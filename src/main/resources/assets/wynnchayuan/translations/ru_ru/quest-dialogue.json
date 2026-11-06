@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 24617,
-  "translated": 24614,
+  "count": 24758,
+  "translated": 24755,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -50774,6 +50774,96 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
+  "Collect White Lilies#001": {
+   "src": "Request from Jayba: Someone, please! I planned on giving my partner a bouquet of lilies for our anniversary, but I simply forgot!",
+   "dst": "Заказ от Jayba: Кто-нибудь, умоляю! К нашей годовщине нужно было подарить второй половинке букет лилий, а это совершенно вылетело из головы!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#002": {
+   "src": "With the festival coming up, they're all sold out! I'd rather not muddy my clothes to get some; especially with the nasty rumors regarding enemies of the state.",
+   "dst": "Из-за приближающегося фестиваля их везде раскупили! Пачкать одежду ради них совсем не хочется, особенно когда ходят мерзкие слухи о врагах государства.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#003": {
+   "src": "{~} White Lilies should do the trick. These lone flowers can be found in grassy areas, usually near blossom trees. Do keep an eye out, they're quite small.",
+   "dst": "{c1}Белые лилии{c2} - {c1}{~} шт.{c2} - вполне подойдут. Эти одинокие цветы растут на травянистых местах, обычно {c3}возле цветущих деревьев{c2}. Смотрите внимательно, они совсем маленькие.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#004": {
+   "src": "If you stick to the roads, you should be able to come across a few. Careful to not get disturbed whilst picking them though! You may want to clear the area beforehand, especially with all the Moorbadgers around...",
+   "dst": "Если держаться дорог, несколько наверняка попадётся. Но следите, чтобы вас не потревожили, пока вы их собираете! Возможно, стоит заранее расчистить местность, особенно учитывая, сколько вокруг болотных барсуков…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#005": {
+   "src": "Unfortunately, all lilies close to town have been picked already. Do bring back the flowers to this post once you're done. Thank you!",
+   "dst": "К сожалению, все лилии рядом с городом уже сорваны. Когда закончите, {c2}принесите цветы к этому посту{/}. Спасибо!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#006": {
+   "src": "Bring [{~} White Lilies] near Blossom trees in the {p} to the Slaying Post at [-{~}, {~}, -{~}]",
+   "dst": "Принесите {c2}[{~} Белая лилия]{/} от цветущих деревьев в {p} на пост истребления по координатам {c3}[-{~}, {~}, -{~}]{/}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#007": {
+   "src": "As you pick up this lonely flower, you feel light on your feet!",
+   "dst": "Когда вы срываете этот одинокий цветок, шаг становится удивительно лёгким!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#008": {
+   "src": "The board mentioned the flowers are really small and sparse. Make sure to look around patches of blossom trees...",
+   "dst": "На доске говорилось, что цветы очень маленькие и встречаются редко. Обязательно осмотрите заросли {c2}цветущих деревьев{/}…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Collect White Lilies#009": {
+   "src": "You've gathered enough White Lilies. You should return to the Slaying Post to collect your reward.",
+   "dst": "Вы собрали достаточно белых лилий. {c2}Вернитесь к посту истребления{/} за наградой.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
    "dst": "Поговори с Поваром в {p} в [-{~}, {~}, -{~}].",
@@ -70083,7 +70173,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#039": {
-   "src": "{u}, after we've don that, I'll need you to take me to the Canopy. I want to familiarize myself with their leadership, and start working on an actual plan.",
+   "src": "{u}, after we've done that, I'll need you to take me to the Canopy. I want to familiarize myself with their leadership, and start working on an actual plan.",
    "dst": "{u}, после этого отведи меня к Canopy. Хочу познакомиться с их руководством и начать составлять настоящий план.",
    "role": "desc",
    "kind": "dialogue",
@@ -70853,7 +70943,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#121": {
-   "src": "S...Sui, we don't w- want to l- lo- lose you too...",
+   "src": "S...Sui, we dont w- want to l- lo- lose you too...",
    "dst": "S...Sui, мы не х- хотим п- по- потерять и тебя...",
    "role": "desc",
    "kind": "dialogue",
@@ -71303,7 +71393,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#170": {
-   "src": "I should talk to the Canopy's leader, get started on some planning. Come by when you're done talking with everyone, okay?",
+   "src": "I should go talk to the Canopy's leader, get started on some planning. Come by when you're done talking with everyone, okay?",
    "dst": "Мне надо поговорить с лидером Canopy и начать планировать. Зайди, когда со всеми поговоришь, ладно?",
    "role": "desc",
    "kind": "dialogue",
@@ -71443,7 +71533,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#184": {
-   "src": "Well, the guards at the prison didn't really care much about who was physically fit to work or not. They just... work you 'tll you're dead, I guess!",
+   "src": "Well, the guards at the prison didn't really care much about who was physically fit to work or not. They just... work you 'till you're dead, I guess!",
    "dst": "Ну, тюремной страже было плевать, кто годен к работе, а кто нет. Они просто... заставляют работать до смерти, видимо!",
    "role": "desc",
    "kind": "dialogue",
@@ -72113,7 +72203,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#254": {
-   "src": "It's quite an extensive network, really... the owls and I have spent years mapping each and every inch of it - and we still haven't seen it all! It's very interesting - and that's not to mention-",
+   "src": "It's quite an extensive network, really... the owls and I have spent years mapping each and every inch of it - and we still haven't seen it all! It's all very interesting - and that's not to mention-",
    "dst": "Сеть весьма обширная... мы с совами годами наносили на карту каждый её дюйм - и до сих пор не всё видели! Очень увлекательно - не говоря уж о-",
    "role": "desc",
    "kind": "dialogue",
@@ -73653,7 +73743,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#413": {
-   "src": "My turn, then? Gourp {~}, we're taking the citadel's {p} by force! Through those neverending tunnels within the plateau, we'll strike where they least expect it!",
+   "src": "My turn, then? Group {~}, we're taking the citadel's {p} by force! Through those neverending tunnels within the plateau, we'll strike where they least expect it!",
    "dst": "Моя очередь? Группа {~}, мы силой берём {p} цитадели! Через бесконечные туннели плато ударим туда, где нас меньше всего ждут!",
    "role": "desc",
    "kind": "dialogue",
@@ -74003,7 +74093,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#448": {
-   "src": "Ah, put a pin that for a second? You two, latecomers? Water Grass, Shadow Bush, we have guidelines for these meetings-",
+   "src": "Ah, put a pin in that for a second? You two, latecomers? Water Grass, Shadow Bush, we have guidelines for these meetings-",
    "dst": "А, можно это отложить? Вы двое, опоздавшие? Водная Трава, Теневой Куст, у нас на встречах есть правила-",
    "role": "desc",
    "kind": "dialogue",
@@ -74713,7 +74803,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#525": {
-   "src": "Soldiers! Don't let down you guard.",
+   "src": "Soldiers! Don't let down your guard.",
    "dst": "Солдаты! Не терять бдительность.",
    "role": "desc",
    "kind": "dialogue",
@@ -74863,7 +74953,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#540": {
-   "src": "And YOU, Thalas! A TOUR! All this power and mastery you can't drop your decibels over and you use NONE of it, you factoring fraud?!",
+   "src": "And YOU, Thalas! A TOUR?! All this power and mastery you can't drop your decibels over and you use NONE of it, you factoring fraud?!",
    "dst": "А ТЫ, Thalas! ЭКСКУРСИЯ! Столько силы и мастерства, что уши закладывает, и НИ КАПЛИ в дело, ты, липовый множитель?!",
    "role": "desc",
    "kind": "dialogue",
@@ -75143,7 +75233,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#569": {
-   "src": "Is that really necessary? If you can take them all captive, you've already solved the problem. It just seems-",
+   "src": "Why is that necessary? If you can take them all captive, you've already solved the problem. It doesn't really-",
    "dst": "Это правда нужно? Если вы возьмёте их всех в плен, проблема уже решена. Просто кажется-",
    "role": "desc",
    "kind": "dialogue",
@@ -75243,7 +75333,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#582": {
-   "src": "It's not like I've already DONE THAT a million times already! It's not like SHE'S the one who taught me that method of stress relief in the FIRST PLACE, noooom no no no, now it's special!!",
+   "src": "It's not like I've already DONE THAT a million times already! It's not like SHE'S the one who taught me that method of stress relief in the FIRST PLACE, noooo, no no no, now it's special !!",
    "dst": "Будто я САМА ЭТО уже миллион раз не делала! Будто не ОНА вообще научила меня так снимать стресс, неееет-нет-нет, теперь это особенное!!",
    "role": "desc",
    "kind": "dialogue",
@@ -75583,7 +75673,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#619": {
-   "src": "Perhaps, the truth of the matter is that you cannot. You have cause me far, far too many problems to simply-",
+   "src": "Perhaps, the truth of the matter is that you cannot. You have caused me far, far too many problems to simply-",
    "dst": "Возможно, правда в том, что ты не можешь. От тебя слишком, слишком много проблем, чтобы просто-",
    "role": "desc",
    "kind": "dialogue",
@@ -76093,7 +76183,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#675": {
-   "src": "...How long has it been, now? Years and years and years... all of it erased, destroyed, and still I remain.",
+   "src": "... How long has it been, now? Years and years and years... all of it erased, destroyed, and still I remain.",
    "dst": "...Сколько же прошло? Годы, годы и годы... всё стёрто, разрушено, а я всё ещё здесь.",
    "role": "desc",
    "kind": "dialogue",
@@ -76133,7 +76223,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#679": {
-   "src": "...ah. I see now my error. Very clever, traversing the shards and reaching though the fractured web into my own past.",
+   "src": "...ah. I see now my error. Very clever, traversing the shards and reaching through the fractured web into my own past.",
    "dst": "...ах. Вот моя ошибка. Умно - пройти по осколкам и сквозь треснувшую сеть заглянуть в моё прошлое.",
    "role": "desc",
    "kind": "dialogue",
@@ -76273,7 +76363,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#694": {
-   "src": "Preparations are in order for burial rights, but we are still deep in the operation! No time to grieve just yet.",
+   "src": "Preparations are in order for burial rites, but we are still deep in the operation! No time to grieve just yet.",
    "dst": "Готовим похороны, но мы всё ещё в разгаре операции! Горевать пока некогда.",
    "role": "desc",
    "kind": "dialogue",
@@ -76513,7 +76603,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#719": {
-   "src": "And... I want to be like that, y'know! Confident enough to do that sorta thing.",
+   "src": "And... I want to be like that, y'know? Confident enough to do that sorta thing.",
    "dst": "И... я хочу быть таким, понимаешь! Достаточно уверенным для такого.",
    "role": "desc",
    "kind": "dialogue",
@@ -76653,7 +76743,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#733": {
-   "src": "Either way. I had the deers bring rations and quipment with us, but in the chaos it seems they have not followed my established sorting system! Everything is a mess.",
+   "src": "Either way. I had the deers bring rations and equipment with us, but in the chaos it seems they have not followed my established sorting system! Everything is a mess.",
    "dst": "Так или иначе. По моему приказу олени взяли пайки и снаряжение, но в суматохе, похоже, не соблюли мою систему сортировки! Всё вверх дном.",
    "role": "desc",
    "kind": "dialogue",
@@ -76971,6 +77061,286 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "wiki"
+  },
+  "Ensemble of Hope#765": {
+   "src": "...you don't scare me.",
+   "dst": "…ты меня не пугаешь.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#766": {
+   "src": "W-wh-what...",
+   "dst": "Ч-ч-что…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#767": {
+   "src": "CHARGE!",
+   "dst": "В АТАКУ!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#768": {
+   "src": "You tell them about the Corruption you've seen in Wynn. About what it does to the land and the people.",
+   "dst": "Ты рассказываешь им о Скверне, что встречается в Wynn. О том, что она делает с землёй и людьми.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#769": {
+   "src": "You... don't tell them why you think it's here. About the Queen. It'd be best to tell everyone at the same time.",
+   "dst": "Ты… не говоришь им, почему думаешь, что она здесь. О Королеве. Лучше рассказать всем разом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#770": {
+   "src": "You suddenly remember. Tasim told you the Queen wanted to speak to you. Maybe you could get an audience...?",
+   "dst": "Вдруг ты вспоминаешь: по словам Tasim, Королева хотела с тобой поговорить. Может, удастся добиться аудиенции…?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#771": {
+   "src": "You tell them about the War of the Realms. Of Light and Dark and War.",
+   "dst": "Ты рассказываешь им о Войне миров. О Свете, Тьме и Войне.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#772": {
+   "src": "You tell them about Corruption. About how it has affected Wynn, and how the recruits Fruma sends help keep it at bay.",
+   "dst": "Ты рассказываешь им о Скверне. О том, как она поразила Wynn и как новобранцы, которых присылает Fruma, помогают её сдерживать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#773": {
+   "src": "You tell them about the Queen. About what she is, what she was. That killing her won't be as easy as-",
+   "dst": "Ты рассказываешь им о Королеве. О том, кто она сейчас и кем была. О том, что убить её будет не так просто, как-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#774": {
+   "src": "Everyone has dispersed into various groups... you can talk to them, or go rest right now.",
+   "dst": "Все разошлись по группам… можно поговорить с ними или сразу пойти отдыхать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#775": {
+   "src": "You probably shouldn't interrupt their reunion.",
+   "dst": "Пожалуй, не стоит мешать их встрече.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#776": {
+   "src": "Right-Click to sleep",
+   "dst": "ПКМ - лечь спать",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#777": {
+   "src": "It looks like everyone else has already gone out. It's just you, now.",
+   "dst": "Похоже, все остальные уже ушли. Теперь здесь только ты.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#778": {
+   "src": "Let's hope I'm not stuck here forever...",
+   "dst": "Будем надеяться, что я здесь не навечно…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#779": {
+   "src": "Imprisonment Guidelines",
+   "dst": "Правила содержания заключённых",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#780": {
+   "src": "- Provide minimum necessary food and water. If work is completed, increase ration allotments.",
+   "dst": "- Выдавать необходимый минимум еды и воды. При выполнении работы увеличивать паёк.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#781": {
+   "src": "- Provide Eternal Wellspring water each year to maintain longevity.",
+   "dst": "- Ежегодно выдавать воду из Eternal Wellspring для поддержания долголетия.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#782": {
+   "src": "- No sources of entertainment are permitted beyond assigned projects.",
+   "dst": "- Никаких развлечений, кроме назначенных проектов.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#783": {
+   "src": "- Under NO circumstances must the curse-proof gate be opened. High escape risk.",
+   "dst": "- Ни при КАКИХ обстоятельствах не открывать защищённые от проклятий ворота. Высокий риск побега.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#784": {
+   "src": "Speak to Two in the palace's throne room. To return go to [-{~}, {~}, -{~}].",
+   "dst": "Поговори с Two в тронном зале дворца. Чтобы вернуться, иди в [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#785": {
+   "src": "This is it, we stand at the precipice of change...",
+   "dst": "Вот и всё, мы стоим на пороге перемен…",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#786": {
+   "src": "With your help, the resistance can create a better future for Fruma, and put an end to this madness!",
+   "dst": "С вашей помощью Сопротивление сможет создать лучшее будущее для Fruma и положить конец этому безумию!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#787": {
+   "src": "...As if it wasn't already enough that I missed that train and had to buy ANOTHER ticket...",
+   "dst": "…Мало того что я опоздал на тот поезд и пришлось покупать ЕЩЁ ОДИН билет…",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#788": {
+   "src": "...I get home and an insurgency has taken over the damn place??? What is going on???",
+   "dst": "…прихожу домой, а тут чёртовы мятежники всё захватили??? Что вообще происходит???",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#789": {
+   "src": "OH, OH, AND JUST AS I THOUGHT IT COULDN'T GET WORSE, LOOK WHO SHOWS UP TO ADD INSULT TO INJURY. YOU.",
+   "dst": "О, О, И ТОЛЬКО Я ПОДУМАЛ, ЧТО ХУЖЕ УЖЕ НЕКУДА, СМОТРИТЕ, КТО ЯВИЛСЯ ПОДСЫПАТЬ СОЛИ НА РАНУ. ТЫ.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#790": {
+   "src": "SO, WHAT, HUH? WHAT'S GOING ON? IS THIS ALL SOME SORT OF... DIVINE PUNISHMENT FOR THE WAY I SPOKE TO YOU BACK OUTSIDE THE SUBWAY??? I'M SORRY, I'M SORRY, OKAY??? PLEASE... MAKE IT END!!!",
+   "dst": "ТАК ЧТО, А? ЧТО ПРОИСХОДИТ? ЭТО ВСЁ КАКАЯ-ТО… КАРА НЕБЕСНАЯ ЗА ТО, КАК Я С ТОБОЙ РАЗГОВАРИВАЛ ТОГДА У МЕТРО??? ПРОСТИ, ПРОСТИ, ЛАДНО??? ПОЖАЛУЙСТА… ПУСТЬ ЭТО ЗАКОНЧИТСЯ!!!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#791": {
+   "src": "GAAAAHH!!! FINE!!! LEAVE ME IN MY MISERY THEN!!!",
+   "dst": "ГААААХ!!! ЛАДНО!!! ТОГДА ОСТАВЬ МЕНЯ В МОЁМ НЕСЧАСТЬЕ!!!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#792": {
+   "src": "Take care out there, {u}.",
+   "dst": "Береги себя там, {u}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 22",
+   "speaker": "Rurie",
+   "source": "captured.json"
   },
   "Enter the Dojo#000": {
    "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
@@ -100048,6 +100418,76 @@
    "stage": "Stage 11",
    "speaker": "Winie",
    "source": "wiki"
+  },
+  "Hunt Woolly Rhinos#001": {
+   "src": "Request from the Customs Clerk: To whomever it may concern, there has recently been an increase in damaged goods from outside the Capital. When questioned, various artisans admit having been attacked by ferocious beasts.",
+   "dst": "Заказ от таможенника: Всем, кого это касается: в последнее время участились случаи порчи товаров, ввозимых из-за пределов Столицы. На расспросы многие ремесленники признались, что на них нападали свирепые звери.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#002": {
+   "src": "Woolly Rhinos seem to match the description, and they are indeed creatures not to be tempered with. I am unsure what causes them such unrest. Perhaps they feel a change in the environment, but it matters not.",
+   "dst": "Под описание, похоже, подходят шерстистые носороги - и с этими созданиями действительно лучше не связываться. Не знаю, что их так тревожит. Возможно, они чувствуют перемены в окружающей среде, но это неважно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#003": {
+   "src": "What matters is that more and more goods are being damaged, causing delays in the monitoring of what goes in and out of the Capital. If someone could hunt at least {~} Woolly Rhinos, it would be of assistance to us all.",
+   "dst": "Важно то, что испорченных товаров всё больше, а это задерживает контроль за тем, что ввозится в Столицу и вывозится из неё. Если бы кто-нибудь выследил хотя бы {c2}{~}{/} {c2}шерстистых носорогов{/}, это помогло бы всем нам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#004": {
+   "src": "There are reports of two of them having been spotted nearby House Thalas and House Nasin. I have set up a carriage next to this board if you wish to go there.",
+   "dst": "Поступают сообщения, что двоих из них видели {c2}возле домов Thalas и Nasin{/}. Если хотите туда отправиться, рядом с этой доской вас ждёт {c2}карета{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#005": {
+   "src": "Additionally, a friend of mine has also seen one to the north of {p}, quite close to the town itself. Please return to this post once you are done. As mentioned, they are very resilient. Be sure to brace yourself.",
+   "dst": "Кроме того, один мой друг видел ещё одного {c2}к северу от {p}{/}, совсем недалеко от самого города. Когда закончите, {c2}возвращайтесь к этому посту{/}. Как уже говорилось, они очень выносливы. Будьте готовы.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#006": {
+   "src": "You've hunted enough of those beasts. You should return to the Slaying Post to collect your reward.",
+   "dst": "Вы выследили достаточно этих зверей. {c2}Вернитесь к посту истребления{/} за наградой.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunt Woolly Rhinos#007": {
+   "src": "Return to the Slaying Post at [-{~}, {~}, -{~}] to collect your reward.",
+   "dst": "Вернитесь к посту истребления по координатам [-{~}, {~}, -{~}] за наградой.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Ice Nations#000": {
    "src": "Thank you again for bringing peace upon our islands.",
@@ -223050,7 +223490,7 @@
    "source": "wiki"
   },
   "The Strong Survive#109": {
-   "src": "We are thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
+   "src": "We are very thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
    "dst": "Благодарим Суверена Majin, что нашёл время произнести вступительную речь.",
    "role": "desc",
    "kind": "dialogue",
@@ -223140,7 +223580,7 @@
    "source": "wiki"
   },
   "The Strong Survive#118": {
-   "src": "I'm Arnol, I come from the nobel {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
+   "src": "I'm Arnol, I come from the noble {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
    "dst": "Я Arnol из знатного дома Tasa из {p}. Fruma столько для нас сделала, и я готов ей служить.",
    "role": "desc",
    "kind": "dialogue",
@@ -223170,7 +223610,7 @@
    "source": "wiki"
   },
   "The Strong Survive#121": {
-   "src": "My family tells me that recruits often end up very... competitive...",
+   "src": "My family tells me that recruits often end up becoming very... competitive...",
    "dst": "Родные говорят, что новобранцы часто очень… соперничают…",
    "role": "desc",
    "kind": "dialogue",
@@ -223750,7 +224190,7 @@
    "source": "wiki"
   },
   "The Strong Survive#179": {
-   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have many weights embedded into them.",
+   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have weights embedded into them.",
    "dst": "Турели подают знак перед выстрелом, однако в ваши щиты встроено множество грузов.",
    "role": "desc",
    "kind": "dialogue",
@@ -223990,8 +224430,8 @@
    "source": "wiki"
   },
   "The Strong Survive#203": {
-   "src": "Good job ! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
-   "dst": "Молодец! Рад, что хоть у одного из нас получилось. Потом расскажешь, как тебе это удалось.",
+   "src": "Good job {u}! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
+   "dst": "Молодец, {u}! Рад, что хоть у одного из нас получилось. Потом расскажешь, как тебе это удалось.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -224010,8 +224450,8 @@
    "source": "captured"
   },
   "The Strong Survive#205": {
-   "src": "Good job ! I am glad that you managed to finish. We should talk more about it later.",
-   "dst": "Молодец! Рад, что у тебя вышло. Потом обсудим подробнее.",
+   "src": "Good job {u}! I am glad that you managed to finish. We should talk more about it later.",
+   "dst": "Молодец, {u}! Рад, что у тебя вышло. Потом обсудим подробнее.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -224040,7 +224480,7 @@
    "source": "wiki"
   },
   "The Strong Survive#208": {
-   "src": "Listen to the challenge instructions then enter the next room and complete the second challenge.",
+   "src": "Listen to the challenge instructions, then enter the next room and complete the second challenge.",
    "dst": "Выслушай инструкции, затем войди в следующую комнату и пройди второе испытание.",
    "role": "desc",
    "kind": "objective",
@@ -224730,7 +225170,7 @@
    "source": "wiki"
   },
   "The Strong Survive#277": {
-   "src": "Go to the challenge room and receive instructions for the final challenge of the day at [-{~}, {~}, {~}].",
+   "src": "Go to the challenge room and recieve instructions for the final challenge of the day at [-{~}, {~}, {~}]",
    "dst": "Пройди в зал испытаний в [-{~}, {~}, {~}] и получи указания к последнему испытанию дня.",
    "role": "desc",
    "kind": "objective",
@@ -225300,8 +225740,8 @@
    "source": "wiki"
   },
   "The Strong Survive#334": {
-   "src": "Hey . It feels like it's been a while since we've last seen each other.",
-   "dst": "Привет. Кажется, мы давно не виделись.",
+   "src": "Hey {u}. It feels like it's been a while since we've last seen each other.",
+   "dst": "Привет, {u}. Кажется, мы давно не виделись.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225330,7 +225770,7 @@
    "source": "wiki"
   },
   "The Strong Survive#337": {
-   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard's barracks.",
+   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard barracks.",
    "dst": "Насчёт того, что было в столовой: меня и ещё одного новобранца отвели в казарму стражи.",
    "role": "desc",
    "kind": "dialogue",
@@ -225380,8 +225820,8 @@
    "source": "wiki"
   },
   "The Strong Survive#342": {
-   "src": "There's something I want to tell you in a more private area . Before you go to bed, talk to me in the barracks.",
-   "dst": "Хочу кое-что сказать тебе в месте поукромнее. Перед сном подойди ко мне в казарме.",
+   "src": "There's something I want to tell you in a more private area {u}. Before you go to bed, talk to me in the barracks.",
+   "dst": "{u}, хочу кое-что сказать тебе в месте поукромнее. Перед сном подойди ко мне в казарме.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225500,7 +225940,7 @@
    "source": "wiki"
   },
   "The Strong Survive#354": {
-   "src": "I'll make you and everyone else who mocked me east their words!",
+   "src": "I'll make you and everyone else who mocked me eat their words!",
    "dst": "Я заставлю тебя и всех, кто надо мной смеялся, взять слова обратно!",
    "role": "desc",
    "kind": "dialogue",
@@ -225530,8 +225970,8 @@
    "source": "wiki"
   },
   "The Strong Survive#357": {
-   "src": "I want to apologize to you . Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
-   "dst": "Хочу извиниться перед тобой. Сегодня, когда я назвал причину, по которой хочу стать солдатом, я солгал.",
+   "src": "I want to apologize to you {u}. Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
+   "dst": "{u}, хочу извиниться перед тобой. Сегодня, когда я назвал причину, по которой хочу стать солдатом, я солгал.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -226050,7 +226490,7 @@
    "source": "wiki"
   },
   "The Strong Survive#409": {
-   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks>",
+   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks?",
    "dst": "Что ж… Какое разочарование. Тебе дали столько шансов, и вот твоя благодарность.",
    "role": "desc",
    "kind": "dialogue",
@@ -226070,7 +226510,7 @@
    "source": "wiki"
   },
   "The Strong Survive#411": {
-   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
+   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made good time.",
    "dst": "Привет, {u}, кажется, испытание прошло неплохо. По крайней мере, я его прошёл, хоть и не уверен, что время хорошее.",
    "role": "desc",
    "kind": "dialogue",
@@ -226090,7 +226530,7 @@
    "source": "wiki"
   },
   "The Strong Survive#413": {
-   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us to do better in the training.",
+   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us do better in the training.",
    "dst": "Что это должно значить? Я думал, наставники нас подбадривают и помогают стать лучше.",
    "role": "desc",
    "kind": "dialogue",
@@ -226200,7 +226640,7 @@
    "source": "wiki"
   },
   "The Strong Survive#424": {
-   "src": "With that being said, I wish all of you lulck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
+   "src": "With that being said, I wish all of you luck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
    "dst": "С этим всё, желаю всем удачи в испытании! Кто без щита - возьмите на стойке рядом с Вербовщиком Ezero.",
    "role": "desc",
    "kind": "dialogue",
@@ -226340,7 +226780,7 @@
    "source": "wiki"
   },
   "The Strong Survive#438": {
-   "src": "It was a lot different back then, yet it seeks that it's reputation hasn't changed much. Funny little coincidence I suppose.",
+   "src": "It was a lot different back then, yet it seems that it's reputation hasn't changed much. Funny little coincidence I suppose.",
    "dst": "Тогда всё было иначе, а слава у него, похоже, всё та же. Забавное совпадение, наверное.",
    "role": "desc",
    "kind": "dialogue",
@@ -226550,7 +226990,7 @@
    "source": "wiki"
   },
   "The Strong Survive#459": {
-   "src": "I've seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
+   "src": "I have seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
    "dst": "Часто вижу тебя с Arnol. Не понимаю, что тебя в нём привлекает. Дело в его фамилии?",
    "role": "desc",
    "kind": "dialogue",
@@ -226670,8 +227110,8 @@
    "source": "wiki"
   },
   "The Strong Survive#471": {
-   "src": "and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
-   "dst": "и я хотели узнать, как прошёл твой вчерашний поединок. Мы, кхм… оба его провалили и хотим понять, как ты победил, просто расскажи, что было в бою.",
+   "src": "{u} and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
+   "dst": "{u} и я хотели узнать, как прошёл твой вчерашний поединок. Мы, кхм… оба его провалили и хотим понять, как ты победил, просто расскажи, что было в бою.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -226690,7 +227130,7 @@
    "source": "wiki"
   },
   "The Strong Survive#473": {
-   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farse, I brutally retaliated...",
+   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farce, I brutally retaliated...",
    "dst": "Я много раз открывался для удара, но соперник так ни разу и не попал. Когда этот фарс мне надоел, я жестоко ответил…",
    "role": "desc",
    "kind": "dialogue",
@@ -226760,8 +227200,8 @@
    "source": "wiki"
   },
   "The Strong Survive#480": {
-   "src": "No true soldier would ever intentionally injure an ally... Let's go, this conversation is over.",
-   "dst": "Настоящий солдат никогда нарочно не ранит союзника… Идём, разговор окончен.",
+   "src": "No true soldier would ever intentionally injure an ally... Let's go, {u} this conversation is over.",
+   "dst": "Настоящий солдат никогда нарочно не ранит союзника… Идём, {u}, разговор окончен.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -226970,7 +227410,7 @@
    "source": "wiki"
   },
   "The Strong Survive#501": {
-   "src": "I will be unable to oversee your challenges today as there is somthing I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
+   "src": "I will be unable to oversee your challenges today as there is something I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
    "dst": "Сегодня я не смогу наблюдать за испытаниями, у меня неотложное дело. Я попросил другого наставника, он ждёт в залах поединков.",
    "role": "desc",
    "kind": "dialogue",
@@ -227160,8 +227600,8 @@
    "source": "wiki"
   },
   "The Strong Survive#520": {
-   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with in private.",
-   "dst": "Ты становишься безнадёжен, Arnol. Иди, мне нужно кое-что обсудить наедине.",
+   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with {u} in private.",
+   "dst": "Ты становишься безнадёжен, Arnol. Иди, мне нужно кое-что обсудить с {u} наедине.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -227240,7 +227680,7 @@
    "source": "wiki"
   },
   "The Strong Survive#528": {
-   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know must be constantly trying to improve!",
+   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know I must constantly be trying to improve!",
    "dst": "Стыд за первый рейтинг подстегнул меня стараться сегодня сильнее. Я рада, что сперва выступила плохо: теперь я знаю, что расти надо постоянно!",
    "role": "desc",
    "kind": "dialogue",
@@ -227520,8 +227960,8 @@
    "source": "wiki"
   },
   "The Strong Survive#556": {
-   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in {p}.",
-   "dst": "Это было последнее оскорбление от Командира Ferreo. Поэтому я здесь, стражником в {p}.",
+   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in Tericen.",
+   "dst": "Это было последнее оскорбление от Командира Ferreo. Поэтому я здесь, стражником в Tericen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -227570,7 +228010,7 @@
    "source": "wiki"
   },
   "The Strong Survive#561": {
-   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have though after reading them...",
+   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have thought after reading them...",
    "dst": "В глубине души… Может, хотелось, чтобы записи нашёл Командир Ferreo. Интересно, что бы он подумал, прочитав их…",
    "role": "desc",
    "kind": "dialogue",
@@ -227660,7 +228100,7 @@
    "source": "wiki"
   },
   "The Strong Survive#570": {
-   "src": "We can only speculate at what the discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
+   "src": "We can only speculate at what they discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
    "dst": "О чём шла речь, можно лишь гадать, но вскоре после той встречи Majin назначил Командира Ferreo главой {p}. Думаю, его наказали за амбиции…",
    "role": "desc",
    "kind": "dialogue",
@@ -228388,6 +228828,976 @@
    "stage": "Stage 32",
    "speaker": "Effal",
    "source": "wiki"
+  },
+  "The Strong Survive#643": {
+   "src": "Type and send your name in chat.",
+   "dst": "Напиши своё имя в чат и отправь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#644": {
+   "src": "You put the uniform on over your armor.",
+   "dst": "Ты надеваешь форму поверх доспехов.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#645": {
+   "src": "Quickly now, head into the large door and join the rest of the recruits!",
+   "dst": "Живее, проходи в большую дверь и присоединяйся к остальным новобранцам!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#646": {
+   "src": "Commander Ferreo\nThe speech may now begin.",
+   "dst": "Commander Ferreo\nРечь сейчас начнётся.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#647": {
+   "src": "Wilton\nWhat an incredible speech!",
+   "dst": "Wilton\nКакая потрясающая речь!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Wilton",
+   "source": "captured.json"
+  },
+  "The Strong Survive#648": {
+   "src": "Saldin\nAmazing!",
+   "dst": "Saldin\nНевероятно!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Saldin",
+   "source": "captured.json"
+  },
+  "The Strong Survive#649": {
+   "src": "You should be standing in the right position, marked with stone, before starting the turret.",
+   "dst": "Перед запуском турели нужно встать на нужное место, отмеченное камнем.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#650": {
+   "src": "You must face the turret in order to block the arrow coming from it.",
+   "dst": "Чтобы отбить стрелу из турели, нужно стоять к ней лицом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#652": {
+   "src": "The statue engraving reads: \"Honour is not given\"",
+   "dst": "Надпись на статуе гласит: «Честь не даётся»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#653": {
+   "src": "Military Guard\nKatze, you must come with me.",
+   "dst": "Military Guard\nKatze, пройдём со мной.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#654": {
+   "src": "Katze\nUhm... Ok...",
+   "dst": "Katze\nЭм… Ладно…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Katze",
+   "source": "captured.json"
+  },
+  "The Strong Survive#655": {
+   "src": "Recruiter Effal\n\nHead down to the dueling room,\nI will meet you there.",
+   "dst": "Recruiter Effal\n\nСпускайся в зал поединков,\nя буду ждать там.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#656": {
+   "src": "Priscilla\nAlright.",
+   "dst": "Priscilla\nХорошо.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Priscilla",
+   "source": "captured.json"
+  },
+  "The Strong Survive#657": {
+   "src": "Dogi\nOn it.",
+   "dst": "Dogi\nУже иду.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Dogi",
+   "source": "captured.json"
+  },
+  "The Strong Survive#658": {
+   "src": "{#} Left-Click to attack, {#} Hold Right-Click to block.",
+   "dst": "{#} ЛКМ - атаковать, {#} удерживать ПКМ - блокировать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#659": {
+   "src": "{u} is the victor.",
+   "dst": "Победа за {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#660": {
+   "src": "You should look at the ranking board now.",
+   "dst": "Теперь стоит взглянуть на доску рейтинга.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#661": {
+   "src": "I hope things go differently tomorrow. I want to be done with bringing shame to my house.",
+   "dst": "Надеюсь, завтра всё сложится иначе. Хватит мне позорить свой дом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 14",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#662": {
+   "src": "You should search the barracks for any information useful to the resistance.",
+   "dst": "Обыщи казарму в поисках сведений, полезных Сопротивлению.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#663": {
+   "src": "My first day at Tericen went amazingly well! I didn't stutter when introducing myself to the Commander, did great in the training exercises, and was able to befriend a fellow {p} recruit!",
+   "dst": "Мой первый день в Tericen прошёл потрясающе! Я не заикался, представляясь Командиру, отлично справился с тренировками и даже подружился с другим новобранцем из {p}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#664": {
+   "src": "Her name is Darea, and we ate lunch together. I spent most of that time talking to her about Commander Ferreo. She seemed somewhat freaked out with how much I knew about him.",
+   "dst": "Её зовут Darea, мы вместе обедали. Почти всё время я рассказывал ей о Командире Ferreo. Кажется, её слегка напугало, как много я о нём знаю.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#665": {
+   "src": "Tomorrow we will have dueling and shield training. The instructor for dueling training will be Commander Ferreo himself!",
+   "dst": "Завтра у нас поединки и тренировка со щитом. Поединки будет вести сам Командир Ferreo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#666": {
+   "src": "Oh dear Queen... Please give me the courage to ask him how he managed to reach that level...",
+   "dst": "О, милостивая Королева… Пожалуйста, дай мне смелости спросить его, как он достиг такого уровня…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#667": {
+   "src": "You are entering the guard barracks, stay sneaking while moving so as to not alert the sleeping guards.",
+   "dst": "Ты входишь в казарму стражи. Двигайся присев, чтобы не разбудить спящих стражников.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#668": {
+   "src": "You must stay sneaking while moving to avoid waking the guards.",
+   "dst": "Двигайся присев, чтобы не разбудить стражников.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#669": {
+   "src": "You rummage through the trash bin...",
+   "dst": "Ты роешься в мусорном ведре…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#670": {
+   "src": "Dear Sovereign Majin, it has been a while since I last wrote to you, or spoken to you, face to face. Coincidentally, I am writing this letter about the last conversation we had.",
+   "dst": "Дорогой Суверен Majin, давно я не писал вам и не говорил с вами лицом к лицу. По совпадению, это письмо как раз о нашем последнем разговоре.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#671": {
+   "src": "I had asked you about potentially becoming a field Commander again. You were hesitant to grant my request, given my age, but would consider it if I showed my value as head of the recruitment program.",
+   "dst": "Я спрашивал вас, нельзя ли мне снова стать полевым командиром. Учитывая мой возраст, вы не спешили удовлетворить мою просьбу, но обещали подумать, если я докажу свою ценность как глава программы набора.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#672": {
+   "src": "I have heard troubling rumours coming from outside the {p}, namely of the growing strength of a hidden resistance group in the {p}.",
+   "dst": "До меня дошли тревожные слухи из-за пределов {p}, а именно о растущей силе тайной группы сопротивления в {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#673": {
+   "src": "As a Wings commander, it is my duty to defend Fruma with my life. I believe I can be of far greater use out there rather than in-",
+   "dst": "Как командир отдела Крыльев, я обязан защищать Fruma ценой жизни. Я уверен, что там принесу куда больше пользы, чем в-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#674": {
+   "src": "The letter ends there.",
+   "dst": "На этом письмо обрывается.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#675": {
+   "src": "It's a list of average scores from the last {~} batches of recruits.",
+   "dst": "Это список средних баллов последних {~} наборов новобранцев.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#676": {
+   "src": "Recruit Batch {~}: Score {~}",
+   "dst": "Набор новобранцев {~}: балл {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#677": {
+   "src": "Recruit Batch {~}: In Progress",
+   "dst": "Набор новобранцев {~}: {c2}в процессе{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#678": {
+   "src": "\"From Adders to Lammergeier: The Beasts of the {p}\"",
+   "dst": "«От Adders до Lammergeier: звери {p}»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#679": {
+   "src": "An index of dangerous animals native to the {p} region.",
+   "dst": "Перечень опасных животных, обитающих в регионе {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#680": {
+   "src": "A history of Tericen and the famous military leaders to come out of it.",
+   "dst": "История Tericen и знаменитых военачальников, вышедших из его стен.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#681": {
+   "src": "\"Tericen: Where Legends are Born\"",
+   "dst": "«Tericen: где рождаются легенды»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#682": {
+   "src": "\"The Great Leaps of Military Prestige\"",
+   "dst": "«Великие взлёты воинской славы»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#683": {
+   "src": "A book detailing what it takes to increase your rank within the Fruman military.",
+   "dst": "Книга о том, что нужно, чтобы подняться в звании в армии Fruma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#684": {
+   "src": "\"The Cursed Ones\"",
+   "dst": "«Проклятые»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#685": {
+   "src": "A tale about people with inherent magical abilities being defeated by the Fruman military.",
+   "dst": "Повесть о людях с врождёнными магическими способностями, побеждённых армией Fruma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#686": {
+   "src": "\"Resilience: The Secret to Success in The Fruman Military\"",
+   "dst": "«Стойкость: секрет успеха в армии Fruma»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#687": {
+   "src": "An autobiography from an old military commander known for their skill with a shield.",
+   "dst": "Автобиография старого военачальника, славившегося умением обращаться со щитом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#688": {
+   "src": "The chef might catch you if you get too close.",
+   "dst": "Если подойдёшь слишком близко, повар может тебя поймать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#689": {
+   "src": "Today I will start my training to become a recruit at {p}. It's hard to believe after all this time, my dreams are finally coming true!",
+   "dst": "Сегодня я начинаю обучение, чтобы стать новобранцем в {p}. Трудно поверить, что спустя столько времени мои мечты наконец сбываются!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#690": {
+   "src": "Soon, recruiter Rosei will come to my house and escort me to the barracks. I am shaking with excitement and nervousness even while writing this.",
+   "dst": "Скоро вербовщик Rosei придёт ко мне домой и проводит в казарму. Я дрожу от волнения и нервов, даже пока пишу это.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#691": {
+   "src": "I hope I can appear presentable when I meet Commander Ferreo.",
+   "dst": "Надеюсь, при встрече с Командиром Ferreo я буду выглядеть достойно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#692": {
+   "src": "There is a strange message at the bottom of the page.",
+   "dst": "Внизу страницы странное сообщение.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#693": {
+   "src": "There is still valuable information to be learned here.",
+   "dst": "Здесь ещё можно узнать кое-что ценное.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#694": {
+   "src": "The guards might catch you if you get too close.",
+   "dst": "Если подойдёшь слишком близко, стражники могут тебя поймать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#695": {
+   "src": "I still couldn't do it... I can't just ask him a question like that outright, I need to show that I am \"worthy\" first. I've done well in the challenges but I still can't make it into the top three on the ranking.",
+   "dst": "И снова не смог… Нельзя просто взять и спросить его о таком в лоб, сначала нужно доказать, что я «достоин». В испытаниях я справляюсь хорошо, но в первую тройку рейтинга всё никак не попаду.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#696": {
+   "src": "Those Wings recruits are just too good, compared to the rest of us. It sometimes scares me how strong they are. If I want any chance of reaching that level, I need to start taking risks.",
+   "dst": "Эти новобранцы из Крыльев просто слишком хороши по сравнению с остальными. Порой меня пугает, насколько они сильны. Если я хочу хоть как-то дотянуться до их уровня, надо начинать рисковать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#697": {
+   "src": "With that credit behind me, I may finally get the courage to ask Commander Ferreo about his biggest secret.",
+   "dst": "С таким достижением за плечами, может, я наконец наберусь смелости спросить Командира Ferreo о его главной тайне.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#698": {
+   "src": "How a vagabond was able to become one of the most famed military commanders, and even receive an incredibly powerful blessing.",
+   "dst": "Как бродяге удалось стать одним из самых прославленных военачальников и даже получить невероятно могущественное благословение.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#699": {
+   "src": "You can overhear Commander Ferreo talking to someone in the room ahead.",
+   "dst": "Ты слышишь, как Командир Ferreo с кем-то разговаривает в комнате впереди.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#700": {
+   "src": "Tomorrow I graduate from {p} and become a soldier. The days seem so similar to me, I've been forgetting to write these diary entries.",
+   "dst": "Завтра я выпускаюсь из {p} и становлюсь солдатом. Дни для меня так похожи друг на друга, что я забывал вести эти записи.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#701": {
+   "src": "In the past I may have been considered for promotion to captain, now, all of that has slipped away. My rankings have been steadily decreasing over the days, becoming lower than ever before.",
+   "dst": "Раньше меня, возможно, рассматривали бы для повышения до капитана, но теперь всё это ускользнуло. Мой рейтинг день за днём неуклонно падал и стал ниже, чем когда-либо.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#702": {
+   "src": "I spend most of my time thinking about what could have been, it feels like I am detached from reality.",
+   "dst": "Я почти всё время думаю о том, что могло бы быть, и мне кажется, будто я оторван от реальности.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#703": {
+   "src": "Yet, even still, the thought manages to appear in my head. Was Commander Ferreo right?",
+   "dst": "И всё же мысль упрямо возвращается: а был ли Командир Ferreo прав?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#704": {
+   "src": "Quickly run back to your bed before Commander Ferreo Catches you!",
+   "dst": "Скорее беги обратно в кровать, пока Командир Ferreo тебя не поймал!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#705": {
+   "src": "You tell Arnol what you saw last night.",
+   "dst": "Ты рассказываешь Arnol о том, что произошло прошлой ночью.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#706": {
+   "src": "And Adder was the one to do this? I did see that he got the highest ranking in the challenges yesterday...",
+   "dst": "И это сделал Adder? Я и правда видел, что вчера в испытаниях у него был самый высокий рейтинг…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#707": {
+   "src": "Recruiter Effal\nHead down to the dueling room.",
+   "dst": "Recruiter Effal\nСпускайся в зал поединков.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#708": {
+   "src": "Military Guard\nMatilda, come with me.",
+   "dst": "Military Guard\nMatilda, пройдём со мной.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#709": {
+   "src": "Recruiter Effal\nGo to the dueling room.",
+   "dst": "Recruiter Effal\nИди в зал поединков.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#710": {
+   "src": "Alright, that's enough, the duel is over.",
+   "dst": "Всё, хватит, поединок окончен.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#711": {
+   "src": "{u} is the winner, clearly.",
+   "dst": "Очевидно, победа за {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#712": {
+   "src": "Both of you wait there. I want to discuss something with you two, face to face.",
+   "dst": "Оба ждите там. Хочу обсудить с вами кое-что с глазу на глаз.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#713": {
+   "src": "You should search the barracks for information on Commander Ferreo's plans.",
+   "dst": "Обыщи казарму в поисках сведений о планах Командира Ferreo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#714": {
+   "src": "The doctor might catch you if you get too close.",
+   "dst": "Если подойдёшь слишком близко, врач может тебя поймать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#715": {
+   "src": "I am crushed... After defeating my opponent in the dueling training. I mustered my courage and asked Commander Ferreo how he went from being at the bottom of the totem pole, to reaching the top of it.",
+   "dst": "Я раздавлен… Победив соперника на тренировке по поединкам, я собрался с духом и спросил Командира Ferreo, как он прошёл путь с самых низов до самой вершины.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#716": {
+   "src": "He paused for a second before asking what my business was knowing that.",
+   "dst": "Он помолчал секунду, а потом спросил, зачем мне это знать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#717": {
+   "src": "I fumbled up a response, saying that I've seen him as an inspiration for all of my life, and have always wondered how he managed to claw his way up to the top.",
+   "dst": "Я промямлил что-то в ответ: что всю жизнь видел в нём пример для подражания и всегда гадал, как ему удалось пробиться на самый верх.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#718": {
+   "src": "He told me that those who set out to achieve a goal out of envy will never be able to reach it.",
+   "dst": "Он сказал, что те, кто стремится к цели из зависти, никогда её не достигнут.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#719": {
+   "src": "No matter how hard I tried, I would never be able to become a commander, nor receive the accolades that he has. Although he may be right... That wasn't what I wanted to hear...",
+   "dst": "Как бы я ни старался, мне никогда не стать командиром и не получить таких почестей, как у него. Может, он и прав… Но я хотел услышать совсем не это…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#720": {
+   "src": "I feel like such an idiot.",
+   "dst": "Чувствую себя полным идиотом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#721": {
+   "src": "It's a screwdriver missing a handle.",
+   "dst": "Это отвёртка без ручки.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#722": {
+   "src": "It's a knife handle, missing its blade.",
+   "dst": "Это рукоять ножа без лезвия.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#723": {
+   "src": "You socket the broken screwdriver into the knife handle.",
+   "dst": "Ты вставляешь сломанную отвёртку в рукоять ножа.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#724": {
+   "src": "You have assembled a repaired screwdriver!",
+   "dst": "{c1}Отвёртка починена!{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#725": {
+   "src": "You have found all of the diary entries!",
+   "dst": "{c1}Все записи дневника найдены!{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#726": {
+   "src": "Choose which diary entry to read:",
+   "dst": "Выбери, какую запись прочитать:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#727": {
+   "src": "Finally, I've done it! I've managed to rank first in training! The Commander has surely noticed my gradual ascent in strength.",
+   "dst": "Наконец-то получилось! Я занял первое место на тренировке! Командир наверняка заметил, как я постепенно становлюсь сильнее.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#728": {
+   "src": "In the back of my mind I'm still unsure about going through with it... But I've put too much effort into this, I can't abandon everything now! I will speak to Commander Ferreo tomorrow, after dueling training.",
+   "dst": "В глубине души я всё ещё не уверен, стоит ли доводить дело до конца… Но я вложил в это слишком много сил, нельзя всё бросить сейчас! Завтра, после тренировки по поединкам, я поговорю с Командиром Ferreo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#729": {
+   "src": "I'm certain, whatever his answer is, it will have an immense impact on me.",
+   "dst": "Я уверен: каким бы ни был его ответ, он сильно на меня повлияет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#730": {
+   "src": "A large wooden door stands before you.",
+   "dst": "Перед тобой большая деревянная дверь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#731": {
+   "src": "Who is there? State your name!",
+   "dst": "Кто там? Назовись!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#732": {
+   "src": "Type and send an answer in chat.",
+   "dst": "Напиши ответ в чат и отправь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#733": {
+   "src": "Hmmm, I must be imagining things...",
+   "dst": "Хмм, наверное, мне мерещится…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#734": {
+   "src": "Go back to bed recruit, you'll need rest for your training tomorrow.",
+   "dst": "Возвращайся в кровать, новобранец, тебе нужно отдохнуть перед завтрашней тренировкой.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#735": {
+   "src": "Do you have them all?",
+   "dst": "Все на месте?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#736": {
+   "src": "I hope you're not expecting a medal for finding my diary entries. I can answer some questions that you may have about them though.",
+   "dst": "Надеюсь, ты не ждёшь медали за найденные записи. Но на кое-какие вопросы о них ответить могу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "Niren",
+   "source": "captured.json"
+  },
+  "The Strong Survive#737": {
+   "src": "Use your screwdriver to escape the vent, then quickly wake up Arnol to escape Tericen together!",
+   "dst": "Открути решётку вентиляции отвёрткой и выберись, а затем скорее разбуди Arnol, чтобы вместе сбежать из Tericen!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#738": {
+   "src": "You tell Arnol that Commander Ferreo plans for him to face off against Adder in the duel tomorrow.",
+   "dst": "Ты рассказываешь Arnol, что Командир Ferreo собирается завтра выставить его на поединок против Adder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#739": {
+   "src": "Behind you, {u}...",
+   "dst": "Позади тебя, {u}…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 31",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#740": {
+   "src": "I'll make you beg for mercy!",
+   "dst": "Ты у меня будешь молить о пощаде!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
   },
   "The Thanos Depository#000": {
    "src": "Thank you again...soldier. For helping us make peace...",
