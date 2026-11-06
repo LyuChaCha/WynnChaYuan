@@ -413,36 +413,88 @@ final class GuiCanvas implements Canvas {
                 : font.width(Component.literal(text).withStyle(sceneFont(dialogue)));
     }
 
-    private static final int RAMP = 256;
+    private static final Map<String, Identifier> GRADIENTS = new HashMap<>();
+    private static final int GRADIENT_CAP = 160;
 
-    private static byte[] ramp() {
-        byte[] out = new byte[RAMP * 2];
-        for (int i = 0; i < RAMP; i++) {
-            out[i] = (byte) i;
-            out[RAMP * 2 - 1 - i] = (byte) i;
+    private static Identifier gradient(String key, int w, int h, MaskSource source) {
+        Identifier id = GRADIENTS.get(key);
+        if (id != null) {
+            return id;
         }
-        return out;
+        if (GRADIENTS.size() >= GRADIENT_CAP) {
+            for (Identifier old : GRADIENTS.values()) {
+                Minecraft.getInstance().getTextureManager().release(old);
+            }
+            GRADIENTS.clear();
+        }
+        byte[] cover = source.get();
+        NativeImage image = new NativeImage(w, h, false);
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                image.setPixel(x, y, ((cover[y * w + x] & 0xFF) << 24) | 0xFFFFFF);
+            }
+        }
+        id = register(key, image);
+        GRADIENTS.put(key, id);
+        return id;
     }
 
     @Override
     public void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        fadeRound(x, y, w, h, 0, argb, from, to);
+    }
+
+    @Override
+    public void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                          float to) {
         int ax = p(x);
         int ay = p(y);
         int pw = p(x + w) - ax;
         int ph = p(y + h) - ay;
+        int alpha = argb >>> 24;
+        if (pw <= 0 || ph <= 0 || alpha == 0) {
+            return;
+        }
+        int a = Math.round(Math.max(0f, Math.min(1f, from)) * 255);
+        int b = Math.round(Math.max(0f, Math.min(1f, to)) * 255);
+        int rr = Math.max(0, Math.min(p(r), Math.min(pw, ph) / 2));
+        int bucket = alpha >= 0x80 ? 1 : alpha >= 0x40 ? 2 : 4;
+        String key = "f" + pw + "x" + ph + "r" + rr + "/" + a + "/" + b + "/" + bucket;
+        Identifier tex = gradient(key, pw, ph,
+                () -> Ui.fadeMask(pw, ph, rr, a, b, Ui.DITHER * bucket));
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, ax, ay, 0f, 0f, pw, ph, pw, ph, argb);
+    }
+
+    @Override
+    public void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                     float ry, float r, int argb) {
+        int left = Math.max(p(x0), p(cx - rx));
+        int top = Math.max(p(y0), p(cy - ry));
+        int right = Math.min(p(x1), p(cx + rx));
+        int bottom = Math.min(p(y1), p(cy + ry));
+        int pw = right - left;
+        int ph = bottom - top;
         if (pw <= 0 || ph <= 0 || (argb >>> 24) == 0) {
             return;
         }
-        int a = Math.round(Math.max(0f, Math.min(1f, from)) * (RAMP - 1));
-        int b = Math.round(Math.max(0f, Math.min(1f, to)) * (RAMP - 1));
-        if (a == b) {
-            g.fill(ax, ay, ax + pw, ay + ph, Ui.fade(argb, a / (float) (RAMP - 1)));
-            return;
-        }
-        Identifier tex = mask("ramp", RAMP * 2, 1, GuiCanvas::ramp);
-        float u = b > a ? a : RAMP * 2 - 1 - a;
-        g.blit(RenderPipelines.GUI_TEXTURED, tex, ax, ay, u, 0f, pw, ph, Math.abs(b - a), 1,
-               RAMP * 2, 1, argb);
+        float ox = p(cx) - left;
+        float oy = p(cy) - top;
+        float sx = rx * scale;
+        float sy = ry * scale;
+        int corner = p(r);
+        int fx = left - p(x0);
+        int fy = top - p(y0);
+        int fw = p(x1) - p(x0);
+        int fh = p(y1) - p(y0);
+        int peak = argb >>> 24;
+        String key = "g" + pw + "x" + ph + "@" + Math.round(ox) + "," + Math.round(oy) + "/"
+                + Math.round(sx) + "," + Math.round(sy) + "/" + fx + "," + fy + "," + fw + ","
+                + fh + "/" + corner + "/" + peak;
+        Identifier tex = gradient(key, pw, ph,
+                () -> Ui.glowMask(pw, ph, ox, oy, sx, sy, fx, fy, fw, fh, corner, peak,
+                                  Ui.DITHER));
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, left, top, 0f, 0f, pw, ph, pw, ph,
+               argb | 0xFF000000);
     }
 
     @Override

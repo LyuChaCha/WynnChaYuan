@@ -96,6 +96,18 @@ final class SceneText implements Canvas {
     }
 
     @Override
+    public void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                          float to) {
+        base.fadeRound(x, y, w, h, r, argb, from, to);
+    }
+
+    @Override
+    public void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                     float ry, float r, int argb) {
+        base.glow(x0, y0, x1, y1, cx, cy, rx, ry, r, argb);
+    }
+
+    @Override
     public void fade(float x, float y, float w, float h, int argb, float from, float to) {
         base.fade(x, y, w, h, argb, from, to);
     }

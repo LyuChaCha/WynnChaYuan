@@ -314,22 +314,57 @@ final class AwtCanvas implements Canvas {
 
     @Override
     public void fade(float x, float y, float w, float h, int argb, float from, float to) {
-        float x0 = p(x);
-        float x1 = p(x + w);
-        float y0 = p(y);
-        float y1 = p(y + h);
-        if (x1 <= x0 || y1 <= y0 || (argb >>> 24) == 0) {
+        fadeRound(x, y, w, h, 0, argb, from, to);
+    }
+
+    @Override
+    public void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                          float to) {
+        int ax = Math.round(p(x));
+        int ay = Math.round(p(y));
+        int pw = Math.round(p(x + w)) - ax;
+        int ph = Math.round(p(y + h)) - ay;
+        int alpha = argb >>> 24;
+        if (pw <= 0 || ph <= 0 || alpha == 0) {
             return;
         }
+        int a = Math.round(Math.max(0f, Math.min(1f, from)) * 255);
+        int b = Math.round(Math.max(0f, Math.min(1f, to)) * 255);
+        int rr = Math.max(0, Math.min(Math.round(p(r)), Math.min(pw, ph) / 2));
+        int bucket = alpha >= 0x80 ? 1 : alpha >= 0x40 ? 2 : 4;
+        stamp(Ui.fadeMask(pw, ph, rr, a, b, Ui.DITHER * bucket), ax, ay, pw, ph, argb);
+    }
+
+    @Override
+    public void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                     float ry, float r, int argb) {
+        int left = Math.max(Math.round(p(x0)), Math.round(p(cx - rx)));
+        int top = Math.max(Math.round(p(y0)), Math.round(p(cy - ry)));
+        int right = Math.min(Math.round(p(x1)), Math.round(p(cx + rx)));
+        int bottom = Math.min(Math.round(p(y1)), Math.round(p(cy + ry)));
+        int pw = right - left;
+        int ph = bottom - top;
+        if (pw <= 0 || ph <= 0) {
+            return;
+        }
+        byte[] mask = Ui.glowMask(pw, ph, p(cx) - left, p(cy) - top, rx * scale, ry * scale,
+                left - Math.round(p(x0)), top - Math.round(p(y0)),
+                Math.round(p(x1)) - Math.round(p(x0)), Math.round(p(y1)) - Math.round(p(y0)),
+                Math.round(p(r)), argb >>> 24, Ui.DITHER);
+        stamp(mask, left, top, pw, ph, argb | 0xFF000000);
+    }
+
+    private void stamp(byte[] mask, int x, int y, int w, int h, int argb) {
+        BufferedImage tile = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
         int base = argb >>> 24;
-        Color left = new Color((argb >> 16) & 0xFF, (argb >> 8) & 0xFF, argb & 0xFF,
-                Math.round(base * Math.max(0f, Math.min(1f, from))));
-        Color right = new Color((argb >> 16) & 0xFF, (argb >> 8) & 0xFF, argb & 0xFF,
-                Math.round(base * Math.max(0f, Math.min(1f, to))));
-        java.awt.Paint was = g.getPaint();
-        g.setPaint(new java.awt.GradientPaint(x0, 0, left, x1, 0, right));
-        g.fill(new Rectangle2D.Float(x0, y0, x1 - x0, y1 - y0));
-        g.setPaint(was);
+        int rgb = argb & 0xFFFFFF;
+        for (int yy = 0; yy < h; yy++) {
+            for (int xx = 0; xx < w; xx++) {
+                int a = (mask[yy * w + xx] & 0xFF) * base / 255;
+                tile.setRGB(xx, yy, (a << 24) | rgb);
+            }
+        }
+        g.drawImage(tile, x, y, null);
     }
 
     private static final Map<String, BufferedImage> IMAGES = new HashMap<>();

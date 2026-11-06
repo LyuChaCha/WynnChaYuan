@@ -90,6 +90,11 @@ public final class Ui {
         if (w <= 0 || h <= 0) {
             return;
         }
+        c.fadeRound(x, y, w, h, Math.max(0, Math.min(r, Math.min(w, h) / 2f)), argb, from, to);
+    }
+
+    static void fadeBands(Canvas c, float x, float y, float w, float h, float r, int argb,
+                          float from, float to) {
         float rr = Math.max(0, Math.min(r, Math.min(w, h) / 2f));
         float step = Math.max(c.px(), 0.25f);
         for (float dy = 0; dy < rr; dy += step) {
@@ -148,8 +153,16 @@ public final class Ui {
         return ax + (bx - ax) * (y - ay) / (by - ay);
     }
 
+    public static final int GLOW_PEAK = 0x4A;
+    public static final float DITHER = 6f;
+
     public static void glowSpot(Canvas c, float cx, float cy, float rx, float ry, float x0,
                                 float y0, float x1, float y1, float corner, int argb) {
+        c.glow(x0, y0, x1, y1, cx, cy, rx, ry, corner, alpha(argb, GLOW_PEAK));
+    }
+
+    static void glowRings(Canvas c, float cx, float cy, float rx, float ry, float x0, float y0,
+                          float x1, float y1, float corner, int argb) {
         for (int i = 0; i < 6; i++) {
             float k = 1f - i / 6f;
             float ax = Math.max(x0, cx - rx * k);
@@ -397,6 +410,66 @@ public final class Ui {
 
     private static boolean hangul(int cp) {
         return cp >= 0xAC00 && cp <= 0xD7AF;
+    }
+
+    public static float noise(int x, int y) {
+        double k = 0.06711056 * x + 0.00583715 * y;
+        double v = 52.9829189 * (k - Math.floor(k));
+        return (float) (v - Math.floor(v)) - 0.5f;
+    }
+
+    public static float cornerCover(int x, int y, int w, int h, int r) {
+        if (r <= 0) {
+            return 1f;
+        }
+        float cx = x < r ? r : (x >= w - r ? w - r : -1);
+        float cy = y < r ? r : (y >= h - r ? h - r : -1);
+        if (cx < 0 || cy < 0) {
+            return 1f;
+        }
+        float dx = x + 0.5f - cx;
+        float dy = y + 0.5f - cy;
+        float d = (float) Math.sqrt(dx * dx + dy * dy);
+        return Math.max(0f, Math.min(1f, r - d + 0.5f));
+    }
+
+    public static byte[] fadeMask(int w, int h, int r, float from, float to, float dither) {
+        byte[] out = new byte[Math.max(0, w * h)];
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                float cover = cornerCover(x, y, w, h, r);
+                if (cover <= 0f) {
+                    continue;
+                }
+                float a = from + (to - from) * (x + 0.5f) / w;
+                float v = a > 0.5f ? a + noise(x, y) * dither : a;
+                out[y * w + x] = (byte) Math.round(Math.max(0f, Math.min(255f, v)) * cover);
+            }
+        }
+        return out;
+    }
+
+    public static byte[] glowMask(int w, int h, float cx, float cy, float rx, float ry, int fx,
+                                  int fy, int fw, int fh, int r, float peak, float dither) {
+        byte[] out = new byte[Math.max(0, w * h)];
+        if (rx <= 0 || ry <= 0) {
+            return out;
+        }
+        for (int y = 0; y < h; y++) {
+            float dy = (y + 0.5f - cy) / ry;
+            for (int x = 0; x < w; x++) {
+                float dx = (x + 0.5f - cx) / rx;
+                float d = (float) Math.sqrt(dx * dx + dy * dy);
+                if (d >= 1f) {
+                    continue;
+                }
+                float t = 1f - d;
+                float a = peak * t * t * (3f - 2f * t) + noise(x + fx, y + fy) * dither;
+                out[y * w + x] = (byte) Math.round(Math.max(0f, Math.min(255f, a))
+                        * cornerCover(x + fx, y + fy, fw, fh, r));
+            }
+        }
+        return out;
     }
 
     public static boolean in(double mx, double my, float x, float y, float w, float h) {

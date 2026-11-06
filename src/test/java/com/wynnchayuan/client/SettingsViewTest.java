@@ -622,6 +622,71 @@ public final class SettingsViewTest {
             ImageIO.write(render(sv, 640, 360, 3).image, "png",
                     new File(out, "zh_tw-dialogue" + (narrow == 1 ? "-narrow" : "") + ".png"));
         }
+        for (int wide : new int[] {150, 220, 360}) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, 960, 540, 2);
+            float[] tab = sv.spot("scene:DIALOGUE");
+            if (tab != null) {
+                sv.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+            }
+            dlg.previewWidth = wide;
+            ImageIO.write(render(sv, 960, 540, 2).image, "png",
+                    new File(out, "zh_tw-dialogue-" + wide + ".png"));
+        }
+        Fake look = new Fake("zh_tw");
+        look.values.put("items.tooltip", 1);
+        SettingsView lv = new SettingsView(look.tabs(), look, 0);
+        lv.showTab(1);
+        ImageIO.write(render(lv, 640, 360, 3).image, "png", new File(out, "zh_tw-panel-notice.png"));
+        ImageIO.write(render(lv, 960, 540, 2).image, "png", new File(out, "zh_tw-panel-notice-960.png"));
+        for (String id : new String[] {"items.tooltip", "dialogue.mode", "world.chat", "world.nametag"}) {
+            Fake pick = new Fake("zh_tw");
+            SettingsView sv = new SettingsView(pick.tabs(), pick, 0);
+            render(sv, 640, 360, 3);
+            float[] fold = sv.spot("f:" + id);
+            for (int i = 0; i < 16 && (fold == null || fold[3] < 10); i++) {
+                sv.scroll(-1);
+                render(sv, 640, 360, 1);
+                fold = sv.spot("f:" + id);
+            }
+            if (fold == null) {
+                continue;
+            }
+            sv.mouseDown(fold[0] + 10, fold[1] + fold[3] / 2, 0);
+            render(sv, 640, 360, 1);
+            for (int k = 0; k < 12; k++) {
+                float[] tail = sv.spot("c:" + id + ":2");
+                float floor = sv.window()[1] + sv.window()[3] - 40;
+                if (tail == null || tail[1] + tail[3] + 8 <= floor) {
+                    break;
+                }
+                sv.scroll(-1);
+                render(sv, 640, 360, 1);
+            }
+            for (int i = 0; i < 6; i++) {
+                float[] opt = sv.spot("c:" + id + ":" + i);
+                if (opt == null) {
+                    break;
+                }
+                sv.mouseDown(opt[0] + 10, opt[1] + opt[3] / 2, 0);
+                AwtCanvas shot = render(sv, 640, 360, 3);
+                float[] first = sv.spot("c:" + id + ":0");
+                float[] last = opt;
+                for (int j = i + 1; j < 6 && sv.spot("c:" + id + ":" + j) != null; j++) {
+                    last = sv.spot("c:" + id + ":" + j);
+                }
+                int x0 = Math.max(0, Math.round((first[0] - 10) * 3));
+                int y0 = Math.max(0, Math.round((first[1] - 8) * 3));
+                int x1 = Math.min(shot.image.getWidth(), Math.round((first[0] + first[2] + 10) * 3));
+                int y1 = Math.min(shot.image.getHeight(), Math.round((last[1] + last[3] + 8) * 3));
+                if (x1 > x0 && y1 > y0) {
+                    ImageIO.write(shot.image.getSubimage(x0, y0, x1 - x0, y1 - y0), "png",
+                            new File(out, "zh_tw-selected-" + id + "-" + i + ".png"));
+                }
+            }
+        }
         for (int width = 20; width <= 80; width += 2) {
             String wrapped = com.wynnchayuan.translate.TextWrapper.wrapToWidth("那我們還在等什麼？",
                     width, text -> text.length() * 9);
@@ -1024,6 +1089,7 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
+            s.panelOffNote = tr("preview.panel.off");
             if (values.get("panel.gap") instanceof Integer gap) {
                 s.gap = gap;
             }

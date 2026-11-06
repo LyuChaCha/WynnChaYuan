@@ -143,11 +143,31 @@ public final class Preview {
             case CAPE -> { }
             default -> data(c, x, y, w, h, s, accent);
         }
+        if (scene == Scene.PANEL && s.tooltipMode != 0 && !s.panelOffNote.isEmpty()) {
+            notice(c, x, y, w, h, s.panelOffNote);
+        }
         c.unclip();
         c.ring(x, y, w, h, Ui.R2, c.px(), SCENE_EDGE);
     }
 
     private static final SceneText SCENE_TEXT = new SceneText();
+
+    private static void notice(Canvas c, int x, int y, int w, int h, String text) {
+        float bx = x + 6;
+        float bw = w - 12;
+        List<String> lines = Ui.wrap(c, text, Math.round(bw - 23));
+        if (lines.isEmpty() || bw < 40) {
+            return;
+        }
+        float bh = lines.size() * 10 + 9;
+        float by = y + h - 6 - bh;
+        c.round(bx - 1, by + 1, bw + 2, bh + 1, Ui.R1 + 1, 0x30000000);
+        Ui.pane(c, bx, by, bw, bh, Ui.R1, Ui.POP, Ui.alpha(Ui.AMBER, 0x8C));
+        c.round(bx + 7, by + 7.5f, 4, 4, 2, Ui.AMBER);
+        for (int i = 0; i < lines.size(); i++) {
+            c.text(lines.get(i), bx + 16, by + 5 + i * 10, Ui.TEXT);
+        }
+    }
 
     static float snap(Canvas c, float want) {
         float px = c.px();
@@ -155,6 +175,14 @@ public final class Preview {
             return want;
         }
         return (float) Math.floor(want / px + 0.001f) * px;
+    }
+
+    static final float MIN_SCENE = 0.75f;
+
+    static float readable(Canvas c, float fit) {
+        float px = c.px();
+        float floor = Math.min(1f, (float) Math.ceil(MIN_SCENE / px - 0.001f) * px);
+        return Math.max(snap(c, Math.min(1f, fit)), floor);
     }
 
     private static void grid(Canvas c, int x, int y, int w, int h) {
@@ -263,15 +291,6 @@ public final class Preview {
                 : s.names == 1 ? zhName + " (" + ITEM + ")" : ITEM;
         boolean replace = s.tooltipMode == 1 && !forcePanel;
         boolean panel = s.tooltipMode == 0 || forcePanel;
-        if (forcePanel && s.tooltipMode != 0 && !s.panelOffNote.isEmpty()) {
-            List<String> note = wrap(c, s.panelOffNote, w - 16);
-            int ny = y + h - 6 - note.size() * 10;
-            c.fill(x + 2, ny - 5, x + w - 2, y + h - 2, 0xC0101822);
-            for (String line : note) {
-                c.text(line, x + 8, ny, Ui.AMBER);
-                ny += 10;
-            }
-        }
 
         String[] tip = new String[ITEM_LINES.length + 1];
         String[] side = new String[ITEM_LINES.length + 1];
@@ -403,7 +422,7 @@ public final class Preview {
         if (!wynnHud(c)) {
             return drawnHotbar(c, x, y, w, h);
         }
-        float s = snap(c, Math.min(1f, (w - 2) / (float) HUD_W));
+        float s = readable(c, (w - 2) / (float) HUD_W);
         float ox = Math.round(x + (w - HUD_W * s) / 2f);
         float oy = Math.round(y + h - 2 - HUD_H * s);
         tex(c, HUD_BANNER, ox, oy, s, 12, -8, 0, 0, 208, 64);
@@ -496,10 +515,11 @@ public final class Preview {
         float barTop = hotbar(c, x, y, w, h);
         SceneText scene = c instanceof SceneText t ? t : null;
 
-        float k = snap(c, Math.min(1f, (w - 2) / 287f));
+        float k = readable(c, (w - 2) / 287f);
         float dw = 287 * k;
         float dh = 106 * k;
-        float dx = Math.round(x + (w - dw) / 2f);
+        float dx = Math.round(dw <= w - 4 ? x + (w - dw) / 2f
+                : Math.max(x + w - 3 - dw, x + 3 - 64 * k));
         float dy = barTop - 2 - dh;
         boolean textured = has(c, DLG_BOX) && has(c, DLG_FRAME);
         if (textured) {
@@ -584,7 +604,7 @@ public final class Preview {
             }
             tw = Math.min(w - 20, tw + 10 * k);
             float th = zh.length * line + 7 * k;
-            float tx = Math.round(dx + dw - tw);
+            float tx = Math.round(Math.max(x + 4, Math.min(dx + dw - tw, x + w - 4 - tw)));
             float ty = Math.round(above - th);
             Ui.box(c, Math.round(tx), Math.round(ty), Math.round(tw), Math.round(th), BOX_BG, accent);
             for (int i = 0; i < zh.length; i++) {
@@ -594,11 +614,11 @@ public final class Preview {
             s.mark(Spot.CHOICES, tx, ty, tw, th);
         }
         if (s.dialogueMode == 0 && s.overlays) {
-            float tw = Math.min(dw * 0.75f, c.width(zhLine) + 10 * k);
+            float tw = Math.min(Math.min(dw * 0.75f, w - 8), c.width(zhLine) + 10 * k);
             List<String> say = wrap(c, zhLine, Math.round((tw - 8 * k)));
             int n = Math.min(3, say.size());
             float th = n * line + 11 * k;
-            float tx = Math.round(dx);
+            float tx = Math.round(Math.max(x + 4, Math.min(dx, x + w - 4 - tw)));
             float ty = Math.round(above - th);
             Ui.box(c, Math.round(tx), Math.round(ty), Math.round(tw), Math.round(th), BOX_BG, accent);
             for (int i = 0; i < n; i++) {

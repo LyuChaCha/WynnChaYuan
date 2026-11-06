@@ -75,9 +75,11 @@ public final class SettingsView extends Surface {
     static final float ROW_H = 22;
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float PREVIEW_W = 240;
+    static final float PREVIEW_W = 292;
     static final float PREVIEW_MIN = 150;
+    static final float PREVIEW_SNUG = 180;
     static final float LIST_MIN = 230;
+    static final float LIST_ROOMY = 318;
     static final float NAV_H = 21;
 
     final List<Row.Tab> tabs;
@@ -379,15 +381,18 @@ public final class SettingsView extends Surface {
         float left = winX + railW + 12;
         float full = winX + winW - 12 - left;
         float previewW = 0;
-        if (!sheet && h >= 150 && full - LIST_MIN - 10 >= PREVIEW_MIN) {
+        float room = full - LIST_MIN - 10;
+        float floor = Math.max(PREVIEW_MIN, Math.min(PREVIEW_SNUG, room));
+        if (!sheet && h >= 150 && room >= PREVIEW_MIN) {
             int saved = host.previewWidth();
-            float want = saved > 0 ? saved : Math.min(PREVIEW_W, full * 0.42f);
-            previewW = Math.round(Math.max(PREVIEW_MIN, Math.min(full - LIST_MIN - 10, want)));
+            float want = saved > 0 ? saved
+                    : Math.min(PREVIEW_W, Math.max(full * 0.42f, full - LIST_ROOMY));
+            previewW = Math.round(Math.max(floor, Math.min(room, want)));
         }
         float listW = previewW > 0 ? full - previewW - 10 : full;
         list(left, top, listW, h);
         if (previewW > 0) {
-            divider(left + listW, top, h, left + LIST_MIN, winX + winW - 12 - PREVIEW_MIN - 10);
+            divider(left + listW, top, h, left + LIST_MIN, winX + winW - 12 - floor - 10);
             preview(left + listW + 10, top, previewW, h);
         }
     }
@@ -835,7 +840,7 @@ public final class SettingsView extends Surface {
             int deep = host.toneDeep(o.tone());
             if (on) {
                 Ui.fadePane(c, bx + 3, oy, (bw - 6) * 0.85f, OPTION_H - OPTION_GAP, 5,
-                            Ui.alpha(deep, 0x5C), 1f, 0f);
+                            Ui.alpha(deep, o.tone() == Row.Tone.OFF ? 0x40 : 0x5C), 1f, 0f);
             } else if (hot) {
                 c.round(bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.RAISED);
             }

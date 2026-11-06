@@ -38,6 +38,16 @@ public interface Canvas {
         fill(x, y, x + w, y + h, Ui.fade(argb, (from + to) / 2f));
     }
 
+    default void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                           float to) {
+        Ui.fadeBands(this, x, y, w, h, r, argb, from, to);
+    }
+
+    default void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                      float ry, float r, int argb) {
+        Ui.glowRings(this, cx, cy, rx, ry, x0, y0, x1, y1, r, argb);
+    }
+
     default void gameText(String text, float x, float y, int argb, float scale, boolean dialogue,
                           boolean shadow) {
         text(text, x, y, argb, scale);
