@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 167,
-  "translated": 167,
+  "count": 172,
+  "translated": 172,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -893,14 +893,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "アイテムはアイテム鑑定士に鑑定してもらうんだ。鑑定士は世界中の町にいる。便利なようにここにも連れてきてるんだ。",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "アイテムは {#} アイテム鑑定士に鑑定してもらうんだ。世界中の町にいるが、お前たち新兵のためにここにも一人いる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "アイテム鑑定士にヘルメットを鑑定してもらって、装備してから戻ってこい。そうしたら通してやる。",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "{#} アイテム鑑定士にヘルメットを鑑定してもらって、装備してから戻ってこい。そうしたら通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -953,8 +953,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "気をつけろよ、新兵ども！ 防具があっても楽じゃないぞ！",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "気をつけろよ、新兵ども！ 新しい防具があっても楽じゃないぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1573,14 +1573,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "また行っちゃったよ… まあ、またすぐ会えるさ。今は Wynn がどんな所か見てみよう。",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "また行っちゃったよ… まあ、すぐにまた会えるさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -1613,14 +1613,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "ほら、試してみたら？コンテンツブックを開いて、強調されたクエストをクリックして。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -1667,13 +1667,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "中では幸運を祈るぞ、新兵ども！必要になるだろうからな…",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "中では幸運を祈るぞ、新兵ども。必要になるだろうからな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "やった！地下道を進もう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "さあ、この地方が本当はどんな所か見に行こう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "美しい… やっとここに来られて、わくわくするね。そう思わない？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "ここで冒険が来るのを待ってても仕方ない！俺は外に出て人助けをしてくるぜ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "あっ！言い忘れるところだった、{u}。もらった便利なアイテム、コンテンツブックがあるんだ。この世界でできることのほとんどが載ってて、追跡するとビーコンで教えてくれるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   }
  }
