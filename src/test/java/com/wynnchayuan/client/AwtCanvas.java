@@ -414,6 +414,51 @@ final class AwtCanvas implements Canvas {
         g.setComposite(was);
     }
 
+    private static Font pixel;
+
+    private static Font pixel() {
+        if (pixel == null) {
+            try (InputStream in = AwtCanvas.class.getResourceAsStream(
+                    "/assets/wynnchayuan/font/fusion_pixel_10px_zh_hant.ttf")) {
+                pixel = Font.createFont(Font.TRUETYPE_FONT, in).deriveFont(10f);
+            } catch (Exception e) {
+                pixel = new Font(Font.MONOSPACED, Font.PLAIN, 10);
+            }
+        }
+        return pixel;
+    }
+
+    @Override
+    public void gameText(String text, float x, float y, int argb, float k, boolean dialogue,
+                         boolean shadow) {
+        if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
+            return;
+        }
+        float dots = Math.max(1, Math.round(scale * k));
+        Font f = pixel().deriveFont(10f * dots);
+        Object aa = g.getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING);
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
+        g.setFont(f);
+        float bx = p(x);
+        float by = p(y) + 8 * dots;
+        if (shadow) {
+            int r = ((argb >> 16) & 0xFF) / 4;
+            int gr = ((argb >> 8) & 0xFF) / 4;
+            int b = (argb & 0xFF) / 4;
+            g.setColor(new Color(r, gr, b, argb >>> 24));
+            g.drawString(text, bx + dots, by + dots);
+        }
+        g.setColor(colour(argb));
+        g.drawString(text, bx, by);
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, aa);
+    }
+
+    @Override
+    public float gameWidth(String text, boolean dialogue) {
+        return text == null || text.isEmpty() ? 0
+                : (float) pixel().getStringBounds(text, FRC).getWidth();
+    }
+
     void done() {
         g.dispose();
     }

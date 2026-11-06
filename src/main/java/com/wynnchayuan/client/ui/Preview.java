@@ -1,6 +1,7 @@
 package com.wynnchayuan.client.ui;
 
 import com.wynnchayuan.PanelGap;
+import com.wynnchayuan.translate.TextWrapper;
 
 import java.util.List;
 import java.util.function.UnaryOperator;
@@ -133,17 +134,20 @@ public final class Preview {
         if (!scenery) {
             grid(c, x, y, w, h);
         }
+        Canvas g = SCENE_TEXT.on(c);
         switch (scene) {
-            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown, false);
-            case PANEL -> tooltip(c, x, y, w, h, s, frame, gapShown, true);
-            case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
-            case WORLD -> world(c, x, y, w, h, s, frame, scenery);
+            case TOOLTIP -> tooltip(g, x, y, w, h, s, frame, gapShown, false);
+            case PANEL -> tooltip(g, x, y, w, h, s, frame, gapShown, true);
+            case DIALOGUE -> dialogue(g, x, y, w, h, s, frame);
+            case WORLD -> world(g, x, y, w, h, s, frame, scenery);
             case CAPE -> { }
             default -> data(c, x, y, w, h, s, accent);
         }
         c.unclip();
         c.ring(x, y, w, h, Ui.R2, c.px(), SCENE_EDGE);
     }
+
+    private static final SceneText SCENE_TEXT = new SceneText();
 
     static float snap(Canvas c, float want) {
         float px = c.px();
@@ -237,7 +241,6 @@ public final class Preview {
     }
 
     private static void shadowed(Canvas c, String text, float x, float y, int argb) {
-        c.text(text, x + 1, y + 1, Ui.alpha(0xFF000000, (argb >>> 24) * 5 / 8));
         c.text(text, x, y, argb);
     }
 
@@ -261,7 +264,7 @@ public final class Preview {
         boolean replace = s.tooltipMode == 1 && !forcePanel;
         boolean panel = s.tooltipMode == 0 || forcePanel;
         if (forcePanel && s.tooltipMode != 0 && !s.panelOffNote.isEmpty()) {
-            List<String> note = Ui.wrap(c, s.panelOffNote, w - 16);
+            List<String> note = wrap(c, s.panelOffNote, w - 16);
             int ny = y + h - 6 - note.size() * 10;
             c.fill(x + 2, ny - 5, x + w - 2, y + h - 2, 0xC0101822);
             for (String line : note) {
@@ -368,7 +371,99 @@ public final class Preview {
         Ui.glyph(c, x, y, arrow, 0xFFFFFFFF);
     }
 
+    private static final String HUD = "minecraft:textures/font/hud/gameplay/default/bottom_middle/";
+    private static final String HUD_BANNER = HUD + "hotbar.png";
+    private static final String HUD_XP = HUD + "experience_bar.png";
+    private static final String HUD_HEALTH = HUD + "health_background.png";
+    private static final String HUD_HEALTH_BAR = HUD + "health_bar.png";
+    private static final String HUD_MANA = HUD + "mana_background.png";
+    private static final String HUD_MANA_BAR = HUD + "mana_bar.png";
+    private static final String HUD_LEVEL = HUD + "hex_meter.png";
+    private static final String HOTBAR = "minecraft:textures/gui/sprites/hud/hotbar.png";
+    private static final String HOTBAR_PICK = "minecraft:textures/gui/sprites/hud/hotbar_selection.png";
+    private static final String[] HOTBAR_ITEMS = {
+        "minecraft:textures/item/bow.png", "minecraft:textures/wynn/potion/healing_full.png",
+        "minecraft:textures/wynn/potion/mana_full.png"};
+    private static final String HOTBAR_BOOK = "minecraft:textures/wynn/gui/player/content_book.png";
+    private static final int HUD_W = 232;
+    private static final int HUD_H = 55;
+    private static final int OUTLINE = 0xFF3A2414;
+
+    private static boolean wynnHud(Canvas c) {
+        return has(c, HUD_BANNER) && has(c, HOTBAR) && has(c, HUD_HEALTH) && has(c, HUD_MANA)
+                && has(c, HUD_LEVEL);
+    }
+
+    private static void tex(Canvas c, String id, float ox, float oy, float s, float tx, float ty,
+                            float u, float v, float uw, float vh) {
+        c.image(id, ox + tx * s, oy + ty * s, uw * s, vh * s, u, v, uw, vh, 0xFFFFFFFF);
+    }
+
     private static float hotbar(Canvas c, int x, int y, int w, int h) {
+        if (!wynnHud(c)) {
+            return drawnHotbar(c, x, y, w, h);
+        }
+        float s = snap(c, Math.min(1f, (w - 2) / (float) HUD_W));
+        float ox = Math.round(x + (w - HUD_W * s) / 2f);
+        float oy = Math.round(y + h - 2 - HUD_H * s);
+        tex(c, HUD_BANNER, ox, oy, s, 12, -8, 0, 0, 208, 64);
+        if (has(c, HUD_XP)) {
+            tex(c, HUD_XP, ox, oy, s, 26, 25, 0, 102, 179, 3);
+        }
+        tex(c, HOTBAR, ox, oy, s, 25, 30, 0, 0, 182, 22);
+        tex(c, HUD_HEALTH, ox, oy, s, 15, 5, 0, 0, 72, 20);
+        if (has(c, HUD_HEALTH_BAR)) {
+            c.image(HUD_HEALTH_BAR, ox + 26 * s, oy + 16 * s, 55 * s, 6 * s, 4, 0, 1, 6, 0xFFFFFFFF);
+        }
+        tex(c, HUD_MANA, ox, oy, s, 144, 5, 0, 0, 72, 20);
+        if (has(c, HUD_MANA_BAR)) {
+            c.image(HUD_MANA_BAR, ox + 149 * s, oy + 16 * s, 55 * s, 6 * s, 4, 0, 1, 6, 0xFFFFFFFF);
+        }
+        tex(c, HUD_LEVEL, ox, oy, s, 104, 3, 0, 0, 24, 27);
+        for (int i = 0; i < HOTBAR_ITEMS.length; i++) {
+            if (has(c, HOTBAR_ITEMS[i])) {
+                tex(c, HOTBAR_ITEMS[i], ox, oy, s, 28 + i * 20, 33, 0, 0, 16, 16);
+            }
+        }
+        if (has(c, HOTBAR_BOOK)) {
+            tex(c, HOTBAR_BOOK, ox, oy, s, 28 + 8 * 20, 33, 0, 0, 16, 16);
+        }
+        if (has(c, HOTBAR_PICK)) {
+            tex(c, HOTBAR_PICK, ox, oy, s, 24, 29, 0, 0, 24, 23);
+        }
+        hudNumber(c, "420 / 436", ox + 15 * s, oy + 7 * s, 72 * s, s, 0xFFFFFFFF, false);
+        hudNumber(c, "62 / 62", ox + 144 * s, oy + 7 * s, 72 * s, s, 0xFFFFFFFF, false);
+        hudNumber(c, "22", ox + 104 * s, oy + 12.5f * s, 24 * s, s, 0xFFFFFFFF, true);
+        return oy + 4 * s;
+    }
+
+    private static void hudNumber(Canvas c, String text, float x, float y, float w, float s,
+                                  int argb, boolean outline) {
+        float tw = c.width(text) * s;
+        float tx = x + (w - tw) / 2f;
+        if (c instanceof SceneText scene) {
+            float was = scene.size;
+            boolean shadow = scene.shadow;
+            scene.size = s;
+            scene.shadow = !outline;
+            if (outline) {
+                for (int dx = -1; dx <= 1; dx++) {
+                    for (int dy = -1; dy <= 1; dy++) {
+                        if (dx != 0 || dy != 0) {
+                            c.text(text, tx + dx * s, y + dy * s, OUTLINE);
+                        }
+                    }
+                }
+            }
+            c.text(text, tx, y, argb);
+            scene.size = was;
+            scene.shadow = shadow;
+            return;
+        }
+        c.text(text, tx, y, argb);
+    }
+
+    private static float drawnHotbar(Canvas c, int x, int y, int w, int h) {
         float cell = Math.max(10, snap(c, Math.min(20, (w - 14) / 9f)));
         float bw = cell * 9 + 2;
         float bh = cell + 2;
@@ -390,17 +485,22 @@ public final class Preview {
         return by;
     }
 
+    static List<String> wrap(Canvas c, String text, int maxW) {
+        return List.of(TextWrapper.wrapToWidth(text, maxW, c::width).split("\n"));
+    }
+
     private static void dialogue(Canvas c, int x, int y, int w, int h, State s, int accent) {
         String zhLine = s.translate.apply(LINE);
         boolean lineZh = s.dialogueMode == 1;
         boolean choiceZh = s.choiceMode == 1;
         float barTop = hotbar(c, x, y, w, h);
+        SceneText scene = c instanceof SceneText t ? t : null;
 
-        float k = snap(c, Math.min(1f, (w - 10) / 287f));
+        float k = snap(c, Math.min(1f, (w - 2) / 287f));
         float dw = 287 * k;
         float dh = 106 * k;
         float dx = Math.round(x + (w - dw) / 2f);
-        float dy = barTop - 4 - dh;
+        float dy = barTop - 2 - dh;
         boolean textured = has(c, DLG_BOX) && has(c, DLG_FRAME);
         if (textured) {
             if (has(c, DLG_FOOTER)) {
@@ -415,7 +515,7 @@ public final class Preview {
                 c.image(DLG_PLATE, dx + 64 * k, dy, 112 * k, 20 * k, 0, 0, 112, 20, 0xFFFFFFFF);
             }
         } else {
-            c.fill(dx + 47 * k, dy + 87 * k, dx + 271 * k, dy + 103 * k, 0xC0120D08);
+            c.fill(dx + 47 * k, dy + 87 * k, dx + 271 * k, dy + 105 * k, 0xC0120D08);
             Ui.box(c, Math.round(dx + 31 * k), Math.round(dy + 9 * k), Math.round(256 * k),
                    Math.round(80 * k), DLG_BG, DLG_EDGE);
             Ui.box(c, Math.round(dx), Math.round(dy), Math.round(64 * k), Math.round(80 * k),
@@ -424,74 +524,95 @@ public final class Preview {
             Ui.box(c, Math.round(dx + 64 * k), Math.round(dy), Math.round(112 * k),
                    Math.round(20 * k), 0xF0302010, DLG_EDGE);
         }
-        c.text(Ui.fit(c, SPEAKER, Math.round(100 * k)), dx + 72 * k, dy + 10 * k - 4, Ui.GOLD);
-        int textW = Math.round((287 - 80) * k);
-        List<String> rows = Ui.wrap(c, lineZh ? zhLine : LINE, textW);
-        float ly = dy + 26 * k;
-        for (int i = 0; i < Math.min(3, rows.size()); i++) {
-            c.text(rows.get(i), dx + 72 * k, ly + i * 10, DLG_TEXT);
+        if (scene != null) {
+            scene.size = k;
+            scene.shadow = false;
+            scene.dialogue = true;
         }
-        String hint = "SHIFT " + (lineZh ? s.translate.apply(CONTINUE) : CONTINUE);
-        c.text(Ui.fit(c, hint, Math.round(200 * k)), dx + 60 * k, dy + 91 * k, 0xFFB5A27A);
+        String speaker = Ui.fit(c, SPEAKER, Math.round(108 * k));
+        c.text(speaker, dx + 64 * k + (112 * k - c.width(speaker)) / 2f, dy + 6 * k, Ui.GOLD);
+        List<String> rows = wrap(c, lineZh ? zhLine : LINE, Math.round(202 * k));
+        for (int i = 0; i < Math.min(5, rows.size()); i++) {
+            c.text(rows.get(i), dx + 71 * k, dy + (24 + i * 12) * k, DLG_TEXT);
+        }
+        String cont = lineZh ? s.translate.apply(CONTINUE) : CONTINUE;
+        float keyW = (c.width("SHIFT") + 6);
+        float hintW = keyW + 4 * k + c.width(cont);
+        float hx = dx + 47 * k + (224 * k - hintW) / 2f;
+        float hy = dy + 92 * k;
+        c.round(hx, hy - 1 * k, keyW, 10 * k, 1.5f * k, 0xFFECE6DD);
+        c.fill(hx, hy + 8 * k, hx + keyW, hy + 9 * k, 0xFF9A8F84);
+        c.text("SHIFT", hx + 3 * k, hy, 0xFF3A2A22);
+        c.text(cont, hx + keyW + 4 * k, hy, 0xFFE8DCC0);
         s.mark(Spot.DIALOGUE, dx, dy, dw, dh);
 
         float cw = 144 * k;
-        float ch = Math.max(12, 12 * k);
+        float ch = 16 * k;
         float cx = dx + dw - cw;
-        float cy = dy - 4;
+        float cy = dy;
         boolean bars = has(c, DLG_CHOICE);
         for (int i = CHOICES.length - 1; i >= 0; i--) {
-            cy -= ch + 3;
+            cy -= ch + 1 * k;
             boolean on = i == 0;
             if (bars) {
-                c.image(DLG_CHOICE, cx, cy, cw, ch, on ? 144 : 0, 0, 144, 12, 0xFFFFFFFF);
+                c.image(DLG_CHOICE, cx, cy, cw, 12 * k, on ? 144 : 0, 0, 144, 12, 0xFFFFFFFF);
             } else {
-                Ui.box(c, Math.round(cx), Math.round(cy), Math.round(cw), Math.round(ch),
+                Ui.box(c, Math.round(cx), Math.round(cy), Math.round(cw), Math.round(12 * k),
                        on ? 0xF03A2A14 : 0xE0201810, on ? 0xFFC9A257 : DLG_EDGE);
             }
             String text = choiceZh ? s.translate.apply(CHOICES[i]) : CHOICES[i];
-            c.text(Ui.fit(c, text, Math.round(cw - 22)), cx + 16, cy + (ch - 8) / 2f,
+            c.text(Ui.fit(c, text, Math.round((cw - 22 * k))), cx + 8 * k, cy + 2 * k,
                    on ? 0xFFFFF2C8 : 0xFFD8C8A0);
             if (on) {
-                c.text(">", cx + 6, cy + (ch - 8) / 2f, 0xFFFFE08A);
+                c.text(">", cx - 7 * k, cy + 2 * k, 0xFFFFE08A);
             }
         }
-        s.mark(Spot.CHOICES, cx, cy, cw, dy - 4 - cy);
+        s.mark(Spot.CHOICES, cx, cy, cw, dy - cy);
 
-        float above = cy - 6;
+        if (scene != null) {
+            scene.dialogue = false;
+            scene.shadow = true;
+        }
+        float line = 10 * k;
+        float above = cy - 6 * k;
         if (s.choiceMode == 0 && s.overlays) {
             String[] zh = new String[CHOICES.length];
-            int tw = 0;
+            float tw = 0;
             for (int i = 0; i < zh.length; i++) {
                 zh[i] = "[" + (i + 1) + "] " + s.translate.apply(CHOICES[i]);
                 tw = Math.max(tw, c.width(zh[i]));
             }
-            tw = Math.min(w - 20, tw + 10);
-            int th = zh.length * 10 + 7;
-            int tx = Math.round(dx + dw - tw);
-            int ty = Math.round(above - th);
-            Ui.box(c, tx, ty, tw, th, BOX_BG, accent);
+            tw = Math.min(w - 20, tw + 10 * k);
+            float th = zh.length * line + 7 * k;
+            float tx = Math.round(dx + dw - tw);
+            float ty = Math.round(above - th);
+            Ui.box(c, Math.round(tx), Math.round(ty), Math.round(tw), Math.round(th), BOX_BG, accent);
             for (int i = 0; i < zh.length; i++) {
-                c.text(Ui.fit(c, zh[i], tw - 8), tx + 4, ty + 4 + i * 10, Ui.TEXT);
+                c.text(Ui.fit(c, zh[i], Math.round((tw - 8 * k))), tx + 4 * k,
+                       ty + 4 * k + i * line, Ui.TEXT);
             }
             s.mark(Spot.CHOICES, tx, ty, tw, th);
         }
         if (s.dialogueMode == 0 && s.overlays) {
-            int tw = Math.min(Math.round(dw * 0.62f), c.width(zhLine) + 10);
-            List<String> say = Ui.wrap(c, zhLine, tw - 8);
-            int th = Math.min(2, say.size()) * 10 + 11;
-            int tx = Math.round(dx);
-            int ty = Math.round(above - th);
-            Ui.box(c, tx, ty, tw, th, BOX_BG, accent);
-            for (int i = 0; i < Math.min(2, say.size()); i++) {
-                c.text(say.get(i), tx + 4, ty + 4 + i * 10, Ui.TEXT);
+            float tw = Math.min(dw * 0.75f, c.width(zhLine) + 10 * k);
+            List<String> say = wrap(c, zhLine, Math.round((tw - 8 * k)));
+            int n = Math.min(3, say.size());
+            float th = n * line + 11 * k;
+            float tx = Math.round(dx);
+            float ty = Math.round(above - th);
+            Ui.box(c, Math.round(tx), Math.round(ty), Math.round(tw), Math.round(th), BOX_BG, accent);
+            for (int i = 0; i < n; i++) {
+                c.text(say.get(i), tx + 4 * k, ty + 4 * k + i * line, Ui.TEXT);
             }
-            int barW = tw - 8;
-            int lit = s.holdSeconds <= 0 ? barW
-                    : Math.max(2, Math.min(barW, barW * s.holdSeconds / 30));
-            c.fill(tx + 4, ty + th - 4, tx + 4 + barW, ty + th - 3, Ui.LINE);
-            c.fill(tx + 4, ty + th - 4, tx + 4 + lit, ty + th - 3, accent);
+            float barW = tw - 8 * k;
+            float lit = s.holdSeconds <= 0 ? barW
+                    : Math.max(2, Math.min(barW, barW * s.holdSeconds / 30f));
+            c.fill(tx + 4 * k, ty + th - 4 * k, tx + 4 * k + barW, ty + th - 3 * k, Ui.LINE);
+            c.fill(tx + 4 * k, ty + th - 4 * k, tx + 4 * k + lit, ty + th - 3 * k, accent);
             s.mark(Spot.DIALOGUE, tx, ty, tw, th);
+        }
+        if (scene != null) {
+            scene.size = 1f;
         }
     }
 
@@ -625,12 +746,11 @@ public final class Preview {
         s.mark(Spot.CHAT, x + 4, chatY - 2, cw, rows * 10 + 2);
 
         String title = s.titles ? zh.apply(TITLE) : TITLE;
-        float big = c.scale(2f);
+        float big = 2f;
         float scale = c.width(title) * big <= w - 24 ? big : 1f;
         float titleW = c.width(title) * scale;
         float titleX = x + (w - titleW) / 2f;
         float titleY = Math.min(chatY - 14 - 8 * scale, y + h * 0.56f);
-        c.text(title, titleX + 1, titleY + 1, 0xA0000000, scale);
         c.text(title, titleX, titleY, 0xFFF5C56B, scale);
         s.mark(Spot.TITLE, titleX, titleY - 1, titleW, 8 * scale + 2);
     }

@@ -605,6 +605,31 @@ public final class SettingsViewTest {
             c.done();
         }
         must("葉子飄了二十秒（含好幾陣風）也沒出錯", true);
+
+        for (int narrow = 0; narrow < 2; narrow++) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            dlg.values.put("dialogue.choices", 1);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, 640, 360, 3);
+            float[] tab = sv.spot("scene:DIALOGUE");
+            if (tab != null) {
+                sv.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+            }
+            if (narrow == 1) {
+                dlg.previewWidth = 150;
+            }
+            ImageIO.write(render(sv, 640, 360, 3).image, "png",
+                    new File(out, "zh_tw-dialogue" + (narrow == 1 ? "-narrow" : "") + ".png"));
+        }
+        for (int width = 20; width <= 80; width += 2) {
+            String wrapped = com.wynnchayuan.translate.TextWrapper.wrapToWidth("那我們還在等什麼？",
+                    width, text -> text.length() * 9);
+            for (String line : wrapped.split("\n")) {
+                must("換行不會讓「？」自己開頭（寬 " + width + "：" + wrapped.replace("\n", "/") + "）",
+                        !line.startsWith("？"));
+            }
+        }
     }
 
     private static SettingsView.Placed find(SettingsView view, String id) {
@@ -629,6 +654,18 @@ public final class SettingsViewTest {
             strings = load(lang);
             english = load("en_us");
             corpus = corpus(lang);
+            File dialogue = new File("src/main/resources/assets/wynnchayuan/translations/" + lang
+                    + "/quest-dialogue.json");
+            if (dialogue.isFile()) {
+                var root = com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(
+                        dialogue.toPath(), StandardCharsets.UTF_8)).getAsJsonObject();
+                for (var e : root.getAsJsonObject("entries").entrySet()) {
+                    var o = e.getValue().getAsJsonObject();
+                    if (o.has("src") && o.has("dst") && !o.get("dst").getAsString().isBlank()) {
+                        corpus.putIfAbsent(o.get("src").getAsString(), o.get("dst").getAsString());
+                    }
+                }
+            }
         }
 
         private static Map<String, String> load(String lang) throws Exception {

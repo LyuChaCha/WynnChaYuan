@@ -38,6 +38,15 @@ public interface Canvas {
         fill(x, y, x + w, y + h, Ui.fade(argb, (from + to) / 2f));
     }
 
+    default void gameText(String text, float x, float y, int argb, float scale, boolean dialogue,
+                          boolean shadow) {
+        text(text, x, y, argb, scale);
+    }
+
+    default float gameWidth(String text, boolean dialogue) {
+        return width(text);
+    }
+
     default int textureWidth(String id) {
         return 0;
     }

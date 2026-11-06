@@ -377,6 +377,42 @@ final class GuiCanvas implements Canvas {
         }
     }
 
+    private static final Map<String, Style> SCENE_FONTS = new HashMap<>();
+
+    private Style sceneFont(boolean dialogue) {
+        if (!dialogue) {
+            return Style.EMPTY;
+        }
+        String lang = family(WynnChaYuan.language());
+        if ("latin".equals(lang)) {
+            return Style.EMPTY;
+        }
+        return SCENE_FONTS.computeIfAbsent(lang, k -> Style.EMPTY.withFont(
+                new FontDescription.Resource(Identifier.fromNamespaceAndPath(
+                        WynnChaYuan.MOD_ID, "preview/" + k))));
+    }
+
+    @Override
+    public void gameText(String text, float x, float y, int argb, float k, boolean dialogue,
+                         boolean shadow) {
+        if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
+            return;
+        }
+        int dots = Math.max(1, Math.round(scale * k));
+        g.pose().pushMatrix();
+        g.pose().translate(p(x), p(y));
+        g.pose().scale(dots, dots);
+        g.drawString(font, Component.literal(text).withStyle(sceneFont(dialogue)), 0, 0, argb,
+                     shadow);
+        g.pose().popMatrix();
+    }
+
+    @Override
+    public float gameWidth(String text, boolean dialogue) {
+        return text == null || text.isEmpty() ? 0
+                : font.width(Component.literal(text).withStyle(sceneFont(dialogue)));
+    }
+
     private static final int RAMP = 256;
 
     private static byte[] ramp() {
