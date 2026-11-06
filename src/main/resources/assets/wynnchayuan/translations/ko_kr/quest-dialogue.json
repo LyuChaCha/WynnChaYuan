@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24612,
-  "translated": 24609,
+  "count": 24617,
+  "translated": 24614,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -102156,14 +102156,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "아이템은 Item Identifier에게서 감정할 수 있다. 세상 모든 도시에 있고, 편의를 위해 여기도 한 명 두고 있지.",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "아이템은 {#} Item Identifier에게서 감정할 수 있다. 세계 곳곳의 마을에 있지만, 너희 같은 신병들을 위해 여기에도 한 명 두고 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -102176,8 +102176,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "투구는  Item Identifier에서 감정한 다음, 장착하고 다시 나를 찾아오게. 그러면 지나가게 해 주지.",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "투구는 {#} Item Identifier에서 감정한 다음, 장착하고 다시 나를 찾아오게. 그러면 지나가게 해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102216,8 +102216,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "안에서 행운을 비네, 신병들! 방어구가 있어도 쉽지 않을 거야!",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "안에서 행운을 비네, 신병들! 새 방어구가 있어도 쉽지 않을 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102836,14 +102836,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "또 가 버렸네... 뭐, 금방 다시 만나겠지. 일단 Wynn이 진짜 어떤 곳인지 보자.",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "또 가 버렸네... 뭐, 곧 자주 보게 되겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -102876,14 +102876,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "자, 한번 써 볼래? 콘텐츠 북을 열고 강조된 퀘스트를 클릭해 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -102930,13 +102930,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "안에서 행운을 빈다, 신병들! 필요할 거다...",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "안에서 행운을 빈다, 신병들. 필요할 거다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "해냈다! 지하 통로를 계속 지나가자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "자, 이 지방이 진짜 어떤 곳인지 보러 가자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "아름답다... 드디어 여기 오니 꽤 설레네, 안 그래?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "여기 서서 모험이 찾아오길 기다려 봐야 소용없어! 난 나가서 사람들을 도울 거야!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "아! 깜빡하고 말 안 할 뻔했네, {u}. 우리가 받은 편리한 물건이 있잖아, 콘텐츠 북. 이 세계에서 할 수 있는 것 대부분을 보여 주고, 추적하면 따라갈 신호기도 만들어 줘.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Kingdom of Sand#000": {

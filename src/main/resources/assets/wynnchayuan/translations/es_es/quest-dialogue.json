@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 24612,
-  "translated": 24609,
+  "count": 24617,
+  "translated": 24614,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -102156,14 +102156,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "Los objetos se identifican en los Identificadores de objetos. Los hay en todas las ciudades del mundo, y aquí tenemos uno por comodidad.",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "Los objetos se identifican en los {#} Identificadores de objetos. Los hay en pueblos de todo el mundo, pero aquí tenemos uno para reclutas como vosotros.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -102176,8 +102176,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "Identifica tu casco en el Identificador de objetos y vuelve a verme con él equipado. Cuando lo hayas hecho, te dejaré pasar.",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "Identifica tu casco en el {#} Identificador de objetos y vuelve a verme con él equipado. Cuando lo hayas hecho, te dejaré pasar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102216,8 +102216,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "¡Suerte ahí dentro, reclutas! ¡Ni con armadura os lo pondrán fácil!",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "¡Suerte ahí dentro, reclutas! ¡Ni con vuestra armadura nueva os lo pondrán fácil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102836,14 +102836,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "Y se ha vuelto a ir... En fin, seguro que lo vemos pronto. Por ahora, veamos cómo es Wynn de verdad.",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "Y se ha vuelto a ir... En fin, seguro que lo veremos más a menudo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -102876,14 +102876,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "Anda, ¿por qué no lo pruebas? Usa tu libro de contenido y haz clic en la misión resaltada.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -102930,13 +102930,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "¡Suerte ahí dentro, reclutas! La vais a necesitar...",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "Suerte ahí dentro, reclutas. La vais a necesitar...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "¡Lo hemos conseguido! Sigamos por el paso subterráneo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "¿Y bien? Vamos a ver cómo es de verdad esta provincia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "Es precioso... Es emocionante estar por fin aquí, ¿no crees?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "¡No sirve de nada quedarse aquí esperando a que la aventura venga a nosotros! ¡Me voy a ayudar a la gente!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "¡Ah! Casi se me olvida contarte algo, {u}. Nos dieron un objeto muy útil: el libro de contenido. Muestra casi todo lo que puedes hacer en este mundo y te permite seguirlo, creando balizas para guiarte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Kingdom of Sand#000": {
