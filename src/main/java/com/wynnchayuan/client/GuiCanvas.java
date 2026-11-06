@@ -398,7 +398,7 @@ final class GuiCanvas implements Canvas {
         if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
             return;
         }
-        int dots = Math.max(1, Math.round(scale * k));
+        float dots = Ui.gameDots(scale, k);
         g.pose().pushMatrix();
         g.pose().translate(p(x), p(y));
         g.pose().scale(dots, dots);

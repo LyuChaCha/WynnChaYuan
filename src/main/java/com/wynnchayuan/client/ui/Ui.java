@@ -412,6 +412,12 @@ public final class Ui {
         return cp >= 0xAC00 && cp <= 0xD7AF;
     }
 
+    public static float gameDots(int scale, float k) {
+        float dots = scale * k;
+        float whole = Math.round(dots);
+        return Math.abs(dots - whole) < 0.05f && whole >= 1 ? whole : Math.max(0.5f, dots);
+    }
+
     public static float noise(int x, int y) {
         double k = 0.06711056 * x + 0.00583715 * y;
         double v = 52.9829189 * (k - Math.floor(k));

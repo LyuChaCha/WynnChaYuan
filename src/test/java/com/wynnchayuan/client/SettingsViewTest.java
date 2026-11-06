@@ -635,6 +635,21 @@ public final class SettingsViewTest {
             ImageIO.write(render(sv, 960, 540, 2).image, "png",
                     new File(out, "zh_tw-dialogue-" + wide + ".png"));
         }
+        for (int[] size : new int[][] {{640, 360, 3}, {960, 540, 2}}) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, size[0], size[1], size[2]);
+            SettingsView.Placed row = find(sv, "dialogue.mode");
+            if (row != null) {
+                sv.mouseDown(row.x() + 12, row.y() + row.h() / 2, 0);
+            }
+            ImageIO.write(render(sv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-dialogue-selected-" + size[0] + ".png"));
+            dlg.previewWidth = 600;
+            ImageIO.write(render(sv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-dialogue-selected-" + size[0] + "-max.png"));
+        }
         Fake look = new Fake("zh_tw");
         look.values.put("items.tooltip", 1);
         SettingsView lv = new SettingsView(look.tabs(), look, 0);

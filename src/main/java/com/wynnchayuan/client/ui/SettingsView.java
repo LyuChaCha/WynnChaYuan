@@ -75,11 +75,11 @@ public final class SettingsView extends Surface {
     static final float ROW_H = 22;
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float PREVIEW_W = 292;
+    static final float PREVIEW_W = 298;
     static final float PREVIEW_MIN = 150;
-    static final float PREVIEW_SNUG = 180;
+    static final float PREVIEW_SNUG = 204;
     static final float LIST_MIN = 230;
-    static final float LIST_ROOMY = 318;
+    static final float LIST_ROOMY = 312;
     static final float NAV_H = 21;
 
     final List<Row.Tab> tabs;

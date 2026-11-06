@@ -469,7 +469,7 @@ final class AwtCanvas implements Canvas {
         if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
             return;
         }
-        float dots = Math.max(1, Math.round(scale * k));
+        float dots = Ui.gameDots(scale, k);
         Font f = pixel().deriveFont(10f * dots);
         Object aa = g.getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING);
         g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);

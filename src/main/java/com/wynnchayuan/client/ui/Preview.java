@@ -177,12 +177,20 @@ public final class Preview {
         return (float) Math.floor(want / px + 0.001f) * px;
     }
 
-    static final float MIN_SCENE = 0.75f;
+    static final float SCENE_PAD = 6;
+    static final float DIALOGUE_W = 287;
+    static final float DIALOGUE_STACK_H = 252;
 
-    static float readable(Canvas c, float fit) {
+    static float fit(Canvas c, float want) {
+        float k = Math.max(0.25f, Math.min(1f, want));
         float px = c.px();
-        float floor = Math.min(1f, (float) Math.ceil(MIN_SCENE / px - 0.001f) * px);
-        return Math.max(snap(c, Math.min(1f, fit)), floor);
+        float crisp = (float) Math.floor(k / px + 0.03f) * px;
+        return crisp >= k * 0.88f && crisp > 0 ? Math.min(1f, crisp) : k;
+    }
+
+    static float dialogueScale(Canvas c, int w, int h) {
+        return fit(c, Math.min((w - SCENE_PAD * 2) / DIALOGUE_W,
+                               (h - SCENE_PAD) / DIALOGUE_STACK_H));
     }
 
     private static void grid(Canvas c, int x, int y, int w, int h) {
@@ -418,11 +426,10 @@ public final class Preview {
         c.image(id, ox + tx * s, oy + ty * s, uw * s, vh * s, u, v, uw, vh, 0xFFFFFFFF);
     }
 
-    private static float hotbar(Canvas c, int x, int y, int w, int h) {
+    private static float hotbar(Canvas c, int x, int y, int w, int h, float s) {
         if (!wynnHud(c)) {
             return drawnHotbar(c, x, y, w, h);
         }
-        float s = readable(c, (w - 2) / (float) HUD_W);
         float ox = Math.round(x + (w - HUD_W * s) / 2f);
         float oy = Math.round(y + h - 2 - HUD_H * s);
         tex(c, HUD_BANNER, ox, oy, s, 12, -8, 0, 0, 208, 64);
@@ -512,14 +519,13 @@ public final class Preview {
         String zhLine = s.translate.apply(LINE);
         boolean lineZh = s.dialogueMode == 1;
         boolean choiceZh = s.choiceMode == 1;
-        float barTop = hotbar(c, x, y, w, h);
+        float k = dialogueScale(c, w, h);
+        float barTop = hotbar(c, x, y, w, h, k);
         SceneText scene = c instanceof SceneText t ? t : null;
 
-        float k = readable(c, (w - 2) / 287f);
-        float dw = 287 * k;
+        float dw = DIALOGUE_W * k;
         float dh = 106 * k;
-        float dx = Math.round(dw <= w - 4 ? x + (w - dw) / 2f
-                : Math.max(x + w - 3 - dw, x + 3 - 64 * k));
+        float dx = Math.round(x + (w - dw) / 2f);
         float dy = barTop - 2 - dh;
         boolean textured = has(c, DLG_BOX) && has(c, DLG_FRAME);
         if (textured) {
@@ -747,7 +753,8 @@ public final class Preview {
             s.mark(Spot.NAMEPLATE, zx, ny + 14, zw, 14);
         }
 
-        float barTop = hotbar(c, x, y, w, h);
+        float barTop = hotbar(c, x, y, w, h,
+                fit(c, (w - SCENE_PAD * 2) / (float) HUD_W));
         String held = s.heldItem ? zh.apply(ITEM) : ITEM;
         int hx = x + (w - c.width(held)) / 2;
         int hy = Math.round(barTop) - 13;
