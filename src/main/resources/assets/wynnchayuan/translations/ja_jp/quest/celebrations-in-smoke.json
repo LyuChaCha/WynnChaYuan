@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Celebrations in Smoke",
-  "count": 540,
-  "translated": 540,
+  "count": 639,
+  "translated": 639,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -28,13 +28,14 @@
   },
   "Celebrations in Smoke#002": {
    "src": "That should be enough to go off if you can find a member of the Kalkalrah clan. If you want to get more information though, you can continue the interrogation.",
-   "dst": "Kalkalrah 族の一員を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
+   "dst": "{c2}Kalkalrah 族の一員{/}を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}member of the Kalkalrah clan{/}"
   },
   "Celebrations in Smoke#003": {
    "src": "Are you familiar with any green tea dealers?",
@@ -58,13 +59,14 @@
   },
   "Celebrations in Smoke#005": {
    "src": "These ashes of a medallion seem to indicate that Arris really was exiled. You'll need to confront them about it.",
-   "dst": "このメダリオンの灰からすると、Arris は本当に追放されていたようだ。問い詰める必要がある。",
+   "dst": "このメダリオンの灰からすると、Arris は本当に追放されていたようだ。{c2}問い詰める{/}必要がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}confront them{/}"
   },
   "Celebrations in Smoke#006": {
    "src": "This looks like what Cerisa was trying to hide when she snuck in. It's a box full of... soldier's gear?",
@@ -927,7 +929,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#092": {
-   "src": "I'm much too weak to ride the ziplines around town anymore so I appreciate any company I can get.",
+   "src": "I'm much too weak to ride the ziplines around town much anymore so I appreciate any company I can get.",
    "dst": "もう体が弱って、町のジップラインには乗れなくてね。誰か来てくれるだけでありがたいよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -998,13 +1000,14 @@
   },
   "Celebrations in Smoke#099": {
    "src": "Quick! Somebody run to the pond to get some water and put out the fire!",
-   "dst": "急いで！誰か池から水を汲んで、火を消してください！",
+   "dst": "急いで！誰か{c2}池から{/}水を汲んで、{c2}火を消してください{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 4",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}run to the pond{/}, {c2}put out the fire{/}"
   },
   "Celebrations in Smoke#100": {
    "src": "Put out the fire.",
@@ -1238,13 +1241,14 @@
   },
   "Celebrations in Smoke#123": {
    "src": "Come back to me once you've found what they're all hiding.",
-   "dst": "皆が隠していることを突き止めたら、戻ってきてください。",
+   "dst": "{c2}皆が隠していることを突き止めたら{/}、戻ってきてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}found what they're all hiding{/}"
   },
   "Celebrations in Smoke#124": {
    "src": "Really? Where?",
@@ -1348,13 +1352,14 @@
   },
   "Celebrations in Smoke#134": {
    "src": "That should be enough to go off if you can find someone who was observant enough to see Cerisa sneak in. If you want to get more information though, you can continue the interrogation.",
-   "dst": "Cerisa が忍び込むのを見ていた、目ざとい人を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
+   "dst": "{c2}Cerisa が忍び込むのを見ていた、目ざとい人{/}を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}someone who was observant enough to see Cerisa sneak in{/}"
   },
   "Celebrations in Smoke#135": {
    "src": "New Quest Start: Celebrations in Smoke",
@@ -1498,13 +1503,14 @@
   },
   "Celebrations in Smoke#149": {
    "src": "You'll have to interrogate him again to see if you can get any new information.",
-   "dst": "新しい情報が得られるか、もう一度尋問する必要がある。",
+   "dst": "新しい情報が得られるか、{c2}もう一度尋問{/}する必要がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}interrogate him again{/}"
   },
   "Celebrations in Smoke#150": {
    "src": "I found your camp. There's green tea, but nothing else I would expect from a merchant",
@@ -1988,13 +1994,14 @@
   },
   "Celebrations in Smoke#198": {
    "src": "Their old medallion was handed to me to burn. In fact, just on my way into the festival I threw its ashes up the tallest tree in {p}.",
-   "dst": "古いメダリオンは私が焼くことに。祭りに来る途中で、その灰を {p} で一番高い木の上に撒いたところです。",
+   "dst": "古いメダリオンは私が焼くことに。祭りに来る途中で、その灰を {c2}{p} で一番高い木の上{/}に撒いたところです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Attendee",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}the tallest tree in {p}{/}"
   },
   "Celebrations in Smoke#199": {
    "src": "Interrogated them? Oh, I hope they haven't done anything bad.",
@@ -2478,13 +2485,14 @@
   },
   "Celebrations in Smoke#247": {
    "src": "That should be enough to go off if you can find someone who buys a lot of green tea. If you want to get more information though, you can continue the interrogation.",
-   "dst": "緑茶をたくさん買う人を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
+   "dst": "{c2}緑茶をたくさん買う人{/}を見つけられれば、これで十分だろう。さらに情報が欲しければ、尋問を続けてもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "",
    "speaker": "",
    "source": "captured",
+   "note":"{c2}someone who buys a lot of green tea{/}",
    "similar": {
     "text": "That should be enough to go off if you can find someone who was observant enough to see Cerisa sneak in. If you want to get more information though, you can continue the interrogation.",
     "file": "quest/celebrations-in-smoke.json",
@@ -2954,13 +2962,14 @@
   },
   "Celebrations in Smoke#294": {
    "src": "The closest I got was some odd tent in the woods east of {p} with a box of the stuff, but that just a scavenger's tent.",
-   "dst": "一番近づけたのは、{p} の東の森にある妙なテントで、緑茶が一箱あった。でもただの拾い屋のテントだった。",
+   "dst": "一番近づけたのは、{c2}{p} の東の森{/}にある妙なテントで、緑茶が一箱あった。でもただの拾い屋のテントだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Attendee",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}in the woods east of {p}{/}"
   },
   "Celebrations in Smoke#295": {
    "src": "I wish the Kalkalrah clan wouldn't keep the secret so well hidden.",
@@ -4134,13 +4143,14 @@
   },
   "Celebrations in Smoke#412": {
    "src": "If you found it here, you could try asking around the festival to see if anyone else recognizes it.",
-   "dst": "ここで見つけたなら、祭りで他に分かる人がいないか聞いてみては。",
+   "dst": "ここで見つけたなら、祭りで{c2}他に分かる人{/}がいないか{c2}聞いて{/}みては。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Stall Attendant",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}asking around{/}"
   },
   "Celebrations in Smoke#413": {
    "src": "Anything else?",
@@ -4493,14 +4503,14 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#448": {
-   "src": "Be careful with the accusations you throw around.",
+   "src": "Be careful what accusations you throw around.",
    "dst": "むやみに疑いをかけるのは気をつけることだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Attendee",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Celebrations in Smoke#449": {
    "src": "Not everyone has their guard down around this festival for those who stick their noses where they don't belong.",
@@ -4753,24 +4763,24 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#474": {
-   "src": "Their recklessness prevents this. In a case where the smallest failure would be a catastrophe, recklessness becomes necessity.",
+   "src": "Their recklessness prevents this. In a case where the smallest failure would be catastrophe, recklessness becomes necessity.",
    "dst": "彼らの無謀さがそれを防ぐ。わずかな失敗が破滅につながる時、無謀さは必要になるのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Celebrations in Smoke#475": {
-   "src": "Imagine they had not acted rashly in throwing the bottle of fuel onto the already lit flame.",
+   "src": "Imagine they had not acted rashly in throwing a bottle of fuel onto the already lit flame.",
    "dst": "もし彼らが、すでについた火に燃料の瓶を投げ込むという無茶をしなかったら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
    "stage": "Stage 7",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Celebrations in Smoke#476": {
    "src": "They did not create the flame, someone else must have been hoping to gain from it.",
@@ -4883,7 +4893,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#487": {
-   "src": "I understand your reticense to pick one. We don't have anything close to the information required to make a proper judgement.",
+   "src": "I understand your reticence to pick one. We don't have anything close to the information required to make a proper judgment.",
    "dst": "一人を選べないお気持ちは分かります。正しい判断に必要な情報など、とても揃っていません。",
    "role": "desc",
    "kind": "dialogue",
@@ -4990,7 +5000,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#498": {
    "src": "To gaze upon this relic from years past,",
@@ -5000,7 +5011,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#499": {
    "src": "This effigy, of ancient foes we fought—",
@@ -5010,7 +5022,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#500": {
    "src": "In memory, we will again ignite!",
@@ -5020,7 +5033,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#501": {
    "src": "An ancient beast, rebuilt with plank and straw,",
@@ -5030,7 +5044,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#502": {
    "src": "What once was flesh, reconstitute as wood;",
@@ -5040,7 +5055,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#503": {
    "src": "All monsters, old and new, must meet their end—",
@@ -5050,7 +5066,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#504": {
    "src": "All fiends must burn! Must broil and char and melt!",
@@ -5060,7 +5077,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#505": {
    "src": "Substance beside, all that remains persists...",
@@ -5070,7 +5088,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#506": {
    "src": "...as blackened corpse, no threat there can exist!",
@@ -5080,7 +5099,8 @@
    "quest": "Celebrations in Smoke",
    "stage": "Stage 10",
    "speaker": "Festival Organizer",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Celebrations in Smoke#507": {
    "src": "Oh, hi, I never got the chance to thank you.",
@@ -5411,6 +5431,1048 @@
    "stage": "Stage 10",
    "speaker": "Burick",
    "source": "wiki"
+  },
+  "Celebrations in Smoke#540": {
+   "src": "Now that you have a mask, you can enjoy the festival.",
+   "dst": "マスクを手に入れたので、お祭りを楽しむことができます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#541": {
+   "src": "Do you want to wear the deer mask?",
+   "dst": "シカの仮面をかぶる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#542": {
+   "src": "You unravel your fortune. It says:",
+   "dst": "運命を解き明かす。こう書かれている：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#543": {
+   "src": "'You will live a long and prosperous life and will die surrouded by your clan.'",
+   "dst": "「長生きして豊かな人生を送り、一族に囲まれてこの世を去ることになるだろう。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Fortune Cookie",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#544": {
+   "src": "'Respect your parents, in your time of greatest need they will come for you.'",
+   "dst": "「両親を敬え。最も助けを必要とする時、両親は必ず助けにくるだろう。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Fortune Cookie",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#545": {
+   "src": "Festival Organizer\nWhat's that!?",
+   "dst": "Festival Organizer\nなんだ！？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#546": {
+   "src": "Festival Attendee\nNot right now, but-",
+   "dst": "Festival Attendee\n今は無理だけど、でも――",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Attendee",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#547": {
+   "src": "What would you like to ask the suspect?",
+   "dst": "容疑者に何を聞く？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#548": {
+   "src": "You've updated your notes with this new information.",
+   "dst": "新しい情報をノートに追加した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#549": {
+   "src": "You're already tracking Suspect {~}.",
+   "dst": "既に{~}人目の容疑者を追跡追っている。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#550": {
+   "src": "You're now following the clues related to Suspect {~}.",
+   "dst": "{~}人目の容疑者に関する手がかりを追っている。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#551": {
+   "src": "Interrogate Suspect {~}",
+   "dst": "{~}人目の容疑者を取り調べする。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#553": {
+   "src": "What would you like to ask Burick?",
+   "dst": "Burick に何を聞く？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#554": {
+   "src": "What would you like to ask Arris?",
+   "dst": "Arris に何を聞く？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#555": {
+   "src": "What would you like to ask Cerisa?",
+   "dst": "Cerisa に何を聞く？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#556": {
+   "src": "Ask Burick further questions?",
+   "dst": "Burick にさらに質問する？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#557": {
+   "src": "Ask Cerisa further questions?",
+   "dst": "Cerisa にさらに質問する？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#558": {
+   "src": "Ask Arris further questions?",
+   "dst": "Arris にさらに質問する？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#559": {
+   "src": "Isn't that personally dangerous, for you?",
+   "dst": "それ、あなた自身が危なくないの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#560": {
+   "src": "Have you seen any changelings?",
+   "dst": "チェンジリングを見たことがある？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#561": {
+   "src": "Why don't you have a medallion?",
+   "dst": "どうしてメダリオンを持ってないの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#562": {
+   "src": "How did you get into the festival without a medallion?",
+   "dst": "メダリオンがないのに、どうやって会場に入場したの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#563": {
+   "src": "Why did you attend?",
+   "dst": "どうして参加したの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#564": {
+   "src": "Why would the clans trust you without a medallion?",
+   "dst": "メダリオンがないのに、なぜ一族たちはあなたを信用するの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#565": {
+   "src": "What do you do as a member of Kalkalrah clan?",
+   "dst": "Kalkalrah 族の一員として、どんなことをしてる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#566": {
+   "src": "What do you do specifically?",
+   "dst": "具体的にどんな仕事をしてる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#567": {
+   "src": "Are you always this nervous?",
+   "dst": "いつもこんなに緊張してるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#568": {
+   "src": "So what if I think you did do it?",
+   "dst": "君がやったと私が思ってたら、どうする？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#569": {
+   "src": "Could you try speaking slower?",
+   "dst": "もう少しゆっくり話してくれる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#570": {
+   "src": "Did you see who tried to burn down the wickerman?",
+   "dst": "ウィッカーマンを焼き払おうとした人を見た？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#571": {
+   "src": "Why did you try to burn down the wickerman?",
+   "dst": "どうしてウィッカーマンを焼き払おうとしたの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#572": {
+   "src": "Where do you get your green tea?",
+   "dst": "緑茶はどこで買ってるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#573": {
+   "src": "Your entire business is selling the products of one clan to everyone else?",
+   "dst": "あなたのビジネスは、ある一族の商品を他のすべての人に販売することだけなの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#574": {
+   "src": "So you won't lie to me at all?",
+   "dst": "じゃあ、私に絶対に嘘をつかないの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#575": {
+   "src": "Why are you so insistent on not wanting to be found to have tried to burn the wickerman? Do you fear the consequences that much?",
+   "dst": "どうしてウィッカーマンを燃やそうとしたことがばれたくないと、そこまで頑なに主張するの？　それほどばれるのが怖いの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#576": {
+   "src": "Do you work alone?",
+   "dst": "一人でやってるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#577": {
+   "src": "Who do you steal from?",
+   "dst": "誰から盗んでるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#578": {
+   "src": "Ask the tea enthusiast a question?",
+   "dst": "緑茶好きの方に質問してみる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#579": {
+   "src": "Search for a camp east of {p} that Burick might have been spotted at",
+   "dst": "{p}の東側で、Burick が目撃された可能性のあるキャンプを探索する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#580": {
+   "src": "The Kalkalrah clan doesn't sell it normally?",
+   "dst": "Kalkalrah 族は普段、それを売ってないの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#581": {
+   "src": "No, It's starting to look like there isn't one.",
+   "dst": "いや、どうやらそれはないみたいだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#582": {
+   "src": "This is where the fire was started, it looks like all that's left is embers.",
+   "dst": "こで火がつけられたようだが、残っているのは燃えカスだけのように見える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#583": {
+   "src": "... except, what's this?",
+   "dst": "……でも、これは何だろう？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#584": {
+   "src": "A bottle? You might want to see if the food stall recognizes it.",
+   "dst": "瓶？　{c2}その屋台{/}でそれを受け付けてくれるかどうか、確認したほうがいいかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c2}food stall{/}"
+  },
+  "Celebrations in Smoke#585": {
+   "src": "Ask the clan member a question?",
+   "dst": "氏族の一員に質問をしてみる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#586": {
+   "src": "Exiled? They never mentioned anything like that when I interrogated them.",
+   "dst": "追放された？　私が彼らを取り調べたとき、そんな話は一切出てこなかった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#587": {
+   "src": "How much do you think I can trust them?",
+   "dst": "彼らをどれくらい信頼できると思う？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#588": {
+   "src": "Why were you exiled?",
+   "dst": "どうして追放されたの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#589": {
+   "src": "How long ago was this?",
+   "dst": "それはいつのこと？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#590": {
+   "src": "Was this the first time something like that happened?",
+   "dst": "初めてこんなことが起こったの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#591": {
+   "src": "Why did you come to the festival?",
+   "dst": "どうしてお祭りに参加したの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#592": {
+   "src": "Give Arris a Fortune Cookie?",
+   "dst": "Arris にフォーチュンクッキーをあげる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#593": {
+   "src": "Sure, let me go get one.",
+   "dst": "いいよ、ちょっと取ってくるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#594": {
+   "src": "Here's your cookie.",
+   "dst": "はい、これがあなたのクッキー。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#595": {
+   "src": "Arris cracks open the cookie.",
+   "dst": "Arris はクッキーを割った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#596": {
+   "src": "This looks like the place that festival attendee mentioned.",
+   "dst": "ここが、お祭りの参加者が話していた場所のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#597": {
+   "src": "The green tea covering the ground seems to indicate the clan member is telling the truth.",
+   "dst": "地面を覆う緑茶の様子から、その一族の者が真実を語っているようだとうかがえる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#598": {
+   "src": "Maybe you could look a bit more closely though?",
+   "dst": "でも、もう少しじっくり見てみてはどうだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#599": {
+   "src": "On the wall is a crude sketch of the surrounding area.",
+   "dst": "壁には、周辺地域の大まかなスケッチが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#600": {
+   "src": "The embers below this cooking pot are still smoldering, it's been used recently.",
+   "dst": "この鍋の下の残り火はまだくすぶっている。つい最近使われたようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#601": {
+   "src": "You cheer your fox on! It, already under pressure, is overwhelmed.",
+   "dst": "キツネを応援しよう！すでにプレッシャーにさらされていたそのキツネは、すっかり圧倒されてしまった。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#602": {
+   "src": "Your voice has recovered and you can cheer again.",
+   "dst": "声は元に戻り、また声援を送れるようになった。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#603": {
+   "src": "You cheer your fox on! It can't hear you over the excitement of the race.",
+   "dst": "キツネを応援しよう！レースの熱気の中で、キツネにはあなたの声は届かない。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#604": {
+   "src": "You cheer your fox on! It receives an extra boost of encouragement!",
+   "dst": "キツネを応援しよう！　そうすれば、キツネは励まされて更に早くなる！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#605": {
+   "src": "You just cheered your fox on! You need a few moments to recover your voice to cheer again.",
+   "dst": "キツネを応援したばかりだ！　また応援できるようになるまで、少し声を休める必要がある。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#606": {
+   "src": "You cheer your fox on! It beams with your approval.",
+   "dst": "キツネを応援しよう！　あなたの応援に、キツネは満面の笑みを浮かべる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#607": {
+   "src": "Ask the mother a question?",
+   "dst": "お母さんに質問をしてみる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#608": {
+   "src": "The box is stuck tightly in the mud. You might have to pull again, harder.",
+   "dst": "箱が泥にがっちりとはまってしまっている。もう一度、もっと強く引っ張る必要があるかもしれない。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#609": {
+   "src": "You'll have to confront her to learn more.",
+   "dst": "もっと詳しく知るためには、{c2}彼女に直接問いたださなければ{/}ならない。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c2}confront her{/}"
+  },
+  "Celebrations in Smoke#610": {
+   "src": "Ask the guard a question?",
+   "dst": "{c1}警備員に質問をしてみる？{/}",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c1}Ask the guard a question?{/}"
+  },
+  "Celebrations in Smoke#611": {
+   "src": "Are you aware of how easy it is to sneak in?",
+   "dst": "ここに忍び込みのが簡単なの、知ってる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#612": {
+   "src": "... You're not sure someone else hasn't already noticed.",
+   "dst": "…誰かがすでに気づいていないか、確信が持てない。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#613": {
+   "src": "The merchant inspects the bottle.",
+   "dst": "店主は瓶を調べている。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#614": {
+   "src": "Ask the racing expert a question?",
+   "dst": "レースの専門家に質問してみる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#615": {
+   "src": "Challenge the racing expert in the fox race?",
+   "dst": "キツネレースで、レースの達人に挑んでみる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#616": {
+   "src": "Ask the group of clan members a question?",
+   "dst": "氏族のメンバーたちに質問してみる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#617": {
+   "src": "I was told you all snuck into the festival with bottles like this.",
+   "dst": "みんなが、こういう瓶を持ってこっそりお祭りに忍び込んだと聞いたよ。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#618": {
+   "src": "You hear a frail voice calling you from the east.",
+   "dst": "{c2}東の方{/}から、かすれた声があなたを呼んでいるのが聞こえる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":"{c2}the east{/}"
+  },
+  "Celebrations in Smoke#619": {
+   "src": "Ask the elderly woman a question?",
+   "dst": "年配の女性に質問してみる？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#620": {
+   "src": "Share your information with the elderly woman?",
+   "dst": "年配の女性に情報を伝える？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#621": {
+   "src": "Then return to me once you do know. I'll be waiting.",
+   "dst": "わかったら、また私のところに戻ってくれ。待ってるよ。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#622": {
+   "src": "I found this box of soldier's gear. It was set down exactly where you snuck in the festival.",
+   "dst": "兵士の装備が入ったこの箱を見つけた。それは、君が祭りに忍び込んだまさにその場所に置かれていた。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#623": {
+   "src": "You lied to me!",
+   "dst": "お前は嘘をついた！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#624": {
+   "src": "This seems counterproductive to your goal of getting me to trust you.",
+   "dst": "これって、私にあなたを信頼してもらうというあなたの目的とは逆効果のように思えるよ。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#625": {
+   "src": "I could report you to the military right now.",
+   "dst": "今すぐ軍にあなたを通報することもできる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#626": {
+   "src": "Is there anything you're not telling me?",
+   "dst": "何か隠していることはない？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#627": {
+   "src": "Why did you join the military?",
+   "dst": "どうして軍に入隊したの？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#628": {
+   "src": "You have enough confessions that the festival organizer should be happy now. You can return to them or continue investigating for more info.",
+   "dst": "すでに十分な供述が得られているので、祭りの主催者はこれで満足するはずだ。{c2}主催者のところに戻る{/}ことも、{c2}さらに情報を集めるために調査を続けることもできる{/}。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c2}return to them{/}, {c2}continue investigating for more info{/}"
+  },
+  "Celebrations in Smoke#629": {
+   "src": "Why are you attending the festival?",
+   "dst": "どうして祭りに参加するの？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#630": {
+   "src": "Ask Burick a further question?",
+   "dst": "Burick に更に質問する？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#631": {
+   "src": "How did you get that massive box of green tea?",
+   "dst": "あの巨大な緑茶の箱を、どうやって手に入れたの？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#632": {
+   "src": "I'm not sure I feel comfortable sharing that with you.",
+   "dst": "それをあなたに話してもいいかどうか、ちょっと迷ってる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#633": {
+   "src": "Ask your question.",
+   "dst": "質問をしよう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#634": {
+   "src": "Is there hidden security at this festival?",
+   "dst": "この祭りには、目立たない警備員がいるの？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#635": {
+   "src": "They caused the small fire that almost burnt down the wickerman!",
+   "dst": "彼らが引き起こした小さな火事で、ウィッカーマンがほぼ全焼するところだった！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note":""
+  },
+  "Celebrations in Smoke#636": {
+   "src": "Return to the festival organizer at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] の祭りの主催者のもとへ戻る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#637": {
+   "src": "You already have found Suspect {~}'s lie!",
+   "dst": "既に{~}人目の容疑者の嘘を見抜いている！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#638": {
+   "src": "Really, I don't think any of them did it.",
+   "dst": "正直なところ、彼らは犯人じゃないと思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#639": {
+   "src": "Do you want to watch the wickerman burn and end the festival?",
+   "dst": "ウィッカーマンが燃やして、祭りの最後を見る？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
