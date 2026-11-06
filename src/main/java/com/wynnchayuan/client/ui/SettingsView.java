@@ -713,7 +713,8 @@ public final class SettingsView extends Surface {
         String label = Ui.fit(c, o.label(), 120);
         float x = Math.round(right - 11 - chipWidth(label));
         float w = Math.round(chipWidth(label));
-        Ui.pane(c, x, y, w, CHIP_H, CHIP_R, Ui.alpha(deep, 0x52), Ui.alpha(m, 0x5C));
+        Ui.fadePane(c, x, y, w, CHIP_H, CHIP_R, Ui.alpha(deep, 0x7A), 1f, 0.2f);
+        c.ring(x, y, w, CHIP_H, CHIP_R, c.px(), Ui.alpha(m, 0x48));
         dot(x + 5, y + (CHIP_H - 6) / 2f, 6, o.tone(), m);
         c.text(label, x + 14, y + (CHIP_H - 8) / 2f, m);
         return x;
@@ -748,8 +749,8 @@ public final class SettingsView extends Surface {
             int m = modeColour(o.tone());
             int deep = host.toneDeep(o.tone());
             if (on) {
-                Ui.pane(c, bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.alpha(deep, 0x38),
-                        Ui.alpha(m, 0x38));
+                Ui.fadePane(c, bx + 3, oy, (bw - 6) * 0.85f, OPTION_H - OPTION_GAP, 5,
+                            Ui.alpha(deep, 0x5C), 1f, 0f);
             } else if (hot) {
                 c.round(bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.RAISED);
             }

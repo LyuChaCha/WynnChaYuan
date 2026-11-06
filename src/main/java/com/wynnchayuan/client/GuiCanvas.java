@@ -305,6 +305,38 @@ final class GuiCanvas implements Canvas {
         }
     }
 
+    private static final int RAMP = 256;
+
+    private static byte[] ramp() {
+        byte[] out = new byte[RAMP * 2];
+        for (int i = 0; i < RAMP; i++) {
+            out[i] = (byte) i;
+            out[RAMP * 2 - 1 - i] = (byte) i;
+        }
+        return out;
+    }
+
+    @Override
+    public void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        int ax = p(x);
+        int ay = p(y);
+        int pw = p(x + w) - ax;
+        int ph = p(y + h) - ay;
+        if (pw <= 0 || ph <= 0 || (argb >>> 24) == 0) {
+            return;
+        }
+        int a = Math.round(Math.max(0f, Math.min(1f, from)) * (RAMP - 1));
+        int b = Math.round(Math.max(0f, Math.min(1f, to)) * (RAMP - 1));
+        if (a == b) {
+            g.fill(ax, ay, ax + pw, ay + ph, Ui.fade(argb, a / (float) (RAMP - 1)));
+            return;
+        }
+        Identifier tex = mask("ramp", RAMP * 2, 1, GuiCanvas::ramp);
+        float u = b > a ? a : RAMP * 2 - 1 - a;
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, ax, ay, u, 0f, pw, ph, Math.abs(b - a), 1,
+               RAMP * 2, 1, argb);
+    }
+
     @Override
     public void svSquare(float x, float y, float w, float h, float hue) {
         int pw = Math.max(2, p(x + w) - p(x));

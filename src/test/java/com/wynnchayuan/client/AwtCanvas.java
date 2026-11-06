@@ -312,6 +312,26 @@ final class AwtCanvas implements Canvas {
         }
     }
 
+    @Override
+    public void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        float x0 = p(x);
+        float x1 = p(x + w);
+        float y0 = p(y);
+        float y1 = p(y + h);
+        if (x1 <= x0 || y1 <= y0 || (argb >>> 24) == 0) {
+            return;
+        }
+        int base = argb >>> 24;
+        Color left = new Color((argb >> 16) & 0xFF, (argb >> 8) & 0xFF, argb & 0xFF,
+                Math.round(base * Math.max(0f, Math.min(1f, from))));
+        Color right = new Color((argb >> 16) & 0xFF, (argb >> 8) & 0xFF, argb & 0xFF,
+                Math.round(base * Math.max(0f, Math.min(1f, to))));
+        java.awt.Paint was = g.getPaint();
+        g.setPaint(new java.awt.GradientPaint(x0, 0, left, x1, 0, right));
+        g.fill(new Rectangle2D.Float(x0, y0, x1 - x0, y1 - y0));
+        g.setPaint(was);
+    }
+
     void done() {
         g.dispose();
     }

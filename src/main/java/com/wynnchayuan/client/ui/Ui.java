@@ -85,30 +85,24 @@ public final class Ui {
                 hsv[2] * 0.76f) & 0xFFFFFF);
     }
 
-    public static void sweep(Canvas c, float x, float y, float w, float h, float r, int left,
-                             int right) {
+    public static void fadePane(Canvas c, float x, float y, float w, float h, float r, int argb,
+                                float from, float to) {
         if (w <= 0 || h <= 0) {
             return;
         }
         float rr = Math.max(0, Math.min(r, Math.min(w, h) / 2f));
-        if (left == right || w <= rr * 2 + 1) {
-            c.round(x, y, w, h, rr, left);
-            return;
+        float step = Math.max(c.px(), 0.25f);
+        for (float dy = 0; dy < rr; dy += step) {
+            float d = rr - dy - step / 2f;
+            float in = rr - (float) Math.sqrt(Math.max(0f, rr * rr - d * d));
+            float a = from + (to - from) * in / w;
+            float b = from + (to - from) * (w - in) / w;
+            float band = Math.min(step, rr - dy);
+            c.fade(x + in, y + dy, w - in * 2, band, argb, a, b);
+            c.fade(x + in, y + h - dy - band, w - in * 2, band, argb, a, b);
         }
-        if (rr > 0) {
-            c.clip(x, y, x + rr, y + h);
-            c.round(x, y, rr * 2, h, rr, left);
-            c.unclip();
-            c.clip(x + w - rr, y, x + w, y + h);
-            c.round(x + w - rr * 2, y, rr * 2, h, rr, right);
-            c.unclip();
-        }
-        float span = w - rr * 2;
-        int steps = Math.max(1, Math.min(24, Math.round(span / 3f)));
-        for (int i = 0; i < steps; i++) {
-            float a = x + rr + span * i / steps;
-            float b = x + rr + span * (i + 1) / steps;
-            c.fill(a, y, b, y + h, mix(left, right, (i + 0.5f) / steps));
+        if (h > rr * 2) {
+            c.fade(x, y + rr, w, h - rr * 2, argb, from, to);
         }
     }
 
