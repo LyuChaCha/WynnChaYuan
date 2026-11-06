@@ -20,8 +20,8 @@ final class RowRealigner {
 
     static Component realign(StyledText original, Component rebuilt,
                              boolean centered, boolean leftAligned) {
-        List<Run> orig = SpaceRuns.splitGaps(SpaceRuns.runs(original.getComponent()));
-        List<Run> made = SpaceRuns.splitGaps(SpaceRuns.runs(rebuilt));
+        List<Run> orig = mergeSpaces(SpaceRuns.splitGaps(SpaceRuns.runs(original.getComponent())));
+        List<Run> made = mergeSpaces(SpaceRuns.splitGaps(SpaceRuns.runs(rebuilt)));
         StringBuilder log = null;
         if (SpaceRuns.rows(orig) > 1 || SpaceRuns.rows(made) > 1) {
             log = new StringBuilder();
