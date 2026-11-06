@@ -57,7 +57,7 @@ final class RowRealigner {
             }
             return rebuilt;
         }
-        List<Integer> origSeg = SpaceRuns.segmentWidths(orig);
+        List<Integer> origSeg = serverWidths(orig, SpaceRuns.segmentWidths(orig));
         List<Integer> madeSeg = SpaceRuns.segmentWidths(made);
 
         int[] adjust = new int[spaces];
@@ -118,11 +118,17 @@ final class RowRealigner {
         int[] target = new int[gaps];
         int x = 0;
         int g = 0;
+        int label = 0;
         for (Run r : o) {
-            x += r.space() ? r.px() : LineTranslator.widthOf(DisplayStyles.literal(r.text(), r.style()));
-            if (r.space()) {
-                target[g++] = x;
+            if (!r.space()) {
+                label = LineTranslator.widthOf(DisplayStyles.literal(r.text(), r.style()));
+                x += label;
+                continue;
             }
+            int rewind = leadingRewind(r);
+            x += r.px() + (rewound(label, rewind, r.px()) ? -label - rewind : 0);
+            label = 0;
+            target[g++] = x;
         }
         MutableComponent out = Component.empty();
         x = 0;
@@ -147,6 +153,55 @@ final class RowRealigner {
             x += px;
         }
         return out;
+    }
+
+    // 退回量是伺服器算的標籤寬，跟這邊量的會差幾 px；欄位起點照它算
+    private static List<Integer> serverWidths(List<Run> runs, List<Integer> widths) {
+        boolean[] gaps = SpaceRuns.tooltipGaps(runs);
+        List<Integer> out = widths;
+        int k = 0;
+        for (int i = 0; i < runs.size() && k < widths.size(); i++) {
+            if (!gaps[i]) {
+                continue;
+            }
+            Run before = i > 0 ? runs.get(i - 1) : null;
+            int label = before == null || before.space()
+                    ? 0 : LineTranslator.widthOf(DisplayStyles.literal(before.text(), before.style()));
+            int rewind = leadingRewind(runs.get(i));
+            if (rewound(label, rewind, runs.get(i).px())) {
+                if (out == widths) {
+                    out = new ArrayList<>(widths);
+                }
+                out.set(k, widths.get(k) - label - rewind);
+            }
+            k++;
+        }
+        return out;
+    }
+
+    private static final int REWIND_SLACK = 12;
+
+    private static boolean rewound(int label, int rewind, int gap) {
+        return rewind < 0 && label > 0 && gap > rewind && Math.abs(label + rewind) <= REWIND_SLACK;
+    }
+
+    private static int leadingRewind(Run run) {
+        if (!run.space()) {
+            return 0;
+        }
+        String text = run.text();
+        int total = 0;
+        int i = 0;
+        while (i < text.length()) {
+            int n = Character.charCount(text.codePointAt(i));
+            int px = SpaceOffset.decode(text.substring(i, i + n));
+            if (px >= 0) {
+                break;
+            }
+            total += px;
+            i += n;
+        }
+        return total;
     }
 
     static List<Run> mergeSpaces(List<Run> runs) {
@@ -230,7 +285,7 @@ final class RowRealigner {
             }
             return SpaceRuns.apply(made, new int[0]);
         }
-        List<Integer> origSeg = SpaceRuns.segmentWidths(orig);
+        List<Integer> origSeg = serverWidths(orig, SpaceRuns.segmentWidths(orig));
         List<Integer> madeSeg = SpaceRuns.segmentWidths(made);
         int[] adjust = new int[spaces];
         boolean leading = centered && origSeg.get(0) == 0 && madeSeg.get(0) == 0;

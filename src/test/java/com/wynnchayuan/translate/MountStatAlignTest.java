@@ -24,7 +24,9 @@ public final class MountStatAlignTest {
         "Speed", "Acceleration", "Altitude", "Jump Height", "Energy", "Handling", "Toughness", "Boost", "Training"
     };
 
-    private static final int[] STAT_PX = {25, 54, 33, 58, 30, 35, 46, 24, 35};
+    private static final int[] STAT_PX = {25, 61, 33, 58, 30, 35, 52, 22, 35};
+
+    private static final int[] SERVER_PX = {25, 54, 33, 52, 30, 35, 46, 24, 35};
 
     private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
 
@@ -52,14 +54,15 @@ public final class MountStatAlignTest {
             List<Integer> rights = new ArrayList<>();
             for (int column : COLUMNS) {
                 for (int k = 0; k < STATS.length; k++) {
-                    rows.add(row(STATS[k], STAT_PX[k], column, "1", "10", "30"));
+                    rows.add(row(STATS[k], SERVER_PX[k], column, "1", "10", "30"));
                     names.add(STATS[k]);
                     rights.add(column + text("1/10 (30) ") + METER_PX);
                 }
             }
             for (int k = 0; k < rows.size(); k++) {
-                check("原文每一列都排到同一個右緣（" + visible(rows.get(k).getString()) + "）",
-                        width(rows.get(k).getComponent()) == rights.get(k));
+                int off = STAT_PX[k % STATS.length] - SERVER_PX[k % STATS.length];
+                check("原文照這邊量的寬度排，跟伺服器的退回量差 " + off + " px（" + visible(rows.get(k).getString()) + "）",
+                        width(rows.get(k).getComponent()) == rights.get(k) + off);
             }
             for (String lang : LANGS) {
                 TranslationStore store = new TranslationStore();
