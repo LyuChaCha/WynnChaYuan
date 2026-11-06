@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 24612,
-  "translated": 24610,
+  "count": 24617,
+  "translated": 24615,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -102156,14 +102156,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "Eşyaları Eşya Tanımlayıcılarda tanımlayabilirsiniz. Dünyanın her şehrinde bulunurlar, kolaylık olsun diye burada da bir tane tutuyoruz.",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "Eşyaları {#} Eşya Tanımlayıcılarda tanımlayabilirsiniz. Dünyanın dört bir yanındaki kasabalarda bulunurlar ama sizin gibi acemiler için burada da bir tane var.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -102176,8 +102176,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "Miğferini  Eşya Tanımlayıcı'da tanımla, sonra kuşanmış hâlde bana dön. Bunu yaptıktan sonra geçmene izin veririm.",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "Miğferini {#} Eşya Tanımlayıcı'da tanımla, sonra kuşanmış hâlde bana dön. Bunu yaptıktan sonra geçmene izin veririm.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102216,8 +102216,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "İçeride bol şans, acemiler! Zırhınız olsa bile kolay olmayacak!",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "İçeride bol şans, acemiler! Yeni zırhınız olsa bile kolay olmayacak!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102836,14 +102836,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "Ve yine gitti... Neyse, eminim onu yakında yine görürüz. Şimdilik Wynn gerçekten nasıl bir yer, bir bakalım.",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "Ve yine gitti... Neyse, eminim onu yakında daha sık göreceğiz.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -102876,14 +102876,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "Al, neden bir denemiyorsun? İçerik Kitabını kullan ve vurgulanmış göreve tıkla.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -102930,13 +102930,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "İçeride bol şans, acemiler! İhtiyacınız olacak...",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "İçeride bol şans, acemiler. İhtiyacınız olacak...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "Başardık! Yeraltı geçidinden devam edelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "Eee? Hadi bu eyaletin gerçekte nasıl bir yer olduğunu görelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "Çok güzel... Sonunda burada olmak epey heyecan verici, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "Burada durup maceranın bize gelmesini beklemenin anlamı yok! Ben dışarı çıkıp insanlara yardım edeceğim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "Ah! Sana söylemeyi neredeyse unutuyordum, {u}. Bize verilen kullanışlı bir eşya var: İçerik Kitabı. Bu dünyada yapabileceğin şeylerin çoğunu gösterir ve onları takip etmeni sağlar, izlemen için fenerler oluşturur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Kingdom of Sand#000": {

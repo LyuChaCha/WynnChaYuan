@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 167,
-  "translated": 167,
+  "count": 172,
+  "translated": 172,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -893,14 +893,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "你可以到物品鉴定师那里鉴定物品。世界上每座城市都有，为了方便，我们这里也放了一位。",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "你可以到 {#} 物品鉴定师那里鉴定物品。各地的城镇都有，我们这里也为你们这些新兵安排了一位。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "到  物品鉴定师那里鉴定你的头盔，戴上之后再回来找我。办完了我就放你过去。",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "到 {#} 物品鉴定师那里鉴定你的头盔，戴上之后再回来找我。办完了我就放你过去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -953,8 +953,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "祝你们好运，新兵们！就算穿了护甲，里面也没那么轻松！",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "祝你们好运，新兵们！就算换上了新护甲，里面也没那么轻松！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1573,14 +1573,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "他又跑了……嗯，我相信很快就会再见到他。现在，我们就去看看 Wynn 到底是什么样子吧。",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "他又跑了……嗯，我相信很快就会经常见到他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -1613,14 +1613,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "来，你何不试试看？打开你的内容手册，点击高亮的任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -1667,13 +1667,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "祝你们好运，新兵们！你们会需要的……",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "祝你们好运，新兵们。你们会需要的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "我们做到了！继续穿过地下通道吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "怎么样？我们去看看这个行省到底是什么样子吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "真美……终于来到这里，真让人兴奋，你不觉得吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "站在这里等冒险找上门可没用！我要出去帮助别人了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "哦！我差点忘了告诉你，{u}。我们拿到了一件很方便的物品，内容手册。它会显示你在这个世界里能做的大部分事情，还能让你追踪它们，产生信标让你跟着走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   }
  }
