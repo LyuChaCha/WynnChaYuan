@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 99.6%（66,431 / 66,725）
+## `zh_tw` 繁體中文 — 99.6%（66,426 / 66,720）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -26,7 +26,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,811 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,051 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 100% | 539 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,742 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -46,7 +46,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 98.7%（65,854 / 66,726）
+## `ru_ru` Русский — 98.7%（65,854 / 66,721）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -65,7 +65,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,749 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,050 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 99% | 531 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 531 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 305 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,742 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -85,7 +85,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 95% | 42 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 98.7%（65,841 / 66,719）
+## `es_es` Español — 98.7%（65,841 / 66,714）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -104,7 +104,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,749 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,050 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 99% | 531 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 531 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,742 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -124,7 +124,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 95% | 42 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 98.7%（66,605 / 67,497）
+## `ja_jp` 日本語 — 98.7%（66,605 / 67,492）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -143,7 +143,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,821 / 24,887 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,050 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 99% | 531 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 531 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 305 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,742 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -163,7 +163,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 95% | 42 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 997 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 98.7%（65,839 / 66,723）
+## `ko_kr` 한국어 — 98.7%（65,839 / 66,718）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -182,7 +182,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,749 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,050 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 99% | 531 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 531 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,742 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -202,7 +202,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 95% | 42 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `tr_tr` Türkçe — 97.6%（65,138 / 66,727）
+## `tr_tr` Türkçe — 97.6%（65,138 / 66,722）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -221,7 +221,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,750 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,050 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 98% | 530 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 530 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 99% | 302 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,743 / 1,743 | 跑 Lootrun 時<br>Seen during a lootrun |
@@ -241,7 +241,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | █████████░ 91% | 40 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,000 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 78.3%（52,224 / 66,725）
+## `zh_cn` 简体中文 — 78.3%（52,219 / 66,720）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -260,7 +260,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 24,722 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 99% | 1,042 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ██████████ 99% | 534 / 539 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 99% | 529 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ░░░░░░░░░░ 0% | 0 / 306 | 探索點的名稱<br>Discovery names |
 | `cave.json` | ██████████ 100% | 203 / 203 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,740 / 1,742 | 跑 Lootrun 時<br>Seen during a lootrun |
