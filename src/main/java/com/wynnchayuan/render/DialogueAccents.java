@@ -148,16 +148,7 @@ final class DialogueAccents {
     }
 
     static boolean shaderKey(TextColor colour) {
-        if (colour == null) {
-            return false;
-        }
-        int rgb = colour.getValue();
-        int r = rgb >> 16 & 0xFF;
-        int g = rgb >> 8 & 0xFF;
-        int b = rgb & 0xFF;
-        boolean movement = g == 235 && b % 4 == 0 && b <= 72;
-        boolean effect = r < 4 && g >= 240 && g < 244 && b < 40;
-        return movement || effect;
+        return ShaderColours.marker(colour);
     }
 
     private static boolean worthPainting(String core) {
