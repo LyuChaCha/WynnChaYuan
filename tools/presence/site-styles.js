@@ -382,10 +382,11 @@ export const STYLE = String.raw`
   .who-row b { min-width: 0; font-size: 15px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .who-row .mc { min-width: 0; margin-left: auto; padding-left: 6px; font-size: 14px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .who-row > svg { width: 18px; height: 18px; flex: none; }
-  .who-row b:only-of-type { flex: 1; }
   .who-row b + svg { margin-left: auto; }
   .who-txt { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.45; }
   .who-top { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+  .who-top > b, .who-row > b { flex: 0 0 auto; max-width: 100%; }
+  .who-top > .mc, .who-row > .mc { flex: 1 1 0; text-align: right; }
   .who-tags { min-width: 0; font-size: 13px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .who-tags .tl { color: var(--leaf); }
   .team-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
@@ -842,7 +843,7 @@ export const STYLE = String.raw`
   .plain { padding-left: 1.1em; }
   .team { border-bottom-color: #ffffff10; }
   .band { grid-template-columns: 220px minmax(0, 1fr); gap: 16px 32px; padding: 30px 0; border-top-color: #ffffff10; }
-  .lineup { grid-template-columns: repeat(auto-fill, minmax(256px, 1fr)); gap: 10px 14px; }
+  .lineup { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px 14px; }
   .who-row, .guild { border-color: transparent; background: #ffffff05; border-radius: 12px; }
   .make > summary { border-color: #ffffff17; background: #ffffff05; border-radius: 16px; padding: 16px 20px; }
   .make[open] > summary { border-radius: 16px 16px 0 0; }
