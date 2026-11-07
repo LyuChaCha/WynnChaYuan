@@ -151,9 +151,13 @@ export const STYLE = String.raw`
   :lang(ja) body { font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Meiryo", system-ui, sans-serif; }
   :lang(ko) body { font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
-  h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
-  h2 { margin: 56px 0 14px; font-size: 19px; font-weight: 650; }
+  h1 { margin: 0; font-size: 28px; font-weight: 650; line-height: 1.3; letter-spacing: .02em; text-wrap: balance; }
+  h2 { margin: 56px 0 14px; font-size: 21px; font-weight: 650; line-height: 1.35; letter-spacing: .01em; text-wrap: balance; }
   .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
+  h1 + .lede { margin-top: 10px; }
+  .lede:lang(zh), .lede:lang(ja), .lede:lang(ko) { max-width: 40em; }
+  #main:has(> .play) > h1 { line-height: inherit; }
+  #main:has(> .play) > .lede { margin-top: 6px; max-width: 62ch; }
   .policy { max-width: 72ch; line-height: 1.75; }
   .policy-date { margin: 8px 0 28px; color: var(--ink-2); font-size: 13px; }
   .policy h2 { margin: 36px 0 10px; font-size: 17px; }
@@ -324,6 +328,7 @@ export const STYLE = String.raw`
   .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); gap: 48px; align-items: center; padding: 14px 0 8px; }
   .hero h1 { font-size: clamp(34px, 4.3vw, 50px); line-height: 1.14; letter-spacing: -.012em; text-wrap: balance; }
   .hero .lede { font-size: 16px; }
+  .hero h1 + .lede { margin-top: 16px; }
   .hero-screen { min-width: 0; animation: settle 720ms var(--arrive) 80ms both; }
   .hero-screen .screen { display: block; aspect-ratio: 480 / 470; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 34px 70px -24px #000000e6, 0 0 0 6px #ffffff07; transition: border-color var(--base) ease, transform var(--base) var(--out); }
   .hero-cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin: 12px 4px 0; font-size: 13px; color: var(--ink-2); }
@@ -560,7 +565,7 @@ export const STYLE = String.raw`
   .spec-nav a { padding: 5px 10px; border-radius: 8px; color: var(--ink-2); transition: color var(--fast) ease, background-color var(--fast) ease; }
   .spec-nav a[aria-current="true"] { color: var(--ink); background: var(--panel-2); }
   .spec section + section { margin-top: 48px; }
-  .spec h2 { margin: 0 0 12px; }
+  .spec h2 { margin: 0 0 12px; font-size: 19px; line-height: inherit; letter-spacing: normal; }
   .spec .note { margin: 14px 0 0; max-width: 68ch; }
   .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
