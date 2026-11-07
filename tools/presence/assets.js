@@ -1,5 +1,6 @@
 import { tagOf } from './site.js';
 import { FONTS } from './demo-fonts.js';
+import { UI_FONTS } from './site-fonts.js';
 import { TEXTURES } from './demo-textures.js';
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
@@ -43,13 +44,14 @@ export function page(html, lang, status = 200) {
 }
 
 export function font(path) {
-  const found = /^\/font\/px-([a-z]{2})\.ttf$/.exec(path);
-  const one = found && Object.hasOwn(FONTS, found[1]) ? FONTS[found[1]] : null;
+  const found = /^\/font\/(px|ui)-([a-z]{2})\.(ttf|woff)$/.exec(path);
+  const set = found && (found[1] === 'px' ? found[3] === 'ttf' && FONTS : found[3] === 'woff' && UI_FONTS);
+  const one = set && Object.hasOwn(set, found[2]) ? set[found[2]] : null;
   if (!one) return refuse('not found', 404);
   return new Response(base64Bytes(one.data), {
     status: 200,
     headers: {
-      'content-type': 'font/ttf',
+      'content-type': found[3] === 'woff' ? 'font/woff' : 'font/ttf',
       'cache-control': 'public, max-age=31536000, immutable',
       'x-content-type-options': 'nosniff',
     },
