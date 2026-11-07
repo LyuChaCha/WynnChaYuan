@@ -1,7 +1,7 @@
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { BRAND, CURSEFORGE, ICON, ISSUES, KOFI, LEAF, RELEASES, REPO } from './site-constants.js';
 import { LANGS, LANG_NAMES, tagOf } from './site-strings.js';
-import { FONT_CSS, STYLE, TEX_CSS } from './site-styles.js';
+import { FONT_CSS, STYLE, TEX_CSS, uiFontFace } from './site-styles.js';
 import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
 const COMMON = String.raw`
@@ -645,7 +645,7 @@ export function layout(lang, title, active, body, script) {
     + '<meta property="og:description" content="%%meta.desc%%">\n'
     + '<meta property="og:image" content="https://wynnchayuan.com/icon-192.png">\n'
     + '<meta name="twitter:card" content="summary">\n'
-    + '<title>' + title + '</title>\n<style>' + STYLE + FONT_CSS + TEX_CSS + '</style>\n</head>\n<body>\n'
+    + '<title>' + title + '</title>\n<style>' + STYLE + uiFontFace(lang) + FONT_CSS + TEX_CSS + '</style>\n</head>\n<body>\n'
     + '<a class="skip" href="#main">%%skip%%</a>'
     + header(lang, active)
     + '\n<main id="main">' + body + '</main>\n'
