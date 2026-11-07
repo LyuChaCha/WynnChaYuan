@@ -126,9 +126,13 @@ final class ToolsTab {
         if (github()) {
             screen.say(T.s("status.fetching"), Ui.TEXT_3);
             fetching = true;
+            Minecraft client = Minecraft.getInstance();
+            TranslationUpdate.started(client);
             ModNetwork.resyncTranslations(result -> {
                 fetching = false;
-                report(result, WynnChaYuan.translations().size() > 0);
+                boolean ok = !result.failed() && result.strings() > 0;
+                screen.say((ok ? "✔ " : "✘ ") + result.summary(), ok ? Ui.GREEN : Ui.RED);
+                TranslationUpdate.finished(client, result);
             });
             return;
         }
