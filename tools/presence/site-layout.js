@@ -1,5 +1,5 @@
 import { CAPE_TEMPLATES } from './cape-templates.js';
-import { CURSEFORGE, ICON, ISSUES, KOFI, LEAF, RELEASES, REPO } from './site-constants.js';
+import { BRAND, CURSEFORGE, ICON, ISSUES, KOFI, LEAF, RELEASES, REPO } from './site-constants.js';
 import { LANGS, LANG_NAMES, tagOf } from './site-strings.js';
 import { FONT_CSS, STYLE, TEX_CSS } from './site-styles.js';
 import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
@@ -510,7 +510,7 @@ export const ACCOUNT_ITEMS = [
   { key: 'admin', href: '/admin', label: 'nav.admin', icon: 'admin', role: 'staff' },
 ];
 
-const DOWNLOADS = [['GitHub Releases', RELEASES], ['CurseForge', CURSEFORGE]];
+const DOWNLOADS = [['GitHub Releases', RELEASES, 'branch'], ['CurseForge', CURSEFORGE, 'box']];
 
 const gate = (item) => (item && item.role ? ' data-need="' + item.role + '" hidden' : '');
 
@@ -581,17 +581,17 @@ function accountLinks(active, menu) {
 function header(lang, active) {
   const mine = ACCOUNT_ITEMS.some((item) => item.href === active);
   const avatar = '<img class="hn-ava" alt="" hidden><span class="hn-ava hn-ava-fb">' + ICON.user + '</span>';
-  const downloads = DOWNLOADS.map(([name, href]) => '<a href="' + href + '" role="menuitem">' + name + ICON.out + '</a>').join('');
+  const downloads = DOWNLOADS.map(([name, href, icon]) => '<a href="' + href + '" role="menuitem">' + ICON[icon] + '<span>' + name + '</span>' + ICON.out + '</a>').join('');
   return '<div class="top"><canvas class="hn-leaves" id="hn-leaves" aria-hidden="true"></canvas><div class="in">'
-    + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
+    + '<a class="brand" href="/">' + BRAND('hb') + 'WynnChaYuan</a>'
     + '<nav class="hn" id="hn" aria-label="%%nav.label%%">' + navMarkup(active) + '</nav>'
     + '<div class="tools">'
-    + '<a class="hn-icon hn-heart hn-tip" href="' + KOFI + '" aria-label="%%foot.kofi%%" data-tip="%%top.sponsor%%">' + ICON.heart + '</a>'
+    + '<a class="hn-icon hn-heart hn-tip" href="' + KOFI + '" aria-label="%%foot.kofi%%" data-tip="%%top.sponsor%%">' + ICON.cup + '</a>'
     + '<div class="pop hn-desk"><button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">'
     + ICON.get + '%%top.get%%' + ICON.down + '</button>'
     + '<div class="menu" id="get-menu" role="menu">' + downloads + '<p role="none">%%top.getnote%%</p></div></div>'
     + '<div class="hn-guest hn-desk" id="hn-guest">'
-    + '<a class="btn small hn-signin" href="/account"' + here('/account', active) + '>%%top.signin%%</a>'
+    + '<a class="btn small hn-signin" href="/account"' + here('/account', active) + '>' + ICON.user + '%%top.signin%%</a>'
     + '<div class="pop"><button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="%%lang.label%%" data-tip="%%lang.label%%" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">'
     + ICON.globe + ICON.down + '</button>'
     + '<div class="menu hn-menu hn-narrow" id="hn-globe-menu" role="menu"><div class="hn-langs" role="group" aria-label="%%lang.label%%">'
@@ -614,10 +614,10 @@ function header(lang, active) {
     + '<div class="hn-panel" id="hn-panel">'
     + panelNavMarkup(active)
     + '<div class="hn-psec"><p class="hn-phead">%%top.get%%</p>'
-    + DOWNLOADS.map(([name, href]) => '<a class="hn-plink" href="' + href + '">' + name + ICON.out + '</a>').join('')
+    + DOWNLOADS.map(([name, href, icon]) => '<a class="hn-plink" href="' + href + '">' + ICON[icon] + '<span>' + name + '</span>' + ICON.out + '</a>').join('')
     + '<p class="hn-pnote">%%top.getnote%%</p></div>'
     + '<div class="hn-psec"><p class="hn-phead">%%nav.account%%</p>'
-    + '<div id="hn-p-guest"><a class="btn small hn-psignin" href="/account"' + here('/account', active) + '>%%top.signin%%</a></div>'
+    + '<div id="hn-p-guest"><a class="btn small hn-psignin" href="/account"' + here('/account', active) + '>' + ICON.user + '%%top.signin%%</a></div>'
     + '<div class="hn-pgrid" id="hn-p-user" hidden><p class="hn-pme">' + avatar + '<span data-me-name></span></p>'
     + accountLinks(active, false)
     + '<button class="hn-plink" type="button" data-signout><span>%%top.signout%%</span>' + ICON.exit + '</button></div></div>'
@@ -650,7 +650,7 @@ export function layout(lang, title, active, body, script) {
     + header(lang, active)
     + '\n<main id="main">' + body + '</main>\n'
     + '<footer><div class="in"><div class="foot">'
-    + '<div class="foot-brand"><a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
+    + '<div class="foot-brand"><a class="brand" href="/">' + BRAND('fb') + 'WynnChaYuan</a>'
     + '<p>%%foot.tagline%%</p></div>'
     + '<div class="foot-cols" role="navigation" aria-label="%%foot.label%%">'
     + column('foot.get', [to(RELEASES, 'GitHub Releases'), to(CURSEFORGE, 'CurseForge'),

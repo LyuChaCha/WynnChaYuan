@@ -778,8 +778,8 @@ r = await inLang('/account?lang=klingon', { cookie: 'lang=en' });
 check('?lang= 亂填的不理', (await r.text()).includes('<html lang="en">'));
 
 check('首頁有下載的連結：主要按鈕是 GitHub Releases、其次 CurseForge',
-  /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest">從 GitHub 下載<\/a>/.test(pages['/'])
-  && /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest">Download on GitHub<\/a>/.test(english['/'])
+  /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest"><svg [^]*?<\/svg>從 GitHub 下載<\/a>/.test(pages['/'])
+  && /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest"><svg [^]*?<\/svg>Download on GitHub<\/a>/.test(english['/'])
   && pages['/'].includes('https://www.curseforge.com/minecraft/mc-mods/wynnchayuan'));
 check('★ 沒有任何一頁連到我們在 Modrinth 的專案頁（2026-10 起不在 Modrinth 上架）',
   PATHS.every((path) => !pages[path].includes('modrinth.com/mod/wynnchayuan') && !english[path].includes('modrinth.com/mod/wynnchayuan')));
@@ -1185,10 +1185,10 @@ check('★ 選單多了「功能」', pages['/'].includes('<a class="hn-link" hr
   check('★ 贊助是一顆只有愛心的按鈕：有說明給螢幕閱讀器、滑過浮出「贊助」', zhTop.includes('<a class="hn-icon hn-heart hn-tip" href="https://ko-fi.com/lyuchacha" aria-label="在 Ko-fi 贊助" data-tip="贊助">')
     && top(english['/']).includes('aria-label="Sponsor on Ko-fi" data-tip="Sponsor"'));
   check('★ 下載還是那顆綠色的鈕，GitHub Releases 排第一、CurseForge 其次、沒有 Modrinth', /<button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">/.test(zhTop)
-    && ['GitHub Releases', 'CurseForge'].every((n) => zhTop.includes('role="menuitem">' + n))
-    && zhTop.indexOf('role="menuitem">GitHub Releases') < zhTop.indexOf('role="menuitem">CurseForge')
-    && !zhTop.includes('role="menuitem">Modrinth'));
-  check('★ 沒登入的樣子：登入＋地球（語言），頭像那一塊藏著', /<div class="hn-guest hn-desk" id="hn-guest"><a class="btn small hn-signin" href="\/account">登入<\/a>/.test(zhTop)
+    && ['GitHub Releases', 'CurseForge'].every((n) => new RegExp('role="menuitem"><svg [^]*?</svg><span>' + n + '</span>').test(zhTop))
+    && zhTop.indexOf('<span>GitHub Releases</span>') < zhTop.indexOf('<span>CurseForge</span>')
+    && !zhTop.includes('<span>Modrinth</span>'));
+  check('★ 沒登入的樣子：登入＋地球（語言），頭像那一塊藏著', /<div class="hn-guest hn-desk" id="hn-guest"><a class="btn small hn-signin" href="\/account"><svg [^]*?<\/svg>登入<\/a>/.test(zhTop)
     && zhTop.includes('<button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="語言" data-tip="語言" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">')
     && zhTop.includes('<div class="pop hn-user hn-desk" id="hn-user" hidden>') && zhTop.includes('<div class="hn-pgrid" id="hn-p-user" hidden>')
     && !/id="hn-guest"[^>]*hidden/.test(zhTop) && !/id="hn-p-guest"[^>]*hidden/.test(zhTop));
@@ -1400,6 +1400,16 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       && bytes[0] === 0 && bytes[1] === 1 && bytes[2] === 0 && bytes[3] === 0);
     check('裁出來的字型留著版權與授權（OFL 的要求）', new TextDecoder('utf-16be').decode(bytes).includes('TakWolf')
       || new TextDecoder('latin1').decode(bytes).includes('TakWolf'));
+    {
+      const { UI_FONTS } = await import('./site-fonts.js');
+      const ui = await worker.fetch(new Request('https://x.test/font/ui-tc.woff?v=' + UI_FONTS.tc.v), env);
+      const head = new Uint8Array(await ui.arrayBuffer());
+      check('★ 網站內文字型拿得到：WOFF、可以長期快取，每一頁都宣告了', ui.status === 200 && ui.headers.get('content-type') === 'font/woff'
+        && ui.headers.get('cache-control').includes('immutable') && String.fromCharCode(...head.slice(0, 4)) === 'wOFF'
+        && ['/', '/capes', '/privacy'].every((p) => pages[p].includes('/font/ui-tc.woff?v=' + UI_FONTS.tc.v)));
+      check('內文字型的副檔名要對：px 是 ttf、ui 是 woff', (await worker.fetch(new Request('https://x.test/font/ui-tc.ttf'), env)).status === 404
+        && (await worker.fetch(new Request('https://x.test/font/px-tc.woff'), env)).status === 404);
+    }
     check('沒有這一份的字型：404', (await worker.fetch(new Request('https://x.test/font/px-xx.ttf'), env)).status === 404
       && (await worker.fetch(new Request('https://x.test/font/../worker.js'), env)).status === 404);
   }
