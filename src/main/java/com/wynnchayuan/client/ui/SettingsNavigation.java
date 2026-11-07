@@ -44,7 +44,8 @@ final class SettingsNavigation {
         boolean searching = view.searching();
         float pillY = view.animate("nav", cy + view.tab * (SettingsView.NAV_H + 2), 55f);
         if (!searching) {
-            view.c.round(x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.alpha(view.accent, 0x33));
+            Ui.pane(view.c, x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.RAIL_ON,
+                    Ui.RAIL_ON_EDGE);
         }
         for (int i = 0; i < view.tabs.size(); i++) {
             Row.Tab t = view.tabs.get(i);
@@ -55,7 +56,7 @@ final class SettingsNavigation {
             if (g > 0.01f) {
                 view.c.round(x + 6, ny, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.fade(0x12FFFFFF, g));
             }
-            int ink = on ? view.accent : (hot ? Ui.TEXT : Ui.TEXT_2);
+            int ink = on ? Ui.RAIL_ON_INK : (hot ? Ui.TEXT : Ui.TEXT_2);
             String name = t.name().get();
             if (slim) {
                 view.c.icon(t.icon(), x + (view.railW - 12) / 2f, ny + 4.5f, 12, ink);
@@ -69,7 +70,7 @@ final class SettingsNavigation {
                 float countW = view.c.width(count);
                 String shown = Ui.fit(view.c, name, (int) (view.railW - 12 - 22 - countW - 12));
                 view.c.text(shown, x + 28, ny + 6.5f, ink);
-                view.c.text(count, x + view.railW - 12 - countW, ny + 6.5f, on ? view.accent : Ui.FAINT);
+                view.c.text(count, x + view.railW - 12 - countW, ny + 6.5f, on ? Ui.RAIL_ON_INK : Ui.FAINT);
                 if (hot && !shown.equals(name)) {
                     view.tip = new Surface.Tip(name, x + view.railW, ny - 4, 0, SettingsView.NAV_H);
                     view.hoverRow = "#nav" + i;
@@ -154,8 +155,9 @@ final class SettingsNavigation {
         int dirty = 0;
         for (Row.Group g : view.tabs.get(view.tab).groups()) {
             for (Row r : g.rows()) {
-                if (r.resettable() && !r.isDefault.getAsBoolean()) {
-                    dirty++;
+                dirty += changed(r) ? 1 : 0;
+                for (Row d : r.details) {
+                    dirty += changed(d) ? 1 : 0;
                 }
             }
         }
@@ -184,8 +186,13 @@ final class SettingsNavigation {
             view.closePopovers();
             for (Row.Group grp : view.tabs.get(view.tab).groups()) {
                 for (Row r : grp.rows()) {
-                    if (r.resettable() && !r.isDefault.getAsBoolean()) {
+                    if (changed(r)) {
                         r.reset.run();
+                    }
+                    for (Row d : r.details) {
+                        if (changed(d)) {
+                            d.reset.run();
+                        }
                     }
                 }
             }
@@ -194,16 +201,56 @@ final class SettingsNavigation {
         });
 
         float textRoom = rx - 10 - x;
+        if (!view.sheet && view.railW < SettingsView.RAIL_W) {
+            float sw = Math.min(150, Math.max(70, room * 0.3f));
+            searchField(rx - 6 - sw, ry - 1, sw);
+            textRoom = rx - 6 - sw - 10 - x;
+        }
         String title = searching ? view.host.tr("search.results") : view.tabs.get(view.tab).name().get();
         float s = view.c.scale(1.5f);
         if (view.c.width(title) * s > textRoom) {
             s = 1f;
         }
-        view.c.text(Ui.fit(view.c, title, (int) (textRoom / s)), x, y + 8, Ui.TEXT, s);
+        Ui.gradientText(view.c, Ui.fit(view.c, title, (int) (textRoom / s)), x, y + 8, s,
+                        Ui.TITLE_FROM, Ui.TITLE_TO);
+        float aboutY = y + 8 + 8 * s + 4;
+        if (!searching && view.tabs.get(view.tab).legend()) {
+            legend(x, aboutY, x + textRoom);
+            return;
+        }
         String about = searching
                 ? view.host.tr("search.count", shownCount())
                 : view.tabs.get(view.tab).about().get();
-        view.c.text(Ui.fit(view.c, about, (int) textRoom), x, y + 8 + 8 * s + 4, Ui.TEXT_3);
+        view.c.text(Ui.fit(view.c, about, (int) textRoom), x, aboutY, Ui.TEXT_3);
+    }
+
+    private static final Row.Tone[] LEGEND = {
+        Row.Tone.ACCENT, Row.Tone.REPLACE, Row.Tone.BOTH, Row.Tone.OFF};
+    private static final String[] LEGEND_KEYS = {
+        "legend.box", "legend.replace", "legend.both", "legend.off"};
+
+    private void legend(float x, float y, float right) {
+        float at = x;
+        for (int i = 0; i < LEGEND.length; i++) {
+            String label = view.host.tr(LEGEND_KEYS[i]);
+            float w = 11 + view.c.width(label);
+            if (at + w > right) {
+                return;
+            }
+            Row.Tone tone = LEGEND[i];
+            int light = tone == Row.Tone.OFF ? Ui.MODE_OFF : view.host.tone(tone);
+            if (tone == Row.Tone.OFF) {
+                view.c.ring(at, y + 1, 7, 7, 3.5f, view.c.px(), light);
+            } else {
+                view.c.round(at, y + 1, 7, 7, 3.5f, light);
+            }
+            view.c.text(label, at + 10, y, Ui.TEXT_2);
+            at += w + 10;
+        }
+    }
+
+    private static boolean changed(Row r) {
+        return r.resettable() && !r.isDefault.getAsBoolean();
     }
 
     private int shownCount() {
@@ -214,6 +261,9 @@ final class SettingsNavigation {
                 for (Row r : g.rows()) {
                     if (SettingsView.matches(r, query)) {
                         n++;
+                    }
+                    for (Row d : r.details) {
+                        n += SettingsView.matches(d, query) ? 1 : 0;
                     }
                 }
             }

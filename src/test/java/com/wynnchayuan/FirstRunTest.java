@@ -42,8 +42,10 @@ public final class FirstRunTest {
 
     private static void freshInstall() throws Exception {
         ModConfig c = fresh();
-        check("新安裝：物品翻譯預設關閉", c.tooltipMode() == ModConfig.TooltipMode.OFF);
+        check("新安裝：物品說明框預設就地取代", c.tooltipMode() == ModConfig.TooltipMode.REPLACE);
         check("新安裝：物品名稱維持原文", c.itemNames() == ModConfig.ItemNames.OFF);
+        check("新安裝：名牌注視時小框", c.nametagMode() == ModConfig.NametagMode.LOOK_AT);
+        check("新安裝：技能名稱附原文", c.abilityNamesOriginal());
         check("新安裝：還沒回答同意、還沒選設定，首次啟動畫面要跳",
                 c.consent() == ModConfig.Consent.UNKNOWN && !c.setupDone()
                         && c.needsFirstRun() && !c.existedBefore());
@@ -58,7 +60,8 @@ public final class FirstRunTest {
                 c.trackerMode().name(), String.valueOf(c.translateScoreboard()),
                 String.valueOf(c.translateObjectives()), String.valueOf(c.translateTitles()),
                 String.valueOf(c.translateBossBar()), String.valueOf(c.translateHeldItem()),
-                String.valueOf(c.wynntilsUi()), String.valueOf(c.showOverlays())));
+                String.valueOf(c.wynntilsUi()), String.valueOf(c.showOverlays()),
+                String.valueOf(c.abilityNamesOriginal())));
     }
 
     private static void recommendedPreset() throws Exception {
@@ -76,10 +79,10 @@ public final class FirstRunTest {
                 c.dialogueMode() == ModConfig.DialogueMode.REPLACE
                         && c.choiceMode() == ModConfig.DialogueMode.REPLACE);
         check("推薦設定：聊天原文加譯文", c.chatMode() == ModConfig.ChatMode.BOTH);
-        check("推薦設定：名牌就地取代", c.nametagMode() == ModConfig.NametagMode.REPLACE);
-        check("推薦設定：物品翻譯關閉、物品名稱原文",
-                c.tooltipMode() == ModConfig.TooltipMode.OFF
-                        && c.itemNames() == ModConfig.ItemNames.OFF);
+        check("推薦設定：名牌注視時小框", c.nametagMode() == ModConfig.NametagMode.LOOK_AT);
+        check("推薦設定：物品說明框就地取代、物品名稱原文、技能名稱附原文",
+                c.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && c.itemNames() == ModConfig.ItemNames.OFF && c.abilityNamesOriginal());
         check("推薦設定：追蹤欄就地取代、記分板與目標翻譯",
                 c.trackerMode() == ModConfig.DialogueMode.REPLACE
                         && c.translateScoreboard() && c.translateObjectives());
@@ -93,8 +96,8 @@ public final class FirstRunTest {
         ModConfig custom = fresh();
         custom.setDialogueModes(ModConfig.DialogueMode.PANEL);
         custom.setChatMode(ModConfig.ChatMode.OFF);
-        custom.setNametagMode(ModConfig.NametagMode.LOOK_AT);
-        custom.setTooltipMode(ModConfig.TooltipMode.REPLACE);
+        custom.setNametagMode(ModConfig.NametagMode.REPLACE);
+        custom.setTooltipMode(ModConfig.TooltipMode.PANEL);
         custom.setItemNames(ModConfig.ItemNames.BOTH);
         custom.setTrackerMode(ModConfig.DialogueMode.OFF);
         custom.setTranslateScoreboard(false);
@@ -105,8 +108,8 @@ public final class FirstRunTest {
                 custom.dialogueMode() == ModConfig.DialogueMode.PANEL
                         && custom.choiceMode() == ModConfig.DialogueMode.PANEL
                         && custom.chatMode() == ModConfig.ChatMode.OFF
-                        && custom.nametagMode() == ModConfig.NametagMode.LOOK_AT
-                        && custom.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && custom.nametagMode() == ModConfig.NametagMode.REPLACE
+                        && custom.tooltipMode() == ModConfig.TooltipMode.PANEL
                         && custom.itemNames() == ModConfig.ItemNames.BOTH
                         && custom.trackerMode() == ModConfig.DialogueMode.OFF
                         && !custom.translateScoreboard() && !custom.translateTitles()

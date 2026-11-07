@@ -38,7 +38,7 @@ final class ToolsTab {
         return SettingsScreen.cfg().source() == ModConfig.Source.GITHUB;
     }
 
-    List<Row> tools() {
+    List<Row> source() {
         List<Row> rows = new ArrayList<>();
         rows.add(Row.segment("data.source", SettingsScreen.t("data.source"), SettingsScreen.t("data.source.hint"))
                 .option(T.s("data.source.github"), Row.Tone.PLAIN)
@@ -64,6 +64,11 @@ final class ToolsTab {
                     default -> Ui.TEXT_2;
                 })
                 .run(this::recheckVersion));
+        return rows;
+    }
+
+    List<Row> report() {
+        List<Row> rows = new ArrayList<>();
         rows.add(Row.action("data.export", SettingsScreen.t("data.export"), SettingsScreen.t("data.export.hint"))
                 .label(SettingsScreen.t("data.export.button"))
                 .run(this::exportCorpus));

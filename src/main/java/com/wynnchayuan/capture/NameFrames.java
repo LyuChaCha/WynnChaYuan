@@ -123,6 +123,23 @@ public final class NameFrames {
         return null;
     }
 
+    public boolean framesName(String template) {
+        if (template == null || size == 0) {
+            return false;
+        }
+        for (String row : template.split("\n")) {
+            String core = core(row);
+            for (Frame frame : candidates(core)) {
+                String slot = core.substring(frame.head().length(),
+                                             core.length() - frame.tail().length());
+                if (nameLike(slot.replace(GlyphSplitter.NUMBER_PLACEHOLDER, "0"))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     private List<Frame> candidates(String core) {
         List<Frame> out = new ArrayList<>(2);
         if (core.isEmpty() || core.length() > MAX_TEMPLATE) {

@@ -18,19 +18,15 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.components.toasts.SystemToast;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.sounds.SoundEvents;
 
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -56,13 +52,13 @@ public final class PanelShot {
     private PanelShot() {}
 
     private static void log(String stage) {
+        ModConfig config = WynnChaYuan.config();
+        if (config == null || !config.debugDumps()) {
+            return;
+        }
         try {
-            Path dir = ConfigFolder.debugDir(FabricLoader.getInstance()
-                            .getConfigDir().resolve(WynnChaYuan.MOD_ID));
-            Files.writeString(dir.resolve("shot-debug.txt"),
-                    LocalTime.now().withNano(0) + "  " + stage
-                            + System.lineSeparator(),
-                    StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            ShotLog.write(ConfigFolder.debugDir(FabricLoader.getInstance()
+                    .getConfigDir().resolve(WynnChaYuan.MOD_ID)), config, stage);
         } catch (Throwable t) {
             ErrorDebug.note("PanelShot#log", null, t);
         }
@@ -144,8 +140,6 @@ public final class PanelShot {
                                     log("畫面鍵盤事件（前置）：收到截圖鍵（"
                                             + screen.getClass().getSimpleName() + "）");
                                     request();
-                                } else {
-                                    noteOtherKey(screen, keyEvent);
                                 }
                             });
                     ScreenKeyboardEvents.afterKeyPress(screen).register((s, keyEvent) -> {
@@ -158,19 +152,6 @@ public final class PanelShot {
                 });
         log("listen：已掛上畫面鍵盤事件（前置與後置）");
     }
-
-    private static void noteOtherKey(Screen screen, Object keyEvent) {
-        if (keyLogged >= KEY_LOG_LIMIT) {
-            return;
-        }
-        keyLogged++;
-        log("畫面鍵盤事件：收到別的鍵（" + keyEvent + "）於 "
-                + screen.getClass().getSimpleName() + "，截圖鍵是 " + keyName());
-    }
-
-    private static final int KEY_LOG_LIMIT = 20;
-
-    private static int keyLogged = 0;
 
     public static void tick() {
         if (!pending) {

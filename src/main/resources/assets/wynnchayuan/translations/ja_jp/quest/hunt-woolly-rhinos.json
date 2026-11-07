@@ -1,0 +1,87 @@
+{
+ "_meta": {
+  "quest": "Hunt Woolly Rhinos",
+  "count": 7,
+  "translated": 7,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Hunt Woolly Rhinos#001": {
+   "src": "Request from the Customs Clerk: To whomever it may concern, there has recently been an increase in damaged goods from outside the Capital. When questioned, various artisans admit having been attacked by ferocious beasts.",
+   "dst": "税関係員からの依頼：関係各位へ。最近、首都圏外からの破損品が増加しています。事情を聴いたところ、複数の職人が猛獣に襲われたことを認めています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "Request from the Customs Clerk:は太字"
+  },
+  "Hunt Woolly Rhinos#002": {
+   "src": "Woolly Rhinos seem to match the description, and they are indeed creatures not to be tempered with. I am unsure what causes them such unrest. Perhaps they feel a change in the environment, but it matters not.",
+   "dst": "Woolly Rhino は、その特徴に合致しているようだが、確かに手を出してはならない生き物だ。何が彼らをそれほど落ち着かない状態にさせているのかは分からない。おそらく環境の変化を感じ取っているのだろうが、それはどうでもいいことだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  },
+  "Hunt Woolly Rhinos#003": {
+   "src": "What matters is that more and more goods are being damaged, causing delays in the monitoring of what goes in and out of the Capital. If someone could hunt at least {~} Woolly Rhinos, it would be of assistance to us all.",
+   "dst": "重要なのは、破損する品物が増え続けており、それによって首都への出入りの監視に遅れが生じているという点です。もし誰かが少なくとも{c2}{~}頭{/}の{c2} Woolly Rhino {/}を狩ってくれれば、私たち全員にとって大きな助けとなるでしょう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}{~} Woolly Rhinos{/}"
+  },
+  "Hunt Woolly Rhinos#004": {
+   "src": "There are reports of two of them having been spotted nearby House Thalas and House Nasin. I have set up a carriage next to this board if you wish to go there.",
+   "dst": "{c2}Thalas 邸と Nasin 邸{/}の近くで、そのうちの2体が目撃されたという報告があります。そこへ行きたい方は、この掲示板の隣に{c2}馬車{/}を用意しておきましたので、ご利用ください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}House Thalas and House Nasin{/}, {c2}carriage{/}"
+  },
+  "Hunt Woolly Rhinos#005": {
+   "src": "Additionally, a friend of mine has also seen one to the north of {p}, quite close to the town itself. Please return to this post once you are done. As mentioned, they are very resilient. Be sure to brace yourself.",
+   "dst": "さらに、私の友人も{c2}{p}の北側{/}、町からかなり近い場所で1匹を目撃しています。作業が終わったら、この{c2}掲示板に戻ってきて{/}ください。前述の通り、彼らは非常にタフです。しっかり身構えておいてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}north of {p}{/}, {c2}return to this post{/}"
+  },
+  "Hunt Woolly Rhinos#006": {
+   "src": "You've hunted enough of those beasts. You should return to the Slaying Post to collect your reward.",
+   "dst": "もう十分あの獣を狩った。{c2}討伐掲示板に戻って{/}報酬を受け取ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}return to the Slaying Post{/}"
+  },
+  "Hunt Woolly Rhinos#007": {
+   "src": "Return to the Slaying Post at [-{~}, {~}, -{~}] to collect your reward.",
+   "dst": "[-{~}, {~}, -{~}]の討伐掲示板に戻って報酬を受け取る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  }
+ }
+}

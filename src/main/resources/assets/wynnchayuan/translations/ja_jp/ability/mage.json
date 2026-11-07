@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "Arcane Transfer でマナを {~} 以上移すと、\n近くの敵にダメージを与える。",
+   "dst": "{c1}Arcane Transfer{c2} でマナを {c3}{~} 以上{c2}移すと、\n近くの敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "Heal が強い光を放ち、\n近くの敵にダメージを与える。",
+   "dst": "{c1}Heal{c2} が強い光を放ち、\n近くの敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -796,7 +796,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "Heal と Arcane Transfer が\n味方の悪い効果と炎をすべて浄化する。",
+   "dst": "{c1}Heal{c2} と {c1}Arcane Transfer{c2} が\n味方の悪い効果と炎をすべて浄化する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1499,7 +1499,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "Ophanim のオーブの体力が +{~} 上がり、\n攻撃時に受けるダメージが\n-{~} 減る。",
+   "dst": "{c2}Ophanim{c1} のオーブの体力が {c3}+{~}{c1} 上がり、\n攻撃時に受けるダメージが\n{c3}-{~}{c1} 減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "Ophanim のオーブの\n最大数が +{~} 増える。",
+   "dst": "{c2}Ophanim{c1} のオーブの\n最大数が {c3}+{~}{c1} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "Sunshower のダメージが上がる。",
+   "dst": "{c2}Sunshower{c1} のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "Ophanim のオーブの最大数が\n+{~} 増えるが、\nダメージは下がる。",
+   "dst": "{c2}Ophanim{c1} のオーブの最大数が\n{c3}+{~}{c1} 増えるが、\nダメージは下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "Meteor の速度が2倍になり、ダメージが上がる。",
+   "dst": "{c2}Meteor{c1} の速度が2倍になり、ダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "Meteor Shower が隕石を +{~} 速く呼び出す。",
+   "dst": "{c1}Meteor Shower{c2} が隕石を {c3}+{~}{c2} 速く呼び出す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "スニーク中に Heal を使うと Dimensional Tear に\n自分を結びつけ、Riftbound になる。",
+   "dst": "{c1}スニーク中に {c2}Heal{c1} を使うと {c2}Dimensional Tear{c1} に\n自分を結びつけ、{c2}Riftbound{c1} になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "Lightweaver のオーブの\n最大数が +{~} 増える。",
+   "dst": "{c2}Lightweaver{c1} のオーブの\n最大数が {c3}+{~}{c1} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "Dimensional Tear が開いている間、\nRiftspawn が棲みつく。",
+   "dst": "{c1}Dimensional Tear{c2} が開いている間、\n{c3}Riftspawn{c2} が棲みつく。",
    "role": "desc",
    "kind": "block",
    "ctx": [

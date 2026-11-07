@@ -9,7 +9,7 @@ import java.util.function.ToIntFunction;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-final class TextWrapper {
+public final class TextWrapper {
 
     private static final char NEWLINE = '\n';
 
@@ -210,7 +210,7 @@ final class TextWrapper {
         return n;
     }
 
-    static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure) {
+    public static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure) {
         return wrapToWidth(text, maxPx, measure, Keep.NOTE);
     }
 

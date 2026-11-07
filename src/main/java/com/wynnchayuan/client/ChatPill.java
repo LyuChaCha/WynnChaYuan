@@ -1,6 +1,7 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
@@ -32,7 +33,7 @@ public final class ChatPill {
 
     static final int WIDTH = INNER + EDGE_WIDTH + GAP;
 
-    private static final int[] STOPS = {0x3A9F4C, 0x5FC063, 0xA2DF86};
+    private static final int[] STOPS = Ui.LEAF_STOPS;
 
     private static final int INK = 0x0C1A10;
 

@@ -1,6 +1,6 @@
 # 校稿清單
 
-**待校稿 38 個檔、13,046 句。** 已校稿 0 個。
+**待校稿 38 個檔、13,171 句。** 已校稿 0 個。
 
 > 這份清單是**產生物**，跑 `python tools/proofread.py` 重產。不要手改。
 
@@ -32,9 +32,9 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
 | Echoes of Change | 763 | [`echoes-of-change.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/echoes-of-change.json) |
-| Ensemble of Hope | 726 | [`ensemble-of-hope.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ensemble-of-hope.json) |
+| Ensemble of Hope | 754 | [`ensemble-of-hope.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ensemble-of-hope.json) |
+| The Strong Survive | 740 | [`the-strong-survive.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-strong-survive.json) |
 | Overture to Despair | 688 | [`overture-to-despair.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/overture-to-despair.json) |
-| The Strong Survive | 643 | [`the-strong-survive.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-strong-survive.json) |
 | Celebrations in Smoke | 639 | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/celebrations-in-smoke.json) |
 | Aldorei's Secret Part II | 636 | [`aldorei-s-secret-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-ii.json) |
 | Apotheosis (Quest) | 616 | [`apotheosis-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/apotheosis-quest.json) |
@@ -85,11 +85,11 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（183 個檔）</summary>
+<details><summary>展開（186 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
-| misc.json | 16,806 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
+| misc.json | 16,864 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
 | npc.json | 9,990 | [`npc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/npc.json) |
 | gear-weapon.json | 2,805 | [`gear-weapon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-weapon.json) |
 | gear-armour.json | 2,484 | [`gear-armour.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-armour.json) |
@@ -97,19 +97,19 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | quest.json | 1,699 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
 | gui.json | 1,247 | [`gui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gui.json) |
 | gear-accessory.json | 1,149 | [`gear-accessory.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-accessory.json) |
-| secret-dialogue.json | 1,037 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
+| secret-dialogue.json | 1,051 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
 | ingredient.json | 975 | [`ingredient.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ingredient.json) |
 | Off the Rails | 934 | [`off-the-rails.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/off-the-rails.json) |
 | label.json | 807 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/label.json) |
 | The Price of Ingenuity | 785 | [`the-price-of-ingenuity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-price-of-ingenuity.json) |
 | Queen's Recruit | 715 | [`queen-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/queen-s-recruit.json) |
+| cosmetics.json | 639 | [`cosmetics.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/cosmetics.json) |
 | The Missing Piece | 617 | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-missing-piece.json) |
-| cosmetics.json | 582 | [`cosmetics.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/cosmetics.json) |
+| dialogue-choice.json | 536 | [`dialogue-choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dialogue-choice.json) |
 | discovery.json | 531 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
-| dialogue-choice.json | 469 | [`dialogue-choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dialogue-choice.json) |
 | A New Beginning | 372 | [`a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-new-beginning.json) |
 | major-id.json | 331 | [`major-id.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/major-id.json) |
-| ui-labels.json | 309 | [`ui-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ui-labels.json) |
+| ui-labels.json | 311 | [`ui-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ui-labels.json) |
 | Recover the Past | 308 | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) |
 | discovery-name.json | 306 | [`discovery-name.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery-name.json) |
 | shaman.json | 295 | [`shaman.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shaman.json) |
@@ -259,11 +259,14 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Cluck Cluck | 15 | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cluck-cluck.json) |
 | archetype.json | 15 | [`archetype.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/archetype.json) |
 | Light and Shadow | 15 | [`light-and-shadow.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/light-and-shadow.json) |
+| Buried Records | 14 | [`buried-records.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/buried-records.json) |
 | profession-terms.json | 12 | [`profession-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/profession-terms.json) |
 | Hidden In Plain Sight | 12 | [`hidden-in-plain-sight.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/hidden-in-plain-sight.json) |
 | Pit of the Dead (Quest) | 11 | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) |
+| Collect White Lilies | 9 | [`collect-white-lilies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/collect-white-lilies.json) |
 | Lost Tower | 9 | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-tower.json) |
 | A Wynnic Excavation | 9 | [`a-wynnic-excavation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/a-wynnic-excavation.json) |
+| Hunt Woolly Rhinos | 7 | [`hunt-woolly-rhinos.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunt-woolly-rhinos.json) |
 | charm.json | 5 | [`charm.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/charm.json) |
 | Ruler of the Skies | 5 | [`ruler-of-the-skies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/ruler-of-the-skies.json) |
 | The Final Moments | 4 | [`the-final-moments.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/the-final-moments.json) |

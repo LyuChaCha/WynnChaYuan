@@ -42,6 +42,78 @@ final class GuiCanvas implements Canvas {
                 : Minecraft.getInstance().getLanguageManager().getSelected());
     }
 
+    private static final Map<String, int[]> TEXTURES = new HashMap<>();
+    private static final Map<String, Identifier> FOUND = new HashMap<>();
+
+    static void forgetTextures() {
+        TEXTURES.clear();
+        FOUND.clear();
+    }
+
+    private static int[] texture(String id) {
+        int[] known = TEXTURES.get(id);
+        if (known != null) {
+            return known;
+        }
+        int[] size = {0, 0};
+        Identifier at = Identifier.tryParse(id);
+        if (at != null) {
+            try (InputStream in = Minecraft.getInstance().getResourceManager().open(at)) {
+                byte[] head = in.readNBytes(24);
+                if (head.length == 24 && head[12] == 'I' && head[13] == 'H' && head[14] == 'D'
+                        && head[15] == 'R') {
+                    size[0] = readInt(head, 16);
+                    size[1] = readInt(head, 20);
+                    FOUND.put(id, at);
+                }
+            } catch (Exception missing) {
+                size[0] = 0;
+                size[1] = 0;
+            }
+        }
+        TEXTURES.put(id, size);
+        return size;
+    }
+
+    private static int readInt(byte[] b, int at) {
+        return ((b[at] & 0xFF) << 24) | ((b[at + 1] & 0xFF) << 16) | ((b[at + 2] & 0xFF) << 8)
+                | (b[at + 3] & 0xFF);
+    }
+
+    @Override
+    public int textureWidth(String id) {
+        return texture(id)[0];
+    }
+
+    @Override
+    public int textureHeight(String id) {
+        return texture(id)[1];
+    }
+
+    @Override
+    public void image(String id, float x, float y, float w, float h, float u, float v, float uw,
+                      float vh, int argb) {
+        int[] size = texture(id);
+        Identifier at = FOUND.get(id);
+        if (at == null || size[0] <= 0 || size[1] <= 0) {
+            return;
+        }
+        int ax = p(x);
+        int ay = p(y);
+        int pw = p(x + w) - ax;
+        int ph = p(y + h) - ay;
+        if (pw <= 0 || ph <= 0) {
+            return;
+        }
+        if (argb == 0xFFFFFFFF) {
+            g.blit(at, ax, ay, ax + pw, ay + ph, u / size[0], (u + uw) / size[0], v / size[1],
+                   (v + vh) / size[1]);
+            return;
+        }
+        g.blit(RenderPipelines.GUI_TEXTURED, at, ax, ay, u, v, pw, ph,
+               Math.round(uw), Math.round(vh), size[0], size[1], argb);
+    }
+
     private static final int[] DOTS = {2, 3, 4, 6};
     private static final Map<String, Style> STYLES = new HashMap<>();
 
@@ -303,6 +375,126 @@ final class GuiCanvas implements Canvas {
             ErrorDebug.note("GuiCanvas#shrunkLogo", null, e);
             return ICON;
         }
+    }
+
+    private static final Map<String, Style> SCENE_FONTS = new HashMap<>();
+
+    private Style sceneFont(boolean dialogue) {
+        if (!dialogue) {
+            return Style.EMPTY;
+        }
+        String lang = family(WynnChaYuan.language());
+        if ("latin".equals(lang)) {
+            return Style.EMPTY;
+        }
+        return SCENE_FONTS.computeIfAbsent(lang, k -> Style.EMPTY.withFont(
+                new FontDescription.Resource(Identifier.fromNamespaceAndPath(
+                        WynnChaYuan.MOD_ID, "preview/" + k))));
+    }
+
+    @Override
+    public void gameText(String text, float x, float y, int argb, float k, boolean dialogue,
+                         boolean shadow) {
+        if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
+            return;
+        }
+        float dots = Ui.gameDots(scale, k);
+        g.pose().pushMatrix();
+        g.pose().translate(p(x), p(y));
+        g.pose().scale(dots, dots);
+        g.drawString(font, Component.literal(text).withStyle(sceneFont(dialogue)), 0, 0, argb,
+                     shadow);
+        g.pose().popMatrix();
+    }
+
+    @Override
+    public float gameWidth(String text, boolean dialogue) {
+        return text == null || text.isEmpty() ? 0
+                : font.width(Component.literal(text).withStyle(sceneFont(dialogue)));
+    }
+
+    private static final Map<String, Identifier> GRADIENTS = new HashMap<>();
+    private static final int GRADIENT_CAP = 160;
+
+    private static Identifier gradient(String key, int w, int h, MaskSource source) {
+        Identifier id = GRADIENTS.get(key);
+        if (id != null) {
+            return id;
+        }
+        if (GRADIENTS.size() >= GRADIENT_CAP) {
+            for (Identifier old : GRADIENTS.values()) {
+                Minecraft.getInstance().getTextureManager().release(old);
+            }
+            GRADIENTS.clear();
+        }
+        byte[] cover = source.get();
+        NativeImage image = new NativeImage(w, h, false);
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                image.setPixel(x, y, ((cover[y * w + x] & 0xFF) << 24) | 0xFFFFFF);
+            }
+        }
+        id = register(key, image);
+        GRADIENTS.put(key, id);
+        return id;
+    }
+
+    @Override
+    public void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        fadeRound(x, y, w, h, 0, argb, from, to);
+    }
+
+    @Override
+    public void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                          float to) {
+        int ax = p(x);
+        int ay = p(y);
+        int pw = p(x + w) - ax;
+        int ph = p(y + h) - ay;
+        int alpha = argb >>> 24;
+        if (pw <= 0 || ph <= 0 || alpha == 0) {
+            return;
+        }
+        int a = Math.round(Math.max(0f, Math.min(1f, from)) * 255);
+        int b = Math.round(Math.max(0f, Math.min(1f, to)) * 255);
+        int rr = Math.max(0, Math.min(p(r), Math.min(pw, ph) / 2));
+        int bucket = alpha >= 0x80 ? 1 : alpha >= 0x40 ? 2 : 4;
+        String key = "f" + pw + "x" + ph + "r" + rr + "/" + a + "/" + b + "/" + bucket;
+        Identifier tex = gradient(key, pw, ph,
+                () -> Ui.fadeMask(pw, ph, rr, a, b, Ui.DITHER * bucket));
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, ax, ay, 0f, 0f, pw, ph, pw, ph, argb);
+    }
+
+    @Override
+    public void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                     float ry, float r, int argb) {
+        int left = Math.max(p(x0), p(cx - rx));
+        int top = Math.max(p(y0), p(cy - ry));
+        int right = Math.min(p(x1), p(cx + rx));
+        int bottom = Math.min(p(y1), p(cy + ry));
+        int pw = right - left;
+        int ph = bottom - top;
+        if (pw <= 0 || ph <= 0 || (argb >>> 24) == 0) {
+            return;
+        }
+        float ox = p(cx) - left;
+        float oy = p(cy) - top;
+        float sx = rx * scale;
+        float sy = ry * scale;
+        int corner = p(r);
+        int fx = left - p(x0);
+        int fy = top - p(y0);
+        int fw = p(x1) - p(x0);
+        int fh = p(y1) - p(y0);
+        int peak = argb >>> 24;
+        String key = "g" + pw + "x" + ph + "@" + Math.round(ox) + "," + Math.round(oy) + "/"
+                + Math.round(sx) + "," + Math.round(sy) + "/" + fx + "," + fy + "," + fw + ","
+                + fh + "/" + corner + "/" + peak;
+        Identifier tex = gradient(key, pw, ph,
+                () -> Ui.glowMask(pw, ph, ox, oy, sx, sy, fx, fy, fw, fh, corner, peak,
+                                  Ui.DITHER));
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, left, top, 0f, 0f, pw, ph, pw, ph,
+               argb | 0xFF000000);
     }
 
     @Override
