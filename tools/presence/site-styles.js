@@ -156,8 +156,6 @@ export const STYLE = String.raw`
   .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
   h1 + .lede { margin-top: 10px; }
   .lede:lang(zh), .lede:lang(ja), .lede:lang(ko) { max-width: 40em; }
-  #main:has(> .play) > h1 { line-height: inherit; }
-  #main:has(> .play) > .lede { margin-top: 6px; max-width: 62ch; }
   .policy { max-width: 72ch; line-height: 1.75; }
   .policy-date { margin: 8px 0 28px; color: var(--ink-2); font-size: 13px; }
   .policy h2 { margin: 36px 0 10px; font-size: 17px; }
@@ -572,7 +570,7 @@ export const STYLE = String.raw`
   .spec-nav a { padding: 5px 10px; border-radius: 8px; color: var(--ink-2); transition: color var(--fast) ease, background-color var(--fast) ease; }
   .spec-nav a[aria-current="true"] { color: var(--ink); background: var(--panel-2); }
   .spec section + section { margin-top: 48px; }
-  .spec h2 { margin: 0 0 12px; font-size: 19px; line-height: inherit; letter-spacing: normal; }
+  .spec h2 { margin: 0 0 12px; }
   .spec .note { margin: 14px 0 0; max-width: 68ch; }
   .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
