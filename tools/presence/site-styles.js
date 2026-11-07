@@ -680,7 +680,7 @@ export const STYLE = String.raw`
   .meta .who.idle { color: var(--gold); }
   .meta .stars { flex: none; margin-left: auto; }
   .notice { margin: 0 0 16px; padding: 10px 14px; border: 1px solid #5c4d27; border-radius: 10px; background: #2a241266; color: var(--gold); font-size: 14px; }
-  .empty { grid-column: 1 / -1; padding: 64px 0; text-align: center; color: var(--ink-2); }
+  .grid > .empty { grid-column: 1 / -1; padding: 56px 16px; border: 1px dashed var(--line); border-radius: 12px; text-align: center; color: var(--ink-2); text-wrap: balance; }
   dialog {
     width: min(92vw, 780px); padding: 0; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 30px 80px #000c;
     opacity: 0; transform: scale(.96);
@@ -781,6 +781,13 @@ export const STYLE = String.raw`
     .cards, .cards.three { grid-template-columns: 1fr; }
     .tpl { grid-template-columns: 1fr; }
     .make > summary .sub { display: none; }
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .grid .stage { padding: 16px 0 12px; }
+    .grid .face { width: 84px; }
+    .grid .meta { padding: 8px 10px 10px; }
+    .grid .card.skel .stage { height: 162px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
