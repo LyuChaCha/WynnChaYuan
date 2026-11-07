@@ -63,6 +63,7 @@ public final class SettingsScreen extends Screen {
 
     @Override
     protected void init() {
+        GuiCanvas.forgetTextures();
         if (view == null) {
             view = new SettingsView(buildTabs(), new Host(), lastTab);
         }
@@ -105,23 +106,29 @@ public final class SettingsScreen extends Screen {
 
     List<Row.Tab> buildTabs() {
         List<Row.Tab> tabs = new ArrayList<>();
-        tabs.add(new Row.Tab("items", t("tab.items"), t("tab.items.about"), Icons.Icon.BOW,
-                Preview.Scene.TOOLTIP, List.of(
-                        new Row.Group(t("group.items"), false, displayTabs.items()),
-                        new Row.Group(t("group.mods"), false, modsTab.mods()))));
-        tabs.add(new Row.Tab("panel", t("tab.panel"), t("tab.panel.about"), Icons.Icon.SCROLL,
+        tabs.add(new Row.Tab("overview", t("tab.overview"), t("tab.overview.about"), Icons.Icon.BUBBLE,
+                Preview.Scene.WORLD, List.of(
+                        new Row.Group(() -> "", false, displayTabs.master()),
+                        new Row.Group(t("group.overview.items"), false, displayTabs.items()),
+                        new Row.Group(t("group.overview.dialogue"), false, displayTabs.dialogue()),
+                        new Row.Group(t("group.overview.world"), false, displayTabs.world()),
+                        new Row.Group(t("group.overview.hud"), false, displayTabs.hud()),
+                        new Row.Group(t("group.overview.chat"), false, displayTabs.chat()),
+                        new Row.Group(t("group.overview.names"), false, displayTabs.names()),
+                        new Row.Group(t("group.mods"), false, modsTab.mods())), true));
+        tabs.add(new Row.Tab("look", t("tab.look"), t("tab.look.about"), Icons.Icon.SCROLL,
                 Preview.Scene.PANEL, List.of(
                         new Row.Group(t("group.place"), false, displayTabs.place()),
                         new Row.Group(t("group.look"), false, displayTabs.look()))));
-        tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
-                Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE,
-                List.of(new Row.Group(t("group.dialogue"), false, displayTabs.dialogue()))));
-        tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
-                Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, displayTabs.world()))));
+        tabs.add(new Row.Tab("lang", t("tab.lang"), t("tab.lang.about"), Icons.Icon.GLOBE,
+                Preview.Scene.DATA, List.of(
+                        new Row.Group(t("group.lang"), false, languageTab.languages()))));
+        List<Row> collect = new ArrayList<>(languageTab.collection());
+        collect.addAll(toolsTab.report());
         tabs.add(new Row.Tab("data", t("tab.data"), t("tab.data.about"), Icons.Icon.BOOK,
                 Preview.Scene.DATA, List.of(
-                        new Row.Group(t("group.lang"), false, languageTab.languages()),
-                        new Row.Group(t("group.tools"), true, toolsTab.tools()))));
+                        new Row.Group(t("group.tools"), true, toolsTab.source()),
+                        new Row.Group(t("group.collect"), false, collect))));
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
                 Preview.Scene.CAPE, List.of(
                         new Row.Group(t("group.badge"), false, badgeTab.badge()),
@@ -156,11 +163,44 @@ public final class SettingsScreen extends Screen {
         public int tone(Row.Tone tone) {
             int accent = cfg().themeARGB();
             return switch (tone) {
+                case ACCENT -> ModeColours.separate(accent);
                 case REPLACE -> ModeColours.replace(accent);
                 case BOTH -> ModeColours.both(accent);
                 case OFF -> 0x40FFFFFF;
-                default -> accent;
+                case PLAIN -> accent;
             };
+        }
+
+        @Override
+        public int toneDeep(Row.Tone tone) {
+            int accent = cfg().themeARGB();
+            return switch (tone) {
+                case ACCENT -> ModeColours.separateDeep(accent);
+                case REPLACE -> ModeColours.replaceDeep(accent);
+                case BOTH -> ModeColours.bothDeep(accent);
+                case OFF -> ModeColours.OFF_DEEP;
+                case PLAIN -> Ui.deep(accent);
+            };
+        }
+
+        @Override
+        public boolean leaves() {
+            return cfg().settingsLeaves();
+        }
+
+        @Override
+        public int previewWidth() {
+            return cfg().previewWidth();
+        }
+
+        @Override
+        public void setPreviewWidth(int width) {
+            cfg().setPreviewWidthLive(width);
+        }
+
+        @Override
+        public void savePreviewWidth() {
+            cfg().saveIfDirty();
         }
 
         @Override

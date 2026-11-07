@@ -5,25 +5,51 @@ public final class ModeColours {
     private ModeColours() {
     }
 
-    public static final int OFF = 0xFFA0A0A0;
+    public static final int OFF = 0xFF8A9A8E;
+    public static final int OFF_DEEP = 0xFF55645A;
 
-    static final int SOFT = 0xFF8FC3E6;
+    public static final int LEAF = 0xFF7FD08A;
+    static final int LEAF_DEEP = 0xFF3A9F4C;
+    static final int GOLD = 0xFFE8C876;
+    static final int GOLD_DEEP = 0xFFB98A3C;
+    static final int CYAN = 0xFF6FE0EC;
+    static final int CYAN_DEEP = 0xFF2F9FB4;
 
     public static int separate(int accent) {
-        return soften(readable(accent) ? accent : SOFT);
+        return turn(LEAF, accent);
     }
 
     public static int replace(int accent) {
-        float[] hsv = hsv(separate(accent));
-        return soften(rgb((hsv[0] + 0.5f) % 1f, hsv[1], hsv[2]));
+        return turn(GOLD, accent);
     }
 
     public static int both(int accent) {
-        return mix(separate(accent), replace(accent));
+        return turn(CYAN, accent);
     }
 
-    static boolean readable(int argb) {
-        return luminance(argb) >= 96;
+    public static int separateDeep(int accent) {
+        return turn(LEAF_DEEP, accent);
+    }
+
+    public static int replaceDeep(int accent) {
+        return turn(GOLD_DEEP, accent);
+    }
+
+    public static int bothDeep(int accent) {
+        return turn(CYAN_DEEP, accent);
+    }
+
+    static int turn(int base, int accent) {
+        float[] theme = hsv(accent);
+        if (theme[1] < 0.12f || theme[2] < 0.08f) {
+            return base;
+        }
+        float shift = theme[0] - hsv(LEAF)[0];
+        if (Math.abs(shift) < 0.004f) {
+            return base;
+        }
+        float[] own = hsv(base);
+        return rgb(((own[0] + shift) % 1f + 1f) % 1f, own[1], own[2]);
     }
 
     static int luminance(int argb) {
@@ -31,18 +57,6 @@ public final class ModeColours {
         int g = (argb >> 8) & 0xFF;
         int b = argb & 0xFF;
         return (r * 299 + g * 587 + b * 114) / 1000;
-    }
-
-    static int soften(int argb) {
-        float[] hsv = hsv(argb);
-        return rgb(hsv[0], Math.min(hsv[1], 0.55f), Math.max(hsv[2], 0.82f));
-    }
-
-    static int mix(int a, int b) {
-        int r = (((a >> 16) & 0xFF) + ((b >> 16) & 0xFF)) / 2;
-        int g = (((a >> 8) & 0xFF) + ((b >> 8) & 0xFF)) / 2;
-        int bl = ((a & 0xFF) + (b & 0xFF)) / 2;
-        return 0xFF000000 | (r << 16) | (g << 8) | bl;
     }
 
     static float[] hsv(int argb) {

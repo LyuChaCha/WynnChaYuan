@@ -8,31 +8,36 @@ public final class ModeColoursTest {
     public static void main(String[] args) {
         System.out.println("=== F6 模式顏色 ===");
 
+        int leaf = 0xFF7FD08A;
+        check("預設的葉綠主題：另外顯示就是葉綠", ModeColours.separate(leaf) == 0xFF7FD08A);
+        check("預設的葉綠主題：就地取代是金色", ModeColours.replace(leaf) == 0xFFE8C876);
+        check("預設的葉綠主題：原文加譯文是青色", ModeColours.both(leaf) == 0xFF6FE0EC);
+        check("預設的葉綠主題：漸層的深色端照設計稿",
+              ModeColours.separateDeep(leaf) == 0xFF3A9F4C
+                      && ModeColours.replaceDeep(leaf) == 0xFFB98A3C
+                      && ModeColours.bothDeep(leaf) == 0xFF2F9FB4);
+
         int accent = 0xFF6FA8D8;
         int sep = ModeColours.separate(accent);
         int rep = ModeColours.replace(accent);
         int both = ModeColours.both(accent);
-
-        check("另開面板偏藍（藍 > 紅）", blue(sep) > red(sep));
-        check("就地取代是補色，偏橘（紅 > 藍）", red(rep) > blue(rep));
-        check("原文加譯文跟兩者都不同", both != sep && both != rep);
-        check("另開面板讀得清楚", ModeColours.luminance(sep) >= 96);
+        check("換成藍色主題，另外顯示跟著偏藍（藍 > 紅）", blue(sep) > red(sep));
+        check("三種模式顏色互不相同", sep != rep && rep != both && both != sep);
+        check("另外顯示讀得清楚", ModeColours.luminance(sep) >= 96);
         check("就地取代讀得清楚", ModeColours.luminance(rep) >= 96);
         check("原文加譯文讀得清楚", ModeColours.luminance(both) >= 96);
         check("關閉跟其他三個都不同",
               ModeColours.OFF != sep && ModeColours.OFF != rep && ModeColours.OFF != both);
 
-        int dark = 0xFF101830;
-        check("主題色太暗時另開面板仍讀得清楚",
-              ModeColours.luminance(ModeColours.separate(dark)) >= 96);
-        check("主題色太暗時就地取代仍讀得清楚",
-              ModeColours.luminance(ModeColours.replace(dark)) >= 96);
+        int grey = 0xFF808080;
+        check("灰色主題（沒有色相）就用預設的三色",
+              ModeColours.separate(grey) == 0xFF7FD08A && ModeColours.replace(grey) == 0xFFE8C876);
 
         int red = 0xFFE05050;
-        check("換成紅色主題，另開面板偏紅",
+        check("換成紅色主題，另外顯示偏紅",
               red(ModeColours.separate(red)) > blue(ModeColours.separate(red)));
-        check("換成紅色主題，就地取代換成青色系",
-              blue(ModeColours.replace(red)) > red(ModeColours.replace(red)));
+        check("換成紅色主題，就地取代跟另外顯示仍然分得開",
+              ModeColours.replace(red) != ModeColours.separate(red));
 
         check("HSV 來回轉換不走樣",
               near(ModeColours.rgb(ModeColours.hsv(0xFF6FA8D8)[0],
