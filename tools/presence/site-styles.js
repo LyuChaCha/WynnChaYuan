@@ -937,6 +937,9 @@ export const STYLE = String.raw`
   .meta .who { overflow: visible; }
   td .btn, th .btn, .tpl-sizes .btn { white-space: nowrap; }
   .btn { text-align: center; }
+  select { max-width: 100%; min-width: 0; }
+  @media (min-width: 941px) { .foot { grid-template-columns: minmax(0, .8fr) minmax(0, 3.6fr); gap: 32px 40px; } }
+  .foot-cols { gap: 26px 24px; }
   .tr-src, .tr-dst, .tr-term, .tr-opt-text, .fb-body, .tr-item, .finder-hits small, input[type="text"], input[type="search"], textarea, .tr-text {
     font-family: "Segoe UI", system-ui, -apple-system, "Microsoft JhengHei UI", "Microsoft YaHei UI", "Yu Gothic UI", "Malgun Gothic", sans-serif;
     font-size: 16px; line-height: 26px; -webkit-font-smoothing: auto; font-smooth: auto; text-rendering: auto;
@@ -950,8 +953,7 @@ export const STYLE = String.raw`
   .btn > .ico.px { margin-left: -2px; }
   .hn-icon > .ico.px, .features .ico.px, .glyph.own svg.px, .fcard .show svg.px, .hn-ava-fb .ico.px { width: 22px; height: 22px; }
   @media (max-width: 720px) {
-    h1 { font-size: 30px; line-height: 40px; }
-    .hero h1 { font-size: 40px; line-height: 52px; }
+    h1, .hero h1 { font-size: 40px; line-height: 52px; }
     #main > h2, .spec h2, .policy h2 { font-size: 30px; line-height: 40px; }
     .who-top { flex-wrap: wrap; }
     .who-top > .mc { flex: 0 1 auto; margin-left: 0; padding-left: 0; text-align: left; }
