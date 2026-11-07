@@ -44,7 +44,8 @@ final class SettingsNavigation {
         boolean searching = view.searching();
         float pillY = view.animate("nav", cy + view.tab * (SettingsView.NAV_H + 2), 55f);
         if (!searching) {
-            view.c.round(x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.alpha(view.accent, 0x33));
+            Ui.pane(view.c, x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.RAIL_ON,
+                    Ui.RAIL_ON_EDGE);
         }
         for (int i = 0; i < view.tabs.size(); i++) {
             Row.Tab t = view.tabs.get(i);
@@ -55,7 +56,7 @@ final class SettingsNavigation {
             if (g > 0.01f) {
                 view.c.round(x + 6, ny, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.fade(0x12FFFFFF, g));
             }
-            int ink = on ? view.accent : (hot ? Ui.TEXT : Ui.TEXT_2);
+            int ink = on ? Ui.RAIL_ON_INK : (hot ? Ui.TEXT : Ui.TEXT_2);
             String name = t.name().get();
             if (slim) {
                 view.c.icon(t.icon(), x + (view.railW - 12) / 2f, ny + 4.5f, 12, ink);
@@ -69,7 +70,7 @@ final class SettingsNavigation {
                 float countW = view.c.width(count);
                 String shown = Ui.fit(view.c, name, (int) (view.railW - 12 - 22 - countW - 12));
                 view.c.text(shown, x + 28, ny + 6.5f, ink);
-                view.c.text(count, x + view.railW - 12 - countW, ny + 6.5f, on ? view.accent : Ui.FAINT);
+                view.c.text(count, x + view.railW - 12 - countW, ny + 6.5f, on ? Ui.RAIL_ON_INK : Ui.FAINT);
                 if (hot && !shown.equals(name)) {
                     view.tip = new Surface.Tip(name, x + view.railW, ny - 4, 0, SettingsView.NAV_H);
                     view.hoverRow = "#nav" + i;
@@ -199,7 +200,8 @@ final class SettingsNavigation {
         if (view.c.width(title) * s > textRoom) {
             s = 1f;
         }
-        view.c.text(Ui.fit(view.c, title, (int) (textRoom / s)), x, y + 8, Ui.TEXT, s);
+        Ui.gradientText(view.c, Ui.fit(view.c, title, (int) (textRoom / s)), x, y + 8, s,
+                        Ui.TITLE_FROM, Ui.TITLE_TO);
         String about = searching
                 ? view.host.tr("search.count", shownCount())
                 : view.tabs.get(view.tab).about().get();

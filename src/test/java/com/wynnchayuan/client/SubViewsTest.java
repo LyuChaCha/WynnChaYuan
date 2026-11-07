@@ -381,10 +381,10 @@ public final class SubViewsTest {
         @Override
         public int tone(Row.Tone tone) {
             return switch (tone) {
-                case REPLACE -> ModeColours.replace(0xFF6FA8D8);
-                case BOTH -> ModeColours.both(0xFF6FA8D8);
+                case REPLACE -> ModeColours.replace(0xFF7FD08A);
+                case BOTH -> ModeColours.both(0xFF7FD08A);
                 case OFF -> 0x40FFFFFF;
-                default -> 0xFF6FA8D8;
+                default -> 0xFF7FD08A;
             };
         }
 
@@ -610,12 +610,12 @@ public final class SubViewsTest {
 
         @Override
         public int accent() {
-            return 0xFF6FA8D8;
+            return 0xFF7FD08A;
         }
 
         @Override
         public int frame() {
-            return 0xFF6FA8D8;
+            return 0xFF7FD08A;
         }
 
         @Override

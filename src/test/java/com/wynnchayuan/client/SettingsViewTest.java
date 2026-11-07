@@ -596,7 +596,7 @@ public final class SettingsViewTest {
         }
 
         private Row colour(String id) {
-            init(id, "#6FA8D8");
+            init(id, "#7FD08A");
             return Row.colour(id, () -> tr(id), () -> tr(id + ".hint"))
                     .hex(() -> (String) values.get(id))
                     .setHex(hex -> {
@@ -748,12 +748,12 @@ public final class SettingsViewTest {
 
         @Override
         public int accent() {
-            return Ui.parseHex((String) values.getOrDefault("panel.theme", "#6FA8D8"), 0xFF6FA8D8);
+            return Ui.parseHex((String) values.getOrDefault("panel.theme", "#7FD08A"), 0xFF7FD08A);
         }
 
         @Override
         public int frame() {
-            return Ui.parseHex((String) values.getOrDefault("panel.colour", "#6FA8D8"), 0xFF6FA8D8);
+            return Ui.parseHex((String) values.getOrDefault("panel.colour", "#7FD08A"), 0xFF7FD08A);
         }
 
         @Override

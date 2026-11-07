@@ -276,9 +276,9 @@ final class AwtCanvas implements Canvas {
 
     @Override
     public void logo(float x, float y, float size) {
-        g.setColor(new Color(0x6FA8D8));
+        g.setColor(new Color(0x7FD08A));
         g.fill(shape(x, y, size, size, size / 5f));
-        g.setColor(new Color(0x0B1420));
+        g.setColor(new Color(0x0C1A10));
         g.fill(shape(x + size * 0.28f, y + size * 0.28f, size * 0.44f, size * 0.44f, size / 10f));
     }
 

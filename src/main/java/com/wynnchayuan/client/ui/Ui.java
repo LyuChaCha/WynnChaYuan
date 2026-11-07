@@ -7,26 +7,38 @@ public final class Ui {
 
     private Ui() {}
 
-    public static final int WINDOW = 0xB8181F2A;
-    public static final int WINDOW_SOLID = 0xF0161C26;
-    public static final int WIN_EDGE = 0x29FFFFFF;
-    public static final int RAIL = 0x0AFFFFFF;
-    public static final int CARD = 0x0EFFFFFF;
-    public static final int FIELD = 0x4D000000;
-    public static final int RAISED = 0x16FFFFFF;
-    public static final int BORDER = 0x26FFFFFF;
-    public static final int LINE = 0x17FFFFFF;
-    public static final int POP = 0xFC1B2330;
-    public static final int SCENE = 0xFF0C1219;
-    public static final int KNOB_OFF = 0xFF7B8694;
-    public static final int TRACK_OFF = 0x33FFFFFF;
+    public static final int WINDOW = 0xC4161E19;
+    public static final int WINDOW_SOLID = 0xF4161E19;
+    public static final int WIN_EDGE = 0xFF2F4A39;
+    public static final int GLOW_TOP = 0xFF24402E;
+    public static final int GLOW_BOTTOM = 0xFF17352C;
+    public static final int VEIL = 0xC8161E19;
+    public static final int RAIL = 0x5522372A;
+    public static final int RAIL_ON = 0xFF2A6A42;
+    public static final int RAIL_ON_EDGE = 0xFF4A9A60;
+    public static final int RAIL_ON_INK = 0xFFD9F5DD;
+    public static final int CARD = 0x0AFFFFFF;
+    public static final int FIELD = 0xB30F1512;
+    public static final int RAISED = 0x14FFFFFF;
+    public static final int BORDER = 0xFF34473B;
+    public static final int LINE = 0xFF2A382F;
+    public static final int GROUP = 0xFF9FC7A6;
+    public static final int GROUP_RULE = 0xFF3F6B4C;
+    public static final int POP = 0xFC18221C;
+    public static final int SCENE = 0xFF1C2620;
+    public static final int KNOB_OFF = 0xFF8A9A8E;
+    public static final int TRACK_OFF = 0xFF323D36;
 
-    public static final int TEXT = 0xFFF2F5F9;
-    public static final int TEXT_2 = 0xFFD3DAE3;
-    public static final int TEXT_3 = 0xFFAEB8C5;
-    public static final int HINT = 0xFF8D98A6;
-    public static final int FAINT = 0xFF7B8694;
-    public static final int ON_ACCENT = 0xFF0B1420;
+    public static final int TEXT = 0xFFE9EFE9;
+    public static final int TEXT_2 = 0xFFC9D5CC;
+    public static final int TEXT_3 = 0xFFA3B3A7;
+    public static final int HINT = 0xFF8A9A8E;
+    public static final int FAINT = 0xFF76867A;
+    public static final int ON_ACCENT = 0xFF0C1A10;
+
+    public static final int TITLE_FROM = 0xFF5FC063;
+    public static final int TITLE_TO = 0xFFA2DF86;
+    public static final int[] LEAF_STOPS = {0xFF3A9F4C, 0xFF5FC063, 0xFFA2DF86};
 
     public static final int GOLD = 0xFFE0BC6E;
     public static final int GREEN = 0xFF7BC47F;
@@ -55,6 +67,76 @@ public final class Ui {
             out |= (Math.round(ca + (cb - ca) * k) & 0xFF) << shift;
         }
         return out;
+    }
+
+    public static int stops(int[] stops, float t) {
+        float at = Math.max(0f, Math.min(1f, t)) * (stops.length - 1);
+        int i = Math.min((int) at, stops.length - 2);
+        return mix(stops[i], stops[i + 1], at - i);
+    }
+
+    public static int deep(int argb) {
+        float[] hsv = toHsv(argb);
+        return (argb & 0xFF000000) | (hsv(hsv[0], Math.min(1f, hsv[1] * 1.65f),
+                hsv[2] * 0.76f) & 0xFFFFFF);
+    }
+
+    public static void sweep(Canvas c, float x, float y, float w, float h, float r, int left,
+                             int right) {
+        if (w <= 0 || h <= 0) {
+            return;
+        }
+        float rr = Math.max(0, Math.min(r, Math.min(w, h) / 2f));
+        if (left == right || w <= rr * 2 + 1) {
+            c.round(x, y, w, h, rr, left);
+            return;
+        }
+        if (rr > 0) {
+            c.clip(x, y, x + rr, y + h);
+            c.round(x, y, rr * 2, h, rr, left);
+            c.unclip();
+            c.clip(x + w - rr, y, x + w, y + h);
+            c.round(x + w - rr * 2, y, rr * 2, h, rr, right);
+            c.unclip();
+        }
+        float span = w - rr * 2;
+        int steps = Math.max(1, Math.min(24, Math.round(span / 3f)));
+        for (int i = 0; i < steps; i++) {
+            float a = x + rr + span * i / steps;
+            float b = x + rr + span * (i + 1) / steps;
+            c.fill(a, y, b, y + h, mix(left, right, (i + 0.5f) / steps));
+        }
+    }
+
+    public static void glowSpot(Canvas c, float cx, float cy, float rx, float ry, float x0,
+                                float y0, float x1, float y1, float corner, int argb) {
+        for (int i = 0; i < 6; i++) {
+            float k = 1f - i / 6f;
+            float ax = Math.max(x0, cx - rx * k);
+            float ay = Math.max(y0, cy - ry * k);
+            float bx = Math.min(x1, cx + rx * k);
+            float by = Math.min(y1, cy + ry * k);
+            if (bx > ax && by > ay) {
+                c.round(ax, ay, bx - ax, by - ay, Math.max(corner, ry * k), alpha(argb, 0x0E));
+            }
+        }
+    }
+
+    public static float gradientText(Canvas c, String text, float x, float y, float scale,
+                                     int from, int to) {
+        int n = text.codePointCount(0, text.length());
+        float at = x;
+        int i = 0;
+        for (int k = 0; k < text.length(); ) {
+            int cp = text.codePointAt(k);
+            int end = k + Character.charCount(cp);
+            String one = text.substring(k, end);
+            c.text(one, at, y, mix(from, to, n <= 1 ? 0f : i / (float) (n - 1)), scale);
+            at += c.width(one) * scale;
+            k = end;
+            i++;
+        }
+        return at;
     }
 
     public static int parseHex(String hex, int fallback) {

@@ -115,6 +115,14 @@ final class ConfigFile {
         if (theme.matches("#[0-9a-fA-F]{6}")) {
             config.themeColor = theme;
         }
+        if (!bool(o, "leafColours", false)) {
+            if (ModConfig.OLD_DEFAULT_COLOUR.equalsIgnoreCase(config.accentColor)) {
+                config.accentColor = ModConfig.DEFAULT_COLOUR;
+            }
+            if (ModConfig.OLD_DEFAULT_COLOUR.equalsIgnoreCase(config.themeColor)) {
+                config.themeColor = ModConfig.DEFAULT_COLOUR;
+            }
+        }
         int hold = integer(o, "dialogueHoldMs", config.dialogueHoldMs);
         config.dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
         config.nametagHoldMs = ModConfig.clamp(integer(o, "nametagHoldMs", config.nametagHoldMs), 0, 60_000);
@@ -284,6 +292,7 @@ final class ConfigFile {
             o.addProperty("panelGap", config.panelGap);
             o.addProperty("accentColor", config.accentColor);
             o.addProperty("themeColor", config.themeColor);
+            o.addProperty("leafColours", true);
             o.addProperty("dialogueHoldMs", config.dialogueHoldMs);
             o.addProperty("dialogueMode", config.dialogueMode.name());
             o.addProperty("choiceMode", config.choiceMode.name());

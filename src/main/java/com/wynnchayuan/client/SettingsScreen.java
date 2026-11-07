@@ -156,10 +156,23 @@ public final class SettingsScreen extends Screen {
         public int tone(Row.Tone tone) {
             int accent = cfg().themeARGB();
             return switch (tone) {
+                case ACCENT -> ModeColours.separate(accent);
                 case REPLACE -> ModeColours.replace(accent);
                 case BOTH -> ModeColours.both(accent);
                 case OFF -> 0x40FFFFFF;
-                default -> accent;
+                case PLAIN -> accent;
+            };
+        }
+
+        @Override
+        public int toneDeep(Row.Tone tone) {
+            int accent = cfg().themeARGB();
+            return switch (tone) {
+                case ACCENT -> ModeColours.separateDeep(accent);
+                case REPLACE -> ModeColours.replaceDeep(accent);
+                case BOTH -> ModeColours.bothDeep(accent);
+                case OFF -> ModeColours.OFF_DEEP;
+                case PLAIN -> Ui.deep(accent);
             };
         }
 

@@ -190,8 +190,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("translateBossBar", true);
         expected.remove("translateNametags");
         expected.addProperty("syncedTranslationsDate", "");
-        expected.addProperty("themeColor", expected.has("accentColor")
-                ? expected.get("accentColor").getAsString() : "#6FA8D8");
+        expected.addProperty("accentColor", "#7FD08A");
+        expected.addProperty("themeColor", "#7FD08A");
+        expected.addProperty("leafColours", true);
         expected.addProperty("oldKeysReleased", false);
         expected.addProperty("wynnventory", true);
         expected.addProperty("wynnMarketSearch", true);

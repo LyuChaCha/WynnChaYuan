@@ -125,7 +125,7 @@ final class DisplayTabs {
         return rows;
     }
 
-    private static final String DEFAULT_COLOUR = "#6FA8D8";
+    private static final String DEFAULT_COLOUR = ModConfig.DEFAULT_COLOUR;
 
     List<Row> look() {
         List<Row> rows = new ArrayList<>();
