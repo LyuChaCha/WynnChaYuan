@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.render.ThirdPartyLiterals;
@@ -31,6 +32,7 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BooleanSupplier;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -95,6 +97,42 @@ public final class CaptureStore {
 
     public void knowsLonger(Predicate<String> lookup) {
         longer = lookup == null ? t -> false : lookup;
+    }
+
+    private volatile Predicate<String> named = t -> false;
+
+    public void knowsPlayerFrames(Predicate<String> frames) {
+        named = frames == null ? t -> false : frames;
+    }
+
+    private volatile BooleanSupplier housing = () -> false;
+
+    public void knowsHousing(BooleanSupplier housing) {
+        this.housing = housing == null ? () -> false : housing;
+    }
+
+    private boolean onHousing() {
+        try {
+            return housing.getAsBoolean();
+        } catch (Throwable t) {
+            ErrorDebug.note("CaptureStore#onHousing", null, t);
+            return false;
+        }
+    }
+
+    private volatile String language;
+
+    public void useLanguage(String lang) {
+        if (lang == null || lang.isBlank() || lang.equals(language)) {
+            return;
+        }
+        String was = language;
+        language = lang;
+        if (was != null) {
+            ColourAudit.clear();
+            OverflowAudit.clear();
+        }
+        dirty.set(true);
     }
 
     private final Map<String, Captured> untranslated = new ConcurrentHashMap<>();
@@ -168,6 +206,14 @@ public final class CaptureStore {
             noteEvent("skipped.ownOutput");
             return false;
         }
+        String noise = CaptureNoise.reason(template, ctx);
+        if (noise == null && CaptureNoise.dependsOnScene(ctx)) {
+            noise = CaptureNoise.sceneReason(template, ctx, onHousing(), this::whereNow);
+        }
+        if (noise != null) {
+            noteEvent(noise);
+            return false;
+        }
         if (translated.test(template)) {
             noteEvent("skipped.translated");
             return false;
@@ -225,11 +271,19 @@ public final class CaptureStore {
         return src.contains(GlyphSplitter.PLAYER_PLACEHOLDER) && known.test(src);
     }
 
-    private static boolean nowFiltered(Captured c) {
+    private boolean nowFiltered(Captured c) {
         if (PlayerDataFilter.carriesPlayerData(c.src)) {
             return true;
         }
         String ctx = c.ctx == null ? "" : c.ctx;
+        if (CaptureNoise.reason(c.src, ctx) != null
+                || CaptureNoise.sceneReason(c.src, ctx, false, () -> c.place) != null) {
+            return true;
+        }
+        if (framedOnSight(ctx) && !c.src.contains(GlyphSplitter.PLAYER_PLACEHOLDER)
+                && named.test(c.src)) {
+            return true;
+        }
         if (ctx.startsWith("npc/nametag") || ctx.startsWith("label/floating")) {
             return PlayerDataFilter.looksPlayerNamed(c.src);
         }
@@ -237,6 +291,10 @@ public final class CaptureStore {
             return PlayerDataFilter.looksAccountNamed(c.src);
         }
         return false;
+    }
+
+    private static boolean framedOnSight(String ctx) {
+        return ctx.startsWith("chat/") || ctx.equals("title") || ctx.startsWith("label/");
     }
 
     public void noteEvent(String name) {
@@ -355,6 +413,9 @@ public final class CaptureStore {
                 + "gui/line 是單獨一行，或條列裡的一項。in 是那份說明的標題（哪一件物品、哪一個選單）。"
                 + " place 是收到的時候人在哪裡：討伐戰寫「Raid · 名稱 · 關卡」，"
                 + "Lootrun 寫「Lootrun · 地區」，其他寫地區名。同一關的漂浮字照 seq 排就是出現的順序。");
+        if (language != null) {
+            meta.addProperty("language", language);
+        }
         meta.addProperty("colours", ColourAudit.size());
         meta.addProperty("overflow", OverflowAudit.size());
         meta.addProperty("unapplied", UnappliedAudit.size());
@@ -428,6 +489,11 @@ public final class CaptureStore {
         JsonObject root = SafeFiles.readObject(file, MAX_BYTES);
         if (root == null) {
             return;
+        }
+        JsonElement meta = root.get("_meta");
+        if (meta != null && meta.isJsonObject() && meta.getAsJsonObject().get("language")
+                instanceof JsonPrimitive saved && saved.isString()) {
+            language = saved.getAsString();
         }
         ColourAudit.load(root.get("colours"));
         OverflowAudit.load(root.get("overflow"));

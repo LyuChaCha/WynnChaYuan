@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "Arcane Transfer 转换超过 {~} 法力时，\n会对附近的敌人造成伤害。",
+   "dst": "{c1}Arcane Transfer{c2} 转换{c3}超过 {~}{c2} 法力时，\n会对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "Heal 会发出强光，\n对附近的敌人造成伤害。",
+   "dst": "{c1}Heal{c2} 会发出强光，\n对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -796,7 +796,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "Heal 与 Arcane Transfer 会清除友军身上的\n燃烧与所有负面效果。",
+   "dst": "{c1}Heal{c2} 与 {c1}Arcane Transfer{c2} 会清除友军身上的\n燃烧与所有负面效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1499,7 +1499,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "Ophanim 光球的生命提高 +{~}，\n它们攻击时受到的损耗\n减少 -{~}。",
+   "dst": "{c2}Ophanim{c1} 光球的生命提高 {c3}+{~}{c1}，\n它们攻击时受到的损耗\n减少 {c3}-{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "Ophanim 的光球数量上限\n提高 +{~}。",
+   "dst": "{c2}Ophanim{c1} 的光球数量上限\n提高 {c3}+{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "提高 Sunshower 的伤害。",
+   "dst": "{c1}提高 {c2}Sunshower{c1} 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "Ophanim 的光球数量上限\n提高 +{~}，但它们的\n伤害降低。",
+   "dst": "{c2}Ophanim{c1} 的光球数量上限\n提高 {c3}+{~}{c1}，但它们的\n伤害降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "Meteor 的速度翻倍，伤害也提高。",
+   "dst": "{c2}Meteor{c1} 的速度翻倍，伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "Meteor Shower 召唤陨石的速度加快 +{~}。",
+   "dst": "{c1}Meteor Shower{c2} 召唤陨石的速度加快 {c3}+{~}{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "潜行时施放 Heal 会把你绑定到你的\nDimensional Tear 上，使你进入 Riftbound。",
+   "dst": "{c1}潜行时施放 {c2}Heal{c1} 会把你绑定到你的\n{c2}Dimensional Tear{c1} 上，使你进入 {c2}Riftbound{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "Lightweaver 的光球数量上限\n提高 +{~}。",
+   "dst": "{c2}Lightweaver{c1} 的光球数量上限\n提高 {c3}+{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "Dimensional Tear 生效期间，\n里面会住着一只 Riftspawn。",
+   "dst": "{c1}Dimensional Tear{c2} 生效期间，\n里面会住着一只 {c3}Riftspawn{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

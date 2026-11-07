@@ -42,6 +42,10 @@ public final class TextSplit {
     }
 
     public static Component oneLine(Component text) {
+        return oneLine(text, false);
+    }
+
+    private static Component oneLine(Component text, boolean seamless) {
         if (text == null || text.getString().indexOf('\n') < 0) {
             return text;
         }
@@ -63,7 +67,9 @@ public final class TextSplit {
             boolean glue = out.isEmpty() || next >= in.size()
                     || wide(out.get(out.size() - 1).cp()) || wide(in.get(next).cp());
             if (!glue) {
-                out.add(new Glyph(' ', g.style()));
+                Style before = out.get(out.size() - 1).style();
+                boolean same = seamless && before.equals(in.get(next).style());
+                out.add(new Glyph(' ', same ? before : g.style()));
             }
             i = next - 1;
         }
@@ -93,7 +99,7 @@ public final class TextSplit {
             }
             all.append(lines.get(i));
         }
-        return oneLine(all);
+        return oneLine(all, true);
     }
 
     public static List<Component> split(Component whole, int rows) {

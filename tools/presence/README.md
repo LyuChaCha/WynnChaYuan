@@ -37,6 +37,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |
 | `demo-fonts.js` | 預覽畫面用的點陣字：從模組附的 Fusion Pixel 10px（SIL OFL 1.1，授權全文在 `assets/wynnchayuan/font/ofl-fusion.txt`）裁出場景裡出現的那幾百個字，四份共 75 KB 左右。同一支 `build-demo.py` 產生（要裝 fontTools；`--check` 不必裝，只看涵蓋的字夠不夠）。Worker 當成 `/font/px-<代號>.ttf` 送出去 |
+| `site-fonts.js` | 網站內文字型：Noto Sans TC 可變粗細（SIL OFL 1.1），只裁繁中網頁用到的字，約 280 KB（WOFF）。`python tools/presence/build-site-fonts.py` 產生（要 fontTools 與 Windows 內建的 `NotoSansTC-VF.ttf`，或 `--font <路徑>`）；改了繁中網頁的字要重跑，`--check` 不必裝字型。Worker 當成 `/font/ui-tc.woff` 送出去 |
 | `textures/`、`demo-textures.js` | 預覽畫面用的材質：遊戲裡真的那幾張（物品說明的框、背包、對話框與頭像、生命與魔力、快捷列、通用的小圖示）、沒穿裝備的格子裡那幾個影子、各稀有度的說明框與徽記、官方的物品圖示、兩張實機截圖當背景（都在 Detlas 一帶，跟預覽裡 22 等的人物同一個等級；街上那一張是真的 NPC，頭上的名牌從截圖上拿掉、改由網頁畫，才能跟著語言換）、背包裡那個人的皮膚（`skin.png`，使用者自己的；網頁用 CSS 的 3D 把它貼成方塊人，會看著滑鼠）。**這些圖是 Wynncraft 的（© Wynncraft），不在這個倉庫的授權範圍裡**，只用在網站的預覽上、不進模組的 jar；頁尾有一句說明。`python tools/presence/build-textures.py` 把 `textures/` 打包成 `demo-textures.js`（`--check` 比對）；要重做材質本身：`--pack` 從資源包重組（玩過 Wynncraft 的客戶端 `downloads/` 底下有快取；那個 zip 被動過手腳，腳本自己解）、`--icons` 重抓官方 CDN 的物品圖示、`--shots <資料夾>` 重做背景（資料夾裡要有 `world.png` 與 `street.png`）、`--skin <玩家名字>` 重抓皮膚。Worker 當成 `/tex/<檔名>` 送出去 |
 | `cape-templates.js` | 披風範本每一種尺寸、兩份說明圖（中文、英文）與一張會動的示範，從 `capes/templates/` 打包的。`node tools/presence/build-cape-templates.mjs`（`--check` 比對）；範本改了要重跑。Worker 當成 `/template/<檔名>` 送出去，披風一覽與帳號頁的下載鈕用它 |
 | `cape-preview.js` | 披風的預覽圖（`/api/cape-preview/<雜湊>`，Discord 機器人的 `/cape` 用）：跟披風一覽的卡片一樣只露出背面、像素放大、墊上卡片的深綠底。Worker 沒有 canvas，PNG 與 GIF 的解碼、編碼都在這支裡（不靠套件；GIF 逐格切、每格自己的調色盤） |
@@ -440,7 +441,7 @@ npx.cmd wrangler deploy
 
 第一次部署到自己的網域時，wrangler 會自己建好 DNS 紀錄與憑證，一兩分鐘後生效。
 
-要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`demo-textures.js`、`cape-templates.js`、`cape-preview.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
+要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`site-fonts.js`、`demo-textures.js`、`cape-templates.js`、`cape-preview.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
 
 ## 在本機看網站
 

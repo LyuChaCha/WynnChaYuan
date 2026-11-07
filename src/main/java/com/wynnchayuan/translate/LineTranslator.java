@@ -418,6 +418,10 @@ public final class LineTranslator {
         return ChatTranslator.translateFramed(line, framed, store);
     }
 
+    public static String framedRows(StyledText label, TranslationStore store) {
+        return LabelTranslator.framedRows(label, store);
+    }
+
     public static boolean[] chatCentred(List<StyledText> rows) {
         return ChatRealigner.chatCentred(rows);
     }

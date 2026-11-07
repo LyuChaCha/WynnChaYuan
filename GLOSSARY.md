@@ -293,7 +293,7 @@ Gikyo 照原文：別人稱 they 的寫「他們」，Gikyo 自稱 it 的寫「�
 | Bleeding Rose | 泣血薔薇 | 報社筆名，比照 `Toxic Thistle` **(待討論)** |
 | Dusk Garden | 暮色花園 | 同上 **(待討論)** |
 | grapple arrow | 抓鉤箭 | Rex 的 |
-| Blossom of Blades | 綻放之刃 | 原文另有 `Blossoming Blades` 的寫法，是同一個組織，中文統一 **(待確認)** |
+| Blossom of Blades | 綻放之刃 | 原文另有 `Blossoming Blades` 的寫法，是同一個組織，中文統一 |
 | Operation Godslayer | 弒神行動 | **(待討論)** |
 | Fledgeling | 雛鳥 | 樹冠對新成員的稱呼 |
 | mirror realm | 鏡界 | Sovereign Two 的鏡子裡 **(待討論)** |

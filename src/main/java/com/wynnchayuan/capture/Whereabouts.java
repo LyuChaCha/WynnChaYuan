@@ -31,6 +31,15 @@ public final class Whereabouts {
         }
     }
 
+    public static boolean onHousing() {
+        try {
+            return Models.Housing != null && Models.Housing.isOnHousing();
+        } catch (Throwable t) {
+            ErrorDebug.note("Whereabouts#onHousing", null, t);
+            return false;
+        }
+    }
+
     private static String raid() {
         RaidInfo raid = Models.Raid.getCurrentRaid();
         if (raid == null || raid.getRaidKind() == null) {

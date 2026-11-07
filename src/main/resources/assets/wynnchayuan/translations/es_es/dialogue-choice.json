@@ -2,7 +2,7 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 536,
+  "count": 611,
   "translated": 536
  },
  "entries": {
@@ -5771,6 +5771,768 @@
    "kind": "dialogue",
    "full": "",
    "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c212": {
+   "src": "[{~} {~}] One of several \"Dr.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] One of several \"Dr. Soosu\" Flavors",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c213": {
+   "src": "Someone started mocking our",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Someone started mocking our Queen.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c214": {
+   "src": "I'll hide.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c215": {
+   "src": "Later...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c216": {
+   "src": "Of what?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c217": {
+   "src": "Elise?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c218": {
+   "src": "I should ask you the same th",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I should ask you the same thing.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c219": {
+   "src": "Tasim. I didn't expect to se",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Tasim. I didn't expect to see you here.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c220": {
+   "src": "They were trying to capture",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "They were trying to capture me!",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c221": {
+   "src": "You joined the Crown!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c222": {
+   "src": "You've seen what they've don",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You've seen what they've done!",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c223": {
+   "src": "What did she want you for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c224": {
+   "src": "I don't have one",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c225": {
+   "src": "{~} Token - [{~} E]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c226": {
+   "src": "{~} Tokens - [{~} E]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c227": {
+   "src": "Nothing right now",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c228": {
+   "src": "Sure - [{~} Tokens]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c229": {
+   "src": "Accuse",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c230": {
+   "src": "Not giving info",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c231": {
+   "src": "I guess so...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c232": {
+   "src": "Unrecognized",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c233": {
+   "src": "Is.. what true?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c234": {
+   "src": "It... is.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c235": {
+   "src": "But he's not here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c236": {
+   "src": "I've hunted Rhinos.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c237": {
+   "src": "What're you doing?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c238": {
+   "src": "What was that for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c239": {
+   "src": "We get it, we're out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c240": {
+   "src": "Soosu?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c241": {
+   "src": "Three?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c242": {
+   "src": "Are you part of the Resistan",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Are you part of the Resistance?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c243": {
+   "src": "Do you know Bush?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c244": {
+   "src": "Wait, what is this place?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c245": {
+   "src": "She's here too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c246": {
+   "src": "We did say we'd kill you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c247": {
+   "src": "These are your last moments!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c248": {
+   "src": "You're right where I want yo",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You're right where I want you.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c249": {
+   "src": "The newspapers wouldn't lie.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The newspapers wouldn't lie...",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c250": {
+   "src": "Where did they go?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c251": {
+   "src": "Freedom to Fruma!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c252": {
+   "src": "We did say we'd kill him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c253": {
+   "src": "The press remains truthful!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c254": {
+   "src": "So what will you all do now?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c255": {
+   "src": "I killed him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c256": {
+   "src": "Majin Thalas is dead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c257": {
+   "src": "This is a weird reaction.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c258": {
+   "src": "We'll do our best.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c259": {
+   "src": "Why are you STILL with her?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c260": {
+   "src": "What is WRONG with you?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c261": {
+   "src": "I'll do my best!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c262": {
+   "src": "I won't kill you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c263": {
+   "src": "I can't. Not again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c264": {
+   "src": "I won't lose another friend.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c265": {
+   "src": "It's not too late for you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c266": {
+   "src": "Live with your mistakes.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c267": {
+   "src": "So will we.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c268": {
+   "src": "Then help Rex!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c269": {
+   "src": "You sound exhausted.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c270": {
+   "src": "We'll need everything we can",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "We'll need everything we can get.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c271": {
+   "src": "Focus on your weapon.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c272": {
+   "src": "Reach into the bottomless we",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Reach into the bottomless well.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c273": {
+   "src": "Reach out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c274": {
+   "src": "It's done.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c275": {
+   "src": "Point at the big rift.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c276": {
+   "src": "Are you forgetting something",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Are you forgetting something?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c277": {
+   "src": "It was the Queen.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c278": {
+   "src": "I would.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c279": {
+   "src": "I made it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c280": {
+   "src": "Tell them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c281": {
+   "src": "How did it go on your end?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c282": {
+   "src": "What's the plan after this?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c283": {
+   "src": "See you soon.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c284": {
+   "src": "We stopped her...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c285": {
+   "src": "Is Rex alright?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c286": {
+   "src": "Is that what the Queen did?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
    "stage": "",
    "speaker": "",
    "source": "captured"

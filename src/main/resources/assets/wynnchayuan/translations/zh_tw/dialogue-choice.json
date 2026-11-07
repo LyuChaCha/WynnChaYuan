@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 536,
-  "translated": 536
+  "count": 611,
+  "translated": 611
  },
  "entries": {
   "choice#c000": {
@@ -5771,6 +5771,768 @@
    "kind": "dialogue",
    "full": "",
    "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c212": {
+   "src": "[{~} {~}] One of several \"Dr.",
+   "dst": "[{~} {~}] 「Dr. Soosu」系列口味之一",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] One of several \"Dr. Soosu\" Flavors",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c213": {
+   "src": "Someone started mocking our",
+   "dst": "有人開始嘲弄我們的女王。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Someone started mocking our Queen.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c214": {
+   "src": "I'll hide.",
+   "dst": "我躲起來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c215": {
+   "src": "Later...",
+   "dst": "待會兒吧……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c216": {
+   "src": "Of what?",
+   "dst": "什麼的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c217": {
+   "src": "Elise?",
+   "dst": "Elise？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c218": {
+   "src": "I should ask you the same th",
+   "dst": "我才想問你同樣的問題。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I should ask you the same thing.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c219": {
+   "src": "Tasim. I didn't expect to se",
+   "dst": "Tasim。沒想到會在這裡見到你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Tasim. I didn't expect to see you here.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c220": {
+   "src": "They were trying to capture",
+   "dst": "他們想抓我！",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "They were trying to capture me!",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c221": {
+   "src": "You joined the Crown!",
+   "dst": "你投靠了王室！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c222": {
+   "src": "You've seen what they've don",
+   "dst": "你看到他們做了什麼！",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You've seen what they've done!",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c223": {
+   "src": "What did she want you for?",
+   "dst": "她找你要做什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c224": {
+   "src": "I don't have one",
+   "dst": "我沒有",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c225": {
+   "src": "{~} Token - [{~} E]",
+   "dst": "{~} 枚代幣 - [{~} E]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c226": {
+   "src": "{~} Tokens - [{~} E]",
+   "dst": "{~} 枚代幣 - [{~} E]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c227": {
+   "src": "Nothing right now",
+   "dst": "現在什麼都不用",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c228": {
+   "src": "Sure - [{~} Tokens]",
+   "dst": "好啊 - [{~} 枚代幣]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c229": {
+   "src": "Accuse",
+   "dst": "指控",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c230": {
+   "src": "Not giving info",
+   "dst": "不肯透露",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c231": {
+   "src": "I guess so...",
+   "dst": "應該是吧……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c232": {
+   "src": "Unrecognized",
+   "dst": "沒認出來",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c233": {
+   "src": "Is.. what true?",
+   "dst": "什、什麼是真的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c234": {
+   "src": "It... is.",
+   "dst": "是……真的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c235": {
+   "src": "But he's not here.",
+   "dst": "可是他不在這裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c236": {
+   "src": "I've hunted Rhinos.",
+   "dst": "我獵過犀牛了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c237": {
+   "src": "What're you doing?",
+   "dst": "你在做什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c238": {
+   "src": "What was that for?",
+   "dst": "那是幹嘛？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c239": {
+   "src": "We get it, we're out.",
+   "dst": "知道了，我們走就是了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c240": {
+   "src": "Soosu?",
+   "dst": "Soosu？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c241": {
+   "src": "Three?",
+   "dst": "三個？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c242": {
+   "src": "Are you part of the Resistan",
+   "dst": "你是反抗組織的人嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Are you part of the Resistance?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c243": {
+   "src": "Do you know Bush?",
+   "dst": "你認識 Bush 嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c244": {
+   "src": "Wait, what is this place?",
+   "dst": "等等，這是什麼地方？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c245": {
+   "src": "She's here too.",
+   "dst": "她也在這裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c246": {
+   "src": "We did say we'd kill you.",
+   "dst": "我們說過會殺了你的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c247": {
+   "src": "These are your last moments!",
+   "dst": "這就是你最後的時刻了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c248": {
+   "src": "You're right where I want yo",
+   "dst": "你正中我的下懷。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You're right where I want you.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c249": {
+   "src": "The newspapers wouldn't lie.",
+   "dst": "報紙才不會說謊……",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The newspapers wouldn't lie...",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c250": {
+   "src": "Where did they go?",
+   "dst": "他們跑哪去了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c251": {
+   "src": "Freedom to Fruma!!",
+   "dst": "Fruma 自由萬歲！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c252": {
+   "src": "We did say we'd kill him.",
+   "dst": "我們說過會殺了他的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c253": {
+   "src": "The press remains truthful!",
+   "dst": "媒體依然說真話！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c254": {
+   "src": "So what will you all do now?",
+   "dst": "那你們接下來打算怎麼辦？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c255": {
+   "src": "I killed him.",
+   "dst": "我殺了他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c256": {
+   "src": "Majin Thalas is dead.",
+   "dst": "Majin Thalas 死了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c257": {
+   "src": "This is a weird reaction.",
+   "dst": "這反應真怪。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c258": {
+   "src": "We'll do our best.",
+   "dst": "我們會盡力的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c259": {
+   "src": "Why are you STILL with her?!",
+   "dst": "你為什麼「還」跟她站在一起？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c260": {
+   "src": "What is WRONG with you?!",
+   "dst": "你到底「哪裡」有問題？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c261": {
+   "src": "I'll do my best!",
+   "dst": "我會盡力的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c262": {
+   "src": "I won't kill you.",
+   "dst": "我不會殺你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c263": {
+   "src": "I can't. Not again.",
+   "dst": "我做不到。不能再一次了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c264": {
+   "src": "I won't lose another friend.",
+   "dst": "我不會再失去任何一個朋友。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c265": {
+   "src": "It's not too late for you.",
+   "dst": "對你來說還不算太遲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c266": {
+   "src": "Live with your mistakes.",
+   "dst": "帶著你的錯誤活下去吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c267": {
+   "src": "So will we.",
+   "dst": "我們也會。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c268": {
+   "src": "Then help Rex!",
+   "dst": "那就去幫 Rex！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c269": {
+   "src": "You sound exhausted.",
+   "dst": "你聽起來累壞了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c270": {
+   "src": "We'll need everything we can",
+   "dst": "我們需要能拿到的一切力量。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "We'll need everything we can get.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c271": {
+   "src": "Focus on your weapon.",
+   "dst": "專注在你的武器上。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c272": {
+   "src": "Reach into the bottomless we",
+   "dst": "探入那口無底的井。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Reach into the bottomless well.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c273": {
+   "src": "Reach out.",
+   "dst": "伸出手。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c274": {
+   "src": "It's done.",
+   "dst": "完成了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c275": {
+   "src": "Point at the big rift.",
+   "dst": "指向那道巨大的裂隙。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c276": {
+   "src": "Are you forgetting something",
+   "dst": "你是不是忘了什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Are you forgetting something?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c277": {
+   "src": "It was the Queen.",
+   "dst": "是女王。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c278": {
+   "src": "I would.",
+   "dst": "我會。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c279": {
+   "src": "I made it!",
+   "dst": "我成功了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c280": {
+   "src": "Tell them.",
+   "dst": "告訴他們。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c281": {
+   "src": "How did it go on your end?",
+   "dst": "你們那邊進行得怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c282": {
+   "src": "What's the plan after this?",
+   "dst": "這之後的計畫是什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c283": {
+   "src": "See you soon.",
+   "dst": "待會見。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c284": {
+   "src": "We stopped her...",
+   "dst": "我們阻止了她……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c285": {
+   "src": "Is Rex alright?",
+   "dst": "Rex 還好嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c286": {
+   "src": "Is that what the Queen did?",
+   "dst": "女王就是那樣做的嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
    "stage": "",
    "speaker": "",
    "source": "captured"
