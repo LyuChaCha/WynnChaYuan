@@ -9,9 +9,11 @@ import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -499,6 +501,8 @@ final class LabelTranslator {
         boolean any = false;
         boolean owned = false;
         boolean missed = false;
+        boolean[] looked = new boolean[rows.length];
+        boolean[] lost = new boolean[rows.length];
         int status = statusFrom(rows);
         for (int i = 0; i < rows.length; i++) {
             String row = rows[i];
@@ -513,6 +517,7 @@ final class LabelTranslator {
                 }
                 out[i] = hit;
                 any = true;
+                looked[i] = true;
                 continue;
             }
             if (i >= status || !GlyphSplitter.hasWordBesidesStatus(row)) {
@@ -528,12 +533,46 @@ final class LabelTranslator {
             }
             out[i] = row;
             missed = true;
+            lost[i] = true;
         }
-        if (!any || (missed && !owned)) {
+        if (!any || (missed && !owned && !playerTextBelow(rows, styled, looked, lost))) {
             return null;
         }
         return String.join(String.valueOf(LineTranslator.NEWLINE), out);
     }
+
+    static boolean playerTextBelow(String[] rows, StyledText[] styled, boolean[] looked,
+                                   boolean[] lost) {
+        if (rows.length != 2 || styled == null || styled.length != 2 || !looked[0] || !lost[1]) {
+            return false;
+        }
+        String below = rows[1].strip();
+        if (below.isEmpty() || !Character.isLowerCase(below.charAt(0))
+                || FIXED_SLOT.matcher(below).find()) {
+            return false;
+        }
+        Set<TextColor> above = colours(styled[0]);
+        Set<TextColor> under = colours(styled[1]);
+        return !above.isEmpty() && !under.isEmpty() && Collections.disjoint(above, under);
+    }
+
+    private static final Pattern FIXED_SLOT = Pattern.compile("\\{[#pu]}");
+
+    private static Set<TextColor> colours(StyledText row) {
+        Set<TextColor> out = new HashSet<>();
+        for (StyledTextPart part : row) {
+            if (GlyphSplitter.isGlyphPart(part)
+                    || !LineTranslator.hasContent(part.getString(null, StyleType.NONE))) {
+                continue;
+            }
+            PartStyle ps = part.getPartStyle();
+            TextColor colour = ps == null ? null : ps.getStyle().getColor();
+            out.add(colour == null ? NO_COLOUR : colour);
+        }
+        return out;
+    }
+
+    private static final TextColor NO_COLOUR = TextColor.fromRgb(0xFFFFFF);
 
     private static String framedRow(StyledText row, String template, TranslationStore store) {
         if (row == null || !LineParts.of(row).template().equals(template)) {

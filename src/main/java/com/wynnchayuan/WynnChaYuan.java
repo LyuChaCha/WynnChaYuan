@@ -160,6 +160,7 @@ public final class WynnChaYuan implements ClientModInitializer {
 
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
             LanguageLayers.settleAutoLanguage();
+            store.useLanguage(language);
             ModNetwork.startNetworked();
         });
 

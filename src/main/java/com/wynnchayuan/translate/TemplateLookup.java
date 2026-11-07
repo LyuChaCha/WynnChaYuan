@@ -828,13 +828,27 @@ final class TemplateLookup {
             if (!core.startsWith(prefix)) {
                 continue;
             }
-            String name = withPercent(core.substring(prefix.length()), store, percent);
+            String rest = core.substring(prefix.length());
+            String name = withPercent(rest, store, percent);
             String word = store.lookup(prefix.strip());
             if (name != null && word != null) {
-                return word + name;
+                return word + (store.namesWithOriginal() ? qualityInOriginal(name, prefix, rest) : name);
             }
         }
         return null;
+    }
+
+    static String qualityInOriginal(String name, String prefix, String rest) {
+        int open = name.lastIndexOf(" (");
+        int close = open < 0 ? -1 : name.indexOf(')', open);
+        if (close < 0) {
+            return name;
+        }
+        String original = name.substring(open + 2, close);
+        if (original.isBlank() || !rest.strip().startsWith(original)) {
+            return name;
+        }
+        return name.substring(0, open + 2) + prefix + original + name.substring(close);
     }
 
     private static final String[] QUALITY_PREFIXES = {"Perfect ", "Defective "};

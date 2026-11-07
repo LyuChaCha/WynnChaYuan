@@ -291,8 +291,11 @@ final class ItemNameRules {
         while (end > 0 && shinyMark(key.charAt(end - 1))) {
             end--;
         }
-        tail = key.substring(end) + tail;
-        key = key.substring(0, end).strip();
+        String marks = key.substring(end);
+        String name = key.substring(0, end);
+        String bare = name.stripTrailing();
+        tail = (marks.isEmpty() ? "" : name.substring(bare.length())) + marks + tail;
+        key = bare.strip();
         if (head.isEmpty() && tail.isEmpty()) {
             return shinyName(key);
         }
