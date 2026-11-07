@@ -919,7 +919,8 @@ export const STYLE = String.raw`
   }
   h1 { font-size: 40px; line-height: 52px; }
   .hero h1 { font-size: 60px; line-height: 72px; font-weight: 400; letter-spacing: 0; }
-  :lang(ja) .hero h1, :lang(ko) .hero h1 { word-break: normal; line-break: strict; }
+  .hero h1 { overflow-wrap: break-word; }
+  .hero h1:lang(ja) { font-size: 40px; line-height: 52px; }
   h2, #main > h2, .spec h2, .tpl h2, .policy h2 { font-size: 30px; line-height: 40px; }
   .side h2, .wipe-box h2, .foot-cols h2 { font-size: 20px; line-height: 28px; }
   h3, .features h3, .fcard h3, .band-head h3 { font-size: 20px; line-height: 28px; }
@@ -938,6 +939,8 @@ export const STYLE = String.raw`
   td .btn, th .btn, .tpl-sizes .btn { white-space: nowrap; }
   .btn { text-align: center; }
   select { max-width: 100%; min-width: 0; }
+  #main :where(p, li, dd, dt, h1, h2, h3, label) { overflow-wrap: break-word; }
+  .bot-state li, .bot-state code { word-break: break-all; }
   @media (min-width: 941px) { .foot { grid-template-columns: minmax(0, .8fr) minmax(0, 3.6fr); gap: 32px 40px; } }
   .foot-cols { gap: 26px 24px; }
   .tr-src, .tr-dst, .tr-term, .tr-opt-text, .fb-body, .tr-item, .finder-hits small, input[type="text"], input[type="search"], textarea, .tr-text {
@@ -954,6 +957,8 @@ export const STYLE = String.raw`
   .hn-icon > .ico.px, .features .ico.px, .glyph.own svg.px, .fcard .show svg.px, .hn-ava-fb .ico.px { width: 22px; height: 22px; }
   @media (max-width: 720px) {
     h1, .hero h1 { font-size: 40px; line-height: 52px; }
+    .hero h1:lang(ja) { font-size: 30px; line-height: 40px; }
+    .hn-tip::after { content: none; }
     #main > h2, .spec h2, .policy h2 { font-size: 30px; line-height: 40px; }
     .who-top { flex-wrap: wrap; }
     .who-top > .mc { flex: 0 1 auto; margin-left: 0; padding-left: 0; text-align: left; }
