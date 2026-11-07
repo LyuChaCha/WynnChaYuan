@@ -77,13 +77,13 @@ public final class ScoreboardListener {
             shown.add(ScoreboardFlow.key(segment.getHeader()));
             Set<String> players = ScoreboardFlow.keptRows(part, segment.getHeader(), content, names);
             kept.addAll(players);
+            ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store, players);
             for (StyledText row : content) {
                 shown.add(ScoreboardFlow.key(row));
-                if (!players.contains(ScoreboardFlow.key(row))) {
-                    capture(row, "desc");
-                }
             }
-            ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store, players);
+            for (StyledText row : leftOver(content, players, plan)) {
+                capture(row, "desc");
+            }
             if (plan.missing() > 0 && players.isEmpty()) {
                 captureBlock(content);
             }
@@ -99,6 +99,21 @@ public final class ScoreboardListener {
         boolean on = WynnChaYuan.config() == null || WynnChaYuan.config().translateScoreboard();
         WynntilsText.setScoreboard(shown, replaced, kept);
         TrackerOverlay.setExtras(any && on ? lines : List.of());
+    }
+
+    static List<StyledText> leftOver(List<StyledText> content, Set<String> players,
+                                     ScoreboardFlow.Plan plan) {
+        List<StyledText> out = new ArrayList<>();
+        if (content == null) {
+            return out;
+        }
+        for (StyledText row : content) {
+            String key = ScoreboardFlow.key(row);
+            if (!players.contains(key) && (plan == null || !plan.rows().containsKey(key))) {
+                out.add(row);
+            }
+        }
+        return out;
     }
 
     private static Set<String> memberNames(ScoreboardUpdatedEvent event) {

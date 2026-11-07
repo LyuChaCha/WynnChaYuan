@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Celebrations in Smoke",
-  "count": 540,
-  "translated": 540,
+  "count": 643,
+  "translated": 639,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -187,7 +187,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#018": {
-   "src": "Then you cannot be trusted. Leave.",
+   "src": "Than you cannot be trusted. Leave.",
    "dst": "Тогда вам нет доверия. Уходите.",
    "role": "desc",
    "kind": "dialogue",
@@ -927,7 +927,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#092": {
-   "src": "I'm much too weak to ride the ziplines around town anymore so I appreciate any company I can get.",
+   "src": "I'm much too weak to ride the ziplines around town much anymore so I appreciate any company I can get.",
    "dst": "Я уже слишком слаба, чтобы кататься по городу на канатках, так что рада любой компании.",
    "role": "desc",
    "kind": "dialogue",
@@ -4493,7 +4493,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#448": {
-   "src": "Be careful with the accusations you throw around.",
+   "src": "Be careful what accusations you throw around.",
    "dst": "Осторожнее с обвинениями, которыми ты разбрасываешься.",
    "role": "desc",
    "kind": "dialogue",
@@ -4753,7 +4753,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#474": {
-   "src": "Their recklessness prevents this. In a case where the smallest failure would be a catastrophe, recklessness becomes necessity.",
+   "src": "Their recklessness prevents this. In a case where the smallest failure would be catastrophe, recklessness becomes necessity.",
    "dst": "Их безрассудство этому мешает. Когда малейшая ошибка - катастрофа, безрассудство становится необходимостью.",
    "role": "desc",
    "kind": "dialogue",
@@ -4763,7 +4763,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#475": {
-   "src": "Imagine they had not acted rashly in throwing the bottle of fuel onto the already lit flame.",
+   "src": "Imagine they had not acted rashly in throwing a bottle of fuel onto the already lit flame.",
    "dst": "Представьте, что они не бросили бы опрометчиво бутылку горючего в уже горящий огонь.",
    "role": "desc",
    "kind": "dialogue",
@@ -4883,7 +4883,7 @@
    "source": "wiki"
   },
   "Celebrations in Smoke#487": {
-   "src": "I understand your reticense to pick one. We don't have anything close to the information required to make a proper judgement.",
+   "src": "I understand your reticence to pick one. We don't have anything close to the information required to make a proper judgment.",
    "dst": "Понимаю, почему вы не хотите выбирать. У нас и близко нет сведений для верного суждения.",
    "role": "desc",
    "kind": "dialogue",
@@ -5411,6 +5411,1088 @@
    "stage": "Stage 10",
    "speaker": "Burick",
    "source": "wiki"
+  },
+  "Celebrations in Smoke#540": {
+   "src": "Now that you have a mask, you can enjoy the festival.",
+   "dst": "Теперь, когда у тебя есть маска, можно наслаждаться праздником.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#541": {
+   "src": "Do you want to wear the deer mask?",
+   "dst": "Надеть маску оленя?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#542": {
+   "src": "You unravel your fortune. It says:",
+   "dst": "Ты разворачиваешь предсказание. В нём сказано:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#543": {
+   "src": "'You will live a long and prosperous life and will die surrouded by your clan.'",
+   "dst": "«Ты проживёшь долгую и счастливую жизнь и умрёшь в кругу своего клана.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Fortune Cookie",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#544": {
+   "src": "'Respect your parents, in your time of greatest need they will come for you.'",
+   "dst": "«Почитай родителей: в час величайшей нужды они придут за тобой.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Fortune Cookie",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#545": {
+   "src": "Festival Organizer\nWhat's that!?",
+   "dst": "Распорядитель праздника\nЧто это?!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#546": {
+   "src": "Festival Attendee\nNot right now, but-",
+   "dst": "Гость праздника\nНе сейчас, но-",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Attendee",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#547": {
+   "src": "What would you like to ask the suspect?",
+   "dst": "Что спросить у подозреваемого?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#548": {
+   "src": "You've updated your notes with this new information.",
+   "dst": "Ты дополнил записи новыми сведениями.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#549": {
+   "src": "You're already tracking Suspect {~}.",
+   "dst": "Ты уже отслеживаешь подозреваемого {~}.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#550": {
+   "src": "You're now following the clues related to Suspect {~}.",
+   "dst": "Теперь ты идёшь по следу улик подозреваемого {~}.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#551": {
+   "src": "Interrogate Suspect {~}",
+   "dst": "Допроси подозреваемого {~}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#553": {
+   "src": "What would you like to ask Burick?",
+   "dst": "Что спросить у Burick?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#554": {
+   "src": "What would you like to ask Arris?",
+   "dst": "Что спросить у Arris?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#555": {
+   "src": "What would you like to ask Cerisa?",
+   "dst": "Что спросить у Cerisa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#556": {
+   "src": "Ask Burick further questions?",
+   "dst": "Задать Burick ещё вопросы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#557": {
+   "src": "Ask Cerisa further questions?",
+   "dst": "Задать Cerisa ещё вопросы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#558": {
+   "src": "Ask Arris further questions?",
+   "dst": "Задать Arris ещё вопросы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#559": {
+   "src": "Isn't that personally dangerous, for you?",
+   "dst": "Разве это не опасно лично для тебя?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#560": {
+   "src": "Have you seen any changelings?",
+   "dst": "Ты видел подменышей?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#561": {
+   "src": "Why don't you have a medallion?",
+   "dst": "Почему у тебя нет медальона?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#562": {
+   "src": "How did you get into the festival without a medallion?",
+   "dst": "Как тебе удалось попасть на праздник без медальона?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#563": {
+   "src": "Why did you attend?",
+   "dst": "Что привело тебя сюда?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#564": {
+   "src": "Why would the clans trust you without a medallion?",
+   "dst": "Почему кланы доверяют тебе без медальона?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#565": {
+   "src": "What do you do as a member of Kalkalrah clan?",
+   "dst": "Чем ты занимаешься в клане Kalkalrah?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#566": {
+   "src": "What do you do specifically?",
+   "dst": "А чем конкретно?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#567": {
+   "src": "Are you always this nervous?",
+   "dst": "Ты всегда так нервничаешь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#568": {
+   "src": "So what if I think you did do it?",
+   "dst": "А если я думаю, что это всё-таки ты?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#569": {
+   "src": "Could you try speaking slower?",
+   "dst": "Можешь говорить помедленнее?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#570": {
+   "src": "Did you see who tried to burn down the wickerman?",
+   "dst": "Ты видел, кто пытался сжечь чучело Wicker?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#571": {
+   "src": "Why did you try to burn down the wickerman?",
+   "dst": "Зачем ты пытался сжечь чучело Wicker?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#572": {
+   "src": "Where do you get your green tea?",
+   "dst": "Где ты берёшь зелёный чай?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#573": {
+   "src": "Your entire business is selling the products of one clan to everyone else?",
+   "dst": "Весь твой промысел - продавать товары одного клана всем остальным?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#574": {
+   "src": "So you won't lie to me at all?",
+   "dst": "Значит, лгать мне ты не станешь вовсе?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#575": {
+   "src": "Why are you so insistent on not wanting to be found to have tried to burn the wickerman? Do you fear the consequences that much?",
+   "dst": "Почему ты так упорно не хочешь, чтобы тебя сочли поджигателем чучела Wicker? Так боишься последствий?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#576": {
+   "src": "Do you work alone?",
+   "dst": "Ты действуешь в одиночку?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#577": {
+   "src": "Who do you steal from?",
+   "dst": "У кого ты крадёшь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#578": {
+   "src": "Ask the tea enthusiast a question?",
+   "dst": "Задать любителю чая вопрос?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#579": {
+   "src": "Search for a camp east of {p} that Burick might have been spotted at",
+   "dst": "Обыщи лагерь к востоку от {p}, где могли видеть Burick",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#580": {
+   "src": "The Kalkalrah clan doesn't sell it normally?",
+   "dst": "Разве клан Kalkalrah обычно его не продаёт?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#581": {
+   "src": "No, It's starting to look like there isn't one.",
+   "dst": "Нет. Похоже, такого торговца просто нет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#582": {
+   "src": "This is where the fire was started, it looks like all that's left is embers.",
+   "dst": "Здесь начался пожар. Похоже, остались одни угли.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#583": {
+   "src": "... except, what's this?",
+   "dst": "... но что это?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#584": {
+   "src": "A bottle? You might want to see if the food stall recognizes it.",
+   "dst": "Бутылка? Стоит узнать, не признают ли её {c2}в лавке с едой{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#585": {
+   "src": "Ask the clan member a question?",
+   "dst": "Задать члену клана вопрос?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#586": {
+   "src": "Exiled? They never mentioned anything like that when I interrogated them.",
+   "dst": "Изгнали? Когда я допрашивал Arris, об этом не было ни слова.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#587": {
+   "src": "How much do you think I can trust them?",
+   "dst": "Насколько, по-твоему, Arris можно доверять?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#588": {
+   "src": "Why were you exiled?",
+   "dst": "За что тебя изгнали?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#589": {
+   "src": "How long ago was this?",
+   "dst": "Как давно это было?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#590": {
+   "src": "Was this the first time something like that happened?",
+   "dst": "Такое случилось впервые?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#591": {
+   "src": "Why did you come to the festival?",
+   "dst": "Что привело тебя на праздник?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#592": {
+   "src": "Give Arris a Fortune Cookie?",
+   "dst": "Дать Arris печенье с предсказанием?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#593": {
+   "src": "Sure, let me go get one.",
+   "dst": "Конечно, сейчас принесу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#594": {
+   "src": "Here's your cookie.",
+   "dst": "Вот твоё печенье.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#595": {
+   "src": "Arris cracks open the cookie.",
+   "dst": "Arris разламывает печенье.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#596": {
+   "src": "This looks like the place that festival attendee mentioned.",
+   "dst": "Похоже, это то самое место, о котором говорил гость праздника.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#597": {
+   "src": "The green tea covering the ground seems to indicate the clan member is telling the truth.",
+   "dst": "Рассыпанный по земле зелёный чай говорит о том, что член клана не врёт.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#598": {
+   "src": "Maybe you could look a bit more closely though?",
+   "dst": "Но, может, стоит присмотреться получше?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#599": {
+   "src": "On the wall is a crude sketch of the surrounding area.",
+   "dst": "На стене - грубый набросок окрестностей.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#600": {
+   "src": "The embers below this cooking pot are still smoldering, it's been used recently.",
+   "dst": "Угли под котелком ещё тлеют - им пользовались недавно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#601": {
+   "src": "You cheer your fox on! It, already under pressure, is overwhelmed.",
+   "dst": "Ты болеешь за своего лиса! Он и так на взводе - и совсем теряется.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#602": {
+   "src": "Your voice has recovered and you can cheer again.",
+   "dst": "Голос вернулся - можно снова болеть.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#603": {
+   "src": "You cheer your fox on! It can't hear you over the excitement of the race.",
+   "dst": "Ты болеешь за своего лиса! Но в азарте гонки он тебя не слышит.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#604": {
+   "src": "You cheer your fox on! It receives an extra boost of encouragement!",
+   "dst": "Ты болеешь за своего лиса! Он получает заряд поддержки!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#605": {
+   "src": "You just cheered your fox on! You need a few moments to recover your voice to cheer again.",
+   "dst": "Ты только что болел за лиса! Нужно немного передохнуть, чтобы голос восстановился.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#606": {
+   "src": "You cheer your fox on! It beams with your approval.",
+   "dst": "Ты болеешь за своего лиса! Он сияет от твоего одобрения.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#607": {
+   "src": "Ask the mother a question?",
+   "dst": "Задать матери вопрос?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#608": {
+   "src": "The box is stuck tightly in the mud. You might have to pull again, harder.",
+   "dst": "Ящик крепко застрял в грязи. Возможно, придётся дёрнуть ещё раз, посильнее.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#609": {
+   "src": "You'll have to confront her to learn more.",
+   "dst": "Чтобы узнать больше, {c2}придётся уличить её{/}.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#610": {
+   "src": "Ask the guard a question?",
+   "dst": "{c1}Задать стражнику вопрос?{/}",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#611": {
+   "src": "Are you aware of how easy it is to sneak in?",
+   "dst": "Ты знаешь, как легко сюда пробраться?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#612": {
+   "src": "... You're not sure someone else hasn't already noticed.",
+   "dst": "... Ты не уверен, что никто другой этого ещё не заметил.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#613": {
+   "src": "The merchant inspects the bottle.",
+   "dst": "Торговец осматривает бутылку.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#614": {
+   "src": "Ask the racing expert a question?",
+   "dst": "Задать знатоку бегов вопрос?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#615": {
+   "src": "Challenge the racing expert in the fox race?",
+   "dst": "Бросить знатоку бегов вызов в лисьих бегах?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#616": {
+   "src": "Ask the group of clan members a question?",
+   "dst": "Задать вопрос компании членов клана?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#617": {
+   "src": "I was told you all snuck into the festival with bottles like this.",
+   "dst": "Мне сказали, что вы все пробрались на праздник с такими бутылками.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#618": {
+   "src": "You hear a frail voice calling you from the east.",
+   "dst": "Ты слышишь слабый голос, зовущий тебя {c2}с востока{/}.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#619": {
+   "src": "Ask the elderly woman a question?",
+   "dst": "Задать пожилой женщине вопрос?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#620": {
+   "src": "Share your information with the elderly woman?",
+   "dst": "Поделиться сведениями с пожилой женщиной?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#621": {
+   "src": "Then return to me once you do know. I'll be waiting.",
+   "dst": "Тогда возвращайся, когда узнаешь. Я подожду.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#622": {
+   "src": "I found this box of soldier's gear. It was set down exactly where you snuck in the festival.",
+   "dst": "Я нашёл этот ящик с солдатским снаряжением. Он лежал ровно там, где ты пробралась на праздник.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#623": {
+   "src": "You lied to me!",
+   "dst": "Ты мне солгала!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#624": {
+   "src": "This seems counterproductive to your goal of getting me to trust you.",
+   "dst": "Не лучший способ заставить меня тебе доверять.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#625": {
+   "src": "I could report you to the military right now.",
+   "dst": "Я могу прямо сейчас сдать тебя военным.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#626": {
+   "src": "Is there anything you're not telling me?",
+   "dst": "Ты что-то от меня скрываешь?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#627": {
+   "src": "Why did you join the military?",
+   "dst": "Почему ты пошла в армию?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#628": {
+   "src": "You have enough confessions that the festival organizer should be happy now. You can return to them or continue investigating for more info.",
+   "dst": "Признаний уже достаточно, распорядитель праздника должен быть доволен. Можно {c2}вернуться к нему{/} или {c2}продолжить расследование, чтобы узнать больше{/}.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#629": {
+   "src": "Why are you attending the festival?",
+   "dst": "Ради чего ты на празднике?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#630": {
+   "src": "Ask Burick a further question?",
+   "dst": "Задать Burick ещё вопрос?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#631": {
+   "src": "How did you get that massive box of green tea?",
+   "dst": "Откуда у тебя этот огромный ящик зелёного чая?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#632": {
+   "src": "I'm not sure I feel comfortable sharing that with you.",
+   "dst": "Не уверен, что готов этим с тобой делиться.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#633": {
+   "src": "Ask your question.",
+   "dst": "Задай свой вопрос.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#634": {
+   "src": "Is there hidden security at this festival?",
+   "dst": "На празднике есть тайная охрана?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#635": {
+   "src": "They caused the small fire that almost burnt down the wickerman!",
+   "dst": "Это они устроили тот небольшой пожар, из-за которого чуть не сгорело чучело Wicker!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Celebrations in Smoke#636": {
+   "src": "Return to the festival organizer at [-{~}, {~}, -{~}]",
+   "dst": "Вернись к распорядителю праздника в [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#637": {
+   "src": "You already have found Suspect {~}'s lie!",
+   "dst": "Ты уже раскрыл ложь подозреваемого {~}!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#638": {
+   "src": "Really, I don't think any of them did it.",
+   "dst": "Честно, я не думаю, что это кто-то из них.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#639": {
+   "src": "Do you want to watch the wickerman burn and end the festival?",
+   "dst": "Посмотреть, как сгорает чучело Wicker, и завершить праздник?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Celebrations in Smoke#640": {
+   "src": "Maybe if you look around, you can find a way to sneak in?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#641": {
+   "src": "No. And I would appreciate it if you would avoid prying in my personal affairs.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "Burick",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#642": {
+   "src": "I disagree. You'll have to find a way to live with that disagreement.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "Burick",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#643": {
+   "src": "The barrel was destroyed! Try again?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

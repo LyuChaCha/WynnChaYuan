@@ -134,11 +134,12 @@ public final class CaptureListener {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
-        String speaker = nameplate;
+        boolean self = CurrentQuest.isSelf(nameplate);
+        String speaker = self ? CurrentQuest.PLAYER : nameplate;
         auditSpeaker(completed, speaker);
         String quest = CurrentQuest.get();
         boolean withQuest = QuestGuess.withQuest(quest, speaker,
-                WynnChaYuan.translations().inCast(quest, speaker),
+                self ? null : WynnChaYuan.translations().inCast(quest, speaker),
                 ConversationPartner.fromBlock());
         auditQuest(completed, quest, withQuest);
         WynnChaYuan.store().record(
@@ -235,12 +236,15 @@ public final class CaptureListener {
              });
 
         StyledText full = event.getText();
-        LineParts owned = full == null || GlyphSplitter.isGlyphOnly(full)
-                ? null : LineTranslator.nameFramed(full, WynnChaYuan.translations());
-        if (owned != null) {
-            WynnChaYuan.store().record(trimStatusLines(owned.template()), "name", "label",
-                                       "label/floating");
-        } else if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
+        boolean worded = full != null && !GlyphSplitter.isGlyphOnly(full);
+        LineParts owned = worded ? LineTranslator.nameFramed(full, WynnChaYuan.translations()) : null;
+        String ownedRows = worded && owned == null
+                ? LineTranslator.framedRows(full, WynnChaYuan.translations()) : null;
+        if (owned != null || ownedRows != null) {
+            WynnChaYuan.store().record(
+                    trimStatusLines(owned != null ? owned.template() : ownedRows), "name", "label",
+                    "label/floating");
+        } else if (worded) {
             String template = trimStatusLines(GlyphSplitter.toTemplate(full));
             if (!template.isBlank() && GlyphSplitter.hasLetter(template)
                     && !PlayerDataFilter.carriesPlayerData(template)

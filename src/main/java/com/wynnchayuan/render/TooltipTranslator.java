@@ -6,6 +6,8 @@ import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.capture.OverflowAudit;
 import com.wynnchayuan.capture.SelfNames;
 import com.wynnchayuan.translate.BlockLayout;
+import com.wynnchayuan.translate.ColumnHeader;
+import com.wynnchayuan.translate.ColumnRightEdge;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.GuessListRow;
 import com.wynnchayuan.translate.IndentAlign;
@@ -154,6 +156,7 @@ final class TooltipTranslator {
                 }
             }
         }
+        int namesKept = i;
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
                 partsOf.apply(styled.get(0)).template()) != null;
         boolean lootrunTitle = n > 0 && TooltipShape.isLootrunCard(styled)
@@ -246,6 +249,8 @@ final class TooltipTranslator {
             }
             IndentAlign.apply(
                     styled, out, rowOf, hit, centered, abilityPanel, TooltipTranslator::measure);
+            ColumnRightEdge.apply(styled, out, rowOf, hit, centered, TooltipTranslator::measure);
+            ColumnHeader.apply(styled, out, rowOf, hit, centered, TooltipTranslator::measure);
         } catch (RuntimeException e) {
             ErrorDebug.note("TooltipTranslator#translateLines", null, e);
         }
@@ -269,7 +274,7 @@ final class TooltipTranslator {
         if (!anyTranslated) {
             return List.of();
         }
-        if (anyMissed(styled, hit, store)) {
+        if (anyMissed(styled, hit, namesKept, store)) {
             TooltipDebug.dumpPartial(tooltip, out, hit);
         }
         out.replaceAll(LineTranslator::unslantAll);
@@ -326,9 +331,9 @@ final class TooltipTranslator {
         return LineTranslator.width(line);
     }
 
-    private static boolean anyMissed(List<StyledText> styled, boolean[] hit,
-                                     TranslationStore store) {
-        for (int k = 0; k < hit.length && k < styled.size(); k++) {
+    static boolean anyMissed(List<StyledText> styled, boolean[] hit, int namesKept,
+                             TranslationStore store) {
+        for (int k = Math.max(0, namesKept); k < hit.length && k < styled.size(); k++) {
             if (hit[k]) {
                 continue;
             }

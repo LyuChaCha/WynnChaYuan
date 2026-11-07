@@ -97,11 +97,11 @@ Wynncraft 被依照地區分為三個不同的省分與中心的海洋，在世�
 - the Realm of Light → 光之領域
 - Guardian of the Forest → 森林守護者
 - the Silent Expanse → 寂靜之境
-- Homecoming → 歸鄉之途
+- Homecoming → 返鄉
 - Leaves in the Wind → 風中之葉
-- The Steel Feather → 鋼鐵之羽
-- Amongst the Canopy→ 樹冠之中
-- Blossom of Blades → 刀刃之花
+- The Steel Feather → 鋼羽
+- Amongst the Canopy→ 樹冠之間
+- Blossom of Blades → 綻放之刃
 - the Decay / Corruption → 衰朽 / 腐敗
 ---
 

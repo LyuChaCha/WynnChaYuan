@@ -68,11 +68,27 @@ public final class OverflowAudit {
         if (PX_UNIT.equals(unit) && need - room < MIN_PX) {
             return null;
         }
-        if (PlayerDataFilter.carriesPlayerData(key)) {
+        if (PlayerDataFilter.carriesPlayerData(key)
+                || onlyOriginalAppended(where, src, dst, room, need, unit)) {
             return null;
         }
         return new Row(where, key, clean(dst), room, need, unit);
     }
+
+    static boolean onlyOriginalAppended(String where, String src, String dst, int room, int need,
+                                        String unit) {
+        if (!TOOLTIP.equals(where) || !PX_UNIT.equals(unit) || need - room > MAX_BRACKETS_PX) {
+            return false;
+        }
+        String name = withoutGlyphSlots(src);
+        return !name.isEmpty() && withoutGlyphSlots(dst).equals("(" + name + ")");
+    }
+
+    private static String withoutGlyphSlots(String text) {
+        return text == null ? "" : clean(text.replace(GlyphSplitter.GLYPH_PLACEHOLDER, ""));
+    }
+
+    static final int MAX_BRACKETS_PX = 8;
 
     private static String id(String where, String src) {
         return where == null || src == null ? null : where + '\u0000' + clean(src);
@@ -122,7 +138,9 @@ public final class OverflowAudit {
                     Row row = new Row(o.get("where").getAsString(), o.get("src").getAsString(),
                             o.get("dst").getAsString(), o.get("room").getAsInt(),
                             o.get("need").getAsInt(), o.get("unit").getAsString());
-                    if (!row.src().isBlank() && ROWS.size() < LIMIT) {
+                    if (!row.src().isBlank() && ROWS.size() < LIMIT
+                            && !onlyOriginalAppended(row.where(), row.src(), row.dst(),
+                                                     row.room(), row.need(), row.unit())) {
                         ROWS.putIfAbsent(row.where() + '\u0000' + row.src(), row);
                     }
                 } catch (RuntimeException e) {
