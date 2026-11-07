@@ -6,6 +6,7 @@ import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.capture.OverflowAudit;
 import com.wynnchayuan.capture.SelfNames;
 import com.wynnchayuan.translate.BlockLayout;
+import com.wynnchayuan.translate.ColumnHeader;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.GuessListRow;
 import com.wynnchayuan.translate.IndentAlign;
@@ -246,6 +247,7 @@ final class TooltipTranslator {
             }
             IndentAlign.apply(
                     styled, out, rowOf, hit, centered, abilityPanel, TooltipTranslator::measure);
+            ColumnHeader.apply(styled, out, rowOf, hit, centered, TooltipTranslator::measure);
         } catch (RuntimeException e) {
             ErrorDebug.note("TooltipTranslator#translateLines", null, e);
         }
