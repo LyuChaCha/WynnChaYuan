@@ -543,17 +543,77 @@ final class LabelTranslator {
         if (spans == null) {
             return null;
         }
-        String name = LineParts.flat(row).substring(spans.userStart(), spans.userEnd());
-        if (name.chars().anyMatch(Character::isDigit)) {
-            return null;
-        }
-        String hit = TemplateLookup.lookup(LineParts.of(row, spans).template(), store);
+        String framed = LineParts.of(row, spans).template();
+        String hit = TemplateLookup.lookup(framed, store);
         String user = GlyphSplitter.PLAYER_PLACEHOLDER;
         if (hit == null || hit.isBlank() || hit.indexOf(user) != hit.lastIndexOf(user)
                 || !hit.contains(user)) {
             return null;
         }
-        return hit.replace(user, name);
+        String name = nameAsTemplate(template, framed, hit);
+        return name == null ? null : hit.replace(user, name);
+    }
+
+    static String nameAsTemplate(String plain, String framed, String hit) {
+        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
+        String number = GlyphSplitter.NUMBER_PLACEHOLDER;
+        int at = framed.indexOf(user);
+        if (at < 0) {
+            return null;
+        }
+        String head = framed.substring(0, at);
+        String tail = framed.substring(at + user.length());
+        if (plain.length() < head.length() + tail.length()
+                || !plain.startsWith(head) || !plain.endsWith(tail)) {
+            return null;
+        }
+        String name = plain.substring(head.length(), plain.length() - tail.length());
+        if (name.isBlank() || name.contains(GlyphSplitter.GLYPH_PLACEHOLDER)
+                || name.contains(GlyphSplitter.PLACE_PLACEHOLDER) || name.contains(user)) {
+            return null;
+        }
+        if (!name.contains(number)) {
+            return name;
+        }
+        if (NUMBERED_SLOT.matcher(hit).find()) {
+            return null;
+        }
+        int before = count(head, number);
+        return count(hit.substring(0, hit.indexOf(user)), number) == before ? name : null;
+    }
+
+    private static int count(String text, String token) {
+        int n = 0;
+        for (int at = text.indexOf(token); at >= 0; at = text.indexOf(token, at + token.length())) {
+            n++;
+        }
+        return n;
+    }
+
+    private static final Pattern NUMBERED_SLOT = Pattern.compile("\\{~\\d+}");
+
+    static String framedRows(StyledText label, TranslationStore store) {
+        if (label == null || store == null || store.nameFrames().size() == 0) {
+            return null;
+        }
+        StyledText[] rows = label.split("\n");
+        if (rows.length < 2) {
+            return null;
+        }
+        String[] out = new String[rows.length];
+        boolean any = false;
+        for (int i = 0; i < rows.length; i++) {
+            String template = LineParts.of(rows[i]).template();
+            Broadcasts.Spans spans = template.isBlank() || !GlyphSplitter.hasLetter(template)
+                    ? null : store.nameFrames().find(rows[i], template);
+            if (spans != null) {
+                out[i] = LineParts.of(rows[i], spans).template();
+                any = true;
+            } else {
+                out[i] = template;
+            }
+        }
+        return any ? String.join("\n", out) : null;
     }
 
     private static String statusRow(String row, TranslationStore store) {

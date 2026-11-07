@@ -147,6 +147,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         store.knowsSources(LanguageLayers::alreadyCollected);
         store.knowsWhere(Whereabouts::now);
         store.knowsLonger(t -> translations.hasLonger(t));
+        store.knowsPlayerFrames(t -> translations.nameFrames().framesName(t));
+        store.knowsHousing(Whereabouts::onHousing);
         OwnOutputs.buildAsync();
         LanguageLayers.loadLayers();
 

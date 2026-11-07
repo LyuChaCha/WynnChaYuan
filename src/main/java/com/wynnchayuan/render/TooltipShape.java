@@ -3,12 +3,9 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.TranslationStore;
-import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
-import net.minecraft.network.chat.FontDescription;
-import net.minecraft.network.chat.Style;
 
 import java.util.List;
 import java.util.Locale;
@@ -65,22 +62,12 @@ final class TooltipShape {
     static String visibleText(StyledText line) {
         StringBuilder out = new StringBuilder();
         for (StyledTextPart part : line) {
-            PartStyle ps = part.getPartStyle();
-            if (ps != null && isInvisibleFont(ps.getStyle())) {
+            if (GlyphSplitter.isInvisiblePart(part)) {
                 continue;
             }
             out.append(part.getString(null, StyleType.NONE));
         }
         return out.toString();
-    }
-
-    private static boolean isInvisibleFont(Style style) {
-        if (style == null) {
-            return false;
-        }
-        FontDescription font = style.getFont();
-        return font instanceof FontDescription.Resource resource
-                && resource.id() != null && "invisible".equals(resource.id().getPath());
     }
 
     private static boolean continues(String prev, String line) {
