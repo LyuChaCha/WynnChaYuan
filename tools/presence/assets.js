@@ -44,7 +44,7 @@ export function page(html, lang, status = 200) {
 }
 
 export function font(path) {
-  const found = /^\/font\/(px|ui)-([a-z]{2})\.(ttf|woff)$/.exec(path);
+  const found = /^\/font\/(px|ui)-([a-z]{2,5})\.(ttf|woff)$/.exec(path);
   const set = found && (found[1] === 'px' ? found[3] === 'ttf' && FONTS : found[3] === 'woff' && UI_FONTS);
   const one = set && Object.hasOwn(set, found[2]) ? set[found[2]] : null;
   if (!one) return refuse('not found', 404);
