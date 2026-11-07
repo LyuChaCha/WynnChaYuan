@@ -92,6 +92,31 @@ public final class OverflowAuditTest {
                 com.wynnchayuan.render.DialogueRewriterProbe.fits(longLine, need)
                         && !com.wynnchayuan.render.DialogueRewriterProbe.fits(longLine, need - 1));
 
+        String gear = "{#}{#}{#}{#}{#}Stormy Chain Boots";
+        check("★ 只多了附上的原文括號、寬 8px：不記",
+                OverflowAudit.audit(T, gear, "{#}(Stormy Chain Boots)", 146, 154, PX) == null);
+        check("沒有圖示的名稱也一樣", OverflowAudit.audit(T, "Lucky Grace", "(Lucky Grace)",
+                66, 74, PX) == null);
+        check("括號裡不是原本那個名字的照記",
+                OverflowAudit.audit(T, gear, "{#}(Stormy Boots of Doom)", 146, 154, PX) != null);
+        check("寬得比兩個括號還多的照記",
+                OverflowAudit.audit(T, gear, "{#}(Stormy Chain Boots)", 146, 175, PX) != null);
+        check("譯名加原文擠在同一列的照記",
+                OverflowAudit.audit(T, gear, "{#}{#}{#}{#}{#}譯名 (Stormy Chain Boots)", 146, 154, PX)
+                        != null);
+        JsonArray stale = new JsonArray();
+        JsonObject paren = new JsonObject();
+        paren.addProperty("where", T);
+        paren.addProperty("src", gear);
+        paren.addProperty("dst", "{#}(Stormy Chain Boots)");
+        paren.addProperty("room", 146);
+        paren.addProperty("need", 154);
+        paren.addProperty("unit", PX);
+        stale.add(paren);
+        OverflowAudit.clear();
+        OverflowAudit.load(stale);
+        check("★ 舊檔裡只多括號的那幾條讀回來時丟掉", OverflowAudit.size() == 0);
+
         OverflowAudit.clear();
         if (failures > 0) {
             System.err.println(failures + " 項失敗");

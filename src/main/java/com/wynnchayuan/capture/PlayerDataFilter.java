@@ -329,6 +329,10 @@ public final class PlayerDataFilter {
         if (template == null || template.isBlank()) {
             return false;
         }
+        int row = template.indexOf('\n');
+        if (NUMBER_GLUED_TO_NAME.matcher(row < 0 ? template : template.substring(0, row)).find()) {
+            return true;
+        }
         String name = firstRowName(template);
         if (name.length() < MIN_PLATE_NAME) {
             return false;
@@ -373,6 +377,8 @@ public final class PlayerDataFilter {
         }
         return real && words.length <= MAX_PLATE_WORDS;
     }
+
+    private static final Pattern NUMBER_GLUED_TO_NAME = Pattern.compile("[a-z]{2}\\{~}");
 
     private static final int MIN_PLATE_NAME = 3;
 

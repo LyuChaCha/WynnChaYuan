@@ -90,9 +90,11 @@ final class WynntilsNames {
         }
         var captured = WynnChaYuan.store();
         LineParts owned = LineTranslator.nameFramed(text, WynnChaYuan.translations());
-        if (owned != null) {
+        String ownedRows = owned == null
+                ? LineTranslator.framedRows(text, WynnChaYuan.translations()) : null;
+        if (owned != null || ownedRows != null) {
             if (captured != null) {
-                captured.record(owned.template(), "name", "label", ctx);
+                captured.record(owned != null ? owned.template() : ownedRows, "name", "label", ctx);
             }
             return;
         }

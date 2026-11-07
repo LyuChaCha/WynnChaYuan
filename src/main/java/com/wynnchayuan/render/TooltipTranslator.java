@@ -155,6 +155,7 @@ final class TooltipTranslator {
                 }
             }
         }
+        int namesKept = i;
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
                 partsOf.apply(styled.get(0)).template()) != null;
         boolean lootrunTitle = n > 0 && TooltipShape.isLootrunCard(styled)
@@ -271,7 +272,7 @@ final class TooltipTranslator {
         if (!anyTranslated) {
             return List.of();
         }
-        if (anyMissed(styled, hit, store)) {
+        if (anyMissed(styled, hit, namesKept, store)) {
             TooltipDebug.dumpPartial(tooltip, out, hit);
         }
         out.replaceAll(LineTranslator::unslantAll);
@@ -328,9 +329,9 @@ final class TooltipTranslator {
         return LineTranslator.width(line);
     }
 
-    private static boolean anyMissed(List<StyledText> styled, boolean[] hit,
-                                     TranslationStore store) {
-        for (int k = 0; k < hit.length && k < styled.size(); k++) {
+    static boolean anyMissed(List<StyledText> styled, boolean[] hit, int namesKept,
+                             TranslationStore store) {
+        for (int k = Math.max(0, namesKept); k < hit.length && k < styled.size(); k++) {
             if (hit[k]) {
                 continue;
             }

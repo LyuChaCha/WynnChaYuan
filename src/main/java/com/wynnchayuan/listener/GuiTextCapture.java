@@ -37,15 +37,7 @@ public final class GuiTextCapture {
 
         boolean skipTitle = stack != null && stack.is(Items.PLAYER_HEAD);
 
-        List<String> templates = new ArrayList<>(tooltip.size());
-        for (Component line : tooltip) {
-            StyledText styled = StyledText.fromComponent(line);
-            if (GlyphSplitter.isGlyphOnly(styled)) {
-                templates.add(null);
-                continue;
-            }
-            templates.add(GlyphSplitter.toTemplate(styled));
-        }
+        List<String> templates = templatesOf(tooltip);
         skipTitle = skipTitle || PlayerDataFilter.isPartyCard(templates);
         CardDump.fromPlayerHead(stack != null && stack.is(Items.PLAYER_HEAD));
         boolean[] covered = covered(templates, GuiTextCapture::whole);
@@ -83,6 +75,19 @@ public final class GuiTextCapture {
             }
             WynnChaYuan.store().recordIn(row[0], "desc", "gui", row[1], title);
         }
+    }
+
+    static List<String> templatesOf(List<Component> tooltip) {
+        List<String> templates = new ArrayList<>(tooltip.size());
+        for (Component line : tooltip) {
+            StyledText styled = GlyphSplitter.withoutInvisible(StyledText.fromComponent(line));
+            if (GlyphSplitter.isGlyphOnly(styled)) {
+                templates.add(null);
+                continue;
+            }
+            templates.add(GlyphSplitter.toTemplate(styled));
+        }
+        return templates;
     }
 
     static List<String[]> rows(List<String> templates, boolean[] covered, int from,

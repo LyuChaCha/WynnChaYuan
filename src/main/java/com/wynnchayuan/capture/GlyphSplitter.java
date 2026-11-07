@@ -78,6 +78,34 @@ public final class GlyphSplitter {
         return true;
     }
 
+    public static boolean isInvisiblePart(StyledTextPart part) {
+        PartStyle style = part == null ? null : part.getPartStyle();
+        return style != null && style.getFont() instanceof FontDescription.Resource resource
+                && resource.id() != null && INVISIBLE_FONT.equals(resource.id().getPath());
+    }
+
+    public static StyledText withoutInvisible(StyledText text) {
+        if (text == null) {
+            return null;
+        }
+        boolean hidden = false;
+        for (StyledTextPart part : text) {
+            hidden |= isInvisiblePart(part);
+        }
+        if (!hidden) {
+            return text;
+        }
+        List<StyledTextPart> shown = new ArrayList<>();
+        for (StyledTextPart part : text) {
+            if (!isInvisiblePart(part)) {
+                shown.add(part);
+            }
+        }
+        return StyledText.fromParts(shown);
+    }
+
+    private static final String INVISIBLE_FONT = "invisible";
+
     public static boolean isGlyphOnly(StyledText text) {
         for (StyledTextPart part : text) {
             if (!isGlyphPart(part) && hasLetter(part.getString(null, StyleType.NONE))) {
