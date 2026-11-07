@@ -85,7 +85,12 @@ public final class Preview {
     private static final String[] CHOICES = {"Yes", "Goodbye."};
     private static final String CONTINUE = "to continue";
     private static final String BOSS = "Zombie";
-    private static final String NPC = "Weapon Merchant";
+    private static final String NPC = "Party Finder";
+    private static final String NPC_ROLE = "Find a party or queue for a raid";
+    private static final String NPC_LABEL = String.join("\n", "{#}", NPC, NPC_ROLE);
+    private static final int NPC_NAME = 0xFFFF55FF;
+    private static final int NPC_ABOUT = 0xFFAAAAAA;
+    private static final int TITLE_GOLD = 0xFFFFAA00;
     private static final String TITLE = "Level Up!";
     private static final String TRACK_1 = "World Event";
     private static final String TRACK_2 = "Click To Track";
@@ -736,29 +741,38 @@ public final class Preview {
         }
         s.mark(Spot.BOARD, sx, sy, boardW, boardH);
 
-        String tag = s.nametag == 1 ? zh.apply(NPC) : NPC;
-        int tagW = c.width(tag) + 6;
-        int nx = scenery ? x + (w - tagW) / 2 : x + 14;
-        int ny = scenery ? y + h * 41 / 100 - 18 : y + Math.max(64, h / 4);
-        c.fill(nx, ny, nx + tagW, ny + 11, SHADE);
-        c.text(tag, nx + 3, ny + 2, 0xFFFFFFFF);
-        if (!scenery) {
-            int px = nx + Math.max(0, (tagW - 16) / 2);
-            c.fill(px + 2, ny + 15, px + 14, ny + 27, 0xFFB98B5E);
-            c.fill(px, ny + 27, px + 16, ny + 45, 0xFF5A3A28);
-            c.fill(px + 2, ny + 45, px + 14, ny + 60, 0xFF3C4E6C);
+        String[] english = {NPC, NPC_ROLE};
+        String[] translated = npcLines(zh);
+        String[] plate = s.nametag == 1 ? translated : english;
+        float k = labelScale(c, Math.max(c.width(plate[0]), c.width(plate[1])), w - 12);
+        float line = 10 * k;
+        float plateW = Math.max(c.width(plate[0]), c.width(plate[1])) * k;
+        float px = Math.round(x + (w - plateW) / 2f);
+        float py = Math.round(scenery ? y + h * 0.41f - line * 2 : y + Math.max(64, h / 4f));
+        if (px + plateW > sx - 2) {
+            py = Math.max(py, sy + boardH + 4);
         }
-        s.mark(Spot.NAMEPLATE, nx, ny, tagW, 11);
+        int[] colours = {NPC_NAME, NPC_ABOUT};
+        for (int i = 0; i < plate.length; i++) {
+            float lw = c.width(plate[i]) * k;
+            c.text(plate[i], x + (w - lw) / 2f, py + i * line, colours[i], k);
+        }
+        if (!scenery) {
+            float fx = Math.round(x + w / 2f - 8);
+            float fy = py + line * 2 + 4;
+            c.fill(fx + 2, fy, fx + 14, fy + 12, 0xFFB98B5E);
+            c.fill(fx, fy + 12, fx + 16, fy + 30, 0xFF5A3A28);
+            c.fill(fx + 2, fy + 30, fx + 14, fy + 45, 0xFF3C4E6C);
+        }
+        s.mark(Spot.NAMEPLATE, px, py, plateW, line * 2);
         if (s.nametag == 0) {
-            String z = zh.apply(NPC);
-            int zw = Math.min(w - 8, c.width(z) + 8);
-            int zx = nx + tagW + 4;
-            if (zx + zw > x + w - 4) {
-                zx = Math.max(x + 4, Math.min(x + w - 4 - zw, nx + (tagW - zw) / 2));
-            }
-            Ui.box(c, zx, ny + 14, zw, 14, BOX_BG, accent);
-            c.text(Ui.fit(c, z, zw - 8), zx + 4, ny + 17, Ui.TEXT);
-            s.mark(Spot.NAMEPLATE, zx, ny + 14, zw, 14);
+            int zw = Math.min(w - 8, Math.max(c.width(translated[0]), c.width(translated[1])) + 8);
+            int zx = Math.round(Math.max(x + 4, Math.min(x + w - 4 - zw, x + (w - zw) / 2f)));
+            int zy = Math.round(py + line * 2 + 4);
+            Ui.box(c, zx, zy, zw, 25, BOX_BG, accent);
+            c.text(Ui.fit(c, translated[0], zw - 8), zx + 4, zy + 4, NPC_NAME);
+            c.text(Ui.fit(c, translated[1], zw - 8), zx + 4, zy + 14, NPC_ABOUT);
+            s.mark(Spot.NAMEPLATE, zx, zy, zw, 25);
         }
 
         float barTop = hotbar(c, x, y, w, h,
@@ -785,9 +799,30 @@ public final class Preview {
         float scale = c.width(title) * big <= w - 24 ? big : 1f;
         float titleW = c.width(title) * scale;
         float titleX = x + (w - titleW) / 2f;
-        float titleY = Math.min(chatY - 14 - 8 * scale, y + h * 0.56f);
-        c.text(title, titleX, titleY, 0xFFF5C56B, scale);
+        float titleY = Math.max(py + line * 2 + 4, Math.min(chatY - 14 - 8 * scale, y + h * 0.56f));
+        c.text(title, titleX, titleY, TITLE_GOLD, scale);
         s.mark(Spot.TITLE, titleX, titleY - 1, titleW, 8 * scale + 2);
+    }
+
+    private static String[] npcLines(UnaryOperator<String> zh) {
+        String block = zh.apply(NPC_LABEL);
+        if (!block.equals(NPC_LABEL)) {
+            String[] parts = block.split("\n");
+            if (parts.length == 3) {
+                return new String[] {parts[1], parts[2]};
+            }
+        }
+        return new String[] {zh.apply(NPC), zh.apply(NPC_ROLE)};
+    }
+
+    static float labelScale(Canvas c, float width, float room) {
+        float px = c.px();
+        for (int n = (int) Math.floor(1.5f / px + 0.001f); n >= 1; n--) {
+            if (width * n * px <= room) {
+                return n * px;
+            }
+        }
+        return px;
     }
 
     private static void data(Canvas c, int x, int y, int w, int h, State s, int accent) {

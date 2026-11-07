@@ -650,6 +650,13 @@ public final class SettingsViewTest {
             ImageIO.write(render(sv, size[0], size[1], size[2]).image, "png",
                     new File(out, "zh_tw-dialogue-selected-" + size[0] + "-max.png"));
         }
+        for (int[] size : new int[][] {{640, 360, 3}, {960, 540, 2}}) {
+            Fake world = new Fake("zh_tw");
+            world.values.put("world.nametag", 1);
+            SettingsView wv = new SettingsView(world.tabs(), world, 0);
+            ImageIO.write(render(wv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-world-replace-" + size[0] + ".png"));
+        }
         Fake look = new Fake("zh_tw");
         look.values.put("items.tooltip", 1);
         SettingsView lv = new SettingsView(look.tabs(), look, 0);
