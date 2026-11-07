@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "祕法回流提取超過 {~} 魔力時，對附近的敵方造成傷害。",
+   "dst": "{c1}祕法回流{c2}提取{c3}超過 {~}{c2} 魔力時，對附近的敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "治療發出一道強光，對附近的敵方造成傷害。",
+   "dst": "{c1}治療{c2}發出一道強光，對附近的敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -796,7 +796,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "治療和祕法回流會消除友軍的燃燒及所有負面狀態。",
+   "dst": "{c1}治療{c2}和{c1}祕法回流{c2}會消除友軍的燃燒及所有負面狀態。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1499,7 +1499,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "奧法尼姆的光球生命增加 {~}，\n光球攻擊時消耗的生命減少 {~}。",
+   "dst": "{c2}奧法尼姆{c1}的光球生命增加 {c3}{~}{c1}，\n光球攻擊時消耗的生命減少 {c3}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "奧法尼姆的光球數量增加 {~}。",
+   "dst": "{c2}奧法尼姆{c1}的光球數量增加 {c3}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "增加太陽雨的傷害。",
+   "dst": "{c1}增加{c2}太陽雨{c1}的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "奧法尼姆的光球數量增加 {~}，但傷害降低。",
+   "dst": "{c2}奧法尼姆{c1}的光球數量增加 {c3}{~}{c1}，但傷害降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "增加隕石的傷害並使其速度翻倍。",
+   "dst": "{c1}增加{c2}隕石{c1}的傷害並使其速度翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "流星雨召喚隕石的速度增加 {~}。",
+   "dst": "{c1}流星雨{c2}召喚隕石的速度增加 {c3}{~}{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "蹲下並施放治療使你和你的次元裂隙綁定，進入裂隙繫身狀態。",
+   "dst": "{c1}蹲下並施放{c2}治療{c1}使你和你的{c2}次元裂隙{c1}綁定，進入{c2}裂隙繫身{c1}狀態。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "織光的光球數量增加 {~}。",
+   "dst": "{c2}織光{c1}的光球數量增加 {c3}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "次元裂隙中將會有一個裂隙之裔躲在其中。",
+   "dst": "{c1}次元裂隙{c2}中將會有一個{c3}裂隙之裔{c2}躲在其中。",
    "role": "desc",
    "kind": "block",
    "ctx": [

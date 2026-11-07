@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "비전 전송으로 마나를 {~} 이상 전송하면\n주변 적에게 피해를 줍니다.",
+   "dst": "{c1}비전 전송{c2}으로 마나를 {c3}{~} 이상{c2} 전송하면\n주변 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "치유가 강한 빛을 내뿜어\n주변 적에게 피해를 줍니다.",
+   "dst": "{c1}치유{c2}가 강한 빛을 내뿜어\n주변 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -796,7 +796,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "치유와 비전 전송이 아군의 모든\n해로운 효과와 불을 정화합니다.",
+   "dst": "{c1}치유{c2}와 {c1}비전 전송{c2}이 아군의 모든\n해로운 효과와 불을 정화합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1499,7 +1499,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "Ophanim 구체의 체력이 +{~}\n증가하고, 공격할 때 받는\n피해가 -{~} 감소합니다.",
+   "dst": "{c2}Ophanim{c1} 구체의 체력이 {c3}+{~}{c1}\n증가하고, 공격할 때 받는\n피해가 {c3}-{~}{c1} 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "Ophanim의 최대 구체 수가\n+{~} 증가합니다.",
+   "dst": "{c2}Ophanim{c1}의 최대 구체 수가\n{c3}+{~}{c1} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "여우비의 피해가 증가합니다.",
+   "dst": "{c2}여우비{c1}의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "Ophanim의 최대 구체 수가\n+{~} 증가하고\n구체의 피해가 감소합니다.",
+   "dst": "{c2}Ophanim{c1}의 최대 구체 수가\n{c3}+{~}{c1} 증가하고\n구체의 피해가 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "Meteor의 속도가 두 배가 되고 피해가 증가합니다.",
+   "dst": "{c2}Meteor{c1}의 속도가 두 배가 되고 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "Meteor Shower가 운석을 +{~} 더 빠르게 소환합니다.",
+   "dst": "{c1}Meteor Shower{c2}가 운석을 {c3}+{~}{c2} 더 빠르게 소환합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "웅크린 채 Heal을 시전하면 자신을\nDimensional Tear에 결속시켜 틈새 결속 상태가 됩니다.",
+   "dst": "{c1}웅크린 채 {c2}Heal{c1}을 시전하면 자신을\n{c2}Dimensional Tear{c1}에 결속시켜 {c2}틈새 결속{c1} 상태가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "Lightweaver의 최대 구체 수가\n+{~} 증가합니다.",
+   "dst": "{c2}Lightweaver{c1}의 최대 구체 수가\n{c3}+{~}{c1} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "Dimensional Tear가 활성화된 동안\n틈새의 자손이 깃듭니다.",
+   "dst": "{c1}Dimensional Tear{c2}가 활성화된 동안\n{c3}틈새의 자손{c2}이 깃듭니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
