@@ -31,7 +31,7 @@ public final class SettingsViewTest {
     }
 
     private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "en_us"};
-    private static final String[] TABS = {"items", "panel", "dialogue", "world", "data", "badge"};
+    private static final String[] TABS = {"overview", "look", "lang", "data", "badge"};
 
     public static void main(String[] args) throws Exception {
         File out = new File("build/ui-preview");
@@ -57,8 +57,8 @@ public final class SettingsViewTest {
                 }
             }
             SettingsView low = new SettingsView(fake.tabs(), fake, 0);
-            low.showTab(3);
-            ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-world-short.png"));
+            low.showTab(0);
+            ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-overview-short.png"));
         }
         LANG = "zh_tw";
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × "
@@ -73,9 +73,16 @@ public final class SettingsViewTest {
         }
         LANG = "ru_ru";
         Fake ru = new Fake("ru_ru");
-        view = new SettingsView(ru.tabs(), ru, 3);
-        render(view, 640, 360, 1);
-        must("ru_ru world：選項太長，整頁換成兩列", view.pageWide());
+        view = new SettingsView(ru.tabs(), ru, 0);
+        List<String> wide = new ArrayList<>();
+        for (int tab = 0; tab < TABS.length; tab++) {
+            view.showTab(tab);
+            render(view, 640, 360, 1);
+            if (view.pageWide()) {
+                wide.add(TABS[tab]);
+            }
+        }
+        must("ru_ru：選項太長的頁整頁換成兩列（" + wide + "）", !wide.isEmpty());
         LANG = "zh_tw";
 
         interactions(out);
@@ -435,9 +442,8 @@ public final class SettingsViewTest {
     }
 
     private static final java.util.Set<String> STRETCHY = java.util.Set.of(
-            "items.tooltip", "items.names", "items.pages", "items.shot", "panel.anchor", "panel.side", "panel.gap",
-            "dialogue.mode", "dialogue.choices", "dialogue.hold", "world.nametag", "world.chat",
-            "world.tracker", "data.language", "data.fallback", "data.ui", "data.source");
+            "items.shot", "panel.anchor", "panel.gap", "dialogue.hold", "data.language",
+            "data.fallback", "data.ui", "data.source");
 
     private static void interactions(File out) throws Exception {
         Fake zh = new Fake("zh_tw");
@@ -449,11 +455,32 @@ public final class SettingsViewTest {
         view.mouseDown(market.ctrlRight() - 8, market.y() + market.h() / 2, 0);
         must("點開關會翻過去", zh.flag("items.market") != before);
 
-        SettingsView.Placed names = find(view, "items.names");
-        view.mouseDown(names.ctrlLeft() + 6, names.y() + names.h() / 2, 0);
-        must("點分段的第一格會選到它", zh.index("items.names") == 0);
+        SettingsView.Placed tooltip = find(view, "items.tooltip");
+        must("三個選項以上的列收起來時沒有選項可點", view.spot("c:items.tooltip:1") == null);
+        view.mouseDown(tooltip.ctrlLeft() - 20, tooltip.y() + tooltip.h() / 2, 0);
         render(view, 640, 360, 1);
-        must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.names"));
+        float[] replace = view.spot("c:items.tooltip:0");
+        must("點那一列會展開，選項一個一列", replace != null);
+        must("展開後底下的細項也畫出來", view.placed().stream()
+                .anyMatch(p -> p.id().equals("items.shiftpeek")));
+        AwtCanvas open = render(view, 640, 360, 3);
+        ImageIO.write(open.image, "png", new File(out, "zh_tw-overview-open.png"));
+        view.mouseDown(replace[0] + 10, replace[1] + replace[3] / 2, 0);
+        must("點展開後的選項會選到它", zh.index("items.tooltip") == 0);
+        render(view, 640, 360, 1);
+        must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.tooltip"));
+        float[] talk = view.spot("f:dialogue.mode");
+        for (int i = 0; i < 12 && (talk == null || talk[3] < 10); i++) {
+            view.scroll(-1);
+            render(view, 640, 360, 1);
+            talk = view.spot("f:dialogue.mode");
+        }
+        must("對話那一列在畫面上", talk != null);
+        view.mouseDown(talk[0] + 10, talk[1] + talk[3] / 2, 0);
+        render(view, 640, 360, 1);
+        must("一次只開一列：開了對話，物品說明框那一列收起來", view.spot("c:items.tooltip:1") == null);
+        view.key(SettingsView.KEY_HOME, false);
+        render(view, 640, 360, 1);
 
         view.showTab(1);
         render(view, 640, 360, 1);
@@ -473,7 +500,7 @@ public final class SettingsViewTest {
         view.key(SettingsView.KEY_ESC, false);
         must("Esc 先收色盤，不是關掉整個畫面", !view.popoverOpen());
 
-        view.showTab(4);
+        view.showTab(2);
         render(view, 640, 360, 1);
         SettingsView.Placed language = find(view, "data.language");
         view.mouseDown(language.ctrlLeft() + 20, language.y() + language.h() / 2, 0);
@@ -495,7 +522,7 @@ public final class SettingsViewTest {
             LANG = lang;
             Fake fake = new Fake(lang);
             SettingsView big = new SettingsView(fake.tabs(), fake, 0);
-            for (int tab : new int[] {0, 3}) {
+            for (int tab : new int[] {0, 1}) {
                 big.showTab(tab);
                 c = render(big, 640, 360, 3);
                 ImageIO.write(c.image, "png", new File(out, "big-" + lang + "-" + TABS[tab] + ".png"));
@@ -504,12 +531,192 @@ public final class SettingsViewTest {
         LANG = "zh_tw";
         for (int[] size : new int[][] {{480, 270}, {427, 240}, {320, 240}}) {
             Fake fake = new Fake("zh_tw");
-            SettingsView small = new SettingsView(fake.tabs(), fake, 3);
+            SettingsView small = new SettingsView(fake.tabs(), fake, 0);
             c = render(small, size[0], size[1], 3);
             ImageIO.write(c.image, "png", new File(out, "small-" + size[0] + "x" + size[1] + ".png"));
-            check("zh_tw world " + size[0] + "x" + size[1], small);
+            check("zh_tw overview " + size[0] + "x" + size[1], small);
         }
+        map(out);
         System.out.println("  [PASS] 點、拖、彈出層、搜尋都走過一遍");
+    }
+
+    private static void map(File out) throws Exception {
+        for (String lang : new String[] {"zh_tw", "en_us", "ru_ru", "es_es"}) {
+            LANG = lang;
+            Fake fake = new Fake(lang);
+            SettingsView view = new SettingsView(fake.tabs(), fake, 0);
+            render(view, 960, 540, 2);
+            float[] chat = view.spot("spot:CHAT");
+            must(lang + "：世界畫面上點得到聊天", chat != null);
+            if (chat == null) {
+                continue;
+            }
+            view.mouseDown(chat[0] + chat[2] / 2, chat[1] + chat[3] / 2, 0);
+            AwtCanvas c = render(view, 960, 540, 2);
+            must(lang + "：點畫面上的聊天，聊天那一列展開", view.spot("c:world.chat:0") != null);
+            ImageIO.write(c.image, "png", new File(out, lang + "-map-world.png"));
+            float[] off = view.spot("c:world.chat:2");
+            if (off != null) {
+                view.mouseDown(off[0] + 10, off[1] + off[3] / 2, 0);
+            }
+            must(lang + "：從展開的那一列改成關閉", fake.index("world.chat") == 2);
+            for (String scene : new String[] {"DIALOGUE", "TOOLTIP"}) {
+                float[] tab = view.spot("scene:" + scene);
+                must(lang + "：預覽上方有 " + scene + " 分頁", tab != null);
+                if (tab != null) {
+                    view.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+                    c = render(view, 960, 540, 2);
+                    ImageIO.write(c.image, "png", new File(out, lang + "-map-"
+                            + scene.toLowerCase(java.util.Locale.ROOT) + ".png"));
+                }
+            }
+            must(lang + "：物品畫面上點得到說明框", view.spot("spot:TOOLTIP") != null);
+        }
+        LANG = "zh_tw";
+        Fake fake = new Fake("zh_tw");
+        SettingsView view = new SettingsView(fake.tabs(), fake, 0);
+        render(view, 960, 540, 2);
+        float[] bar = view.spot("divider");
+        must("表格與預覽之間有可以拖的分隔線", bar != null);
+        if (bar != null) {
+            float before = bar[0];
+            view.mouseDown(bar[0] + 3, bar[1] + 40, 0);
+            view.mouseDrag(bar[0] + 120, bar[1] + 40);
+            view.mouseUp();
+            render(view, 960, 540, 2);
+            must("往右拖，預覽變窄、寬度記下來（" + fake.previewWidth + "）",
+                    fake.previewWidth > 0 && view.spot("divider")[0] > before);
+            must("拖到底也不會窄過下限", fake.previewWidth >= 150);
+            ImageIO.write(render(view, 960, 540, 2).image, "png", new File(out, "zh_tw-map-narrow.png"));
+            float[] again = view.spot("divider");
+            CLOCK += 2000;
+            view.render(new AwtCanvas(960, 540, 1, "zh_tw"), 960, 540, -100, -100, CLOCK);
+            view.mouseDown(again[0] + 3, again[1] + 40, 0);
+            view.mouseUp();
+            CLOCK += 100;
+            view.render(new AwtCanvas(960, 540, 1, "zh_tw"), 960, 540, -100, -100, CLOCK);
+            view.mouseDown(again[0] + 3, again[1] + 40, 0);
+            view.mouseUp();
+            must("按兩下回到預設寬度", fake.previewWidth == 0);
+        }
+        for (int i = 0; i < 400; i++) {
+            AwtCanvas c = new AwtCanvas(640, 360, 1, "zh_tw");
+            view.render(c, 640, 360, -100, -100, CLOCK += 50);
+            c.done();
+        }
+        must("葉子飄了二十秒（含好幾陣風）也沒出錯", true);
+
+        for (int narrow = 0; narrow < 2; narrow++) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            dlg.values.put("dialogue.choices", 1);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, 640, 360, 3);
+            float[] tab = sv.spot("scene:DIALOGUE");
+            if (tab != null) {
+                sv.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+            }
+            if (narrow == 1) {
+                dlg.previewWidth = 150;
+            }
+            ImageIO.write(render(sv, 640, 360, 3).image, "png",
+                    new File(out, "zh_tw-dialogue" + (narrow == 1 ? "-narrow" : "") + ".png"));
+        }
+        for (int wide : new int[] {150, 220, 360}) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, 960, 540, 2);
+            float[] tab = sv.spot("scene:DIALOGUE");
+            if (tab != null) {
+                sv.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+            }
+            dlg.previewWidth = wide;
+            ImageIO.write(render(sv, 960, 540, 2).image, "png",
+                    new File(out, "zh_tw-dialogue-" + wide + ".png"));
+        }
+        for (int[] size : new int[][] {{640, 360, 3}, {960, 540, 2}}) {
+            Fake dlg = new Fake("zh_tw");
+            dlg.values.put("dialogue.mode", 0);
+            SettingsView sv = new SettingsView(dlg.tabs(), dlg, 0);
+            render(sv, size[0], size[1], size[2]);
+            SettingsView.Placed row = find(sv, "dialogue.mode");
+            if (row != null) {
+                sv.mouseDown(row.x() + 12, row.y() + row.h() / 2, 0);
+            }
+            ImageIO.write(render(sv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-dialogue-selected-" + size[0] + ".png"));
+            dlg.previewWidth = 600;
+            ImageIO.write(render(sv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-dialogue-selected-" + size[0] + "-max.png"));
+        }
+        for (int[] size : new int[][] {{640, 360, 3}, {960, 540, 2}}) {
+            Fake world = new Fake("zh_tw");
+            world.values.put("world.nametag", 1);
+            SettingsView wv = new SettingsView(world.tabs(), world, 0);
+            ImageIO.write(render(wv, size[0], size[1], size[2]).image, "png",
+                    new File(out, "zh_tw-world-replace-" + size[0] + ".png"));
+        }
+        Fake look = new Fake("zh_tw");
+        look.values.put("items.tooltip", 1);
+        SettingsView lv = new SettingsView(look.tabs(), look, 0);
+        lv.showTab(1);
+        ImageIO.write(render(lv, 640, 360, 3).image, "png", new File(out, "zh_tw-panel-notice.png"));
+        ImageIO.write(render(lv, 960, 540, 2).image, "png", new File(out, "zh_tw-panel-notice-960.png"));
+        for (String id : new String[] {"items.tooltip", "dialogue.mode", "world.chat", "world.nametag"}) {
+            Fake pick = new Fake("zh_tw");
+            SettingsView sv = new SettingsView(pick.tabs(), pick, 0);
+            render(sv, 640, 360, 3);
+            float[] fold = sv.spot("f:" + id);
+            for (int i = 0; i < 16 && (fold == null || fold[3] < 10); i++) {
+                sv.scroll(-1);
+                render(sv, 640, 360, 1);
+                fold = sv.spot("f:" + id);
+            }
+            if (fold == null) {
+                continue;
+            }
+            sv.mouseDown(fold[0] + 10, fold[1] + fold[3] / 2, 0);
+            render(sv, 640, 360, 1);
+            for (int k = 0; k < 12; k++) {
+                float[] tail = sv.spot("c:" + id + ":2");
+                float floor = sv.window()[1] + sv.window()[3] - 40;
+                if (tail == null || tail[1] + tail[3] + 8 <= floor) {
+                    break;
+                }
+                sv.scroll(-1);
+                render(sv, 640, 360, 1);
+            }
+            for (int i = 0; i < 6; i++) {
+                float[] opt = sv.spot("c:" + id + ":" + i);
+                if (opt == null) {
+                    break;
+                }
+                sv.mouseDown(opt[0] + 10, opt[1] + opt[3] / 2, 0);
+                AwtCanvas shot = render(sv, 640, 360, 3);
+                float[] first = sv.spot("c:" + id + ":0");
+                float[] last = opt;
+                for (int j = i + 1; j < 6 && sv.spot("c:" + id + ":" + j) != null; j++) {
+                    last = sv.spot("c:" + id + ":" + j);
+                }
+                int x0 = Math.max(0, Math.round((first[0] - 10) * 3));
+                int y0 = Math.max(0, Math.round((first[1] - 8) * 3));
+                int x1 = Math.min(shot.image.getWidth(), Math.round((first[0] + first[2] + 10) * 3));
+                int y1 = Math.min(shot.image.getHeight(), Math.round((last[1] + last[3] + 8) * 3));
+                if (x1 > x0 && y1 > y0) {
+                    ImageIO.write(shot.image.getSubimage(x0, y0, x1 - x0, y1 - y0), "png",
+                            new File(out, "zh_tw-selected-" + id + "-" + i + ".png"));
+                }
+            }
+        }
+        for (int width = 20; width <= 80; width += 2) {
+            String wrapped = com.wynnchayuan.translate.TextWrapper.wrapToWidth("那我們還在等什麼？",
+                    width, text -> text.length() * 9);
+            for (String line : wrapped.split("\n")) {
+                must("換行不會讓「？」自己開頭（寬 " + width + "：" + wrapped.replace("\n", "/") + "）",
+                        !line.startsWith("？"));
+            }
+        }
     }
 
     private static SettingsView.Placed find(SettingsView view, String id) {
@@ -534,6 +741,18 @@ public final class SettingsViewTest {
             strings = load(lang);
             english = load("en_us");
             corpus = corpus(lang);
+            File dialogue = new File("src/main/resources/assets/wynnchayuan/translations/" + lang
+                    + "/quest-dialogue.json");
+            if (dialogue.isFile()) {
+                var root = com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(
+                        dialogue.toPath(), StandardCharsets.UTF_8)).getAsJsonObject();
+                for (var e : root.getAsJsonObject("entries").entrySet()) {
+                    var o = e.getValue().getAsJsonObject();
+                    if (o.has("src") && o.has("dst") && !o.get("dst").getAsString().isBlank()) {
+                        corpus.putIfAbsent(o.get("src").getAsString(), o.get("dst").getAsString());
+                    }
+                }
+            }
         }
 
         private static Map<String, String> load(String lang) throws Exception {
@@ -579,7 +798,9 @@ public final class SettingsViewTest {
                     ? id + ".hint" : id + ".unbound";
             Row r = Row.segment(id, () -> tr(id), () -> tr(hintKey));
             for (int i = 0; i < keys.length; i++) {
-                r.option(keys[i].startsWith("=") ? keys[i].substring(1) : tr(keys[i]), tones[i]);
+                String about = english.containsKey("wynnchayuan." + keys[i] + ".hint")
+                        ? tr(keys[i] + ".hint") : null;
+                r.option(keys[i].startsWith("=") ? keys[i].substring(1) : tr(keys[i]), tones[i], about);
             }
             return r.selected(() -> index(id)).pick(i -> values.put(id, i))
                     .reset(() -> !dirty(id), () -> values.put(id, defaults.get(id)));
@@ -596,7 +817,7 @@ public final class SettingsViewTest {
         }
 
         private Row colour(String id) {
-            init(id, "#6FA8D8");
+            init(id, "#7FD08A");
             return Row.colour(id, () -> tr(id), () -> tr(id + ".hint"))
                     .hex(() -> (String) values.get(id))
                     .setHex(hex -> {
@@ -636,50 +857,65 @@ public final class SettingsViewTest {
             Row.Tone bo = Row.Tone.BOTH;
             Row.Tone off = Row.Tone.OFF;
             Row.Tone pl = Row.Tone.PLAIN;
+            List<Row> master = List.of(toggle("translations.enabled", true, null));
             List<Row> items = List.of(
-                    segment("items.tooltip", 0, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off"),
-                    segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
-                    toggle("items.shiftpeek", true, null),
-                    segment("items.pages", 0, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "items.pages.off"),
+                    segment("items.tooltip", 1, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.TOOLTIP)
+                            .details(List.of(toggle("items.shiftpeek", true, null))),
                     toggle("items.market", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));
+            List<Row> dialogue = List.of(
+                    segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.DIALOGUE)
+                            .details(List.of(toggle("dialogue.cover", true, null),
+                                    slider("dialogue.hold", 0, 30, 6, true))),
+                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.CHOICES));
+            List<Row> world = List.of(
+                    segment("world.nametag", 0, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.NAMEPLATE)
+                            .details(List.of(action("world.nametag.advanced", "button.adjust"))),
+                    toggle("world.helditem", true, null).tone(rp).spot(Preview.Spot.HELD),
+                    toggle("world.titles", true, "mode.replace").tone(rp).spot(Preview.Spot.TITLE));
+            List<Row> hud = List.of(
+                    toggle("world.bossbar", true, "mode.replace").tone(rp).spot(Preview.Spot.BOSS),
+                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off")
+                            .spot(Preview.Spot.TRACKER),
+                    toggle("world.objectives", true, "mode.replace").tone(rp).near(Preview.Spot.BOARD),
+                    toggle("world.scoreboard", true, null).tone(rp).spot(Preview.Spot.BOARD));
+            List<Row> chat = List.of(
+                    segment("world.chat", 1, new Row.Tone[] {rp, bo, off}, "mode.replace", "mode.both", "mode.off")
+                            .spot(Preview.Spot.CHAT)
+                            .details(List.of(toggle("world.chatcopy", true, null))));
+            List<Row> names = List.of(
+                    segment("items.names", 2, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off")
+                            .near(Preview.Spot.TOOLTIP),
+                    segment("items.pages", 0, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
+                    toggle("items.abilitynames", true, null).tone(bo));
             List<Row> place = List.of(
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),
                     segment("panel.side", 0, new Row.Tone[] {pl, pl, pl}, "mode.auto", "mode.right", "mode.left"),
-                    slider("panel.gap", 12, 200, 12, false));
-            List<Row> look = List.of(colour("panel.theme"), colour("panel.colour"));
-            List<Row> dialogue = List.of(
-                    segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
-                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
-                    slider("dialogue.hold", 0, 30, 6, true),
+                    slider("panel.gap", 12, 200, 12, false),
                     toggle("dialogue.overlays", true, null));
-            List<Row> world = List.of(
-                    segment("world.nametag", 1, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
-                            .extra(() -> tr("button.advanced"), () -> { }),
-                    segment("world.chat", 1, new Row.Tone[] {rp, bo, off}, "mode.replace", "mode.both", "mode.off"),
-                    toggle("world.titles", true, "mode.replace"),
-                    toggle("world.bossbar", true, "mode.replace"),
-                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
-                    toggle("world.objectives", true, "mode.replace"),
-                    toggle("world.scoreboard", true, null),
-                    toggle("world.helditem", true, null),
-                    toggle("world.chatcopy", true, null));
+            List<Row> look = List.of(colour("panel.colour"), colour("panel.theme"),
+                    toggle("look.leaves", true, null));
             List<Row> langs = List.of(
                     select("data.language", true, "data.language.auto"),
                     select("data.fallback", true, "data.fallback.auto"),
-                    select("data.ui", false, "data.ui.auto"),
-                    toggle("data.collect", true, null),
-                    toggle("data.collectgui", false, null),
-                    toggle("data.debug", false, null));
+                    select("data.ui", false, "data.ui.auto"));
             List<Row> tools = List.of(
                     segment("data.source", 0, new Row.Tone[] {pl, pl}, "data.source.github", "data.source.local"),
                     toggle("data.autoupdate", false, null),
                     Row.action("data.reload", () -> tr("data.reload"), () -> tr("data.reload.github"))
                             .label(() -> tr("data.reload.fetch")),
                     Row.status("data.version", () -> tr("data.version"), () -> tr("data.version.hint"))
-                            .label(() -> tr("data.version.latest")).labelColour(() -> Ui.GREEN),
+                            .label(() -> tr("data.version.latest")).labelColour(() -> Ui.GREEN));
+            List<Row> collect = List.of(
+                    toggle("data.collect", true, null),
+                    toggle("data.collectgui", false, null),
+                    toggle("data.debug", false, null),
                     action("data.export", "data.export.button"),
                     action("data.submit", "data.submit.button"));
             List<Row.Tab> tabs = new ArrayList<>();
@@ -688,14 +924,21 @@ public final class SettingsViewTest {
                     toggle("items.wms", true, null),
                     toggle("items.wynnventory", true, null),
                     toggle("items.wynnmod", true, null));
-            tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP,
-                    group("group.items", false, items), group("group.mods", false, mods)));
-            tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.PANEL,
+            tabs.add(new Row.Tab("overview", () -> tr("tab.overview"), () -> tr("tab.overview.about"),
+                    Icons.Icon.BUBBLE, Preview.Scene.WORLD, List.of(
+                    new Row.Group(() -> "", false, master),
+                    group("group.overview.items", false, items),
+                    group("group.overview.dialogue", false, dialogue),
+                    group("group.overview.world", false, world),
+                    group("group.overview.hud", false, hud),
+                    group("group.overview.chat", false, chat),
+                    group("group.overview.names", false, names),
+                    group("group.mods", false, mods)), true));
+            tabs.add(tab("look", Icons.Icon.SCROLL, Preview.Scene.PANEL,
                     group("group.place", false, place), group("group.look", false, look)));
-            tabs.add(tab("dialogue", Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE, group("group.dialogue", false, dialogue)));
-            tabs.add(tab("world", Icons.Icon.COMPASS, Preview.Scene.WORLD, group("group.world", false, world)));
+            tabs.add(tab("lang", Icons.Icon.GLOBE, Preview.Scene.DATA, group("group.lang", false, langs)));
             tabs.add(tab("data", Icons.Icon.BOOK, Preview.Scene.DATA,
-                    group("group.lang", false, langs), group("group.tools", true, tools)));
+                    group("group.tools", true, tools), group("group.collect", false, collect)));
             tabs.add(badgeTab());
             return tabs;
         }
@@ -748,12 +991,12 @@ public final class SettingsViewTest {
 
         @Override
         public int accent() {
-            return Ui.parseHex((String) values.getOrDefault("panel.theme", "#6FA8D8"), 0xFF6FA8D8);
+            return Ui.parseHex((String) values.getOrDefault("panel.theme", "#7FD08A"), 0xFF7FD08A);
         }
 
         @Override
         public int frame() {
-            return Ui.parseHex((String) values.getOrDefault("panel.colour", "#6FA8D8"), 0xFF6FA8D8);
+            return Ui.parseHex((String) values.getOrDefault("panel.colour", "#7FD08A"), 0xFF7FD08A);
         }
 
         @Override
@@ -815,6 +1058,27 @@ public final class SettingsViewTest {
         }
 
         @Override
+        public boolean leaves() {
+            return flagOr("look.leaves", true);
+        }
+
+        int previewWidth;
+
+        @Override
+        public int previewWidth() {
+            return previewWidth;
+        }
+
+        @Override
+        public void setPreviewWidth(int width) {
+            previewWidth = width;
+        }
+
+        private boolean flagOr(String id, boolean fallback) {
+            return values.get(id) instanceof Boolean on ? on : fallback;
+        }
+
+        @Override
         public void openNotice() { }
 
         @Override
@@ -847,9 +1111,21 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
+            s.panelOffNote = tr("preview.panel.off");
             if (values.get("panel.gap") instanceof Integer gap) {
                 s.gap = gap;
             }
+            s.tooltipMode = values.get("items.tooltip") instanceof Integer i ? i : 0;
+            s.dialogueMode = values.get("dialogue.mode") instanceof Integer i ? i : 1;
+            s.choiceMode = values.get("dialogue.choices") instanceof Integer i ? i : 1;
+            s.nametag = values.get("world.nametag") instanceof Integer i ? i : 1;
+            s.chat = values.get("world.chat") instanceof Integer i ? i : 1;
+            s.tracker = values.get("world.tracker") instanceof Integer i ? i : 0;
+            s.names = values.get("items.names") instanceof Integer i ? i : 2;
+            s.titles = flagOr("world.titles", true);
+            s.bossbar = flagOr("world.bossbar", true);
+            s.scoreboard = flagOr("world.scoreboard", true);
+            s.heldItem = flagOr("world.helditem", true);
             s.translate = text -> {
                 String hit = corpus.get(text);
                 return hit == null || hit.isBlank() ? text : hit;

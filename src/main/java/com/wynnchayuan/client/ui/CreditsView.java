@@ -5,16 +5,37 @@ import java.util.List;
 
 public final class CreditsView extends Surface {
 
-    public record Member(String name, String minecraft) {
+    public record Member(String name, String minecraft, int colour, List<String> teams,
+                         List<String> areas) {
+        public Member {
+            teams = teams == null ? List.of() : List.copyOf(teams);
+            areas = areas == null ? List.of() : List.copyOf(areas);
+        }
+
         boolean hasHead() {
             return minecraft != null && !minecraft.isBlank();
         }
+
+        boolean tagged() {
+            return !teams.isEmpty() || !areas.isEmpty();
+        }
+
+        boolean in(String team) {
+            return team.isEmpty() || teams.contains(team);
+        }
     }
 
-    public record Section(String role, int colour, List<Member> members) {}
+    public record Section(String role, String about, int colour, boolean band,
+                          List<Member> members) {
+        public Section {
+            members = members == null ? List.of() : List.copyOf(members);
+        }
+    }
 
     public interface Host {
         List<Section> sections();
+
+        String teamName(String code);
 
         String title();
 
@@ -23,12 +44,21 @@ public final class CreditsView extends Surface {
         void close();
     }
 
-    private static final float HEAD = 11;
-    private static final float ROW = 15;
+    public static final String[] TEAM_ORDER = {
+        "zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
+
+    private static final int EVERYONE = 0xFFA8A8A8;
+    private static final float HEAD = 16;
+    private static final float CELL_H = 26;
+    private static final float CELL_MIN = 168;
     private static final int MAX_COLUMNS = 3;
+    private static final float BAND_HEAD = 18;
+    private static final float BAND_GAP = 12;
+    private static final float CHIP_H = 14;
 
     private final Shell shell;
     private final Host host;
+    private String team = "";
     private float scroll;
     private float scrollTarget;
     private float maxScroll;
@@ -54,10 +84,14 @@ public final class CreditsView extends Surface {
         return true;
     }
 
+    public String team() {
+        return team;
+    }
+
     @Override
     protected void draw() {
-        float w = Math.min(screenW - 20, 500);
-        float h = Math.min(screenH - 14, 334);
+        float w = Math.min(screenW - 20, 560);
+        float h = Math.min(screenH - 14, 360);
         float x = Math.round((screenW - w) / 2f);
         float y = Math.round((screenH - h) / 2f);
         window(x, y, w, h, shell.blurred());
@@ -72,56 +106,32 @@ public final class CreditsView extends Surface {
         String sub = "v" + host.version() + "  ·  " + shell.tr("credits.tagline");
         c.text(Ui.fit(c, sub, (int) (right - left - 31)), left + 31, y + 9 + 8 * s + 3, Ui.TEXT_3);
 
-        List<String> notes = new ArrayList<>();
-        notes.addAll(Ui.wrap(c, shell.tr("credits.note1"), (int) (right - left)));
-        notes.addAll(Ui.wrap(c, shell.tr("credits.note2"), (int) (right - left)));
+        List<Section> sections = host.sections();
+        List<String> present = present(sections);
+        if (!team.isEmpty() && !present.contains(team)) {
+            team = "";
+        }
+        float top = y + 42;
+        if (!present.isEmpty()) {
+            top = chipRow(present, left, top, right) + 8;
+        }
+
+        List<String> notes = Ui.wrap(c, shell.tr("credits.note2"), (int) (right - left));
         float footY = y + h - 28;
         float notesY = footY - 6 - notes.size() * 10;
-        float top = y + 42;
         float bottom = notesY - 6;
         float listH = bottom - top;
-        float listW = right - left - 6;
+        float listW = right - left - 8;
+        int columns = Math.max(1, Math.min(MAX_COLUMNS, (int) (listW / CELL_MIN)));
+        float cellW = listW / columns;
 
-        List<Section> sections = host.sections();
-        float cell = widest(sections) + 18;
-        int columns = Math.max(1, Math.min(MAX_COLUMNS, (int) (listW / Math.max(1f, cell))));
-        float contentH = 0;
-        for (Section section : sections) {
-            contentH += sectionHeight(section, columns) + 8;
-        }
-        contentH = Math.max(0, contentH - 8);
+        float contentH = content(sections, columns, cellW, left, 0, false);
         maxScroll = Math.max(0, contentH - listH);
         scrollTarget = Math.max(0, Math.min(maxScroll, scrollTarget));
         scroll = Ui.ease(Math.max(0, Math.min(maxScroll, scroll)), scrollTarget, dt, 55f);
 
-        clip(left, top, right, bottom);
-        float cy = top - scroll + Math.max(0, (listH - contentH) / 2f);
-        float centre = left + listW / 2f;
-        for (Section section : sections) {
-            String role = section.role();
-            float rw = c.width(role);
-            c.text(role, centre - rw / 2f, cy, section.colour());
-            int line = Ui.alpha(section.colour(), 0x60);
-            c.fill(centre - rw / 2f - 46, cy + 4, centre - rw / 2f - 8, cy + 4 + c.px(), line);
-            c.fill(centre + rw / 2f + 8, cy + 4, centre + rw / 2f + 46, cy + 4 + c.px(), line);
-            cy += 15;
-            List<Member> members = section.members();
-            if (members.isEmpty()) {
-                String empty = shell.tr("credits.empty");
-                c.text(empty, centre - c.width(empty) / 2f, cy, Ui.FAINT);
-                cy += ROW;
-            }
-            int used = Math.min(columns, Math.max(1, members.size()));
-            float start = centre - used * cell / 2f;
-            for (int i = 0; i < members.size(); i++) {
-                int column = i % used;
-                member(members.get(i), start + column * cell + cell / 2f, cy, section.colour());
-                if (column == used - 1 || i == members.size() - 1) {
-                    cy += ROW;
-                }
-            }
-            cy += 8;
-        }
+        clip(left - 2, top, right, bottom);
+        content(sections, columns, cellW, left, top - scroll, true);
         unclip();
         scrollbar(right - 3, top, listH, contentH, scroll, maxScroll);
 
@@ -138,40 +148,210 @@ public final class CreditsView extends Surface {
         button("back", right - bw, by, bw, 18, back, true, true, null, host::close);
     }
 
-    private void member(Member m, float centre, float y, int colour) {
-        float total = memberWidth(m);
-        float x = centre - total / 2f;
-        if (m.hasHead()) {
-            c.head(m.minecraft(), x, y - 1.5f, HEAD);
-            x += HEAD + 5;
-        }
-        c.text(m.name(), x, y, colour);
-        if (m.hasHead()) {
-            c.text(m.minecraft(), x + c.width(m.name()) + 6, y, Ui.HINT);
-        }
-    }
-
-    private float memberWidth(Member m) {
-        float w = c.width(m.name());
-        if (m.hasHead()) {
-            w += HEAD + 5 + 6 + c.width(m.minecraft());
-        }
-        return w;
-    }
-
-    private float widest(List<Section> sections) {
-        float widest = 40;
-        for (Section section : sections) {
-            for (Member m : section.members()) {
-                widest = Math.max(widest, memberWidth(m));
+    private static List<String> present(List<Section> sections) {
+        List<String> out = new ArrayList<>();
+        for (String code : TEAM_ORDER) {
+            if (anyone(sections, code)) {
+                out.add(code);
             }
         }
-        return widest;
+        return out;
     }
 
-    private static float sectionHeight(Section section, int columns) {
-        int count = section.members().size();
-        int used = Math.min(columns, Math.max(1, count));
-        return 15 + (count == 0 ? ROW : (count + used - 1) / used * ROW);
+    private static boolean anyone(List<Section> sections, String code) {
+        for (Section section : sections) {
+            if (!section.band()) {
+                continue;
+            }
+            for (Member m : section.members()) {
+                if (m.teams().contains(code)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private float chipRow(List<String> present, float left, float y, float right) {
+        float x = left;
+        float rowY = y;
+        for (int i = -1; i < present.size(); i++) {
+            String code = i < 0 ? "" : present.get(i);
+            String label = i < 0 ? shell.tr("credits.all") : host.teamName(code);
+            c.language(i < 0 ? shell.language() : code);
+            float cw = c.width(label) + 14;
+            if (x > left && x + cw > right) {
+                x = left;
+                rowY += CHIP_H + 4;
+            }
+            boolean on = code.equals(team);
+            boolean hot = !on && over(x, rowY, cw, CHIP_H);
+            if (on) {
+                c.round(x, rowY, cw, CHIP_H, Ui.R1, Ui.LEAF_STOPS[1]);
+            } else {
+                Ui.pane(c, x, rowY, cw, CHIP_H, Ui.R1, hot ? Ui.RAISED : Ui.FIELD, Ui.BORDER);
+            }
+            c.text(label, x + 7, rowY + 3, on ? Ui.ON_ACCENT : (hot ? Ui.TEXT : Ui.TEXT_2));
+            c.language(shell.language());
+            zone(x, rowY, cw, CHIP_H, (px, py, b) -> {
+                if (!code.equals(team)) {
+                    click();
+                    team = code;
+                    scroll = 0;
+                    scrollTarget = 0;
+                }
+            }).key = "team:" + (code.isEmpty() ? "all" : code);
+            x += cw + 4;
+        }
+        return rowY + CHIP_H;
+    }
+
+    private float content(List<Section> sections, int columns, float cellW, float left, float y,
+                          boolean paint) {
+        float at = y;
+        float width = cellW * columns;
+        for (Section section : sections) {
+            if (!section.band()) {
+                continue;
+            }
+            List<Member> shown = new ArrayList<>();
+            for (Member m : section.members()) {
+                if (m.in(team)) {
+                    shown.add(m);
+                }
+            }
+            if (shown.isEmpty()) {
+                continue;
+            }
+            if (paint) {
+                bandHead(section, left, at, width);
+            }
+            at += BAND_HEAD;
+            for (int i = 0; i < shown.size(); i++) {
+                int column = i % columns;
+                if (paint) {
+                    member(shown.get(i), section.colour(), left + column * cellW, at, cellW);
+                }
+                if (column == columns - 1 || i == shown.size() - 1) {
+                    at += CELL_H;
+                }
+            }
+            at += BAND_GAP;
+        }
+        if (team.isEmpty()) {
+            for (Section section : sections) {
+                if (!section.band() && !section.members().isEmpty()) {
+                    at = quiet(section, left, at, width, paint) + BAND_GAP;
+                }
+            }
+        }
+        if (paint) {
+            everyone(left, at, width);
+        }
+        return at + 12 - y;
+    }
+
+    private void bandHead(Section section, float x, float y, float w) {
+        c.icon(Icons.Icon.LEAF, x, y, 11, section.colour());
+        c.text(section.role(), x + 15, y + 2, section.colour());
+        float after = x + 15 + c.width(section.role()) + 8;
+        String about = section.about();
+        if (about != null && !about.isEmpty() && after < x + w - 24) {
+            c.text(Ui.fit(c, about, (int) (x + w - after)), after, y + 2, Ui.TEXT_3);
+        }
+        c.fade(x, y + BAND_HEAD - 5, w, c.px(), Ui.alpha(section.colour(), 0x66), 1f, 0f);
+    }
+
+    private void member(Member m, int bandColour, float x, float y, float w) {
+        if (over(x, y, w - 4, CELL_H - 3)) {
+            c.round(x - 2, y - 1, w - 2, CELL_H - 2, Ui.R1, Ui.RAISED);
+        }
+        float hx = x + 2;
+        float hy = y + (CELL_H - 2 - HEAD) / 2f;
+        if (m.hasHead()) {
+            c.head(m.minecraft(), hx, hy, HEAD);
+        } else {
+            Ui.pane(c, hx, hy, HEAD, HEAD, 3, Ui.FIELD, Ui.BORDER);
+            c.icon(Icons.Icon.LEAF, hx + 3, hy + 3, HEAD - 6, Ui.FAINT);
+        }
+        float leafX = x + w - 18;
+        c.icon(Icons.Icon.LEAF, leafX, y + (CELL_H - 2 - 9) / 2f, 9,
+               m.colour() != 0 ? m.colour() : bandColour);
+        float tx = hx + HEAD + 6;
+        float room = leafX - 5 - tx;
+        float nameY = m.tagged() ? y + 3 : y + (CELL_H - 2 - 8) / 2f;
+        String name = Ui.fit(c, m.name(), (int) room);
+        c.text(name, tx, nameY, Ui.TEXT);
+        if (m.hasHead() && !m.minecraft().equals(m.name())) {
+            float mx = tx + c.width(name) + 5;
+            if (mx < tx + room - 14) {
+                c.text(Ui.fit(c, m.minecraft(), (int) (tx + room - mx)), mx, nameY, Ui.HINT);
+            }
+        }
+        if (m.tagged()) {
+            tags(m, tx, y + 14, tx + room);
+        }
+    }
+
+    private void tags(Member m, float x, float y, float limit) {
+        List<String[]> parts = new ArrayList<>();
+        for (String code : m.teams()) {
+            parts.add(new String[] {host.teamName(code), code});
+        }
+        for (String area : m.areas()) {
+            parts.add(new String[] {shell.tr("credits.area." + area), shell.language()});
+        }
+        float at = x;
+        for (int i = 0; i < parts.size(); i++) {
+            if (i > 0) {
+                String dot = " · ";
+                if (at + c.width(dot) + 8 >= limit) {
+                    return;
+                }
+                c.text(dot, at, y, Ui.FAINT);
+                at += c.width(dot);
+            }
+            c.language(parts.get(i)[1]);
+            String whole = parts.get(i)[0];
+            String text = Ui.fit(c, whole, (int) (limit - at));
+            c.text(text, at, y, Ui.FAINT);
+            at += c.width(text);
+            c.language(shell.language());
+            if (!text.equals(whole)) {
+                return;
+            }
+        }
+    }
+
+    private float quiet(Section section, float x, float y, float w, boolean paint) {
+        if (paint) {
+            c.text(section.role(), x + 2, y + 2, Ui.TEXT_3);
+        }
+        StringBuilder names = new StringBuilder();
+        for (Member m : section.members()) {
+            if (names.length() > 0) {
+                names.append("  ·  ");
+            }
+            names.append(m.name());
+        }
+        float at = y + 15;
+        for (String line : Ui.wrap(c, names.toString(), (int) (w - 4))) {
+            if (paint) {
+                c.text(line, x + 2, at, Ui.FAINT);
+            }
+            at += 10;
+        }
+        return at;
+    }
+
+    private void everyone(float x, float y, float w) {
+        c.icon(Icons.Icon.LEAF, x + 1, y, 10, EVERYONE);
+        String lead = shell.tr("credits.user");
+        c.text(lead, x + 15, y + 1, Ui.TEXT_2);
+        float after = x + 15 + c.width(lead) + 6;
+        if (after < x + w - 24) {
+            c.text(Ui.fit(c, shell.tr("credits.userb"), (int) (x + w - after)), after, y + 1,
+                   Ui.FAINT);
+        }
     }
 }

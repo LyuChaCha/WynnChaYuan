@@ -40,6 +40,7 @@ public final class HotPathCacheTest {
 
         Path tmp = Files.createTempDirectory("wcy-hotpath");
         ModConfig config = new ModConfig(tmp.resolve("config.json"));
+        config.setNametagMode(ModConfig.NametagMode.REPLACE);
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(ROOT.resolve(Languages.DEFAULT)));
         CaptureStore captured = new CaptureStore(tmp.resolve("captured.json"));

@@ -20,7 +20,7 @@ public final class ModConfig {
 
     final ConfigFile configFile = new ConfigFile(this);
 
-    TooltipMode tooltipMode = TooltipMode.OFF;
+    TooltipMode tooltipMode = TooltipMode.REPLACE;
 
     public enum TooltipMode { PANEL, REPLACE, OFF }
 
@@ -56,6 +56,10 @@ public final class ModConfig {
 
     boolean wynntilsFps = true;
 
+    boolean settingsLeaves = true;
+
+    int previewWidth;
+
     boolean dialogueCover = true;
 
     boolean marketSearch = true;
@@ -68,7 +72,7 @@ public final class ModConfig {
 
     boolean shiftPeekNames = true;
 
-    boolean abilityNamesOriginal = false;
+    boolean abilityNamesOriginal = true;
 
     ShotMode shotMode = ShotMode.KEY;
 
@@ -111,7 +115,7 @@ public final class ModConfig {
 
     boolean translateBossBar = true;
 
-    NametagMode nametagMode = NametagMode.REPLACE;
+    NametagMode nametagMode = NametagMode.LOOK_AT;
 
     public enum NametagMode { LOOK_AT, REPLACE, OFF }
 
@@ -153,9 +157,13 @@ public final class ModConfig {
 
     int panelGap = DEFAULT_PANEL_GAP;
 
-    String accentColor = "#6FA8D8";
+    public static final String DEFAULT_COLOUR = "#7FD08A";
 
-    String themeColor = "#6FA8D8";
+    static final String OLD_DEFAULT_COLOUR = "#6FA8D8";
+
+    String accentColor = DEFAULT_COLOUR;
+
+    String themeColor = DEFAULT_COLOUR;
 
     int dialogueHoldMs = 6000;
 
@@ -239,9 +247,10 @@ public final class ModConfig {
         dialogueMode = DialogueMode.REPLACE;
         choiceMode = DialogueMode.REPLACE;
         chatMode = ChatMode.BOTH;
-        nametagMode = NametagMode.REPLACE;
-        tooltipMode = TooltipMode.OFF;
+        nametagMode = NametagMode.LOOK_AT;
+        tooltipMode = TooltipMode.REPLACE;
         itemNames = ItemNames.OFF;
+        abilityNamesOriginal = true;
         pageNames = ItemNames.ON;
         trackerMode = DialogueMode.REPLACE;
         translateScoreboard = true;
@@ -420,6 +429,28 @@ public final class ModConfig {
 
     public boolean wynntilsFps() {
         return wynntilsFps;
+    }
+
+    public boolean settingsLeaves() {
+        return settingsLeaves;
+    }
+
+    public int previewWidth() {
+        return previewWidth;
+    }
+
+    public void setPreviewWidthLive(int width) {
+        int v = width <= 0 ? 0 : clamp(width, 100, 800);
+        if (v != previewWidth) {
+            previewWidth = v;
+            dirty = true;
+        }
+    }
+
+    public boolean toggleSettingsLeaves() {
+        settingsLeaves = !settingsLeaves;
+        save();
+        return settingsLeaves;
     }
 
     public boolean dialogueCover() {
@@ -789,7 +820,7 @@ public final class ModConfig {
         try {
             return Integer.parseInt(hex.replace("#", ""), 16);
         } catch (NumberFormatException e) {
-            return 0x6FA8D8;
+            return 0x7FD08A;
         }
     }
 

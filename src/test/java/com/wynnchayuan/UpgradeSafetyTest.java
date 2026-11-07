@@ -90,7 +90,7 @@ public final class UpgradeSafetyTest {
 
         ModConfig c = new ModConfig(file);
         check("半截的 config.json：建得起來，全部用預設值",
-                c.tooltipMode() == ModConfig.TooltipMode.OFF && c.collect()
+                c.tooltipMode() == ModConfig.TooltipMode.REPLACE && c.collect()
                         && c.source() == ModConfig.Source.GITHUB);
         List<Path> aside = brokenCopies(dir, "config.json");
         check("半截的 config.json 改名放旁邊，原位空出來",
@@ -110,7 +110,7 @@ public final class UpgradeSafetyTest {
         Files.writeString(file, "");
         ModConfig empty = new ModConfig(file);
         check("空的 config.json：預設值、改名放旁邊",
-                empty.tooltipMode() == ModConfig.TooltipMode.OFF
+                empty.tooltipMode() == ModConfig.TooltipMode.REPLACE
                         && brokenCopies(dir, "config.json").size() == 1);
 
         Files.write(file, new byte[64]);
@@ -190,8 +190,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("translateBossBar", true);
         expected.remove("translateNametags");
         expected.addProperty("syncedTranslationsDate", "");
-        expected.addProperty("themeColor", expected.has("accentColor")
-                ? expected.get("accentColor").getAsString() : "#6FA8D8");
+        expected.addProperty("accentColor", "#7FD08A");
+        expected.addProperty("themeColor", "#7FD08A");
+        expected.addProperty("leafColours", true);
         expected.addProperty("oldKeysReleased", false);
         expected.addProperty("wynnventory", true);
         expected.addProperty("wynnMarketSearch", true);
@@ -201,6 +202,8 @@ public final class UpgradeSafetyTest {
         expected.addProperty("ownCape", true);
         expected.addProperty("pageNames", "ON");
         expected.addProperty("wynntilsFps", true);
+        expected.addProperty("settingsLeaves", true);
+        expected.addProperty("previewWidth", 0);
         expected.addProperty("dialogueCover", true);
         expected.addProperty("translationsEnabled", true);
         expected.addProperty("abilityNamesOriginal", false);

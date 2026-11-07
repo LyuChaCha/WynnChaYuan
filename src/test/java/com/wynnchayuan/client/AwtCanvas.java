@@ -276,9 +276,9 @@ final class AwtCanvas implements Canvas {
 
     @Override
     public void logo(float x, float y, float size) {
-        g.setColor(new Color(0x6FA8D8));
+        g.setColor(new Color(0x7FD08A));
         g.fill(shape(x, y, size, size, size / 5f));
-        g.setColor(new Color(0x0B1420));
+        g.setColor(new Color(0x0C1A10));
         g.fill(shape(x + size * 0.28f, y + size * 0.28f, size * 0.44f, size * 0.44f, size / 10f));
     }
 
@@ -310,6 +310,188 @@ final class AwtCanvas implements Canvas {
             g.setColor(new Color(Ui.hsv(360f * xx / pw, 1f, 1f), false));
             g.fillRect(Math.round(p(x)) + xx, Math.round(p(y)), 1, ph);
         }
+    }
+
+    @Override
+    public void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        fadeRound(x, y, w, h, 0, argb, from, to);
+    }
+
+    @Override
+    public void fadeRound(float x, float y, float w, float h, float r, int argb, float from,
+                          float to) {
+        int ax = Math.round(p(x));
+        int ay = Math.round(p(y));
+        int pw = Math.round(p(x + w)) - ax;
+        int ph = Math.round(p(y + h)) - ay;
+        int alpha = argb >>> 24;
+        if (pw <= 0 || ph <= 0 || alpha == 0) {
+            return;
+        }
+        int a = Math.round(Math.max(0f, Math.min(1f, from)) * 255);
+        int b = Math.round(Math.max(0f, Math.min(1f, to)) * 255);
+        int rr = Math.max(0, Math.min(Math.round(p(r)), Math.min(pw, ph) / 2));
+        int bucket = alpha >= 0x80 ? 1 : alpha >= 0x40 ? 2 : 4;
+        stamp(Ui.fadeMask(pw, ph, rr, a, b, Ui.DITHER * bucket), ax, ay, pw, ph, argb);
+    }
+
+    @Override
+    public void glow(float x0, float y0, float x1, float y1, float cx, float cy, float rx,
+                     float ry, float r, int argb) {
+        int left = Math.max(Math.round(p(x0)), Math.round(p(cx - rx)));
+        int top = Math.max(Math.round(p(y0)), Math.round(p(cy - ry)));
+        int right = Math.min(Math.round(p(x1)), Math.round(p(cx + rx)));
+        int bottom = Math.min(Math.round(p(y1)), Math.round(p(cy + ry)));
+        int pw = right - left;
+        int ph = bottom - top;
+        if (pw <= 0 || ph <= 0) {
+            return;
+        }
+        byte[] mask = Ui.glowMask(pw, ph, p(cx) - left, p(cy) - top, rx * scale, ry * scale,
+                left - Math.round(p(x0)), top - Math.round(p(y0)),
+                Math.round(p(x1)) - Math.round(p(x0)), Math.round(p(y1)) - Math.round(p(y0)),
+                Math.round(p(r)), argb >>> 24, Ui.DITHER);
+        stamp(mask, left, top, pw, ph, argb | 0xFF000000);
+    }
+
+    private void stamp(byte[] mask, int x, int y, int w, int h, int argb) {
+        BufferedImage tile = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        int base = argb >>> 24;
+        int rgb = argb & 0xFFFFFF;
+        for (int yy = 0; yy < h; yy++) {
+            for (int xx = 0; xx < w; xx++) {
+                int a = (mask[yy * w + xx] & 0xFF) * base / 255;
+                tile.setRGB(xx, yy, (a << 24) | rgb);
+            }
+        }
+        g.drawImage(tile, x, y, null);
+    }
+
+    private static final Map<String, BufferedImage> IMAGES = new HashMap<>();
+    private static final BufferedImage NONE = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+
+    // 資源包的材質不進倉庫；-Dwcy.pack=<解出來的資料夾> 才拿得到，平常走畫的那一套
+    private static BufferedImage picture(String id) {
+        return IMAGES.computeIfAbsent(id, key -> {
+            int colon = key.indexOf(':');
+            String space = colon < 0 ? "minecraft" : key.substring(0, colon);
+            String file = colon < 0 ? key : key.substring(colon + 1);
+            try (InputStream in = AwtCanvas.class.getResourceAsStream("/assets/" + space + "/" + file)) {
+                if (in != null) {
+                    return javax.imageio.ImageIO.read(in);
+                }
+            } catch (Exception e) {
+                return NONE;
+            }
+            String pack = System.getProperty("wcy.pack");
+            if (pack != null) {
+                java.io.File f = new java.io.File(pack, space + "/" + file);
+                try {
+                    if (f.isFile()) {
+                        return javax.imageio.ImageIO.read(f);
+                    }
+                } catch (Exception e) {
+                    return NONE;
+                }
+            }
+            return NONE;
+        });
+    }
+
+    @Override
+    public int textureWidth(String id) {
+        BufferedImage img = picture(id);
+        return img == NONE ? 0 : img.getWidth();
+    }
+
+    @Override
+    public int textureHeight(String id) {
+        BufferedImage img = picture(id);
+        return img == NONE ? 0 : img.getHeight();
+    }
+
+    @Override
+    public void image(String id, float x, float y, float w, float h, float u, float v, float uw,
+                      float vh, int argb) {
+        BufferedImage img = picture(id);
+        if (img == NONE || w <= 0 || h <= 0) {
+            return;
+        }
+        int dx0 = Math.round(p(x));
+        int dy0 = Math.round(p(y));
+        int dx1 = Math.round(p(x + w));
+        int dy1 = Math.round(p(y + h));
+        if (dx1 <= dx0 || dy1 <= dy0 || uw <= 0 || vh <= 0) {
+            return;
+        }
+        int sx0 = Math.max(0, (int) Math.floor(u));
+        int sy0 = Math.max(0, (int) Math.floor(v));
+        int sx1 = Math.min(img.getWidth(), (int) Math.ceil(u + uw));
+        int sy1 = Math.min(img.getHeight(), (int) Math.ceil(v + vh));
+        if (sx1 <= sx0 || sy1 <= sy0) {
+            return;
+        }
+        java.awt.Composite was = g.getComposite();
+        int a = argb >>> 24;
+        if (a < 255) {
+            g.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, a / 255f));
+        }
+        Shape clipWas = g.getClip();
+        g.clipRect(dx0, dy0, dx1 - dx0, dy1 - dy0);
+        double kx = (dx1 - dx0) / (double) uw;
+        double ky = (dy1 - dy0) / (double) vh;
+        java.awt.geom.AffineTransform at = new java.awt.geom.AffineTransform();
+        at.translate(dx0 + (sx0 - u) * kx, dy0 + (sy0 - v) * ky);
+        at.scale(kx, ky);
+        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+        g.drawImage(img.getSubimage(sx0, sy0, sx1 - sx0, sy1 - sy0), at, null);
+        g.setClip(clipWas);
+        g.setComposite(was);
+    }
+
+    private static Font pixel;
+
+    private static Font pixel() {
+        if (pixel == null) {
+            try (InputStream in = AwtCanvas.class.getResourceAsStream(
+                    "/assets/wynnchayuan/font/fusion_pixel_10px_zh_hant.ttf")) {
+                pixel = Font.createFont(Font.TRUETYPE_FONT, in).deriveFont(10f);
+            } catch (Exception e) {
+                pixel = new Font(Font.MONOSPACED, Font.PLAIN, 10);
+            }
+        }
+        return pixel;
+    }
+
+    @Override
+    public void gameText(String text, float x, float y, int argb, float k, boolean dialogue,
+                         boolean shadow) {
+        if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
+            return;
+        }
+        float dots = Ui.gameDots(scale, k);
+        Font f = pixel().deriveFont(10f * dots);
+        Object aa = g.getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING);
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
+        g.setFont(f);
+        float bx = p(x);
+        float by = p(y) + 8 * dots;
+        if (shadow) {
+            int r = ((argb >> 16) & 0xFF) / 4;
+            int gr = ((argb >> 8) & 0xFF) / 4;
+            int b = (argb & 0xFF) / 4;
+            g.setColor(new Color(r, gr, b, argb >>> 24));
+            g.drawString(text, bx + dots, by + dots);
+        }
+        g.setColor(colour(argb));
+        g.drawString(text, bx, by);
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, aa);
+    }
+
+    @Override
+    public float gameWidth(String text, boolean dialogue) {
+        return text == null || text.isEmpty() ? 0
+                : (float) pixel().getStringBounds(text, FRC).getWidth();
     }
 
     void done() {

@@ -420,7 +420,7 @@ public final class FirstRunView extends Surface {
         }
         unclip();
         if (bodyT < 0.99f) {
-            c.fill(left, top, left + w, bottom, Ui.fade(0xC8181F2A, 1f - bodyT));
+            c.fill(left, top, left + w, bottom, Ui.fade(Ui.VEIL, 1f - bodyT));
         }
         if (maxScroll > 0) {
             float trackX = left + w - 3;

@@ -16,7 +16,7 @@ public final class Row {
 
     public enum Tone { ACCENT, REPLACE, BOTH, OFF, PLAIN }
 
-    public record Option(String label, Tone tone) {}
+    public record Option(String label, Tone tone, String about) {}
 
     public record Choice(String id, String label, String badge, boolean auto) {}
 
@@ -28,6 +28,10 @@ public final class Row {
     BooleanSupplier on = () -> false;
     Runnable flip = () -> { };
     Supplier<String> onText;
+    Tone tone = Tone.ACCENT;
+    List<Row> details = List.of();
+    Preview.Spot spot;
+    boolean aims;
 
     final List<Option> options = new ArrayList<>();
     IntSupplier selected = () -> 0;
@@ -41,7 +45,7 @@ public final class Row {
     IntConsumer slide = v -> { };
     IntFunction<String> format = String::valueOf;
 
-    Supplier<String> hex = () -> "#6FA8D8";
+    Supplier<String> hex = () -> "#7FD08A";
     Predicate<String> setHex = s -> false;
 
     Runnable commit = () -> { };
@@ -114,8 +118,38 @@ public final class Row {
     }
 
     public Row option(String text, Tone tone) {
-        options.add(new Option(text, tone));
+        return option(text, tone, null);
+    }
+
+    public Row option(String text, Tone tone, String about) {
+        options.add(new Option(text, tone, about));
         return this;
+    }
+
+    public Row tone(Tone onTone) {
+        this.tone = onTone;
+        return this;
+    }
+
+    public Row details(List<Row> under) {
+        this.details = under;
+        return this;
+    }
+
+    public Row spot(Preview.Spot at) {
+        this.spot = at;
+        this.aims = true;
+        return this;
+    }
+
+    public Row near(Preview.Spot at) {
+        this.spot = at;
+        this.aims = false;
+        return this;
+    }
+
+    public boolean folds() {
+        return kind == Kind.SEGMENT && options.size() >= 3;
     }
 
     public Row selected(IntSupplier index) {
@@ -239,5 +273,11 @@ public final class Row {
     public record Group(Supplier<String> title, boolean tool, List<Row> rows) {}
 
     public record Tab(String key, Supplier<String> name, Supplier<String> about,
-                      Icons.Icon icon, Preview.Scene scene, List<Group> groups) {}
+                      Icons.Icon icon, Preview.Scene scene, List<Group> groups, boolean legend) {
+
+        public Tab(String key, Supplier<String> name, Supplier<String> about, Icons.Icon icon,
+                   Preview.Scene scene, List<Group> groups) {
+            this(key, name, about, icon, scene, groups, false);
+        }
+    }
 }
