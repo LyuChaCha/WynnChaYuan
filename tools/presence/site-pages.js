@@ -3031,9 +3031,9 @@ const TRANSLATE_JS = scriptFile('translate', String.raw`
   }
   function refreshCounts() {
     var open = state.props.filter(function (p) { return p.st === 'open'; }).length;
-    document.getElementById('tc-props').textContent = open ? ' ' + open : '';
+    document.getElementById('tc-props').textContent = open ? String(open) : '';
     var polls = state.polls.filter(function (p) { return p.st === 'open'; }).length;
-    document.getElementById('tc-terms').textContent = polls ? ' ' + polls : '';
+    document.getElementById('tc-terms').textContent = polls ? String(polls) : '';
   }
   document.getElementById('tr-pst').onchange = function () { drawProps(); };
   function drawProps() {
