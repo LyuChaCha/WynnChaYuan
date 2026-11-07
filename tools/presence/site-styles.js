@@ -728,7 +728,7 @@ export const STYLE = String.raw`
   .linkcode code.share-url { flex: 1 1 220px; min-width: 0; font-size: 13px; padding: 7px 10px; word-break: break-all; }
   .vis-line { flex-direction: column; align-items: stretch; gap: 8px; }
   .vis-line .seg { align-self: flex-start; }
-  .wipe-panel { margin-top: 28px; max-width: 720px; border-color: #5a2b2b; }
+  .wipe-panel { margin-top: 28px; border-color: #5a2b2b; }
   #wipe { width: min(92vw, 560px); }
   .wipe-box { padding: 22px 24px; }
   .wipe-box h2 { margin: 0 0 10px; font-size: 18px; }
@@ -807,6 +807,9 @@ export const STYLE = String.raw`
   .hn-link[aria-current="page"], .hn-link.hn-cur, .spec-nav a[aria-current="true"] { background: #7fd08a1a; box-shadow: inset 0 0 0 1px #7fd08a4d; color: var(--ink); }
   .hn-link, .hn-icon, .hn-avatar, .spec-nav a, .seg, .seg button, .seg .pill, select.pick, select.lang { border-radius: 999px; }
   .eg span { white-space: normal; overflow: visible; }
+  #in > .panel { max-width: none !important; }
+  .tr-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .tr-tabs button { flex: none; white-space: nowrap; }
   .menu > a > span, .hn-plink > span { flex: 1; min-width: 0; }
   .menu > a > .ico:last-child, .hn-plink > .ico:last-child { width: 14px; height: 14px; color: var(--ink-2); }
   .btn > .ico { width: 17px; height: 17px; margin-left: -2px; }
@@ -907,6 +910,8 @@ export const STYLE = String.raw`
     .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
     .grid .stage { padding: 18px 0 14px; }
     .grid .card.skel .stage { height: 167px; }
+    .make > summary { gap: 12px; padding: 14px 16px; }
+    .make > summary img { display: none; }
     .grid .meta { padding: 10px 2px 0; }
   }
   @media (prefers-reduced-motion: reduce) {
