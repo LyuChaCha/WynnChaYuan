@@ -181,11 +181,11 @@ final class RowRealigner {
 
     private static final int REWIND_SLACK = 12;
 
-    private static boolean rewound(int label, int rewind, int gap) {
+    static boolean rewound(int label, int rewind, int gap) {
         return rewind < 0 && label > 0 && gap > rewind && Math.abs(label + rewind) <= REWIND_SLACK;
     }
 
-    private static int leadingRewind(Run run) {
+    static int leadingRewind(Run run) {
         if (!run.space()) {
             return 0;
         }
