@@ -179,6 +179,9 @@ public final class LanguageLayers {
         Path chosen = Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
         TranslationCache.prepare(chosen, WynnChaYuan.language);
         loadLayers();
+        if (WynnChaYuan.store() != null) {
+            WynnChaYuan.store().useLanguage(WynnChaYuan.language);
+        }
         refreshOncePerSession(WynnChaYuan.language);
         done.accept(T.s("data.language.done", Languages.nativeName(WynnChaYuan.language),
                 WynnChaYuan.translations.size()));
