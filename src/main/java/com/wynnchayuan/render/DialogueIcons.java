@@ -61,10 +61,10 @@ public final class DialogueIcons {
                 text.codePoints().filter(DialogueIcons::isIcon)
                     .forEach(cp -> found.putIfAbsent(cp, style));
             }
-            if (hasContent(text) && !colours.contains(style.getColor())) {
+            if (hasContent(text) && !holds(colours, style.getColor())) {
                 colours.add(style.getColor());
             }
-            if (GlyphSplitter.hasLetter(text) && !words.contains(style.getColor())) {
+            if (GlyphSplitter.hasLetter(text) && !holds(words, style.getColor())) {
                 words.add(style.getColor());
             }
             return Optional.empty();
@@ -74,7 +74,7 @@ public final class DialogueIcons {
             seen = Map.copyOf(found);
             changed = true;
         }
-        if (body[0] && (!colours.equals(palette) || !words.equals(wordPalette))) {
+        if (body[0] && (!alike(colours, palette) || !alike(words, wordPalette))) {
             palette = Collections.unmodifiableList(colours);
             wordPalette = Collections.unmodifiableList(words);
             changed = true;
@@ -82,6 +82,27 @@ public final class DialogueIcons {
         if (changed) {
             generation++;
         }
+    }
+
+    private static boolean holds(List<TextColor> seen, TextColor colour) {
+        for (TextColor each : seen) {
+            if (ShaderColours.same(each, colour)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean alike(List<TextColor> now, List<TextColor> before) {
+        if (now.size() != before.size()) {
+            return false;
+        }
+        for (int i = 0; i < now.size(); i++) {
+            if (!ShaderColours.same(now.get(i), before.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static boolean hasContent(String text) {

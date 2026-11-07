@@ -341,7 +341,7 @@ public final class DialogueRewriter {
                         if (tofu == null) {
                             tofu = DialogueFonts.unpaintable(piece.text(), worn);
                         }
-                        out.append(Component.literal(piece.text()).withStyle(worn));
+                        inkSettled(out, piece.text(), worn, styles.get(i));
                     }
                 }
                 continue;
@@ -353,13 +353,27 @@ public final class DialogueRewriter {
             if (swapped[i] && tofu == null) {
                 tofu = DialogueFonts.unpaintable(texts.get(i), style);
             }
-            out.append(Component.literal(texts.get(i)).withStyle(style));
+            if (swapped[i]) {
+                inkSettled(out, texts.get(i), style, styles.get(i));
+            } else {
+                out.append(Component.literal(texts.get(i)).withStyle(style));
+            }
         }
         if (tofu != null) {
             DialogueProbe.tofu(message, out, tofu);
             return null;
         }
         return out;
+    }
+
+    private static void inkSettled(MutableComponent out, String text, Style worn, Style row) {
+        if (!ShaderColours.marker(worn.getColor())) {
+            out.append(Component.literal(text).withStyle(worn));
+            return;
+        }
+        for (LineParts.Piece run : ShaderColours.settle(text, worn, DialogueFonts.fontOf(row))) {
+            out.append(Component.literal(run.text()).withStyle(run.style()));
+        }
     }
 
     static List<LineParts.Piece> iconRuns(LineParts.Piece piece, Style row) {
