@@ -16,8 +16,8 @@ const HOME = String.raw`
       <h1>%%home.h1%%</h1>
       <p class="lede">%%home.lede%%</p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/LyuChaCha/WynnChaYuan/releases/latest">%%home.github%%</a>
-        <a class="btn" href="https://www.curseforge.com/minecraft/mc-mods/wynnchayuan">CurseForge</a>
+        <a class="btn primary" href="https://github.com/LyuChaCha/WynnChaYuan/releases/latest">` + ICON.get + String.raw`%%home.github%%</a>
+        <a class="btn" href="https://www.curseforge.com/minecraft/mc-mods/wynnchayuan">` + ICON.box + String.raw`CurseForge</a>
       </div>
       <div class="chips" role="group" aria-label="%%home.langs%%">
         <button type="button" class="chip" data-lang="zh_tw" lang="zh-Hant">繁體中文</button><button type="button" class="chip" data-lang="zh_cn" lang="zh-Hans">简体中文</button><button type="button" class="chip" data-lang="ja_jp" lang="ja">日本語</button>
@@ -88,7 +88,7 @@ const HOME = String.raw`
   </div>
   <div class="cta">
     <a class="btn" href="/capes">%%home.seecapes%%</a>
-    <a class="btn" href="https://ko-fi.com/lyuchacha">%%home.donate%%</a>
+    <a class="btn" href="https://ko-fi.com/lyuchacha">` + ICON.cup + String.raw`%%home.donate%%</a>
     <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
   </div>
 `;
@@ -387,8 +387,8 @@ const FEATURES = String.raw`
         </div>
         <p class="note">%%features.cnote%%</p>
         <div class="cta">
-          <a class="btn primary" href="` + RELEASES + String.raw`">%%home.github%%</a>
-          <a class="btn" href="` + CURSEFORGE + String.raw`">CurseForge</a>
+          <a class="btn primary" href="` + RELEASES + String.raw`">` + ICON.get + String.raw`%%home.github%%</a>
+          <a class="btn" href="` + CURSEFORGE + String.raw`">` + ICON.box + String.raw`CurseForge</a>
           <a class="btn" href="/#install">%%features.install%%</a>
         </div>
       </section>

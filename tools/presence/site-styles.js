@@ -46,8 +46,7 @@ export const STYLE = String.raw`
   .hn-leaves { position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 61px; pointer-events: none; image-rendering: pixelated; opacity: .72; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; flex: none; }
   .brand:hover { text-decoration: none; }
-  .brand span { color: var(--leaf); display: flex; transition: color 300ms ease; }
-  .brand svg { width: 26px; height: 26px; transform-origin: 25% 85%; transition: transform 520ms var(--out); }
+  .brand .logo { width: 30px; height: 30px; flex: none; transform-origin: 30% 85%; transition: transform 520ms var(--out); }
   nav { display: flex; gap: 4px; flex-wrap: wrap; }
   nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 15px; transition: color var(--fast) ease, background-color var(--fast) ease; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
@@ -274,11 +273,10 @@ export const STYLE = String.raw`
     .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
     tbody tr:hover td { background: #ffffff06; }
     .hn-icon:hover, .hn-avatar:hover { color: var(--ink); border-color: var(--leaf-deep); }
-    .hn-heart:hover { color: #f2a7b6; background: var(--panel-2); border-color: transparent; }
+    .hn-heart:hover { color: var(--gold); background: var(--panel-2); border-color: transparent; }
     .hn-tip:hover::after { opacity: 1; transform: translate(-50%, 0); transition-delay: 300ms; }
     .hn-sheen:hover::after { transform: translateX(340%) skewX(-18deg); transition: transform 680ms var(--out); }
-    .brand:hover span { color: #a9e8b2; }
-    .brand:hover svg { transform: rotate(-12deg) scale(1.06); }
+    .brand:hover .logo { transform: rotate(-8deg) scale(1.04); }
     .hn-mi:hover, .hn-plink:hover, .hn-plangs > a:hover { background: var(--panel-2); }
     .fcard:hover { border-color: var(--leaf-deep); background: #18221c; }
     .make > summary:hover { background: #1b2c21; }
@@ -806,6 +804,12 @@ export const STYLE = String.raw`
   .top { background: #0f1512d9; border-bottom-color: #ffffff0f; }
   .top .in, footer .in, .hn-pnav, .hn-psec { max-width: 1200px; }
   .top .in { padding-left: 24px; padding-right: 24px; }
+  .hn-link[aria-current="page"], .hn-link.hn-cur, .spec-nav a[aria-current="true"] { background: #7fd08a1a; box-shadow: inset 0 0 0 1px #7fd08a4d; color: var(--ink); }
+  .hn-link, .hn-icon, .hn-avatar, .spec-nav a, .seg, .seg button, .seg .pill, select.pick, select.lang { border-radius: 999px; }
+  .eg span { white-space: normal; overflow: visible; }
+  .menu > a > span, .hn-plink > span { flex: 1; min-width: 0; }
+  .menu > a > .ico:last-child, .hn-plink > .ico:last-child { width: 14px; height: 14px; color: var(--ink-2); }
+  .btn > .ico { width: 17px; height: 17px; margin-left: -2px; }
   main { max-width: 1200px; padding: 64px 24px 120px; }
   h1 { font-size: 34px; line-height: 1.25; letter-spacing: -.005em; }
   #main > h2 { margin: 112px 0 18px; font-size: 28px; line-height: 1.25; letter-spacing: -.01em; }
@@ -916,7 +920,7 @@ export const STYLE = String.raw`
     .hn-trig .ico, .hn-avatar > .ico, #get > .ico:last-child, #hn-globe > .ico:last-child, .hn-mi[aria-expanded] > .ico:last-child { transition: none; }
     .hn-panel, .hn-panel.open, .menu > *, .menu.open > *, .hn-panel > *, .hn-panel.open > * { transform: none; }
     .menu.open > *, .hn-panel.open > * { transition-delay: 0ms; }
-    .hn-link:active, .hn-icon:active, .hn-avatar:active, .hn-plink:active, .brand:hover svg { transform: none; }
+    .hn-link:active, .hn-icon:active, .hn-avatar:active, .hn-plink:active, .brand:hover .logo { transform: none; }
     .hn-sheen::after, .hn-leaves { display: none; }
     .scr .hud > * { animation: none; }
     .inv .slot::after { animation: none !important; }
