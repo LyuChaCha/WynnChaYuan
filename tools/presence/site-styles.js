@@ -36,7 +36,7 @@ export const STYLE = String.raw`
   }
   a { color: var(--leaf); text-decoration: none; text-underline-offset: 3px; }
   a:hover { text-decoration: underline; }
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
     outline: 2px solid var(--leaf); outline-offset: 2px;
   }
   .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); view-transition-name: top; }
@@ -175,7 +175,6 @@ export const STYLE = String.raw`
   .tr-count { color: var(--gold); font-variant-numeric: tabular-nums; }
   .tr-search { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 8px; }
   .tr-search input[type="search"] { flex: 1 1 280px; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink); border: 1px solid var(--line); background: #0f1512; }
-  .tr-search input[type="search"]:focus { border-color: var(--leaf-deep); outline: none; }
   .tr-check { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--ink-2); font-size: 14px; }
   .tr-list { display: grid; gap: 10px; }
   .tr-row { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); min-width: 0; }
@@ -187,7 +186,7 @@ export const STYLE = String.raw`
   .tr-chip.bad { color: var(--danger); background: #e08a8a1f; }
   .tr-src { color: var(--ink-2); font-size: 14px; overflow-wrap: anywhere; }
   .tr-dst { color: var(--ink); margin-top: 4px; overflow-wrap: anywhere; }
-  .tr-dst.empty { color: var(--ink-2); font-style: italic; }
+  .tr-dst.empty { color: var(--ink-2); }
   .tr-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
   .tr-actions input[type="text"] { flex: 1 1 200px; min-width: 0; width: auto; }
   .tr-more { margin-top: 10px; display: grid; gap: 10px; }
@@ -214,7 +213,6 @@ export const STYLE = String.raw`
   .gv-tools { margin-top: 2px; }
   .gv-tools .btn { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13px; padding: 4px 9px; }
   .tr-text { width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink); border: 1px solid var(--line); background: #0f1512; resize: vertical; }
-  .tr-text:focus { border-color: var(--leaf-deep); outline: none; }
   .tr-prop { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
   .tr-item { padding: 8px 10px; border-radius: 8px; background: var(--panel-2); }
   .fb-form { max-width: 720px; margin-top: 20px; }
@@ -267,7 +265,9 @@ export const STYLE = String.raw`
   .btn[disabled]:active { transform: none; }
   /* 懸停只給有滑鼠的裝置：觸控點一下會卡在懸停的樣子 */
   @media (hover: hover) and (pointer: fine) {
-    .btn:hover { border-color: var(--leaf-deep); }
+    .btn:hover { border-color: var(--leaf-deep); background-color: #223029; }
+    input[type="file"]::file-selector-button:hover { border-color: var(--leaf-deep); background-color: #223029; }
+    .tr-tabs button[aria-selected="false"]:hover { color: var(--ink); }
     .btn.primary:hover { background: #93dba0; border-color: #93dba0; }
     .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
     tbody tr:hover td { background: #ffffff06; }
@@ -297,12 +297,18 @@ export const STYLE = String.raw`
     width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink);
     border: 1px solid var(--line); background: #0f1512; transition: border-color var(--fast) ease;
   }
-  input[type="text"]:focus { border-color: var(--leaf-deep); }
+  input[type="text"], input[type="search"], textarea { transition: border-color var(--fast) ease, box-shadow var(--fast) ease; }
+  input[type="text"]:focus, input[type="search"]:focus, textarea:focus { border-color: var(--leaf); outline: 2px solid transparent; outline-offset: 0; box-shadow: 0 0 0 3px #7fd08a2e; }
+  :where(.policy, .lede, .note, .hint, .notice, .steps, .plain, .fb-gate, .panel > p) a:not(.btn) {
+    text-decoration: underline; text-decoration-color: #7fd08a59; text-decoration-thickness: 1px; text-underline-offset: 3px;
+    transition: text-decoration-color var(--fast) ease;
+  }
+  :where(.policy, .lede, .note, .hint, .notice, .steps, .plain, .fb-gate, .panel > p) a:not(.btn):hover { text-decoration-color: currentColor; }
   input[type="file"] { font: inherit; font-size: 14px; color: var(--ink-2); max-width: 100%; }
   input[type="file"]::file-selector-button {
     font: inherit; font-size: 14px; cursor: pointer; margin-right: 10px; padding: 7px 14px; border-radius: 9px;
     border: 1px solid var(--line); background: var(--panel-2); color: var(--ink);
-    transition: border-color 160ms ease;
+    transition: border-color 160ms ease, background-color 160ms ease;
   }
   td { transition: background-color var(--fast) ease; }
   .msg { margin: 10px 0 0; font-size: 14px; min-height: 1.4em; }
@@ -663,7 +669,7 @@ export const STYLE = String.raw`
   .set-line b { display: block; font-weight: 600; font-size: 14px; }
   .set-line .hint { margin-top: 2px; }
   @media (hover: hover) and (pointer: fine) {
-    .card:hover { transform: translateY(-3px); border-color: var(--leaf-deep); box-shadow: 0 10px 26px #0008; }
+    .card:hover { transform: translateY(-2px); border-color: var(--leaf-deep); box-shadow: 0 10px 24px -6px #000a; }
     .card:hover:has(.open:active) { transform: translateY(-1px) scale(.98); }
     .star:hover { color: var(--gold); background: #0b0f0dd9; }
   }
