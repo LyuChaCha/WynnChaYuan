@@ -165,7 +165,7 @@ public final class FirstRunScreen extends CanvasScreen {
                         BOX_REPLACE_OFF, () -> cfg().tooltipMode().ordinal(),
                         i -> cfg().setTooltipMode(ModConfig.TooltipMode.values()[i])),
                 mode("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
-                        new Row.Tone[] {Row.Tone.ACCENT, Row.Tone.BOTH, Row.Tone.OFF},
+                        new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.BOTH, Row.Tone.OFF},
                         () -> cfg().itemNames().ordinal(), i -> {
                             cfg().setItemNames(ModConfig.ItemNames.values()[i]);
                             applyNameModes();

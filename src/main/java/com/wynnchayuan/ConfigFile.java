@@ -37,6 +37,8 @@ final class ConfigFile {
             config.tooltipMode = tooltip;
         } else if (showPanel != null) {
             config.tooltipMode = showPanel ? ModConfig.TooltipMode.PANEL : ModConfig.TooltipMode.OFF;
+        } else {
+            config.tooltipMode = ModConfig.TooltipMode.OFF;
         }
         config.shotMode = enumOr(o, "shotMode", ModConfig.ShotMode.class, config.shotMode);
         ModConfig.DialogueMode dialogue = enumOf(o, "dialogueMode", ModConfig.DialogueMode.class);
@@ -54,6 +56,8 @@ final class ConfigFile {
         config.ownCape = bool(o, "ownCape", config.ownCape);
         config.wynntilsUi = bool(o, "wynntilsUi", config.wynntilsUi);
         config.wynntilsFps = bool(o, "wynntilsFps", config.wynntilsFps);
+        config.settingsLeaves = bool(o, "settingsLeaves", config.settingsLeaves);
+        config.previewWidth = Math.max(0, ModConfig.clamp(integer(o, "previewWidth", 0), 0, 800));
         config.dialogueCover = bool(o, "dialogueCover", config.dialogueCover);
         config.translateTitles = bool(o, "translateTitles", config.translateTitles);
         config.translationsEnabled = bool(o, "translationsEnabled", config.translationsEnabled);
@@ -71,7 +75,7 @@ final class ConfigFile {
         config.wynnmodTooltip = bool(o, "wynnmodTooltip", config.wynnmodTooltip);
         config.wynnMarketSearch = bool(o, "wynnMarketSearch", config.wynnMarketSearch);
         config.shiftPeekNames = bool(o, "shiftPeekNames", config.shiftPeekNames);
-        config.abilityNamesOriginal = bool(o, "abilityNamesOriginal", config.abilityNamesOriginal);
+        config.abilityNamesOriginal = bool(o, "abilityNamesOriginal", false);
         config.chatMode = enumOr(o, "chatMode", ModConfig.ChatMode.class, config.chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
@@ -92,7 +96,8 @@ final class ConfigFile {
         config.collectGuiText = bool(o, "collectGuiText", config.collectGuiText);
         config.source = enumOr(o, "source", ModConfig.Source.class, config.source);
         config.translateBossBar = bool(o, "translateBossBar", config.translateBossBar);
-        config.nametagMode = enumOr(o, "nametagMode", ModConfig.NametagMode.class, config.nametagMode);
+        config.nametagMode = enumOr(o, "nametagMode", ModConfig.NametagMode.class,
+                ModConfig.NametagMode.REPLACE);
         config.panelSide = enumOr(o, "panelSide", ModConfig.PanelSide.class, config.panelSide);
         config.noticeDismissed = bool(o, "noticeDismissed", config.noticeDismissed);
         config.oldKeysReleased = bool(o, "oldKeysReleased", config.oldKeysReleased);
@@ -114,6 +119,14 @@ final class ConfigFile {
         String theme = str(o, "themeColor", config.accentColor);
         if (theme.matches("#[0-9a-fA-F]{6}")) {
             config.themeColor = theme;
+        }
+        if (!bool(o, "leafColours", false)) {
+            if (ModConfig.OLD_DEFAULT_COLOUR.equalsIgnoreCase(config.accentColor)) {
+                config.accentColor = ModConfig.DEFAULT_COLOUR;
+            }
+            if (ModConfig.OLD_DEFAULT_COLOUR.equalsIgnoreCase(config.themeColor)) {
+                config.themeColor = ModConfig.DEFAULT_COLOUR;
+            }
         }
         int hold = integer(o, "dialogueHoldMs", config.dialogueHoldMs);
         config.dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
@@ -284,6 +297,7 @@ final class ConfigFile {
             o.addProperty("panelGap", config.panelGap);
             o.addProperty("accentColor", config.accentColor);
             o.addProperty("themeColor", config.themeColor);
+            o.addProperty("leafColours", true);
             o.addProperty("dialogueHoldMs", config.dialogueHoldMs);
             o.addProperty("dialogueMode", config.dialogueMode.name());
             o.addProperty("choiceMode", config.choiceMode.name());
@@ -302,6 +316,8 @@ final class ConfigFile {
             o.addProperty("ownCape", config.ownCape);
             o.addProperty("wynntilsUi", config.wynntilsUi);
             o.addProperty("wynntilsFps", config.wynntilsFps);
+            o.addProperty("settingsLeaves", config.settingsLeaves);
+            o.addProperty("previewWidth", config.previewWidth);
             o.addProperty("dialogueCover", config.dialogueCover);
             o.addProperty("marketSearch", config.marketSearch);
             o.addProperty("shiftPeekNames", config.shiftPeekNames);

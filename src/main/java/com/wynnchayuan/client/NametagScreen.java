@@ -58,10 +58,10 @@ public final class NametagScreen extends CanvasScreen {
                                 next.run();
                             }
                         })
-                        .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.REPLACE,
+                        .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.LOOK_AT,
                                 () -> {
                                     for (int n = 0; n < 3 && cfg().nametagMode()
-                                            != ModConfig.NametagMode.REPLACE; n++) {
+                                            != ModConfig.NametagMode.LOOK_AT; n++) {
                                         next.run();
                                     }
                                 }),

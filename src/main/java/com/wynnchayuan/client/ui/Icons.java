@@ -32,7 +32,9 @@ public final class Icons {
                   cubic(16, 4, 7, 4, 4, 8, 4, 13), cubic(4, 13, 4, 14, 4, 16, 6, 18), line(9, 18)),
              cubic(5, 21, 5.5f, 16.5f, 7.5f, 13, 12, 11)),
         CAPE(closed(8, 4, 16, 4, 19, 20, 5, 20), line(8, 4, 8, 6.5f), line(16, 4, 16, 6.5f),
-             line(12, 8, 12, 20));
+             line(12, 8, 12, 20)),
+        GLOBE(circle(12, 12, 9), line(3, 12, 21, 12), cubic(12, 3, 7.5f, 7, 7.5f, 17, 12, 21),
+              cubic(12, 3, 16.5f, 7, 16.5f, 17, 12, 21));
 
         final float[][] paths;
 

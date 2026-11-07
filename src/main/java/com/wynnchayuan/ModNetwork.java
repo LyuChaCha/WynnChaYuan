@@ -13,15 +13,23 @@ public final class ModNetwork {
 
     private ModNetwork() {}
 
-    public static void resyncTranslations(Consumer<String> done) {
+    public record Resync(String summary, String reason, int changed, int strings, boolean failed) {}
+
+    public static void resyncTranslations(Consumer<Resync> done) {
         Thread worker = new Thread(() -> {
+            int before = RemoteSync.failures();
             String remote = RemoteSync.remoteVersion();
-            LanguageLayers.fetchCurrentLanguages();
+            int changed = LanguageLayers.fetchCurrentLanguages();
             String result = RemoteSync.lastResult();
-            TranslationUpdate.done(remote);
+            boolean failed = RemoteSync.blocked() || RemoteSync.failures() > before;
+            if (!failed) {
+                TranslationUpdate.done(remote);
+            }
             Minecraft.getInstance().execute(() -> {
                 LanguageLayers.reloadTranslations();
-                done.accept(T.s("status.sync_total", result, WynnChaYuan.translations.size()));
+                int strings = WynnChaYuan.translations.size();
+                done.accept(new Resync(T.s("status.sync_total", result, strings), result, changed,
+                                       strings, failed));
             });
         }, WynnChaYuan.MOD_ID + "-resync");
         worker.setDaemon(true);

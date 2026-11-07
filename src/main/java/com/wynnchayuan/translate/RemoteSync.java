@@ -22,6 +22,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class RemoteSync {
 
@@ -44,6 +45,15 @@ public final class RemoteSync {
 
     private static volatile String lastResult;
     private static volatile boolean blocked;
+    private static final AtomicInteger FAILURES = new AtomicInteger();
+
+    public static int failures() {
+        return FAILURES.get();
+    }
+
+    public static boolean blocked() {
+        return blocked;
+    }
 
     private static boolean allowed() {
         blocked = !NetworkGate.online();
@@ -248,6 +258,7 @@ public final class RemoteSync {
             Files.createDirectories(cacheDir);
         } catch (Exception e) {
             lastResult = T.s("status.sync_cache_failed", e.getMessage());
+            FAILURES.incrementAndGet();
             return 0;
         }
 
@@ -284,9 +295,13 @@ public final class RemoteSync {
             changed += TranslationCache.record(cacheDir, fetched, names, index != FAILED);
         } catch (Exception e) {
             lastResult = T.s("status.sync_offline", e.getMessage());
+            FAILURES.incrementAndGet();
             return changed;
         }
 
+        if (failed > 0) {
+            FAILURES.incrementAndGet();
+        }
         lastResult = failed == 0
                 ? T.s("status.sync_ok", ok, changed)
                 : T.s("status.sync_partial", ok, failed);
