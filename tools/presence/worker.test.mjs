@@ -1400,6 +1400,16 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       && bytes[0] === 0 && bytes[1] === 1 && bytes[2] === 0 && bytes[3] === 0);
     check('裁出來的字型留著版權與授權（OFL 的要求）', new TextDecoder('utf-16be').decode(bytes).includes('TakWolf')
       || new TextDecoder('latin1').decode(bytes).includes('TakWolf'));
+    {
+      const { UI_FONTS } = await import('./site-fonts.js');
+      const ui = await worker.fetch(new Request('https://x.test/font/ui-tc.woff?v=' + UI_FONTS.tc.v), env);
+      const head = new Uint8Array(await ui.arrayBuffer());
+      check('★ 網站內文字型拿得到：WOFF、可以長期快取，每一頁都宣告了', ui.status === 200 && ui.headers.get('content-type') === 'font/woff'
+        && ui.headers.get('cache-control').includes('immutable') && String.fromCharCode(...head.slice(0, 4)) === 'wOFF'
+        && ['/', '/capes', '/privacy'].every((p) => pages[p].includes('/font/ui-tc.woff?v=' + UI_FONTS.tc.v)));
+      check('內文字型的副檔名要對：px 是 ttf、ui 是 woff', (await worker.fetch(new Request('https://x.test/font/ui-tc.ttf'), env)).status === 404
+        && (await worker.fetch(new Request('https://x.test/font/px-tc.woff'), env)).status === 404);
+    }
     check('沒有這一份的字型：404', (await worker.fetch(new Request('https://x.test/font/px-xx.ttf'), env)).status === 404
       && (await worker.fetch(new Request('https://x.test/font/../worker.js'), env)).status === 404);
   }
