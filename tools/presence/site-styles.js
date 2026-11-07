@@ -978,6 +978,7 @@ export const STYLE = String.raw`
   .policy, .tr-list, .fb-form, .fb-gate, .fb-notes { margin-right: auto; }
   .tr-list { max-width: 1120px; }
   .who-tags { word-break: keep-all; }
+  .who-tag { white-space: nowrap; }
   @property --tone { syntax: '<color>'; inherits: true; initial-value: #7fd08a; }
   @property --tone-glow { syntax: '<color>'; inherits: true; initial-value: #22432c; }
   :root { --tone: #7fd08a; --tone-glow: #22432c; --pxa: var(--tone); transition: --tone 900ms ease, --tone-glow 900ms ease; }

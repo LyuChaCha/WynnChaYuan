@@ -231,17 +231,24 @@ const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = 
             var txt = el('span', 'who-txt');
             var tags = el('span', 'who-tags');
             var words = [];
+            var units = [];
             teams.forEach(function (code) {
               var tl = el('span', 'tl', TEAM_NAMES[code] || code);
               tl.lang = STAGE_TAGS[code] || '';
-              if (words.length) tags.append(' · ');
-              tags.append(tl);
+              units.push(tl);
               words.push(TEAM_NAMES[code] || code);
             });
             areas.forEach(function (code) {
               var word = L.teamAreas[code] || code;
-              tags.append((words.length ? ' · ' : '') + word);
+              units.push(document.createTextNode(word));
               words.push(word);
+            });
+            units.forEach(function (part, at) {
+              var unit = el('span', 'who-tag');
+              unit.append(part);
+              if (at < units.length - 1) unit.append(' ·');
+              tags.append(unit);
+              if (at < units.length - 1) tags.append(' ');
             });
             tags.title = words.join(' · ');
             var top = el('span', 'who-top');
