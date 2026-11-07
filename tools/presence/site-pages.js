@@ -6,12 +6,18 @@ import { TEXT, attribute, filled, plain } from './site-strings.js';
 import { TEX_URL } from './site-styles.js';
 import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
-const REVEAL_HOME = '#main > h2, #main > .lede, .features > div, #main > .more, .split > *, .band, .everyone, #main > .panel, #main > .cta';
+const REVEAL_HOME = '.hm-sec > h2, .hm-sec > .lede, .hm-tile, .hm-steps > li, .hm-note, .band, .everyone, .hm-free, .hm-points > li, .hm-sponsor > .cta';
+
+const TONES = "(function () { var root = document.documentElement; var parts = document.querySelectorAll('[data-tone]');"
+  + " if (!parts.length || !('IntersectionObserver' in window)) return;"
+  + " var watch = new IntersectionObserver(function (seen) { seen.forEach(function (one) {"
+  + " if (one.isIntersecting) root.setAttribute('data-tone', one.target.getAttribute('data-tone')); }); }, { rootMargin: '-45% 0px -45% 0px' });"
+  + " parts.forEach(function (part) { watch.observe(part); }); })();";
 
 const REVEAL_FEATURES = 'section[id] > h2, .cards > .fcard';
 
 const HOME = String.raw`
-  <section class="hero">
+  <section class="hero" data-tone="forest">
     <div>
       <h1>%%home.h1%%</h1>
       <p class="lede">%%home.lede%%</p>
@@ -31,66 +37,72 @@ const HOME = String.raw`
   </section>
   ` + STAGE_PARTS + String.raw`
 
-  <h2>%%home.what%%</h2>
-  <div class="features">
-    <div>` + ICON.tooltip + String.raw`<h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
-    <div>` + ICON.dialogue + String.raw`<h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
-    <div>` + ICON.tree + String.raw`<h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
-    <div>` + ICON.chat + String.raw`<h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
-    <div>` + ICON.window + String.raw`<h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
-    <div>` + ICON.refresh + String.raw`<h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
-  </div>
-  <p class="more"><a href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></p>
-
-  <h2 id="install">%%home.install%%</h2>
-  <div class="split">
-    <div class="panel">
-      <p style="margin:0">%%home.need%%</p>
-      <p class="note" style="margin:8px 0 0">%%home.how%%</p>
+  <section class="hm-sec" data-tone="moss" aria-labelledby="h-what">
+    <h2 id="h-what">%%home.what%%</h2>
+    <div class="hm-bento">
+      <article class="hm-tile hm-lead">` + ICON.tooltip + String.raw`<h3>%%home.f1%%</h3><p>%%home.f1b%%</p></article>
+      <article class="hm-tile">` + ICON.dialogue + String.raw`<h3>%%home.f2%%</h3><p>%%home.f2b%%</p></article>
+      <article class="hm-tile">` + ICON.tree + String.raw`<h3>%%home.f3%%</h3><p>%%home.f3b%%</p></article>
+      <article class="hm-tile">` + ICON.chat + String.raw`<h3>%%home.f4%%</h3><p>%%home.f4b%%</p></article>
+      <article class="hm-tile">` + ICON.window + String.raw`<h3>%%home.f5%%</h3><p>%%home.f5b%%</p></article>
+      <article class="hm-tile hm-wide">` + ICON.refresh + String.raw`<div><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
+        <a class="hm-more" href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></article>
     </div>
-    <div class="panel note">%%home.about%%</div>
-  </div>
+  </section>
 
-  <h2 id="team">%%home.team%%</h2>
-  <p class="lede">%%home.teamlede%%</p>
-  <template id="leaf">` + LEAF + String.raw`</template>
-  <template id="out">` + ICON.out + String.raw`</template>
-  <div class="team-pick" id="team-pick" role="group" aria-label="%%home.teampick%%" hidden></div>
-  <div class="team" id="team-list" aria-busy="true">
-    <section class="band" id="band-developers" data-role="developers">
-      <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-sponsors" data-role="sponsors">
-      <div class="band-head">` + leaf('#5BD8E8') + String.raw`<h3>%%home.sponsor%%</h3><p>%%home.sponsorb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-contributors" data-role="contributors">
-      <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-guilds" data-role="guilds" hidden>
-      <div class="band-head"><span style="color:var(--ink)">` + ICON.flag + String.raw`</span><h3>%%home.guilds%%</h3><p>%%home.guildsb%%</p></div>
-      <ul class="lineup guilds"></ul>
-    </section>
-  </div>
-  <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
-  <p class="everyone">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b>%%home.userb%%</span></p>
+  <section class="hm-sec" data-tone="teal" aria-labelledby="install">
+    <h2 id="install">%%home.install%%</h2>
+    <div class="hm-install">
+      <ol class="hm-steps">
+        <li><span class="hm-num" aria-hidden="true">1</span><p>%%home.need%%</p></li>
+        <li><span class="hm-num" aria-hidden="true">2</span><p>%%home.how%%</p></li>
+      </ol>
+      <aside class="hm-note note">%%home.about%%</aside>
+    </div>
+  </section>
 
-  <h2 id="sponsoring">%%home.support%%</h2>
-  <div class="panel">
-    <p style="margin:0">%%home.free%%</p>
-    <ul class="plain">
+  <section class="hm-sec hm-team" data-tone="forest" aria-labelledby="team">
+    <h2 id="team">%%home.team%%</h2>
+    <p class="lede">%%home.teamlede%%</p>
+    <template id="leaf">` + LEAF + String.raw`</template>
+    <template id="out">` + ICON.out + String.raw`</template>
+    <div class="team-pick" id="team-pick" role="group" aria-label="%%home.teampick%%" hidden></div>
+    <div class="team" id="team-list" aria-busy="true">
+      <section class="band" id="band-developers" data-role="developers">
+        <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-sponsors" data-role="sponsors">
+        <div class="band-head">` + leaf('#5BD8E8') + String.raw`<h3>%%home.sponsor%%</h3><p>%%home.sponsorb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-contributors" data-role="contributors">
+        <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-guilds" data-role="guilds" hidden>
+        <div class="band-head"><span style="color:var(--ink)">` + ICON.flag + String.raw`</span><h3>%%home.guilds%%</h3><p>%%home.guildsb%%</p></div>
+        <ul class="lineup guilds"></ul>
+      </section>
+    </div>
+    <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
+    <p class="everyone">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b>%%home.userb%%</span></p>
+  </section>
+
+  <section class="hm-sec hm-sponsor" data-tone="dusk" aria-labelledby="sponsoring">
+    <h2 id="sponsoring">%%home.support%%</h2>
+    <p class="hm-free">%%home.free%%</p>
+    <ul class="hm-points">
       <li>%%home.sup1%%</li>
       <li>%%home.sup2%%</li>
       <li>%%home.sup3%%</li>
     </ul>
-  </div>
-  <div class="cta">
-    <a class="btn" href="/capes">%%home.seecapes%%</a>
-    <a class="btn" href="https://ko-fi.com/lyuchacha">` + ICON.cup + String.raw`%%home.donate%%</a>
-    <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
-  </div>
+    <div class="cta">
+      <a class="btn" href="/capes">%%home.seecapes%%</a>
+      <a class="btn" href="https://ko-fi.com/lyuchacha">` + ICON.cup + String.raw`%%home.donate%%</a>
+      <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
+    </div>
+  </section>
 `;
 
 const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = ' + readJsonData('demo-data') + ';' + STAGE_JS + String.raw`
@@ -3188,7 +3200,7 @@ const TRANSLATE_JS = scriptFile('translate', String.raw`
 `);
 
 const PAGES = {
-  '/': ['home.title', HOME, HOME_JS + scriptFile('home-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')')],
+  '/': ['home.title', HOME, HOME_JS + scriptFile('home-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')') + scriptFile('home-tone', TONES)],
   '/features': ['features.title', FEATURES, FEATURES_JS + scriptFile('features-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')')],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
