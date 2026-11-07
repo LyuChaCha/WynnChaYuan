@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.DiscoveryBlock;
 import com.wynnchayuan.translate.FlowedDebug;
 import com.wynnchayuan.translate.LineTranslator;
@@ -250,6 +251,8 @@ public final class DiscoveryBlockTest {
         missKeepsEnglish();
         capture();
         everyEntry();
+        placeSplitByWrap();
+        placeSplitCapture();
 
         System.out.println(failures == 0 ? "探索點段落：全部通過" : "探索點段落：" + failures + " 項失敗");
         if (failures > 0) {
@@ -469,6 +472,105 @@ public final class DiscoveryBlockTest {
 
     private static String filled(String text) {
         return text.replaceAll("\\{~\\d*}", "3").replaceAll("\\{p}", "Ragni");
+    }
+
+    private static final String SPLIT_PLACE = "Kander Forest";
+
+    private static List<StyledText> splitAt(String label, String sentence, String place) {
+        int colon = label.indexOf(": ") + 2;
+        List<StyledText> block = new ArrayList<>();
+        block.add(head(label.substring(0, colon), label.substring(colon, label.lastIndexOf(" (")),
+                       label.substring(label.lastIndexOf(" ("))));
+        block.add(blank());
+        int gap = place.indexOf(' ');
+        boolean split = false;
+        for (String row : wrapped(sentence)) {
+            int at = split ? -1 : row.indexOf(place);
+            if (at < 0) {
+                block.add(prose(row));
+                continue;
+            }
+            block.add(prose(row.substring(0, at + gap)));
+            block.add(prose(row.substring(at + gap + 1)));
+            split = true;
+        }
+        return block;
+    }
+
+    private static String seen(Component whole) {
+        StringBuilder out = new StringBuilder();
+        for (Component row : shown(whole)) {
+            out.append(visible(row));
+        }
+        return out.toString().replaceAll("\\s+", "");
+    }
+
+    private static void placeSplitByWrap() throws Exception {
+        for (String language : LANGUAGES) {
+            TranslationStore store = real(language);
+            for (boolean replace : new boolean[] {true, false}) {
+                String mode = language + (replace ? " 就地取代" : " 原文加譯文");
+                int tried = 0;
+                int spelled = 0;
+                List<String> missed = new ArrayList<>();
+                for (Map.Entry<String, JsonElement> e : corpus(language).entrySet()) {
+                    String key = e.getKey();
+                    int newline = key.indexOf('\n');
+                    String body = newline < 0 ? key : key.substring(newline + 1);
+                    if (key.startsWith("_") || key.contains("??") || !body.contains("{p}")
+                            || e.getValue().getAsString().isBlank()) {
+                        continue;
+                    }
+                    if (!LineParts.of(StyledText.fromComponent(Component.literal(body))).template().equals(body)) {
+                        spelled++;
+                        continue;
+                    }
+                    String sentence = body.replaceAll("\\{~\\d*}", "3").replace("{p}", SPLIT_PLACE);
+                    String label = newline < 0 ? "Secret Discovery: Some Name (+100 XP)"
+                            : filled(key.substring(0, newline));
+                    List<StyledText> block = splitAt(label, sentence, SPLIT_PLACE);
+                    Component out = replace ? held(block, store) : queued(block, store);
+                    tried++;
+                    boolean hit = out != null
+                            && !out.getString().contains(sentence.substring(0, Math.min(24, sentence.length())))
+                            && seen(out).contains(SPLIT_PLACE.replace(" ", ""));
+                    if (!hit) {
+                        missed.add(key);
+                    }
+                }
+                check("★ " + mode + "：地名被折成兩列也查得到（試 " + tried + "、地名寫死的跳過 " + spelled
+                        + "、沒中 " + missed.size()
+                        + (missed.isEmpty() ? "" : "：" + missed.get(0)) + "）",
+                      tried > 0 && missed.isEmpty());
+            }
+        }
+    }
+
+    private static void placeSplitCapture() throws Exception {
+        TranslationStore empty = synthetic(new JsonObject());
+        CaptureStore store = new CaptureStore(
+                Files.createTempDirectory("wynnchayuan-discovery").resolve("captured.json"));
+        DiscoveryRows rows = new DiscoveryRows();
+        String sentence = "This once grand cathedral has begun to fall into disrepair over the years as the"
+                + " effects of the Decay worsened. Nevertheless, the church still continues to provide"
+                + " blessings and protection to the " + SPLIT_PLACE + "'s inhabitants.";
+        long now = 1000;
+        for (StyledText row : splitAt("Area Discovered: House of Talor (+100 XP)", sentence, SPLIT_PLACE)) {
+            if (!rows.offer(row, "chat/INFO", now++, store, empty)) {
+                store.recordChat(CaptureListener.chatTemplate(row, s -> {}, empty), "chat/INFO", now);
+            }
+        }
+        rows.settle(now + DiscoveryRows.QUIET_MS + 1, store, empty);
+        store.settleChat(now + 5000);
+        store.flush();
+        JsonObject entries = JsonParser.parseReader(Files.newBufferedReader(
+                captureFile(store))).getAsJsonObject().getAsJsonObject("entries");
+        List<String> sources = new ArrayList<>();
+        for (JsonElement e : entries.asMap().values()) {
+            sources.add(e.getAsJsonObject().get("src").getAsString());
+        }
+        String want = sentence.replace(SPLIT_PLACE, "{p}");
+        check("★ 地名被折開的段落收成 {p} 的整句（實際 " + sources + "）", sources.contains(want));
     }
 
     private static void everyEntry() throws Exception {
