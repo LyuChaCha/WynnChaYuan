@@ -1007,7 +1007,7 @@ export const STYLE = String.raw`
   .hm-lead { grid-area: lead; align-content: end; min-height: 380px; padding: 32px;
     background: linear-gradient(180deg, #0f151252 0%, #0f1512e6 62%, #0f1512 100%), var(--t-bg-world) center / cover no-repeat; }
   .hm-lead > .ico { width: 44px; height: 44px; }
-  .hm-lead h3 { font-size: 30px; line-height: 40px; }
+  .hm-lead h3 { font-size: 20px; line-height: 28px; }
   .hm-lead p { max-width: 30em; color: var(--ink); }
   .hm-wide { grid-area: wide; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 20px;
     background: linear-gradient(90deg, color-mix(in srgb, var(--sec) 16%, transparent), transparent 72%); }
@@ -1021,6 +1021,10 @@ export const STYLE = String.raw`
   .hm-steps p { margin: 10px 0 0; }
   .hm-note { margin: 0; padding: 20px 24px; border: 1px dashed #d8b76566; border-radius: 6px; }
   .hm-team .band { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 28px 0; }
+  @media (min-width: 1001px) {
+    .hm-team .team { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); column-gap: 32px; }
+    .hm-team #band-contributors, .hm-team #band-guilds { grid-column: 1 / -1; }
+  }
   .hm-team .lineup:not(.guilds) { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
   .hm-team .lineup:not(.guilds) .who-row { position: relative; flex-direction: column; justify-content: flex-start; gap: 10px; height: 100%; padding: 20px 12px 16px; text-align: center; }
   .hm-team .lineup:not(.guilds) .who-row img, .hm-team .lineup:not(.guilds) .who-row .blank { width: 48px; height: 48px; }
