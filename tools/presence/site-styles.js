@@ -653,7 +653,7 @@ export const STYLE = String.raw`
     border: 0; border-radius: 9px; background: #0b0f0d8c; color: var(--ink-2); cursor: pointer;
     transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out);
   }
-  .star svg, .stars svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+  .star svg, .stars svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linejoin: round; }
   .star[aria-pressed="true"] { color: var(--gold); }
   .star[aria-pressed="true"] svg { fill: currentColor; }
   .star:active { transform: scale(.88); }

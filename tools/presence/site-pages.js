@@ -33,12 +33,12 @@ const HOME = String.raw`
 
   <h2>%%home.what%%</h2>
   <div class="features">
-    <div><h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
-    <div><h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
-    <div><h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
-    <div><h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
-    <div><h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
-    <div><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
+    <div>` + ICON.tooltip + String.raw`<h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
+    <div>` + ICON.dialogue + String.raw`<h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
+    <div>` + ICON.tree + String.raw`<h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
+    <div>` + ICON.chat + String.raw`<h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
+    <div>` + ICON.window + String.raw`<h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
+    <div>` + ICON.refresh + String.raw`<h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
   </div>
   <p class="more"><a href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></p>
 
@@ -292,11 +292,11 @@ const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = 
   })();
 `);
 
-const card = (key, at, eg) => '<article class="fcard"><i class="glyph" style="--r:' + at[0] + ';--c:' + at[1]
-  + '" aria-hidden="true"></i><div><h3>%%feat.' + key + '%%</h3><p>%%feat.' + key + 'b%%</p>'
+const card = (key, icon, eg) => '<article class="fcard"><span class="glyph own" aria-hidden="true">' + ICON[icon]
+  + '</span><div><h3>%%feat.' + key + '%%</h3><p>%%feat.' + key + 'b%%</p>'
   + (eg ? '<p class="eg" data-eg="' + eg + '" aria-hidden="true"></p>' : '') + '</div></article>';
 
-const mod = (name, slug, state, key) => '<article class="fcard mod"><i class="glyph" style="--r:2;--c:11" aria-hidden="true"></i>'
+const mod = (name, slug, state, key) => '<article class="fcard mod"><span class="glyph own" aria-hidden="true">' + ICON.plug + '</span>'
   + '<div><h3><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
   + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></h3><p>%%feat.' + key + 'b%%</p></div></article>';
 
@@ -352,19 +352,19 @@ const FEATURES = String.raw`
       <section id="translate">
         <h2>%%features.t%%</h2>
         <div class="cards">
-          ` + [card('t1', [0, 8], 'Main Attack Damage'), card('t2', [0, 3], 'Ability Points'),
-    card('t3', [2, 15], 'Well, what are we waiting for?'), card('t4', [1, 13], 'World Event'),
-    card('t5', [2, 9], 'Weapon Merchant'), card('t6', [3, 0], 'The trade has been completed!'),
-    card('t7', [3, 9], 'Trade Market'), card('t8', [1, 8], 'Daily Objective:'),
-    card('t9', [3, 12], 'Secret Discovery'), card('t10', [3, 3], 'Level Up!')].join('\n          ') + String.raw`
+          ` + [card('t1', 'tooltip', 'Main Attack Damage'), card('t2', 'tree', 'Ability Points'),
+    card('t3', 'dialogue', 'Well, what are we waiting for?'), card('t4', 'tracker', 'World Event'),
+    card('t5', 'nameplate', 'Weapon Merchant'), card('t6', 'chat', 'The trade has been completed!'),
+    card('t7', 'window', 'Trade Market'), card('t8', 'swords', 'Daily Objective:'),
+    card('t9', 'compass', 'Secret Discovery'), card('t10', 'title', 'Level Up!')].join('\n          ') + String.raw`
         </div>
         <p class="note">%%features.tnote%%</p>
       </section>
       <section id="tools">
         <h2>%%features.u%%</h2>
         <div class="cards">
-          ` + [card('u1', [2, 7]), card('u2', [3, 6]), card('u3', [3, 4]), card('u4', [0, 12]),
-    card('u5', [4, 12]), card('u6', [2, 11]), card('u7', [5, 4]), card('u8', [2, 8])].join('\n          ') + String.raw`
+          ` + [card('u1', 'refresh'), card('u2', 'search'), card('u3', 'pen'), card('u4', 'layers'),
+    card('u5', 'panel'), card('u6', 'camera'), card('u7', 'get'), card('u8', 'sliders')].join('\n          ') + String.raw`
         </div>
       </section>
       <section id="social">
@@ -374,7 +374,7 @@ const FEATURES = String.raw`
             <div><h3>%%feat.s1%%</h3><p>%%feat.s1b%%</p></div></article>
           <article class="fcard tall"><div class="show" aria-hidden="true"><span class="capemini"><img src="` + TPL('example-88x68.gif') + String.raw`" alt="" loading="lazy"></span><span class="capemini"><img src="` + TPL('template-88x68.png') + String.raw`" alt="" loading="lazy"></span></div>
             <div><h3>%%feat.s2%%</h3><p>%%feat.s2b%%</p></div></article>
-          <article class="fcard tall"><div class="show" aria-hidden="true"><i class="glyph" style="--r:2;--c:14;box-shadow:none;background:none"></i></div>
+          <article class="fcard tall"><div class="show" aria-hidden="true">` + ICON.shield + String.raw`</div>
             <div><h3>%%feat.s3%%</h3><p>%%feat.s3b%%</p></div></article>
         </div>
       </section>
