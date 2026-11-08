@@ -1402,17 +1402,46 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       || new TextDecoder('latin1').decode(bytes).includes('TakWolf'));
     {
       const { UI_FONTS } = await import('./site-fonts.js');
+      const { inflateSync } = await import('node:zlib');
+      const nameTable = (bytes) => {
+        const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+        let table = new Uint8Array(0);
+        for (let i = 0; i < view.getUint16(12); i++) {
+          const at = 44 + i * 20;
+          if (String.fromCharCode(...bytes.slice(at, at + 4)) !== 'name') continue;
+          const start = view.getUint32(at + 4), packed = view.getUint32(at + 8), size = view.getUint32(at + 12);
+          const raw = bytes.slice(start, start + packed);
+          table = packed < size ? new Uint8Array(inflateSync(raw)) : raw;
+        }
+        const names = {};
+        if (table.length < 6) return names;
+        const at = new DataView(table.buffer, table.byteOffset, table.byteLength);
+        const base = at.getUint16(4);
+        for (let i = 0; i < at.getUint16(2); i++) {
+          const row = 6 + i * 12;
+          if (at.getUint16(row) !== 3) continue;
+          const from = base + at.getUint16(row + 10);
+          names[at.getUint16(row + 6)] = new TextDecoder('utf-16be').decode(table.slice(from, from + at.getUint16(row + 8)));
+        }
+        return names;
+      };
       let fontsOk = Object.keys(UI_FONTS).join() === 'latin,tc,sc,ja,ko';
-      for (const code of Object.keys(UI_FONTS)) {
-        const ui = await worker.fetch(new Request('https://x.test/font/ui-' + code + '.woff?v=' + UI_FONTS[code].v), env);
+      let licensed = true;
+      for (const one of Object.values(UI_FONTS).flatMap((set) => set.faces)) {
+        const ui = await worker.fetch(new Request('https://x.test/font/ui-' + one.file + '.woff?v=' + one.v), env);
         const head = new Uint8Array(await ui.arrayBuffer());
         fontsOk = fontsOk && ui.status === 200 && ui.headers.get('content-type') === 'font/woff'
           && ui.headers.get('cache-control').includes('immutable') && String.fromCharCode(...head.slice(0, 4)) === 'wOFF';
+        const names = nameTable(head);
+        licensed = licensed && (names[13] || '').includes('SIL Open Font License') && (names[1] || '').startsWith('WCY Site')
+          && [1, 3, 4, 6, 16, 17].every((id) => !/huninn|varela|source|resource/i.test(names[id] || ''));
       }
-      check('★ 網站點陣字五份都拿得到：WOFF、可以長期快取', fontsOk);
-      const faces = (html) => (html.match(/\/font\/ui-[a-z]+\.woff/g) || []).join();
-      check('★ 每個語言只載自己那一份點陣字', ['/', '/capes', '/privacy'].every((p) => faces(pages[p]) === '/font/ui-tc.woff'
-        && faces(english[p]) === '/font/ui-latin.woff'));
+      check('★ 網站字型每一份都拿得到：WOFF、可以長期快取', fontsOk);
+      check('裁出來的網站字型留著 OFL 授權、換掉保留字型名稱', licensed);
+      const faces = (html) => [...new Set(html.match(/\/font\/ui-[a-z0-9-]+\.woff/g) || [])].sort().join();
+      const files = (code) => UI_FONTS[code].faces.map((one) => '/font/ui-' + one.file + '.woff').sort().join();
+      check('★ 每個語言只載自己那一套字型', ['/', '/capes', '/privacy'].every((p) => faces(pages[p]) === files('tc')
+        && faces(english[p]) === files('latin')));
       check('內文字型的副檔名要對：px 是 ttf、ui 是 woff', (await worker.fetch(new Request('https://x.test/font/ui-tc.ttf'), env)).status === 404
         && (await worker.fetch(new Request('https://x.test/font/px-tc.woff'), env)).status === 404
         && (await worker.fetch(new Request('https://x.test/font/ui-xx.woff'), env)).status === 404);
