@@ -3,8 +3,8 @@
   "domain": "ingredient",
   "lang": "zh_tw",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 975,
-  "translated": 975,
+  "count": 976,
+  "translated": 976,
   "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟製作材料無關。",
   "itemNames": true,
   "gearNames": false
@@ -8780,6 +8780,15 @@
   "ingredient#0974": {
    "src": "Massive Anchor",
    "dst": "巨型船錨",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "ingredient/ingredient"
+   ]
+  },
+  "ingredient#0975": {
+   "src": "Platinum Ingot",
+   "dst": "白金錠",
    "role": "name",
    "kind": "term",
    "ctx": [
