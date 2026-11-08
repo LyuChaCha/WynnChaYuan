@@ -8,11 +8,21 @@ import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
 const REVEAL_HOME = '.hm-sec > h2, .hm-sec > .lede, .hm-tile, .hm-steps > li, .hm-note, .band, .everyone, .hm-free, .hm-points > li, .hm-sponsor > .cta';
 
-const TONES = "(function () { var root = document.documentElement; var parts = document.querySelectorAll('[data-tone]');"
-  + " if (!parts.length || !('IntersectionObserver' in window)) return;"
-  + " var watch = new IntersectionObserver(function (seen) { seen.forEach(function (one) {"
-  + " if (one.isIntersecting) root.setAttribute('data-tone', one.target.getAttribute('data-tone')); }); }, { rootMargin: '-45% 0px -45% 0px' });"
-  + " parts.forEach(function (part) { watch.observe(part); }); })();";
+const TONES = "(function () { var root = document.documentElement;"
+  + " var parts = Array.prototype.map.call(document.querySelectorAll('[data-tone]'), function (el) {"
+  + " var look = getComputedStyle(el); return { el: el, a: rgb(look.getPropertyValue('--sec')), b: rgb(look.getPropertyValue('--sec-glow')) }; });"
+  + " if (parts.length < 2) return;"
+  + " function rgb(hex) { hex = hex.trim(); return [1, 3, 5].map(function (i) { return parseInt(hex.substr(i, 2), 16); }); }"
+  + " function mix(x, y, t) { return 'rgb(' + x.map(function (v, i) { return Math.round(v + (y[i] - v) * t); }).join(',') + ')'; }"
+  + " var queued = false;"
+  + " function paint() { queued = false; var mid = window.innerHeight / 2;"
+  + " var at = parts.map(function (part) { var box = part.el.getBoundingClientRect(); return box.top + box.height / 2; });"
+  + " var i = 0; while (i < at.length - 2 && at[i + 1] <= mid) i++;"
+  + " var t = Math.max(0, Math.min(1, (mid - at[i]) / (at[i + 1] - at[i]))); t = t * t * (3 - 2 * t);"
+  + " root.style.setProperty('--tone', mix(parts[i].a, parts[i + 1].a, t));"
+  + " root.style.setProperty('--tone-glow', mix(parts[i].b, parts[i + 1].b, t)); }"
+  + " function queue() { if (!queued) { queued = true; window.requestAnimationFrame(paint); } }"
+  + " window.addEventListener('scroll', queue, { passive: true }); window.addEventListener('resize', queue); paint(); })();";
 
 const REVEAL_FEATURES = 'section[id] > h2, .cards > .fcard';
 

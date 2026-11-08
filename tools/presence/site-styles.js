@@ -981,21 +981,19 @@ export const STYLE = String.raw`
   .who-tag { white-space: nowrap; }
   @property --tone { syntax: '<color>'; inherits: true; initial-value: #7fd08a; }
   @property --tone-glow { syntax: '<color>'; inherits: true; initial-value: #22432c; }
-  :root { --tone: #7fd08a; --tone-glow: #22432c; --pxa: var(--tone); transition: --tone 900ms ease, --tone-glow 900ms ease; }
-  html[data-tone="moss"] { --tone: #b5cf6e; --tone-glow: #36421c; }
-  html[data-tone="teal"] { --tone: #62cfb4; --tone-glow: #123f36; }
-  html[data-tone="dusk"] { --tone: #e6b866; --tone-glow: #4a3312; }
+  :root { --tone: #7fd08a; --tone-glow: #22432c; --pxa: var(--tone); }
   html, body { overflow-x: clip; }
   body { background-image: none; }
   body::before {
     content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background: radial-gradient(1200px 640px at 78% -12%, var(--tone-glow), transparent 70%),
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(1200px 640px at 78% -12%, var(--tone-glow), transparent 70%),
       radial-gradient(900px 620px at -6% 108%, color-mix(in srgb, var(--tone-glow) 70%, transparent), transparent 70%);
   }
-  [data-tone="forest"] { --sec: #7fd08a; }
-  [data-tone="moss"] { --sec: #b5cf6e; }
-  [data-tone="teal"] { --sec: #62cfb4; }
-  [data-tone="dusk"] { --sec: #e6b866; }
+  [data-tone="forest"] { --sec: #7fd08a; --sec-glow: #22432c; }
+  [data-tone="moss"] { --sec: #b5cf6e; --sec-glow: #36421c; }
+  [data-tone="teal"] { --sec: #62cfb4; --sec-glow: #123f36; }
+  [data-tone="dusk"] { --sec: #e6b866; --sec-glow: #4a3312; }
   .hm-sec { position: relative; margin-top: 128px; }
   .hm-sec > h2 { margin: 0 0 28px; }
   .hm-sec > h2::after { content: ""; display: block; width: 40px; height: 4px; margin-top: 12px; background: var(--sec); }
@@ -1063,7 +1061,6 @@ export const STYLE = String.raw`
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    :root { transition: none; }
     .btn:active, .card:has(.open:active), .card:hover, .card:hover:has(.open:active), .star:active { transform: none; }
     .hero > div > *, .hero-screen, .card, .fig { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
     .chip:active, .hero-screen .screen:hover { transform: none; }
