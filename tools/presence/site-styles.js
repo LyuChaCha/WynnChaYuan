@@ -1029,7 +1029,10 @@ export const STYLE = String.raw`
   .hm-team .lineup:not(.guilds) .who-row img, .hm-team .lineup:not(.guilds) .who-row .blank { width: 48px; height: 48px; }
   .hm-team .lineup:not(.guilds) .who-row > svg { position: absolute; top: 10px; right: 10px; margin: 0; }
   .hm-team .lineup:not(.guilds) .who-txt { align-items: center; }
-  .hm-team .lineup:not(.guilds) .who-tags { text-wrap: balance; }
+  .hm-team .lineup:not(.guilds) .who-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .hm-team .lineup:not(.guilds) .who-tag { padding: 0 6px; border-radius: 3px; background: #ffffff0a; }
+  .hm-team .lineup:not(.guilds) .who-tag:has(.tl) { background: color-mix(in srgb, var(--leaf) 14%, transparent); }
+  .hm-team .lineup:not(.guilds) .who-tags .sep { display: none; }
   .hm-team .lineup:not(.guilds) .who-top { flex-direction: column; align-items: center; gap: 0; }
   .hm-team .lineup:not(.guilds) .who-top > .mc, .hm-team .lineup:not(.guilds) .who-row > .mc { flex: none; margin: 0; padding: 0; text-align: center; }
   .hm-sponsor { padding: 80px 0; }

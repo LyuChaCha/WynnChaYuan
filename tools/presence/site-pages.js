@@ -256,7 +256,7 @@ const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = 
             units.forEach(function (part, at) {
               var unit = el('span', 'who-tag');
               unit.append(part);
-              if (at < units.length - 1) unit.append(' ·');
+              if (at < units.length - 1) unit.append(el('span', 'sep', ' ·'));
               tags.append(unit);
               if (at < units.length - 1) tags.append(' ');
             });
