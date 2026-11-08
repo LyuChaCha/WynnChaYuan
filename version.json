@@ -1,11 +1,65 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.6",
+ "latest": "1.0.7",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.7": {
+   "headline": "1.0.7: new settings screen with a live preview",
+   "items": [
+    "Added: the settings screen is redesigned: a wide sidebar, the settings in the middle and a large preview on the right. The preview draws items, dialogue and the world with the game's own textures and fonts, switches to whatever row you pick and redraws as you change a setting. Drag the divider to resize it.",
+    "Added: leaves drifting behind the settings screen. Turn them off under Background leaves.",
+    "Added: after you press Update translations, chat says when the update starts and whether it worked.",
+    "Changed: new installs start with Replace in place for item tooltips, quest dialogue and dialogue choices, Box while looking for nameplates, item names off and ability names + original on. Existing settings are kept.",
+    "Changed: captured.json leaves out more player-related text (pets, housing, guild tags, item sent and received messages), keeps NPC lines outside quests, and records your own lines as Player. Diagnostic files no longer log key presses.",
+    "Fixed: Discovery text in chat is translated as one sentence and centred, also when a place name is split across two rows.",
+    "Fixed: dialogue choices are no longer swapped for a gear name with the same spelling, such as Whisper.",
+    "Fixed: long dialogue choices no longer flash back to English while they scroll.",
+    "Fixed: mount stat values line up on one right edge again.",
+    "Fixed: shaking dialogue text no longer turns yellow or green in Replace in place.",
+    "Fixed: housing teleporter signs translate only the first row; the guild tower boss bar is translated; Shiny names keep their spacing when the original is shown; ability labels of players whose names contain digits are translated.",
+    "Fixed: a failed translation update is no longer recorded as up to date.",
+    "Translations: Fruma quests, caves, secret discoveries and mini-quests from player captures; The Royal University's Library; Japanese contributions (thanks yool141 and rink914), with the new lines added to the other languages."
+   ],
+   "zh_tw": {
+    "headline": "1.0.7：設定畫面改版，附即時預覽",
+    "items": [
+     "新增：設定畫面改版：寬側欄、中間是設定、右邊是大預覽。預覽用遊戲自己的材質與字型畫出物品、對話與世界，選到哪一列就切到那個畫面，改設定立刻重畫；中間的分隔線可以拖動調整寬度。",
+     "新增：設定畫面後面會飄葉子，可在「背景葉子」關掉。",
+     "新增：按下「更新翻譯」後，聊天欄會說何時開始更新、有沒有成功。",
+     "變更：新安裝的預設改為：物品說明框、任務對話、對話選項用「就地取代」，名牌用「注視時小框」，物品名稱關閉，技能名稱附原文開啟。已經有的設定照舊。",
+     "變更：captured.json 不再收寵物、住宅、公會標籤、物品寄送通知等跟玩家有關的文字；任務以外的 NPC 對話也會收，自己的台詞記成 Player。診斷檔不再記錄按鍵。",
+     "修正：聊天欄的地區探索說明整句翻譯並置中，地名被折成兩行也能翻。",
+     "修正：對話選項不再被換成同名的裝備名，例如 Whisper。",
+     "修正：較長的對話選項捲動時不再閃回英文。",
+     "修正：坐騎數值重新對齊到同一個右緣。",
+     "修正：「就地取代」時，抖動的對話文字不再變成黃色或綠色。",
+     "修正：住宅傳送立牌只翻第一列；公會塔的 Boss 血條會翻譯；Shiny 名稱附原文時保留空白；名字帶數字的玩家，技能標籤也會翻譯。",
+     "修正：更新翻譯失敗時，不再記成已是最新。",
+     "譯文：玩家收集的 Fruma 任務、洞窟、祕密探索與小任務；The Royal University's Library；日文社群貢獻（感謝 yool141、rink914），新增內容也補到其他語言。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.7：设置界面改版，附实时预览",
+    "items": [
+     "新增：设置界面改版：宽侧栏、中间是设置、右边是大预览。预览用游戏自己的材质和字体画出物品、对话和世界，选中哪一行就切到对应画面，改设置立即重画；中间的分隔线可以拖动调整宽度。",
+     "新增：设置界面的背景会有叶子落下，可在「背景叶子」关闭。",
+     "新增：按下「更新翻译」后，聊天栏会提示何时开始更新、是否成功。",
+     "变更：新安装的默认值改为：物品说明框、任务对话、对话选项用「就地替换」，名牌用「注视时小框」，物品名称关闭，技能名称附原文开启。已有的设置保持不变。",
+     "变更：captured.json 不再收集宠物、住宅、公会标签、物品寄送通知等与玩家有关的文字；任务以外的 NPC 对话也会收集，自己的台词记为 Player。诊断文件不再记录按键。",
+     "修复：聊天栏的地区探索说明整句翻译并居中，地名被折成两行也能翻译。",
+     "修复：对话选项不再被替换成同名的装备名，例如 Whisper。",
+     "修复：较长的对话选项滚动时不再闪回英文。",
+     "修复：坐骑数值重新对齐到同一个右边缘。",
+     "修复：「就地替换」时，抖动的对话文字不再变成黄色或绿色。",
+     "修复：住宅传送立牌只翻译第一行；公会塔的 Boss 血条会翻译；Shiny 名称附原文时保留空格；名字带数字的玩家，技能标签也会翻译。",
+     "修复：更新翻译失败时，不再记为已是最新。",
+     "译文：玩家收集的 Fruma 任务、洞穴、秘密探索与小任务；The Royal University's Library；日文社区贡献（感谢 yool141、rink914），新增内容也补到其他语言。"
+    ]
+   }
+  },
   "1.0.6": {
    "headline": "1.0.6: fixes, faster lookups and a big code cleanup",
    "items": [
