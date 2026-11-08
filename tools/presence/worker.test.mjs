@@ -1402,13 +1402,20 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       || new TextDecoder('latin1').decode(bytes).includes('TakWolf'));
     {
       const { UI_FONTS } = await import('./site-fonts.js');
-      const ui = await worker.fetch(new Request('https://x.test/font/ui-tc.woff?v=' + UI_FONTS.tc.v), env);
-      const head = new Uint8Array(await ui.arrayBuffer());
-      check('★ 網站內文字型拿得到：WOFF、可以長期快取，每一頁都宣告了', ui.status === 200 && ui.headers.get('content-type') === 'font/woff'
-        && ui.headers.get('cache-control').includes('immutable') && String.fromCharCode(...head.slice(0, 4)) === 'wOFF'
-        && ['/', '/capes', '/privacy'].every((p) => pages[p].includes('/font/ui-tc.woff?v=' + UI_FONTS.tc.v)));
+      let fontsOk = Object.keys(UI_FONTS).join() === 'latin,tc,sc,ja,ko';
+      for (const code of Object.keys(UI_FONTS)) {
+        const ui = await worker.fetch(new Request('https://x.test/font/ui-' + code + '.woff?v=' + UI_FONTS[code].v), env);
+        const head = new Uint8Array(await ui.arrayBuffer());
+        fontsOk = fontsOk && ui.status === 200 && ui.headers.get('content-type') === 'font/woff'
+          && ui.headers.get('cache-control').includes('immutable') && String.fromCharCode(...head.slice(0, 4)) === 'wOFF';
+      }
+      check('★ 網站點陣字五份都拿得到：WOFF、可以長期快取', fontsOk);
+      const faces = (html) => (html.match(/\/font\/ui-[a-z]+\.woff/g) || []).join();
+      check('★ 每個語言只載自己那一份點陣字', ['/', '/capes', '/privacy'].every((p) => faces(pages[p]) === '/font/ui-tc.woff'
+        && faces(english[p]) === '/font/ui-latin.woff'));
       check('內文字型的副檔名要對：px 是 ttf、ui 是 woff', (await worker.fetch(new Request('https://x.test/font/ui-tc.ttf'), env)).status === 404
-        && (await worker.fetch(new Request('https://x.test/font/px-tc.woff'), env)).status === 404);
+        && (await worker.fetch(new Request('https://x.test/font/px-tc.woff'), env)).status === 404
+        && (await worker.fetch(new Request('https://x.test/font/ui-xx.woff'), env)).status === 404);
     }
     check('沒有這一份的字型：404', (await worker.fetch(new Request('https://x.test/font/px-xx.ttf'), env)).status === 404
       && (await worker.fetch(new Request('https://x.test/font/../worker.js'), env)).status === 404);
@@ -1464,7 +1471,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
         && js.includes('var(--t-slots)'));
       check('★ 說明框的字離框的外緣 12 格（遊戲的規格），物品那一面的框照內容的寬度、有上下限', /\n  \.tip \{[^}]*padding: 1\.2em 1\.2em/.test(js)
         && /\.duo \.tip \{[^}]*width: max-content; min-width: [\d.]+em; max-width: [\d.]+em/.test(js));
-      check('★ 首頁與功能頁往下捲有淡進來的動畫；減少動態的設定下不做、一開始就看得到的不動', pages['/'].includes('<script>revealOnScroll("#main > h2')
+      check('★ 首頁與功能頁往下捲有淡進來的動畫；減少動態的設定下不做、一開始就看得到的不動', pages['/'].includes('<script>revealOnScroll(".hm-sec > h2')
         && pages['/features'].includes('<script>revealOnScroll("section[id] > h2, .cards > .fcard")</script>')
         && js.includes("matchMedia('(prefers-reduced-motion: reduce)').matches) return;") && js.includes('return node.getBoundingClientRect().top > fold;')
         && !pages['/capes'].includes('<script>revealOnScroll('));

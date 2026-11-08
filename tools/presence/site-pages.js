@@ -6,12 +6,28 @@ import { TEXT, attribute, filled, plain } from './site-strings.js';
 import { TEX_URL } from './site-styles.js';
 import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
-const REVEAL_HOME = '#main > h2, #main > .lede, .features > div, #main > .more, .split > *, .band, .everyone, #main > .panel, #main > .cta';
+const REVEAL_HOME = '.hm-sec > h2, .hm-sec > .lede, .hm-tile, .hm-steps > li, .hm-note, .band, .everyone, .hm-free, .hm-points > li, .hm-sponsor > .cta';
+
+const TONES = "(function () { var root = document.documentElement;"
+  + " var parts = Array.prototype.map.call(document.querySelectorAll('[data-tone]'), function (el) {"
+  + " var look = getComputedStyle(el); return { el: el, a: rgb(look.getPropertyValue('--sec')), b: rgb(look.getPropertyValue('--sec-glow')) }; });"
+  + " if (parts.length < 2) return;"
+  + " function rgb(hex) { hex = hex.trim(); return [1, 3, 5].map(function (i) { return parseInt(hex.substr(i, 2), 16); }); }"
+  + " function mix(x, y, t) { return 'rgb(' + x.map(function (v, i) { return Math.round(v + (y[i] - v) * t); }).join(',') + ')'; }"
+  + " var queued = false;"
+  + " function paint() { queued = false; var mid = window.innerHeight / 2;"
+  + " var at = parts.map(function (part) { var box = part.el.getBoundingClientRect(); return box.top + box.height / 2; });"
+  + " var i = 0; while (i < at.length - 2 && at[i + 1] <= mid) i++;"
+  + " var t = Math.max(0, Math.min(1, (mid - at[i]) / (at[i + 1] - at[i]))); t = t * t * (3 - 2 * t);"
+  + " root.style.setProperty('--tone', mix(parts[i].a, parts[i + 1].a, t));"
+  + " root.style.setProperty('--tone-glow', mix(parts[i].b, parts[i + 1].b, t)); }"
+  + " function queue() { if (!queued) { queued = true; window.requestAnimationFrame(paint); } }"
+  + " window.addEventListener('scroll', queue, { passive: true }); window.addEventListener('resize', queue); paint(); })();";
 
 const REVEAL_FEATURES = 'section[id] > h2, .cards > .fcard';
 
 const HOME = String.raw`
-  <section class="hero">
+  <section class="hero" data-tone="forest">
     <div>
       <h1>%%home.h1%%</h1>
       <p class="lede">%%home.lede%%</p>
@@ -31,66 +47,72 @@ const HOME = String.raw`
   </section>
   ` + STAGE_PARTS + String.raw`
 
-  <h2>%%home.what%%</h2>
-  <div class="features">
-    <div>` + ICON.tooltip + String.raw`<h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
-    <div>` + ICON.dialogue + String.raw`<h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
-    <div>` + ICON.tree + String.raw`<h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
-    <div>` + ICON.chat + String.raw`<h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
-    <div>` + ICON.window + String.raw`<h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
-    <div>` + ICON.refresh + String.raw`<h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
-  </div>
-  <p class="more"><a href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></p>
-
-  <h2 id="install">%%home.install%%</h2>
-  <div class="split">
-    <div class="panel">
-      <p style="margin:0">%%home.need%%</p>
-      <p class="note" style="margin:8px 0 0">%%home.how%%</p>
+  <section class="hm-sec" data-tone="moss" aria-labelledby="h-what">
+    <h2 id="h-what">%%home.what%%</h2>
+    <div class="hm-bento">
+      <article class="hm-tile hm-lead">` + ICON.tooltip + String.raw`<h3>%%home.f1%%</h3><p>%%home.f1b%%</p></article>
+      <article class="hm-tile">` + ICON.dialogue + String.raw`<h3>%%home.f2%%</h3><p>%%home.f2b%%</p></article>
+      <article class="hm-tile">` + ICON.tree + String.raw`<h3>%%home.f3%%</h3><p>%%home.f3b%%</p></article>
+      <article class="hm-tile">` + ICON.chat + String.raw`<h3>%%home.f4%%</h3><p>%%home.f4b%%</p></article>
+      <article class="hm-tile">` + ICON.window + String.raw`<h3>%%home.f5%%</h3><p>%%home.f5b%%</p></article>
+      <article class="hm-tile hm-wide">` + ICON.refresh + String.raw`<div><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
+        <a class="hm-more" href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></article>
     </div>
-    <div class="panel note">%%home.about%%</div>
-  </div>
+  </section>
 
-  <h2 id="team">%%home.team%%</h2>
-  <p class="lede">%%home.teamlede%%</p>
-  <template id="leaf">` + LEAF + String.raw`</template>
-  <template id="out">` + ICON.out + String.raw`</template>
-  <div class="team-pick" id="team-pick" role="group" aria-label="%%home.teampick%%" hidden></div>
-  <div class="team" id="team-list" aria-busy="true">
-    <section class="band" id="band-developers" data-role="developers">
-      <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-sponsors" data-role="sponsors">
-      <div class="band-head">` + leaf('#5BD8E8') + String.raw`<h3>%%home.sponsor%%</h3><p>%%home.sponsorb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-contributors" data-role="contributors">
-      <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
-      <ul class="lineup"></ul>
-    </section>
-    <section class="band" id="band-guilds" data-role="guilds" hidden>
-      <div class="band-head"><span style="color:var(--ink)">` + ICON.flag + String.raw`</span><h3>%%home.guilds%%</h3><p>%%home.guildsb%%</p></div>
-      <ul class="lineup guilds"></ul>
-    </section>
-  </div>
-  <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
-  <p class="everyone">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b>%%home.userb%%</span></p>
+  <section class="hm-sec" data-tone="teal" aria-labelledby="install">
+    <h2 id="install">%%home.install%%</h2>
+    <div class="hm-install">
+      <ol class="hm-steps">
+        <li><span class="hm-num" aria-hidden="true">1</span><p>%%home.need%%</p></li>
+        <li><span class="hm-num" aria-hidden="true">2</span><p>%%home.how%%</p></li>
+      </ol>
+      <aside class="hm-note note">%%home.about%%</aside>
+    </div>
+  </section>
 
-  <h2 id="sponsoring">%%home.support%%</h2>
-  <div class="panel">
-    <p style="margin:0">%%home.free%%</p>
-    <ul class="plain">
+  <section class="hm-sec hm-team" data-tone="forest" aria-labelledby="team">
+    <h2 id="team">%%home.team%%</h2>
+    <p class="lede">%%home.teamlede%%</p>
+    <template id="leaf">` + LEAF + String.raw`</template>
+    <template id="out">` + ICON.out + String.raw`</template>
+    <div class="team-pick" id="team-pick" role="group" aria-label="%%home.teampick%%" hidden></div>
+    <div class="team" id="team-list" aria-busy="true">
+      <section class="band" id="band-developers" data-role="developers">
+        <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-sponsors" data-role="sponsors">
+        <div class="band-head">` + leaf('#5BD8E8') + String.raw`<h3>%%home.sponsor%%</h3><p>%%home.sponsorb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-contributors" data-role="contributors">
+        <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
+        <ul class="lineup"></ul>
+      </section>
+      <section class="band" id="band-guilds" data-role="guilds" hidden>
+        <div class="band-head"><span style="color:var(--ink)">` + ICON.flag + String.raw`</span><h3>%%home.guilds%%</h3><p>%%home.guildsb%%</p></div>
+        <ul class="lineup guilds"></ul>
+      </section>
+    </div>
+    <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
+    <p class="everyone">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b>%%home.userb%%</span></p>
+  </section>
+
+  <section class="hm-sec hm-sponsor" data-tone="dusk" aria-labelledby="sponsoring">
+    <h2 id="sponsoring">%%home.support%%</h2>
+    <p class="hm-free">%%home.free%%</p>
+    <ul class="hm-points">
       <li>%%home.sup1%%</li>
       <li>%%home.sup2%%</li>
       <li>%%home.sup3%%</li>
     </ul>
-  </div>
-  <div class="cta">
-    <a class="btn" href="/capes">%%home.seecapes%%</a>
-    <a class="btn" href="https://ko-fi.com/lyuchacha">` + ICON.cup + String.raw`%%home.donate%%</a>
-    <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
-  </div>
+    <div class="cta">
+      <a class="btn" href="/capes">%%home.seecapes%%</a>
+      <a class="btn" href="https://ko-fi.com/lyuchacha">` + ICON.cup + String.raw`%%home.donate%%</a>
+      <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
+    </div>
+  </section>
 `;
 
 const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = ' + readJsonData('demo-data') + ';' + STAGE_JS + String.raw`
@@ -219,17 +241,24 @@ const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = 
             var txt = el('span', 'who-txt');
             var tags = el('span', 'who-tags');
             var words = [];
+            var units = [];
             teams.forEach(function (code) {
               var tl = el('span', 'tl', TEAM_NAMES[code] || code);
               tl.lang = STAGE_TAGS[code] || '';
-              if (words.length) tags.append(' · ');
-              tags.append(tl);
+              units.push(tl);
               words.push(TEAM_NAMES[code] || code);
             });
             areas.forEach(function (code) {
               var word = L.teamAreas[code] || code;
-              tags.append((words.length ? ' · ' : '') + word);
+              units.push(document.createTextNode(word));
               words.push(word);
+            });
+            units.forEach(function (part, at) {
+              var unit = el('span', 'who-tag');
+              unit.append(part);
+              if (at < units.length - 1) unit.append(el('span', 'sep', ' ·'));
+              tags.append(unit);
+              if (at < units.length - 1) tags.append(' ');
             });
             tags.title = words.join(' · ');
             var top = el('span', 'who-top');
@@ -636,7 +665,7 @@ const VIEWER = String.raw`
 
 const SKINVIEW = '<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.1/bundles/skinview3d.bundle.js"></script>';
 
-const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>';
+const STAR = ICON.star;
 
 const CAPES = String.raw`
   <h1>%%capes.h1%%</h1>
@@ -3188,7 +3217,7 @@ const TRANSLATE_JS = scriptFile('translate', String.raw`
 `);
 
 const PAGES = {
-  '/': ['home.title', HOME, HOME_JS + scriptFile('home-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')')],
+  '/': ['home.title', HOME, HOME_JS + scriptFile('home-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')') + scriptFile('home-tone', TONES)],
   '/features': ['features.title', FEATURES, FEATURES_JS + scriptFile('features-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')')],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
