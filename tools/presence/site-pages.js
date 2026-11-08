@@ -665,7 +665,7 @@ const VIEWER = String.raw`
 
 const SKINVIEW = '<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.1/bundles/skinview3d.bundle.js"></script>';
 
-const STAR = ICON.star;
+const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>';
 
 const CAPES = String.raw`
   <h1>%%capes.h1%%</h1>

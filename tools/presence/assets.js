@@ -43,9 +43,11 @@ export function page(html, lang, status = 200) {
   });
 }
 
+const UI_FILES = Object.fromEntries(Object.values(UI_FONTS).flatMap((set) => set.faces.map((one) => [one.file, one])));
+
 export function font(path) {
-  const found = /^\/font\/(px|ui)-([a-z]{2,5})\.(ttf|woff)$/.exec(path);
-  const set = found && (found[1] === 'px' ? found[3] === 'ttf' && FONTS : found[3] === 'woff' && UI_FONTS);
+  const found = /^\/font\/(px|ui)-([a-z0-9-]{2,8})\.(ttf|woff)$/.exec(path);
+  const set = found && (found[1] === 'px' ? found[3] === 'ttf' && FONTS : found[3] === 'woff' && UI_FILES);
   const one = set && Object.hasOwn(set, found[2]) ? set[found[2]] : null;
   if (!one) return refuse('not found', 404);
   return new Response(base64Bytes(one.data), {
