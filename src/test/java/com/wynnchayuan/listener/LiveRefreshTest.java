@@ -40,6 +40,7 @@ public final class LiveRefreshTest {
         Bootstrap.bootStrap();
         Path dir = Files.createTempDirectory("wynnchayuan-live-refresh");
         ModConfig config = new ModConfig(dir.resolve("config.json"));
+        config.setNametagMode(ModConfig.NametagMode.REPLACE);
         TranslationStore store = new TranslationStore();
         store.loadAll(corpus(dir));
         set("config", config);

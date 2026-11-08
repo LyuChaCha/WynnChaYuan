@@ -130,14 +130,28 @@ public final class TranslationUpdate {
             return;
         }
         fetching = true;
-        ModChat.say(client, T.c("status.fetching").withStyle(ChatFormatting.GRAY));
+        started(client);
         ModNetwork.resyncTranslations(result -> {
             fetching = false;
-            if (client.player != null) {
-                ModChat.say(client, T.c("chat.translations.done", result)
-                        .withStyle(ChatFormatting.GREEN));
-            }
+            finished(client, result);
         });
+    }
+
+    public static void started(Minecraft client) {
+        ModChat.say(client, T.c("chat.translations.start").withStyle(ChatFormatting.GRAY));
+    }
+
+    public static void finished(Minecraft client, ModNetwork.Resync result) {
+        Component line;
+        if (result.failed()) {
+            line = T.c("chat.translations.failed", result.reason()).withStyle(ChatFormatting.RED);
+        } else if (result.changed() > 0) {
+            line = T.c("chat.translations.changed", result.changed(), result.strings())
+                    .withStyle(ChatFormatting.GREEN);
+        } else {
+            line = T.c("chat.translations.same", result.strings()).withStyle(ChatFormatting.GREEN);
+        }
+        ModChat.say(client, line);
     }
 
     public static void tellOnce(Minecraft client) {
