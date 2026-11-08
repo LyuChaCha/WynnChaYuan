@@ -655,12 +655,12 @@ export const STYLE = String.raw`
     border: 0; border-radius: 3px; background: #0b0f0d8c; color: var(--ink-2); cursor: pointer;
     transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out);
   }
-  .star svg { width: 22px; height: 22px; }
+  .star svg, .stars svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linejoin: round; }
   .star[aria-pressed="true"] { color: var(--gold); }
-  .star[aria-pressed="true"] { --pxf: currentColor; }
+  .star[aria-pressed="true"] svg { fill: currentColor; }
   .star:active { transform: scale(.88); }
   .meta .stars { display: inline-flex; align-items: center; gap: 3px; color: var(--gold); font-variant-numeric: tabular-nums; }
-  .meta .stars svg { width: 11px; height: 11px; --pxf: currentColor; }
+  .meta .stars svg { width: 12px; height: 12px; fill: currentColor; stroke: none; }
   .tag.off { background: none; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
   .tag.wait { background: #5c4d27; color: var(--gold); }
   .tag.mine { background: var(--leaf-deep); color: #fff; }
@@ -925,7 +925,7 @@ export const STYLE = String.raw`
   .side h2, .wipe-box h2 { font-size: 18px; line-height: 1.4; }
   .foot-cols h2 { font-size: 14px; line-height: 1.5; font-weight: 700; }
   h3, .features h3, .fcard h3, .band-head h3 { font-size: 17px; line-height: 1.45; letter-spacing: 0; }
-  :lang(zh) :is(h1, h2, h3), :lang(ja) :is(h1, h2, h3), :lang(ko) :is(h1, h2, h3) { font-weight: 700; letter-spacing: .02em; }
+  :lang(zh) :is(h1, h2, h3), :lang(ja) :is(h1, h2, h3), :lang(ko) :is(h1, h2, h3) { font-weight: 400; letter-spacing: .02em; }
   :lang(zh) .hero h1, :lang(ja) .hero h1, :lang(ko) .hero h1 { font-size: clamp(36px, 3.9vw, 52px); line-height: 1.25; letter-spacing: .02em; word-break: keep-all; }
   :lang(ja) :is(h1, h2, h3), :lang(ko) :is(h1, h2, h3), :lang(ja) .hero h1, :lang(ko) .hero h1 { letter-spacing: .01em; }
   .hero h1:lang(ja) { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.3; }
@@ -962,13 +962,6 @@ export const STYLE = String.raw`
     font-size: 16px; line-height: 1.6; letter-spacing: 0;
   }
   .tr-term { font-size: 18px; line-height: 1.5; }
-  :root { --pxa: var(--leaf); }
-  .btn.primary, .chip[aria-pressed="true"] { --pxa: currentColor; }
-  .ico.px { width: 22px; height: 22px; flex: none; shape-rendering: crispEdges; }
-  .ico.px-down, .ico.px-out, .hn-trig .ico.px, #get > .ico.px:last-child, #hn-globe > .ico.px:last-child, .hn-avatar > .ico.px,
-  .menu > a > .ico.px:last-child, .hn-plink > .ico.px:last-child, .hn-mi[aria-expanded] > .ico.px:last-child, .btn.small > .ico.px { width: 11px; height: 11px; }
-  .btn > .ico.px { margin-left: -2px; }
-  .hn-icon > .ico.px, .features .ico.px, .glyph.own svg.px, .fcard .show svg.px, .hn-ava-fb .ico.px { width: 22px; height: 22px; }
   @media (max-width: 720px) {
     h1 { font-size: 30px; }
     .hero h1 { font-size: 38px; }
@@ -995,7 +988,7 @@ export const STYLE = String.raw`
   .who-tag { white-space: nowrap; }
   @property --tone { syntax: '<color>'; inherits: true; initial-value: #7fd08a; }
   @property --tone-glow { syntax: '<color>'; inherits: true; initial-value: #22432c; }
-  :root { --tone: #7fd08a; --tone-glow: #22432c; --pxa: var(--tone); }
+  :root { --tone: #7fd08a; --tone-glow: #22432c; }
   html, body { overflow-x: clip; }
   body { background-image: none; }
   body::before {
@@ -1014,7 +1007,7 @@ export const STYLE = String.raw`
   .hm-sec > h2 + .lede { margin: -12px 0 20px; }
   .hm-bento { display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: "lead lead . ." "lead lead . ." "wide wide wide wide"; }
   .hm-tile { display: grid; align-content: start; gap: 8px; padding: 24px; border: 1px solid color-mix(in srgb, var(--sec) 22%, transparent); border-radius: 6px; background: #ffffff05; }
-  .hm-tile > .ico { width: 22px; height: 22px; color: var(--sec); --pxa: var(--sec); }
+  .hm-tile > .ico { width: 24px; height: 24px; color: var(--sec); }
   .hm-tile h3 { margin: 6px 0 0; }
   .hm-tile p { margin: 0; color: var(--ink-2); }
   .hm-lead { grid-area: lead; align-content: end; min-height: 380px; padding: 32px;

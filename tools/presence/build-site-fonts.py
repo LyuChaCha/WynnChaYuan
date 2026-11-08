@@ -24,19 +24,16 @@ EXTRA = '，。、；：？！「」『』（）《》〈〉…—・×→←↑
 NUNITO = ('Nunito[wght].ttf', {'wght': (400, 800)})
 HUNINN = ('jf-openhuninn-2.1.ttf', None)
 ZEN = ('ZenMaruGothic-Regular.ttf', None)
-ZEN_BOLD = ('ZenMaruGothic-Bold.ttf', None)
 HAN_CN = ('ResourceHanRoundedCN-VF.otf', {'wght': 400, 'ROND': 100})
-HAN_CN_BOLD = ('ResourceHanRoundedCN-VF.otf', {'wght': 700, 'ROND': 100})
 HAN_KR = ('ResourceHanRoundedKR-VF.otf', {'wght': 400, 'ROND': 100})
-HAN_KR_BOLD = ('ResourceHanRoundedKR-VF.otf', {'wght': 700, 'ROND': 100})
 FILLS = [NUNITO, HUNINN, HAN_CN, HAN_KR]
 
 SETS = [
-    ('latin', None, [('latin', '400 800', NUNITO)]),
-    ('tc', 'zh', [('tc', '400 800', HUNINN)]),
-    ('sc', 'zh-cn', [('sc', '400', HAN_CN), ('sc-b', '700', HAN_CN_BOLD)]),
-    ('ja', 'ja', [('ja', '400', ZEN), ('ja-b', '700', ZEN_BOLD)]),
-    ('ko', 'ko', [('ko', '400', HAN_KR), ('ko-b', '700', HAN_KR_BOLD)]),
+    ('latin', None, NUNITO),
+    ('tc', 'zh', HUNINN),
+    ('sc', 'zh-cn', HAN_CN),
+    ('ja', 'ja', ZEN),
+    ('ko', 'ko', HAN_KR),
 ]
 
 
@@ -115,10 +112,10 @@ def options(hinting, kern=True):
     return chosen
 
 
-def rename(font, label, weight):
+def rename(font, label):
     table = font['name']
     table.names = [n for n in table.names if n.nameID in (0, 7, 13, 14) or n.nameID >= 256]
-    style = 'Bold' if weight == '700' else 'Regular'
+    style = 'Regular'
     family = 'WCY Site ' + label
     for nid, value in ((1, family), (2, style), (3, family + ' ' + style), (4, family + ' ' + style),
                        (6, re.sub(r'[^A-Za-z0-9]', '', family) + '-' + style)):
@@ -130,7 +127,7 @@ def rename(font, label, weight):
         font['STAT'].table.ElidedFallbackNameID = 2
 
 
-def subset(sources, source, chars, label, weight):
+def subset(sources, source, chars, label):
     from fontTools import subset as tool
     from fontTools.ttLib import TTFont
     from fontTools.varLib import instancer
@@ -149,7 +146,8 @@ def subset(sources, source, chars, label, weight):
         again = tool.Subsetter(options(False, False))
         again.populate(unicodes=[ord(c) for c in covered])
         again.subset(font)
-    rename(font, label, weight)
+    rename(font, label)
+    font.recalcTimestamp = False
     font.flavor = 'woff'
     out = io.BytesIO()
     font.save(out)
@@ -179,16 +177,10 @@ def face(data, extra):
 
 def build(sources, need):
     fonts = {}
-    for code, _, plan in SETS:
-        faces = []
-        first = plan[0][2]
-        data, covered = subset(sources, first, need[code], code, plan[0][1])
-        faces.append(face(data, {'file': plan[0][0], 'weight': plan[0][1]}))
-        print('%s: %d characters, %d bytes woff' % (plan[0][0], len(covered), len(data)))
-        for file, weight, source in plan[1:]:
-            data, _ = subset(sources, source, covered, code, weight)
-            faces.append(face(data, {'file': file, 'weight': weight}))
-            print('%s: %d bytes woff' % (file, len(data)))
+    for code, _, first in SETS:
+        data, covered = subset(sources, first, need[code], code)
+        faces = [face(data, {'file': code, 'weight': '400 800'})]
+        print('%s: %d characters, %d bytes woff' % (code, len(covered), len(data)))
         left = ''.join(c for c in need[code] if c not in covered)
         fill = 0
         for source in FILLS:
@@ -199,7 +191,7 @@ def build(sources, need):
                 continue
             fill += 1
             weight = '400 800' if source[1] and isinstance(source[1].get('wght'), tuple) else '400'
-            data, _ = subset(sources, source, take, code + ' fill', weight)
+            data, _ = subset(sources, source, take, code + ' fill')
             faces.append(face(data, {'file': '%s-f%d' % (code, fill), 'weight': weight, 'range': ranges(take)}))
             print('%s-f%d: %d characters, %d bytes woff' % (code, fill, len(take), len(data)))
             covered += take
