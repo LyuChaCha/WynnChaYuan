@@ -328,6 +328,7 @@ Thanks to the Traditional and Simplified Chinese communities for all their help 
 | yool | `yool141` |
 | 早安白月 | `ZLGX` |
 | 百里莫凌 | `BaiLiML` |
+| RinK | `RinK_mine` |
 
 ### Data sources
 
