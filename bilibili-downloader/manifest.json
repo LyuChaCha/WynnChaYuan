@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "B站影片下載器",
+  "version": "1.0.0",
+  "description": "在 bilibili 影片頁面加上下載按鈕，可選畫質下載影片與音訊。",
+  "host_permissions": ["https://www.bilibili.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.bilibili.com/video/*"],
+      "js": ["md5.js", "api.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "B站影片下載器" }
+}
