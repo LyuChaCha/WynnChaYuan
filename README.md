@@ -315,6 +315,7 @@ gradle build
 | yool | `yool141` |
 | 早安白月 | `ZLGX` |
 | 百里莫凌 | `BaiLiML` |
+| RinK | `RinK_mine` |
 
 ### 資料來源
 
