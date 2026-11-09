@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 295,
-  "translated": 295,
+  "count": 297,
+  "translated": 297,
   "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -4056,6 +4056,35 @@
    "tree": "04/shaman/06/003/004",
    "ability": "Strides of Heresy",
    "code": "SHAMAN-P6-R03-C04"
+  },
+  "ability-shaman#0387": {
+   "src": "When wearing the {#} Mask of the Lunatic, casting Totem{#}\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
+   "dst": "{#} Mask of the Lunatic を着けている間、スニーク中に\nTotem{#} を使うと地面に叩きつけられ、\nすべての Static を爆発させる。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#} Mask of the Lunatic, casting Totem{#} while sneaking will cause it to smash down onto the ground, detonating all Static.",
+   "_raw": "When wearing the  Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0388": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 自分のジャンプの高さ +{~}",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Soaring Wingbeats"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
+   "tree": "04/shaman/07/004/001",
+   "ability": "Soaring Wingbeats",
+   "code": "SHAMAN-P7-R04-C01"
   }
  }
 }

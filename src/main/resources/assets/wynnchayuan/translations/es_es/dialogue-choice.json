@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 639,
-  "translated": 606
+  "count": 640,
+  "translated": 638
  },
  "entries": {
   "choice#c000": {
@@ -5777,7 +5777,7 @@
   },
   "choice#c212": {
    "src": "[{~} {~}] One of several \"Dr.",
-   "dst": "",
+   "dst": "[{~} {~}] Uno de los varios sabores \"Dr. Soosu\"",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] One of several \"Dr. Soosu\" Flavors",
@@ -5788,7 +5788,7 @@
   },
   "choice#c213": {
    "src": "Someone started mocking our",
-   "dst": "",
+   "dst": "Alguien empezó a burlarse de nuestra Reina.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Someone started mocking our Queen.",
@@ -5799,7 +5799,7 @@
   },
   "choice#c214": {
    "src": "I'll hide.",
-   "dst": "",
+   "dst": "Me esconderé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5809,7 +5809,7 @@
   },
   "choice#c215": {
    "src": "Later...",
-   "dst": "",
+   "dst": "Luego...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5819,7 +5819,7 @@
   },
   "choice#c216": {
    "src": "Of what?",
-   "dst": "",
+   "dst": "¿De qué?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5839,7 +5839,7 @@
   },
   "choice#c218": {
    "src": "I should ask you the same th",
-   "dst": "",
+   "dst": "Lo mismo debería preguntarte yo.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I should ask you the same thing.",
@@ -5850,7 +5850,7 @@
   },
   "choice#c219": {
    "src": "Tasim. I didn't expect to se",
-   "dst": "",
+   "dst": "Tasim. No esperaba verte aquí.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Tasim. I didn't expect to see you here.",
@@ -5861,7 +5861,7 @@
   },
   "choice#c220": {
    "src": "They were trying to capture",
-   "dst": "",
+   "dst": "¡Intentaban capturarme!",
    "role": "desc",
    "kind": "dialogue",
    "full": "They were trying to capture me!",
@@ -5872,7 +5872,7 @@
   },
   "choice#c221": {
    "src": "You joined the Crown!",
-   "dst": "",
+   "dst": "¡Te has unido a la Corona!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5882,7 +5882,7 @@
   },
   "choice#c222": {
    "src": "You've seen what they've don",
-   "dst": "",
+   "dst": "¡Has visto lo que han hecho!",
    "role": "desc",
    "kind": "dialogue",
    "full": "You've seen what they've done!",
@@ -5893,7 +5893,7 @@
   },
   "choice#c223": {
    "src": "What did she want you for?",
-   "dst": "",
+   "dst": "¿Para qué te quería?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5903,7 +5903,7 @@
   },
   "choice#c224": {
    "src": "I don't have one",
-   "dst": "",
+   "dst": "No tengo",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5913,7 +5913,7 @@
   },
   "choice#c225": {
    "src": "{~} Token - [{~} E]",
-   "dst": "",
+   "dst": "{~} ficha - [{~} E]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5923,7 +5923,7 @@
   },
   "choice#c226": {
    "src": "{~} Tokens - [{~} E]",
-   "dst": "",
+   "dst": "{~} fichas - [{~} E]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5933,7 +5933,7 @@
   },
   "choice#c227": {
    "src": "Nothing right now",
-   "dst": "",
+   "dst": "Nada por ahora",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5943,7 +5943,7 @@
   },
   "choice#c228": {
    "src": "Sure - [{~} Tokens]",
-   "dst": "",
+   "dst": "Claro - [{~} fichas]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5953,7 +5953,7 @@
   },
   "choice#c229": {
    "src": "Accuse",
-   "dst": "",
+   "dst": "Acusar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5963,7 +5963,7 @@
   },
   "choice#c230": {
    "src": "Not giving info",
-   "dst": "",
+   "dst": "Sin dar información",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5973,7 +5973,7 @@
   },
   "choice#c231": {
    "src": "I guess so...",
-   "dst": "",
+   "dst": "Supongo que sí...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5983,7 +5983,7 @@
   },
   "choice#c232": {
    "src": "Unrecognized",
-   "dst": "",
+   "dst": "Sin reconocer",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5993,7 +5993,7 @@
   },
   "choice#c233": {
    "src": "Is.. what true?",
-   "dst": "",
+   "dst": "¿C-cierto el qué?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6003,7 +6003,7 @@
   },
   "choice#c234": {
    "src": "It... is.",
-   "dst": "",
+   "dst": "Lo... es.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6013,7 +6013,7 @@
   },
   "choice#c235": {
    "src": "But he's not here.",
-   "dst": "",
+   "dst": "Pero él no está aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6023,7 +6023,7 @@
   },
   "choice#c236": {
    "src": "I've hunted Rhinos.",
-   "dst": "",
+   "dst": "He cazado rinocerontes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6033,7 +6033,7 @@
   },
   "choice#c237": {
    "src": "What're you doing?",
-   "dst": "",
+   "dst": "¿Qué haces?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6043,7 +6043,7 @@
   },
   "choice#c238": {
    "src": "What was that for?",
-   "dst": "",
+   "dst": "¿A qué ha venido eso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6053,7 +6053,7 @@
   },
   "choice#c239": {
    "src": "We get it, we're out.",
-   "dst": "",
+   "dst": "Vale, lo pillamos, ya nos vamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6073,7 +6073,7 @@
   },
   "choice#c241": {
    "src": "Three?",
-   "dst": "",
+   "dst": "¿Tres?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6083,7 +6083,7 @@
   },
   "choice#c242": {
    "src": "Are you part of the Resistan",
-   "dst": "",
+   "dst": "¿Eres de la resistencia?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Are you part of the Resistance?",
@@ -6094,7 +6094,7 @@
   },
   "choice#c243": {
    "src": "Do you know Bush?",
-   "dst": "",
+   "dst": "¿Conoces a Bush?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6176,7 +6176,7 @@
   },
   "choice#c251": {
    "src": "Freedom to Fruma!!",
-   "dst": "",
+   "dst": "¡¡Libertad para Fruma!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6831,6 +6831,16 @@
    "kind": "dialogue",
    "full": "",
    "quest": "Apotheosis (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c297": {
+   "src": "[{~} {~}] The Chocolate Cow",
+   "dst": "[{~} {~}] La vaca de chocolate",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
    "stage": "",
    "speaker": "",
    "source": "captured"
