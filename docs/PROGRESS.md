@@ -7,15 +7,15 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 99.6%（67,253 / 67,547）
+## `zh_tw` 繁體中文 — 99.6%（67,345 / 67,639）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,296 / 17,564 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,307 / 17,575 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 818 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 100% | 10,140 / 10,154 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 100% | 10,187 / 10,201 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 248 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,799 / 1,800 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -24,7 +24,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,867 / 24,870 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,870 / 24,873 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -46,15 +46,15 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 99.3%（67,877 / 68,345）
+## `ja_jp` 日本語 — 99.3%（67,970 / 68,437）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,291 / 17,571 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,302 / 17,582 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 817 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 98% | 10,002 / 10,169 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 98% | 10,050 / 10,216 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 248 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,794 / 1,795 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -63,7 +63,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,940 / 24,943 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,943 / 24,946 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -85,15 +85,15 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 997 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 99.3%（67,095 / 67,560）
+## `ko_kr` 한국어 — 99.3%（67,188 / 67,652）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,292 / 17,574 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,303 / 17,585 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 817 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 98% | 9,986 / 10,154 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 98% | 10,034 / 10,201 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 248 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,799 / 1,800 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -102,7 +102,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,867 / 24,870 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,870 / 24,873 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -124,15 +124,15 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 99.3%（67,088 / 67,553）
+## `ru_ru` Русский — 99.3%（67,181 / 67,645）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,287 / 17,569 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,298 / 17,580 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 817 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 98% | 9,986 / 10,154 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 98% | 10,034 / 10,201 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 248 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,798 / 1,799 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -141,7 +141,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,867 / 24,870 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,870 / 24,873 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -163,15 +163,15 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 99.3%（67,084 / 67,551）
+## `es_es` Español — 99.3%（67,177 / 67,643）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,286 / 17,568 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,297 / 17,579 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 817 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 98% | 9,983 / 10,153 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 98% | 10,031 / 10,200 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 248 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,798 / 1,799 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -180,7 +180,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,867 / 24,870 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,870 / 24,873 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 534 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -202,15 +202,15 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,003 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `tr_tr` Türkçe — 98.3%（66,431 / 67,564）
+## `tr_tr` Türkçe — 98.3%（66,524 / 67,656）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,179 / 17,578 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 98% | 17,190 / 17,589 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 817 / 818 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | █████████░ 93% | 9,449 / 10,156 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,247 / 1,247 | 選單與介面<br>Menus and interface text |
+| `npc.json` | █████████░ 93% | 9,497 / 10,203 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,278 / 1,278 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 99% | 246 / 248 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,799 / 1,800 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
@@ -219,7 +219,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,868 / 24,870 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,871 / 24,873 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 1,194 / 1,194 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 533 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 306 / 306 | 探索點的名稱<br>Discovery names |
@@ -241,7 +241,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,000 / 1,003 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 78.3%（52,205 / 66,706）
+## `zh_cn` 简体中文 — 78.3%（52,205 / 66,708）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -251,14 +251,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | ██░░░░░░░░ 23% | 2,273 / 10,097 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 98% | 1,228 / 1,247 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████░░░░ 62% | 150 / 242 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ██████████ 99% | 1,785 / 1,800 | 任務介面<br>The quest interface |
+| `quest.json` | ██████████ 99% | 1,784 / 1,799 | 任務介面<br>The quest interface |
 | `quest-name.json` | █████████░ 93% | 144 / 155 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,320 / 1,320 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 24,722 / 24,814 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 24,723 / 24,817 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 99% | 1,042 / 1,051 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 99% | 529 / 534 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ░░░░░░░░░░ 0% | 0 / 306 | 探索點的名稱<br>Discovery names |
