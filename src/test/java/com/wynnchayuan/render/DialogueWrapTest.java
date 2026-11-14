@@ -37,6 +37,7 @@ public final class DialogueWrapTest {
         panelWords();
         panelColours();
         panelShortAndHard();
+        boldRows();
 
         System.out.println(failures == 0 ? "\n對話折行：全部通過"
                 : "\n對話折行：" + failures + " 項失敗");
@@ -75,6 +76,65 @@ public final class DialogueWrapTest {
         check("中文選項的 \\n 直接接起來", text.contains("你是誰？"));
         check("拉丁字之間補一個空白", text.contains("Nos hemos visto antes?"));
         check("提示列的 \\n 也攤平", text.contains("繼續下去"));
+    }
+
+    private static void boldRows() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-bold");
+        setConfig(new ModConfig(dir.resolve("config.json")));
+        Files.writeString(dir.resolve("quest.json"), """
+                {
+                  "Corkus Accipientis! My finest creation. This is the final fight of the Bronze tier!": "Corkus Accipientis！我最傑出的作品。這就是 Bronze 階級的最後一戰！",
+                  "Run back to your garrison, comrade! Run back now!": "快逃回你的駐地吧，同志！現在就逃！"
+                }
+                """, StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        Style body0 = font("hud/dialogue/text/wynncraft/body_0").withColor(BODY);
+        Style body1 = font("hud/dialogue/text/wynncraft/body_1").withColor(BODY);
+
+        MutableComponent mixed = Component.empty();
+        message(mixed, body0.withBold(true), "Corkus Accipientis!", body0, " My finest creation.");
+        row(mixed, body1, "This is the final fight of the Bronze tier!");
+        Component plain = rewritten(mixed, store);
+        check("★ 原文只有名字是粗體：譯文那幾列不整列變粗體", plain != null && !boldText(plain));
+
+        MutableComponent all = Component.empty();
+        row(all, body0.withBold(true), "Run back to your garrison, comrade!");
+        row(all, body1.withBold(true), "Run back now!");
+        check("原文整句都是粗體：譯文照樣是粗體", boldText(rewritten(all, store)));
+    }
+
+    private static Component rewritten(Component message, TranslationStore store) {
+        DialogueRewriter.forget();
+        Component out = null;
+        for (int i = 0; i < 20; i++) {
+            Component next = DialogueRewriter.rewrite(message, store);
+            if (next != null) {
+                out = next;
+            }
+        }
+        return out;
+    }
+
+    private static boolean boldText(Component out) {
+        if (out == null) {
+            return false;
+        }
+        boolean[] bold = {false};
+        out.visit((style, text) -> {
+            if (text.codePoints().anyMatch(c -> c >= 0x4E00 && c <= 0x9FFF) && style.isBold()) {
+                bold[0] = true;
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return bold[0];
+    }
+
+    private static void message(MutableComponent message, Style lead, String head, Style tail, String rest) {
+        message.append(Component.literal(offset(42)).withStyle(tail));
+        message.append(Component.literal(head).withStyle(lead));
+        message.append(Component.literal(rest).withStyle(tail));
+        message.append(Component.literal(offset(-73)).withStyle(tail));
     }
 
     private static void row(MutableComponent message, Style style, String text) {
