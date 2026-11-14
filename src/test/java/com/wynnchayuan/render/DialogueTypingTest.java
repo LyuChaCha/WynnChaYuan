@@ -31,6 +31,7 @@ public final class DialogueTypingTest {
         fragments();
         composite();
         diverged();
+        wordName();
         glyphs();
 
         TranslationStore store = new TranslationStore();
@@ -99,6 +100,24 @@ public final class DialogueTypingTest {
         }
         check("岔開之後不會停在別句的半句譯文上（實際最後一幀 "
                         + frames.get(frames.size() - 1) + "）", !stuck);
+    }
+
+    private static void wordName() throws Exception {
+        TranslationStore store = miniStore("""
+                {
+                  "Well, nothing to do but keep moving! Tasim, {u}, I'll race you to the gate!":
+                      "好啦，繼續走吧！Tasim、{u}，我們來比誰先到城門！",
+                  "General Store": "雜貨店",
+                  "General Merchant": "雜貨商人"
+                }
+                """);
+        CurrentQuest.set(null);
+        String src = "Well, nothing to do but keep moving! Tasim, General, I'll race you to the gate!";
+        List<String> frames = typeOut(src, store, src.length());
+        String last = frames.get(frames.size() - 1);
+        check("★ 名字是常見英文字也照樣填進 {u}，不會只翻到名字前（實際 " + last + "）",
+              "好啦，繼續走吧！Tasim、General，我們來比誰先到城門！".equals(last));
+        check("名字那幾格沒有中英來回跳", steady(frames));
     }
 
     private static void glyphs() {

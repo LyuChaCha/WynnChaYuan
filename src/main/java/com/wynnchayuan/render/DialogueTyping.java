@@ -451,6 +451,7 @@ final class DialogueTyping {
             FORECAST.heard(store, typed);
         }
         if (!source.equals(typed)) {
+            parts = parts.namedAs(source);
             int cut = unfilledAt(hit, parts);
             if (cut >= 0) {
                 hit = hit.substring(0, cut);

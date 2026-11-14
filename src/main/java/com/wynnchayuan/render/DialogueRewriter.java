@@ -50,17 +50,18 @@ public final class DialogueRewriter {
         long now = DialogueLayout.clock.getAsLong();
         Frame frame = Frame.of(message);
         findBody(frame);
+        frame.bold = wholeBold(frame);
         List<Integer> body = frame.body;
         List<Style> styles = frame.styles;
         var mode = ModConfig.DialogueMode.REPLACE;
         boolean doBody = WynnChaYuan.config().dialogueMode() == mode;
         boolean doChoice = WynnChaYuan.config().choiceMode() == mode;
         int room = rowWidth(frame.texts, body);
+        Style lead = body.isEmpty() ? null : frame.rowStyle(body.get(0));
         String hit = body.isEmpty() || !doBody ? null
-                : DialogueTyping.line(joinedBody(frame), store, body.size(),
-                        styles.get(body.get(0)), room);
+                : DialogueTyping.line(joinedBody(frame), store, body.size(), lead, room);
         DialogueLayout.Layout laid = hit == null ? null
-                : DialogueLayout.layout(hit, body.size(), styles.get(body.get(0)), room, now);
+                : DialogueLayout.layout(hit, body.size(), lead, room, now);
         List<String> rows = laid == null ? null : laid.rows();
         for (int n = 0; rows != null && n < body.size(); n++) {
             if (DialogueFonts.fontMissing(DialogueFonts.fontOf(styles.get(body.get(n))))) {
@@ -91,6 +92,11 @@ public final class DialogueRewriter {
         final Map<Integer, List<LineParts.Piece>> painted = new HashMap<>();
         boolean[] swapped;
         boolean changed;
+        boolean bold;
+
+        Style rowStyle(int at) {
+            return styles.get(at).withBold(bold);
+        }
 
         static Frame of(Component message) {
             Frame frame = new Frame();
@@ -291,7 +297,7 @@ public final class DialogueRewriter {
                 was += DialogueLayout.width(texts.get(i), styles.get(i));
             }
             String shown = laid.shown(n);
-            int shrink = was - DialogueLayout.width(shown, styles.get(at));
+            int shrink = was - DialogueLayout.width(shown, frame.rowStyle(at));
             String back = DialogueLayout.offset(after + shrink);
             if (back == null) {
                 continue;
@@ -299,7 +305,7 @@ public final class DialogueRewriter {
             List<LineParts.Piece> pieces = new ArrayList<>();
             for (LineParts.Piece part : DialogueLayout.cutRow(laid, inked, starts, n)) {
                 pieces.add(new LineParts.Piece(part.text(),
-                        styles.get(at).withColor(part.style().getColor())));
+                        frame.rowStyle(at).withColor(part.style().getColor())));
             }
             painted.put(at, pieces);
             texts.set(at, shown);
@@ -413,6 +419,22 @@ public final class DialogueRewriter {
                 return false;
             }
             any |= DialogueFonts.readable(texts.get(i));
+        }
+        return any;
+    }
+
+    private static boolean wholeBold(Frame frame) {
+        boolean any = false;
+        for (int n = 0; n < frame.body.size(); n++) {
+            for (int i = frame.body.get(n); i <= frame.ends.get(n); i++) {
+                if (frame.texts.get(i).isBlank()) {
+                    continue;
+                }
+                if (!frame.styles.get(i).isBold()) {
+                    return false;
+                }
+                any = true;
+            }
         }
         return any;
     }

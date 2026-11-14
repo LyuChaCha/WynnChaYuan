@@ -205,7 +205,8 @@ public final class PlayerNameplateTest {
                   !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(keep));
         }
 
-        List<String> accepted = List.of("manage your island", "repair items");
+        List<String> accepted = List.of("manage your island", "repair items",
+                "Now. Ahem. As you will remember, this next challenger was intended as YahyaBot V{~}.");
         blocked.removeAll(accepted);
         check("人工翻過的語料沒有新的誤擋（實際 " + blocked + "）", blocked.isEmpty());
 

@@ -46,6 +46,45 @@ public record LineParts(
                              named, accents, textStyle, runs);
     }
 
+    public LineParts namedAs(String source) {
+        String slot = GlyphSplitter.PLAYER_PLACEHOLDER;
+        int at = source == null ? -1 : source.indexOf(slot);
+        if (!users.isEmpty() || at < 0 || source.indexOf(slot, at + slot.length()) >= 0) {
+            return this;
+        }
+        String pre = source.substring(0, at);
+        if (!template.startsWith(pre)) {
+            return this;
+        }
+        String post = source.substring(at + slot.length());
+        int open = post.indexOf('{');
+        if (open >= 0) {
+            post = post.substring(0, open);
+        }
+        String rest = template.substring(pre.length());
+        int end = 0;
+        while (end < rest.length() && nameChar(rest.charAt(end))) {
+            end++;
+        }
+        String after = rest.substring(end);
+        if (end < MIN_NAME || end > MAX_NAME || after.isEmpty() || post.isEmpty()
+                || !(post.startsWith(after) || after.startsWith(post))) {
+            return this;
+        }
+        Style style = runs.isEmpty() || runs.get(0).style() == null
+                ? Style.EMPTY : runs.get(0).style();
+        return new LineParts(pre + slot + after, glyphs, places, numbers,
+                             List.of(new Piece(rest.substring(0, end), style)), accents, textStyle, runs);
+    }
+
+    private static boolean nameChar(char c) {
+        return Character.isLetterOrDigit(c) || c == '_';
+    }
+
+    private static final int MIN_NAME = 3;
+
+    private static final int MAX_NAME = 16;
+
     private static final Pattern LITERAL_PLAYER = Pattern.compile("\\bPlayer\\b");
 
     private static final String LITERAL_NAME = "Player";
