@@ -68,6 +68,7 @@ and lists matches as you type (↑↓ to pick, Tab to fill).
 
 - **[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)**: its search box takes translated names, and results show the translation next to the English name.
 - **[Wynnventory](https://modrinth.com/mod/wynnventory)**: its price box, reward screen and settings are translated; hold Shift to see the original. The price box is placed by the tooltip that is actually shown and shrinks when it is too long; with its "anchor tooltips" on, the item tooltip moves clear of it.
+- **[YuChaYuan BuildSharer](https://github.com/LyuChaCha/YuChaYuan-BuildSharer)**: a sister mod that turns your character into a WynnBuilder link; its messages follow the language you pick in this mod.
 
 The full list is under [Mod compatibility](#mod-compatibility) below.
 
@@ -173,6 +174,7 @@ When a new version comes out, the game tells you and the Update button swaps it 
 | [Mod Menu](https://modrinth.com/mod/modmenu) | Optional, supported | Adds a configure button to the mod list |
 | [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | Optional, supported | Its search panel finds items by translated name and shows the translation next to the English name; what gets sent is still the English name |
 | [Wynnventory](https://modrinth.com/mod/wynnventory) | Optional, supported | Its price box, reward screen and settings screen are translated too (item names follow the "Translate item names" setting); hold Shift to see the original. The price box is placed by the tooltip that is actually shown, and with "anchor tooltips" on the item tooltip moves clear of it. The switch only appears in the settings when it is installed |
+| [YuChaYuan BuildSharer](https://github.com/LyuChaCha/YuChaYuan-BuildSharer) | Optional, supported | Sister mod: `/buildsharer` turns your character (crafted recipes and powder tiers included) into a WynnBuilder link; its messages follow the language set in this mod |
 | [WynnMod](https://modrinth.com/mod/wynnmod) | Compatible | The gear tooltips it redraws are translated too (can be turned off under Settings → Items → Mod support). The lines it reads to decide a raid's outcome stay in English while it is installed, so streaks are counted correctly (without it you see the translation as usual) |
 | Mods that add sections to tooltips (Nori, Wynnpool…) | Compatible | Those sections are kept as they are. If they make the translation panel longer than the original, list their labels in `config/wynnchayuan/third-party-sections.json` to filter them |
 
