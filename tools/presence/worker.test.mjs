@@ -1575,7 +1575,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     .replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<div class="hn-langs[^"]*"[\s\S]*?<\/div>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
     .replace(/<[^>]+>/g, ' ')));
 }
-check('功能頁的列都填了字（27 列）', (pages['/features'].match(/class="fcard/g) || []).length === 27
+check('功能頁的列都填了字（28 列）', (pages['/features'].match(/class="fcard/g) || []).length === 28
   && !/<dd>\s*<\/dd>/.test(pages['/features']));
 check('teamOf：只留三個身分，欄位只有名字、遊戲 ID、顏色', JSON.stringify(teamOf([
   { key: 'credits.role.developers', color: '#FFD24A', members: [{ name: ' A ', mc: 'Alice_Dev', rainbow: true, cape: 'x.gif' }] },

@@ -326,7 +326,7 @@ const card = (key, icon, eg) => '<article class="fcard"><span class="glyph own" 
   + (eg ? '<p class="eg" data-eg="' + eg + '" aria-hidden="true"></p>' : '') + '</div></article>';
 
 const mod = (name, slug, state, key) => '<article class="fcard mod"><span class="glyph own" aria-hidden="true">' + ICON.plug + '</span>'
-  + '<div><h3><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
+  + '<div><h3><a href="' + (slug.startsWith('https://') ? slug : 'https://modrinth.com/mod/' + slug) + '">' + name + '</a>'
   + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></h3><p>%%feat.' + key + 'b%%</p></div></article>';
 
 const TEMPLATE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
@@ -412,7 +412,9 @@ const FEATURES = String.raw`
         <div class="cards">
           ` + [mod('Wynntils 4.2+', 'wynntils', 'required', 'c1'), mod('Fabric API', 'fabric-api', 'required', 'c2'),
     mod('Mod Menu', 'modmenu', 'optional', 'c3'), mod('WynnMarketSearch', 'wynnmarketsearch', 'optional', 'c4'),
-    mod('Wynnventory', 'wynnventory', 'optional', 'c5'), mod('WynnMod', 'wynnmod', 'compatible', 'c6')].join('\n          ') + String.raw`
+    mod('Wynnventory', 'wynnventory', 'optional', 'c5'),
+    mod('YuChaYuan BuildSharer', 'https://github.com/LyuChaCha/YuChaYuan-BuildSharer', 'optional', 'c7'),
+    mod('WynnMod', 'wynnmod', 'compatible', 'c6')].join('\n          ') + String.raw`
         </div>
         <p class="note">%%features.cnote%%</p>
         <div class="cta">

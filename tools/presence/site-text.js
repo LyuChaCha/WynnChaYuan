@@ -354,6 +354,7 @@ export const MORE_TEXT = {
   "feat.c4b": "Su panel de búsqueda acepta nombres traducidos y, en los resultados, los muestra junto a los nombres en inglés.",
   "feat.c5b": "Su cuadro de precios, sus pantallas de recompensas y sus ajustes también se traducen; mantén Mayús para ver el original.",
   "feat.c6b": "Las pocas líneas que lee para saber cómo terminó una incursión se quedan en inglés, para que tu racha se cuente bien.",
+  "feat.c7b": "Mod hermano: /buildsharer convierte tu personaje en un enlace de WynnBuilder, reconstruye las recetas de los objetos fabricados y lee el nivel de los polvos por ti; sus mensajes siguen el idioma de este mod.",
   "js": {
    "loading": "Cargando…",
    "count": "Capas: {n} (las imágenes idénticas cuentan una sola vez)",
@@ -1044,6 +1045,7 @@ export const MORE_TEXT = {
   "feat.c4b": "検索パネルに訳名を入力でき、結果では英語名の横に訳名を表示します。",
   "feat.c5b": "価格ボックス、報酬画面、設定も翻訳します。Shift を押している間は原文を表示します。",
   "feat.c6b": "レイドの結果を判定するために読み取る数行は英語のまま残すので、連続クリアの記録が正しく数えられます。",
+  "feat.c7b": "姉妹 MOD：/buildsharer で現在のキャラクターを WynnBuilder のリンクにします。クラフト品はレシピを逆算し、パウダーの段階も自動で読み取ります。メッセージはこの MOD の言語に合わせて切り替わります。",
   "js": {
    "loading": "読み込み中…",
    "count": "マント {n} 件（同じ画像は 1 件として数えます）",
@@ -1734,6 +1736,7 @@ export const MORE_TEXT = {
   "feat.c4b": "검색 패널에 번역명을 입력할 수 있고, 결과에서는 영어 이름 옆에 번역명을 표시합니다.",
   "feat.c5b": "가격 상자, 보상 화면, 설정도 번역됩니다. Shift를 누르고 있으면 원문이 표시됩니다.",
   "feat.c6b": "이 모드가 레이드 결과를 판정하려고 읽는 몇 줄은 영어로 남겨 두어, 연승 기록이 정확히 집계됩니다.",
+  "feat.c7b": "자매 모드: /buildsharer로 현재 캐릭터를 WynnBuilder 링크로 바꿉니다. 제작 장비는 레시피를 역산하고 파우더 등급도 자동으로 읽습니다. 메시지는 이 모드의 언어를 따라갑니다.",
   "js": {
    "loading": "불러오는 중…",
    "count": "망토 {n}개(같은 이미지는 하나로 계산)",
@@ -2424,6 +2427,7 @@ export const MORE_TEXT = {
   "feat.c4b": "В его панели поиска можно вводить переведённые названия, а в результатах они показаны рядом с английскими.",
   "feat.c5b": "Его окно цен, экраны наград и настройки тоже переводятся; удерживайте Shift, чтобы увидеть оригинал.",
   "feat.c6b": "Те несколько строк, по которым он определяет исход рейда, остаются на английском, чтобы серия побед считалась верно.",
+  "feat.c7b": "Родственный мод: /buildsharer превращает вашего персонажа в ссылку WynnBuilder, сам восстанавливает рецепты крафтовых предметов и уровни порошков; его сообщения следуют языку этого мода.",
   "js": {
    "loading": "Загрузка…",
    "count": "Плащей: {n} (одинаковые изображения считаются один раз)",
@@ -3114,6 +3118,7 @@ export const MORE_TEXT = {
   "feat.c4b": "Arama paneli çevrilmiş adları kabul eder ve sonuçlarda bunları İngilizce adların yanında gösterir.",
   "feat.c5b": "Fiyat kutusu, ödül ekranları ve ayarları da çevrilir; özgün metni görmek için Shift’e basılı tut.",
   "feat.c6b": "Bir raid’in nasıl bittiğini anlamak için okuduğu birkaç satır İngilizce kalır; böylece serin doğru sayılır.",
+  "feat.c7b": "Kardeş mod: /buildsharer karakterini bir WynnBuilder bağlantısına çevirir; üretilmiş eşyaların tariflerini çıkarır ve toz seviyelerini kendisi okur. Mesajları bu modun diliyle değişir.",
   "js": {
    "loading": "Yükleniyor…",
    "count": "{n} pelerin (aynı görseller bir kez sayılır)",
@@ -3804,6 +3809,7 @@ export const MORE_TEXT = {
   "feat.c4b": "它的搜索面板可以输入译名，结果里的英文名旁边会附上译名。",
   "feat.c5b": "它的价格框、奖励界面和设置也会翻译；按住 Shift 看原文。",
   "feat.c6b": "它用来判断副本结果的那几句话保留英文，这样连续通关数才不会算错。",
+  "feat.c7b": "姊妹模组：/buildsharer 把当前角色转成 WynnBuilder 链接，crafted 会反推出配方、粉末阶级自动读取；消息跟随本模组的语言切换。",
   "js": {
    "loading": "加载中…",
    "count": "共 {n} 件披风（相同的图只算一件）",
