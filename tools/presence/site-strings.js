@@ -226,6 +226,7 @@ export const TEXT = {
     'feat.c4b': '它的搜尋面板打譯名也找得到，結果在英文名旁邊附上譯名。',
     'feat.c5b': '它的價格框、獎勵畫面與設定畫面也翻成譯文；按住 Shift 看原文。',
     'feat.c6b': '它用來判斷討伐戰結果的那幾句話保留英文，連勝才不會算錯。',
+    'feat.c7b': '姊妹模組：/buildsharer 把目前角色轉成 WynnBuilder 網址，crafted 會反推出配方、粉末階級自動讀取；訊息跟著本模組的語言切換。',
 
     js: {
       loading: '讀取中…',
@@ -593,6 +594,7 @@ export const TEXT = {
     'feat.c4b': 'Its search panel accepts translated names, and shows them next to the English ones in the results.',
     'feat.c5b': 'Its price box, reward screens and settings are translated too; hold Shift to see the original.',
     'feat.c6b': 'The few lines it reads to tell how a raid ended stay in English, so your streak is counted right.',
+    'feat.c7b': 'Sister mod: /buildsharer turns your character into a WynnBuilder link, working out crafted recipes and reading powder tiers for you; its messages follow this mod\'s language.',
 
     js: {
       loading: 'Loading…',
