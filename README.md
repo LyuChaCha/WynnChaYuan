@@ -63,6 +63,7 @@ WynnChaYuan 是一個專門做 Wynncraft 多語言翻譯的開源公益專案（
 
 - **[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)**：它的搜尋欄可以打譯名，結果在英文名旁邊並排顯示譯名。
 - **[Wynnventory](https://modrinth.com/mod/wynnventory)**：價格框、獎勵畫面、設定畫面都有翻，按住 Shift 看原文。價格框照實際顯示的物品說明擺放，太長會縮小；開啟它的「固定在左側」時，物品說明會讓開。
+- **[YuChaYuan BuildSharer](https://github.com/LyuChaCha/YuChaYuan-BuildSharer)**：把目前角色轉成 WynnBuilder 網址的姊妹模組，它的訊息會跟著本模組設定的語言切換。
 
 完整的相容清單見下面的[模組相容](#模組相容)。
 
@@ -168,6 +169,7 @@ WynnChaYuan 是一個專門做 Wynncraft 多語言翻譯的開源公益專案（
 | [Mod Menu](https://modrinth.com/mod/modmenu) | 選裝，有支援 | 模組清單上多一顆設定按鈕 |
 | [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | 選裝，有支援 | 它的搜尋面板打譯名也找得到，結果列在英文名旁邊附上譯名；送出去的仍是英文名 |
 | [Wynnventory](https://modrinth.com/mod/wynnventory) | 選裝，有支援 | 它的價格框、獎勵畫面與設定畫面也翻成譯文（物品名跟著「翻譯物品名稱」的設定）；按住 Shift 看原文。價格框照實際顯示的物品說明擺放，開了「固定在左側」時物品說明會讓開。有裝才會在設定裡出現開關 |
+| [YuChaYuan BuildSharer](https://github.com/LyuChaCha/YuChaYuan-BuildSharer) | 選裝，有支援 | 姊妹模組：`/buildsharer` 把目前角色（含 crafted 配方與粉末階級）轉成 WynnBuilder 網址；它的訊息跟著本模組設定的語言切換 |
 | [WynnMod](https://modrinth.com/mod/wynnmod) | 相容 | 它重畫的裝備說明也會翻成譯文（設定「物品」→「模組支援」可以關掉）。它用來判斷討伐戰結果的那幾句話，裝了它的時候保留英文，連勝才不會算錯（沒裝的人照常看到譯文） |
 | 會在 tooltip 加區塊的模組（Nori、Wynnpool…） | 相容 | 那些區塊照原樣留著。翻譯面板因此比原文多出幾行時，把區塊標籤填進 `config/wynnchayuan/third-party-sections.json` 就會濾掉 |
 
