@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The House of Twain (Quest)",
-  "count": 16,
-  "translated": 16,
+  "count": 17,
+  "translated": 17,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -161,6 +161,16 @@
    "dst": "Sé que descubrir la verdad nunca es fácil, pero sigue intentándolo; por favor, tráeme [{~} Diario de Twain].",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "Habla con Twendle en la casa de Twain en [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

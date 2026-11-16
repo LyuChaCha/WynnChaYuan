@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The House of Twain (Quest)",
-  "count": 16,
-  "translated": 16,
+  "count": 17,
+  "translated": 17,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -161,6 +161,16 @@
    "dst": "我知道要查明真相從來都不容易，但請繼續努力，把 [{~} Twain 日誌] 帶來給我。",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "前往 Twain 宅邸與 Twendle 對話，座標 [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

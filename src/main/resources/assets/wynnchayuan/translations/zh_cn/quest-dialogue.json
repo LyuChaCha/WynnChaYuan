@@ -4,7 +4,7 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24817,
+  "count": 24827,
   "translated": 24723,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
@@ -15449,7 +15449,7 @@
    "source": "captured"
   },
   "A Sandy Scandal#028": {
-   "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
+   "src": "Looks like the bandits have started their heist! You should follow them into the bank and stop them.",
    "dst": "看来强盗已经开始抢银行了！你该跟着他们进银行，阻止他们。",
    "role": "desc",
    "kind": "dialogue",
@@ -25595,7 +25595,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
    "dst": "Ureietun！人类救了 Ressinter 的命！为什么不信任？",
    "role": "desc",
    "kind": "dialogue",
@@ -25645,7 +25645,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "……可以信任人类不会杀。人类可以在 Centerworld 走动。但人类不能见 Arrai-Veretel！",
    "role": "desc",
    "kind": "dialogue",
@@ -37887,7 +37887,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#074": {
-   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
+   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in its nest to stop the spiders, once and for all.",
    "dst": "你也听到那只蜘蛛提到女王了吧？我们大概得在它的巢穴里打倒它，才能彻底阻止这些蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
@@ -37897,7 +37897,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#075": {
-   "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
+   "src": "We should get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
    "dst": "我们差不多该下山了。别让 Aledar 和队长等太久。",
    "role": "desc",
    "kind": "dialogue",
@@ -55017,6 +55017,16 @@
   "Crop Failure#054": {
    "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
    "dst": "要是你有兴致调查一番，就进去看看吧，小子。等你找到点什么，那个农夫八成得亲眼看到才肯信。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#055": {
+   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -101169,6 +101179,16 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
+  "Ice Nations#030": {
+   "src": "Find the ghost ship by heading north of the {p} and bring back [Ancient Treasure] to Hallfred at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Infested Plants#000": {
    "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
    "dst": "我先走一步。照着内容手册里的坐标走，就能找到那个洞窟！",
@@ -107305,7 +107325,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#032": {
+  "Lost Soles#031": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "“大厅上方那张脸，它的鼻子得更重才能打开道路”。",
    "role": "desc",
@@ -107315,7 +107335,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#033": {
+  "Lost Soles#032": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
    "dst": "嗯，所有提示都出现在讲这个房间——餐厅——的那一章里。你知道这是什么意思吗？感觉应该很明显，可我怎么也想不通。",
    "role": "desc",
@@ -107325,7 +107345,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#034": {
+  "Lost Soles#033": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
    "dst": "“大厅上方那张脸，它的鼻子得更重才能打开道路”",
    "role": "desc",
@@ -107335,7 +107355,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#035": {
+  "Lost Soles#034": {
    "src": "Talk to Grandon and tell him about your findings",
    "dst": "与 Grandon 对话，告诉他你的发现",
    "role": "desc",
@@ -107345,7 +107365,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#036": {
+  "Lost Soles#035": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
    "dst": "大头下面藏着一个房间？我怎么没想到！我一直在想他们得多自恋才会放那个东西，谁知道它真的有用处！",
    "role": "desc",
@@ -107355,7 +107375,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#037": {
+  "Lost Soles#036": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "所以，有块告示叫你去角落找石头？嗯……有意思！",
    "role": "desc",
@@ -107365,7 +107385,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#039": {
+  "Lost Soles#037": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
    "dst": "总之，看来他们猜到我们得想办法把靴子放回去，还提前做了准备。那真是太好了。",
    "role": "desc",
@@ -107375,7 +107395,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#040": {
+  "Lost Soles#038": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
    "dst": "我说过，楼梯全都坏了。我是说，我肯定爬不上那些烂木头。我想最好还是去找那块石头吧，嗯？",
    "role": "desc",
@@ -107385,7 +107405,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#041": {
+  "Lost Soles#039": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
    "dst": "可是会在哪呢……噢？这是提示吗？我刚在下一页注意到这个。",
    "role": "desc",
@@ -107395,7 +107415,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#042": {
+  "Lost Soles#040": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
    "dst": "“颜色不同的地毯会指出那块石头，揭开桌子的秘密”。",
    "role": "desc",
@@ -107405,7 +107425,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#043": {
+  "Lost Soles#041": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
    "dst": "“颜色不同的地毯会指出那块石头，揭开桌子的秘密”",
    "role": "desc",
@@ -107415,7 +107435,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#045": {
+  "Lost Soles#042": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
    "dst": "哎呀！这些老家伙真是了不起的工程师！我从来没想过房子里会有这些东西。总之，有留言吗？上面写了什么？",
    "role": "desc",
@@ -107425,7 +107445,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#046": {
+  "Lost Soles#043": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
    "dst": "没人要的洞？他指的一定是这个大厅后面的小老鼠洞。不过现在它就只是个洞了，老鼠都没了。",
    "role": "desc",
@@ -107435,7 +107455,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#047": {
+  "Lost Soles#044": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
    "dst": "嗯，细节，细节。我们除了放捕鼠器之外从没仔细查过，考虑到这些机关有多复杂，我想里面可能真有什么东西。",
    "role": "desc",
@@ -107445,7 +107465,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#048": {
+  "Lost Soles#045": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
    "dst": "我建议你去看看那个洞，然后到蓝旗子上面找找！",
    "role": "desc",
@@ -107455,7 +107475,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#049": {
+  "Lost Soles#046": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
    "dst": "可是如果那是通往二楼的路，日记里这句又是什么意思？",
    "role": "desc",
@@ -107465,7 +107485,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#050": {
+  "Lost Soles#047": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
    "dst": "“往墙上的地图后面扔点东西，就能揭开一部分密码”？等等，那大概是指地下室的密码！弄好之后马上回来找我，我还有更多事要告诉你！",
    "role": "desc",
@@ -107475,7 +107495,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#051": {
+  "Lost Soles#048": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
    "dst": "“往墙上的地图后面扔点东西，就能揭开一部分密码”",
    "role": "desc",
@@ -107485,7 +107505,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#052": {
+  "Lost Soles#049": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
    "dst": "你找到一部分密码了！？哈哈，太好了！我得说，你几分钟的进展比我几年的还多！你们人类真是了不起！",
    "role": "desc",
@@ -107495,7 +107515,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#053": {
+  "Lost Soles#050": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
    "dst": "好了，日记上说你得想办法上二楼，找出密码的另外 {~} 位数字。",
    "role": "desc",
@@ -107505,7 +107525,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#054": {
+  "Lost Soles#051": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
    "dst": "记住，要上二楼，你得按老鼠洞里的按钮，打开从天花板垂下的蓝旗子上方的通道。",
    "role": "desc",
@@ -107515,7 +107535,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#055": {
+  "Lost Soles#052": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
    "dst": "日记没说在哪，只说藏得很好，而且房子里还有其他线索。另外 {~} 位数字应该都在二楼上面！也许 Leacen 在上面的时候也看到过相关的东西。",
    "role": "desc",
@@ -107525,7 +107545,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#056": {
+  "Lost Soles#053": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
    "dst": "找到完整的密码后，就去地下室。拿到密码之后，沿着庄园外的小路和告示走就行。",
    "role": "desc",
@@ -107535,7 +107555,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#057": {
+  "Lost Soles#054": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
    "dst": "把手伸进没人要的洞里，打开旗子上方的秘密通道",
    "role": "desc",
@@ -107545,7 +107565,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#058": {
+  "Lost Soles#055": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
    "dst": "把 [{~} Boot Container] 和 [Abysso Galoshes] 带回给 Ferndor",
    "role": "desc",
@@ -107555,7 +107575,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#059": {
+  "Lost Soles#056": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
    "dst": "可恶，我还以为这些书里总有一本能打开秘密书架……哦，嗨，人类小家伙。你也爬上楼梯了？",
    "role": "desc",
@@ -107565,7 +107585,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#060": {
+  "Lost Soles#057": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "哇，秘密通道！没有爬上来那么厉害，不过还是干得好！我猜你在找密码的提示？",
    "role": "desc",
@@ -107575,7 +107595,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#063": {
+  "Lost Soles#058": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
    "dst": "这样吧，人类小家伙。你帮我们的忙，我就告诉你一些你可能会感兴趣的情报。怎么样？",
    "role": "desc",
@@ -107585,7 +107605,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#064": {
+  "Lost Soles#059": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
    "dst": "楼上有几间卧室，还有一道从 [-{~}, {~}, -{~}] 开始的螺旋楼梯。走到楼梯顶端就能到达庄园的屋顶。告示牌位于屋顶边缘的 [-{~}, {~}, -{~}]，上面写着“{~} is the first”。",
    "role": "desc",
@@ -107595,7 +107615,7 @@
    "speaker": "First Digit",
    "source": "wiki"
   },
-  "Lost Soles#065": {
+  "Lost Soles#060": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
    "dst": "第二位数字的告示牌就是你在第 {~} 阶段找到的那块：往 Grandon 附近的地图扔任意物品，就会显示第二位数字是 {~}。",
    "role": "desc",
@@ -107605,7 +107625,7 @@
    "speaker": "Second Digit",
    "source": "wiki"
   },
-  "Lost Soles#066": {
+  "Lost Soles#061": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
    "dst": "二楼的 [-{~}, {~}, -{~}] 有一扇铁门，旁边有个按钮。按下按钮开门进入小房间，你会看到一块告示牌写着“He told us that the blue flowers are special...”。回到铁门外的区域，[-{~}, {~}, -{~}] 的按钮旁边的高架上有一朵蓝花。这个按钮会打开一道梯子，通往房间角落 [-{~}, {~}, -{~}] 的一间卧室。第三块告示牌就在梯子通往的房间墙上，位于 [-{~}, {~}, -{~}]，上面写着“{~} is the third”。",
    "role": "desc",
@@ -107615,7 +107635,7 @@
    "speaker": "Third Digit",
    "source": "wiki"
   },
-  "Lost Soles#067": {
+  "Lost Soles#062": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
    "dst": "三楼有一道从 [-{~}, {~}, -{~}] 开始的楼梯，通往一条横跨走廊的通道。从通道北侧栏杆的缺口跳下去，可以进入一个小洞，里面有块告示牌写着“He always hid something underneath his pillow...”。跳回 [-{~}, {~}, -{~}] 的主卧室，按照线索提示，往枕头上扔一颗绿宝石。这会打开 [-{~}, {~}, -{~}] 高架后面的小房间，通往最后一块告示牌，上面写着“{~} is the fourth”。注意：如果你来不及进入房间，可以站在高架顶上把绿宝石扔到枕头上。",
    "role": "desc",
@@ -107625,7 +107645,7 @@
    "speaker": "Fourth Digit",
    "source": "wiki"
   },
-  "Lost Soles#068": {
+  "Lost Soles#063": {
    "src": "You found the container? I wish I would have gone with you...",
    "dst": "你找到盒子了？真希望我当时跟你一起去……",
    "role": "desc",
@@ -107635,7 +107655,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#069": {
+  "Lost Soles#064": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
    "dst": "至少我们能阻止庄园慢慢衰败了！让我把靴子放进盒子里……",
    "role": "desc",
@@ -107645,7 +107665,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#070": {
+  "Lost Soles#065": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
    "dst": "真简单。我还是不敢相信这么小的东西会惹出这么多麻烦。",
    "role": "desc",
@@ -107655,7 +107675,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#071": {
+  "Lost Soles#066": {
    "src": "Well, I can not just let you stand there without a reward, right?",
    "dst": "好了，我总不能让你空手站在那里，对吧？",
    "role": "desc",
@@ -107665,7 +107685,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#072": {
+  "Lost Soles#067": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
    "dst": "来，给你一些绿宝石，还有这双靴子怎么样？这是曾经拥有这座宅邸的 Sodeta 公会送给我家族的传家宝。我保证它们不邪恶！随时欢迎来看我们！",
    "role": "desc",
@@ -107675,7 +107695,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#073": {
+  "Lost Soles#068": {
    "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
    "dst": "不知道那双靴子跑到哪去了……都过了这么久。你听说过 [Abysso Galoshes] 吗？",
    "role": "desc",
@@ -107685,7 +107705,7 @@
    "speaker": "Ferndor",
    "source": "captured"
   },
-  "Lost Soles#074": {
+  "Lost Soles#069": {
    "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
    "dst": "多年前被一个海盗从我们这里偷走了！你要是能把 [Abysso Galoshes] 带来帮我们，我可以给你报酬！",
    "role": "desc",
@@ -107693,6 +107713,36 @@
    "quest": "Lost Soles",
    "stage": "Stage 1",
    "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#070": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor at [-{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#071": {
+   "src": "It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#072": {
+   "src": "The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Tower#000": {
@@ -111121,6 +111171,16 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
+  "Memory Paranoia#127": {
+   "src": "Look around the chandelier at the stairs.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Misadventure on the Sea#000": {
    "src": "As you touch the obelisk, it ignites with an otherworldly blue light...",
    "dst": "你一碰到方尖碑，它便燃起一道不属于这个世界的蓝光……",
@@ -112372,7 +112432,7 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#125": {
-   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
+   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or somethin'!",
    "dst": "士兵，该你大显身手了！用你的法术什么的把它吓跑！",
    "role": "desc",
    "kind": "dialogue",
@@ -126680,7 +126740,7 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
    "dst": "在 {p} 外的灌木废墟附近，找到大门旁边的暗门",
    "role": "desc",
    "kind": "objective",
@@ -127028,6 +127088,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Overture to Despair#000": {
    "src": "- No weaponry or blessed equipment in common areas.",
@@ -145735,7 +145805,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#001": {
+  "Reclaiming the House#000": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "如果我要……夺回……我需要更多火力……",
    "role": "desc",
@@ -145745,7 +145815,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#002": {
+  "Reclaiming the House#001": {
    "src": "Anyway, it's clear that I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
    "dst": "总之，很明显，如果我想有机会夺回那个前哨站，就需要更多火力。",
    "role": "desc",
@@ -145755,7 +145825,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#003": {
+  "Reclaiming the House#002": {
    "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's...kind of a relief.",
    "dst": "什——我太惊讶了！在正中间——他们没杀那些士兵，只是把他们关进笼子里？这……算是松了一口气。",
    "role": "desc",
@@ -145765,7 +145835,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#004": {
+  "Reclaiming the House#003": {
    "src": "There's definitely too many orcs in the plaza there for us to take down on our own...",
    "dst": "广场上的兽人肯定太多了，我们俩打不过……",
    "role": "desc",
@@ -145775,7 +145845,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#005": {
+  "Reclaiming the House#004": {
    "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may not be an option...",
    "dst": "好，现在我只需要想想我们俩要怎么进去……外围有哨兵，所以翻墙可能行不通……",
    "role": "desc",
@@ -145785,7 +145855,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#006": {
+  "Reclaiming the House#005": {
    "src": "Someone outside door? Check!",
    "dst": "门外有人？查一下！",
    "role": "desc",
@@ -145795,7 +145865,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#007": {
+  "Reclaiming the House#006": {
    "src": "Oh, orc from mud bath. In, now!",
    "dst": "哦，泡泥巴浴回来的兽人。快进来！",
    "role": "desc",
@@ -145805,7 +145875,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#008": {
+  "Reclaiming the House#007": {
    "src": "No enter for humans! This place belong to orcs!",
    "dst": "人类不准进！这地方是兽人的！",
    "role": "desc",
@@ -145815,7 +145885,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#009": {
+  "Reclaiming the House#008": {
    "src": "Someone outside door. Check!",
    "dst": "门外有人。查一下！",
    "role": "desc",
@@ -145825,7 +145895,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#010": {
+  "Reclaiming the House#009": {
    "src": "Ah... Took mud bath. Orc enter, quick!",
    "dst": "啊……泡过泥巴浴。兽人进来，快！",
    "role": "desc",
@@ -145835,7 +145905,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#011": {
+  "Reclaiming the House#010": {
    "src": "[{~}/{~}] Ropes cut.",
    "dst": "[{~}/{~}] 绳索已割断。",
    "role": "desc",
@@ -145845,7 +145915,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#012": {
+  "Reclaiming the House#011": {
    "src": "The Gavellian Army's sending reinforcements to our outpost, finally. Everything was getting too much to handle on our end.",
    "dst": "Gavel 军队终于要派增援到我们的前哨站了。我们这边实在快撑不住了。",
    "role": "desc",
@@ -145855,7 +145925,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#013": {
+  "Reclaiming the House#012": {
    "src": "You Wynnic folks are way better suited than us for guard duty. Why don't you take over for me, huh?",
    "dst": "你们 Wynn 人比我们适合站岗多了。不如你来替我，怎么样？",
    "role": "desc",
@@ -145865,7 +145935,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#014": {
+  "Reclaiming the House#013": {
    "src": "Join Elphaba on a mission in the Temporary Camp at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~}, {~}, -{~}] 的临时营地加入 Elphaba 的任务",
    "role": "desc",
@@ -145875,7 +145945,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#015": {
+  "Reclaiming the House#014": {
    "src": "Oh, a Wynnic soldier out here in the boondocks? Honestly, you're just what we need- I could use your help, if you're able?",
    "dst": "噢，这种穷乡僻壤竟然有 Wynn 的士兵？说真的，你正是我们需要的人——如果可以的话，能帮我个忙吗？",
    "role": "desc",
@@ -145885,7 +145955,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#016": {
+  "Reclaiming the House#015": {
    "src": "Good, thank you. Let me lock down the camp before I give you the briefing, though.",
    "dst": "很好，谢谢。不过先让我把营地封锁好，再给你做简报。",
    "role": "desc",
@@ -145895,7 +145965,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#017": {
+  "Reclaiming the House#016": {
    "src": "My name is Elphaba. I've been working with the Gavellian army for a good few years now.",
    "dst": "我叫 Elphaba。我在 Gavel 军队服役好几年了。",
    "role": "desc",
@@ -145905,7 +145975,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#018": {
+  "Reclaiming the House#017": {
    "src": "I'm the commander of the {p} Outpost down ahead. It's a strategic fortress, placed to monitor the Orcish capital.",
    "dst": "我是前面 {p} 前哨站的指挥官。那是一座战略要塞，用来监视兽人的首都。",
    "role": "desc",
@@ -145915,7 +145985,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#019": {
+  "Reclaiming the House#018": {
    "src": "It was safe for a long while, but especially in the past while the Orcs have gotten far bolder, more aggressive.",
    "dst": "那里安全了很长一段时间，但尤其是最近，兽人变得大胆得多，也更有攻击性。",
    "role": "desc",
@@ -145925,7 +145995,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#020": {
+  "Reclaiming the House#019": {
    "src": "They overwhelmed the outpost- we had to retreat and set up this camp to watch over the place we used to watch over them with!",
    "dst": "他们攻陷了前哨站——我们只好撤退，建起这个营地，来监视我们原本用来监视他们的地方！",
    "role": "desc",
@@ -145935,7 +146005,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#021": {
+  "Reclaiming the House#020": {
    "src": "...oh no. See, this is what I mean! The orcs are coming!",
    "dst": "……噢不。你看，我说的就是这个！兽人来了！",
    "role": "desc",
@@ -145945,7 +146015,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#022": {
+  "Reclaiming the House#021": {
    "src": "Brace yourself, soldier! Protect the camp!",
    "dst": "做好准备，士兵！保护营地！",
    "role": "desc",
@@ -145955,7 +146025,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#023": {
+  "Reclaiming the House#022": {
    "src": "Kill the mobs raiding the Camp.",
    "dst": "击杀突袭营地的敌人。",
    "role": "desc",
@@ -145965,7 +146035,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#024": {
+  "Reclaiming the House#023": {
    "src": "This is the third attack in three days! How many reinforcements have they got?!",
    "dst": "这是三天里的第三次袭击了！他们到底有多少援军？！",
    "role": "desc",
@@ -145975,7 +146045,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#025": {
+  "Reclaiming the House#024": {
    "src": "Gah! Their casters are strong, careful!",
    "dst": "啊！他们的施法者很强，小心！",
    "role": "desc",
@@ -145985,7 +146055,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#026": {
+  "Reclaiming the House#025": {
    "src": "Talk to Elphaba for information on the upcoming attack.",
    "dst": "与 Elphaba 对话，了解即将到来的进攻。",
    "role": "desc",
@@ -145995,7 +146065,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#027": {
+  "Reclaiming the House#026": {
    "src": "Ugh, I think that was all of them... Come here now, I'll start up where we left off.",
    "dst": "呃，我想那是最后一批了……过来吧，我接着刚才说。",
    "role": "desc",
@@ -146005,7 +146075,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#028": {
+  "Reclaiming the House#027": {
    "src": "Not sure I could have done that myself. I'm lucky you came around when you did, soldier.",
    "dst": "我不确定我一个人能不能撑过去。幸好你来得正是时候，士兵。",
    "role": "desc",
@@ -146015,7 +146085,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#030": {
+  "Reclaiming the House#028": {
    "src": "You've certainly got the fighting chops, so I'd appreciate the aid, but we've got to come up with a plan, fast.",
    "dst": "你的战斗本领肯定没问题，所以我很感激你的帮忙，但我们得赶快想个计划。",
    "role": "desc",
@@ -146025,7 +146095,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#031": {
+  "Reclaiming the House#029": {
    "src": "There's an old tower near the outpost- some old storage silo. It was built taller than the fort, so we might be able to spy on them from there.",
    "dst": "前哨站附近有一座旧塔——是个旧仓储筒仓。它盖得比要塞还高，所以我们也许能从那里侦察他们。",
    "role": "desc",
@@ -146035,7 +146105,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#032": {
+  "Reclaiming the House#030": {
    "src": "It's a risk though, since it's so close by, but we have no other options. Meet me at the tower southeast of here so we can survey the situation.",
    "dst": "不过那里离得很近，有风险，但我们别无选择。在这里东南边的塔跟我会合，我们去看看情况。",
    "role": "desc",
@@ -146045,7 +146115,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#033": {
+  "Reclaiming the House#031": {
    "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "前往 [-{~}, {~}, -{~}] 的瞭望塔，筹划进攻。",
    "role": "desc",
@@ -146055,7 +146125,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#034": {
+  "Reclaiming the House#032": {
    "src": "Soldier! I'm right behind you. You can see our outpost- and the tower I mentioned.",
    "dst": "士兵！我就在你后面。你看得到我们的前哨站——还有我说的那座塔。",
    "role": "desc",
@@ -146065,7 +146135,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#035": {
+  "Reclaiming the House#033": {
    "src": "We need to find a way in. A lot of soldiers were caught unaware during the Orcs' assault, too.",
    "dst": "我们得想办法进去。兽人突袭的时候，也有很多士兵措手不及。",
    "role": "desc",
@@ -146075,7 +146145,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#036": {
+  "Reclaiming the House#034": {
    "src": "If there's any survivors in there, we should make rescuing them a priority.",
    "dst": "如果里面还有幸存者，我们应该优先救他们。",
    "role": "desc",
@@ -146085,7 +146155,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#037": {
+  "Reclaiming the House#035": {
    "src": "After all, it means more manpower for us. We can't count on that being the case, though...",
    "dst": "毕竟那意味着我们有更多人手。不过我们不能指望真有幸存者……",
    "role": "desc",
@@ -146095,7 +146165,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#038": {
+  "Reclaiming the House#036": {
    "src": "Come on, hurry inside before one of the orcs spots us!",
    "dst": "快，趁兽人发现我们之前赶紧进去！",
    "role": "desc",
@@ -146105,7 +146175,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#039": {
+  "Reclaiming the House#037": {
    "src": "Enter to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "进入 [-{~}, {~}, -{~}] 的瞭望塔，筹划进攻。",
    "role": "desc",
@@ -146115,7 +146185,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#040": {
+  "Reclaiming the House#038": {
    "src": "Alright, this is a pretty clear view. Let's see what's going on in there...",
    "dst": "好，这里视野很清楚。我们来看看里面发生了什么……",
    "role": "desc",
@@ -146125,7 +146195,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#042": {
+  "Reclaiming the House#039": {
    "src": "...but that cage is held up by those ropes. If we can cut them, the other soldiers should be able to help!",
    "dst": "……不过那个笼子是用那些绳子吊着的。如果我们能割断绳子，其他士兵应该就能帮忙！",
    "role": "desc",
@@ -146135,7 +146205,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#044": {
+  "Reclaiming the House#040": {
    "src": "Maybe we can keep an eye out on their sentry patterns and look for an opening-",
    "dst": "也许我们可以观察他们哨兵的巡逻规律，找个空档——",
    "role": "desc",
@@ -146145,7 +146215,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#045": {
+  "Reclaiming the House#041": {
    "src": "Humans on old tower! Junhur will shoot! This our place now, get out!!",
    "dst": "人类在旧塔上！Junhur 要开炮！这里现在是我们的，滚出去！！",
    "role": "desc",
@@ -146155,7 +146225,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#046": {
+  "Reclaiming the House#042": {
    "src": "Aw, not now! I knew this was a risk, no time to get out... Brace for impact!!",
    "dst": "啊，偏偏这个时候！我就知道有风险，来不及出去了……快抓稳！！",
    "role": "desc",
@@ -146165,7 +146235,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#047": {
+  "Reclaiming the House#043": {
    "src": "Old tower fall! Junhur is best cannon shooter!!",
    "dst": "旧塔倒了！Junhur 是最强炮手！！",
    "role": "desc",
@@ -146175,7 +146245,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#048": {
+  "Reclaiming the House#044": {
    "src": "Agh, soldier!! Are you alright, where'd you fall?!",
    "dst": "啊，士兵！！你没事吧，你掉到哪去了？！",
    "role": "desc",
@@ -146185,7 +146255,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#049": {
+  "Reclaiming the House#045": {
    "src": "Ah... Wow. You barely look scratched, you must've gotten really lucky.",
    "dst": "啊……哇。你几乎没受什么伤，运气一定好得不得了。",
    "role": "desc",
@@ -146195,7 +146265,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#050": {
+  "Reclaiming the House#046": {
    "src": "Not so much here... I'm pretty battered after that. At least one of us is in good condition...",
    "dst": "我这边就没那么好了……摔完我伤得不轻。至少我们俩有一个状况还好……",
    "role": "desc",
@@ -146205,7 +146275,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#051": {
+  "Reclaiming the House#047": {
    "src": "Unfortunately, that means figuring a way in is up to you. We can't examine their sentry patterns from down here.",
    "dst": "可惜，这代表得由你来想办法进去了。在下面这里没法观察他们哨兵的巡逻规律。",
    "role": "desc",
@@ -146215,7 +146285,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#052": {
+  "Reclaiming the House#048": {
    "src": "I'll survive, sure, but I won't be able to walk around and defend myself for a while.",
    "dst": "我死不了，但有一阵子没办法走动，也保护不了自己。",
    "role": "desc",
@@ -146225,7 +146295,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#053": {
+  "Reclaiming the House#049": {
    "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
    "dst": "我很不想让你一个人去，但如果能让你安心点，你应该够强，或者说够幸运，能闯过去。",
    "role": "desc",
@@ -146235,7 +146305,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#054": {
+  "Reclaiming the House#050": {
    "src": "Explore the perimeter of the outpost. Try to find a way in, but be careful, okay?",
    "dst": "去前哨站外围探索一下。想办法进去，不过要小心，好吗？",
    "role": "desc",
@@ -146245,7 +146315,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#055": {
+  "Reclaiming the House#051": {
    "src": "Explore the outpost's surroundings to find another way in.",
    "dst": "探索前哨站周围，寻找其他入口。",
    "role": "desc",
@@ -146255,7 +146325,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#056": {
+  "Reclaiming the House#052": {
    "src": "Follow the trail of mud left by the orc. It leads to the cave at [-{~}, {~}, -{~}]",
    "dst": "跟着兽人留下的泥巴痕迹走。它通往 [-{~}, {~}, -{~}] 的洞窟",
    "role": "desc",
@@ -146265,7 +146335,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#057": {
+  "Reclaiming the House#053": {
    "src": "Enter the outpost while covered in mud.",
    "dst": "浑身沾满泥巴进入前哨站。",
    "role": "desc",
@@ -146275,7 +146345,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#058": {
+  "Reclaiming the House#054": {
    "src": "More muddy orcs? In, now!",
    "dst": "又是满身泥的兽人？进去，快！",
    "role": "desc",
@@ -146285,7 +146355,7 @@
    "speaker": "Orc Guard",
    "source": "wiki"
   },
-  "Reclaiming the House#059": {
+  "Reclaiming the House#055": {
    "src": "Cut the ropes to free the guards from the cage.",
    "dst": "割断绳子，把守卫从笼子里放出来。",
    "role": "desc",
@@ -146295,7 +146365,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#060": {
+  "Reclaiming the House#056": {
    "src": "Kill the Orcish Overtakers.",
    "dst": "击杀兽人夺取者。",
    "role": "desc",
@@ -146305,7 +146375,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#061": {
+  "Reclaiming the House#057": {
    "src": "Good thinking with the mud disguise, soldier! They never suspected a thing, now come help us out over here!",
    "dst": "泥巴伪装真聪明，士兵！他们一点都没起疑，快过来帮我们！",
    "role": "desc",
@@ -146315,7 +146385,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#062": {
+  "Reclaiming the House#058": {
    "src": "Kill the Orcish Overtakers, we'll help keep the other ones off you!",
    "dst": "击杀兽人夺取者，其他的我们帮你挡住！",
    "role": "desc",
@@ -146325,7 +146395,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#063": {
+  "Reclaiming the House#059": {
    "src": "Open the gate with a spell",
    "dst": "用法术打开大门",
    "role": "desc",
@@ -146335,7 +146405,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#064": {
+  "Reclaiming the House#060": {
    "src": "The Overtakers are down, the other Orcs are flailing! Open the outpost's entrance with a spell now, we've got this under control!",
    "dst": "夺取者倒下了，其他兽人乱成一团！现在用法术打开前哨站的入口，这里我们控制得住！",
    "role": "desc",
@@ -146345,7 +146415,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#065": {
+  "Reclaiming the House#061": {
    "src": "Talk to Elphaba.",
    "dst": "与 Elphaba 对话。",
    "role": "desc",
@@ -146355,7 +146425,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#066": {
+  "Reclaiming the House#062": {
    "src": "Phew... That's some fine work there, soldier! The outpost is back under our control!",
    "dst": "呼……干得真漂亮，士兵！前哨站又回到我们手里了！",
    "role": "desc",
@@ -146365,7 +146435,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#067": {
+  "Reclaiming the House#063": {
    "src": "Glad to see some more capable Wynnic hands over here. Though, I didn't catch your name. Would you mind?",
    "dst": "很高兴看到这边又多了些能干的 Wynn 人手。不过，我还没问你的名字。能告诉我吗？",
    "role": "desc",
@@ -146375,7 +146445,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#068": {
+  "Reclaiming the House#064": {
    "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "{u}，是吧？我会记住的。你几乎不需要我帮忙，嘿……真希望我没拖后腿，不过至少结果不错。",
    "role": "desc",
@@ -146385,7 +146455,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#069": {
+  "Reclaiming the House#065": {
    "src": "Here- it's some of my own personal spending money, as a thank-you gift.",
    "dst": "给——这是我自己的一点零花钱，当作谢礼。",
    "role": "desc",
@@ -146395,7 +146465,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#070": {
+  "Reclaiming the House#066": {
    "src": "Alright everyone, let's get this place ship-shape! Everything needs to be repaired in case of another attack!!",
    "dst": "好了，各位，把这里收拾得整整齐齐！所有东西都得修好，以防再有袭击！！",
    "role": "desc",
@@ -146404,6 +146474,16 @@
    "stage": "Stage 11",
    "speaker": "Elphaba",
    "source": "wiki"
+  },
+  "Reclaiming the House#067": {
+   "src": "Follow the trail of mud left by the orc.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Recover the Past#000": {
    "src": "But with this device... we can change that! Restore what has been lost! Recover the- you get the point.",
@@ -154558,6 +154638,16 @@
    "stage": "Stage 10",
    "speaker": "Nasea",
    "source": "wiki"
+  },
+  "Rise of the Quartron#118": {
+   "src": "Talk to Nasea in the Karoc Quarry at [-{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
@@ -198078,6 +198168,16 @@
    "dst": "我知道要查明真相从来都不容易，但请继续努力，把 [{~} Twain 日志] 带来给我。",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 61,
-  "translated": 61,
+  "count": 62,
+  "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -271,8 +271,8 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "{p} dışındaki Undergrowth Ruins yakınında, kapının yanındaki gizli geçidi bul",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
+   "dst": "{p} dışında, Undergrowth Ruins'in yanındaki gizli geçidi bul",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -501,8 +501,8 @@
    "source": "wiki"
   },
   "Out of my Mind#049": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "Bitki canavarını yok etmenin bir yolunu bul, sonra bulduklarını anlatmak için {p} içindeki gruba dön: [-{~},-{~}]",
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~}, {~}, -{~}] to report your findings",
+   "dst": "Bitki canavarını yok etmenin bir yolunu bul, sonra bulduklarını anlatmak için {p} içindeki gruba dön: [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -619,6 +619,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "[-{~}, {~}, -{~}] konumundaki ağaç evde {p} çocuklarıyla konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
