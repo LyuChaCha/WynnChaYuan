@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 24873,
-  "translated": 24871,
+  "count": 24883,
+  "translated": 24881,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -15449,7 +15449,7 @@
    "source": "captured"
   },
   "A Sandy Scandal#028": {
-   "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
+   "src": "Looks like the bandits have started their heist! You should follow them into the bank and stop them.",
    "dst": "Görünüşe göre haydutlar soyguna başlamış! Onları bankaya kadar takip edip durdurmalısın.",
    "role": "desc",
    "kind": "dialogue",
@@ -25595,7 +25595,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
    "dst": "Ureietun! İnsan Ressinter'in hayatını kurtardı! Niye güvenmemek?",
    "role": "desc",
    "kind": "dialogue",
@@ -25645,8 +25645,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
-   "dst": "...insanın öldürmeyeceğine güvenilir. İnsan Centerworld'de dolaşabilir. Ama insan Arrai-Veretel'i görmek yok!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "dst": "İnsanın öldürmeyeceğine güvenilir. İnsan Centerworld'de dolaşabilir. Ama insan Arrai-Veretel'i görmek yok!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -38177,7 +38177,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#074": {
-   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
+   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in its nest to stop the spiders, once and for all.",
    "dst": "Örümceğin bir kraliçeden bahsettiğini duydun, değil mi? Örümcekleri tamamen durdurmak için muhtemelen onu kendi yuvasında yenmemiz gerekecek.",
    "role": "desc",
    "kind": "dialogue",
@@ -38187,7 +38187,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#075": {
-   "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
+   "src": "We should get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
    "dst": "Artık dağdan insek iyi olur. Aledar'la Kaptan'ı bekletmeyelim.",
    "role": "desc",
    "kind": "dialogue",
@@ -55307,6 +55307,16 @@
   "Crop Failure#054": {
    "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
    "dst": "İçini araştırmaya hevesin varsa bi' bak oraya, ahbap. O çiftçi bir şey bulduğunda inanmak için muhtemelen kendi gözüyle görmek isteyecektir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#055": {
+   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "İyi günler! İhtiyar Doubiss'in mallarından neye ihtiyacın var?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -101459,6 +101469,16 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
+  "Ice Nations#030": {
+   "src": "Find the ghost ship by heading north of the {p} and bring back [Ancient Treasure] to Hallfred at [{~}, {~}, -{~}]",
+   "dst": "{p} bölgesinin kuzeyine giderek hayalet gemiyi bul ve [Kadim Hazine] eşyasını [{~}, {~}, -{~}] konumundaki Hallfred'e getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Infested Plants#000": {
    "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
    "dst": "Ben önden gidiyorum. Mağarayı bulmak için içerik kitabındaki koordinatları takip et yeter!",
@@ -107595,7 +107615,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#032": {
+  "Lost Soles#031": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "\"Salonun üstündeki yüzün burnu, yolu açmak için daha ağır olmalı\".",
    "role": "desc",
@@ -107605,7 +107625,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#033": {
+  "Lost Soles#032": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
    "dst": "Hmm, bütün ipuçları bu odayla, yemek salonuyla ilgili bir bölümde geçiyor. Bunun ne anlama geldiğine dair fikrin var mı? Apaçık olmalı gibi geliyor ama hayatta çözemiyorum.",
    "role": "desc",
@@ -107615,7 +107635,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#034": {
+  "Lost Soles#033": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
    "dst": "\"Salonun üstündeki yüzün burnu, yolu açmak için daha ağır olmalı\"",
    "role": "desc",
@@ -107625,7 +107645,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#035": {
+  "Lost Soles#034": {
    "src": "Talk to Grandon and tell him about your findings",
    "dst": "Grandon ile konuş ve bulduklarını anlat",
    "role": "desc",
@@ -107635,7 +107655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#036": {
+  "Lost Soles#035": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
    "dst": "Büyük kafanın altında gizli bir oda mı? Bu neden benim aklıma gelmedi!? Onu oraya koymak için ne kadar kendini beğenmiş olmaları gerektiğini hep merak etmiştim, meğer gerçekten bir amacı varmış!",
    "role": "desc",
@@ -107645,7 +107665,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#037": {
+  "Lost Soles#036": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "Demek köşedeki taşı aramanı söyleyen bir tabela vardı? Hm...ilginç!",
    "role": "desc",
@@ -107655,7 +107675,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#039": {
+  "Lost Soles#037": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
    "dst": "Neyse, görünüşe göre botları geri getirmenin bir yolunu aramamız gerekeceğini tahmin edip hazırlık yapmışlar. İyi ki de yapmışlar.",
    "role": "desc",
@@ -107665,7 +107685,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#040": {
+  "Lost Soles#038": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
    "dst": "Dediğim gibi, merdivenlerin hepsi kırık. Yani ben o çürük tahta parçalarına kesinlikle tırmanamazdım. En iyisi o taşı aramak, ha?",
    "role": "desc",
@@ -107675,7 +107695,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#041": {
+  "Lost Soles#039": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
    "dst": "Ama nerede olabilir...oh? Bu bir ipucu mu? Bunu sonraki sayfada yeni fark ettim.",
    "role": "desc",
@@ -107685,7 +107705,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#042": {
+  "Lost Soles#040": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
    "dst": "\"Farklı renkteki halı, masanın sırrını açığa çıkaracak taşı sana gösterecek\".",
    "role": "desc",
@@ -107695,7 +107715,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#043": {
+  "Lost Soles#041": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
    "dst": "\"Farklı renkteki halı, masanın sırrını açığa çıkaracak taşı sana gösterecek\"",
    "role": "desc",
@@ -107705,7 +107725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#045": {
+  "Lost Soles#042": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
    "dst": "Vay be! Ne mühendismiş bu eski herifler! Evde böyle şeyler olacağını hiç hayal etmezdim. Neyse, bir mesaj var mıydı? Ne diyordu?",
    "role": "desc",
@@ -107715,7 +107735,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#046": {
+  "Lost Soles#043": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
    "dst": "Kimsenin istemediği delik mi? Ancak bu salonun arka tarafındaki küçük fare deliğini kastediyor olabilir. Gerçi artık sadece bir delik, farelerin hepsi gitti.",
    "role": "desc",
@@ -107725,7 +107745,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#047": {
+  "Lost Soles#044": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
    "dst": "Neyse, ayrıntılar, ayrıntılar. Fare kapanı kurmaktan başka hiç bakmadık, şu düzeneklerin ne kadar karmaşık olduğunu düşününce içinde bir şey olabilir.",
    "role": "desc",
@@ -107735,7 +107755,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#048": {
+  "Lost Soles#045": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
    "dst": "Bence deliğe bak, sonra mavi bayrakların üstünde ara!",
    "role": "desc",
@@ -107745,7 +107765,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#049": {
+  "Lost Soles#046": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
    "dst": "Ama ikinci kata çıkan yol oysa, günlük bununla ne demek istiyor?",
    "role": "desc",
@@ -107755,7 +107775,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#050": {
+  "Lost Soles#047": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
    "dst": "\"Kodun bir parçasını ortaya çıkarmak için duvardaki haritanın arkasına bir şey at\" mı? Dur, bu muhtemelen bodrumun şifresi demek! Bunu yapınca hemen bana dön, sana anlatacak daha çok şeyim var!",
    "role": "desc",
@@ -107765,7 +107785,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#051": {
+  "Lost Soles#048": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
    "dst": "\"Kodun bir parçasını ortaya çıkarmak için duvardaki haritanın arkasına bir şey at\"",
    "role": "desc",
@@ -107775,7 +107795,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#052": {
+  "Lost Soles#049": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
    "dst": "Şifrenin bir parçasını mı buldun!? Hahah, mükemmel! Doğrusu, birkaç dakikada benim birkaç yılda kat ettiğimden fazla yol aldın! Siz insanlar gerçekten bambaşkasınız!",
    "role": "desc",
@@ -107785,7 +107805,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#053": {
+  "Lost Soles#050": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
    "dst": "Şimdi günlük, şifrenin diğer {~} hanesini bulmak için ikinci kata çıkman gerektiğini söylüyor.",
    "role": "desc",
@@ -107795,7 +107815,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#054": {
+  "Lost Soles#051": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
    "dst": "Unutma, ikinci kata çıkmak için fare deliğindeki düğmeyi kullanıp tavandan sarkan mavi bayrakların üstündeki geçidi açman lazım.",
    "role": "desc",
@@ -107805,7 +107825,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#055": {
+  "Lost Soles#052": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
    "dst": "Nerede olduklarını söylemiyor, sadece iyi saklandıklarını ve evin etrafında başka ipuçları olduğunu söylüyor. Diğer {~} hanenin hepsi yukarıda, ikinci katta olmalı! Belki Leacen de oradayken onlarla ilgili bir şey görmüştür.",
    "role": "desc",
@@ -107815,7 +107835,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#056": {
+  "Lost Soles#053": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
    "dst": "Şifrenin tamamını bulunca bodruma git. Elinde olunca konağın dışındaki yolu ve tabelaları takip etmen yeterli.",
    "role": "desc",
@@ -107825,7 +107845,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#057": {
+  "Lost Soles#054": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
    "dst": "İstenmeyen deliğe uzanarak bayrakların üstündeki gizli geçidi aç",
    "role": "desc",
@@ -107835,7 +107855,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#058": {
+  "Lost Soles#055": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
    "dst": "[{~} Boot Container] ve [Abysso Galoshes] eşyalarını Ferndor'a geri getir",
    "role": "desc",
@@ -107845,7 +107865,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#059": {
+  "Lost Soles#056": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
    "dst": "Hay aksi, bu kitaplardan birinin gizli bir rafı açacağından emindim...oh, selam İnsancık. Sen de merdivenlerden tırmanmayı başardın mı?",
    "role": "desc",
@@ -107855,7 +107875,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#060": {
+  "Lost Soles#057": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "Vay canına, gizli geçit! Tırmanarak çıkmak kadar etkileyici değil ama yine de aferin! Tahminimce şifre ipuçlarını arıyorsun?",
    "role": "desc",
@@ -107865,7 +107885,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#063": {
+  "Lost Soles#058": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
    "dst": "Bak ne diyeceğim, İnsancık. Sen bize yardım et, ben de sana duymak isteyebileceğin bazı bilgiler vereyim. Nasıl, uyar mı?",
    "role": "desc",
@@ -107875,7 +107895,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#064": {
+  "Lost Soles#059": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
    "dst": "Üst katta birkaç yatak odası ve [-{~}, {~}, -{~}] konumunda başlayan döner bir merdiven var. Merdivenin tepesine çık, seni konağın çatısına götürecek. Tabela çatının kenarında, [-{~}, {~}, -{~}] konumunda ve üzerinde \"Birincisi {~}\" yazıyor.",
    "role": "desc",
@@ -107885,7 +107905,7 @@
    "speaker": "First Digit",
    "source": "wiki"
   },
-  "Lost Soles#065": {
+  "Lost Soles#060": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
    "dst": "İkinci hanenin tabelası, {~}. aşamada bulduğun tabela. Grandon'ın yanındaki haritaya herhangi bir eşya atınca ikinci hanenin {~} olduğu ortaya çıkıyor.",
    "role": "desc",
@@ -107895,7 +107915,7 @@
    "speaker": "Second Digit",
    "source": "wiki"
   },
-  "Lost Soles#066": {
+  "Lost Soles#061": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
    "dst": "İkinci katta, [-{~}, {~}, -{~}] konumunda yanında düğme olan bir demir kapı var. Kapıyı açmak için düğmeye bas ve küçük odaya gir; \"Bize mavi çiçeklerin özel olduğunu söyledi...\" yazan bir tabela bulacaksın. Demir kapının dışındaki alana dönünce, [-{~}, {~}, -{~}] konumunda bir düğmenin yanındaki yüksek rafta tek bir mavi çiçek var. Düğme, odanın köşesindeki bir yatak odasına çıkan bir merdiven açar, [-{~}, {~}, -{~}] konumunda. Üçüncü tabela merdivenin çıktığı odanın duvarında, [-{~}, {~}, -{~}] konumunda ve üzerinde \"Üçüncüsü {~}\" yazıyor.",
    "role": "desc",
@@ -107905,7 +107925,7 @@
    "speaker": "Third Digit",
    "source": "wiki"
   },
-  "Lost Soles#067": {
+  "Lost Soles#062": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
    "dst": "Üçüncü katta [-{~}, {~}, -{~}] konumunda başlayan ve bir koridorun üstünden geçen bir yürüme yoluna çıkan merdiven var. Yürüme yolundan kuzey taraftaki korkuluk boşluğundan atlarsan \"Yastığının altına hep bir şey saklardı...\" yazan bir tabelanın olduğu küçük bir deliğe girebilirsin. [-{~}, {~}, -{~}] konumundaki Ana Yatak Odasına geri in ve ipucunun dediği gibi yastığın üstüne bir zümrüt at. Bu, [-{~}, {~}, -{~}] konumunda yüksek bir rafın arkasında küçük bir oda açar ve son tabelaya çıkar; üzerinde \"Dördüncüsü {~}\" yazıyor. Odaya girmeye yetişemezsen rafın üstünde dururken yastığa zümrüt atabileceğini unutma.",
    "role": "desc",
@@ -107915,7 +107935,7 @@
    "speaker": "Fourth Digit",
    "source": "wiki"
   },
-  "Lost Soles#068": {
+  "Lost Soles#063": {
    "src": "You found the container? I wish I would have gone with you...",
    "dst": "Kutuyu buldun mu? Keşke ben de seninle gelseydim...",
    "role": "desc",
@@ -107925,7 +107945,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#069": {
+  "Lost Soles#064": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
    "dst": "En azından konağın yavaş yavaş çürümesini durdurabiliriz! Botları kutuya bir koyayım...",
    "role": "desc",
@@ -107935,7 +107955,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#070": {
+  "Lost Soles#065": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
    "dst": "Kolay oldu. Bu kadar küçük bir şeyin bu kadar sorun çıkarabildiğine hâlâ inanamıyorum.",
    "role": "desc",
@@ -107945,7 +107965,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#071": {
+  "Lost Soles#066": {
    "src": "Well, I can not just let you stand there without a reward, right?",
    "dst": "Eh, seni ödülsüz öyle bekletemem, değil mi?",
    "role": "desc",
@@ -107955,7 +107975,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#072": {
+  "Lost Soles#067": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
    "dst": "Al, biraz zümrüte ve şu botlara ne dersin? Bu konağın eski sahibi Sodeta Loncası'nın ailemize bıraktığı yadigârlar. Söz veriyorum, kötü değiller! İstediğin zaman bizi ziyaret et!",
    "role": "desc",
@@ -107965,7 +107985,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#073": {
+  "Lost Soles#068": {
    "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
    "dst": "O botlar nereye gitti acaba... Üzerinden çok zaman geçti. [Abysso Galoshes] hakkında bir şey biliyor musun?",
    "role": "desc",
@@ -107975,7 +107995,7 @@
    "speaker": "Ferndor",
    "source": "captured"
   },
-  "Lost Soles#074": {
+  "Lost Soles#069": {
    "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
    "dst": "Yıllar önce bir korsan onları bizden çaldı! Bana [Abysso Galoshes] getirip yardım edersen seni ödüllendirebilirim!",
    "role": "desc",
@@ -107983,6 +108003,36 @@
    "quest": "Lost Soles",
    "stage": "Stage 1",
    "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#070": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor at [-{~}, {~}, -{~}]",
+   "dst": "[{~} Boot Container] ve [Abysso Galoshes] eşyalarını [-{~}, {~}, -{~}] konumundaki Ferndor'a geri getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#071": {
+   "src": "It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "Merdivenler çöktüğünden beri epey uzun süredir oraya çıkılamıyor. Leacen hariç, ama o biraz kaçık...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#072": {
+   "src": "The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "Diğer {~} hanenin hepsi yukarıda, ikinci katta olmalı! Belki Leacen de oradayken onlarla ilgili bir şey görmüştür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Tower#000": {
@@ -111411,6 +111461,16 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
+  "Memory Paranoia#127": {
+   "src": "Look around the chandelier at the stairs.",
+   "dst": "Merdivenlerdeki avizenin çevresine bak.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Misadventure on the Sea#000": {
    "src": "As you touch the obelisk, it ignites with an otherworldly blue light...",
    "dst": "Dikilitaşa dokunduğunda öteki dünyadan gelme mavi bir ışıkla parlıyor...",
@@ -112662,7 +112722,7 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#125": {
-   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
+   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or somethin'!",
    "dst": "Asker, şimdi kendini gösterme zamanı! Büyülerinden biriyle falan korkut şunu!",
    "role": "desc",
    "kind": "dialogue",
@@ -126970,8 +127030,8 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "{p} dışındaki Undergrowth Ruins yakınında, kapının yanındaki gizli geçidi bul",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
+   "dst": "{p} dışında, Undergrowth Ruins'in yanındaki gizli geçidi bul",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127200,8 +127260,8 @@
    "source": "wiki"
   },
   "Out of my Mind#049": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "Bitki canavarını yok etmenin bir yolunu bul, sonra bulduklarını anlatmak için {p} içindeki gruba dön: [-{~},-{~}]",
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~}, {~}, -{~}] to report your findings",
+   "dst": "Bitki canavarını yok etmenin bir yolunu bul, sonra bulduklarını anlatmak için {p} içindeki gruba dön: [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127318,6 +127378,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "[-{~}, {~}, -{~}] konumundaki ağaç evde {p} çocuklarıyla konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Overture to Despair#000": {
    "src": "- No weaponry or blessed equipment in common areas.",
@@ -146025,7 +146095,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#001": {
+  "Reclaiming the House#000": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Daha fazla ateş gücüne ihtiyacım var, eğer...ben...",
    "role": "desc",
@@ -146035,7 +146105,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#002": {
+  "Reclaiming the House#001": {
    "src": "Anyway, it's clear that I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
    "dst": "Neyse, o karakolu geri alma şansım olacaksa daha fazla ateş gücüne ihtiyacım olacağı ortada.",
    "role": "desc",
@@ -146045,7 +146115,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#003": {
+  "Reclaiming the House#002": {
    "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's...kind of a relief.",
    "dst": "N- Şok oldum! Şurada, ortada- askerleri öldürmek yerine kafese mi koymuşlar? Bu... biraz içimi rahatlattı.",
    "role": "desc",
@@ -146055,7 +146125,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#004": {
+  "Reclaiming the House#003": {
    "src": "There's definitely too many orcs in the plaza there for us to take down on our own...",
    "dst": "Şuradaki meydanda kendi başımıza alt edemeyeceğimiz kadar çok ork var...",
    "role": "desc",
@@ -146065,7 +146135,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#005": {
+  "Reclaiming the House#004": {
    "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may not be an option...",
    "dst": "Tamam, şimdi ikimizin de nasıl içeri gireceğini bulmam lazım... Çevrede nöbetçiler var, yani duvarı aşmak bir seçenek olmayabilir...",
    "role": "desc",
@@ -146075,7 +146145,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#006": {
+  "Reclaiming the House#005": {
    "src": "Someone outside door? Check!",
    "dst": "Kapı dışında biri? Bak!",
    "role": "desc",
@@ -146085,7 +146155,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#007": {
+  "Reclaiming the House#006": {
    "src": "Oh, orc from mud bath. In, now!",
    "dst": "Ah, çamur banyosundan ork. Gir, çabuk!",
    "role": "desc",
@@ -146095,7 +146165,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#008": {
+  "Reclaiming the House#007": {
    "src": "No enter for humans! This place belong to orcs!",
    "dst": "İnsanlar giremez! Burası orkların!",
    "role": "desc",
@@ -146105,7 +146175,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#009": {
+  "Reclaiming the House#008": {
    "src": "Someone outside door. Check!",
    "dst": "Kapı dışında biri. Bak!",
    "role": "desc",
@@ -146115,7 +146185,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#010": {
+  "Reclaiming the House#009": {
    "src": "Ah... Took mud bath. Orc enter, quick!",
    "dst": "Ah... Çamur banyosu almış. Ork gir, çabuk!",
    "role": "desc",
@@ -146125,7 +146195,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#011": {
+  "Reclaiming the House#010": {
    "src": "[{~}/{~}] Ropes cut.",
    "dst": "[{~}/{~}] İp kesildi.",
    "role": "desc",
@@ -146135,7 +146205,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#012": {
+  "Reclaiming the House#011": {
    "src": "The Gavellian Army's sending reinforcements to our outpost, finally. Everything was getting too much to handle on our end.",
    "dst": "Gavel Ordusu karakolumuza nihayet takviye gönderiyor. Bizim taraf için her şey kaldırılamaz hale gelmişti.",
    "role": "desc",
@@ -146145,7 +146215,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#013": {
+  "Reclaiming the House#012": {
    "src": "You Wynnic folks are way better suited than us for guard duty. Why don't you take over for me, huh?",
    "dst": "Siz Wynnliler nöbet işine bizden çok daha uygunsunuz. Benim yerime sen geçsene, ha?",
    "role": "desc",
@@ -146155,7 +146225,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#014": {
+  "Reclaiming the House#013": {
    "src": "Join Elphaba on a mission in the Temporary Camp at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] konumundaki Geçici Kamp'ta Elphaba'nın görevine katıl",
    "role": "desc",
@@ -146165,7 +146235,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#015": {
+  "Reclaiming the House#014": {
    "src": "Oh, a Wynnic soldier out here in the boondocks? Honestly, you're just what we need- I could use your help, if you're able?",
    "dst": "Aa, bu ıssız yerde bir Wynnli asker mi? Açıkçası tam ihtiyacımız olan kişisin- elinden gelirse bana yardım eder misin?",
    "role": "desc",
@@ -146175,7 +146245,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#016": {
+  "Reclaiming the House#015": {
    "src": "Good, thank you. Let me lock down the camp before I give you the briefing, though.",
    "dst": "Güzel, teşekkürler. Ama seni bilgilendirmeden önce kampı bir güvenceye alayım.",
    "role": "desc",
@@ -146185,7 +146255,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#017": {
+  "Reclaiming the House#016": {
    "src": "My name is Elphaba. I've been working with the Gavellian army for a good few years now.",
    "dst": "Adım Elphaba. Epey yıldır Gavel ordusuyla çalışıyorum.",
    "role": "desc",
@@ -146195,7 +146265,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#018": {
+  "Reclaiming the House#017": {
    "src": "I'm the commander of the {p} Outpost down ahead. It's a strategic fortress, placed to monitor the Orcish capital.",
    "dst": "İlerideki {p} Karakolu'nun komutanıyım. Ork başkentini gözetlemek için kurulmuş stratejik bir kale.",
    "role": "desc",
@@ -146205,7 +146275,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#019": {
+  "Reclaiming the House#018": {
    "src": "It was safe for a long while, but especially in the past while the Orcs have gotten far bolder, more aggressive.",
    "dst": "Uzun süre güvenliydi ama özellikle son zamanlarda orklar çok daha cüretkâr, çok daha saldırgan oldu.",
    "role": "desc",
@@ -146215,7 +146285,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#020": {
+  "Reclaiming the House#019": {
    "src": "They overwhelmed the outpost- we had to retreat and set up this camp to watch over the place we used to watch over them with!",
    "dst": "Karakolu ele geçirdiler- geri çekilip onları gözetlediğimiz yeri gözetlemek için bu kampı kurmak zorunda kaldık!",
    "role": "desc",
@@ -146225,7 +146295,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#021": {
+  "Reclaiming the House#020": {
    "src": "...oh no. See, this is what I mean! The orcs are coming!",
    "dst": "...eyvah. Bak, işte bunu diyordum! Orklar geliyor!",
    "role": "desc",
@@ -146235,7 +146305,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#022": {
+  "Reclaiming the House#021": {
    "src": "Brace yourself, soldier! Protect the camp!",
    "dst": "Hazırlan, asker! Kampı koru!",
    "role": "desc",
@@ -146245,7 +146315,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#023": {
+  "Reclaiming the House#022": {
    "src": "Kill the mobs raiding the Camp.",
    "dst": "Kampa saldıran yaratıkları öldür.",
    "role": "desc",
@@ -146255,7 +146325,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#024": {
+  "Reclaiming the House#023": {
    "src": "This is the third attack in three days! How many reinforcements have they got?!",
    "dst": "Üç günde üçüncü saldırı bu! Kaç tane takviyeleri var?!",
    "role": "desc",
@@ -146265,7 +146335,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#025": {
+  "Reclaiming the House#024": {
    "src": "Gah! Their casters are strong, careful!",
    "dst": "Ah! Büyücüleri güçlü, dikkat et!",
    "role": "desc",
@@ -146275,7 +146345,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#026": {
+  "Reclaiming the House#025": {
    "src": "Talk to Elphaba for information on the upcoming attack.",
    "dst": "Yaklaşan saldırı hakkında bilgi almak için Elphaba ile konuş.",
    "role": "desc",
@@ -146285,7 +146355,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#027": {
+  "Reclaiming the House#026": {
    "src": "Ugh, I think that was all of them... Come here now, I'll start up where we left off.",
    "dst": "Of, galiba hepsi buydu... Gel buraya, kaldığımız yerden devam edeyim.",
    "role": "desc",
@@ -146295,7 +146365,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#028": {
+  "Reclaiming the House#027": {
    "src": "Not sure I could have done that myself. I'm lucky you came around when you did, soldier.",
    "dst": "Bunu tek başıma yapabilir miydim emin değilim. Tam zamanında geldiğin için şanslıyım, asker.",
    "role": "desc",
@@ -146305,7 +146375,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#030": {
+  "Reclaiming the House#028": {
    "src": "You've certainly got the fighting chops, so I'd appreciate the aid, but we've got to come up with a plan, fast.",
    "dst": "Dövüşmeyi bildiğin kesin, yardımına minnettar olurum ama hemen bir plan yapmamız lazım.",
    "role": "desc",
@@ -146315,7 +146385,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#031": {
+  "Reclaiming the House#029": {
    "src": "There's an old tower near the outpost- some old storage silo. It was built taller than the fort, so we might be able to spy on them from there.",
    "dst": "Karakolun yakınında eski bir kule var- eski bir depo silosu. Kaleden daha yüksek yapılmıştı, belki oradan onları gözetleyebiliriz.",
    "role": "desc",
@@ -146325,7 +146395,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#032": {
+  "Reclaiming the House#030": {
    "src": "It's a risk though, since it's so close by, but we have no other options. Meet me at the tower southeast of here so we can survey the situation.",
    "dst": "Gerçi çok yakın olduğu için riskli ama başka seçeneğimiz yok. Durumu incelemek için buranın güneydoğusundaki kulede buluşalım.",
    "role": "desc",
@@ -146335,7 +146405,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#033": {
+  "Reclaiming the House#031": {
    "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "Saldırıyı planlamak için [-{~}, {~}, -{~}] konumundaki gözetleme kulesine git.",
    "role": "desc",
@@ -146345,7 +146415,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#034": {
+  "Reclaiming the House#032": {
    "src": "Soldier! I'm right behind you. You can see our outpost- and the tower I mentioned.",
    "dst": "Asker! Hemen arkandayım. Karakolumuzu görebiliyorsun- bir de bahsettiğim kuleyi.",
    "role": "desc",
@@ -146355,7 +146425,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#035": {
+  "Reclaiming the House#033": {
    "src": "We need to find a way in. A lot of soldiers were caught unaware during the Orcs' assault, too.",
    "dst": "İçeri girmenin bir yolunu bulmalıyız. Orkların saldırısında birçok asker de hazırlıksız yakalandı.",
    "role": "desc",
@@ -146365,7 +146435,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#036": {
+  "Reclaiming the House#034": {
    "src": "If there's any survivors in there, we should make rescuing them a priority.",
    "dst": "İçeride hayatta kalan varsa önceliğimiz onları kurtarmak olmalı.",
    "role": "desc",
@@ -146375,7 +146445,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#037": {
+  "Reclaiming the House#035": {
    "src": "After all, it means more manpower for us. We can't count on that being the case, though...",
    "dst": "Sonuçta bizim için daha fazla adam demek. Ama öyle olacağına da güvenemeyiz...",
    "role": "desc",
@@ -146385,7 +146455,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#038": {
+  "Reclaiming the House#036": {
    "src": "Come on, hurry inside before one of the orcs spots us!",
    "dst": "Hadi, orklardan biri bizi görmeden çabuk içeri gir!",
    "role": "desc",
@@ -146395,7 +146465,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#039": {
+  "Reclaiming the House#037": {
    "src": "Enter to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "Saldırıyı planlamak için [-{~}, {~}, -{~}] konumundaki gözetleme kulesine gir.",
    "role": "desc",
@@ -146405,7 +146475,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#040": {
+  "Reclaiming the House#038": {
    "src": "Alright, this is a pretty clear view. Let's see what's going on in there...",
    "dst": "Tamam, buradan oldukça net görünüyor. Bakalım içeride neler oluyor...",
    "role": "desc",
@@ -146415,7 +146485,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#042": {
+  "Reclaiming the House#039": {
    "src": "...but that cage is held up by those ropes. If we can cut them, the other soldiers should be able to help!",
    "dst": "...ama o kafes şu iplerle asılı duruyor. Onları kesebilirsek diğer askerler yardım edebilir!",
    "role": "desc",
@@ -146425,7 +146495,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#044": {
+  "Reclaiming the House#040": {
    "src": "Maybe we can keep an eye out on their sentry patterns and look for an opening-",
    "dst": "Belki nöbetçilerin düzenini izleyip bir açık kollayabiliriz-",
    "role": "desc",
@@ -146435,7 +146505,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#045": {
+  "Reclaiming the House#041": {
    "src": "Humans on old tower! Junhur will shoot! This our place now, get out!!",
    "dst": "İnsanlar eski kulede! Junhur ateş edecek! Burası şimdi bizim, defolun!!",
    "role": "desc",
@@ -146445,7 +146515,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#046": {
+  "Reclaiming the House#042": {
    "src": "Aw, not now! I knew this was a risk, no time to get out... Brace for impact!!",
    "dst": "Ah, şimdi olmaz! Riskli olduğunu biliyordum, çıkacak vakit yok... Darbeye hazırlan!!",
    "role": "desc",
@@ -146455,7 +146525,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#047": {
+  "Reclaiming the House#043": {
    "src": "Old tower fall! Junhur is best cannon shooter!!",
    "dst": "Eski kule düştü! Junhur en iyi top atıcı!!",
    "role": "desc",
@@ -146465,7 +146535,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#048": {
+  "Reclaiming the House#044": {
    "src": "Agh, soldier!! Are you alright, where'd you fall?!",
    "dst": "Ah, asker!! İyi misin, nereye düştün?!",
    "role": "desc",
@@ -146475,7 +146545,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#049": {
+  "Reclaiming the House#045": {
    "src": "Ah... Wow. You barely look scratched, you must've gotten really lucky.",
    "dst": "Ah... Vay. Neredeyse hiç çizik yok sende, gerçekten şanslıymışsın.",
    "role": "desc",
@@ -146485,7 +146555,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#050": {
+  "Reclaiming the House#046": {
    "src": "Not so much here... I'm pretty battered after that. At least one of us is in good condition...",
    "dst": "Bende pek öyle değil... Bu düşüşten sonra epey hırpalandım. En azından birimiz sağlam...",
    "role": "desc",
@@ -146495,7 +146565,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#051": {
+  "Reclaiming the House#047": {
    "src": "Unfortunately, that means figuring a way in is up to you. We can't examine their sentry patterns from down here.",
    "dst": "Ne yazık ki içeri girmenin yolunu bulmak sana kaldı. Buradan nöbetçilerin düzenini inceleyemeyiz.",
    "role": "desc",
@@ -146505,7 +146575,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#052": {
+  "Reclaiming the House#048": {
    "src": "I'll survive, sure, but I won't be able to walk around and defend myself for a while.",
    "dst": "Hayatta kalırım, elbette, ama bir süre ortalıkta dolaşıp kendimi savunamayacağım.",
    "role": "desc",
@@ -146515,7 +146585,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#053": {
+  "Reclaiming the House#049": {
    "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
    "dst": "Seni böyle yalnız bırakmaktan nefret ediyorum ama teselli olacaksa, bunu atlatacak kadar güçlü ya da şanslısın.",
    "role": "desc",
@@ -146525,7 +146595,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#054": {
+  "Reclaiming the House#050": {
    "src": "Explore the perimeter of the outpost. Try to find a way in, but be careful, okay?",
    "dst": "Karakolun çevresini keşfet. İçeri girmenin bir yolunu bulmaya çalış ama dikkatli ol, tamam mı?",
    "role": "desc",
@@ -146535,7 +146605,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#055": {
+  "Reclaiming the House#051": {
    "src": "Explore the outpost's surroundings to find another way in.",
    "dst": "İçeri girmenin başka bir yolunu bulmak için karakolun çevresini keşfet.",
    "role": "desc",
@@ -146545,7 +146615,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#056": {
+  "Reclaiming the House#052": {
    "src": "Follow the trail of mud left by the orc. It leads to the cave at [-{~}, {~}, -{~}]",
    "dst": "Orkun bıraktığı çamur izini takip et. İz, [-{~}, {~}, -{~}] konumundaki mağaraya çıkıyor",
    "role": "desc",
@@ -146555,7 +146625,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#057": {
+  "Reclaiming the House#053": {
    "src": "Enter the outpost while covered in mud.",
    "dst": "Çamura bulanmış haldeyken karakola gir.",
    "role": "desc",
@@ -146565,7 +146635,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#058": {
+  "Reclaiming the House#054": {
    "src": "More muddy orcs? In, now!",
    "dst": "Başka çamurlu ork mu? Gir, çabuk!",
    "role": "desc",
@@ -146575,7 +146645,7 @@
    "speaker": "Orc Guard",
    "source": "wiki"
   },
-  "Reclaiming the House#059": {
+  "Reclaiming the House#055": {
    "src": "Cut the ropes to free the guards from the cage.",
    "dst": "Muhafızları kafesten kurtarmak için ipleri kes.",
    "role": "desc",
@@ -146585,7 +146655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#060": {
+  "Reclaiming the House#056": {
    "src": "Kill the Orcish Overtakers.",
    "dst": "Orcish Overtaker'ları öldür.",
    "role": "desc",
@@ -146595,7 +146665,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#061": {
+  "Reclaiming the House#057": {
    "src": "Good thinking with the mud disguise, soldier! They never suspected a thing, now come help us out over here!",
    "dst": "Çamur kılığı iyi fikirdi, asker! Hiçbir şeyden şüphelenmediler, şimdi gel de bize yardım et!",
    "role": "desc",
@@ -146605,7 +146675,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#062": {
+  "Reclaiming the House#058": {
    "src": "Kill the Orcish Overtakers, we'll help keep the other ones off you!",
    "dst": "Orcish Overtaker'ları öldür, diğerlerini senden uzak tutarız!",
    "role": "desc",
@@ -146615,7 +146685,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#063": {
+  "Reclaiming the House#059": {
    "src": "Open the gate with a spell",
    "dst": "Kapıyı bir büyüyle aç",
    "role": "desc",
@@ -146625,7 +146695,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#064": {
+  "Reclaiming the House#060": {
    "src": "The Overtakers are down, the other Orcs are flailing! Open the outpost's entrance with a spell now, we've got this under control!",
    "dst": "Overtaker'lar düştü, diğer orklar ne yapacağını şaşırdı! Karakolun girişini hemen bir büyüyle aç, burayı biz hallederiz!",
    "role": "desc",
@@ -146635,7 +146705,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#065": {
+  "Reclaiming the House#061": {
    "src": "Talk to Elphaba.",
    "dst": "Elphaba ile konuş.",
    "role": "desc",
@@ -146645,7 +146715,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#066": {
+  "Reclaiming the House#062": {
    "src": "Phew... That's some fine work there, soldier! The outpost is back under our control!",
    "dst": "Of... İyi iş çıkardın, asker! Karakol yeniden bizim kontrolümüzde!",
    "role": "desc",
@@ -146655,7 +146725,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#067": {
+  "Reclaiming the House#063": {
    "src": "Glad to see some more capable Wynnic hands over here. Though, I didn't catch your name. Would you mind?",
    "dst": "Burada daha fazla becerikli Wynnli el görmek güzel. Gerçi adını duyamadım. Söyler misin?",
    "role": "desc",
@@ -146665,7 +146735,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#068": {
+  "Reclaiming the House#064": {
    "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "Demek {u}? Aklımda tutacağım. Yardımıma neredeyse hiç ihtiyacın olmadı, heh... Keşke bu kadar yük olmasaydım ama en azından işler yolunda gitti.",
    "role": "desc",
@@ -146675,7 +146745,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#069": {
+  "Reclaiming the House#065": {
    "src": "Here- it's some of my own personal spending money, as a thank-you gift.",
    "dst": "Al- teşekkür hediyesi olarak kendi harçlığımdan biraz.",
    "role": "desc",
@@ -146685,7 +146755,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#070": {
+  "Reclaiming the House#066": {
    "src": "Alright everyone, let's get this place ship-shape! Everything needs to be repaired in case of another attack!!",
    "dst": "Pekâlâ millet, burayı derleyip toparlayalım! Başka bir saldırıya karşı her şeyin onarılması lazım!!",
    "role": "desc",
@@ -146694,6 +146764,16 @@
    "stage": "Stage 11",
    "speaker": "Elphaba",
    "source": "wiki"
+  },
+  "Reclaiming the House#067": {
+   "src": "Follow the trail of mud left by the orc.",
+   "dst": "Orkun bıraktığı çamur izini takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Recover the Past#000": {
    "src": "But with this device... we can change that! Restore what has been lost! Recover the- you get the point.",
@@ -154848,6 +154928,16 @@
    "stage": "Stage 10",
    "speaker": "Nasea",
    "source": "wiki"
+  },
+  "Rise of the Quartron#118": {
+   "src": "Talk to Nasea in the Karoc Quarry at [-{~}, {~}, -{~}]",
+   "dst": "Karoc Quarry bölgesinde Nasea ile konuş: [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
@@ -198368,6 +198458,16 @@
    "dst": "Gerçeği ortaya çıkarmanın hiç kolay olmadığını biliyorum ama denemeye devam et, lütfen bana [{~} Twain Günlüğü] getir.",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "House of Twain bölgesindeki Twendle ile konuş: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

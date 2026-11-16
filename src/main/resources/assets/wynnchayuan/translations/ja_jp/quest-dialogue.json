@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24946,
-  "translated": 24943,
+  "count": 24956,
+  "translated": 24953,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -15449,7 +15449,7 @@
    "source": "captured"
   },
   "A Sandy Scandal#028": {
-   "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
+   "src": "Looks like the bandits have started their heist! You should follow them into the bank and stop them.",
    "dst": "強盗たちが銀行襲撃を始めたようだ！後を追って銀行に入り、止めよう。",
    "role": "desc",
    "kind": "dialogue",
@@ -25595,7 +25595,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
    "dst": "Ureietun！人間 Ressinter の命救った！なぜ信じない？",
    "role": "desc",
    "kind": "dialogue",
@@ -25645,8 +25645,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
-   "dst": "…人間殺さない、信じられる。人間 Centerworld 歩いていい。でも Arrai-Veretel に会うな！",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "dst": "人間殺さない、信じられる。人間 Centerworld 歩いていい。でも Arrai-Veretel に会うな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -38390,7 +38390,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#074": {
-   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
+   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in its nest to stop the spiders, once and for all.",
    "dst": "蜘蛛が女王と言ってたの、聞いたよね？蜘蛛を完全に止めるには、巣の中でそいつを倒すしかなさそうだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -38400,7 +38400,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#075": {
-   "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
+   "src": "We should get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
    "dst": "そろそろ山を下りよう。Aledar と隊長を待たせたくない。",
    "role": "desc",
    "kind": "dialogue",
@@ -55549,6 +55549,16 @@
   "Crop Failure#054": {
    "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
    "dst": "調べてみる気があるなら、あそこを覗いてみな、兄ちゃん。何か見つけても、あの農夫は自分の目で見なきゃ信じねえだろうがな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#055": {
+   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "こんにちは！ Doubiss の店で、何をお探しですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -101977,6 +101987,16 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
+  "Ice Nations#030": {
+   "src": "Find the ghost ship by heading north of the {p} and bring back [Ancient Treasure] to Hallfred at [{~}, {~}, -{~}]",
+   "dst": "{p} の北へ向かって幽霊船を見つけ、[Ancient Treasure] を [{~}, {~}, -{~}] の Hallfred に届ける",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Infested Plants#000": {
    "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
    "dst": "先に行ってるよ。コンテンツブックの座標をたどれば、あの洞窟が見つかるから！",
@@ -108134,7 +108154,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#032": {
+  "Lost Soles#031": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "「広間の上の顔は、道を開くために重くすべき鼻を持つ」。",
    "role": "desc",
@@ -108144,7 +108164,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#033": {
+  "Lost Soles#032": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
    "dst": "うーん、ヒントは全部この部屋、食堂についての章にあります。どういう意味か分かりますか？簡単そうなのに、どうしても分からなくて。",
    "role": "desc",
@@ -108154,7 +108174,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#034": {
+  "Lost Soles#033": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
    "dst": "「広間の上の顔は、道を開くために重くすべき鼻を持つ」",
    "role": "desc",
@@ -108164,7 +108184,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#035": {
+  "Lost Soles#034": {
    "src": "Talk to Grandon and tell him about your findings",
    "dst": "Grandon と話し、見つけたことを伝える",
    "role": "desc",
@@ -108174,7 +108194,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#036": {
+  "Lost Soles#035": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
    "dst": "大きな頭の下に隠し部屋？なんで思いつかなかったんだ！？あんなものを置くなんてどれだけ自己中心的なんだと思ってましたが、ちゃんと意味があったとは！",
    "role": "desc",
@@ -108184,7 +108204,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#037": {
+  "Lost Soles#036": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "つまり、隅で石を探せという看板があったと？ふむ… 興味深い！",
    "role": "desc",
@@ -108194,7 +108214,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#039": {
+  "Lost Soles#037": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
    "dst": "とにかく、私たちが長靴を返す方法を探すことになると見越して、準備していたようですね。ありがたいことです。",
    "role": "desc",
@@ -108204,7 +108224,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#040": {
+  "Lost Soles#038": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
    "dst": "言った通り、階段は全部壊れてます。あんな腐った木くずを登るなんて私には無理です。まずはその石を探すのがよさそうですね？",
    "role": "desc",
@@ -108214,7 +108234,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#041": {
+  "Lost Soles#039": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
    "dst": "でも、どこにあるんでしょう… おや？これもヒントかな？次のページで今気づきました。",
    "role": "desc",
@@ -108224,7 +108244,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#042": {
+  "Lost Soles#040": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
    "dst": "「色の違う絨毯が、食卓の秘密を明かす石を示す」。",
    "role": "desc",
@@ -108234,7 +108254,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#043": {
+  "Lost Soles#041": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
    "dst": "「色の違う絨毯が、食卓の秘密を明かす石を示す」",
    "role": "desc",
@@ -108244,7 +108264,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#045": {
+  "Lost Soles#042": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
    "dst": "いやはや！大した技術者ですね、ご先祖様たちは！家にこんなものがあるなんて思いもしなかった。で、伝言はありましたか？何と？",
    "role": "desc",
@@ -108254,7 +108274,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#046": {
+  "Lost Soles#043": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
    "dst": "誰も欲しがらない穴？この広間の奥にある小さなネズミ穴のことでしょう。もうネズミはいないので、ただの穴ですが。",
    "role": "desc",
@@ -108264,7 +108284,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#047": {
+  "Lost Soles#044": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
    "dst": "まあ、細かいことはいいでしょう。ネズミ捕りを置いた以外は調べたことがないので、これまでの凝った仕掛けを思えば何かあるかもしれません。",
    "role": "desc",
@@ -108274,7 +108294,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#048": {
+  "Lost Soles#045": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
    "dst": "私なら、まず穴の中を覗いて、それから青い旗の上を探しますね！",
    "role": "desc",
@@ -108284,7 +108304,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#049": {
+  "Lost Soles#046": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
    "dst": "でも、それが二階への道なら、日記のこれはどういう意味でしょう？",
    "role": "desc",
@@ -108294,7 +108314,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#050": {
+  "Lost Soles#047": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
    "dst": "「壁の地図の後ろに何かを投げると暗号の一部が現れる」？待って、たぶん地下室の暗号のことだ！終わったらすぐ戻ってきてください、まだ話があります！",
    "role": "desc",
@@ -108304,7 +108324,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#051": {
+  "Lost Soles#048": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
    "dst": "「壁の地図の後ろに何かを投げると暗号の一部が現れる」",
    "role": "desc",
@@ -108314,7 +108334,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#052": {
+  "Lost Soles#049": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
    "dst": "暗号の一部を見つけたんですか！？ははっ、素晴らしい！数分で私の数年分より進みましたよ！人間って本当にすごい！",
    "role": "desc",
@@ -108324,7 +108344,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#053": {
+  "Lost Soles#050": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
    "dst": "さて、日記によれば、暗号の残り {~} 桁を見つけるには二階へ行かないといけないそうです。",
    "role": "desc",
@@ -108334,7 +108354,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#054": {
+  "Lost Soles#051": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
    "dst": "忘れずに。二階へ上がるには、ネズミ穴のボタンで、天井から下がる青い旗の上の通路を開くんです。",
    "role": "desc",
@@ -108344,7 +108364,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#055": {
+  "Lost Soles#052": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
    "dst": "場所は書いてなくて、うまく隠してあることと、家のあちこちに追加の手がかりがあることだけ。残りの {~} 桁は全部二階にあるはずです！Leacen が上にいる間に何か見てるかもしれません。",
    "role": "desc",
@@ -108354,7 +108374,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#056": {
+  "Lost Soles#053": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
    "dst": "暗号が全部そろったら地下室へ。手に入れたら、屋敷の外の道と看板に従って進むだけです。",
    "role": "desc",
@@ -108364,7 +108384,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#057": {
+  "Lost Soles#054": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
    "dst": "誰も欲しがらない穴に手を入れて、旗の上の隠し通路を開く",
    "role": "desc",
@@ -108374,7 +108394,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#058": {
+  "Lost Soles#055": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
    "dst": "[{~} Boot Container] と [Abysso Galoshes] を Ferndor に持ち帰る",
    "role": "desc",
@@ -108384,7 +108404,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#059": {
+  "Lost Soles#056": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
    "dst": "ちぇっ、この本のどれかで隠し棚が開くと思ったのに… あ、やっほーヒューミー。あんたも階段を登ってきたの？",
    "role": "desc",
@@ -108394,7 +108414,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#060": {
+  "Lost Soles#057": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "わあ、隠し通路！登ってくるほどカッコよくはないけど、よくやったじゃん！暗号のヒントを探してるんでしょ？",
    "role": "desc",
@@ -108404,7 +108424,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#063": {
+  "Lost Soles#058": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
    "dst": "じゃあこうしよう、ヒューミー。あたしたちを手伝ってくれたら、あんたが知りたそうな情報をあげる。どう？",
    "role": "desc",
@@ -108414,7 +108434,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#064": {
+  "Lost Soles#059": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
    "dst": "上の階にはいくつか寝室と、[-{~}, {~}, -{~}] から始まるらせん階段がある。階段の上まで行くと屋敷の屋根に出る。看板は屋根の端の [-{~}, {~}, -{~}] にあり、「{~} is the first」と書かれている。",
    "role": "desc",
@@ -108424,7 +108444,7 @@
    "speaker": "First Digit",
    "source": "wiki"
   },
-  "Lost Soles#065": {
+  "Lost Soles#060": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
    "dst": "二つ目の数字の看板は第 {~} 段階で見つかるもの。Grandon の近くの地図に何かアイテムを投げると、二つ目の数字が {~} だと分かる。",
    "role": "desc",
@@ -108434,7 +108454,7 @@
    "speaker": "Second Digit",
    "source": "wiki"
   },
-  "Lost Soles#066": {
+  "Lost Soles#061": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
    "dst": "二階の [-{~}, {~}, -{~}] に、横にボタンのある鉄の扉がある。ボタンを押して扉を開け、小部屋に入ると「He told us that the blue flowers are special...」と書かれた看板がある。鉄の扉の外に戻ると、[-{~}, {~}, -{~}] のボタンの横の高い棚に青い花が一輪ある。そのボタンで、部屋の隅の [-{~}, {~}, -{~}] にある寝室へのはしごが現れる。三つ目の看板ははしごの先の部屋の壁、[-{~}, {~}, -{~}] にあり、「{~} is the third」と書かれている。",
    "role": "desc",
@@ -108444,7 +108464,7 @@
    "speaker": "Third Digit",
    "source": "wiki"
   },
-  "Lost Soles#067": {
+  "Lost Soles#062": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
    "dst": "三階には [-{~}, {~}, -{~}] から始まり、廊下をまたぐ通路へ続く階段がある。通路の北側の手すりの隙間から飛び降りると小さな穴に入れ、「He always hid something underneath his pillow...」と書かれた看板がある。[-{~}, {~}, -{~}] の主寝室に降り、ヒントの通り枕にエメラルドを投げる。すると [-{~}, {~}, -{~}] の高い棚の裏に小部屋が開き、「{~} is the fourth」と書かれた最後の看板がある。部屋に入るのが間に合わなければ、棚の上に立ったまま枕へエメラルドを投げてもよい。",
    "role": "desc",
@@ -108454,7 +108474,7 @@
    "speaker": "Fourth Digit",
    "source": "wiki"
   },
-  "Lost Soles#068": {
+  "Lost Soles#063": {
    "src": "You found the container? I wish I would have gone with you...",
    "dst": "入れ物を見つけたんですか？一緒に行けばよかった…",
    "role": "desc",
@@ -108464,7 +108484,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#069": {
+  "Lost Soles#064": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
    "dst": "これで屋敷がゆっくり腐朽していくのを止められます！長靴を入れ物に入れますね…",
    "role": "desc",
@@ -108474,7 +108494,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#070": {
+  "Lost Soles#065": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
    "dst": "簡単でしたね。こんな小さな物がこれほどの騒ぎを起こすなんて、まだ信じられません。",
    "role": "desc",
@@ -108484,7 +108504,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#071": {
+  "Lost Soles#066": {
    "src": "Well, I can not just let you stand there without a reward, right?",
    "dst": "さて、お礼もなしにそこに立たせておくわけにはいきませんよね？",
    "role": "desc",
@@ -108494,7 +108514,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#072": {
+  "Lost Soles#067": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
    "dst": "さあ、エメラルドと、このブーツをどうぞ。かつてこの屋敷を所有していた Sodeta ギルドから家に贈られた家宝です。呪われてはいませんよ！いつでも遊びに来てください！",
    "role": "desc",
@@ -108504,7 +108524,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#073": {
+  "Lost Soles#068": {
    "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
    "dst": "あの長靴はどこへ行ってしまったのか……もうずいぶん経ちます。[Abysso Galoshes] をご存じですか？",
    "role": "desc",
@@ -108514,7 +108534,7 @@
    "speaker": "Ferndor",
    "source": "captured"
   },
-  "Lost Soles#074": {
+  "Lost Soles#069": {
    "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
    "dst": "何年も前に海賊に盗まれたんです！[Abysso Galoshes] を持ってきて助けてくだされば、お礼をします！",
    "role": "desc",
@@ -108522,6 +108542,36 @@
    "quest": "Lost Soles",
    "stage": "Stage 1",
    "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#070": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor at [-{~}, {~}, -{~}]",
+   "dst": "[{~} Boot Container] と [Abysso Galoshes] を [-{~}, {~}, -{~}] の Ferndor に持ち帰る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#071": {
+   "src": "It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "階段が崩れてから、ずいぶん長いこと上がれていないんです。Leacen は別ですが、彼女はちょっと変わってて…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#072": {
+   "src": "The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "残りの {~} 桁は全部二階にあるはずです！Leacen が上にいる間に何か見てるかもしれません。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Tower#000": {
@@ -111950,6 +112000,16 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
+  "Memory Paranoia#127": {
+   "src": "Look around the chandelier at the stairs.",
+   "dst": "階段のシャンデリアのあたりを調べる。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Misadventure on the Sea#000": {
    "src": "As you touch the obelisk, it ignites with an otherworldly blue light...",
    "dst": "オベリスクに触れると、この世のものとは思えない青い光が灯った…",
@@ -113201,7 +113261,7 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#125": {
-   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
+   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or somethin'!",
    "dst": "兵士、お前の見せ場だ！呪文か何かで追っ払え！",
    "role": "desc",
    "kind": "dialogue",
@@ -127623,8 +127683,8 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "{p} の外にある茂みの遺跡近く、門の横の隠し扉を見つける",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
+   "dst": "{p} の外にある茂みの遺跡の横の隠し扉を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127853,8 +127913,8 @@
    "source": "wiki"
   },
   "Out of my Mind#049": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "植物の怪物を倒す方法を見つけ、[-{~},-{~}] の {p} にいる子供たちのもとへ戻って報告する",
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~}, {~}, -{~}] to report your findings",
+   "dst": "植物の怪物を倒す方法を見つけ、[-{~}, {~}, -{~}] の {p} にいる子供たちのもとへ戻って報告する",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127971,6 +128031,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "[-{~}, {~}, -{~}] のツリーハウスの中で {p} の子供たちと話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Overture to Despair#000": {
    "src": "- No weaponry or blessed equipment in common areas.",
@@ -146748,7 +146818,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#001": {
+  "Reclaiming the House#000": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "もっと火力が要る、もし…取り…戻すなら…",
    "role": "desc",
@@ -146758,7 +146828,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#002": {
+  "Reclaiming the House#001": {
    "src": "Anyway, it's clear that I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
    "dst": "とにかく、あの前哨基地を取り戻すには、もっと火力が必要なのは明らかだ。",
    "role": "desc",
@@ -146768,7 +146838,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#003": {
+  "Reclaiming the House#002": {
    "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's...kind of a relief.",
    "dst": "な—驚いた！真ん中だ—奴ら、兵士を殺さずに檻に入れたのか？それは…少しほっとした。",
    "role": "desc",
@@ -146778,7 +146848,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#004": {
+  "Reclaiming the House#003": {
    "src": "There's definitely too many orcs in the plaza there for us to take down on our own...",
    "dst": "広場のオークは多すぎて、二人じゃとても倒しきれない…",
    "role": "desc",
@@ -146788,7 +146858,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#005": {
+  "Reclaiming the House#004": {
    "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may not be an option...",
    "dst": "よし、あとは二人でどう潜り込むかだ…外周に見張りがいるから、越えていくのは無理かもしれない…",
    "role": "desc",
@@ -146798,7 +146868,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#006": {
+  "Reclaiming the House#005": {
    "src": "Someone outside door? Check!",
    "dst": "扉の外に誰かいる？確認！",
    "role": "desc",
@@ -146808,7 +146878,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#007": {
+  "Reclaiming the House#006": {
    "src": "Oh, orc from mud bath. In, now!",
    "dst": "おお、泥風呂から来たオーク。入れ、早く！",
    "role": "desc",
@@ -146818,7 +146888,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#008": {
+  "Reclaiming the House#007": {
    "src": "No enter for humans! This place belong to orcs!",
    "dst": "人間は入るな！ここはオークの場所！",
    "role": "desc",
@@ -146828,7 +146898,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#009": {
+  "Reclaiming the House#008": {
    "src": "Someone outside door. Check!",
    "dst": "扉の外に誰かいる。確認！",
    "role": "desc",
@@ -146838,7 +146908,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#010": {
+  "Reclaiming the House#009": {
    "src": "Ah... Took mud bath. Orc enter, quick!",
    "dst": "ああ……泥風呂に入った。オーク入れ！",
    "role": "desc",
@@ -146848,7 +146918,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#011": {
+  "Reclaiming the House#010": {
    "src": "[{~}/{~}] Ropes cut.",
    "dst": "[{~}/{~}] ロープを切った。",
    "role": "desc",
@@ -146858,7 +146928,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#012": {
+  "Reclaiming the House#011": {
    "src": "The Gavellian Army's sending reinforcements to our outpost, finally. Everything was getting too much to handle on our end.",
    "dst": "Gavel 軍がようやく我々の前哨地へ増援を送ってくれる。こっちはもう手に負えなくなってきていたんだ。",
    "role": "desc",
@@ -146868,7 +146938,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#013": {
+  "Reclaiming the House#012": {
    "src": "You Wynnic folks are way better suited than us for guard duty. Why don't you take over for me, huh?",
    "dst": "Wynn の連中は俺たちより見張りに向いてるよな。俺の代わりをやってくれないか、どうだ？",
    "role": "desc",
@@ -146878,7 +146948,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#014": {
+  "Reclaiming the House#013": {
    "src": "Join Elphaba on a mission in the Temporary Camp at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の Temporary Camp で Elphaba の任務に加わる",
    "role": "desc",
@@ -146888,7 +146958,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#015": {
+  "Reclaiming the House#014": {
    "src": "Oh, a Wynnic soldier out here in the boondocks? Honestly, you're just what we need- I could use your help, if you're able?",
    "dst": "おや、こんな片田舎に Wynn の兵士？正直、まさに必要な人材だ—手が空いているなら、力を貸してくれないか？",
    "role": "desc",
@@ -146898,7 +146968,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#016": {
+  "Reclaiming the House#015": {
    "src": "Good, thank you. Let me lock down the camp before I give you the briefing, though.",
    "dst": "よし、ありがとう。説明の前に、まず野営地を封鎖させてくれ。",
    "role": "desc",
@@ -146908,7 +146978,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#017": {
+  "Reclaiming the House#016": {
    "src": "My name is Elphaba. I've been working with the Gavellian army for a good few years now.",
    "dst": "私は Elphaba。Gavel の軍でもう何年も働いている。",
    "role": "desc",
@@ -146918,7 +146988,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#018": {
+  "Reclaiming the House#017": {
    "src": "I'm the commander of the {p} Outpost down ahead. It's a strategic fortress, placed to monitor the Orcish capital.",
    "dst": "この先の {p} Outpost の指揮官だ。オークの首都を監視するための戦略要塞だよ。",
    "role": "desc",
@@ -146928,7 +146998,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#019": {
+  "Reclaiming the House#018": {
    "src": "It was safe for a long while, but especially in the past while the Orcs have gotten far bolder, more aggressive.",
    "dst": "長いこと安全だったが、特に最近はオークがずっと大胆で攻撃的になった。",
    "role": "desc",
@@ -146938,7 +147008,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#020": {
+  "Reclaiming the House#019": {
    "src": "They overwhelmed the outpost- we had to retreat and set up this camp to watch over the place we used to watch over them with!",
    "dst": "奴らに前哨基地を制圧された—撤退して野営地を張り、奴らを見張るための場所を見張る羽目になった！",
    "role": "desc",
@@ -146948,7 +147018,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#021": {
+  "Reclaiming the House#020": {
    "src": "...oh no. See, this is what I mean! The orcs are coming!",
    "dst": "…まずい。ほら、こういうことだ！オークが来る！",
    "role": "desc",
@@ -146958,7 +147028,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#022": {
+  "Reclaiming the House#021": {
    "src": "Brace yourself, soldier! Protect the camp!",
    "dst": "構えろ、兵士！野営地を守れ！",
    "role": "desc",
@@ -146968,7 +147038,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#023": {
+  "Reclaiming the House#022": {
    "src": "Kill the mobs raiding the Camp.",
    "dst": "野営地を襲撃するモンスターを倒す。",
    "role": "desc",
@@ -146978,7 +147048,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#024": {
+  "Reclaiming the House#023": {
    "src": "This is the third attack in three days! How many reinforcements have they got?!",
    "dst": "三日で三度目の襲撃だ！奴らの援軍はどれだけいるんだ？！",
    "role": "desc",
@@ -146988,7 +147058,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#025": {
+  "Reclaiming the House#024": {
    "src": "Gah! Their casters are strong, careful!",
    "dst": "くっ！術師が強い、気をつけろ！",
    "role": "desc",
@@ -146998,7 +147068,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#026": {
+  "Reclaiming the House#025": {
    "src": "Talk to Elphaba for information on the upcoming attack.",
    "dst": "Elphaba と話して、次の攻撃について聞く。",
    "role": "desc",
@@ -147008,7 +147078,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#027": {
+  "Reclaiming the House#026": {
    "src": "Ugh, I think that was all of them... Come here now, I'll start up where we left off.",
    "dst": "ふう、これで全部片付いたか…こっちへ。さっきの続きを話そう。",
    "role": "desc",
@@ -147018,7 +147088,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#028": {
+  "Reclaiming the House#027": {
    "src": "Not sure I could have done that myself. I'm lucky you came around when you did, soldier.",
    "dst": "私一人じゃ切り抜けられなかったかもな。いい時に来てくれて助かったよ、兵士。",
    "role": "desc",
@@ -147028,7 +147098,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#030": {
+  "Reclaiming the House#028": {
    "src": "You've certainly got the fighting chops, so I'd appreciate the aid, but we've got to come up with a plan, fast.",
    "dst": "君の腕は確かだ、助けてくれるならありがたい。だが急いで作戦を立てないと。",
    "role": "desc",
@@ -147038,7 +147108,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#031": {
+  "Reclaiming the House#029": {
    "src": "There's an old tower near the outpost- some old storage silo. It was built taller than the fort, so we might be able to spy on them from there.",
    "dst": "前哨基地の近くに古い塔がある—古い貯蔵サイロだ。砦より高く建てられているから、そこから偵察できるかもしれない。",
    "role": "desc",
@@ -147048,7 +147118,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#032": {
+  "Reclaiming the House#030": {
    "src": "It's a risk though, since it's so close by, but we have no other options. Meet me at the tower southeast of here so we can survey the situation.",
    "dst": "近すぎて危険だが、ほかに手はない。ここから南東の塔で落ち合おう、状況を確かめるんだ。",
    "role": "desc",
@@ -147058,7 +147128,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#033": {
+  "Reclaiming the House#031": {
    "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "[-{~}, {~}, -{~}] の見張り塔へ行き、攻撃の作戦を立てる。",
    "role": "desc",
@@ -147068,7 +147138,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#034": {
+  "Reclaiming the House#032": {
    "src": "Soldier! I'm right behind you. You can see our outpost- and the tower I mentioned.",
    "dst": "兵士！すぐ後ろにいるぞ。私たちの前哨基地が見えるだろう—それに話した塔も。",
    "role": "desc",
@@ -147078,7 +147148,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#035": {
+  "Reclaiming the House#033": {
    "src": "We need to find a way in. A lot of soldiers were caught unaware during the Orcs' assault, too.",
    "dst": "中へ入る道を探さないと。オークの襲撃で不意を突かれた兵士も大勢いる。",
    "role": "desc",
@@ -147088,7 +147158,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#036": {
+  "Reclaiming the House#034": {
    "src": "If there's any survivors in there, we should make rescuing them a priority.",
    "dst": "中に生存者がいるなら、救出を最優先にすべきだ。",
    "role": "desc",
@@ -147098,7 +147168,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#037": {
+  "Reclaiming the House#035": {
    "src": "After all, it means more manpower for us. We can't count on that being the case, though...",
    "dst": "なにしろ、こちらの戦力が増えるからな。まあ、当てにはできないが…",
    "role": "desc",
@@ -147108,7 +147178,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#038": {
+  "Reclaiming the House#036": {
    "src": "Come on, hurry inside before one of the orcs spots us!",
    "dst": "さあ、オークに見つかる前に急いで中へ！",
    "role": "desc",
@@ -147118,7 +147188,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#039": {
+  "Reclaiming the House#037": {
    "src": "Enter to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "[-{~}, {~}, -{~}] の見張り塔に入り、攻撃の作戦を立てる。",
    "role": "desc",
@@ -147128,7 +147198,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#040": {
+  "Reclaiming the House#038": {
    "src": "Alright, this is a pretty clear view. Let's see what's going on in there...",
    "dst": "よし、よく見える。中の様子を見てみよう…",
    "role": "desc",
@@ -147138,7 +147208,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#042": {
+  "Reclaiming the House#039": {
    "src": "...but that cage is held up by those ropes. If we can cut them, the other soldiers should be able to help!",
    "dst": "…だが、あの檻はロープで吊られている。切れば、兵士たちが加勢できるはずだ！",
    "role": "desc",
@@ -147148,7 +147218,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#044": {
+  "Reclaiming the House#040": {
    "src": "Maybe we can keep an eye out on their sentry patterns and look for an opening-",
    "dst": "見張りの巡回を観察して、隙を探せば—",
    "role": "desc",
@@ -147158,7 +147228,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#045": {
+  "Reclaiming the House#041": {
    "src": "Humans on old tower! Junhur will shoot! This our place now, get out!!",
    "dst": "古い塔に人間！Junhur 撃つ！ここ今は我らの場所、出ていけ！！",
    "role": "desc",
@@ -147168,7 +147238,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#046": {
+  "Reclaiming the House#042": {
    "src": "Aw, not now! I knew this was a risk, no time to get out... Brace for impact!!",
    "dst": "ああ、よりによって今！危険は承知だった、逃げる時間はない…衝撃に備えろ！！",
    "role": "desc",
@@ -147178,7 +147248,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#047": {
+  "Reclaiming the House#043": {
    "src": "Old tower fall! Junhur is best cannon shooter!!",
    "dst": "古い塔、倒れた！Junhur 一番の大砲撃ち！！",
    "role": "desc",
@@ -147188,7 +147258,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#048": {
+  "Reclaiming the House#044": {
    "src": "Agh, soldier!! Are you alright, where'd you fall?!",
    "dst": "くっ、兵士！！無事か、どこに落ちた？！",
    "role": "desc",
@@ -147198,7 +147268,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#049": {
+  "Reclaiming the House#045": {
    "src": "Ah... Wow. You barely look scratched, you must've gotten really lucky.",
    "dst": "ああ…すごい。かすり傷もないじゃないか、よほど運がよかったんだな。",
    "role": "desc",
@@ -147208,7 +147278,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#050": {
+  "Reclaiming the House#046": {
    "src": "Not so much here... I'm pretty battered after that. At least one of us is in good condition...",
    "dst": "こっちはそうもいかない…かなりやられた。少なくとも一人は無事でよかった…",
    "role": "desc",
@@ -147218,7 +147288,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#051": {
+  "Reclaiming the House#047": {
    "src": "Unfortunately, that means figuring a way in is up to you. We can't examine their sentry patterns from down here.",
    "dst": "あいにく、中への道を探すのは君に任せるしかない。ここからじゃ見張りの巡回が見えない。",
    "role": "desc",
@@ -147228,7 +147298,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#052": {
+  "Reclaiming the House#048": {
    "src": "I'll survive, sure, but I won't be able to walk around and defend myself for a while.",
    "dst": "死にはしない、だがしばらくは歩くことも身を守ることもできない。",
    "role": "desc",
@@ -147238,7 +147308,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#053": {
+  "Reclaiming the House#049": {
    "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
    "dst": "君を一人にするのは心苦しいが、慰めになるなら—君は十分強いか、十分運がいい。きっと切り抜けられる。",
    "role": "desc",
@@ -147248,7 +147318,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#054": {
+  "Reclaiming the House#050": {
    "src": "Explore the perimeter of the outpost. Try to find a way in, but be careful, okay?",
    "dst": "前哨基地の外周を探ってくれ。中への道を探すんだ、でも気をつけて、いいな？",
    "role": "desc",
@@ -147258,7 +147328,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#055": {
+  "Reclaiming the House#051": {
    "src": "Explore the outpost's surroundings to find another way in.",
    "dst": "前哨基地の周囲を探索し、別の侵入経路を探す。",
    "role": "desc",
@@ -147268,7 +147338,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#056": {
+  "Reclaiming the House#052": {
    "src": "Follow the trail of mud left by the orc. It leads to the cave at [-{~}, {~}, -{~}]",
    "dst": "オークが残した泥の跡をたどる。[-{~}, {~}, -{~}] の洞窟へ続いている",
    "role": "desc",
@@ -147278,7 +147348,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#057": {
+  "Reclaiming the House#053": {
    "src": "Enter the outpost while covered in mud.",
    "dst": "泥まみれのまま前哨基地に入る。",
    "role": "desc",
@@ -147288,7 +147358,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#058": {
+  "Reclaiming the House#054": {
    "src": "More muddy orcs? In, now!",
    "dst": "また泥だらけのオーク？早く入れ！",
    "role": "desc",
@@ -147298,7 +147368,7 @@
    "speaker": "Orc Guard",
    "source": "wiki"
   },
-  "Reclaiming the House#059": {
+  "Reclaiming the House#055": {
    "src": "Cut the ropes to free the guards from the cage.",
    "dst": "ロープを切って、檻から衛兵を解放する。",
    "role": "desc",
@@ -147308,7 +147378,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#060": {
+  "Reclaiming the House#056": {
    "src": "Kill the Orcish Overtakers.",
    "dst": "Orcish Overtaker を倒す。",
    "role": "desc",
@@ -147318,7 +147388,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#061": {
+  "Reclaiming the House#057": {
    "src": "Good thinking with the mud disguise, soldier! They never suspected a thing, now come help us out over here!",
    "dst": "泥の変装とは名案だ、兵士！奴らまったく疑わなかった。さあ、こっちを手伝ってくれ！",
    "role": "desc",
@@ -147328,7 +147398,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#062": {
+  "Reclaiming the House#058": {
    "src": "Kill the Orcish Overtakers, we'll help keep the other ones off you!",
    "dst": "Orcish Overtaker を倒せ、他の奴らは俺たちが食い止める！",
    "role": "desc",
@@ -147338,7 +147408,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#063": {
+  "Reclaiming the House#059": {
    "src": "Open the gate with a spell",
    "dst": "呪文で門を開ける",
    "role": "desc",
@@ -147348,7 +147418,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#064": {
+  "Reclaiming the House#060": {
    "src": "The Overtakers are down, the other Orcs are flailing! Open the outpost's entrance with a spell now, we've got this under control!",
    "dst": "Overtaker は倒れた、他のオークは総崩れだ！呪文で前哨基地の入口を開けてくれ、ここは俺たちが抑える！",
    "role": "desc",
@@ -147358,7 +147428,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#065": {
+  "Reclaiming the House#061": {
    "src": "Talk to Elphaba.",
    "dst": "Elphaba と話す。",
    "role": "desc",
@@ -147368,7 +147438,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#066": {
+  "Reclaiming the House#062": {
    "src": "Phew... That's some fine work there, soldier! The outpost is back under our control!",
    "dst": "ふう…見事だったぞ、兵士！前哨基地は我々の手に戻った！",
    "role": "desc",
@@ -147378,7 +147448,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#067": {
+  "Reclaiming the House#063": {
    "src": "Glad to see some more capable Wynnic hands over here. Though, I didn't catch your name. Would you mind?",
    "dst": "頼れる Wynn の人手が増えて嬉しいよ。ところで、名前をまだ聞いていなかった。教えてくれるか？",
    "role": "desc",
@@ -147388,7 +147458,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#068": {
+  "Reclaiming the House#064": {
    "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "{u}、か。覚えておくよ。君は私の助けなんてほとんど要らなかったな、はは…足手まといになってすまない、でも結果オーライだ。",
    "role": "desc",
@@ -147398,7 +147468,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#069": {
+  "Reclaiming the House#065": {
    "src": "Here- it's some of my own personal spending money, as a thank-you gift.",
    "dst": "これを—私の個人的な小遣いだ、お礼として。",
    "role": "desc",
@@ -147408,7 +147478,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#070": {
+  "Reclaiming the House#066": {
    "src": "Alright everyone, let's get this place ship-shape! Everything needs to be repaired in case of another attack!!",
    "dst": "よし皆、ここを整えるぞ！次の襲撃に備えて、全部修理するんだ！！",
    "role": "desc",
@@ -147417,6 +147487,16 @@
    "stage": "Stage 11",
    "speaker": "Elphaba",
    "source": "wiki"
+  },
+  "Reclaiming the House#067": {
+   "src": "Follow the trail of mud left by the orc.",
+   "dst": "オークが残した泥の跡をたどる。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Recover the Past#000": {
    "src": "But with this device... we can change that! Restore what has been lost! Recover the- you get the point.",
@@ -155571,6 +155651,16 @@
    "stage": "Stage 10",
    "speaker": "Nasea",
    "source": "wiki"
+  },
+  "Rise of the Quartron#118": {
+   "src": "Talk to Nasea in the Karoc Quarry at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] の Karoc Quarry で Nasea と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
@@ -199808,6 +199898,16 @@
    "dst": "真相を明らかにするのが容易でないのは分かっているが、どうか続けてほしい。[{~} Twain の日記] を持ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] の House of Twain にいる Twendle と話す。",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

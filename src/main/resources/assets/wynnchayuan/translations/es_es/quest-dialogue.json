@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 24873,
-  "translated": 24870,
+  "count": 24883,
+  "translated": 24880,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -15449,7 +15449,7 @@
    "source": "captured"
   },
   "A Sandy Scandal#028": {
-   "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
+   "src": "Looks like the bandits have started their heist! You should follow them into the bank and stop them.",
    "dst": "¡Parece que los bandidos han empezado el golpe! Deberías seguirlos al banco y detenerlos.",
    "role": "desc",
    "kind": "dialogue",
@@ -25595,7 +25595,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
    "dst": "¡Ureietun! ¡Humano salvar vida de Ressinter! ¿Por qué no confiar?",
    "role": "desc",
    "kind": "dialogue",
@@ -25645,8 +25645,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
-   "dst": "...poder confiar en que humano no matar. Humano andar por Centerworld. ¡Pero no ver a Arrai-Veretel!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "dst": "Poder confiar en que humano no matar. Humano andar por Centerworld. ¡Pero no ver a Arrai-Veretel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -38177,7 +38177,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#074": {
-   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
+   "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in its nest to stop the spiders, once and for all.",
    "dst": "Oíste a la araña mencionar a una reina, ¿verdad? Seguramente tendremos que vencerla en su nido para acabar con las arañas de una vez por todas.",
    "role": "desc",
    "kind": "dialogue",
@@ -38187,7 +38187,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#075": {
-   "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
+   "src": "We should get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
    "dst": "Deberíamos ir bajando la montaña. No hagamos esperar a Aledar y al capitán.",
    "role": "desc",
    "kind": "dialogue",
@@ -55307,6 +55307,16 @@
   "Crop Failure#054": {
    "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
    "dst": "Échale un vistazo si te ves con ganas de investigar, compadre. Ese granjero querrá verlo con sus propios ojos para creérselo cuando encuentres algo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#055": {
+   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "¡Buen día! ¿Qué te hace falta de las existencias del viejo Doubiss?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -101459,6 +101469,16 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
+  "Ice Nations#030": {
+   "src": "Find the ghost ship by heading north of the {p} and bring back [Ancient Treasure] to Hallfred at [{~}, {~}, -{~}]",
+   "dst": "Encuentra el barco fantasma yendo al norte de {p} y lleva el [Ancient Treasure] a Hallfred en [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Infested Plants#000": {
    "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
    "dst": "Me adelanto. ¡Sigue las coordenadas de tu libro de contenido para encontrar esa cueva!",
@@ -107595,7 +107615,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#032": {
+  "Lost Soles#031": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "\"La cara sobre el salón posee la nariz que debe pesar más para abrir el camino\".",
    "role": "desc",
@@ -107605,7 +107625,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#033": {
+  "Lost Soles#032": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
    "dst": "Hmm, todas las pistas salen en un capítulo sobre esta sala, el comedor. ¿Se te ocurre qué significa? Parece que debería ser obvio, pero no hay manera de que lo saque.",
    "role": "desc",
@@ -107615,7 +107635,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#034": {
+  "Lost Soles#033": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
    "dst": "\"La cara sobre el salón posee la nariz que debe pesar más para abrir el camino\"",
    "role": "desc",
@@ -107625,7 +107645,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#035": {
+  "Lost Soles#034": {
    "src": "Talk to Grandon and tell him about your findings",
    "dst": "Habla con Grandon y cuéntale lo que has descubierto",
    "role": "desc",
@@ -107635,7 +107655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#036": {
+  "Lost Soles#035": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
    "dst": "¿Una sala escondida bajo la cabezota? ¡¿Cómo no se me ocurrió?! Siempre me pregunté qué ego había que tener para ponerla ahí, ¡y resulta que tenía una función!",
    "role": "desc",
@@ -107645,7 +107665,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#037": {
+  "Lost Soles#036": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "¿Un cartel te decía que buscaras piedra en la esquina? Hm... ¡intrigante!",
    "role": "desc",
@@ -107655,7 +107675,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#039": {
+  "Lost Soles#037": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
    "dst": "En fin, parece que supusieron que tendríamos que buscar cómo devolver las botas, y lo prepararon todo. Menos mal.",
    "role": "desc",
@@ -107665,7 +107685,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#040": {
+  "Lost Soles#038": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
    "dst": "Como decía, la escalera está destrozada. Vamos, yo desde luego no treparía por esas maderas podridas. Igual es mejor buscar esa piedra, ¿hm?",
    "role": "desc",
@@ -107675,7 +107695,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#041": {
+  "Lost Soles#039": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
    "dst": "Pero ¿dónde estará...? ¿Oh? ¿Esto es una pista? Acabo de verlo en la página siguiente.",
    "role": "desc",
@@ -107685,7 +107705,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#042": {
+  "Lost Soles#040": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
    "dst": "\"La alfombra de otro color te mostrará la piedra que revela el secreto de la mesa\".",
    "role": "desc",
@@ -107695,7 +107715,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#043": {
+  "Lost Soles#041": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
    "dst": "\"La alfombra de otro color te mostrará la piedra que revela el secreto de la mesa\"",
    "role": "desc",
@@ -107705,7 +107725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#045": {
+  "Lost Soles#042": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
    "dst": "¡Caray! ¡Vaya ingenieros estaban hechos los viejos! Jamás habría imaginado nada de esto en la casa. En fin, ¿había un mensaje? ¿Qué decía?",
    "role": "desc",
@@ -107715,7 +107735,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#046": {
+  "Lost Soles#043": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
    "dst": "¿El agujero que nadie quería? Solo puede referirse a la ratonera del fondo de esta sala. Aunque ya no es más que un agujero, las ratas se fueron.",
    "role": "desc",
@@ -107725,7 +107745,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#047": {
+  "Lost Soles#044": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
    "dst": "Bueno, detalles, detalles. Nunca lo revisamos más allá de poner trampas, así que puede que haya algo dentro, viendo lo complejos que son estos artilugios.",
    "role": "desc",
@@ -107735,7 +107755,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#048": {
+  "Lost Soles#045": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
    "dst": "¡Yo miraría en el agujero y luego encima de las banderas azules!",
    "role": "desc",
@@ -107745,7 +107765,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#049": {
+  "Lost Soles#046": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
    "dst": "Pero si ese es el paso a la planta de arriba, ¿qué significa esto del diario?",
    "role": "desc",
@@ -107755,7 +107775,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#050": {
+  "Lost Soles#047": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
    "dst": "¿\"Lanza algo detrás del mapa de la pared para descubrir una parte del código\"? ¡Espera, eso será el código del sótano! ¡Vuelve enseguida cuando lo hayas hecho, tengo más que contarte!",
    "role": "desc",
@@ -107765,7 +107785,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#051": {
+  "Lost Soles#048": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
    "dst": "\"Lanza algo detrás del mapa de la pared para descubrir una parte del código\"",
    "role": "desc",
@@ -107775,7 +107795,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#052": {
+  "Lost Soles#049": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
    "dst": "¿¡Has encontrado una parte del código!? ¡Jajá, excelente! ¡Debo decir que has avanzado más en unos minutos que yo en unos años! ¡Los humanos sois algo serio!",
    "role": "desc",
@@ -107785,7 +107805,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#053": {
+  "Lost Soles#050": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
    "dst": "Ahora el diario dice que debes subir a la segunda planta para hallar los otros {~} dígitos del código.",
    "role": "desc",
@@ -107795,7 +107815,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#054": {
+  "Lost Soles#051": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
    "dst": "Recuerda: para subir a la segunda planta hay que usar el botón de la ratonera y abrir el paso sobre las banderas azules del techo.",
    "role": "desc",
@@ -107805,7 +107825,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#055": {
+  "Lost Soles#052": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
    "dst": "No dice dónde están, solo que están bien escondidos y que hay más pistas por la casa. ¡Los otros {~} dígitos deberían estar todos en la segunda planta! Quizá Leacen haya visto algo de ellos mientras estaba arriba.",
    "role": "desc",
@@ -107815,7 +107835,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#056": {
+  "Lost Soles#053": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
    "dst": "Cuando tengas el código entero, ve al sótano. Basta con seguir el camino y los carteles de fuera de la mansión.",
    "role": "desc",
@@ -107825,7 +107845,7 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#057": {
+  "Lost Soles#054": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
    "dst": "Abre el paso secreto sobre las banderas metiendo la mano en el agujero que nadie quería",
    "role": "desc",
@@ -107835,7 +107855,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#058": {
+  "Lost Soles#055": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
    "dst": "Lleva [{~} Boot Container] y [Abysso Galoshes] de vuelta a Ferndor",
    "role": "desc",
@@ -107845,7 +107865,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Soles#059": {
+  "Lost Soles#056": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
    "dst": "Jolín, estaba segura de que uno de estos libros abriría un estante secreto... ah, hola, humanito. ¿Tú también lograste subir la escalera?",
    "role": "desc",
@@ -107855,7 +107875,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#060": {
+  "Lost Soles#057": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "¡Hala, un pasadizo secreto! No mola tanto como subir trepando, ¡pero buen trabajo igual! Supongo que buscas las pistas del código, ¿no?",
    "role": "desc",
@@ -107865,7 +107885,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#063": {
+  "Lost Soles#058": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
    "dst": "Mira lo que te digo, humanito. Nos echas una mano y yo te cuento algo que te va a interesar. ¿Te parece bien?",
    "role": "desc",
@@ -107875,7 +107895,7 @@
    "speaker": "Leacen",
    "source": "wiki"
   },
-  "Lost Soles#064": {
+  "Lost Soles#059": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
    "dst": "En la planta de arriba hay dormitorios y una escalera de caracol que arranca en [-{~}, {~}, -{~}]. Sube hasta lo más alto y saldrás al tejado de la mansión. El cartel está en [-{~}, {~}, -{~}], al borde del tejado, y dice \"{~} is the first\".",
    "role": "desc",
@@ -107885,7 +107905,7 @@
    "speaker": "First Digit",
    "source": "wiki"
   },
-  "Lost Soles#065": {
+  "Lost Soles#060": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
    "dst": "El cartel del segundo dígito es el de la etapa {~}: lanza cualquier objeto al mapa junto a Grandon y verás que el segundo dígito es {~}.",
    "role": "desc",
@@ -107895,7 +107915,7 @@
    "speaker": "Second Digit",
    "source": "wiki"
   },
-  "Lost Soles#066": {
+  "Lost Soles#061": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
    "dst": "En la segunda planta, en [-{~}, {~}, -{~}], hay una puerta de hierro con un botón al lado. Púlsalo para abrirla y entra en la salita; deberías encontrar un cartel que dice \"He told us that the blue flowers are special...\". De vuelta a la zona de fuera de la puerta de hierro, hay una flor azul en un estante alto junto a un botón en [-{~}, {~}, -{~}]. El botón abre una escalera que lleva a un dormitorio en la esquina de la sala, en [-{~}, {~}, -{~}]. El tercer cartel está en la pared de la habitación a la que lleva la escalera, en [-{~}, {~}, -{~}], y dice \"{~} is the third\".",
    "role": "desc",
@@ -107905,7 +107925,7 @@
    "speaker": "Third Digit",
    "source": "wiki"
   },
-  "Lost Soles#067": {
+  "Lost Soles#062": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
    "dst": "En la tercera planta hay una escalera que arranca en [-{~}, {~}, -{~}] y lleva a una pasarela que cruza un pasillo. Saltando de la pasarela por un hueco de la barandilla del lado norte, puedes meterte en un pequeño hueco con un cartel que dice \"He always hid something underneath his pillow...\". Baja de nuevo al Dormitorio Principal en [-{~}, {~}, -{~}] y, como sugiere la pista, lanza una esmeralda sobre la almohada. Esto abre una salita detrás de un estante alto, en [-{~}, {~}, -{~}], que lleva al cartel final, que dice \"{~} is the fourth\". Ten en cuenta que, si no eres lo bastante rápido para entrar en la sala, puedes lanzar la esmeralda hasta la almohada desde encima del estante.",
    "role": "desc",
@@ -107915,7 +107935,7 @@
    "speaker": "Fourth Digit",
    "source": "wiki"
   },
-  "Lost Soles#068": {
+  "Lost Soles#063": {
    "src": "You found the container? I wish I would have gone with you...",
    "dst": "¿Encontraste el contenedor? Ojalá hubiera ido contigo...",
    "role": "desc",
@@ -107925,7 +107945,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#069": {
+  "Lost Soles#064": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
    "dst": "¡Al menos podemos detener la lenta decadencia de la mansión! Deja que meta las botas en el contenedor...",
    "role": "desc",
@@ -107935,7 +107955,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#070": {
+  "Lost Soles#065": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
    "dst": "Qué fácil. Sigo sin creer que algo tan pequeño cause tantos problemas.",
    "role": "desc",
@@ -107945,7 +107965,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#071": {
+  "Lost Soles#066": {
    "src": "Well, I can not just let you stand there without a reward, right?",
    "dst": "Bueno, no puedo dejarte ahí de pie sin recompensa, ¿verdad?",
    "role": "desc",
@@ -107955,7 +107975,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#072": {
+  "Lost Soles#067": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
    "dst": "Toma, ¿qué tal unas esmeraldas y estas botas? Son reliquias que le dio a mi familia el gremio Sodeta, que antaño poseyó esta mansión. ¡Prometo que no son malignas! ¡Visítanos cuando quieras!",
    "role": "desc",
@@ -107965,7 +107985,7 @@
    "speaker": "Ferndor",
    "source": "wiki"
   },
-  "Lost Soles#073": {
+  "Lost Soles#068": {
    "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
    "dst": "Me pregunto adónde habrán ido esas botas... Ha pasado mucho tiempo. ¿Sabes algo de las [Abysso Galoshes]?",
    "role": "desc",
@@ -107975,7 +107995,7 @@
    "speaker": "Ferndor",
    "source": "captured"
   },
-  "Lost Soles#074": {
+  "Lost Soles#069": {
    "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
    "dst": "¡Un pirata nos las robó hace años! ¡Si me traes las [Abysso Galoshes] y nos ayudas, te recompensaré!",
    "role": "desc",
@@ -107983,6 +108003,36 @@
    "quest": "Lost Soles",
    "stage": "Stage 1",
    "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#070": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor at [-{~}, {~}, -{~}]",
+   "dst": "Lleva [{~} Boot Container] y [Abysso Galoshes] de vuelta a Ferndor en [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#071": {
+   "src": "It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "Hace bastante que no se puede subir, desde que se derrumbó la escalera. Salvo Leacen, pero está un poco loca...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#072": {
+   "src": "The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "¡Los otros {~} dígitos deberían estar todos en la segunda planta! Quizá Leacen haya visto algo de ellos mientras estaba arriba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Tower#000": {
@@ -111411,6 +111461,16 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
+  "Memory Paranoia#127": {
+   "src": "Look around the chandelier at the stairs.",
+   "dst": "Examina los alrededores de la lámpara junto a la escalera.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Misadventure on the Sea#000": {
    "src": "As you touch the obelisk, it ignites with an otherworldly blue light...",
    "dst": "Al tocar el obelisco, se enciende con una luz azul de otro mundo...",
@@ -112662,7 +112722,7 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#125": {
-   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
+   "src": "Soldier, now's your time to shine! Scare it off with one of your spells or somethin'!",
    "dst": "¡Soldado, ha llegado tu momento! ¡Espántalo con uno de tus hechizos o algo!",
    "role": "desc",
    "kind": "dialogue",
@@ -126970,8 +127030,8 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "Encuentra la puerta oculta junto a la verja cerca de las Ruinas de la Maleza a las afueras de {p}",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
+   "dst": "Encuentra la puerta oculta junto a las Ruinas de la Maleza a las afueras de {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127200,8 +127260,8 @@
    "source": "wiki"
   },
   "Out of my Mind#049": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "Encuentra la forma de destruir al monstruo vegetal y vuelve con el grupo en {p} en [-{~},-{~}] para contar lo que has descubierto",
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~}, {~}, -{~}] to report your findings",
+   "dst": "Encuentra la forma de destruir al monstruo vegetal y vuelve con el grupo en {p} en [-{~}, {~}, -{~}] para contar lo que has descubierto",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -127318,6 +127378,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "Habla con los niños de {p} en [-{~}, {~}, -{~}], dentro de la casa del árbol",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Overture to Despair#000": {
    "src": "- No weaponry or blessed equipment in common areas.",
@@ -146025,7 +146095,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#001": {
+  "Reclaiming the House#000": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Necesito más potencia de fuego si quiero... recuperar...",
    "role": "desc",
@@ -146035,7 +146105,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#002": {
+  "Reclaiming the House#001": {
    "src": "Anyway, it's clear that I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
    "dst": "En fin, está claro que necesitaré más potencia de fuego si quiero tener alguna opción de recuperar ese puesto.",
    "role": "desc",
@@ -146045,7 +146115,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#003": {
+  "Reclaiming the House#002": {
    "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's...kind of a relief.",
    "dst": "Pe- ¡No me lo creo! Ahí en el centro- ¿los han enjaulado en vez de matarlos? Eso es... casi un alivio.",
    "role": "desc",
@@ -146055,7 +146125,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#004": {
+  "Reclaiming the House#003": {
    "src": "There's definitely too many orcs in the plaza there for us to take down on our own...",
    "dst": "Hay demasiados orcos en la plaza para que podamos con ellos solos...",
    "role": "desc",
@@ -146065,7 +146135,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#005": {
+  "Reclaiming the House#004": {
    "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may not be an option...",
    "dst": "Bien, ahora solo me falta pensar cómo entramos los dos... Hay centinelas en el perímetro, así que saltar por encima quizá no sea opción...",
    "role": "desc",
@@ -146075,7 +146145,7 @@
    "speaker": "Elphaba",
    "source": "captured"
   },
-  "Reclaiming the House#006": {
+  "Reclaiming the House#005": {
    "src": "Someone outside door? Check!",
    "dst": "¿Alguien fuera de puerta? ¡Comprobar!",
    "role": "desc",
@@ -146085,7 +146155,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#007": {
+  "Reclaiming the House#006": {
    "src": "Oh, orc from mud bath. In, now!",
    "dst": "Oh, orco de baño de barro. ¡Adentro, ya!",
    "role": "desc",
@@ -146095,7 +146165,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#008": {
+  "Reclaiming the House#007": {
    "src": "No enter for humans! This place belong to orcs!",
    "dst": "¡Humanos no entrar! ¡Este sitio pertenecer a orcos!",
    "role": "desc",
@@ -146105,7 +146175,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#009": {
+  "Reclaiming the House#008": {
    "src": "Someone outside door. Check!",
    "dst": "Alguien fuera de puerta. ¡Comprobar!",
    "role": "desc",
@@ -146115,7 +146185,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#010": {
+  "Reclaiming the House#009": {
    "src": "Ah... Took mud bath. Orc enter, quick!",
    "dst": "Ah… Tomar baño de barro. ¡Orco entrar, rápido!",
    "role": "desc",
@@ -146125,7 +146195,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#011": {
+  "Reclaiming the House#010": {
    "src": "[{~}/{~}] Ropes cut.",
    "dst": "[{~}/{~}] Cuerdas cortadas.",
    "role": "desc",
@@ -146135,7 +146205,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#012": {
+  "Reclaiming the House#011": {
    "src": "The Gavellian Army's sending reinforcements to our outpost, finally. Everything was getting too much to handle on our end.",
    "dst": "El Ejército de Gavel está enviando refuerzos a nuestro puesto, por fin. Todo se nos estaba yendo de las manos por aquí.",
    "role": "desc",
@@ -146145,7 +146215,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#013": {
+  "Reclaiming the House#012": {
    "src": "You Wynnic folks are way better suited than us for guard duty. Why don't you take over for me, huh?",
    "dst": "Vosotros, los de Wynn, estáis mucho más hechos para la guardia que nosotros. ¿Por qué no me relevas, eh?",
    "role": "desc",
@@ -146155,7 +146225,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Reclaiming the House#014": {
+  "Reclaiming the House#013": {
    "src": "Join Elphaba on a mission in the Temporary Camp at [-{~}, {~}, -{~}]",
    "dst": "Únete a Elphaba en una misión en el Temporary Camp, en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -146165,7 +146235,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#015": {
+  "Reclaiming the House#014": {
    "src": "Oh, a Wynnic soldier out here in the boondocks? Honestly, you're just what we need- I could use your help, if you're able?",
    "dst": "¿Un soldado de Wynn por estos andurriales? La verdad, eres justo lo que necesitamos- Me vendría bien tu ayuda, ¿te ves capaz?",
    "role": "desc",
@@ -146175,7 +146245,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#016": {
+  "Reclaiming the House#015": {
    "src": "Good, thank you. Let me lock down the camp before I give you the briefing, though.",
    "dst": "Bien, gracias. Aunque déjame cerrar el campamento antes de darte las instrucciones.",
    "role": "desc",
@@ -146185,7 +146255,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#017": {
+  "Reclaiming the House#016": {
    "src": "My name is Elphaba. I've been working with the Gavellian army for a good few years now.",
    "dst": "Me llamo Elphaba. Llevo ya unos cuantos años trabajando con el ejército de Gavel.",
    "role": "desc",
@@ -146195,7 +146265,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#018": {
+  "Reclaiming the House#017": {
    "src": "I'm the commander of the {p} Outpost down ahead. It's a strategic fortress, placed to monitor the Orcish capital.",
    "dst": "Mando el puesto avanzado de {p}, ahí delante. Es una fortaleza estratégica para vigilar la capital orca.",
    "role": "desc",
@@ -146205,7 +146275,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#019": {
+  "Reclaiming the House#018": {
    "src": "It was safe for a long while, but especially in the past while the Orcs have gotten far bolder, more aggressive.",
    "dst": "Estuvo seguro mucho tiempo, pero sobre todo últimamente los orcos se han vuelto mucho más audaces y agresivos.",
    "role": "desc",
@@ -146215,7 +146285,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#020": {
+  "Reclaiming the House#019": {
    "src": "They overwhelmed the outpost- we had to retreat and set up this camp to watch over the place we used to watch over them with!",
    "dst": "Arrasaron el puesto- tuvimos que retirarnos y montar este campamento para vigilar el lugar desde el que los vigilábamos a ellos.",
    "role": "desc",
@@ -146225,7 +146295,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#021": {
+  "Reclaiming the House#020": {
    "src": "...oh no. See, this is what I mean! The orcs are coming!",
    "dst": "...ay, no. ¿Ves? ¡A esto me refiero! ¡Los orcos vienen!",
    "role": "desc",
@@ -146235,7 +146305,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#022": {
+  "Reclaiming the House#021": {
    "src": "Brace yourself, soldier! Protect the camp!",
    "dst": "¡Prepárate, soldado! ¡Protege el campamento!",
    "role": "desc",
@@ -146245,7 +146315,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#023": {
+  "Reclaiming the House#022": {
    "src": "Kill the mobs raiding the Camp.",
    "dst": "Mata a los monstruos que asaltan el campamento.",
    "role": "desc",
@@ -146255,7 +146325,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#024": {
+  "Reclaiming the House#023": {
    "src": "This is the third attack in three days! How many reinforcements have they got?!",
    "dst": "¡Es el tercer ataque en tres días! ¡¿Cuántos refuerzos tienen?!",
    "role": "desc",
@@ -146265,7 +146335,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#025": {
+  "Reclaiming the House#024": {
    "src": "Gah! Their casters are strong, careful!",
    "dst": "¡Agh! Sus magos son fuertes, ¡cuidado!",
    "role": "desc",
@@ -146275,7 +146345,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#026": {
+  "Reclaiming the House#025": {
    "src": "Talk to Elphaba for information on the upcoming attack.",
    "dst": "Habla con Elphaba para saber más sobre el ataque que se avecina.",
    "role": "desc",
@@ -146285,7 +146355,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#027": {
+  "Reclaiming the House#026": {
    "src": "Ugh, I think that was all of them... Come here now, I'll start up where we left off.",
    "dst": "Uf, creo que ya están todos... Ven aquí, retomo donde lo dejamos.",
    "role": "desc",
@@ -146295,7 +146365,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#028": {
+  "Reclaiming the House#027": {
    "src": "Not sure I could have done that myself. I'm lucky you came around when you did, soldier.",
    "dst": "No sé si habría podido hacerlo yo sola. Suerte que has aparecido justo ahora, soldado.",
    "role": "desc",
@@ -146305,7 +146375,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#030": {
+  "Reclaiming the House#028": {
    "src": "You've certainly got the fighting chops, so I'd appreciate the aid, but we've got to come up with a plan, fast.",
    "dst": "Desde luego sabes pelear, así que te agradezco la ayuda, pero tenemos que idear un plan, rápido.",
    "role": "desc",
@@ -146315,7 +146385,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#031": {
+  "Reclaiming the House#029": {
    "src": "There's an old tower near the outpost- some old storage silo. It was built taller than the fort, so we might be able to spy on them from there.",
    "dst": "Cerca del puesto hay una torre vieja- un antiguo silo de almacenaje. La construyeron más alta que el fuerte, así que quizá podamos espiarlos desde allí.",
    "role": "desc",
@@ -146325,7 +146395,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#032": {
+  "Reclaiming the House#030": {
    "src": "It's a risk though, since it's so close by, but we have no other options. Meet me at the tower southeast of here so we can survey the situation.",
    "dst": "Es un riesgo, porque está muy cerca, pero no tenemos otra opción. Reúnete conmigo en la torre al sureste de aquí y estudiamos la situación.",
    "role": "desc",
@@ -146335,7 +146405,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#033": {
+  "Reclaiming the House#031": {
    "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "Ve a la torre de vigilancia en [-{~}, {~}, -{~}] para planear el ataque.",
    "role": "desc",
@@ -146345,7 +146415,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#034": {
+  "Reclaiming the House#032": {
    "src": "Soldier! I'm right behind you. You can see our outpost- and the tower I mentioned.",
    "dst": "¡Soldado! Estoy justo detrás de ti. Ya ves nuestro puesto- y la torre de la que te hablé.",
    "role": "desc",
@@ -146355,7 +146425,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#035": {
+  "Reclaiming the House#033": {
    "src": "We need to find a way in. A lot of soldiers were caught unaware during the Orcs' assault, too.",
    "dst": "Tenemos que encontrar una forma de entrar. Además, el asalto de los orcos pilló desprevenidos a muchos soldados.",
    "role": "desc",
@@ -146365,7 +146435,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#036": {
+  "Reclaiming the House#034": {
    "src": "If there's any survivors in there, we should make rescuing them a priority.",
    "dst": "Si queda algún superviviente ahí dentro, rescatarlo debería ser lo primero.",
    "role": "desc",
@@ -146375,7 +146445,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#037": {
+  "Reclaiming the House#035": {
    "src": "After all, it means more manpower for us. We can't count on that being the case, though...",
    "dst": "Al fin y al cabo, eso significa más efectivos para nosotros. Aunque no podemos contar con ello...",
    "role": "desc",
@@ -146385,7 +146455,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#038": {
+  "Reclaiming the House#036": {
    "src": "Come on, hurry inside before one of the orcs spots us!",
    "dst": "¡Vamos, entra rápido antes de que nos vea algún orco!",
    "role": "desc",
@@ -146395,7 +146465,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#039": {
+  "Reclaiming the House#037": {
    "src": "Enter to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "Entra en la torre de vigilancia en [-{~}, {~}, -{~}] para planear el ataque.",
    "role": "desc",
@@ -146405,7 +146475,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#040": {
+  "Reclaiming the House#038": {
    "src": "Alright, this is a pretty clear view. Let's see what's going on in there...",
    "dst": "Bien, desde aquí se ve bastante claro. Veamos qué pasa ahí dentro...",
    "role": "desc",
@@ -146415,7 +146485,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#042": {
+  "Reclaiming the House#039": {
    "src": "...but that cage is held up by those ropes. If we can cut them, the other soldiers should be able to help!",
    "dst": "...pero esa jaula cuelga de esas cuerdas. ¡Si las cortamos, los demás soldados podrán ayudar!",
    "role": "desc",
@@ -146425,7 +146495,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#044": {
+  "Reclaiming the House#040": {
    "src": "Maybe we can keep an eye out on their sentry patterns and look for an opening-",
    "dst": "Quizá podamos vigilar las rondas de los centinelas y buscar un hueco-",
    "role": "desc",
@@ -146435,7 +146505,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#045": {
+  "Reclaiming the House#041": {
    "src": "Humans on old tower! Junhur will shoot! This our place now, get out!!",
    "dst": "¡Humanos en torre vieja! ¡Junhur disparar! ¡¡Este sitio ahora nuestro, fuera!!",
    "role": "desc",
@@ -146445,7 +146515,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#046": {
+  "Reclaiming the House#042": {
    "src": "Aw, not now! I knew this was a risk, no time to get out... Brace for impact!!",
    "dst": "¡Ahora no! Sabía que era un riesgo, no da tiempo a salir... ¡¡Al suelo!!",
    "role": "desc",
@@ -146455,7 +146525,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#047": {
+  "Reclaiming the House#043": {
    "src": "Old tower fall! Junhur is best cannon shooter!!",
    "dst": "¡Torre vieja caer! ¡¡Junhur ser mejor tirador de cañón!!",
    "role": "desc",
@@ -146465,7 +146535,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#048": {
+  "Reclaiming the House#044": {
    "src": "Agh, soldier!! Are you alright, where'd you fall?!",
    "dst": "¡¡Agh, soldado!! ¿Estás bien? ¡¿Dónde has caído?!",
    "role": "desc",
@@ -146475,7 +146545,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#049": {
+  "Reclaiming the House#045": {
    "src": "Ah... Wow. You barely look scratched, you must've gotten really lucky.",
    "dst": "Ah... Vaya. Casi ni tienes un rasguño, has debido de tener mucha suerte.",
    "role": "desc",
@@ -146485,7 +146555,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#050": {
+  "Reclaiming the House#046": {
    "src": "Not so much here... I'm pretty battered after that. At least one of us is in good condition...",
    "dst": "Aquí no tanto... Me he llevado una buena. Al menos uno de los dos está en condiciones...",
    "role": "desc",
@@ -146495,7 +146565,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#051": {
+  "Reclaiming the House#047": {
    "src": "Unfortunately, that means figuring a way in is up to you. We can't examine their sentry patterns from down here.",
    "dst": "Por desgracia, eso significa que buscar la manera de entrar te toca a ti. Desde aquí abajo no vemos sus rondas.",
    "role": "desc",
@@ -146505,7 +146575,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#052": {
+  "Reclaiming the House#048": {
    "src": "I'll survive, sure, but I won't be able to walk around and defend myself for a while.",
    "dst": "Sobreviviré, claro, pero durante un tiempo no podré moverme ni defenderme.",
    "role": "desc",
@@ -146515,7 +146585,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#053": {
+  "Reclaiming the House#049": {
    "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
    "dst": "Odio dejarte solo así, pero si te sirve de consuelo, deberías ser lo bastante duro, o lo bastante afortunado, para salir adelante.",
    "role": "desc",
@@ -146525,7 +146595,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#054": {
+  "Reclaiming the House#050": {
    "src": "Explore the perimeter of the outpost. Try to find a way in, but be careful, okay?",
    "dst": "Explora el perímetro del puesto. Intenta encontrar una forma de entrar, pero ten cuidado, ¿vale?",
    "role": "desc",
@@ -146535,7 +146605,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#055": {
+  "Reclaiming the House#051": {
    "src": "Explore the outpost's surroundings to find another way in.",
    "dst": "Explora los alrededores del puesto para encontrar otra forma de entrar.",
    "role": "desc",
@@ -146545,7 +146615,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#056": {
+  "Reclaiming the House#052": {
    "src": "Follow the trail of mud left by the orc. It leads to the cave at [-{~}, {~}, -{~}]",
    "dst": "Sigue el rastro de barro que dejó el orco. Lleva a la cueva en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -146555,7 +146625,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#057": {
+  "Reclaiming the House#053": {
    "src": "Enter the outpost while covered in mud.",
    "dst": "Entra en el puesto cubierto de barro.",
    "role": "desc",
@@ -146565,7 +146635,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#058": {
+  "Reclaiming the House#054": {
    "src": "More muddy orcs? In, now!",
    "dst": "¿Más orcos con barro? ¡Adentro, ya!",
    "role": "desc",
@@ -146575,7 +146645,7 @@
    "speaker": "Orc Guard",
    "source": "wiki"
   },
-  "Reclaiming the House#059": {
+  "Reclaiming the House#055": {
    "src": "Cut the ropes to free the guards from the cage.",
    "dst": "Corta las cuerdas para liberar a los guardias de la jaula.",
    "role": "desc",
@@ -146585,7 +146655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#060": {
+  "Reclaiming the House#056": {
    "src": "Kill the Orcish Overtakers.",
    "dst": "Mata a los Orcish Overtaker.",
    "role": "desc",
@@ -146595,7 +146665,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#061": {
+  "Reclaiming the House#057": {
    "src": "Good thinking with the mud disguise, soldier! They never suspected a thing, now come help us out over here!",
    "dst": "¡Buena idea la del disfraz de barro, soldado! No sospecharon nada, ¡ahora ven a echarnos una mano aquí!",
    "role": "desc",
@@ -146605,7 +146675,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#062": {
+  "Reclaiming the House#058": {
    "src": "Kill the Orcish Overtakers, we'll help keep the other ones off you!",
    "dst": "¡Mata a los Orcish Overtaker, nosotros te quitamos a los demás de encima!",
    "role": "desc",
@@ -146615,7 +146685,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#063": {
+  "Reclaiming the House#059": {
    "src": "Open the gate with a spell",
    "dst": "Abre la puerta con un hechizo",
    "role": "desc",
@@ -146625,7 +146695,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#064": {
+  "Reclaiming the House#060": {
    "src": "The Overtakers are down, the other Orcs are flailing! Open the outpost's entrance with a spell now, we've got this under control!",
    "dst": "¡Los Overtaker han caído, los demás orcos están desbordados! Abre ahora la entrada del puesto con un hechizo, ¡esto lo tenemos controlado!",
    "role": "desc",
@@ -146635,7 +146705,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#065": {
+  "Reclaiming the House#061": {
    "src": "Talk to Elphaba.",
    "dst": "Habla con Elphaba.",
    "role": "desc",
@@ -146645,7 +146715,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#066": {
+  "Reclaiming the House#062": {
    "src": "Phew... That's some fine work there, soldier! The outpost is back under our control!",
    "dst": "Uf... ¡Menudo trabajo, soldado! ¡El puesto vuelve a estar bajo nuestro control!",
    "role": "desc",
@@ -146655,7 +146725,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#067": {
+  "Reclaiming the House#063": {
    "src": "Glad to see some more capable Wynnic hands over here. Though, I didn't catch your name. Would you mind?",
    "dst": "Me alegra tener aquí más manos capaces de Wynn. Aunque no he oído tu nombre. ¿Te importa?",
    "role": "desc",
@@ -146665,7 +146735,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#068": {
+  "Reclaiming the House#064": {
    "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "{u}, ¿eh? Lo recordaré. Casi no has necesitado mi ayuda, je... Ojalá no hubiera sido una carga, pero al menos ha salido bien.",
    "role": "desc",
@@ -146675,7 +146745,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#069": {
+  "Reclaiming the House#065": {
    "src": "Here- it's some of my own personal spending money, as a thank-you gift.",
    "dst": "Toma- son unos ahorrillos míos, como regalo de agradecimiento.",
    "role": "desc",
@@ -146685,7 +146755,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#070": {
+  "Reclaiming the House#066": {
    "src": "Alright everyone, let's get this place ship-shape! Everything needs to be repaired in case of another attack!!",
    "dst": "¡Muy bien, todos, dejemos esto como los chorros del oro! ¡¡Hay que repararlo todo por si hay otro ataque!!",
    "role": "desc",
@@ -146694,6 +146764,16 @@
    "stage": "Stage 11",
    "speaker": "Elphaba",
    "source": "wiki"
+  },
+  "Reclaiming the House#067": {
+   "src": "Follow the trail of mud left by the orc.",
+   "dst": "Sigue el rastro de barro que dejó el orco.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Recover the Past#000": {
    "src": "But with this device... we can change that! Restore what has been lost! Recover the- you get the point.",
@@ -154848,6 +154928,16 @@
    "stage": "Stage 10",
    "speaker": "Nasea",
    "source": "wiki"
+  },
+  "Rise of the Quartron#118": {
+   "src": "Talk to Nasea in the Karoc Quarry at [-{~}, {~}, -{~}]",
+   "dst": "Habla con Nasea en la cantera de Karoc en [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
@@ -198368,6 +198458,16 @@
    "dst": "Sé que descubrir la verdad nunca es fácil, pero sigue intentándolo; por favor, tráeme [{~} Diario de Twain].",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The House of Twain (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The House of Twain (Quest)#016": {
+   "src": "Talk to Twendle at the House of Twain at [{~}, {~}, -{~}]",
+   "dst": "Habla con Twendle en la casa de Twain en [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The House of Twain (Quest)",
    "stage": "",
    "speaker": "",

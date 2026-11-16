@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 61,
-  "translated": 61,
+  "count": 62,
+  "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -267,8 +267,8 @@
    "source": "wiki"
   },
   "Out of my Mind#026": {
-   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "{p} 밖 덤불 유적 근처 관문 옆에 숨겨진 문을 찾으세요",
+   "src": "Find the hidden door next to the Undergrowth Ruins outside {p}",
+   "dst": "{p} 밖 덤불 유적 옆에 숨겨진 문을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -497,8 +497,8 @@
    "source": "wiki"
   },
   "Out of my Mind#049": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~},-{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~}, {~}, -{~}] to report your findings",
+   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~}, {~}, -{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -615,6 +615,16 @@
    "stage": "Stage 6",
    "speaker": "Prentiss",
    "source": "wiki"
+  },
+  "Out of my Mind#061": {
+   "src": "Speak with the {p} children at [-{~}, {~}, -{~}] inside the treehouse",
+   "dst": "[-{~}, {~}, -{~}]의 나무 위 집 안에 있는 {p} 아이들과 이야기하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
