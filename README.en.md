@@ -74,7 +74,7 @@ The full list is under [Mod compatibility](#mod-compatibility) below.
 
 ### Tools that come with it
 
-- **Copy chat**: lists recent chat messages; click one to copy it, so a report can include the English text (key unbound by default).
+- **Chat log**: keeps the chat you receive this session, even across server switches. Pick several messages and copy them as text or as an image; in quick mode, left click copies an image and right click copies text. Open it from /wcy or the button at the bottom right of the chat.
 - **Panel screenshot**: copies the translation panel to the clipboard or saves it as an image (key unbound by default).
 - **In-game update**: when a new version is out, chat says so once; click "Click here to update now" in that message (same as typing `/wcy update`), or press Update on the release notes screen, and the new version is downloaded from GitHub Releases and swapped in when you close the game. Nothing is downloaded unless you press it.
 - **Speed up Wynntils item rendering**: the inventory, bank and market are smoother, and look the same (F6 > Features, on by default).
@@ -192,7 +192,7 @@ launch; no mod update needed.
 Text that reads oddly, terms you want made consistent, features you would like: all welcome.
 **You do not have to translate or program anything**:
 
-- **Report with a screenshot**: a screenshot of anything still in English, mistranslated or laid out badly already helps a lot. Copy chat copies a chat line's original text, and Panel screenshot saves the translation panel as an image.
+- **Report with a screenshot**: a screenshot of anything still in English, mistranslated or laid out badly already helps a lot. Chat log copies a chat line's original text or an image of it, and Panel screenshot saves the translation panel as an image.
 - **Export untranslated strings**: quest dialogue and NPC nameplates have no official data source; they only arrive when players run into them.
   1. **Settings → Data → Export untranslated strings** opens `config/wynnchayuan/export`, which holds `captured.json`.
   2. Look through the file and delete anything personal (other players' names, guild names, private chat).

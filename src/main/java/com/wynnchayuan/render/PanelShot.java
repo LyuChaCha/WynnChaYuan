@@ -235,7 +235,7 @@ public final class PanelShot {
         });
     }
 
-    private static NativeImage crop(NativeImage full, int x, int y, int w, int h) {
+    public static NativeImage crop(NativeImage full, int x, int y, int w, int h) {
         int left = Math.max(0, Math.min(x, full.getWidth() - 1));
         int top = Math.max(0, Math.min(y, full.getHeight() - 1));
         int right = Math.max(left + 1, Math.min(x + w, full.getWidth()));

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import com.wynnchayuan.client.ui.ChatLogView;
 import com.wynnchayuan.client.ui.CreditsView;
 import com.wynnchayuan.client.ui.FirstRunView;
 import com.wynnchayuan.client.ui.Icons;
@@ -14,6 +15,7 @@ import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.SettingsView;
 import com.wynnchayuan.client.ui.Shell;
+import com.wynnchayuan.client.ui.Styled;
 import com.wynnchayuan.client.ui.Surface;
 import com.wynnchayuan.client.ui.Ui;
 
@@ -62,6 +64,9 @@ public final class SubViewsTest {
                 views.put("credits", new CreditsView(shell, new FakeCredits(shell)));
                 views.put("position", new PositionView(shell, new FakePlaces(shell)));
                 views.put("nametag", nametag(lang));
+                views.put("chatlog", new ChatLogView(shell, new FakeChat(true, true)));
+                views.put("chatlog-quick", new ChatLogView(shell, new FakeChat(false, true)));
+                views.put("chatlog-off", new ChatLogView(shell, new FakeChat(true, false)));
                 FakeFirstRun withNotice = new FakeFirstRun(shell, true, true, false);
                 withNotice.notice = true;
                 views.put("firstrun-notice", new FirstRunView(shell, withNotice));
@@ -89,7 +94,7 @@ public final class SubViewsTest {
             must(lang + "：這幾張畫到的字，附的字型都有（缺「" + gone + "」，重跑 tools/build-ui-fonts.py）",
                     gone.length() == 0);
         }
-        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 13 張 × "
+        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 16 張 × "
                 + SIZES.length + " 種大小）");
 
         position(out);
@@ -98,6 +103,7 @@ public final class SubViewsTest {
         credits();
         firstRun();
         firstRunNotice();
+        chatLog(out);
 
         if (failures > 0) {
             System.out.println("SubViews: " + failures + " 項失敗");
@@ -609,6 +615,166 @@ public final class SubViewsTest {
                 List.of(new Row.Group(() -> fake.tr("world.nametag"), false, rows)))), fake, 0, true);
     }
 
+    private static void chatLog(File out) throws Exception {
+        FakeShell shell = new FakeShell("zh_tw");
+        FakeChat chat = new FakeChat(true, true);
+        ChatLogView view = new ChatLogView(shell, chat);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        int last = chat.all.size() - 1;
+        float[] a = view.spot("row:" + last);
+        float[] b = view.spot("row:" + (last - 2));
+        must("最新的一則在畫面最下面", a != null && b != null && a[1] > b[1]);
+        if (a == null || b == null) {
+            return;
+        }
+        view.mouseDown(b[0] + 20, b[1] + 3, 0);
+        view.mouseDrag(a[0] + 20, a[1] + 3);
+        view.mouseUp();
+        AwtCanvas shot = render(view, "zh_tw", 640, 360, 2, a[0] + 60, a[1] + 3);
+        ImageIO.write(shot.image, "png", new File(out, "zh_tw-chatlog-selected.png"));
+        view.key('C', true);
+        must("拖曳選三則、Ctrl+C 照時間順序複製三則（實際 " + chat.copied.size() + "）",
+                chat.copied.size() == 3 && chat.copied.get(0) == chat.all.get(last - 2).key()
+                        && chat.copied.get(2) == chat.all.get(last).key());
+
+        float[] mid = view.spot("row:" + (last - 1));
+        view.mouseDown(mid[0] + 20, mid[1] + 3, 0);
+        view.mouseUp();
+        chat.copied.clear();
+        view.key('C', true);
+        must("再點一次就取消那一則", chat.copied.size() == 2);
+        must("Esc 先清掉選取，不關視窗", view.key(Surface.KEY_ESC, false));
+        must("沒有選取時 Esc 交給畫面關掉", !view.key(Surface.KEY_ESC, false));
+
+        chat.multi = false;
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        float[] one = view.spot("row:" + last);
+        chat.copied.clear();
+        view.mouseDown(one[0] + 20, one[1] + 3, 1);
+        view.mouseUp();
+        must("快速模式右鍵：直接複製那一則文字", chat.copied.size() == 1
+                && chat.copied.get(0) == chat.all.get(last).key());
+        must("右鍵不拍圖", view.pendingShot() == null);
+        view.mouseDown(one[0] + 20, one[1] + 3, 0);
+        view.mouseUp();
+        must("左鍵還沒畫出來之前不拍", view.pendingShot() == null);
+        AwtCanvas card = render(view, "zh_tw", 640, 360, 2, -100, -100);
+        float[] rect = view.pendingShot();
+        must("左鍵：畫出卡片之後交出要拍的範圍", rect != null && rect[2] > 20 && rect[3] > 8);
+        ImageIO.write(card.image, "png", new File(out, "zh_tw-chatlog-card.png"));
+        view.shotTaken();
+        must("拍過就不再交出範圍", view.pendingShot() == null);
+        for (int i = 0; i < 8; i++) {
+            render(view, "zh_tw", 640, 360, 1, -100, -100);
+        }
+        must("拍完卡片收掉，可以再拍下一張", view.pendingShot() == null);
+    }
+
+    static final class FakeChat implements ChatLogView.Host {
+        static final String[] LINES = {
+                "[Party] Aster: ready when you are",
+                "[Guild] Mirin: anyone up for Nest of the Grootslangs tonight? need two more",
+                "You have 3 unclaimed quest rewards. Visit the quest book to claim them.",
+                "[Party] Lio: brb grabbing potions",
+                "Talk to the Seaskipper Captain to travel between the islands of the Ocean.",
+                "[Guild] Aster: gg everyone",
+                "Your guild has completed a war against the territory Detlas Close Suburbs and earned 1,240 emeralds for the bank.",
+                "[Party] Mirin: thanks for the carry"};
+
+        final List<ChatLogView.Msg> all = new ArrayList<>();
+        final List<Object> copied = new ArrayList<>();
+        boolean multi;
+        boolean recording;
+        private int builtFor = -1;
+
+        FakeChat(boolean multi, boolean recording) {
+            this.multi = multi;
+            this.recording = recording;
+        }
+
+        @Override
+        public List<ChatLogView.Msg> messages(int wrapWidth) {
+            if (!recording) {
+                return List.of();
+            }
+            if (builtFor != wrapWidth) {
+                builtFor = wrapWidth;
+                List<Object> keys = new ArrayList<>();
+                for (ChatLogView.Msg m : all) {
+                    keys.add(m.key());
+                }
+                all.clear();
+                for (int i = 0; i < LINES.length * 3; i++) {
+                    Object key = i < keys.size() ? keys.get(i) : new Object();
+                    all.add(new ChatLogView.Msg(key, wrap(LINES[i % LINES.length], wrapWidth),
+                            String.format("%02d:%02d", 20 + i / 60, i % 60)));
+                }
+            }
+            return all;
+        }
+
+        private static List<Styled> wrap(String text, int width) {
+            List<Styled> out = new ArrayList<>();
+            StringBuilder line = new StringBuilder();
+            for (String word : text.split(" ")) {
+                String next = line.length() == 0 ? word : line + " " + word;
+                if (next.length() * 6 > width && line.length() > 0) {
+                    out.add(line(line.toString()));
+                    line.setLength(0);
+                    line.append(word);
+                } else {
+                    line.setLength(0);
+                    line.append(next);
+                }
+            }
+            out.add(line(line.toString()));
+            return out;
+        }
+
+        private static Styled line(String text) {
+            return new Styled() {
+                @Override
+                public float width() {
+                    return text.length() * 6;
+                }
+
+                @Override
+                public String plain() {
+                    return text;
+                }
+            };
+        }
+
+        @Override
+        public boolean recording() {
+            return recording;
+        }
+
+        @Override
+        public void startRecording() {
+            recording = true;
+        }
+
+        @Override
+        public boolean multi() {
+            return multi;
+        }
+
+        @Override
+        public void setMulti(boolean multi) {
+            this.multi = multi;
+        }
+
+        @Override
+        public boolean copyText(List<Object> keys) {
+            copied.addAll(keys);
+            return true;
+        }
+
+        @Override
+        public void close() { }
+    }
+
     static final class FakeShell implements Shell {
         private final Map<String, String> strings;
         private final Map<String, String> english;

@@ -2,7 +2,6 @@ package com.wynnchayuan;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.wynnchayuan.capture.PlayerDataFilter;
-import com.wynnchayuan.client.ChatCopyScreen;
 import com.wynnchayuan.client.FirstRunScreen;
 import com.wynnchayuan.client.NoticeScreen;
 import com.wynnchayuan.client.SettingsScreen;
@@ -42,10 +41,6 @@ final class ModKeys {
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
-        WynnChaYuan.copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
-                "key.wynnchayuan.copyChat",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         PanelShot.bind(WynnChaYuan.screenshotKey);
         PanelShot.listen();
 
@@ -82,9 +77,6 @@ final class ModKeys {
             if (ModCommands.openSettingsNextTick) {
                 ModCommands.openSettingsNextTick = false;
                 client.setScreen(new SettingsScreen());
-            }
-            while (WynnChaYuan.copyChatKey.consumeClick()) {
-                client.setScreen(new ChatCopyScreen());
             }
             while (WynnChaYuan.screenshotKey.consumeClick()) {
                 PanelShot.request();

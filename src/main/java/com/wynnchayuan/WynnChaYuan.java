@@ -8,6 +8,7 @@ import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.capture.PlaceNames;
 import com.wynnchayuan.capture.Whereabouts;
+import com.wynnchayuan.client.ChatLogButton;
 import com.wynnchayuan.client.MarketPicker;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.listener.ActionBarListener;
@@ -80,7 +81,6 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     static KeyMapping screenshotKey;
 
-    static KeyMapping copyChatKey;
     static Path configDir;
 
     static volatile String language = Languages.DEFAULT;
@@ -279,6 +279,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             WynntilsMod.registerEventListener(new MarketListener());
             ClientSendMessageEvents.MODIFY_CHAT.register(MarketListener::rewrite);
             MarketPicker.register();
+            ChatLogButton.register();
             ModLog.info("已掛上 Wynntils 事件，開始收集");
         } catch (Throwable t) {
             ModLog.warn("掛載失敗，停用收集功能: " + t);

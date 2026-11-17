@@ -47,6 +47,7 @@ public final class ModConfig {
     boolean translateHeldItem = true;
 
     boolean chatCopy = true;
+    boolean chatCopyMulti = true;
 
     boolean capes = true;
 
@@ -531,6 +532,17 @@ public final class ModConfig {
 
     public boolean chatCopy() {
         return chatCopy;
+    }
+
+    public boolean chatCopyMulti() {
+        return chatCopyMulti;
+    }
+
+    public void setChatCopyMulti(boolean multi) {
+        if (chatCopyMulti != multi) {
+            chatCopyMulti = multi;
+            save();
+        }
     }
 
     public boolean capes() {
