@@ -24,6 +24,10 @@ public final class ChatLogView extends Surface {
         boolean copyText(List<Object> keys);
 
         void close();
+
+        default float[] dock(int screenW, int screenH) {
+            return null;
+        }
     }
 
     static final float LINE = 10;
@@ -68,6 +72,9 @@ public final class ChatLogView extends Surface {
     private boolean shotDrawn;
     private long shotTakenAt;
 
+    private boolean docked;
+    private float[] panel = new float[4];
+
     public ChatLogView(Shell shell, Host host) {
         this.shell = shell;
         this.host = host;
@@ -99,6 +106,14 @@ public final class ChatLogView extends Surface {
         statusAt = now;
     }
 
+    public boolean inside(double x, double y) {
+        return Ui.in(x, y, panel[0], panel[1], panel[2], panel[3]);
+    }
+
+    public boolean busy() {
+        return shot != null || dragging != null;
+    }
+
     @Override
     public boolean scroll(double dy) {
         if (shot != null) {
@@ -119,8 +134,14 @@ public final class ChatLogView extends Surface {
             return true;
         }
         if (ctrl && key == 'C') {
+            if (selected.isEmpty()) {
+                return false;
+            }
             copyText(new ArrayList<>(selected));
             return true;
+        }
+        if (docked && key != KEY_ESC && key != KEY_PAGE_UP && key != KEY_PAGE_DOWN) {
+            return false;
         }
         if (ctrl && key == 'A' && host.multi()) {
             for (Msg m : shown) {
@@ -150,41 +171,77 @@ public final class ChatLogView extends Surface {
 
     @Override
     protected void draw() {
-        float w = Math.min(screenW - 20, 540);
-        float h = Math.min(screenH - 14, 330);
-        float x = Math.round((screenW - w) / 2f);
-        float y = Math.round((screenH - h) / 2f);
-        window(x, y, w, h, shell.blurred());
-        zone(0, 0, screenW, screenH, (px, py, b) -> { });
+        float[] dock = host.dock(screenW, screenH);
+        docked = dock != null;
+        float x;
+        float y;
+        float w;
+        float h;
+        if (docked) {
+            x = dock[0];
+            y = dock[1];
+            w = dock[2];
+            h = dock[3];
+            dockPane(x, y, w, h);
+        } else {
+            w = Math.min(screenW - 20, 540);
+            h = Math.min(screenH - 14, 330);
+            x = Math.round((screenW - w) / 2f);
+            y = Math.round((screenH - h) / 2f);
+            window(x, y, w, h, shell.blurred());
+            zone(0, 0, screenW, screenH, (px, py, b) -> { });
+        }
+        panel = new float[] {x, y, w, h};
 
-        float left = x + 12;
-        float right = x + w - 12;
+        float left = x + (docked ? 7 : 12);
+        float right = x + w - (docked ? 7 : 12);
         boolean multi = host.multi();
+        float headH = docked ? 22 : 40;
+        float footH = docked ? 24 : 28;
+
+        if (docked) {
+            float cs = 12;
+            boolean hot = over(right - cs, y + 5, cs, cs);
+            float g = glow("dock-close", hot);
+            c.round(right - cs, y + 5, cs, cs, Ui.R1, Ui.fade(0x22FFFFFF, g));
+            c.icon(Icons.Icon.CLOSE, right - cs + 2.5f, y + 7.5f, 7, Ui.mix(Ui.TEXT_3, Ui.TEXT, g));
+            zone(right - cs, y + 5, cs, cs, (px, py, b) -> {
+                click();
+                host.close();
+            }).key = "b:dock-close";
+            right -= cs + 6;
+        }
 
         List<Row.Option> modes = List.of(
                 new Row.Option(shell.tr("chatlog.mode.multi"), Row.Tone.ACCENT, ""),
                 new Row.Option(shell.tr("chatlog.mode.quick"), Row.Tone.ACCENT, ""));
         float segW = Math.min(w * 0.42f, Math.max(c.width(modes.get(0).label()),
                 c.width(modes.get(1).label())) * 2 + 34);
-        segmented("mode", right - segW, right, y + 12, modes, () -> multi ? 0 : 1, i -> {
+        segmented("mode", right - segW, right, y + (docked ? 4 : 12), modes, () -> multi ? 0 : 1, i -> {
             host.setMulti(i == 0);
             selected.clear();
         }, tone -> accent);
 
-        float s = c.scale(1.5f);
-        c.text(shell.tr("chatlog.title"), left, y + 9, Ui.TEXT, s);
+        float s = c.scale(docked ? 1f : 1.5f);
+        c.text(shell.tr("chatlog.title"), left, y + (docked ? 8 : 9), docked ? Ui.TEXT_2 : Ui.TEXT, s);
 
-        float footY = y + h - 28;
-        listTop = y + 40;
-        listBottom = footY - 6;
+        float footY = y + h - footH;
+        listTop = y + headH;
+        listBottom = footY - (docked ? 3 : 6);
+        if (docked) {
+            right = x + w - 7;
+        }
         float timeW = c.width("00:00") + 8;
         float textX = left + timeW;
         float rowRight = right - 7;
         int wrap = (int) Math.max(40, rowRight - textX - 4);
         shown = host.messages(wrap);
 
-        String sub = shell.tr("chatlog.count", shown.size());
-        c.text(Ui.fit(c, sub, (int) (right - segW - 10 - left)), left, y + 9 + 8 * s + 4, Ui.FAINT);
+        if (!docked) {
+            String sub = shell.tr("chatlog.count", shown.size());
+            c.text(Ui.fit(c, sub, (int) (right - segW - 10 - left)), left, y + 9 + 8 * s + 4,
+                   Ui.FAINT);
+        }
 
         if (shown.isEmpty()) {
             empty(x, w);
@@ -197,6 +254,23 @@ public final class ChatLogView extends Surface {
         if (shot != null) {
             popover = this::card;
         }
+    }
+
+    private void dockPane(float x, float y, float w, float h) {
+        winX = x;
+        winY = y;
+        winW = w;
+        winH = h;
+        for (int i = 3; i >= 1; i--) {
+            float g = i * 1.5f;
+            c.round(x - g, y - g + 2, w + g * 2, h + g * 2, Ui.R2 + g, 0x14000000);
+        }
+        Ui.pane(c, x, y, w, h, Ui.R2, Ui.WINDOW_SOLID, 0);
+        Ui.glowSpot(c, x + w * 0.1f, y - h * 0.1f, w * 0.7f, h * 0.6f, x, y, x + w, y + h, Ui.R2,
+                    Ui.GLOW_TOP);
+        c.ring(x, y, w, h, Ui.R2, c.px(), Ui.WIN_EDGE);
+        c.fill(x + Ui.R2, y + c.px(), x + w - Ui.R2, y + c.px() * 2, 0x26FFFFFF);
+        zone(x, y, w, h, (px, py, b) -> { });
     }
 
     private void empty(float x, float w) {
@@ -512,19 +586,22 @@ public final class ChatLogView extends Surface {
 
     private void footer(float x, float w, float left, float right, float footY, boolean multi) {
         c.fill(x + 1, footY, x + w - 1, footY + c.px(), Ui.LINE);
-        float by = footY + 5;
+        float bh = docked ? 16 : 18;
+        float by = footY + (docked ? 4 : 5);
         float end = right;
-        String close = shell.tr("button.close");
-        float cw = buttonWidth(close) + 10;
-        button("close", end - cw, by, cw, 18, close, true, false, null, host::close);
-        end -= cw + 5;
+        if (!docked) {
+            String close = shell.tr("button.close");
+            float cw = buttonWidth(close) + 10;
+            button("close", end - cw, by, cw, bh, close, true, false, null, host::close);
+            end -= cw + 5;
+        }
 
         if (multi && !shown.isEmpty()) {
             boolean any = !selected.isEmpty();
             String text = shell.tr("chatlog.copy.text");
             String image = shell.tr("chatlog.copy.image");
             String clear = shell.tr("chatlog.clear");
-            float room = end - left - 90;
+            float room = end - left - (docked ? 40 : 90);
             float tw = buttonWidth(text) + 8;
             float iw = buttonWidth(image) + 8;
             float xw = buttonWidth(clear) + 4;
@@ -535,14 +612,14 @@ public final class ChatLogView extends Surface {
                 iw *= k;
                 xw *= k;
             }
-            button("text", end - tw, by, tw, 18, text, any, true, null,
+            button("text", end - tw, by, tw, bh, text, any, true, null,
                    () -> copyText(new ArrayList<>(selected)));
             end -= tw + 5;
-            button("image", end - iw, by, iw, 18, image, any, false, null,
+            button("image", end - iw, by, iw, bh, image, any, false, null,
                    () -> copyImage(picked()));
             end -= iw + 5;
             if (any) {
-                button("clear", end - xw, by, xw, 18, clear, true, false, null, selected::clear);
+                button("clear", end - xw, by, xw, bh, clear, true, false, null, selected::clear);
                 end -= xw + 5;
             }
         }
@@ -566,7 +643,7 @@ public final class ChatLogView extends Surface {
             ink = accent;
         }
         if (end - left > 30 && !line.isEmpty()) {
-            c.text(Ui.fit(c, line, (int) (end - left - 4)), left, by + 5, ink);
+            c.text(Ui.fit(c, line, (int) (end - left - 4)), left, by + (bh - 8) / 2f, ink);
         }
     }
 }

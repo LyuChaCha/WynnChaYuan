@@ -74,7 +74,7 @@ The full list is under [Mod compatibility](#mod-compatibility) below.
 
 ### Tools that come with it
 
-- **Chat log**: keeps the chat you receive this session, even across server switches. Pick several messages and copy them as text or as an image; in quick mode, left click copies an image and right click copies text. Open it from /wcy or the button at the bottom right of the chat.
+- **Chat log**: keeps the chat you receive this session, even across server switches. Pick several messages and copy them as text or as an image; in quick mode, left click copies an image and right click copies text. Press T and click "Chat log" at the bottom right: the panel opens right over the chat and stays open for the session until you click it again. It is also in /wcy.
 - **Panel screenshot**: copies the translation panel to the clipboard or saves it as an image (key unbound by default).
 - **In-game update**: when a new version is out, chat says so once; click "Click here to update now" in that message (same as typing `/wcy update`), or press Update on the release notes screen, and the new version is downloaded from GitHub Releases and swapped in when you close the game. Nothing is downloaded unless you press it.
 - **Speed up Wynntils item rendering**: the inventory, bank and market are smoother, and look the same (F6 > Features, on by default).
