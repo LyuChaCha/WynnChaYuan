@@ -278,6 +278,8 @@ final class DisplayTabs {
                         Row.action("world.chatlog", SettingsScreen.t("world.chatlog"),
                                         SettingsScreen.t("world.chatlog.hint"))
                                 .label(SettingsScreen.t("world.chatlog.open"))
-                                .run(() -> screen.client().setScreen(new ChatLogScreen(screen))))));
+                                .run(() -> screen.client().setScreen(new ChatLogScreen(screen))),
+                        SettingsScreen.toggle("world.chatlog.button", true, cfg()::chatLogButton,
+                                cfg()::toggleChatLogButton))));
     }
 }

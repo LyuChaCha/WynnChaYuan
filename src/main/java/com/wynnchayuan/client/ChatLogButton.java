@@ -66,7 +66,8 @@ public final class ChatLogButton {
     }
 
     private static boolean shown() {
-        return WynnChaYuan.config() != null && WynnChaYuan.config().chatCopy();
+        return WynnChaYuan.config() != null && WynnChaYuan.config().chatCopy()
+                && WynnChaYuan.config().chatLogButton();
     }
 
     private static boolean active() {
