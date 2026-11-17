@@ -48,6 +48,7 @@ public final class ModConfig {
 
     boolean chatCopy = true;
     boolean chatCopyMulti = true;
+    boolean chatLogButton = true;
 
     boolean capes = true;
 
@@ -532,6 +533,16 @@ public final class ModConfig {
 
     public boolean chatCopy() {
         return chatCopy;
+    }
+
+    public boolean chatLogButton() {
+        return chatLogButton;
+    }
+
+    public boolean toggleChatLogButton() {
+        chatLogButton = !chatLogButton;
+        save();
+        return chatLogButton;
     }
 
     public boolean chatCopyMulti() {

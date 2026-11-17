@@ -16,7 +16,7 @@ import net.minecraft.util.Util;
 public final class ChatLogButton {
 
     private static final float H = 13;
-    private static final float ABOVE_INPUT = 17;
+    private static final float GAP = 4;
 
     private static boolean open;
 
@@ -66,7 +66,8 @@ public final class ChatLogButton {
     }
 
     private static boolean shown() {
-        return WynnChaYuan.config() != null && WynnChaYuan.config().chatCopy();
+        return WynnChaYuan.config() != null && WynnChaYuan.config().chatCopy()
+                && WynnChaYuan.config().chatLogButton();
     }
 
     private static boolean active() {
@@ -77,7 +78,15 @@ public final class ChatLogButton {
         GuiCanvas measure = new GuiCanvas(null, chat.getFont(),
                 Minecraft.getInstance().getWindow().getGuiScale());
         float w = measure.width(T.s("chatlog.button")) + 25;
-        return new float[] {chat.width - 4 - w, chat.height - ABOVE_INPUT - H, w, H};
+        float[] frame = ChatLogHost.chatFrame(chat.width, chat.height);
+        float right = frame[0] + frame[2];
+        if (open) {
+            float[] dock = ChatLogHost.dockRect(chat.width, chat.height);
+            right = Math.max(right, dock[0] + dock[2]);
+        }
+        float x = Math.min(chat.width - 4 - w, right + GAP);
+        float y = frame[1] + frame[3] - H;
+        return new float[] {x, y, w, H};
     }
 
     private static boolean pill(ChatScreen chat, double x, double y) {
