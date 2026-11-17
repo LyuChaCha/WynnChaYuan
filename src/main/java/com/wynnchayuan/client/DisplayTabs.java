@@ -274,6 +274,10 @@ final class DisplayTabs {
                                 ModConfig.ChatMode.BOTH))
                 .spot(Preview.Spot.CHAT)
                 .details(List.of(SettingsScreen.toggle("world.chatcopy", true, cfg()::chatCopy,
-                        cfg()::toggleChatCopy))));
+                                cfg()::toggleChatCopy),
+                        Row.action("world.chatlog", SettingsScreen.t("world.chatlog"),
+                                        SettingsScreen.t("world.chatlog.hint"))
+                                .label(SettingsScreen.t("world.chatlog.open"))
+                                .run(() -> screen.client().setScreen(new ChatLogScreen(screen))))));
     }
 }

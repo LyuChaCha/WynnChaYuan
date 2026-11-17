@@ -27,6 +27,7 @@ public final class Icons {
         UP(line(6, 15, 12, 9, 18, 15)),
         RIGHT(line(9, 6, 15, 12, 9, 18)),
         CHECK(line(5, 12.5f, 10, 17.5f, 19, 7)),
+        COPY(rect(9, 9, 11, 11), line(15, 5, 15, 4, 4, 4, 4, 15, 5, 15)),
         CLOSE(line(6, 6, 18, 18), line(18, 6, 6, 18)),
         LEAF(join(cubic(9, 18, 15.2f, 18, 19.5f, 14.7f, 20, 6), line(20, 4, 16, 4),
                   cubic(16, 4, 7, 4, 4, 8, 4, 13), cubic(4, 13, 4, 14, 4, 16, 6, 18), line(9, 18)),

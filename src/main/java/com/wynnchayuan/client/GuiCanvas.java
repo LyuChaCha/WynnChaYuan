@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Canvas;
 import com.wynnchayuan.client.ui.Icons;
+import com.wynnchayuan.client.ui.Styled;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
@@ -174,6 +175,18 @@ final class GuiCanvas implements Canvas {
     @Override
     public void raise() {
         g.nextStratum();
+    }
+
+    @Override
+    public void styled(Styled line, float x, float y, float alpha) {
+        if (!(line instanceof GameLine game) || alpha < 0.02f) {
+            return;
+        }
+        g.pose().pushMatrix();
+        g.pose().translate(p(x), p(y));
+        g.pose().scale(scale, scale);
+        g.drawString(font, game.text(), 0, 0, Ui.fade(0xFFFFFFFF, alpha), true);
+        g.pose().popMatrix();
     }
 
     private int p(float v) {

@@ -3,7 +3,6 @@ package com.wynnchayuan.client;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.PanelShot;
-import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -16,10 +15,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.awt.image.BufferedImage;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -121,17 +116,9 @@ public final class ShotScreen extends Screen {
     }
 
     private void copy() {
-        try {
-            BufferedImage image = toBuffered(shot);
-            Toolkit.getDefaultToolkit().getSystemClipboard()
-                    .setContents(new ImageClip(image), null);
-            note = T.c("shot.copied")
-                    .withStyle(ChatFormatting.GREEN);
-        } catch (Throwable t) {
-            ErrorDebug.note("ShotScreen#copy", null, t);
-            note = T.c("shot.nocopy")
-                    .withStyle(ChatFormatting.RED);
-        }
+        note = ImageClipboard.copy(shot, "ShotScreen#copy")
+                ? T.c("shot.copied").withStyle(ChatFormatting.GREEN)
+                : T.c("shot.nocopy").withStyle(ChatFormatting.RED);
     }
 
     private void save() {
@@ -150,17 +137,6 @@ public final class ShotScreen extends Screen {
         }
     }
 
-    private static BufferedImage toBuffered(NativeImage source) {
-        BufferedImage out = new BufferedImage(source.getWidth(), source.getHeight(),
-                BufferedImage.TYPE_INT_ARGB);
-        for (int y = 0; y < source.getHeight(); y++) {
-            for (int x = 0; x < source.getWidth(); x++) {
-                out.setRGB(x, y, source.getPixel(x, y) | 0xFF000000);
-            }
-        }
-        return out;
-    }
-
     @Override
     public void onClose() {
         if (texture != null) {
@@ -173,23 +149,5 @@ public final class ShotScreen extends Screen {
     @Override
     public boolean isPauseScreen() {
         return false;
-    }
-
-    private record ImageClip(BufferedImage image) implements Transferable {
-
-        @Override
-        public DataFlavor[] getTransferDataFlavors() {
-            return new DataFlavor[] {DataFlavor.imageFlavor};
-        }
-
-        @Override
-        public boolean isDataFlavorSupported(DataFlavor flavor) {
-            return DataFlavor.imageFlavor.equals(flavor);
-        }
-
-        @Override
-        public Object getTransferData(DataFlavor flavor) {
-            return image;
-        }
     }
 }

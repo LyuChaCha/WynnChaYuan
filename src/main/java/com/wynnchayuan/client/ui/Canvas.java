@@ -71,4 +71,8 @@ public interface Canvas {
 
     default void raise() {
     }
+
+    default void styled(Styled line, float x, float y, float alpha) {
+        text(line.plain(), x, y, Ui.fade(Ui.TEXT, alpha));
+    }
 }

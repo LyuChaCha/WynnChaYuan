@@ -52,6 +52,7 @@ final class ConfigFile {
             config.choiceMode = dialogue;
         }
         config.chatCopy = bool(o, "chatCopy", config.chatCopy);
+        config.chatCopyMulti = bool(o, "chatCopyMulti", config.chatCopyMulti);
         config.capes = bool(o, "capes", config.capes);
         config.ownCape = bool(o, "ownCape", config.ownCape);
         config.wynntilsUi = bool(o, "wynntilsUi", config.wynntilsUi);
@@ -312,6 +313,7 @@ final class ConfigFile {
             o.addProperty("wynnmodTooltip", config.wynnmodTooltip);
             o.addProperty("wynnMarketSearch", config.wynnMarketSearch);
             o.addProperty("chatCopy", config.chatCopy);
+            o.addProperty("chatCopyMulti", config.chatCopyMulti);
             o.addProperty("capes", config.capes);
             o.addProperty("ownCape", config.ownCape);
             o.addProperty("wynntilsUi", config.wynntilsUi);
