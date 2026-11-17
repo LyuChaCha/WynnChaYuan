@@ -1,11 +1,44 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.7",
+ "latest": "1.0.8",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.8": {
+   "headline": "1.0.8: chat log right in the chat box",
+   "items": [
+    "Added: Chat log replaces Copy chat. Press T and click Chat log next to the chat box to open it right over the chat, or open it from /wcy. It keeps up to 1,000 messages for the session, also after you switch servers.",
+    "Added: in Chat log, pick several messages (they get a dashed outline) and copy them as text or as an image. In Quick mode, left click copies a message as an image and right click copies it as text.",
+    "Added: the Chat log button next to the chat box can be turned off in /wcy. The Copy chat key is removed.",
+    "Fixed: translated dialogue no longer runs past the dialogue box when the original line starts with a bold word.",
+    "Fixed: dialogue with a name that is also a common English word, such as General, no longer stops halfway.",
+    "Translations: new 2.2.5 gear and ingredient names with lore; dialogue, nameplates and seven secret discoveries around Troms and Almuj from player captures; Japanese contributions (thanks yool141 and rink914) and Spanish contributions (thanks Manux094)."
+   ],
+   "zh_tw": {
+    "headline": "1.0.8：聊天紀錄直接開在聊天欄",
+    "items": [
+     "新增：「聊天紀錄」取代「複製聊天」。按 T 後點聊天框旁的「聊天紀錄」，面板直接開在聊天欄上；也可以從 /wcy 打開。這次遊戲最多留 1000 則，換伺服器也還在。",
+     "新增：聊天紀錄可以選多則（有虛線框），複製成文字或圖片；快速模式下，左鍵複製成圖片、右鍵複製成文字。",
+     "新增：聊天框旁的「聊天紀錄」按鈕可以在 /wcy 關掉；原本的「複製聊天」按鍵拿掉了。",
+     "修正：原文那一列開頭是粗體時，譯文不再超出對話框。",
+     "修正：名字剛好是常見英文字（例如 General）時，對話不再翻到一半停住。",
+     "譯文：2.2.5 新裝備與材料的名稱和 lore；玩家收集的 Troms、Almuj 一帶對話、名牌與七個隱藏探索點；日文社群貢獻（感謝 yool141、rink914）與西文社群貢獻（感謝 Manux094）。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.8：聊天记录直接在聊天栏打开",
+    "items": [
+     "新增：「聊天记录」取代「复制聊天」。按 T 后点聊天框旁的「聊天记录」，面板直接在聊天栏上打开；也可以从 /wcy 打开。这次游戏最多保留 1000 条，换服务器也还在。",
+     "新增：聊天记录可以选多条（有虚线框），复制成文字或图片；快速模式下，左键复制成图片、右键复制成文字。",
+     "新增：聊天框旁的「聊天记录」按钮可以在 /wcy 关闭；原来的「复制聊天」按键已移除。",
+     "修正：原文那一行开头是粗体时，译文不再超出对话框。",
+     "修正：名字刚好是常见英文单词（例如 General）时，对话不再翻到一半停住。",
+     "译文：2.2.5 新装备与材料的名称和 lore；玩家收集的 Troms、Almuj 一带对话、名牌与七个隐藏探索点；日文社区贡献（感谢 yool141、rink914）与西班牙文社区贡献（感谢 Manux094）。"
+    ]
+   }
+  },
   "1.0.7": {
    "headline": "1.0.7: new settings screen with a live preview",
    "items": [
