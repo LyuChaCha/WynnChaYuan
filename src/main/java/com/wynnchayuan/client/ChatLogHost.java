@@ -27,6 +27,8 @@ final class ChatLogHost implements ChatLogView.Host {
     private static final DateTimeFormatter CLOCK =
             DateTimeFormatter.ofPattern("HH:mm", Locale.ROOT).withZone(ZoneId.systemDefault());
 
+    static final float CHAT_BOTTOM = 40;
+
     private final Font font;
     private final Runnable close;
     private final boolean docked;
@@ -125,18 +127,26 @@ final class ChatLogHost implements ChatLogView.Host {
         close.run();
     }
 
-    @Override
-    public float[] dock(int screenW, int screenH) {
-        if (!docked) {
-            return null;
-        }
+    static float[] chatFrame(int screenW, int screenH) {
         Minecraft mc = Minecraft.getInstance();
         double scale = mc.options.chatScale().get();
-        float w = (float) (ChatComponent.getWidth(mc.options.chatWidth().get()) * scale) + 16;
-        float h = (float) (ChatComponent.getHeight(mc.options.chatHeightFocused().get()) * scale) + 52;
-        w = Math.max(Math.min(280, screenW - 8), Math.min(screenW - 8, w));
-        h = Math.max(Math.min(120, screenH - 40), Math.min(screenH - 40, h));
-        return new float[] {2, screenH - 16 - h, w, h};
+        float w = (float) ((ChatComponent.getWidth(mc.options.chatWidth().get()) + 8) * scale);
+        float h = (float) (ChatComponent.getHeight(mc.options.chatHeightFocused().get()) * scale);
+        float bottom = screenH - CHAT_BOTTOM;
+        return new float[] {0, bottom - h, Math.min(screenW - 4, w), h};
+    }
+
+    @Override
+    public float[] dock(int screenW, int screenH) {
+        return docked ? dockRect(screenW, screenH) : null;
+    }
+
+    static float[] dockRect(int screenW, int screenH) {
+        float[] frame = chatFrame(screenW, screenH);
+        float bottom = frame[1] + frame[3];
+        float w = Math.max(Math.min(280, screenW - 8), Math.min(screenW - 8, frame[2]));
+        float h = Math.max(Math.min(140, bottom - 6), Math.min(bottom - 6, frame[3] + 46));
+        return new float[] {2, bottom - h, w, h};
     }
 
     void tick(ChatLogView view) {
