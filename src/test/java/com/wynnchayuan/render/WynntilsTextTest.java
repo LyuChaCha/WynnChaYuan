@@ -40,6 +40,7 @@ public final class WynntilsTextTest {
                 Files.createTempDirectory("wcy-overlay").resolve("config.json"));
 
         tracker(config, store);
+        bombBell(config, store);
         objectives(config, store);
         markers(config, store);
         heldItem(config, store);
@@ -466,6 +467,22 @@ public final class WynntilsTextTest {
               "進行中".equals(WynntilsScreenText.screenText(inProgress, config, store).getString()));
 
         screenCache(config, store);
+    }
+
+    private static void bombBell(ModConfig config, TranslationStore store) {
+        StyledText loot = StyledText.fromString("§6Loot§7 on §fWC32 §6(16m 35s)");
+        String shown = WynntilsScreenText.screenText(loot, config, store).getString();
+        check("炸彈鈴的 Loot 換成炸彈名稱（實際 " + shown + "）",
+              shown.startsWith("§6加倍掉落") && shown.contains("WC32"));
+        check("炸彈鈴的時間照樣翻（實際 " + shown + "）", shown.contains("16 分 35 秒"));
+
+        String combat = WynntilsScreenText.screenText(
+                StyledText.fromString("§6Combat XP§7 on §fWC1 §6(3m 12s)"), config, store).getString();
+        check("其他炸彈照舊（實際 " + combat + "）", combat.startsWith("§6戰鬥經驗"));
+
+        String label = WynntilsScreenText.screenText(
+                StyledText.fromString("§7Loot"), config, store).getString();
+        check("炸彈鈴以外的 Loot 不受影響（實際 " + label + "）", label.equals("§7寶物"));
     }
 
     private static void screenCache(ModConfig config, TranslationStore store) {
