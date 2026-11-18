@@ -33,7 +33,7 @@ Gear names stay in English by default; they can be turned on in the settings.
 - **Translations update themselves**: new translations come from GitHub without a mod update; each launch checks, and chat shows a line where "Click here to update" applies them (turn on "Auto-update translations" under Settings → Data to skip the question)
 - **Market search in your language**: type the translated name in the trade market, the English one is sent
 - **Hold Shift to see the original**: names of ingredients, materials and gathering tools switch back to English while Shift is held
-- **Copy chat**: copy recent chat lines for a report
+- **Chat log**: press T and open it next to the chat box; it keeps messages after you switch servers, and you can pick several and copy them as text or an image
 - **Screenshot** of the translation panel (no key by default; bind one under Controls)
 - **Speed up Wynntils item rendering**: smoother inventory, bank and market (F6 > Features, on by default)
 - **Wynnventory**: its price box, reward screen and settings are translated; the price box is placed by the tooltip that is actually shown, and moves clear with "anchor tooltips" on
@@ -131,7 +131,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 - **譯文自動更新**：新的翻譯從 GitHub 下載，不必更新模組；每次開遊戲都會檢查，有新譯文就在聊天室提示一行，點「按這裡更新」馬上生效（到設定「資料」打開「自動更新翻譯」就不再詢問）
 - **市集搜尋**：在交易市集打譯名，送出前自動換回英文原名
 - **按住 Shift 看原文**：素材、材料與採集工具的名稱，按住 Shift 時變回英文
-- **複製聊天**：複製最近的聊天訊息，方便回報
+- **聊天紀錄**：按 T 後在聊天框旁打開，換伺服器也還在；可以選多則，複製成文字或圖片
 - **截圖**：譯文面板截圖（按鍵預設不綁，到「按鍵設定」自己綁）
 - **加速 Wynntils 物品繪製**：開背包、銀行、市集時更順（F6「功能」，預設開啟）
 - **Wynnventory**：價格框、獎勵畫面與設定也翻；價格框照實際顯示的物品說明擺放，開了「固定在左側」時物品說明會讓開
