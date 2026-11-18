@@ -46,12 +46,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 44 / 44 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,007 / 1,007 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 99.4%（67,673 / 68,099）
+## `es_es` Español — 99.4%（67,694 / 68,099）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 311 / 311 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 98% | 17,506 / 17,788 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 99% | 17,527 / 17,788 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 832 / 832 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
 | `npc.json` | ██████████ 99% | 10,134 / 10,266 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,289 / 1,289 | 選單與介面<br>Menus and interface text |
