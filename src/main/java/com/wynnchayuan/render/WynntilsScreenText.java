@@ -8,11 +8,14 @@ import com.wynnchayuan.translate.LookupScope;
 import com.wynnchayuan.translate.PageNames;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.StyledTextPart;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BooleanSupplier;
@@ -84,13 +87,17 @@ final class WynntilsScreenText {
         if (seen != null && seen.fresh(store) && seen.content() == content) {
             return seen.out() == null ? text : seen.out();
         }
+        StyledText bell = bombBell(text, store);
         Component hit;
         if (statusRow(text.getStringWithoutFormatting())) {
             try (LookupScope scope = LookupScope.barItemNames(true)) {
-                hit = LineTranslator.translate(text, store);
+                hit = LineTranslator.translate(bell, store);
             }
         } else {
-            hit = LineTranslator.translate(text, store);
+            hit = LineTranslator.translate(bell, store);
+        }
+        if (hit == null && bell != text) {
+            hit = bell.getComponent();
         }
         if (hit != null && text.getString().indexOf('\n') < 0) {
             hit = ScoreboardFlow.oneLine(hit);
@@ -111,6 +118,30 @@ final class WynntilsScreenText {
             SCREEN_CACHE.put(text, new Cached(store.cacheAge(), store.pageNameMode(), content, out));
         }
         return out == null ? text : out;
+    }
+
+    static final String BOMB_BELL = "Bomb Bell: ";
+
+    static StyledText bombBell(StyledText text, TranslationStore store) {
+        List<StyledTextPart> parts = new ArrayList<>();
+        for (StyledTextPart part : text) {
+            parts.add(part);
+        }
+        if (parts.size() < 3 || !StyledText.fromPart(parts.get(1)).getStringWithoutFormatting().strip().equals("on")) {
+            return text;
+        }
+        StyledText type = StyledText.fromPart(parts.get(0));
+        String name = type.getStringWithoutFormatting().strip();
+        String hit = name.isEmpty() ? null : store.lookup(BOMB_BELL + name);
+        if (hit == null || hit.isBlank()) {
+            return text;
+        }
+        var out = Component.literal(hit).withStyle(
+                WynntilsText.styleOf(type).withFont(FontDescription.DEFAULT));
+        for (int i = 1; i < parts.size(); i++) {
+            out.append(parts.get(i).getComponent());
+        }
+        return StyledText.fromComponent(out);
     }
 
     // 以 Wynntils 套件名比對，它搬套件時會安靜失效
