@@ -99,6 +99,9 @@ final class LabelTranslator {
             translated = TemplateLookup.lookup(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
+            translated = withStatusRows(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
             LineParts framed = ChatTranslator.framedOnMiss(label, parts, store);
             if (framed != null) {
                 translated = store.labelLookup(framed.template());
@@ -684,6 +687,35 @@ final class LabelTranslator {
     }
 
     private static final Pattern MOB_NAME_ROW = Pattern.compile(".*\\S\\s+(?:\\{#\\}){2,}");
+
+    static String withStatusRows(String template, TranslationStore store) {
+        String[] rows = template.split(LineTranslator.NL, -1);
+        int keep = GlyphSplitter.wordedRows(rows);
+        if (keep == rows.length) {
+            return null;
+        }
+        String head = String.join(LineTranslator.NL, Arrays.copyOf(rows, keep));
+        String hit = store.labelLookup(head);
+        if (hit == null || hit.isBlank()) {
+            hit = TemplateLookup.lookup(head, store);
+        }
+        if (hit == null || hit.isBlank()) {
+            return null;
+        }
+        String tail = String.join(LineTranslator.NL, Arrays.copyOfRange(rows, keep, rows.length));
+        if (NUMBERED_SLOT.matcher(hit).find()) {
+            String number = GlyphSplitter.NUMBER_PLACEHOLDER;
+            int n = count(head, number);
+            StringBuilder numbered = new StringBuilder(tail.length() + 8);
+            int from = 0;
+            for (int at = tail.indexOf(number); at >= 0; at = tail.indexOf(number, from)) {
+                numbered.append(tail, from, at).append("{~").append(++n).append('}');
+                from = at + number.length();
+            }
+            tail = numbered.append(tail.substring(from)).toString();
+        }
+        return hit + LineTranslator.NL + tail;
+    }
 
     static boolean trimsWholeRows(String template) {
         int nl = template.lastIndexOf(LineTranslator.NEWLINE);
