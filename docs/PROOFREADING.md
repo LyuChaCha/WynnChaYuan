@@ -85,7 +85,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（194 個檔）</summary>
+<details><summary>展開（195 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
@@ -96,7 +96,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | quest.json | 1,875 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
 | lootrun.json | 1,742 | [`lootrun.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/lootrun.json) |
 | gui.json | 1,289 | [`gui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gui.json) |
-| secret-dialogue.json | 1,254 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
+| secret-dialogue.json | 1,263 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
 | gear-accessory.json | 1,152 | [`gear-accessory.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-accessory.json) |
 | ingredient.json | 978 | [`ingredient.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ingredient.json) |
 | Off the Rails | 944 | [`off-the-rails.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/off-the-rails.json) |
@@ -200,9 +200,9 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | WynnExcavation Site C | 61 | [`wynnexcavation-site-c.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-c.json) |
 | Haven Antiquity | 59 | [`haven-antiquity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/haven-antiquity.json) |
 | The Dark Descent | 59 | [`the-dark-descent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-dark-descent.json) |
+| Dearly Departed | 58 | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) |
 | Master Piece | 58 | [`master-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/master-piece.json) |
 | Tempo Town Trouble | 58 | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) |
-| Dearly Departed | 57 | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) |
 | The Lost | 57 | [`the-lost.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-lost.json) |
 | gear.json | 57 | [`gear.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/gear.json) |
 | Crop Failure | 56 | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) |
@@ -214,9 +214,9 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Lava Springs | 46 | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) |
 | Blazing Retribution | 45 | [`blazing-retribution.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/blazing-retribution.json) |
 | Redbeard's Booty | 45 | [`redbeard-s-booty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/redbeard-s-booty.json) |
+| wynntils.json | 45 | [`wynntils.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/wynntils.json) |
 | Beneath the Depths | 44 | [`beneath-the-depths.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beneath-the-depths.json) |
 | Canyon Condor | 44 | [`canyon-condor.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/canyon-condor.json) |
-| wynntils.json | 44 | [`wynntils.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/wynntils.json) |
 | Heart of Llevigar | 41 | [`heart-of-llevigar.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/heart-of-llevigar.json) |
 | unsorted.json | 41 | [`unsorted.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/unsorted.json) |
 | Grand Youth | 40 | [`grand-youth.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/grand-youth.json) |
@@ -243,8 +243,8 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | The Passage (Quest) | 29 | [`the-passage-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-passage-quest.json) |
 | Tribal Aggression | 29 | [`tribal-aggression.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tribal-aggression.json) |
 | WynnExcavation Site B | 29 | [`wynnexcavation-site-b.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-b.json) |
+| Enzan's Brother | 28 | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) |
 | The Bigger Picture | 27 | [`the-bigger-picture.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-bigger-picture.json) |
-| Enzan's Brother | 26 | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) |
 | Underwater | 26 | [`underwater.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/underwater.json) |
 | An Iron Heart Part I | 25 | [`an-iron-heart-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-i.json) |
 | Maltic's Well | 25 | [`maltic-s-well.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/maltic-s-well.json) |
@@ -270,6 +270,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Collect White Lilies | 9 | [`collect-white-lilies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/collect-white-lilies.json) |
 | Lost Tower | 9 | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-tower.json) |
 | A Wynnic Excavation | 9 | [`a-wynnic-excavation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/a-wynnic-excavation.json) |
+| Water of the Past | 9 | [`water-of-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/water-of-the-past.json) |
 | Lost Farmers | 8 | [`lost-farmers.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/lost-farmers.json) |
 | Hunt Woolly Rhinos | 7 | [`hunt-woolly-rhinos.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunt-woolly-rhinos.json) |
 | charm.json | 5 | [`charm.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/charm.json) |
