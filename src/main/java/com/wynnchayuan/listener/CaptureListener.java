@@ -266,10 +266,7 @@ public final class CaptureListener {
             return template;
         }
         String[] lines = template.split("\n", -1);
-        int keep = lines.length;
-        while (keep > 1 && !GlyphSplitter.hasWordBesidesStatus(lines[keep - 1])) {
-            keep--;
-        }
+        int keep = GlyphSplitter.wordedRows(lines);
         return keep == lines.length ? template
                 : String.join("\n", Arrays.copyOf(lines, keep));
     }
