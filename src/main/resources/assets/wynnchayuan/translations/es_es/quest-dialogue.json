@@ -4,7 +4,7 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 24883,
+  "count": 24886,
   "translated": 24880,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
@@ -55517,8 +55517,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "es tu mejor opción si te cuesta seguir con vida. Reduce el daño que recibes, poco más.",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} Defensa es tu mejor opción si te cuesta seguir con vida. Reduce el daño que recibes, poco más.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55527,8 +55527,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "Agilidad, esa es para los que arriesgan. Cuanta más tengas, más probable es que esquives los ataques y anules casi todo su daño.",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} Agilidad, esa es para los que arriesgan. Cuanta más tengas, más probable es que esquives los ataques y anules casi todo su daño.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55587,7 +55587,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "¡Santa Vaca! Es... es... ¡ha vuelto! ¡Mátalo, rápido!",
    "role": "desc",
    "kind": "dialogue",
@@ -55752,11 +55752,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "Hay cinco.  Fuerza,  Destreza,  Inteligencia,  Defensa y  Agilidad, cada uno con bonificaciones distintas.",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "Hay cinco. {#} Fuerza, {#} Destreza, {#} Inteligencia, {#} Defensa y {#} Agilidad, cada uno con bonificaciones distintas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55875,6 +55876,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -79531,6 +79543,27 @@
    "kind": "dialogue",
    "quest": "Enzan's Brother",
    "source": "capture"
+  },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note": "obsessed は斜体"
   },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",

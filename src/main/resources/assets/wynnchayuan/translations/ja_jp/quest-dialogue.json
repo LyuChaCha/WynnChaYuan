@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24956,
-  "translated": 24953,
+  "count": 24959,
+  "translated": 24956,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -55568,13 +55568,14 @@
   },
   "Dearly Departed#000": {
    "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
-   "dst": "{#} 器用さは少し厄介な能力だ。高ければ高いほど、攻撃が二倍のダメージを与える確率が上がる。いいだろう？",
+   "dst": "{#} {c1}器用さ{/}は少し変な能力だ。高ければ高いほど、攻撃が二倍のダメージを与える確率が上がる。いいだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured",
+   "note": "{c1}Dexterity{/}",
    "similar": {
     "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
     "file": "quest/dearly-departed.json",
@@ -55584,13 +55585,14 @@
   },
   "Dearly Departed#001": {
    "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
-   "dst": "{#} 知力は呪文を使う者のためのもので、呪文の消費を下げ、マナの最大値を増やす。",
+   "dst": "{#} {c1}知力{/}は呪文を使う者のためのもので、呪文の消費を下げ、マナの最大値を増やす。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured",
+   "note": "{c1}Intelligence{/}",
    "similar": {
     "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
     "file": "quest/dearly-departed.json",
@@ -55670,13 +55672,14 @@
   },
   "Dearly Departed#009": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
-   "dst": "私の立場は分かるだろう？哀れな男を助けると思って、あそこの [Muddy Shovel] を取ってきて、戻ってきてくれ。",
+   "dst": "私の立場は分かるだろう？哀れな男を助けると思って、あそこの {c3}[Muddy Shovel] {/}を{c2}取ってきて{/}、戻ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 1",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}go and grab{/} , {c3}[Muddy Shovel]{/}"
   },
   "Dearly Departed#010": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
@@ -55740,13 +55743,14 @@
   },
   "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
-   "dst": "スキルポイントだよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
+   "dst": "{c2}スキルポイント{/}だよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Skill Points{/} , Skill Pointsは太字"
   },
   "Dearly Departed#019": {
    "src": "You get it, or do you want me to tell you what they are?",
@@ -55759,24 +55763,26 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "は、生き延びるのに苦労しているなら一番だ。受けるダメージが減る、それだけさ。",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} {c1}防御{/}は、生き延びるのに苦労しているなら一番だ。受けるダメージが減る、それだけさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}Defence{/}"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "俊敏さ、これは危険を好む人向けだ。多いほど攻撃を回避しやすくなり、ダメージをほとんど打ち消せる。",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} {c1}俊敏{/}さ、これは危険を好む人向けだ。多いほど攻撃を回避しやすくなり、ダメージをほとんど打ち消せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}Agility{/}"
   },
   "Dearly Departed#025": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
@@ -55790,23 +55796,25 @@
   },
   "Dearly Departed#026": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
-   "dst": "コンパスを開けばスキルポイントを振れる。準備ができたら中に入って、私の指輪を取ってきてくれ。",
+   "dst": "{c2}コンパスを開けば{c3}スキルポイント{/}を振れる。準備ができたら中に入って、{c2}私の指輪を取ってきてくれ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}open your compass{/} , {c3}Skill Points{/} , {c2}get my ring{/} , Skill Pointsは太字"
   },
   "Dearly Departed#028": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
-   "dst": "さあ行け、兵士よ！{p} 軍の力を見せてくれ！えっと、つまり…指輪を取ってきてくれ！",
+   "dst": "さあ行け、兵士よ！{p} 軍の力を見せてくれ！えっと、つまり…{c2}指輪を取ってきてくれ{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 4",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}get me that ring{/}"
   },
   "Dearly Departed#029": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
@@ -55829,7 +55837,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "牛神様！あれは…あれは…奴が戻ってきた！早く倒してくれ！",
    "role": "desc",
    "kind": "dialogue",
@@ -55896,7 +55904,8 @@
    "quest": "Dearly Departed",
    "stage": "Stage 6",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "actions は斜体"
   },
   "Dearly Departed#039": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
@@ -55990,19 +55999,22 @@
   },
   "Dearly Departed#048": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
-   "dst": "スキルポイントも振ってあるよね？何かあった時に役立つかもしれないからね。",
+   "dst": "{c2}スキルポイント{/}も振ってあるよね？何かあった時に役立つかもしれないからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "speaker": "Farmer Kelri",
+   "source": "capture",
+   "note": "{c2}Skill Points{/} , Skill Pointsは太字"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "五種類ある。筋力、器用さ、知力、防御、俊敏さ、それぞれ別のボーナスがあるんだ。",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "五種類ある。{#} {c2}筋力{/}、{#} {c3}器用さ{/}、{#} {c4}知力{/}、{#} {c5}防御{/}、{#} {c6}俊敏さ{/}、それぞれ別のボーナスがあるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}Strength{/} , {c3}Dexterity{/} , {c4}Intelligence{/} , {c5}Defence{/} , {c6}Agility{/}"
   },
   "Dearly Departed#050": {
    "src": "Why are you asking me that?",
@@ -56030,27 +56042,30 @@
   },
   "Dearly Departed#053": {
    "src": "About Strength.",
-   "dst": "筋力について。",
+   "dst": "{c2}筋力{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}Strength{/}"
   },
   "Dearly Departed#054": {
    "src": "About Dexterity.",
-   "dst": "器用さについて。",
+   "dst": "{c2}器用さ{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}Dexterity{/}"
   },
   "Dearly Departed#055": {
    "src": "About Intelligence.",
-   "dst": "知力について。",
+   "dst": "{c2}知力{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}Intelligence{/}"
   },
   "Dearly Departed#056": {
    "src": "Not yet...",
@@ -56094,11 +56109,12 @@
   },
   "Dearly Departed#061": {
    "src": "About Defence.",
-   "dst": "防御について。",
+   "dst": "{c2}防御{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}Defence{/}"
   },
   "Dearly Departed#062": {
    "src": "About Agility.",
@@ -56110,13 +56126,25 @@
   },
   "Dearly Departed#063": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
-   "dst": "{#} 筋力は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
+   "dst": "{#} {c1}筋力{/}は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Strength{/}"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "兵士さん、本当にありがとう。君のおかげで助かったよ……妻にどう説明すればよかったか、さあね、ハハ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -79885,13 +79913,14 @@
   },
   "Enzan's Brother#009": {
    "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "この道を行け。アイテム鑑定士の先にいるから、見逃すことはない。鑑定士の先の大きな階段を目指せ。",
+   "dst": "この道を行け。{c2}アイテム鑑定士の先{/}にいるから、見逃すことはない。{c2}鑑定士の先の大きな階段を目指せ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
    "stage": "Stage 1",
    "speaker": "Enzan",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Just head to the big set of stairs, past the item identifier{/}"
   },
   "Enzan's Brother#010": {
    "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
@@ -79965,13 +79994,14 @@
   },
   "Enzan's Brother#017": {
    "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "[{~} Energy Mushroom] を持ってきたら助けてやる。階段を下りて洞窟に入り、キノコを取ってこい！",
+   "dst": "{c2}[{~} Energy Mushroom] {c1}を持ってきたら助けてやる。{c3}階段を下りて洞窟に入り、キノコを取ってこい{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
    "stage": "Stage 2",
    "speaker": "Therck",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Energy Mushroom]{/} , {c3}Enter the cave down the stairs, and bring me that mushroom{/}"
   },
   "Enzan's Brother#018": {
    "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
@@ -80029,19 +80059,42 @@
   },
   "Enzan's Brother#024": {
    "src": "Who knows, maybe there's a treasure or something up there?",
-   "dst": "上に宝か何かがあるかもしれないだろ？",
+   "dst": "{c2}上に{/}宝か何かがあるかもしれないだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}up there{/}"
   },
   "Enzan's Brother#025": {
    "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
-   "dst": "この指輪を持っていけ。アクセサリーだ。近くのアイテム鑑定士で鑑定できる。",
+   "dst": "この指輪を持っていけ。アクセサリーだ。{c2}近くのアイテム鑑定士で鑑定できる{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
+   "source": "capture",
+   "note": "{c2}identify it at the nearby Item Identifier{/}"
+  },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "何を待ってるんだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
    "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "兄を見つけるのは難しくないはず。階段に夢中なんだから。アイテム鑑定士の近くにいるはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note": "obsessed は斜体"
   },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",

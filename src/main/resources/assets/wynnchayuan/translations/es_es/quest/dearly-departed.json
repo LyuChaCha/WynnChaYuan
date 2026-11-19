@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 57,
+  "count": 58,
   "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -199,8 +199,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "es tu mejor opción si te cuesta seguir con vida. Reduce el daño que recibes, poco más.",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} Defensa es tu mejor opción si te cuesta seguir con vida. Reduce el daño que recibes, poco más.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -209,8 +209,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "Agilidad, esa es para los que arriesgan. Cuanta más tengas, más probable es que esquives los ataques y anules casi todo su daño.",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} Agilidad, esa es para los que arriesgan. Cuanta más tengas, más probable es que esquives los ataques y anules casi todo su daño.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -269,7 +269,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "¡Santa Vaca! Es... es... ¡ha vuelto! ¡Mátalo, rápido!",
    "role": "desc",
    "kind": "dialogue",
@@ -434,11 +434,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "Hay cinco.  Fuerza,  Destreza,  Inteligencia,  Defensa y  Agilidad, cada uno con bonificaciones distintas.",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "Hay cinco. {#} Fuerza, {#} Destreza, {#} Inteligencia, {#} Defensa y {#} Agilidad, cada uno con bonificaciones distintas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -557,6 +558,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   }
  }
 }
