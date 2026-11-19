@@ -5,6 +5,8 @@ import com.wynnchayuan.client.ui.ChatLogView;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents;
@@ -29,6 +31,15 @@ public final class ChatLogButton {
                 attach(chat);
             }
         });
+        HudElementRegistry.replaceElement(VanillaHudElements.CHAT, chat -> (g, tick) -> {
+            if (!coversChat()) {
+                chat.render(g, tick);
+            }
+        });
+    }
+
+    private static boolean coversChat() {
+        return active() && Minecraft.getInstance().screen instanceof ChatScreen;
     }
 
     private static void attach(ChatScreen chat) {
