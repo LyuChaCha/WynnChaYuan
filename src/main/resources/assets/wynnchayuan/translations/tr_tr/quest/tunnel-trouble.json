@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Tunnel Trouble",
-  "count": 68,
-  "translated": 68,
+  "count": 69,
+  "translated": 69,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -151,7 +151,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "{p} ile {p} arasında hızlı ve kolay yolculuk için kullanırdık. Yıllardır terk edilmiş durumda.",
    "role": "desc",
    "kind": "dialogue",
@@ -689,6 +689,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "Emirlerini aldın, acemi. Yerine getir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   }
  }
 }
