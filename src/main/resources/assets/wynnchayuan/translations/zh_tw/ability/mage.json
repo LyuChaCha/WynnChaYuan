@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "{c1}祕法回流{c2}提取{c3}超過 {~}{c2} 魔力時，對附近的敵方造成傷害。",
+   "dst": "{c1}祕法回流{c2}提取{c3}至少 {~}{c2} 魔力時，對附近的敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -934,7 +934,7 @@
   },
   "ability-mage#0067": {
    "src": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
-   "dst": "冰蛇會朝著你面對的方向移動。",
+   "dst": "冰蛇會朝著你面對的方向移動，讓你能操控它。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1651,7 +1651,7 @@
   },
   "ability-mage#0119": {
    "src": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
-   "dst": "使用 Heal 和 Arcane Transfer 額外獲得移動速度。",
+   "dst": "使用 Heal 或 Arcane Transfer 後 額外獲得移動速度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "{c2}奧法尼姆{c1}的光球數量增加 {c3}{~}{c1}。",
+   "dst": "{c2}奧法尼姆{c1}的光球數量上限增加 {c3}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "{c2}奧法尼姆{c1}的光球數量增加 {c3}{~}{c1}，但傷害降低。",
+   "dst": "{c2}奧法尼姆{c1}的光球數量上限增加 {c3}{~}{c1}，但傷害降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "{c2}織光{c1}的光球數量增加 {c3}{~}{c1}。",
+   "dst": "{c2}織光{c1}的光球數量上限增加 {c3}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "{c1}次元裂隙{c2}中將會有一個{c3}裂隙之裔{c2}躲在其中。",
+   "dst": "{c1}次元裂隙{c2}存在期間，會有一個{c3}裂隙之裔{c2}棲身其中。",
    "role": "desc",
    "kind": "block",
    "ctx": [

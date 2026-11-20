@@ -148,7 +148,7 @@ public final class AbilityTermTest {
         }
         check("「治療」有底線", underlined(out, "治療") == Boolean.TRUE);
         check("「祕法回流」有底線", underlined(out, "祕法回流") == Boolean.TRUE);
-        check("「和」沒有底線", underlined(out, "和") == Boolean.FALSE);
+        check("「或」沒有底線", underlined(out, "或") == Boolean.FALSE);
         check("★ 名稱後面的「額外獲得」沒有底線", underlined(out, "額外獲得") == Boolean.FALSE);
         check("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
     }
