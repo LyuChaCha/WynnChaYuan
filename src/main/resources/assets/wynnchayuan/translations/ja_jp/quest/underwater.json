@@ -8,13 +8,14 @@
  "entries": {
   "Underwater#000": {
    "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
-   "dst": "ヘルメットが欲しいなら、洞窟から [{~} Gudgeon Meat] を持ってきてくれ！",
+   "dst": "ヘルメットが欲しいなら、洞窟から {c2}[{~} Gudgeon Meat]{/} を持ってきてくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}[{~} Gudgeon Meat]{/}"
   },
   "Underwater#001": {
    "src": "Glad to see you again!",
@@ -114,23 +115,25 @@
   },
   "Underwater#010": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
-   "dst": "Sayrr は船で沖に出ているが、隣の洞窟を通れば彼の釣り場まですぐだ。道中は気をつけて。",
+   "dst": "Sayrr は船で沖に出ているが、{c2}隣の洞窟を通れば彼の釣り場まですぐ{/}だ。道中は気をつけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 1",
    "speaker": "Omango",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}the cave next to me is a quick way over{/}"
   },
   "Underwater#011": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
-   "dst": "ヘルメットを手に入れたら船を探索し、[{~} Ancient Treasure] を持ち帰ってくれ。幸運を。",
+   "dst": "ヘルメットを手に入れたら船を探索し、{c2}[{~} Ancient Treasure] {/}を持ち帰ってくれ。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 1",
    "speaker": "Omango",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Ancient Treasure]{/}"
   },
   "Underwater#012": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
@@ -174,23 +177,25 @@
   },
   "Underwater#016": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
-   "dst": "聞こえてただろうが、この辺じゃもう魚が食いつかねえ！なんとか稼がなきゃならねえ！あの洞窟に魚はいるんだが…",
+   "dst": "聞こえてただろうが、この辺じゃもう魚が食いつかねえ！なんとか稼がなきゃならねえ！{c2}あの洞窟に魚はいる{/}んだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 2",
    "speaker": "Sayrr",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}There's some fish in that cave,{/}"
   },
   "Underwater#017": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
-   "dst": "…ちょっと危ねえんだ。そうだな、釣り竿を貸してやるから、下で [{~} Gudgeon Meat] でも釣ってきてくれ。",
+   "dst": "…ちょっと危ねえんだ。そうだな、釣り竿を貸してやるから、下で {c2}[{~} Gudgeon Meat] {/}でも釣ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 2",
    "speaker": "Sayrr",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Gudgeon Meat]{/}"
   },
   "Underwater#018": {
    "src": "The helmet will be all yours after that.",
@@ -271,6 +276,49 @@
    "stage": "Stage 5",
    "speaker": "Omango",
    "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "もうヘルメットをなくしまったのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "それなら、手伝ってやろう！前と同じように、洞窟から{c2}[{~} Gudgeon Meat]{/}を持ってきてくれたら、その代わりに1つやるよ！どうだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json",
+   "note":"{c2}[{~} Gudgeon Meat]{/}"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "難破船の近くにいる {c2}Omango {/}に会いに行きな！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json",
+   "note":"{c2}Omango{/} , quest.json 中也有同样的内容"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "これこそが、 Omango が話していた宝物に違いない！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note":""
   }
  }
 }
