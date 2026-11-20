@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 57,
+  "count": 58,
   "translated": 56,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -199,8 +199,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} 如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -209,8 +209,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} 敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -269,7 +269,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "神圣的牛啊！那……那……他回来了！快杀了它！",
    "role": "desc",
    "kind": "dialogue",
@@ -434,11 +434,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "一共有五项。{#} 力量、{#} 灵巧、{#} 智力、{#} 防御和 {#} 敏捷，各有不同的加成。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -557,6 +558,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   }
  }
 }
