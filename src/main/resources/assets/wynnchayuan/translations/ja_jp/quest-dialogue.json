@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24959,
-  "translated": 24956,
+  "count": 24964,
+  "translated": 24961,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -102062,13 +102062,14 @@
   },
   "Infested Plants#001": {
    "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
-   "dst": "…んー、ちょっとギリギリだけど…あっ！君、えっと、まだいたの…！そう。そうだよ、あの洞窟に入らなきゃ、覚えてる？",
+   "dst": "…んー、ちょっとギリギリだけど…あっ！君、えっと、まだいたの…！そう。そうだよ、{c2}あの洞窟に入らなきゃ{/}、覚えてる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}go into that cave{/}"
   },
   "Infested Plants#002": {
    "src": "[+{~} Saccharum Plant]",
@@ -102444,11 +102445,12 @@
   },
   "Infested Plants#042": {
    "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
-   "dst": "僕はそれでいいよ。{u}、君は洞窟へ。その間、僕がここで Ope を守る。",
+   "dst": "僕はそれでいいよ。{u}、{c2}君は洞窟へ{/}。その間、僕がここで Ope を守る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
-   "source": "capture"
+   "source": "capture",
+   "note": "{c2}go into the cave{/}"
   },
   "Infested Plants#043": {
    "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
@@ -102592,6 +102594,15 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "ちょっと休んでくるね。でも、すぐにまた冒険に出られるようになるから、心配しないで！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Jungle Fever#000": {
@@ -108821,13 +108832,14 @@
   },
   "Maltic's Well#009": {
    "src": "But she's lured my child into the well! My only child! He was born in Wynn, that makes him a Wynn citizen!",
-   "dst": "でも息子を井戸に誘い込んだんです！たった一人の息子を！Wynn 生まれだから Wynn の市民なんですよ！",
+   "dst": "でも{c2}息子を井戸に誘い込んだ{/}んです！たった一人の息子を！Wynn 生まれだから Wynn の市民なんですよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
    "stage": "Stage 1",
    "speaker": "Rynend",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}she's lured my child into the well!{/}"
   },
   "Maltic's Well#010": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
@@ -224172,7 +224184,8 @@
    "quest": "The Sewers of Ragni",
    "stage": "Stage 5",
    "speaker": "Jenprest",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "things は斜体"
   },
   "The Sewers of Ragni#033": {
    "src": "Good, let's use it on this wall, it looks like we can break right through...",
@@ -224203,16 +224216,6 @@
    "stage": "Stage 6",
    "speaker": "Jenprest",
    "source": "wiki"
-  },
-  "The Sewers of Ragni#036": {
-   "src": "Did you feel like there was",
-   "dst": "何かがいるような気がしなかったか",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "captured"
   },
   "The Sewers of Ragni#037": {
    "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
@@ -244717,7 +244720,7 @@
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Fenor",
    "source": "captured"
   },
   "Tunnel Trouble#003": {
@@ -244831,7 +244834,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "{p} と {p} を素早く行き来するのに使われていたが、もう何年も放置されている。",
    "role": "desc",
    "kind": "dialogue",
@@ -244882,13 +244885,14 @@
   },
   "Tunnel Trouble#019": {
    "src": "Uh... well, to start, we'll need to clear that debris. Just... give it a shove, or something. That'll probably do it.",
-   "dst": "えーと…まずはこの瓦礫をどかさないとな。軽く押せば崩れるだろう。",
+   "dst": "えーと…まずはこの瓦礫をどかさないとな。{c2}軽く押せば{/}崩れるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "Stage 2",
    "speaker": "Miner Linton",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}give it a shove{/}"
   },
   "Tunnel Trouble#020": {
    "src": "Help Miner Linton remove the debris blocking the path.",
@@ -245222,13 +245226,14 @@
   },
   "Tunnel Trouble#053": {
    "src": "...Oh! Right! You were busy with something before you came to help me, weren't you? Hm... I think I might be able to help you with that as well! Let's go back to the tunnel!",
-   "dst": "…あっ！そうだ！僕を手伝う前、何か用事の途中だったよね？うーん…それも手伝えるかも！トンネルに戻ろう！",
+   "dst": "…あっ！そうだ！僕を手伝う前、何か用事の途中だったよね？うーん…それも手伝えるかも！{c2}トンネルに戻ろう{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "Stage 9",
    "speaker": "Drale",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}go back to the tunnel{/}"
   },
   "Tunnel Trouble#054": {
    "src": "Return to Miner Linton back in the abandoned cave.",
@@ -245369,6 +245374,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "新兵、命令は受けたな。実行しろ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   },
   "Underice#000": {
    "src": "Where is the [Breathing Helmet I] I asked you for?",
@@ -247142,13 +247157,14 @@
   },
   "Underwater#000": {
    "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
-   "dst": "ヘルメットが欲しいなら、洞窟から [{~} Gudgeon Meat] を持ってきてくれ！",
+   "dst": "ヘルメットが欲しいなら、洞窟から {c2}[{~} Gudgeon Meat]{/} を持ってきてくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}[{~} Gudgeon Meat]{/}"
   },
   "Underwater#001": {
    "src": "Glad to see you again!",
@@ -247248,23 +247264,25 @@
   },
   "Underwater#010": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
-   "dst": "Sayrr は船で沖に出ているが、隣の洞窟を通れば彼の釣り場まですぐだ。道中は気をつけて。",
+   "dst": "Sayrr は船で沖に出ているが、{c2}隣の洞窟を通れば彼の釣り場まですぐ{/}だ。道中は気をつけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 1",
    "speaker": "Omango",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the cave next to me is a quick way over{/}"
   },
   "Underwater#011": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
-   "dst": "ヘルメットを手に入れたら船を探索し、[{~} Ancient Treasure] を持ち帰ってくれ。幸運を。",
+   "dst": "ヘルメットを手に入れたら船を探索し、{c2}[{~} Ancient Treasure] {/}を持ち帰ってくれ。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 1",
    "speaker": "Omango",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Ancient Treasure]{/}"
   },
   "Underwater#012": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
@@ -247308,23 +247326,25 @@
   },
   "Underwater#016": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
-   "dst": "聞こえてただろうが、この辺じゃもう魚が食いつかねえ！なんとか稼がなきゃならねえ！あの洞窟に魚はいるんだが…",
+   "dst": "聞こえてただろうが、この辺じゃもう魚が食いつかねえ！なんとか稼がなきゃならねえ！{c2}あの洞窟に魚はいる{/}んだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 2",
    "speaker": "Sayrr",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}There's some fish in that cave,{/}"
   },
   "Underwater#017": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
-   "dst": "…ちょっと危ねえんだ。そうだな、釣り竿を貸してやるから、下で [{~} Gudgeon Meat] でも釣ってきてくれ。",
+   "dst": "…ちょっと危ねえんだ。そうだな、釣り竿を貸してやるから、下で {c2}[{~} Gudgeon Meat] {/}でも釣ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
    "stage": "Stage 2",
    "speaker": "Sayrr",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Gudgeon Meat]{/}"
   },
   "Underwater#018": {
    "src": "The helmet will be all yours after that.",
@@ -247405,6 +247425,49 @@
    "stage": "Stage 5",
    "speaker": "Omango",
    "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "もうヘルメットをなくしまったのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "それなら、手伝ってやろう！前と同じように、洞窟から{c2}[{~} Gudgeon Meat]{/}を持ってきてくれたら、その代わりに1つやるよ！どうだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json",
+   "note": "{c2}[{~} Gudgeon Meat]{/}"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "難破船の近くにいる {c2}Omango {/}に会いに行きな！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json",
+   "note": "{c2}Omango{/} , quest.json 中也有同样的内容"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "これこそが、 Omango が話していた宝物に違いない！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
   },
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
