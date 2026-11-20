@@ -38,7 +38,7 @@
   },
   "ability-archer#0002": {
    "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
-   "dst": "射出一發爆炸箭矢，\n在命中的區域爆炸並造成大量傷害。\n(若被自己的爆炸波及會受到你的每秒傷害 {~} 的傷害)",
+   "dst": "射出一發遠程爆炸箭矢，\n在命中處爆炸，對大範圍造成大量傷害。\n(若被自己的爆炸波及會受到你的每秒傷害 {~} 的傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -873,7 +873,7 @@
   },
   "ability-archer#0063": {
    "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
-   "dst": "每使用箭矢風暴射出 {~1} 支箭後，\n你的普攻都會額外發射一支燧石箭，\n對敵人造成傷害。\n(每次普攻最多發射 {~2} 支燧石箭)",
+   "dst": "近期內每用箭矢風暴射出 {~1} 支箭後，\n你的普攻都會額外發射一支燧石箭，\n對敵人造成傷害。\n(每次普攻最多發射 {~2} 支燧石箭)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1747,7 +1747,7 @@
   },
   "ability-archer#0127": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "如果你在 {~1} 秒或更長時間內\n未對敵人造成傷害，你的下一次攻擊\n將造成額外 {~2} 傷害並獲得額外 {~3} 層專注{#}。",
+   "dst": "如果你在 {~1} 秒或更長時間內\n未對敵人造成傷害，你的下一次命中\n將造成額外 {~2} 傷害並獲得額外 {~3} 層專注{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
