@@ -17,7 +17,7 @@ public final class DialogueFitLangTest {
     private static final int[] WIDTHS = {232, 208};
 
     private static final String[] LANGS =
-            {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
+            {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"};
 
     public static void main(String[] args) throws Exception {
         DialogueLayout.widthForTest = DialogueFitLangTest::realWidth;

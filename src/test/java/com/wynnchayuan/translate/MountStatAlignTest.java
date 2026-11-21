@@ -28,7 +28,9 @@ public final class MountStatAlignTest {
 
     private static final int[] SERVER_PX = {25, 54, 33, 52, 30, 35, 46, 24, 35};
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
+    private static final java.util.Set<String> SAME_WORD = java.util.Set.of("pt_br:Altitude");
+
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"};
 
     private static final int[] COLUMNS = {75, 69};
 
@@ -81,7 +83,8 @@ public final class MountStatAlignTest {
                         check(lang + " " + stat + " 標籤跟數值沒疊在一起（間距 " + gap + " px）：" + visible(text),
                                 gap >= MIN_GAP_PX);
                         check(lang + " " + stat + " 標籤翻了、沒附原文：" + visible(text),
-                                !text.isEmpty() && !text.startsWith(stat) && !text.contains("(" + stat + ")"));
+                                !text.isEmpty() && (!text.startsWith(stat) || SAME_WORD.contains(lang + ":" + stat))
+                                        && !text.contains("(" + stat + ")"));
                     }
                 }
             }

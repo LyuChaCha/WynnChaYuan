@@ -3,12 +3,12 @@
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
   "count": 641,
-  "translated": 0
+  "translated": 641
  },
  "entries": {
   "choice#c000": {
    "src": "Are you headed someplace?",
-   "dst": "",
+   "dst": "Está indo a algum lugar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -18,7 +18,7 @@
   },
   "choice#c001": {
    "src": "What's life like here?",
-   "dst": "",
+   "dst": "Como é a vida aqui?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -28,7 +28,7 @@
   },
   "choice#c002": {
    "src": "Just saying hello.",
-   "dst": "",
+   "dst": "Só dando um oi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -38,7 +38,7 @@
   },
   "choice#c003": {
    "src": "What's wrong?",
-   "dst": "",
+   "dst": "O que houve?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -48,7 +48,7 @@
   },
   "choice#c004": {
    "src": "Uhh.. Nothing.",
-   "dst": "",
+   "dst": "Hã.. Nada.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -58,7 +58,7 @@
   },
   "choice#c005": {
    "src": "Where are you walking?",
-   "dst": "",
+   "dst": "Aonde está indo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -68,7 +68,7 @@
   },
   "choice#c006": {
    "src": "Where are you coming from?",
-   "dst": "",
+   "dst": "De onde você vem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -78,7 +78,7 @@
   },
   "choice#c007": {
    "src": "What are you up to?",
-   "dst": "",
+   "dst": "O que anda fazendo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -88,7 +88,7 @@
   },
   "choice#c000#000": {
    "src": "Have you heard of any rumors lately?",
-   "dst": "",
+   "dst": "Ouviu algum boato ultimamente?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -98,7 +98,7 @@
   },
   "choice#c000#001": {
    "src": "What do you think about this village?",
-   "dst": "",
+   "dst": "O que acha desta aldeia?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -108,7 +108,7 @@
   },
   "choice#c000#002": {
    "src": "Do you know anyone by the name of Garvan?",
-   "dst": "",
+   "dst": "Conhece alguém chamado Garvan?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -118,7 +118,7 @@
   },
   "choice#c000#003": {
    "src": "How long have you lived in this village?",
-   "dst": "",
+   "dst": "Há quanto tempo mora nesta aldeia?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -128,7 +128,7 @@
   },
   "choice#c000#004": {
    "src": "Do you mind if I go inside of your house?",
-   "dst": "",
+   "dst": "Se importa se eu entrar na sua casa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -138,7 +138,7 @@
   },
   "choice#c000#005": {
    "src": "Say nothing [EXIT]",
-   "dst": "",
+   "dst": "Não dizer nada [SAIR]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -148,7 +148,7 @@
   },
   "choice#c000#006": {
    "src": "We should probably lay low.",
-   "dst": "",
+   "dst": "Melhor não chamarmos atenção.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -158,7 +158,7 @@
   },
   "choice#c000#007": {
    "src": "Let's talk to your friends.",
-   "dst": "",
+   "dst": "Vamos falar com seus amigos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -168,7 +168,7 @@
   },
   "choice#c000#008": {
    "src": "We want to expose Aldorei.",
-   "dst": "",
+   "dst": "Queremos desmascarar Aldorei.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -178,7 +178,7 @@
   },
   "choice#c000#009": {
    "src": "So why aren't you dead?",
-   "dst": "",
+   "dst": "E por que você não está morto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -188,7 +188,7 @@
   },
   "choice#c000#010": {
    "src": "So why are you immortal?",
-   "dst": "",
+   "dst": "E por que você é imortal?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -198,7 +198,7 @@
   },
   "choice#c000#011": {
    "src": "I don't have any questions.",
-   "dst": "",
+   "dst": "Não tenho perguntas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -208,7 +208,7 @@
   },
   "choice#c008": {
    "src": "What do you think of the See",
-   "dst": "",
+   "dst": "O que acha do Vidente?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What do you think of the Seer?",
@@ -219,7 +219,7 @@
   },
   "choice#c009": {
    "src": "I'd like to view the hint ag",
-   "dst": "",
+   "dst": "Quero ver a dica de novo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -229,7 +229,7 @@
   },
   "choice#c010": {
    "src": "Why do you want these spirit",
-   "dst": "",
+   "dst": "Por que quer esses espíritos de volta?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Why do you want these spirits returned?",
@@ -240,7 +240,7 @@
   },
   "choice#c011": {
    "src": "I'd like to submit my ticket",
-   "dst": "",
+   "dst": "Quero entregar meus bilhetes.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I'd like to submit my tickets.",
@@ -251,7 +251,7 @@
   },
   "choice#c012": {
    "src": "Yes, I helped you with the h",
-   "dst": "",
+   "dst": "Sim, te ajudei com a máscara assombrada, lembra?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Yes, I helped you with the haunted mask problem, remember?",
@@ -262,7 +262,7 @@
   },
   "choice#c013": {
    "src": "Let me think about this for",
-   "dst": "",
+   "dst": "Deixa eu pensar um pouco.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Let me think about this for a moment.",
@@ -273,7 +273,7 @@
   },
   "choice#c014": {
    "src": "How have you been doing sinc",
-   "dst": "",
+   "dst": "Como você tem andado desde então?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -283,7 +283,7 @@
   },
   "choice/npc#000": {
    "src": "What do elements on my gear",
-   "dst": "",
+   "dst": "O que os elementos do meu equipamento fazem?",
    "full": "What do elements on my gear do?",
    "role": "desc",
    "kind": "dialogue",
@@ -294,7 +294,7 @@
   },
   "choice/npc#001": {
    "src": "What do elements on enemies",
-   "dst": "",
+   "dst": "O que significam os elementos dos inimigos?",
    "full": "What do elements on enemies mean?",
    "role": "desc",
    "kind": "dialogue",
@@ -305,7 +305,7 @@
   },
   "choice/npc#002": {
    "src": "How can I tell a spell is co",
-   "dst": "",
+   "dst": "Como sei que vem um feitiço?",
    "full": "How can I tell a spell is coming?",
    "role": "desc",
    "kind": "dialogue",
@@ -316,7 +316,7 @@
   },
   "choice/npc#003": {
    "src": "How's society now that you'r",
-   "dst": "",
+   "dst": "Como está a sociedade agora que você voltou?",
    "full": "How's society now that you're back?",
    "role": "desc",
    "kind": "dialogue",
@@ -327,7 +327,7 @@
   },
   "choice/Fantastic Voyage#001": {
    "src": "Favorite type of bread?",
-   "dst": "",
+   "dst": "Seu tipo de pão favorito?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -337,7 +337,7 @@
   },
   "choice/Fantastic Voyage#002": {
    "src": "What's with Relend?",
-   "dst": "",
+   "dst": "Qual é a do Relend?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -347,7 +347,7 @@
   },
   "choice/Fantastic Voyage#003": {
    "src": "Have you seen a parrot aroun",
-   "dst": "",
+   "dst": "Viu um papagaio por aqui?",
    "full": "Have you seen a parrot around here?",
    "role": "desc",
    "kind": "dialogue",
@@ -358,7 +358,7 @@
   },
   "choice/Fantastic Voyage#011": {
    "src": "What service do you provide?",
-   "dst": "",
+   "dst": "Que serviço você oferece?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -368,7 +368,7 @@
   },
   "choice/Fantastic Voyage#012": {
    "src": "Can you tell my fortune? [{~}",
-   "dst": "",
+   "dst": "Pode ler minha sorte? [{~} LE]",
    "full": "Can you tell my fortune? [{~} LE]",
    "role": "desc",
    "kind": "dialogue",
@@ -379,7 +379,7 @@
   },
   "choice/Fantastic Voyage#017": {
    "src": "Just here to say hi",
-   "dst": "",
+   "dst": "Só vim dar um oi",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -389,7 +389,7 @@
   },
   "choice/Fantastic Voyage#019": {
    "src": "I'm alright, thanks",
-   "dst": "",
+   "dst": "Estou bem, obrigado",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -399,7 +399,7 @@
   },
   "choice/A Hunter's Calling#001": {
    "src": "Stay here",
-   "dst": "",
+   "dst": "Ficar aqui",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -409,7 +409,7 @@
   },
   "choice/A Hunter's Calling#002": {
    "src": "Go back and fight Therorick!",
-   "dst": "",
+   "dst": "Voltar e lutar contra Therorick!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -419,7 +419,7 @@
   },
   "choice/Arachnids' Ascent#001": {
    "src": "I'll keep adventuring, and s",
-   "dst": "",
+   "dst": "Vou continuar aventurando e ver quem posso ajudar.",
    "full": "I'll keep adventuring, and see who I can help.",
    "role": "desc",
    "kind": "dialogue",
@@ -430,7 +430,7 @@
   },
   "choice/Arachnids' Ascent#019": {
    "src": "I might explore a little, se",
-   "dst": "",
+   "dst": "Talvez explore um pouco, ver o que mais há por aí.",
    "full": "I might explore a little, see what else there is out there.",
    "role": "desc",
    "kind": "dialogue",
@@ -441,7 +441,7 @@
   },
   "choice/Arachnids' Ascent#051": {
    "src": "I'll stick around here a lit",
-   "dst": "",
+   "dst": "Vou ficar por aqui mais um pouco.",
    "full": "I'll stick around here a little longer.",
    "role": "desc",
    "kind": "dialogue",
@@ -452,7 +452,7 @@
   },
   "choice/Arachnids' Ascent#063": {
    "src": "I'm not sure what I'll do ne",
-   "dst": "",
+   "dst": "Não sei bem o que vou fazer agora.",
    "full": "I'm not sure what I'll do next.",
    "role": "desc",
    "kind": "dialogue",
@@ -463,7 +463,7 @@
   },
   "choice/Queen's Recruit#064": {
    "src": "I'm sorry.",
-   "dst": "",
+   "dst": "Desculpe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -473,7 +473,7 @@
   },
   "choice/Queen's Recruit#066": {
    "src": "...alright.",
-   "dst": "",
+   "dst": "...tudo bem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -483,7 +483,7 @@
   },
   "choice/Queen's Recruit#067": {
    "src": "I don't know.",
-   "dst": "",
+   "dst": "Não sei.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -493,7 +493,7 @@
   },
   "choice#c017": {
    "src": "Have you heard of any rumors",
-   "dst": "",
+   "dst": "Ouviu algum boato ultimamente?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Have you heard of any rumors lately?",
@@ -504,7 +504,7 @@
   },
   "choice#c018": {
    "src": "What do you think about this",
-   "dst": "",
+   "dst": "O que acha desta aldeia?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What do you think about this village?",
@@ -515,7 +515,7 @@
   },
   "choice#c019": {
    "src": "I'm a human",
-   "dst": "",
+   "dst": "Sou humano",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -525,7 +525,7 @@
   },
   "choice#c020": {
    "src": "I want to see the rules for",
-   "dst": "",
+   "dst": "Quero ver as regras do enigma de novo.",
    "role": "desc",
    "kind": "dialogue",
    "full": null,
@@ -536,7 +536,7 @@
   },
   "choice#c021": {
    "src": "The Blue Core",
-   "dst": "",
+   "dst": "O núcleo azul",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -546,7 +546,7 @@
   },
   "choice#c022": {
    "src": "The Orange Core",
-   "dst": "",
+   "dst": "O núcleo laranja",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -556,7 +556,7 @@
   },
   "choice#c023": {
    "src": "The Purple Core",
-   "dst": "",
+   "dst": "O núcleo roxo",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -566,7 +566,7 @@
   },
   "choice#c024": {
    "src": "The Gray Core",
-   "dst": "",
+   "dst": "O núcleo cinza",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -576,7 +576,7 @@
   },
   "choice#c025": {
    "src": "The Rainbow Core",
-   "dst": "",
+   "dst": "O núcleo arco-íris",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -586,7 +586,7 @@
   },
   "choice#c026": {
    "src": "The Green Core",
-   "dst": "",
+   "dst": "O núcleo verde",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -596,7 +596,7 @@
   },
   "choice#c027": {
    "src": "I'm dead?",
-   "dst": "",
+   "dst": "Estou morto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -606,7 +606,7 @@
   },
   "choice#c028": {
    "src": "Have I been here before?",
-   "dst": "",
+   "dst": "Já estive aqui antes?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -616,7 +616,7 @@
   },
   "choice#c029": {
    "src": "Why a mansion?",
-   "dst": "",
+   "dst": "Por que uma mansão?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -626,7 +626,7 @@
   },
   "choice#c030": {
    "src": "Do you talk to everyone?",
-   "dst": "",
+   "dst": "Você fala com todo mundo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -636,7 +636,7 @@
   },
   "choice#c031": {
    "src": "We can move on.",
-   "dst": "",
+   "dst": "Podemos seguir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -646,7 +646,7 @@
   },
   "choice#c032": {
    "src": "Why are you doing this for m",
-   "dst": "",
+   "dst": "Por que está fazendo isso por mim?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Why are you doing this for me?",
@@ -657,7 +657,7 @@
   },
   "choice#c033": {
    "src": "I am lost, yes.",
-   "dst": "",
+   "dst": "Sim, estou perdido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -667,7 +667,7 @@
   },
   "choice#c034": {
    "src": "I'm not lost.",
-   "dst": "",
+   "dst": "Não estou perdido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -677,7 +677,7 @@
   },
   "choice#c035": {
    "src": "It was!",
-   "dst": "",
+   "dst": "Foi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -687,7 +687,7 @@
   },
   "choice#c036": {
    "src": "Needs some work.",
-   "dst": "",
+   "dst": "Precisa de ajustes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -697,7 +697,7 @@
   },
   "choice#c040": {
    "src": "Bread.",
-   "dst": "",
+   "dst": "Pão.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -707,7 +707,7 @@
   },
   "choice#c044": {
    "src": "Can I grab a {p} Whiskey",
-   "dst": "",
+   "dst": "Me vê um uísque de {p}?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Can I grab a {p} Whiskey?",
@@ -718,7 +718,7 @@
   },
   "choice#c045": {
    "src": "Can I grab a Jofash Rum? [{~}E",
-   "dst": "",
+   "dst": "Me vê um rum de Jofash? [{~}E]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -728,7 +728,7 @@
   },
   "choice#c046": {
    "src": "Can I grab a {p} Pinot?",
-   "dst": "",
+   "dst": "Me vê um pinot de {p}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -738,7 +738,7 @@
   },
   "choice#c047": {
    "src": "Can I grab an {p} Absint",
-   "dst": "",
+   "dst": "Me vê um absinto de {p}?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Can I grab an {p} Absinthe?",
@@ -749,7 +749,7 @@
   },
   "choice#c049": {
    "src": "Not today, thanks",
-   "dst": "",
+   "dst": "Hoje não, obrigado",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -759,7 +759,7 @@
   },
   "choice#c050": {
    "src": "I'm still not interested.",
-   "dst": "",
+   "dst": "Continuo sem interesse.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -769,7 +769,7 @@
   },
   "choice#c051": {
    "src": "Let's trade!",
-   "dst": "",
+   "dst": "Vamos negociar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -779,7 +779,7 @@
   },
   "choice#c052": {
    "src": "What do you even do with all",
-   "dst": "",
+   "dst": "E o que você faz com toda essa sucata?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What do you even do with all this junk?",
@@ -790,7 +790,7 @@
   },
   "choice#c053": {
    "src": "What's up with the broken th",
-   "dst": "",
+   "dst": "Qual é a daquela coisa quebrada lá fora?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What's up with the broken thing outside?",
@@ -801,7 +801,7 @@
   },
   "choice#c054": {
    "src": "Ever find anything interesti",
-   "dst": "",
+   "dst": "Já achou algo interessante por aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Ever find anything interesting in the {p}?",
@@ -812,7 +812,7 @@
   },
   "choice#c055": {
    "src": "Just passing by!",
-   "dst": "",
+   "dst": "Só de passagem!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -822,7 +822,7 @@
   },
   "choice#c056": {
    "src": "Do you want to repair the transporter?",
-   "dst": "",
+   "dst": "Quer consertar o transportador?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -832,7 +832,7 @@
   },
   "choice#c064": {
    "src": "Yeah sure!",
-   "dst": "",
+   "dst": "Claro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -842,7 +842,7 @@
   },
   "choice#c065": {
    "src": "Maybe later.",
-   "dst": "",
+   "dst": "Talvez depois.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -852,7 +852,7 @@
   },
   "choice#c066": {
    "src": "Saying hi!",
-   "dst": "",
+   "dst": "Vim dar um oi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -862,7 +862,7 @@
   },
   "choice#c067": {
    "src": "Join the race",
-   "dst": "",
+   "dst": "Entrar na corrida",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -872,7 +872,7 @@
   },
   "choice#c068": {
    "src": "Refuse",
-   "dst": "",
+   "dst": "Recusar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -882,7 +882,7 @@
   },
   "choice#c015": {
    "src": "Do you know anyone by the na",
-   "dst": "",
+   "dst": "Conhece alguém chamado Garvan?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Do you know anyone by the name of Garvan?",
@@ -893,7 +893,7 @@
   },
   "choice#c016": {
    "src": "Xoeinbor.",
-   "dst": "",
+   "dst": "Xoeinbor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -903,7 +903,7 @@
   },
   "choice#c069": {
    "src": "Go back and Continue Hunter'",
-   "dst": "",
+   "dst": "Voltar e continuar O chamado do caçador.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Go back and Continue Hunter's Calling.",
@@ -914,7 +914,7 @@
   },
   "choice#c070": {
    "src": "Medallion?",
-   "dst": "",
+   "dst": "Medalhão?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -924,7 +924,7 @@
   },
   "choice#c071": {
    "src": "What's this device for?",
-   "dst": "",
+   "dst": "Para que serve este aparelho?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -934,7 +934,7 @@
   },
   "choice#c072": {
    "src": "Is there anything I can do t",
-   "dst": "",
+   "dst": "Posso fazer algo para ajudar?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Is there anything I can do to help?",
@@ -945,7 +945,7 @@
   },
   "choice#c073": {
    "src": "Alright, I can do that.",
-   "dst": "",
+   "dst": "Certo, posso fazer isso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -955,7 +955,7 @@
   },
   "choice#c074": {
    "src": "Tell me more about True Ice.",
-   "dst": "",
+   "dst": "Fale mais sobre o True Ice.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -965,7 +965,7 @@
   },
   "choice#c075": {
    "src": "What did you have for breakf",
-   "dst": "",
+   "dst": "O que você comeu no café da manhã hoje?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What did you have for breakfast today?",
@@ -976,7 +976,7 @@
   },
   "choice#c076": {
    "src": "Could we shatter it somehow,",
-   "dst": "",
+   "dst": "Daria para quebrá-lo de algum jeito, com uma arma ou um feitiço?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Could we shatter it somehow, with a weapon or a spell?",
@@ -987,7 +987,7 @@
   },
   "choice#c077": {
    "src": "Would lava from the Heights",
-   "dst": "",
+   "dst": "A lava das Heights serviria?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Would lava from the Heights work?",
@@ -998,7 +998,7 @@
   },
   "choice#c078": {
    "src": "What's your favorite color?",
-   "dst": "",
+   "dst": "Qual é a sua cor favorita?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1008,7 +1008,7 @@
   },
   "choice#c079": {
    "src": "What happened to all the dra",
-   "dst": "",
+   "dst": "O que aconteceu com todos os dragões?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What happened to all the dragons?",
@@ -1019,7 +1019,7 @@
   },
   "choice#c080": {
    "src": "The Doguns would know about",
-   "dst": "",
+   "dst": "Os Doguns saberiam algo sobre dragões?",
    "role": "desc",
    "kind": "dialogue",
    "full": "The Doguns would know about dragons?",
@@ -1030,7 +1030,7 @@
   },
   "choice#c081": {
    "src": "Read any good books recently",
-   "dst": "",
+   "dst": "Leu algum livro bom ultimamente?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Read any good books recently?",
@@ -1041,7 +1041,7 @@
   },
   "choice#c082": {
    "src": "[{~} Dragonling Eggs]",
-   "dst": "",
+   "dst": "[{~} Dragonling Eggs]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1051,7 +1051,7 @@
   },
   "choice#c083": {
    "src": "[{~} Shiny Shell]",
-   "dst": "",
+   "dst": "[{~} Shiny Shell]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1061,7 +1061,7 @@
   },
   "choice#c084": {
    "src": "[Rock]",
-   "dst": "",
+   "dst": "[Pedra]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1071,7 +1071,7 @@
   },
   "choice#c085": {
    "src": "What are you?",
-   "dst": "",
+   "dst": "O que você é?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1081,7 +1081,7 @@
   },
   "choice#c086": {
    "src": "What happened to us?",
-   "dst": "",
+   "dst": "O que aconteceu com a gente?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -1091,7 +1091,7 @@
   },
   "choice#c087": {
    "src": "What can I do around here to",
-   "dst": "",
+   "dst": "Como posso ajudar por aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What can I do around here to help?",
@@ -1102,7 +1102,7 @@
   },
   "choice#c088": {
    "src": "What's it like being an Admi",
-   "dst": "",
+   "dst": "Como é ser almirante?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What's it like being an Admiral?",
@@ -1113,7 +1113,7 @@
   },
   "choice#c089": {
    "src": "What were you doing in {p}",
-   "dst": "",
+   "dst": "O que você fazia em {p}?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What were you doing in {p}?",
@@ -1124,7 +1124,7 @@
   },
   "choice/A New Beginning#009": {
    "src": "Can we try and get along?",
-   "dst": "",
+   "dst": "Podemos tentar nos dar bem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -1134,7 +1134,7 @@
   },
   "choice/A New Beginning#010": {
    "src": "...yes. He did.",
-   "dst": "",
+   "dst": "...sim. Ele viveu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -1144,7 +1144,7 @@
   },
   "choice/Espren(NPC)#001": {
    "src": "How's the Weather",
-   "dst": "",
+   "dst": "Como está o tempo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "",
@@ -1154,7 +1154,7 @@
   },
   "choice/Espren(NPC)#002": {
    "src": "I have an odd question...",
-   "dst": "",
+   "dst": "Uma pergunta esquisita...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "",
@@ -1164,7 +1164,7 @@
   },
   "choice/The Cursed One#143": {
    "src": "What's the report?",
-   "dst": "",
+   "dst": "O que diz o relatório?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "",
@@ -1174,7 +1174,7 @@
   },
   "choice/Undersupply#001": {
    "src": "The villagers need more wate",
-   "dst": "",
+   "dst": "Os aldeões precisam de mais água.",
    "role": "desc",
    "kind": "dialogue",
    "full": "The villagers need more water.",
@@ -1185,7 +1185,7 @@
   },
   "choice/Revelations in Fall#001": {
    "src": "I had a friend...",
-   "dst": "",
+   "dst": "Eu tinha um amigo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "",
@@ -1195,7 +1195,7 @@
   },
   "choice/The Scarred Springs#001": {
    "src": "I'll come back later.",
-   "dst": "",
+   "dst": "Volto mais tarde.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1205,7 +1205,7 @@
   },
   "choice/The Scarred Springs#002": {
    "src": "Want some help?",
-   "dst": "",
+   "dst": "Quer ajuda?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1215,7 +1215,7 @@
   },
   "choice/The Scarred Springs#003": {
    "src": "You run this place?",
-   "dst": "",
+   "dst": "O senhor cuida daqui?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1225,7 +1225,7 @@
   },
   "choice/The Scarred Springs#004": {
    "src": "Opinion on tea?",
-   "dst": "",
+   "dst": "O que acha de chá?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1235,7 +1235,7 @@
   },
   "choice/The Scarred Springs#005": {
    "src": "Maripe sent me.",
-   "dst": "",
+   "dst": "Maripe me mandou.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1245,7 +1245,7 @@
   },
   "choice/The Scarred Springs#006": {
    "src": "Job's done.",
-   "dst": "",
+   "dst": "Trabalho feito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1255,7 +1255,7 @@
   },
   "choice/The Scarred Springs#007": {
    "src": "Hang the poster",
-   "dst": "",
+   "dst": "Pendurar o cartaz",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1265,7 +1265,7 @@
   },
   "choice/The Scarred Springs#008": {
    "src": "Pishlas is reopening soon.",
-   "dst": "",
+   "dst": "O Pishlas vai reabrir logo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1275,7 +1275,7 @@
   },
   "choice/The Scarred Springs#009": {
    "src": "I can't say.",
-   "dst": "",
+   "dst": "Não sei dizer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1285,7 +1285,7 @@
   },
   "choice/The Scarred Springs#010": {
    "src": "Surely...",
-   "dst": "",
+   "dst": "Com certeza...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1295,7 +1295,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#001": {
    "src": "Hello again!",
-   "dst": "",
+   "dst": "Olá de novo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1306,7 +1306,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#002": {
    "src": "What can I find around here?",
-   "dst": "",
+   "dst": "O que tem por aqui?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1317,7 +1317,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#003": {
    "src": "I have something to report.",
-   "dst": "",
+   "dst": "Tenho algo a relatar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1328,7 +1328,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#004": {
    "src": "I'm feeling dizzy...",
-   "dst": "",
+   "dst": "Estou ficando tonto...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1339,7 +1339,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#005": {
    "src": "May I speak to Zhiraok?",
-   "dst": "",
+   "dst": "Posso falar com Zhiraok?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1350,7 +1350,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#006": {
    "src": "Nevermind.",
-   "dst": "",
+   "dst": "Deixa pra lá.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1361,7 +1361,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#008": {
    "src": "Feel watched?",
-   "dst": "",
+   "dst": "Se sente observado?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1372,7 +1372,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#009": {
    "src": "Is this Zhiraok's home?",
-   "dst": "",
+   "dst": "Esta é a casa de Zhiraok?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1383,7 +1383,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#010": {
    "src": "How are you?",
-   "dst": "",
+   "dst": "Como vai?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1394,7 +1394,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#011": {
    "src": "There's someone trying to sn",
-   "dst": "",
+   "dst": "Tem alguém tentando entrar escondido na mansão.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1405,7 +1405,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#033": {
    "src": "I saw a cursed one in town!",
-   "dst": "",
+   "dst": "Vi um amaldiçoado na cidade!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1416,7 +1416,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#035": {
    "src": "I have something else to rep",
-   "dst": "",
+   "dst": "Tenho outra coisa a denunciar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1427,7 +1427,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#040": {
    "src": "Open a random page",
-   "dst": "",
+   "dst": "Abrir uma página aleatória",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1438,7 +1438,7 @@
   },
   "choice/Solace in Pain(Secret Discovery)#041": {
    "src": "Read from the start",
-   "dst": "",
+   "dst": "Ler desde o início",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solace in Pain",
@@ -1449,7 +1449,7 @@
   },
   "choice/Solidarity of Steel#001": {
    "src": "It's very different to Aubur",
-   "dst": "",
+   "dst": "É bem diferente de Auburn.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1460,7 +1460,7 @@
   },
   "choice/Solidarity of Steel#002": {
    "src": "I like it.",
-   "dst": "",
+   "dst": "Eu gosto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1471,7 +1471,7 @@
   },
   "choice/Solidarity of Steel#003": {
    "src": "That'd be me.",
-   "dst": "",
+   "dst": "Sou eu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1482,7 +1482,7 @@
   },
   "choice/Solidarity of Steel#004": {
    "src": "None of us are cursed, sir.",
-   "dst": "",
+   "dst": "Nenhum de nós é amaldiçoado, senhor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1493,7 +1493,7 @@
   },
   "choice/Solidarity of Steel#005": {
    "src": "Why is that?",
-   "dst": "",
+   "dst": "Por quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1504,7 +1504,7 @@
   },
   "choice/Solidarity of Steel#006": {
    "src": "Yuman's been teasing him.",
-   "dst": "",
+   "dst": "O Yuman anda zoando ele.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1515,7 +1515,7 @@
   },
   "choice/Solidarity of Steel#007": {
    "src": "I guess we're just tired.",
-   "dst": "",
+   "dst": "Acho que é só cansaço.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1526,7 +1526,7 @@
   },
   "choice/Solidarity of Steel#008": {
    "src": "They sent me as a sacrifice",
-   "dst": "",
+   "dst": "Me mandaram como sacrifício para interromper a conversa de vocês.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1537,7 +1537,7 @@
   },
   "choice/Solidarity of Steel#009": {
    "src": "They sent me as a sacrifice",
-   "dst": "",
+   "dst": "Me mandaram como sacrifício para interromper a conversa de vocês.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1548,7 +1548,7 @@
   },
   "choice/Solidarity of Steel#010": {
    "src": "They were just catching up,",
-   "dst": "",
+   "dst": "Pelo jeito, só estavam botando o papo em dia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1559,7 +1559,7 @@
   },
   "choice/Solidarity of Steel#011": {
    "src": "I died. She killed me.",
-   "dst": "",
+   "dst": "Eu morri. Ela me matou.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1570,7 +1570,7 @@
   },
   "choice/Solidarity of Steel#012": {
    "src": "No casualties to report!",
-   "dst": "",
+   "dst": "Nenhuma baixa a relatar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1581,7 +1581,7 @@
   },
   "choice/Solidarity of Steel#013": {
    "src": "They're... right over there.",
-   "dst": "",
+   "dst": "Estão... bem ali. Dá para ver.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1592,7 +1592,7 @@
   },
   "choice/Solidarity of Steel#014": {
    "src": "What's with Yuman?",
-   "dst": "",
+   "dst": "O que deu no Yuman?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1603,7 +1603,7 @@
   },
   "choice/Solidarity of Steel#015": {
    "src": "What's your role here?",
-   "dst": "",
+   "dst": "Qual é o seu papel aqui?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1614,7 +1614,7 @@
   },
   "choice/Solidarity of Steel#016": {
    "src": "He... didn't do anything.",
-   "dst": "",
+   "dst": "Ele... não fez nada.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1625,7 +1625,7 @@
   },
   "choice/Solidarity of Steel#017": {
    "src": "Tickets?",
-   "dst": "",
+   "dst": "Vales?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1636,7 +1636,7 @@
   },
   "choice/Solidarity of Steel#018": {
    "src": "Oh, I'm just exploring.",
-   "dst": "",
+   "dst": "Ah, só estou explorando.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1647,7 +1647,7 @@
   },
   "choice/Solidarity of Steel#019": {
    "src": "Who's this region's Sovereig",
-   "dst": "",
+   "dst": "Quem é o Soberano desta região?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1658,7 +1658,7 @@
   },
   "choice/Solidarity of Steel#020": {
    "src": "I'm done.",
-   "dst": "",
+   "dst": "Já terminei.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1669,7 +1669,7 @@
   },
   "choice/Solidarity of Steel#021": {
    "src": "It was the least we could do",
-   "dst": "",
+   "dst": "Era o mínimo que podíamos fazer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1680,7 +1680,7 @@
   },
   "choice/Solidarity of Steel#022": {
    "src": "That was kind of you.",
-   "dst": "",
+   "dst": "Foi gentil da sua parte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1691,7 +1691,7 @@
   },
   "choice/Solidarity of Steel#023": {
    "src": "It could have gone worse!",
-   "dst": "",
+   "dst": "Podia ter sido pior!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1702,7 +1702,7 @@
   },
   "choice/Solidarity of Steel#024": {
    "src": "Oh, I forgot about that.",
-   "dst": "",
+   "dst": "Ah, tinha esquecido disso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1713,7 +1713,7 @@
   },
   "choice/The Price of Ingenuity#001": {
    "src": "Quill's coming over.",
-   "dst": "",
+   "dst": "A Quill está vindo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1724,7 +1724,7 @@
   },
   "choice/The Price of Ingenuity#002": {
    "src": "Uhh... Good morning?",
-   "dst": "",
+   "dst": "Hã... Bom dia?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1735,7 +1735,7 @@
   },
   "choice/The Price of Ingenuity#003": {
    "src": "Quill wanted to talk to us.",
-   "dst": "",
+   "dst": "A Quill quer falar conosco.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1746,7 +1746,7 @@
   },
   "choice/The Price of Ingenuity#004": {
    "src": "Is she not a morning person?",
-   "dst": "",
+   "dst": "Ela não é de acordar cedo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1757,7 +1757,7 @@
   },
   "choice/The Price of Ingenuity#005": {
    "src": "Syndra didn't give us any ta",
-   "dst": "",
+   "dst": "A Syndra não nos deu nenhuma tarefa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1768,7 +1768,7 @@
   },
   "choice/The Price of Ingenuity#006": {
    "src": "Why ask me and not anyone el",
-   "dst": "",
+   "dst": "Por que perguntar para mim e não para outro?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1779,7 +1779,7 @@
   },
   "choice/The Price of Ingenuity#007": {
    "src": "Seems empty.",
-   "dst": "",
+   "dst": "Parece vazio.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1790,7 +1790,7 @@
   },
   "choice/The Price of Ingenuity#008": {
    "src": "I don't like this...",
-   "dst": "",
+   "dst": "Não gosto disso...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1801,7 +1801,7 @@
   },
   "choice/The Price of Ingenuity#009": {
    "src": "I didn't say that.",
-   "dst": "",
+   "dst": "Eu não disse isso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1812,7 +1812,7 @@
   },
   "choice/The Price of Ingenuity#010": {
    "src": "You were!",
-   "dst": "",
+   "dst": "Você era, sim!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1823,7 +1823,7 @@
   },
   "choice/The Price of Ingenuity#011": {
    "src": "We should go up.",
-   "dst": "",
+   "dst": "Devíamos subir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1834,7 +1834,7 @@
   },
   "choice/The Price of Ingenuity#012": {
    "src": "Are you going to hand one of",
-   "dst": "",
+   "dst": "Você vai entregar um de nós?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1845,7 +1845,7 @@
   },
   "choice/The Price of Ingenuity#013": {
    "src": "We pushed buttons till it wo",
-   "dst": "",
+   "dst": "Apertamos botões até funcionar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1856,7 +1856,7 @@
   },
   "choice/The Price of Ingenuity#014": {
    "src": "We... went up?",
-   "dst": "",
+   "dst": "Nós... subimos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1867,7 +1867,7 @@
   },
   "choice/The Price of Ingenuity#015": {
    "src": "Enhanced Locomotive Motor",
-   "dst": "",
+   "dst": "Motor Locomotivo Aprimorado",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1878,7 +1878,7 @@
   },
   "choice/The Price of Ingenuity#016": {
    "src": "Dynamic Irrigation System",
-   "dst": "",
+   "dst": "Sistema Irrigador Dinâmico",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1889,7 +1889,7 @@
   },
   "choice/The Price of Ingenuity#017": {
    "src": "Quantum Displacement Module",
-   "dst": "",
+   "dst": "Módulo Deslocador Quântico",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1900,7 +1900,7 @@
   },
   "choice/The Price of Ingenuity#018": {
    "src": "{~} NA to {~} NA",
-   "dst": "",
+   "dst": "De {~} NA a {~} NA",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1911,7 +1911,7 @@
   },
   "choice/The Price of Ingenuity#019": {
    "src": "{~} IA and onwards",
-   "dst": "",
+   "dst": "De {~} IA em diante",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1922,7 +1922,7 @@
   },
   "choice/The Price of Ingenuity#020": {
    "src": "Close the diary.",
-   "dst": "",
+   "dst": "Fechar o diário.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -1933,7 +1933,7 @@
   },
   "choice/Hidden In Plain Sight#001": {
    "src": "Talk.",
-   "dst": "",
+   "dst": "Conversar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hidden In Plain Sight",
@@ -1944,7 +1944,7 @@
   },
   "choice/Hidden In Plain Sight#002": {
    "src": "Scare.",
-   "dst": "",
+   "dst": "Assustar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hidden In Plain Sight",
@@ -1955,7 +1955,7 @@
   },
   "choice/Hidden In Plain Sight#003": {
    "src": "Stare.",
-   "dst": "",
+   "dst": "Encarar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hidden In Plain Sight",
@@ -1966,7 +1966,7 @@
   },
   "choice/Hidden In Plain Sight#004": {
    "src": "Pet.",
-   "dst": "",
+   "dst": "Fazer carinho.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hidden In Plain Sight",
@@ -1977,7 +1977,7 @@
   },
   "choice/Hidden In Plain Sight#005": {
    "src": "Give seeds.",
-   "dst": "",
+   "dst": "Dar sementes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hidden In Plain Sight",
@@ -1988,7 +1988,7 @@
   },
   "choice/Through the Pipes#001": {
    "src": "A raccoon?",
-   "dst": "",
+   "dst": "Um guaxinim?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1999,7 +1999,7 @@
   },
   "choice/Through the Pipes#002": {
    "src": "What's the gift?",
-   "dst": "",
+   "dst": "Qual é o presente?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2010,7 +2010,7 @@
   },
   "choice/Through the Pipes#003": {
    "src": "Sorry, I'm busy.",
-   "dst": "",
+   "dst": "Desculpe, estou ocupado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2021,7 +2021,7 @@
   },
   "choice/Through the Pipes#004": {
    "src": "I'm almost done.",
-   "dst": "",
+   "dst": "Estou quase terminando.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2032,7 +2032,7 @@
   },
   "choice/Through the Pipes#005": {
    "src": "Leave Dock",
-   "dst": "",
+   "dst": "Sair do cais",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2043,7 +2043,7 @@
   },
   "choice/Through the Pipes#006": {
    "src": "Use firecracker",
-   "dst": "",
+   "dst": "Usar um rojão",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2054,7 +2054,7 @@
   },
   "choice/Through the Pipes#007": {
    "src": "Show shiny object",
-   "dst": "",
+   "dst": "Mostrar um objeto brilhante",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2065,7 +2065,7 @@
   },
   "choice/Through the Pipes#008": {
    "src": "Trap in cage",
-   "dst": "",
+   "dst": "Prender na gaiola",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2076,7 +2076,7 @@
   },
   "choice/Through the Pipes#009": {
    "src": "Fight",
-   "dst": "",
+   "dst": "Lutar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2087,7 +2087,7 @@
   },
   "choice/The Missing Piece#001": {
    "src": "Fine, but to who?",
-   "dst": "",
+   "dst": "Tá, mas para quem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2098,7 +2098,7 @@
   },
   "choice/The Missing Piece#002": {
    "src": "Um, no...",
-   "dst": "",
+   "dst": "Hã, não...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2109,7 +2109,7 @@
   },
   "choice/The Missing Piece#004": {
    "src": "I'm looking for someone.",
-   "dst": "",
+   "dst": "Estou procurando alguém.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2120,7 +2120,7 @@
   },
   "choice/The Missing Piece#005": {
    "src": "No, not really...",
-   "dst": "",
+   "dst": "Não, na verdade não...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2131,7 +2131,7 @@
   },
   "choice/The Missing Piece#006": {
    "src": "Perhaps I don't.",
-   "dst": "",
+   "dst": "Talvez não.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2142,7 +2142,7 @@
   },
   "choice/The Missing Piece#008": {
    "src": "It's for you.",
-   "dst": "",
+   "dst": "É para você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2153,7 +2153,7 @@
   },
   "choice/The Missing Piece#009": {
    "src": "A letter.",
-   "dst": "",
+   "dst": "Uma carta.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2164,7 +2164,7 @@
   },
   "choice/The Missing Piece#010": {
    "src": "I am, originally.",
-   "dst": "",
+   "dst": "Sou, de origem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2175,7 +2175,7 @@
   },
   "choice/The Missing Piece#011": {
    "src": "Isn't it lonely?",
-   "dst": "",
+   "dst": "Não se sente sozinha?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2186,7 +2186,7 @@
   },
   "choice/The Missing Piece#012": {
    "src": "Sip tea.",
-   "dst": "",
+   "dst": "Tomar um gole de chá.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2197,7 +2197,7 @@
   },
   "choice/The Missing Piece#013": {
    "src": "How long?",
-   "dst": "",
+   "dst": "Quanto tempo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2208,7 +2208,7 @@
   },
   "choice/The Missing Piece#014": {
    "src": "{~} IA, I think?",
-   "dst": "",
+   "dst": "{~} IA, acho?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2219,7 +2219,7 @@
   },
   "choice/The Missing Piece#015": {
    "src": "I can pay.",
-   "dst": "",
+   "dst": "Posso pagar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2230,7 +2230,7 @@
   },
   "choice/The Missing Piece#016": {
    "src": "But can I...",
-   "dst": "",
+   "dst": "Mas será que eu...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2241,7 +2241,7 @@
   },
   "choice/The Missing Piece#017": {
    "src": "I saw a slacker!",
-   "dst": "",
+   "dst": "Vi um preguiçoso!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2252,7 +2252,7 @@
   },
   "choice/The Missing Piece#018": {
    "src": "Open it.",
-   "dst": "",
+   "dst": "Abrir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2263,7 +2263,7 @@
   },
   "choice/The Missing Piece#019": {
    "src": "Confront.",
-   "dst": "",
+   "dst": "Confrontar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2274,7 +2274,7 @@
   },
   "choice/The Missing Piece#020": {
    "src": "I'm her friend.",
-   "dst": "",
+   "dst": "Sou amigo dela.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2285,7 +2285,7 @@
   },
   "choice/The Missing Piece#021": {
    "src": "Just passing by.",
-   "dst": "",
+   "dst": "Só de passagem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2296,7 +2296,7 @@
   },
   "choice/The Missing Piece#022": {
    "src": "Head out?",
-   "dst": "",
+   "dst": "Vamos indo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2307,7 +2307,7 @@
   },
   "choice/The Missing Piece#024": {
    "src": "I'll carry you.",
-   "dst": "",
+   "dst": "Eu carrego você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2318,7 +2318,7 @@
   },
   "choice/The Missing Piece#025": {
    "src": "You're just guessing!?",
-   "dst": "",
+   "dst": "Você está só chutando!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2329,7 +2329,7 @@
   },
   "choice/Fantastic Voyage#020": {
    "src": "Not today, thank you!",
-   "dst": "",
+   "dst": "Hoje não, obrigado!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -2340,7 +2340,7 @@
   },
   "choice/Aldorei's Secret Part II#001": {
    "src": "About that...they were taken",
-   "dst": "",
+   "dst": "Sobre isso... já cuidamos deles.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -2351,7 +2351,7 @@
   },
   "choice/Aldorei's Secret Part II#002": {
    "src": "We didn't see any guards whe",
-   "dst": "",
+   "dst": "Não vimos nenhum guarda quando chegamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -2362,7 +2362,7 @@
   },
   "choice/Royal Trials#001": {
    "src": "[Leaf]",
-   "dst": "",
+   "dst": "[Folha]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -2373,7 +2373,7 @@
   },
   "choice/Royal Trials#002": {
    "src": "[Flower]",
-   "dst": "",
+   "dst": "[Flor]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -2384,7 +2384,7 @@
   },
   "choice/Royal Trials#003": {
    "src": "[Egg]",
-   "dst": "",
+   "dst": "[Ovo]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -2395,7 +2395,7 @@
   },
   "choice/The Qira Hive#001": {
    "src": "Were you really holding back",
-   "dst": "",
+   "dst": "Você estava mesmo se segurando?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive",
@@ -2406,7 +2406,7 @@
   },
   "choice/The Qira Hive#002": {
    "src": "Any advice for the challenge",
-   "dst": "",
+   "dst": "Alguma dica para o desafio?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive",
@@ -2417,7 +2417,7 @@
   },
   "choice/All Roads To Peace#001": {
    "src": "Joe?",
-   "dst": "",
+   "dst": "Joe?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads To Peace",
@@ -2428,7 +2428,7 @@
   },
   "choice#c090": {
    "src": "[Blindness]",
-   "dst": "",
+   "dst": "[Cegueira]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "",
@@ -2439,7 +2439,7 @@
   },
   "choice/Off the Rails#001": {
    "src": "Not on your nelly.",
-   "dst": "",
+   "dst": "Nem morto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2450,7 +2450,7 @@
   },
   "choice/Off the Rails#002": {
    "src": "Nuh uh.",
-   "dst": "",
+   "dst": "Nananinanão.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2461,7 +2461,7 @@
   },
   "choice/Off the Rails#003": {
    "src": "Absolutely not.",
-   "dst": "",
+   "dst": "De jeito nenhum.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2472,7 +2472,7 @@
   },
   "choice/Off the Rails#004": {
    "src": "Price of the trip",
-   "dst": "",
+   "dst": "Preço da viagem",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2483,7 +2483,7 @@
   },
   "choice/Off the Rails#005": {
    "src": "About your job",
-   "dst": "",
+   "dst": "Sobre o seu trabalho",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2494,7 +2494,7 @@
   },
   "choice/Off the Rails#006": {
    "src": "You look tired",
-   "dst": "",
+   "dst": "Você parece cansado",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2505,7 +2505,7 @@
   },
   "choice/Off the Rails#007": {
    "src": "Other people in subway",
-   "dst": "",
+   "dst": "Outras pessoas no metrô",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2516,7 +2516,7 @@
   },
   "choice/Off the Rails#008": {
    "src": "Just wanted to say hi!",
-   "dst": "",
+   "dst": "Só queria dar um oi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2527,7 +2527,7 @@
   },
   "choice/Off the Rails#009": {
    "src": "Your trip",
-   "dst": "",
+   "dst": "Sua viagem",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2538,7 +2538,7 @@
   },
   "choice/Off the Rails#010": {
    "src": "What's with your shirt?",
-   "dst": "",
+   "dst": "Que camisa é essa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2549,7 +2549,7 @@
   },
   "choice/Off the Rails#011": {
    "src": "Other people on train",
-   "dst": "",
+   "dst": "Outros passageiros",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2560,7 +2560,7 @@
   },
   "choice/Off the Rails#012": {
    "src": "Your home",
-   "dst": "",
+   "dst": "Sua casa",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2571,7 +2571,7 @@
   },
   "choice/Off the Rails#013": {
    "src": "Other staff?",
-   "dst": "",
+   "dst": "Outros funcionários?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2582,7 +2582,7 @@
   },
   "choice/Off the Rails#014": {
    "src": "Sewage incident",
-   "dst": "",
+   "dst": "Incidente do esgoto",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2593,7 +2593,7 @@
   },
   "choice/Off the Rails#015": {
    "src": "Biology",
-   "dst": "",
+   "dst": "Biologia",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2604,7 +2604,7 @@
   },
   "choice/Off the Rails#016": {
    "src": "Snails?",
-   "dst": "",
+   "dst": "Caracóis?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2615,7 +2615,7 @@
   },
   "choice/Off the Rails#017": {
    "src": "Thoughts on train",
-   "dst": "",
+   "dst": "O que acha do trem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2626,7 +2626,7 @@
   },
   "choice/Off the Rails#018": {
    "src": "I didn't do it!",
-   "dst": "",
+   "dst": "Não fui eu!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2637,7 +2637,7 @@
   },
   "choice/Off the Rails#019": {
    "src": "Evidence?",
-   "dst": "",
+   "dst": "Provas?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2648,7 +2648,7 @@
   },
   "choice/Off the Rails#020": {
    "src": "Pockets",
-   "dst": "",
+   "dst": "Bolsos",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2659,7 +2659,7 @@
   },
   "choice/Off the Rails#021": {
    "src": "Position",
-   "dst": "",
+   "dst": "Posição",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2670,7 +2670,7 @@
   },
   "choice/Off the Rails#022": {
    "src": "See anything before the murd",
-   "dst": "",
+   "dst": "Viu algo antes do assassinato?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2681,7 +2681,7 @@
   },
   "choice/Off the Rails#023": {
    "src": "Access to locked rooms",
-   "dst": "",
+   "dst": "Acesso aos quartos trancados",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2692,7 +2692,7 @@
   },
   "choice/Off the Rails#024": {
    "src": "You seemed mad about somethi",
-   "dst": "",
+   "dst": "Você parecia bravo com alguma coisa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2703,7 +2703,7 @@
   },
   "choice/Off the Rails#025": {
    "src": "Constables",
-   "dst": "",
+   "dst": "Condestáveis",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2714,7 +2714,7 @@
   },
   "choice/Off the Rails#026": {
    "src": "General Levi",
-   "dst": "",
+   "dst": "General Levi",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2725,7 +2725,7 @@
   },
   "choice/Off the Rails#027": {
    "src": "Thanks for helping",
-   "dst": "",
+   "dst": "Obrigado pela ajuda",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2736,7 +2736,7 @@
   },
   "choice/Off the Rails#028": {
    "src": "Your meal, sir.",
-   "dst": "",
+   "dst": "Sua refeição, senhor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2747,7 +2747,7 @@
   },
   "choice/Off the Rails#029": {
    "src": "Cemor's request",
-   "dst": "",
+   "dst": "O pedido de Cemor",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2758,7 +2758,7 @@
   },
   "choice/Off the Rails#030": {
    "src": "Help with bag",
-   "dst": "",
+   "dst": "Ajudar com a mala",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2769,7 +2769,7 @@
   },
   "choice/Off the Rails#031": {
    "src": "What have you been doing?",
-   "dst": "",
+   "dst": "O que você andou fazendo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2780,7 +2780,7 @@
   },
   "choice/Off the Rails#032": {
    "src": "What were you doing on the t",
-   "dst": "",
+   "dst": "O que você fazia no trem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2791,7 +2791,7 @@
   },
   "choice/Off the Rails#033": {
    "src": "Where were you during the mu",
-   "dst": "",
+   "dst": "Onde você estava na hora do assassinato?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2802,7 +2802,7 @@
   },
   "choice/Off the Rails#034": {
    "src": "You mentioned a Deraj earlie",
-   "dst": "",
+   "dst": "Você falou de um tal Deraj antes?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2813,7 +2813,7 @@
   },
   "choice/Off the Rails#035": {
    "src": "Passengers",
-   "dst": "",
+   "dst": "Passageiros",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2824,7 +2824,7 @@
   },
   "choice/Off the Rails#036": {
    "src": "Accusation",
-   "dst": "",
+   "dst": "Acusação",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2835,7 +2835,7 @@
   },
   "choice/Off the Rails#037": {
    "src": "Book in closet",
-   "dst": "",
+   "dst": "Livro no armário",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2846,7 +2846,7 @@
   },
   "choice/A Croaking Cryptid#001": {
    "src": "I'll just... go...",
-   "dst": "",
+   "dst": "Eu vou... indo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Croaking Cryptid",
@@ -2857,7 +2857,7 @@
   },
   "choice/A Croaking Cryptid#002": {
    "src": "...You have parents?",
-   "dst": "",
+   "dst": "...Você tem pais?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Croaking Cryptid",
@@ -2868,7 +2868,7 @@
   },
   "choice/Echoes of Change#001": {
    "src": "What was that about?",
-   "dst": "",
+   "dst": "O que foi aquilo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2879,7 +2879,7 @@
   },
   "choice/Echoes of Change#002": {
    "src": "Going alright so far.",
-   "dst": "",
+   "dst": "Até agora, tudo bem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2890,7 +2890,7 @@
   },
   "choice/Echoes of Change#003": {
    "src": "We got the schedules!",
-   "dst": "",
+   "dst": "Pegamos as escalas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2901,7 +2901,7 @@
   },
   "choice/Echoes of Change#004": {
    "src": "Why do I have to do all the",
-   "dst": "",
+   "dst": "Por que eu tenho que fazer tudo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2912,7 +2912,7 @@
   },
   "choice/Echoes of Change#005": {
    "src": "Do you need me for that?",
-   "dst": "",
+   "dst": "Precisa de mim para isso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2923,7 +2923,7 @@
   },
   "choice/Echoes of Change#006": {
    "src": "Grow up, Zeph.",
-   "dst": "",
+   "dst": "Cresça, Zeph.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2934,7 +2934,7 @@
   },
   "choice/Echoes of Change#007": {
    "src": "Nice bow skills!",
-   "dst": "",
+   "dst": "Mandou bem no arco!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2945,7 +2945,7 @@
   },
   "choice/Echoes of Change#008": {
    "src": "Hah!! I'm faster!! Haha!",
-   "dst": "",
+   "dst": "Há!! Sou mais rápido!! Haha!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2956,7 +2956,7 @@
   },
   "choice/Echoes of Change#009": {
    "src": "Looks okay to me.",
-   "dst": "",
+   "dst": "Para mim parece certo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2967,7 +2967,7 @@
   },
   "choice/Echoes of Change#010": {
    "src": "I almost beat you!",
-   "dst": "",
+   "dst": "Quase ganhei de você!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2978,7 +2978,7 @@
   },
   "choice/Echoes of Change#011": {
    "src": "It looks good!",
-   "dst": "",
+   "dst": "Ficou bom!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -2989,7 +2989,7 @@
   },
   "choice/Echoes of Change#012": {
    "src": "I guess...",
-   "dst": "",
+   "dst": "Acho que sim...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3000,7 +3000,7 @@
   },
   "choice/Echoes of Change#013": {
    "src": "Yeesh. You're angry.",
-   "dst": "",
+   "dst": "Eita. Que raiva, hein.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3011,7 +3011,7 @@
   },
   "choice/Echoes of Change#014": {
    "src": "However what?",
-   "dst": "",
+   "dst": "Porém o quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3022,7 +3022,7 @@
   },
   "choice/Echoes of Change#015": {
    "src": "The people back there...",
-   "dst": "",
+   "dst": "O pessoal lá atrás...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3033,7 +3033,7 @@
   },
   "choice/Echoes of Change#016": {
    "src": "I know him.",
-   "dst": "",
+   "dst": "Eu o conheço.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3044,7 +3044,7 @@
   },
   "choice/Echoes of Change#017": {
    "src": "He's a good person.",
-   "dst": "",
+   "dst": "Ele é uma boa pessoa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3055,7 +3055,7 @@
   },
   "choice/Echoes of Change#018": {
    "src": "I didn't know he was a Sover",
-   "dst": "",
+   "dst": "Eu não sabia que ele era um Soberano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3066,7 +3066,7 @@
   },
   "choice/Echoes of Change#019": {
    "src": "Then why are we doing it?",
-   "dst": "",
+   "dst": "Então por que fazemos isso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3077,7 +3077,7 @@
   },
   "choice/Echoes of Change#020": {
    "src": "Did Zhiraok know?",
-   "dst": "",
+   "dst": "O Zhiraok sabia?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3088,7 +3088,7 @@
   },
   "choice/Echoes of Change#021": {
    "src": "Did you try to find your lov",
-   "dst": "",
+   "dst": "Você tentou achar sua amada?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3099,7 +3099,7 @@
   },
   "choice/Echoes of Change#022": {
    "src": "How did you meet her?",
-   "dst": "",
+   "dst": "Como você a conheceu?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3110,7 +3110,7 @@
   },
   "choice/Echoes of Change#023": {
    "src": "Goodnight.",
-   "dst": "",
+   "dst": "Boa noite.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3121,7 +3121,7 @@
   },
   "choice/Echoes of Change#024": {
    "src": "Looking for you.",
-   "dst": "",
+   "dst": "Procurando você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3132,7 +3132,7 @@
   },
   "choice/Echoes of Change#025": {
    "src": "Why are you?",
-   "dst": "",
+   "dst": "E você?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3143,7 +3143,7 @@
   },
   "choice/Echoes of Change#026": {
    "src": "Technically, Syndra did it.",
-   "dst": "",
+   "dst": "Tecnicamente, foi a Syndra.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -3154,7 +3154,7 @@
   },
   "choice/Aldwell Library#001": {
    "src": "Read it",
-   "dst": "",
+   "dst": "Ler",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldwell Library",
@@ -3165,7 +3165,7 @@
   },
   "choice/Aldwell Library#002": {
    "src": "I'm too old for that.",
-   "dst": "",
+   "dst": "Sou velho demais pra isso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldwell Library",
@@ -3176,7 +3176,7 @@
   },
   "choice#npc00": {
    "src": "Where've you been?",
-   "dst": "",
+   "dst": "Por onde você andou?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -3186,7 +3186,7 @@
   },
   "choice#npc01": {
    "src": "You're boring. Bye.",
-   "dst": "",
+   "dst": "Você é chato. Tchau.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -3196,7 +3196,7 @@
   },
   "choice#npc02": {
    "src": "...Oh! Right. Social interaction. I can do that.",
-   "dst": "",
+   "dst": "...Ah! Certo. Interação social. Isso eu sei fazer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -3206,7 +3206,7 @@
   },
   "choice#c091": {
    "src": "A new copy please?",
-   "dst": "",
+   "dst": "Outra cópia, por favor?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -3216,7 +3216,7 @@
   },
   "choice#c092": {
    "src": "I'll be fine.",
-   "dst": "",
+   "dst": "Vou ficar bem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -3226,7 +3226,7 @@
   },
   "choice#c093": {
    "src": "Pishlas poster",
-   "dst": "",
+   "dst": "Cartaz do Pishlas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -3236,7 +3236,7 @@
   },
   "choice#c094": {
    "src": "I haven't.",
-   "dst": "",
+   "dst": "Ainda não.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3246,7 +3246,7 @@
   },
   "choice#c095": {
    "src": "I was fast asleep... I didn'",
-   "dst": "",
+   "dst": "Eu dormia pesado... Não ouvi nada.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I was fast asleep... I didn't hear a thing.",
@@ -3257,7 +3257,7 @@
   },
   "choice#c096": {
    "src": "I thought we were under atta",
-   "dst": "",
+   "dst": "Achei que estávamos sendo atacados!",
    "role": "desc",
    "kind": "dialogue",
    "full": "I thought we were under attack!",
@@ -3268,7 +3268,7 @@
   },
   "choice#c097": {
    "src": "Anyway, Quill's coming over.",
-   "dst": "",
+   "dst": "Enfim, a Quill está vindo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -3278,7 +3278,7 @@
   },
   "choice#c098": {
    "src": "Good... luck?",
-   "dst": "",
+   "dst": "Boa... sorte?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -3288,7 +3288,7 @@
   },
   "choice#c099": {
    "src": "Let's go.",
-   "dst": "",
+   "dst": "Vamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -3298,7 +3298,7 @@
   },
   "choice#c100": {
    "src": "Soda",
-   "dst": "",
+   "dst": "Refrigerante",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3308,7 +3308,7 @@
   },
   "choice#c101": {
    "src": "[{~} {~}] Zhirao Sleep Solut",
-   "dst": "",
+   "dst": "[{~} {~}] Zhirao Sleep Solution",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] Zhirao Sleep Soluti",
@@ -3319,7 +3319,7 @@
   },
   "choice#c102": {
    "src": "[{~} {~}] Majin PEACOCK POWE",
-   "dst": "",
+   "dst": "[{~} {~}] Majin PEACOCK POWER Refined Energy Boost",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] Majin PEACOCK POWER Refined Energy Boo",
@@ -3330,7 +3330,7 @@
   },
   "choice#c103": {
    "src": "[{~} {~}] Red Butterfly",
-   "dst": "",
+   "dst": "[{~} {~}] Red Butterfly",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3340,7 +3340,7 @@
   },
   "choice#c104": {
    "src": "Cemor?",
-   "dst": "",
+   "dst": "Cemor?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3350,7 +3350,7 @@
   },
   "choice#c105": {
    "src": "I found your key",
-   "dst": "",
+   "dst": "Achei sua chave",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3360,7 +3360,7 @@
   },
   "choice#c106": {
    "src": "Crossword",
-   "dst": "",
+   "dst": "Palavras cruzadas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3370,7 +3370,7 @@
   },
   "choice#c107": {
    "src": "I have purchased the Haunted",
-   "dst": "",
+   "dst": "Comprei a Máscara assombrada.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I have purchased the Haunted Mask.",
@@ -3381,7 +3381,7 @@
   },
   "choice#c108": {
    "src": "We'll be back for you, Yusan",
-   "dst": "",
+   "dst": "Voltaremos para buscar você, Yusanu.",
    "role": "desc",
    "kind": "dialogue",
    "full": "We'll be back for you, Yusanu.",
@@ -3392,7 +3392,7 @@
   },
   "choice#c109": {
    "src": "Fine... get us that list.",
-   "dst": "",
+   "dst": "Tá... arranje essa lista.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3402,7 +3402,7 @@
   },
   "choice#c110": {
    "src": "We have to keep moving.",
-   "dst": "",
+   "dst": "Temos que seguir em frente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3412,7 +3412,7 @@
   },
   "choice#c111": {
    "src": "We can't give up hope.",
-   "dst": "",
+   "dst": "Não podemos perder a fé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3422,7 +3422,7 @@
   },
   "choice#c112": {
    "src": "Do you not believe we did it",
-   "dst": "",
+   "dst": "Você não acredita que fomos nós?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Do you not believe we did it?",
@@ -3433,7 +3433,7 @@
   },
   "choice#c113": {
    "src": "We don't know where he is.",
-   "dst": "",
+   "dst": "Não sabemos onde ele está.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3443,7 +3443,7 @@
   },
   "choice#c114": {
    "src": "We just... need to do what h",
-   "dst": "",
+   "dst": "Só... temos que fazer o que ele diz.",
    "role": "desc",
    "kind": "dialogue",
    "full": "We just... need to do what he says.",
@@ -3454,7 +3454,7 @@
   },
   "choice#c115": {
    "src": "Do you know of anyone named",
-   "dst": "",
+   "dst": "Conhece alguém chamado Nisen?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Do you know of anyone named Nisen?",
@@ -3465,7 +3465,7 @@
   },
   "choice#c116": {
    "src": "Haven't got one...what?",
-   "dst": "",
+   "dst": "Não tenho um... o quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3475,7 +3475,7 @@
   },
   "choice#c117": {
    "src": "We've entered a parallel uni",
-   "dst": "",
+   "dst": "Entramos num universo paralelo!",
    "role": "desc",
    "kind": "dialogue",
    "full": "We've entered a parallel universe!",
@@ -3486,7 +3486,7 @@
   },
   "choice#c118": {
    "src": "Where's Azael?",
-   "dst": "",
+   "dst": "Cadê o Azael?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3496,7 +3496,7 @@
   },
   "choice#c119": {
    "src": "Is Rurie always like this?",
-   "dst": "",
+   "dst": "A Rurie é sempre assim?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3506,7 +3506,7 @@
   },
   "choice#c120": {
    "src": "Where is Azael?",
-   "dst": "",
+   "dst": "Onde está o Azael?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -3516,7 +3516,7 @@
   },
   "choice#c121": {
    "src": "Deraj?",
-   "dst": "",
+   "dst": "Deraj?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3526,7 +3526,7 @@
   },
   "choice#c122": {
    "src": "At least they're alive.",
-   "dst": "",
+   "dst": "Pelo menos estão vivos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3536,7 +3536,7 @@
   },
   "choice#c123": {
    "src": "Syndra's... gone?",
-   "dst": "",
+   "dst": "A Syndra... se foi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3546,7 +3546,7 @@
   },
   "choice#c124": {
    "src": "Executed...?",
-   "dst": "",
+   "dst": "Executada...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3556,7 +3556,7 @@
   },
   "choice#c125": {
    "src": "We'll break them out.",
-   "dst": "",
+   "dst": "Vamos tirá-los de lá.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3566,7 +3566,7 @@
   },
   "choice#c126": {
    "src": "So have you.",
-   "dst": "",
+   "dst": "Você também.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3576,7 +3576,7 @@
   },
   "choice#c127": {
    "src": "Why are you here, Tasim?",
-   "dst": "",
+   "dst": "O que faz aqui, Tasim?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3586,7 +3586,7 @@
   },
   "choice#c128": {
    "src": "So... you're a Sovereign now",
-   "dst": "",
+   "dst": "Então... agora você é um Soberano.",
    "role": "desc",
    "kind": "dialogue",
    "full": "So... you're a Sovereign now.",
@@ -3597,7 +3597,7 @@
   },
   "choice#c129": {
    "src": "And the other part?",
-   "dst": "",
+   "dst": "E a outra parte?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3607,7 +3607,7 @@
   },
   "choice#c130": {
    "src": "Your \"curse?\"",
-   "dst": "",
+   "dst": "Sua \"maldição\"?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3617,7 +3617,7 @@
   },
   "choice#c131": {
    "src": "Once.",
-   "dst": "",
+   "dst": "Uma vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3627,7 +3627,7 @@
   },
   "choice#c132": {
    "src": "She killed Syndra, Tasim.",
-   "dst": "",
+   "dst": "Ela matou a Syndra, Tasim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3637,7 +3637,7 @@
   },
   "choice#c133": {
    "src": "Aledar was with the Leaves,",
-   "dst": "",
+   "dst": "O Aledar estava com as Folhas, sabia?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Aledar was with the Leaves, you know.",
@@ -3648,7 +3648,7 @@
   },
   "choice#c134": {
    "src": "Now she wants to talk?",
-   "dst": "",
+   "dst": "Agora ela quer conversar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3658,7 +3658,7 @@
   },
   "choice#c135": {
    "src": "Zhiraok.",
-   "dst": "",
+   "dst": "Zhiraok.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3668,7 +3668,7 @@
   },
   "choice#c136": {
    "src": "Majin.",
-   "dst": "",
+   "dst": "Majin.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3678,7 +3678,7 @@
   },
   "choice#c137": {
    "src": "The Ranger.",
-   "dst": "",
+   "dst": "O Patrulheiro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3688,7 +3688,7 @@
   },
   "choice#c138": {
    "src": "The Warden.",
-   "dst": "",
+   "dst": "O Carcereiro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3698,7 +3698,7 @@
   },
   "choice#c139": {
    "src": "The Spymaster.",
-   "dst": "",
+   "dst": "A Mestra dos Espiões.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3708,7 +3708,7 @@
   },
   "choice#c140": {
    "src": "Project?",
-   "dst": "",
+   "dst": "Projeto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3718,7 +3718,7 @@
   },
   "choice#c141": {
    "src": "The canopy has been compromi",
-   "dst": "",
+   "dst": "Descobriram o Dossel.",
    "role": "desc",
    "kind": "dialogue",
    "full": "The canopy has been compromised.",
@@ -3729,7 +3729,7 @@
   },
   "choice#c142": {
    "src": "There was a change of plans.",
-   "dst": "",
+   "dst": "Houve uma mudança de planos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3739,7 +3739,7 @@
   },
   "choice#c143": {
    "src": "The hideout has been comprom",
-   "dst": "",
+   "dst": "Descobriram o esconderijo.",
    "role": "desc",
    "kind": "dialogue",
    "full": "The hideout has been compromised.",
@@ -3750,7 +3750,7 @@
   },
   "choice#c144": {
    "src": "Ahem. The news?",
-   "dst": "",
+   "dst": "Aham. As notícias?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3760,7 +3760,7 @@
   },
   "choice#c145": {
    "src": "Did you forget already?",
-   "dst": "",
+   "dst": "Já esqueceu?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3770,7 +3770,7 @@
   },
   "choice#c146": {
    "src": "Who... who are you?",
-   "dst": "",
+   "dst": "Quem... quem é você?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -3780,7 +3780,7 @@
   },
   "choice#c147": {
    "src": "C'mon. Let's get out of here",
-   "dst": "",
+   "dst": "Vamos. Vamos sair daqui.",
    "role": "desc",
    "kind": "dialogue",
    "full": "C'mon. Let's get out of here.",
@@ -3791,7 +3791,7 @@
   },
   "choice#c148": {
    "src": "And you're just going to fig",
-   "dst": "",
+   "dst": "E você vai simplesmente enfrentar Majin?",
    "role": "desc",
    "kind": "dialogue",
    "full": "And you're just going to fight Majin?",
@@ -3802,7 +3802,7 @@
   },
   "choice#c149": {
    "src": "Okay. Let's go then.",
-   "dst": "",
+   "dst": "Tá. Então vamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3812,7 +3812,7 @@
   },
   "choice#c150": {
    "src": "Let's get clothes to blend i",
-   "dst": "",
+   "dst": "Vamos arranjar roupas para nos disfarçar.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Let's get clothes to blend in.",
@@ -3823,7 +3823,7 @@
   },
   "choice#c151": {
    "src": "Offer to pay {~}LE.",
-   "dst": "",
+   "dst": "Oferecer {~}LE.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3833,7 +3833,7 @@
   },
   "choice#c152": {
    "src": "Well.... I wish you good luc",
-   "dst": "",
+   "dst": "Bom.... boa sorte!",
    "role": "desc",
    "kind": "dialogue",
    "full": "Well.... I wish you good luck!",
@@ -3844,7 +3844,7 @@
   },
   "choice#c153": {
    "src": "Daily Butterfly",
-   "dst": "",
+   "dst": "Borboleta Diária",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3854,7 +3854,7 @@
   },
   "choice#c154": {
    "src": "Aelumia Times",
-   "dst": "",
+   "dst": "Aelumia Times",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3864,7 +3864,7 @@
   },
   "choice#c155": {
    "src": "Fab Fashion",
-   "dst": "",
+   "dst": "Moda Fabulosa",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3874,7 +3874,7 @@
   },
   "choice#c156": {
    "src": "We need some clothes.",
-   "dst": "",
+   "dst": "Precisamos de roupas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3884,7 +3884,7 @@
   },
   "choice#c157": {
    "src": "I... don't have that.",
-   "dst": "",
+   "dst": "Eu... não tenho isso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3894,7 +3894,7 @@
   },
   "choice#c158": {
    "src": "We're expecting company.",
-   "dst": "",
+   "dst": "Estamos esperando visita.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -3904,7 +3904,7 @@
   },
   "choice#c159": {
    "src": "You don't want to look aroun",
-   "dst": "",
+   "dst": "Não quer dar uma olhada?",
    "role": "desc",
    "kind": "dialogue",
    "full": "You don't want to look around?",
@@ -3915,7 +3915,7 @@
   },
   "choice#c160": {
    "src": "Let's get some food or drink",
-   "dst": "",
+   "dst": "Vamos comer ou beber algo.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Let's get some food or drinks.",
@@ -3926,7 +3926,7 @@
   },
   "choice#c161": {
    "src": "Any tourist recommendations",
-   "dst": "",
+   "dst": "Alguma dica turística por aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Any tourist recommendations in {p}?",
@@ -3937,7 +3937,7 @@
   },
   "choice#c162": {
    "src": "Do you host any events here",
-   "dst": "",
+   "dst": "Vocês fazem eventos aqui no hotel?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Do you host any events here at the hotel?",
@@ -3948,7 +3948,7 @@
   },
   "choice#c163": {
    "src": "I want to make a complaint.",
-   "dst": "",
+   "dst": "Quero fazer uma reclamação.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3958,7 +3958,7 @@
   },
   "choice#c164": {
    "src": "Bye!",
-   "dst": "",
+   "dst": "Tchau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3968,7 +3968,7 @@
   },
   "choice#c165": {
    "src": "The beds are uncomfortable.",
-   "dst": "",
+   "dst": "As camas são incômodas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3978,7 +3978,7 @@
   },
   "choice#c166": {
    "src": "The room is dirty.",
-   "dst": "",
+   "dst": "O quarto está sujo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3988,7 +3988,7 @@
   },
   "choice#c167": {
    "src": "It is too expensive!",
-   "dst": "",
+   "dst": "Está caro demais!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -3998,7 +3998,7 @@
   },
   "choice#c168": {
    "src": "[{~} {~}] Highland Spring Wa",
-   "dst": "",
+   "dst": "[{~} {~}] Água de nascente Highland",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] Highland Spring Water",
@@ -4009,7 +4009,7 @@
   },
   "choice#c169": {
    "src": "[{~} {~}] Tall Maple Cream So",
-   "dst": "",
+   "dst": "[{~} {~}] Refrigerante cremoso Tall Maple",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] Tall Maple Cream Soda",
@@ -4020,7 +4020,7 @@
   },
   "choice#c170": {
    "src": "[{~} {~}] Red Bark Barrel Sa",
-   "dst": "",
+   "dst": "[{~} {~}] Salsaparrilha Red Bark Barrel",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] Red Bark Barrel Sarsap",
@@ -4031,7 +4031,7 @@
   },
   "choice#c175": {
    "src": "Leave and stop music",
-   "dst": "",
+   "dst": "Sair e parar a música",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4041,7 +4041,7 @@
   },
   "choice#c176": {
    "src": "Get ice.",
-   "dst": "",
+   "dst": "Pegar gelo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4051,7 +4051,7 @@
   },
   "choice#c177": {
    "src": "Okay. What do we do?",
-   "dst": "",
+   "dst": "Tá. O que a gente faz?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4061,7 +4061,7 @@
   },
   "choice#c178": {
    "src": "Are you doing alright?",
-   "dst": "",
+   "dst": "Você está bem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4071,7 +4071,7 @@
   },
   "choice#c179": {
    "src": "Uh... no.",
-   "dst": "",
+   "dst": "Hã... não.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4081,7 +4081,7 @@
   },
   "choice#c180": {
    "src": "Where regions meet...",
-   "dst": "",
+   "dst": "Onde as regiões se unem...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4091,7 +4091,7 @@
   },
   "choice#c181": {
    "src": "The {p}, actually.",
-   "dst": "",
+   "dst": "{p}, na verdade.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4101,7 +4101,7 @@
   },
   "choice#c182": {
    "src": "I... spawned in. From nothin",
-   "dst": "",
+   "dst": "Eu... apareci. Do nada.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I... spawned in. From nothing.",
@@ -4112,7 +4112,7 @@
   },
   "choice#c183": {
    "src": "What she said!",
-   "dst": "",
+   "dst": "O que ela disse!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4122,7 +4122,7 @@
   },
   "choice#c184": {
    "src": "May we...",
-   "dst": "",
+   "dst": "Que desenterremos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4132,7 +4132,7 @@
   },
   "choice#c185": {
    "src": "Let's get some rest",
-   "dst": "",
+   "dst": "Vamos descansar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4142,7 +4142,7 @@
   },
   "choice#c186": {
    "src": "Tell me about Syndra.",
-   "dst": "",
+   "dst": "Fale da Syndra.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4152,7 +4152,7 @@
   },
   "choice#c187": {
    "src": "Let's just wait.",
-   "dst": "",
+   "dst": "Melhor esperar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4162,7 +4162,7 @@
   },
   "choice#c188": {
    "src": "What was it about?",
-   "dst": "",
+   "dst": "Era sobre o quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4172,7 +4172,7 @@
   },
   "choice#c189": {
    "src": "She knew.",
-   "dst": "",
+   "dst": "Ela sabia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4182,7 +4182,7 @@
   },
   "choice#c190": {
    "src": "Our stove is on?",
-   "dst": "",
+   "dst": "Nosso fogão está ligado?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4192,7 +4192,7 @@
   },
   "choice#c191": {
    "src": "I'm here for my friends.",
-   "dst": "",
+   "dst": "Vim pelos meus amigos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4202,7 +4202,7 @@
   },
   "choice#c192": {
    "src": "Are you here to fight?",
-   "dst": "",
+   "dst": "Veio para lutar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4212,7 +4212,7 @@
   },
   "choice#c193": {
    "src": "I'm... leaving.",
-   "dst": "",
+   "dst": "Eu... vou embora.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4222,7 +4222,7 @@
   },
   "choice#c194": {
    "src": "Magic?",
-   "dst": "",
+   "dst": "Magia?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4232,7 +4232,7 @@
   },
   "choice#c195": {
    "src": "Psionics?",
-   "dst": "",
+   "dst": "Psiônica?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4242,7 +4242,7 @@
   },
   "choice#c196": {
    "src": "You sure like to talk...",
-   "dst": "",
+   "dst": "Você gosta mesmo de falar...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4252,7 +4252,7 @@
   },
   "choice#c197": {
    "src": "Who are you, really?",
-   "dst": "",
+   "dst": "Quem é você, de verdade?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4262,7 +4262,7 @@
   },
   "choice#c198": {
    "src": "Why do you care?",
-   "dst": "",
+   "dst": "Por que você se importa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4272,7 +4272,7 @@
   },
   "choice#c199": {
    "src": "Why is this a blind spot?",
-   "dst": "",
+   "dst": "Por que é um ponto cego?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4282,7 +4282,7 @@
   },
   "choice#c200": {
    "src": "We do.",
-   "dst": "",
+   "dst": "Nós sim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4292,7 +4292,7 @@
   },
   "choice#c201": {
    "src": "Fruma seems so... detached f",
-   "dst": "",
+   "dst": "Fruma parece tão... alheia a isso.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Fruma seems so... detached from it.",
@@ -4303,7 +4303,7 @@
   },
   "choice#c202": {
    "src": "So I'm free to leave?",
-   "dst": "",
+   "dst": "Então estou livre para ir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4313,7 +4313,7 @@
   },
   "choice#c203": {
    "src": "Are you two alright?",
-   "dst": "",
+   "dst": "Vocês dois estão bem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4323,7 +4323,7 @@
   },
   "choice#c204": {
    "src": "I'm glad you're safe.",
-   "dst": "",
+   "dst": "Que bom que estão a salvo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4333,7 +4333,7 @@
   },
   "choice#c205": {
    "src": "How was your time imprisoned",
-   "dst": "",
+   "dst": "Como foi o tempo na prisão?",
    "role": "desc",
    "kind": "dialogue",
    "full": "How was your time imprisoned?",
@@ -4344,7 +4344,7 @@
   },
   "choice#c206": {
    "src": "Thoughts on the Blossom of B",
-   "dst": "",
+   "dst": "O que acha da Flor de Lâminas?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Thoughts on the Blossom of Blades?",
@@ -4355,7 +4355,7 @@
   },
   "choice#c207": {
    "src": "So, what're your plans?",
-   "dst": "",
+   "dst": "E aí, quais são seus planos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4365,7 +4365,7 @@
   },
   "choice#c208": {
    "src": "Gonna get going.",
-   "dst": "",
+   "dst": "Vou indo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4375,7 +4375,7 @@
   },
   "choice#c209": {
    "src": "I think you know.",
-   "dst": "",
+   "dst": "Acho que você sabe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -4385,7 +4385,7 @@
   },
   "choice#c210": {
    "src": "It's not too late to switch",
-   "dst": "",
+   "dst": "Ainda dá tempo de mudar de lado.",
    "role": "desc",
    "kind": "dialogue",
    "full": "It's not too late to switch sides.",
@@ -4396,7 +4396,7 @@
   },
   "choice#c211": {
    "src": "You're sticking with the Cro",
-   "dst": "",
+   "dst": "Você vai continuar com a Coroa?",
    "role": "desc",
    "kind": "dialogue",
    "full": "You're sticking with the Crown?",
@@ -4407,7 +4407,7 @@
   },
   "choice/Ensemble of Hope#001": {
    "src": "For the most part.",
-   "dst": "",
+   "dst": "Na maior parte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -4418,7 +4418,7 @@
   },
   "choice/Ensemble of Hope#002": {
    "src": "Well enough!",
-   "dst": "",
+   "dst": "Bem o bastante!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -4429,7 +4429,7 @@
   },
   "choice/Ensemble of Hope#003": {
    "src": "Eh...",
-   "dst": "",
+   "dst": "Bom...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -4440,7 +4440,7 @@
   },
   "choice/Celebrations in Smoke#001": {
    "src": "Yes, here",
-   "dst": "",
+   "dst": "{c1}Sim, aqui{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4452,7 +4452,7 @@
   },
   "choice/Celebrations in Smoke#002": {
    "src": "Supplier?",
-   "dst": "",
+   "dst": "Fornecedor?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4464,7 +4464,7 @@
   },
   "choice/Celebrations in Smoke#003": {
    "src": "Medallion?",
-   "dst": "",
+   "dst": "Medalhão?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4476,7 +4476,7 @@
   },
   "choice/Celebrations in Smoke#004": {
    "src": "Have you seen any changeling",
-   "dst": "",
+   "dst": "Você viu algum metamorfo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4488,7 +4488,7 @@
   },
   "choice/Celebrations in Smoke#005": {
    "src": "I have questions on a differ",
-   "dst": "",
+   "dst": "Tenho perguntas sobre outro assunto",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4500,7 +4500,7 @@
   },
   "choice/Celebrations in Smoke#006": {
    "src": "How did you get in?",
-   "dst": "",
+   "dst": "Como você entrou?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4512,7 +4512,7 @@
   },
   "choice/Celebrations in Smoke#007": {
    "src": "Clans trust you?",
-   "dst": "",
+   "dst": "Os clãs confiam em você?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4524,7 +4524,7 @@
   },
   "choice/Celebrations in Smoke#008": {
    "src": "Change topic",
-   "dst": "",
+   "dst": "Mudar de assunto",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4536,7 +4536,7 @@
   },
   "choice/Celebrations in Smoke#009": {
    "src": "Nervous?",
-   "dst": "",
+   "dst": "Nervoso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4548,7 +4548,7 @@
   },
   "choice/Celebrations in Smoke#010": {
    "src": "Specific role?",
-   "dst": "",
+   "dst": "Função específica?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4560,7 +4560,7 @@
   },
   "choice/Celebrations in Smoke#011": {
    "src": "Always nervous?",
-   "dst": "",
+   "dst": "Sempre nervoso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4572,7 +4572,7 @@
   },
   "choice/Celebrations in Smoke#012": {
    "src": "Speak slower?",
-   "dst": "",
+   "dst": "Mais devagar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4584,7 +4584,7 @@
   },
   "choice/Celebrations in Smoke#013": {
    "src": "Don't accuse",
-   "dst": "",
+   "dst": "Não acusar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4596,7 +4596,7 @@
   },
   "choice/Celebrations in Smoke#015": {
    "src": "Business model?",
-   "dst": "",
+   "dst": "Modelo de negócio?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4608,7 +4608,7 @@
   },
   "choice/Celebrations in Smoke#016": {
    "src": "Your clan?",
-   "dst": "",
+   "dst": "Seu clã?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4620,7 +4620,7 @@
   },
   "choice/Celebrations in Smoke#017": {
    "src": "May I have some?",
-   "dst": "",
+   "dst": "Me dá um pouco?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4632,7 +4632,7 @@
   },
   "choice/Celebrations in Smoke#018": {
    "src": "What clan are you a member o",
-   "dst": "",
+   "dst": "De que clã você é?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4644,7 +4644,7 @@
   },
   "choice/Celebrations in Smoke#019": {
    "src": "Can I have some of it?",
-   "dst": "",
+   "dst": "Posso pegar um pouco?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4656,7 +4656,7 @@
   },
   "choice/Celebrations in Smoke#020": {
    "src": "Work alone?",
-   "dst": "",
+   "dst": "Trabalha sozinha?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4668,7 +4668,7 @@
   },
   "choice/Celebrations in Smoke#021": {
    "src": "Won't lie?",
-   "dst": "",
+   "dst": "Não vai mentir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4680,7 +4680,7 @@
   },
   "choice/Celebrations in Smoke#022": {
    "src": "Afraid?",
-   "dst": "",
+   "dst": "Com medo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4692,7 +4692,7 @@
   },
   "choice/Celebrations in Smoke#023": {
    "src": "Why are you so insistent on",
-   "dst": "",
+   "dst": "Por que você insiste tanto em não descobrirem que tentou queimar o homem de vime?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4704,7 +4704,7 @@
   },
   "choice/Celebrations in Smoke#024": {
    "src": "Seen changelings?",
-   "dst": "",
+   "dst": "Viu metamorfos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4716,7 +4716,7 @@
   },
   "choice/Celebrations in Smoke#025": {
    "src": "Are you sure?",
-   "dst": "",
+   "dst": "Tem certeza?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4728,7 +4728,7 @@
   },
   "choice/Celebrations in Smoke#026": {
    "src": "Not usually sold?",
-   "dst": "",
+   "dst": "Não costumam vender?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4740,7 +4740,7 @@
   },
   "choice/Celebrations in Smoke#027": {
    "src": "Are you sure?",
-   "dst": "",
+   "dst": "Tem certeza?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4752,7 +4752,7 @@
   },
   "choice/Celebrations in Smoke#028": {
    "src": "Do you know Arris? They say ",
-   "dst": "",
+   "dst": "Conhece Arris? Diz ser membro do seu clã ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4764,7 +4764,7 @@
   },
   "choice/Celebrations in Smoke#029": {
    "src": "How much can I trust them?",
-   "dst": "",
+   "dst": "Até que ponto posso confiar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4776,7 +4776,7 @@
   },
   "choice/Celebrations in Smoke#030": {
    "src": "That's all, thank you for yo",
-   "dst": "",
+   "dst": "É só isso, obrigado pela ajuda.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4788,7 +4788,7 @@
   },
   "choice/Celebrations in Smoke#031": {
    "src": "Can I trust them?",
-   "dst": "",
+   "dst": "Posso confiar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4800,7 +4800,7 @@
   },
   "choice/Celebrations in Smoke#032": {
    "src": "How long ago?",
-   "dst": "",
+   "dst": "Há quanto tempo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4812,7 +4812,7 @@
   },
   "choice/Celebrations in Smoke#033": {
    "src": "First time?",
-   "dst": "",
+   "dst": "Primeira vez?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4824,7 +4824,7 @@
   },
   "choice/Celebrations in Smoke#034": {
    "src": "Give cookie",
-   "dst": "",
+   "dst": "{c1}Dar biscoito{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4836,7 +4836,7 @@
   },
   "choice/Celebrations in Smoke#035": {
    "src": "Danger?",
-   "dst": "",
+   "dst": "Perigo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4848,7 +4848,7 @@
   },
   "choice/Celebrations in Smoke#036": {
    "src": "Easy to sneak in",
-   "dst": "",
+   "dst": "Fácil de entrar escondido",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4860,7 +4860,7 @@
   },
   "choice/Celebrations in Smoke#037": {
    "src": "You called me?",
-   "dst": "",
+   "dst": "{c1}Me chamou?{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4872,7 +4872,7 @@
   },
   "choice/Celebrations in Smoke#038": {
    "src": "Don't know",
-   "dst": "",
+   "dst": "Não sei",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4884,7 +4884,7 @@
   },
   "choice/Celebrations in Smoke#039": {
    "src": "Soldier's gear?",
-   "dst": "",
+   "dst": "{c1}Equipamento de soldado?{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4896,7 +4896,7 @@
   },
   "choice/Celebrations in Smoke#040": {
    "src": "You lied!",
-   "dst": "",
+   "dst": "Você mentiu!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4908,7 +4908,7 @@
   },
   "choice/Celebrations in Smoke#041": {
    "src": "Less trustworthy",
-   "dst": "",
+   "dst": "Menos confiável",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4920,7 +4920,7 @@
   },
   "choice/Celebrations in Smoke#042": {
    "src": "Could report you",
-   "dst": "",
+   "dst": "Posso denunciar você",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4932,7 +4932,7 @@
   },
   "choice/Celebrations in Smoke#043": {
    "src": "Why not?",
-   "dst": "",
+   "dst": "Por que não?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4944,7 +4944,7 @@
   },
   "choice/Celebrations in Smoke#044": {
    "src": "Hiding more?",
-   "dst": "",
+   "dst": "Escondendo mais algo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4956,7 +4956,7 @@
   },
   "choice/Celebrations in Smoke#045": {
    "src": "Why enlist?",
-   "dst": "",
+   "dst": "Por que se alistar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4968,7 +4968,7 @@
   },
   "choice/Celebrations in Smoke#046": {
    "src": "I found your camp. There's g",
-   "dst": "",
+   "dst": "{c1}Achei seu acampamento. Tem chá verde, mas nada do que eu esperaria de um mercador{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4980,7 +4980,7 @@
   },
   "choice/Celebrations in Smoke#047": {
    "src": "Born outside clan?",
-   "dst": "",
+   "dst": "Nasceu fora de um clã?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4992,7 +4992,7 @@
   },
   "choice/Celebrations in Smoke#048": {
    "src": "Give info",
-   "dst": "",
+   "dst": "{c1}Dar informação{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5004,7 +5004,7 @@
   },
   "choice/Celebrations in Smoke#049": {
    "src": "Hidden security?",
-   "dst": "",
+   "dst": "{c1}Segurança oculta?{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5016,7 +5016,7 @@
   },
   "choice/Celebrations in Smoke#050": {
    "src": "None of them.",
-   "dst": "",
+   "dst": "Nenhum deles.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5028,7 +5028,7 @@
   },
   "choice/Celebrations in Smoke#051": {
    "src": "Really, nobody",
-   "dst": "",
+   "dst": "Sério, ninguém",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5040,7 +5040,7 @@
   },
   "choice/Ensemble of Hope#004": {
    "src": "Ready to go now!",
-   "dst": "",
+   "dst": "Pronto para ir!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5051,7 +5051,7 @@
   },
   "choice/Ensemble of Hope#005": {
    "src": "What? Why?",
-   "dst": "",
+   "dst": "O quê? Por quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5062,7 +5062,7 @@
   },
   "choice/Ensemble of Hope#006": {
    "src": "Sounds good!",
-   "dst": "",
+   "dst": "Parece bom!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5073,7 +5073,7 @@
   },
   "choice/Ensemble of Hope#007": {
    "src": "How are you feeling?",
-   "dst": "",
+   "dst": "Como você está se sentindo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5084,7 +5084,7 @@
   },
   "choice/Ensemble of Hope#008": {
    "src": "Thoughts on the plan?",
-   "dst": "",
+   "dst": "O que acha do plano?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5095,7 +5095,7 @@
   },
   "choice/Ensemble of Hope#009": {
    "src": "Ready to see the Canopy agai",
-   "dst": "",
+   "dst": "Pronto para rever o Dossel?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5106,7 +5106,7 @@
   },
   "choice/Ensemble of Hope#010": {
    "src": "How are you really?",
-   "dst": "",
+   "dst": "Como você está de verdade?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5117,7 +5117,7 @@
   },
   "choice/Ensemble of Hope#011": {
    "src": "What do you think of the pla",
-   "dst": "",
+   "dst": "O que você acha do plano?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5128,7 +5128,7 @@
   },
   "choice/Ensemble of Hope#012": {
    "src": "What's phase two?",
-   "dst": "",
+   "dst": "Qual é a fase dois?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5139,7 +5139,7 @@
   },
   "choice/Ensemble of Hope#013": {
    "src": "Let's meet the Canopy.",
-   "dst": "",
+   "dst": "Vamos ver o Dossel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5150,7 +5150,7 @@
   },
   "choice/Ensemble of Hope#014": {
    "src": "You were kind of hard on her",
-   "dst": "",
+   "dst": "Você pegou meio pesado com ela.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5161,7 +5161,7 @@
   },
   "choice/Ensemble of Hope#015": {
    "src": "Where's everyone else?",
-   "dst": "",
+   "dst": "Cadê todo mundo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5172,7 +5172,7 @@
   },
   "choice/Ensemble of Hope#016": {
    "src": "DON'T!",
-   "dst": "",
+   "dst": "NÃO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5183,7 +5183,7 @@
   },
   "choice/Ensemble of Hope#017": {
    "src": "I think I know what it is.",
-   "dst": "",
+   "dst": "Acho que sei o que é.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5194,7 +5194,7 @@
   },
   "choice/Ensemble of Hope#018": {
    "src": "I'll tell you later.",
-   "dst": "",
+   "dst": "Depois eu conto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5205,7 +5205,7 @@
   },
   "choice/Ensemble of Hope#019": {
    "src": "I'm glad you're ok.",
-   "dst": "",
+   "dst": "Que bom que você está bem.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5216,7 +5216,7 @@
   },
   "choice/Ensemble of Hope#020": {
    "src": "I'm sorry for lying to you.",
-   "dst": "",
+   "dst": "Desculpe ter mentido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5227,7 +5227,7 @@
   },
   "choice/Ensemble of Hope#021": {
    "src": "She wanted to meet with me.",
-   "dst": "",
+   "dst": "Ela queria me encontrar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5238,7 +5238,7 @@
   },
   "choice/Ensemble of Hope#022": {
    "src": "I could get an audience.",
-   "dst": "",
+   "dst": "Consigo uma audiência.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5249,7 +5249,7 @@
   },
   "choice/Ensemble of Hope#023": {
    "src": "Tell them what you know.",
-   "dst": "",
+   "dst": "Contar o que você sabe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5260,7 +5260,7 @@
   },
   "choice/Ensemble of Hope#024": {
    "src": "I don't see them.",
-   "dst": "",
+   "dst": "Não estou vendo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5271,7 +5271,7 @@
   },
   "choice/Ensemble of Hope#025": {
    "src": "In a hurry?",
-   "dst": "",
+   "dst": "Com pressa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5282,7 +5282,7 @@
   },
   "choice/Ensemble of Hope#026": {
    "src": "Just ask him out already...",
-   "dst": "",
+   "dst": "Chama ele pra sair logo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5293,7 +5293,7 @@
   },
   "choice/Ensemble of Hope#027": {
    "src": "The password is MOVE.",
-   "dst": "",
+   "dst": "A senha é SAI DA FRENTE.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5304,7 +5304,7 @@
   },
   "choice/Ensemble of Hope#028": {
    "src": "I'm turning myself in.",
-   "dst": "",
+   "dst": "Vim me entregar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5315,7 +5315,7 @@
   },
   "choice/Ensemble of Hope#029": {
    "src": "What are you planning?",
-   "dst": "",
+   "dst": "O que você está tramando?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5326,7 +5326,7 @@
   },
   "choice/Ensemble of Hope#030": {
    "src": "How do I prove it?",
-   "dst": "",
+   "dst": "Como eu provo isso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5337,7 +5337,7 @@
   },
   "choice/Ensemble of Hope#031": {
    "src": "What are your terms?",
-   "dst": "",
+   "dst": "Quais são suas condições?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5348,7 +5348,7 @@
   },
   "choice/Ensemble of Hope#032": {
    "src": "I won't join you.",
-   "dst": "",
+   "dst": "Não vou me juntar a você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5359,7 +5359,7 @@
   },
   "choice/Ensemble of Hope#033": {
    "src": "So will you let me go?",
-   "dst": "",
+   "dst": "Então você vai me deixar ir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5370,7 +5370,7 @@
   },
   "choice/Ensemble of Hope#034": {
    "src": "I'm alive!",
-   "dst": "",
+   "dst": "Estou vivo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5381,7 +5381,7 @@
   },
   "choice/Ensemble of Hope#035": {
    "src": "Slight issues",
-   "dst": "",
+   "dst": "Uns probleminhas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5392,7 +5392,7 @@
   },
   "choice/Ensemble of Hope#036": {
    "src": "Disappointed?",
-   "dst": "",
+   "dst": "Decepcionado?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5403,7 +5403,7 @@
   },
   "choice/Ensemble of Hope#037": {
    "src": "Appreciate the concern.",
-   "dst": "",
+   "dst": "Obrigado pela preocupação.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5414,7 +5414,7 @@
   },
   "choice/Ensemble of Hope#038": {
    "src": "I thought we'd heard from th",
-   "dst": "",
+   "dst": "Achei que já tínhamos notícias deles?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5425,7 +5425,7 @@
   },
   "choice/Ensemble of Hope#039": {
    "src": "I'll go.",
-   "dst": "",
+   "dst": "Eu vou.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -5436,7 +5436,7 @@
   },
   "choice/Overture to Despair#001": {
    "src": "Just being realistic.",
-   "dst": "",
+   "dst": "Só estou sendo realista.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5447,7 +5447,7 @@
   },
   "choice/Overture to Despair#002": {
    "src": "The Mistwoods, actually.",
-   "dst": "",
+   "dst": "Mistwoods, na verdade.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5458,7 +5458,7 @@
   },
   "choice/Overture to Despair#004": {
    "src": "...did it work?",
-   "dst": "",
+   "dst": "...funcionou?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5469,7 +5469,7 @@
   },
   "choice/The Strong Survive#001": {
    "src": "Where should I be right now?",
-   "dst": "",
+   "dst": "Onde eu deveria estar agora?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5480,7 +5480,7 @@
   },
   "choice/The Strong Survive#002": {
    "src": "Tell me about being a recrui",
-   "dst": "",
+   "dst": "Fale sobre ser recruta.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Tell me about being a recruit.",
@@ -5491,7 +5491,7 @@
   },
   "choice/The Strong Survive#003": {
    "src": "Tell me about Fort Terican.",
-   "dst": "",
+   "dst": "Fale do forte de Tericen.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5502,7 +5502,7 @@
   },
   "choice/The Strong Survive#004": {
    "src": "Tell me about the Fruman mil",
-   "dst": "",
+   "dst": "Fale do exército de Fruma.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Tell me about the Fruman military.",
@@ -5513,7 +5513,7 @@
   },
   "choice/The Strong Survive#005": {
    "src": "What will happen after I com",
-   "dst": "",
+   "dst": "O que acontece quando eu terminar o treinamento aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "What will happen after I complete my training here?",
@@ -5524,7 +5524,7 @@
   },
   "choice/The Strong Survive#006": {
    "src": "I had trouble with it at fir",
-   "dst": "",
+   "dst": "No começo foi difícil, mas no fim eu consegui.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I had trouble with it at first, but was able to succeed in the end.",
@@ -5535,7 +5535,7 @@
   },
   "choice/The Strong Survive#007": {
    "src": "I completed the challenge wi",
-   "dst": "",
+   "dst": "Completei o desafio sem falhar.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I completed the challenge without failing.",
@@ -5546,7 +5546,7 @@
   },
   "choice/The Strong Survive#008": {
    "src": "How were you unable to block",
-   "dst": "",
+   "dst": "Como você não conseguiu bloquear nenhuma flecha?",
    "role": "desc",
    "kind": "dialogue",
    "full": "How were you unable to block any of the arrows?",
@@ -5557,7 +5557,7 @@
   },
   "choice/The Strong Survive#009": {
    "src": "I finished the course quickl",
-   "dst": "",
+   "dst": "Terminei o percurso rapidinho.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I finished the course quickly.",
@@ -5568,7 +5568,7 @@
   },
   "choice/The Strong Survive#010": {
    "src": "I managed to find a way thro",
-   "dst": "",
+   "dst": "Depois de um tempo, achei um jeito de passar pelo percurso.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I managed to find a way through the course after a while.",
@@ -5579,7 +5579,7 @@
   },
   "choice/The Strong Survive#011": {
    "src": "Why would I tell you?",
-   "dst": "",
+   "dst": "Por que eu te contaria?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5590,7 +5590,7 @@
   },
   "choice/The Strong Survive#012": {
    "src": "Look further down the list.",
-   "dst": "",
+   "dst": "Olhar mais abaixo na lista.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5601,7 +5601,7 @@
   },
   "choice/The Strong Survive#013": {
    "src": "Finish looking at the list.",
-   "dst": "",
+   "dst": "Terminar de olhar a lista.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5612,7 +5612,7 @@
   },
   "choice/The Strong Survive#014": {
    "src": "Continue looking around Teri",
-   "dst": "",
+   "dst": "{c1}Continuar explorando Tericen.{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "Continue looking around Tericen.",
@@ -5623,7 +5623,7 @@
   },
   "choice/The Strong Survive#015": {
    "src": "Eavesdrop on their conversat",
-   "dst": "",
+   "dst": "{c1}Escutar a conversa escondido.{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "Eavesdrop on their conversation.",
@@ -5634,7 +5634,7 @@
   },
   "choice/The Strong Survive#016": {
    "src": "I was able to complete the c",
-   "dst": "",
+   "dst": "Consegui completar o desafio.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I was able to complete the challenge.",
@@ -5645,7 +5645,7 @@
   },
   "choice/The Strong Survive#017": {
    "src": "Like you, I was not able to",
-   "dst": "",
+   "dst": "Assim como você, não consegui completar o desafio.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Like you, I was not able to complete the challenge.",
@@ -5656,7 +5656,7 @@
   },
   "choice/The Strong Survive#018": {
    "src": "Knock on the door.",
-   "dst": "",
+   "dst": "Bater na porta.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5667,7 +5667,7 @@
   },
   "choice/The Strong Survive#019": {
    "src": "Why did you hide your diary",
-   "dst": "",
+   "dst": "{c1}Por que você escondeu seu diário pelo quartel?{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "Why did you hide your diary entries around the barracks?",
@@ -5678,7 +5678,7 @@
   },
   "choice/The Strong Survive#020": {
    "src": "Did you ever end up discover",
-   "dst": "",
+   "dst": "{c1}Você chegou a descobrir o segredo do comandante Ferreo?{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "Did you ever end up discovering Commander Ferreo's secret?",
@@ -5689,7 +5689,7 @@
   },
   "choice/The Strong Survive#021": {
    "src": "I should be heading back to",
-   "dst": "",
+   "dst": "{c1}Eu devia voltar para a cama.{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "I should be heading back to bed now.",
@@ -5700,7 +5700,7 @@
   },
   "choice/The Strong Survive#022": {
    "src": "We must escape!",
-   "dst": "",
+   "dst": "{c1}Temos que fugir!{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "I should be heading back to bed now.",
@@ -5711,7 +5711,7 @@
   },
   "choice/The Strong Survive#023": {
    "src": "We can try to find a way aro",
-   "dst": "",
+   "dst": "{c1}Podemos tentar achar outro caminho.{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "We can try to find a way around them.",
@@ -5722,7 +5722,7 @@
   },
   "choice/The Strong Survive#024": {
    "src": "I'll deal with them if they",
-   "dst": "",
+   "dst": "{c1}Se nos virem, eu cuido deles.{/}",
    "role": "desc",
    "kind": "dialogue",
    "full": "I'll deal with them if they spot us.",
@@ -5733,7 +5733,7 @@
   },
   "choice/The Strong Survive#025": {
    "src": "How did you get here?",
-   "dst": "",
+   "dst": "Como você chegou aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5744,7 +5744,7 @@
   },
   "choice/The Strong Survive#026": {
    "src": "Do you remember me?",
-   "dst": "",
+   "dst": "Lembra de mim?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5755,7 +5755,7 @@
   },
   "choice/The Strong Survive#027": {
    "src": "Why are you waiting here?",
-   "dst": "",
+   "dst": "Por que está esperando aqui?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5766,7 +5766,7 @@
   },
   "choice/The Strong Survive#028": {
    "src": "Be careful out there.",
-   "dst": "",
+   "dst": "Tome cuidado lá fora.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -5777,7 +5777,7 @@
   },
   "choice#c212": {
    "src": "[{~} {~}] One of several \"Dr.",
-   "dst": "",
+   "dst": "[{~} {~}] Um dos vários sabores de \"Dr. Soosu\"",
    "role": "desc",
    "kind": "dialogue",
    "full": "[{~} {~}] One of several \"Dr. Soosu\" Flavors",
@@ -5788,7 +5788,7 @@
   },
   "choice#c213": {
    "src": "Someone started mocking our",
-   "dst": "",
+   "dst": "Alguém começou a zombar da nossa Rainha.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Someone started mocking our Queen.",
@@ -5799,7 +5799,7 @@
   },
   "choice#c214": {
    "src": "I'll hide.",
-   "dst": "",
+   "dst": "Vou me esconder.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5809,7 +5809,7 @@
   },
   "choice#c215": {
    "src": "Later...",
-   "dst": "",
+   "dst": "Depois...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5819,7 +5819,7 @@
   },
   "choice#c216": {
    "src": "Of what?",
-   "dst": "",
+   "dst": "Do quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5829,7 +5829,7 @@
   },
   "choice#c217": {
    "src": "Elise?",
-   "dst": "",
+   "dst": "Elise?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5839,7 +5839,7 @@
   },
   "choice#c218": {
    "src": "I should ask you the same th",
-   "dst": "",
+   "dst": "Eu é que devia perguntar isso.",
    "role": "desc",
    "kind": "dialogue",
    "full": "I should ask you the same thing.",
@@ -5850,7 +5850,7 @@
   },
   "choice#c219": {
    "src": "Tasim. I didn't expect to se",
-   "dst": "",
+   "dst": "Tasim. Não esperava ver você aqui.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Tasim. I didn't expect to see you here.",
@@ -5861,7 +5861,7 @@
   },
   "choice#c220": {
    "src": "They were trying to capture",
-   "dst": "",
+   "dst": "Eles tentaram me capturar!",
    "role": "desc",
    "kind": "dialogue",
    "full": "They were trying to capture me!",
@@ -5872,7 +5872,7 @@
   },
   "choice#c221": {
    "src": "You joined the Crown!",
-   "dst": "",
+   "dst": "Você se juntou à Coroa!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5882,7 +5882,7 @@
   },
   "choice#c222": {
    "src": "You've seen what they've don",
-   "dst": "",
+   "dst": "Você viu o que eles fizeram!",
    "role": "desc",
    "kind": "dialogue",
    "full": "You've seen what they've done!",
@@ -5893,7 +5893,7 @@
   },
   "choice#c223": {
    "src": "What did she want you for?",
-   "dst": "",
+   "dst": "Para que ela queria você?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5903,7 +5903,7 @@
   },
   "choice#c224": {
    "src": "I don't have one",
-   "dst": "",
+   "dst": "Não tenho",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5913,7 +5913,7 @@
   },
   "choice#c225": {
    "src": "{~} Token - [{~} E]",
-   "dst": "",
+   "dst": "{~} ficha - [{~} E]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5923,7 +5923,7 @@
   },
   "choice#c226": {
    "src": "{~} Tokens - [{~} E]",
-   "dst": "",
+   "dst": "{~} fichas - [{~} E]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5933,7 +5933,7 @@
   },
   "choice#c227": {
    "src": "Nothing right now",
-   "dst": "",
+   "dst": "Nada por enquanto",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5943,7 +5943,7 @@
   },
   "choice#c228": {
    "src": "Sure - [{~} Tokens]",
-   "dst": "",
+   "dst": "Claro - [{~} fichas]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5953,7 +5953,7 @@
   },
   "choice#c229": {
    "src": "Accuse",
-   "dst": "",
+   "dst": "Acusar",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5963,7 +5963,7 @@
   },
   "choice#c230": {
    "src": "Not giving info",
-   "dst": "",
+   "dst": "Sem dar informação",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5973,7 +5973,7 @@
   },
   "choice#c231": {
    "src": "I guess so...",
-   "dst": "",
+   "dst": "Acho que sim...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5983,7 +5983,7 @@
   },
   "choice#c232": {
    "src": "Unrecognized",
-   "dst": "",
+   "dst": "Não reconhecido",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -5993,7 +5993,7 @@
   },
   "choice#c233": {
    "src": "Is.. what true?",
-   "dst": "",
+   "dst": "Ver... verdade o quê?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6003,7 +6003,7 @@
   },
   "choice#c234": {
    "src": "It... is.",
-   "dst": "",
+   "dst": "É... sim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6013,7 +6013,7 @@
   },
   "choice#c235": {
    "src": "But he's not here.",
-   "dst": "",
+   "dst": "Mas ele não está aqui.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6023,7 +6023,7 @@
   },
   "choice#c236": {
    "src": "I've hunted Rhinos.",
-   "dst": "",
+   "dst": "Já cacei rinocerontes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6033,7 +6033,7 @@
   },
   "choice#c237": {
    "src": "What're you doing?",
-   "dst": "",
+   "dst": "O que você está fazendo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6043,7 +6043,7 @@
   },
   "choice#c238": {
    "src": "What was that for?",
-   "dst": "",
+   "dst": "Para que isso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6053,7 +6053,7 @@
   },
   "choice#c239": {
    "src": "We get it, we're out.",
-   "dst": "",
+   "dst": "Entendemos, já vamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6063,7 +6063,7 @@
   },
   "choice#c240": {
    "src": "Soosu?",
-   "dst": "",
+   "dst": "Soosu?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6073,7 +6073,7 @@
   },
   "choice#c241": {
    "src": "Three?",
-   "dst": "",
+   "dst": "Três?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6083,7 +6083,7 @@
   },
   "choice#c242": {
    "src": "Are you part of the Resistan",
-   "dst": "",
+   "dst": "Você é da Resistência?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Are you part of the Resistance?",
@@ -6094,7 +6094,7 @@
   },
   "choice#c243": {
    "src": "Do you know Bush?",
-   "dst": "",
+   "dst": "Conhece o Arbusto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6104,7 +6104,7 @@
   },
   "choice#c244": {
    "src": "Wait, what is this place?",
-   "dst": "",
+   "dst": "Peraí, que lugar é este?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6114,7 +6114,7 @@
   },
   "choice#c245": {
    "src": "She's here too.",
-   "dst": "",
+   "dst": "Ela também está aqui.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6124,7 +6124,7 @@
   },
   "choice#c246": {
    "src": "We did say we'd kill you.",
-   "dst": "",
+   "dst": "Dissemos que te mataríamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6134,7 +6134,7 @@
   },
   "choice#c247": {
    "src": "These are your last moments!",
-   "dst": "",
+   "dst": "São seus últimos momentos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6144,7 +6144,7 @@
   },
   "choice#c248": {
    "src": "You're right where I want yo",
-   "dst": "",
+   "dst": "Você está bem onde eu queria.",
    "role": "desc",
    "kind": "dialogue",
    "full": "You're right where I want you.",
@@ -6155,7 +6155,7 @@
   },
   "choice#c249": {
    "src": "The newspapers wouldn't lie.",
-   "dst": "",
+   "dst": "Os jornais não mentiriam...",
    "role": "desc",
    "kind": "dialogue",
    "full": "The newspapers wouldn't lie...",
@@ -6166,7 +6166,7 @@
   },
   "choice#c250": {
    "src": "Where did they go?",
-   "dst": "",
+   "dst": "Para onde eles foram?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6176,7 +6176,7 @@
   },
   "choice#c251": {
    "src": "Freedom to Fruma!!",
-   "dst": "",
+   "dst": "Liberdade para Fruma!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6186,7 +6186,7 @@
   },
   "choice#c252": {
    "src": "We did say we'd kill him.",
-   "dst": "",
+   "dst": "Dissemos que o mataríamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6196,7 +6196,7 @@
   },
   "choice#c253": {
    "src": "The press remains truthful!",
-   "dst": "",
+   "dst": "A imprensa continua honesta!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6206,7 +6206,7 @@
   },
   "choice#c254": {
    "src": "So what will you all do now?",
-   "dst": "",
+   "dst": "E agora, o que vocês vão fazer?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6216,7 +6216,7 @@
   },
   "choice#c255": {
    "src": "I killed him.",
-   "dst": "",
+   "dst": "Eu o matei.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6226,7 +6226,7 @@
   },
   "choice#c256": {
    "src": "Majin Thalas is dead.",
-   "dst": "",
+   "dst": "Majin Thalas está morto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6236,7 +6236,7 @@
   },
   "choice#c257": {
    "src": "This is a weird reaction.",
-   "dst": "",
+   "dst": "Que reação estranha.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6246,7 +6246,7 @@
   },
   "choice#c258": {
    "src": "We'll do our best.",
-   "dst": "",
+   "dst": "Vamos fazer o possível.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6256,7 +6256,7 @@
   },
   "choice#c259": {
    "src": "Why are you STILL with her?!",
-   "dst": "",
+   "dst": "Por que você AINDA está com ela?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6266,7 +6266,7 @@
   },
   "choice#c260": {
    "src": "What is WRONG with you?!",
-   "dst": "",
+   "dst": "Qual é o SEU problema?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6276,7 +6276,7 @@
   },
   "choice#c261": {
    "src": "I'll do my best!",
-   "dst": "",
+   "dst": "Vou fazer o possível!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6286,7 +6286,7 @@
   },
   "choice#c262": {
    "src": "I won't kill you.",
-   "dst": "",
+   "dst": "Não vou matar você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6296,7 +6296,7 @@
   },
   "choice#c263": {
    "src": "I can't. Not again.",
-   "dst": "",
+   "dst": "Não consigo. De novo não.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6306,7 +6306,7 @@
   },
   "choice#c264": {
    "src": "I won't lose another friend.",
-   "dst": "",
+   "dst": "Não vou perder outro amigo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6316,7 +6316,7 @@
   },
   "choice#c265": {
    "src": "It's not too late for you.",
-   "dst": "",
+   "dst": "Ainda não é tarde para você.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6326,7 +6326,7 @@
   },
   "choice#c266": {
    "src": "Live with your mistakes.",
-   "dst": "",
+   "dst": "Viva com seus erros.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6336,7 +6336,7 @@
   },
   "choice#c267": {
    "src": "So will we.",
-   "dst": "",
+   "dst": "Nós também.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6346,7 +6346,7 @@
   },
   "choice#c268": {
    "src": "Then help Rex!",
-   "dst": "",
+   "dst": "Então ajude o Rex!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6356,7 +6356,7 @@
   },
   "choice#c269": {
    "src": "You sound exhausted.",
-   "dst": "",
+   "dst": "Você parece exausto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6366,7 +6366,7 @@
   },
   "choice#c270": {
    "src": "We'll need everything we can",
-   "dst": "",
+   "dst": "Vamos precisar de tudo o que conseguirmos.",
    "role": "desc",
    "kind": "dialogue",
    "full": "We'll need everything we can get.",
@@ -6377,7 +6377,7 @@
   },
   "choice#c271": {
    "src": "Focus on your weapon.",
-   "dst": "",
+   "dst": "Concentrar-se na arma.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6387,7 +6387,7 @@
   },
   "choice#c272": {
    "src": "Reach into the bottomless we",
-   "dst": "",
+   "dst": "Mergulhar a mão no poço sem fundo.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Reach into the bottomless well.",
@@ -6398,7 +6398,7 @@
   },
   "choice#c273": {
    "src": "Reach out.",
-   "dst": "",
+   "dst": "Estender a mão.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6408,7 +6408,7 @@
   },
   "choice#c274": {
    "src": "It's done.",
-   "dst": "",
+   "dst": "Está feito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6418,7 +6418,7 @@
   },
   "choice#c275": {
    "src": "Point at the big rift.",
-   "dst": "",
+   "dst": "Apontar para a grande fenda.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6428,7 +6428,7 @@
   },
   "choice#c276": {
    "src": "Are you forgetting something",
-   "dst": "",
+   "dst": "Não está esquecendo nada?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Are you forgetting something?",
@@ -6439,7 +6439,7 @@
   },
   "choice#c277": {
    "src": "It was the Queen.",
-   "dst": "",
+   "dst": "Foi a Rainha.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6449,7 +6449,7 @@
   },
   "choice#c278": {
    "src": "I would.",
-   "dst": "",
+   "dst": "Eu faria.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6459,7 +6459,7 @@
   },
   "choice#c279": {
    "src": "I made it!",
-   "dst": "",
+   "dst": "Consegui!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6469,7 +6469,7 @@
   },
   "choice#c280": {
    "src": "Tell them.",
-   "dst": "",
+   "dst": "Contar a eles.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6479,7 +6479,7 @@
   },
   "choice#c281": {
    "src": "How did it go on your end?",
-   "dst": "",
+   "dst": "Como foi do lado de vocês?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6489,7 +6489,7 @@
   },
   "choice#c282": {
    "src": "What's the plan after this?",
-   "dst": "",
+   "dst": "Qual é o plano depois disso?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6499,7 +6499,7 @@
   },
   "choice#c283": {
    "src": "See you soon.",
-   "dst": "",
+   "dst": "Até logo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6509,7 +6509,7 @@
   },
   "choice#c284": {
    "src": "We stopped her...",
-   "dst": "",
+   "dst": "Nós a detivemos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6519,7 +6519,7 @@
   },
   "choice#c285": {
    "src": "Is Rex alright?",
-   "dst": "",
+   "dst": "O Rex está bem?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6529,7 +6529,7 @@
   },
   "choice#c286": {
    "src": "Is that what the Queen did?",
-   "dst": "",
+   "dst": "Foi isso que a Rainha fez?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6539,7 +6539,7 @@
   },
   "choice#c287": {
    "src": "[{~} {~}] The Chocolate Cow",
-   "dst": "",
+   "dst": "[{~} {~}] Vaca de Chocolate",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6549,7 +6549,7 @@
   },
   "choice#c288": {
    "src": "Kalkalrah Clan",
-   "dst": "",
+   "dst": "Clã Kalkalrah",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6559,7 +6559,7 @@
   },
   "choice#c289": {
    "src": "The Peacekeeper's Clan",
-   "dst": "",
+   "dst": "O clã dos Pacificadores",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6569,7 +6569,7 @@
   },
   "choice#c290": {
    "src": "Lostheth Clan",
-   "dst": "",
+   "dst": "Clã Lostheth",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6579,7 +6579,7 @@
   },
   "choice#c291": {
    "src": "Introduction",
-   "dst": "",
+   "dst": "Apresentação",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6589,7 +6589,7 @@
   },
   "choice#c292": {
    "src": "Agricultural District",
-   "dst": "",
+   "dst": "Distrito Agrícola",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6599,7 +6599,7 @@
   },
   "choice#c293": {
    "src": "The Great Mines",
-   "dst": "",
+   "dst": "As Grandes Minas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6609,7 +6609,7 @@
   },
   "choice#c294": {
    "src": "Bottle of Mist - [{~} Tokens]",
-   "dst": "",
+   "dst": "Garrafa de névoa - [{~} fichas]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6619,7 +6619,7 @@
   },
   "choice#c295": {
    "src": "Wicker Doll - [{~} Tokens]",
-   "dst": "",
+   "dst": "Boneco de vime - [{~} fichas]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6629,7 +6629,7 @@
   },
   "choice#c296": {
    "src": "Kaleidoscope - [{~} Tokens]",
-   "dst": "",
+   "dst": "Caleidoscópio - [{~} fichas]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6639,7 +6639,7 @@
   },
   "choice#c297": {
    "src": "Leaves Count",
-   "dst": "",
+   "dst": "Contagem das Folhas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
@@ -6649,7 +6649,7 @@
   },
   "choice/The Royal University's Library#002": {
    "src": "[Library Permission Slip]",
-   "dst": "",
+   "dst": "[Autorização da biblioteca]",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6660,7 +6660,7 @@
   },
   "choice/The Royal University's Library#003": {
    "src": "Ranks of Our Military",
-   "dst": "",
+   "dst": "Patentes do nosso exército",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6671,7 +6671,7 @@
   },
   "choice/The Royal University's Library#004": {
    "src": "Regional Divisions",
-   "dst": "",
+   "dst": "Divisões regionais",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6682,7 +6682,7 @@
   },
   "choice/The Royal University's Library#005": {
    "src": "The Constabulary",
-   "dst": "",
+   "dst": "Os Condestáveis",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6693,7 +6693,7 @@
   },
   "choice/The Royal University's Library#006": {
    "src": "Read a page",
-   "dst": "",
+   "dst": "Ler uma página",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6704,7 +6704,7 @@
   },
   "choice/Apotheosis (Quest)#015": {
    "src": "We will.",
-   "dst": "",
+   "dst": "Vamos sim.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6715,7 +6715,7 @@
   },
   "choice/Apotheosis (Quest)#016": {
    "src": "You're still with her, even",
-   "dst": "",
+   "dst": "Você ainda está com ela, mesmo agora?!",
    "role": "desc",
    "kind": "dialogue",
    "full": "You're still with her, even now?!",
@@ -6726,7 +6726,7 @@
   },
   "choice/Apotheosis (Quest)#017": {
    "src": "Tasim... you don't have to d",
-   "dst": "",
+   "dst": "Tasim... você não precisa fazer isso.",
    "role": "desc",
    "kind": "dialogue",
    "full": "Tasim... you don't have to do this.",
@@ -6737,7 +6737,7 @@
   },
   "choice/Apotheosis (Quest)#019": {
    "src": "Got it!",
-   "dst": "",
+   "dst": "Entendido!",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6748,7 +6748,7 @@
   },
   "choice/Apotheosis (Quest)#023": {
    "src": "Get over yourself.",
-   "dst": "",
+   "dst": "Desce do salto.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6759,7 +6759,7 @@
   },
   "choice/Apotheosis (Quest)#024": {
    "src": "Say nothing.",
-   "dst": "",
+   "dst": "Não dizer nada.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6770,7 +6770,7 @@
   },
   "choice/Apotheosis (Quest)#031": {
    "src": "Silently take the charm.",
-   "dst": "",
+   "dst": "Pegar o amuleto em silêncio.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6781,7 +6781,7 @@
   },
   "choice/Apotheosis (Quest)#032": {
    "src": "...there you are, after all",
-   "dst": "",
+   "dst": "...aí está você, afinal",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6792,7 +6792,7 @@
   },
   "choice/Apotheosis (Quest)#033": {
    "src": "...he saved Rex.",
-   "dst": "",
+   "dst": "...ele salvou o Rex.",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6803,7 +6803,7 @@
   },
   "choice/Apotheosis (Quest)#042": {
    "src": "Auburn is safe...",
-   "dst": "",
+   "dst": "Auburn está a salvo...",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6814,7 +6814,7 @@
   },
   "choice/Apotheosis (Quest)#046": {
    "src": "Are you truly ready to take",
-   "dst": "",
+   "dst": "Você está mesmo pronto para derrubar a Rainha?",
    "role": "desc",
    "kind": "dialogue",
    "full": "Are you truly ready to take the Queen down?",
@@ -6825,7 +6825,7 @@
   },
   "choice/Apotheosis (Quest)#049": {
    "src": "The remaining Sovereigns hav",
-   "dst": "",
+   "dst": "Os Soberanos que restam se juntaram a nós... acho...",
    "role": "desc",
    "kind": "dialogue",
    "full": "The remaining Sovereigns have joined us... I think...",
@@ -6836,7 +6836,7 @@
   },
   "choice/Apotheosis (Quest)#052": {
    "src": "How did you figure it out?",
-   "dst": "",
+   "dst": "Como você descobriu?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",
@@ -6847,7 +6847,7 @@
   },
   "choice/Potion Making#000": {
    "src": "How do I get mushrooms?",
-   "dst": "",
+   "dst": "Como consigo cogumelos?",
    "role": "desc",
    "kind": "dialogue",
    "full": "",

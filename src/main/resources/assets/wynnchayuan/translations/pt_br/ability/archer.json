@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 234,
-  "translated": 0,
+  "translated": 234,
   "note": "弓箭手的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0000": {
    "src": "Arrow Bomb",
-   "dst": "",
+   "dst": "Flecha-bomba",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -23,7 +23,7 @@
   },
   "ability-archer#0001": {
    "src": "Click Combo: LEFT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "Combo de cliques: ESQ-DIR-DIR",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -38,7 +38,7 @@
   },
   "ability-archer#0002": {
    "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
-   "dst": "",
+   "dst": "Dispara uma flecha de longo alcance que explode\ne causa muito dano em uma área grande.\n(Causa {~} do seu DPS a você mesmo)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-archer#0003": {
    "src": "{#} Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#} Alcance: ±{~} blocos",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-archer#0004": {
    "src": "Bow Proficiency",
-   "dst": "",
+   "dst": "Domínio do arco",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -79,7 +79,7 @@
   },
   "ability-archer#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a bow.",
-   "dst": "",
+   "dst": "Aumenta o dano e o alcance do seu\nataque principal ao usar um arco.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -94,7 +94,7 @@
   },
   "ability-archer#0006": {
    "src": "Cheaper Arrow Bomb",
-   "dst": "",
+   "dst": "Flecha-bomba mais barata",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -106,7 +106,7 @@
   },
   "ability-archer#0007": {
    "src": "Reduce the Mana cost of Arrow Bomb.",
-   "dst": "",
+   "dst": "Reduz o custo de mana de Arrow Bomb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -122,7 +122,7 @@
   },
   "ability-archer#0008": {
    "src": "Heart Shatter",
-   "dst": "",
+   "dst": "Quebra-corações",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -134,7 +134,7 @@
   },
   "ability-archer#0009": {
    "src": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
-   "dst": "",
+   "dst": "Acertar um mob diretamente com Arrow Bomb\nestilhaça o coração dele e causa dano adicional.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -149,7 +149,7 @@
   },
   "ability-archer#0010": {
    "src": "Double Shots",
-   "dst": "",
+   "dst": "Disparo duplo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -161,7 +161,7 @@
   },
   "ability-archer#0011": {
    "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
-   "dst": "",
+   "dst": "Dobra as flechas do ataque principal\ne reduz o dano delas.\n(Mais difícil acertar inimigos distantes)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -176,7 +176,7 @@
   },
   "ability-archer#0012": {
    "src": "{#} Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#} Dano de ataque principal: -{~} (por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -189,7 +189,7 @@
   },
   "ability-archer#0013": {
    "src": "Escape",
-   "dst": "",
+   "dst": "Fuga",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -201,7 +201,7 @@
   },
   "ability-archer#0014": {
    "src": "Click Combo: LEFT-LEFT-LEFT",
-   "dst": "",
+   "dst": "Combo de cliques: ESQ-ESQ-ESQ",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -216,7 +216,7 @@
   },
   "ability-archer#0015": {
    "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
-   "dst": "",
+   "dst": "Jogue-se para trás para escapar do perigo.\n(Segure Shift ao fugir para cancelar)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -231,7 +231,7 @@
   },
   "ability-archer#0016": {
    "src": "Power Shots",
-   "dst": "",
+   "dst": "Disparos potentes",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -243,7 +243,7 @@
   },
   "ability-archer#0017": {
    "src": "Your Main Attack arrows have\nincreased speed and knockback.",
-   "dst": "",
+   "dst": "As flechas do seu ataque principal têm\nmais velocidade e repulsão.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -258,7 +258,7 @@
   },
   "ability-archer#0018": {
    "src": "Arrow Storm",
-   "dst": "",
+   "dst": "Tempestade de flechas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -270,7 +270,7 @@
   },
   "ability-archer#0019": {
    "src": "Click Combo: LEFT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "Combo de cliques: ESQ-DIR-ESQ",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -285,7 +285,7 @@
   },
   "ability-archer#0020": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "",
+   "dst": "Dispara uma rajada de {~} flechas,\ncausando dano considerável aos mobs\npróximos e empurrando-os para longe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -300,7 +300,7 @@
   },
   "ability-archer#0021": {
    "src": "{#} Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -316,7 +316,7 @@
   },
   "ability-archer#0022": {
    "src": "Cheaper Escape",
-   "dst": "",
+   "dst": "Fuga mais barata",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -328,7 +328,7 @@
   },
   "ability-archer#0023": {
    "src": "Reduce the Mana cost of Escape.",
-   "dst": "",
+   "dst": "Reduz o custo de mana de Escape.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -344,7 +344,7 @@
   },
   "ability-archer#0024": {
    "src": "Arrow Shield",
-   "dst": "",
+   "dst": "Escudo de flechas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -356,7 +356,7 @@
   },
   "ability-archer#0025": {
    "src": "Click Combo: LEFT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "Combo de cliques: ESQ-ESQ-DIR",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -371,7 +371,7 @@
   },
   "ability-archer#0026": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "",
+   "dst": "Forma um escudo ao seu redor que reduz um pouco\no dano que você recebe. Cada golpe sofrido consome uma\ncarga do escudo. Inimigos que chegarem perto demais\nsofrem dano e são repelidos. ({~} cargas)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -386,7 +386,7 @@
   },
   "ability-archer#0027": {
    "src": "Windy Feet",
-   "dst": "",
+   "dst": "Pés de vento",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -398,7 +398,7 @@
   },
   "ability-archer#0028": {
    "src": "Casting Escape grants a speed buff\nto you and nearby players.",
-   "dst": "",
+   "dst": "Usar Escape dá um fortalecimento de velocidade\na você e aos jogadores próximos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -413,7 +413,7 @@
   },
   "ability-archer#0029": {
    "src": "{#} Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#} Efeito: +{~} de bônus de velocidade (➲) aos aliados",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -427,7 +427,7 @@
   },
   "ability-archer#0030": {
    "src": "Nimble String",
-   "dst": "",
+   "dst": "Corda ágil",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -439,7 +439,7 @@
   },
   "ability-archer#0031": {
    "src": "Arrow Storm fires twice as fast and\nshoots +{~} arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm dispara duas vezes mais rápido e\nlança +{~} flechas por rajada.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -454,7 +454,7 @@
   },
   "ability-archer#0032": {
    "src": "Phantom Ray hits twice as fast but lasts half as long.",
-   "dst": "",
+   "dst": "Phantom Ray acerta duas vezes mais rápido, mas dura metade do tempo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -469,7 +469,7 @@
   },
   "ability-archer#0033": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#} Dano total: -{~} (do seu DPS, por flecha/raio)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -482,7 +482,7 @@
   },
   "ability-archer#0034": {
    "src": "Buckshot",
-   "dst": "",
+   "dst": "Chumbo grosso",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -494,7 +494,7 @@
   },
   "ability-archer#0035": {
    "src": "When Arrow Shield loses its last charge, spew\n{~} piercing arrows forth from your bow.",
-   "dst": "",
+   "dst": "Quando Arrow Shield perde a última carga, seu arco\ndispara {~} flechas perfurantes para a frente.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -509,7 +509,7 @@
   },
   "ability-archer#0036": {
    "src": "Triple Shots",
-   "dst": "",
+   "dst": "Disparo triplo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -521,7 +521,7 @@
   },
   "ability-archer#0037": {
    "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
-   "dst": "",
+   "dst": "Triplica as flechas do ataque principal, mas elas causam\n-{~} do dano normal das flechas do ataque principal.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -536,7 +536,7 @@
   },
   "ability-archer#0038": {
    "src": "{#} Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#} Dano de ataque principal: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -549,7 +549,7 @@
   },
   "ability-archer#0039": {
    "src": "Bryophyte Roots",
-   "dst": "",
+   "dst": "Raízes de briófita",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -561,7 +561,7 @@
   },
   "ability-archer#0040": {
    "src": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every {~}s.",
-   "dst": "",
+   "dst": "Acertar um inimigo com Arrow Storm\ncria uma área de efeito que o desacelera\ne causa dano a cada {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -576,7 +576,7 @@
   },
   "ability-archer#0041": {
    "src": "Fire Creep",
-   "dst": "",
+   "dst": "Rastro de fogo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -588,7 +588,7 @@
   },
   "ability-archer#0042": {
    "src": "Arrow Bomb will leave a trail of\nfire for {~}s. Enemies that walk\ninto it take damage every {~}s.",
-   "dst": "",
+   "dst": "Arrow Bomb deixa um rastro de\nfogo por {~}s. Inimigos que\npisarem nele sofrem dano a cada {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -603,7 +603,7 @@
   },
   "ability-archer#0043": {
    "src": "Phantom Ray",
-   "dst": "",
+   "dst": "Raio fantasma",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -615,7 +615,7 @@
   },
   "ability-archer#0044": {
    "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
-   "dst": "",
+   "dst": "Condensa Arrow Storm em um único raio\nque causa dano aos inimigos {~} vezes por segundo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -630,7 +630,7 @@
   },
   "ability-archer#0045": {
    "src": "Guardian Angels",
-   "dst": "",
+   "dst": "Anjos da guarda",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -642,7 +642,7 @@
   },
   "ability-archer#0046": {
    "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
-   "dst": "",
+   "dst": "Seu Arrow Shield vira {~} arcos sencientes\nque atiram nos inimigos próximos a cada {~}s, cada um\ncom {~} de munição. (Arrow Shield não vai mais\nrepelir inimigos nem dar resistência)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -657,7 +657,7 @@
   },
   "ability-archer#0047": {
    "src": "{#} Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, por disparo)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -670,7 +670,7 @@
   },
   "ability-archer#0048": {
    "src": "Basaltic Trap",
-   "dst": "",
+   "dst": "Armadilha basáltica",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -682,7 +682,7 @@
   },
   "ability-archer#0049": {
    "src": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max {~} Traps)",
-   "dst": "",
+   "dst": "Ao acertar o chão com Arrow Bomb, deixa\numa Armadilha que causa dano aos inimigos. (Máx. {~} Armadilhas)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -697,7 +697,7 @@
   },
   "ability-archer#0050": {
    "src": "Focus",
-   "dst": "",
+   "dst": "Foco",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -709,7 +709,7 @@
   },
   "ability-archer#0051": {
    "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
-   "dst": "",
+   "dst": "Ao acertar um inimigo agressivo a {~}+\nblocos de distância, ganhe +{~} de Foco {#}. (Máx. {~})\n(Perde {~} de Foco se errar uma vez)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -724,7 +724,7 @@
   },
   "ability-archer#0052": {
    "src": "{#} Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#} Bônus de dano: +{~} (por Foco)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -737,7 +737,7 @@
   },
   "ability-archer#0053": {
    "src": "Leap",
-   "dst": "",
+   "dst": "Salto",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -749,7 +749,7 @@
   },
   "ability-archer#0054": {
    "src": "Leap in the direction of your movement\nwhen you double jump.",
-   "dst": "",
+   "dst": "Salte na direção do seu movimento\nao dar um pulo duplo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -764,7 +764,7 @@
   },
   "ability-archer#0055": {
    "src": "The distance scales with your Walk Speed.",
-   "dst": "",
+   "dst": "A distância depende da sua velocidade de movimento.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -779,7 +779,7 @@
   },
   "ability-archer#0056": {
    "src": "Cheaper Arrow Storm",
-   "dst": "",
+   "dst": "Tempestade de flechas mais barata",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -791,7 +791,7 @@
   },
   "ability-archer#0057": {
    "src": "Reduce the Mana cost of Arrow Storm.",
-   "dst": "",
+   "dst": "Reduz o custo de mana de Arrow Storm.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -807,7 +807,7 @@
   },
   "ability-archer#0058": {
    "src": "Implosion",
-   "dst": "",
+   "dst": "Implosão",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -819,7 +819,7 @@
   },
   "ability-archer#0059": {
    "src": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
-   "dst": "",
+   "dst": "Arrow Bomb puxa os inimigos\npara você. Se houver uma Armadilha perto,\nela os puxa para a Armadilha.\nAumenta o dano de Heart Shatter.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -834,7 +834,7 @@
   },
   "ability-archer#0060": {
    "src": "Arrow Wall",
-   "dst": "",
+   "dst": "Muro de flechas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -846,7 +846,7 @@
   },
   "ability-archer#0061": {
    "src": "Gives Arrow Shield +{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield ganha +{~} cargas extras.\nOs Anjos da guarda causarão -{~} de dano.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -861,7 +861,7 @@
   },
   "ability-archer#0062": {
    "src": "Arsenal Synergy",
-   "dst": "",
+   "dst": "Sinergia de arsenal",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -873,7 +873,7 @@
   },
   "ability-archer#0063": {
    "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
-   "dst": "",
+   "dst": "A cada {~} flechas disparadas por Arrow Storm\nrecentemente, seus Ataques principais também\ndisparam uma flecha de sílex que fere inimigos.\n(Máx. {~} sílex por ataque principal)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -888,7 +888,7 @@
   },
   "ability-archer#0064": {
    "src": "{#} Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (dano de ataque principal, por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -901,7 +901,7 @@
   },
   "ability-archer#0065": {
    "src": "Fierce Stomp",
-   "dst": "",
+   "dst": "Pisão feroz",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -913,7 +913,7 @@
   },
   "ability-archer#0066": {
    "src": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
-   "dst": "",
+   "dst": "Ao usar Escape, segure Shift para\ndespencar rápido, causar dano\ne cegar os inimigos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -928,7 +928,7 @@
   },
   "ability-archer#0067": {
    "src": "Patient Hunter",
-   "dst": "",
+   "dst": "Caçador paciente",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -940,7 +940,7 @@
   },
   "ability-archer#0068": {
    "src": "Increase your maximum Traps by +{~}.",
-   "dst": "",
+   "dst": "Aumenta seu máximo de Armadilhas em +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -958,7 +958,7 @@
   },
   "ability-archer#0069": {
    "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
-   "dst": "",
+   "dst": "Suas Armadilhas causam +{~} de dano\na cada segundo ativas. (Máx. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -973,7 +973,7 @@
   },
   "ability-archer#0070": {
    "src": "Grappling Hook",
-   "dst": "",
+   "dst": "Arpéu",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -985,7 +985,7 @@
   },
   "ability-archer#0071": {
    "src": "Holding Shift while casting\nwill pull any enemy you hit.",
-   "dst": "",
+   "dst": "Segurar Shift ao lançar\npuxa qualquer inimigo que você acertar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1000,7 +1000,7 @@
   },
   "ability-archer#0072": {
    "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
-   "dst": "",
+   "dst": "Ao lançar Escape, arremesse um gancho\nque puxa você ao atingir um bloco.\n(Escape não vai mais te jogar para trás)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1015,7 +1015,7 @@
   },
   "ability-archer#0073": {
    "src": "More Focus",
-   "dst": "",
+   "dst": "Mais foco",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1027,7 +1027,7 @@
   },
   "ability-archer#0074": {
    "src": "Increase your maximum Focus {#} by +{~}.",
-   "dst": "",
+   "dst": "Aumenta seu Foco {#} máximo em +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1043,7 +1043,7 @@
   },
   "ability-archer#0075": {
    "src": "Murder Flock",
-   "dst": "",
+   "dst": "Revoada assassina",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1055,7 +1055,7 @@
   },
   "ability-archer#0076": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
-   "dst": "",
+   "dst": "Armadilha basáltica invoca um Corvo ao detonar que\nbica inimigos agressivos a cada {~}s. (Máx. {~})\nInimigos feridos ficam distraídos por {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1070,7 +1070,7 @@
   },
   "ability-archer#0077": {
    "src": "Refined Gunpowder",
-   "dst": "",
+   "dst": "Pólvora refinada",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1082,7 +1082,7 @@
   },
   "ability-archer#0078": {
    "src": "Increase the damage of Arrow Bomb.",
-   "dst": "",
+   "dst": "Aumenta o dano de Arrow Bomb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1097,7 +1097,7 @@
   },
   "ability-archer#0079": {
    "src": "Phantom Force",
-   "dst": "",
+   "dst": "Força fantasma",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1109,7 +1109,7 @@
   },
   "ability-archer#0080": {
    "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
-   "dst": "",
+   "dst": "Phantom Ray ganha alcance frontal\nextra e fica mais largo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1124,7 +1124,7 @@
   },
   "ability-archer#0081": {
    "src": "Windstorm",
-   "dst": "",
+   "dst": "Vendaval",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1136,7 +1136,7 @@
   },
   "ability-archer#0082": {
    "src": "Arrow Storm gains recoil while midair.",
-   "dst": "",
+   "dst": "Arrow Storm gera recuo no ar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1151,7 +1151,7 @@
   },
   "ability-archer#0083": {
    "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm dispara +{~} rajada\nde flechas e +{~} flechas extras por rajada.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1166,7 +1166,7 @@
   },
   "ability-archer#0084": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} Dano total: -{~} (do seu DPS, por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1179,7 +1179,7 @@
   },
   "ability-archer#0085": {
    "src": "Grape Bomb",
-   "dst": "",
+   "dst": "Bomba-cacho",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1191,7 +1191,7 @@
   },
   "ability-archer#0086": {
    "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
-   "dst": "",
+   "dst": "Arrow Bomb lança {~} bombas\nmenores extras ao explodir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1206,7 +1206,7 @@
   },
   "ability-archer#0087": {
    "src": "Ivyroot Mamba",
-   "dst": "",
+   "dst": "Mamba de hera",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1218,7 +1218,7 @@
   },
   "ability-archer#0088": {
    "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
-   "dst": "",
+   "dst": "Bryophyte Roots invoca uma Serpente ao\nsumir, que cospe veneno enfraquecedor\nem inimigos agressivos a cada {~}s. (Máx. {~})\nOs inimigos ficam enfraquecidos por {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1233,7 +1233,7 @@
   },
   "ability-archer#0089": {
    "src": "Twain's Arc",
-   "dst": "",
+   "dst": "Arco de Twain",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1245,7 +1245,7 @@
   },
   "ability-archer#0090": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "",
+   "dst": "Com {~}+ de Foco {#}, segurar Shift\ninvoca Twain's Arc. Carregue-o para\ndisparar um raio destrutivo de longo alcance.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1260,7 +1260,7 @@
   },
   "ability-archer#0091": {
    "src": "Frenzy",
-   "dst": "",
+   "dst": "Frenesi",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1272,7 +1272,7 @@
   },
   "ability-archer#0092": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "Acertar um inimigo dá um breve fortalecimento\nde +{~} de velocidade de movimento, até {~} por segundo. (Máx. +{~})\n-{~} do bônus se perde a cada segundo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1287,7 +1287,7 @@
   },
   "ability-archer#0093": {
    "src": "Shrapnel Bomb",
-   "dst": "",
+   "dst": "Bomba de estilhaços",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1299,7 +1299,7 @@
   },
   "ability-archer#0094": {
    "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
-   "dst": "",
+   "dst": "A explosão de Arrow Bomb lança {~}\nestilhaços, causando dano numa área grande.\n(Cada inimigo só pode ser atingido por três estilhaços)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1314,7 +1314,7 @@
   },
   "ability-archer#0095": {
    "src": "{#} Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, por estilhaço)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1327,7 +1327,7 @@
   },
   "ability-archer#0096": {
    "src": "Rocket Jump",
-   "dst": "",
+   "dst": "Salto-foguete",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1339,7 +1339,7 @@
   },
   "ability-archer#0097": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
-   "dst": "",
+   "dst": "O recuo de Arrow Bomb aumenta, e\no dano que ela causa em você cai para {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1354,7 +1354,7 @@
   },
   "ability-archer#0098": {
    "src": "Scorched Earth",
-   "dst": "",
+   "dst": "Terra arrasada",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1366,7 +1366,7 @@
   },
   "ability-archer#0099": {
    "src": "Fire Creep becomes much stronger.",
-   "dst": "",
+   "dst": "Fire Creep fica muito mais forte.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1381,7 +1381,7 @@
   },
   "ability-archer#0100": {
    "src": "{#} Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} Duração: +{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1395,7 +1395,7 @@
   },
   "ability-archer#0101": {
    "src": "More Traps",
-   "dst": "",
+   "dst": "Mais armadilhas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1407,7 +1407,7 @@
   },
   "ability-archer#0102": {
    "src": "Divine Intervention",
-   "dst": "",
+   "dst": "Intervenção divina",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1419,7 +1419,7 @@
   },
   "ability-archer#0103": {
    "src": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +{~} damage.",
-   "dst": "",
+   "dst": "Lançar Arrow Bomb faz com que eles\ndeem tiros explosivos que causam +{~} de dano.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1434,7 +1434,7 @@
   },
   "ability-archer#0104": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "",
+   "dst": "Lançar Arrow Storm faz com que eles\natirem {~}x mais rápido enquanto Arrow Storm estiver ativo",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1449,7 +1449,7 @@
   },
   "ability-archer#0105": {
    "src": "Guardian Angels gain +{~} additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
-   "dst": "",
+   "dst": "Os Anjos da guarda ganham +{~} de munição extra.\nSempre que você lança um feitiço, seus Anjos da guarda\nficam fortalecidos por um instante.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-archer#0106": {
    "src": "Cheaper Arrow Shield",
-   "dst": "",
+   "dst": "Escudo de flechas mais barato",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-archer#0107": {
    "src": "Reduce the Mana cost of Arrow Shield.",
-   "dst": "",
+   "dst": "Reduz o custo de mana de Arrow Shield.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1492,7 +1492,7 @@
   },
   "ability-archer#0108": {
    "src": "Honed Shield",
-   "dst": "",
+   "dst": "Escudo afiado",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1504,7 +1504,7 @@
   },
   "ability-archer#0109": {
    "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
-   "dst": "",
+   "dst": "O raio, a repulsão\ne o dano de Arrow Shield aumentam.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1519,7 +1519,7 @@
   },
   "ability-archer#0110": {
    "src": "Guardian Angels' damage is increased.",
-   "dst": "",
+   "dst": "O dano dos Anjos da guarda aumenta.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1534,7 +1534,7 @@
   },
   "ability-archer#0111": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, para Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1547,7 +1547,7 @@
   },
   "ability-archer#0112": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, para Anjos da guarda, por disparo)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1561,7 +1561,7 @@
   },
   "ability-archer#0113": {
    "src": "Shocking Bomb",
-   "dst": "",
+   "dst": "Bomba de choque",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1573,7 +1573,7 @@
   },
   "ability-archer#0114": {
    "src": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
-   "dst": "",
+   "dst": "Arrow Bomb não sofre efeito da\ngravidade e tem dano de explosão maior.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1588,7 +1588,7 @@
   },
   "ability-archer#0115": {
    "src": "Stormy Feet",
-   "dst": "",
+   "dst": "Pés de tempestade",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1600,7 +1600,7 @@
   },
   "ability-archer#0116": {
    "src": "Windy Feet will last longer and grant a stronger\nspeed buff.",
-   "dst": "",
+   "dst": "Windy Feet dura mais e dá um fortalecimento\nde velocidade mais forte.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1615,7 +1615,7 @@
   },
   "ability-archer#0117": {
    "src": "Bounding Stride",
-   "dst": "",
+   "dst": "Passada saltitante",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1627,7 +1627,7 @@
   },
   "ability-archer#0118": {
    "src": "Leap will launch you further.",
-   "dst": "",
+   "dst": "Leap lança você mais longe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1642,7 +1642,7 @@
   },
   "ability-archer#0119": {
    "src": "Homing Shots",
-   "dst": "",
+   "dst": "Disparos teleguiados",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1654,7 +1654,7 @@
   },
   "ability-archer#0120": {
    "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
-   "dst": "",
+   "dst": "As flechas do seu Ataque principal seguem os\ninimigos próximos e não sofrem efeito da gravidade.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1669,7 +1669,7 @@
   },
   "ability-archer#0121": {
    "src": "Recycling",
-   "dst": "",
+   "dst": "Reciclagem",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1681,7 +1681,7 @@
   },
   "ability-archer#0122": {
    "src": "When any of your projectiles miss, gain +{~} Mana.",
-   "dst": "",
+   "dst": "Quando algum projétil seu errar, ganhe +{~} de mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1696,7 +1696,7 @@
   },
   "ability-archer#0123": {
    "src": "Mana Trap",
-   "dst": "",
+   "dst": "Armadilha de mana",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1708,7 +1708,7 @@
   },
   "ability-archer#0124": {
    "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
-   "dst": "",
+   "dst": "Suas Armadilhas dão {~} de mana\npor segundo e {~} de mana\nao explodir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1723,7 +1723,7 @@
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
-   "dst": "",
+   "dst": "Fuga mais barata II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1735,7 +1735,7 @@
   },
   "ability-archer#0126": {
    "src": "Initiator",
-   "dst": "",
+   "dst": "Iniciador",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1747,7 +1747,7 @@
   },
   "ability-archer#0127": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "",
+   "dst": "Se você não ferir nenhum inimigo por\n{~}s ou mais, seu próximo acerto\ncausa +{~} de dano e dá +{~} de Foco {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1762,7 +1762,7 @@
   },
   "ability-archer#0128": {
    "src": "Courier's Edict",
-   "dst": "",
+   "dst": "Édito do mensageiro",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1774,7 +1774,7 @@
   },
   "ability-archer#0129": {
    "src": "Fierce Stomp sends out {~} waves of\nheavenly light in front of you.",
-   "dst": "",
+   "dst": "Fierce Stomp lança {~} ondas de\nluz celestial à sua frente.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1789,7 +1789,7 @@
   },
   "ability-archer#0130": {
    "src": "Landing after Leap triggers Fierce Stomp.",
-   "dst": "",
+   "dst": "Aterrissar após Leap ativa Fierce Stomp.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1804,7 +1804,7 @@
   },
   "ability-archer#0131": {
    "src": "{#} Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, por onda)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1817,7 +1817,7 @@
   },
   "ability-archer#0132": {
    "src": "Vigilant Sentinels",
-   "dst": "",
+   "dst": "Sentinelas vigilantes",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1829,7 +1829,7 @@
   },
   "ability-archer#0133": {
    "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
-   "dst": "",
+   "dst": "Lançar Arrow Shield com os Anjos da guarda ativos\ntambém lança Buckshot. Aumenta o dano de Buckshot.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1844,7 +1844,7 @@
   },
   "ability-archer#0134": {
    "src": "Increase Guardian Angels' range and damage.",
-   "dst": "",
+   "dst": "Aumenta o alcance e o dano dos Anjos da guarda.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1859,7 +1859,7 @@
   },
   "ability-archer#0135": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, para Buckshot, por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1872,7 +1872,7 @@
   },
   "ability-archer#0136": {
    "src": "Call of the Hound",
-   "dst": "",
+   "dst": "Chamado do sabujo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1884,7 +1884,7 @@
   },
   "ability-archer#0137": {
    "src": "Arrow Shield summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
-   "dst": "",
+   "dst": "Arrow Shield invoca um Sabujo que\nataca inimigos agressivos a cada {~}s\ne os arrasta até suas armadilhas.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1899,7 +1899,7 @@
   },
   "ability-archer#0138": {
    "src": "Decimator",
-   "dst": "",
+   "dst": "Dizimador",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1911,7 +1911,7 @@
   },
   "ability-archer#0139": {
    "src": "Phantom Ray gains extra forward range.",
-   "dst": "",
+   "dst": "Phantom Ray ganha alcance frontal extra.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1926,7 +1926,7 @@
   },
   "ability-archer#0140": {
    "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
-   "dst": "",
+   "dst": "Phantom Ray aumenta seu dano em {~}\ntoda vez que você não errar com ele. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1941,7 +1941,7 @@
   },
   "ability-archer#0141": {
    "src": "Phasing Beam",
-   "dst": "",
+   "dst": "Feixe de fase",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1953,7 +1953,7 @@
   },
   "ability-archer#0142": {
    "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Twain's Arc carrega {~} mais rápido e\nagora pode perfurar até {~} inimigos,\ncausando menos dano após perfurar.\n(O dano conta como dano de ataque principal)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1968,7 +1968,7 @@
   },
   "ability-archer#0143": {
    "src": "{#} Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#} Dano total: -{~} (após perfurar)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1981,7 +1981,7 @@
   },
   "ability-archer#0144": {
    "src": "Spectral Hover",
-   "dst": "",
+   "dst": "Levitação espectral",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1993,7 +1993,7 @@
   },
   "ability-archer#0145": {
    "src": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
-   "dst": "",
+   "dst": "Usar Escape aplica Queda lenta.\nAgachar a qualquer momento cancela este efeito.\n(O efeito não pode ser renovado no ar)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2008,7 +2008,7 @@
   },
   "ability-archer#0146": {
    "src": "Parting Gift",
-   "dst": "",
+   "dst": "Presente de despedida",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2020,7 +2020,7 @@
   },
   "ability-archer#0147": {
    "src": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of {~} arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
-   "dst": "",
+   "dst": "Ao lançar Escape, solte no ar\numa bomba de fragmentação que explode\ne manda uma carga de {~} flechas\npara sua posição anterior.\n(Cada inimigo só pode ser atingido por uma flecha)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2035,7 +2035,7 @@
   },
   "ability-archer#0148": {
    "src": "Bouncing Bomb",
-   "dst": "",
+   "dst": "Bomba saltitante",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2047,7 +2047,7 @@
   },
   "ability-archer#0149": {
    "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
-   "dst": "",
+   "dst": "Arrow Bomb viaja {~} mais devagar e\nquica uma vez ao atingir um bloco ou inimigo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2062,7 +2062,7 @@
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
-   "dst": "",
+   "dst": "Tempestade de flechas mais barata II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2074,7 +2074,7 @@
   },
   "ability-archer#0151": {
    "src": "Cheaper Arrow Shield II",
-   "dst": "",
+   "dst": "Escudo de flechas mais barato II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2086,7 +2086,7 @@
   },
   "ability-archer#0152": {
    "src": "Hookshot",
-   "dst": "",
+   "dst": "Lança-ganchos",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2098,7 +2098,7 @@
   },
   "ability-archer#0153": {
    "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "",
+   "dst": "Aumenta o alcance, a velocidade\ne a força do seu Grappling Hook.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2113,7 +2113,7 @@
   },
   "ability-archer#0154": {
    "src": "Ghostly Trigger",
-   "dst": "",
+   "dst": "Gatilho fantasmagórico",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2125,7 +2125,7 @@
   },
   "ability-archer#0155": {
    "src": "While airborne after casting Escape, your\nnext {~} Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
-   "dst": "",
+   "dst": "No ar após lançar Escape, seus\npróximos {~} Ataques principais podem ser disparados em\nsequência, ignorando a velocidade de ataque,\ne saem na hora de Twain's Arc.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2140,7 +2140,7 @@
   },
   "ability-archer#0156": {
    "src": "Arrow Hurricane",
-   "dst": "",
+   "dst": "Furacão de flechas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2152,7 +2152,7 @@
   },
   "ability-archer#0157": {
    "src": "Arrow Storm will shoot +{~} extra streams of arrows.",
-   "dst": "",
+   "dst": "Arrow Storm dispara +{~} rajadas extras de flechas.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2167,7 +2167,7 @@
   },
   "ability-archer#0158": {
    "src": "Arrow Storm's recoil is doubled.",
-   "dst": "",
+   "dst": "O recuo de Arrow Storm dobra.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2182,7 +2182,7 @@
   },
   "ability-archer#0159": {
    "src": "Beast Lore",
-   "dst": "",
+   "dst": "Saber das feras",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2194,7 +2194,7 @@
   },
   "ability-archer#0160": {
    "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
-   "dst": "",
+   "dst": "Aumenta seu máximo de Serpentes em +{~}.\nAumenta seu máximo de Corvos em +{~}.\nAumenta o dano do seu Sabujo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2209,7 +2209,7 @@
   },
   "ability-archer#0161": {
    "src": "Tangled Traps",
-   "dst": "",
+   "dst": "Armadilhas emaranhadas",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2221,7 +2221,7 @@
   },
   "ability-archer#0162": {
    "src": "Grape Bomb gains +{~} grape.",
-   "dst": "",
+   "dst": "Grape Bomb ganha +{~} bomba.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2236,7 +2236,7 @@
   },
   "ability-archer#0163": {
    "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
-   "dst": "",
+   "dst": "Suas Armadilhas ficam ligadas por uma corda\nque fere inimigos a cada {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2251,7 +2251,7 @@
   },
   "ability-archer#0164": {
    "src": "Coursing Restraints",
-   "dst": "",
+   "dst": "Amarras eletrizantes",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2263,7 +2263,7 @@
   },
   "ability-archer#0165": {
    "src": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
-   "dst": "",
+   "dst": "Shocking Bomb eletrocuta os inimigos\npor um tempo, reduzindo suas defesas.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2278,7 +2278,7 @@
   },
   "ability-archer#0166": {
    "src": "{#} Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} Efeito: -{~} de bônus de resistência ({#}) a inimigos",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2291,7 +2291,7 @@
   },
   "ability-archer#0167": {
    "src": "Elusive",
-   "dst": "",
+   "dst": "Esquivo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2303,7 +2303,7 @@
   },
   "ability-archer#0168": {
    "src": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb e Arrow Storm não terão mais\nrecuo, e suas Arrow Bombs não causarão dano em você.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2318,7 +2318,7 @@
   },
   "ability-archer#0169": {
    "src": "Chilling Snare",
-   "dst": "",
+   "dst": "Laço gélido",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2330,7 +2330,7 @@
   },
   "ability-archer#0170": {
    "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "",
+   "dst": "Prende um laço gelado à Armadilha basáltica que,\napós detonar, trava drasticamente e fere\ninimigos próximos a cada {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2345,7 +2345,7 @@
   },
   "ability-archer#0171": {
    "src": "Feedback Loop",
-   "dst": "",
+   "dst": "Ciclo de retroalimentação",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2357,7 +2357,7 @@
   },
   "ability-archer#0172": {
    "src": "Hitting {~} flint arrow will make your next\nArrow Storm shoot +{~} arrow per stream. (Max {~})",
-   "dst": "",
+   "dst": "Acertar {~} flecha de sílex faz seu próximo\nArrow Storm disparar +{~} flecha por rajada. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2372,7 +2372,7 @@
   },
   "ability-archer#0173": {
    "src": "Swift Primer",
-   "dst": "",
+   "dst": "Detonador rápido",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2384,7 +2384,7 @@
   },
   "ability-archer#0174": {
    "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
-   "dst": "",
+   "dst": "Patient Hunter aumenta seu dano em +{~}\npor segundo, e seu dano máximo em +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2399,7 +2399,7 @@
   },
   "ability-archer#0175": {
    "src": "Crepuscular Ray",
-   "dst": "",
+   "dst": "Raio crepuscular",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2411,7 +2411,7 @@
   },
   "ability-archer#0176": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "",
+   "dst": "Com {~}+ de Foco {#}, lançar Arrow Storm\na {~}+ blocos do chão faz você\nlevitar e disparar {~} flechas teleguiadas\npor segundo até acabar seu Foco {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2426,7 +2426,7 @@
   },
   "ability-archer#0177": {
    "src": "While in this state, lose {~} Focus {#} every {~}s.",
-   "dst": "",
+   "dst": "Nesse estado, perde {~} de Foco {#} a cada {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2441,7 +2441,7 @@
   },
   "ability-archer#0178": {
    "src": "Transience",
-   "dst": "",
+   "dst": "Efemeridade",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2453,7 +2453,7 @@
   },
   "ability-archer#0179": {
    "src": "Arrow Storm will pierce enemies.",
-   "dst": "",
+   "dst": "Arrow Storm perfura os inimigos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2468,7 +2468,7 @@
   },
   "ability-archer#0180": {
    "src": "Snow Storm",
-   "dst": "",
+   "dst": "Nevasca",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2480,7 +2480,7 @@
   },
   "ability-archer#0181": {
    "src": "Enemies near you will be slowed down.",
-   "dst": "",
+   "dst": "Inimigos perto de você ficam lentos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2495,7 +2495,7 @@
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
-   "dst": "",
+   "dst": "Flecha-bomba mais barata II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2507,7 +2507,7 @@
   },
   "ability-archer#0183": {
    "src": "More Focus II",
-   "dst": "",
+   "dst": "Mais foco II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2519,7 +2519,7 @@
   },
   "ability-archer#0184": {
    "src": "Wild Light",
-   "dst": "",
+   "dst": "Luz selvagem",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2531,7 +2531,7 @@
   },
   "ability-archer#0185": {
    "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
-   "dst": "",
+   "dst": "Aumenta o dano do seu Ataque principal em +{~}\na cada +{~} de velocidade de movimento ganha com Frenzy.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2546,7 +2546,7 @@
   },
   "ability-archer#0186": {
    "src": "Fimbulwinter",
-   "dst": "",
+   "dst": "Fimbulwinter",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2558,7 +2558,7 @@
   },
   "ability-archer#0187": {
    "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
-   "dst": "",
+   "dst": "Inimigos sofrem dano extra após ficarem\ndentro de Chilling Snare por {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2573,7 +2573,7 @@
   },
   "ability-archer#0188": {
    "src": "Warding Wisps",
-   "dst": "",
+   "dst": "Fogos-fátuos protetores",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2585,7 +2585,7 @@
   },
   "ability-archer#0189": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "",
+   "dst": "Quando Arrow Shield perde uma carga,\ninvoca um fogo-fátuo que segue e\nprotege você. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2600,7 +2600,7 @@
   },
   "ability-archer#0190": {
    "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
-   "dst": "",
+   "dst": "Seus fogos-fátuos podem possuir inimigos\npróximos por {~}s, causando dano\na cada {~}s e deixando-os lentos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2615,7 +2615,7 @@
   },
   "ability-archer#0191": {
    "src": "Shrieking Arrows",
-   "dst": "",
+   "dst": "Flechas estridentes",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2627,7 +2627,7 @@
   },
   "ability-archer#0192": {
    "src": "Arrow Storm and Phantom Ray will deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Storm e Phantom Ray causam dano extra.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2642,7 +2642,7 @@
   },
   "ability-archer#0193": {
    "src": "{#} Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, por flecha)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2656,7 +2656,7 @@
   },
   "ability-archer#0194": {
    "src": "{#} Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, por raio)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2669,7 +2669,7 @@
   },
   "ability-archer#0195": {
    "src": "Overgrowth",
-   "dst": "",
+   "dst": "Crescimento desenfreado",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2681,7 +2681,7 @@
   },
   "ability-archer#0196": {
    "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
-   "dst": "",
+   "dst": "Bryophyte Roots se espalha mais\ne causa dano {~} mais rápido.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2696,7 +2696,7 @@
   },
   "ability-archer#0197": {
    "src": "Quick Draw",
-   "dst": "",
+   "dst": "Gatilho rápido",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2708,7 +2708,7 @@
   },
   "ability-archer#0198": {
    "src": "Not missing with Phantom Ray {~} times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "Não errar com Phantom Ray {~} vezes\nseguidas transforma seu próximo\nAtaque principal num raio de Twain's Arc.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2723,7 +2723,7 @@
   },
   "ability-archer#0199": {
    "src": "Sniffer Dog",
-   "dst": "",
+   "dst": "Cão farejador",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2735,7 +2735,7 @@
   },
   "ability-archer#0200": {
    "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
-   "dst": "",
+   "dst": "Seu Sabujo tem {~} de chance de\ndesenterrar uma Armadilha ao atacar inimigos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2750,7 +2750,7 @@
   },
   "ability-archer#0201": {
    "src": "Repel",
-   "dst": "",
+   "dst": "Repelir",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2762,7 +2762,7 @@
   },
   "ability-archer#0202": {
    "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
-   "dst": "",
+   "dst": "Lançar Arrow Shield empurra os inimigos\npróximos e dá uma breve explosão de resistência.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2777,7 +2777,7 @@
   },
   "ability-archer#0203": {
    "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
-   "dst": "",
+   "dst": "Reduz a recarga desta habilidade em {~}s\ntoda vez que Arrow Shield perde uma carga.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2792,7 +2792,7 @@
   },
   "ability-archer#0204": {
    "src": "Pyrotechnics",
-   "dst": "",
+   "dst": "Pirotecnia",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2804,7 +2804,7 @@
   },
   "ability-archer#0205": {
    "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
-   "dst": "",
+   "dst": "Arrow Bomb e Grape Bomb\nficam muito mais quentes, aumentando\no dano da explosão.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2819,7 +2819,7 @@
   },
   "ability-archer#0206": {
    "src": "{#} Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, para Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2832,7 +2832,7 @@
   },
   "ability-archer#0207": {
    "src": "{#} Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, para Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2845,7 +2845,7 @@
   },
   "ability-archer#0208": {
    "src": "Canine Colleague",
-   "dst": "",
+   "dst": "Colega canino",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2857,7 +2857,7 @@
   },
   "ability-archer#0209": {
    "src": "Increase your maximum Hounds by +{~}.",
-   "dst": "",
+   "dst": "Aumenta seu máximo de Sabujos em +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2872,7 +2872,7 @@
   },
   "ability-archer#0210": {
    "src": "Mael's Quiver",
-   "dst": "",
+   "dst": "Aljava de Mael",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2884,7 +2884,7 @@
   },
   "ability-archer#0211": {
    "src": "Increase the damage of Crepuscular Ray.",
-   "dst": "",
+   "dst": "Aumenta o dano de Crepuscular Ray.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2899,7 +2899,7 @@
   },
   "ability-archer#0212": {
    "src": "Repositioning",
-   "dst": "",
+   "dst": "Reposicionamento",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2911,7 +2911,7 @@
   },
   "ability-archer#0213": {
    "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
-   "dst": "",
+   "dst": "Ganhe um breve aumento de velocidade\napós disparar Twain's Arc.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2926,7 +2926,7 @@
   },
   "ability-archer#0214": {
    "src": "{#} Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#} Efeito: +{~} de velocidade de movimento (➲) a você",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2939,7 +2939,7 @@
   },
   "ability-archer#0215": {
    "src": "Angelic Ascension",
-   "dst": "",
+   "dst": "Ascensão angelical",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2951,7 +2951,7 @@
   },
   "ability-archer#0216": {
    "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
-   "dst": "",
+   "dst": "Arrow Bomb castiga os inimigos que atinge\nem cheio com um raio vindo dos céus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2966,7 +2966,7 @@
   },
   "ability-archer#0217": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "",
+   "dst": "Arrow Storm dura {~} vezes mais\ne sai num leque mais fechado",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2981,7 +2981,7 @@
   },
   "ability-archer#0218": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap have no cooldown.",
-   "dst": "",
+   "dst": "Invoque o poder da Luz\npara fortalecer seus ataques por {~}s\ne deixar Leap sem recarga.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2996,7 +2996,7 @@
   },
   "ability-archer#0219": {
    "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
-   "dst": "",
+   "dst": "Os Anjos da guarda terão munição ilimitada\ne ativam Buckshot após {~} rajadas.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3011,7 +3011,7 @@
   },
   "ability-archer#0220": {
    "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
-   "dst": "",
+   "dst": "O Ataque principal passa a disparar Flechas de luz\nque causam {~} a mais de dano ao longo de {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3026,7 +3026,7 @@
   },
   "ability-archer#0221": {
    "src": "{#} Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#} Dano total: {~} (do seu DPS, castigo de Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3039,7 +3039,7 @@
   },
   "ability-archer#0222": {
    "src": "The Twilight Zone",
-   "dst": "",
+   "dst": "A zona crepuscular",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3051,7 +3051,7 @@
   },
   "ability-archer#0223": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "",
+   "dst": "Ao fim da duração, ou ao lançar F, dispare uma flecha de feitiço\ne uma de ataque principal em cada inimigo marcado.\nAs flechas causam dano extra por\ncada acúmulo de Crepúsculo {#} no alvo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3066,7 +3066,7 @@
   },
   "ability-archer#0224": {
    "src": "Enter a focused state for {~}s.",
-   "dst": "",
+   "dst": "Entre num estado de foco por {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3081,7 +3081,7 @@
   },
   "ability-archer#0225": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "Nesse estado, você pula mais alto, cai mais devagar\ne todos os inimigos na sua linha de visão são\nmarcados com Crepúsculo {#} a cada {~}s. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3096,7 +3096,7 @@
   },
   "ability-archer#0226": {
    "src": "{#} Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (dano de ataque principal, por Crepúsculo)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3109,7 +3109,7 @@
   },
   "ability-archer#0227": {
    "src": "{#} Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#} Dano total: +{~} (do seu DPS, por Crepúsculo)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3122,7 +3122,7 @@
   },
   "ability-archer#0228": {
    "src": "Extinction Event",
-   "dst": "",
+   "dst": "Evento de extinção",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3134,7 +3134,7 @@
   },
   "ability-archer#0229": {
    "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
-   "dst": "",
+   "dst": "As bombas deixam Armadilhas basálticas\ne, às vezes, Chilling Snares.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3149,7 +3149,7 @@
   },
   "ability-archer#0230": {
    "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
-   "dst": "",
+   "dst": "Convoca uma revoada de corvos táticos\nque fazem um bombardeio em tapete\nnuma área grande à sua frente.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3164,7 +3164,7 @@
   },
   "ability-archer#0231": {
    "src": "Arrow Bomb pulls enemies together.\nIf a Trap is nearby, enemies are\npulled towards it instead.",
-   "dst": "",
+   "dst": "Arrow Bomb junta os inimigos.\nSe houver uma Armadilha perto, os inimigos\nsão puxados até ela.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3178,7 +3178,7 @@
   },
   "ability-archer#0232": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to +{~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "Acertar um inimigo dá um breve fortalecimento\nde +{~} de velocidade de movimento, até +{~} por segundo. (Máx. +{~})\n-{~} do bônus se perde a cada segundo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3192,7 +3192,7 @@
   },
   "ability-archer#0233": {
    "src": "Increases Heart Shatter's damage.",
-   "dst": "",
+   "dst": "Aumenta o dano de Heart Shatter.",
    "role": "desc",
    "kind": "block",
    "ctx": [

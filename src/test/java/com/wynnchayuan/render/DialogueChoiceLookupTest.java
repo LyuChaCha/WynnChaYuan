@@ -27,7 +27,7 @@ public final class DialogueChoiceLookupTest {
     private static final String ROOT = "src/main/resources/assets/wynnchayuan/translations";
 
     private static final List<String> LANGUAGES = List.of(
-            "zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr");
+            "zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br");
 
     private static final List<String> SONGS = List.of(
             "Status", "Bullfrog's Bellow", "Whisper", "Day In, Day Out");
