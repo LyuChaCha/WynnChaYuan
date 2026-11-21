@@ -113,6 +113,8 @@ final class ItemNameRules {
 
     private static final Pattern COLOUR_MARKER = Pattern.compile("\\{(?:c\\d+|/)}");
 
+    private static final Pattern PROSE_WORD = Pattern.compile("(?<![A-Za-z{])[a-z]{2,}(?![A-Za-z}])");
+
     private volatile Pattern abilityNamePattern;
     private volatile int abilityNamePatternSize = -1;
 
@@ -143,7 +145,8 @@ final class ItemNameRules {
 
     String embeddedAbilityNamesWithOriginal(String key, String hit) {
         Pattern names = abilityNamePattern();
-        if (names == null || key == null || hit == null) {
+        if (names == null || key == null || hit == null
+                || !PROSE_WORD.matcher(names.matcher(key).replaceAll(" ")).find()) {
             return null;
         }
         Matcher found = names.matcher(key);
