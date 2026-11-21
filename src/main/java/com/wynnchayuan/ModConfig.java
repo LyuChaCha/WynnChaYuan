@@ -50,6 +50,10 @@ public final class ModConfig {
     boolean chatCopyMulti = true;
     boolean chatLogButton = true;
 
+    double chatLogButtonX = -1;
+
+    double chatLogButtonY = -1;
+
     boolean capes = true;
 
     boolean ownCape = true;
@@ -543,6 +547,16 @@ public final class ModConfig {
         chatLogButton = !chatLogButton;
         save();
         return chatLogButton;
+    }
+
+    public double[] chatLogButtonPos() {
+        return chatLogButtonX < 0 || chatLogButtonY < 0 ? null : new double[] {chatLogButtonX, chatLogButtonY};
+    }
+
+    public void setChatLogButtonPos(double x, double y) {
+        chatLogButtonX = x < 0 ? -1 : Math.min(1, x);
+        chatLogButtonY = y < 0 ? -1 : Math.min(1, y);
+        save();
     }
 
     public boolean chatCopyMulti() {
