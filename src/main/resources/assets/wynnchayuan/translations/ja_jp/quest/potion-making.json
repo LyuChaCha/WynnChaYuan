@@ -28,13 +28,14 @@
   },
   "Potion Making#002": {
    "src": "Get me... [{~} Red Mushroom], they can be found outside the east gate behind me.",
-   "dst": "持ってきて… [{~} 赤いキノコ]。私の後ろの東門の外で見つかる。",
+   "dst": "持ってきて… {c2}[{~} 赤いキノコ]{/}。私の後ろの{c3}東門{/}の外で見つかる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 1",
    "speaker": "The Assistant",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}[{~} Red Mushroom]{/} , {c3}east gate{/}"
   },
   "Potion Making#003": {
    "src": "You must...ensure that it worked. You...are much stronger than I, stranger...",
@@ -117,24 +118,26 @@
    "source": "wiki"
   },
   "Potion Making#011": {
-   "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
-   "dst": "近くのムーシュルームを倒し、[{~} 赤いキノコ] を {p} の助手に届ける",
+   "src": "Slay Mooshrooms near [{~}, {~}, -{~}] and bring [{~} Red Mushrooms] to The Assistant in {p}",
+   "dst": "[{~}, {~}, -{~}]付近にいるムーシュルームを倒し、{c3}[{~} 赤いキノコ]{/} を {p} の助手に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c3}[{~} Red Mushrooms]{/}"
   },
   "Potion Making#012": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
-   "dst": "早く…頼んだ [{~} 赤いキノコ] を…ここから東門を出て {p} を抜けて。",
+   "dst": "早く…頼んだ {c2}[{~} 赤いキノコ] {/}を…ここから東門を出て {p} を抜けて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "The Assistant",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Red Mushroom]{/}"
   },
   "Potion Making#013": {
    "src": "The...the...cows. Steal...from them.",
@@ -188,13 +191,14 @@
   },
   "Potion Making#018": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
-   "dst": "キノコを集めていた時、オレンジの魔女帽みたいな屋根の小屋を見た？",
+   "dst": "キノコを集めていた時、{c2}オレンジ{/}の魔女帽みたいな屋根の小屋を見た？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "The Assistant",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}orange{/}"
   },
   "Potion Making#019": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
@@ -217,7 +221,7 @@
    "source": "wiki"
   },
   "Potion Making#021": {
-   "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
+   "src": "Enter the hut at [{~}, {~}, -{~}], slay Essren, and take his coat",
    "dst": "[{~}, {~}, -{~}] の小屋に入り、Essren を倒して上着を奪う。",
    "role": "desc",
    "kind": "objective",
