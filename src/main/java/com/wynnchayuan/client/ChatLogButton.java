@@ -5,6 +5,8 @@ import com.wynnchayuan.client.ui.ChatLogView;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents;
@@ -17,6 +19,7 @@ public final class ChatLogButton {
 
     private static final float H = 13;
     private static final float GAP = 4;
+    private static final float EDGE = 2;
 
     private static boolean open;
 
@@ -28,6 +31,15 @@ public final class ChatLogButton {
                 attach(chat);
             }
         });
+        HudElementRegistry.replaceElement(VanillaHudElements.CHAT, chat -> (g, tick) -> {
+            if (!coversChat()) {
+                chat.render(g, tick);
+            }
+        });
+    }
+
+    private static boolean coversChat() {
+        return active() && Minecraft.getInstance().screen instanceof ChatScreen;
     }
 
     private static void attach(ChatScreen chat) {
@@ -79,14 +91,30 @@ public final class ChatLogButton {
                 Minecraft.getInstance().getWindow().getGuiScale());
         float w = measure.width(T.s("chatlog.button")) + 25;
         float[] frame = ChatLogHost.chatFrame(chat.width, chat.height);
+        float[] dock = open ? ChatLogHost.dockRect(chat.width, chat.height) : null;
+        return place(frame, dock, w, chat.width);
+    }
+
+    static float[] place(float[] frame, float[] dock, float w, float screenW) {
         float right = frame[0] + frame[2];
-        if (open) {
-            float[] dock = ChatLogHost.dockRect(chat.width, chat.height);
+        float top = frame[1];
+        if (dock != null) {
             right = Math.max(right, dock[0] + dock[2]);
+            top = Math.min(top, dock[1]);
         }
-        float x = Math.min(chat.width - 4 - w, right + GAP);
-        float y = frame[1] + frame[3] - H;
-        return new float[] {x, y, w, H};
+        float side = right + GAP;
+        if (side + w <= screenW - EDGE) {
+            return new float[] {side, frame[1] + frame[3] - H, w, H};
+        }
+        float x = Math.max(EDGE, Math.min(screenW - EDGE - w, right - w));
+        float above = top - GAP - H;
+        if (above >= EDGE) {
+            return new float[] {x, above, w, H};
+        }
+        if (dock != null) {
+            return null;
+        }
+        return new float[] {x, top + EDGE, w, H};
     }
 
     private static boolean pill(ChatScreen chat, double x, double y) {
@@ -94,7 +122,7 @@ public final class ChatLogButton {
             return false;
         }
         float[] b = box(chat);
-        return Ui.in(x, y, b[0], b[1], b[2], b[3]);
+        return b != null && Ui.in(x, y, b[0], b[1], b[2], b[3]);
     }
 
     private static void render(ChatScreen chat, ChatLogView view, GuiGraphics g, int mouseX,
@@ -123,6 +151,9 @@ public final class ChatLogButton {
 
     private static void pillDraw(ChatScreen chat, GuiCanvas c, int mouseX, int mouseY) {
         float[] b = box(chat);
+        if (b == null) {
+            return;
+        }
         boolean hot = Ui.in(mouseX, mouseY, b[0], b[1], b[2], b[3]);
         int accent = 0xFF000000 | (WynnChaYuan.config().themeARGB() & 0xFFFFFF);
         float r = H / 2f;

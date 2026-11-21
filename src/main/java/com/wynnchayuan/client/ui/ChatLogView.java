@@ -327,7 +327,10 @@ public final class ChatLogView extends Surface {
             hovered = hot;
             hoverSince = now;
         }
-        scrollbar(rowRight + 4, listTop, listH, contentH, scroll, maxScroll);
+        scrollbar(rowRight + 4, listTop, listH, contentH, scroll, maxScroll, to -> {
+            scroll = scrollTarget = (float) to;
+            stick = scrollTarget >= maxScroll - 1;
+        });
     }
 
     private void row(Msg m, int index, float left, float textX, float rowRight, float ry,

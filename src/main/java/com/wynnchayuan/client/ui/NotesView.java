@@ -147,7 +147,8 @@ public final class NotesView extends Surface {
             }
             unclip();
             c.language(shell.language());
-            scrollbar(right - 3, top, listH, contentH, scroll, maxScroll);
+            scrollbar(right - 3, top, listH, contentH, scroll, maxScroll,
+                      to -> scroll = scrollTarget = (float) to);
         }
 
         c.fill(x + 1, footY, x + w - 1, footY + c.px(), Ui.LINE);

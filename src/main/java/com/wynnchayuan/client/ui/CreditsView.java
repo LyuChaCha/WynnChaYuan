@@ -133,7 +133,8 @@ public final class CreditsView extends Surface {
         clip(left - 2, top, right, bottom);
         content(sections, columns, cellW, left, top - scroll, true);
         unclip();
-        scrollbar(right - 3, top, listH, contentH, scroll, maxScroll);
+        scrollbar(right - 3, top, listH, contentH, scroll, maxScroll,
+                  to -> scroll = scrollTarget = (float) to);
 
         float ny = notesY;
         for (String line : notes) {
