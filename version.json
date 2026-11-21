@@ -1,11 +1,44 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.8",
+ "latest": "1.0.8_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.8_1": {
+   "headline": "1.0.8_1: chat log fixes and original ability names",
+   "items": [
+    "Changed: the Chat log button sits beside the chat box when there is room, otherwise above it. While the panel is open the chat underneath is hidden, and scrollbars can be dragged.",
+    "Added: with \"Show original ability names\" on, ability names written out in titles and descriptions (such as \"Unlock Implosion ability\") also show the original name.",
+    "Added: Brazilian Portuguese settings screen; Nicolas Flores joins the credits as the pt_br translator.",
+    "Fixed: floating labels followed by a progress row such as [0/1] are translated again.",
+    "Fixed: Loot Bomb announcements and the bomb bell use the same name.",
+    "Translations: Japanese quest dialogue reread against the story; non-quest text, skill trees and terms reread in all languages; Ruins of Detlas journals; Japanese contributions (thanks yool141)."
+   ],
+   "zh_tw": {
+    "headline": "1.0.8_1：聊天紀錄修正、技能名附原文",
+    "items": [
+     "調整：「聊天紀錄」按鈕有空間就放在聊天框旁，沒有就放在上方；面板打開時底下的聊天不再露出來，捲軸可以拖曳。",
+     "新增：開啟「技能名稱附原文」時，標題與說明裡寫成中文的技能名（例如「解鎖內爆技能」）也會附上原文。",
+     "新增：Português (pt_br) 的設定畫面；致謝名單加入 pt_br 譯者 Nicolas Flores。",
+     "修正：漂浮字後面接著 [0/1] 這類進度時，照樣會翻譯。",
+     "修正：Loot Bomb 的公告與炸彈鈴用同一個名稱。",
+     "譯文：日文任務對話照劇情重讀；各語言的任務以外文字、技能樹與術語重讀；Detlas 遺跡的日記；日文社群貢獻（感謝 yool141）。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.8_1：聊天记录修正、技能名附原文",
+    "items": [
+     "调整：「聊天记录」按钮有空间就放在聊天框旁，没有就放在上方；面板打开时底下的聊天不再露出来，滚动条可以拖动。",
+     "新增：开启「技能名称附原文」时，标题与说明里写成中文的技能名（例如「解锁内爆技能」）也会附上原文。",
+     "新增：Português (pt_br) 的设置界面；致谢名单加入 pt_br 译者 Nicolas Flores。",
+     "修正：漂浮文字后面接着 [0/1] 这类进度时，照样会翻译。",
+     "修正：Loot Bomb 的公告与炸弹铃使用同一个名称。",
+     "译文：日文任务对话按剧情重读；各语言的任务以外文字、技能树与术语重读；Detlas 遗迹的日记；日文社区贡献（感谢 yool141）。"
+    ]
+   }
+  },
   "1.0.8": {
    "headline": "1.0.8: chat log right in the chat box",
    "items": [
