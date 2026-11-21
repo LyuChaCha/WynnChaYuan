@@ -45,7 +45,7 @@ public final class CreditsView extends Surface {
     }
 
     public static final String[] TEAM_ORDER = {
-        "zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
+        "zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"};
 
     private static final int EVERYONE = 0xFFA8A8A8;
     private static final float HEAD = 16;
