@@ -85,12 +85,12 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（195 個檔）</summary>
+<details><summary>展開（196 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
-| misc.json | 17,784 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
-| npc.json | 10,271 | [`npc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/npc.json) |
+| misc.json | 17,790 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
+| npc.json | 10,276 | [`npc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/npc.json) |
 | gear-weapon.json | 2,816 | [`gear-weapon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-weapon.json) |
 | gear-armour.json | 2,501 | [`gear-armour.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-armour.json) |
 | quest.json | 1,874 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
@@ -274,6 +274,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Lost Farmers | 8 | [`lost-farmers.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/lost-farmers.json) |
 | Hunt Woolly Rhinos | 7 | [`hunt-woolly-rhinos.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunt-woolly-rhinos.json) |
 | charm.json | 5 | [`charm.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/charm.json) |
+| Black Road Runaround | 5 | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) |
 | Hallowed Ground | 5 | [`hallowed-ground.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/hallowed-ground.json) |
 | Ruler of the Skies | 5 | [`ruler-of-the-skies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/ruler-of-the-skies.json) |
 | Empty Vaults | 4 | [`empty-vaults.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/empty-vaults.json) |

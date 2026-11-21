@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**24,888 / 24,891 句已翻（100.0%），共 159 個任務，還沒有人動的有 0 個。**
+**24,893 / 24,896 句已翻（100.0%），共 160 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -52,6 +52,7 @@
 | Arachnids' Ascent | [`arachnids-ascent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/arachnids-ascent.json) | 113 | 107 | 7 | ✅ |
 | Beneath the Depths | [`beneath-the-depths.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beneath-the-depths.json) | 44 | 38 | 3 | ✅ |
 | Beyond the Grave | [`beyond-the-grave.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beyond-the-grave.json) | 185 | 173 | 3 | ✅ |
+| Black Road Runaround | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) | 5 | 0 | 1 | ✅ |
 | Blazing Retribution | [`blazing-retribution.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/blazing-retribution.json) | 45 | 38 | 4 | ✅ |
 | Bob's Lost Soul | [`bob-s-lost-soul.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/bob-s-lost-soul.json) | 83 | 73 | 5 | ✅ |
 | Brothers Return | [`brothers-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/brothers-return.json) | 103 | 89 | 7 | ✅ |
