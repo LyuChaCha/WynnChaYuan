@@ -72,13 +72,13 @@ public final class MajorIdWrapTest {
             String all = render(tip, store, null);
             String label = indent.isEmpty() ? "續行沒有縮排" : "續行帶 À 縮排";
             check(label + "：名稱翻了（實際：" + oneLine(all) + "）", all.contains("自由跑者"));
-            check(label + "：說明翻了", all.contains("衝刺條"));
+            check(label + "：說明翻了", all.contains("耐力條"));
             check(label + "：沒有留下英文說明", !all.contains("When your sprint")
                     && !all.contains("bar is under") && !all.contains("increase your sprint"));
             check(label + "：數值填回去了", all.contains("30%") && all.contains("+150%"));
             String wrapped = render(tip, store, MajorIdWrapTest::width);
             check(label + "（重新折行）：說明翻了（實際：" + oneLine(wrapped) + "）",
-                    wrapped.contains("衝刺條") && !wrapped.contains("When your sprint"));
+                    wrapped.contains("耐力條") && !wrapped.contains("When your sprint"));
             check(label + "（重新折行）：行數沒有比原文多",
                     rowsOf(tip, store, MajorIdWrapTest::width) <= tip.size());
         }

@@ -199,6 +199,14 @@ public final class GlyphSplitter {
         return s != null && hasWord(STATUS_WORD.matcher(s).replaceAll(" "));
     }
 
+    public static int wordedRows(String[] rows) {
+        int keep = rows.length;
+        while (keep > 1 && !hasWordBesidesStatus(rows[keep - 1])) {
+            keep--;
+        }
+        return keep;
+    }
+
     public static boolean hasWord(String s) {
         if (s == null) {
             return false;

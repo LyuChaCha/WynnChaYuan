@@ -56,11 +56,13 @@ public final class AbilityNameOriginalTest {
 
         lookups(store, ability, majorId);
         abilityRow(store);
+        unlockRow(store, ability);
         majorIdLine(store, MAJOR_ID, ALTRUISM_ROWS);
         majorIdLine(store, "Requiem", REQUIEM_ROWS);
         termLookups(store);
         inDescription(store, "Major ID 說明", majorIdBlock(REQUIEM_ROWS), true);
         inDescription(store, "技能樹說明", greyBlock(SUNFLARE_TREE_ROWS), false);
+        writtenOutNames(store);
         alreadyAppended(corpus, store);
 
         finish();
@@ -121,6 +123,40 @@ public final class AbilityNameOriginalTest {
         } finally {
             store.setAbilityNamesWithOriginal(false);
         }
+    }
+
+    private static void unlockRow(TranslationStore store, String ability) {
+        String key = "Unlock " + ABILITY + " ability";
+        String off = store.lookup(key);
+        check("前提：解鎖那一列有整句譯文、譯名寫死在裡面（" + off + "）",
+                off != null && off.contains(ability) && !off.contains(ABILITY));
+        if (off == null) {
+            return;
+        }
+        store.setAbilityNamesWithOriginal(true);
+        try {
+            String on = store.lookup(key);
+            check("★ 開著：解鎖那一列的技能名附了原文（" + on + "）",
+                    on != null && on.contains(ability + " (" + ABILITY + ")"));
+            check("解鎖那一列的原文只附一次",
+                    on != null && on.indexOf(ABILITY) == on.lastIndexOf(ABILITY));
+            check("附上去的原文被擋著不再換", on != null && !store.keptOriginals(on).isEmpty());
+            MutableComponent styled = Component.empty()
+                    .append(Component.literal("Unlock ").withStyle(
+                            Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55))))
+                    .append(Component.literal(ABILITY).withStyle(
+                            Style.EMPTY.withColor(TextColor.fromRgb(0xFFE14D)).withBold(true)))
+                    .append(Component.literal(" ability").withStyle(
+                            Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55))));
+            String shown = text(LineTranslator.translate(StyledText.fromComponent(styled), store));
+            check("★ 實機的三段顏色列：畫面上附了原文（" + shown + "）",
+                    shown.contains("(" + ABILITY + ")"));
+            check("不是解鎖句型的整句不受影響", store.lookup("Unlock the gate") == null
+                    || !store.lookup("Unlock the gate").contains("("));
+        } finally {
+            store.setAbilityNamesWithOriginal(false);
+        }
+        check("★ 關著：解鎖那一列照舊只有譯名", off.equals(store.lookup(key)));
     }
 
     private static void majorIdLine(TranslationStore store, String name, String[][] rows) {
@@ -213,6 +249,35 @@ public final class AbilityNameOriginalTest {
                     colour != null && colour == BODY_COLOUR);
             check(what + "：行數跟關著時一樣",
                     on != null && onText.split("\n", -1).length == offText.split("\n", -1).length);
+        } finally {
+            store.setAbilityNamesWithOriginal(false);
+        }
+    }
+
+    private static final String[] PURIFICATION_ROWS = {
+        "Heal and Arcane Transfer will purify",
+        "allies of all negative effects and fire.",
+    };
+
+    private static void writtenOutNames(TranslationStore store) {
+        String heal = store.lookup("Heal");
+        String transfer = store.lookup("Arcane Transfer");
+        List<StyledText> block = greyBlock(PURIFICATION_ROWS);
+        String offText = join(LineTranslator.translateBlock(block, store, new boolean[block.size()]));
+        check("前提：譯文把技能名寫成中文（" + shorten(offText) + "）",
+                heal != null && transfer != null && offText.contains(heal)
+                        && offText.contains(transfer) && !offText.contains("Heal"));
+        store.setAbilityNamesWithOriginal(true);
+        try {
+            String onText = join(LineTranslator.translateBlock(block, store,
+                    new boolean[block.size()]));
+            check("★ 開著：寫成中文的技能名也附了原文（" + shorten(onText) + "）",
+                    heal != null && transfer != null
+                            && onText.contains(store.lookupTerm("Heal") == null ? heal : heal)
+                            && onText.contains("(Heal)") && onText.contains("(Arcane Transfer)"));
+            check("每個原文只附一次", onText.indexOf("(Heal)") == onText.lastIndexOf("(Heal)"));
+            check("行數跟關著時一樣",
+                    onText.split("\n", -1).length == offText.split("\n", -1).length);
         } finally {
             store.setAbilityNamesWithOriginal(false);
         }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Tunnel Trouble",
-  "count": 68,
-  "translated": 68,
+  "count": 69,
+  "translated": 69,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -33,7 +33,7 @@
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Fenor",
    "source": "captured"
   },
   "Tunnel Trouble#003": {
@@ -147,7 +147,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "{p} と {p} を素早く行き来するのに使われていたが、もう何年も放置されている。",
    "role": "desc",
    "kind": "dialogue",
@@ -198,13 +198,14 @@
   },
   "Tunnel Trouble#019": {
    "src": "Uh... well, to start, we'll need to clear that debris. Just... give it a shove, or something. That'll probably do it.",
-   "dst": "えーと…まずはこの瓦礫をどかさないとな。軽く押せば崩れるだろう。",
+   "dst": "えーと…まずはこの瓦礫をどかさないとな。{c2}軽く押せば{/}崩れるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "Stage 2",
    "speaker": "Miner Linton",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}give it a shove{/}"
   },
   "Tunnel Trouble#020": {
    "src": "Help Miner Linton remove the debris blocking the path.",
@@ -348,7 +349,7 @@
   },
   "Tunnel Trouble#034": {
    "src": "...You know what? I'm not going to ask. As far as I'm concerned, that didn't happen.",
-   "dst": "…いや、もういい。俺は聞きに行かない。何も起こらなかったよ。",
+   "dst": "…いや、もういい。何も聞かねえよ。俺の中じゃ、何も起きなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -538,13 +539,14 @@
   },
   "Tunnel Trouble#053": {
    "src": "...Oh! Right! You were busy with something before you came to help me, weren't you? Hm... I think I might be able to help you with that as well! Let's go back to the tunnel!",
-   "dst": "…あっ！そうだ！僕を手伝う前、何か用事の途中だったよね？うーん…それも手伝えるかも！トンネルに戻ろう！",
+   "dst": "…あっ！そうだ！僕を手伝う前、何か用事の途中だったよね？うーん…それも手伝えるかも！{c2}トンネルに戻ろう{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
    "stage": "Stage 9",
    "speaker": "Drale",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}go back to the tunnel{/}"
   },
   "Tunnel Trouble#054": {
    "src": "Return to Miner Linton back in the abandoned cave.",
@@ -685,6 +687,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "新兵、命令は受けたな。実行しろ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   }
  }
 }

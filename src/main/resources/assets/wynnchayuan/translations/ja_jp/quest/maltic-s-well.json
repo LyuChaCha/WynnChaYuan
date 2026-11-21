@@ -50,7 +50,7 @@
   },
   "Maltic's Well#003": {
    "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
-   "dst": "…だって扉を間違えたら獣のもとに送られるのよ、世にも恐ろしい獣に！その、えー…{p} の衛兵をブランチに食べる獣！！ほんとよ！",
+   "dst": "…だって扉を間違えたら獣のもとに送られるのよ、世にも恐ろしい獣に！その、えー…{p} の衛兵をブランチに食べる獣！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
@@ -110,13 +110,14 @@
   },
   "Maltic's Well#009": {
    "src": "But she's lured my child into the well! My only child! He was born in Wynn, that makes him a Wynn citizen!",
-   "dst": "でも息子を井戸に誘い込んだんです！たった一人の息子を！Wynn 生まれだから Wynn の市民なんですよ！",
+   "dst": "でも{c2}息子を井戸に誘い込んだ{/}んです！たった一人の息子を！Wynn 生まれだから Wynn の市民なんですよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
    "stage": "Stage 1",
    "speaker": "Rynend",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}she's lured my child into the well!{/}"
   },
   "Maltic's Well#010": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",

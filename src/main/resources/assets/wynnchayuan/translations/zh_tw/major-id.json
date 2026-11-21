@@ -875,7 +875,7 @@
   },
   "major-id#0167": {
    "src": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within {~} blocks will receive the same amount.",
-   "dst": "每當你從生命竊取與生命恢復屬性獲得生命時，{~} 格內的友軍也會獲得等量的生命值。",
+   "dst": "每當你從生命竊取與生命回復屬性獲得生命時，{~} 格內的友軍也會獲得等量的生命值。",
    "role": "desc",
    "_raw": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within 16 blocks will receive the same amount."
   },
@@ -1031,7 +1031,7 @@
   },
   "major-id#0194": {
    "src": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency).",
-   "dst": "Buckshot 會為友軍恢復相當於你所有生命恢復屬性總和的生命值(受治療效率影響)。",
+   "dst": "Buckshot 會為友軍恢復相當於你所有生命回復屬性總和的生命值(受治療效率影響)。",
    "role": "desc",
    "_raw": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency)."
   },
@@ -1061,13 +1061,13 @@
   },
   "major-id#0199": {
    "src": "Chain Lightning hits slower, rebounds, adds {~} chains, and pulls mobs closer for a {#}{~} explosion spell.",
-   "dst": "Chain Lightning 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
+   "dst": "Chain Lightning 的打擊變慢且會反彈，鎖鏈增加 {~1} 條，並把怪物拉近，隨後造成 {#}{~2} 爆炸傷害。",
    "role": "desc",
    "_raw": "Chain Lightning hits slower, rebounds, adds 6 chains, and pulls mobs closer for a {#}9999% explosion spell."
   },
   "major-id#0200": {
    "src": "Chain Lightning hits slower, rebounds, adds {~} chains, and pulls mobs closer for a {#}{~} explosion spell.",
-   "dst": "Chain Lightning 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
+   "dst": "Chain Lightning 的打擊變慢且會反彈，鎖鏈增加 {~1} 條，並把怪物拉近，隨後造成 {#}{~2} 爆炸傷害。",
    "role": "desc",
    "_raw": "Chain Lightning hits slower, rebounds, adds 6 chains, and pulls mobs closer for a 8000% explosion spell."
   },
@@ -1089,13 +1089,13 @@
   },
   "major-id#0204": {
    "src": "Courage casts a series of {~} infernos that expand after the last, dealing {#}{~} each, and grants {~} resistance instead of a damage boost.",
-   "dst": "Courage 會連續施放 {~1} 道致死烈焰，並在最後一道之後擴張範圍，每道造成 {#}{~2} 傷害，同時改為提供 {~3} 抗性而非傷害加成。",
+   "dst": "Courage 會連續施放 {~1} 道逐次擴大的烈焰，每道造成 {#}{~2} 傷害，同時改為提供 {~3} 抗性而非傷害加成。",
    "role": "desc",
    "_raw": "Dead the last, dealing 150% each, and grants 20% resistance instead of a damage boost."
   },
   "major-id#0205": {
    "src": "Courage will immediately combust Guardian Angels, dealing {#}{~} and enkindling Buckshot's arrows with {#}{~} Main Attack damage.",
-   "dst": "Courage 會立即將 Guardian Angels 燃燒殆盡，造成 {#}{~1} 傷害，並點燃 Buckshot 的箭矢，降下懲戒，使其額外造成 {#}{~2} 普攻傷害。",
+   "dst": "Courage 會立即將 Guardian Angels 燃燒殆盡，造成 {#}{~1} 傷害，並點燃 Buckshot 的箭矢，使其額外造成 {#}{~2} 普攻傷害。",
    "role": "desc",
    "_raw": "Courage will immediately combust Guardian Angels, dealing 4000% and enkindling Buckshot's arrows with 20% Main Attack damage."
   },
@@ -1271,7 +1271,7 @@
   },
   "major-id#0236": {
    "src": "Health Regeneration is increased by {~} for every {~} Health missing.",
-   "dst": "每損失 {~2} 生命值，生命恢復提高 {~1}。",
+   "dst": "每損失 {~2} 生命值，生命回復提高 {~1}。",
    "role": "desc",
    "_raw": "Health Regeneration is increased by 0.75% for every 1% Health missing."
   },
@@ -1521,13 +1521,13 @@
   },
   "major-id#0280": {
    "src": "Regeneration increases Totem's damage by {#}+{~} {#}+{~} instead of restoring health.",
-   "dst": "Regeneration 將會增加 Totem {#}+{~1} 與 {#}+{~2} 傷害，但無法讓你回血。",
+   "dst": "Regeneration 改為使 Totem 的傷害增加 {#}+{~1} 與 {#}+{~2}，不再恢復生命。",
    "role": "desc",
    "_raw": "Regeneration increases Totem's damage by +14% +6% instead of restoring health."
   },
   "major-id#0281": {
    "src": "Righting Reflex has {~} reduced fall speed, lasts twice as long, and is affected stronger by movement speed.",
-   "dst": "Righting Reflex 的落下速度降低 {~}，持續時間加倍，且更容易受到移動速度影響。",
+   "dst": "Righting Reflex 的落下速度降低 {~}，持續時間加倍，且受移動速度的影響更大。",
    "role": "desc",
    "_raw": "Righting Reflex has 75% reduced fall speed, lasts twice as long, and is affected stronger by movement speed."
   },
@@ -1685,7 +1685,7 @@
   },
   "major-id#0309": {
    "src": "When your sprint bar is under {~} full, increase your sprint speed by +{~}.",
-   "dst": "衝刺條低於 {~1} 時，衝刺速度提高 +{~2}。",
+   "dst": "耐力條低於 {~1} 時，疾跑速度提高 +{~2}。",
    "role": "desc",
    "_raw": "When your sprint bar is under 30% full, increase your sprint speed by +150%."
   },
@@ -1697,7 +1697,7 @@
   },
   "major-id#0311": {
    "src": "While under {~} maximum health, allies within {~} blocks gain {~} bonus damage and defence.",
-   "dst": "當自身最大生命值降至 {~1} 以下，周圍 {~2} 格內的友軍將會獲得 {~3} 傷害加成與防禦。",
+   "dst": "當自身生命值低於最大生命值的 {~1} 時，周圍 {~2} 格內的友軍將會獲得 {~3} 傷害加成與防禦。",
    "role": "desc",
    "_raw": "While under 50% maximum health, allies within 8 blocks gain 15% bonus damage and defence."
   },

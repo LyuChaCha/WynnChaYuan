@@ -4,7 +4,7 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24827,
+  "count": 24840,
   "translated": 24723,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
@@ -40566,6 +40566,56 @@
    "speaker": "",
    "source": "captured"
   },
+  "Black Road Runaround#001": {
+   "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#002": {
+   "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#003": {
+   "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#004": {
+   "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#005": {
+   "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
    "dst": "那个兽人往湖那边跑了！！快追，快追啊，别让他又逃到别处去！！",
@@ -55227,8 +55277,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} 如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55237,8 +55287,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} 敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55297,7 +55347,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "神圣的牛啊！那……那……他回来了！快杀了它！",
    "role": "desc",
    "kind": "dialogue",
@@ -55462,11 +55512,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "一共有五项。{#} 力量、{#} 灵巧、{#} 智力、{#} 防御和 {#} 敏捷，各有不同的加成。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55585,6 +55636,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -79242,6 +79304,27 @@
    "quest": "Enzan's Brother",
    "source": "capture"
   },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note": "obsessed は斜体"
+  },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",
    "dst": "他们死了。看来其中一个是被炮弹击中的。",
@@ -101731,6 +101814,15 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Jungle Fever#000": {
@@ -222113,16 +222205,6 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#036": {
-   "src": "Did you feel like there was",
-   "dst": "你有没有觉得那里好像有",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Sewers of Ragni#037": {
    "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
    "dst": "而且算你走运，我们在里面没碰上太可怕的东西。有些传说……",
@@ -242588,7 +242670,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "我们用它在 {p} 和 {p} 之间快速方便地往来。它已经废弃好多年了。",
    "role": "desc",
    "kind": "dialogue",
@@ -243126,6 +243208,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   },
   "Underice#000": {
    "src": "Where is the [Breathing Helmet I] I asked you for?",
@@ -245162,6 +245254,46 @@
    "stage": "Stage 5",
    "speaker": "Omango",
    "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "你该回坠毁的船那边去找 Omango！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Infested Plants",
-  "count": 61,
-  "translated": 61,
+  "count": 62,
+  "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -18,13 +18,14 @@
   },
   "Infested Plants#001": {
    "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
-   "dst": "…んー、ちょっとギリギリだけど…あっ！君、えっと、まだいたの…！そう。そうだよ、あの洞窟に入らなきゃ、覚えてる？",
+   "dst": "…んー、ちょっとギリギリだけど…あっ！君、えっと、まだいたの…！そう。そうだよ、{c2}あの洞窟に入らなきゃ{/}、覚えてる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}go into that cave{/}"
   },
   "Infested Plants#002": {
    "src": "[+{~} Saccharum Plant]",
@@ -400,11 +401,12 @@
   },
   "Infested Plants#042": {
    "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
-   "dst": "僕はそれでいいよ。{u}、君は洞窟へ。その間、僕がここで Ope を守る。",
+   "dst": "僕はそれでいいよ。{u}、{c2}君は洞窟へ{/}。その間、僕がここで Ope を守る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}go into the cave{/}"
   },
   "Infested Plants#043": {
    "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
@@ -548,6 +550,15 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "ちょっと休んでくるね。でも、すぐにまた冒険に出られるようになるから、心配しないで！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
    "source": "capture"
   }
  }

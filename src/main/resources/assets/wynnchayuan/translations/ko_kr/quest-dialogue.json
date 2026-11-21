@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24883,
-  "translated": 24880,
+  "count": 24896,
+  "translated": 24890,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -40856,6 +40856,56 @@
    "speaker": "",
    "source": "captured"
   },
+  "Black Road Runaround#001": {
+   "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
+   "dst": "어이, 거기 꼬마! Enkser 영감이 너한테 첫 말을 줬다믄서! 그 양반 짠돌이라, 공짜로 받은 걸 운 좋은 줄 알어.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#002": {
+   "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
+   "dst": "있잖여, 네 말이랑 좀 더 친해지게 작은 놀이 하나 해 볼텨? 타임 트라이얼이라는 거여.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#003": {
+   "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
+   "dst": "이 근방을 한 바퀴 도는 코스를 만들어 놨지. 몇 사람이 달려 봤는디, 기록 보유자인 Enkser도 있었어. 그 양반하고 Betty는 진짜 만만찮은 상대라니께.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#004": {
+   "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
+   "dst": "기록에 따라 받는 보상이 달라. 에메랄드, 장비, 그리고 Enkser 기록 (A 랭크)을 깨면 말을 한 마리 더 받을 수 있지! 그 양반이 건 내기여.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#005": {
+   "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
+   "dst": "무엇보다 네 말이 더 강해지는 데 도움이 될 거여. 그래서 어뗘, 꼬마? 한번 해 볼텨? 할 거면 나한테 다시 말 걸어.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
    "dst": "그 오크가 호수 쪽으로 뛰어갔어!! 잡아, 다른 데로 도망가기 전에 잡으라고!!",
@@ -55517,8 +55567,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "살아남기 힘들다면 이게 최선이야. 받는 피해를 줄여 줘, 그게 다야.",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} 방어는 살아남기 힘들 때 최선이야. 받는 피해를 줄여 줘, 그게 다야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55527,8 +55577,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "재빠름, 이건 모험가 체질용이야. 많을수록 들어오는 공격을 피할 확률이 올라서 피해를 대부분 없애 주지.",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} 재빠름, 이건 모험가 체질용이야. 많을수록 들어오는 공격을 피할 확률이 올라서 피해를 대부분 없애 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55587,7 +55637,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "맙소사! 저... 저... 그가 돌아왔어! 어서 죽여!",
    "role": "desc",
    "kind": "dialogue",
@@ -55752,11 +55802,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "다섯 가지야.  힘,  민첩,  지능,  방어,  재빠름. 각각 보너스가 달라.",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "다섯 가지야. {#} 힘, {#} 민첩, {#} 지능, {#} 방어, {#} 재빠름. 각각 보너스가 달라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55875,6 +55926,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -79532,6 +79594,27 @@
    "quest": "Enzan's Brother",
    "source": "capture"
   },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note": "obsessed は斜体"
+  },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",
    "dst": "그들은 죽었다. 그중 하나는 포탄에 맞은 것 같다.",
@@ -79944,7 +80027,7 @@
   },
   "Fallen Delivery#041": {
    "src": "And, please don't try and sneak in and bother him either. I got my ears boxed last time someone got by me.",
-   "dst": "그리고 몰래 들어가서 방해할 생각도 마세요. 지난번에 누가 날 지나쳐 들어갔을 때 된통 혼났거든요.",
+   "dst": "그리고 몰래 들어가서 방해할 생각도 마세요. 지난번에 누가 날 지나쳐 들어갔을 때 따귀를 얻어맞았거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fallen Delivery",
@@ -102021,6 +102104,15 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "난 좀 쉬러 갈게. 그래도 금방 다시 모험 나갈 수 있을 테니 걱정 마!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Jungle Fever#000": {
@@ -222701,16 +222793,6 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#036": {
-   "src": "Did you feel like there was",
-   "dst": "거기 뭔가 있는 것 같지 않았어?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Sewers of Ragni#037": {
    "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
    "dst": "그리고 저 안에서 너무 험한 놈을 안 만난 걸 다행으로 알아. 들리는 얘기로는...",
@@ -243176,7 +243258,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "{p}에서 {p}까지 빠르게 오가는 데 썼네. 버려진 지 여러 해가 됐지.",
    "role": "desc",
    "kind": "dialogue",
@@ -243714,6 +243796,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "명령은 내렸네, 신병. 가서 수행하게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   },
   "Underice#000": {
    "src": "Where is the [Breathing Helmet I] I asked you for?",
@@ -245750,6 +245842,46 @@
    "stage": "Stage 5",
    "speaker": "Omango",
    "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "벌써 투구를 잃어버렸어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "그럼 도와주지! 지난번처럼 동굴에서 [{~} Gudgeon Meat]를 가져오면 하나 다시 줄게! 어때?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "난파선 근처로 돌아가서 Omango한테 가 봐!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "이게 Omango가 말한 보물이 틀림없어!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Enzan's Brother",
-  "count": 26,
-  "translated": 26,
+  "count": 28,
+  "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -88,7 +88,7 @@
   },
   "Enzan's Brother#008": {
    "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
-   "dst": "今の新兵がどれほど大変か分かる。だから助けになる物がある！いや、持ってるのは俺の兄弟だ！",
+   "dst": "今の新兵がどれほど大変か分かる。だから助けになる物がある！いや、持ってるのは俺の弟だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -98,13 +98,14 @@
   },
   "Enzan's Brother#009": {
    "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "この道を行け。アイテム鑑定士の先にいるから、見逃すことはない。鑑定士の先の大きな階段を目指せ。",
+   "dst": "この道を行け。{c2}アイテム鑑定士の先{/}にいるから、見逃すことはない。{c2}鑑定士の先の大きな階段を目指せ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
    "stage": "Stage 1",
    "speaker": "Enzan",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Just head to the big set of stairs, past the item identifier{/}"
   },
   "Enzan's Brother#010": {
    "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
@@ -118,7 +119,7 @@
   },
   "Enzan's Brother#011": {
    "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
-   "dst": "[-{~1}, {~2}, -{~3}]、{p} のアイテム鑑定士の近くで Enzan の兄弟を見つける。",
+   "dst": "[-{~1}, {~2}, -{~3}]、{p} のアイテム鑑定士の近くで Enzan の弟を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -138,7 +139,7 @@
   },
   "Enzan's Brother#013": {
    "src": "Oh, my brother? Sorry, I didn't know.",
-   "dst": "兄弟の紹介？悪い、知らなかった。",
+   "dst": "兄貴の紹介？悪い、知らなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -178,13 +179,14 @@
   },
   "Enzan's Brother#017": {
    "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "[{~} Energy Mushroom] を持ってきたら助けてやる。階段を下りて洞窟に入り、キノコを取ってこい！",
+   "dst": "{c2}[{~} Energy Mushroom] {c1}を持ってきたら助けてやる。{c3}階段を下りて洞窟に入り、キノコを取ってこい{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
    "stage": "Stage 2",
    "speaker": "Therck",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Energy Mushroom]{/} , {c3}Enter the cave down the stairs, and bring me that mushroom{/}"
   },
   "Enzan's Brother#018": {
    "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
@@ -242,19 +244,42 @@
   },
   "Enzan's Brother#024": {
    "src": "Who knows, maybe there's a treasure or something up there?",
-   "dst": "上に宝か何かがあるかもしれないだろ？",
+   "dst": "{c2}上に{/}宝か何かがあるかもしれないだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}up there{/}"
   },
   "Enzan's Brother#025": {
    "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
-   "dst": "この指輪を持っていけ。アクセサリーだ。近くのアイテム鑑定士で鑑定できる。",
+   "dst": "この指輪を持っていけ。アクセサリーだ。{c2}近くのアイテム鑑定士で鑑定できる{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
+   "source": "capture",
+   "note":"{c2}identify it at the nearby Item Identifier{/}"
+  },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "何を待ってるんだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
    "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "弟を見つけるのは難しくないはず。階段に夢中なんだから。アイテム鑑定士の近くにいるはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note":"obsessed は斜体"
   }
  }
 }

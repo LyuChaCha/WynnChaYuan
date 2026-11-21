@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 57,
+  "count": 58,
   "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -199,8 +199,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} Защита выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -209,8 +209,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -269,7 +269,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "Святая корова! Это… это… он вернулся! Убей его, скорее!",
    "role": "desc",
    "kind": "dialogue",
@@ -434,11 +434,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "Их пять.  Сила,  Ловкость,  Интеллект,  Защита и  Проворство, у каждого свои бонусы.",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "Их пять. {#} Сила, {#} Ловкость, {#} Интеллект, {#} Защита и {#} Проворство, у каждого свои бонусы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -557,6 +558,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   }
  }
 }

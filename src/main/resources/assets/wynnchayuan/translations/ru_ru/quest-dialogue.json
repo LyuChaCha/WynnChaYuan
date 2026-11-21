@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 24883,
-  "translated": 24880,
+  "count": 24896,
+  "translated": 24890,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -40856,6 +40856,56 @@
    "speaker": "",
    "source": "captured"
   },
+  "Black Road Runaround#001": {
+   "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
+   "dst": "Эй, малый! Слыхал, старина Enkser подарил тебе первого коня! Он тот ещё скупердяй, так что считай, повезло, что задаром достался.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#002": {
+   "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
+   "dst": "Слышь, хошь сыграть в одну игру, чтоб получше спознаться со своим скакуном? Гонкой на время зовётся.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#003": {
+   "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
+   "dst": "Я тут трассу по округе проложил. Пара-тройка народу её уж опробовала, и Enkser тоже - рекорд-то за ним. Он со своей Betty - сила, с которой надо считаться, вот что я те скажу.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#004": {
+   "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
+   "dst": "Смотря какое время покажешь, такие и награды получишь. Изумруды, снаряжение, а коли побьёшь время Enkser (ранг A), так ещё и коня! Это он сам на спор поставил.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#005": {
+   "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
+   "dst": "А главное - скакун твой от этого крепче станет. Ну так что, малый? Попробуешь? Коли надумаешь - подходи ещё разок.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json"
+  },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
    "dst": "Тот орк побежал к озеру!! Лови его, лови, пока не удрал ещё куда!!",
@@ -55517,8 +55567,8 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} Защита выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55527,8 +55577,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55587,7 +55637,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "Святая корова! Это… это… он вернулся! Убей его, скорее!",
    "role": "desc",
    "kind": "dialogue",
@@ -55752,11 +55802,12 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "speaker": "Farmer Kelri"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "Их пять.  Сила,  Ловкость,  Интеллект,  Защита и  Проворство, у каждого свои бонусы.",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "Их пять. {#} Сила, {#} Ловкость, {#} Интеллект, {#} Защита и {#} Проворство, у каждого свои бонусы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55875,6 +55926,17 @@
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -79532,6 +79594,27 @@
    "quest": "Enzan's Brother",
    "source": "capture"
   },
+  "Enzan's Brother#026": {
+   "src": "What are you waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "My brother shouldn't be hard to find, he's obsessed with stairs. He should be near the item identifier.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Enzan",
+   "source": "capture",
+   "note": "obsessed は斜体"
+  },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",
    "dst": "Они мертвы. Похоже, одного задело пушечным ядром.",
@@ -102021,6 +102104,15 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "Пойду немного отдохну. Но скоро буду готов к новым приключениям, не волнуйся!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Jungle Fever#000": {
@@ -222701,16 +222793,6 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#036": {
-   "src": "Did you feel like there was",
-   "dst": "Тебе не показалось, что там",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Sewers of Ragni#037": {
    "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
    "dst": "И считай, что тебе повезло: ничего особо мерзкого нам там не попалось. Некоторые истории…",
@@ -243176,7 +243258,7 @@
    "source": "wiki"
   },
   "Tunnel Trouble#014": {
-   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
    "dst": "По ней мы быстро ходили между {p} и {p}. Она заброшена много лет.",
    "role": "desc",
    "kind": "dialogue",
@@ -243714,6 +243796,16 @@
    "stage": "Stage 11",
    "speaker": "Sergeant Klafson",
    "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "Приказ ты получил, новобранец. Выполняй!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
   },
   "Underice#000": {
    "src": "Where is the [Breathing Helmet I] I asked you for?",
@@ -245750,6 +245842,46 @@
    "stage": "Stage 5",
    "speaker": "Omango",
    "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "Ты уже потерял шлем?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "Тогда помогу! Принеси мне [{~} Мясо пескаря] из пещеры, как в прошлый раз, и я дам тебе новый! Идёт?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "Тебе бы сходить к Omango, он там, у разбитого корабля!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "Должно быть, это то сокровище, о котором говорил Omango!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",

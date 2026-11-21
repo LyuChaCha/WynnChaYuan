@@ -1,20 +1,21 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 57,
-  "translated": 57,
+  "count": 58,
+  "translated": 58,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dearly Departed#000": {
    "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
-   "dst": "{#} 器用さは少し厄介な能力だ。高ければ高いほど、攻撃が二倍のダメージを与える確率が上がる。いいだろう？",
+   "dst": "{#} {c1}器用さ{/}は少し変な能力だ。高ければ高いほど、攻撃が二倍のダメージを与える確率が上がる。いいだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured",
+   "note":"{c1}Dexterity{/}",
    "similar": {
     "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
     "file": "quest/dearly-departed.json",
@@ -24,13 +25,14 @@
   },
   "Dearly Departed#001": {
    "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
-   "dst": "{#} 知力は呪文を使う者のためのもので、呪文の消費を下げ、マナの最大値を増やす。",
+   "dst": "{#} {c1}知力{/}は呪文を使う者のためのもので、呪文の消費を下げ、マナの最大値を増やす。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
    "source": "captured",
+   "note":"{c1}Intelligence{/}",
    "similar": {
     "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
     "file": "quest/dearly-departed.json",
@@ -110,13 +112,14 @@
   },
   "Dearly Departed#009": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
-   "dst": "私の立場は分かるだろう？哀れな男を助けると思って、あそこの [Muddy Shovel] を取ってきて、戻ってきてくれ。",
+   "dst": "私の立場は分かるだろう？哀れな男を助けると思って、あそこの {c3}[Muddy Shovel] {/}を{c2}取ってきて{/}、戻ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 1",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}go and grab{/} , {c3}[Muddy Shovel]{/}"
   },
   "Dearly Departed#010": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
@@ -180,13 +183,14 @@
   },
   "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
-   "dst": "スキルポイントだよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
+   "dst": "{c2}スキルポイント{/}だよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Skill Points{/} , Skill Pointsは太字"
   },
   "Dearly Departed#019": {
    "src": "You get it, or do you want me to tell you what they are?",
@@ -199,24 +203,26 @@
    "source": "wiki"
   },
   "Dearly Departed#023": {
-   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "は、生き延びるのに苦労しているなら一番だ。受けるダメージが減る、それだけさ。",
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} {c1}防御{/}は、生き延びるのに苦労しているなら一番だ。受けるダメージが減る、それだけさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c1}Defence{/}"
   },
   "Dearly Departed#024": {
-   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "俊敏さ、これは危険を好む人向けだ。多いほど攻撃を回避しやすくなり、ダメージをほとんど打ち消せる。",
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} {c1}俊敏{/}さ、これは危険を好む人向けだ。多いほど攻撃を回避しやすくなり、ダメージをほとんど打ち消せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c1}Agility{/}"
   },
   "Dearly Departed#025": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
@@ -230,23 +236,25 @@
   },
   "Dearly Departed#026": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
-   "dst": "コンパスを開けばスキルポイントを振れる。準備ができたら中に入って、私の指輪を取ってきてくれ。",
+   "dst": "{c2}コンパスを開けば{c3}スキルポイント{/}を振れる。準備ができたら中に入って、{c2}私の指輪を取ってきてくれ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}open your compass{/} , {c3}Skill Points{/} , {c2}get my ring{/} , Skill Pointsは太字"
   },
   "Dearly Departed#028": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
-   "dst": "さあ行け、兵士よ！{p} 軍の力を見せてくれ！えっと、つまり…指輪を取ってきてくれ！",
+   "dst": "さあ行け、兵士よ！{p} 軍の力を見せてくれ！えっと、つまり…{c2}指輪を取ってきてくれ{/}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 4",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}get me that ring{/}"
   },
   "Dearly Departed#029": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
@@ -269,7 +277,7 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
    "dst": "牛神様！あれは…あれは…奴が戻ってきた！早く倒してくれ！",
    "role": "desc",
    "kind": "dialogue",
@@ -336,7 +344,8 @@
    "quest": "Dearly Departed",
    "stage": "Stage 6",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"actions は斜体"
   },
   "Dearly Departed#039": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
@@ -430,19 +439,22 @@
   },
   "Dearly Departed#048": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
-   "dst": "スキルポイントも振ってあるよね？何かあった時に役立つかもしれないからね。",
+   "dst": "{c2}スキルポイント{/}も振ってあるよね？何かあった時に役立つかもしれないからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "speaker": "Farmer Kelri",
+   "source": "capture",
+   "note":"{c2}Skill Points{/} , Skill Pointsは太字"
   },
   "Dearly Departed#049": {
-   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
-   "dst": "五種類ある。筋力、器用さ、知力、防御、俊敏さ、それぞれ別のボーナスがあるんだ。",
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "五種類ある。{#} {c2}筋力{/}、{#} {c3}器用さ{/}、{#} {c4}知力{/}、{#} {c5}防御{/}、{#} {c6}俊敏さ{/}、それぞれ別のボーナスがあるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}Strength{/} , {c3}Dexterity{/} , {c4}Intelligence{/} , {c5}Defence{/} , {c6}Agility{/}"
   },
   "Dearly Departed#050": {
    "src": "Why are you asking me that?",
@@ -470,27 +482,30 @@
   },
   "Dearly Departed#053": {
    "src": "About Strength.",
-   "dst": "筋力について。",
+   "dst": "{c2}筋力{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}Strength{/}"
   },
   "Dearly Departed#054": {
    "src": "About Dexterity.",
-   "dst": "器用さについて。",
+   "dst": "{c2}器用さ{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}Dexterity{/}"
   },
   "Dearly Departed#055": {
    "src": "About Intelligence.",
-   "dst": "知力について。",
+   "dst": "{c2}知力{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}Intelligence{/}"
   },
   "Dearly Departed#056": {
    "src": "Not yet...",
@@ -534,11 +549,12 @@
   },
   "Dearly Departed#061": {
    "src": "About Defence.",
-   "dst": "防御について。",
+   "dst": "{c2}防御{/}について。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "source": "capture"
+   "source": "capture",
+   "note":"{c2}Defence{/}"
   },
   "Dearly Departed#062": {
    "src": "About Agility.",
@@ -550,13 +566,25 @@
   },
   "Dearly Departed#063": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
-   "dst": "{#} 筋力は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
+   "dst": "{#} {c1}筋力{/}は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c1}Strength{/}"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "兵士さん、本当にありがとう。君のおかげで助かったよ……妻にどう説明すればよかったか、さあね、ハハ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note":""
   }
  }
 }

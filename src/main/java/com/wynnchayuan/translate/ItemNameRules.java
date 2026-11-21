@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.wynnchayuan.translate.TranslationStore.ICON;
 import static com.wynnchayuan.translate.TranslationStore.bareName;
@@ -108,6 +109,86 @@ final class ItemNameRules {
             tail -= ICON.length();
         }
         return hit.substring(0, tail) + " (" + original + ")" + hit.substring(tail);
+    }
+
+    private static final Pattern COLOUR_MARKER = Pattern.compile("\\{(?:c\\d+|/)}");
+
+    private static final Pattern PROSE_WORD = Pattern.compile("(?<![A-Za-z{])[a-z]{2,}(?![A-Za-z}])");
+
+    private volatile Pattern abilityNamePattern;
+    private volatile int abilityNamePatternSize = -1;
+
+    private Pattern abilityNamePattern() {
+        Pattern cached = abilityNamePattern;
+        int size = abilityNameDsts.size();
+        if (cached != null && abilityNamePatternSize == size) {
+            return cached;
+        }
+        List<String> names = new ArrayList<>(abilityNameDsts.keySet());
+        names.sort((a, b) -> b.length() - a.length());
+        StringBuilder alternation = new StringBuilder();
+        for (String name : names) {
+            if (name.length() < 3) {
+                continue;
+            }
+            if (!alternation.isEmpty()) {
+                alternation.append('|');
+            }
+            alternation.append(Pattern.quote(name));
+        }
+        Pattern built = alternation.isEmpty() ? null
+                : Pattern.compile("(?<![A-Za-z'])(?:" + alternation + ")(?![A-Za-z])");
+        abilityNamePattern = built;
+        abilityNamePatternSize = size;
+        return built;
+    }
+
+    String embeddedAbilityNamesWithOriginal(String key, String hit) {
+        Pattern names = abilityNamePattern();
+        if (names == null || key == null || hit == null
+                || !PROSE_WORD.matcher(names.matcher(key).replaceAll(" ")).find()) {
+            return null;
+        }
+        Matcher found = names.matcher(key);
+        boolean changed = false;
+        int from = 0;
+        String text = hit;
+        while (found.find()) {
+            String name = found.group();
+            if (text.contains("(" + name + ")")) {
+                continue;
+            }
+            String best = null;
+            int bestAt = -1;
+            for (String dst : abilityNameDsts.getOrDefault(name, Set.of())) {
+                if (dst.isEmpty() || dst.equals(name)) {
+                    continue;
+                }
+                int at = text.indexOf(dst, from);
+                if (at >= 0 && (best == null || dst.length() > best.length())) {
+                    best = dst;
+                    bestAt = at;
+                }
+            }
+            if (best == null) {
+                continue;
+            }
+            int end = bestAt + best.length();
+            if (text.startsWith(" (", end) || text.startsWith("(", end)) {
+                continue;
+            }
+            int next = end;
+            Matcher marker = COLOUR_MARKER.matcher(text);
+            while (marker.find(next) && marker.start() == next) {
+                next = marker.end();
+            }
+            boolean gap = next < text.length() && Character.isLetterOrDigit(text.charAt(next));
+            String inserted = " (" + name + ")" + (gap ? " " : "");
+            text = text.substring(0, end) + inserted + text.substring(end);
+            from = end + inserted.length();
+            changed = true;
+        }
+        return changed ? text : null;
     }
 
     String abilityLabelWithOriginal(String key, String hit) {
