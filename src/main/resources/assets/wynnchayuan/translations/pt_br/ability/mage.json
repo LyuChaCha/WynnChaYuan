@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "A cada {~} ou {~} de dano de feitiço (valor fixo) dos seus\nitens, ganhe +{~}/{~}s de regeneração de mana (Máx. {~}/{~}s)",
+   "dst": "A cada {c2}{~}{c1} ou {c2}{~}{c1} de dano de feitiço {c2}(valor fixo){c1} dos seus\nitens, ganhe {c2}+{~}/{~}s{c1} de regeneração de mana (Máx. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "Cura você e os aliados próximos\nnuma área grande ao seu redor.\n(Ao curar outros, você não pode curar\nmais de {~} da vida máxima deles)",
+   "dst": "Cura você e os aliados próximos\nnuma área grande ao seu redor.\n{c2}(Ao curar outros, você não pode curar\nmais de {~} da vida máxima {c3}deles{c2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -688,7 +688,7 @@
   },
   "ability-mage#0049": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "Meteor, Ice Snake e Etheric Slash adicionam +{~} de mana a\num Banco de mana ✺ por cada inimigo agressivo atingido.\nFrozen Tornado e Meteor Shower adicionam +{~} de mana.",
+   "dst": "{c1}Meteor{c2}, {c1}Ice Snake{c2} e {c1}Etheric Slash{c2} adicionam {c3}+{~}{c2} de mana a\num {c4}Banco de mana ✺{c2} por cada inimigo agressivo atingido.\n{c1}Frozen Tornado{c2} e {c1}Meteor Shower{c2} adicionam {c3}+{~}{c2} de mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2067,7 +2067,7 @@
   },
   "ability-mage#0150": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "Meteor, Ice Snake e Etheric Slash adicionam +{~} de mana ao\nseu Banco de mana ✺ por cada inimigo agressivo atingido.\nFrozen Tornado e Meteor Shower adicionam +{~} de mana.",
+   "dst": "{c1}Meteor{c2}, {c1}Ice Snake{c2} e {c1}Etheric Slash{c2} adicionam {c3}+{~}{c2} de mana ao\nseu {c4}Banco de mana ✺{c2} por cada inimigo agressivo atingido.\n{c1}Frozen Tornado{c2} e {c1}Meteor Shower{c2} adicionam {c3}+{~}{c2} de mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3304,7 +3304,7 @@
   },
   "ability-mage#0246": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.\nFrost Dragon's Breath will add +{~} Mana.",
-   "dst": "Meteor, Ice Snake e Etheric Slash adicionam +{~} de mana ao\nseu Banco de mana ✺ por cada inimigo agressivo atingido.\nFrozen Tornado e Meteor Shower adicionam +{~} de mana.\nFrost Dragon's Breath adiciona +{~} de mana.",
+   "dst": "{c1}Meteor{c2}, {c1}Ice Snake{c2} e {c1}Etheric Slash{c2} adicionam {c3}+{~}{c2} de mana ao\nseu {c4}Banco de mana ✺{c2} por cada inimigo agressivo atingido.\n{c1}Frozen Tornado{c2} e {c1}Meteor Shower{c2} adicionam {c3}+{~}{c2} de mana.\n{c1}Frost Dragon's Breath{c2} adiciona {c3}+{~}{c2} de mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
