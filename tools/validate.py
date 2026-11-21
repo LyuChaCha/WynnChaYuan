@@ -951,6 +951,12 @@ UNIT_DST: dict[str, list[tuple[str, str, str]]] = {
         ("veces", "times", r"\s*(?:veces|vez)"),
         ("monstruos", "mobs", r"\s*(?:monstruos?|mobs?)"),
     ],
+    "pt_br": [
+        ("blocos", "blocks", r"\s*blocos?"),
+        ("s", "seconds", r"\s*(?:s\b|segundos?)"),
+        ("vezes", "times", r"\s*(?:vezes|vez)"),
+        ("monstros", "mobs", r"\s*(?:monstros?|mobs?)"),
+    ],
     "tr_tr": [
         ("blok", "blocks", r"\s*blok"),
         ("sn", "seconds", r"\s*(?:sn\b|saniye|s\b)"),

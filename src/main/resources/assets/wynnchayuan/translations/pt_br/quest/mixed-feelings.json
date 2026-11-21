@@ -1,0 +1,984 @@
+{
+ "_meta": {
+  "quest": "Mixed Feelings",
+  "count": 97,
+  "translated": 97,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Mixed Feelings#000": {
+   "src": "Speak to Javen at the Corkus Docks.",
+   "dst": "Fale com Javen nas docas de Corkus.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#001": {
+   "src": "Mo’in lad! We don’t get many Wynn folks round ‘ere.",
+   "dst": "Opa, rapaz! Não vem muita gente de Wynn por aqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#002": {
+   "src": "Welcome to old Javen’s tavern, what can I do yer for?",
+   "dst": "Bem-vindo à taverna do velho Javen, o que vai ser?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#003": {
+   "src": "Let’s see... I can give ya some of the islands “Old Cork” Brew..",
+   "dst": "Vejamos… Posso servir a cerveja \"Old Cork\" da ilha..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#004": {
+   "src": "Seems like you are in luck today, adventurer.",
+   "dst": "Parece que está com sorte hoje, aventureiro.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Mixed Feelings#005": {
+   "src": "My day's been long, and you also look like you could do with a drink or two.",
+   "dst": "Tive um dia longo, e você também parece precisar de um ou dois tragos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Mixed Feelings#006": {
+   "src": "There's no need to pay by yourself. Javen, we'll have two cups of the seasonal brew.",
+   "dst": "Não precisa pagar sozinho. Javen, duas canecas da cerveja da estação.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Mixed Feelings#007": {
+   "src": "Cheers!",
+   "dst": "Saúde!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Mixed Feelings#008": {
+   "src": "Everything alright, lad? Looking a bit pale...",
+   "dst": "Tudo bem, rapaz? Está meio pálido…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#009": {
+   "src": "Talk to Javen.",
+   "dst": "Fale com Javen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#010": {
+   "src": "Oh by the mighty founders, everything is ruined!",
+   "dst": "Pelos poderosos fundadores, está tudo destruído!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#011": {
+   "src": "YOU!",
+   "dst": "VOCÊ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#012": {
+   "src": "You did this! Yer mad in the head! Possessed or summet!",
+   "dst": "Foi você! Tá doido da cabeça! Possuído ou coisa assim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#013": {
+   "src": "Yer seem fine now though. What got inter ye lad? You went berserk like!",
+   "dst": "Mas agora parece normal. O que deu em ti, rapaz? Ficou furioso!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#014": {
+   "src": "It weren’t just here neither. You ran outta here and wrecked all sorts! You better go find the people you affected and apologise",
+   "dst": "E não foi só aqui. Saiu correndo e destruiu tudo! É melhor ir achar quem você prejudicou e pedir desculpas",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 2",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#015": {
+   "src": "Talk to the citizens around the docks.",
+   "dst": "Fale com os cidadãos pelas docas.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#016": {
+   "src": "The whole aqueduct is ruined! The city's fresh water is just draining into the ocean...",
+   "dst": "O aqueduto inteiro está destruído! A água limpa da cidade está escoando para o oceano…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#017": {
+   "src": "Ah! It's you! Back to wreck the rest of the city's infrastructure?! You're meant to be a tourist!",
+   "dst": "Ah! É você! Voltou pra destruir o resto da cidade?! Você devia ser turista!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#018": {
+   "src": "Wait... Weren't your eyes red before? Were you ill? It was a bit scary.",
+   "dst": "Espere… Seus olhos não estavam vermelhos? Estava doente? Deu medo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#019": {
+   "src": "Oh.. You don't even remember? Well.. If you want to help, I need it right now.",
+   "dst": "Ah.. Nem lembra? Bem.. Se quer ajudar, preciso agora.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#020": {
+   "src": "The system needs to be rebooted, which can only be done down in the sewers.",
+   "dst": "O sistema precisa ser reiniciado, e isso só se faz lá nos esgotos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#021": {
+   "src": "Kind of a design flaw if you ask me.. But if you go down that trap door, you will find it in the sewers!",
+   "dst": "Meio que falha de projeto, se quer saber.. Mas desça por aquele alçapão e vai achar nos esgotos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#022": {
+   "src": "You fixed it? Everything you broke? That's one hell of a twisted personality.",
+   "dst": "Consertou? Tudo que quebrou? Que personalidade mais retorcida.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#023": {
+   "src": "Corkus has been urging tourists and envoys from the other provinces to gain recognition.",
+   "dst": "Corkus vem atraindo turistas e enviados de outras províncias para ganhar reconhecimento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#024": {
+   "src": "There are others that blame any outsiders for the problems of the islands.. They say they are patriots.. but honestly...",
+   "dst": "Há quem culpe qualquer forasteiro pelos problemas das ilhas.. Dizem ser patriotas.. mas, sinceramente…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#025": {
+   "src": "They are just awful people. They want to do anything to make non Corkians look bad.",
+   "dst": "São só gente horrível. Fazem de tudo para queimar quem não é Corkian.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#026": {
+   "src": "If I were you, I'd better start asking around to find out more about that!",
+   "dst": "Se eu fosse você, começaria a perguntar por aí para saber mais!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#027": {
+   "src": "Speak to the other citizens around the docks.",
+   "dst": "Fale com os outros cidadãos pelas docas.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#028": {
+   "src": "It’s THEM! Someone call the authorities! It’s the one who set my house on fire.",
+   "dst": "É ESSA PESSOA! Chamem as autoridades! Foi quem pôs fogo na minha casa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#029": {
+   "src": "How could you do this and just come back all calm like? You were screaming your head off!",
+   "dst": "Como pode fazer isso e voltar todo calmo? Você estava gritando feito louco!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#030": {
+   "src": "My house is still burning! Wait… You say you don’t have any memory of any of this?",
+   "dst": "Minha casa ainda está pegando fogo! Espere… Diz que não lembra de nada disso?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#031": {
+   "src": "Look, if you’re serious, you have a chance to help make it better.",
+   "dst": "Olha, se está falando sério, tem uma chance de ajudar a consertar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#032": {
+   "src": "There are valuables in a chest in there you must save before the whole place burns to the ground, get going!",
+   "dst": "Tem objetos de valor num baú lá dentro que você precisa salvar antes que tudo queime, vai logo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#033": {
+   "src": "You did it! So you weren't lying? Ugh, I guess you might just be trustworthy.",
+   "dst": "Conseguiu! Então não mentia? Ugh, talvez você seja de confiança.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#034": {
+   "src": "You know about the 'patriots' of Corkus?",
+   "dst": "Sabe dos 'patriotas' de Corkus?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#035": {
+   "src": "Well this kind of maneuver is right up their alley.. It certainly made you look bad!",
+   "dst": "Bem, esse tipo de manobra é bem a cara deles.. E com certeza te queimou!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#036": {
+   "src": "Now that you bring it up, I did hear a group of Corkians quietly discussing something about framing tourists.",
+   "dst": "Agora que falou, ouvi um grupo de Corkian cochichando sobre incriminar turistas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#037": {
+   "src": "I have no idea how they would make you do something against your will though...",
+   "dst": "Mas não sei como fariam você agir contra a sua vontade…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 4",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#038": {
+   "src": "Talk to the final victim of your rampage.",
+   "dst": "Fale com a última vítima da sua fúria.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#039": {
+   "src": "Came back to wreck the rest of my work have you? Why aren't you all insane looking?",
+   "dst": "Voltou pra destruir o resto do meu trabalho? Por que não está com cara de louco?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#040": {
+   "src": "So now your story is you were not in control? It's easy to believe. You were mad!",
+   "dst": "Agora diz que não estava no controle? É fácil de acreditar. Você estava doido!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#041": {
+   "src": "I don't know if you have some kind of condition.. but if you want to help, I need it to clean up the mess you made.",
+   "dst": "Não sei se tem algum problema.. mas se quer ajudar, preciso que limpe a bagunça que fez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#042": {
+   "src": "I need to replace all the cargo you destroyed.",
+   "dst": "Preciso repor toda a carga que você destruiu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#043": {
+   "src": "All you gotta do is get those crates here and put them back on the boats. The limit is {~} for each boat, not more not less!",
+   "dst": "Só precisa trazer aquelas caixas e pôr de volta nos barcos. O limite é {~} por barco, nem mais nem menos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#044": {
+   "src": "Some weights might not be needed, but be careful, I don't wanna go diving after you.",
+   "dst": "Talvez alguns pesos sobrem, mas cuidado, não quero mergulhar atrás de você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#045": {
+   "src": "You did it? ... -I mean, at last. Eh... I guess I was too fast with my judgement for once.",
+   "dst": "Conseguiu? … -Digo, finalmente. Hã… Acho que julguei rápido demais desta vez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#046": {
+   "src": "Hmm… As it happens I have seen some strange things around here.",
+   "dst": "Hmm… Por acaso vi umas coisas estranhas por aqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#047": {
+   "src": "During the night I saw something moving across the cliffs.. Looked like a personal balloon.",
+   "dst": "À noite vi algo se movendo pelos penhascos.. Parecia um balão individual.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#048": {
+   "src": "It wouldn't have been out of the ordinary except there are occasional blood trails leading from the balloon...",
+   "dst": "Não seria nada demais, só que às vezes há rastros de sangue saindo do balão…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#049": {
+   "src": "If you really want to approach these people… I guess all you would need to do is follow the trail of blood.",
+   "dst": "Se quer mesmo se aproximar dessa gente… acho que basta seguir o rastro de sangue.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#050": {
+   "src": "Can't say I recommend it but the trail starts near the aqueduct.",
+   "dst": "Não recomendo, mas o rastro começa perto do aqueduto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 5",
+   "speaker": "Corkus City Citizen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#051": {
+   "src": "Follow the trail of blood and board the airship.",
+   "dst": "Siga o rastro de sangue e embarque na aeronave.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#052": {
+   "src": "Explore the cliff base.",
+   "dst": "Explore a base do penhasco.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#053": {
+   "src": "Why are you here? I don't mean here and now, I mean why are you on our island?",
+   "dst": "Por que está aqui? Não aqui e agora, digo por que está na nossa ilha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#054": {
+   "src": "You have of course found yourself in front of me because you were a pawn in our attempts to save this nation.",
+   "dst": "Você está diante de mim, claro, porque foi um peão na nossa tentativa de salvar esta nação.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#055": {
+   "src": "I suppose I should apologize, but truth is you are the reason for this movement. Not you personally... but your people.",
+   "dst": "Eu deveria pedir desculpas, mas a verdade é que você é a razão deste movimento. Não você em pessoa… mas o seu povo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#056": {
+   "src": "You... Look at yourself. You fight in a war you did not cause. You come from a land you don't even remember.",
+   "dst": "Você… Olhe para si. Luta numa guerra que não causou. Vem de uma terra de que nem se lembra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#057": {
+   "src": "We ask ourselves why would we invite people from two lands of sin. Invite a nation of warring travellers and a nation of greedy merchants to our doors?",
+   "dst": "Por que, nos perguntamos, convidar gente de duas terras de pecado? Abrir as portas a uma nação de viajantes belicosos e outra de mercadores gananciosos?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#058": {
+   "src": "The Corkian people are above such mundane capitalism and brutality. We work as a nation to better all.",
+   "dst": "Os Corkian estão acima desse capitalismo vulgar e dessa brutalidade. Como nação, buscamos o bem comum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#059": {
+   "src": "You have been a pawn your entire existence on this world. The worst part is you don't even know it.",
+   "dst": "Você foi um peão a vida toda neste mundo. O pior é que nem sabe disso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#060": {
+   "src": "Do you, for example - Know the name of your ultimate enemy? The reason for the war on your land?",
+   "dst": "Você sabe, por exemplo, o nome do seu inimigo final? O motivo da guerra na sua terra?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#061": {
+   "src": "No? Didn't think so. I have no time for this. You served your purpose, even if you did try and redeem your barbaric behaviour... Kill them!",
+   "dst": "Não? Imaginei. Não tenho tempo para isto. Você cumpriu seu papel, mesmo tentando redimir sua conduta bárbara… Matem!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#062": {
+   "src": "Fight and evade the waves of mobs until the timer runs out.",
+   "dst": "Lute e escape das ondas de monstros até o tempo acabar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#063": {
+   "src": "Tougher than I expected. You don’t mind if I interfere a bit, do you?",
+   "dst": "Mais duro que o esperado. Se importa se eu interferir um pouco?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#064": {
+   "src": "Hmph.",
+   "dst": "Hmpf.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#065": {
+   "src": "You may have won this fight, but you are still the loser in this situation.",
+   "dst": "Pode ter vencido esta luta, mas ainda é o perdedor nesta situação.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#066": {
+   "src": "Your eyes are still closed to the greater picture of it all. Corkus is the only place safe from it. I will make sure of it!",
+   "dst": "Seus olhos seguem fechados para o quadro maior. Corkus é o único lugar a salvo disso. Eu vou garantir que seja!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#067": {
+   "src": "There are still greater things in motion as we speak. Plans that will secure this island's safety.",
+   "dst": "Coisas maiores estão em andamento enquanto falamos. Planos que vão garantir a segurança da ilha.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#068": {
+   "src": "Fruma.. Gavel.. Wynn… It’s all a joke. We all sit on the cusp of this reality, fighting only the prelude to the real war.",
+   "dst": "Fruma.. Gavel.. Wynn… É tudo piada. Estamos todos à beira desta realidade, lutando só o prelúdio da guerra de verdade.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#069": {
+   "src": "This is our farewell. I must depart before the short sighted government arrive. Good Luck with your struggle.",
+   "dst": "Esta é nossa despedida. Preciso partir antes que esse governo míope chegue. Boa sorte na sua luta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "Rensa",
+   "source": "wiki"
+  },
+  "Mixed Feelings#070": {
+   "src": "Speak to Javen.",
+   "dst": "Fale com Javen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mixed Feelings#071": {
+   "src": "Now look who we got over ‘ere! We were all wondering if you'd ever wake up.",
+   "dst": "Olha só quem apareceu! Estávamos todos pensando se você ia acordar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#072": {
+   "src": "Sorry we ever doubted ye. Weren't fair of us. What you drank was a rare brew designed to enrage and berserk someone.",
+   "dst": "Desculpa por duvidar de ti. Não foi justo. O que bebeu era uma bebida rara feita pra enfurecer e enlouquecer alguém.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#073": {
+   "src": "Basically, it weren't yer fault lad. We never knew some Corkians were so closed minded.",
+   "dst": "Resumindo, não foi culpa sua, rapaz. Não sabíamos que tinha Corkian tão cabeça fechada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#074": {
+   "src": "Anyways! Look at what we got, thanks to you I acquired this little place!",
+   "dst": "Enfim! Olha só o que temos, graças a você consegui este cantinho!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#075": {
+   "src": "By means of reparations have this on me. Yer always welcome round here.",
+   "dst": "Como reparação, esta é por minha conta. Você é sempre bem-vindo aqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "wiki"
+  },
+  "Mixed Feelings#076": {
+   "src": "Go for a drink at the Corkus Docks Inn, [-{~}, {~}, -{~}]",
+   "dst": "Vá tomar algo na estalagem das docas de Corkus, [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#077": {
+   "src": "Talk to Javen to find out more about what happened.",
+   "dst": "Fale com Javen para saber mais sobre o que houve.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#078": {
+   "src": "You should ask Javen about what happened.",
+   "dst": "Pergunte ao Javen sobre o que houve.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#079": {
+   "src": "Talk to citizens around the docks to find out more about what happened.",
+   "dst": "Fale com os cidadãos pelas docas para saber mais sobre o que houve.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#080": {
+   "src": "You ran outta here and wrecked all sorts! You better go find the people you affected and apologise!",
+   "dst": "Saiu correndo daqui e destruiu tudo! É melhor achar quem você prejudicou e pedir desculpas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Javen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#081": {
+   "src": "Hurry, please! Just head into the big trapdoor by the bushes, the controls are in there.",
+   "dst": "Rápido, por favor! Entre no alçapão grande perto dos arbustos, os controles estão lá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#082": {
+   "src": "> Thank you for choosingsing CorkTech! Your company for a safe and trustworthy service.",
+   "dst": "> Obrigado por escolherer a CorkTech! Sua empresa para um serviço seguro e confiável.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#083": {
+   "src": "Powering up elevator...",
+   "dst": "Ligando o elevador…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#084": {
+   "src": "You can push the button beside the crates to pick them up, and stand on the pressure plate to place them.",
+   "dst": "Aperte o botão ao lado das caixas para pegá-las, e pise na placa de pressão para colocá-las.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#085": {
+   "src": "It seems like all crates are balanced now.",
+   "dst": "As caixas parecem equilibradas agora.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#086": {
+   "src": "I learned about some rumours involving separatists. I should continue helping locals to find out more.",
+   "dst": "Soube de uns boatos envolvendo separatistas. Devo continuar ajudando os moradores para saber mais.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#087": {
+   "src": "Someone told you more about the patriots of Corkus. You should continue to find the missing clue.",
+   "dst": "Alguém te contou mais sobre os patriotas de Corkus. Continue atrás da pista que falta.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#088": {
+   "src": "You manage to reach the chest safely, getting ready to jump through a hole the fire burned.",
+   "dst": "Você chega ao baú em segurança e se prepara para pular por um buraco aberto pelo fogo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#089": {
+   "src": "Follow the trail of blood close to the castle, [-{~}, {~}, -{~}]",
+   "dst": "Siga o rastro de sangue perto do castelo, [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#090": {
+   "src": "You really don't see a reason to go in there at the moment.",
+   "dst": "Você não vê motivo para entrar lá agora.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#091": {
+   "src": "Use the balloon to enter the suspicious hideout.",
+   "dst": "Use o balão para entrar no esconderijo suspeito.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#092": {
+   "src": "Survive the fight against the drugged corkian",
+   "dst": "Sobreviva à luta contra o Corkian drogado",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#093": {
+   "src": "After witnessing your crash into the cliff, Corkian citizens informed the government.",
+   "dst": "Depois de ver você se espatifar no penhasco, cidadãos Corkian avisaram o governo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#094": {
+   "src": "Shortly after your victory security forces found the hideout and arrested the remaining separatists.",
+   "dst": "Pouco após sua vitória, as forças de segurança acharam o esconderijo e prenderam os separatistas restantes.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#095": {
+   "src": "Their leader was nowhere to be found.",
+   "dst": "O líder deles não foi encontrado.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#096": {
+   "src": "Always nice to see my favourite customer pay a visit!",
+   "dst": "É sempre bom ver meu cliente favorito de visita!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "captured.json"
+  }
+ }
+}

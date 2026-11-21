@@ -1,0 +1,1850 @@
+{
+ "_meta": {
+  "quest": "Cowfusion",
+  "count": 183,
+  "translated": 183,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Cowfusion#000": {
+   "src": "[!] Main Laboratory Door unlocked!",
+   "dst": "[!] Porta do laboratório aberta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#001": {
+   "src": "Looks like Ranol's cows are being held in this pen... maybe there's a way to unlock the door around?",
+   "dst": "As vacas de Ranol parecem presas neste curral... será que há um jeito de abrir a porta por aqui?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#002": {
+   "src": "Talk to Ranol at [{~}, {~}, -{~}]",
+   "dst": "Fale com Ranol em [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#003": {
+   "src": "A Human, eh? All the way out 'ere at the end of the canyon? Yer a tough one.",
+   "dst": "Um Humano, é? Lá no fim do cânion? Ocê é dos duros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#004": {
+   "src": "Perhaps I can give yer some work, if yer are lookin' for it? Someone's been coming and nabbing my cows!",
+   "dst": "Quem sabe eu te arrumo um serviço, se ocê tá procurando? Alguém tá vindo e afanando minhas vacas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#005": {
+   "src": "'an I know exactly who it is - that blasted cow scientist that lives in the lab just north of 'ere.",
+   "dst": "E eu sei bem quem é - aquele maldito cientista de vacas que mora no laboratório ao norte daqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#006": {
+   "src": "Anyway, yer up for the job? Can't let 'im just keep stealing them forever!",
+   "dst": "Enfim, topa o serviço? Num posso deixar ele roubar elas pra sempre!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#007": {
+   "src": "His cavern laboratory is just north from 'ere. Not too hard to find. Once yer there, get him to return my cows!",
+   "dst": "O laboratório dele na caverna fica logo ao norte. Num é difícil achar. Lá, faz ele devolver minhas vacas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#008": {
+   "src": "There's one problem though. The door to the place is always shut, so you'll 'ave to find another way in.",
+   "dst": "Mas tem um problema. A porta de lá vive fechada, então ocê vai ter que achar outro jeito de entrar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 1",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#009": {
+   "src": "Head to the Laboratory at [{~}, {~}, -{~}]",
+   "dst": "Vá ao Laboratório em [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#010": {
+   "src": "Maybe there's a way to open the door somewhere around..?",
+   "dst": "Será que há um jeito de abrir a porta por aqui..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#011": {
+   "src": "Find a way into the Laboratory",
+   "dst": "Encontre um jeito de entrar no Laboratório",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#012": {
+   "src": "Search the Laboratory for the missing cows",
+   "dst": "Procure as vacas desaparecidas no Laboratório",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#013": {
+   "src": "Find a way to free the Cows.",
+   "dst": "Encontre um jeito de libertar as vacas.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#014": {
+   "src": "???",
+   "dst": "???",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#015": {
+   "src": "Find out what happened",
+   "dst": "Descubra o que aconteceu",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#016": {
+   "src": "[!] You can no longer jump or cast spells.",
+   "dst": "[!] Não pode mais pular nem usar feitiços.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#017": {
+   "src": "Something feels wrong... you should head back to Ranol...",
+   "dst": "Algo parece errado... você deveria voltar a Ranol...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#018": {
+   "src": "Return to Ranol",
+   "dst": "Volte a Ranol",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#019": {
+   "src": "What's this 'ere? Ibele, that you? My girl, I knew you'd come back to me!",
+   "dst": "Que é isso? Ibele, é ocê? Minha menina, sabia que ia voltar pra mim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 8",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#020": {
+   "src": "And to think I was going to hire some city-dwellin' 'uman to get you for me? Ha!",
+   "dst": "E pensar que eu ia contratar um 'umano da cidade pra te buscar? Rá!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 8",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#021": {
+   "src": "Right then, back into the pen you go. Hup!",
+   "dst": "Muito bem, de volta pro curral. Upa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 8",
+   "speaker": "Ranol",
+   "source": "wiki"
+  },
+  "Cowfusion#022": {
+   "src": "Escape Ranol's farm",
+   "dst": "Fuja da fazenda de Ranol",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#023": {
+   "src": "Moo.",
+   "dst": "Muu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#024": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#025": {
+   "src": "Password?",
+   "dst": "Senha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#026": {
+   "src": "Moo? (What password?)",
+   "dst": "Muu? (Que senha?)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#027": {
+   "src": "You're right, there is no password. Just seeing if you can understand me.",
+   "dst": "Tem razão, não tem senha. Só queria ver se você me entende.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#028": {
+   "src": "You're one of us then, the oppressed? Want to break free from these farmers? Well aren't you in luck.",
+   "dst": "Então você é um dos nossos, dos oprimidos? Quer se libertar desses fazendeiros? Pois está com sorte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#029": {
+   "src": "I can help you with that. WE can help you with that.",
+   "dst": "Eu posso te ajudar com isso. NÓS podemos te ajudar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#030": {
+   "src": "Our people have a secret hideout not far from here. It's located right under that barn just behind me.",
+   "dst": "Nosso povo tem um esconderijo secreto não muito longe. Fica bem embaixo daquele celeiro atrás de mim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#031": {
+   "src": "It may seem close, but unless you've been practicing your athletics, you won't be able to get over these fences.",
+   "dst": "Parece perto, mas, a não ser que tenha treinado atletismo, você não vai conseguir pular essas cercas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#032": {
+   "src": "See that haybale in the middle of our pen? I bet you could push and pull it into such a position that'd allow you to climb over the fence with your cow physique.",
+   "dst": "Vê aquele fardo de feno no meio do curral? Aposto que dá para empurrar e puxar até uma posição que te deixe pular a cerca com esse físico de vaca.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#033": {
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
+   "dst": "O segundo curral talvez tenha um problema parecido, mas com certeza você dá conta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#034": {
+   "src": "Good luck!",
+   "dst": "Boa sorte!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#035": {
+   "src": "Moo moo moooo moo Moo moo.(T",
+   "dst": "Muu muu muuuu muu Muu muu.(O",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#036": {
+   "src": "What? What does that even mean? There isn't actually a password! Or did no one tell me that there was? Ah, nevermind, at least you can understand me.",
+   "dst": "O quê? O que isso quer dizer? Não existe senha de verdade! Ou ninguém me contou que existia? Ah, deixa pra lá, pelo menos você me entende.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 9",
+   "speaker": "Suspicious Cow",
+   "source": "wiki"
+  },
+  "Cowfusion#037": {
+   "src": "Find and enter the Secret Cow Hideout",
+   "dst": "Encontre e entre no Esconderijo Secreto das Vacas",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#038": {
+   "src": "You can left-click to pull the hay bale and right-click to push it.",
+   "dst": "Clique esquerdo puxa o fardo de feno; clique direito empurra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#039": {
+   "src": "Talk to the Receptionist",
+   "dst": "Fale com quem está na recepção",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#040": {
+   "src": "Oh, a new recruit? We weren't expecting anyone at this time. How'd you find your way in?",
+   "dst": "Ah, um recruta novo? Não esperávamos ninguém a esta hora. Como achou a entrada?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 11",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Cowfusion#041": {
+   "src": "Wait, you're different. Something's off about you. Like you've never been in a cow's body before.",
+   "dst": "Espera, você é diferente. Algo está estranho. Como se nunca tivesse estado num corpo de vaca.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 11",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Cowfusion#042": {
+   "src": "Oh. Oh, this is not good. Uhm, you should talk to the boss. He'll probably know what to do with you.",
+   "dst": "Ah. Ah, isso não é bom. Hã, você devia falar com o chefe. Ele deve saber o que fazer com você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 11",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Cowfusion#043": {
+   "src": "You'll find him in the big office at the very end of this facility. Just stick to the path and don't be nosy, okay?",
+   "dst": "Ele fica na sala grande bem no fim das instalações. Siga o caminho e não fique bisbilhotando, tá?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 11",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Cowfusion#044": {
+   "src": "Find the one who's in charge of the hideout",
+   "dst": "Encontre quem comanda o esconderijo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#045": {
+   "src": "Talk to Drale",
+   "dst": "Fale com Drale",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#046": {
+   "src": "Whoop, alright! Don't want you going anywhere, buddy! Uh... What are you doing here, exactly...?",
+   "dst": "Opa, beleza! Não quero você saindo daí, amigão! Hã... O que faz aqui, exatamente...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#047": {
+   "src": "You- what? Oh, gosh, how is that even possible? I don't think I had anything that could...",
+   "dst": "Você- o quê? Nossa, como isso é possível? Acho que eu não tinha nada que pudesse...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#048": {
+   "src": "Oh! You must've been snooping through my laboratory. That's... okay, we can talk about that later. Did you step into my machine?",
+   "dst": "Ah! Você deve ter fuçado no meu laboratório. Isso... tudo bem, falamos disso depois. Você entrou na minha máquina?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#049": {
+   "src": "It's not even meant to do that! Its purpose is to turn the exiles back into Wocs. So how does a Human become a cow...?",
+   "dst": "Ela nem devia fazer isso! Serve para transformar os exilados de volta em Wocs. Então como um Humano vira vaca...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#050": {
+   "src": "Right, right, sorry. Here, uh- I'll try and get this cage down. Darn controls... Why did I design these so poorly?",
+   "dst": "Certo, certo, desculpe. Olha, hã- vou tentar baixar esta jaula. Malditos controles... Por que projetei tão mal?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#051": {
+   "src": "...So while I try to figure out which lever to push, tell me about yourself! Anything interesting going on in your life?",
+   "dst": "...Então, enquanto descubro qual alavanca puxar, me fale de você! Alguma novidade interessante na sua vida?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#052": {
+   "src": "Moo moo moo mooooo! (I was t",
+   "dst": "Muu muu muu muuuuu! (Fui e",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#053": {
+   "src": "You... You are? You are! Oh, wow, it's great to see you again! It's been so long since our escapades back in Wynn!",
+   "dst": "Você... É você? É você! Nossa, que bom te ver de novo! Faz tanto tempo desde nossas aventuras em Wynn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#054": {
+   "src": "This is great, actually! I- I can show you around the place! Introduce you to some of the folks we freed together! Oh, what fantastic timing this has been.",
+   "dst": "Isso é ótimo, na verdade! Eu- eu posso te mostrar o lugar! Te apresentar a alguns dos que libertamos juntos! Ah, que momento perfeito.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#055": {
+   "src": "... So apparently you can climb ropes but not jump. Being a cow is weird.",
+   "dst": "... Pelo visto você sobe em corda, mas não pula. Ser vaca é estranho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#056": {
+   "src": "I just need to figure out which switch to pull... I think it's this one! Probably. I really need to label these things. Alright, here goes!",
+   "dst": "Só preciso descobrir qual alavanca puxar... Acho que é esta! Provavelmente. Preciso mesmo etiquetar essas coisas. Certo, lá vai!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#057": {
+   "src": "Wait, no, that's the wrong-...!",
+   "dst": "Espera, não, é a errad-...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#058": {
+   "src": "I, uh... Hah. Very funny. Tell me you're a human, then pretend to be a cow.",
+   "dst": "Eu, hã... Rá. Muito engraçado. Diz que é humano e depois finge ser vaca.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#059": {
+   "src": "That's... fine. You know, I'm under quite a lot of stress right now. Working hard, day in and day out. I don't really need your attitude right now!",
+   "dst": "Isso... tudo bem. Sabe, estou bem estressado agora. Trabalhando duro, dia após dia. Não preciso dessa sua atitude agora!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#060": {
+   "src": "You know what? I don't need this attitude. I'm- I'm going to send you to The Pit. Where- where all my other mistakes lie.",
+   "dst": "Quer saber? Não preciso dessa atitude. Vou- vou te mandar para o Poço. Onde- onde estão todos os meus outros erros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#061": {
+   "src": "...You have a weapon. You can probably manage! You don't need anything from me! Here, see how you like it down there!",
+   "dst": "...Você tem uma arma. Deve dar conta! Não precisa de nada meu! Toma, vamos ver se você gosta lá embaixo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#062": {
+   "src": "Okay. So you are just a regular cow. Not a Woc. Uh... Who let you in, little pal? I'm going to need to have to have a word about closing the doors...",
+   "dst": "Certo. Então você é só uma vaca comum. Não um Woc. Hã... Quem te deixou entrar, amiguinho? Vou ter que conversar com alguém sobre fechar as portas...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#063": {
+   "src": "Well, this is... awkward. So, then... cow. What's it like being... a cow?",
+   "dst": "Bom, isso é... constrangedor. Então... vaca. Como é ser... uma vaca?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#064": {
+   "src": "Right. Okay. Figure I'd best let you go free.",
+   "dst": "Certo. Tá. Acho melhor te deixar livre.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#065": {
+   "src": "...Unless. Unless. Nobody's... nobody's looking. I could just send you to The Pit... Nobody would know.",
+   "dst": "...A não ser. A não ser. Ninguém... ninguém está vendo. Eu podia te mandar pro Poço... Ninguém saberia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#066": {
+   "src": "It's... easier this way. It's fine. Maybe you'll even- maybe you'll even make your way out. Good luck, little buddy.",
+   "dst": "É... mais fácil assim. Tudo bem. Talvez você até- talvez você até consiga sair. Boa sorte, amiguinho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 13",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#067": {
+   "src": "Escape The Pit",
+   "dst": "Escape do Poço",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#068": {
+   "src": "... where did you come from?!",
+   "dst": "... de onde você saiu?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#069": {
+   "src": "You fell into the incinerator? And defeated a mutant cow monster?",
+   "dst": "Você caiu no incinerador? E derrotou uma vaca mutante monstruosa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#070": {
+   "src": "...Oh! You're the one Drale told us to look out for. Accidentally dropped into the Pit, huh?",
+   "dst": "...Ah! Você é quem o Drale mandou a gente procurar. Caiu no Poço sem querer, né?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#071": {
+   "src": "The boss said to apologize to ya for the inconvenience. We've all been workin' late hours recently... Some of us more than others.",
+   "dst": "O chefe mandou pedir desculpas pelo incômodo. Todo mundo anda fazendo hora extra... Uns mais que outros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#072": {
+   "src": "Anyhow, follow me. I'll take you back to him, and you can talk this out! You'll be back as a human in no time.",
+   "dst": "Enfim, me segue. Eu te levo até ele e vocês conversam! Logo você volta a ser humano.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#073": {
+   "src": "So... yeah. That's Drale for you. Absentminded as ever. He said something about labeling his levers from now on, so I reckon that's a positive.",
+   "dst": "Então... é. Esse é o Drale. Distraído como sempre. Disse algo sobre etiquetar as alavancas daqui pra frente, então já é alguma coisa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#074": {
+   "src": "...You're a friend of the boss, right? Would you be able to put in a good word for us? Gerald and I have been down here for a while, and we'd like to get back to our normal positions.",
+   "dst": "...Você é amigo do chefe, né? Pode falar bem da gente pra ele? Eu e o Gerald estamos aqui embaixo faz tempo, e queremos voltar aos nossos postos normais.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#075": {
+   "src": "Huh? What ship? Oh, right. You're not a Woc. So, you see, our race isn't actually from- you know, maybe that's a story for another time.",
+   "dst": "Hã? Que nave? Ah, é. Você não é um Woc. Então, a nossa raça não é de verdade de- sabe, talvez isso fique pra outra hora.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "Worker",
+   "source": "captured",
+   "similar": {
+    "text": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
+    "file": "quest/cowfusion.json",
+    "ratio": 0.89,
+    "reason": "candidate"
+   }
+  },
+  "Cowfusion#076": {
+   "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
+   "dst": "O Drale é legal num dia bom, mas os dias bons andam acabando! Ele vive virando a noite nesse projeto... totalmente desnecessário!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#077": {
+   "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
+   "dst": "Ele insiste em continuar procurando a nossa nave original em vez de construir uma nova com todo o material que temos! É ridículo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#078": {
+   "src": "Maybe you'll be able to get through to him, being his friend and all. We've all been stressed, and it's really just...",
+   "dst": "Talvez você consiga convencer ele, sendo amigo dele e tal. Está todo mundo estressado, e é sério...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#079": {
+   "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
+   "dst": "Que nave? Ah, claro, você não é um Woc. Olha, a nossa raça não é de- sabe, talvez isso fique pra outra hora.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#080": {
+   "src": "For now let's get you back up to the main lab. Drale will be glad to see you in one piece! He sounded worried for your safety.",
+   "dst": "Por ora, vamos te levar de volta ao laboratório. O Drale vai gostar de te ver inteiro! Ele parecia preocupado com você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#081": {
+   "src": "Well, we're here!",
+   "dst": "Bom, chegamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#082": {
+   "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
+   "dst": "Sobe por aquele cano e, com sorte, ele te cospe bem na frente do Drale.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#083": {
+   "src": "Remember what I told you! Try to put in a good word for us, yeah?",
+   "dst": "Lembra do que eu disse! Tenta falar bem da gente, tá?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#084": {
+   "src": "If not, well... At least I tried. Let the record show I tried.",
+   "dst": "Se não, bom... Pelo menos eu tentei. Que conste que eu tentei.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#085": {
+   "src": "...Alright! Go on, off you go! It was lovely to meet you.",
+   "dst": "...Certo! Vai lá, pode ir! Foi um prazer te conhecer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#086": {
+   "src": "Yeah that checks out. So what happened to get you thrown down here?",
+   "dst": "É, faz sentido. E o que aconteceu pra te jogarem aqui embaixo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#087": {
+   "src": "Oh, angered him by pretending to be a cow after already speaking? Yeah, I feel ya. When the boss is in a mood, anything you say could get you thrown down here.",
+   "dst": "Ah, irritou ele fingindo ser vaca depois de já ter falado? É, te entendo. Quando o chefe está de mau humor, qualquer coisa que você diz te joga aqui embaixo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#088": {
+   "src": "Here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
+   "dst": "Olha, por que você não me segue? Eu te levo até ele, vocês se acertam, e com certeza logo você volta a ser humano!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#089": {
+   "src": "So... yeah. Drale isn't the best at... conflict resolution. Catch him on a bad day, and he might just throw you in the Pit.",
+   "dst": "Então... é. O Drale não é muito bom em... resolver conflitos. Pega ele num dia ruim e ele te joga no Poço.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#090": {
+   "src": "I got stationed down here for a week because I interrupted him during his daily yoga session.",
+   "dst": "Eu fui mandado pra cá por uma semana porque interrompi a sessão diária de ioga dele.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#091": {
+   "src": "Gerald, over there? He used to be in accounting. Until he forgot to carry the two one day, and... Well, here he is now.",
+   "dst": "O Gerald, ali? Ele era da contabilidade. Até que um dia esqueceu o vai-um, e... Bom, aqui está ele.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#092": {
+   "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood!",
+   "dst": "Por ora, vamos te levar de volta ao laboratório e tomara que o Drale esteja de melhor humor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#093": {
+   "src": "If you try explaining the situation again I'm sure he'll be understanding.",
+   "dst": "Se você explicar a situação de novo, tenho certeza que ele vai entender.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#094": {
+   "src": "He usually is after he's had some time to cool off.",
+   "dst": "Ele costuma entender depois que esfria a cabeça.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#095": {
+   "src": "Go on, off you go! It was lovely to meet you.",
+   "dst": "Vai lá, pode ir! Foi um prazer te conhecer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#096": {
+   "src": "Pretended to be a cow when you're actually a human? Must have caught him on a rough day to get thrown down for that. Usually he'd just let a cow go.",
+   "dst": "Fingiu ser vaca sendo humano? Deve ter pegado ele num dia ruim pra ser jogado aqui por isso. Normalmente ele só deixaria uma vaca ir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#097": {
+   "src": "Well here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
+   "dst": "Bom, olha, por que você não me segue? Eu te levo até ele, vocês se acertam, e com certeza logo você volta a ser humano!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#098": {
+   "src": "So... yeah. That's Drale. Catch him on a bad day, and he might just throw you into the Pit.",
+   "dst": "Então... é. Esse é o Drale. Pega ele num dia ruim e ele te joga no Poço.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#099": {
+   "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood! Maybe mention the human thing this time, alright?",
+   "dst": "Por ora, vamos te levar de volta ao laboratório e tomara que o Drale esteja de melhor humor! Dessa vez fala que é humano, tá?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 14",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Cowfusion#100": {
+   "src": "Oh, this is- Oh! You're alive! I, ah- heh. Sorry about... all that. I really, really need to label these levers properly...",
+   "dst": "Ah, isso é- Ah! Você está vivo! Eu, ah- hehe. Desculpa por... tudo aquilo. Preciso mesmo etiquetar essas alavancas...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#101": {
+   "src": "Moo mooooo moo moo! (The wor",
+   "dst": "Muu muuuuu muu muu! (Os trabalhadores do Poço querem um posto melhor!)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#102": {
+   "src": "Right! Right. You've seen... all that down there, then. I just hope you won't think less of me for it.",
+   "dst": "Certo! Certo. Então você viu... tudo aquilo lá embaixo. Só espero que não pense mal de mim por isso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#103": {
+   "src": "I can... I can tell you more about it later. I hope it wasn't too bad? Down there? You seem to have gotten out in one piece, so...",
+   "dst": "Eu posso... posso te contar mais depois. Espero que não tenha sido tão ruim? Lá embaixo? Parece que você saiu inteiro, então...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#104": {
+   "src": "...Oh. Right. Gosh, how long has it been since I-...",
+   "dst": "...Ah. É. Nossa, quanto tempo faz desde que eu-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#105": {
+   "src": "Okay. Alright, yes, I'll give them better positions. And I'll- I don't know. Apologize. Give them a bonus.",
+   "dst": "Tá. Tudo bem, sim, vou dar postos melhores pra eles. E vou- sei lá. Pedir desculpas. Dar um bônus.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#106": {
+   "src": "It's been... hard, recently. We've been working to get back home, and I guess I just... Put too much of myself into that. It's fine! Don't- Don't worry about me.",
+   "dst": "Tem sido... difícil, ultimamente. Estamos tentando voltar pra casa, e acho que eu só... me dediquei demais a isso. Tudo bem! Não- Não se preocupe comigo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#107": {
+   "src": "Moo... Moo moo moooo? (So...",
+   "dst": "Muu... Muu muu muuuu? (Então... como eu volto ao normal?)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#108": {
+   "src": "Oh. Right, your body! I can fix that! We just need to get back to the machine, and... Poof. You'll be back to normal!",
+   "dst": "Ah. Claro, seu corpo! Isso eu resolvo! Só precisamos voltar à máquina e... Puf. Você volta ao normal!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#109": {
+   "src": "...I hope. Hey, being a cow isn't so bad! If- If it doesn't work, we can make you a home here...?",
+   "dst": "...Espero. Ei, ser vaca não é tão ruim! Se- Se não funcionar, te arrumamos um lar aqui...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#110": {
+   "src": "Uh... It'll work. It's always- always worked in the past! Heh...",
+   "dst": "Hã... Vai funcionar. Sempre- sempre funcionou antes! Hehe...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#111": {
+   "src": "Anyway! Let's get going!",
+   "dst": "Enfim! Vamos indo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#112": {
+   "src": "Moo moo moooo... (How do I g",
+   "dst": "Muu muu muuuu... (Como eu volto ao normal?)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#113": {
+   "src": "Uh... Hm. Maybe- Maybe being a cow is affecting your brain somehow... That can't be good.",
+   "dst": "Hã... Hm. Talvez- Talvez ser vaca esteja afetando seu cérebro... Isso não pode ser bom.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#114": {
+   "src": "We should get you back to human as quickly as possible. Come on, follow me.",
+   "dst": "Melhor te fazer voltar a ser humano o quanto antes. Vamos, me segue.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#115": {
+   "src": "...This doesn't even mean anything! What am I supposed to do with-",
+   "dst": "...Isso nem quer dizer nada! O que eu devo fazer com-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#116": {
+   "src": "Oh! It's- It's you! Didn't I just...",
+   "dst": "Ah! É- É você! Eu não acabei de...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#117": {
+   "src": "...Um. This is... really awkward, haha. I'm... sorry?",
+   "dst": "...Hum. Que... constrangedor, haha. Desculpa...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#118": {
+   "src": "You're... the one who pretended to be a cow, right? I, uh... in my defense, I was very stressed. So I dropped you into the Pit.",
+   "dst": "Você é... quem fingiu ser vaca, né? Eu, hã... em minha defesa, eu estava muito estressado. Aí te joguei no Poço.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#119": {
+   "src": "...Anyway! What's- What's going on with your life? Anything interesting?",
+   "dst": "...Enfim! Como- Como vai a vida? Alguma novidade?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#120": {
+   "src": "Oh! Right. Getting back to normal.",
+   "dst": "Ah! Certo. Voltar ao normal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#121": {
+   "src": "You said you stepped into my machine, right? We could try putting you in there a second time. What's the worst that could happen?",
+   "dst": "Você disse que entrou na minha máquina, né? Podemos tentar te colocar lá uma segunda vez. O que de pior pode acontecer?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#122": {
+   "src": "...Uh. You stay as a cow. That's what. That's... fine. Let's just go and try it out.",
+   "dst": "...Hã. Você continuar vaca. É isso. Isso... tudo bem. Vamos lá testar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#123": {
+   "src": "I am talking to a cow. Again. Why is this where my life has taken me.",
+   "dst": "Estou falando com uma vaca. De novo. Como a minha vida chegou a isso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#124": {
+   "src": "So! What's... going on, little buddy? Any- any souvenirs? From the Pit...?",
+   "dst": "Então! Como... vai, amiguinho? Alguma- alguma lembrança? Do Poço...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#125": {
+   "src": "Oh, you- Oh. Right! Okay. I don't- I don't quite understand why you would pretend to be a cow. But alright!",
+   "dst": "Ah, você- Ah. Certo! Tá. Eu não- não entendo bem por que você fingiria ser vaca. Mas tudo bem!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#126": {
+   "src": "So, uh... Human turned into a cow. Okay. How did you manage to get yourself stuck as a cow, anyway? I didn't think we had anything that could do that...",
+   "dst": "Então, hã... Humano virou vaca. Tá. Como você conseguiu ficar preso como vaca? Achei que não tínhamos nada capaz disso...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#127": {
+   "src": "My machine. It's- It's not even supposed to do that! I designed it to turn exiles back into Wocs, how would it have...",
+   "dst": "Minha máquina. Ela- Ela nem devia fazer isso! Eu fiz ela pra transformar exilados de volta em Wocs, como ela teria...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#128": {
+   "src": "Great. Of course it'd have that issue, and just when I thought I...",
+   "dst": "Ótimo. Claro que teria esse defeito, e bem quando eu achei que...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#129": {
+   "src": "Right. Right. Alright. We can work with this! Let's just take you back to that machine, put you in it, and see if it turns you back to normal!",
+   "dst": "Certo. Certo. Tudo bem. Dá pra resolver! Vamos te levar de volta à máquina, te colocar nela e ver se você volta ao normal!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#130": {
+   "src": "It'll work. Probably. I mean, I haven't ever tried it, so I can't really say for sure... Oh, yep, you're still here. Let's get moving.",
+   "dst": "Vai funcionar. Provavelmente. Quer dizer, nunca testei, então não posso garantir... Ah, é, você ainda está aí. Vamos andando.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#131": {
+   "src": "Yep. Just a cow...",
+   "dst": "É. Só uma vaca...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#132": {
+   "src": "Well, alright. Let's just- get you in my machine, I guess. It worked for the exiles, so maybe it will work for you...?",
+   "dst": "Bom, tudo bem. Vamos só- te pôr na minha máquina, acho. Funcionou com os exilados, então talvez funcione com você...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#133": {
+   "src": "...Don't look at me like that. Come on, let's get going.",
+   "dst": "...Não me olha assim. Vamos, vamos indo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#134": {
+   "src": "So... How have you been? It's been a while since our adventure at {p}, hasn't it?",
+   "dst": "Então... Como você tem passado? Faz tempo desde a nossa aventura em {p}, né?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#135": {
+   "src": "Well, you've been turned into a cow... Obviously... But besides that!",
+   "dst": "Bom, você virou vaca... Obviamente... Mas fora isso!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#136": {
+   "src": "Me? Well... heh. I've been doing pretty well, all things considered. We've been gathering exiles from all over the province! Set up a city to hold us all while we work towards...",
+   "dst": "Eu? Bom... hehe. Tenho ido bem, considerando tudo. Estamos reunindo exilados da província toda! Montamos uma cidade pra todos nós enquanto trabalhamos para...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#137": {
+   "src": "It's a long story. I can't tell you everything- not yet. But... All of us here, we don't belong here. We just want to go home.",
+   "dst": "É uma longa história. Não posso contar tudo- ainda não. Mas... Ninguém aqui pertence a este lugar. Só queremos ir pra casa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#138": {
+   "src": "And- and maybe if we can find our ship again, we'll be able to prove that we're not irredeemable. That whatever we went through- that it won't define us.",
+   "dst": "E- e talvez, se acharmos a nossa nave, a gente prove que não somos irrecuperáveis. Que o que passamos- que isso não vai nos definir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#139": {
+   "src": "...Heh. Don't- don't worry about it too much. For now, this place is enough of a safe haven for us. It'll have to be enough until we succeed.",
+   "dst": "...Hehe. Não- não esquenta muito com isso. Por enquanto, este lugar já é um refúgio pra gente. Vai ter que bastar até conseguirmos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#140": {
+   "src": "We're so close. I can feel it. Just... Just a little while left to go.",
+   "dst": "Estamos tão perto. Eu sinto isso. Só... Só falta um pouquinho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#141": {
+   "src": "Anyway, uh... Here's the elevator! Just step on in, and we can head on up to the laboratory.",
+   "dst": "Enfim, hã... Aqui está o elevador! É só entrar e subimos para o laboratório.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#142": {
+   "src": "Moooo moo moo moo? (What's t",
+   "dst": "Muuuu muu muu muu? (Pra que serve essa porta grande do nosso lado?)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#143": {
+   "src": "The- oh. Uh... It's nothing. Nothing to worry about.",
+   "dst": "A- ah. Hã... Não é nada. Nada com que se preocupar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#144": {
+   "src": "It just leads to... maintenance. Yep! Just- just maintenance. Nothing else.",
+   "dst": "Ela só leva à... manutenção. É! Só- só manutenção. Mais nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#145": {
+   "src": "Into the elevator now, come on! You need a key to get in anyway, and I definitely don't have one laying around!",
+   "dst": "Pro elevador, vamos! Além disso, precisa de uma chave pra entrar, e eu com certeza não tenho nenhuma por aí!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#146": {
+   "src": "...You're worrying me, friend. Come on, let's get going. Into the elevator, let's get you back to normal.",
+   "dst": "...Você está me preocupando, amigo. Vamos, vamos indo. Pro elevador, vamos te fazer voltar ao normal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#147": {
+   "src": "So... Have you done anything interesting recently? Besides- getting turned into a cow. Obviously.",
+   "dst": "Então... Fez algo interessante ultimamente? Além de- virar vaca. Obviamente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#148": {
+   "src": "You're, uh... Probably wondering what this place is. Just a big city under some random guy's farm, right?",
+   "dst": "Deve estar, hã... se perguntando que lugar é este. Só uma cidade sob a fazenda de um cara qualquer, né?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#149": {
+   "src": "It's... heh. We've been trying to gather as many of our people as we can. We exiles have to stick together, after all.",
+   "dst": "É... hehe. Estamos tentando reunir o máximo possível do nosso povo. Nós, exilados, temos que ficar juntos, afinal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#150": {
+   "src": "It's a long story. I'm not sure how much of it I really want to tell you, heh. Especially considering... Yeah.",
+   "dst": "É uma longa história. Não sei quanto dela quero te contar, hehe. Ainda mais considerando... É.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#151": {
+   "src": "But. This place is a safe haven for us exiles. A place for us all to live until we achieve our goals.",
+   "dst": "Mas. Este lugar é um refúgio pra nós, exilados. Um lugar pra vivermos até alcançar nossos objetivos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#152": {
+   "src": "And- hey! You've seen our secrets now! May as well let it be a safe haven for you as well, right? Heh.",
+   "dst": "E- ei! Você já viu nossos segredos! Então que seja um refúgio pra você também, né? Hehe.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#153": {
+   "src": "Oh- the elevator. Here we are. Uh... Just head on in, little buddy? It'll take us up.",
+   "dst": "Ah- o elevador. Chegamos. Hã... Pode entrar, amiguinho? Ele vai nos levar pra cima.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#154": {
+   "src": "...You're worrying me. Come on, let's get going. Into the elevator, let's get you back to normal.",
+   "dst": "...Você está me preocupando. Vamos, vamos indo. Pro elevador, vamos te fazer voltar ao normal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#155": {
+   "src": "So... Hey there, little... cow?",
+   "dst": "Então... Oi, pequena... vaca?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#156": {
+   "src": "Uh. Do you- do you understand what I'm saying?",
+   "dst": "Hã. Você- você entende o que eu digo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#157": {
+   "src": "...This is stupid. I'm talking to a cow. Of course you can't...",
+   "dst": "...Que bobagem. Falo com uma vaca. Claro que você não...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#158": {
+   "src": "Well I guess I could- talk at you. For a bit. If that's, heh, fine with you!",
+   "dst": "Bom, acho que posso- falar com você. Um pouco. Se, hehe, tudo bem pra você!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#159": {
+   "src": "It's been tough, recently. Working towards a goal I know is important, but still feels... out of reach.",
+   "dst": "Anda difícil. Lutar por uma meta que sei que é importante, mas que ainda parece... fora de alcance.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#160": {
+   "src": "And it doesn't seem like anybody else can see that! That this is important! They look at me like I'm going crazy, and-",
+   "dst": "E parece que ninguém mais vê isso! Que isso é importante! Me olham como se eu estivesse ficando louco, e-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#161": {
+   "src": "I'm not. I know I'm not. We need to find the ship. If we don't, who knows what...",
+   "dst": "Não estou. Sei que não. Temos que achar a nave. Se não, quem sabe o que...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#162": {
+   "src": "Anyway! Here's the elevator! Just step on in, and we can head on up to the laboratory.",
+   "dst": "Enfim! Aqui está o elevador! É só entrar e subimos para o laboratório.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#163": {
+   "src": "Hrrgh- You're- you're not a cow?! Why would you... I just said all that, and you could...",
+   "dst": "Hrrgh- Você- você não é uma vaca?! Por que você... Eu falei tudo aquilo, e você podia...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#164": {
+   "src": "D-Don't worry about the door. It's... It's nothing. Maintenance. That- that's what it is.",
+   "dst": "N-Não se preocupe com a porta. É... Não é nada. Manutenção. É- é isso que é.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#165": {
+   "src": "Er... come on, into the elevator! You want to get back to normal, right? Besides, you'd need a key to get in there, and I don't know where you'd find one of those, haha!",
+   "dst": "Hã... vamos, pro elevador! Você quer voltar ao normal, né? Além disso, precisaria de uma chave pra entrar ali, e não sei onde você acharia uma, haha!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#166": {
+   "src": "...Moo. Yep. I agree. Come on, let's get going. Into the elevator.",
+   "dst": "...Muu. É. Concordo. Vamos, vamos indo. Pro elevador.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#167": {
+   "src": "So... here we are. The lab!",
+   "dst": "Pronto... o laboratório!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#168": {
+   "src": "Just... follow me, for now. The machine is this way.",
+   "dst": "Só... me segue, por ora. A máquina é por aqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#169": {
+   "src": "There it is! If you step into the machine, real quick, it should... it should work!",
+   "dst": "Ali está! Se você entrar na máquina, rapidinho, ela deve... deve funcionar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 15",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#170": {
+   "src": "Enter the Transmutation Machine",
+   "dst": "Entre na Máquina de Transmutação",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cowfusion",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cowfusion#171": {
+   "src": "Look at you! As good as new!",
+   "dst": "Olha só! Novinho em folha!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 16",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#172": {
+   "src": "Heh... Well, there you are! Good as new! I hope...",
+   "dst": "Hehe... Bom, aí está! Novinho! Espero...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#173": {
+   "src": "And- to, uh, compensate you for... you know... Here! One liquid emerald. I feel terrible for how our reunion ended up going... I hope you won't hold it against me?",
+   "dst": "E- pra, hã, te compensar por... sabe... Toma! Uma esmeralda líquida. Me sinto péssimo pelo nosso reencontro... Espero que não guarde mágoa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#174": {
+   "src": "Uh... I really should get back to work. But- hey! Feel free to visit whenever you want! You'll be able to use the entrance at Ranol's farm.",
+   "dst": "Hã... Eu preciso voltar ao trabalho. Mas- ei! Venha me visitar quando quiser! Você pode usar a entrada na fazenda do Ranol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#175": {
+   "src": "Maybe I can tell you more about what I've been up to! That'd be nice.",
+   "dst": "Talvez eu te conte mais do que ando fazendo! Seria legal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#176": {
+   "src": "There you are! Back to norm...-",
+   "dst": "Aí está! De volta ao norm...-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#177": {
+   "src": "{u}?! What are you- that was you the whole time?! Why didn't you tell me!",
+   "dst": "{u}?! O que você- era você esse tempo todo?! Por que não me disse!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#178": {
+   "src": "Oh gosh, this has been... An awful reunion. I can't believe I dropped you into the Pit...",
+   "dst": "Nossa, isso foi... Um reencontro horrível. Não acredito que te joguei no Poço...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#179": {
+   "src": "I'm so sorry for- for all of that. You should have told me! Oh...",
+   "dst": "Me desculpa por- por tudo aquilo. Devia ter me dito! Ai...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#180": {
+   "src": "Okay, uh... Here, take this. As- as compensation for- for all of that.",
+   "dst": "Tá, hã... Toma, fica com isso. Como- como compensação por- por tudo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#181": {
+   "src": "I... I need to get back to work. But- uh, if you ever want, feel free to visit sometime? You'll be able to use the entrance at Ranol's farm.",
+   "dst": "Eu... preciso voltar ao trabalho. Mas- hã, se quiser, passa aqui algum dia? Você pode usar a entrada na fazenda do Ranol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Cowfusion#182": {
+   "src": "Maybe I can tell you more about what I've been up to! Heh...",
+   "dst": "Talvez eu te conte mais do que ando fazendo! Hehe...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "Stage 17",
+   "speaker": "Drale",
+   "source": "wiki"
+  }
+ }
+}

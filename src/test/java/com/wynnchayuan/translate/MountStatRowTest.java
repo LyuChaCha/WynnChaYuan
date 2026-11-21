@@ -19,7 +19,9 @@ public final class MountStatRowTest {
         "Speed", "Acceleration", "Altitude", "Energy", "Handling", "Toughness", "Boost", "Training"
     };
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
+    private static final java.util.Set<String> SAME_WORD = java.util.Set.of("pt_br:Altitude");
+
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"};
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();
@@ -34,7 +36,7 @@ public final class MountStatRowTest {
                     Component out = LineTranslator.translate(row(stat, 52, 60, max), store, false);
                     String text = out == null ? "" : out.getString();
                     check(lang + " 坐騎屬性 " + stat + (max ? "（帶上限）" : "") + " 有翻（" + text + "）",
-                            !text.isEmpty() && !text.startsWith(stat));
+                            !text.isEmpty() && (!text.startsWith(stat) || SAME_WORD.contains(lang + ":" + stat)));
                     check(lang + " 坐騎屬性 " + stat + " 不當成技能名附原文（" + text + "）",
                             !text.contains("(" + stat + ")"));
                     check(lang + " 坐騎屬性 " + stat + " 數值留著", text.contains("52/60"));

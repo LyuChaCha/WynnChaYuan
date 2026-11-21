@@ -1,0 +1,390 @@
+{
+ "_meta": {
+  "quest": "The Sewers of Ragni",
+  "count": 38,
+  "translated": 38,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Sewers of Ragni#000": {
+   "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
+   "dst": "Soldado! Andou explorando os esgotos? Espero que esteja bem preparado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
+   "src": "Soldier! Good timing. We've been requestin' help for ages.",
+   "dst": "Soldado! Chegou na hora. Pedimos ajuda há séculos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#002": {
+   "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
+   "dst": "Com as hordas corrompidas aterrorizando as Planícies, mais e mais gente vem para {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#003": {
+   "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
+   "dst": "Problema: o cano principal do esgoto entupiu. Claro que ninguém quis o serviço.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#004": {
+   "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
+   "dst": "Vou precisar que você suje as mãos. Preciso de ajuda com o entupimento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#005": {
+   "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
+   "dst": "O plano é este. Entramos, pomos explosivos pequenos para soltar o entupimento, e saímos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#006": {
+   "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
+   "dst": "Vamos por este cano lateral. O maior, morro abaixo, bem... melhor não se meter muito nele.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#007": {
+   "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
+   "dst": "Fique esperto lá dentro. Qualquer coisa pode estar à espreita. Pronto? Vamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#008": {
+   "src": "New Quest Started: The Sewers of {p}",
+   "dst": "Nova missão iniciada: Os esgotos de {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#009": {
+   "src": "Good, ya caught up. Watch your step around this place, soldier.",
+   "dst": "Bom, me alcançou. Cuidado onde pisa por aqui, soldado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#010": {
+   "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
+   "dst": "Os batedores confirmaram que a área está limpa, mas uma curva errada te leva ao velho complexo prisional.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#011": {
+   "src": "I... we really don't want t' end up there.",
+   "dst": "Eu... a gente não quer mesmo ir parar lá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#012": {
+   "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
+   "dst": "Tome um explosivo pequeno. Já pus um no entupimento; se só ele não bastar, use este.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#013": {
+   "src": "The exit has opened...",
+   "dst": "A saída se abriu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#014": {
+   "src": "The pillar seems very unstable...",
+   "dst": "O pilar parece bem instável...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#015": {
+   "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
+   "dst": "Ah, você está vivo! Parece que subestimamos a quantidade de esgoto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#016": {
+   "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
+   "dst": "... ah. Este esgoto tem história, sabe. Nos Ataques a {p}, escondiam civis aqui, na velha prisão.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#017": {
+   "src": "Let's get out of here. D'you still have the explosive I gave you?",
+   "dst": "Vamos sair daqui. Ainda tem o explosivo que te dei?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#018": {
+   "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
+   "dst": "Ufa! Parece que a primeira explosão desentupiu o cano, os cidadãos de {p} vão ficar felizes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#019": {
+   "src": "... I don't know exactly what's in there, soldier.",
+   "dst": "... Não sei bem o que tem lá dentro, soldado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#020": {
+   "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
+   "dst": "Não posso te impedir de explorar a masmorra, mas recomendo se equipar antes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#021": {
+   "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
+   "dst": "Diz a lenda que Bob, o guerreiro lendário, nasceu lá num ataque a {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#022": {
+   "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
+   "dst": "A mãe dele morreu no parto, mas há quem diga que ficou anos lá embaixo. Apodrecendo. Esperando.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#023": {
+   "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
+   "dst": "Mas é só uma história! Obrigado pela ajuda, soldado, e boa sorte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#024": {
+   "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
+   "dst": "O Tenente em [-{~}, {~}, -{~}] precisa de ajuda.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#025": {
+   "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
+   "dst": "Entre no esgoto em [-{~}, {~}, -{~}] e encontre o entupimento.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#026": {
+   "src": "Explore the sewer and find the blockage.",
+   "dst": "Explore o esgoto e encontre o entupimento.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#027": {
+   "src": "Anyway, I've found the blockage. It's right up ahead.",
+   "dst": "Enfim, achei o entupimento. Está logo à frente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#028": {
+   "src": "Find a way to fix the blockage.",
+   "dst": "Encontre um jeito de desfazer o entupimento.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#029": {
+   "src": "Find a way out of the spooky sewer.",
+   "dst": "Encontre a saída deste esgoto sinistro.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#030": {
+   "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
+   "dst": "Te perdi um pouco lá atrás. Sorte que nos achamos, sinceramente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#031": {
+   "src": "I lost you for a bit back there. 's lucky we found each other, t' be honest.",
+   "dst": "Te perdi um pouco lá atrás. Sorte que nos achamos, sinceramente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#032": {
+   "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
+   "dst": "Às vezes... às vezes não bastava. Dizem que ainda há... coisas vagando lá. Restos dos massacres.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#033": {
+   "src": "Good, let's use it on this wall, it looks like we can break right through...",
+   "dst": "Ótimo, use nesta parede, parece que dá pra atravessar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#034": {
+   "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
+   "dst": "Fale com Jenprest em [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#035": {
+   "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
+   "dst": "E dê graças por não termos topado com nada muito feio lá dentro. Algumas histórias...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#037": {
+   "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
+   "dst": "E dê graças por não termos topado com nada muito feio lá dentro. Algumas das histórias...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#038": {
+   "src": "... I don't exactly know what's in there, soldier.",
+   "dst": "... Não sei bem o que tem lá dentro, soldado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  }
+ }
+}

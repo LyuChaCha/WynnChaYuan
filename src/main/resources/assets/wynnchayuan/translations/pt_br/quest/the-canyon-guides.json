@@ -1,0 +1,756 @@
+{
+ "_meta": {
+  "quest": "The Canyon Guides",
+  "count": 74,
+  "translated": 74,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Canyon Guides#000": {
+   "src": "Welcome to Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
+   "dst": "Bem-vindo ao Templo Bantisu, humano errante. Ajudamos viajantes como você a atravessar as caprichosas paredes do cânion.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#001": {
+   "src": "You appear quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
+   "dst": "Você parece forte e de mente afiada. Podemos pedir sua ajuda, então?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#002": {
+   "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but be unable to reach him.",
+   "dst": "Veja, um homem perdido está acampado nos penhascos próximos. Dói vê-lo e não conseguir alcançá-lo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#003": {
+   "src": "So we ask you to guide Seluc to us. We shall send you to him, and you shall bring him here. If you wish to help, you will be rewarded for your time.",
+   "dst": "Então pedimos que guie Seluc até nós. Vamos enviar você até ele, e você o trará aqui. Se quiser ajudar, será recompensado pelo seu tempo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#004": {
+   "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day of cliff diving?",
+   "dst": "Espera, um humano! Argh, não devia ter me iludido. O que você fez, passou o dia pulando de penhasco?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#005": {
+   "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at doing that, right? Fetching things and people?",
+   "dst": "Se quer mesmo ser útil, traga um monge Bantisu aqui! Você é bom nisso, né? Buscar coisas e pessoas?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#006": {
+   "src": "Kill them! Kill them now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
+   "dst": "Mate-os! Mate-os já! E me TIRE DAQUI! Você me meteu nessa, agora me tire!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#007": {
+   "src": "Are you blind?! You knocked my shoes off in that lake! Follow the path, and don't take any off routes! I don't want to risk cutting up my feet!",
+   "dst": "Está cego?! Você derrubou meus sapatos naquele lago! Siga a trilha e não pegue desvios! Não quero arriscar cortar os pés!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#008": {
+   "src": "Trying to ditch on me while I'm talking my coat off? You have an obligation to help me you know!",
+   "dst": "Tentando me largar enquanto tiro o casaco? Você tem a obrigação de me ajudar, sabia!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#009": {
+   "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair!. Besides that...",
+   "dst": "Tanta caminhada...Vou descansar aqui. Você me fez pular de um penhasco, eu te faço ir devagar. É justo! Além disso...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#010": {
+   "src": "I only even came out here to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
+   "dst": "Só vim aqui para ver a paisagem. Pelo menos isso não dá pra estragar. Mesmo assim, que férias essas...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#011": {
+   "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into a lake and made me lose my shoes!",
+   "dst": "Argh, meus pés estão me matando. Talvez a trilha fosse melhor se ALGUÉM não me jogasse num lago e me fizesse perder os sapatos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#012": {
+   "src": "Find me a way up, and fast! I've had enough of this stupid canyon.",
+   "dst": "Ache um jeito de subir, e rápido! Já cansei desse cânion idiota.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#013": {
+   "src": "Huff...puff... Well...huff... Wait, there's...there's no way down the other side! Huff...what a waste!!",
+   "dst": "Uf...puf... Bem...uf... Espera, não...não tem como descer do outro lado! Uf...que desperdício!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#014": {
+   "src": "You...had better count yourself lucky I haven't broken any bones from this. Agh...but that doesn't mean I'm not aching all over!!",
+   "dst": "Você...dê-se por sortudo de eu não ter quebrado nenhum osso. Argh...mas isso não quer dizer que não esteja todo dolorido!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#015": {
+   "src": "I paid two weeks' wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
+   "dst": "Paguei duas semanas de salário pelo casaco que você encharcou. Não saio daqui sem ele, e estou cansado demais para descer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#016": {
+   "src": "[+{~} Ornamental Coat]",
+   "dst": "[+{~} Casaco ornado]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#017": {
+   "src": "Now that you have the coat, you should return to Seluc",
+   "dst": "Agora que está com o casaco, volte até Seluc",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#018": {
+   "src": "Seluc doesn't seem to be here any more. Maybe he's moved further.",
+   "dst": "Seluc não parece mais estar aqui. Talvez tenha seguido adiante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#019": {
+   "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude to this kind human.",
+   "dst": "Que isto sirva de lição, Seluc. Não se pode mentir a quem vê com o vento. Agora mostre gratidão a este humano gentil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#020": {
+   "src": "As thanks, we will also grant you access to the Bantisu Air Boosters found around the canyon. I hope they are of assistance to you.",
+   "dst": "Como agradecimento, também daremos acesso aos Bantisu Air Boosters espalhados pelo cânion. Espero que ajudem você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured",
+   "similar": {
+    "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
+    "file": "quest/the-canyon-guides.json",
+    "ratio": 0.898,
+    "reason": "candidate"
+   }
+  },
+  "The Canyon Guides#021": {
+   "src": "Speak to Gana at [{~}, {~}, -{~}].",
+   "dst": "Fale com Gana em [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#022": {
+   "src": "We commune with the wind, and she gives us her sight. Wherever the breeze blows, we may see.",
+   "dst": "Comungamos com o vento, e ele nos dá sua visão. Onde a brisa sopra, podemos ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#023": {
+   "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
+   "dst": "As criaturas do cânion lá são impiedosas, e não somos feitos para combate físico. Poderíamos alcançá-lo, mas ficaríamos presos também.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#024": {
+   "src": "Find Seluc in his camp at [{~}, {~}, -{~}].",
+   "dst": "Encontre Seluc em seu acampamento em [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#025": {
+   "src": "Who's that? Am I finally being rescued!?",
+   "dst": "Quem está aí? Enfim vou ser salvo!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#026": {
+   "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
+   "dst": "Se queria mesmo me resgatar, com certeza desperdiçou o tempo de nós dois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#027": {
+   "src": "WHY YOU-",
+   "dst": "SEU-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#028": {
+   "src": "You're trying to kill me, aren't you?! What, can't take hearing the truth? Now my coat is drenched, and! AND!",
+   "dst": "Está tentando me matar, né?! O quê, não aguenta ouvir a verdade? Agora meu casaco está encharcado, e! E!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#029": {
+   "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
+   "dst": "Esses Jinko vão atacar a qualquer segundo!! Não tenho arma, achou que eu ia sair correndo para uma briga?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#030": {
+   "src": "Escort Seluc back to Gana.",
+   "dst": "Escolte Seluc de volta até Gana.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#031": {
+   "src": "Ugh, all that danger got me flustered. I'm sweating in this coat...and it's all soaked already. Let me just...",
+   "dst": "Argh, todo esse perigo me deixou nervoso. Estou suando neste casaco...e ele já está encharcado. Deixa eu só...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#032": {
+   "src": "...set that aside. Congratulations, human! I'm probably never getting that coat back, and it cost me a pretty sum. Thanks for nothing.",
+   "dst": "...deixar isto de lado. Parabéns, humano! Nunca mais vou ver esse casaco, e ele me custou uma boa grana. Obrigado por nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#033": {
+   "src": "Wait, what in the world- What's going on?!",
+   "dst": "Espera, que diabos- O que está havendo?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#034": {
+   "src": "GAH! NOT AGAIN!!!",
+   "dst": "AI! DE NOVO NÃO!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#035": {
+   "src": "NO ONE TELLS ME ANYTHING! The brochure didn't mention earthquakes, YOU didn't tell me either, but what was I expecting from a human anyways?!",
+   "dst": "NINGUÉM ME AVISA NADA! O folheto não falava de terremotos, VOCÊ também não me disse, mas o que eu esperava de um humano, afinal?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#036": {
+   "src": "I'm not a carrot! You'd better get me out of h- ...wait, wait, those...",
+   "dst": "Não sou cenoura! É melhor me tirar da- ...espera, espera, aqueles...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#037": {
+   "src": "H-Hobgoblins. Hobgoblins HOBGOBLINS THERE'S HOBGOBLINS!! KILL THEM! AAAAH! AAH! AAAAAAH!",
+   "dst": "H-Hobgoblins. Hobgoblins HOBGOBLINS TEM HOBGOBLINS!! MATE-OS! AAAAH! AAH! AAAAAAH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#038": {
+   "src": "Sweet baby bovine I just saw my life flash before my eyes. Ugh...now pull me up. I'm stuck. But easy on the goods, I'm NOT a carrot I'll remind you!",
+   "dst": "Santa vaquinha, vi minha vida passar diante dos olhos. Argh...agora me puxe. Estou preso. Mas cuidado com a mercadoria, NÃO sou uma cenoura, lembra!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#039": {
+   "src": "Great. I'm SO grateful to be covered in mud and hobgoblin blood, and to be lacking my coat, AND to be stuck with a human.",
+   "dst": "Ótimo. Estou TÃO grato por estar coberto de lama e sangue de hobgoblin, sem meu casaco, E preso com um humano.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#040": {
+   "src": "Just get me out of here already. See, if an actual Bantisu monk had come down I'd probably be at home already, sipping tea by the fire!",
+   "dst": "Só me tire daqui logo. Viu, se um monge Bantisu de verdade tivesse descido, eu já estaria em casa, tomando chá perto da lareira!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#041": {
+   "src": "I know you humans are reckless, but I'd have expected you to have SOME concern, since you supposedly wanted to rescue me.",
+   "dst": "Sei que vocês humanos são imprudentes, mas esperava ALGUMA preocupação, já que supostamente queria me resgatar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#042": {
+   "src": "More earthquakes...? Wait-",
+   "dst": "Mais tremores...? Espera-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#043": {
+   "src": "The ridge is collapsing!!",
+   "dst": "A crista está desabando!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#044": {
+   "src": "RUN!",
+   "dst": "VAI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#045": {
+   "src": "...perfect. Just GREAT! The only available path to the temple, and now it's blocked off! Just my luck!!",
+   "dst": "...perfeito. ÓTIMO mesmo! O único caminho ao templo, e agora bloqueado! Que sorte a minha!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#046": {
+   "src": "...wait. You're reckless and willing to endanger your life, right? There's no way that I could possibly use them, but I see some ledges.",
+   "dst": "...espera. Você é imprudente e topa arriscar a vida, certo? Eu jamais conseguiria usar, mas vejo umas saliências.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#047": {
+   "src": "See, just to the side of the rockslide? There's some ledges to jump around on.",
+   "dst": "Viu, bem ao lado do deslizamento? Há saliências para ir pulando.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#048": {
+   "src": "Find a way to get Seluc past the blockage.",
+   "dst": "Encontre um jeito de fazer Seluc passar pelo bloqueio.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#049": {
+   "src": "...of course it's a ladder. I'm going to be feeling this climb for weeks...",
+   "dst": "...claro que é uma escada. Vou sentir essa subida por semanas...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#050": {
+   "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
+   "dst": "Você faz ALGO direito?! Nem pensar que vou pular aí embaixo, seu maníaco!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#051": {
+   "src": "YOU-!",
+   "dst": "SEU-!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#052": {
+   "src": "When I said you were reckless, I was hoping that maybe you'd keep that side of yourself away from other people!!",
+   "dst": "Quando eu disse que você era imprudente, esperava que deixasse esse seu lado longe dos outros!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#053": {
+   "src": "At least we're nearly at the temple now. Come on Seluc, silver linings, silver linings. You're nearly away from this freak...",
+   "dst": "Pelo menos estamos quase no templo. Vamos, Seluc, pense positivo, pense positivo. Você está quase livre desse doido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#054": {
+   "src": "Okay, you know what? No. You've put me through QUITE a lot here, human, so you're going to do me a favor and I'm not going to move another step til it's done.",
+   "dst": "Tá, quer saber? Não. Você me fez passar por MUITA coisa, humano, então vai me fazer um favor e não dou mais um passo até que esteja feito.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#055": {
+   "src": "So you're going back down to the bottom of the ridge, and you're going to get me my coat. It's the least you could do.",
+   "dst": "Então você vai voltar lá para o pé da crista e buscar meu casaco. É o mínimo que pode fazer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#056": {
+   "src": "And be quick about it! I feel like these quakes are going to make the whole mountain collapse. That looks like it opened up a hole straight to the bottom!",
+   "dst": "E seja rápido! Acho que esses tremores vão derrubar a montanha inteira. Parece que abriu um buraco direto até o fundo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#057": {
+   "src": "Retrieve the coat Seluc left behind at [{~}, {~}, -{~}].",
+   "dst": "Recupere o casaco que Seluc deixou em [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#058": {
+   "src": "Talk to Gana and Seluc.",
+   "dst": "Fale com Gana e Seluc.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#059": {
+   "src": "Took you long enough, coat-fetcher! I'm practically frostbitten up here!",
+   "dst": "Demorou, hein, pega-casaco! Estou quase congelando aqui em cima!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#060": {
+   "src": "You see, I was just speaking to Gana about your dirt-poor imitation of their job! You ought to be ashamed- I had to get up here all on my own!",
+   "dst": "Sabe, eu estava contando a Gana sobre sua imitação barata do trabalho deles! Devia ter vergonha- tive que subir aqui sozinho!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#061": {
+   "src": "...hm. I will say, there are many lost around the canyon, Seluc- it may have been a long time before we were able to help you.",
+   "dst": "...hm. Devo dizer, há muitos perdidos pelo cânion, Seluc- poderia demorar muito até conseguirmos ajudar você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#062": {
+   "src": "Anyway! Give me that coat. The monks here are going to provide me some hospitality then guide me out of these wretched canyon walls.",
+   "dst": "Enfim! Me dê esse casaco. Os monges daqui vão me receber e depois me guiar para fora destas malditas paredes do cânion.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#063": {
+   "src": "This is goodbye then, human, I won't be missing you. Shoo!",
+   "dst": "Então é adeus, humano, não vou sentir sua falta. Xô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#064": {
+   "src": "...He did not really guide himself here. Did he.",
+   "dst": "...Ele não se guiou até aqui de verdade. Não é.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#065": {
+   "src": "It was me who guided him.",
+   "dst": "Fui eu que o guiei.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#066": {
+   "src": "Should you tell Gana the truth?",
+   "dst": "Contar a verdade a Gana?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#067": {
+   "src": "...uh. ...dang it, why you gotta did that.",
+   "dst": "...hã. ...droga, pra que foi fazer isso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#068": {
+   "src": "He's being sincere.",
+   "dst": "Ele é sincero.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#069": {
+   "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
+   "dst": "Isso mesmo! Viu, Gana? Depois de tudo, ao menos o humano não é mentiroso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#070": {
+   "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
+   "dst": "...Bem, 'pega-casaco', trazer o casaco deste homem ainda é uma boa ação. E por isso, você será recompensado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#071": {
+   "src": "Maybe you think anything's possible for you since you're a soldier, but I'm just a guy from {p}! I hardly know anything about the canyon outside of what the brochures say!",
+   "dst": "Talvez você ache que tudo é possível por ser soldado, mas eu sou só um cara de {p}! Mal sei algo do cânion além do que dizem os folhetos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#072": {
+   "src": "Seluc hides in a camp northeast of here, atop the cliffs.",
+   "dst": "Seluc acampa a nordeste daqui, no alto dos penhascos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#073": {
+   "src": "We ask you to guide Seluc to us. If you wish to help, you will be rewarded for your time.",
+   "dst": "Pedimos que guie Seluc até nós. Se quiser ajudar, será recompensado pelo seu tempo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "ja_jp"
+  }
+ }
+}

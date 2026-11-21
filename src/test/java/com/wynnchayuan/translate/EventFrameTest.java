@@ -39,7 +39,7 @@ public final class EventFrameTest {
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
-        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"}) {
+        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"}) {
             TranslationStore real = new TranslationStore();
             real.loadAll(base.resolve(lang));
             for (int wrap = 0; wrap <= 3; wrap++) {

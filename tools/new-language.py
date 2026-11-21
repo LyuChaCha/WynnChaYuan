@@ -71,8 +71,11 @@ def blank_file(data):
     if isinstance(data, dict):
         out = OrderedDict()
         for key, value in data.items():
-            out[key] = value if key.startswith("_") or not isinstance(value, str) \
-                       else ""
+            if key == "_meta":
+                out[key] = blank(value)
+            else:
+                out[key] = value if key.startswith("_") or not isinstance(value, str) \
+                           else ""
         return out
     return blank(data)
 
