@@ -387,6 +387,11 @@ final class TranslationIndex {
             if (labelled != null) {
                 return labelled;
             }
+            String embedded = nameRules.embeddedAbilityNamesWithOriginal(template.strip(), hit);
+            if (embedded != null) {
+                return holdAppended ? embedded
+                        : LootrunNames.apply(template, embedded, store.pageNameMode());
+            }
         }
         return holdAppended ? hit : LootrunNames.apply(template, hit, store.pageNameMode());
     }
