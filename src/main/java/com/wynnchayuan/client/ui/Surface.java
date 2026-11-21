@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.DoubleConsumer;
 import java.util.function.IntConsumer;
 import java.util.function.IntSupplier;
 import java.util.function.ToIntFunction;
@@ -524,15 +525,31 @@ public abstract class Surface {
         Ui.pane(c, x, y, w, h, Ui.R2, Ui.fade(Ui.POP, in), Ui.fade(Ui.alpha(accent, 0x8C), in));
     }
 
+    private static final String SCROLLBAR = "scrollbar";
+    private float grab;
+
     protected void scrollbar(float x, float y, float h, float contentH, float scroll,
-                             float maxScroll) {
+                             float maxScroll, DoubleConsumer seek) {
         if (maxScroll <= 0) {
             return;
         }
-        c.round(x, y, 2.5f, h, 1.25f, Ui.LINE);
         float thumbH = Math.max(14, h * h / Math.max(1f, contentH));
         float thumbY = y + (h - thumbH) * (scroll / maxScroll);
-        c.round(x, thumbY, 2.5f, thumbH, 1.25f, Ui.alpha(accent, 0xC8));
+        boolean held = SCROLLBAR.equals(draggingKey);
+        float hot = animate(SCROLLBAR, held || over(x - 4, y, 11, h) ? 1f : 0f, 40f);
+        float w = 2.5f + 1.5f * hot;
+        float tx = x - 0.75f * hot;
+        c.round(x, y, 2.5f, h, 1.25f, Ui.LINE);
+        c.round(tx, thumbY, w, thumbH, w / 2f,
+                Ui.alpha(accent, (int) (0xC8 + (0xFF - 0xC8) * hot)));
+        float travel = Math.max(1f, h - thumbH);
+        Zone z = zone(x - 4, y, 11, h, (px, py, b) -> {
+            grab = py >= thumbY && py < thumbY + thumbH ? (float) (py - thumbY) : thumbH / 2f;
+            seek.accept(Math.max(0, Math.min(1, (py - grab - y) / travel)) * maxScroll);
+        });
+        z.key = SCROLLBAR;
+        z.drag = (px, py, b) ->
+                seek.accept(Math.max(0, Math.min(1, (py - grab - y) / travel)) * maxScroll);
     }
 
     protected record Tip(String text, float x, float y, float w, float h) {}

@@ -686,6 +686,28 @@ public final class SubViewsTest {
                 row == null ? -100 : row[1] + 3);
         ImageIO.write(dockShot.image, "png", new File(out, "zh_tw-chatlog-dock.png"));
         must("有選取時 Ctrl+C 由面板複製", dock.key('C', true) && docked.copied.size() == 1);
+
+        float[] bar = dock.spot("scrollbar");
+        must("捲軸抓得到", bar != null && bar[3] > 20);
+        if (bar != null) {
+            float bx = bar[0] + bar[2] / 2f;
+            dock.mouseDown(bx, bar[1] + 1, 0);
+            dock.mouseUp();
+            for (int i = 0; i < 3; i++) {
+                render(dock, "zh_tw", 640, 360, 1, -100, -100);
+            }
+            float[] oldest = dock.spot("row:0");
+            must("點捲軸最上面就跳到最舊的一則", oldest != null && oldest[3] > 0);
+            dock.mouseDown(bx, bar[1] + 1, 0);
+            dock.mouseDrag(bx, bar[1] + bar[3]);
+            dock.mouseUp();
+            for (int i = 0; i < 3; i++) {
+                render(dock, "zh_tw", 640, 360, 1, -100, -100);
+            }
+            float[] newest = dock.spot("row:" + (docked.all.size() - 1));
+            must("把捲軸拖到底就回到最新一則", newest != null && newest[3] > 0
+                    && (dock.spot("row:0") == null || dock.spot("row:0")[3] == 0));
+        }
         press(dock, "b:dock-close");
         must("右上角的叉收起面板", docked.closed);
     }
