@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24964,
-  "translated": 24961,
+  "count": 24969,
+  "translated": 24966,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -41068,6 +41068,61 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "Black Road Runaround#001": {
+   "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
+   "dst": "おい、坊や！　あの Enkser おじさんが、お前に初めての馬をくれたって聞いたぞ！　あいつはケチな奴だから、タダでもらえたのはラッキーだと思えよ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Black Road Runaround#002": {
+   "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
+   "dst": "ねえ、自分の愛馬ともっと親しくなるために、ちょっとしたゲームをやってみないか？　「{c2}タイムトライアル{/}」ってやつだよ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json",
+   "note": "{c2}Time Trial{/}"
+  },
+  "Black Road Runaround#003": {
+   "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
+   "dst": "近所を周回するコースを作ってみたんだ。何人かが試走してくれたんだけど、その中には記録保持者の Enkser もいたよ。あいつと「Betty」は、本当に手強い相手だぜ、本当に。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Black Road Runaround#004": {
+   "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
+   "dst": "走破時間次第で、{c2}さまざまな報酬{/}が手に入る。エメラルドや装備、そして {c3}Enkser の記録(Aランク){/}を上回れば、さらに別の馬まで手に入る！　これは彼が賭けたものなんです。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json",
+   "note": "{c2}different rewards{/} , {c3}Enkser's time (A-Rank){/}"
+  },
+  "Black Road Runaround#005": {
+   "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
+   "dst": "何より、これで{c2}君の愛馬がもっと強くなる{/}んだ。どうだ、坊や？ 試してみるか？ もし試してみたいなら、{c2}また俺に声をかけてくれ{/}。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "Stablehand",
+   "source": "captured.json",
+   "note": "{c2}make yer steed stronger{/} , {c2}talk to me again{/}"
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
@@ -166336,13 +166391,14 @@
   },
   "Stable Story#008": {
    "src": "So, let's cut a deal- They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "そこで取引だ― 奴らに厩舎の鍵を盗まれた。{p} の私の納屋に行って…",
+   "dst": "そこで取引だ― 奴らに{c2}厩舎の鍵{/}を盗まれた。{p} の私の{c2}納屋{/}に行って…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 1",
    "speaker": "Enkser",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}stable key{/} , {c2}barn{/}"
   },
   "Stable Story#009": {
    "src": "And return that key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
@@ -166496,13 +166552,14 @@
   },
   "Stable Story#024": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "この納屋で、{p} で育てた馬を、ここ {p} の金持ちに売ってるんだ。",
+   "dst": "この納屋で、{c2}{p}{/} で育てた馬を、ここ {p} の金持ちに売ってるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 1",
    "speaker": "Enkser",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{p}{/}"
   },
   "Stable Story#025": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
@@ -166556,13 +166613,14 @@
   },
   "Stable Story#030": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "やあ、[{~} Stable Key] は見つかったかい？東の {p} のどこかにあるはずだ。",
+   "dst": "やあ、{c2}[{~} Stable Key]{/} は見つかったかい？東の {p} のどこかにあるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 2",
    "speaker": "Enkser",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Stable Key]{/}"
   },
   "Stable Story#031": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or-",
