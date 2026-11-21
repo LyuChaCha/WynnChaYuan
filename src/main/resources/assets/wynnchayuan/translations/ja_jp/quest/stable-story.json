@@ -88,13 +88,14 @@
   },
   "Stable Story#008": {
    "src": "So, let's cut a deal- They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "そこで取引だ― 奴らに厩舎の鍵を盗まれた。{p} の私の納屋に行って…",
+   "dst": "そこで取引だ― 奴らに{c2}厩舎の鍵{/}を盗まれた。{p} の私の{c2}納屋{/}に行って…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 1",
    "speaker": "Enkser",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}stable key{/} , {c2}barn{/}"
   },
   "Stable Story#009": {
    "src": "And return that key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
@@ -248,13 +249,14 @@
   },
   "Stable Story#024": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "この納屋で、{p} で育てた馬を、ここ {p} の金持ちに売ってるんだ。",
+   "dst": "この納屋で、{c2}{p}{/} で育てた馬を、ここ {p} の金持ちに売ってるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 1",
    "speaker": "Enkser",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}{p}{/}"
   },
   "Stable Story#025": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
@@ -308,13 +310,14 @@
   },
   "Stable Story#030": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "やあ、[{~} Stable Key] は見つかったかい？東の {p} のどこかにあるはずだ。",
+   "dst": "やあ、{c2}[{~} Stable Key]{/} は見つかったかい？東の {p} のどこかにあるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
    "stage": "Stage 2",
    "speaker": "Enkser",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Stable Key]{/}"
   },
   "Stable Story#031": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or-",
