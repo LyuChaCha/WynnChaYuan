@@ -1,0 +1,563 @@
+{
+ "_meta": {
+  "quest": "Infested Plants",
+  "count": 62,
+  "translated": 62,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Infested Plants#000": {
+   "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
+   "dst": "ฉันจะไปก่อนนะ แค่ตามพิกัดในสมุดเนื้อหาไปก็จะเจอถ้ำนั่น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#001": {
+   "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
+   "dst": "...อืม เฉียดฉิวหน่อย แต่... อ๊ะ! คุณ เอ่อ ยังอยู่ที่นี่...! ใช่ ใช่- คุณต้องเข้าไปในถ้ำนั่นไง จำได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#002": {
+   "src": "[+{~} Saccharum Plant]",
+   "dst": "[+{~} ต้น Saccharum]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#003": {
+   "src": "[-{~} Saccharum Plant]",
+   "dst": "[-{~} ต้น Saccharum]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#004": {
+   "src": "Meet up with Tasim at the entrance to {p} at [-{~}, {~}, -{~}].",
+   "dst": "ไปพบ Tasim ที่ทางเข้า {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#005": {
+   "src": "Oh, {u}! There you are. It's good to see you. Are you ready to continue on towards {p}?",
+   "dst": "โอ้ {u}! อยู่นี่เอง ดีใจที่ได้เจอนะครับ พร้อมจะไปต่อที่ {p} หรือยังครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#006": {
+   "src": "H-hey! You two! You're soldiers, right? I can tell from your weird fashion sense. You folk are supposed to help people! So. Help!",
+   "dst": "เฮ-เฮ้! สองคนนั่นน่ะ! เป็นทหารใช่ไหม? ดูจากแฟชั่นประหลาดๆ ก็รู้ พวกนายต้องช่วยคนสิ! งั้น ช่วยที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Infested Plants#007": {
+   "src": "Huh? Oh- yes, of course! What's your name? What do you need help with?",
+   "dst": "ฮะ? อ๋อ- ครับ แน่นอน! คุณชื่ออะไรครับ? ให้ช่วยเรื่องอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#008": {
+   "src": "I'm Ope! I was recently... uh... bit by a spider! And now I need your help to get a rare medicinal herb to heal me!",
+   "dst": "ฉันชื่อ Ope! เมื่อกี้ฉัน... เอ่อ... โดนแมงมุมกัด! เลยต้องให้พวกนายช่วยหาสมุนไพรหายากมารักษา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#009": {
+   "src": "It only grows in an infested cave filled with creepy crawlies. And I'm clearly in no condition to go get it myself!",
+   "dst": "มันขึ้นแค่ในถ้ำที่มีแมลงน่าขยะแขยงเต็มไปหมด แล้วสภาพฉันก็ไปเอาเองไม่ไหวแน่ๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#010": {
+   "src": "Well, alright! We're here to help, after all, so... We'll get you that herb!",
+   "dst": "ก็ได้ครับ! ยังไงเราก็มาเพื่อช่วยอยู่แล้ว งั้น... เราจะหาสมุนไพรมาให้ครับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#011": {
+   "src": "Follow Ope to the cave at [-{~}, {~}, -{~}].",
+   "dst": "ตาม Ope ไปที่ถ้ำที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#012": {
+   "src": "Hm... There's two of you. Good! One of your can climb up into that cave, and the other can protect me from the crawly spiders down here!",
+   "dst": "อืม... มากันสองคน ดี! คนนึงปีนขึ้นไปในถ้ำนั่น อีกคนคอยปกป้องฉันจากแมงมุมข้างล่างนี่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#013": {
+   "src": "Alright! {u}, you can go into the cave, and I can defend Ope here while you do that.",
+   "dst": "ได้ครับ! {u} คุณเข้าไปในถ้ำ ส่วนผมจะคุ้มกัน Ope อยู่ตรงนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#014": {
+   "src": "Locate the medicine in the spider cave behind Ope at [-{~}, {~}, -{~}].",
+   "dst": "หายาในถ้ำแมงมุมข้างหลัง Ope ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#015": {
+   "src": "Exit the cave at [-{~}, {~}, -{~}] with the medicinal herb.",
+   "dst": "ออกจากถ้ำที่ [-{~}, {~}, -{~}] พร้อมสมุนไพร",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#016": {
+   "src": "There you are! It feels like we've been waiting for hours.",
+   "dst": "มาแล้ว! รู้สึกเหมือนรอมาเป็นชั่วโมงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#017": {
+   "src": "It... really hasn't been that long. Maybe ten minutes at most.",
+   "dst": "ก็... ไม่ได้นานขนาดนั้นครับ อย่างมากก็สิบนาที",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#018": {
+   "src": "Well-... Anyway! Do you have the herb? It's very- uh, important! To cure me. Yep.",
+   "dst": "ก็-... ช่างเถอะ! ได้สมุนไพรไหม? มันสำคัญมาก- เอ่อ สำคัญมาก! ไว้รักษาฉัน ใช่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#019": {
+   "src": "Well. Goodbye!",
+   "dst": "งั้น ลาก่อน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#020": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#021": {
+   "src": "That's... frustrating. He seemed shady from the start, I should have-... Well. What's done is done. Let's go speak to that mayor.",
+   "dst": "น่า... หงุดหงิดจริงๆ ครับ เขาดูไม่น่าไว้ใจตั้งแต่แรก ผมน่าจะ-... ช่างเถอะ เรื่องมันผ่านไปแล้ว ไปหานายกเทศมนตรีกันครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#022": {
+   "src": "Speak to Mayor Alvin in Alekin Village at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับนายกเทศมนตรี Alvin ใน Alekin Village ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#023": {
+   "src": "Speak to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับนายกเทศมนตรี Alvin ใน {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#024": {
+   "src": "Ah, travelers... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
+   "dst": "อา นักเดินทาง... ยินดีต้อนรับสู่เมืองป่าเล็กๆ ของเรา จะมาอยู่ที่นี่ หรือแค่ผ่านทางมาครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Infested Plants#025": {
+   "src": "Probably the latter. Though, we ran into a man named Ope, who directed us to speak with you.",
+   "dst": "คงอย่างหลังครับ แต่เราเจอชายชื่อ Ope ที่บอกให้มาคุยกับท่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#026": {
+   "src": "Here, I may offer you a small sum of emeralds as an apology. I hope he has not soured your opinion of our small town, here...",
+   "dst": "นี่ครับ ผมขอมอบมรกตจำนวนเล็กน้อยเป็นการขอโทษ หวังว่าเขาจะไม่ทำให้พวกท่านมองเมืองเล็กๆ ของเราแย่ไปนะครับ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Infested Plants#027": {
+   "src": "Oh... Thank you. That's very kind of you. We'll probably stay for a while, before we continue towards {p}.",
+   "dst": "โอ้... ขอบคุณครับ ท่านใจดีมาก เราคงพักที่นี่สักพักก่อนจะไปต่อที่ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#028": {
+   "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
+   "dst": "โอ้ {u}! อยู่นี่เอง ดีใจที่ได้เจอนะครับ ผมว่าเราควรมุ่งหน้าไป {p} ต่อ แต่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#029": {
+   "src": "It looks like we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... and the undead are a danger, as always... but between you and me, we should be-",
+   "dst": "ดูเหมือนเราต้องผ่าน {p} ก่อน ผมได้ยินว่าป่าเต็มไปด้วยแมงมุม... แล้วพวกผีดิบก็อันตรายเหมือนเคย... แต่ระหว่างเราสองคน เราน่าจะ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#030": {
+   "src": "H-hey! You two! You're soldiers, right?",
+   "dst": "เฮ-เฮ้! สองคนนั่นน่ะ! เป็นทหารใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#031": {
+   "src": "Uh- yes, we are, but-",
+   "dst": "เอ่อ- ใช่ครับ แต่-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#032": {
+   "src": "Yep, I could tell from your weird fashion sense! You folk are supposed to help people, right? So. Help!",
+   "dst": "ใช่แหละ ดูจากแฟชั่นประหลาดๆ ก็รู้! พวกนายต้องช่วยคนใช่ไหม? งั้น ช่วยที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#033": {
+   "src": "Well, sure- but who are you? Why are you out on your own, isn't it dangerous? Aren't the undead...",
+   "dst": "ก็ได้ครับ- แต่คุณเป็นใคร? ออกมาคนเดียวแบบนี้ไม่อันตรายเหรอ? พวกผีดิบไม่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#034": {
+   "src": "I'm Ope! And the undead... eh, there's not as many of them around here. The spiders aren't picky 'bout who they go for.",
+   "dst": "ฉันชื่อ Ope! ส่วนผีดิบ... เอ๊ะ แถวนี้มีไม่เยอะหรอก แมงมุมต่างหากที่ไม่เลือกเหยื่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#035": {
+   "src": "Right... okay. That makes sense. What did you need help with?",
+   "dst": "อ้อ... โอเค ก็สมเหตุสมผลครับ ให้ช่วยเรื่องอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#036": {
+   "src": "I... uh... so, there's this rare medicinal herb that grows in these woods, right? And it's important. But the only place I know to find it is an infested cave, filled with creepy crawly spiders.",
+   "dst": "ฉัน... เอ่อ... คือ มีสมุนไพรหายากขึ้นอยู่ในป่านี้ ใช่ไหม? แล้วมันสำคัญ แต่ที่เดียวที่ฉันรู้ว่ามีคือถ้ำที่เต็มไปด้วยแมงมุมน่าขยะแขยง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#037": {
+   "src": "And, y'know, I- I'm no soldier! Can't just go in there and get it myself! So, I was hoping you could help me out.",
+   "dst": "แล้ว รู้ใช่ไหม ฉัน- ฉันไม่ใช่ทหารนี่! จะเข้าไปเอาเองก็ไม่ได้! เลยหวังว่าพวกนายจะช่วยฉันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#038": {
+   "src": "Well... we came to Wynn to help out, after all. So... we can get you that herb!",
+   "dst": "ก็... ยังไงเราก็มา Wynn เพื่อช่วยอยู่แล้ว งั้น... เราจะหาสมุนไพรนั้นมาให้ครับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#039": {
+   "src": "Great. Great! I'll bring you to the cave, and you can do the rest from there. Follow me!",
+   "dst": "เยี่ยม เยี่ยมเลย! ฉันจะพาไปที่ถ้ำ ที่เหลือพวกนายจัดการต่อเอง ตามมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#040": {
+   "src": "Well, here we are! That's the cave right over there- just climb up the rocks and jump into it. It's safe! Uh, probably.",
+   "dst": "เอาละ ถึงแล้ว! ถ้ำอยู่ตรงนั้นเลย- แค่ปีนหินขึ้นไปแล้วกระโดดเข้าไป ปลอดภัย! เอ่อ น่าจะนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#041": {
+   "src": "...eek. There's a lot of spiders even up here... hey, since there's two of you- one of you can go get the herb, and the other can, uh... protect me from the crawly spiders?",
+   "dst": "...อี๋ ข้างบนนี้ก็มีแมงมุมเยอะ... นี่ มากันสองคนนี่- คนนึงไปเอาสมุนไพร อีกคน เอ่อ... คอยปกป้องฉันจากแมงมุมดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#042": {
+   "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
+   "dst": "ได้ครับ {u} คุณเข้าไปในถ้ำ ส่วนผมจะคุ้มกัน Ope อยู่ข้างบนนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#043": {
+   "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
+   "dst": "อือ... ดี! ดี ดี! ขอให้ เอ่อ โชคดีข้างบนนะ! พยายามอย่าให้แมงมุมกัดเยอะล่ะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#044": {
+   "src": "...ah- there you are!! What took you so long, it feels like we've been waiting for hours!",
+   "dst": "...อ๊ะ- มาแล้ว!! ทำไมนานจัง รู้สึกเหมือนรอมาเป็นชั่วโมงๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#045": {
+   "src": "It-... mm. A-anyway! Do you have the herb? It's very important, yep.",
+   "dst": "มัน-... อืม ช-ช่างเถอะ! ได้สมุนไพรไหม? มันสำคัญมาก ใช่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#046": {
+   "src": "Come to think of it... I don't think you ever mentioned what you needed it for.",
+   "dst": "ว่าแต่... ผมว่าคุณยังไม่เคยบอกเลยว่าต้องการมันไปทำอะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#047": {
+   "src": "Oh, I- eheh, it... I... uh, it's n-none of your business, actually.",
+   "dst": "อ้อ ฉัน- เอะเฮะ มัน... ฉัน... เอ่อ ม-ไม่ใช่เรื่องของนายหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#048": {
+   "src": "I- I thank you kindly for your work, soldiers! Now, about your payment... let's see, what do I have...",
+   "dst": "ข- ขอบใจมากสำหรับงานนะ ทหาร! ส่วนค่าตอบแทน... ขอดูก่อน มีอะไรบ้าง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#049": {
+   "src": "Oh. I seem to be out of emeralds. Well- then, I- I can offer some advice! There's lots to find in this forest. Plenty of other caves with valuables to explore! Might be worth your time!",
+   "dst": "อ้าว ดูเหมือนมรกตจะหมด งั้น- ฉัน- ฉันให้คำแนะนำแทนละกัน! ป่านี้มีอะไรให้หาเยอะ มีถ้ำอื่นที่มีของมีค่าให้สำรวจอีกเพียบ! อาจคุ้มเวลานะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#050": {
+   "src": "Wait, what? Hey, are you seriously not going to-",
+   "dst": "เดี๋ยว อะไรนะ? นี่ คุณจะไม่-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#051": {
+   "src": "It has been a time soldiers, but I- I truly must be going! Important things to get to! We're near {p}, you should stop on by! Just keep going east down the main road!",
+   "dst": "ยินดีที่ได้รู้จักนะ ทหาร แต่ฉัน- ฉันต้องไปแล้วจริงๆ! มีธุระสำคัญ! เราอยู่ใกล้ {p} แวะไปสิ! แค่เดินไปทางตะวันออกตามถนนใหญ่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#052": {
+   "src": "You can, uh, go speak to the mayor! He can cover my expenses!",
+   "dst": "พวกนาย เอ่อ ไปคุยกับนายกเทศมนตรีได้! เขาจ่ายแทนฉันได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#053": {
+   "src": "...well. Goodbye!",
+   "dst": "...งั้น ลาก่อน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#054": {
+   "src": "That's... frustrating. I really did just want to know... well. What's done is done. Let's just go talk to that mayor he mentioned.",
+   "dst": "น่า... หงุดหงิดจริงๆ ผมแค่อยากรู้เท่านั้นเอง... ช่างเถอะ เรื่องมันผ่านไปแล้ว ไปคุยกับนายกเทศมนตรีที่เขาพูดถึงกันครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#055": {
+   "src": "I'm going to go on ahead. I'll meet you in {p}, it's just down the main road to the east.",
+   "dst": "ผมจะไปก่อนนะครับ เจอกันที่ {p} อยู่ทางตะวันออกตามถนนใหญ่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#056": {
+   "src": "Ah, recruits... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
+   "dst": "อา ทหารใหม่... ยินดีต้อนรับสู่เมืองป่าเล็กๆ ของเรา จะมาอยู่ที่นี่ หรือแค่ผ่านทางมาครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#057": {
+   "src": "Just passing through, our destination is {p}. Though... we ran into a man named Ope, who directed us to speak with you.",
+   "dst": "แค่ผ่านทางครับ เราจะไป {p} แต่... เราเจอชายชื่อ Ope ที่บอกให้มาคุยกับท่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#058": {
+   "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with sometimes.",
+   "dst": "อ้อ Ope... ท่าทางจะเจอเขาแล้วไม่ค่อยดีสินะครับ ผมต้องขอโทษแทนเขาด้วย เขาเป็น... คนที่รับมือยากในบางครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#059": {
+   "src": "Oh... thank you. That's very kind of you. We'll probably stay a while, before we continue towards {p}.",
+   "dst": "โอ้... ขอบคุณครับ ท่านใจดีมาก เราคงพักที่นี่สักพักก่อนจะไปต่อที่ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#060": {
+   "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay.",
+   "dst": "งั้นก็ทำตัวตามสบายเหมือนอยู่บ้านเลยครับ! ที่นี่ยินดีต้อนรับนักเดินทางทุกคน จะอยู่นานแค่ไหนก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
+   "dst": "ผมจะไปพักสักหน่อยนะครับ แต่อีกไม่นานก็พร้อมผจญภัยต่อแล้ว ไม่ต้องห่วงครับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "speaker": "Tasim",
+   "source": "capture"
+  }
+ }
+}

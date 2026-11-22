@@ -1,0 +1,360 @@
+{
+ "_meta": {
+  "quest": "Wrath of the Mummy",
+  "count": 35,
+  "translated": 35,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Wrath of the Mummy#000": {
+   "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
+   "dst": "ผมรู้อะไรเรื่องมัมมี่ไหมเหรอ? แน่นอน! ผมศึกษามันมาทั้งชีวิต!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#001": {
+   "src": "Mummies aren't known to be weak, especially that one. It's demonic... pure evil. It's easily one of the most powerful specimens I've encountered.",
+   "dst": "มัมมี่ไม่ได้ขึ้นชื่อว่าอ่อนแอ โดยเฉพาะตัวนั้น มันเป็นปีศาจ... ชั่วร้ายบริสุทธิ์ เป็นหนึ่งในตัวที่ทรงพลังที่สุดที่ผมเคยเจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#002": {
+   "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just restocked.",
+   "dst": "เว้นแต่... ฟังนะ ข้ารอจะได้ขนแกะสีชมพูมานานแล้ว และร้านเดียวที่ขายเพิ่งเติมสินค้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#003": {
+   "src": "Or better yet, if you happen to have some of that pink wool on you. If you give it to me, well... the tomb is all yours.",
+   "dst": "หรือดีกว่านั้น ถ้าเจ้ามีขนแกะสีชมพูติดตัวอยู่ ถ้ายกให้ข้า ก็... สุสานเป็นของเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#004": {
+   "src": "Either way, you can take my wagon over there to {p}, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
+   "dst": "ยังไงก็ เจ้านั่งเกวียนข้าไป {p} ได้ แต่ขากลับหาทางเอง เอา [{~} Pink Wool] มาให้ แล้วข้าจะปล่อยเจ้าผ่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#005": {
+   "src": "Have you got me [{~} Pink Wool] yet!? You can get it from the shop in {p}.",
+   "dst": "ได้ [{~} Pink Wool] มาหรือยัง!? หาซื้อได้ที่ร้านใน {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#006": {
+   "src": "I don't know you, and you don't know me. Got it?",
+   "dst": "ข้าไม่รู้จักเจ้า เจ้าไม่รู้จักข้า เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#007": {
+   "src": "Stay away, friend!",
+   "dst": "ถอยไปเพื่อน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#008": {
+   "src": "I live in this camp by choice. A curse follows me... and now trouble starts wherever I go. I left civilization and made camp in the desert, where I could do no more harm.",
+   "dst": "ผมเลือกอยู่ในแคมป์นี้เอง คำสาปตามติดผม... ไปที่ไหนก็มีปัญหา ผมเลยทิ้งเมืองมาตั้งแคมป์ในทะเลทราย ที่ที่ผมทำร้ายใครไม่ได้อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#009": {
+   "src": "I do miss the comforts of {p} some days, though... you look like a learned adventurer. If I asked you to investigate this curse, perhaps you could help me rid myself of it?",
+   "dst": "แต่บางวันผมก็คิดถึงความสะดวกสบายใน {p}... คุณดูเป็นนักผจญภัยที่มีความรู้ ถ้าผมขอให้สืบเรื่องคำสาปนี้ คุณอาจช่วยผมให้หลุดพ้นได้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#010": {
+   "src": "It all started when I discovered an old tomb in the North of the desert. Upon entering it, the ground started shaking and I heard inhuman screams coming from deeper within.",
+   "dst": "ทุกอย่างเริ่มตอนผมพบสุสานเก่าทางเหนือของทะเลทราย พอเข้าไป พื้นก็เริ่มสั่น และผมได้ยินเสียงกรีดร้องที่ไม่ใช่มนุษย์ดังมาจากข้างใน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#011": {
+   "src": "I ran as fast as I could, learning later the tomb housed the remains of an ancient Mummy... which I accidentally awoke. If the Mummy could be put back to rest, perhaps the curse would go away.",
+   "dst": "ผมวิ่งหนีสุดชีวิต ภายหลังถึงรู้ว่าสุสานนั้นเก็บร่างมัมมี่โบราณ... ที่ผมเผลอปลุกขึ้นมา ถ้ามัมมี่กลับไปหลับใหล คำสาปอาจหายไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#012": {
+   "src": "I have heard of a scholar in {p}, Achper, who may know more about the tomb. I am reluctant to return to the city, in case my presence hurts anyone else.",
+   "dst": "ผมได้ยินว่ามีนักปราชญ์ใน {p} ชื่อ Achper ที่อาจรู้เรื่องสุสาน ผมไม่อยากกลับเข้าเมือง เผื่อการมีอยู่ของผมจะทำร้ายใครอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#013": {
+   "src": "If you would truly like to help, you should start by talking to him.",
+   "dst": "ถ้าอยากช่วยจริงๆ เริ่มจากไปคุยกับเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 1",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#014": {
+   "src": "Talk to Achper in {p} about the curse at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Achper ใน {p} เรื่องคำสาปที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#015": {
+   "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
+   "dst": "ปกติเข้าถึงตัวยากมาก ซ่อนอยู่ในสุสาน... และไม่ชอบให้ใครรบกวน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#016": {
+   "src": "I have heard of the curse that follows Ormrod, and the only way to remove its effects would be to kill the mummy.",
+   "dst": "ผมเคยได้ยินเรื่องคำสาปที่ตาม Ormrod และทางเดียวที่จะลบล้างได้คือฆ่ามัมมี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#017": {
+   "src": "The tomb lies in the North of the desert, but be very careful!",
+   "dst": "สุสานอยู่ทางเหนือของทะเลทราย แต่ระวังให้มาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#018": {
+   "src": "On top of that, the Creden Tibus bandit clan have been ransacking the tombs around the desert. You might run into trouble with them, so be prepared.",
+   "dst": "นอกจากนั้น โจรเผ่า Creden Tibus ปล้นสุสานทั่วทะเลทรายอยู่ คุณอาจมีเรื่องกับพวกมัน เตรียมตัวไว้ให้ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 2",
+   "speaker": "Achper",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#019": {
+   "src": "Attempt to enter the Mummy's tomb at [{~}, {~}, -{~}]",
+   "dst": "ลองเข้าสุสานมัมมี่ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#020": {
+   "src": "Stop! If you're thinking about looting the tomb, you're too late. The Creden Tibus have laid claim here, and you're not getting past.",
+   "dst": "หยุด! ถ้าคิดจะปล้นสุสาน เจ้ามาช้าไป Creden Tibus ยึดที่นี่แล้ว เจ้าผ่านไปไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#021": {
+   "src": "Mummy? Curse? I don't know anything about that, but I can't let you in - how do I know you won't just grab the gold?",
+   "dst": "มัมมี่? คำสาป? ข้าไม่รู้เรื่องพวกนั้น แต่ปล่อยเจ้าเข้าไปไม่ได้ - จะรู้ได้ไงว่าเจ้าไม่ฉกทองไป?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#022": {
+   "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
+   "dst": "ปัญหาคือร้านอยู่ที่ {p} แต่ข้าต้องเฝ้าสุสานนี้ ถ้าเจ้าไปซื้อมาให้ก่อนของหมด ข้าจะทำเป็นมองไม่เห็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#023": {
+   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
+   "dst": "ใช้เกวียนของโจรที่ [{~}, {~}, -{~}] ไป {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#024": {
+   "src": "Bring back [{~} Pink Wool] to the bandit at [{~}, {~}, -{~}].",
+   "dst": "นำ [{~} Pink Wool] ไปให้โจรที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#025": {
+   "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
+   "dst": "โอ้ ใครจะคิด? เจ้าได้ขนแกะสีชมพูมาแล้ว! เอามา แล้วข้าจะทำเป็นไม่เห็น ปล่อยเจ้าเข้าสุสาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 5",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#026": {
+   "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
+   "dst": "แค่อย่าแตะทองนะ? ถ้าข้าเป็นเจ้า จะไม่เข้าไปลึกเกินไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 5",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#027": {
+   "src": "The clan was going to explore further inside, but the sounds...",
+   "dst": "เผ่าเราจะสำรวจลึกเข้าไป แต่เสียงพวกนั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 5",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#028": {
+   "src": "Anyway, I'll still let you inside if you want. Just remember, if anyone asks, this conversation never happened.",
+   "dst": "ยังไงก็ ถ้าอยากเข้า ข้าก็ยังให้เข้า แค่จำไว้ ถ้ามีใครถาม เราไม่เคยคุยกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 5",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#029": {
+   "src": "Enter the tomb at [{~}, {~}, -{~}] and kill the Mummy.",
+   "dst": "เข้าสุสานที่ [{~}, {~}, -{~}] และสังหารมัมมี่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#030": {
+   "src": "Bring [{~} Mummy's Bandage] to Ormrod at [{~}, {~}, -{~}].",
+   "dst": "นำ [{~} Mummy's Bandage] ไปให้ Ormrod ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#031": {
+   "src": "Hello, again... have you had any luck?",
+   "dst": "สวัสดีอีกครั้ง... มีโชคบ้างไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 7",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#032": {
+   "src": "Those are the Mummy's bandages?! You did it? My curse is finally lifted!",
+   "dst": "นั่นผ้าพันแผลของมัมมี่?! คุณทำได้? คำสาปของผมหายไปแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 7",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#033": {
+   "src": "I can't thank you enough! As a reward, take this rag I got from the Mummy when I entered the tomb.",
+   "dst": "ขอบคุณไม่รู้จะพูดยังไง! เป็นรางวัล รับผ้าขี้ริ้วที่ผมได้จากมัมมี่ตอนเข้าสุสานไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 7",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#034": {
+   "src": "I am not strong enough to wear it, but I'm sure you are! Take these emeralds too, that's the least I can do!",
+   "dst": "ผมไม่แข็งแรงพอจะสวม แต่คุณต้องได้แน่! รับมรกตพวกนี้ไปด้วย อย่างน้อยผมก็ทำได้แค่นี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 7",
+   "speaker": "Ormrod",
+   "source": "wiki"
+  }
+ }
+}

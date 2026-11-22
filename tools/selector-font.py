@@ -149,7 +149,11 @@ def render(lang, chars, ttf):
     own = set(TTFont(str(ttf)).getBestCmap())
     mine = [c for c in chars if ord(c) in own]
     rest = [c for c in chars if ord(c) not in own]
-    table, width = draw_sheet(lang, mine, ImageFont.truetype(str(ttf), 10), CELL_H, BASELINE)
+    table, width = None, 0
+    if mine:
+        table, width = draw_sheet(lang, mine, ImageFont.truetype(str(ttf), 10), CELL_H, BASELINE)
+    elif (SHEETS / f"{lang}.png").exists():
+        (SHEETS / f"{lang}.png").unlink()
     extra = None
     old = SHEETS / f"{lang}_x.png"
     if rest:
@@ -164,13 +168,15 @@ def write_fonts(lang, table, extra, ttf_provider):
         path = FONTS / lang / f"{name}.json"
         spec = json.loads(path.read_text(encoding="utf-8"))
         reference = [p for p in spec["providers"] if p.get("type") == "reference"]
-        providers = reference + [{
-            "type": "bitmap",
-            "file": f"wynnchayuan:font/selector/{lang}.png",
-            "height": CELL_H,
-            "ascent": ascent,
-            "chars": table,
-        }]
+        providers = list(reference)
+        if table:
+            providers.append({
+                "type": "bitmap",
+                "file": f"wynnchayuan:font/selector/{lang}.png",
+                "height": CELL_H,
+                "ascent": ascent,
+                "chars": table,
+            })
         if extra:
             providers.append({
                 "type": "bitmap",
@@ -194,7 +200,7 @@ def main():
         ttf, provider = ttf_for(lang)
         table, width, extra = render(lang, chars, ttf)
         write_fonts(lang, table, extra, provider)
-        print(f"{lang}: {len(chars)} 個字，格寬 {width} px，{len(table)} 列 -> {SHEETS / (lang + '.png')}")
+        print(f"{lang}: {len(chars)} 個字，格寬 {width} px，{len(table or [])} 列 -> {SHEETS / (lang + '.png')}")
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ public final class MountStatRowTest {
 
     private static final java.util.Set<String> SAME_WORD = java.util.Set.of("pt_br:Altitude");
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"};
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();

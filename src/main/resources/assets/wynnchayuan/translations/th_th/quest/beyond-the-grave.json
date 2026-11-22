@@ -1,0 +1,1864 @@
+{
+ "_meta": {
+  "quest": "Beyond the Grave",
+  "count": 185,
+  "translated": 185,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Beyond the Grave#000": {
+   "src": "Speak to Irlok in the {p} at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Irlok ที่ {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#001": {
+   "src": "Welcome to Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
+   "dst": "ยินดีต้อนรับสู่วิหาร Bantisu นักเดินทาง เรานำทางดวงวิญญาณที่หลงทาง ไม่ว่าคนหลงทางเข้าเมือง หรือวิญญาณที่ออกจากหุบผาไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#002": {
+   "src": "However, recently our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
+   "dst": "แต่ช่วงนี้งานของเรายากขึ้นมาก หุบผาสั่นไหวและเปลี่ยนแปลง บ่อยครั้งที่สิ่งมีชีวิตที่ถูกฝังมานานหลุดออกมาเมื่อผนังเคลื่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#003": {
+   "src": "And unfortunately, the worst has come to pass, that one of these creatures is hostile. The Bantisu monks of old collapsed the entrance to its cave to seal it away...",
+   "dst": "และน่าเสียดาย สิ่งที่เลวร้ายที่สุดก็เกิดขึ้น หนึ่งในนั้นดุร้าย พระ Bantisu ในอดีตทลายทางเข้าถ้ำของมันเพื่อผนึกไว้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#004": {
+   "src": "...but the rubble has shifted, and the cave is open once more. We were not strong enough to defeat it then, and we are not strong enough to defeat it now.",
+   "dst": "...แต่ซากหินเคลื่อนไป ถ้ำจึงเปิดอีกครั้ง ตอนนั้นเราไม่แข็งแกร่งพอจะเอาชนะมัน และตอนนี้ก็ยังไม่พอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#005": {
+   "src": "Even trying to collapse the cave again has ended in failure, for the beast, Krolton, slays our mages and demolitionists in but an instant.",
+   "dst": "แม้แต่จะทลายถ้ำอีกครั้งก็ล้มเหลว เพราะอสูร Krolton สังหารนักเวทและช่างระเบิดของเราในพริบตา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#006": {
+   "src": "However, the word on the wind tells tales of humans doing the impossible as a matter of rote. Krolton must be dealt with before it leaves the cave- I beg your assistance!",
+   "dst": "แต่สายลมเล่าว่ามนุษย์ทำสิ่งที่เป็นไปไม่ได้จนเป็นเรื่องปกติ ต้องจัดการ Krolton ก่อนมันออกจากถ้ำ เราขอร้องให้ช่วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#007": {
+   "src": "We've no time to spare. I will prepare a short spell to bring you to the cave- Please, wait outside, and prepare yourself.",
+   "dst": "เราไม่มีเวลาแล้ว เราจะเตรียมเวทสั้นๆ ส่งคุณไปที่ถ้ำ ได้โปรดรอข้างนอกและเตรียมตัวให้พร้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 1",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#008": {
+   "src": "Seek out the creature in the mines at [{~}, {~}, -{~}].",
+   "dst": "ตามหาสิ่งมีชีวิตนั้นในเหมืองที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#009": {
+   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton may emerge.",
+   "dst": "ขออภัยที่กะทันหัน แต่คุณต้องเข้าใจถึงความเร่งด่วน เราไม่มีทางรู้ว่า Krolton จะออกมาเมื่อไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 2",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#010": {
+   "src": "We will pray for your safety, and that your spirit will not become among those we must guide out of the canyon.",
+   "dst": "เราจะภาวนาให้คุณปลอดภัย และขอให้วิญญาณคุณไม่ต้องเป็นหนึ่งในนั้นที่เราต้องนำทางออกจากหุบผา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 2",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#011": {
+   "src": "Now, hold tight, and godspeed!!",
+   "dst": "จับไว้แน่นๆ แล้วโชคดี!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 2",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#012": {
+   "src": "Explore the strange realm and bargain with Death.",
+   "dst": "สำรวจดินแดนประหลาดและต่อรองกับมัจจุราช",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#013": {
+   "src": "SO THAT IS YOUR FIRST INSTINCT? TO CLIMB THE VALLEY WALLS IN FRUITLESS SEARCH OF AN ESCAPE?",
+   "dst": "นั่นคือสัญชาตญาณแรกของเจ้ารึ? ปีนผนังหุบเขาเพื่อหาทางหนีอย่างไร้ประโยชน์?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#014": {
+   "src": "AMUSING. BUT THIS IS WHERE YOU MUST BE. TAKE ALL THE TIME YOU LIKE, THOUGH. I WILL WAIT FOR YOU TO COME TO MY MANOR.",
+   "dst": "น่าขัน แต่ที่นี่คือที่ที่เจ้าต้องอยู่ ใช้เวลาเท่าไรก็ได้ ข้าจะรอให้เจ้ามาที่คฤหาสน์ของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#015": {
+   "src": "SO MY MANSION IS DULL ENOUGH YOU'D RATHER GO ROCK CLIMBING?",
+   "dst": "คฤหาสน์ข้าน่าเบื่อจนเจ้าอยากไปปีนหน้าผามากกว่ารึ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#016": {
+   "src": "OR DID I SIMPLY SCARE YOU OFF SAYING SUCH SERIOUS THINGS?",
+   "dst": "หรือข้าพูดเรื่องจริงจังจนเจ้ากลัวหนีไป?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#017": {
+   "src": "NEVERTHELESS, YOU WILL BE BACK EVENTUALLY. THERE IS NOTHING FOR ANYONE OUT THERE.",
+   "dst": "อย่างไรก็ตาม สักวันเจ้าจะกลับมา ข้างนอกนั่นไม่มีอะไรสำหรับใครเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#018": {
+   "src": "IT SEEMS I HAVE A NEW GUEST. WELCOME.",
+   "dst": "ดูเหมือนข้ามีแขกคนใหม่ ยินดีต้อนรับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#019": {
+   "src": "MAKE YOURSELF COMFORTABLE. YOU'LL BE STAYING HERE FOR A WHILE.",
+   "dst": "ทำตัวตามสบาย เจ้าจะต้องอยู่ที่นี่อีกนาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#020": {
+   "src": "NOTHING IS STOPPING YOU FROM TAKING A LOOK AROUND. DON'T TOUCH ANYTHING THOUGH. AND TAKE OFF YOUR SHOES AS YOU ENTER.",
+   "dst": "ไม่มีอะไรห้ามเจ้าเดินดูรอบๆ แต่อย่าแตะต้องอะไร และถอดรองเท้าก่อนเข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#021": {
+   "src": "WHEN YOU FEEL LIKE IT, COME TO MY OFFICE UPSTAIRS. WE HAVE A LENGTHY TALK TO HAVE.",
+   "dst": "เมื่อพร้อมแล้ว มาที่ห้องทำงานข้าชั้นบน เรามีเรื่องต้องคุยกันยาว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#022": {
+   "src": "THIS IS WHERE I SERVE MEALS TO MY GUESTS. THEY GIVE SUCH GLOWING REVIEWS.",
+   "dst": "ที่นี่ข้าเสิร์ฟอาหารให้แขก พวกเขารีวิวกันดีเยี่ยมเชียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#023": {
+   "src": "AFTER ALL, IT IS SAID ONE'S LAST MEAL IS THE SWEETEST, SO HAVING ANOTHER AFTER THAT IS SURELY TO DIE FOR. AH HA HA.",
+   "dst": "ว่ากันว่ามื้อสุดท้ายหวานที่สุด ฉะนั้นได้กินอีกมื้อหลังจากนั้นก็คงอร่อยจะตาย อะฮ่า ฮ่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#024": {
+   "src": "IF I HAD BOUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
+   "dst": "ถ้าเช้านี้ข้าซื้อแป้งมา คงอบคุกกี้ฉลองการตายของเจ้าแล้ว เขาว่าคุกกี้ช็อกโกแลตชิปของข้าดีที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#025": {
+   "src": "BUT ALAS. WE WILL HAVE TO CONTENT OURSELVES WITH A LAST DRINK FOR THE DEPARTED INSTEAD. I'LL PUT THE KETTLE ON.",
+   "dst": "แต่น่าเสียดาย เราคงต้องพอใจกับเครื่องดื่มส่งผู้ล่วงลับแทน เดี๋ยวข้าต้มน้ำให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#026": {
+   "src": "FEET OFF THE TABLE, PLEASE.",
+   "dst": "เอาเท้าลงจากโต๊ะด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#027": {
+   "src": "THIS SECTION OF THE MANSION IS UNDERGOING RENOVATIONS. FOR THE TIME BEING, IT GOES EMPTY.",
+   "dst": "ส่วนนี้ของคฤหาสน์กำลังปรับปรุง ตอนนี้ยังว่างอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#028": {
+   "src": "SOULS DO LINGER HERE. LINGERING EVER LONGER THAN BEFORE. AND WITH SO MANY ARRIVING...",
+   "dst": "ดวงวิญญาณยังวนเวียนอยู่ที่นี่ วนเวียนนานกว่าแต่ก่อน และยังมีมาถึงอีกมากมาย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#029": {
+   "src": "IT IS, PERHAPS, A POINTLESS COMFORT TO GIVE. BUT I FEEL A GUEST ROOM WOULD BE APPRECIATED, UNDER THE CIRCUMSTANCES.",
+   "dst": "บางทีมันอาจเป็นการปลอบใจที่ไร้ประโยชน์ แต่ข้ารู้สึกว่าห้องรับแขกคงเป็นที่ซาบซึ้ง ในสถานการณ์เช่นนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#030": {
+   "src": "PERHAPS GROWING THINGS IN A PLACE LIKE THIS IS A FOOL'S ERRAND.",
+   "dst": "การปลูกต้นไม้ในที่แบบนี้อาจเป็นงานของคนโง่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#031": {
+   "src": "IF IT IS, THEN I WILL MERRILY JINGLE MY BELLS AS I WATER THEM. IT IS FLEETING JOY TO CARE FOR THEM, BUT A JOY NONETHELESS.",
+   "dst": "ถ้าใช่ ข้าก็จะสั่นกระดิ่งอย่างร่าเริงขณะรดน้ำ การดูแลพวกมันเป็นความสุขชั่วครู่ แต่ก็ยังเป็นความสุข",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#032": {
+   "src": "THESE ARE BUSHES. NOTHING YOU DON'T ALREADY KNOW.",
+   "dst": "นี่คือพุ่มไม้ ไม่มีอะไรที่เจ้าไม่รู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#033": {
+   "src": "WELCOME TO MY LIBRARY. I FIND MY GUESTS ARE DRAWN TO HERE. PERHAPS IT IS BECAUSE KNOWLEDGE IS POWER, AS I HAVE BEEN TOLD.",
+   "dst": "ยินดีต้อนรับสู่ห้องสมุดของข้า แขกของข้ามักถูกดึงดูดมาที่นี่ อาจเพราะความรู้คือพลัง อย่างที่ใครเขาว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#034": {
+   "src": "ALTHOUGH, GIVEN SO MANY OF MY BOOKS ARE WRITTEN IN DEAD LANGUAGES, THERE IS LITTLE POWER TO BE FOUND HERE.",
+   "dst": "แต่หนังสือส่วนใหญ่ของข้าเขียนด้วยภาษาที่ตายไปแล้ว จึงมีพลังให้ค้นพบที่นี่น้อยนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#035": {
+   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE, HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
+   "dst": "แต่ข้าจะไม่หวงช่วงพักผ่อนให้แขก แม้จะแค่ชั่วครู่ ความเป็นมนุษย์ผู้ต้องตายเป็นบทเรียนที่โหดร้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#036": {
+   "src": "IT SEEMS YOU REALLY WANTED TO KNOW WHAT WAS BEHIND THIS DOOR.",
+   "dst": "ดูเหมือนเจ้าอยากรู้จริงๆ ว่าหลังประตูนี้มีอะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#037": {
+   "src": "I GUESS YOU WILL GET WHAT YOU WANTED...",
+   "dst": "คงได้สมใจแล้วสินะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#038": {
+   "src": "ANOTHER DOOR.",
+   "dst": "อีกประตูหนึ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#039": {
+   "src": "DO YOU REALLY THINK IT WAS WORTH YOUR TIME?",
+   "dst": "เจ้าคิดจริงๆ รึว่ามันคุ้มเวลา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#040": {
+   "src": "AH, I SEE YOU HAVE DISCOVERED THE HOURGLASSES. I SUPPOSE IT IS ONLY NATURAL THEY WOULD DRAW YOUR ATTENTION.",
+   "dst": "อ้า ข้าเห็นว่าเจ้าพบนาฬิกาทรายแล้ว คงเป็นธรรมดาที่มันจะดึงความสนใจเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#041": {
+   "src": "EACH ONE MEASURES THE LIFE OF A BEING. WHEN ALL THE SAND REACHES THE BOTTOM, I RECEIVE A NEW GUEST.",
+   "dst": "แต่ละอันวัดชีวิตของสิ่งมีชีวิตหนึ่ง เมื่อทรายไหลลงก้นหมด ข้าก็จะได้แขกคนใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#042": {
+   "src": "BUT A MEASURED LIFESPAN IS NOT A GUARANTEE. IT IS ONLY AN ESTIMATE. THE RATE OF THE HOURGLASS WILL SHIFT IN RESPONSE TO ANY NUMBER OF FACTORS.",
+   "dst": "แต่อายุขัยที่วัดไว้ไม่ใช่สิ่งรับประกัน เป็นเพียงการประมาณ อัตราของนาฬิกาทรายจะเปลี่ยนไปตามปัจจัยนับไม่ถ้วน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#043": {
+   "src": "I AM SURE WE COULD FIND YOURS, IF WE SEARCHED HARD ENOUGH. BUT I FIND MOST VISITORS STRUGGLE TO GRAPPLE WITH SUCH A TANGIBLE DISPLAY.",
+   "dst": "ข้ามั่นใจว่าเราหาของเจ้าเจอได้ ถ้าค้นให้ดีพอ แต่ข้าพบว่าผู้มาเยือนส่วนใหญ่รับมือกับสิ่งที่จับต้องได้ขนาดนี้ไม่ไหว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#044": {
+   "src": "THIS ONE... IT IS SPECIAL. IT DISPLAYS SOMETHING FAR MORE IMPORTANT THAN INDIVIDUAL LIFESPANS.",
+   "dst": "อันนี้... มันพิเศษ มันแสดงบางสิ่งที่สำคัญกว่าอายุขัยของแต่ละชีวิตมากนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#045": {
+   "src": "IT IS HERE TO MEASURE HOW MUCH TIME THE WORLD HAS LEFT.",
+   "dst": "มันอยู่ที่นี่เพื่อวัดว่าโลกเหลือเวลาอีกเท่าไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#046": {
+   "src": "AS WITH THE OTHERS, IT IS MERELY AN ESTIMATE. IT HAS BEEN SLOWED AND HALTED IN THE PAST.",
+   "dst": "เช่นเดียวกับอันอื่น มันเป็นเพียงการประมาณ ในอดีตมันเคยช้าลงและหยุดไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#047": {
+   "src": "BUT I FEAR THE COMING END IS INEVITABLE. IT WAS SET IN MOTION LONG, LONG AGO, BY ACTORS BEYOND THE BOTH OF US.",
+   "dst": "แต่ข้าเกรงว่าจุดจบที่ใกล้เข้ามาจะเลี่ยงไม่ได้ มันถูกเริ่มไว้นานแสนนาน โดยผู้ที่อยู่เหนือเราทั้งสอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#048": {
+   "src": "I KEEP IT AS A REMINDER. TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
+   "dst": "ข้าเก็บไว้เป็นเครื่องเตือนใจ ให้ทะนุถนอมสิ่งที่ยังเหลือ ก่อนที่มันจะสูญไปเช่นกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#049": {
+   "src": "PLEASE REFRAIN FROM TOUCHING ANY OF MY JARS. I KEEP THINGS VERY DEAR TO ME IN THEM.",
+   "dst": "โปรดอย่าแตะโหลของข้า ข้าเก็บสิ่งที่รักมากไว้ในนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#050": {
+   "src": "PARTICULARLY MY JAR OF SOIL. THAT IS A SOUVENIR FROM VERY, VERY LONG AGO.",
+   "dst": "โดยเฉพาะโหลดินของข้า นั่นเป็นของที่ระลึกจากนานแสนนานมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#051": {
+   "src": "I HAVE NO NEED FOR SLEEP. SO, MY BEDROOM NOW SERVES MERELY A SYMBOLIC PURPOSE.",
+   "dst": "ข้าไม่จำเป็นต้องนอน ห้องนอนข้าตอนนี้จึงมีไว้เพียงเป็นสัญลักษณ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#052": {
+   "src": "SYMBOLIC OF WHAT, YOU ASK? MY LOVING MARRIAGE. JUST BECAUSE I DO NOT HAVE A HEART, IT DOES NOT MEAN I CANNOT LOVE.",
+   "dst": "สัญลักษณ์ของอะไร เจ้าถามรึ? ของชีวิตคู่ที่เปี่ยมรัก ข้าไม่มีหัวใจ ก็ไม่ได้แปลว่ารักไม่เป็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#053": {
+   "src": "\"TIL DEATH DO US PART\" IS FOR QUITTERS, I SAY. I WILL LOVE HER BEYOND THE END OF TIME ITSELF.",
+   "dst": "\"จนกว่าความตายจะพรากเราจากกัน\" มีไว้สำหรับพวกยอมแพ้ ข้าจะรักนางไปจนเลยจุดจบของกาลเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#054": {
+   "src": "THESE DAYS, THE CATS LAY CLAIM TO THE BED FOR THE MOST PART. AT LEAST SOMEONE IS GETTING USE OUT OF IT, IN THE END.",
+   "dst": "ทุกวันนี้แมวยึดเตียงไปเกือบหมด อย่างน้อยก็มีใครได้ใช้มันในที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#055": {
+   "src": "THIS IS THE DARK LORD, SNUGGLEBUNS. GREET HIM WITH RESPECT, WITH A PAT ON THE HEAD AND A SCRATCH UNDER THE CHIN.",
+   "dst": "นี่คือจอมมาร Snugglebuns ทักทายเขาอย่างนอบน้อม ด้วยการลูบหัวและเกาใต้คาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#056": {
+   "src": "HE IS A GUEST, MUCH LIKE YOURSELF. UNLIKE YOU, HOWEVER, HE HAS BEEN HERE A VERY LONG TIME.",
+   "dst": "เขาเป็นแขกเหมือนเจ้า แต่ต่างจากเจ้า เขาอยู่ที่นี่มานานมากแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#057": {
+   "src": "HE IS ONE OF THE MORE STUBBORN BEASTS I HAVE ENCOUNTERED ACROSS THESE EONS. YOU SEE, HE IS WAITING FOR SOMEONE TO CROSS OVER. MUCH LIKE MYSELF, HE CAN BE VERY PATIENT.",
+   "dst": "เขาเป็นหนึ่งในสัตว์ที่ดื้อที่สุดที่ข้าเคยพบตลอดหลายกัปกัลป์ เห็นไหม เขากำลังรอใครบางคนข้ามมา เขาอดทนได้มาก เหมือนข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#058": {
+   "src": "TOO PATIENT FOR HIS OWN GOOD, PERHAPS.",
+   "dst": "อาจจะอดทนมากเกินไปด้วยซ้ำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#059": {
+   "src": "...I DO NOT HAVE THE HEART TO TELL HIM THE TRUTH. AND SO, AS THE YEARS PASS, HIS CLAIM ON MY HOME CONTINUES TO GROW.",
+   "dst": "...ข้าไม่มีใจจะบอกความจริงกับเขา ยิ่งปีผ่านไป เขาก็ยิ่งยึดบ้านข้าไปเรื่อยๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#060": {
+   "src": "AND I ALLOW IT. I FIND HIS COMPANIONSHIP WORTH THE HASSLE.",
+   "dst": "และข้าก็ยอม ข้าว่าการมีเขาเป็นเพื่อนนั้นคุ้มกับความยุ่งยาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#061": {
+   "src": "IT MAY NOT SEEM AS SUCH FROM YOUR PERSPECTIVE. BUT LIFE IS LIMITED. STILL, SOULS PASS THROUGH THE CYCLE, AND THE WORLD KEEPS ON SPINNING.",
+   "dst": "จากมุมมองเจ้าอาจไม่เป็นเช่นนั้น แต่ชีวิตมีจำกัด ถึงอย่างนั้น ดวงวิญญาณก็ผ่านวัฏจักร และโลกก็ยังหมุนต่อไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#062": {
+   "src": "...THEY WERE NOT MEANT TO BE LOST. TO PASS BEYOND MY REACH, TO REACH AN END SOMEWHERE I CANNOT FIND THEM.",
+   "dst": "...พวกเขาไม่ควรสูญหาย ไม่ควรพ้นเอื้อมมือข้า ไม่ควรถึงจุดจบในที่ที่ข้าหาไม่เจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#063": {
+   "src": "AND YET, THROUGH MEANS BEYOND MY CONTROL, THEY DO. THEY HAVE. WITH EACH AND EVERY ONE, I LOSE A PIECE OF MYSELF. IRREVERSIBLY.",
+   "dst": "แต่ด้วยสิ่งที่อยู่นอกการควบคุมของข้า พวกเขาก็สูญไป และสูญไปแล้ว ทุกดวงที่หายไป ข้าเสียส่วนหนึ่งของตัวเอง อย่างไม่อาจคืน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#064": {
+   "src": "AND THE CYCLE MUST KEEP SPINNING, LESSENED EVEN AS IT MAY BE. BUT I STILL REMEMBER THEM, EACH LIFE THAT THEY LIVED.",
+   "dst": "และวัฏจักรต้องหมุนต่อไป แม้จะพร่องลงก็ตาม แต่ข้ายังจำพวกเขาได้ ทุกชีวิตที่พวกเขาได้ใช้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#065": {
+   "src": "SOMEONE HAS TO, AFTER ALL.",
+   "dst": "ยังไงก็ต้องมีใครสักคนจำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#066": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Takan",
+   "source": "wiki"
+  },
+  "Beyond the Grave#067": {
+   "src": "THIS ONE SHOULD BE FAMILIAR TO YOU.",
+   "dst": "ดวงนี้น่าจะคุ้นตาเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#068": {
+   "src": "FEW EVER HAVE THE CHANCE TO COME FACE TO FACE WITH A LIFE THEY THEMSELVES HAVE BROUGHT TO AN END. I WONDER HOW YOU FEEL NOW.",
+   "dst": "น้อยคนนักจะได้เผชิญหน้ากับชีวิตที่ตนเองเป็นผู้ปลิดลง ข้าสงสัยว่าเจ้ารู้สึกอย่างไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#069": {
+   "src": "HE WAS ONCE A GOOD MAN. BUT SUCH IS THE TRAVESTY OF THAT WAR-RAVAGED PROVINCE, THAT IT TWISTS THE MIND AND SPIRIT IN SUCH A WAY.",
+   "dst": "เขาเคยเป็นคนดี แต่นั่นคือโศกนาฏกรรมของแคว้นที่สงครามย่ำยี มันบิดเบือนจิตใจและวิญญาณให้เป็นเช่นนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#070": {
+   "src": "I WILL NOT PASS JUDGEMENT ON YOUR ACTIONS. BUT PERHAPS DEATH WAS A KINDER FATE THAN THE TURMOIL HE WAS DROWNING IN.",
+   "dst": "ข้าจะไม่ตัดสินการกระทำของเจ้า แต่บางทีความตายอาจเป็นชะตาที่ปรานีกว่าความทุกข์ที่เขากำลังจมอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#071": {
+   "src": "EVEN HERE, FREED OF ITS INFLUENCE, HE STRUGGLES TO RELEASE THAT ANGER THAT GRIPPED HIM SO TIGHTLY. HE REFUSES TO MOVE ON.",
+   "dst": "แม้อยู่ที่นี่ พ้นจากอิทธิพลนั้นแล้ว เขายังดิ้นรนจะปล่อยความโกรธที่เคยรัดเขาแน่นหนา เขาไม่ยอมไปต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#072": {
+   "src": "BUT HE WILL, EVENTUALLY. THEY ALL DO. IT IS ONLY A MATTER OF TIME.",
+   "dst": "แต่สักวันเขาจะไป ทุกคนไปทั้งนั้น เป็นเพียงเรื่องของเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#074": {
+   "src": "HE IS NOT THE FIRST TO HAVE SUFFERED SUCH A FATE. THAT BLIGHT HAS TAKEN HOLD OF OH SO MANY OVER THE YEARS.",
+   "dst": "เขาไม่ใช่คนแรกที่ต้องเจอชะตาเช่นนี้ โรคร้ายนั้นเกาะกุมผู้คนมากมายเหลือเกินตลอดหลายปี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#075": {
+   "src": "A MILLENNIUM IS A RAINDROP IN THE SEA COMPARED TO MY EXISTENCE. SO WHY HAVE THESE YEARS FELT SO MUCH LONGER THAN EVER BEFORE?",
+   "dst": "หนึ่งพันปีเป็นเพียงหยดฝนในทะเลเมื่อเทียบกับการดำรงอยู่ของข้า แล้วไฉนช่วงปีเหล่านี้จึงรู้สึกยาวนานกว่าที่เคย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#076": {
+   "src": "IT IS FORTUNATE THAT IT ONLY TARGETS THE BODY, AND ONLY ONCE ITS SPARK FLICKERS OUT.",
+   "dst": "โชคดีที่มันเล่นงานเพียงร่างกาย และเฉพาะเมื่อประกายชีวิตมอดดับแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#077": {
+   "src": "WHAT IT DOES IS BAD ENOUGH ALREADY. IF IT WERE TO TAKE THE SOUL, AS WELL...",
+   "dst": "สิ่งที่มันทำก็เลวร้ายพอแล้ว ถ้ามันเอาวิญญาณไปด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#079": {
+   "src": "AH HA HA. I WOULD RATHER NOT DWELL ON THAT ANY LONGER. IT ISN'T AS IF I COULD DO SOMETHING ABOUT IT, ANYWAY.",
+   "dst": "อะฮ่า ฮ่า ข้าไม่อยากจมอยู่กับเรื่องนั้นอีก อย่างไรข้าก็ทำอะไรกับมันไม่ได้อยู่แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#081": {
+   "src": "WELCOME TO MY OFFICE. GO ON, TAKE A GUESS AT WHAT I DO HERE.",
+   "dst": "ยินดีต้อนรับสู่ห้องทำงานข้า ลองทายสิว่าข้าทำอะไรที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#082": {
+   "src": "I DIE OF BOREDOM.",
+   "dst": "ข้าเบื่อจะตาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#083": {
+   "src": "...REALLY? NOTHING? PERHAPS I NEED SOME NEW MATERIAL.",
+   "dst": "...จริงรึ? ไม่ขำเลย? ข้าคงต้องหามุกใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#084": {
+   "src": "PLEASE TAKE A SEAT. LET US REVIEW YOUR OPTIONS.",
+   "dst": "เชิญนั่ง มาทบทวนทางเลือกของเจ้ากัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#085": {
+   "src": "PERHAPS SITTING IN FRONT OF DEATH MAY SEEM AN ODD PLACE TO BE. I APOLOGIZE FOR ANY DISCOMFORT.",
+   "dst": "การนั่งต่อหน้ามัจจุราชอาจดูเป็นที่ที่แปลก ข้าขออภัยหากทำให้อึดอัด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#086": {
+   "src": "NOW, BEFORE WE BEGIN IN EARNEST. LIVING BEINGS ARE NOT SUBTLE ABOUT HAVING QUESTIONS. I AM SURE YOU HAVE THEM.",
+   "dst": "ทีนี้ ก่อนจะเริ่มจริงจัง สิ่งมีชีวิตไม่เคยเก็บอาการเวลามีคำถาม ข้ามั่นใจว่าเจ้ามี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#087": {
+   "src": "GO ON. ASK THEM NOW. I DO NOT WANT TO BE INTERRUPTED LATER.",
+   "dst": "ถามมาเลย ถามตอนนี้ ข้าไม่อยากถูกขัดจังหวะทีหลัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#088": {
+   "src": "SO IT WOULD SEEM.",
+   "dst": "ดูจะเป็นเช่นนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#089": {
+   "src": "FEEL FREE TO TAKE A MOMENT TO COME TO TERMS WITH YOUR MORTALITY, IF YOU NEED IT. I HAVE TIME.",
+   "dst": "ใช้เวลาสักครู่ทำใจยอมรับความเป็นผู้ต้องตายได้ตามสบาย หากจำเป็น ข้ามีเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#090": {
+   "src": "ANYTHING ELSE?",
+   "dst": "มีอะไรอีกไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#091": {
+   "src": "MANY, MANY, MANY TIMES. AS HAS EVERY OTHER LIVING BEING.",
+   "dst": "หลายต่อหลายครั้ง เหมือนสิ่งมีชีวิตทั้งปวง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#092": {
+   "src": "ONCE A LIFE REACHES AN END, THE SOUL PASSES THROUGH THE VEIL, CROSSING OVER INTO DEATH.",
+   "dst": "เมื่อชีวิตถึงจุดจบ วิญญาณจะผ่านม่าน ข้ามเข้าสู่ความตาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#093": {
+   "src": "HERE, THEY LINGER. MEMORIES FADE WITH TIME, AND THE SOUL IS REDUCED TO THE ESSENTIALS. PREPARED TO RETURN TO THE CYCLE.",
+   "dst": "ที่นี่ พวกเขาวนเวียน ความทรงจำจางลงตามกาลเวลา วิญญาณถูกลดทอนจนเหลือแก่นแท้ พร้อมกลับสู่วัฏจักร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#094": {
+   "src": "LIFE AND DEATH ARE NOT IN OPPOSITION, AS YOU MORTALS OFTEN ASSUME. THEY ARE TWO PARTS OF THE SAME WHOLE.",
+   "dst": "ชีวิตและความตายไม่ได้อยู่ตรงข้ามกัน อย่างที่พวกมนุษย์มักคิด มันคือสองส่วนของสิ่งเดียวกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#095": {
+   "src": "YOU, THE ESSENCE AT THE CORE OF YOUR BEING, HAVE BEEN HERE MANY TIMES BEFORE. AND YOU WILL BE HERE MANY TIMES AGAIN.",
+   "dst": "เจ้า แก่นแท้ที่เป็นแกนกลางของตัวเจ้า เคยมาที่นี่หลายครั้งแล้ว และจะมาที่นี่อีกหลายครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#096": {
+   "src": "...OR, SO I WOULD HOPE. BUT I DIGRESS.",
+   "dst": "...หรือข้าก็หวังเช่นนั้น นอกเรื่องแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#098": {
+   "src": "IT IS DEATH. IT MAY BE HARD TO BELIEVE, I KNOW. AH HA HA. BUT I HAVE BEEN EXCEEDINGLY CLEAR, HAVEN'T I?",
+   "dst": "นี่คือความตาย อาจเชื่อยาก ข้ารู้ อะฮ่า ฮ่า แต่ข้าพูดชัดเจนมากแล้ว ใช่ไหมเล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#099": {
+   "src": "BUT NOT EVERY SOUL WILL SEE IT THE SAME WAY. MOST LACK THE CAPACITY TO CONCEPTUALIZE IT AS ANYTHING MORE THAN A HAZE. A BLURRED STATE OF BEING.",
+   "dst": "แต่ไม่ใช่ทุกวิญญาณจะเห็นเหมือนกัน ส่วนใหญ่ไม่อาจรับรู้มันได้มากกว่าหมอกจางๆ สภาวะที่พร่ามัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#100": {
+   "src": "IT IS RARE THAT I MAY HOST A GUEST WITH THE CLARITY OF MIND AND THE WILLPOWER REMAINING TO SEE THIS PLACE FOR WHAT IT TRULY IS.",
+   "dst": "หายากนักที่ข้าจะได้ต้อนรับแขกที่ยังมีจิตแจ่มใสและเจตจำนงพอจะเห็นที่นี่อย่างที่มันเป็นจริงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#101": {
+   "src": "HOWEVER FLEETINGLY, I DO ENJOY WHEN IT HAPPENS. IT IS WORTH CELEBRATING. NOW IF ONLY I HAD SOME SPIRITS TO SHARE. AH HA HA.",
+   "dst": "แม้เพียงชั่วครู่ ข้าก็ชอบเวลาที่มันเกิดขึ้น สมควรฉลอง เสียดายไม่มีเหล้าดีๆ ไว้ดื่มกับพวกวิญญาณ อะฮ่า ฮ่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#103": {
+   "src": "OH, IT CHANGES WITH THE TIMES. AND ACCORDING TO MY WHIMS.",
+   "dst": "โอ้ มันเปลี่ยนไปตามยุคสมัย และตามอารมณ์ของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#104": {
+   "src": "IT HAS PREVIOUSLY BEEN A TOWER, A CASTLE, A FOREST, A CAVERN... I WAS IN A VERY UNDERGROUND PHASE OF MY EXISTENCE BACK THEN.",
+   "dst": "ก่อนหน้านี้มันเคยเป็นหอคอย ปราสาท ป่า ถ้ำ... ตอนนั้นข้าอยู่ในช่วงชีวิตที่ใต้ดินสุดๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#105": {
+   "src": "FOR NOW, A MANOR SERVES ME WELL. I DO ADMIRE THE ARCHITECTURAL STYLE OF ITS TIME. VERY GOTHIC.",
+   "dst": "ตอนนี้คฤหาสน์ก็ใช้ได้ดี ข้าชื่นชมสถาปัตยกรรมยุคนั้น โกธิกมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#107": {
+   "src": "CERTAINLY NOT. WHEREVER WOULD I FIND THE TIME?",
+   "dst": "ไม่มีทาง ข้าจะไปหาเวลาจากไหน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#108": {
+   "src": "FOR MOST SOULS, THERE IS LITTLE NEED TO INTERVENE. THEY WILL LINGER, BUT GIVEN TIME, THEY WILL FIND THEIR WAY FORWARD.",
+   "dst": "สำหรับวิญญาณส่วนใหญ่ ไม่ค่อยต้องเข้าไปยุ่ง พวกเขาจะวนเวียนอยู่ แต่เมื่อเวลาผ่านไป ก็จะหาทางไปต่อได้เอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#109": {
+   "src": "BUT ON OCCASION, AN ARRIVAL WILL DRAW MY INTEREST. ONE WHICH DEMANDS A PROPER WELCOME.",
+   "dst": "แต่บางครั้ง ผู้มาถึงบางคนก็ดึงดูดความสนใจข้า คนที่สมควรได้รับการต้อนรับอย่างเหมาะสม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#110": {
+   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
+   "dst": "การพบกันในห้องทำงานนี้ไม่จำเป็นจริงๆ หรอก เอกสารพวกนี้มีไว้โชว์ แต่บางครั้งข้าก็ชอบตามใจตัวเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#112": {
+   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME YOU COULD THINK OF MORE.",
+   "dst": "เท่านั้นคงครบแล้ว ถ้าให้เวลาเจ้ามากกว่านี้ เจ้าอาจนึกคำถามได้อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#113": {
+   "src": "BUT IT IS BEST WE GET ON WITH OUR DISCUSSION, I WOULD SAY.",
+   "dst": "แต่ข้าว่า เราคุยกันต่อดีกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#114": {
+   "src": "LET US BEGIN WITH THE BASICS.",
+   "dst": "เริ่มจากพื้นฐานกันก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#115": {
+   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER TO ADD TO THE TALLY.",
+   "dst": "สาเหตุการตาย: ถูกสังหารโดยสิ่งสยองนามว่า Krolton เพิ่มอีกหนึ่งในบัญชี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#116": {
+   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FOE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
+   "dst": "รวดเร็วและหลีกเลี่ยงไม่ได้ ไม่น่าอายที่แพ้ศัตรูเช่นนั้น เจ้าไม่ใช่คนแรก และคงไม่ใช่คนสุดท้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#117": {
+   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEANS, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
+   "dst": "แม้บางทีข้าก็แอบหวังให้ใครสักคนจัดการมันได้สำเร็จ มันอยู่มาเกินกว่าที่ควรนัก และสร้างความรำคาญทุกครั้งที่โผล่ออกมา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#118": {
+   "src": "BUT I DIGRESS. NEXT, LET US PERUSE YOUR LIFE'S RECORD. IT IS A FORMALITY, FOR THE MOST PART. ONLY APPLICABLE IF YOU WISH TO RETURN TO THE CYCLE.",
+   "dst": "แต่ข้าออกนอกเรื่องแล้ว ต่อไป มาตรวจบันทึกชีวิตของเจ้ากัน ส่วนใหญ่เป็นแค่พิธีการ ใช้เฉพาะเมื่อเจ้าต้องการกลับสู่วัฏจักร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#119": {
+   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUESTS. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
+   "dst": "แต่ถ้าจะให้พูดอย่างเห็นแก่ตัว ข้าอยากชวนให้เจ้าอยู่ต่ออีกสักพัก นานแล้วที่ข้าไม่มีแขก การมีเจ้าเป็นเพื่อนคงเป็นที่ซาบซึ้งนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#120": {
+   "src": "...YOU HAVE TIME TO DECIDE. FOR NOW, WE MAY...",
+   "dst": "...เจ้ามีเวลาตัดสินใจ ตอนนี้ เราอาจ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#122": {
+   "src": "HM. HOW VERY INTERESTING. THAT WOULD EXPLAIN SOME THINGS.",
+   "dst": "หืม น่าสนใจยิ่งนัก นั่นอธิบายบางอย่างได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#123": {
+   "src": "SOMETHING HAS GONE WRONG. IT WOULD SEEM YOUR SPARK HAS PERSISTED EVEN THROUGH THE VEIL... EVEN THOUGH SUCH A THING SHOULD BE IMPOSSIBLE.",
+   "dst": "มีบางอย่างผิดพลาด ดูเหมือนประกายชีวิตของเจ้ายังคงอยู่ แม้ผ่านม่านมาแล้ว... ทั้งที่สิ่งนี้ไม่น่าเป็นไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#124": {
+   "src": "IT HAS IMPRINTED ITSELF INTO YOUR VERY ESSENCE... HOW HAS THIS COME TO PASS? COULD IT HAVE BEEN...",
+   "dst": "มันประทับลงในแก่นแท้ของเจ้าเอง... เรื่องนี้เกิดขึ้นได้อย่างไร? หรือว่าจะเป็น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#125": {
+   "src": "AH. I SEE... THIS COMPLICATES MATTERS.",
+   "dst": "อา เข้าใจแล้ว... ยุ่งยากขึ้นแล้วสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#127": {
+   "src": "I WOULD NOT WISH TO KEEP YOU HERE. IT WOULD NOT BE RIGHT. AND YET, I LACK THE MEANS TO RETURN YOU TO THE LIVING. SUCH AN ACT IS BEYOND MY OWN CAPABILITY.",
+   "dst": "ข้าไม่อยากกักเจ้าไว้ที่นี่ มันไม่ถูกต้อง แต่ข้าก็ไม่มีหนทางส่งเจ้ากลับไปสู่โลกคนเป็น สิ่งนั้นเกินความสามารถของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#128": {
+   "src": "WHAT TO DO, WHAT TO DO...",
+   "dst": "ทำยังไงดี ทำยังไงดี...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#130": {
+   "src": "A THOUGHT OCCURS TO ME. THOUGH I LACK THE MEANS MYSELF, THERE IS AN OPTION YET OPEN TO US. A THREAD I MAY REACH OUT AND GRASP.",
+   "dst": "ข้านึกออกแล้ว แม้ข้าจะไม่มีหนทางเอง แต่ยังมีทางเลือกเปิดอยู่ ด้ายเส้นหนึ่งที่ข้าเอื้อมไปคว้าได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#131": {
+   "src": "THE WRETCHED KROLTON. ITS SPARK IS STRONG, HAVING TAKEN SO MANY LIVES TO MAINTAIN IT. IF IT IS SLAIN, THAT STRENGTH WILL QUICKLY DISPERSE.",
+   "dst": "Krolton ผู้ชั่วช้า ประกายชีวิตของมันแรงกล้า เพราะพรากชีวิตมากมายมาหล่อเลี้ยง ถ้ามันถูกสังหาร พลังนั้นจะสลายไปอย่างรวดเร็ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#132": {
+   "src": "BUT FOR ONE SHORT MOMENT, IT WILL BE WITHIN MY REACH. AND WITH IT, WE MAY REIGNITE YOUR OWN CRADLED SPARK.",
+   "dst": "แต่ในชั่วขณะสั้นๆ มันจะอยู่ในเอื้อมมือข้า และด้วยมัน เราอาจจุดประกายชีวิตที่เจ้าถนอมไว้ให้ลุกโชนอีกครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#133": {
+   "src": "...THIS IS NOT AN ACT I TAKE LIGHTLY. TO TWIST THE CYCLE IN SUCH A WAY... IT IS AGAINST MY VERY NATURE.",
+   "dst": "...นี่ไม่ใช่สิ่งที่ข้าทำอย่างง่ายดาย การบิดวัฏจักรเช่นนี้... ขัดกับธรรมชาติของข้าเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#134": {
+   "src": "BUT, SELFISHLY, I FIND MYSELF CARING LESS ABOUT SUCH THINGS AS OF LATE.",
+   "dst": "แต่ถ้าจะให้พูดอย่างเห็นแก่ตัว ช่วงนี้ข้าเริ่มใส่ใจเรื่องพวกนั้นน้อยลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#135": {
+   "src": "SO IT IS DECIDED. I WILL GRANT YOU PASSAGE BACK BEYOND THE VEIL, WHERE YOU WILL RETURN TO THE BODY YOU HAD LEFT BEHIND.",
+   "dst": "ตัดสินแล้ว ข้าจะเปิดทางให้เจ้าข้ามกลับผ่านม่าน ไปสู่ร่างที่เจ้าทิ้งไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#136": {
+   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AN END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
+   "dst": "ที่นั่น ด้วยพลังที่เจ้ายังมี เจ้าจะยุติสิ่งสยองนั้น และด้วยจุดจบของมัน เราจะผลักจุดจบของเจ้าออกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#137": {
+   "src": "IT WILL TAKE SOME TIME TO PREPARE. IN THE MEANTIME, YOU MAY EXPLORE THE MANSION FURTHER.",
+   "dst": "ต้องใช้เวลาเตรียมการสักพัก ระหว่างนี้เจ้าจะสำรวจคฤหาสน์ต่อก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#138": {
+   "src": "THERE IS A GAME I HAD SET UP, IN THE OTHER UPSTAIRS ROOM. IT WAS MEANT TO BE A SURPRISE FOR YOU, BUT SINCE YOU WILL BE LEAVING, I SUPPOSE WE MAY PUSH IT FORWARD.",
+   "dst": "ข้าเตรียมเกมไว้ในห้องชั้นบนอีกห้อง ตั้งใจจะเป็นเซอร์ไพรส์ให้เจ้า แต่ในเมื่อเจ้าจะไปแล้ว เราคงเลื่อนมันให้เร็วขึ้นได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#139": {
+   "src": "YES? WHAT ELSE DO YOU NEED?",
+   "dst": "ว่าไง? ต้องการอะไรอีก?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#140": {
+   "src": "HM.",
+   "dst": "HM.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#141": {
+   "src": "WHY INDEED.",
+   "dst": "นั่นสิ ทำไม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#142": {
+   "src": "I SUPPOSE I HAVE GROWN TIRED OF STANDING BY.",
+   "dst": "ข้าคงเบื่อการยืนดูอยู่เฉยๆ แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#143": {
+   "src": "IT IS DIFFICULT, WATCHING THE WORLD'S FATE UNFOLD, UNABLE TO LIFT EVEN A SINGLE SKELETAL FINGER TO MAKE A DIFFERENCE.",
+   "dst": "มันยากนัก ที่ต้องเฝ้าดูชะตาโลกคลี่คลาย โดยยกนิ้วกระดูกสักนิ้วเพื่อเปลี่ยนแปลงอะไรไม่ได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#144": {
+   "src": "YOU DO NOT YET UNDERSTAND, I TAKE IT. FEW EVER WILL. IT IS SOMETHING FAR BEYOND ANY MORTAL'S CAPACITY TO COMPREHEND.",
+   "dst": "เจ้ายังไม่เข้าใจสินะ น้อยคนนักจะเข้าใจ มันเป็นสิ่งที่เกินกว่ามนุษย์ผู้ต้องตายคนใดจะหยั่งถึง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#145": {
+   "src": "I SUSPECT YOU WILL SOMEDAY. I DO NOT BELIEVE IN DESTINY. BUT PERHAPS THIS IS CLOSE ENOUGH.",
+   "dst": "ข้าสงสัยว่าสักวันเจ้าจะเข้าใจ ข้าไม่เชื่อเรื่องโชคชะตา แต่บางทีนี่ก็ใกล้เคียงพอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#146": {
+   "src": "IN TRUTH, YOU ARE RATHER FORTUNATE. YOU HAVE FOUND YOURSELF IN THE EXACT SET OF CIRCUMSTANCES TO ALLOW ME TO INTERVENE.",
+   "dst": "อันที่จริง เจ้าโชคดีไม่น้อย เจ้าอยู่ในสถานการณ์ที่ลงตัวพอดี ให้ข้าเข้าแทรกแซงได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#147": {
+   "src": "IT WOULD NOT BE RIGHT TO LET THE OPPORTUNITY PASS ME BY.",
+   "dst": "ไม่ถูกต้องหากข้าจะปล่อยโอกาสนี้ผ่านไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#148": {
+   "src": "IN ANY OTHER CIRCUMSTANCE, I WOULD BE HAPPY TO OBLIGE. A LONG-TERM GUEST IS ALWAYS APPRECIATED IN THESE LONESOME TIMES.",
+   "dst": "หากเป็นสถานการณ์อื่น ข้ายินดีทำตาม แขกที่อยู่ยาวเป็นที่ซาบซึ้งเสมอในยามเปล่าเปลี่ยวเช่นนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#149": {
+   "src": "BUT I CAN NOT. I WILL NOT.",
+   "dst": "แต่ข้าทำไม่ได้ ข้าจะไม่ทำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#150": {
+   "src": "...I HOPE YOU WILL UNDERSTAND.",
+   "dst": "...หวังว่าเจ้าจะเข้าใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#151": {
+   "src": "...GO. DO NOT LINGER HERE ANY LONGER.",
+   "dst": "...ไปเถิด อย่าวนเวียนอยู่ที่นี่อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#152": {
+   "src": "THE GAME IS IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION. I THINK YOU WILL ENJOY IT.",
+   "dst": "เกมอยู่ในห้องชั้นบนอีกห้อง สุดอีกฝั่งของคฤหาสน์ ข้าคิดว่าเจ้าจะชอบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#153": {
+   "src": "I CANNOT HELP BUT NOTICE YOU ARE STILL HERE. ARE YOU LOST? THE GAME IS READY FOR YOU IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION.",
+   "dst": "ข้าอดสังเกตไม่ได้ว่าเจ้ายังอยู่ที่นี่ หลงทางรึ? เกมรอเจ้าอยู่ในห้องชั้นบนอีกห้อง สุดอีกฝั่งของคฤหาสน์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#154": {
+   "src": "Find a way to exit the strange realm by looking around the mansion.",
+   "dst": "หาทางออกจากดินแดนประหลาดโดยสำรวจรอบคฤหาสน์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#155": {
+   "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
+   "dst": "ข้าบอกแล้วว่าเจ้าต้องนั่งบนโซฟา จอจะดับถ้าเจ้าออกไปไกลเกิน เจ้าต้องเริ่มใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#156": {
+   "src": "VERY IMPRESSIVE. HOWEVER, THAT WAS MERELY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
+   "dst": "น่าประทับใจนัก แต่นั่นเป็นเพียงรอบที่ {~} จาก {~} รอบ แต่ละรอบจะยากขึ้นเรื่อยๆ พร้อมไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#157": {
+   "src": "AH HA HA. THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
+   "dst": "อะฮ่า ฮ่า ดูหน้าเจ้าสิ ประเมินค่าไม่ได้ หัวกะโหลกข้าแข็งทื่อ แขกของข้าเลยต้องทำหน้าทำตาแทนข้าให้หนำใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#158": {
+   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW. WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
+   "dst": "ในเมื่อเจ้าต้องไปเร็วๆ นี้ ข้าจึงตัดรายการตอบคำถามให้สั้นลง สำหรับตอนนี้ เราจะเล่นต่อจากที่ค้างไว้เมื่อเจ้ากลับมาอย่างเลี่ยงไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#159": {
+   "src": "...WAS IT ENJOYABLE? I HAD PUT A GREAT DEAL OF WORK INTO IT.",
+   "dst": "...สนุกไหม? ข้าทุ่มเทให้มันมากเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#160": {
+   "src": "I AM GLAD. I PUT A LOT OF TIME INTO ENSURING MY GUESTS ARE ENTERTAINED HERE.",
+   "dst": "ข้าดีใจ ข้าใช้เวลามากเพื่อให้แขกของข้าได้รับความบันเทิงที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#161": {
+   "src": "I SEE. VERY WELL. YOUR FEEDBACK IS APPRECIATED. I WILL HAVE TO MAKE SOME REVISIONS.",
+   "dst": "เข้าใจแล้ว ก็ได้ ขอบคุณสำหรับคำติชม ข้าคงต้องปรับปรุงบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#162": {
+   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. BOOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
+   "dst": "เท่านี้แหละ ถ้าเจ้าอยู่นานกว่านี้ได้ก็ดี ข้าชอบทำกิจกรรมกับแขกที่มีสติ ชมรมหนังสือ ขบวนพาเหรดเล็กๆ... แต่คงต้องรอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#163": {
+   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR A MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
+   "dst": "ทีนี้ คฤหาสน์นี้ไม่มีประตูหลัง ข้าต้องสร้างให้เจ้าออก ขออภัยเรื่องเสียงดังสักครู่ แล้วออกทางใหม่ได้ทุกเมื่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#165": {
+   "src": "SO. THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
+   "dst": "เช่นนั้น เจ้าก็เดินกลับสู่ความฝันอันยาวนานแห่งชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#166": {
+   "src": "IT WAS A SHORT STAY. BUT, I DID ENJOY HAVING YOU HERE. I ALWAYS DO LIKE THE GUESTS WHO CAN SEE ME FOR WHAT I AM.",
+   "dst": "เป็นการพักสั้นๆ แต่ข้าก็สนุกที่ได้มีเจ้าอยู่ ข้าชอบแขกที่มองเห็นข้าอย่างที่ข้าเป็นเสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#167": {
+   "src": "THE CIRCUMSTANCES HAVE NEVER ALIGNED FOR A GUEST TO LEAVE THIS WAY. TYPICALLY, THEY WILL MOVE ON AND EVENTUALLY RETURN TO THE CYCLE.",
+   "dst": "ไม่เคยมีสถานการณ์ใดลงตัวให้แขกจากไปแบบนี้ ปกติพวกเขาจะไปต่อ แล้วกลับสู่วัฏจักรในที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#168": {
+   "src": "SO IN A WAY, THIS CANNOT BE CALLED A \"GOODBYE.\" AH HA HA. NO, INSTEAD IT IS A \"SEE YOU SOON.\"",
+   "dst": "ฉะนั้นในแง่หนึ่ง นี่เรียกว่า \"ลาก่อน\" ไม่ได้ อะฮ่า ฮ่า ไม่ใช่ มันคือ \"แล้วพบกันใหม่\" ต่างหาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#169": {
+   "src": "Defeat Krolton to earn your way back to the living.",
+   "dst": "เอาชนะ Krolton เพื่อกลับสู่โลกของคนเป็น",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#170": {
+   "src": "...ONE LAST THING. YOU HAVE NOT YET ENTIRELY REINTEGRATED INTO YOUR BODY.",
+   "dst": "...อีกเรื่องหนึ่ง เจ้ายังกลับเข้าร่างได้ไม่สมบูรณ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#171": {
+   "src": "AS SUCH, FOR THE TIME BEING, MORTALITY IS MERELY A SUGGESTION. SO BE AS RECKLESS AS YOU WANT.",
+   "dst": "ฉะนั้นในตอนนี้ ความตายเป็นแค่คำแนะนำ บ้าบิ่นได้เต็มที่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#172": {
+   "src": "SO LONG AS THE HORROR DIES, NO MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
+   "dst": "ขอเพียงสิ่งสยองนั้นตาย ไม่ว่าด้วยสาเหตุใด ก็เพียงพอสำหรับเรา จำไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#173": {
+   "src": "AND THERE SHALL I DECLARE IT BE DONE. THE HORROR'S SPARK UNWOVEN.. AND YOU, BODY, SOUL, SPARK, KNITTED BACK TOGETHER. A NEW PATCH FOR THE TAPESTRY OF YOUR LIFE.",
+   "dst": "แล้วข้าจะประกาศว่าเสร็จสิ้น ประกายของสิ่งสยองถูกคลายเส้น.. และเจ้า ร่าง วิญญาณ ประกาย ถักกลับเข้าด้วยกัน ผ้าปะผืนใหม่บนพรมทอชีวิตเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#174": {
+   "src": "IT WAS NICE TO SEE THIS PLACE IN PERSON AGAIN, EVEN IF I WAS ONLY VISITING FOR A MOMENT. BUT NOW I MUST RETURN TO MY OWN BUSINESS.",
+   "dst": "ดีที่ได้เห็นที่นี่ด้วยตาตัวเองอีกครั้ง แม้จะแค่แวะมาชั่วครู่ แต่ตอนนี้ข้าต้องกลับไปทำธุระของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#175": {
+   "src": "THIS MEANS FAREWELL, FOR THE TIME BEING. WHEN WE NEXT MEET, YOU WILL HAVE REACHED YOUR FINAL END.",
+   "dst": "นี่คือการอำลา ชั่วคราว เมื่อเราพบกันครั้งหน้า เจ้าจะถึงจุดจบสุดท้ายแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#176": {
+   "src": "TIL THEN, TREASURE YOUR LIFE AS YOU LIVE IT TO THE FULLEST. I LOOK FORWARD TO SHARING STORIES OVER TEA, AH HA HA.",
+   "dst": "จนกว่าจะถึงตอนนั้น จงทะนุถนอมชีวิตและใช้มันให้เต็มที่ ข้ารอคอยที่จะได้เล่าเรื่องกันพร้อมจิบชา อะฮ่า ฮ่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 5",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#177": {
+   "src": "Take proof of Krolton's demise to Irlok at [{~}, {~}, -{~}]",
+   "dst": "นำหลักฐานการตายของ Krolton ไปให้ Irlok ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beyond the Grave#178": {
+   "src": "Oh, thank goodness. You've returned- not free of wear, but certainly alive. Did you need to flee from Krolton, or is he...?",
+   "dst": "โอ้ ขอบคุณสวรรค์ คุณกลับมาแล้ว สะบักสะบอม แต่ยังมีชีวิตแน่ๆ คุณต้องหนี Krolton มา หรือว่ามัน...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#179": {
+   "src": "Truly? The beast is dead?",
+   "dst": "จริงหรือ? อสูรตายแล้ว?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#180": {
+   "src": "Gracious, I don't think I've ever been so relieved. Krolton was responsible for thousands of deaths long ago. You've prevented an oncoming massacre!",
+   "dst": "สวรรค์ เราไม่เคยโล่งใจเท่านี้มาก่อน Krolton เคยคร่าชีวิตไปนับพันเมื่อนานมาแล้ว คุณป้องกันการสังหารหมู่ที่กำลังจะมาได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#181": {
+   "src": "Bantisu Temple owes you a great deal. Here, then- a suitable reward.",
+   "dst": "วิหาร Bantisu ติดหนี้คุณมาก นี่ รางวัลที่สมน้ำสมเนื้อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#182": {
+   "src": "A powerful Bantisu artifact, as reward for defeating a beast that menaced in antiquated times.",
+   "dst": "อาวุธวิเศษอันทรงพลังของ Bantisu เป็นรางวัลที่เอาชนะอสูรที่เคยคุกคามมาแต่โบราณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#183": {
+   "src": "Safe travels, human. Whether it was luck or strength that had you prevail, I pray it will not fail you in the future.",
+   "dst": "เดินทางปลอดภัย มนุษย์ ไม่ว่าโชคหรือพลังที่พาคุณชนะ ขอให้มันไม่ทิ้งคุณในวันหน้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Irlok",
+   "source": "wiki"
+  },
+  "Beyond the Grave#184": {
+   "src": "REVISITING OLD MEMORIES, ARE WE?",
+   "dst": "รำลึกความหลังอยู่รึ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#185": {
+   "src": "THIS BOOK IS SO BAD, EVEN THE LONG-WINDED AND PAINFUL DEATH OF SWEENEY S. GREENVILLE IS BETTER THAN THIS.",
+   "dst": "หนังสือเล่มนี้แย่มาก แม้แต่ความตายแสนยืดยาวและทรมานของ Sweeney S. Greenville ยังดีกว่านี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 6",
+   "speaker": "Death",
+   "source": "wiki"
+  },
+  "Beyond the Grave#186": {
+   "src": "I SHOULD THINK IT IS QUITE RUDE TO PLAY A HOST'S GAME WITHOUT HAVING SPOKEN TO THEM FIRST. PLEASE COME TO MY OFFICE.",
+   "dst": "ข้าว่ามันค่อนข้างเสียมารยาทนะ ที่เล่นเกมของเจ้าบ้านโดยไม่คุยกับเขาก่อน เชิญมาที่ห้องทำงานข้า",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#187": {
+   "src": "OH, THE REMOTE CAN BE FIDDLY. YOU NEED TO BE SITTING ON THE COUCH FOR IT TO WORK.",
+   "dst": "โอ้ รีโมตมันจุกจิกหน่อย เจ้าต้องนั่งบนโซฟามันถึงจะใช้ได้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#188": {
+   "src": "YOU HAVE YOUR TASK, AND FOR THE MOMENT, YOU BEAR MY PITH. SLAY THE CANYON HORROR KROLTON, AND THEN I MAY BREAK THE RULES FOR YOU, JUST THIS ONCE.",
+   "dst": "เจ้ามีภารกิจแล้ว และตอนนี้เจ้าแบกแก่นแท้ของข้าไว้ สังหาร Krolton สิ่งสยองแห่งหุบผา แล้วข้าอาจแหกกฎให้เจ้า เพียงครั้งนี้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#189": {
+   "src": "You feel... alive again. Everything feels just as it did before you died.",
+   "dst": "คุณรู้สึก... มีชีวิตอีกครั้ง ทุกอย่างรู้สึกเหมือนก่อนที่คุณจะตาย",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#190": {
+   "src": "Well, the job is done. You should tell Irlok the good news...",
+   "dst": "เอาล่ะ งานเสร็จแล้ว คุณควรไปบอกข่าวดีกับ Irlok...",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#191": {
+   "src": "You are truly an amazing warrior. Thank you for putting an end to Krolton.",
+   "dst": "คุณเป็นนักรบที่น่าทึ่งจริงๆ ขอบคุณที่ยุติ Krolton",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "Beyond the Grave#192": {
+   "src": "...something's gone wrong.",
+   "dst": "...มีบางอย่างผิดพลาด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#193": {
+   "src": "[+{~} Krolton's Remains]",
+   "dst": "[+{~} ซากของ Krolton]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#194": {
+   "src": "...did all of that actually just happen?",
+   "dst": "...เมื่อกี้เกิดขึ้นจริงเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#195": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "...แต่ไม่ต้องพูดถึงตอนที่ตายก็ได้มั้ง แปลกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

@@ -1,0 +1,310 @@
+{
+ "_meta": {
+  "quest": "Star Thief",
+  "count": 30,
+  "translated": 30,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Star Thief#000": {
+   "src": "This pile of gravel appears to have blocked the entrance... Maybe there's a shovel nearby?",
+   "dst": "กองกรวดนี้ดูเหมือนจะขวางทางเข้าไว้... แถวนี้อาจมีพลั่วอยู่ก็ได้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#001": {
+   "src": "[{~}/{~}] Thief: .... I can't control myself...fjfjfj This rock...",
+   "dst": "[{~}/{~}] หัวขโมย: .... ฉันควบคุมตัวเองไม่ได้...fjfjfj หินนี่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#002": {
+   "src": "Look into the rumors of strange weather near the Imal Inn at [-{~}, {~}, -{~}].",
+   "dst": "สืบข่าวลือเรื่องอากาศแปลกๆ ใกล้ Imal Inn ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#003": {
+   "src": "Find the meteor's crash site at [-{~}, {~}, -{~}].",
+   "dst": "หาจุดที่อุกกาบาตตกที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#004": {
+   "src": "Hey you! Human. What are you doing here?",
+   "dst": "เฮ้ เจ้า! มนุษย์ มาทำอะไรที่นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#005": {
+   "src": "Under Villager law any extra terrestrial or extra voidal entities are prohibited and owned by the state.",
+   "dst": "ตามกฎหมายชาวบ้าน สิ่งใดจากนอกโลกหรือจากแดนสุญญตาถือเป็นของต้องห้ามและเป็นสมบัติของรัฐ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#006": {
+   "src": "Seeing as you are new to the land, I can't see you being prosecuted, especially a {p} Guard.",
+   "dst": "ในเมื่อคุณเพิ่งมาถึงดินแดนนี้ คงไม่โดนดำเนินคดีหรอก ยิ่งเป็นทหารยามของ {p} ด้วยแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#007": {
+   "src": "This meteor is different to what we've seen before. We suspect that direct contact with the meteor is dangerous.",
+   "dst": "อุกกาบาตลูกนี้ต่างจากที่เราเคยเห็นมา เราสงสัยว่าการสัมผัสมันโดยตรงอาจเป็นอันตราย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#008": {
+   "src": "The magical radiation doesn't seem to be affecting you at all though. Do you not feel anything? Perhaps you could help me locate it.",
+   "dst": "แต่รังสีเวทดูไม่ส่งผลกับคุณเลย คุณไม่รู้สึกอะไรเลยเหรอ? บางทีคุณอาจช่วยผมตามหามันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 2",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#009": {
+   "src": "Explore the cave that the meteor crashed into.",
+   "dst": "สำรวจถ้ำที่อุกกาบาตตกลงไป",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#010": {
+   "src": "It's... mine.",
+   "dst": "มัน... ของฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Star Thief#011": {
+   "src": "Escape the collapsing cave.",
+   "dst": "หนีออกจากถ้ำที่กำลังถล่ม",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#012": {
+   "src": "Follow the trail leading off to the east from the cave.",
+   "dst": "ตามรอยที่ออกจากถ้ำไปทางทิศตะวันออก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#013": {
+   "src": "Explore the cave at [-{~}, {~}, -{~}] and defeat the insane thief.",
+   "dst": "สำรวจถ้ำที่ [-{~}, {~}, -{~}] และกำจัดหัวขโมยที่เสียสติ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#014": {
+   "src": ".... I can't control myself...fjfjfj This rock...",
+   "dst": ".... ฉันควบคุมตัวเองไม่ได้...fjfjfj หินนี่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 6",
+   "speaker": "Thief",
+   "source": "wiki"
+  },
+  "Star Thief#015": {
+   "src": "What is... this feeling... No I won't listen..",
+   "dst": "นี่มัน... ความรู้สึกอะไร... ไม่ ฉันจะไม่ฟัง..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 6",
+   "speaker": "Thief",
+   "source": "wiki"
+  },
+  "Star Thief#016": {
+   "src": "Bring back the piece of meteor to the secret agent at [-{~}, {~}, -{~}].",
+   "dst": "นำเศษอุกกาบาตกลับไปให้สายลับที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Star Thief#017": {
+   "src": "Hello again. Did you find the meteor down there? Why on earth are you holding some?!",
+   "dst": "สวัสดีอีกครั้ง เจออุกกาบาตข้างล่างนั่นไหม? ทำไมคุณถือมันมาด้วยล่ะเนี่ย?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#018": {
+   "src": "I see. This material is incredibly rare and magically powerful. Meteors fall all over Gavel and come in a variety of colours and potency.",
+   "dst": "เข้าใจแล้ว วัสดุนี้หายากมากและมีพลังเวทมหาศาล อุกกาบาตตกทั่ว Gavel มีหลากสีและหลายระดับพลัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#019": {
+   "src": "We don't fully understand them, but we know they are dangerous. Every scientist who has studied them has lost their minds.",
+   "dst": "เรายังไม่เข้าใจมันทั้งหมด แต่รู้ว่ามันอันตราย นักวิทยาศาสตร์ทุกคนที่ศึกษามันเสียสติไปหมดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#020": {
+   "src": "The meteors hold many secrets and powers, maybe the ones we need to end your war. Thank you, here's a small reward for helping us.",
+   "dst": "อุกกาบาตซ่อนความลับและพลังไว้มากมาย บางทีอาจเป็นสิ่งที่เราต้องใช้ยุติสงครามของพวกคุณ ขอบคุณ นี่รางวัลเล็กน้อยที่ช่วยเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#021": {
+   "src": "Hello again. Did you find the meteor down there? No? Maybe go back and try to find it?",
+   "dst": "สวัสดีอีกครั้ง เจออุกกาบาตข้างล่างนั่นไหม? ไม่เจอ? ลองกลับไปหาอีกทีดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#022": {
+   "src": "Remember... Just follow the white trail leading to the cave!",
+   "dst": "อย่าลืมนะ... แค่ตามรอยสีขาวที่นำไปสู่ถ้ำ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 7",
+   "speaker": "Agent",
+   "source": "wiki"
+  },
+  "Star Thief#023": {
+   "src": "I can't... control... my mind... end me.",
+   "dst": "ฉัน... ควบคุม... จิตใจ... ไม่ได้... ฆ่าฉันที",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "Stage 6",
+   "speaker": "Thief",
+   "source": "captured"
+  },
+  "Star Thief#024": {
+   "src": "What's that noise...?",
+   "dst": "เสียงอะไรน่ะ...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#025": {
+   "src": "It's coming from the west.",
+   "dst": "มาจากทางทิศตะวันตก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#026": {
+   "src": "What was that? It seems to have landed nearby, maybe you should go investigate.",
+   "dst": "นั่นอะไรน่ะ? ดูเหมือนจะตกลงมาใกล้ๆ บางทีคุณควรไปสำรวจดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#027": {
+   "src": "It seems like the meteor crashed into a cave.",
+   "dst": "ดูเหมือนอุกกาบาตจะตกลงไปในถ้ำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#028": {
+   "src": "The meteor shard is radiating an odd and unfamiliar magical energy",
+   "dst": "เศษอุกกาบาตแผ่พลังเวทประหลาดที่ไม่คุ้นเคยออกมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#029": {
+   "src": "Thank you again for your help!",
+   "dst": "ขอบคุณที่ช่วยอีกครั้งนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "Agent",
+   "source": "captured"
+  }
+ }
+}

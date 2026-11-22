@@ -1,0 +1,2806 @@
+{
+ "_meta": {
+  "quest": "The Order of the Grook",
+  "count": 278,
+  "translated": 278,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Order of the Grook#000": {
+   "src": "Eager much? Keep yourself seated for now.",
+   "dst": "ใจร้อนจังนะ? นั่งรอไปก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Pensa",
+   "source": "captured"
+  },
+  "The Order of the Grook#001": {
+   "src": "Do you...not have any manners at all?! Just running into my parents' house like that! Jeez!",
+   "dst": "นี่... ไม่มีมารยาทเลยหรือไง?! วิ่งพรวดเข้ามาในบ้านพ่อแม่ฉันแบบนั้น! ให้ตายสิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
+   "source": "captured"
+  },
+  "The Order of the Grook#002": {
+   "src": "I oughta... Hm. Well...maybe...",
+   "dst": "น่าจะ... อืม ก็... บางที...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#003": {
+   "src": "Oh, I know! Here, go into my room real fast, and grab the letter in there.",
+   "dst": "อ๊ะ รู้แล้ว! นี่ วิ่งเข้าไปในห้องฉันเร็วๆ แล้วหยิบจดหมายในนั้นมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
+   "source": "captured"
+  },
+  "The Order of the Grook#004": {
+   "src": "Bring it to me when you do, I wanna make sure it's the right one.",
+   "dst": "ได้แล้วเอามาให้ฉันนะ ฉันอยากดูให้แน่ใจว่าถูกฉบับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
+   "source": "captured"
+  },
+  "The Order of the Grook#005": {
+   "src": "Go look for my letter in my bedroom, pretty please.",
+   "dst": "ไปหาจดหมายของฉันในห้องนอนหน่อยนะ ขอร้องล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#006": {
+   "src": "My parents were super excited when that letter flew into my room, but magical school sounds so boring...",
+   "dst": "พ่อแม่ฉันตื่นเต้นสุดๆ ตอนจดหมายบินเข้ามาในห้อง แต่โรงเรียนเวทมนตร์ฟังดูน่าเบื่อจะตาย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "captured"
+  },
+  "The Order of the Grook#007": {
+   "src": "The letter says to meet a boat captain on the broken docks next to the Seaskipper, and to \"have faith\". What does that mean?",
+   "dst": "จดหมายบอกให้ไปพบกัปตันเรือที่ท่าเรือพังข้าง Seaskipper และให้ \"มีศรัทธา\" หมายความว่าอะไรกันนะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#008": {
+   "src": "This weird looking place is actually a magical transportation hub.",
+   "dst": "ที่หน้าตาประหลาดแห่งนี้ที่จริงเป็นศูนย์กลางการเดินทางด้วยเวทมนตร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#009": {
+   "src": "Each tunnel leads someplace else in the world, but the transportation portals aren't always, ehm...accurate? Let's leave it at that.",
+   "dst": "อุโมงค์แต่ละแห่งพาไปที่อื่นในโลก แต่ประตูมิติเคลื่อนย้ายไม่ได้... เอ่อ... แม่นยำเสมอไป? ขอพูดแค่นี้แล้วกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#010": {
+   "src": "There are also some secret passages around, supposedly...",
+   "dst": "ได้ยินว่าแถวนี้ยังมีทางลับอยู่ด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#011": {
+   "src": "Psst. Are you a student at Grookwarts?",
+   "dst": "ชู่ว เธอเป็นนักเรียน Grookwarts หรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#012": {
+   "src": "This is the way in. Do you see that weird looking dirt wall?",
+   "dst": "ทางเข้าอยู่ตรงนี้ เห็นกำแพงดินหน้าตาแปลกๆ นั่นไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#013": {
+   "src": "Just run straight through. Don't tell any non-wizard folks, though.",
+   "dst": "แค่วิ่งทะลุเข้าไปตรงๆ แต่อย่าบอกพวกที่ไม่ใช่พ่อมดล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#014": {
+   "src": "Hello, new students! Over here!",
+   "dst": "สวัสดี นักเรียนใหม่! ทางนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#015": {
+   "src": "So all of you will be getting two vouchers each, and with them you will need to buy one wand, and a book or tome.",
+   "dst": "ทุกคนจะได้คูปองคนละสองใบ ใช้ซื้อคทาหนึ่งอัน และหนังสือหรือตำราหนึ่งเล่ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#016": {
+   "src": "Students, please gather your school material and start your day! One wand and one tome.",
+   "dst": "นักเรียนทุกคน ไปรับอุปกรณ์การเรียนแล้วเริ่มวันใหม่ได้! คทาหนึ่งอันและตำราหนึ่งเล่ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#017": {
+   "src": "Gosh, so many things, so little time!",
+   "dst": "ตายแล้ว ของเยอะแยะ เวลาน้อยนิด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#018": {
+   "src": "Have you picked out your wand and book yet? I chose an Avo Pheonix Wand.",
+   "dst": "เลือกคทากับหนังสือหรือยัง? ฉันเลือก Avo Pheonix Wand",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#019": {
+   "src": "Wait a minute, are you new here? You look really tall!",
+   "dst": "เดี๋ยวนะ เธอเป็นเด็กใหม่เหรอ? ตัวสูงจังเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#020": {
+   "src": "You look at the papers...",
+   "dst": "คุณดูเอกสาร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#021": {
+   "src": "Just fill in what subject you want to take and our guides will lead you to your classes.",
+   "dst": "แค่กรอกวิชาที่อยากเรียน แล้วไกด์ของเราจะพาไปห้องเรียน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#022": {
+   "src": "A true wizard after my own heart, seeking wisdom! Good choice. Now, choose a Practical Magic lesson.",
+   "dst": "พ่อมดตัวจริงที่ใจตรงกับข้า แสวงหาปัญญา! เลือกได้ดี ทีนี้ เลือกวิชาเวทมนตร์ภาคปฏิบัติหนึ่งวิชา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#023": {
+   "src": "Effects and materials are intertwined in function, but each has applications independent of one another. Now, choose a Magical Creatures class.",
+   "dst": "เอฟเฟกต์และวัสดุทำงานผูกพันกัน แต่ต่างก็มีประโยชน์ในตัวเองแยกจากกัน ทีนี้ เลือกวิชาสัตว์วิเศษหนึ่งวิชา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#024": {
+   "src": "Ah, yes... As well-liked as that class is, those Wybels are more trouble than they're worth to keep sometimes. Lastly, you must choose a Magical Type class.",
+   "dst": "อา ใช่... ถึงวิชานั้นจะเป็นที่นิยม แต่บางครั้งพวก Wybel ก็ก่อเรื่องจนไม่คุ้มที่จะเลี้ยง สุดท้าย เจ้าต้องเลือกวิชาประเภทเวทมนตร์หนึ่งวิชา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#025": {
+   "src": "What you take from the earth, you must give back.",
+   "dst": "สิ่งใดที่เจ้าเอาไปจากผืนดิน เจ้าต้องคืนกลับไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#026": {
+   "src": "P-please sit down, fledgeling!",
+   "dst": "น-นั่งลงก่อนนะ ลูกเจี๊ยบ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#027": {
+   "src": "It also is the element o-of knowledge, and pure magicality. Water i-is a sort of magical default, if you w-will. If it isn't focused on o-one element or another, magic ends up being water-based.",
+   "dst": "มันยังเป็นธาตุแห่งค-ความรู้ และพลังเวทบริสุทธิ์ น้ำเป-เป็นเหมือนค่าเริ่มต้นของเวทมนตร์ ถ-ถ้าจะพูดแบบนั้น ถ้าเวทไม่ได้เน้นไปที่ธ-ธาตุใดธาตุหนึ่ง มันก็จะกลายเป็นธาตุน้ำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#028": {
+   "src": "Good w-work there! I h-hope I wasn't too boring with all my talking... You can go now.",
+   "dst": "ท-ทำได้ดีมาก! ห-หวังว่าครูคงไม่พูดมากจนน่าเบื่อนะ... ไปได้แล้วจ้ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#029": {
+   "src": "N-now, who's n-next? And...i-is it really cold in here for all of you, too? Or, is it j-just me...?",
+   "dst": "ท-ทีนี้ ใครค-คนต่อไป? แล้ว... ใ-ในนี้หนาวกันทุกคนเลยหรือเปล่า? หรือว่าค-ครูหนาวอยู่คนเดียว...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#030": {
+   "src": "If you've read my books, you know about Quartz, and how dangerous it can be if overcharged. So, of course, we have an overcharged sample here so you can feel the signs of it.",
+   "dst": "ถ้าเคยอ่านหนังสือของครู ก็คงรู้จักควอตซ์ และรู้ว่ามันอันตรายแค่ไหนถ้าประจุเกิน เราจึงมีตัวอย่างที่ประจุเกินไว้ตรงนี้ ให้พวกเธอได้สัมผัสสัญญาณของมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#031": {
+   "src": "Depending on the formation, they can have natural effects as well. These crystals were found in Gavel's floating islands, and...well, let's say it's difficult to keep it in its case.",
+   "dst": "ขึ้นอยู่กับการก่อตัว มันอาจมีผลตามธรรมชาติด้วย ผลึกพวกนี้พบบนเกาะลอยฟ้าของ Gavel และ... ก็นะ บอกได้แค่ว่าเก็บมันไว้ในตู้ยากมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#032": {
+   "src": "Wybels! Pronounced like \"nibble,\" they're a rather popular pet nowadays. But you all knew that, you want to know where they came from.",
+   "dst": "Wybel! ออกเสียงคล้าย \"วิบเบิล\" เป็นสัตว์เลี้ยงยอดนิยมในทุกวันนี้ แต่ทุกคนรู้อยู่แล้ว ที่อยากรู้คือมันมาจากไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#033": {
+   "src": "The explanation that we got was that they lived in the Ahms region, and when it split open, they eventually burrowed onto the surface of the {p}.",
+   "dst": "คำอธิบายที่เราได้รับคือ มันเคยอาศัยอยู่ในภูมิภาค Ahms และเมื่อที่นั่นแยกออก มันก็ขุดโพรงขึ้นมาบนผิวดินของ {p} ในที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#034": {
+   "src": "Oh, speaking of fluff. They wooly fur never actually stops growing, ever, and neither do their hooves, their horns, or their teeth. They shed often.",
+   "dst": "อ้อ พูดถึงขนปุย ขนฟูของมันไม่เคยหยุดยาวเลย ไม่มีวันหยุด กีบ เขา หรือฟันของมันก็เช่นกัน มันผลัดขนบ่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#035": {
+   "src": "Wybel fluff is also able to be boiled, and it turns into a sticky molasses-like substance. It's used for candy, and it's very popular...but it's all POISON!!",
+   "dst": "ขนปุยของ Wybel ยังเอาไปต้มได้ มันจะกลายเป็นของเหนียวๆ คล้ายกากน้ำตาล ใช้ทำขนมหวาน และเป็นที่นิยมมาก... แต่มันคือยาพิษทั้งนั้น!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#036": {
+   "src": "It's POISON, I tell you! Wybel meat is horrendously inedible! It'll give you the worst stomachache of your life! The candymakers are feeding us DEATH!",
+   "dst": "มันคือยาพิษ ฉันบอกเลย! เนื้อ Wybel กินไม่ได้อย่างร้ายแรง! มันจะทำให้ปวดท้องที่สุดในชีวิต! พวกคนทำขนมกำลังป้อนความตายให้เรา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#037": {
+   "src": "It's almost like they miss it, somehow. It's almost like they might be FROM outer space! It's ALMOST like they bring insanity-inducing things into our houses ON PURPOSE!",
+   "dst": "เหมือนกับว่ามันคิดถึงที่นั่นยังไงยังงั้น เหมือนกับว่ามันมาจากนอกโลก! เหมือนกับว่ามันจงใจพาสิ่งที่ทำให้คลั่งเข้ามาในบ้านเรา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#038": {
+   "src": "Everyone says there's only nine, but WE know the truth! There's a tenth out there, an ultimately powerful one that wants us all gone. Pray you never see it, kids.",
+   "dst": "ใครๆ ก็บอกว่ามีแค่เก้า แต่เรารู้ความจริง! ยังมีตัวที่สิบอยู่ข้างนอกนั่น ตัวที่ทรงพลังที่สุดและอยากให้พวกเราหายไปให้หมด ภาวนาว่าอย่าได้เจอมันเลย เด็กๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#039": {
+   "src": "Anyways, my lesson's safe from all that. All you have to do is re-order these plush Wybel toys on the stand. You'll figure it out once you're up here.",
+   "dst": "เอาเถอะ วิชาของฉันปลอดภัยจากเรื่องพวกนั้น แค่จัดเรียงตุ๊กตา Wybel บนชั้นวางใหม่ ขึ้นมาข้างบนแล้วก็จะเข้าใจเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#040": {
+   "src": "Welcome in, guys and gals...we're learnin' about nature magic today!",
+   "dst": "เข้ามาเลยหนุ่มๆ สาวๆ... วันนี้เราจะเรียนเวทมนตร์ธรรมชาติกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#041": {
+   "src": "Druidic practices tend to deal with healing more, and nurturing. When life's created, it gives off energy...and Druids use that energy for their magic.",
+   "dst": "วิถีดรูอิดมักเกี่ยวกับการรักษาและการทะนุถนอม เมื่อชีวิตถือกำเนิด มันจะปล่อยพลังงานออกมา... และดรูอิดใช้พลังงานนั้นเป็นเวทมนตร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#042": {
+   "src": "Shamanic skills are a lot more direct, man. They take the life from other things and use that to do their stuff. It's way more varied than Druidic magic.",
+   "dst": "ทักษะชาแมนตรงไปตรงมากว่าเยอะเลยเพื่อน มันดึงชีวิตจากสิ่งอื่นมาใช้ทำสิ่งต่างๆ หลากหลายกว่าเวทดรูอิดเยอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#043": {
+   "src": "Each has its ups and downs, man. Druidism is chill and helpful...but you can really expand your mind with Shamanism, buddies.",
+   "dst": "แต่ละอย่างก็มีดีมีเสียเพื่อน วิถีดรูอิดชิลล์และมีประโยชน์... แต่วิถีชาแมนเปิดโลกทางความคิดได้สุดๆ นะเพื่อนๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#044": {
+   "src": "But, it's not picky about what life you take, man! A good shaman takes from plants and animals, not people!",
+   "dst": "แต่มันไม่เลือกว่าจะดึงชีวิตจากอะไรนะเพื่อน! ชาแมนที่ดีดึงจากพืชกับสัตว์ ไม่ใช่จากคน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#045": {
+   "src": "Don't be a Slykaar, kiddos. He asked for human sacrifices, but he lived in a jungle, man! Like, what the hey! He coulda done anything else!",
+   "dst": "อย่าเป็นแบบ Slykaar นะเด็กๆ หมอนั่นเรียกร้องเครื่องสังเวยเป็นคน ทั้งที่อยู่ในป่าแท้ๆ เพื่อน! แบบ เอ้า อะไรเนี่ย! จะทำอย่างอื่นก็ได้ตั้งเยอะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#046": {
+   "src": "Anyways. Our test today, little buds, is to practice some shamanic skills. We got a sick cow in the back, and you're gonna nurse it back to health.",
+   "dst": "เอาล่ะ การทดสอบวันนี้นะเจ้าต้นกล้าน้อย คือฝึกทักษะชาแมนกันหน่อย ข้างหลังมีวัวป่วยอยู่ตัวหนึ่ง พวกเธอต้องรักษามันให้หายดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#047": {
+   "src": "When you think you have the right amount, activate the altar and see your results, man!",
+   "dst": "ถ้าคิดว่าได้ปริมาณพอดีแล้ว ก็เปิดใช้แท่นบูชาแล้วดูผลลัพธ์เลยเพื่อน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#048": {
+   "src": "You may now leave.",
+   "dst": "ไปได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#049": {
+   "src": "You are about to enter the graduation room, there is no coming back after that. Are you sure?",
+   "dst": "คุณกำลังจะเข้าห้องพิธีจบการศึกษา เข้าไปแล้วจะกลับมาไม่ได้อีก แน่ใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#050": {
+   "src": "Let us start with {u}. Please come up to the stage!",
+   "dst": "เริ่มจาก {u} ก่อน เชิญขึ้นมาบนเวที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Let us start with . Please come up to the stage!",
+    "file": "quest/the-order-of-the-grook.json",
+    "ratio": 0.97,
+    "reason": "placeholders"
+   }
+  },
+  "The Order of the Grook#051": {
+   "src": "Oh, hey. You're that student from earlier.",
+   "dst": "อ้าว หวัดดี เธอคือนักเรียนคนเมื่อกี้นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#052": {
+   "src": "Now that you've graduated you probably don't need to use the secret wall anymore.",
+   "dst": "ตอนนี้เธอเรียนจบแล้ว คงไม่ต้องใช้กำแพงลับอีกแล้วล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#053": {
+   "src": "Do you think we should make it something other than dirt? My robe gets dirty easily...",
+   "dst": "เธอว่าเราควรทำมันจากอย่างอื่นที่ไม่ใช่ดินไหม? เสื้อคลุมฉันเปื้อนง่ายจัง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#054": {
+   "src": "Talk to Seasum in a tower on {p}.",
+   "dst": "คุยกับ Seasum ในหอคอยบน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#055": {
+   "src": "Ugh... I really, really, reeeeally don't want to go...",
+   "dst": "เฮ้อ... ไม่อยากไปเลย ไม่อยาก ไม่อยากจริงๆๆๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#056": {
+   "src": "Hey, who are you?",
+   "dst": "นี่ เธอเป็นใครน่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#057": {
+   "src": "Get the school invitation from Seasum room and bring it to Seasum.",
+   "dst": "เอาจดหมายเชิญเข้าโรงเรียนจากห้องของ Seasum ไปให้ Seasum",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#058": {
+   "src": "Yep, that's the right letter. I hope you like school!",
+   "dst": "ใช่ นั่นแหละจดหมายที่ถูก หวังว่าเธอจะชอบโรงเรียนนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#059": {
+   "src": "I don't even want to learn magic! I just want to write my stories and play games. You can go instead.",
+   "dst": "ฉันไม่ได้อยากเรียนเวทมนตร์ด้วยซ้ำ! ฉันแค่อยากเขียนนิยายกับเล่นเกม เธอไปแทนฉันก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#060": {
+   "src": "I know the picture on the letter is of me, but you can, um...",
+   "dst": "ฉันรู้ว่ารูปในจดหมายเป็นรูปฉัน แต่เธอก็แค่ เอ่อ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#061": {
+   "src": "You can say you had a growth spurt! Uh, that should work, i think!",
+   "dst": "บอกว่าเธอตัวยืดขึ้นมาก็ได้! เอ่อ น่าจะได้ผลนะ ฉันว่า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#062": {
+   "src": "Now go on, you should get out before my parents see you. I don't want them to find out I gave that letter away...",
+   "dst": "ไปได้แล้ว เธอควรออกไปก่อนพ่อแม่ฉันเห็น ฉันไม่อยากให้พวกเขารู้ว่าฉันยกจดหมายนั่นให้คนอื่น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 2",
+   "speaker": "Seasum",
+   "source": "wiki"
+  },
+  "The Order of the Grook#063": {
+   "src": "Talk to the School Ship Captain on the pier next to the Seaskipper Captain.",
+   "dst": "คุยกับกัปตันเรือของโรงเรียนที่ท่าเรือ ข้างกัปตัน Seaskipper",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#064": {
+   "src": "Hey! What are you doing all the way over here? This dock's broken.",
+   "dst": "เฮ้! มาทำอะไรไกลถึงนี่? ท่าเรือนี้พังนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#065": {
+   "src": "Oh, a student, you say. Aren't you a little old to be learning fundamental magical knowledge?",
+   "dst": "อ้อ นักเรียนงั้นเหรอ ไม่แก่ไปหน่อยเหรอที่จะมาเรียนพื้นฐานเวทมนตร์?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#066": {
+   "src": "Well, if I could see your invitation letter, then?",
+   "dst": "งั้นขอดูจดหมายเชิญหน่อยได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#067": {
+   "src": "...Hm. This...wow, you really look quite different than the picture. Did you get a new haircut?",
+   "dst": "...อืม นี่มัน... ว้าว ตัวจริงดูต่างจากในรูปไปเยอะเลยนะ ไปตัดผมทรงใหม่มาเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#068": {
+   "src": "Well, no judging from me! Keep walking to the end of the dock. Have faith!",
+   "dst": "เอาเถอะ ฉันไม่ตัดสินใครหรอก! เดินไปจนสุดท่าเรือเลย มีศรัทธาไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 3",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#069": {
+   "src": "Climb aboard the ship.",
+   "dst": "ขึ้นเรือ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#070": {
+   "src": "Alright everyone. Ready for a magical experience?",
+   "dst": "เอาล่ะทุกคน พร้อมสำหรับประสบการณ์มหัศจรรย์หรือยัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 4",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#071": {
+   "src": "We're headed to the Nexus. You've been told where to go. If you've forgotten, ask your fellow students!",
+   "dst": "เรากำลังมุ่งหน้าไป Nexus ทุกคนรู้แล้วว่าต้องไปที่ไหน ถ้าลืม ก็ถามเพื่อนนักเรียนดูนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 4",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#072": {
+   "src": "If you ever need to come back here, just walk out onto the dock again. Good luck, now!",
+   "dst": "ถ้าอยากกลับมาที่นี่ แค่เดินออกไปที่ท่าเรืออีกครั้ง โชคดีนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 4",
+   "speaker": "Boat Captain",
+   "source": "wiki"
+  },
+  "The Order of the Grook#073": {
+   "src": "Follow the children to the school.",
+   "dst": "ตามเด็กๆ ไปที่โรงเรียน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#074": {
+   "src": "Through the wall, right? I hope my uniform doesn't get dirty.",
+   "dst": "ทะลุกำแพงไปใช่ไหม? หวังว่าชุดนักเรียนจะไม่เปื้อนนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 5",
+   "speaker": "Student",
+   "source": "wiki"
+  },
+  "The Order of the Grook#075": {
+   "src": "Talk to Cidre on the school island.",
+   "dst": "คุยกับ Cidre บนเกาะของโรงเรียน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#076": {
+   "src": "Welcome to the island of Grookwarts! I will be guiding and helping all the new students.",
+   "dst": "ยินดีต้อนรับสู่เกาะ Grookwarts! ฉันจะคอยนำทางและช่วยเหลือนักเรียนใหม่ทุกคน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 6",
+   "speaker": "Cidre",
+   "source": "wiki"
+  },
+  "The Order of the Grook#077": {
+   "src": "You can find everything here around the docks. Choosing your materials is very important, so buy the ones that speak to you!",
+   "dst": "ทุกอย่างหาได้แถวท่าเรือนี่แหละ การเลือกอุปกรณ์สำคัญมาก ฉะนั้นซื้ออันที่ถูกใจที่สุดนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 6",
+   "speaker": "Cidre",
+   "source": "wiki"
+  },
+  "The Order of the Grook#078": {
+   "src": "When you're done, meet with Miss Una at the front gates!",
+   "dst": "เสร็จแล้วไปพบคุณครู Una ที่ประตูหน้านะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 6",
+   "speaker": "Cidre",
+   "source": "wiki"
+  },
+  "The Order of the Grook#079": {
+   "src": "Purchase a wand from the Wand Merchant and a book from the Magical Book Merchant, then talk to Una.",
+   "dst": "ซื้อคทาจากพ่อค้าคทาและหนังสือจากพ่อค้าหนังสือเวทมนตร์ แล้วคุยกับ Una",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#080": {
+   "src": "Alrighty, fledgeling Grooks!",
+   "dst": "เอาล่ะ ลูกเจี๊ยบ Grook ทั้งหลาย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 7",
+   "speaker": "Una",
+   "source": "wiki"
+  },
+  "The Order of the Grook#081": {
+   "src": "Seems like you all have your materials in order. You are now free to enter Grookwarts and begin your lessons.",
+   "dst": "ดูเหมือนทุกคนจะเตรียมอุปกรณ์พร้อมแล้ว เข้าไปใน Grookwarts แล้วเริ่มเรียนได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 7",
+   "speaker": "Una",
+   "source": "wiki"
+  },
+  "The Order of the Grook#082": {
+   "src": "The door is just behind me. Walk on in!",
+   "dst": "ประตูอยู่ข้างหลังครูนี่เอง เดินเข้าไปเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 7",
+   "speaker": "Una",
+   "source": "wiki"
+  },
+  "The Order of the Grook#083": {
+   "src": "Attend the welcoming dinner at Grookwarts.",
+   "dst": "ร่วมงานเลี้ยงต้อนรับที่ Grookwarts",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#084": {
+   "src": "Hush, hush! The speech will be soon!",
+   "dst": "ชู่ๆ! เดี๋ยวจะมีสุนทรพจน์แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Student",
+   "source": "wiki"
+  },
+  "The Order of the Grook#085": {
+   "src": "Hurry, take a seat! The banquet will be starting any second now!",
+   "dst": "เร็วเข้า นั่งเร็ว! งานเลี้ยงจะเริ่มแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Student",
+   "source": "wiki"
+  },
+  "The Order of the Grook#086": {
+   "src": "Magical children of Wynn and Gavel alike... We welcome you here, to our fair academy.",
+   "dst": "เหล่าเด็กผู้มีเวทมนตร์ทั้งจาก Wynn และ Gavel... เรายินดีต้อนรับพวกเจ้าสู่สถาบันอันงดงามของเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Order of the Grook#087": {
+   "src": "Oh lordy, the headmaster! I didn't even see him come in!",
+   "dst": "ตายแล้ว อาจารย์ใหญ่! ฉันไม่เห็นเลยว่าท่านเข้ามาตอนไหน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Student",
+   "source": "wiki"
+  },
+  "The Order of the Grook#088": {
+   "src": "Uhm... I don't see him at all, actually...",
+   "dst": "เอ่อ... ที่จริงฉันไม่เห็นท่านเลยนะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Student",
+   "source": "wiki"
+  },
+  "The Order of the Grook#089": {
+   "src": "Well, I should hope you can see me now, all of you. Oh, what a splendid turnout this year!",
+   "dst": "หวังว่าตอนนี้ทุกคนคงมองเห็นข้าแล้วนะ โอ้ ปีนี้มีคนมาเยอะน่าชื่นใจจริง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#090": {
+   "src": "Apologies, I simply can't resist a bit of theatrics. But now, it is time to listen and learn, fledgeling Grooks.",
+   "dst": "ขออภัย ข้าอดใจเล่นละครเล็กน้อยไม่ได้ แต่ตอนนี้ถึงเวลาฟังและเรียนรู้แล้ว ลูกเจี๊ยบ Grook ทั้งหลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#091": {
+   "src": "We knowledged mages and scholars, the Order of the Grook, are pleased to see each of you here. Whether you be a young mind aching with curiosity...",
+   "dst": "พวกเราเหล่าจอมเวทและนักปราชญ์ผู้รอบรู้แห่งภาคีแห่ง Grook ยินดีที่ได้พบพวกเจ้าทุกคน ไม่ว่าเจ้าจะเป็นจิตใจเยาว์วัยที่กระหายใคร่รู้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#092": {
+   "src": "...or an old hat looking to refine their knowledge, all seeking to learn magic are welcomed here. We expect great things of you.",
+   "dst": "...หรือผู้ช่ำชองที่อยากขัดเกลาความรู้ ทุกคนที่แสวงหาการเรียนเวทมนตร์ล้วนได้รับการต้อนรับที่นี่ เราคาดหวังสิ่งยิ่งใหญ่จากพวกเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#093": {
+   "src": "Now, to business. You will write your schedules for the semester. Look down on your paper and write in what classes you wish to participate in.",
+   "dst": "ทีนี้เข้าเรื่อง พวกเจ้าจะเขียนตารางเรียนของภาคเรียนนี้ ดูที่กระดาษของเจ้า แล้วเขียนวิชาที่อยากเรียนลงไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#094": {
+   "src": "You will need to choose four classes, one from each category. The categories are: Elemental Magic, Practical Magic, Magical Creatures, and Types of magic.",
+   "dst": "เจ้าต้องเลือกสี่วิชา หมวดละหนึ่งวิชา หมวดต่างๆ ได้แก่ เวทมนตร์ธาตุ เวทมนตร์ภาคปฏิบัติ สัตว์วิเศษ และประเภทเวทมนตร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#095": {
+   "src": "The schedule book is at the end of the table. Worry not, there is no limit on class size. If you wish to take it, you may take it.",
+   "dst": "สมุดตารางเรียนอยู่ปลายโต๊ะ ไม่ต้องกังวล ไม่มีการจำกัดจำนวนคนต่อวิชา อยากเรียนอะไรก็เลือกได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 8",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#096": {
+   "src": "Choose your classes.",
+   "dst": "เลือกวิชาเรียนของคุณ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#097": {
+   "src": "Talk to the Ghost Guide and attend your chosen classes (The Ghost Guide will lead you to each class):",
+   "dst": "คุยกับไกด์ผีแล้วเข้าเรียนวิชาที่เลือก (ไกด์ผีจะพาคุณไปแต่ละห้อง):",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#098": {
+   "src": "I'll be leading you to your classes, everyone! Talk to me when you're ready to go.",
+   "dst": "ฉันจะพาทุกคนไปห้องเรียนเอง! พร้อมเมื่อไหร่ก็มาคุยกับฉันนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#099": {
+   "src": "Alright, fledgeling Grooks! Your first class is starting in just a minute. Follow me!",
+   "dst": "เอาล่ะ ลูกเจี๊ยบ Grook ทั้งหลาย! วิชาแรกจะเริ่มในอีกไม่กี่นาที ตามฉันมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#100": {
+   "src": "Here are the elemental classes. Step on in. Your magical journey truly begins here!",
+   "dst": "นี่คือห้องเรียนวิชาธาตุ เข้าไปเลย การเดินทางทางเวทมนตร์ของพวกเธอเริ่มต้นที่นี่อย่างแท้จริง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#101": {
+   "src": "Now, all of you. Sit. Listen.",
+   "dst": "เอาล่ะทุกคน นั่ง ฟัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#102": {
+   "src": "Earth is an element of great power. Versatile and everpresent, nearly as the air.",
+   "dst": "ดินเป็นธาตุแห่งพลังอันยิ่งใหญ่ ปรับใช้ได้หลากหลายและมีอยู่ทุกที่ เกือบเท่าลม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#103": {
+   "src": "Thunder provides force... Earth provides sheer power. The difference... Force choose its own path. Power is force, directed.",
+   "dst": "สายฟ้าให้แรง... ดินให้พลังล้วนๆ ความต่างคือ... แรงเลือกทางของมันเอง พลังคือแรงที่ถูกกำหนดทิศทาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#104": {
+   "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
+   "dst": "ดินยังเป็นผืนดินเอง หิน โลหะ ต้นไม้ และดิน ต้นไม้โอนเอนตามลมแต่ไม่หัก และขุนเขาไม่เคยพังทลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#105": {
+   "src": "The Touroto, stepped in earthly magic, are nearly invincible to all but themselves. It is proof of the earth's strength.",
+   "dst": "พวก Touroto ที่ชุ่มด้วยเวทแห่งดิน แทบไม่มีอะไรทำร้ายได้นอกจากพวกเดียวกันเอง นั่นคือข้อพิสูจน์ถึงความแข็งแกร่งของผืนดิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#106": {
+   "src": "The Doguns... They were masters of the earth, and fire alike, shaping caverns to their will... And now, nearly extinct. A terrible crime...",
+   "dst": "พวก Doguns... เคยเป็นปรมาจารย์แห่งดินและไฟ ปั้นแต่งถ้ำได้ดั่งใจ... และบัดนี้ แทบสูญพันธุ์ เป็นอาชญากรรมอันเลวร้าย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#107": {
+   "src": "But we shall honor them, and move forwards. We shall strike the earth and claim it to be our own.",
+   "dst": "แต่เราจะให้เกียรติพวกเขา และก้าวต่อไป เราจะทุบผืนดินและประกาศว่ามันเป็นของเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#108": {
+   "src": "The tome directs the earth's force. Take it and utilize it to shatter the stones I summon.",
+   "dst": "ตำราจะกำหนดทิศทางพลังแห่งดิน เอาไปใช้ทำลายก้อนหินที่ครูเรียกออกมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#109": {
+   "src": "The darkest parts of the stones are weak points. Find them, and learn the power of the earth.",
+   "dst": "ส่วนที่มืดที่สุดของหินคือจุดอ่อน หามันให้เจอ แล้วเรียนรู้พลังแห่งดิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#110": {
+   "src": "You know the earth's power, fledgeling. There is nothing more for you here. Go.",
+   "dst": "เจ้ารู้จักพลังแห่งดินแล้ว ลูกเจี๊ยบ ที่นี่ไม่มีอะไรให้เจ้าอีก ไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#111": {
+   "src": "Hee hee, take your seats, take your seats, TAKE. YOUR. SEATS. A marvelous batch of eager students today!!",
+   "dst": "ฮิฮิ นั่งลง นั่งลง นั่ง. ลง. เดี๋ยว. นี้. นักเรียนใจกระหายรุ่นนี้ช่างวิเศษนัก!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#112": {
+   "src": "Almost as marvelous as the powers of Thunder! Energy! Pure, unfocused energy! Devastation, desolation, industrialization all alike!",
+   "dst": "เกือบวิเศษเท่าพลังแห่งสายฟ้า! พลังงาน! พลังงานบริสุทธิ์ไร้ทิศทาง! ทั้งการทำลายล้าง ความรกร้าง และอุตสาหกรรม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#113": {
+   "src": "Yes, yes! Thunder is technical and versatile! Unreliable to all those who don't know how to rely on it, to those dexterous of hand and mind!",
+   "dst": "ใช่ ใช่! สายฟ้าทั้งซับซ้อนและหลากหลาย! ไม่น่าไว้ใจสำหรับคนที่ไม่รู้จักไว้ใจมัน แต่สำหรับผู้คล่องแคล่วทั้งมือและใจ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#114": {
+   "src": "But woe, woe, Thunder is reviled, reviled! Pure energy has no morality! If used for good, yes yes, ho hum, but if used for evil, oh, burn the witch! Burn, burn! Evil, they say! Pah!!",
+   "dst": "แต่โอ้ อนิจจา สายฟ้าถูกเหยียดหยาม เหยียดหยาม! พลังงานบริสุทธิ์ไม่มีศีลธรรม! ใช้ทำดีก็ ใช่ ใช่ งั้นๆ แต่ถ้าใช้ทำชั่ว โอ้ เผาแม่มด! เผา เผา! ชั่วร้าย พวกนั้นว่า! ชิ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#115": {
+   "src": "All magicks are unaligned with silly concepts such as morality. They are pure chaos! But Thunder, the element of energy and force, it seems ever so EASY to use for evil...",
+   "dst": "เวทมนตร์ทั้งหลายไม่ได้ผูกกับแนวคิดไร้สาระอย่างศีลธรรม มันคือความโกลาหลบริสุทธิ์! แต่สายฟ้า ธาตุแห่งพลังงานและแรง ดูช่างง่ายนักที่จะใช้ทำชั่ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#116": {
+   "src": "And evil has found it, found it! CORRUPTION!! DEMONS!! Forces anathema to us, but knowleged in the ways of force and thus, thunder! So terrible, terrible, and thunder mages feared, feared...",
+   "dst": "แล้วความชั่วก็พบมัน พบมัน! ความแปดเปื้อน!! ปีศาจ!! พลังที่เราชิงชัง แต่รอบรู้ในวิถีแห่งแรง และนั่นก็คือสายฟ้า! น่ากลัวนัก น่ากลัว และจอมเวทสายฟ้าก็ถูกหวาดกลัว หวาดกลัว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#117": {
+   "src": "And then, then! Joyous day, the Corkians arrived with their marvelous machines, and their electromagic! Thunder controlled, thunder tamed! The wonder of it all!",
+   "dst": "แล้วจากนั้น จากนั้น! วันแห่งความยินดี พวก Corkian มาถึงพร้อมเครื่องจักรอันน่าทึ่งและเวทไฟฟ้า! สายฟ้าที่ควบคุมได้ สายฟ้าที่ถูกฝึกให้เชื่อง! ช่างมหัศจรรย์!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#118": {
+   "src": "Electromagic makes handles crank, gears spin, metal move, gives sheer stones the power to THINK, and to PLAN! A Corkian original, and a splendid, splendid development reintroduced!",
+   "dst": "เวทไฟฟ้าทำให้คันโยกหมุน เฟืองหมุน โลหะเคลื่อน ให้หินเปล่าๆ มีพลังที่จะคิด และวางแผน! ต้นตำรับจาก Corkian และนวัตกรรมยอดเยี่ยม ยอดเยี่ยมที่ถูกนำกลับมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#119": {
+   "src": "And so, you shall see for yourselves! Electromagic at work! You will control thunder and electricity, and make the machines bend to your world today, today, this shocking day!",
+   "dst": "และตอนนี้ พวกเธอจะได้เห็นด้วยตาตัวเอง! เวทไฟฟ้าในการทำงาน! พวกเธอจะควบคุมสายฟ้าและไฟฟ้า และทำให้เครื่องจักรทำตามใจ วันนี้ วันนี้ วันที่แสนช็อก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#120": {
+   "src": "The mechanism is behind me now! Come up, come up! See the power of thunder, shackled by our whims, won't you, {u}?",
+   "dst": "กลไกอยู่ข้างหลังครูแล้ว! ขึ้นมา ขึ้นมา! มาดูพลังสายฟ้าที่ถูกล่ามไว้ด้วยความต้องการของเรา ใช่ไหม {u}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#121": {
+   "src": "Whee hee hee! Thunder tamed, thunder shackled, and your magical wings unbound by such petty concepts, {u}! What a show!",
+   "dst": "วี้ฮิฮิฮิ! สายฟ้าเชื่อง สายฟ้าถูกล่าม และปีกเวทมนตร์ของเธอก็หลุดพ้นจากแนวคิดเล็กๆ แบบนั้น {u}! ช่างเป็นการแสดงที่ยอดเยี่ยม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#122": {
+   "src": "Expand your knowledge ever further, further! Your task is complete, complete, and your next awaits!",
+   "dst": "ขยายความรู้ของเธอต่อไป ต่อไปอีก! ภารกิจของเธอเสร็จแล้ว เสร็จแล้ว และวิชาต่อไปรออยู่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#123": {
+   "src": "Aah, wow! Everyone s-sure got here quick...",
+   "dst": "อ-อ๊ะ ว้าว! ท-ทุกคนมาถึงเร็วจัง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#124": {
+   "src": "Welcome, w-welcome. The Water element class is...certainly an interesting one, I-I'd hope... Because water doesn't j-just pertain to, well, w-water...",
+   "dst": "ยินดีต้อนรับ ย-ยินดีต้อนรับ วิชาธาตุน้ำเป็นวิชาที่... น่าสนใจแน่นอน ค-ครูหวังว่างั้นนะ... เพราะน้ำไม่ได้เกี่ยวแค่กับ ก็... น-น้ำ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#125": {
+   "src": "Learning a-about the water element and e-expanding your horizons can allow you to cast spells easier... C-control the flow of magic better, you see.",
+   "dst": "การเรียนรู้เ-เกี่ยวกับธาตุน้ำและข-ขยายมุมมองจะช่วยให้ร่ายเวทได้ง่ายขึ้น... ค-ควบคุมการไหลของเวทได้ดีขึ้นน่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#126": {
+   "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
+   "dst": "สัตว์น้ำส่วนใหญ่ผ-ผูกกับธาตุน้ำ แต่สัตว์ที่อยู่ในที่หนาวเย็นหรือมีหิมะก็ด-ด้วย... บ่อยครั้งพวกมันผูกกับธาตุลมด้วย แต่ไม่เสมอไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#127": {
+   "src": "In a-addition, many holy artifacts are enchanted with water magic... S-something about how it's a pure type of energy, I believe.",
+   "dst": "น-นอกจากนี้ วัตถุศักดิ์สิทธิ์หลายชิ้นถูกร่ายมนตร์ด้วยเวทน้ำ... บ-บางอย่างเกี่ยวกับการที่มันเป็นพลังงานบริสุทธิ์ล่ะมั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#128": {
+   "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
+   "dst": "สุดท้าย เวทน้ำช่วยเส-เสริมความสามารถในการรักษา แค่รู้เวทดีอย่างเดียวไม-ไม่ช่วย แต่ถ้ามีวัตถุที่บรรจุเวทน้ำจริงๆ ก็เพิ่มประสิทธิภาพการรักษาได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#129": {
+   "src": "N-now, for your test, I have...um, a...a test. Anyone who wants to try it f-first, just go up and start.",
+   "dst": "ท-ทีนี้ สำหรับการทดสอบ ครูมี... เอ่อ... การทดสอบ ใครอยากลองก-ก่อน ก็ขึ้นมาเริ่มได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#130": {
+   "src": "Good to see a decent turnout this year for my class. Too dangerous, pah! You can take this just fine.",
+   "dst": "ดีใจที่ปีนี้มีคนมาเรียนวิชาครูพอสมควร อันตรายเกินไปงั้นเหรอ ชิ! พวกเธอรับมือได้สบาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#131": {
+   "src": "Anyways. The Fire element class. Many misunderstand just what fire stands for...but after today, you will leave with courage in your hearts.",
+   "dst": "เอาล่ะ วิชาธาตุไฟ หลายคนเข้าใจผิดว่าไฟหมายถึงอะไร... แต่หลังจากวันนี้ พวกเธอจะออกไปพร้อมความกล้าในหัวใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#132": {
+   "src": "Fire is, of course, related to physical fire, magma, etcetera. A burning torch is a source of fire magic, but that is not the only source of it.",
+   "dst": "แน่นอนว่าไฟเกี่ยวข้องกับไฟจริง แมกมา และอื่นๆ คบไฟที่ลุกอยู่เป็นแหล่งของเวทไฟ แต่ไม่ใช่แหล่งเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#133": {
+   "src": "Courage, bravery, and defensiveness are also tied to the fire element. Those stalwart and selfless, willing to sacrifice themselves for others.",
+   "dst": "ความกล้า ความหาญ และการปกป้อง ก็ผูกกับธาตุไฟด้วย ผู้ที่มั่นคงและไม่เห็นแก่ตัว ยอมเสียสละตนเพื่อผู้อื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#134": {
+   "src": "In addition, although water is tied to healing magic, fire is tied to self-healing. Regenerative capacity, if you will. Many fire-based artifacts heal the user passively.",
+   "dst": "นอกจากนี้ ถึงน้ำจะผูกกับเวทรักษา แต่ไฟผูกกับการรักษาตัวเอง พูดง่ายๆ คือความสามารถในการฟื้นฟู วัตถุธาตุไฟหลายชิ้นรักษาผู้ใช้ได้เอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#135": {
+   "src": "And while they are on the verge of extinction after the war in the {p}, the Dogun species used to embody fire and earth magic alike. It is a shame what happened to them.",
+   "dst": "และแม้ตอนนี้จะใกล้สูญพันธุ์หลังสงครามใน {p} แต่เผ่าพันธุ์ Dogun เคยเป็นตัวแทนทั้งเวทไฟและเวทดิน น่าเสียดายกับสิ่งที่เกิดกับพวกเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#136": {
+   "src": "Unfortunately, it is also notable that corrupted creatures are often connected to fire, by nature of the corruption seeming to bring heat wherever it goes...",
+   "dst": "น่าเสียดายที่ต้องบอกด้วยว่า สิ่งมีชีวิตแปดเปื้อนมักผูกกับไฟ เพราะความแปดเปื้อนดูจะนำความร้อนไปทุกที่ที่มันไป...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#137": {
+   "src": "But aside from that, onto our practical test. You will all come up to me, starting with {u}, and hone courage. I will be casting balls of fire at you.",
+   "dst": "นอกจากนั้น มาเข้าสู่การทดสอบภาคปฏิบัติ ทุกคนจะขึ้นมาหาครู เริ่มจาก {u} เพื่อฝึกความกล้า ครูจะยิงลูกไฟใส่พวกเธอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#138": {
+   "src": "You will need to dodge these fire charges. If you are hit, it counts as a failure. Now. Let's get started, {u}.",
+   "dst": "พวกเธอต้องหลบลูกไฟพวกนี้ ถ้าโดนถือว่าสอบตก เอาล่ะ เริ่มกันเลย {u}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#139": {
+   "src": "Are you ready? Summon your bravery.",
+   "dst": "พร้อมไหม? รวบรวมความกล้าของเธอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#140": {
+   "src": "Well done, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "dst": "ทำได้ดี ลูกเจี๊ยบ Grook! ลับสัญชาตญาณต่อไป สักวันเธอจะเป็นวีรบุรุษที่ยอดเยี่ยม ครูมั่นใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#141": {
+   "src": "Dismissed, {u}. You may leave. Now do I have any volunteers for the next round...?",
+   "dst": "เลิกได้ {u} ไปได้แล้ว ทีนี้มีใครอาสารอบต่อไปไหม...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#142": {
+   "src": "Arright class, the sooner we start, the sooner we finish, so everyone, take your seats! You'll be getting up soon enough anyways!",
+   "dst": "เอาล่ะนักเรียน ยิ่งเริ่มเร็วก็ยิ่งเสร็จเร็ว ทุกคนนั่งลง! เดี๋ยวก็ได้ลุกอยู่แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#143": {
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "dst": "ไปต่อเลย ลม! พวกเธอหายใจมันอยู่ มันล้อมรอบเราอยู่ แต่ยังไม่รู้ว่ามันคืออะไร งั้นตั้งใจฟัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#144": {
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
+   "dst": "ลมคือธาตุแห่งอิสรภาพ! ความเร็ว สายลม และความว่องไว ถ้าฝึกความว่องไวมาดี การโจมตีจะดูเหมือนทะลุตัวเธอไปเฉยๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#145": {
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
+   "dst": "แต่ยิ่งกว่านั้น เพราะลมมีอยู่ทุกที่ มันเลยเป็นเวทที่ใช้ได้หลากหลายที่สุดอย่างหนึ่ง ผู้คนใช้มันสารพัดวิธี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#146": {
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
+   "dst": "ที่ Gavel นักพรตแห่งลม Bantisu ขยายการมองเห็นไปกับสายลมได้! พวกเขาใช้มันช่วยนำทางคนที่หลงในหุบเขาตรงโน้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#147": {
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "dst": "สัตว์มีปีกหลายชนิดผูกกับธาตุลม แต่ไม่ใช่ทั้งหมด ผู้ใช้เวทลมบางคนลอยตัวได้เลย! ดีไม่หยอกเลยใช่ไหมล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#148": {
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
+   "dst": "ด้วยร่างที่บางเบา วิญญาณและภูตผีก็มักเกี่ยวกับเวทลมด้วย ชวนให้สงสัยนะว่าเป่าผีออกนอกหน้าต่างได้ไหม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#149": {
+   "src": "And finally, some old, old tales tell of a woman who crossed the sea before it was calmed using air magic to fly. 's just an old legend, but an interesting one.",
+   "dst": "และสุดท้าย ตำนานเก่าแก่มากๆ เล่าถึงหญิงคนหนึ่งที่ข้ามทะเลก่อนมันจะสงบ โดยใช้เวทลมบินข้ามไป ก็แค่ตำนานเก่า แต่น่าสนใจดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#150": {
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
+   "dst": "ทีนี้ การทดสอบภาคปฏิบัติ! ถึงเวลาขยับแข้งขยับขาแล้ว! พวกเธอจะวิ่งด่านอุปสรรคที่ครูจัดไว้ แต่มีลูกเล่นนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#151": {
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
+   "dst": "ทุกคนมาที่โต๊ะ! ต้องพกขนนกนี่ไปด้วยถึงจะผ่านได้ มันช่วยให้กระโดดสูงขึ้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#152": {
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
+   "dst": "เป้าหมายคือเก็บลูกแก้วคริสตัลสามลูกที่ครูวางไว้ในด่าน เจอแล้วก็เอามาคืนครู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#153": {
+   "src": "The course is behind me. Shake a leg, now!",
+   "dst": "ด่านอยู่ข้างหลังครู รีบเข้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#154": {
+   "src": "Lessee here, one, two, three, yes indeedy! You got through that pretty quick!",
+   "dst": "ไหนดูซิ หนึ่ง สอง สาม ใช่เลย! ผ่านมาได้เร็วทีเดียว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#155": {
+   "src": "Now, if you'll just hand me back that feather ya got there...",
+   "dst": "ทีนี้ ถ้าคืนขนนกที่ถืออยู่ให้ครู...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#156": {
+   "src": "...then you'll be all done! Congrats, little fledge, you've finished this class! Now get on along to your next one!",
+   "dst": "...ก็เสร็จเรียบร้อย! ยินดีด้วยลูกเจี๊ยบน้อย เธอเรียนวิชานี้จบแล้ว! ไปวิชาต่อไปได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#157": {
+   "src": "Moving swiftly on, the next class is just across the way. Follow me!",
+   "dst": "ไปกันต่อเลย วิชาต่อไปอยู่ฝั่งตรงข้ามนี่เอง ตามฉันมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#158": {
+   "src": "Alright everyone, take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses.",
+   "dst": "เอาล่ะทุกคน นั่งลงแต่อย่าสบายนัก เดี๋ยวก็ได้ลุกแล้ว หวังว่าพกแว่นอ่านหนังสือมานะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#159": {
+   "src": "See, I'll just be giving you a short primer, then sending you out for your practical exercise, since I have all this written down already.",
+   "dst": "คือครูจะแค่ปูพื้นสั้นๆ แล้วส่งไปทำแบบฝึกหัดภาคปฏิบัติ เพราะครูเขียนทุกอย่างไว้หมดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#160": {
+   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be an artificer, you need to know how each one works.",
+   "dst": "หลักของวิชานี้คือ วัสดุหลายอย่าง ไม่ว่าเธอจะรู้หรือไม่ ล้วนมีเวทมนตร์อยู่ในตัวไม่ทางใดก็ทางหนึ่ง ถ้าอยากเป็นช่างประดิษฐ์เวท ต้องรู้ว่าแต่ละอย่างทำงานยังไง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#161": {
+   "src": "Thankfully, the field of artifice is a very popular one, so there's a wealth of knowledge out there on magical materials and on how to use them effectively.",
+   "dst": "โชคดีที่สาขาช่างประดิษฐ์เวทเป็นที่นิยมมาก จึงมีความรู้มากมายเรื่องวัสดุเวทมนตร์และวิธีใช้ให้ได้ผล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#162": {
+   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get into. Tough to master, though!",
+   "dst": "ให้ตายสิ ขนาดทหาร Wynn ยังประกอบแหวนจากทองแดงกับใยแมงมุมเก่าๆ ได้ แปลว่าเรื่องนี้เริ่มต้นง่าย แต่ชำนาญยากนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#163": {
+   "src": "For those intimidated, you don't need much crafting knowledge for this class; you'll be reading up on everything you need to know in the back.",
+   "dst": "ใครที่กลัวอยู่ วิชานี้ไม่ต้องใช้ความรู้การประดิษฐ์มากนัก ทุกอย่างที่ต้องรู้มีให้อ่านอยู่ด้านหลัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#164": {
+   "src": "You all will be crafting a magical amulet using different items. I've got stockpiles in the back; everyone will be crafting a different kind of necklace.",
+   "dst": "ทุกคนจะประดิษฐ์เครื่องรางห้อยคอจากไอเทมต่างๆ ครูกองของไว้ด้านหลังแล้ว แต่ละคนจะทำสร้อยคอคนละแบบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#165": {
+   "src": "Here's a note of what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
+   "dst": "นี่คือโน้ตว่าเธอต้องประดิษฐ์อะไร พอได้วัสดุที่คิดว่าต้องใช้แล้ว ก็มาที่แท่นประดิษฐ์ มันถูกร่ายมนตร์ไว้ และจะประดิษฐ์ไอเทมให้ถ้าเธอมีของครบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#166": {
+   "src": "Mhm, that's the ticket, {u}. If you're interested in learning more, you can probably find my books in most of the libraries.",
+   "dst": "อืม นั่นแหละ {u} ถ้าสนใจเรียนรู้เพิ่ม น่าจะหาหนังสือของครูได้ในห้องสมุดเกือบทุกแห่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#167": {
+   "src": "Your feathers are coming in just nicely, fledgeling. You can scoot off to your next class now.",
+   "dst": "ขนของเธอเริ่มขึ้นสวยแล้วนะ ลูกเจี๊ยบ ไปวิชาต่อไปได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#168": {
+   "src": "Okay class, everyone take your seats, and listen up. This class is going to be interesting.",
+   "dst": "เอาล่ะนักเรียน ทุกคนนั่งลงแล้วตั้งใจฟัง วิชานี้จะน่าสนใจทีเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#169": {
+   "src": "As you know, this class is all about magical effects, specifically those tied to various materials, and how they'll affect you!",
+   "dst": "อย่างที่รู้ วิชานี้ว่าด้วยเอฟเฟกต์เวทมนตร์ โดยเฉพาะที่ผูกกับวัสดุต่างๆ และผลที่มันจะมีต่อพวกเธอ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#170": {
+   "src": "This is going to be a hands-on learning experience, so those of you with weak constitutions may request to skip the demonstration if you're concerned for your health.",
+   "dst": "นี่จะเป็นการเรียนรู้แบบลงมือจริง ใครที่ร่างกายอ่อนแอขอข้ามการสาธิตได้ถ้ากังวลเรื่องสุขภาพ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#171": {
+   "src": "It may be explosive, but it will be in a controlled manner. The worst that'll happen to you is your face will get a bit dusty, or your glasses will fall off.",
+   "dst": "มันอาจระเบิด แต่จะอยู่ในการควบคุม อย่างแย่ที่สุดก็แค่หน้ามอมฝุ่นนิดหน่อย หรือแว่นหลุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#172": {
+   "src": "Magical crystals, as we have to my left here, can be charged with all kinds of different effects. This is an incredibly valuable aspect for artificers.",
+   "dst": "ผลึกเวทมนตร์อย่างที่อยู่ทางซ้ายครูนี้ บรรจุเอฟเฟกต์ได้สารพัดแบบ นี่คือคุณสมบัติที่มีค่ามหาศาลสำหรับช่างประดิษฐ์เวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#173": {
+   "src": "Our last sample is of cosmic material, and if you're sickened easily, then don't examine it. Its effects are mostly unknown, but one thing's certain...",
+   "dst": "ตัวอย่างสุดท้ายเป็นวัสดุจากห้วงจักรวาล ถ้าเวียนหัวง่ายก็อย่าไปตรวจดู ผลของมันส่วนใหญ่ยังไม่มีใครรู้ แต่ที่แน่ๆ คือ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#174": {
+   "src": "...it's dangerous to be exposed for long periods. Now, each of you will go back behind me, and examine and interact with each of the three samples provided.",
+   "dst": "...การสัมผัสมันนานๆ นั้นอันตราย ทีนี้ ทุกคนไปด้านหลังครู แล้วตรวจดูและลองสัมผัสตัวอย่างทั้งสามที่เตรียมไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#175": {
+   "src": "Once you've done so, then you can leave. Hands-on training is the best way to learn, after all.",
+   "dst": "ทำเสร็จแล้วก็ไปได้ อย่างไรเสีย การลงมือทำก็เป็นวิธีเรียนที่ดีที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#176": {
+   "src": "Well done. How did that feel?",
+   "dst": "ทำได้ดี รู้สึกยังไงบ้าง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#177": {
+   "src": "Personally, the void sample is the most interesting to me. You may now leave the classroom.",
+   "dst": "ส่วนตัวครูว่าตัวอย่างจากห้วงสุญญตาน่าสนใจที่สุด ออกจากห้องเรียนได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 11",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#178": {
+   "src": "There's a bit of a walk to your next class. Follow me.",
+   "dst": "วิชาต่อไปต้องเดินไกลหน่อย ตามฉันมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#179": {
+   "src": "These staircases were supposed to move, but... That was too much work to put together, apparently. They're a pain to navigate, aren't they?",
+   "dst": "บันไดพวกนี้ควรจะเคลื่อนที่ได้ แต่... ดูเหมือนจะทำยากเกินไป เดินยากชะมัดเลยว่าไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#180": {
+   "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
+   "dst": "เอาล่ะ ลูกเจี๊ยบ grook ทั้งหลาย ได้เวลาบอกข้อมูลที่พวกเธอมาเพื่อฟังจริงๆ แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#181": {
+   "src": "But no one actually KNOWS for sure. That means they. Could. Be. ANYTHING! What could lie beneath that veneer of fluff and playful demeanor?!",
+   "dst": "แต่ไม่มีใครรู้แน่จริงๆ นั่นแปลว่าพวกมัน. อาจ. เป็น. อะไรก็ได้! อะไรซ่อนอยู่ใต้ขนปุยและท่าทางขี้เล่นนั่น?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#182": {
+   "src": "These materials have innate magical energy to them. Stable like lodestone and reliable like quartz, but not as powerful as either. Interesting, that a fluffball has that potential!!",
+   "dst": "วัสดุพวกนี้มีพลังเวทอยู่ในตัว เสถียรเหมือนหินแม่เหล็กและเชื่อถือได้เหมือนควอตซ์ แต่พลังไม่เท่าทั้งสองอย่าง น่าสนใจนะที่ก้อนขนปุยมีศักยภาพแบบนั้น!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#183": {
+   "src": "And the worst part is, if too much fluff gathers up in one spot, ANOTHER WYBEL APPEARS! They reproduce by budding!! Growing out of lint and dust! It's a no-win game they're makin' us play!",
+   "dst": "และที่แย่ที่สุดคือ ถ้าขนปุยกองรวมกันที่เดียวมากเกินไป WYBEL อีกตัวจะโผล่มา! พวกมันขยายพันธุ์ด้วยการแตกหน่อ!! งอกจากขุยผ้ากับฝุ่น! เกมที่พวกมันบังคับให้เราเล่นไม่มีทางชนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#184": {
+   "src": "Wybels do have some good use though...they can sniff out sources of cosmic magic, like a pig sniffs out truffles. Sometimes they even try to take it home.",
+   "dst": "แต่ Wybel ก็มีประโยชน์อยู่บ้าง... มันดมหาแหล่งเวทจากห้วงจักรวาลได้ เหมือนหมูดมหาเห็ดทรัฟเฟิล บางทีมันยังพยายามคาบกลับบ้านด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#185": {
+   "src": "They're here to kill us all, I swear it! How else would you explain a wybel VAPORIZING a group of poachers? Ten colors of wybel, every one of them rotten evil!",
+   "dst": "พวกมันมาเพื่อฆ่าพวกเราทุกคน ฉันสาบาน! ไม่งั้นจะอธิบายยังไงที่ wybel ตัวหนึ่งทำให้กลุ่มพรานลักลอบระเหยหายไป? wybel สิบสี ทุกตัวชั่วร้ายถึงแก่น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#186": {
+   "src": "Alrighty, fledgeling, good job. You're armed with the REAL truth now! Go on to your next class.",
+   "dst": "เอาล่ะ ลูกเจี๊ยบ ทำได้ดี ตอนนี้เธอมีความจริงที่แท้จริงเป็นอาวุธแล้ว! ไปวิชาต่อไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#187": {
+   "src": "Hello, students. This is your magical creatures class, and I will be your instructor.",
+   "dst": "สวัสดีนักเรียน นี่คือวิชาสัตว์วิเศษ และครูจะเป็นผู้สอนของพวกเธอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#188": {
+   "src": "Different species have different levels of innate magicality. This is often an invisible aspect of the species. You must never assume.",
+   "dst": "สิ่งมีชีวิตแต่ละชนิดมีระดับพลังเวทโดยกำเนิดต่างกัน บ่อยครั้งมันเป็นลักษณะที่มองไม่เห็น อย่าด่วนสรุปเด็ดขาด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#189": {
+   "src": "To begin with, Doguns. They are ancient creatures, artificial-seeming at first. Despite this, they are highly adept at earth and fire-based magic.",
+   "dst": "เริ่มจาก Doguns พวกเขาเป็นสิ่งมีชีวิตโบราณ แรกเห็นดูเหมือนถูกประดิษฐ์ขึ้น ถึงอย่างนั้น พวกเขาก็เชี่ยวชาญเวทดินและไฟอย่างยิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#190": {
+   "src": "Able to quite literally move mountains, it is theorized that they were the ones to carve out the inside of the {p} into the caves we know today.",
+   "dst": "ด้วยความสามารถย้ายภูเขาได้จริงๆ มีทฤษฎีว่าพวกเขาคือผู้ขุดภายใน {p} จนกลายเป็นถ้ำอย่างที่เรารู้จักทุกวันนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#191": {
+   "src": "Moving on. We'll touch on the societies of Trolls, Goblins, Orcs, Ogres, and Hobgoblins. Some include Gerts into this grouping, though by technicality they are separate.",
+   "dst": "ต่อไป เราจะพูดถึงสังคมของโทรลล์ ก็อบลิน ออร์ค โอเกอร์ และฮ็อบก็อบลิน บางคนนับ Gerts รวมในกลุ่มนี้ด้วย แม้ในทางเทคนิคจะแยกกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#192": {
+   "src": "Though many of these types of societies have mystical practices, the only known way for Orcs and such to utilize magic is through artifacts. They've little magical potential.",
+   "dst": "แม้สังคมพวกนี้หลายแห่งจะมีพิธีกรรมลึกลับ แต่วิธีเดียวที่รู้กันว่าออร์คและพวกพ้องใช้เวทได้คือผ่านอาร์ทิแฟกต์ พวกมันมีศักยภาพทางเวทน้อยมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Though many Greenskins societies with mystical particles, the only known way for them to utilize magic is through magical artifacts. They've little magic potential.",
+    "file": "quest/the-order-of-the-grook.json",
+    "ratio": 0.834,
+    "reason": "candidate"
+   }
+  },
+  "The Order of the Grook#193": {
+   "src": "Tales also tell of their utilizing demonic energy for various purposes. However, we are only able to assume their magical energy from Dwarven tales, as they are nigh-extinct",
+   "dst": "ตำนานยังเล่าว่าพวกมันใช้พลังปีศาจเพื่อจุดประสงค์ต่างๆ แต่เราทำได้แค่คาดเดาพลังเวทของพวกมันจากเรื่องเล่าของคนแคระ เพราะพวกมันเกือบสูญพันธุ์แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#194": {
+   "src": "Moving on. The term \"Greenskins\" is a catch-all for Trolls, Goblins, Orcs, Ogres and Hobgoblins. Some include Gerts into this definition, though by technicality they are separate.",
+   "dst": "ต่อไป คำว่า \"พวกผิวเขียว\" ใช้เรียกรวมโทรลล์ ก็อบลิน ออร์ค โอเกอร์ และฮ็อบก็อบลิน บางคนนับ Gerts รวมด้วย แม้ในทางเทคนิคจะแยกกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#195": {
+   "src": "Though many Greenskins societies with mystical particles, the only known way for them to utilize magic is through magical artifacts. They've little magic potential.",
+   "dst": "แม้สังคมพวกผิวเขียวหลายแห่งจะมีพิธีกรรมลึกลับ แต่วิธีเดียวที่รู้กันว่าพวกมันใช้เวทได้คือผ่านอาร์ทิแฟกต์เวท พวกมันมีศักยภาพทางเวทน้อยมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#196": {
+   "src": "Meanwhile, Villagers are of the opposite persuasion. High magical potential, often unrealized out of laziness.",
+   "dst": "ส่วนชาวบ้านนั้นตรงกันข้าม มีศักยภาพทางเวทสูง แต่มักไม่ได้พัฒนาเพราะความขี้เกียจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#197": {
+   "src": "Humans are often thought of as more magical than Villagers, due to Fruman soldiers seeming to know some magic innately, but this is untrue.",
+   "dst": "คนมักคิดว่ามนุษย์มีพลังเวทมากกว่าชาวบ้าน เพราะทหาร Fruma ดูเหมือนจะรู้เวทติดตัวมาแต่กำเนิด แต่นั่นไม่จริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#198": {
+   "src": "Dwarves have a similar level of magicality to Humans, but like Villagers, it often goes unrealized. Their culture values physical strength more.",
+   "dst": "คนแคระมีพลังเวทใกล้เคียงมนุษย์ แต่ก็เหมือนชาวบ้าน มักไม่ได้พัฒนา วัฒนธรรมของพวกเขาให้ค่ากับพละกำลังทางกายมากกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#199": {
+   "src": "It is theorized that the reason for this is due to their distaste for the demonic energies of the Doguns. They reject their magic potential often, such that it is lessening over time.",
+   "dst": "มีทฤษฎีว่าสาเหตุมาจากความรังเกียจพลังปีศาจของ Doguns พวกเขาปฏิเสธศักยภาพทางเวทของตัวเองบ่อยจนมันลดลงเรื่อยๆ ตามกาลเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#200": {
+   "src": "Inversely, Elves have a deep connection to their magicality. Despite their reclusiveness, they are known for their open share of magical energy within their own society.",
+   "dst": "ในทางกลับกัน เอลฟ์มีความผูกพันกับพลังเวทอย่างลึกซึ้ง แม้จะเก็บตัว แต่ก็ขึ้นชื่อเรื่องการแบ่งปันพลังเวทอย่างเปิดเผยในสังคมของตน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#201": {
+   "src": "The outcast Elves of {p} have shared their connection to what they refer to as 'The Light.' This connection is supposedly unfathomable, but guides them and protects them.",
+   "dst": "เอลฟ์ผู้ถูกขับไล่แห่ง {p} เคยเล่าถึงความผูกพันกับสิ่งที่พวกเขาเรียกว่า 'แสง' ว่ากันว่ามันลึกล้ำเกินหยั่งถึง แต่คอยนำทางและปกป้องพวกเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#202": {
+   "src": "Now, we see if you were paying attention. You will come here and order the societies I have referred to in this class from least magical, to most.",
+   "dst": "เอาล่ะ มาดูกันว่าพวกเธอตั้งใจฟังไหม ออกมาเรียงลำดับสังคมที่ฉันพูดถึงในคาบนี้ จากที่มีเวทน้อยที่สุดไปมากที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#203": {
+   "src": "Well done, you got it right!",
+   "dst": "เก่งมาก ตอบถูกแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#204": {
+   "src": "Correct. {u}, thank you for paying attention. No one ever seems to in this class. You may go.",
+   "dst": "ถูกต้อง {u} ขอบใจที่ตั้งใจฟังนะ ไม่เคยมีใครตั้งใจฟังในคาบนี้เลย ไปได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 12",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#205": {
+   "src": "Next class is actually rather close!",
+   "dst": "ห้องเรียนถัดไปอยู่ใกล้นิดเดียว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#206": {
+   "src": "Just follow me.",
+   "dst": "ตามมาเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#207": {
+   "src": "...I was hoping for a smaller class size.",
+   "dst": "...นึกว่าจะมีนักเรียนน้อยกว่านี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#208": {
+   "src": "Corruption is incredibly dangerous...it'll be tough to keep so many students safe. If anyone wishes to leave, you may.",
+   "dst": "ความแปดเปื้อนอันตรายมาก...คงยากที่จะดูแลนักเรียนเยอะขนาดนี้ให้ปลอดภัย ใครอยากออกไปก็ไปได้นะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#209": {
+   "src": "Now... Corruption is a force of nature of...some description. Yes, you heard me right. We don't actually know much about it.",
+   "dst": "เอาล่ะ... ความแปดเปื้อนคือพลังธรรมชาติแบบ...อะไรสักอย่าง ใช่ ฟังไม่ผิดหรอก จริงๆ แล้วเรารู้เรื่องมันน้อยมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#210": {
+   "src": "Even though it's plagued the Wynn province for a thousand years, the way it behaves is so incredibly alien in nature that it's nigh-impossible to study.",
+   "dst": "แม้มันจะระบาดในแคว้น Wynn มาพันปี แต่พฤติกรรมของมันแปลกประหลาดเหลือเกินจนแทบศึกษาไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#211": {
+   "src": "We know it raises undead bodies... The working theory is that the more heavily injured a target is, the more susceptible they are to being corrupted.",
+   "dst": "เรารู้ว่ามันปลุกศพให้ลุกขึ้น... ทฤษฎีตอนนี้คือ ยิ่งเป้าหมายบาดเจ็บหนักเท่าไร ก็ยิ่งถูกทำให้แปดเปื้อนได้ง่ายเท่านั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#212": {
+   "src": "And...well, you can't exactly get more injured than \"dead.\" Hence, the growth of zombies and skeletons and all, over in Wynn.",
+   "dst": "และ...ก็นะ ไม่มีอะไรบาดเจ็บหนักไปกว่า \"ตาย\" แล้ว ซอมบี้ โครงกระดูก และพวกนั้นถึงได้เพิ่มขึ้นใน Wynn",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#213": {
+   "src": "It appears to spread by a complex \"root\" system. A scientist from {p}, Orikal, has studied this. The corruption spikes appear to spread it in greater concentration.",
+   "dst": "ดูเหมือนมันแพร่ผ่านระบบ \"ราก\" ที่ซับซ้อน Orikal นักวิทยาศาสตร์จาก {p} ศึกษาเรื่องนี้ไว้ หนามแปดเปื้อนดูจะแพร่มันได้เข้มข้นกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#214": {
+   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affects everyone slightly differently.",
+   "dst": "ส่วนผลต่อตัวคน ที่พบบ่อยที่สุดคือหวาดระแวงกับโกรธง่าย และนั่นแทบเป็นสิ่งเดียวที่คงที่ มันส่งผลต่อแต่ละคนต่างกันเล็กน้อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#215": {
+   "src": "The worst part is that practically every single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
+   "dst": "ที่แย่ที่สุดคือแทบทุกอย่างที่เราพูดมานี้เป็นแค่การคาดเดาและทฤษฎี! พลังแห่งความแปดเปื้อนนั้นน่าสะพรึงกลัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#216": {
+   "src": "The only thing we know for certain is that powerful ice-based magic can halt corruption, as seen in the {p} region.",
+   "dst": "สิ่งเดียวที่เรารู้แน่คือเวทน้ำแข็งที่ทรงพลังหยุดความแปดเปื้อนได้ อย่างที่เห็นในแถบ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#217": {
+   "src": "Now, the dangerous part. Everyone, come up past my desk here. We'll examine a corrupted creature in a controlled environment.",
+   "dst": "ทีนี้ ส่วนที่อันตราย ทุกคนเดินผ่านโต๊ะครูขึ้นมา เราจะตรวจสอบสิ่งมีชีวิตที่แปดเปื้อนในสภาพแวดล้อมที่ควบคุมไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#218": {
+   "src": "We have one in captivity, and its cage is reinforced with the strongest metals we have...so dear god let it be enough.",
+   "dst": "เราจับมาได้ตัวหนึ่ง กรงของมันเสริมด้วยโลหะที่แข็งแรงที่สุดที่เรามี...ขอให้มันพอเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#219": {
+   "src": "Bringing it out now...be sure to back up. We don't want anyone caught in the crossfire here.",
+   "dst": "กำลังเอาออกมาแล้ว...ถอยหลังไว้นะ เราไม่อยากให้ใครโดนลูกหลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#220": {
+   "src": "One thing to note about undead corrupteds...they can't be cured. You can weaken them, but that's about it. ...wait...",
+   "dst": "เรื่องหนึ่งที่ต้องรู้เกี่ยวกับซากศพแปดเปื้อน...พวกมันรักษาไม่ได้ ทำให้อ่อนแอลงได้ แต่ก็แค่นั้น ...เดี๋ยวนะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#221": {
+   "src": "Wait, why's it spreading here? It's never done this before! E-everyone, back up, now!",
+   "dst": "เดี๋ยว ทำไมมันแพร่ออกมาตรงนี้? ไม่เคยเป็นแบบนี้มาก่อน! ท-ทุกคน ถอยไป เดี๋ยวนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#222": {
+   "src": "A-as you can see, corruption is very powerful, eheheh, c-can someone go get another teacher or something?!",
+   "dst": "อ-อย่างที่เห็น ความแปดเปื้อนทรงพลังมาก เอะเฮะเฮะ ม-มีใครไปตามครูคนอื่นมาหน่อยได้ไหม?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#223": {
+   "src": "Wait, no! It's corroding the bars! Everyone, RUN! NOW! GET OUT OF HERE, CLASS DISMISSED!!!",
+   "dst": "ไม่นะ! มันกัดกร่อนลูกกรง! ทุกคน วิ่ง! เดี๋ยวนี้! ออกไปจากที่นี่ เลิกเรียน!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#224": {
+   "src": "GAACK! No, {u}, I said RUN! Don't fight that thing, get OUT!",
+   "dst": "อ๊าก! ไม่ {u} บอกให้วิ่งไง! อย่าสู้กับมัน ออกไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#225": {
+   "src": "Dear lord...that was awful. {u}, I can't believe you were able to kill that thing!",
+   "dst": "พระเจ้า...แย่มาก {u} ไม่อยากเชื่อเลยว่าคุณฆ่ามันได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#226": {
+   "src": "Class absolutely dismissed. We've got to cancel this class...it's far too dangerous for the students...",
+   "dst": "เลิกเรียนแน่นอน ต้องยกเลิกวิชานี้แล้ว...มันอันตรายเกินไปสำหรับนักเรียน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#227": {
+   "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
+   "dst": "การใช้เวทธรรมชาติมีสองทางหลัก... ศาสตร์ชาแมนกับศาสตร์ดรูอิด เหรียญเดียวกันคนละด้านน่ะเพื่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#228": {
+   "src": "Either way, it's all about equivalent exchange, y'see? You can't get somethin' from nothin', man. Either make life or take life.",
+   "dst": "ยังไงมันก็คือการแลกเปลี่ยนที่เท่าเทียม เข้าใจไหม? ไม่มีอะไรได้มาจากความว่างเปล่าหรอกเพื่อน ถ้าไม่สร้างชีวิตก็พรากชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#229": {
+   "src": "You'll need to sacrifice some old grooks, but it has to be just the right amount, man! The practice is through the door behind me.",
+   "dst": "พวกเธอต้องสังเวย grook แก่ๆ บ้าง แต่ต้องพอดีเป๊ะนะเพื่อน! ห้องฝึกอยู่หลังประตูข้างหลังฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#230": {
+   "src": "Groovy work, man! You're at one with nature!",
+   "dst": "เจ๋งมากเพื่อน! เป็นหนึ่งเดียวกับธรรมชาติแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#231": {
+   "src": "Your feathers are all grown out, man! Time to head out!",
+   "dst": "ขนของเธองอกเต็มที่แล้วเพื่อน! ได้เวลาไปแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
+   "source": "wiki"
+  },
+  "The Order of the Grook#232": {
+   "src": "Finish school for the day.",
+   "dst": "เรียนให้จบในวันนี้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#233": {
+   "src": "That's all four classes! I hope you found them magically enriching! Now, off to the graduation hall!",
+   "dst": "ครบทั้งสี่คาบแล้ว! หวังว่าจะได้ความรู้ทางเวทกลับไปเยอะนะ! ทีนี้ ไปห้องพิธีจบการศึกษากัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 14",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#234": {
+   "src": "It's the room all the way at the bottom of the stairs. Hurry, don't hold up the ceremony! It won't start until everyone's there.",
+   "dst": "ห้องที่อยู่ล่างสุดของบันไดน่ะ รีบเลย อย่าให้พิธีล่าช้า! จะยังไม่เริ่มจนกว่าทุกคนจะมาครบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 14",
+   "speaker": "Ghost Guide",
+   "source": "wiki"
+  },
+  "The Order of the Grook#235": {
+   "src": "Go to the ceremony room for the Headmaster's closing speech.",
+   "dst": "ไปที่ห้องพิธีเพื่อฟังสุนทรพจน์ปิดท้ายของอาจารย์ใหญ่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Order of the Grook#236": {
+   "src": "Take a seat. The ceremony is starting.",
+   "dst": "นั่งลงได้ พิธีกำลังจะเริ่ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#237": {
+   "src": "And so, your teachings, or at least their basics, have ended. Your magical feathers have started to grow!",
+   "dst": "และแล้ว การเรียนของพวกเธอ หรืออย่างน้อยก็ขั้นพื้นฐาน ก็จบลง ขนเวทของพวกเธอเริ่มงอกแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#238": {
+   "src": "You have all been performing very well during your classes today. I've heard quite a bit of praise from the teachers being passed around.",
+   "dst": "วันนี้พวกเธอทุกคนทำได้ดีมากในชั้นเรียน ฉันได้ยินคำชมจากเหล่าครูอยู่เยอะทีเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#239": {
+   "src": "But now, for your efforts, you shall not go unrewarded. You will leave here with more than simply knowledge.",
+   "dst": "และความพยายามของพวกเธอจะไม่สูญเปล่า พวกเธอจะออกไปจากที่นี่พร้อมสิ่งที่มากกว่าความรู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#240": {
+   "src": "Your tools have shaped your minds, subtly but inexorably. And so with that, what you leave with today, both in mind and in treasure, shall be different for each of you.",
+   "dst": "เครื่องมือของพวกเธอได้หล่อหลอมจิตใจอย่างแนบเนียนแต่ไม่อาจต้านทาน ดังนั้นสิ่งที่พวกเธอได้รับวันนี้ ทั้งในใจและในรูปสมบัติ จะต่างกันไปในแต่ละคน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#241": {
+   "src": "There is a reason I've called you up first, you know. Recall what I said about old hats earlier? Don't think we didn't notice the armor, or the weapon, or the grim countenance.",
+   "dst": "รู้ไหม ฉันเรียกคุณขึ้นมาก่อนก็เพราะมีเหตุผล จำที่ฉันพูดเรื่องมือเก๋าได้ไหม? อย่าคิดว่าเราไม่สังเกตเห็นชุดเกราะ อาวุธ หรือสีหน้าเคร่งขรึมนั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#242": {
+   "src": "But no need to worry. Those who truly have the drive to become learned in the ways of magic, no matter who they are, will always find their way here, and be accepted.",
+   "dst": "แต่ไม่ต้องกังวล ผู้ที่มีแรงผลักดันจะร่ำเรียนวิถีแห่งเวทอย่างแท้จริง ไม่ว่าเป็นใคร จะหาทางมาที่นี่ได้เสมอ และจะได้รับการยอมรับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#243": {
+   "src": "A shame about Seasum, but not to worry. Now, hand over your materials, and you'll receive your rewards.",
+   "dst": "น่าเสียดายเรื่อง Seasum แต่ไม่ต้องห่วง ทีนี้ ส่งวัสดุมา แล้วคุณจะได้รับรางวัล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#244": {
+   "src": "And there you have it. Your feathers are grown, and you can spread your magical wings! Good luck on your adventures, Wynn soldier.",
+   "dst": "เรียบร้อย ขนของคุณงอกเต็มแล้ว กางปีกเวทของคุณได้เลย! โชคดีในการผจญภัยนะ ทหารแห่ง Wynn",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "Stage 15",
+   "speaker": "Headmaster",
+   "source": "wiki"
+  },
+  "The Order of the Grook#245": {
+   "src": "The element of bravery and resolve. Now, choose a Practical Magic lesson.",
+   "dst": "ธาตุแห่งความกล้าหาญและความมุ่งมั่น ทีนี้ เลือกคาบเวทภาคปฏิบัติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#246": {
+   "src": "Artificing is a very useful tool for the burgeoning magic user! I'm fond of it, myself. Now, choose a Magical Creatures class.",
+   "dst": "งานช่างเวทเป็นเครื่องมือที่มีประโยชน์มากสำหรับผู้ใช้เวทมือใหม่! ส่วนตัวฉันก็ชอบนะ ทีนี้ เลือกคาบสัตว์วิเศษ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#247": {
+   "src": "So you seek a broad spectrum of knowledge upon magicality! I wholeheartedly approve. Lastly, you must choose a Magical Type class.",
+   "dst": "อยากได้ความรู้ด้านเวทอย่างกว้างขวางสินะ! ฉันเห็นด้วยสุดใจ สุดท้าย คุณต้องเลือกคาบประเภทเวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#248": {
+   "src": "You have learned enough here, I believe. Now, it is up to you whether you want to continue with other lessons or try to master this test.",
+   "dst": "ฉันว่าคุณเรียนรู้ที่นี่มากพอแล้ว ทีนี้ก็ขึ้นอยู่กับคุณว่าจะเรียนคาบอื่นต่อ หรือจะพยายามผ่านบททดสอบนี้ให้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#249": {
+   "src": "Quartz is a versatile magical material useful in nearly any magical item in some fashion.",
+   "dst": "ควอตซ์เป็นวัสดุเวทอเนกประสงค์ ใช้ได้กับแทบทุกไอเทมเวทไม่ทางใดก็ทางหนึ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#250": {
+   "src": "Due to its natural ability to passively absorb magical energy, it is a phenominally applicable material for magical batteries or storage.",
+   "dst": "ด้วยความสามารถตามธรรมชาติที่ดูดซับพลังเวทได้เอง มันจึงเหมาะอย่างยิ่งสำหรับทำแบตเตอรี่หรือที่เก็บพลังเวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#251": {
+   "src": "Magical marvels such as the electromagic generator in {p} are powered primarily by quartz and related materials.",
+   "dst": "สิ่งมหัศจรรย์ทางเวทอย่างเครื่องกำเนิดไฟฟ้าเวทใน {p} ใช้พลังจากควอตซ์และวัสดุที่คล้ายกันเป็นหลัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#252": {
+   "src": "However, it has its limits. While it is effective at storing energy, it can only store a finite amount.",
+   "dst": "แต่มันก็มีขีดจำกัด แม้จะเก็บพลังได้ดี แต่ก็เก็บได้ในปริมาณจำกัด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#253": {
+   "src": "Overloading quartz with magical energy can cause it to create magical discharge, which can overcharge nearby quartz as well, causing violent chain reactions.",
+   "dst": "การอัดพลังเวทใส่ควอตซ์มากเกินไปอาจทำให้เกิดการปล่อยประจุเวท ซึ่งทำให้ควอตซ์ใกล้เคียงโอเวอร์โหลดไปด้วย จนเกิดปฏิกิริยาลูกโซ่รุนแรง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#254": {
+   "src": "Cosmic magic is being studied presently by magical experts. There are few conclusive truths of cosmic energies, one such being that it is only found in things fallen from the sky.",
+   "dst": "ตอนนี้เหล่าผู้เชี่ยวชาญกำลังศึกษาเวทจักรวาล ความจริงที่แน่ชัดเรื่องพลังจักรวาลมีไม่มาก หนึ่งในนั้นคือมันพบได้เฉพาะในสิ่งที่ตกลงมาจากฟ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#255": {
+   "src": "The meteors and comets that have fallen are difficult to study, as not only does each color or type of fallen meteor appear to have different magical effects on its environment...",
+   "dst": "อุกกาบาตและดาวหางที่ตกลงมาศึกษายาก เพราะไม่เพียงแต่อุกกาบาตแต่ละสีหรือแต่ละชนิดดูจะมีผลทางเวทต่อสภาพแวดล้อมต่างกัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#256": {
+   "src": "...but many types of meteor have been found to induce a creeping insanity in those exposed to it for extended periods. Three initial cosmic researchers fell prey to this effect.",
+   "dst": "...แต่ยังพบว่าอุกกาบาตหลายชนิดทำให้ผู้ที่สัมผัสเป็นเวลานานค่อยๆ เสียสติ นักวิจัยจักรวาลรุ่นแรกสามคนตกเป็นเหยื่อของผลนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#257": {
+   "src": "Small samples and meteor shards appear generally safe, but are to be treated with the utmost care and caution. Gavellian law outlaws non-registered usage of cosmic materials.",
+   "dst": "ตัวอย่างชิ้นเล็กและเศษอุกกาบาตดูจะปลอดภัยโดยทั่วไป แต่ต้องจัดการด้วยความระมัดระวังสูงสุด กฎหมาย Gavel ห้ามใช้วัสดุจักรวาลโดยไม่ได้ขึ้นทะเบียน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#258": {
+   "src": "Magical stabilizers do as they state, stabilize magical energy. Though materials such as quartz and runes are useful, misuse can result in disaster for the user.",
+   "dst": "ตัวรักษาเสถียรภาพเวทก็ทำตามชื่อ คือทำให้พลังเวทคงที่ แม้วัสดุอย่างควอตซ์และรูนจะมีประโยชน์ แต่ใช้ผิดวิธีอาจเกิดหายนะกับผู้ใช้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#259": {
+   "src": "Thus, stabilizers are a necessity for creating safe-to-use magical items. In the past, these manifested as massive chains of quartz batteries or wasteful use of metals such as gold or silver.",
+   "dst": "ดังนั้นตัวรักษาเสถียรภาพจึงจำเป็นต่อการสร้างไอเทมเวทที่ใช้ได้อย่างปลอดภัย ในอดีต มันอยู่ในรูปแบตเตอรี่ควอตซ์ต่อกันยาวเหยียด หรือการใช้โลหะอย่างทองหรือเงินอย่างสิ้นเปลือง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#260": {
+   "src": "Recently however, a material called Lodestone was discovered. It actively stabilizes influxes of magical energy far more efficiently than jewels or precious metals.",
+   "dst": "แต่เมื่อไม่นานมานี้ มีการค้นพบวัสดุที่เรียกว่าหินแม่เหล็ก มันทำให้พลังเวทที่ไหลเข้ามาคงที่ได้ดีกว่าอัญมณีหรือโลหะมีค่ามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#261": {
+   "src": "However, it has the side effect of leaching excess magic into the environment into a raw form. It is theorized that the presence of Lodestone in Gavel has...",
+   "dst": "แต่มันมีผลข้างเคียงคือปล่อยเวทส่วนเกินออกสู่สิ่งแวดล้อมในรูปดิบ มีทฤษฎีว่าการที่มีหินแม่เหล็กใน Gavel...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#262": {
+   "src": "...contributed heavily to the diverse flora and fauna of the region; the magic energy influenced evolution in ways that areas like Wynn have not seen.",
+   "dst": "...มีส่วนอย่างมากต่อความหลากหลายของพืชและสัตว์ในภูมิภาค พลังเวทส่งผลต่อวิวัฒนาการในแบบที่ดินแดนอย่าง Wynn ไม่เคยเห็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#263": {
+   "src": "Powders, while simple in actual structure, are often misunderstood except by enchanters and artificers.",
+   "dst": "ผงธาตุแม้โครงสร้างจะเรียบง่าย แต่มักถูกเข้าใจผิด ยกเว้นในหมู่นักเสกเวทและช่างเวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#264": {
+   "src": "Being made of specific blends of various items with magical ties to elements, certain powders are easier to create than others. Magical plants are easier to grind down than magical minerals, for instance.",
+   "dst": "เพราะทำจากการผสมไอเทมต่างๆ ที่ผูกพันกับธาตุทางเวท ผงธาตุบางชนิดจึงทำง่ายกว่าชนิดอื่น เช่น พืชเวทบดง่ายกว่าแร่เวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#265": {
+   "src": "After each item is ground to dust, enchanters purify the blend to remove extraneous aspects, leaving only the pure elemental powder in its wake.",
+   "dst": "หลังบดไอเทมแต่ละชิ้นจนเป็นผง นักเสกเวทจะชำระส่วนผสมเพื่อขจัดส่วนเกิน เหลือไว้เพียงผงธาตุบริสุทธิ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#266": {
+   "src": "Items more heavily attuned to a specific element will create a stronger blend of powder, but even items with the slightest connection to an element can conceivably be used to create a powder.",
+   "dst": "ไอเทมที่เข้ากับธาตุใดธาตุหนึ่งมากจะได้ผงธาตุที่แรงกว่า แต่แม้ไอเทมที่เชื่อมโยงกับธาตุเพียงน้อยนิดก็อาจนำมาทำผงธาตุได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#267": {
+   "src": "To apply powders to items in a refined way, one must either incorporate the mix into the base construction of an item, or utilize the energies within for an enchantment.",
+   "dst": "การใส่ผงธาตุลงในไอเทมอย่างประณีต ต้องผสมมันเข้าไปในโครงสร้างพื้นฐานของไอเทม หรือดึงพลังภายในมาใช้ในการเสกเวท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#268": {
+   "src": "Merely sprinkling powders over other things will not generate any magical effects, although some artists are known to use powders to make brilliant colors of paint, strangely.",
+   "dst": "แค่โรยผงธาตุใส่ของอื่นจะไม่เกิดผลทางเวทใดๆ แต่แปลกที่ศิลปินบางคนใช้ผงธาตุทำสีวาดภาพที่สดใส",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#269": {
+   "src": "Most magic items require a \"focus\" in order to draw out and direct their magical energies. Many items are usable as foci, but certain items have been found to be far more effective than others.",
+   "dst": "ไอเทมเวทส่วนใหญ่ต้องใช้ \"สื่อเวท\" เพื่อดึงและควบคุมพลังเวท ไอเทมหลายอย่างใช้เป็นสื่อเวทได้ แต่พบว่าบางอย่างได้ผลดีกว่ามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#270": {
+   "src": "Jewels and precious stones are easy to channel magic through, and thus are often used in conjunction as basic foci. Certain gems have inclination towards specific elements...",
+   "dst": "อัญมณีและหินมีค่านำเวทผ่านได้ง่าย จึงมักใช้ร่วมกันเป็นสื่อนำพื้นฐาน อัญมณีบางชนิดโน้มเอียงไปทางธาตุเฉพาะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#271": {
+   "src": "...most often indicated by the color of the gem, but all are applicable for general purposes.",
+   "dst": "...ซึ่งส่วนใหญ่ดูได้จากสีของอัญมณี แต่ทุกชนิดใช้งานทั่วไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#272": {
+   "src": "A less common type of focus is found in the form of Runes. They are a magical unknown, for all intents and purposes, with each specific rune seeming to have a different magical inclination.",
+   "dst": "สื่อเวทที่พบน้อยกว่าคือรูน ในทุกแง่มุม มันเป็นปริศนาทางเวท รูนแต่ละอันดูจะมีความโน้มเอียงทางเวทต่างกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#273": {
+   "src": "Only five types of Runes have ever been found, and after a disastrous attempt at combining Runic power, horrifically powerful Rune Guardians have begun to appear in Gavel to guard them.",
+   "dst": "เคยพบรูนเพียงห้าชนิด และหลังความพยายามรวมพลังรูนที่จบลงด้วยหายนะ ผู้พิทักษ์รูนที่ทรงพลังน่าสะพรึงก็เริ่มปรากฏใน Gavel เพื่อเฝ้าพวกมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#274": {
+   "src": "Due to this, the remaining stockpile of Runes continues to dwindle as they are used and sold between their holders, or hoarded by the wealthy.",
+   "dst": "เพราะเหตุนี้ รูนที่เหลืออยู่จึงลดลงเรื่อยๆ เพราะถูกใช้และซื้อขายกันในหมู่ผู้ครอบครอง หรือถูกคนรวยกักตุนไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#275": {
+   "src": "The crafting table isn't responding. Looks like you haven't got the right items.",
+   "dst": "แท่นประดิษฐ์ไม่ตอบสนอง ดูเหมือนคุณยังไม่มีไอเทมที่ถูกต้อง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#276": {
+   "src": "The crafting table responds, and the materials shape themselves into a rather fetching amulet.",
+   "dst": "แท่นประดิษฐ์ตอบสนอง และวัสดุก็ก่อรูปเป็นจี้ที่ดูสวยงามทีเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#277": {
+   "src": "[+{~} Amulet]",
+   "dst": "[+{~} จี้]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

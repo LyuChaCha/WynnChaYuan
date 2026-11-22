@@ -1,0 +1,886 @@
+{
+ "_meta": {
+  "quest": "Mushroom Man",
+  "count": 87,
+  "translated": 87,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Mushroom Man#000": {
+   "src": "I'm sorry, recruit, but that passage is blocked. We used to use it, but not anymore...",
+   "dst": "ขอโทษนะทหารใหม่ แต่ทางนั้นถูกปิดแล้ว เราเคยใช้มัน แต่ตอนนี้ไม่แล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#001": {
+   "src": "He's... difficult. He's the son of my sister, who we lost to spiders some time ago.",
+   "dst": "เขา... ยุ่งยากหน่อย เป็นลูกของน้องสาวผม ที่เราเสียเธอไปให้แมงมุมเมื่อนานมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "He's... difficult. He's the son of my sister, who was unfortunately killed by spiders some time ago.",
+    "file": "quest/supply-and-delivery.json",
+    "ratio": 0.852,
+    "reason": "candidate"
+   }
+  },
+  "Mushroom Man#002": {
+   "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken its toll on us both.",
+   "dst": "เมื่อพ่อของเขาไม่อยู่ ผมจึงต้องรับเขามาเลี้ยง ตอนนี้เขาโตเป็นผู้ใหญ่แล้ว ใช่ แต่... ผมเกรงว่าการสูญเสียทำร้ายเราทั้งคู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#003": {
+   "src": "I truly hope he will cease with these ridiculous ploys soon... but I can't bring myself to do more than give him a stern talking to.",
+   "dst": "ผมหวังจริงๆ ว่าเขาจะเลิกแผนการไร้สาระพวกนี้เสียที... แต่ผมก็ทำได้แค่ดุเขาเท่านั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#004": {
+   "src": "He's a good man, truly. I believe that with my whole heart. I only wish he would show that side of himself to others.",
+   "dst": "เขาเป็นคนดีจริงๆ ผมเชื่ออย่างนั้นสุดหัวใจ แค่อยากให้เขาแสดงด้านนั้นให้คนอื่นเห็นบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#005": {
+   "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
+   "dst": "{u} หวัดดี! ที่นี่ดีจริงๆ เลยว่าไหม? ผมอยากอยู่อีกสักพักก่อนไปต่อที่ {p} แต่เดี๋ยวก็พร้อมแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#006": {
+   "src": "You need to be Woodcutting Lv. {~} to start this Mini-Quest.",
+   "dst": "ต้องมี Lv. ตัดไม้ {~} เพื่อเริ่มมินิเควสนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#007": {
+   "src": "We can kill spiders! Right, {u}? Come on, this is what we're here to do! We became soldiers to help the people of Wynn, didn't we? We'll help you get your mushrooms back, sir.",
+   "dst": "เราฆ่าแมงมุมได้! ใช่ไหม {u}? มาเถอะ นี่แหละสิ่งที่เรามาทำ! เราเป็นทหารเพื่อช่วยผู้คนของ Wynn ไม่ใช่เหรอ? เราจะช่วยเอาเห็ดของคุณคืนมาเองครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#008": {
+   "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
+   "dst": "ฮ-อืม ดี ผมท-ทำซุปไม่ได้ถ้าไม่มี... เห็ด ต-ตามผมมา ผมจะพาไปหา-... แมงมุม แ-แมงมุมเลว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#009": {
+   "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
+   "dst": "อ้า พวกคุณสองคนคงเป็นทหารใหม่ที่ Aledar เล่าให้เราฟัง ดีใจที่ได้เจอกันสักที แต่ดูเหมือนพวกคุณจะรีบร้อนมานะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "captured"
+  },
+  "Mushroom Man#010": {
+   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushrooms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-why wouldn't it b-be?",
+   "dst": "โอ-โอ้! เปล่า ม-ไม่มีอะไรเกิดขึ้น ไม่มีส-สักอย่าง เห็ดของผม... มันสบายดี ถามท-ทำไมล่ะ? ท-ทุกอย่าง... ด-ดีเยี่ยม ท-ทำไมจะไม่ดีล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#011": {
+   "src": "Soon... s-soon I will have my m-mushrooms again...",
+   "dst": "อีกไม่นาน... อ-อีกไม่นานผมจะได้เห็ดคืน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#012": {
+   "src": "G-gah! D-don't you know it's rude to-... to e-eavesdrop?",
+   "dst": "ก-กั๊ก! ม-ไม่รู้เหรอว่ามันเสียมารยาทที่จะ-... แ-แอบฟัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#013": {
+   "src": "I-... this is bad. This is really bad. We need to tell the Mayor, now.",
+   "dst": "ผ-... แย่แล้ว แย่มากๆ เราต้องไปบอกนายกเทศมนตรี เดี๋ยวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#014": {
+   "src": "Right! Right. We've arrived from {p}, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
+   "dst": "ใช่! ใช่ เรามาจาก {p} พร้อมข่าวร้ายและคำขอความช่วยเหลือ แมงมุมในป่ากลายเป็นศัตรูและคุกคามเมือง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#015": {
+   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with him.",
+   "dst": "แล้วร้อยโท Van ก็กำลังวางแผนบุกฐานที่มั่นแปดเปื้อน! ผมแน่ใจว่าเขาคงยินดีถ้ามีกำลังพลเพิ่ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Mushroom Man#016": {
+   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Tasim ที่ {p} ตรง [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#017": {
+   "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
+   "dst": "ระหว่างนี้ ผมคิดอยู่ว่าเราจะช่วยที่นี่ได้ยังไง... ผมอาจมีไอเดียแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#018": {
+   "src": "Take a look at that villager over there. He's acting a little off, like he's got something going on. I wonder...",
+   "dst": "ดูชาวบ้านคนนั้นสิ เขาทำตัวแปลกๆ เหมือนมีเรื่องอะไรอยู่ ผมสงสัยว่า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#019": {
+   "src": "Alright, I've decided. I'm feeling a little restless, so let's go over there and see if there's anything we can help with!",
+   "dst": "เอาละ ตัดสินใจแล้ว ผมอยู่ไม่สุขนิดหน่อย ไปตรงนั้นดูกันว่ามีอะไรให้ช่วยไหม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#020": {
+   "src": "Maybe we can leave this place better off than it was when we got here!",
+   "dst": "บางทีเราอาจทำให้ที่นี่ดีกว่าตอนที่เรามาถึงก็ได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#021": {
+   "src": "Speak to the strange man at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับชายแปลกหน้าที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#022": {
+   "src": "Speak to the strange man at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับชายแปลกหน้าที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#023": {
+   "src": "G-... Hi! H-how can I help you on this... this p-perfectly fine and n-n-normal day!",
+   "dst": "ก-... หวัดดี! ม-มีอะไรให้ช่วยในวัน... วันที่ป-ปกติดีและธ-ธ-ธรรมดาแบบนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#024": {
+   "src": "Sorry to interrupt- we're soldiers traveling through this town, and you looked like the sort of person who might need the kind of help soldiers can provide. Anything we can help with?",
+   "dst": "ขอโทษที่รบกวน เราเป็นทหารที่เดินทางผ่านเมืองนี้ และคุณดูเหมือนคนที่อาจต้องการความช่วยเหลือแบบที่ทหารช่วยได้ มีอะไรให้เราช่วยไหมครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#025": {
+   "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
+   "dst": "...ก-ก็ได้ ค-คุณจับได้! เห็ดของผม... เห็ดของผมไม่สบายดี! ม-มันแย่ด้วยซ้ำ! พ-พอใจ-... พอใจหรือยัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#026": {
+   "src": "Ehm- no, but that's why we're here! Is there anything we can do to help your... uh. Your mushrooms?",
+   "dst": "เอ่อ- ไม่หรอก แต่นั่นแหละที่เรามา! มีอะไรที่เราช่วย... เอ่อ เห็ดของคุณได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#027": {
+   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-But- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
+   "dst": "อืม ทหารหนึ่ง ทหารส-สอง... ด-ดูอ่อนแอ ผมเคยเห็นท-ที่แข็ง-... แข็งแกร่งกว่านี้ แ-แต่- เฮะๆ ท-ทหารที่แข็งแกร่งกว่า... ไม่อยู่ที่นี่ ค-คุณก็คงพอได้ มั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#028": {
+   "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
+   "dst": "ผม- ที่เก็บเห็ดที่ผมชอบที่สุด ผมใช้มันไม่ได้อีก-... อีกแล้ว แมงมุม แ-แมงมุมเพียบ พวกมันย-ย-ยึดไปแล้ว... ผมเก็บเห็ดไม่ได้ ช่วยฆ่าแ-แ-แมงมุมได้ไหม? เห็ด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#029": {
+   "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}].",
+   "dst": "ตาม Yahya ไปยังแปลงเห็ดที่ถูกยึดของเขาที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#030": {
+   "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}]",
+   "dst": "ตาม Yahya ไปยังแปลงเห็ดที่ถูกยึดของเขาที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#031": {
+   "src": "H-here we are. I- I can f-feel the m-m-mushrooms... from here. And the s-spiders! No-... no good.",
+   "dst": "ม-มาถึงแล้ว ผม- ผมร-รู้สึกถึงเ-เ-เห็ด... จากตรงนี้ แล้วก็แ-แมงมุม! ไม่-... ไม่ดีเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#032": {
+   "src": "S-so! Mushrooms. Those-... those bad c-creepy c-crawly s-s-spiders... Kill them. P-please?",
+   "dst": "ฉ-ฉะนั้น! เห็ด พวก-... พวกแมงมุมน่าข-ขนลุกไต่ยั้วเยี้ย... ฆ่ามันซะ ไ-ได้โปรด?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#033": {
+   "src": "We wouldn't have come here if we weren't planning to. Alright, {u}, let's clear out some spiders!",
+   "dst": "ถ้าไม่ตั้งใจจะทำ เราก็คงไม่มาหรอก เอาละ {u} ไปกวาดล้างแมงมุมกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#034": {
+   "src": "Clear out the spiders from Yahya's favorite mushroom patch at [-{~}, {~}, -{~}], then return and talk to Yahya.",
+   "dst": "กวาดล้างแมงมุมจากแปลงเห็ดที่ Yahya ชอบที่สุดที่ [-{~}, {~}, -{~}] แล้วกลับไปคุยกับ Yahya",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#035": {
+   "src": "Well, it looks cleared to me. These are... uh... some fine mushrooms!",
+   "dst": "อืม ดูเรียบร้อยดีนะ เห็ดพวกนี้... เอ่อ... งามดีเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#036": {
+   "src": "Th-thank you soldiers! That was-... I mean. It was f-fine, I g-... guess.",
+   "dst": "ข-ขอบคุณครับทหารทุกคน! เมื่อกี้มัน-... คือว่า มันก-ก็ไม่เป็นไรหรอก ม-... มั้งครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#037": {
+   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
+   "dst": "...โอ-โอ้ ผมต-ต้องจ่ายเงิน... ตอนนี้เลยเหรอ? เฮะ [{~} มรกต] พอไหม..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#038": {
+   "src": "...Come on.",
+   "dst": "...ไม่เอาน่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#039": {
+   "src": "Oho okay, ok-... okay! It was a joke, don't get all ex-... ex-... excited. Here, just take-",
+   "dst": "โอโฮ ก็ได้ ก็-... ก็ได้! ล้อเล่นน่า อย่าเพิ่งตื่-... ตื่-... ตื่นเต้น นี่ เอาไปเลย-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#040": {
+   "src": "G-gah! C-creepy! C-c-crawly! S-s-s-spiders!!!",
+   "dst": "ก-กั๊ก! น-น่าขนลุก! ย-ยั้วเยี้ย! แ-แ-แมงมุม!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#041": {
+   "src": "Yahya! No!",
+   "dst": "Yahya! ไม่นะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#042": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#043": {
+   "src": "Return to Mayor Alvin at [-{~}, {~}, -{~}] with news about the spiders.",
+   "dst": "กลับไปหานายกเทศมนตรี Alvin ที่ [-{~}, {~}, -{~}] พร้อมข่าวเรื่องแมงมุม",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#044": {
+   "src": "Ah, hello travelers. You seem to be in a rush- has something happened?",
+   "dst": "อ้า หวัดดี นักเดินทาง ดูรีบร้อนนะ เกิดอะไรขึ้นหรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#045": {
+   "src": "Yes! Yes, something- something has happened. We went with Yahya to help him with a problem he was having with spiders-",
+   "dst": "ใช่! ใช่ มีบางอย่าง- มีบางอย่างเกิดขึ้น เราไปกับ Yahya เพื่อช่วยเขาเรื่องปัญหาแมงมุม-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#046": {
+   "src": "Yes, yes, I know of Yahya's antics... He doesn't seem to be with you. Has he ran off on you, just as Ope did?",
+   "dst": "ใช่ ใช่ ผมรู้เรื่องพฤติกรรมของ Yahya ดี... ดูเหมือนเขาไม่ได้มากับพวกคุณ หนีพวกคุณไปเหมือนที่ Ope ทำเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#047": {
+   "src": "No- no. When we finished clearing out the spiders, we were swarmed- and they took him!",
+   "dst": "ไม่- ไม่ใช่ พอเรากวาดล้างแมงมุมเสร็จ พวกมันก็รุมเข้ามา- แล้วจับเขาไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#048": {
+   "src": "...Oh. Oh, dear. That isn't good at all. If they're making moves such as this, unprovoked...",
+   "dst": "...โอ้ ตายจริง แบบนี้ไม่ดีเลย ถ้าพวกมันเคลื่อนไหวแบบนี้โดยไม่มีใครยั่วยุ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#049": {
+   "src": "You two are soldiers, yes? I would ask you to continue your travels to {p}. Find an Admiral Aegis- tell him our little village needs aid.",
+   "dst": "พวกคุณสองคนเป็นทหารใช่ไหม? ผมขอให้พวกคุณเดินทางต่อไปที่ {p} ตามหาพลเรือเอก Aegis บอกเขาว่าหมู่บ้านเล็กๆ ของเราต้องการความช่วยเหลือ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#050": {
+   "src": "I-... of course. We'll set out immediately. Come on, {u}.",
+   "dst": "ผ-... แน่นอน เราจะออกเดินทางทันที มาเถอะ {u}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#051": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
+   "dst": "เดินทางไป {p} เพื่อขอความช่วยเหลือจากกองทัพที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#052": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}]",
+   "dst": "เดินทางไป {p} เพื่อขอความช่วยเหลือจากกองทัพที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#053": {
+   "src": "Wait. Did you hear that?",
+   "dst": "เดี๋ยว ได้ยินนั่นไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#054": {
+   "src": "Gah! {u}, look out!",
+   "dst": "อ๊ะ! {u} ระวัง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#055": {
+   "src": "Another one of these? We've fought one of them before, we can do it again!",
+   "dst": "อีกตัวเหรอ? เราเคยสู้กับมันมาแล้ว ทำได้อีกแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#056": {
+   "src": "Phew. I think that went about as well as it could have!",
+   "dst": "เฮ้อ ผมว่าออกมาดีที่สุดเท่าที่จะเป็นได้แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#057": {
+   "src": "We're both in one piece, the corrupted is dead... Good. That's good!",
+   "dst": "เราสองคนยังครบสามสิบสอง ตัวแปดเปื้อนตายแล้ว... ดี ดีมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#058": {
+   "src": "Let's keep moving towards {p}. I don't think it's too much further, if we keep heading east from here.",
+   "dst": "ไปต่อที่ {p} กันเถอะ ผมว่าไม่ไกลแล้ว ถ้าเรามุ่งไปทางตะวันออกจากตรงนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#059": {
+   "src": "Wait up!",
+   "dst": "รอด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#060": {
+   "src": "Why'd you just leave me there? If we couldn't fight that thing off together, what made you think I could do it alone?",
+   "dst": "ทำไมทิ้งผมไว้ตรงนั้น? ถ้าเราสองคนยังสู้มันไม่ได้ ทำไมคิดว่าผมจะสู้ได้คนเดียว?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#061": {
+   "src": "I managed to get away, but... still. What if I couldn't? Would you have just left me for dead?",
+   "dst": "ผมหนีมาได้ แต่... ก็นะ ถ้าผมหนีไม่รอดล่ะ? คุณจะทิ้งให้ผมตายเลยเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#062": {
+   "src": "...Whatever. I'm alive, you're alive... that's probably good enough. Let's go find Admiral Aegis",
+   "dst": "...ช่างเถอะ ผมรอด คุณรอด... คงพอแล้วล่ะ ไปหาพลเรือเอก Aegis กัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#063": {
+   "src": "...Oh, {u}, you're awake! I was really worried there for a bit...",
+   "dst": "...โอ้ {u} ฟื้นแล้ว! เมื่อกี้ผมเป็นห่วงมากเลย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#064": {
+   "src": "After you went down, I managed to hold my own long enough for some nearby soldiers to arrive and help. I can't thank Lieutenant Van enough.",
+   "dst": "หลังคุณล้มลง ผมยื้อไว้ได้นานพอให้ทหารที่อยู่แถวนั้นมาช่วย ผมขอบคุณร้อยโท Van เท่าไรก็ไม่พอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#065": {
+   "src": "We, uh... brought you back here to rest up. Aledar's around here somewhere, I think.",
+   "dst": "เรา เอ่อ... พาคุณกลับมาพักที่นี่ Aledar น่าจะอยู่แถวนี้แหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#066": {
+   "src": "Oh, I spoke to Admiral Aegis about the spider problem already. He said he wants to speak to you about it, too. He should be downstairs",
+   "dst": "อ้อ ผมคุยกับพลเรือเอก Aegis เรื่องแมงมุมแล้ว เขาบอกว่าอยากคุยกับคุณด้วย น่าจะอยู่ชั้นล่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#067": {
+   "src": "...and that's how we managed to defeat that undead swarm, sir!",
+   "dst": "...และนั่นคือวิธีที่เราเอาชนะฝูงอันเดดได้ครับท่าน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Mushroom Man#068": {
+   "src": "That's good to hear. Thank you for your work, Aledar. I'll speak to Lieutenant Van and see if he'd be willing to take you into his squad.",
+   "dst": "ดีใจที่ได้ยินอย่างนั้น ขอบคุณสำหรับผลงานนะ Aledar ผมจะคุยกับร้อยโท Van ดูว่าเขาจะรับคุณเข้าหน่วยไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#069": {
+   "src": "Thank you for the opportunity, sir. I won't let you down-... Wait, is that- Tasim and {u}?",
+   "dst": "ขอบคุณสำหรับโอกาสครับท่าน ผมจะไม่ทำให้ผิดหวัง-... เดี๋ยว นั่น- Tasim กับ {u} เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Mushroom Man#070": {
+   "src": "Aledar! We've finally made it to {p}. We've had... something of an adventure, getting here.",
+   "dst": "Aledar! ในที่สุดเราก็มาถึง {p} แล้ว เราเจอ... การผจญภัยมาพอสมควรกว่าจะมาถึง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#071": {
+   "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
+   "dst": "ชาวเมืองคนหนึ่งถูกจับตัวไปต่อหน้าต่อตาเรา นายกเทศมนตรี Alvin ส่งเรามาขอความช่วยเหลือจากกองทัพ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#072": {
+   "src": "Bad news, indeed. Very well, we will make preparations. For the time being, the two of you should rest and hone your skills. Captain Ragon here in the barracks would gladly offer some training.",
+   "dst": "ข่าวร้ายจริงๆ ก็ได้ เราจะเตรียมการ ระหว่างนี้พวกคุณสองคนควรพักผ่อนและฝึกฝีมือ กัปตัน Ragon ที่ค่ายทหารนี่ยินดีฝึกให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#073": {
+   "src": "Thank you, sir. But is there anything we could do to actually help?",
+   "dst": "ขอบคุณครับท่าน แต่มีอะไรที่เราช่วยได้จริงๆ บ้างไหมครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#074": {
+   "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I'd suggest you speak with him.",
+   "dst": "กระตือรือร้นดีนี่! ขอคิดก่อน... ผมว่ากัปตัน Fenor ที่ประตูตะวันตกกำลังหาคนช่วยอยู่ ถ้าพวกคุณเต็มใจ ลองไปคุยกับเขาดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#075": {
+   "src": "Yes, yes. Well, I must be off. If the threat of Nivla's spiders is growing... we must prepare accordingly. I hope to hear of your future endeavors, all three of you.",
+   "dst": "ใช่ ใช่ เอาละ ผมต้องไปแล้ว ถ้าภัยจากแมงมุมของ Nivla กำลังเพิ่มขึ้น... เราต้องเตรียมรับมือให้พร้อม หวังว่าจะได้ยินผลงานของพวกคุณทั้งสามคนในอนาคต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#076": {
+   "src": "...so, Captain, what do you think? We'll need to start training soldiers more quickly, but I hope that won't be a problem.",
+   "dst": "...ว่าไง กัปตัน คิดยังไง? เราต้องเร่งฝึกทหารให้เร็วขึ้น แต่หวังว่าคงไม่เป็นปัญหานะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#077": {
+   "src": "Of course, Admiral, I'll see what I can do.",
+   "dst": "แน่นอนครับท่านพลเรือเอก ผมจะดูว่าทำอะไรได้บ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Captain Ragon",
+   "source": "wiki"
+  },
+  "Mushroom Man#078": {
+   "src": "Excellent. Now- ah, {u}. Good to see you're up and about again. You gave us quite a shock!",
+   "dst": "ยอดเยี่ยม ทีนี้- อ้า {u} ดีใจที่เห็นคุณลุกขึ้นมาได้อีกครั้ง คุณทำเราตกใจแทบแย่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#079": {
+   "src": "Van tells me that goliath the two of you faced was a dangerous foe. He was impressed you managed to damage it as much as you did, even if you ended up needing rescue.",
+   "dst": "Van บอกว่า Goliath ที่พวกคุณสองคนเจอเป็นศัตรูที่อันตราย เขาประทับใจที่พวกคุณทำมันบาดเจ็บได้มากขนาดนั้น แม้สุดท้ายจะต้องมีคนไปช่วยก็ตาม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#080": {
+   "src": "Now, to business. We've already begun planning for our assault on the spiders, but we'll need more well-trained soldiers. Captain Ragon here should be able to help you hone your skills.",
+   "dst": "เข้าเรื่องกันเถอะ เราเริ่มวางแผนบุกโจมตีแมงมุมแล้ว แต่เราต้องการทหารที่ฝึกมาดีกว่านี้ กัปตัน Ragon ตรงนี้ช่วยฝึกฝีมือคุณได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#081": {
+   "src": "And if we wanted to help out, sir? I'm getting a little stir-crazy in here.",
+   "dst": "แล้วถ้าเราอยากช่วยล่ะครับท่าน? ผมเริ่มอยู่ไม่สุขแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#082": {
+   "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I suggest you speak with him.",
+   "dst": "กระตือรือร้นดีนี่! ขอคิดก่อน... ผมว่ากัปตัน Fenor ที่ประตูตะวันตกกำลังหาคนช่วยอยู่ ถ้าพวกคุณเต็มใจ ลองไปคุยกับเขาดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#083": {
+   "src": "In addition, Lieutenant Van was highly impressed by your fight with the goliath! He told me to pass on that he'd appreciate your help in a raid he's planning on a nearby corrupted stronghold. I believe your friend Aledar was involved.",
+   "dst": "นอกจากนี้ ร้อยโท Van ประทับใจการต่อสู้ของคุณกับ Goliath มาก! เขาฝากบอกว่าอยากให้คุณช่วยในการบุกฐานที่มั่นแปดเปื้อนใกล้ๆ ที่เขากำลังวางแผน ผมว่าเพื่อนคุณ Aledar ก็มีส่วนร่วมด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#084": {
+   "src": "With that, I must be off. We have many preparations to make, and the enemy never rests. I hope to hear of your future endeavors, both of you.",
+   "dst": "เท่านี้ก่อน ผมต้องไปแล้ว เรามีเรื่องต้องเตรียมอีกมาก และศัตรูไม่เคยหยุดพัก หวังว่าจะได้ยินผลงานของพวกคุณทั้งสองในอนาคต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#085": {
+   "src": "I am everywhere. M-mushroom soup, stew, soup m-makes me fast!",
+   "dst": "ผมอยู่ทุกที่ ซ-ซุปเห็ด สตู ซุปทำให้ผมเ-เร็ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#086": {
+   "src": "...Oh. It's- you. Hello.",
+   "dst": "...อ้อ คุณ- นี่เอง หวัดดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Yahya",
+   "source": "captured"
+  }
+ }
+}

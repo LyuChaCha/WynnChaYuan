@@ -1,0 +1,3240 @@
+{
+ "_meta": {
+  "quest": "The Breaking Point",
+  "count": 322,
+  "translated": 322,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Breaking Point#000": {
+   "src": "Hey, keep up! We need to get this part into the machine as quickly as we can!",
+   "dst": "เฮ้ ตามให้ทันสิ! เราต้องเอาชิ้นส่วนนี้ใส่เครื่องให้เร็วที่สุด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#001": {
+   "src": "Amazing work! I'll get us back to Kandon Beda with that capacitor as quick as possible.",
+   "dst": "เยี่ยมมาก! ฉันจะพาเรากลับ Kandon Beda พร้อมตัวเก็บประจุนั่นให้เร็วที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#002": {
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
+   "dst": "ข้า... เข้าใจแล้ว {u}... Ozoth บอกข้าว่า... เปลวไฟนิรันดร์... จะปลดปล่อยผู้อาวุโส",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "captured",
+   "similar": {
+    "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
+    "file": "quest/the-breaking-point.json",
+    "ratio": 0.98,
+    "reason": "placeholders"
+   }
+  },
+  "The Breaking Point#003": {
+   "src": "Where can we find one?",
+   "dst": "จะหาได้ที่ไหน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#004": {
+   "src": "You need to get onto the path up to {p}. There should be signposts outside of {p}...",
+   "dst": "เจ้าต้องขึ้นทางที่ไป {p} นอก {p} น่าจะมีป้ายบอกทาง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#005": {
+   "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
+   "dst": "คุยกับนายพล Elix ที่ [{~}, {~}, -{~}] ใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#006": {
+   "src": "... Alright, let's see here... Private! Give me a report!",
+   "dst": "... เอาล่ะ ไหนดูซิ... พลทหาร! รายงานมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#007": {
+   "src": "Sir, our readings are positive! Stability is at {~}, and shows no sign of dropping.",
+   "dst": "ท่านครับ ค่าที่วัดได้เป็นบวก! เสถียรภาพอยู่ที่ {~} และไม่มีทีท่าจะลดลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#008": {
+   "src": "Readings are positive!",
+   "dst": "ค่าที่วัดได้เป็นบวก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#009": {
+   "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find... -",
+   "dst": "ดีมาก คอยจับตาทุกอย่างไว้ มีอะไรเกิดขึ้นก็รายงานข้า ทีนี้ ข้าต้องไปหา... -",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#010": {
+   "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
+   "dst": "ฮึ่ม แล้วเจ้าเป็นใครกัน? พื้นที่นี้ห้ามพลเรือนเข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#011": {
+   "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
+   "dst": "นักผจญภัย แน่ล่ะ ตอนนี้เรากำลังทำงานที่ค่อนข้างอันตราย ข้าต้องขอให้เจ้า-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#012": {
+   "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
+   "dst": "... เครื่องรักษาเสถียรภาพ? เรากำลังทำงานอันตรายอยู่ คือคุมสิ่งที่อยู่หลังหน้าผานั่นให้สงบ ข้าเลยต้องขอให้เจ้า-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#013": {
+   "src": "General! Stability is dropping, and fast!",
+   "dst": "ท่านนายพล! เสถียรภาพกำลังลดลง เร็วมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#014": {
+   "src": "General!",
+   "dst": "นายพล!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#015": {
+   "src": "What?! Of all times for it to-",
+   "dst": "อะไรนะ?! ทำไมต้องมาตอน-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#016": {
+   "src": "Urgh... Soldiers, follow protocol! Secure what you can, leave what you can't! And- you! I haven't forgotten about you. As soon as this all clears up, we'll-",
+   "dst": "อึก... ทหาร ทำตามขั้นตอน! เก็บอะไรได้ก็เก็บ ที่เก็บไม่ได้ก็ทิ้ง! และ- เจ้า! ข้ายังไม่ลืมเจ้าหรอก พอทุกอย่างสงบเมื่อไร เราจะ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#017": {
+   "src": "Gah! This damned Colossus! What I wouldn't give to...",
+   "dst": "อ๊าก! ยักษ์หินบ้านี่! ข้ายอมแลกอะไรก็ได้เพื่อ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#018": {
+   "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
+   "dst": "... จบแล้ว Walder! สำรวจความเสียหายของอุปกรณ์! Morec! นับคนเจ็บทั่วฐาน ดูให้แน่ว่าทุกคนปลอดภัย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#019": {
+   "src": "Yes sir!",
+   "dst": "รับทราบ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#020": {
+   "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
+   "dst": "ท่านนายพล! เรามาเร็วที่สุดแล้ว- เราอยู่ข้างล่างในห้องสมุด แล้วทางออกก็- อ้าว ว้าว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#021": {
+   "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
+   "dst": "เอาล่ะ Rhay ตอนนี้เจ้ามาแล้วใช่ไหม? คิดว่ายังไง ซ่อมได้ไหม? เราต้องทำให้มันใช้ได้ก่อน-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#022": {
+   "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
+   "dst": "ซ่อมได้ไหม- ไม่ ซ่อมไม่ได้อยู่แล้ว! ฉันคนเดียวไม่ไหว ยิ่งไม่มีอุปกรณ์ที่เหมาะแถวนี้ด้วย! เฮ้อ นี่ห่างจากครั้งก่อนมานานแค่ไหนแล้ว?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#023": {
+   "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
+   "dst": "ผ่านมา... สามวัน... ราวๆ นั้น Rhay... เจ้าก็รู้ว่าเรา... ฝืนต่อไป-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#024": {
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
+   "dst": "เครื่องรักษาเสถียรภาพใช้ได้ผลมาตลอดนะ Ineos! มันเป็นเทคโนโลยีชั้นยอดของแคว้นเรา และมันก็ใช้ได้ผลมาตลอด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#025": {
+   "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
+   "dst": "Rhay เจ้ารู้... ดีพอๆ กับข้า... ว่ามันแย่ลงเรื่อยๆ ผู้พิทักษ์... เริ่มต้านทาน... เครื่องจักรของเจ้า เราต้องการ... แผนใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#026": {
+   "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
+   "dst": "ใช่ ถ้าคุณคิดออกเมื่อไร ฉันยินดีฟังเลย! แต่จนถึงตอนนี้ คุณแทบไม่ได้อะไร-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#027": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#028": {
+   "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
+   "dst": "... ขอโทษ ขอโทษนะ ฉันไม่ได้ตั้งใจ ท่านนายพล ตอบคำถามท่าน... ตัวเครื่องรักษาเสถียรภาพเสียหาย แต่ที่นี่น่าจะมีของพอซ่อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#029": {
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "dst": "ปัญหาคือแผงควบคุมดูเหมือนจะไหม้! และเราไม่มีอะไหล่เก็บไว้ที่นี่ เราต้องเดินทางกลับ Corkus แล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#030": {
+   "src": "... Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
+   "dst": "... ใช่ เจ้า เจ้าเป็นนักผจญภัยใช่ไหม? และดูมีอุปกรณ์ครบ งั้นเจ้าจะเดินทางไป Corkus กับ Rhay และช่วยทุกอย่างที่จำเป็นที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#031": {
+   "src": "Huh?",
+   "dst": "หา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#032": {
+   "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
+   "dst": "เดี๋ยว ท่านนายพล-... ค่ะ ก็ได้ ถ้าอย่างนั้น... ฉันให้เวลาคุณเตรียมตัว เราจะนั่งบอลลูนลมร้อนไป Corkus เจอกันที่นั่นนะ เราไม่มีเวลาให้เสียแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#033": {
+   "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
+   "dst": "ส่วนข้าจะ... กลับไปที่ห้องสมุด ข้าเชื่อว่า... พวกเจ้าจะสำเร็จ... แต่เราต้อง... เตรียมรับมือ... กับสิ่งที่เลวร้ายที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#034": {
+   "src": "Alright...",
+   "dst": "ก็ได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#035": {
+   "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "ไปพบ Rhay ที่บอลลูนลมร้อนที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#036": {
+   "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
+   "dst": "อ้า มาแล้ว! ถ้าพร้อมแล้ว เราไปกันดีกว่า แค่ขึ้นบอลลูนนี้ แล้วกัปตันจะพาเราไปที่ที่ต้องไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#037": {
+   "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
+   "dst": "ฉันเล่าเพิ่มระหว่างทางได้ แต่เราต้องรีบไปแล้ว ไม่รู้ว่าเหลือเวลาอีกเท่าไรก่อนจะ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#038": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
+   "dst": "ใช่ ใช่ ไม่ต้องสนใจฉันนะ ฉันแค่เครียดนิดหน่อย เพราะ... ก็ เหตุผลชัดๆ นั่นแหละ ขึ้นมาเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#039": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, for obvious reasons. Just hop aboard.",
+   "dst": "ใช่ ใช่ ไม่ต้องสนใจฉันนะ ฉันแค่เครียดนิดหน่อย เพราะ... ก็ เพราะเหตุผลชัดๆ นั่นแหละ ขึ้นมาเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#040": {
+   "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "เดินทางไป {p} ด้วยบอลลูนลมร้อนที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#041": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
+   "dst": "นั่นไง! ยักษ์หินแห่งหุบผาตัวจริง ต้นเหตุของปัญหาทั้งหมดของเราที่ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#042": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all of our problems here at {p}.",
+   "dst": "นั่นไง! ยักษ์หินแห่งหุบผาตัวจริง ต้นเหตุของปัญหาทั้งหมดของเราที่ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#043": {
+   "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
+   "dst": "เอาล่ะ! คุณรู้อะไรมาบ้างแล้ว? ฉันรู้ว่าเราลากคุณเข้ามาโดยไม่ได้บอกอะไรมาก งั้น... ฉันเล่ารายละเอียดให้ได้นะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#044": {
+   "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
+   "dst": "อ้าว เขาบอกแล้วเหรอ? ก็สมเหตุสมผล ใช่ คุณพูดถูกที่มันเป็นต้นเหตุแผ่นดินไหว แต่ยังมีมากกว่านั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#045": {
+   "src": "You've seen the {p}, right? Heard of the Fracturing. From what we can tell, what happened to that region a thousand years ago is happening again, here and now.",
+   "dst": "คุณเคยเห็น {p} แล้วใช่ไหม? เคยได้ยินเรื่องการแตกร้าว เท่าที่เรารู้ สิ่งที่เกิดกับภูมิภาคนั้นเมื่อพันปีก่อนกำลังเกิดขึ้นอีก ที่นี่ ตอนนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#046": {
+   "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
+   "dst": "ใช่ ถูกต้อง มันทำงานผิดปกติมานานแล้ว และเริ่มฉีกหุบผาออกเป็นเสี่ยงๆ ตรงนี้แหละที่เราเข้ามา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#047": {
+   "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
+   "dst": "ก็... อย่างแรก มันเป็นของโบราณ สร้างขึ้นนานก่อนที่ Dogun จะจำได้เสียอีก ทั้งที่พวกเขาอยู่แถบนี้มาหลายพันปี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#048": {
+   "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
+   "dst": "Ineos บอกว่า แต่ก่อน Dogun เป็นผู้คอยทำให้มันสงบ แต่ตั้งแต่คนแคระเข้ามาและเริ่มสงคราม ความรู้นั้นก็สูญหายไปกับกาลเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#049": {
+   "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
+   "dst": "ซึ่งก็... เป็นปัญหา! {p} ทำงานผิดปกติมาหลายร้อยปี และกำลังถึงจุดแตกหัก ถ้าเราไม่หยุดมัน มันจะฉีกหุบผาออกเป็นเสี่ยงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#050": {
+   "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
+   "dst": "อ้าว? งั้นคุณเคยเดินทางในหุบผามาแล้ว ใช่ คุณก็คงเห็นว่าหุบผาบิดเบี้ยวและเปลี่ยนไปยังไง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#051": {
+   "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
+   "dst": "มันทำลายบ้านเรือน ขังผู้คนไว้ลึกในหุบเขาที่วกวนเหมือนเขาวงกต... และช่วงหลังมานี้ มันเริ่มฉีกรูเข้าสู่สุญญตา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#052": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "สิ่งนี้เก่าแก่มาก และเราไม่รู้ว่ามันทำงานยังไง ที่ทำได้ดีที่สุดคือพยายามไม่ให้มันถึงจุดแตกหัก และไม่ให้หุบผาต้องจบแบบเดียวกับ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#053": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try and keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "สิ่งนี้เก่าแก่มาก และเราไม่รู้ว่ามันทำงานยังไง ที่ทำได้ดีที่สุดคือพยายามไม่ให้มันถึงจุดแตกหัก และไม่ให้หุบผาต้องจบแบบเดียวกับ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#054": {
+   "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
+   "dst": "รัฐบาลของ Gavel ติดต่อเราที่ Corkus มาสักพักแล้ว ขอให้ช่วยรับมือภัยคุกคามนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#055": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
+   "dst": "สภาของเราตกลง และเราก็เริ่มออกแบบเครื่องจักรที่เลียนแบบเวท Dogun ซึ่งเคยทำให้ยักษ์หินนั่นสงบเมื่อนานมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#056": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified the Colossus long ago.",
+   "dst": "สภาของเราตกลง และเราก็เริ่มออกแบบเครื่องจักรที่เลียนแบบเวท Dogun ซึ่งเคยทำให้ยักษ์หินสงบเมื่อนานมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#057": {
+   "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
+   "dst": "Ineos ช่วยเราเรื่องนี้ เขากับฉันทำงานอยู่ที่ {p} เพื่อให้ทุกอย่างราบรื่น ซึ่ง... เห็นชัดว่ามันไม่ราบรื่นเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#058": {
+   "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
+   "dst": "... เราจะไม่เป็นไร! เราจะไปพบสามีฉันที่ Corkus แล้วเขาจะรู้ว่าต้องทำยังไง เขารู้เสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#059": {
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "dst": "คนของเราที่นั่นหาชิ้นส่วนที่ต้องใช้ซ่อมเครื่องให้ได้ นี่... นี่ไม่ใช่ครั้งแรกที่มันระเบิด ฉันหวังว่าครั้งนี้เราจะทำให้มันเสถียรได้แล้ว แต่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#060": {
+   "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
+   "dst": "แต่ เฮ้! เราคุมสถานการณ์ได้ เราซ่อมมันได้ทันเสมอ ให้มันทำงานต่อได้ระหว่างที่ยักษ์หินตื่นอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#061": {
+   "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
+   "dst": "อ้อ! ใช่ เขาเป็นคนรับผิดชอบการออกแบบและผลิตเครื่องนี้ เขามีพรสวรรค์ด้านออกแบบของพวกนี้ ถ้าไม่มีเขา... ก็ เราคงแย่กว่านี้มาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#062": {
+   "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
+   "dst": "ฉันจะดีใจที่ได้เจอเขาอีก ไม่ได้ไป Corkus มาพักใหญ่แล้ว และ... ก็ ฉันมั่นใจว่าเขาจะรู้ว่าต้องทำยังไงกับเรื่องนี้ เขารู้เสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#063": {
+   "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
+   "dst": "... เอาล่ะ! เฮ้ ดูเหมือนเราใกล้ถึงแล้ว เราจะจัดการทุกอย่างให้เรียบร้อย แล้วกลับ {p} ได้ในไม่ช้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#064": {
+   "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
+   "dst": "หาผู้ติดต่อในโรงงานที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#065": {
+   "src": "Alright, let's just head on in. My husband should be around here somewhere...",
+   "dst": "โอเค เข้าไปกันเลย สามีฉันน่าจะอยู่แถวนี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#066": {
+   "src": "Rhay, love! You're back already? Our next routine maintenance isn't for another- Wait, {u}? What are you doing here?",
+   "dst": "Rhay ที่รัก! กลับมาแล้วเหรอ? การบำรุงรักษารอบหน้ายังไม่ถึงอีก- เดี๋ยว {u}? คุณมาทำอะไรที่นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#067": {
+   "src": "I... You two know each other?",
+   "dst": "ฉัน... สองคนรู้จักกันเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#068": {
+   "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
+   "dst": "แน่นอนสิ - เขาคือคนที่ช่วยผมเรื่องโรงงานทั้งหมดไง! แล้วสองคนเจอกันได้ยังไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#069": {
+   "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
+   "dst": "เขาแค่โผล่มาที่ {p} แล้วตกลงช่วยเราเรื่อง... - ทำไมคุณไม่บอกตั้งแต่แรกล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#070": {
+   "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
+   "dst": "คงจะ...- ใช่ ถ้าอย่างนั้นก็ยิ่งทำให้คุณเหมาะจะช่วยเรา! ไม่อยากเชื่อว่าฉันจำคุณไม่ได้...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#071": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
+   "dst": "โอเค กลับมาที่คำถาม - สองคนมาทำอะไรที่นี่เร็วจัง? ยังเหลืออีกหลายวันกว่าจะถึงการบำรุงรักษารอบหน้าไม่ใช่เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#072": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maintenance, isn't there?",
+   "dst": "โอเค กลับมาที่คำถาม - สองคนมาทำอะไรที่นี่เร็วจัง? ยังเหลืออีกหลายวันกว่าจะถึงการบำรุงรักษารอบหน้าไม่ใช่เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#073": {
+   "src": "I did send you an invite! I gave it to... you know, the one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
+   "dst": "ผมส่งการ์ดเชิญไปแล้วนะ! ฝากไว้กับ... นั่นไง กัปตันที่รับส่งคน! แต่คุณไม่มางานแต่ง ผมเลยคิดว่ามันคงไปไม่ถึง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#074": {
+   "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
+   "dst": "ก็คุณติดต่อยากนี่! ตอนนี้คุณไปมาทั่วโลกแล้ว แม้แต่ {p} - ว่าแต่ สองคนมาที่นี่ทำไม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#075": {
+   "src": "!!!",
+   "dst": "!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#076": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
+   "dst": "ใช่! ใช่ ฉันเผลอนอกเรื่องไปหน่อย... เอ่อ เราเจอปัญหาที่ {p} เกิดแผ่นดินไหวที่ตรวจจับไม่ได้ และเครื่องเสียหายหนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#077": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an unexpected seismic event, and the device was heavily damaged.",
+   "dst": "ใช่! ใช่ ฉันเผลอนอกเรื่องไปหน่อย... เอ่อ เราเจอปัญหาที่ {p} เกิดแผ่นดินไหวที่ไม่คาดคิด และเครื่องเสียหายหนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#078": {
+   "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
+   "dst": "ซ่อมส่วนใหญ่ได้ด้วยวัสดุที่มีอยู่ที่นั่น แต่เราขาดตัวเก็บประจุ Magmaflux สำหรับแผงควบคุม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#079": {
+   "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maintenance. So... I'm not sure what we-",
+   "dst": "... อ้อ นั่นจะเป็นปัญหา เรายังไม่มีโอกาสผลิตชิ้นส่วนเพิ่มเลย - เพิ่งบำรุงรักษาไปไม่นาน งั้น... ผมไม่แน่ใจว่าเราจะ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#080": {
+   "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
+   "dst": "ผมแอบได้ยินที่คุยกันจากตรงนั้น- ดีใจที่ได้เจอนะ Rhay- แต่ ถึงบนนี้จะไม่มีตัวเก็บประจุเหลือ ผมรู้ว่าจะหาได้ที่ไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#081": {
+   "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
+   "dst": "เราดัดแปลงโรงงานนี้มาใช้งาน แต่เดิมมันสร้างไว้แปรรูปทรัพยากรจากเหมืองข้างล่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#082": {
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "dst": "ถึงจะเลิกใช้ไปแล้ว แต่ข้างล่างน่าจะยังมีหุ่นยนต์ขุดเหมืองอยู่- และรุ่นที่ทรงพลังบางรุ่นก็ใช้วงจรคล้ายตัวเก็บประจุที่เราใช้ทุกวันนี้มาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#083": {
+   "src": "...You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
+   "dst": "...คุณพูดถูก! ถ้าพวกมันยังอยู่ข้างล่าง เราก็ถอดหุ่นสักตัวแล้วเอาวงจรมาใช้ได้ {u} เราส่งคุณลงเหมืองไปหาของที่ต้องการ ระหว่างที่เราเตรียมตัวอยู่บนนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#084": {
+   "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
+   "dst": "โอเค... โชคดีข้างล่างนะ! หาหุ่นให้เจอ ทำลายมัน แล้วนำตัวเก็บประจุขึ้นมา! พร้อมเมื่อไรก็เหยียบแท่นกลางโรงงาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#085": {
+   "src": "I need to prepare first.",
+   "dst": "ขอเตรียมตัวก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#086": {
+   "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
+   "dst": "โอเค ไม่เป็นไร แค่รีบหน่อยนะ! คุณก็รู้ว่าเราเสียเวลาไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#087": {
+   "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
+   "dst": "เอาชิ้นส่วนจากถ้ำที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#088": {
+   "src": "Door opening in {~}...",
+   "dst": "ประตูจะเปิดใน {~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#089": {
+   "src": "{~}...",
+   "dst": "{~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#090": {
+   "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
+   "dst": "ตรวจพบผู้บุกรุก อนุมัติการต่อสู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#091": {
+   "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
+   "dst": "กำลังใช้มาตรการต่อต้านผู้บุกรุกขั้นที่สอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#092": {
+   "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
+   "dst": "เปลี่ยนเส้นทางทุกหน่วยที่มีเพื่อหยุดผู้บุกรุก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#093": {
+   "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER...",
+   "dst": "ที่นี่เป็นเขตหวงห้าม ขออนุมัติใช้กำลังถึงชีวิตต่อผู้บุกรุก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#094": {
+   "src": "AUTHORISATION GRANTED.",
+   "dst": "อนุมัติแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#095": {
+   "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
+   "dst": "เปลี่ยนเส้นทางหุ่นยนต์ขุดเหมืองเพื่อหยุดผู้บุกรุก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#096": {
+   "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
+   "dst": "กลับไปที่บอลลูนลมร้อนที่ [-{~}, {~}, -{~}] พร้อมตัวเก็บประจุ Magmaflux",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#097": {
+   "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
+   "dst": "ดีใจที่ได้เจออีกนะ {u} ขอให้โชคดีกับยักษ์หิน แล้วก็ Rhay... รีบกลับบ้านให้เร็วที่สุดนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#098": {
+   "src": "Fly safe, both of you.",
+   "dst": "บินปลอดภัยนะ ทั้งสองคน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#099": {
+   "src": "Return to General Elix with the Corkian Stabiliser",
+   "dst": "นำเครื่องรักษาเสถียรภาพ Corkian กลับไปให้นายพล Elix",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#100": {
+   "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
+   "dst": "ก็... ราบรื่นกว่าที่คิดจริงๆ ฉันยังไม่อยากเชื่อว่าคุณไม่บอกว่ารู้จัก Maxie อยู่แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#101": {
+   "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
+   "dst": "โอ้ ว้าว ดูเหมือนพวกเขาซ่อมเครื่องได้ดีทีเดียว เมื่อดูจากทุกอย่าง เหลือแค่ชิ้นนี้ก็ใช้งานได้อีกครั้ง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#102": {
+   "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
+   "dst": "ฮึ่ม Rhay มาแล้วสินะ ในเมื่อกลับมาแล้ว ข้าเดาว่าที่ Corkus คงราบรื่นดี?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#103": {
+   "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
+   "dst": "ราบรื่นพอค่ะ ท่านนายพล! เรามีของที่ต้องใช้ซ่อมแผงควบคุมแล้ว เราจะทำให้เครื่องรักษาเสถียรภาพทำงานได้อีกครั้ง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#104": {
+   "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
+   "dst": "แล้วไง?! รออะไรอยู่? ซ่อมให้เสร็จ เราเสียเวลาไม่ได้ ในเมื่อยักษ์หินบ้านั่นตระหง่านค้ำหัวเราอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#105": {
+   "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
+   "dst": "ค่ะ ท่าน! โอเค {u} แค่เสียบตัวเก็บประจุลงไปตรง... นั้น ฉันจะดูให้มันทำงานราบรื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#106": {
+   "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
+   "dst": "เรียบร้อย ทีนี้มาทำให้มันทำงานอีกครั้ง! Walder คอยจับตาเสถียรภาพ! และ... Rhay เจ้ามั่นใจนะว่ามันจะได้ผล?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#107": {
+   "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
+   "dst": "ม-มั่นใจค่ะ นี่คือโอกาสสุดท้าย เราต้องหวังว่าเครื่องรักษาเสถียรภาพจะทนไหว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#108": {
+   "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
+   "dst": "โอเค โอเค... เดี๋ยวนี้หรือไม่มีวัน... ทนไว้ เครื่องรักษาเสถียรภาพ ทนไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#109": {
+   "src": "... Oh. That's... that's it, then. It's over. We failed.",
+   "dst": "... อ้อ นั่น... นั่นก็คือจบแล้ว เราล้มเหลว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#110": {
+   "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
+   "dst": "ข้า... เสียใจ Rhay ข้า... หวังว่ามันจะได้ผล ความจริง... ข้าก็ไม่มี... แผนอะไร... เหมือนกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#111": {
+   "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
+   "dst": "ผู้อาวุโส... คงรู้... ว่าต้องทำอย่างไร... แต่พวกท่าน... จากไปนานแล้ว เหลือเพียง... ซากปรักหักพัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#112": {
+   "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and as wise... as the earth itself...",
+   "dst": "ผู้อาวุโส... พวกท่านคือ... ผู้ยิ่งใหญ่ที่สุด... ในหมู่ Dogun เก่าแก่... ดุจศิลาที่เก่าแก่ที่สุด... และรอบรู้... ดุจผืนดิน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#113": {
+   "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
+   "dst": "พวกท่านมี... เวท... เหนือกว่าที่... พวกเราจะทำได้ มีเพียงพวกท่าน... ที่ทำให้... ผู้พิทักษ์ของเราสงบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#114": {
+   "src": "What happened to the Elders?",
+   "dst": "เกิดอะไรขึ้นกับผู้อาวุโส?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#115": {
+   "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
+   "dst": "พวกท่าน... ถูกผนึกไว้ แช่แข็งใน... น้ำแข็ง... ที่ลึกที่สุด เมื่อคนแคระ... สังหาร Garaheth... ผู้อาวุโส... ก็ล่มสลายไปกับมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#116": {
+   "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
+   "dst": "ช่างโหดร้าย... สงคราม... คนของข้า... แต่ตอนนี้... ไม่ใช่เวลาครุ่นคิด มีเรื่อง... สำคัญกว่า... ตรงหน้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#117": {
+   "src": "But the war is over. The dwa",
+   "dst": "แต่สงครามจบแล้ว คนแคระ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#118": {
+   "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
+   "dst": "ข้า... ข้าไม่... รู้เรื่องนี้ คนของข้า... เป็นอิสระแล้ว? นานเท่าไร... แล้ว... ที่ข้าไม่ได้เห็น... บ้านของข้า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#119": {
+   "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
+   "dst": "เจ้า... นักผจญภัย เราต้อง... ไปพูดกับคนของข้า หัวหน้าเผ่าของเรา... จะรู้... ว่าจะปลดปล่อย... ผู้อาวุโสได้อย่างไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#120": {
+   "src": "If there's a chance... We have to take it. Ineos, {u}, take the balloon. We'll do what we can here. Now, go! There's no time to waste!",
+   "dst": "ถ้ายังมีโอกาส... เราต้องคว้าไว้ Ineos {u} ไปเอาบอลลูน เราจะทำเท่าที่ทำได้ที่นี่ ไปเดี๋ยวนี้! ไม่มีเวลาให้เสียแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#121": {
+   "src": "It looks like Ozoth's body is trying to prevent you from getting the Everflame!",
+   "dst": "ดูเหมือนร่างของ Ozoth กำลังพยายามขัดขวางไม่ให้คุณเอาเปลวไฟนิรันดร์ไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#122": {
+   "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
+   "dst": "ไปพบ Ineos และ Rhay ที่บอลลูนลมร้อนที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#123": {
+   "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
+   "dst": "ข้าไม่เคย... เห็น Heights... จากเบื้องบน ข้าสงสัยว่า... แสงเรืองของมัน... จะเจิดจ้า... เท่าที่มองจากข้างล่างหรือไม่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#124": {
+   "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
+   "dst": "ข้าได้แต่หวัง... ว่าผู้อาวุโส... ไม่ได้จากไป... ตลอดกาล เราต้องการ... ปัญญาของพวกท่านเหลือเกิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#125": {
+   "src": "Ah... I believe us... to be landing...",
+   "dst": "อา... ข้าคิดว่าเรา... กำลังจะลงจอด...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#126": {
+   "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "เดินทางไป {p} กับ Ineos ด้วยบอลลูนลมร้อนที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#127": {
+   "src": "{u}... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
+   "dst": "{u}... สวัสดี ช่างเป็น... ภาพที่แปลก... ที่เห็นเจ้าลงจอด... ที่หมู่บ้านเรา... ด้วยสิ่งประดิษฐ์เช่นนั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#128": {
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
+   "dst": "และ... นั่นคือ... Ineos หรือ? เราคิดว่า... คนแคระ... ทุบเจ้าเป็นเศษหินไปแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#129": {
+   "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
+   "dst": "ข้าหนีมาได้... มันเป็นเรื่องยาว... Korzim เราไม่มี... เวลา พ่อของเจ้า... อยู่ไหน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#130": {
+   "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
+   "dst": "เขาอยู่... ข้างล่าง พวกเขากำลัง... ปลดปล่อยผู้ถูกแช่แข็ง... ใน New Taloka ทำไมเจ้า... อยากพูด... กับเขา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#131": {
+   "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
+   "dst": "ผู้พิทักษ์... กำลังพิโรธ เราต้องหา... ผู้อาวุโส พวกท่านจะรู้... วิธีทำให้มันสงบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#132": {
+   "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
+   "dst": "ผู้... พิทักษ์... ข้าเข้าใจ ข้าจะ... พาพวกเจ้าทั้งสอง... ไปหาเขา Sidio... Raetin... ข้าฝากพวกเจ้า... ดูแลที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#133": {
+   "src": "Now, let us... travel. Through flame... and through stone...",
+   "dst": "บัดนี้ ไปกันเถิด... ผ่านเปลวเพลิง... และผ่านศิลา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#134": {
+   "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
+   "dst": "คุยกับกษัตริย์แห่ง {p} และหัวหน้าเผ่า Dogun ที่ New Taloka ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#135": {
+   "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
+   "dst": "เรามาถึง... แล้ว Taloka เป็น... หนึ่งในเมืองแรกที่ล่มสลาย... ในสงคราม เราร่วมมือ... กับคนแคระ... ฟื้นฟูมันขึ้นมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#136": {
+   "src": "Are we all ready?",
+   "dst": "ทุกคนพร้อมไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#137": {
+   "src": "Ready...",
+   "dst": "พร้อม...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Edac",
+   "source": "wiki"
+  },
+  "The Breaking Point#138": {
+   "src": "Ready!",
+   "dst": "พร้อม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#139": {
+   "src": "Very well. Begin on three. One... Two... Three!",
+   "dst": "ดีมาก เริ่มเมื่อนับสาม หนึ่ง... สอง... สาม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#140": {
+   "src": "Beginning reheating cycle! Stand back from the subject.",
+   "dst": "เริ่มรอบการให้ความร้อน! ถอยห่างจากเป้าหมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#141": {
+   "src": "... Where... am... I? How long... has it... been...?",
+   "dst": "... ข้า... อยู่... ที่ไหน? ผ่านไป... นาน... เท่าไรแล้ว...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#142": {
+   "src": "...Dwarf... You... you froze me... I will... I will...!",
+   "dst": "...คนแคระ... แก... แกแช่แข็งข้า... ข้าจะ... ข้าจะ...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#143": {
+   "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
+   "dst": "สงบลง... Delg สงคราม... ของเราจบแล้ว เรา... เป็นอิสระแล้ว เจ้า... เป็นอิสระแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#144": {
+   "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
+   "dst": "... อิสรภาพ? หลายร้อย... ปี... แห่งสงคราม... แล้วเรา... เป็นอิสระ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dogun Delg",
+   "source": "wiki"
+  },
+  "The Breaking Point#145": {
+   "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
+   "dst": "ใช่ เราเป็นอิสระ... ท่องไปในบ้านของเรา... อีกครั้ง Edac... พา Delg ไป... และช่วยเขาปรับตัว... กับ Heights",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#146": {
+   "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
+   "dst": "อา {u}! ดีใจที่ได้พบเจ้าอีก เราไม่เห็นเจ้าแถวนี้เลยตั้งแต่... ตั้งแต่ทุกอย่างจบลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#147": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
+   "dst": "ใช่ เรา... ทำงานหนัก... ตลอดหลายสัปดาห์ที่ผ่านมา Taloka จะ... ตั้งตระหง่านอีกครั้งในไม่ช้า และพี่น้อง... ที่ถูกผนึกของเราหลายคน... ได้คืนชีพแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#148": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed brethren... have been returned to life.",
+   "dst": "ใช่ เรา... ทำงานหนัก... ตลอดหลายสัปดาห์ที่ผ่านมา Taloka จะ... ตั้งตระหง่านอีกครั้งในไม่ช้า และพี่น้อง... ที่ถูกผนึกของเราหลายคน... ได้คืนชีพแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#149": {
+   "src": "[-{~} Magmaflux Capacitor]",
+   "dst": "[-{~} ตัวเก็บประจุ Magmaflux]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#150": {
+   "src": "You use the grappling hook to swing back to the King in a dazzling feat of trapeze consisting of mid-air flips and acrobatic flourishes.",
+   "dst": "คุณใช้ตะขอเกี่ยวเหวี่ยงตัวกลับไปหากษัตริย์ ด้วยท่ากายกรรมโหนบาร์อันตระการตา ทั้งตีลังกากลางอากาศและลีลาโลดโผน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#151": {
+   "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
+   "dst": "อา แต่เรื่องนั้นค่อยคุยกันทีหลัง บอกข้ามา วันนี้อะไรพาเจ้ามาที่นี่? ต้องการอะไรจากเราหรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#152": {
+   "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "สถานการณ์... เลวร้าย ผู้พิทักษ์ยิ่งใหญ่... ถูกทิ้งไว้ลำพัง... นานเกินไป เราต้องการ... ปัญญา... ของผู้อาวุโส เจ้ารู้ไหม... ว่าพวกท่านถูกผนึกไว้ที่ใด?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#153": {
+   "src": "The situation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "สถานการณ์... เลวร้าย ผู้พิทักษ์ยิ่งใหญ่... ถูกทิ้งไว้ลำพัง... นานเกินไป เราต้องการ... ปัญญา... ของผู้อาวุโส เจ้ารู้ไหม... ว่าพวกท่านถูกผนึกไว้ที่ใด?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#154": {
+   "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
+   "dst": "ผู้อาวุโสงั้นรึ?! ใช่ เรารู้ว่าพวกเขาถูกผนึกไว้ที่ไหน แต่การนำตัวออกมาไม่ใช่เรื่องง่าย เราต้องใช้เวลาหลายปีกว่าจะฝ่าการป้องกันไปได้ และยังมี Dogun อีกนับไม่ถ้วนที่ต้องปลดปล่อยก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#155": {
+   "src": "The Protector?!",
+   "dst": "ผู้พิทักษ์งั้นรึ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#156": {
+   "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
+   "dst": "Ineos... ข้าอยากให้ผู้อาวุโส... เป็นอิสระ... ไม่ต่างจากเจ้า แต่ผู้พิทักษ์ของเรา... ยืนหยัดมั่นคง... มาหลายร้อยปี มันยังยืนหยัด... ได้อีก-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#157": {
+   "src": "No... Has it truly... fallen this far..?",
+   "dst": "ไม่... มันทรุด... ถึงเพียงนี้... จริงหรือ..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#158": {
+   "src": "... That was your Protector? How powerful is it, if it can reach this far?",
+   "dst": "... นั่นคือผู้พิทักษ์ของพวกเจ้าหรือ? มันทรงพลังขนาดไหน ถึงส่งผลมาไกลถึงนี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#159": {
+   "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
+   "dst": "ถ้าผู้พิทักษ์... เขย่าได้แม้แต่ Heights... มันก็ทำลาย... แคว้นนี้ได้ครึ่งหนึ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#160": {
+   "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
+   "dst": "Draani... ต้องปลดปล่อยผู้อาวุโส มีเพียงพวกท่าน... ที่รู้วิธีทำให้มันสงบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#161": {
+   "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
+   "dst": "ใช่... ข้าเข้าใจ ดีมาก {u} ข้าจะพาเจ้าไปห้องนิรภัยของผู้อาวุโส ข้าถือกุญแจที่เปิดทางไปข้างหน้า Paku รวบรวมคนของเจ้า ดูว่าใครมีทางออกอื่นบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#162": {
+   "src": "We will... search for one. I cannot... promise that one exists.",
+   "dst": "เราจะ... หาดู ข้า... สัญญาไม่ได้ว่ามันมีอยู่จริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#163": {
+   "src": "{u}, let us go. It sounds as if we have very little time to waste.",
+   "dst": "{u} ไปกันเถอะ ฟังดูเหมือนเราเหลือเวลาน้อยเต็มที",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#164": {
+   "src": "I will make preparations, and meet you at the Vault of Ice.",
+   "dst": "ข้าจะเตรียมการ แล้วไปพบเจ้าที่ห้องนิรภัยน้ำแข็ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#165": {
+   "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
+   "dst": "เข้าไปในห้องนิรภัย Dogun ใน Freezing Heights ตอนล่างที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#166": {
+   "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
+   "dst": "... แฮ่ม ทางเข้าอยู่ที่นี่สินะ หนึ่งในความลับที่เราปกป้องแน่นหนาที่สุด... ข้าหวังว่าจะไม่ต้องเผชิญเครื่องเตือนใจนี้ไปอีกสักพัก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#167": {
+   "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
+   "dst": "แต่ดูเหมือนตอนนี้เราไม่มีทางเลือกมากนัก ข้ามีกุญแจ เข้าไปข้างในกันเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#168": {
+   "src": "Unlock the Dogun Vault to find the Elders.",
+   "dst": "ปลดล็อกห้องนิรภัย Dogun เพื่อตามหาผู้อาวุโส",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#169": {
+   "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns here forever. I'll be glad to disappoint them.",
+   "dst": "ที่นี่หนาวน่าดูเลยนะ ห้องนิรภัยที่สลักเข้าไปใน True Ice ของ drake... บรรพบุรุษข้าคงหวังจะขัง Dogun พวกนี้ไว้ตลอดกาล ข้ายินดีจะทำให้พวกเขาผิดหวัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#170": {
+   "src": "Quickly, then, let us proceed to the primary door. I pray the Elders' will be responsive to our situation with the Colossus.",
+   "dst": "เช่นนั้นรีบไปที่ประตูหลักกันเถอะ ข้าภาวนาให้เหล่าผู้อาวุโสยอมรับฟังเรื่องยักษ์หินของเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#171": {
+   "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
+   "dst": "อย่างไรก็ตาม... ขอข้าลองเปิดประตูบานที่สองนี่ดู น่าจะง่ายแค่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#172": {
+   "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "อืม นั่น... ไม่ได้ผล เวทนี้เก่าแก่ และข้าไม่เคยใช้เวลาเรียนมันอย่างจริงจังเลย... เอาล่ะ เรายังมีทางอื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#173": {
+   "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
+   "dst": "ถ้าข้าจำไม่ผิด น่าจะมีสวิตช์ควบคุมด้วยมืออยู่อีกฝั่งของเหวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#174": {
+   "src": "Hm. That... didn't work. This magic is old, and I never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "อืม นั่น... ไม่ได้ผล เวทนี้เก่าแก่ และข้าไม่เคยใช้เวลาเรียนมันอย่างจริงจังเลย... เอาล่ะ เรายังมีทางอื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#175": {
+   "src": "If my memory serves correctly, there should be a manual override on the other end of this chasm.",
+   "dst": "ถ้าข้าจำไม่ผิด น่าจะมีสวิตช์ควบคุมด้วยมืออยู่สุดอีกฝั่งของเหวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#176": {
+   "src": "[+{~} Trusty Grappling Hook]",
+   "dst": "[+{~} Trusty Grappling Hook]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#177": {
+   "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
+   "dst": "ปัญหาคือบ่อลาวาอันตรายที่ขวางทางอยู่... และข้าว่าเข่าข้าคงไม่ไหวที่จะกระโดดข้ามไปทั้งหมด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#178": {
+   "src": "I would never usually do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
+   "dst": "ปกติข้าไม่มีวันทำแบบนี้หรอก แต่นี่เป็นยามคับขัน เอ้า เอา Grappling Hook คู่ใจของข้าไป มันน่าจะช่วยให้เจ้าไปถึงสวิตช์ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#179": {
+   "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
+   "dst": "แต่มันก็มีข้อจำกัดนะ มันเกี่ยวได้แค่หินสีฟ้าบนผนังพวกนั้น - และข้าจะขอคืนทันทีที่เจ้าทำเสร็จ ขอบใจมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#180": {
+   "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
+   "dst": "นี่ {u}! ดูท่าจะไปได้ดีนะ แต่ถ้าติดล่ะก็ จำไว้ว่ากระโดดแล้วเกี่ยวกลางอากาศได้ น่าจะช่วยกับแท่นยากๆ บางอันได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#181": {
+   "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
+   "dst": "ดูเหมือนจะปลดล็อกแล้ว {u}! กลับมาทางนี้ แล้วข้าจะเปิดประตูให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#182": {
+   "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
+   "dst": "นั่นไง! ยอดเยี่ยม เจ้าใช้ตะขอนั่นยังกับผู้เชี่ยวชาญตัวจริง! อา ทำให้นึกถึงตอนที่-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#183": {
+   "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
+   "dst": "...แอ้ม ยอดเยี่ยมจริงๆ เมื่อเปิดสวิตช์แล้ว ข้าน่าจะจัดการที่เหลือเพื่อเปิดประตูได้เอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#184": {
+   "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
+   "dst": "แต่ก่อนอื่น ข้าขอตะขอเกี่ยวนั่นคืน! คิดดูสิว่าจะเกิดอะไรขึ้นถ้าเจ้าเอามันไปใช้ได้ตามใจทุกที่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#185": {
+   "src": "And so... I believe we have gone as far as we can.",
+   "dst": "แล้ว... ข้าว่าเรามาได้ไกลที่สุดเท่าที่ไปได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#186": {
+   "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
+   "dst": "นี่คือ True Ice {u} มันทิ้งรอยแผลไว้ที่ Heights ส่วนนี้มาหลายศตวรรษ นับแต่มังกรน้ำแข็งสร้างมันขึ้นในการพิชิตของบรรพบุรุษข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#187": {
+   "src": "When were the elders first i",
+   "dst": "ผู้อาวุโสถูกขังไว้ตั้งแต่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#188": {
+   "src": "It cannot be melted or burned through by any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
+   "dst": "มันละลายหรือเผาทะลุไม่ได้ไม่ว่าด้วยวิธีใด นั่นคือเหตุที่เลือกที่นี่เป็นสุสานของพวกเขา ข้าเกรงว่าเราทำอะไรไม่ได้อีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#189": {
+   "src": "At the end of the war, I imagine.",
+   "dst": "ข้าคิดว่าคงตอนสงครามสิ้นสุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#190": {
+   "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
+   "dst": "เมื่อนิคมสุดท้ายของ Dogun ล่มสลาย และ Garaheth ถูกสังหารเป็นครั้งแรก บรรพบุรุษข้าคงผนึกพวกเขาไว้ลึกในน้ำแข็งนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#191": {
+   "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
+   "dst": "การ... กระทำของคนแคระหลังชนะสงครามมีบันทึกไว้มากมาย ข้าคงไม่แปลกใจถ้าบันทึกของเราจะเขียนว่าการกักขังนี้เป็นชัยชนะอันยิ่งใหญ่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#192": {
+   "src": "Who put them here?",
+   "dst": "ใครเอาพวกเขามาขัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#193": {
+   "src": "The Dwarves, of course. Who else?",
+   "dst": "คนแคระน่ะสิ จะใครอีกล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#194": {
+   "src": "I believe it was General Algard of the Dwarven army who ordered the Elders' imprisonments",
+   "dst": "ข้าเชื่อว่านายพล Algard แห่งกองทัพคนแคระเป็นผู้สั่งขังเหล่าผู้อาวุโส",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#195": {
+   "src": "He was lauded as a hero, naturally. Now... now we must reap the consequences of such a decision.",
+   "dst": "เขาได้รับการยกย่องเป็นวีรบุรุษ แน่นอนอยู่แล้ว ตอนนี้... ตอนนี้เราต้องรับผลของการตัดสินใจนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#196": {
+   "src": "True Ice is a material which cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
+   "dst": "True Ice เป็นวัสดุที่ละลายหรือเผาทะลุไม่ได้ไม่ว่าด้วยวิธีใด แม้แต่เวทของ Dogun ก็ทำให้มันบุบไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#197": {
+   "src": "... I imagine this is why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
+   "dst": "... ข้าคิดว่านี่คือเหตุที่เลือกที่นี่ไว้ขังผู้อาวุโส คุกที่พวกเขาจะไม่มีวันหนีออกไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#198": {
+   "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
+   "dst": "ว่ากันว่ามันก่อตัวเองได้ในสภาพที่รุนแรงสุดขีด... แต่น้ำแข็งตรงนี้ไม่ได้เกิดเองตามธรรมชาติเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#199": {
+   "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
+   "dst": "มันเกิดจากลมหายใจของ Ice Drake ระหว่างสงคราม- และ เอ่อ อย่างที่เจ้าเห็น มันก็อยู่ตรงนี้มาตั้งแต่นั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#200": {
+   "src": "Just another remnant of our past mistakes, I suppose...",
+   "dst": "ก็แค่ร่องรอยอีกอย่างของความผิดพลาดในอดีต ข้าว่านะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#201": {
+   "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
+   "dst": "แอ้ม อย่างไรก็ตาม- อย่างที่ข้าบอก True Ice ทำลายไม่ได้ แม้แต่ด้วยเปลวไฟที่ร้อนแรงที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#202": {
+   "src": "If an Ice Drake formed this",
+   "dst": "ถ้า Ice Drake สร้างสิ่งนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#203": {
+   "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
+   "dst": "ข้า... ข้าว่าลมหายใจมังกรอาจละลายมันได้ ก็ฟังดูมีเหตุผลอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#204": {
+   "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
+   "dst": "แต่เรารู้น้อยมากว่ามังกรเป็นอย่างไร พอพวกมันสูญพันธุ์ ความรู้นั้นก็... ไร้ประโยชน์ แล้วมันก็สูญหายไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#205": {
+   "src": "If anyone would know more about dragons, it would be the doguns.",
+   "dst": "ถ้าจะมีใครรู้เรื่องมังกรมากกว่านี้ ก็คงเป็นพวก Dogun",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#206": {
+   "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
+   "dst": "แต่ทั้งหมดนั้นไม่สำคัญหรอก มังกรสูญพันธุ์ไปหมดแล้ว เรายังไม่มีทางเลือกอยู่ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#207": {
+   "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too big a threat.",
+   "dst": "ก็พวกมันสูญพันธุ์ไปแล้วน่ะสิ เมื่ออารยธรรมของ Gavel ขยายใหญ่ขึ้น ความดุร้ายและขนาดของมังกรก็เป็นภัยใหญ่เกินไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#208": {
+   "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
+   "dst": "บางตัวถูกล่า บางตัวอดตาย ไข่ถูกเอาออกจากรังแล้วทุบกับก้อนหินให้นกกิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#209": {
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
+   "dst": "ตอนนี้เหลือแต่ลูกมังกร - เงาของบรรพบุรุษที่เคยยิ่งใหญ่ ที่มีไฟแทบไม่พอจะลวกเกราะเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#210": {
+   "src": "Not all of the dragons are g",
+   "dst": "ใช่ว่ามังกรจะหายไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#211": {
+   "src": "You- what? Near {p}?",
+   "dst": "เจ้า- อะไรนะ? ใกล้ {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#212": {
+   "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
+   "dst": "มังกรที่ยังมีชีวิต... เจ้าทำอะไรมามากเลยนะ? หยุดสงคราม ย้ายมังกร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#213": {
+   "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
+   "dst": "เอาล่ะ... ถ้ามีมังกรที่ยังมีชีวิตอยู่ที่ {p}... เราก็ยังมีหวัง! {u} เราต้องขอความช่วยเหลือจากมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#214": {
+   "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
+   "dst": "กลับไปหาคนอื่นๆ กันเถอะ ข้าขอให้พวกเขารออยู่นอก {p}... บางทีพวกเขาอาจยืนยันได้ว่าลมหายใจมังกรจะใช้ได้ผล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#215": {
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "dst": "ถูกต้อง มังกรไฟเข้าข้างพวกเขาในสงคราม เจ้าคงเคยเห็นโครงกระดูกที่อยู่นอก Freezing Heights แล้วใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#216": {
+   "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
+   "dst": "ใช่ ก็... คนแคระต้องการสิ่งที่ต้านพลังมหาศาลของมังกรไฟในสนามรบได้ จึงหันไปจับมังกรและ drake ธาตุอื่นมาเป็นทาส",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#217": {
+   "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
+   "dst": "เช่น Ice Drake ที่สร้างห้องนิรภัยนี้ และขังผู้อาวุโสไว้ในน้ำแข็งที่บริสุทธิ์ที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#218": {
+   "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
+   "dst": "... ก็ มีนิยายเล่มเยี่ยมเกี่ยวกับสัตว์พวกนั้นตัวหนึ่งจาก Shiar ที่ต้องเดินทางไป Heights พร้อมแหวนที่ได้รับเป็นมรดก-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#219": {
+   "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
+   "dst": "แต่ข้ายอมรับว่าคำถามพวกนี้แทบไม่สำคัญแล้ว เรามีเรื่องที่เร่งด่วนกว่าอยู่ {u}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#220": {
+   "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
+   "dst": "น้ำแข็งนี้แข็งกว่าออบซิเดียนเสียอีก ผลึกที่ก่อเป็นมันถูกยึดไว้ด้วยเวทโบราณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#221": {
+   "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
+   "dst": "ทุบด้วยเครื่องมือแบบนั้นไม่ได้แน่ บางทีอาจมีอาวุธที่ทะลวงได้ซ่อนอยู่ลึกๆ ในคลังอาวุธของเรา- ยังไงห้องนิรภัยนี้ก็ต้องถูกสลักขึ้นมาด้วยอะไรสักอย่าง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#222": {
+   "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
+   "dst": "แต่ในสถานการณ์แบบนี้ ข้าไม่คิดว่าเรามีเวลาตามหามัน ต่อให้เริ่มตอนนี้ คลังอาวุธของเราก็ใหญ่มหาศาล คงใช้เวลาหลายสัปดาห์กว่าจะเจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#223": {
+   "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
+   "dst": "ลาวาของ Heights ก็แค่หินหลอมเหลว เป็นแค่ร่องรอยจากการก่อตัวของถ้ำเหล่านี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#224": {
+   "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
+   "dst": "มันร้อนไม่พอจะละลาย True Ice เลยสักนิด ถ้าทำได้ Freezing Heights คงหายไปนานแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#225": {
+   "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
+   "dst": "สีที่... เอ่อ... สีเขียวก็ดีนะ ข้าว่า? แต่อาจไม่ค่อยเป็นคนแคระเท่าไหร่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#226": {
+   "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
+   "dst": "งั้นสีแดง หรือสีส้ม! ...แต่ผ้าปูที่นอนของข้าเป็นสีกรมท่าที่สวยที่สุดเลยนะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#227": {
+   "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
+   "dst": "มื้อเช้า... ข้ากินไข่ไปบ้างมั้ง แต่ข้าไม่รู้เลยว่ามันจะเป็นมื้อเช้ามื้อสุดท้าย จริงไหม..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#228": {
+   "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
+   "dst": "อืม... ถ้ารู้ก่อน ข้าอาจเลือกอย่างอื่น บางทีข้าอาจจะ-... ช่างเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#229": {
+   "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
+   "dst": "ไปรวมตัวกันนอก {p} ที่ [{~}, {~}, -{~}] เพื่อหาทางปลดปล่อยผู้อาวุโส",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#230": {
+   "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... นี่แหละสถานการณ์ที่เราเจออยู่ Paku เจ้าคิดอย่างไร? แผนแบบนี้จะได้ผลไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#231": {
+   "src": "... so that is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... นี่แหละสถานการณ์ที่เราเจออยู่ Paku เจ้าคิดอย่างไร? แผนแบบนี้จะได้ผลไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#232": {
+   "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
+   "dst": "อืม... เจ้าอาจพูดถูก... Draani เวทใน... ลมหายใจมังกร... ทรงพลังยิ่งนัก และไม่น่าเชื่อ... Ozoth ผู้เกรียงไกร... ยังมีชีวิต... มาตลอดหลายปีนี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#233": {
+   "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
+   "dst": "ถ้า Ozoth ยังมีชีวิต... เราต้องขอให้นางช่วย ถ้า Dogun เป็นผู้ขอ... ความช่วยเหลือ นางจะ... ให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#234": {
+   "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
+   "dst": "เอาล่ะ แผนนี้ก็ดีพอๆ กับแผนอื่น {u} เจ้าจะเดินทางไปขอคำปรึกษาจากมังกรตัวนี้ พร้อมกับ... Ineos ใช่ไหมนะ? โชคดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#235": {
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "เจ้าควร... ใช้อุโมงค์การค้า... {u} ข้าจะใส่พิกัด... ไว้ในสมุดเนื้อหาของเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#236": {
+   "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
+   "dst": "ใช้อุโมงค์การค้าของ {p} ที่ [{~}, {~}, -{~}] เพื่อเดินทางไป {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#237": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] to attempt to speak with her.",
+   "dst": "เดินทางไป {p} ที่ [{~}, {~}, -{~}] เพื่อลองพูดคุยกับนาง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#238": {
+   "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
+   "dst": "อา... ดีใจ... ที่ได้... พบเจ้า เราต้อง... ไปหา Ozoth... โดยเร็วที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#239": {
+   "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
+   "dst": "มังกร Ozoth... ผู้ก่อเพลิงไม่รู้ดับ... เรามา... เพื่อขอความช่วยเหลือจากท่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#240": {
+   "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
+   "dst": "เรากำลังตามหา... วิธี... ละลายน้ำแข็ง... ที่บริสุทธิ์ที่สุด ชะตา... ของ Gavel... แขวนอยู่บนเส้นด้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#241": {
+   "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
+   "dst": "Dogun... และมังกร... ชะตาของเราผูกพันกัน... มาหลายศตวรรษ บัดนี้เราขอวิงวอน... ผู้ก่อเพลิงไม่รู้ดับ... ช่วยแคว้นนี้ด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#242": {
+   "src": "... well...",
+   "dst": "... เอ่อ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#243": {
+   "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
+   "dst": "ผู้ก่อเพลิงไม่รู้ดับ... ยอมสละ... ของนาง เจ้าต้อง... นำมันออกมา... จากท้องของนาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#244": {
+   "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
+   "dst": "ข้าแนะนำว่า... อย่าคิด... เรื่องนี้มากนัก เมื่อ... เจ้าพร้อม... จงเข้าไปในปากของ Ozoth แล้วนำ... เปลวไฟออกมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#245": {
+   "src": "Descend into Ozoth's belly to retrieve an Everflame.",
+   "dst": "ลงไปในท้องของ Ozoth เพื่อนำเปลวไฟนิรันดร์ออกมา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#246": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
+   "dst": "เดินทางไป {p} ที่ [{~}, {~}, -{~}] พร้อมเปลวไฟนิรันดร์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#247": {
+   "src": "{u}! Have you retrieved... the Eternal Flame?",
+   "dst": "{u}! เจ้าได้... เปลวไฟนิรันดร์มาแล้วหรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#248": {
+   "src": "{u}! Have you retrieved... the Everflame?",
+   "dst": "{u}! เจ้าได้... เปลวไฟนิรันดร์มาแล้วหรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#249": {
+   "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
+   "dst": "ยอดเยี่ยม ผู้ก่อเพลิงไม่รู้ดับ... ขอบคุณ... ที่ท่านเสียสละ ข้าจะดูแล... ให้เปลวไฟของท่าน... ได้คืนสู่ท่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#250": {
+   "src": "Ozoth apologises... if it was a bit hot... in there.",
+   "dst": "Ozoth ขออภัย... ถ้าข้างใน... ร้อนไปหน่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#251": {
+   "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
+   "dst": "บัดนี้ {u}... ข้าไม่เคยเก่ง... เวทโบราณ... แต่หวังว่าข้าจะมีฝีมือพอ... พาเราลัดกลับไป...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#252": {
+   "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
+   "dst": "เจ้ากลับมาแล้ว! มีข่าวจาก {p} ไหม? มังกรยอมช่วยหรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#253": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
+   "dst": "ยอม... Ozoth ได้เสียสละครั้งใหญ่... เพื่อแคว้นนี้... แต่เราได้เปลวไฟนิรันดร์... มาละลายน้ำแข็งแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#254": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Everflame... to melt the ice.",
+   "dst": "ยอม... Ozoth ได้เสียสละครั้งใหญ่... เพื่อแคว้นนี้... แต่เราได้เปลวไฟนิรันดร์... มาละลายน้ำแข็งแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#255": {
+   "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
+   "dst": "ทำได้ดี... ทั้งสองคน ข้าจะดูแล... ให้ชาว Dogun ขอบคุณนาง... อย่างสมควร คนแคระก็ควร... ทำเช่นเดียวกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#256": {
+   "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
+   "dst": "ใช่ ใช่ แต่ตอนนี้ไม่มีเวลามากังวลเรื่องนั้น เร็วเข้า กลับไปที่-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#257": {
+   "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
+   "dst": "ระวัง... เหล่าผู้อาวุโส... ไว้ Draani หลังถูกขังมานาน... พวกเขาคงไม่พอใจนัก สำคัญยิ่ง... ที่เจ้าต้องอธิบาย... สถานการณ์ให้พวกเขาฟัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#258": {
+   "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
+   "dst": "ข้าอยากไปกับ... ทั้งสอง... แต่น้ำแข็งไม่เป็นมิตร... กับพวกเรา ขอให้ทั้งสอง... โชคดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#259": {
+   "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "...ใช่ ใช่แล้ว เอาล่ะ เลี่ยงไม่ได้หรอก มาเถอะ {u} เราต้องละลายน้ำแข็งปลดผู้อาวุโสแล้วทำให้พวกเขาฟังเรา นำเปลวไฟมา ข้าจะไปรอที่ห้องนิรภัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#260": {
+   "src": "... right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "... ใช่ ใช่แล้ว เอาล่ะ เลี่ยงไม่ได้หรอก มาเถอะ {u} เราต้องละลายน้ำแข็งปลดผู้อาวุโสแล้วทำให้พวกเขาฟังเรา นำเปลวไฟมา ข้าจะไปรอที่ห้องนิรภัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#261": {
+   "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
+   "dst": "กลับไปที่ห้องนิรภัย Dogun ที่ [{~}, {~}, -{~}] เพื่อปลดปล่อยผู้อาวุโส Dogun",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#262": {
+   "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
+   "dst": "เอาล่ะ จะรออะไรอยู่! มาปลดปล่อยผู้อาวุโสพวกนี้กันเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#263": {
+   "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
+   "dst": "แค่นำเปลวไฟนิรันดร์ไปที่ห้องขังแต่ละห้อง แล้วละลาย True Ice นั่นซะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#264": {
+   "src": "Excellent! We've done it! Now we just need to explain the situation-...",
+   "dst": "ยอดเยี่ยม! เราทำได้! ตอนนี้แค่ต้องอธิบายสถานการณ์-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#265": {
+   "src": "We are freed.",
+   "dst": "เราเป็นอิสระ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#266": {
+   "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
+   "dst": "...อา ข้าคงไม่ได้... คิดเรื่องนี้ให้รอบคอบ เอ่อ ท่านผู้อาวุโส ข้าต้องขออ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#267": {
+   "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
+   "dst": "คนแคระ... หึ อาชญากรรม... ของบรรพบุรุษเจ้า... ต้องถูกชดใช้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#268": {
+   "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
+   "dst": "ทว่า เรา... ได้ยินเจ้าพูดแล้ว เรา... ได้รู้ถึง... สภาพของผู้พิทักษ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#269": {
+   "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
+   "dst": "เราจะ... สะสางหนี้ของเจ้า... ทีหลัง เรื่องนี้... เร่งด่วน... กว่า ผู้พิทักษ์... ต้องสงบลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#270": {
+   "src": "...Yes. You. Human. That was... dragonfire... was it not?",
+   "dst": "...ใช่ เจ้า มนุษย์ นั่นคือ... ไฟมังกร... ใช่หรือไม่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#271": {
+   "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
+   "dst": "ถ้าเช่นนั้น ขอข้า... ยืมมัน พลังของมัน... จะช่วยให้เรา... ฟื้นพลังของเรา บัดนี้... ผู้ใดครอง... ตำแหน่ง... หัวหน้าเผ่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#272": {
+   "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
+   "dst": "อ-อา! ตอนนี้ Paku เป็นหัวหน้าเผ่า Dogun เขาน่าจะอยู่... ที่ Taloka",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#273": {
+   "src": "Very well... We shall travel... through flame... and through stone...",
+   "dst": "ดีแล้ว... เราจะเดินทาง... ผ่านเปลวเพลิง... และผ่านศิลา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#274": {
+   "src": "...The Elders... after all this time... to see you, again... in the flesh...",
+   "dst": "...ท่านผู้อาวุโส... เวลาผ่านไปนาน... ได้เห็นท่าน... อีกครั้ง... ต่อหน้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#275": {
+   "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
+   "dst": "ยินดีที่ได้พบ Paku เรามีเรื่อง... ต้องคุยมาก แต่ก่อนอื่น... เราต้องไป... หาผู้พิทักษ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#276": {
+   "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
+   "dst": "มากับเรา... Ineos และ Paku เหลือ... เวลาน้อยนัก... ที่จะเสียไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#277": {
+   "src": "Now, let us travel... Through flame... and through stone...",
+   "dst": "บัดนี้ ไปกันเถิด... ผ่านเปลวเพลิง... และผ่านศิลา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#278": {
+   "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
+   "dst": "Korzim... ลูกข้า... มากับเรา ผู้อาวุโสต้องไปดู... ผู้พิทักษ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#279": {
+   "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
+   "dst": "Iscor... Astal... Desint... นานเหลือเกิน... ที่ไม่ได้พบ ข้าจะไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#280": {
+   "src": "earth and flame... fire and stone... transport us through your form!",
+   "dst": "ผืนดินและเปลวไฟ... เพลิงและศิลา... จงพาเราผ่านร่างของท่าน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#281": {
+   "src": "-have to trust that they'll return!",
+   "dst": "-ต้องเชื่อว่าพวกเขาจะกลับมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#282": {
+   "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demolition mages on standby the past few days, our only choice is to-",
+   "dst": "ไม่มีเวลาแล้ว! ฉันรู้สึกได้ว่าพื้นบ้าๆ นี่กำลังแตกใต้เท้า เราต้องใช้ทางเลือกสุดท้าย เราให้จอมเวทรื้อถอนเตรียมพร้อมมาหลายวันแล้ว ทางเดียวที่เหลือคือ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#283": {
+   "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
+   "dst": "Rhay Elix ผู้อาวุโสของข้า... เป็นอิสระแล้ว ท่านมาที่นี่... เพื่อช่วย... ผู้พิทักษ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#284": {
+   "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
+   "dst": "มากับเรา... ผู้กล้าทั้งหลาย เจ้าจะได้เห็น... ว่าความพยายามช่วยแคว้นนี้ของเจ้า... ไม่สูญเปล่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#285": {
+   "src": "flames of the earth... take us to the great protector... to make our plea!",
+   "dst": "เปลวเพลิงแห่งผืนดิน... พาเราไปหาผู้พิทักษ์ผู้ยิ่งใหญ่... เพื่อวิงวอน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#286": {
+   "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
+   "dst": "เดินทางไปหายักษ์หินแห่งหุบผาที่ [{~}, {~}, -{~}] เพื่อลองทำให้มันสงบลง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#287": {
+   "src": "Great Protector... It is furious.",
+   "dst": "ผู้พิทักษ์ผู้ยิ่งใหญ่... กำลังกริ้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#288": {
+   "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
+   "dst": "หึ คนแคระโง่เขลา... นี่คือผล...ของสงครามไร้ค่าของพวกเจ้า... พวกเจ้าโชคดี...ที่ปล่อยเราออกมาทัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#289": {
+   "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
+   "dst": "Desint... Iscor... ข้าจะเตรียม... พิธีกรรม คุ้มกันข้า... ระหว่างนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#290": {
+   "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
+   "dst": "มนุษย์ เราจะดึงผู้พิทักษ์... กลับจากปากเหว นั่นคือทั้งหมดที่เราทำได้ ด้วยพลังทั้งหมด... ที่เรารวบรวมได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#291": {
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
+   "dst": "เจ้าต้องเข้าไป... ในดินแดนศักดิ์สิทธิ์นี้ ต่อสู้ฝ่าไปจนสุดทาง... ปลุกสติ... ให้มัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#292": {
+   "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
+   "dst": "นักผจญภัย... เราฝากความหวัง...ไว้กับเจ้า เราจะพยายาม...สนับสนุนเจ้าเท่าที่ทำได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#293": {
+   "src": "We'll do the best we can out here! I have some ideas already...",
+   "dst": "เราจะทำเต็มที่จากข้างนอกนี่! ฉันมีไอเดียอยู่บ้างแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#294": {
+   "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
+   "dst": "Rhay ไม่ใช่เวลานี้ มนุษย์ เราคอยหนุนหลังให้ คุณทำได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#295": {
+   "src": "You have faced...worse odds before...have you not? You will face them...again.",
+   "dst": "เจ้าเคยเผชิญ...สิ่งที่แย่กว่านี้...มาแล้วไม่ใช่หรือ? เจ้าจะเผชิญ...มันได้อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#296": {
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
+   "dst": "เสร็จแล้ว Desint... Iscor... เข้าประจำที่ เราต้อง... ยั้งมันไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#297": {
+   "src": "great protector, lord of stone, hear our burning call. your fury clouds your vision, your anger burns and twists our home.",
+   "dst": "ผู้พิทักษ์ผู้ยิ่งใหญ่ เจ้าแห่งศิลา โปรดฟังเสียงเรียกอันร้อนแรงของเรา ความโกรธบดบังตาท่าน ความกริ้วแผดเผาบ้านเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#298": {
+   "src": "we, the doguns, who now hold the final flame of a fallen god... we will hold you back. we will keep this land intact!",
+   "dst": "พวกเรา ชาว Dogun ผู้ถือเปลวไฟสุดท้ายแห่งเทพผู้ล่วงลับ... เราจะยั้งท่านไว้ เราจะรักษาผืนแผ่นดินนี้ไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#299": {
+   "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
+   "dst": "เราจะ... ยั้งมันจากตรงนี้... มนุษย์ บัดนี้... ไป! เราจะ... ยั้งมันไว้... ได้ไม่นาน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#300": {
+   "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
+   "dst": "ผลึกนี้...จะให้เจ้าใช้...เปลวไฟของเรา ใช้มัน...ทะลวง...การป้องกันของมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#301": {
+   "src": "{u}... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
+   "dst": "{u}... ก่อนเจ้าไป ข้าขอมอบ... วัตถุโบราณทรงพลังเหล่านี้ ชนเผ่าของเรา... เก็บรักษามันมา... นานกว่าอายุข้า มันอาจ... ช่วยเจ้าในการเดินทาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#302": {
+   "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
+   "dst": "ข้าให้ของล้ำค่าเท่าที่ Paku มอบให้ไม่ได้ แต่ข้ายังให้เงินก้อนหนึ่งจากคลังของเรายืมได้ ใช้ตามจำเป็น ขอแค่เจ้าทำให้เจ้านั่นสงบลงได้ โชคดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} ตัวเก็บประจุ Magmaflux]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#304": {
+   "src": "Have you flown to Corkus with Rhay yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "บินไป Corkus กับ Rhay แล้วหรือยัง? เร็วเข้า ไปที่บอลลูนลมร้อนทางใต้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#305": {
+   "src": "Just step on the iron platform and we'll send you down!",
+   "dst": "แค่ก้าวขึ้นแท่นเหล็ก แล้วเราจะส่งคุณลงไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#306": {
+   "src": "[!] Central bore tunnel opening! Exercise caution around the deep drop.",
+   "dst": "[!] อุโมงค์เจาะกลางกำลังเปิด! ระวังบริเวณที่ดิ่งลึก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#307": {
+   "src": "You got the part! Head back to the balloon and I'll meet you there.",
+   "dst": "ได้ชิ้นส่วนแล้ว! กลับไปที่บอลลูน แล้วเจอกันที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Breaking Point#308": {
+   "src": "Have you flown to the Heights with Ineos yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "บินไป Heights กับ Ineos แล้วหรือยัง? เร็วเข้า ไปที่บอลลูนลมร้อนทางใต้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#309": {
+   "src": "I... will meet you... by the airship. I am... eager... to see my home... again.",
+   "dst": "ข้า... จะไปพบเจ้า... ที่เรือเหาะ ข้า... อยาก... เห็นบ้านเกิด... อีกครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#310": {
+   "src": "Well... That's it, then! I'll see you two off, and then... Then I'll figure out how to clean up here.",
+   "dst": "เอาล่ะ... งั้นก็เท่านี้! ฉันจะส่งพวกคุณสองคน แล้วก็... แล้วค่อยคิดว่าจะเก็บกวาดที่นี่ยังไง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#311": {
+   "src": "I... I really did hope we could do it. I thought that our magic could save the day, that it could stop this thing!",
+   "dst": "ฉัน... ฉันหวังจริงๆ ว่าเราจะทำได้ ฉันคิดว่าเวทของเราจะช่วยได้ จะหยุดเจ้านั่นได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#312": {
+   "src": "... Nothing to do about it now, of course! Good luck out there. We're counting on you two now. Go find those Elders!",
+   "dst": "... ตอนนี้ทำอะไรไม่ได้แล้วล่ะ! โชคดีนะ ตอนนี้เราฝากความหวังไว้กับคุณสองคนแล้ว ไปตามหาผู้อาวุโสพวกนั้นเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#313": {
+   "src": "It has been... many years... since I fled the Heights. I am... grateful to... the Corkians... for taking me in.",
+   "dst": "ผ่านมา... หลายปี... นับแต่ข้าหนีจาก Heights ข้า... ขอบคุณ... ชาว Corkian... ที่รับข้าไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#314": {
+   "src": "But... The war... has ended. I can finally... go home...",
+   "dst": "แต่... สงคราม... จบแล้ว ในที่สุดข้าก็... ได้กลับบ้าน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#315": {
+   "src": "... {p} first... though. We still... have work to do...",
+   "dst": "... แต่ไป {p} ก่อน... เรายัง... มีงานต้องทำ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#316": {
+   "src": "What are you waiting for? Use my hook to get to the override switch at the end of this cave!",
+   "dst": "จะรออะไรอยู่? ใช้ตะขอของข้าไปที่สวิตช์ควบคุมด้วยมือท้ายถ้ำนี่สิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "King Draani",
+   "source": "captured"
+  },
+  "The Breaking Point#317": {
+   "src": "Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "มาเถอะ {u} เราต้องละลายน้ำแข็งปลดผู้อาวุโสแล้วทำให้พวกเขาฟังเรา นำเปลวไฟมา ข้าจะไปรอที่ห้องนิรภัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "ว่าไง? รออะไรอยู่- มาเร็ว ไป Corkus กันเถอะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "ว่าไง รออะไรอยู่?! ใส่ชิ้นส่วนเข้าเครื่องเร็วเข้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "โชคดีที่ Heights นะ {u} ฉันจะ... ดูว่ากู้อะไรจากเครื่องได้บ้าง แต่ดูท่าไม่ค่อยดี ผู้อาวุโสของ Ineos อาจเป็นความหวังเดียวของเรา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "เจ้าควร... ใช้อุโมงค์การค้า... {u} ข้าใส่พิกัด... ไว้ในสมุดเนื้อหาของเจ้าแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
+  }
+ }
+}

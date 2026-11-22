@@ -1,0 +1,710 @@
+{
+ "_meta": {
+  "quest": "Dwarves and Doguns Part IV",
+  "count": 70,
+  "translated": 70,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Dwarves and Doguns Part IV#000": {
+   "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
+   "dst": "เงียบ เจ้าเด็กคนแคระ...เจ้าล้มเหลว... เราจะไม่ยอมไปเงียบๆ จงตื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Dogun Chieftain",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part IV#001": {
+   "src": "{u}... Do you have...the staff? And the amulet...?",
+   "dst": "{u}... เจ้ามี...ไม้เท้าไหม? แล้วเครื่องราง...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part IV#003": {
+   "src": "Return to Korzim on the second floor of the enchanter in {p} with the Amulet of Fire Resistance and the Staff of True Ice.",
+   "dst": "กลับไปหา Korzim ที่ชั้นสองของบ้านนักเสกเวทใน {p} พร้อม Amulet of Fire Resistance และ Staff of True Ice",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#005": {
+   "src": "The war is starting... and Axelus... He has not returned.",
+   "dst": "สงครามกำลังเริ่ม... และ Axelus... ยังไม่กลับมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#006": {
+   "src": "We can not go... Not without him. Find him... And bring him to the... Dogun village.",
+   "dst": "เราไปไม่ได้... ถ้าไม่มีเขา หาเขาให้เจอ... แล้วพาเขามาที่... หมู่บ้าน Dogun",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#007": {
+   "src": "I can not leave. The guard...it is on high alert. He was last at {p}...yes?",
+   "dst": "ข้าออกไปไม่ได้ ทหารยาม...ตื่นตัวเต็มที่ ครั้งล่าสุดเขาอยู่ที่ {p}...ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#008": {
+   "src": "Head to {p} and look for Axelus.",
+   "dst": "ไปที่ {p} แล้วตามหา Axelus",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#009": {
+   "src": "The first group has already started their climb, let's hurry.",
+   "dst": "กลุ่มแรกเริ่มปีนขึ้นไปแล้ว รีบเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#010": {
+   "src": "Hey! Everyone, the king has someone in the cage! It's been years since we used it!",
+   "dst": "เฮ้! ทุกคน กษัตริย์จับใครขังกรงไว้! ไม่ได้ใช้กรงนั้นมาหลายปีแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#011": {
+   "src": "Wait, that's Axelus up there!! The king locked up his son?! What in the world?",
+   "dst": "เดี๋ยว นั่น Axelus อยู่บนนั้น!! กษัตริย์ขังลูกตัวเองเหรอ?! เกิดอะไรขึ้นเนี่ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#012": {
+   "src": "I heard he was consorting with demons, but that can't possibly be true, can it?",
+   "dst": "ได้ยินว่าเขาคบค้ากับปีศาจ แต่มันไม่น่าจะจริงหรอก ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#013": {
+   "src": "For the last time, they are not demons!! Gods, I've been telling you this whole time! Not even my father will listen to reason!",
+   "dst": "บอกเป็นครั้งสุดท้าย พวกเขาไม่ใช่ปีศาจ!! เทพเจ้า ข้าบอกพวกเจ้ามาตลอด! แม้แต่ท่านพ่อยังไม่ฟังเหตุผล!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#014": {
+   "src": "If I don't get freed we're doomed, you hear me?! We won't survive another war! As your prince I demand to be freed!",
+   "dst": "ถ้าข้าไม่ถูกปล่อย พวกเราจบเห่แน่ ได้ยินไหม?! เราไม่รอดจากสงครามอีกครั้งแน่! ในฐานะเจ้าชาย ข้าสั่งให้ปล่อยข้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#015": {
+   "src": "Listen, the statues are climbable and there's a control panel for the lava siphons near them! Now help me so we all don't die!",
+   "dst": "ฟังนะ รูปปั้นพวกนั้นปีนได้ และมีแผงควบคุมท่อดูดลาวาอยู่ใกล้ๆ! ช่วยข้าเร็ว เราจะได้ไม่ตายกันหมด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#016": {
+   "src": "Free Axelus and escape the city.",
+   "dst": "ปล่อย Axelus แล้วหนีออกจากเมือง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#017": {
+   "src": "Wait, that human just defaced the hero's monument!! Are they working with the demons too?",
+   "dst": "เดี๋ยว มนุษย์คนนั้นเพิ่งทำลายอนุสาวรีย์วีรบุรุษ!! มันร่วมมือกับปีศาจด้วยเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#018": {
+   "src": "{u}! I didn't think you'd be back, but we need to leave, now! Meet me outside!",
+   "dst": "{u}! ไม่คิดว่าคุณจะกลับมา แต่เราต้องไปเดี๋ยวนี้! เจอกันข้างนอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#019": {
+   "src": "{u}! Over here, to the right! By the cannon! I'm commandeering this thing.",
+   "dst": "{u}! ทางนี้ ด้านขวา! ข้างปืนใหญ่! ฉันขอยึดเจ้านี่ล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#020": {
+   "src": "We need to get up to the Doguns before the Dwarves begin their assault, or before the Doguns take their last resort.",
+   "dst": "เราต้องขึ้นไปหาพวก Doguns ก่อนคนแคระจะบุก หรือก่อนพวก Doguns จะใช้ไม้ตายสุดท้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#021": {
+   "src": "Get in the cannon, now! You've got your armour, you might end up charred and covered in soot but you'll be fine!",
+   "dst": "เข้าไปในปืนใหญ่ เดี๋ยวนี้! คุณมีเกราะ อาจไหม้เกรียมเปื้อนเขม่าไปหน่อย แต่ไม่เป็นไรหรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#022": {
+   "src": "Don't tell anyone we shot ourselves out of a cannon, I'll never live it down. Now come on, to the Dogun village, hurry!",
+   "dst": "อย่าบอกใครนะว่าเรายิงตัวเองออกจากปืนใหญ่ ฉันอายไปตลอดชีวิตแน่ ไปเร็ว ไปหมู่บ้าน Dogun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#023": {
+   "src": "If the Doguns are taking their last resort and summoning Garaheth, then we've got two sides to stop at once...basically, the odds are astronomically against us.",
+   "dst": "ถ้าพวก Doguns ใช้ไม้ตายสุดท้ายและอัญเชิญ Garaheth เราก็ต้องหยุดสองฝ่ายพร้อมกัน... พูดง่ายๆ คือโอกาสชนะแทบเป็นศูนย์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#024": {
+   "src": "That means you do what you need to do, no matter what. Understood? If we can stop this madness then the casualties won't have died for nothing! Now move!",
+   "dst": "แปลว่าคุณต้องทำสิ่งที่ต้องทำ ไม่ว่ายังไงก็ตาม เข้าใจไหม? ถ้าเราหยุดความบ้าคลั่งนี้ได้ คนที่ตายไปก็ไม่ได้ตายเปล่า! ไปเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#025": {
+   "src": "Reach the portal and stop Garaheth.",
+   "dst": "ไปให้ถึงประตูมิติและหยุด Garaheth",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#026": {
+   "src": "WAIT, STOP THE-",
+   "dst": "รอก่อน หยุด-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#028": {
+   "src": "I can't believe this... That bone was part of the ritual?! Agh, how could we have been so STUPID! You're all lucky we prepared for this!!",
+   "dst": "ไม่อยากเชื่อเลย... กระดูกนั่นเป็นส่วนหนึ่งของพิธีงั้นเหรอ?! อ๊าก เราโง่ได้ขนาดนี้ได้ยังไง! พวกแกโชคดีนะที่เราเตรียมรับมือไว้!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#029": {
+   "src": "You need to get inside him. He's still chained! The amulet will protect you from the heat! Freeze him from the inside out!!",
+   "dst": "คุณต้องเข้าไปในตัวมัน มันยังถูกล่ามอยู่! จี้นั่นจะกันความร้อนให้คุณ! แช่แข็งมันจากข้างในออกมา!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#030": {
+   "src": "Enter the body of Garaheth.",
+   "dst": "เข้าไปในร่างของ Garaheth",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#031": {
+   "src": "Find all {~} organs and destroy them.",
+   "dst": "ค้นหาและทำลายอวัยวะทั้ง {~} ชิ้น",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#032": {
+   "src": "Leave Garaheth and exit his realm.",
+   "dst": "ออกจากร่าง Garaheth และออกจากอาณาเขตของมัน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#033": {
+   "src": "EVERYONE, STOP THIS! RIGHT NOW!! IT'S OVER!!",
+   "dst": "ทุกคน หยุดเดี๋ยวนี้! เดี๋ยวนี้เลย!! จบแล้ว!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#034": {
+   "src": "Open your eyes for once in your lives!! You see that?! Behind me! THAT was going to be the end result!",
+   "dst": "ลืมตาดูสักครั้งในชีวิตเถอะ!! เห็นไหม?! ข้างหลังฉัน! นั่นแหละคือผลลัพธ์ที่จะเกิดขึ้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#035": {
+   "src": "Garaheth would have killed every one of us, damn it! Are you that short-sighted that you can't see this?!",
+   "dst": "Garaheth จะฆ่าพวกเราทุกคน ให้ตายสิ! สายตาสั้นจนมองไม่เห็นเลยหรือไง?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#036": {
+   "src": "Everyone here is to blame, except the human who helped stop this! The Doguns were already exiled, they wouldn't have hurt anyone!",
+   "dst": "ทุกคนที่นี่ผิดหมด ยกเว้นมนุษย์ที่ช่วยหยุดเรื่องนี้! พวก Doguns ถูกเนรเทศไปแล้ว พวกเขาไม่ทำร้ายใครหรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#037": {
+   "src": "But we couldn't just let ANYTHING be! You always need more glory, more, more, MORE! Don't you, Draani? I'm ashamed to be your lineage!",
+   "dst": "แต่เราก็ปล่อยอะไรไว้เฉยๆ ไม่ได้! ต้องการเกียรติเพิ่มตลอด อีก อีก อีก! ใช่ไหม Draani? ฉันอายที่เป็นสายเลือดของท่าน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#038": {
+   "src": "And you, Doguns! I...I pitied you. You were wronged, but you resort to this? You'd doom the world over to spite the Dwarves? Is that it?!",
+   "dst": "ส่วนพวกแก Doguns! ฉัน...ฉันเคยสงสารพวกแก พวกแกถูกกระทำ แต่กลับทำแบบนี้เนี่ยนะ? จะลากทั้งโลกไปตายเพื่อแก้แค้นคนแคระ? งั้นเหรอ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#039": {
+   "src": "Whelp. You do not understand. To be persecuted...and see your people tortured...hunted.",
+   "dst": "เจ้าเด็กน้อย เจ้าไม่เข้าใจ การถูกไล่ล่า... เห็นผู้คนของตนถูกทรมาน... ถูกล่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#040": {
+   "src": "You all deserve it! You attacked our ancestors for sport! Eye for an eye, have you heard of it? It's only fair!",
+   "dst": "พวกแกสมควรโดนแล้ว! พวกแกโจมตีบรรพบุรุษเราเพื่อความสนุก! ตาต่อตา ฟันต่อฟัน เคยได้ยินไหม? ยุติธรรมดีแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dwarven Commander",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#041": {
+   "src": "Imbeciles...your stories are not true. We... We lived through the war. You took everything...and suffered none.",
+   "dst": "พวกโง่... เรื่องเล่าของพวกเจ้าไม่จริง พวกเรา... เราผ่านสงครามนั้นมา พวกเจ้าเอาไปทุกอย่าง...โดยไม่ทุกข์ทนเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#042": {
+   "src": "I've been trying to tell BOTH of you that the monarchy has been spreading lies for centuries! One bad king doesn't mean the whole species is a loss!",
+   "dst": "ฉันพยายามบอกทั้งสองฝ่ายมาตลอดว่าราชวงศ์ปล่อยคำโกหกมาหลายร้อยปี! กษัตริย์เลวคนเดียวไม่ได้แปลว่าทั้งเผ่าพันธุ์จะไร้ค่า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#043": {
+   "src": "Shut your mouth. Even now...you trample on the bones of our god... You have taken everything from us...",
+   "dst": "หุบปาก แม้แต่ตอนนี้... พวกเจ้ายังเหยียบย่ำกระดูกเทพเจ้าของเรา... พวกเจ้าพรากทุกอย่างไปจากเรา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#044": {
+   "src": "This earth is stained by you. We...we shall burn you...and scatter your ash to the wind.",
+   "dst": "ผืนดินนี้มีมลทินเพราะพวกเจ้า พวกเรา...จะเผาพวกเจ้า...แล้วโปรยเถ้าไปกับสายลม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#045": {
+   "src": "DON'T YOU DARE! STOP, RIGHT NOW!",
+   "dst": "อย่าบังอาจนะ! หยุด เดี๋ยวนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#046": {
+   "src": "Axelus!",
+   "dst": "Axelus!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#047": {
+   "src": "...he..",
+   "dst": "...เขา.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#048": {
+   "src": "You would... You would kill a savior...?",
+   "dst": "พวกเจ้า... จะฆ่าผู้กอบกู้งั้นหรือ...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#049": {
+   "src": "No, no! No no no, this can't be happening! H-Hang on, we'll save you, I...I'll do something, I...",
+   "dst": "ไม่ ไม่! ไม่ ไม่ ไม่ เป็นไปไม่ได้! ท-ทนไว้ก่อน เราจะช่วยเจ้า ข้า...ข้าจะทำอะไรสักอย่าง ข้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#050": {
+   "src": "Y-You DEMONS! MONSTERS! I'll avenge you, Axelus, j-just give me time-",
+   "dst": "พ-พวกปีศาจ! สัตว์ประหลาด! ข้าจะแก้แค้นให้เจ้า Axelus ข-ขอเวลาหน่อย-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#051": {
+   "src": "AGH, SHUT UP! SHUT...ack... Q-Quiet. Listen to one damn word from my mouth, Draani... For once in your miserable life",
+   "dst": "อ๊าก หุบปาก! หุบ...อึก... เ-เงียบ ฟังคำพูดฉันสักคำเถอะ Draani... สักครั้งในชีวิตอันน่าสมเพชของท่าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#052": {
+   "src": "Tell. The. TRUTH!! G-gaagh...you know that's th...the only way to stop this. Swallow your pride, you...old fool...",
+   "dst": "บอก. ความ. จริง!! อ-อึก...ท่านก็รู้ว่านั่น...ทางเดียวที่จะหยุดเรื่องนี้ ทิ้งทิฐิไปซะ ไอ้...ตาแก่โง่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#053": {
+   "src": "I...I... Axelus... He...he called me Draani...why did...?",
+   "dst": "ข้า...ข้า... Axelus... เขาเรียกข้าว่า Draani...ทำไม...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#054": {
+   "src": "Men, stand down. This... This war is over! I will not have one more life lost! Touch the Doguns and I'll personally behead you!",
+   "dst": "ทหาร วางอาวุธ สงคราม...สงครามนี้จบแล้ว! ข้าจะไม่ยอมเสียชีวิตใครอีกแม้แต่คนเดียว! ใครแตะต้อง Doguns ข้าจะตัดหัวเอง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#055": {
+   "src": "Chief, I...I ask of you but an hour of your time. If you are willing to negotiate...",
+   "dst": "หัวหน้าเผ่า ข้า...ข้าขอเวลาท่านเพียงชั่วโมงเดียว หากท่านยินดีเจรจา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#056": {
+   "src": "Speak with the King of {p} and the Dogun Chieftain.",
+   "dst": "คุยกับกษัตริย์แห่ง {p} และหัวหน้าเผ่า Dogun",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#057": {
+   "src": "Ah, you've arrived. I...actually remember you from earlier. So you and...",
+   "dst": "อ้า เจ้ามาแล้ว ข้า...จำเจ้าได้จากก่อนหน้านี้ เจ้ากับ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#058": {
+   "src": "A-and...",
+   "dst": "แ-และ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#059": {
+   "src": "...you knew my son. Were helping him try to put an end to this, before everything was too far gone. Heh...apologies, for that.",
+   "dst": "...เจ้ารู้จักลูกชายข้า เคยช่วยเขาพยายามยุติเรื่องนี้ ก่อนทุกอย่างจะสายเกินแก้ เฮอะ...ขออภัยด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#060": {
+   "src": "Paku and I have had a long discussion about the wisdom of youth over the old. You all were right. I needed to swallow my pride.",
+   "dst": "Paku กับข้าคุยกันยาวเรื่องปัญญาของคนหนุ่มเทียบกับคนแก่ พวกเจ้าพูดถูก ข้าต้องลดทิฐิลง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#061": {
+   "src": "We agreed upon a peace treaty... A new city... The Dwarves will aid us in building it.",
+   "dst": "เราตกลงสนธิสัญญาสันติภาพกันแล้ว... เมืองใหม่... คนแคระจะช่วยเราสร้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#062": {
+   "src": "All hostilities...will end. My people will...be free to roam the caverns. It has been...too long.",
+   "dst": "ความเป็นศัตรูทั้งหมด...จะสิ้นสุด ผู้คนของข้าจะ...ท่องไปในถ้ำได้อย่างเสรี มันนาน...เกินไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#063": {
+   "src": "And the entombed Doguns at Courag will be reconstituted, as well, supposing that is a possibility.",
+   "dst": "และ Doguns ที่ถูกฝังไว้ที่ Courag ก็จะได้รับการฟื้นคืน หากเป็นไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#064": {
+   "src": "Every king, since my so-far-great grandfather, Draani Thunderwill, has battled with their morality over the lies told to my people.",
+   "dst": "กษัตริย์ทุกองค์ นับแต่ Draani Thunderwill บรรพบุรุษเก่าแก่ของข้า ต่างต่อสู้กับมโนธรรมของตนเรื่องคำโกหกที่บอกแก่ประชาชน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#065": {
+   "src": "It ends here, with the name Draani VIII. It will take time, but the bloodshed has proven things must begin to change now.",
+   "dst": "มันจบที่นี่ ในนาม Draani VIII จะต้องใช้เวลา แต่การนองเลือดพิสูจน์แล้วว่าทุกอย่างต้องเริ่มเปลี่ยนตั้งแต่ตอนนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#066": {
+   "src": "You and the coalition have saved the Heights, and Gavel. In {p}, you will find a stall to trade valuable minerals. You will be granted special Dwarven privileges to purchase it now.",
+   "dst": "เจ้ากับพันธมิตรช่วย Heights และ Gavel ไว้ ใน {p} เจ้าจะพบแผงค้าแลกแร่ล้ำค่า เจ้าจะได้รับสิทธิพิเศษของคนแคระให้ซื้อได้ตั้งแต่บัดนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#067": {
+   "src": "Though that is...almost certainly not enough a reward for everything you have done...sincerely. Thank you, Wynn soldier.",
+   "dst": "แม้นั่น...แทบแน่นอนว่าไม่คุ้มกับทุกสิ่งที่เจ้าทำ...ด้วยใจจริง ขอบคุณ ทหารแห่ง Wynn",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "กลับไปหา Korzim ที่ [{~}, {~}, -{~}] ชั้นสองของร้านนักร่ายมนตร์ใน {p} พร้อม Amulet of Fire และ Staff of Ice",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "ไปให้ถึงโคลอสเซียมพิธีกรรมและขัดขวางการอัญเชิญ Garaheth",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "แช่แข็งจุดตายของ Garaheth ทุกจุดที่หาเจอ!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "ออกมาจากร่าง Garaheth!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "เรา...เราไม่เหลืออะไรแล้ว... เราน่าจะ...พาพวกมันไปด้วย... ตอนนี้พวกมันจะ...จะ... เจ้า...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
+  }
+ }
+}

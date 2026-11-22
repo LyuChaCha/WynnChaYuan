@@ -1,0 +1,1020 @@
+{
+ "_meta": {
+  "quest": "Royal Trials",
+  "count": 101,
+  "translated": 101,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Royal Trials#000": {
+   "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
+   "dst": "คุยกับยาม Skyraider ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#001": {
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
+   "dst": "ถอยไป! ห้ามใครเข้าจนกว่าจะเลือกราชินีโจรสลัดได้ คนเดินดินอย่างเจ้ามาทำอะไรที่นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 1",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#002": {
+   "src": "Participate? Are ye crazy? Ain't no way a landlubber is wearing the crown.",
+   "dst": "เข้าร่วม? บ้าไปแล้วรึ? คนเดินดินไม่มีทางได้สวมมงกุฎหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 1",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#003": {
+   "src": "Off with ya now! Before I call the gals to gut you. And dun' go wandering round chatting to any skyraiders!",
+   "dst": "ไปซะ! ก่อนข้าจะเรียกสาวๆ มาควักไส้เจ้า แล้วอย่าเดินเตร่ไปคุยกับพวก Skyraider ล่ะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 1",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#004": {
+   "src": "Talk to Hrona at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Hrona ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#005": {
+   "src": "Yer wantin' to be pirate queen, ye? Don' worry, I can help ye.",
+   "dst": "อยากเป็นราชินีโจรสลัดใช่ไหม? ไม่ต้องห่วง ข้าช่วยเจ้าได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#006": {
+   "src": "Y'see, the other pirates ain't fit for the role. They're dumb 'n weak. All they've got is looks.",
+   "dst": "รู้ไหม โจรสลัดคนอื่นไม่เหมาะกับตำแหน่งนี้ พวกนางทั้งโง่ทั้งอ่อนแอ มีดีแค่หน้าตา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#007": {
+   "src": "Yer got the lot! Looks and talent.",
+   "dst": "เจ้ามีครบ! ทั้งหน้าตาและฝีมือ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#008": {
+   "src": "Y'know, the guard, she's dumb too. A simple disguise will fool 'er. Issue is, ye dun' look like a skyraider at all!",
+   "dst": "ยามนั่นก็โง่เหมือนกัน ปลอมตัวง่ายๆ ก็หลอกนางได้ ปัญหาคือ เจ้าดูไม่เหมือน Skyraider เลยสักนิด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#009": {
+   "src": "Yer in luck, though. A skyraider will sell anything for a price - just look around the town and see if ye can persuade anyone to part with their outfit.",
+   "dst": "แต่เจ้าโชคดี Skyraider ขายได้ทุกอย่างถ้าราคาถูกใจ - ลองเดินดูรอบเมือง ว่าจะกล่อมใครให้ยอมขายชุดได้ไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 2",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#010": {
+   "src": "Look around the skyraider town at [{~}, {~}, -{~}] and find a pirate outfit.",
+   "dst": "สำรวจเมือง Skyraider ที่ [{~}, {~}, -{~}] แล้วหาชุดโจรสลัด",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#011": {
+   "src": "Aye? A landwalker, wanderin' around our base? Whatcha' want?",
+   "dst": "หือ? คนเดินดินมาเดินเตร่ในฐานเรา? ต้องการอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#012": {
+   "src": "My outfit?!",
+   "dst": "ชุดข้า?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#013": {
+   "src": "... aye, I suppose I could be tempted to pass it on to ye... for a price.",
+   "dst": "... ก็ได้ ข้าอาจยอมยกให้เจ้า... ถ้าได้ราคา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#014": {
+   "src": "Here, these are what I would trade it to ye for.",
+   "dst": "นี่ ของพวกนี้แหละที่ข้าจะยอมแลก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#015": {
+   "src": "If yer thinkin' emeralds... [{~} Emerald Blocks] seems like a fair price, heh.",
+   "dst": "ถ้าคิดจะจ่ายมรกต... [{~} บล็อกมรกต] ก็ราคายุติธรรมดี เฮะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#016": {
+   "src": "Of course, if yer running low on funds, how about ye grab me [{~} Dragonling Eggs] instead? Y'know, the ingredient. I'm 'oping to raise some 'o the lil critters!",
+   "dst": "แต่ถ้าเงินไม่ค่อยมี หา [{~} Dragonling Eggs] มาให้ข้าแทนดีไหม? วัตถุดิบนั่นแหละ ข้าอยากเลี้ยงเจ้าตัวเล็กพวกนั้นสักหน่อย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#017": {
+   "src": "But if neither of them tickle ye fancy... I've always wanted [{~} Shiny Shell] - they're just so sparkly! Ye can find them in the cave south-east of here, beside the ladders.",
+   "dst": "แต่ถ้าไม่ถูกใจทั้งสองอย่าง... ข้าอยากได้ [{~} Shiny Shell] มานานแล้ว - มันวิบวับมาก! หาได้ในถ้ำทางตะวันออกเฉียงใต้ ข้างบันได",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#018": {
+   "src": "Ye get me one o' those three, landwalker, and ye can have my outfit!",
+   "dst": "เอามาสักอย่างจากสามอย่างนั้น คนเดินดิน แล้วชุดข้าเป็นของเจ้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 3",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#019": {
+   "src": "Give an item to Egpla at [{~}, {~}, -{~}].",
+   "dst": "มอบไอเทมให้ Egpla ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#020": {
+   "src": "So, landwalker, are ye ready to pay up? I can see emeralds in ye pocket, hand 'em over.",
+   "dst": "ว่าไง คนเดินดิน พร้อมจ่ายหรือยัง? ข้าเห็นมรกตในกระเป๋าเจ้า ส่งมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#021": {
+   "src": "Alrigh'! Those're exactly what I've been lookin' for. Give it here, lemme have a look...",
+   "dst": "ดีล่ะ! นั่นแหละที่ข้าตามหา ส่งมา ขอข้าดูหน่อย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#022": {
+   "src": "Aye, landwalker! Is that the sparkle of a shiny shell I spot in ye pocket?! Lemme have a look...",
+   "dst": "เฮ้ คนเดินดิน! ที่วิบวับในกระเป๋าเจ้านั่น shiny shell ใช่ไหม?! ขอข้าดูหน่อย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#023": {
+   "src": "Alright, landwalker. Ye can have me outfit. 'ere, lemme just get changed inside.",
+   "dst": "ก็ได้ คนเดินดิน ชุดข้าเป็นของเจ้า รอเดี๋ยว ข้าขอเข้าไปเปลี่ยนชุดก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#024": {
+   "src": "Here ye go, landlubber. I hope ye get some kinda use out of it, whatever ye want it for.",
+   "dst": "นี่ คนเดินดิน หวังว่ามันจะมีประโยชน์ ไม่ว่าเจ้าจะเอาไปทำอะไรก็ตาม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#025": {
+   "src": "Enter the trials at [{~}, {~}, -{~}].",
+   "dst": "เข้าร่วมบททดสอบที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#026": {
+   "src": "Another contestant, eh? That outfit looks a bit funny on ye, but I'll let yer in. Hurry up!",
+   "dst": "ผู้เข้าแข่งขันอีกคนรึ? ชุดนั่นดูแปลกๆ บนตัวเจ้า แต่ข้าจะให้เข้าไป รีบเข้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#027": {
+   "src": "Approach the stage.",
+   "dst": "เดินไปที่เวที",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#028": {
+   "src": "Ugh! Ye can't be the queen, ye can barely fly an airship!",
+   "dst": "ชิ! เจ้าเป็นราชินีไม่ได้หรอก แค่ขับเรือเหาะยังแทบไม่เป็น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 6",
+   "speaker": "Angry Contestant",
+   "source": "wiki"
+  },
+  "Royal Trials#029": {
+   "src": "No! I'll be the queen! I'm much more qualified than any of you sky rats!",
+   "dst": "ไม่! ข้าต่างหากจะเป็นราชินี! ข้าเหมาะกว่าพวกหนูฟ้าอย่างพวกเจ้าเยอะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 6",
+   "speaker": "Angry Contestant",
+   "source": "wiki"
+  },
+  "Royal Trials#030": {
+   "src": "Listen to the Trials Overseer's speech.",
+   "dst": "ฟังสุนทรพจน์ของผู้คุมบททดสอบ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#031": {
+   "src": "Gather round, ladies. The next Queen is about to be selected!",
+   "dst": "มารวมกัน สาวๆ ราชินีคนต่อไปกำลังจะถูกเลือกแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#032": {
+   "src": "As ye know, our previous queen suffered a... nasty fate, murdered on her very own airship by a Wynn soldier.",
+   "dst": "อย่างที่รู้ ราชินีองค์ก่อนของเราพบจุดจบที่... น่าอนาถ ถูกทหาร Wynn สังหารบนเรือเหาะของนางเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#033": {
+   "src": "But in the ashes of her honor, a new queen shall rise! Three trials. That's what ye all face now.",
+   "dst": "แต่จากเถ้าถ่านแห่งเกียรติของนาง ราชินีองค์ใหม่จะผงาดขึ้น! บททดสอบสามด่าน คือสิ่งที่พวกเจ้าต้องเจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#034": {
+   "src": "Only one, who passes all trials laid before her, will pass and gain the title of Skyraider Queen.",
+   "dst": "มีเพียงหนึ่งคนที่ผ่านบททดสอบทั้งหมดได้ จะได้ครองตำแหน่งราชินี Skyraider",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#035": {
+   "src": "Now, I introduce ye all to the first trial, to test yer capability at a vital skill for queenship - combat!",
+   "dst": "ต่อไป ข้าขอแนะนำบททดสอบแรก ซึ่งจะวัดทักษะสำคัญของการเป็นราชินี - การต่อสู้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#036": {
+   "src": "Ladies, you may now Begin!",
+   "dst": "สาวๆ เริ่มได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 7",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#037": {
+   "src": "Defeat the armory room of the combat challenge.",
+   "dst": "ผ่านห้องคลังอาวุธของการทดสอบการต่อสู้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#038": {
+   "src": "Defeat the brig room of the combat challenge.",
+   "dst": "ผ่านห้องขังของการทดสอบการต่อสู้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#039": {
+   "src": "Defeat the cockpit room of the combat challenge.",
+   "dst": "ผ่านห้องบังคับเรือของการทดสอบการต่อสู้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#040": {
+   "src": "Listen to the trials overseer's speech.",
+   "dst": "ฟังสุนทรพจน์ของผู้คุมบททดสอบ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#041": {
+   "src": "Arr, that weeded out the weak. A queen must be strong to lead.",
+   "dst": "อาร์ คัดพวกอ่อนแอออกไปแล้ว ราชินีต้องแข็งแกร่งจึงจะนำได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 11",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#042": {
+   "src": "Now, to the second challenge - the task of flight! Ye can't be a queen if ye can't fly yer airship!",
+   "dst": "ต่อไป ด่านที่สอง - การบิน! เป็นราชินีไม่ได้หรอกถ้าขับเรือเหาะของตัวเองไม่เป็น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 11",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#043": {
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
+   "dst": "เบิกตาให้กว้าง สาวๆ พลาดนิดเดียวความตายรออยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 11",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#044": {
+   "src": "This task should get rid of the rest of ye unworthy.",
+   "dst": "ด่านนี้น่าจะกำจัดพวกไม่คู่ควรที่เหลือได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 11",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#045": {
+   "src": "Defeat the challenge of flight.",
+   "dst": "ผ่านด่านการบิน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#047": {
+   "src": "Well lookie here, an amateur made it through her flight.",
+   "dst": "ดูสิ มือใหม่บินผ่านมาได้ด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#048": {
+   "src": "Well let’s see how you hold up in the final task ladies.",
+   "dst": "มาดูกันว่าพวกเจ้าจะรับมือด่านสุดท้ายได้แค่ไหน สาวๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#049": {
+   "src": "Yer ain’ a pirate at all if ye can't steal, but this is different.",
+   "dst": "ขโมยไม่เป็นก็ไม่ใช่โจรสลัด แต่ครั้งนี้ต่างออกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#050": {
+   "src": "This is the real deal. Stealin’ from a highly secure mansion.",
+   "dst": "ของจริง ขโมยจากคฤหาสน์ที่ระวังภัยแน่นหนา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#051": {
+   "src": "Yer job is to steal a priceless treasure from the richest family in the sky.",
+   "dst": "งานของเจ้าคือขโมยสมบัติล้ำค่าจากตระกูลที่รวยที่สุดบนฟ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#052": {
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
+   "dst": "เราจะรอพร้อมเรือเหาะหลบหนีที่จุดรับตัว ใครมาไม่ทันก็ถูกทิ้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#053": {
+   "src": "Remember, this be the real thing, and the consequences of failure will be severe. Good luck, ladies.",
+   "dst": "จำไว้ นี่ของจริง และความล้มเหลวจะมีผลร้ายแรง โชคดี สาวๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#054": {
+   "src": "This is the garden we'll tunnel into, and yer'll 'ave to find a way into the Mansion, maybe yer can just ask nicely, heh.",
+   "dst": "นี่คือสวนที่เราจะขุดอุโมงค์เข้าไป แล้วพวกเจ้าต้องหาทางเข้าคฤหาสน์เอง บางทีแค่ขอดีๆ ก็ได้ เฮะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#055": {
+   "src": "Then yer'll have to sneak through these corridors to reach the treasure - and don't let the guards find yer, or they'll lock yer up and throw away the key.",
+   "dst": "จากนั้นต้องแอบผ่านทางเดินพวกนี้ไปหาสมบัติ - และอย่าให้ยามเจอ ไม่งั้นจะถูกขังแล้วโยนกุญแจทิ้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#056": {
+   "src": "This, o' course, is the mythical treasure that yer want to grab and get outta here, stat. I'm sure there'll be some extra defenses around, though...",
+   "dst": "และนี่ แน่นอน คือสมบัติในตำนานที่ต้องคว้าแล้วรีบเผ่นทันที แต่คงมีการป้องกันพิเศษอยู่รอบๆ แน่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#057": {
+   "src": "And finally yer'll have to escape outta this window right 'ere - I'll be waitin' with an airship to carry all of ye out.",
+   "dst": "สุดท้ายก็หนีออกทางหน้าต่างบานนี้ - ข้าจะรอพร้อมเรือเหาะเพื่อพาพวกเจ้าออกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#058": {
+   "src": "Break into the mansion.",
+   "dst": "บุกเข้าคฤหาสน์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#059": {
+   "src": "Aye', think ye ready to try grabbin' that treasure, eh? Just 'ead outta this hole and try to find yer way into the mansion.",
+   "dst": "เอ้า พร้อมจะไปคว้าสมบัติแล้วรึ? ออกจากโพรงนี้แล้วหาทางเข้าคฤหาสน์ให้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 14",
+   "speaker": "Skyraider",
+   "source": "wiki"
+  },
+  "Royal Trials#060": {
+   "src": "Sneak past the guards and steal the treasure.",
+   "dst": "แอบผ่านยามไปแล้วขโมยสมบัติ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#061": {
+   "src": "Oi', you! Whatcha' think yer' doin' sneakin' around these parts? This be a restricted area! Yer' headed to the jail cell!",
+   "dst": "เฮ้ย แก! คิดว่ากำลังทำอะไร ด้อมๆ มองๆ แถวนี้? นี่เขตหวงห้าม! ไปห้องขังซะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 15",
+   "speaker": "Mansion Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#062": {
+   "src": "Get the treasure to the trials overseer outside of the mansion's window.",
+   "dst": "นำสมบัติไปให้ผู้คุมบททดสอบนอกหน้าต่างคฤหาสน์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#063": {
+   "src": "Aye', men! Tha' treasure has been stolen! Prepare the defenses!",
+   "dst": "เฮ้ย ทุกคน! สมบัติถูกขโมย! เตรียมป้องกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 16",
+   "speaker": "Mansion Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#064": {
+   "src": "Aye, we caught the nasty thief! We'll be lockin' him up till' he rots!",
+   "dst": "จับไอ้หัวขโมยได้แล้ว! ขังมันไว้จนเน่าเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 16",
+   "speaker": "Mansion Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#065": {
+   "src": "Ah, I thought yer might be the first one back. Yer got a queenly look about ye...",
+   "dst": "อ้า ข้าคิดแล้วว่าเจ้าจะกลับมาเป็นคนแรก เจ้ามีแววราชินีอยู่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 16",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#066": {
+   "src": "Head into the airship behind me, lassie. We'll wait a second for the others.",
+   "dst": "ขึ้นเรือเหาะข้างหลังข้าไปเลย แม่หนู เราจะรอคนอื่นสักครู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 16",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#067": {
+   "src": "Exit the Mansion onto the airship outside.",
+   "dst": "ออกจากคฤหาสน์ไปขึ้นเรือเหาะด้านนอก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#069": {
+   "src": "Aha! I figured it'd be ye to win o'er the rest of that lot… Ye've earned the proper sovereignty of bein' our ruler, our queen of the Skyraiders.",
+   "dst": "อะฮ่า! ข้าว่าแล้วว่าเจ้าจะชนะพวกที่เหลือ... เจ้าได้รับสิทธิ์อันชอบธรรมที่จะปกครองเรา ราชินีแห่ง Skyraider",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#070": {
+   "src": "Don't be worryin', we got this airship armoured somethin' heavy, and we’re miles away from their cannons… Nothin' to be afraid of, we're safe in this ship.",
+   "dst": "ไม่ต้องห่วง เรือเหาะลำนี้หุ้มเกราะหนาเตอะ และเราอยู่ห่างปืนใหญ่พวกมันหลายไมล์... ไม่มีอะไรต้องกลัว บนเรือนี้เราปลอดภัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#071": {
+   "src": "But, first things first, let’s take a look inside that fancy box ye got, see what mythical treasures lay guarded behind those grubby guardsmen, shall we?",
+   "dst": "แต่ก่อนอื่น มาดูในกล่องหรูนั่นกันหน่อย ว่าสมบัติในตำนานอะไรที่ยามสกปรกพวกนั้นเฝ้าไว้ ว่าไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#072": {
+   "src": "By the skies and seas…",
+   "dst": "โอ้ ฟ้าทะเลเอ๋ย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#073": {
+   "src": "I hafta wonder now if this weren't bein' guarded for a bit of a nefarious reason. This be... Quite the weapon. It'd be deadly if this got used.",
+   "dst": "ข้าชักสงสัยว่ามันถูกเฝ้าไว้ด้วยเหตุผลชั่วร้ายหรือเปล่า นี่มัน... อาวุธร้ายกาจเลย ถ้าถูกนำไปใช้คงอันตรายถึงชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#074": {
+   "src": "Well, thanks to ye, us Skyraiders might have it now, but using this weapon against civilization would be beyond terrible. We might be pirates but we ain't heartless!",
+   "dst": "เพราะเจ้า ตอนนี้มันอาจเป็นของ Skyraider แต่ถ้าใช้อาวุธนี้กับผู้คนคงเลวร้ายเกินบรรยาย เราอาจเป็นโจรสลัด แต่ไม่ได้ไร้หัวใจ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#075": {
+   "src": "I think we'll just have to keep this locked up nice n' tight once we get back. We'll be sure to tie this little cataclysm-in-a-box down much safer th'n those idiot men did.",
+   "dst": "กลับไปแล้วคงต้องล็อกมันไว้ให้แน่นหนา เราจะมัดหายนะในกล่องนี้ให้ปลอดภัยกว่าที่พวกผู้ชายโง่ๆ นั่นทำเยอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#076": {
+   "src": "Aha! Just gettin' back now. Let's head down and start the ceremony, shall we?",
+   "dst": "อะฮ่า! เพิ่งกลับมาถึง ลงไปเริ่มพิธีกันเถอะ ว่าไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#077": {
+   "src": "I am pleased to introduce our {~}th Skyraider Queen. Fer the sake of our people, let her reign last more than two weeks.",
+   "dst": "ข้ายินดีขอแนะนำราชินี Skyraider องค์ที่ {~} เพื่อประชาชนของเรา ขอให้นางครองราชย์ได้นานเกินสองสัปดาห์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#078": {
+   "src": "I, on behalf on the rest of the Skyraider people, have the honor of decoratin' you with the highest decoration of the Skyraiders, The Queen's Headpiece.",
+   "dst": "ในนามของชาว Skyraider ทั้งปวง ข้ามีเกียรติประดับเจ้าด้วยเครื่องอิสริยาภรณ์สูงสุดของ Skyraider นั่นคือ The Queen's Headpiece",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#079": {
+   "src": "Please use your sovereignty to lead us to the riches we deserve.",
+   "dst": "โปรดใช้อำนาจของท่านนำเราไปสู่ความมั่งคั่งที่เราสมควรได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 18",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#080": {
+   "src": "Talk to the trials overseer.",
+   "dst": "คุยกับผู้คุมบททดสอบ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#081": {
+   "src": "Yer Majesty. What an honour to have such a beautiful queen.",
+   "dst": "ฝ่าบาท ช่างเป็นเกียรติที่ได้ราชินีงดงามเช่นนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#082": {
+   "src": "Now that ye've been crown, we must give ye the reward.",
+   "dst": "ในเมื่อท่านได้รับมงกุฎแล้ว เราต้องมอบรางวัลให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#083": {
+   "src": "Benefits of being a queen I 'spose.",
+   "dst": "สิทธิพิเศษของราชินีน่ะนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#084": {
+   "src": "Please accept this, yer majesty.",
+   "dst": "โปรดรับไว้ ฝ่าบาท",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Trials Overseer",
+   "source": "wiki"
+  },
+  "Royal Trials#085": {
+   "src": "What item would you trade to Egpla for her outfit?",
+   "dst": "คุณจะเอาไอเทมอะไรแลกชุดกับ Egpla?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#086": {
+   "src": "Landwalker! Have ye found any of the items yet?",
+   "dst": "คนเดินดิน! หาของได้สักอย่างหรือยัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#087": {
+   "src": "Remember, I'd trade it to ye for [{~} Emerald Blocks], [{~} Dragonling Eggs] or [{~} Shiny Shell] from the cave to the south-east!",
+   "dst": "จำไว้ ข้าจะแลกกับ [{~} บล็อกมรกต], [{~} Dragonling Eggs] หรือ [{~} Shiny Shell] จากถ้ำทางตะวันออกเฉียงใต้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#088": {
+   "src": "Watcha be doin' here?",
+   "dst": "มาทำอะไรแถวนี้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#089": {
+   "src": "Don' waste your time 'round me! You've got trials to attend.",
+   "dst": "อย่ามาเสียเวลากับข้า! เจ้ามีบททดสอบต้องไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#090": {
+   "src": "As you walk, you hear arguments between other contestants either side of you...",
+   "dst": "ระหว่างเดิน คุณได้ยินผู้เข้าแข่งขันคนอื่นทั้งสองข้างทะเลาะกัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#091": {
+   "src": "Perhaps you could try throwing this at the window?",
+   "dst": "ลองขว้างสิ่งนี้ใส่หน้าต่างดูไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#092": {
+   "src": "What item would you like to throw at the window?",
+   "dst": "อยากขว้างไอเทมอะไรใส่หน้าต่าง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#093": {
+   "src": "It doesn't look like your leaf did anything... you should find another item to throw.",
+   "dst": "ใบไม้ดูไม่ได้ผลอะไรเลย... ควรหาไอเทมอื่นมาขว้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#094": {
+   "src": "It doesn't look like your grape did anything... you should find another item to throw.",
+   "dst": "องุ่นดูไม่ได้ผลอะไรเลย... ควรหาไอเทมอื่นมาขว้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#095": {
+   "src": "It doesn't look like your flower did anything... you should find another item to throw.",
+   "dst": "ดอกไม้ดูไม่ได้ผลอะไรเลย... ควรหาไอเทมอื่นมาขว้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#096": {
+   "src": "It doesn't look like your apple did anything... you should find another item to throw.",
+   "dst": "แอปเปิลดูไม่ได้ผลอะไรเลย... ควรหาไอเทมอื่นมาขว้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#097": {
+   "src": "It doesn't look like your egg did anything... you should find another item to throw.",
+   "dst": "ไข่ดูไม่ได้ผลอะไรเลย... ควรหาไอเทมอื่นมาขว้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#098": {
+   "src": "The rock broke the window! Now you've just got to find a way up there...",
+   "dst": "ก้อนหินทำหน้าต่างแตกแล้ว! ตอนนี้แค่หาทางขึ้นไปให้ได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#099": {
+   "src": "Looks like you're inside the Mansion... now you've got to your way to the treasure.",
+   "dst": "ดูเหมือนคุณเข้ามาในคฤหาสน์แล้ว... ตอนนี้ต้องหาทางไปถึงสมบัติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#100": {
+   "src": "Aye, we caught the dirty thief. We'll 'ave that treasure back, and ye can rot in this cell!",
+   "dst": "จับหัวขโมยสกปรกได้แล้ว เราจะเอาสมบัติคืน ส่วนแกก็เน่าอยู่ในห้องขังนี่ไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Mansion Guard",
+   "source": "captured.json"
+  },
+  "Royal Trials#101": {
+   "src": "Move along, ya' got clearance to board the airship!",
+   "dst": "ไปได้ เจ้าได้รับอนุญาตขึ้นเรือเหาะแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Mansion Guard",
+   "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "ไง คนเดินดิน หวังว่าชุดนั่นจะมีประโยชน์นะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
+  }
+ }
+}

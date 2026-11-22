@@ -1,0 +1,3346 @@
+{
+ "_meta": {
+  "quest": "The Canary Calls",
+  "count": 332,
+  "translated": 332,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Canary Calls#000": {
+   "src": "Day {~}, {~} AP",
+   "dst": "วันที่ {~}, {~} AP",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#001": {
+   "src": "Find out what's happening at the {p} coal mine at [{~}, {~}, -{~}].",
+   "dst": "ไปดูว่าเกิดอะไรขึ้นที่เหมืองถ่านหิน {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#002": {
+   "src": "Phew... Everyone make it out alright? That was...one hell of a sprint. I'm absolutely knackered.",
+   "dst": "เฮ้อ... ทุกคนออกมาได้ปลอดภัยนะ? นั่นมัน...วิ่งหนีตายสุดๆ เลย ฉันหมดแรงแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#003": {
+   "src": "I'm not sure, mate. I left a bunch of my stuff down there. Who knows if I'll get it back.",
+   "dst": "ไม่รู้สิเพื่อน ฉันทิ้งของไว้ข้างล่างเพียบ ไม่รู้จะได้คืนไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Micho",
+   "source": "wiki"
+  },
+  "The Canary Calls#004": {
+   "src": "Forget about that, what are we gonna tell the chief? That chopsy old fool is gonna kill us if he sees us not working.",
+   "dst": "ช่างมันเถอะ เราจะบอกหัวหน้าว่าไงดี? ไอ้แก่ปากมากนั่นฆ่าเราแน่ถ้าเห็นเราไม่ทำงาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#005": {
+   "src": "Oi, you! Listen, there was some kind of explosion down in the mines. We're not sure what it was or where it came from, but it surely didn't sound good.",
+   "dst": "เฮ้ คุณน่ะ! ฟังนะ มีระเบิดอะไรสักอย่างข้างล่างในเหมือง เราไม่รู้ว่ามันคืออะไรหรือมาจากไหน แต่เสียงไม่ดีแน่ๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#006": {
+   "src": "The four of us were the only blokes down in the mines, so everyone should be out safely. But I reckon we can't go back if this issue isn't resolved.",
+   "dst": "ข้างล่างมีแค่พวกเราสี่คน ทุกคนน่าจะออกมาได้อย่างปลอดภัย แต่ฉันว่าเรากลับลงไปไม่ได้ถ้าเรื่องนี้ยังไม่จบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#007": {
+   "src": "You must go to the chief and tell him about the situation. Head down this mineshaft and turn left, and he should be there.",
+   "dst": "คุณต้องไปบอกหัวหน้าเรื่องนี้ ลงไปตามปล่องเหมืองนี่แล้วเลี้ยวซ้าย เขาน่าจะอยู่ตรงนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#008": {
+   "src": "Just, uh... Make sure not to mention us by name. Now, if you'll excuse us, we'll...be on our way.",
+   "dst": "แค่ เอ่อ... อย่าเอ่ยชื่อพวกเรานะ เอาล่ะ ขอตัว พวกเราจะ...ไปละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#009": {
+   "src": "Turn left from the mine's entrance and speak to the chief at [{~}, {~}, -{~}].",
+   "dst": "เลี้ยวซ้ายจากทางเข้าเหมืองแล้วคุยกับหัวหน้าที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#010": {
+   "src": "That's right, keep it moving! The whole of {p} is going to run out of coal at this pace!",
+   "dst": "ใช่แล้ว ทำต่อไป! ด้วยความเร็วแบบนี้ ทั้ง {p} ได้ถ่านหินหมดแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#011": {
+   "src": "Eh? What do you want? Only registered miners are allowed beyond this point. Speak up or get off the premises.",
+   "dst": "ห๊ะ? ต้องการอะไร? เลยจากตรงนี้ไปให้เฉพาะคนงานเหมืองที่ลงทะเบียน พูดมาหรือไม่ก็ออกไปจากที่นี่ซะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#012": {
+   "src": "...An explosion? In the mines? Just now?",
+   "dst": "...ระเบิด? ในเหมือง? เมื่อกี้นี้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#013": {
+   "src": "EMERGENCY BREAK TIME, YOU GERBILS! EVERYONE COME AND MEET ME BY THE ENTRANCE! NOW!!!",
+   "dst": "พักฉุกเฉิน ไอ้พวกหนูเจอร์บิล! ทุกคนมาพบข้าที่ทางเข้า! เดี๋ยวนี้!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#014": {
+   "src": "Alright, you lot better listen bloody carefully. An explosion has been reported in the mines. You all know what that means, yes?",
+   "dst": "เอาล่ะ พวกแกตั้งใจฟังให้ดีๆ มีรายงานว่าเกิดระเบิดในเหมือง พวกแกรู้ใช่ไหมว่านั่นหมายความว่าไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#015": {
+   "src": "Early dismissal?",
+   "dst": "เลิกงานเร็ว?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#016": {
+   "src": "Month-long vacation?",
+   "dst": "พักร้อนหนึ่งเดือน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#017": {
+   "src": "Paid leave?!",
+   "dst": "ลาได้เงิน?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#018": {
+   "src": "...Am I getting fired?",
+   "dst": "...ผมโดนไล่ออกเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#019": {
+   "src": "No, you bunch of ingrates! One of you needs to take the ol' canary down to the mines and see whatever the hell's going on.",
+   "dst": "ไม่ใช่ ไอ้พวกเนรคุณ! ต้องมีใครสักคนพานกคีรีบูนเฒ่าลงไปในเหมือง แล้วดูว่าเกิดบ้าอะไรขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#020": {
+   "src": "Now, which one of you blokes would be willing to-",
+   "dst": "เอาล่ะ ใครในพวกแกจะยอม-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#021": {
+   "src": "NOT IT!",
+   "dst": "ไม่เอา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miners",
+   "source": "wiki"
+  },
+  "The Canary Calls#022": {
+   "src": "Right then. I guess that leaves you, young lad. What do you say? Want a job?",
+   "dst": "งั้นก็ ข้าว่าคงเหลือแต่แกแล้วไอ้หนุ่ม ว่าไง? อยากได้งานไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#023": {
+   "src": "You sure? I'll pay a lot, and it won't be dangerous. Even if it is, you've got all that armor on you!",
+   "dst": "แน่ใจรึ? ข้าจ่ายเยอะนะ แล้วก็ไม่อันตรายด้วย ต่อให้อันตราย แกก็ใส่เกราะเต็มตัวอยู่แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#024": {
+   "src": "You're right. I'll do it.",
+   "dst": "ก็จริง ตกลง ทำก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#025": {
+   "src": "That's the spirit! Come on then, let me introduce you to our little feathered mascot.",
+   "dst": "นั่นแหละจิตวิญญาณ! มาเลย ข้าจะแนะนำมาสคอตขนนกตัวน้อยของเราให้รู้จัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#026": {
+   "src": "You'll get a bloody mountain of emeralds, god damn it! This is a once in a lifetime opportunity! Do you want it or not?",
+   "dst": "แกจะได้มรกตกองเท่าภูเขา ให้ตายสิ! นี่มันโอกาสครั้งเดียวในชีวิต! จะเอาหรือไม่เอา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#027": {
+   "src": "Good. Now, hurry up and follow me.",
+   "dst": "ดี ทีนี้รีบตามข้ามา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#028": {
+   "src": "No. I don't care.",
+   "dst": "ไม่ ไม่สนหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#029": {
+   "src": "You know what? This is ridiculous. The whole of {p} is at danger, and you're playing games with ME?! I know you can do it. Follow me. Now.",
+   "dst": "รู้อะไรไหม? นี่มันไร้สาระ ทั้ง {p} กำลังตกอยู่ในอันตราย แล้วแกยังมาเล่นตลกกับข้าอีก?! ข้ารู้ว่าแกทำได้ ตามมา เดี๋ยวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#030": {
+   "src": "Scared speechless, eh? Don't worry, it'll be an easy job. Come on, follow me to the canary's cage.",
+   "dst": "กลัวจนพูดไม่ออกเลยรึ? ไม่ต้องห่วง งานง่ายๆ มาเถอะ ตามข้าไปที่กรงนกคีรีบูน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#031": {
+   "src": "Meet our canary! She's such a beaut.",
+   "dst": "นี่ไงนกคีรีบูนของเรา! สวยใช่ไหมล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#032": {
+   "src": "You see, whenever we hear news of an explosion, we always bring our canary with us to check it out. They can detect potential gases much earlier than we can.",
+   "dst": "เห็นไหม ทุกครั้งที่ได้ข่าวว่ามีระเบิด เราจะพานกคีรีบูนไปตรวจด้วยเสมอ พวกมันจับแก๊สได้เร็วกว่าเรามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#033": {
+   "src": "Let me just get the key and-",
+   "dst": "ขอข้าไปหยิบกุญแจแล้ว-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#034": {
+   "src": "WAIT, WHAT? WHERE'S THE BLOODY KEY? WHICH ONE OF YOU LOT IS RESPONSIBLE?! I SWEAR I'M GONNA...",
+   "dst": "เดี๋ยว อะไรนะ? กุญแจบ้านั่นไปไหน? ใครในพวกแกเป็นคนทำ?! สาบานเลยว่าข้าจะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#035": {
+   "src": "[+{~} Chewed-up Toothpick]",
+   "dst": "[+{~} ไม้จิ้มฟันที่ถูกเคี้ยว]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#036": {
+   "src": "...Listen up, lad. Take this toothpick I've been chewing on. I need you to pick the cage's lock. It's a little wet, but it should do the trick. Understood? Good, now hurry up!",
+   "dst": "...ฟังนะไอ้หนุ่ม เอาไม้จิ้มฟันที่ข้าเคี้ยวอยู่นี่ไป ข้าต้องการให้แกงัดกุญแจกรง มันเปียกนิดหน่อย แต่น่าจะใช้ได้ เข้าใจไหม? ดี ทีนี้รีบเข้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#037": {
+   "src": "Unlock the canary's cage at [{~}, {~}, -{~}]",
+   "dst": "ปลดล็อกกรงนกคีรีบูนที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#038": {
+   "src": "Doing just fine, lad. Almost there...",
+   "dst": "ไปได้สวยไอ้หนุ่ม เกือบแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#039": {
+   "src": "Little old birdie is getting quite excited! Keep it up.",
+   "dst": "เจ้านกน้อยตื่นเต้นใหญ่แล้ว! ทำต่อไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#040": {
+   "src": "Right then, lad! It's time to begin the-",
+   "dst": "เอาล่ะไอ้หนุ่ม! ถึงเวลาเริ่ม-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#041": {
+   "src": "OW! Bloody hell! Those are some freakishly sharp claws! What are you playing at?!",
+   "dst": "โอ๊ย! บ้าเอ๊ย! กรงเล็บคมเป็นบ้าเลย! เล่นอะไรของแกวะ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#042": {
+   "src": "Easy, Ryan. We won't lose it. We're in this together. {u} will take care of it.",
+   "dst": "ใจเย็น Ryan เราไม่ตกงานหรอก เราอยู่ด้วยกัน {u} จะจัดการเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "Thesead Coal Miner",
+   "source": "captured",
+   "similar": {
+    "text": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
+    "file": "quest/the-canary-calls.json",
+    "ratio": 0.974,
+    "reason": "placeholders"
+   }
+  },
+  "The Canary Calls#043": {
+   "src": "Well, I think she likes you, lad. Doesn't like me, apparently.",
+   "dst": "ข้าว่ามันชอบแกนะไอ้หนุ่ม ดูเหมือนจะไม่ชอบข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#044": {
+   "src": "I was going to feed her, but I suppose you can do the honors. Or not, seeing as she's been particularly troublesome...",
+   "dst": "ข้ากำลังจะให้อาหารมัน แต่ให้เกียรติแกทำก็ได้ หรือไม่ก็ไม่ต้อง เห็นวันนี้มันพยศเป็นพิเศษ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#045": {
+   "src": "Anyway, do as you please. I'll be waiting by the elevator in the mineshaft. Hurry up, and don't make me wait!",
+   "dst": "ยังไงก็ตามใจแก ข้าจะรออยู่ที่ลิฟต์ในปล่องเหมือง รีบหน่อย อย่าให้ข้ารอ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#046": {
+   "src": "Head to the mine elevator at [{~}, {~}, -{~}].",
+   "dst": "ไปที่ลิฟต์เหมืองที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#047": {
+   "src": "Right then, lad! I suppose you might want to know more about this job.",
+   "dst": "เอาล่ะไอ้หนุ่ม! แกคงอยากรู้เรื่องงานนี้มากขึ้นสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#048": {
+   "src": "As I said before, when unknown explosions occur in the mines, that's usually a sign that something bad happened.",
+   "dst": "อย่างที่บอกไปแล้ว เวลามีระเบิดไม่ทราบสาเหตุในเหมือง มักเป็นสัญญาณว่ามีเรื่องร้ายเกิดขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#049": {
+   "src": "Most of the time, an awfully putrid gas appears. This is where our canary comes in. Once she verifies that a gas is present, we decide whether or not to temporarily close the mine.",
+   "dst": "ส่วนใหญ่จะมีแก๊สเหม็นเน่าน่าขยะแขยงโผล่มา นี่แหละที่นกคีรีบูนของเรามีบทบาท พอมันยืนยันว่ามีแก๊ส เราก็จะตัดสินใจว่าจะปิดเหมืองชั่วคราวหรือไม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#050": {
+   "src": "I presume you met Daffyd and his group, correct? Thankfully, they were the only ones down in the mines.",
+   "dst": "แกคงเจอ Daffyd กับพรรคพวกแล้วใช่ไหม? โชคดีที่มีแค่พวกนั้นอยู่ข้างล่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#051": {
+   "src": "...Wait, where the hell even are they? Did I not tell them to...",
+   "dst": "...เดี๋ยว พวกนั้นไปอยู่ไหนวะเนี่ย? ข้าไม่ได้บอกให้พวกมัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#052": {
+   "src": "Eh, doesn't matter. Lad, point is, I want you to check whether that gas is still there, if at all.",
+   "dst": "เอ๊ะ ช่างเถอะ ไอ้หนุ่ม ประเด็นคือข้าอยากให้แกตรวจว่าแก๊สนั่นยังอยู่ไหม ถ้ามีจริงน่ะนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#053": {
+   "src": "We'll use the elevator behind me to get down into the mines. Just let me pull this here lever to activate it...",
+   "dst": "เราจะใช้ลิฟต์ข้างหลังข้าลงไปในเหมือง ขอข้าดึงคันโยกนี่เพื่อเปิดใช้ก่อน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#054": {
+   "src": "...WHY ISN'T THIS BLOODY CONTRAPTION WORKING??! WORK, WORK, GOD DAMN IT!!",
+   "dst": "...ทำไมเครื่องบ้านี่ไม่ทำงานวะ??! ทำงานสิ ทำงาน ให้ตายเถอะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#055": {
+   "src": "Must've been Daffyd and his group... No worries, lad. I've got, uh...a last resort, so to speak.",
+   "dst": "ต้องเป็น Daffyd กับพวกแน่... ไม่ต้องห่วงไอ้หนุ่ม ข้ามี เอ่อ...ไม้ตายสุดท้าย ว่างั้นเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#056": {
+   "src": "[+{~} Gear Stick]",
+   "dst": "[+{~} คันเกียร์]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#057": {
+   "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The {u}'.",
+   "dst": "ชอบปาร์ตี้เต้นรำไหม? ท่าเต้นพวกนั้นแย่สุดๆ จนฉันอยากตั้งชื่อให้ว่า 'ท่า {u}' เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "Canary",
+   "source": "captured",
+   "similar": {
+    "text": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
+    "file": "quest/the-canary-calls.json",
+    "ratio": 0.984,
+    "reason": "placeholders"
+   }
+  },
+  "The Canary Calls#058": {
+   "src": "You'll need to ride a minecart down into the mines. Thing is, we haven't used them to transport people in...years.",
+   "dst": "แกต้องนั่งรถรางลงไปในเหมือง ปัญหาคือ เราไม่ได้ใช้มันขนคนมา...หลายปีแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#059": {
+   "src": "Why? Erm, well... See for yourself.",
+   "dst": "ทำไมรึ? เอ่อ ก็... ดูเอาเองแล้วกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#060": {
+   "src": "Our transporter minecarts are manual. Miners around here prefer automatic.",
+   "dst": "รถรางขนส่งของเราเป็นเกียร์ธรรมดา คนงานเหมืองแถวนี้ชอบเกียร์ออโต้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#061": {
+   "src": "For you, it should be no issue controlling it. There's instructions attached to the gear stick.",
+   "dst": "สำหรับแก ควบคุมมันได้สบายอยู่แล้ว มีคู่มือติดไว้ที่คันเกียร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#062": {
+   "src": "Now then, go into the mineshaft, following the rails behind me. You'll be able to summon a minecart there.",
+   "dst": "ทีนี้ เข้าไปในปล่องเหมือง ตามรางข้างหลังข้าไป แกจะเรียกรถรางได้ที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#063": {
+   "src": "Use the rails to get to the gas leakage.",
+   "dst": "ใช้รางไปยังจุดที่แก๊สรั่ว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#064": {
+   "src": "Follow the rail tracks and find a way to escape the mine",
+   "dst": "ตามรางไปแล้วหาทางหนีออกจากเหมือง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#065": {
+   "src": "Continue further in the mine to find a way out.",
+   "dst": "เข้าไปในเหมืองลึกกว่านี้เพื่อหาทางออก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#066": {
+   "src": "Hello.",
+   "dst": "หวัดดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#067": {
+   "src": "Forgive my interference.",
+   "dst": "ขอโทษที่เข้ามายุ่งนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#068": {
+   "src": "I am but a figment of your imagination. To you, I am not real.",
+   "dst": "ฉันเป็นแค่ภาพในจินตนาการของเธอ สำหรับเธอ ฉันไม่มีตัวตน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#069": {
+   "src": "The mysterious force that brought death upon me... It changed me.",
+   "dst": "พลังลึกลับที่นำความตายมาสู่ฉัน... มันเปลี่ยนฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#070": {
+   "src": "So too will it change you. I will make that happen. Just for you.",
+   "dst": "มันจะเปลี่ยนเธอด้วย ฉันจะทำให้เป็นอย่างนั้น เพื่อเธอคนเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#071": {
+   "src": "No need to thank me. It is the least I can do.",
+   "dst": "ไม่ต้องขอบคุณ เป็นสิ่งน้อยที่สุดที่ฉันทำได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#072": {
+   "src": "Moments like these are cherished. Savor the moment with me. Would you like to die with me?",
+   "dst": "ช่วงเวลาแบบนี้ควรค่าแก่การทะนุถนอม ดื่มด่ำไปกับฉันสิ อยากตายไปพร้อมกับฉันไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#073": {
+   "src": "No. I won't go that easily.",
+   "dst": "ไม่ ไม่ยอมไปง่ายๆ หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#074": {
+   "src": "I see. So you want to make this an unforgettable experience. I appreciate the thoughtfulness.",
+   "dst": "เข้าใจแล้ว เธออยากให้นี่เป็นประสบการณ์ที่ไม่มีวันลืม ฉันซาบซึ้งในความใส่ใจนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#075": {
+   "src": "Let's have some fun.",
+   "dst": "มาสนุกกันหน่อยเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#076": {
+   "src": "Yes, but make it quick...",
+   "dst": "ได้ แต่ขอเร็วๆ นะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#077": {
+   "src": "I was hoping we could stay for a little longer. If that is your choice, then so be it.",
+   "dst": "ฉันหวังว่าเราจะได้อยู่ด้วยกันอีกสักหน่อย ถ้านั่นคือทางที่เธอเลือก ก็ตามนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#078": {
+   "src": "See you on the other side.",
+   "dst": "แล้วเจอกันอีกฝั่งนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#079": {
+   "src": "I would be more than glad to. Sit back and relax.",
+   "dst": "ยินดีอย่างยิ่ง นั่งพิงสบายๆ แล้วผ่อนคลายเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#080": {
+   "src": "How was your day today?",
+   "dst": "วันนี้เป็นยังไงบ้าง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#081": {
+   "src": "Mine could have been better. Cramped up in a cage all day, then suddenly witnessing my death in front of an incompetent human.",
+   "dst": "ของฉันน่าจะดีกว่านี้ ถูกขังในกรงแคบๆ ทั้งวัน แล้วจู่ๆ ก็ต้องเห็นตัวเองตายต่อหน้ามนุษย์ไร้ความสามารถ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#082": {
+   "src": "You couldn't even save me. How pathetic.",
+   "dst": "เธอช่วยฉันไม่ได้ด้วยซ้ำ น่าสมเพชจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#083": {
+   "src": "So, anyway, do you come here often?",
+   "dst": "ว่าแต่ มาที่นี่บ่อยไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#084": {
+   "src": "Oh, wait. This is your first time. As well as your last time. That's very poetic. Do you want to become a poet?",
+   "dst": "อ้อ จริงสิ นี่เป็นครั้งแรกของเธอ และเป็นครั้งสุดท้ายด้วย ช่างเป็นกวีจริงๆ อยากเป็นกวีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#085": {
+   "src": "I know a good poem. Want to hear it?",
+   "dst": "ฉันรู้จักกลอนดีๆ บทหนึ่ง อยากฟังไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#086": {
+   "src": "You don't die often,",
+   "dst": "เธอไม่ค่อยตาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#087": {
+   "src": "You have maximum soul points,",
+   "dst": "แต้มวิญญาณเต็มเปี่ยม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#088": {
+   "src": "That's about to change.",
+   "dst": "แต่กำลังจะเปลี่ยน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#089": {
+   "src": "You mess up sometimes,",
+   "dst": "บางทีเธอพลาด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#090": {
+   "src": "Mistakes are part of Life,",
+   "dst": "ความผิดพลาดคือชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#091": {
+   "src": "Death is a part too.",
+   "dst": "ความตายก็เช่นกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#092": {
+   "src": "Your soul points are low,",
+   "dst": "แต้มวิญญาณเหลือน้อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#093": {
+   "src": "You will lose a lot of things,",
+   "dst": "เธอจะเสียของมากมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#094": {
+   "src": "Better not get killed.",
+   "dst": "อย่าตายจะดีกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#095": {
+   "src": "You're a casual,",
+   "dst": "เธอแค่เล่นชิลๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#096": {
+   "src": "You likely hate professions,",
+   "dst": "คงเกลียดงานอาชีพ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#097": {
+   "src": "At least you're with me.",
+   "dst": "อย่างน้อยมีฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#098": {
+   "src": "You are well-rounded,",
+   "dst": "เธอรอบด้าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#099": {
+   "src": "You are skilled at everything,",
+   "dst": "เก่งไปซะทุกอย่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#100": {
+   "src": "The jack of all trades.",
+   "dst": "เป็นสารพัดช่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#101": {
+   "src": "Your level is maxed,",
+   "dst": "เลเวลเธอเต็มแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#102": {
+   "src": "You spend hours getting that,",
+   "dst": "ใช้หลายชั่วโมงไต่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#103": {
+   "src": "Don't know why you're here.",
+   "dst": "มาทำอะไรที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#104": {
+   "src": "You love professions,",
+   "dst": "เธอรักงานอาชีพ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#105": {
+   "src": "Love that cannot be defined,",
+   "dst": "รักที่ไม่อาจนิยาม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#106": {
+   "src": "Please go take a break.",
+   "dst": "ไปพักบ้างเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#107": {
+   "src": "You are average,",
+   "dst": "เธอธรรมดา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#108": {
+   "src": "The most average Joe I've seen,",
+   "dst": "ธรรมดาที่สุดที่เคยเห็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#109": {
+   "src": "What more can I say.",
+   "dst": "จะพูดอะไรได้อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#110": {
+   "src": "How was that? It was beautiful, wasn't it?",
+   "dst": "เป็นไงบ้าง? งดงามใช่ไหมล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#111": {
+   "src": "Silence is bliss. You must not have very many friends.",
+   "dst": "ความเงียบคือความสุข เธอคงมีเพื่อนไม่มากสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#112": {
+   "src": "That's okay. I am your friend. Am I your friend? Please say yes. I'm very lonely.",
+   "dst": "ไม่เป็นไร ฉันเป็นเพื่อนเธอเอง ฉันเป็นเพื่อนเธอใช่ไหม? ตอบว่าใช่ทีเถอะ ฉันเหงามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#113": {
+   "src": "I had friends too, once. They were all taken by a bunch of selfish coal miners. Then died to their incompetence.",
+   "dst": "ฉันเองก็เคยมีเพื่อน พวกมันถูกคนงานเหมืองเห็นแก่ตัวพาตัวไปหมด แล้วก็ตายเพราะความไร้ความสามารถของพวกนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#114": {
+   "src": "But you are different. You are not like the others. I like you. I love you. I love you so much.",
+   "dst": "แต่เธอไม่เหมือนกัน เธอไม่เหมือนคนอื่น ฉันชอบเธอ ฉันรักเธอ ฉันรักเธอมากเหลือเกิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#115": {
+   "src": "Love is patient.",
+   "dst": "ความรักนั้นอดทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#116": {
+   "src": "Love is kind.",
+   "dst": "ความรักนั้นใจดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#117": {
+   "src": "Love does not envy.",
+   "dst": "ความรักไม่อิจฉา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#118": {
+   "src": "Love does not boast.",
+   "dst": "ความรักไม่โอ้อวด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#119": {
+   "src": "Love is not arrogant.",
+   "dst": "ความรักไม่หยิ่งผยอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#120": {
+   "src": "Love is not rude.",
+   "dst": "ความรักไม่หยาบคาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#121": {
+   "src": "Love is not irritible.",
+   "dst": "ความรักไม่ฉุนเฉียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#122": {
+   "src": "Love is not resentful.",
+   "dst": "ความรักไม่ผูกใจเจ็บ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#123": {
+   "src": "It bears all things.",
+   "dst": "ทนได้ทุกสิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#124": {
+   "src": "It hopes all things.",
+   "dst": "หวังในทุกสิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#125": {
+   "src": "It endures all things.",
+   "dst": "อดทนต่อทุกสิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#126": {
+   "src": "It is everlasting.",
+   "dst": "มันคงอยู่นิรันดร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#127": {
+   "src": "Goodbye.",
+   "dst": "ลาก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#128": {
+   "src": "Hello again.",
+   "dst": "สวัสดีอีกครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#129": {
+   "src": "I will give you another chance to redeem yourself.",
+   "dst": "ฉันจะให้โอกาสเธอแก้ตัวอีกครั้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#130": {
+   "src": "So kindly, I will tell you again.",
+   "dst": "ฉันใจดีนะ จะบอกเธออีกครั้งก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#131": {
+   "src": "Fight the Canary.",
+   "dst": "สู้กับนกคีรีบูน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#132": {
+   "src": "Let's do a little warm-up, shall we?",
+   "dst": "มาวอร์มอัพกันหน่อยดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#133": {
+   "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
+   "dst": "ชอบปาร์ตี้เต้นรำไหม? ท่าเต้นพวกนั้นแย่สุดๆ จนฉันอยากตั้งชื่อให้ว่า 'ท่า '",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#134": {
+   "src": "Let's do something I like to call 'The Canary'.",
+   "dst": "มาเล่นสิ่งที่ฉันเรียกว่า 'นกคีรีบูน' กันเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#135": {
+   "src": "Hands off those, if you would be so kind.",
+   "dst": "เอามือออกจากตรงนั้นด้วย ถ้าไม่รังเกียจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#136": {
+   "src": "Amazing... That really hit different.",
+   "dst": "สุดยอด... อันนั้นเจ็บไม่เบาเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#137": {
+   "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
+   "dst": "จริงแท้ เธอคือผู้ที่ทำลายยักษ์หินได้ (ในภาษา Gavel โบราณ)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#138": {
+   "src": "I suppose this is it.",
+   "dst": "คงถึงเวลาแล้วสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#139": {
+   "src": "It's been fun, kid.",
+   "dst": "สนุกดีนะ เจ้าหนู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#140": {
+   "src": "Alas, time runs short.",
+   "dst": "อนิจจา เวลาใกล้หมดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#141": {
+   "src": "You are about to enter the cruel, real world.",
+   "dst": "เธอกำลังจะเข้าสู่โลกความจริงอันโหดร้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#142": {
+   "src": "Kill me now, so we can spend our final moments together in bliss.",
+   "dst": "ฆ่าฉันซะ เราจะได้ใช้ช่วงเวลาสุดท้ายด้วยกันอย่างมีความสุข",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#143": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "ยอดเยี่ยม เธอคือสุดยอดของมนุษยชาติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#144": {
+   "src": "Have fun.",
+   "dst": "ขอให้สนุก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#145": {
+   "src": "No, I will not.",
+   "dst": "ไม่ ไม่ทำหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#146": {
+   "src": "Kill me. Now.",
+   "dst": "ฆ่าฉัน เดี๋ยวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#147": {
+   "src": "Kill me now or you'll live to regret it.",
+   "dst": "ฆ่าฉันซะ ไม่งั้นเธอจะเสียใจไปตลอดชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#148": {
+   "src": "Kill me now or I'll destroy {p}.",
+   "dst": "ฆ่าฉันซะ ไม่งั้นฉันจะทำลาย {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#149": {
+   "src": "Kill me now or I'll destroy Gavel.",
+   "dst": "ฆ่าฉันซะ ไม่งั้นฉันจะทำลาย Gavel",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#150": {
+   "src": "Kill me now or I'll ruin every single province.",
+   "dst": "ฆ่าฉันซะ ไม่งั้นฉันจะทำลายทุกแคว้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#151": {
+   "src": "Kill me now or I'll destroy the world.",
+   "dst": "ฆ่าฉันซะ ไม่งั้นฉันจะทำลายโลก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#152": {
+   "src": "Okay, so you don't care about the world. In that case, kill me now or I'll kill your friends.",
+   "dst": "โอเค เธอไม่แคร์โลกสินะ งั้นฆ่าฉันซะ ไม่งั้นฉันจะฆ่าเพื่อนเธอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#153": {
+   "src": "Kill me now or I'll do LITERALLY ANYTHING!",
+   "dst": "ฆ่าฉันซะ ไม่งั้นฉันจะทำทุกอย่างจริงๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#154": {
+   "src": "No no. No no no no no. No. It's too late.",
+   "dst": "ไม่ ไม่ ไม่ไม่ไม่ไม่ไม่ ไม่ สายไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#155": {
+   "src": "I just wanted to play again. Oh well.",
+   "dst": "ฉันแค่อยากเล่นอีกครั้ง ช่างเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#156": {
+   "src": "At least I'll be in your memories. Forever. And ever.",
+   "dst": "อย่างน้อยฉันจะอยู่ในความทรงจำของเธอ ตลอดไป และตลอดกาล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#157": {
+   "src": "...Hey! They're waking up!",
+   "dst": "...เฮ้! ฟื้นแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Canary Calls#158": {
+   "src": "Keep performing CPR, they're almost awake!",
+   "dst": "ทำ CPR ต่อไป ใกล้ฟื้นแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#159": {
+   "src": "No way! I actually did it! I saved their life!",
+   "dst": "ไม่จริงน่า! ฉันทำได้! ฉันช่วยชีวิตคนไว้ได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#160": {
+   "src": "We better get a raise for this!",
+   "dst": "งานนี้เราควรได้ขึ้นเงินเดือนนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#161": {
+   "src": "What the?! Who the hell let you in my house?",
+   "dst": "อะไรวะ?! ใครให้พวกแกเข้ามาในบ้านข้า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#162": {
+   "src": "Boss! I can explain!",
+   "dst": "หัวหน้า! ผมอธิบายได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#163": {
+   "src": "No, you can't. Get outta here before I start lowering your salary.",
+   "dst": "ไม่ แกอธิบายไม่ได้ ออกไปซะก่อนข้าจะหักเงินเดือน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#164": {
+   "src": "But, boss! I saved-",
+   "dst": "แต่หัวหน้า! ผมช่วย-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#165": {
+   "src": "GO!!",
+   "dst": "ไป!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#166": {
+   "src": "Well then, lad! Despite their incompetence, they still managed to save your skin.",
+   "dst": "เอาล่ะไอ้หนุ่ม! ถึงพวกนั้นจะไร้ความสามารถ แต่ก็ยังช่วยชีวิตแกไว้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#167": {
+   "src": "Come speak to me for a quick debriefing.",
+   "dst": "มาคุยกับข้า สรุปเรื่องกันสั้นๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#168": {
+   "src": "Talk to Chief Clight.",
+   "dst": "คุยกับหัวหน้า Clight",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#169": {
+   "src": "I sent my miners down to save you as soon as we felt that earthquake. It was so strong that I genuinely thought the world was ending.",
+   "dst": "ข้าส่งคนงานลงไปช่วยแกทันทีที่รู้สึกถึงแผ่นดินไหว มันแรงจนข้านึกว่าโลกจะแตกจริงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#170": {
+   "src": "I'm jolly sorry for forcing you to take on this job. This whole situation was completely unexpected.",
+   "dst": "ข้าขอโทษจริงๆ ที่บังคับให้แกรับงานนี้ เรื่องทั้งหมดนี่ไม่มีใครคาดคิดเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#171": {
+   "src": "Typically, gases are cleared up almost instantly. This time, however, it seemed to have been a lot more potent... But how?",
+   "dst": "ปกติแก๊สจะหายไปแทบจะทันที แต่ครั้งนี้ดูเหมือนมันจะรุนแรงกว่ามาก... แต่เป็นไปได้ยังไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#172": {
+   "src": "...{p}. It stirs once more. That thing... It has already caused too much hardship for this area to handle.",
+   "dst": "...{p} มันขยับอีกแล้ว เจ้าสิ่งนั้น... มันสร้างความลำบากให้แถบนี้มากเกินจะรับไหวแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#173": {
+   "src": "It must be destroyed, once and for all. How that will happen, I do not know. But you...",
+   "dst": "มันต้องถูกทำลายให้สิ้นซาก จะทำยังไงข้าก็ไม่รู้ แต่แก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#174": {
+   "src": "Tell you what, lad! I'll give you, and only you, permission to access parts of the mine, right where we mine our world-famous {p} coal.",
+   "dst": "เอางี้ไอ้หนุ่ม! ข้าจะให้แก และแกคนเดียว เข้าไปในส่วนของเหมืองที่เราขุดถ่านหิน {p} อันเลื่องชื่อได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#175": {
+   "src": "Consider yourself a part-time {p} coal miner. You've earned it, lad.",
+   "dst": "ถือว่าแกเป็นคนงานเหมือง {p} พาร์ทไทม์แล้วกัน แกสมควรได้ไอ้หนุ่ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#176": {
+   "src": "Can't hit me with that.",
+   "dst": "แค่นั้นโดนฉันไม่ได้หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#177": {
+   "src": "That tickles.",
+   "dst": "จั๊กจี้จัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#178": {
+   "src": "Is this the height of your skill?",
+   "dst": "ฝีมือเธอมีแค่นี้เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#179": {
+   "src": "Try harder.",
+   "dst": "พยายามอีกหน่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#180": {
+   "src": "Are you even playing the game?",
+   "dst": "เธอเล่นเกมเป็นหรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#181": {
+   "src": "Go ahead. Run right into it.",
+   "dst": "เอาเลย วิ่งชนเข้าไปเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#182": {
+   "src": "Was that you, or will you blame that on lag?",
+   "dst": "นั่นฝีมือเธอ หรือจะโทษว่าแลค?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#183": {
+   "src": "Feels nice, doesn't it?",
+   "dst": "รู้สึกดีใช่ไหมล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#184": {
+   "src": "Even a snail could dodge that.",
+   "dst": "หอยทากยังหลบได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#185": {
+   "src": "You can't escape your doom.",
+   "dst": "เธอหนีชะตากรรมไม่พ้นหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#186": {
+   "src": "Nice going bozo, you fell off.",
+   "dst": "เก่งมากเจ้าโง่ ตกลงไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#187": {
+   "src": "Interesting tactic! Do it again.",
+   "dst": "กลยุทธ์น่าสนใจ! ทำอีกสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#188": {
+   "src": "Nice try, but that won't work.",
+   "dst": "พยายามได้ดี แต่ไม่ได้ผลหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#189": {
+   "src": "Hey up! Aren't you that Wynn soldier we've heard about? You look proper tough, is all.",
+   "dst": "เฮ้ หวัดดี! คุณคือทหาร Wynn ที่เราได้ยินมาใช่ไหม? ก็ดูแกร่งจริงๆ นะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#190": {
+   "src": "No, this is definitely them! The name's {u}, right?",
+   "dst": "ไม่ คนนี้แหละแน่นอน! ชื่อ {u} ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#191": {
+   "src": "Woah, this kid's a soldier? I wish I had that kind of job... I'd imagine it's much better than this crap.",
+   "dst": "ว้าว เด็กนี่เป็นทหารเหรอ? อยากได้งานแบบนั้นบ้างจัง... คงดีกว่างานห่วยๆ นี่เยอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#192": {
+   "src": "Yeah, I really hate this job, man. That and the chief makes me pull my hair out... In fact, I already went bald because of it!",
+   "dst": "ใช่ ฉันเกลียดงานนี้สุดๆ เลยเพื่อน แถมหัวหน้ายังทำให้ฉันอยากทึ้งผมตัวเอง... ที่จริงฉันหัวล้านเพราะเรื่องนี้แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#193": {
+   "src": "Dude, the chief scares the crap out of me. I'm surprised that I still have this job. Looks like we might lose it if the mines ain't restored fast enough.",
+   "dst": "เพื่อน หัวหน้าน่ากลัวสุดๆ ฉันแปลกใจที่ยังไม่โดนไล่ออก ดูท่าเราอาจตกงานถ้าเหมืองไม่กลับมาเร็วพอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#194": {
+   "src": "I-I don't want to lose this job, man! I've got a wife and two goldfish!",
+   "dst": "ฉ-ฉันไม่อยากตกงานนะเพื่อน! ฉันมีเมียกับปลาทองอีกสองตัว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#195": {
+   "src": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
+   "dst": "ใจเย็น Ryan เราไม่ตกงานหรอก เราอยู่ด้วยกัน จะจัดการเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#196": {
+   "src": "Our very lives are in your hands, soldier. Good luck, and be careful. The mines are quite treacherous even for people like you.",
+   "dst": "ชีวิตพวกเราอยู่ในมือคุณแล้ว ทหาร โชคดี และระวังตัวด้วย เหมืองอันตรายมากแม้แต่กับคนอย่างคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#197": {
+   "src": "We still can't believe we found you. I'm proper shocked.",
+   "dst": "เรายังไม่อยากเชื่อเลยว่าเจอคุณ ฉันตกใจสุดๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#198": {
+   "src": "We had to use that blasted archaic minecart system because the elevator was still busted.",
+   "dst": "เราต้องใช้ระบบรถรางโบราณบ้าๆ นั่น เพราะลิฟต์ยังพังอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#199": {
+   "src": "Everyone was exhausted from it. But just when all hope was seemingly lost, we found you laying on the ground.",
+   "dst": "ทุกคนเหนื่อยกันหมด แต่ตอนที่ดูเหมือนจะหมดหวัง เราก็เจอคุณนอนอยู่บนพื้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#200": {
+   "src": "You were violently twitching about, as if you were possessed by something. It was scary.",
+   "dst": "คุณชักกระตุกรุนแรง เหมือนถูกอะไรสิง น่ากลัวมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#201": {
+   "src": "Whatever the effects of that gas are, we want absolutely none of it. I'm never stepping foot inside of that bloody mine ever again.",
+   "dst": "ไม่ว่าแก๊สนั่นจะส่งผลยังไง เราไม่อยากยุ่งด้วยเลย ฉันจะไม่เหยียบเข้าไปในเหมืองบ้านั่นอีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#202": {
+   "src": "For the sake of our jobs and {p}, the Colossus must be stopped.",
+   "dst": "เพื่องานของเราและเพื่อ {p} ต้องหยุดยักษ์หินให้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#203": {
+   "src": "So, kindly, I will tell you again.",
+   "dst": "ฉันใจดีนะ จะบอกเธออีกครั้งก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#204": {
+   "src": "Very good! Come on then, let me introduce to you our little feathered mascot.",
+   "dst": "ดีมาก! มาเลย ข้าจะแนะนำมาสคอตขนนกตัวน้อยของเราให้รู้จัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#205": {
+   "src": "I ran into a group of miners from {p}, a small mining settlement not far from where I lived. I've heard about this place.",
+   "dst": "ผมเจอกลุ่มคนงานเหมืองจาก {p} นิคมเหมืองเล็กๆ ไม่ไกลจากที่ผมอยู่ ผมเคยได้ยินเรื่องที่นี่มาก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#206": {
+   "src": "It seems you have failed a lot of times. Would you like to skip this section?",
+   "dst": "ดูเหมือนคุณจะล้มเหลวหลายครั้ง ต้องการข้ามช่วงนี้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#207": {
+   "src": "It seems that your spells are severely weakened by the gas. You should follow the rail tracks to find a way out of the mine.",
+   "dst": "ดูเหมือนเวทของคุณจะอ่อนลงมากเพราะแก๊ส คุณควรตามรางไปเพื่อหาทางออกจากเหมือง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#208": {
+   "src": "It's blocked. Perhaps there's something around to break through?",
+   "dst": "มันถูกขวางไว้ บางทีอาจมีอะไรแถวนี้ใช้ทะลวงได้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#209": {
+   "src": "The town is incredibly poor, yet they're right on top of an extremely rich coal deposit. Their future, just a stone's throw away. And yet...",
+   "dst": "เมืองนี้ยากจนอย่างยิ่ง ทั้งที่ตั้งอยู่บนแหล่งถ่านหินที่อุดมสมบูรณ์มาก อนาคตของพวกเขาอยู่แค่เอื้อม แต่ถึงอย่างนั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#210": {
+   "src": "They still manage to struggle. A struggle that would be incredibly magnified by recent events. Indeed, those miners were also searching for survivors of that earthquake.",
+   "dst": "พวกเขาก็ยังลำบาก ความลำบากที่เหตุการณ์ล่าสุดทำให้หนักขึ้นอีกหลายเท่า แท้จริงแล้ว คนงานเหมืองเหล่านั้นก็กำลังตามหาผู้รอดชีวิตจากแผ่นดินไหวครั้งนั้นด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#211": {
+   "src": "Its influence was far and wide, and its strength unlike anything ever seen before. They told me that their town was absolutely devastated beyond recognition by the earthquake.",
+   "dst": "แรงของมันแผ่ไปไกล และรุนแรงอย่างที่ไม่เคยมีใครเห็น พวกเขาบอกผมว่าเมืองของพวกเขาถูกแผ่นดินไหวทำลายจนจำไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#212": {
+   "src": "But words cannot describe the atrocities I saw when I first entered that place.",
+   "dst": "แต่ไม่มีคำใดบรรยายความโหดร้ายที่ผมเห็นตอนก้าวเข้าไปที่นั่นครั้งแรกได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#213": {
+   "src": "Families struggling trying to rescue their kin who were trapped by the debris;",
+   "dst": "ครอบครัวที่พยายามช่วยญาติที่ติดอยู่ใต้ซากปรักหักพัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#214": {
+   "src": "I heard nothing but complete silence, occasionally interrupted by the wails of the town's residents.",
+   "dst": "ผมไม่ได้ยินอะไรเลยนอกจากความเงียบสนิท ที่บางครั้งถูกขัดด้วยเสียงคร่ำครวญของชาวเมือง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#215": {
+   "src": "Despite being a grown man in my {~}'s, I could not help but feel like an innocent child at that moment.",
+   "dst": "แม้จะเป็นผู้ใหญ่อายุ {~} กว่าปีแล้ว ผมก็อดรู้สึกเหมือนเด็กไร้เดียงสาในตอนนั้นไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#216": {
+   "src": "Such a mournful existence. If this life had any meaning to begin with, it was meant for nothing but despair.",
+   "dst": "ช่างเป็นการมีอยู่ที่น่าเศร้า ถ้าชีวิตนี้มีความหมายตั้งแต่แรก มันก็มีไว้เพื่อความสิ้นหวังเท่านั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#217": {
+   "src": "One of the miners who I met earlier brought me to a nearby area underneath a cliff, which was seemingly untouched by the earthquake.",
+   "dst": "คนงานเหมืองคนหนึ่งที่ผมเจอก่อนหน้านี้พาผมไปยังที่ใกล้ๆ ใต้หน้าผา ซึ่งดูเหมือนแผ่นดินไหวจะไม่ได้แตะต้อง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#218": {
+   "src": "A lot of refugees made their homes here, desperately clinging on to the last thread of life. A lifestyle that I would need to adopt, whether I liked it or not.",
+   "dst": "ผู้ลี้ภัยมากมายตั้งรกรากที่นี่ เกาะเส้นด้ายสุดท้ายของชีวิตอย่างสิ้นหวัง วิถีชีวิตที่ผมต้องรับมา ไม่ว่าจะชอบหรือไม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#219": {
+   "src": "But to my surprise, the miner offered me some money and a job to get me back up on my feet. So incredibly kind of him. He reminded me of my mother.",
+   "dst": "แต่ผิดคาด คนงานเหมืองคนนั้นให้เงินและงานผมเพื่อให้ผมตั้งตัวได้ใหม่ ช่างใจดีเหลือเกิน เขาทำให้ผมนึกถึงแม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#220": {
+   "src": "His name was Clight. Seemed like a nice fellow. Apparently he had gone through a similar situation as I did.",
+   "dst": "เขาชื่อ Clight ดูเป็นคนดี ดูเหมือนเขาจะเคยเจอสถานการณ์คล้ายๆ ผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#221": {
+   "src": "Not as grave as mine, though. Lost his home and everything a few years back. Sought refuge in {p}. Now, he is well off and is seeking to become the chief miner one day.",
+   "dst": "แต่ไม่หนักเท่าของผม เขาเสียบ้านและทุกอย่างไปเมื่อหลายปีก่อน มาลี้ภัยที่ {p} ตอนนี้เขามีฐานะดีและอยากเป็นหัวหน้าคนงานเหมืองสักวัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#222": {
+   "src": "You have already pulled this lever.",
+   "dst": "คุณดึงคันโยกนี้ไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#223": {
+   "src": "To return to your previous point, go back into the mineshaft at [{~},-{~}].",
+   "dst": "หากต้องการกลับไปจุดก่อนหน้า ให้กลับเข้าไปในปล่องเหมืองที่ [{~},-{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#224": {
+   "src": "I'm not even REAL!",
+   "dst": "ฉันไม่มีตัวตนด้วยซ้ำ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#225": {
+   "src": "I'm alaready dead, how is this even possible?",
+   "dst": "ฉันตายไปแล้ว เป็นไปได้ยังไงเนี่ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#226": {
+   "src": "Okay, who even put those there in the first place?",
+   "dst": "โอเค ใครเอาของพวกนั้นมาวางไว้ตั้งแต่แรกเนี่ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#227": {
+   "src": "Seriously... Enough is enough.",
+   "dst": "จริงๆ เลย... พอได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#228": {
+   "src": "It felt nice the first time, but now it's...different.",
+   "dst": "ครั้งแรกมันรู้สึกดีนะ แต่ตอนนี้มัน...ไม่เหมือนเดิม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#229": {
+   "src": "Hands off of those, if you would be so kind.",
+   "dst": "เอามือออกจากตรงนั้นด้วย ถ้าไม่รังเกียจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#230": {
+   "src": "Took our canary with us and everything. Just another day in the life.",
+   "dst": "พานกคีรีบูนไปด้วยและอะไรๆ อีก ก็แค่อีกวันหนึ่งในชีวิต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#231": {
+   "src": "I was stood on a ledge overlooking a crevasse, where the gas supposedly was, to get a better look of the area.",
+   "dst": "ผมยืนอยู่บนชะง่อนหินที่มองลงไปเห็นรอยแยก ที่ว่ากันว่ามีแก๊สอยู่ เพื่อดูพื้นที่ให้ชัดขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#232": {
+   "src": "And then... He pushed me off. As if I was some kind of piece of trash.",
+   "dst": "แล้ว... เขาก็ผลักผมตกลงไป ราวกับผมเป็นแค่ขยะชิ้นหนึ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#233": {
+   "src": "He did it, that mudder Clight. He said those words with no hesitation, no sarcasm, no nothing.",
+   "dst": "เขาทำ ไอ้ Clight สารเลวนั่น เขาพูดคำเหล่านั้นโดยไม่ลังเล ไม่ประชด ไม่มีอะไรเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#234": {
+   "src": "It was genuine. Or, at least, I think it was. I glanced at his eyes very briefly, and I saw tears. Tears of joy? Or...sadness?",
+   "dst": "มันจริงใจ หรืออย่างน้อยผมก็คิดว่าอย่างนั้น ผมเหลือบมองตาเขาแวบเดียว และเห็นน้ำตา น้ำตาแห่งความสุข? หรือ...ความเศร้า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#235": {
+   "src": "I don't even know what to think anymore. Everything I've experienced, all the moments we've shared, all the trust we've had for each other.",
+   "dst": "ผมไม่รู้จะคิดยังไงอีกแล้ว ทุกสิ่งที่ผมผ่านมา ทุกช่วงเวลาที่เราแบ่งปันกัน ความไว้ใจทั้งหมดที่เรามีต่อกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#236": {
+   "src": "It was all a blatant lie. An act. And for what? Wealth? Power? Dominion? No... That is not the Clight I know. And yet, somehow, it happened.",
+   "dst": "มันคือคำโกหกทั้งหมด เป็นการแสดง แล้วเพื่ออะไร? ความมั่งคั่ง? อำนาจ? การครอบครอง? ไม่... นั่นไม่ใช่ Clight ที่ผมรู้จัก แต่มันก็เกิดขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#237": {
+   "src": "It happened. Yes, it did happen. It really did happen. Happen. Happen happen happen. Happy. Yes, I am happy. The happiest person in the world. Happiness.",
+   "dst": "มันเกิดขึ้น ใช่ มันเกิดขึ้นแล้ว เกิดขึ้นจริงๆ เกิด เกิด เกิด เกิด เกิดสุข ใช่ ผมเป็นสุข คนที่สุขที่สุดในโลก ความสุข",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#238": {
+   "src": "Indeed, happiness is the meaning of life, if you are a naive little kid. Life has no meaning.",
+   "dst": "แท้จริงแล้ว ความสุขคือความหมายของชีวิต ถ้าคุณเป็นเด็กน้อยไร้เดียงสา ชีวิตไม่มีความหมายหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#239": {
+   "src": "How foolish it was of me to think it had any meaning.",
+   "dst": "ผมช่างโง่ที่คิดว่ามันมีความหมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#240": {
+   "src": "No... The true meaning of life is to blindly walk a path to find that fabled 'meaning', only to find no end in sight.",
+   "dst": "ไม่... ความหมายแท้ของชีวิตคือการเดินอย่างมืดบอดเพื่อตามหา 'ความหมาย' ในตำนานนั่น แต่กลับไม่เห็นจุดสิ้นสุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#241": {
+   "src": "Suffering leads to the pursuit of happiness, which only leads back to suffering, and so on.",
+   "dst": "ความทุกข์นำไปสู่การไขว่คว้าความสุข ซึ่งก็พากลับไปสู่ความทุกข์ วนไปเรื่อยๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#242": {
+   "src": "What is the point, really? Even inside my perfect {p}, people were still suffering.",
+   "dst": "แล้วจะมีประโยชน์อะไรกันแน่? แม้แต่ใน {p} ที่สมบูรณ์แบบของผม ผู้คนก็ยังทุกข์ทรมาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#243": {
+   "src": "And Clight... Was it all...pointless? Was there...any point in my existence? Maybe I'll just... No.",
+   "dst": "แล้ว Clight... ทั้งหมดนั่น...ไร้ความหมาย? การมีอยู่ของผม...มีความหมายไหม? บางทีผมอาจจะ... ไม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#244": {
+   "src": "There is only one more thing meant for this world. Destroy what's left of it. People won't need to suffer anymore.",
+   "dst": "เหลือเพียงสิ่งเดียวที่มีไว้สำหรับโลกนี้ ทำลายสิ่งที่เหลืออยู่ของมัน ผู้คนจะได้ไม่ต้องทุกข์อีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#245": {
+   "src": "I now finally understand why the Colossus claimed so many lives.",
+   "dst": "ตอนนี้ในที่สุดผมก็เข้าใจว่าทำไมยักษ์หินถึงคร่าชีวิตไปมากมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#246": {
+   "src": "I have decided, at long last. My true purpose in life. Kill Clight, destroy {p}, and restore order to the world.",
+   "dst": "ในที่สุดผมก็ตัดสินใจได้ เป้าหมายที่แท้จริงในชีวิตของผม ฆ่า Clight ทำลาย {p} และนำระเบียบกลับคืนสู่โลก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#247": {
+   "src": "We were going down into the mines to investigate a suspicious gas leakage.",
+   "dst": "เรากำลังลงไปในเหมืองเพื่อสืบเรื่องแก๊สรั่วที่น่าสงสัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#248": {
+   "src": "I think I'm going insane. Strange apparitions keep appearing in the corner of my eye.",
+   "dst": "ผมคิดว่าผมกำลังจะบ้า ภาพประหลาดคอยโผล่มาที่หางตาอยู่เรื่อยๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#249": {
+   "src": "Were they ghosts? Or real people? I couldn't tell. It constantly feels as if I'm zoning out from time to time.",
+   "dst": "นั่นคือผี? หรือคนจริงๆ? ผมแยกไม่ออก รู้สึกเหมือนเหม่อลอยไปเป็นพักๆ ตลอดเวลา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#250": {
+   "src": "It's as if I am a figment of his imagination, real but not real. His judgment, clouded by perception. Wait, what did I just write?",
+   "dst": "ราวกับผมเป็นภาพในจินตนาการของเขา มีจริงแต่ก็ไม่จริง วิจารณญาณของเขาถูกการรับรู้บดบัง เดี๋ยว ผมเพิ่งเขียนอะไรลงไป?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#251": {
+   "src": "No, scratch that. No idea...where that came from... Ugh. My head... The pain is indescribable.",
+   "dst": "ไม่ ลบทิ้ง ไม่รู้ว่า...มาจากไหน... อึก หัวผม... เจ็บจนบรรยายไม่ถูก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#252": {
+   "src": "But it feels very good, like a nice little massage. What the...? There it is again.",
+   "dst": "แต่มันก็รู้สึกดีมาก เหมือนนวดเบาๆ อะไรกัน...? มาอีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#253": {
+   "src": "It's like time stops, and suddenly there's words on the paper. Are they...the thoughts hidden deep within my subconscious...?",
+   "dst": "เหมือนเวลาหยุดนิ่ง แล้วจู่ๆ ก็มีตัวอักษรบนกระดาษ หรือมันคือ...ความคิดที่ซ่อนอยู่ลึกในจิตใต้สำนึกของผม...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#254": {
+   "src": "One of the strange apparitions I saw recently was what seemed to be a blue canary, like that one I brought with me on that day.",
+   "dst": "ภาพประหลาดอย่างหนึ่งที่ผมเห็นเมื่อเร็วๆ นี้ดูเหมือนนกคีรีบูนสีฟ้า เหมือนตัวที่ผมพาไปด้วยในวันนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#255": {
+   "src": "And it was...talking to me? It seemed like it was incredibly angry at me. It cursed at me, made threats against me, and wished I had never existed.",
+   "dst": "แล้วมัน...พูดกับผม? ดูเหมือนมันโกรธผมมาก มันสาปแช่ง ข่มขู่ และอยากให้ผมไม่เคยเกิดมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#256": {
+   "src": "It didn't throw any regular curses, no, it threw the harshest curses and the most horrific threats at me. Was it real? Or just my imagination?",
+   "dst": "มันไม่ได้สาปแช่งธรรมดาๆ ไม่เลย มันสาปแช่งรุนแรงที่สุดและขู่ผมอย่างน่าสยองที่สุด มันจริงหรือ? หรือแค่จินตนาการของผม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#257": {
+   "src": "Likely the latter, but... what was it supposed to mean, then? Was it...a warning? Did I...glimpse the future?",
+   "dst": "น่าจะอย่างหลัง แต่... แล้วมันหมายความว่าอะไร? มันคือ...คำเตือน? ผม...เห็นอนาคตงั้นหรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#258": {
+   "src": "Or was it just a manifestation of my thoughts? If so, then... perhaps it was him.",
+   "dst": "หรือมันเป็นแค่ภาพสะท้อนความคิดของผม? ถ้าเป็นเช่นนั้น... บางทีมันอาจเป็นเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#259": {
+   "src": "Indeed. The one who ruined my life and got away with it.",
+   "dst": "ใช่แล้ว คนที่ทำลายชีวิตผมแล้วลอยนวลไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#260": {
+   "src": "No... He will not get away with it. I will not allow that to happen. For the sake of the world, he must be stopped.",
+   "dst": "ไม่... เขาจะไม่ได้ลอยนวล ผมจะไม่ยอมให้เป็นเช่นนั้น เพื่อโลกนี้ เขาต้องถูกหยุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#261": {
+   "src": "He... That's him, right? Am I even thinking about the same thing...? Ugh, every part of my body is aching.",
+   "dst": "เขา... ใช่เขาใช่ไหม? ผมคิดถึงเรื่องเดียวกันอยู่หรือเปล่า...? อึก ปวดไปทั้งตัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#262": {
+   "src": "I can't even write anymore. This may be the last entry in my journal. I will continue on while my flame still flickers.",
+   "dst": "ผมเขียนต่อไม่ไหวแล้ว นี่อาจเป็นบันทึกสุดท้ายในสมุดของผม ผมจะเดินหน้าต่อไปตราบที่เปลวไฟของผมยังริบหรี่อยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#263": {
+   "src": "Rest assured, I will not die here. I cannot die here. I must do...his...bidding.",
+   "dst": "วางใจได้ ผมจะไม่ตายที่นี่ ผมตายที่นี่ไม่ได้ ผมต้องทำตาม...คำสั่ง...ของเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#264": {
+   "src": "I will change my identity, erase my past self from the face of the world, anything... Anything to achieve my goal.",
+   "dst": "ผมจะเปลี่ยนตัวตน ลบตัวตนในอดีตออกจากโลกนี้ อะไรก็ได้... อะไรก็ได้เพื่อบรรลุเป้าหมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#265": {
+   "src": "But I will leave this journal here to remind future miners of the fabled 'meaning' they are hopelessly searching for.",
+   "dst": "แต่ผมจะทิ้งสมุดบันทึกนี้ไว้ที่นี่ เพื่อเตือนคนงานเหมืองรุ่นหลังถึง 'ความหมาย' ในตำนานที่พวกเขาตามหาอย่างไร้ความหวัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#266": {
+   "src": "Stop searching for it, there is no point in finding meaning. If you persist, then... you may end up like me.",
+   "dst": "เลิกตามหามันเถอะ การค้นหาความหมายไม่มีประโยชน์ ถ้ายังดื้อดึง... คุณอาจจบแบบผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#267": {
+   "src": "Two paths, side by side. Present, and future. One of them is...hopeless. The other is the road I must walk.",
+   "dst": "สองเส้นทาง เคียงข้างกัน ปัจจุบัน และอนาคต เส้นหนึ่ง...สิ้นหวัง อีกเส้นคือทางที่ผมต้องเดิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#268": {
+   "src": "Our paths won't cross. But... Should we, in fact, ever meet up... On that day...",
+   "dst": "เส้นทางของเราจะไม่บรรจบกัน แต่... หากวันหนึ่งเราได้พบกันจริงๆ... ในวันนั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#269": {
+   "src": "Today, I was nominated for chief of the {p} coal mine. Right hand of the mayor.",
+   "dst": "วันนี้ผมได้รับการเสนอชื่อเป็นหัวหน้าเหมืองถ่านหิน {p} มือขวาของนายกเทศมนตรี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#270": {
+   "src": "Four years of hard work finally paid off. This is my chance to find the answers we are all looking for.",
+   "dst": "สี่ปีแห่งการทำงานหนักได้ผลตอบแทนในที่สุด นี่คือโอกาสของผมที่จะหาคำตอบที่เราทุกคนตามหา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#271": {
+   "src": "The answers that I once began to search for on that fabled day when I lost everything.",
+   "dst": "คำตอบที่ผมเริ่มตามหาในวันที่ไม่มีวันลืม วันที่ผมสูญเสียทุกอย่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#272": {
+   "src": "Finally, a chance to find a way for us to live in peace again. No more tragedy, no more disaster.",
+   "dst": "ในที่สุดก็มีโอกาสหาทางให้เราได้อยู่อย่างสงบอีกครั้ง ไม่มีโศกนาฏกรรม ไม่มีหายนะอีกต่อไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#273": {
+   "src": "Just...happiness. Happiness, security, and stability. With the power as chief, I will make that my goal.",
+   "dst": "มีแค่...ความสุข ความสุข ความปลอดภัย และความมั่นคง ด้วยอำนาจของหัวหน้า ผมจะทำให้นั่นเป็นเป้าหมาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#274": {
+   "src": "Indeed, the perfect {p} will be realized under my leadership.",
+   "dst": "แท้จริงแล้ว {p} ที่สมบูรณ์แบบจะเกิดขึ้นได้ภายใต้การนำของผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#275": {
+   "src": "In order to achieve security and stability, my first course of action as chief will be to make everyone into miners to ensure that no one is left without a job.",
+   "dst": "เพื่อให้เกิดความปลอดภัยและมั่นคง สิ่งแรกที่ผมจะทำในฐานะหัวหน้าคือให้ทุกคนเป็นคนงานเหมือง เพื่อให้แน่ใจว่าไม่มีใครตกงาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#276": {
+   "src": "They will work towards a common goal - eliminating the threat of the Colossus. {p} will become a safe haven in the Canyon, a sanctuary in the midst of chaos.",
+   "dst": "พวกเขาจะทำงานเพื่อเป้าหมายเดียวกัน - กำจัดภัยคุกคามจากยักษ์หิน {p} จะกลายเป็นที่หลบภัยใน Canyon เป็นสถานที่ปลอดภัยท่ามกลางความโกลาหล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#277": {
+   "src": "No one will be left homeless or poor, unhappy or misfortuned. Freedom from suffering, in its simplicity. It is...the best existence possible.",
+   "dst": "จะไม่มีใครไร้บ้านหรือยากจน ไม่มีใครทุกข์หรือโชคร้าย อิสระจากความทุกข์อย่างเรียบง่าย นั่นคือ...การมีอยู่ที่ดีที่สุดที่เป็นไปได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#278": {
+   "src": "I was running against Clight. As a man of high respect and trust, I was not surprised he was nominated.",
+   "dst": "ผมลงแข่งกับ Clight ในฐานะคนที่ได้รับความเคารพและไว้วางใจสูง ผมไม่แปลกใจที่เขาได้รับการเสนอชื่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#279": {
+   "src": "Regardless of whoever wins, I trust that he will do great things. We desire the same thing, after all.",
+   "dst": "ไม่ว่าใครจะชนะ ผมเชื่อว่าเขาจะทำสิ่งยิ่งใหญ่ เพราะยังไงเราก็ปรารถนาสิ่งเดียวกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#280": {
+   "src": "Prevent the Colossus from interfering with our futures. The one who ravaged our homes, ruined our lives, and shattered all hope.",
+   "dst": "ป้องกันไม่ให้ยักษ์หินมาขัดขวางอนาคตของเรา ผู้ที่ทำลายบ้านเรา ทำลายชีวิตเรา และทำลายความหวังทั้งหมด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#281": {
+   "src": "We wouldn't have to live in fear anymore. I know it's wishful thinking, but... a man can dream.",
+   "dst": "เราจะไม่ต้องอยู่อย่างหวาดกลัวอีก ผมรู้ว่ามันเป็นแค่ความฝันลมๆ แล้งๆ แต่... ฝันไปก็ไม่เสียหาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#282": {
+   "src": "I think I'm starting to get used to this place. I've been working for a while now as a coal miner.",
+   "dst": "ผมคิดว่าผมเริ่มชินกับที่นี่แล้ว ผมทำงานเป็นคนงานเหมืองถ่านหินมาได้สักพักแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#283": {
+   "src": "It may not be the easiest job in the world, but I'm at least earning money for a roof over my head and for food on the table.",
+   "dst": "มันอาจไม่ใช่งานที่ง่ายที่สุดในโลก แต่อย่างน้อยผมก็หาเงินได้พอมีหลังคาคุ้มหัวและมีอาหารบนโต๊ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#284": {
+   "src": "I wake up every day thinking not of the grueling task at the start of the day, but of the rewards I'll reap at the end of the day.",
+   "dst": "ผมตื่นทุกวันโดยไม่ได้คิดถึงงานหนักตอนเช้า แต่คิดถึงผลตอบแทนที่จะได้ตอนเย็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#285": {
+   "src": "It's kind of funny, really. It's funny how much I've changed over such a short period of time.",
+   "dst": "มันก็ตลกดีนะ ตลกที่ผมเปลี่ยนไปมากขนาดนี้ในเวลาแค่ไม่นาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#286": {
+   "src": "That day, when that man Clight offered to help me walk on this twisted, beaten path, I started to look at life differently. Taking the good with the bad, you know?",
+   "dst": "วันนั้น ตอนที่ชายชื่อ Clight เสนอจะช่วยผมเดินบนเส้นทางที่คดเคี้ยวและลำบากนี้ ผมเริ่มมองชีวิตต่างไป ยอมรับทั้งเรื่องดีและเรื่องร้าย เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#287": {
+   "src": "Clight was like the light at the end of the tunnel. Everyone aspired to be like him.",
+   "dst": "Clight เหมือนแสงสว่างที่ปลายอุโมงค์ ทุกคนอยากเป็นเหมือนเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#288": {
+   "src": "He was a hard worker with relentless determination to make {p} and its residents the best they can be.",
+   "dst": "เขาเป็นคนขยันที่มุ่งมั่นไม่ลดละ ที่จะทำให้ {p} และชาวเมืองดีที่สุดเท่าที่จะเป็นได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#289": {
+   "src": "When we went to the bar after a long day's work, Clight would often bring us boilo, a sweet citrusy alcoholic beverage originating from {p}.",
+   "dst": "เวลาเราไปบาร์หลังเลิกงานมาทั้งวัน Clight มักจะเอา boilo มาให้เรา เครื่องดื่มแอลกอฮอล์รสหวานกลิ่นส้มที่มีต้นกำเนิดจาก {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#290": {
+   "src": "Traditionally, everyone has their own unique take on boilo. My boilo, which I loved making, was something I was always proud of.",
+   "dst": "ตามธรรมเนียมแล้ว ทุกคนจะมี boilo สูตรของตัวเอง boilo ของผม ซึ่งผมชอบทำมาก เป็นสิ่งที่ผมภูมิใจเสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#291": {
+   "src": "But Clight's boilo? It was by far the best boilo I've ever tasted. He would do that just to put a smile on everyone's faces. Indeed... I've seen that smile, somewhere before.",
+   "dst": "แต่ boilo ของ Clight น่ะเหรอ? มันคือ boilo ที่อร่อยที่สุดที่ผมเคยชิมมาเลย เขาทำเพียงเพื่อให้ทุกคนยิ้มได้ แท้จริงแล้ว... ผมเคยเห็นรอยยิ้มนั้นที่ไหนสักแห่งมาก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#292": {
+   "src": "Clight was the only person who I really liked. Looked up to, even. He was always there for me in my times of need.",
+   "dst": "Clight เป็นคนเดียวที่ผมชอบจริงๆ ถึงขั้นนับถือเลยด้วยซ้ำ เขาอยู่ข้างผมเสมอยามที่ผมต้องการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#293": {
+   "src": "I would go as far as saying he's perfect. However, when I look into his eyes... I see imperfection.",
+   "dst": "ผมกล้าพูดเลยว่าเขาสมบูรณ์แบบ แต่เวลาผมมองตาเขา... ผมเห็นความไม่สมบูรณ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#294": {
+   "src": "Like a diamond, there is always something flawed about it. Something just... doesn't feel right.",
+   "dst": "เหมือนเพชร มันมีตำหนิอยู่เสมอ บางอย่าง... ก็รู้สึกไม่ถูกต้อง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#295": {
+   "src": "Like he's trying to hide something by acting in such a way. Or perhaps... I see my own reflection. Indeed, we are...the same.",
+   "dst": "เหมือนเขาพยายามซ่อนอะไรบางอย่างด้วยการทำตัวแบบนั้น หรือบางที... ผมอาจเห็นเงาสะท้อนของตัวเอง ใช่แล้ว เรา...เหมือนกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#296": {
+   "src": "The past couple of years have done wonders for myself and {p}.",
+   "dst": "สองสามปีที่ผ่านมาสร้างสิ่งมหัศจรรย์ให้ทั้งตัวผมและ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#297": {
+   "src": "Ever since I became chief, I have not lived a single day that I felt was unfulfilling.",
+   "dst": "ตั้งแต่ได้เป็นหัวหน้า ผมไม่เคยมีวันไหนที่รู้สึกว่าไร้ความหมายเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#298": {
+   "src": "I was able to revolutionize the coal industry and bring in much more profit.",
+   "dst": "ผมปฏิวัติอุตสาหกรรมถ่านหินได้และนำกำไรเข้ามามากขึ้นมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#299": {
+   "src": "With that profit, I began planning reconstruction for {p}, as part of my goal in mitigating the Colossus' impact on the city.",
+   "dst": "ด้วยกำไรนั้น ผมเริ่มวางแผนบูรณะ {p} ซึ่งเป็นส่วนหนึ่งของเป้าหมายที่จะลดผลกระทบของยักษ์หินต่อเมือง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#300": {
+   "src": "I planned to use expensive materials that would, in theory, prevent earthquakes from touching the city.",
+   "dst": "ผมวางแผนใช้วัสดุราคาแพงที่ตามทฤษฎีแล้วจะป้องกันไม่ให้แผ่นดินไหวแตะต้องเมืองได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#301": {
+   "src": "It took many years, but today, the project has finally been completed.",
+   "dst": "ใช้เวลาหลายปี แต่วันนี้โครงการก็เสร็จสมบูรณ์ในที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#302": {
+   "src": "The new {p} is completely unrecognizable compared to the old one, and I daresay it's one of the best looking cities in Gavel, as well as the safest in the Canyon.",
+   "dst": "{p} ใหม่ต่างจากเดิมจนจำไม่ได้ และผมกล้าพูดว่าเป็นหนึ่งในเมืองที่สวยที่สุดใน Gavel ทั้งยังปลอดภัยที่สุดใน Canyon",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#303": {
+   "src": "Clight and I have also been getting along well.",
+   "dst": "ผมกับ Clight ก็เข้ากันได้ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#304": {
+   "src": "Despite losing in the chief election, he has been there by my side.",
+   "dst": "ถึงจะแพ้เลือกตั้งหัวหน้า เขาก็ยังอยู่เคียงข้างผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#305": {
+   "src": "Second in command, if you will. However, even though we are good friends, we still have arguments from time to time, mostly about how to proceed further with {p}.",
+   "dst": "เป็นมือรอง ถ้าจะเรียกแบบนั้น แต่ถึงเราจะเป็นเพื่อนที่ดีกัน เราก็ยังเถียงกันบ้างเป็นครั้งคราว ส่วนใหญ่เรื่องว่าจะพัฒนา {p} ต่อไปอย่างไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#306": {
+   "src": "He always mentions that rebuilding the city was a waste of money, instead wishing it funded a direct way of dealing with the Colossus, rather than an indirect one.",
+   "dst": "เขามักพูดว่าการสร้างเมืองใหม่เป็นการผลาญเงิน และอยากให้เอาเงินไปใช้จัดการยักษ์หินโดยตรง ไม่ใช่ทางอ้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#307": {
+   "src": "Truthfully, I don't know if I can answer that. I just... I don't know if I can. I'm... afraid of the consequences.",
+   "dst": "พูดตามตรง ผมไม่รู้ว่าจะตอบเรื่องนั้นได้ไหม ผมแค่... ไม่รู้ว่าทำได้หรือเปล่า ผม... กลัวผลที่จะตามมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#308": {
+   "src": "It is a huge task. Anxiety inducing, in fact. I just can't bring myself to face it.",
+   "dst": "มันเป็นงานใหญ่หลวง น่ากังวลด้วยซ้ำ ผมแค่ทำใจเผชิญหน้ากับมันไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#309": {
+   "src": "And I'm not sure why. I just... want to live a peaceful life. No more problems, no more anxiety, no more fearing the future.",
+   "dst": "และผมก็ไม่แน่ใจว่าทำไม ผมแค่... อยากใช้ชีวิตอย่างสงบ ไม่มีปัญหา ไม่มีความกังวล ไม่ต้องกลัวอนาคตอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#310": {
+   "src": "This new {p} can make that happen. Yes... The endless now. {p}, in stasis, forever frozen in time.",
+   "dst": "{p} ใหม่นี้ทำให้เป็นจริงได้ ใช่... ปัจจุบันไม่สิ้นสุด {p} ที่หยุดนิ่ง ถูกแช่แข็งในกาลเวลาตลอดไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#311": {
+   "src": "Miners forever working to maintain the status quo. As it...should be.",
+   "dst": "คนงานเหมืองทำงานไปตลอดกาลเพื่อรักษาสภาพเดิม อย่างที่...ควรเป็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#312": {
+   "src": "Food and water are incredibly scarce. My clothing is beginning to wear and tear.",
+   "dst": "อาหารและน้ำขาดแคลนอย่างหนัก เสื้อผ้าของผมเริ่มขาดวิ่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#313": {
+   "src": "My sanity is dwindling by the minute. Darkness envelops the caverns, and not a soul to be seen.",
+   "dst": "สติของผมเลือนหายไปทุกนาที ความมืดปกคลุมถ้ำ และไม่มีใครให้เห็นสักคน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#314": {
+   "src": "Yet somehow, I've managed to survive down in the mines for a couple days. Perhaps it's luck? Or fate? I don't even know anymore.",
+   "dst": "แต่ไม่รู้ทำไม ผมรอดชีวิตอยู่ในเหมืองมาได้สองสามวัน อาจเป็นโชค? หรือโชคชะตา? ผมไม่รู้อีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#315": {
+   "src": "It feels as if my memory and thinking skills are extremely clouded. It hurts me to even write this very passage.",
+   "dst": "รู้สึกเหมือนความจำและการคิดของผมพร่ามัวไปหมด แค่เขียนบันทึกนี้ก็เจ็บปวดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#316": {
+   "src": "This gas... It's not normal. In fact, I don't even think it's a gas.",
+   "dst": "แก๊สนี้... มันไม่ปกติ ที่จริงผมไม่คิดว่ามันเป็นแก๊สด้วยซ้ำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#317": {
+   "src": "It's like... some kind of magical force. There's this constant pressure against my head, as if it's about to explode, and I can't stop coughing.",
+   "dst": "มันเหมือน... พลังเวทบางอย่าง มีแรงกดที่หัวไม่หยุด ราวกับจะระเบิด และผมไอไม่หยุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#318": {
+   "src": "I tried casting the handful of Air spells I still remembered from my childhood, and they changed form...?",
+   "dst": "ผมลองร่ายเวทลมไม่กี่อย่างที่ยังจำได้ตั้งแต่เด็ก แล้วมันก็เปลี่ยนรูป...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#319": {
+   "src": "Although they became a lot weaker. Maybe I'm just misremembering, given that I barely used them. Regardless, I have never experienced anything like this, in all my days of mining.",
+   "dst": "แม้มันจะอ่อนลงมาก บางทีผมอาจจำผิดเพราะแทบไม่ได้ใช้ ยังไงก็ตาม ตลอดชีวิตการทำเหมือง ผมไม่เคยเจออะไรแบบนี้มาก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#320": {
+   "src": "This force... Could it be the Colossus' doing? If it really is, then that means... No...",
+   "dst": "พลังนี้... หรือจะเป็นฝีมือยักษ์หิน? ถ้าใช่จริง นั่นก็หมายความว่า... ไม่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#321": {
+   "src": "No matter. Time remains but a mere obstacle in my path.",
+   "dst": "ช่างเถอะ เวลาเป็นเพียงอุปสรรคเล็กๆ บนเส้นทางของผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#322": {
+   "src": "It will not stop me from achieving my goal, nor will this force. Nothing will stop me, for I am destined to be this world's saviour.",
+   "dst": "มันจะไม่หยุดผมจากเป้าหมาย พลังนี้ก็เช่นกัน ไม่มีสิ่งใดหยุดผมได้ เพราะผมถูกลิขิตให้เป็นผู้กอบกู้โลกนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#323": {
+   "src": "People are born into the passage of fate, doomed to float aimlessly in the sea of suffering.",
+   "dst": "ผู้คนเกิดมาในสายธารแห่งชะตา ถูกสาปให้ลอยไร้จุดหมายในทะเลแห่งความทุกข์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#324": {
+   "src": "Many have tried, but none have ever managed to escape its torrential flow. And yet, recent events defy that fate.",
+   "dst": "หลายคนพยายาม แต่ไม่มีใครหลุดพ้นกระแสอันเชี่ยวกรากของมันได้ แต่เหตุการณ์ล่าสุดกลับท้าทายชะตานั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#325": {
+   "src": "I am...the chosen one. Chosen by the Colossus to rid the world of the cycle of suffering, the very nature of the world, the very fabric of reality.",
+   "dst": "ผมคือ...ผู้ถูกเลือก ถูกยักษ์หินเลือกให้ปลดปล่อยโลกจากวัฏจักรแห่งความทุกข์ จากธรรมชาติของโลก จากผืนผ้าแห่งความเป็นจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#326": {
+   "src": "There is only one meant for this world, and I AM IT. That is ME, and NO ONE ELSE.",
+   "dst": "มีเพียงหนึ่งเดียวที่ถูกลิขิตไว้สำหรับโลกนี้ และนั่นคือผม คือผม ไม่ใช่ใครอื่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#327": {
+   "src": "a child wandering around looking for their missing family; people frantically rummaging through the rubble to find their belongings.",
+   "dst": "เด็กคนหนึ่งเดินหาครอบครัวที่หายไป ผู้คนคุ้ยหาข้าวของในกองซากอย่างบ้าคลั่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#328": {
+   "src": "'When I lost everything, I tried to look towards the future,' he said. 'It was hard, but it's the mentality that keeps me going.' His words inspired me to live on another day.",
+   "dst": "'ตอนที่ผมเสียทุกอย่าง ผมพยายามมองไปข้างหน้า' เขาว่า 'มันยาก แต่ความคิดนี้ทำให้ผมไปต่อได้' คำพูดของเขาทำให้ผมมีแรงใจอยู่ต่ออีกวัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#329": {
+   "src": "indeed... you are the one who can destroy the colossus.",
+   "dst": "แท้จริงแล้ว... เธอคือผู้ที่ทำลายยักษ์หินได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#330": {
+   "src": "'This is for your own good. Goodbye.' Those were the last words I heard from him.",
+   "dst": "'นี่เพื่อตัวนายเอง ลาก่อน' นั่นคือคำสุดท้ายที่ผมได้ยินจากเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#331": {
+   "src": "'You're letting this continue to be a problem. Destroy the Colossus and there won't have to be any more worrying,' he says.",
+   "dst": "'นายปล่อยให้เรื่องนี้เป็นปัญหาต่อไป ทำลายยักษ์หินซะ แล้วจะไม่ต้องกังวลอะไรอีก' เขาว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  }
+ }
+}

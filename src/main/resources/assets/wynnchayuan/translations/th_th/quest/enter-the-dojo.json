@@ -1,0 +1,1270 @@
+{
+ "_meta": {
+  "quest": "Enter the Dojo",
+  "count": 126,
+  "translated": 126,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Enter the Dojo#000": {
+   "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
+   "dst": "ยุครุ่งเรืองของศาสตร์คืนชีพคนตายสิ้นสุดลงใน {~} AP เมื่อศาสตร์นี้ถูกสั่งห้าม การลบหลู่ผู้ตายและกักวิญญาณไม่ให้ไปสู่สุคติ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#001": {
+   "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
+   "dst": "อย่าใส่อะไรลงในชามากเกินไป เพราะรสที่ขัดกันหลายอย่างจะทำให้ชาขุ่นและรสแย่ วัตถุดิบสามอย่างถือเป็นเกณฑ์ที่ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#002": {
+   "src": "Talk to Sensei Miyagi at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Sensei Miyagi ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#003": {
+   "src": "Oh hohoho! So a human has found their way to my humble dojo? Intriguing! I am called Sensei Miyagi. I welcome you.",
+   "dst": "โฮะๆๆ! มนุษย์หาทางมาถึงโดโจต่ำต้อยของข้าได้หรือนี่? น่าสนใจ! ข้าชื่อ Sensei Miyagi ยินดีต้อนรับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#004": {
+   "src": "This dojo, I have dedicated to honing skills in all of the arts- from martial prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "โดโจนี้ ข้าอุทิศให้การฝึกฝนศาสตร์ทุกแขนง- ตั้งแต่ฝีมือการต่อสู้และความเฉียบแหลมทางความคิด ไปจนถึงงานช่างและงานศิลป์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#005": {
+   "src": "Many have come- traveled from all corners of the earth to this humble one's dojo to train themselves and grow stronger. I am to presume you are the same?",
+   "dst": "มีผู้คนมากมายเดินทางมาจากทุกสารทิศสู่โดโจของผู้ต่ำต้อยผู้นี้ เพื่อฝึกฝนให้แข็งแกร่งขึ้น ข้าเดาว่าเจ้าก็เช่นกัน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#006": {
+   "src": "Although, while I have enjoyed my life's work here, I cannot deny I am getting on in years. I seek a successor, a master of many skills to take my place.",
+   "dst": "แต่ถึงข้าจะสนุกกับงานทั้งชีวิตที่นี่ ก็ปฏิเสธไม่ได้ว่าข้าแก่ลงทุกวัน ข้ากำลังหาผู้สืบทอด ปรมาจารย์ผู้ชำนาญหลายศาสตร์มาแทนที่ข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#007": {
+   "src": "To the one who should master the arts, I would bequeath the Master's Gi, a symbol of resolute skill. Of course, do not feel pressured to take over for me, hoho!",
+   "dst": "ผู้ที่เชี่ยวชาญทุกศาสตร์ ข้าจะมอบ Master's Gi ให้ เป็นสัญลักษณ์แห่งฝีมืออันมั่นคง แน่นอน ไม่ต้องรู้สึกกดดันว่าต้องมาแทนข้าหรอก โฮะๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#008": {
+   "src": "As long as I may teach others and bring them to new heights, I am satisfied. Whether your aim be merely to sharpen your skills or to allow me to retire, you are welcomed.",
+   "dst": "ขอเพียงข้าได้สอนผู้อื่นและพาพวกเขาไปสู่จุดที่สูงขึ้น ข้าก็พอใจแล้ว ไม่ว่าเจ้าแค่อยากขัดเกลาฝีมือ หรืออยากให้ข้าได้เกษียณ เจ้าก็เป็นที่ต้อนรับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#009": {
+   "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
+   "dst": "เมื่อพร้อมจะเริ่ม จงชำระกายในน้ำพุหลังโดโจ แล้วข้าจะนำทางเจ้าไปสู่บททดสอบแรก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#010": {
+   "src": "Jump down the water pit to begin the challenges.",
+   "dst": "กระโดดลงบ่อน้ำเพื่อเริ่มบททดสอบ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#011": {
+   "src": "Ascend the Lufar Room in the physical strength challenge.",
+   "dst": "ปีนขึ้นไปบนห้อง Lufar ในบททดสอบพละกำลัง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#012": {
+   "src": "Here we are then- The Lufar Room. Here tests your agility! Even these old bones can scale this room in short order- how shall you fare?",
+   "dst": "มาถึงแล้ว- ห้อง Lufar ที่นี่ทดสอบความว่องไวของเจ้า! ขนาดกระดูกแก่ๆ ของข้ายังปีนห้องนี้ได้ในพริบตา- แล้วเจ้าล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#013": {
+   "src": "Fight your way through the Fiata Room in the combat challenge.",
+   "dst": "ฝ่าฟันผ่านห้อง Fiata ในบททดสอบการต่อสู้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#014": {
+   "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
+   "dst": "ข้ายอมรับในฝีมือเจ้า เจ้าผ่านบททดสอบของห้อง Lufar แล้ว! โฮะๆ แต่บททดสอบถัดไปเคยล้มศิษย์มานักต่อนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#015": {
+   "src": "Now, comes the Fiata Room! Here, your combat prowess shall be put to the test. Martial skill comes easily to me...but what of your own?",
+   "dst": "ต่อไปคือห้อง Fiata! ที่นี่ฝีมือการต่อสู้ของเจ้าจะถูกทดสอบ ศิลปะการต่อสู้นั้นง่ายดายสำหรับข้า...แล้วของเจ้าล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#016": {
+   "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
+   "dst": "ไขปริศนาแห่งการมองในห้อง Cliste ในบททดสอบสายตา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#017": {
+   "src": "Next, however, is not a challenge of physical skill, but of observation and logical reasoning, in this- the Cliste Room. Here, a puzzle awaits.",
+   "dst": "แต่บททดสอบถัดไปไม่ใช่เรื่องฝีมือทางกาย หากเป็นการสังเกตและการใช้เหตุผล ในห้องนี้- ห้อง Cliste ที่นี่มีปริศนารออยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#018": {
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as are many things.",
+   "dst": "เจ้าต้องหาเส้นทางพาบล็อกสีแดงไปยังบล็อกสีทอง ง่ายในทฤษฎี...ยากในทางปฏิบัติ เหมือนหลายๆ สิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#019": {
+   "src": "Remember this as you work- Change your perspective, and the reality changes.",
+   "dst": "จำไว้ขณะทำ- เปลี่ยนมุมมอง แล้วความจริงจะเปลี่ยนไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#020": {
+   "src": "And there, I recognize your mental acuity! You have passed the Cliste Room. You are doing quite well, but many have gotten to this point and had a single point stymie them.",
+   "dst": "และนั่นไง ข้ายอมรับในความเฉียบแหลมของเจ้า! เจ้าผ่านห้อง Cliste แล้ว ทำได้ดีทีเดียว แต่หลายคนมาถึงจุดนี้แล้วก็ติดอยู่แค่จุดเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#021": {
+   "src": "Welcome then, to the last challenge I offer you, held within the Sitheach Room and cavern.",
+   "dst": "ขอต้อนรับสู่บททดสอบสุดท้ายที่ข้ามีให้ ณ ห้องและถ้ำ Sitheach",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#022": {
+   "src": "Your task here, is to become tranquil, and at peace with nature. What that entails... I leave up to you.",
+   "dst": "ภารกิจของเจ้าที่นี่คือทำใจให้สงบ และกลมกลืนกับธรรมชาติ จะต้องทำอย่างไรนั้น... ข้าปล่อยให้เจ้าตัดสินเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#023": {
+   "src": "There are many paths to tranquility. Whatever you choose, you will know when you have reached the point of success.",
+   "dst": "หนทางสู่ความสงบมีมากมาย ไม่ว่าเจ้าเลือกทางใด เจ้าจะรู้เองเมื่อถึงจุดแห่งความสำเร็จ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#024": {
+   "src": "Exit the Sitheach cave through the tunnel near the temple.",
+   "dst": "ออกจากถ้ำ Sitheach ทางอุโมงค์ใกล้วิหาร",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#025": {
+   "src": "Speak to Sensei Miyagi.",
+   "dst": "คุยกับ Sensei Miyagi",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#026": {
+   "src": "I see it now. The troubled heart you came here with is troubled no longer. I recognize your mastery of the Sitheach Room.",
+   "dst": "ข้าเห็นแล้ว ใจที่ว้าวุ่นตอนเจ้ามาถึง บัดนี้ไม่ว้าวุ่นอีกแล้ว ข้ายอมรับความเชี่ยวชาญห้อง Sitheach ของเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#027": {
+   "src": "Oh hoho... It is just like a human to do what cannot be done. That is each challenge of my humble dojo, completed!",
+   "dst": "โฮะๆ... ช่างสมเป็นมนุษย์ที่ทำสิ่งที่ทำไม่ได้ให้สำเร็จ บททดสอบทุกด่านในโดโจต่ำต้อยของข้า เจ้าผ่านหมดแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#028": {
+   "src": "So! While I did advise you not to feel pressured of it, I am curious, young master. Do you wish to take my place here, so I may sit these old bones down?",
+   "dst": "เอาละ! ถึงข้าจะบอกว่าไม่ต้องกดดัน แต่ข้าก็อยากรู้ ยอดฝีมือรุ่นเยาว์ เจ้าอยากรับตำแหน่งแทนข้า ให้กระดูกแก่ๆ นี้ได้พักหรือไม่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#029": {
+   "src": "...Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "dst": "...อ้า แน่นอนว่าไม่ แม้เจ้าจะเชี่ยวชาญ นี่ก็เป็นเพียงก้าวหนึ่งบนเส้นทางของเจ้า ไม่ต้องห่วง ข้าเข้าใจดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#030": {
+   "src": "I am certain that I will find a suitable successor before my time comes- and equally as certain that I've many a year to go, hoho!",
+   "dst": "ข้ามั่นใจว่าจะหาผู้สืบทอดที่เหมาะสมได้ก่อนถึงเวลาของข้า- และมั่นใจพอๆ กันว่าข้ายังเหลือเวลาอีกหลายปี โฮะๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#031": {
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
+   "dst": "อย่างไรก็ดี เจ้าผ่านบททดสอบของ Sensei ผู้ต่ำต้อยผู้นี้แล้ว ข้าจึงจะมอบสิ่งที่สัญญาไว้ให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#032": {
+   "src": "Wear this [Master's Gi] with pride, and remember this final lesson- There is never a point in life that you will stop learning. See the world and its lessons every day of your life, young master.",
+   "dst": "สวม [Master's Gi] นี้อย่างภาคภูมิ และจำบทเรียนสุดท้ายนี้ไว้- ชีวิตไม่มีวันหยุดเรียนรู้ จงมองโลกและบทเรียนของมันทุกวันในชีวิต ยอดฝีมือรุ่นเยาว์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#033": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "ข้าได้ยินเรื่องฝีมือการต่อสู้ของมนุษย์มามาก บททดสอบนี้ข้าจะเฝ้าดูเอง เข้ามาเลย ผู้ท้าชิง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#034": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "ฝ่าฟันผ่านบททดสอบการต่อสู้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#035": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "ข้าขอยอมรับฝีมือการต่อสู้ของเจ้า และประกาศว่าเจ้าผ่านห้อง Fiata แล้ว ทำได้ดีมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#036": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "ในการก่อตั้งโดโจนี้ ข้าพเจ้าได้แรงบันดาลใจจากตำนานมากมาย หลายครั้งข้าพเจ้าถูกผู้อื่นเย้ยหยันที่เชื่อในตำนานเก่าแก่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Despite this, I am still in great health! Surely the years are catching up to me, but many I know are far less able by the same age.",
+   "dst": "ถึงกระนั้น ข้าพเจ้ายังคงสุขภาพแข็งแรง! แน่นอนว่าวัยย่อมไล่ตามข้าพเจ้าทัน แต่คนที่ข้าพเจ้ารู้จักหลายคนในวัยเดียวกันกลับอ่อนแอกว่ามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#038": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "และผลลัพธ์ก็พิสูจน์ตัวเอง ณ เวลาที่เขียนนี้ คือ {~} AP ข้าพเจ้าอายุ {~} ปี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "หลายคนลืมไปว่าร่างกายมีพลังได้มากเพียงใด เพราะการใช้เวทแพร่หลายเหลือเกิน แม้ความรู้ทางเวทจะสำคัญในตัวมันเอง และข้าพเจ้าก็ผิดที่ละเลยมันเช่นกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "แต่ตำนานและวิถีของนักรบและกษัตริย์โบราณ เช่น Remikas หรือแม้แต่ทหารยุคใหม่อย่าง Tisaun Sodeta ล้วนมีคุณค่ายิ่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "ในที่นี้ ข้าพเจ้าจะเล่าว่าตำนานใดมอบปัญญา พลัง และสุขภาพแก่ข้าพเจ้า และส่งต่อความรู้นั้นแก่ท่าน ผู้อ่านที่รัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "...ถึงจะเป็นหนังสือที่น่าสนใจ แต่สิ่งที่หนังสือบรรยาย คุณก็กำลังเผชิญอยู่มากแล้ว และมันไม่ได้ทำให้คุณสงบลงเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "กลมกลืนเป็นหนึ่งเดียวกับธรรมชาติในห้องและถ้ำ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#044": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "การทำสมาธิคือการขจัดสิ่งรบกวนทั้งหมด และพิจารณาภายในอย่างสงบ- เพื่อเป็นหนึ่งเดียวกับตนเองและยึดตนไว้กับปัจจุบัน หรือเพียงเพื่อผ่อนคลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "ขอแนะนำอย่างยิ่งสำหรับผู้ที่เครียดหรือจิตใจขุ่นมัว ต่อไปนี้คือขั้นตอนพื้นฐานของการฝึกสมาธิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "ขั้นแรก หาที่เงียบและสบาย ที่ที่คุณรู้สึกปลอดภัย และไม่มีสิ่งภายนอกมารบกวน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "หากเพิ่งเริ่ม ให้ตั้งนาฬิกาทรายหรือนาฬิกาปลุกไว้ช่วงสั้นๆ สิบหรือสิบห้านาทีก็พอ แม้ช่วงสั้นๆ ก็ช่วยได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "ต่อมา นั่งลง ท่าดั้งเดิมคือนั่งขัดสมาธิวางมือบนตัก แต่ขอแค่สบาย ท่าไหนก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "เมื่อได้ที่สบายแล้ว หลับตาและหายใจลึกๆ หายใจเข้าลึกๆ กลั้นไว้สักครู่ หายใจออก แล้วกลั้นไว้เท่ากัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "จดจ่อกับความรู้สึกของลมหายใจ และเพียงความรู้สึกของลมหายใจเท่านั้น หากใจล่องลอย อย่ากังวล- แค่ดึงความสนใจกลับมาที่ลมหายใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "เมื่อรู้สึกพร้อมจะลุก หรือเมื่อหมดเวลา ค่อยๆ ลืมตาและสังเกตสิ่งรอบตัว- ภาพและเสียง และความรู้สึกของร่างกาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "แม้จะมีวิธีทำสมาธิที่ซับซ้อนกว่านี้ แต่ก็ไม่จำเป็น- เมื่ออ่านจบแล้ว ลองทำเองดูเมื่อมีเวลาว่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "...นี่ดูมีหวัง คุณค่อยๆ นั่งลงและหลับตา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "...breathe in...",
+   "dst": "...หายใจเข้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "...breathe out...",
+   "dst": "...หายใจออก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "...คุณจดจ่อไม่ได้ ใจคุณล่องลอยไปหลายทางพร้อมกันเกินไป น่าเสียดาย แต่ก็ควรจดจำไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "เมื่อต่อสู้มือเปล่าหรือด้วยอาวุธอย่างสนับมือ คาตาร์ หรือถุงมือเหล็ก ท่วงท่าคือสิ่งสำคัญที่สุดในการรับมือคู่ต่อสู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "การวางท่าทำให้ร่างกายมั่นคง รับการโจมตีได้โดยเสียหายน้อยลง หรือทำให้ตัวเบาพอจะหลบการโจมตีได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "การต่อสู้ทุกรูปแบบต้องเรียนรู้ผ่านการฝึกฝนอย่างหนัก- ไม่มีใครเป็นผู้เชี่ยวชาญได้เพียงเพราะอ่าน นี่คือท่าพื้นฐานไม่กี่ท่าให้ฝึก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "ท่าก้าวหน้า ขากางกว้าง ขาหลังเหยียดตึงสุด และลำตัวตั้งตรง เป็นท่าที่มั่นคงไว้ทรงตัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "ท่าถอยหลัง เท้าข้างหนึ่งอยู่หน้าอีกข้าง เท้าหลังหันออกด้านข้าง น้ำหนักอยู่ที่ขาหลัง ใช้หลบการโจมตีที่ร่างกายท่อนบน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "ท่าแมว ทิ้งน้ำหนักไว้ที่เท้าหลังเช่นกัน ขางอชิดกัน และเท้าหน้าวางบนส้นเท้า ทำให้เตรียมเตะหน้าแรงๆ ได้ง่าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "ท่านกกระเรียน ยกขาข้างหนึ่งขึ้นให้เท้าอยู่ระดับเข่าอีกข้าง ใช้เตรียมเตะ และหลบการกวาดขาของศัตรูด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#064": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "จอมเวทผู้น่านับถือหลายคนได้ทิ้งรอยไว้ในประวัติศาสตร์ ชื่อของพวกเขาถูกเอ่ยซ้ำด้วยเหตุผล- เราเรียนรู้ได้มากจากสิ่งที่พวกเขาแสดงให้เห็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "น่าเสียดายที่ข้อนี้ใช้ได้ทั้งด้านดีและด้านร้าย เช่น บทเรียนหนึ่งที่กลายเป็นกฎหมาย เกี่ยวกับการใช้เวทผูกวิญญาณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "...ถูกมองว่าเป็นการกระทำอันโหดร้ายและผิดศีลธรรม การกักวิญญาณไว้ บังคับให้ทำตามคำสั่ง ในร่างที่เน่าเปื่อยและทรมาน เป็นสิ่งที่ยอมรับไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "นับแต่นั้น การผูกวิญญาณคือเวทที่ถูกลงโทษหนักที่สุดในทั่วทั้ง Gavel ยิ่งกว่าพิธีกรรมปีศาจ หรือแม้แต่ศาสตร์คืนชีพคนตายที่การผูกวิญญาณฝังรากอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "...หนังสือนี้อ่านแล้วหนักใจมาก ไม่เหมาะกับการหาความสงบแน่นอน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "การชงชาเป็นกระบวนการเรียบง่ายแบบสมาธิ ที่ในตัวมันเองมีความลึกซึ้ง เราจะมาย้อนดูมรดกของมันกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "ต้องใช้น้ำสะอาดสดใหม่ ต้มให้เดือดเบาๆ ในหม้อหรือกาต้ม แล้วผสมสมุนไพรและวัตถุดิบตามชอบ..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "การเก็บวัตถุดิบสดๆ ช่วยเพิ่มมิติให้ชา แม้จะชงชาดีๆ ได้จากวัตถุดิบใดก็ตาม ขอเพียงไม่เน่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "วัตถุดิบที่พบบ่อยได้แก่ น้ำตาล ตะไคร้ รากขิง คาโมมายล์ และลาเวนเดอร์ แต่ละอย่างมีบทบาทของตัวเองในชา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "น้ำตาลช่วยกลบความขมของชาบางชนิด และปรับรสให้กลมกล่อม แต่ถ้ามากไป ชาจะหวานเลี่ยนและเหนียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Chamomile adds a pleasantly sweet, floral taste to a brew. The delicate flavor helps the body and mind relax- it is oft used as a sleep aid.",
+   "dst": "คาโมมายล์ให้รสหวานหอมดอกไม้อย่างน่ารื่นรมย์ รสอ่อนละมุนช่วยให้กายและใจผ่อนคลาย- มักใช้ช่วยให้นอนหลับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#075": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "รสเปรี้ยวเฉพาะตัวของตะไคร้ได้รับการยกย่องว่าเป็นเอกลักษณ์ของชาเขียว รสอ่อนๆ หอมสดชื่นคล้ายมินต์เป็นฐานชั้นดีสำหรับชาผ่อนคลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "แม้รากขิงจะขมจัดและกลบวัตถุดิบอื่นจนหมด แต่ก็มีสรรพคุณทางยาแรง ที่อาจช่วยให้ผู้ป่วยกระปรี้กระเปร่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "ลาเวนเดอร์ช่วยผ่อนคลายเช่นกัน แต่ต้องเป็นตัวหลักของชา ต้องแช่นานและขมจัด จึงกลบวัตถุดิบอื่นหมด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "...พอคิดดูแล้ว หลังฝึกหนักมาขนาดนี้ ได้ชาสักถ้วยคงดีไม่น้อย บางทีคุณน่าจะชงสักถ้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "แม้หลายคนจะคิดว่าการพักผ่อนเป็นเรื่องเกินเอื้อมเพราะตารางชีวิตแน่นเอี้ยด ความจริงคือมีหลายสิ่งที่ทำได้ทุกวันเพื่อผ่อนคลายโดยใช้เวลาไม่มาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "เช่น การดูแลต้นไม้ในบ้านเป็นงานง่ายๆ ปลูกจากเมล็ดหรือซื้อมาก็ได้ การดูแลสวนเป็นวิธีผ่อนคลายง่ายๆ ทั้งยังให้ที่ไว้พักผ่อนอีกด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "คุณเปลี่ยนห้องไหนก็ได้ให้เป็นสวนแค่หากระถางมา แต่สำหรับคนที่ไม่มีเวลามากพอ ลองดูแลต้นบอนไซแทนก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "มันต้องการแค่น้ำ แดด และการดูแลด้วยกรรไกรตัดแต่งกิ่งอย่างระมัดระวัง การจัดทรงแบบนี้เป็นศิลปะในตัวเอง และยังมีความหมายทางจิตวิญญาณด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "มันต้องการสมาธิในขณะนั้น แต่ใช้เวลาน้อยมาก แค่แบ่งเวลาสั้นๆ ก็เสร็จ ทั้งยังช่วยฟอกอากาศในบ้านด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "อีกวิธีง่ายๆ ในการผ่อนคลายคือจัดสวนหิน ไม่ต้องใช้พื้นที่มาก- แค่กล่องเล็กๆ ก็พอ ใส่กรวดและหินเรียบๆ ลงไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "ใช้คราดมือเล็กๆ วาดเส้นบนกรวดเป็นลวดลายต่างๆ ทุกวัน ง่ายแค่นั้นเอง- แต่ไม่ต้องตั้งใจวาดลายไหนเป็นพิเศษ ปล่อยให้มือวาดไปเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "การทำแบบนี้ช่วยดึงความสนใจออกจากความคิดที่เครียด และพาคุณกลับมาสู่ปัจจุบัน ทั้งยังเป็นของชวนคุยสนุกๆ ที่จัดได้ง่ายและถูก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "...เป็นความคิดที่ดี แต่น่าเสียดายที่ที่นี่ไม่มีสวนเซน และคุณก็ไม่มีต้นบอนไซหรือกรรไกรตัดกิ่งติดมือ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "แกะเงยหน้าขึ้นมองคุณ แล้วกลับไปทำธุระของมันต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "วัวเงยหน้าขึ้นมองคุณ แล้วกลับไปทำธุระของมันต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "หมูเงยหน้าขึ้นมองคุณ แล้วกลับไปทำธุระของมันต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "เมื่อชงชาเสร็จและกลิ่นหอมอบอวลไปทั้งห้อง คุณค่อยๆ จิบไปสองสามอึก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "ความร้อนของชาและรสหวานอ่อนๆ หอมดอกไม้ทำให้คอและกายอุ่นขึ้น คุณรู้สึกผ่อนคลายขึ้น แต่...ยังไม่กลมกลืนกับธรรมชาติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "...มีสัตว์บางตัวเดินอยู่ในถ้ำ การถวายอะไรเล็กๆ น้อยๆ ดูเป็นทางที่ถูก และชายังเหลืออีกเยอะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "...หืม? นี่ไม่ใช่หนังสือ แต่เป็นแฟ้มเอกสาร Miyagi ลืมวางทิ้งไว้หรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "ดูเหมือนจะมีข้อตกลงการค้าหลายฉบับ ระหว่าง Sakura Dojo กับ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "ดูเหมือนเพิ่งได้รับไหมจาก Hive ล็อตใหญ่ ไม่มีบันทึกการจ่ายมรกต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "ในเวลาเดียวกันก็ส่งเชอร์รี่กับข้าวออกไป- คงแลกสินค้ากันโดยตรง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "บันทึกก่อนหน้าแสดงการแลกเศษโลหะกับไม้เชอร์รี่ และการส่งใบชากับวัตถุดิบเป็นของขวัญ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "...มีจดหมายอยู่ด้วย ลายมือวิจิตรมาก...ส่งมาจากนายหญิงแห่ง Hive เอง เมื่อไม่กี่เดือนก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "\"หวังว่าจดหมายนี้จะพบท่านในสภาพสบายดี ขอขอบคุณอีกครั้งสำหรับการค้า กองคาราวานจาก {p} หายากในระยะหลัง และสิ่งที่ท่านบริจาคช่วยไม่ให้เหล่าคนรับใช้ต้องอดอยาก\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "\"แม้ในเกือบทุกกรณี ดิฉันจะส่งสิ่งที่ดิฉันสร้างกลุ่มเล็กๆ ไปหาเสบียง แต่นั่นเป็นฝันร้ายทั้งด้านการจัดการและการเมืองที่ดิฉันอยากเลี่ยง\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "\"ดิฉันจะตอบแทนในเวลาอันควร- แน่นอน ดิฉันแบ่งมรกตให้ได้จำนวนหนึ่งหากท่านต้องการ ท่านได้รับความไว้วางใจพอจะได้เช็คเปล่าในเรื่องนี้ ท่านจึงกำหนดราคาได้เอง\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "\"เช่นกัน ดิฉันยินดีเสนอเศษโลหะคุณภาพเยี่ยมเพิ่ม หรืออาจเป็นไหมหรือหินปลุกชีพเพิ่มสำหรับหุ่นฝึกของท่าน โปรดตอบกลับพร้อมคำขอโดยเร็ว\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "\"ดิฉันตั้งใจจะร่วมเดินทางกับกองคาราวานครั้งหน้าที่นำค่าตอบแทนไป และตั้งตารอการเยือน เราอาจได้เล่นโกะกระดานนั้นจนจบเสียที\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "\"จาก Mistress Qira\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "วัวเงยหน้าขึ้นมองคุณ ดวงตาของมันเป็นประกายเมื่อเห็นชาเขียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "คุณยื่นชาให้วัวอย่างใจกว้าง แล้ววางลงบนพื้นให้มันดื่ม วัวพยักหน้าให้คุณอย่างนอบน้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "...เมื่อเห็นมันดื่มจากถ้วยเหมือนที่คุณทำ คุณรู้สึกถึงความผูกพันบางอย่าง และพร้อมกับการตระหนักนั้นก็เกิดความสงบขึ้นในใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "คุณจำไม่ได้ว่าครั้งสุดท้ายที่รู้สึกผ่อนคลายขนาดนี้คือเมื่อไร คุณรู้แน่ว่าคุณพิชิตบททดสอบแห่งความสงบแล้ว ได้เวลาไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "หมูเงยหน้าขึ้นมองคุณ แล้วพยักหน้าอย่างนอบน้อม คุณได้รับความสงบและมิตรภาพจากธรรมชาติแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "แกะเงยหน้าขึ้นมองคุณ แล้วพยักหน้าอย่างนอบน้อม คุณได้รับความสงบและมิตรภาพจากธรรมชาติแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "วัวเงยหน้าขึ้นมองคุณ แล้วพยักหน้าอย่างนอบน้อม คุณได้รับความสงบและมิตรภาพจากธรรมชาติแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "คุณยื่นชาให้แกะอย่างใจกว้าง แล้ววางลงบนพื้นให้มันดื่ม แกะพยักหน้าให้คุณอย่างนอบน้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#114": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "คุณยื่นชาให้หมูอย่างใจกว้าง แล้ววางลงบนพื้นให้มันดื่ม หมูพยักหน้าให้คุณอย่างนอบน้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#115": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "ออกจากถ้ำทางอุโมงค์ใกล้วิหาร",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#116": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "โฮะๆ... ใช่แล้ว ชายแก่คนนี้ยังมีชีวิตเหลืออีกเยอะ อย่าทิ้งพรสวรรค์ที่เจ้ามี ยอดฝีมือรุ่นเยาว์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "Defeat the dummies, and bring their tokens to the door! Simple, yes?",
+   "dst": "ล้มหุ่นฝึก แล้วนำเหรียญของพวกมันไปที่ประตู! ง่ายใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#118": {
+   "src": "Show no fear, challenger! There is no shame in failing.",
+   "dst": "อย่ากลัว ผู้ท้าชิง! การล้มเหลวไม่ใช่เรื่องน่าอาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#119": {
+   "src": "And worry not, the fiata Room is reinforced against all manner of attacks. Run wild, hoho!",
+   "dst": "และไม่ต้องห่วง ห้อง Fiata เสริมความแข็งแรงรับการโจมตีทุกรูปแบบ จัดเต็มได้เลย โฮะๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#120": {
+   "src": "It is fascinating to see how you battle. Very different from my stylings!",
+   "dst": "การได้เห็นเจ้าต่อสู้ช่างน่าทึ่ง ต่างจากสไตล์ของข้ามาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#121": {
+   "src": "Of course, you wield a weapon to battle, so of course it is different from unarmed combat, hoho...",
+   "dst": "แน่ล่ะ เจ้าใช้อาวุธต่อสู้ ย่อมต่างจากการต่อสู้มือเปล่าเป็นธรรมดา โฮะๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#122": {
+   "src": "Perhaps you may be interested in learning to fight unarmed after!",
+   "dst": "หลังจากนี้เจ้าอาจสนใจเรียนการต่อสู้มือเปล่าก็ได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#123": {
+   "src": "Oh, this is getting quite good. I should get a snack to eat while I watch...",
+   "dst": "โอ้ ชักจะสนุกแล้ว ข้าควรหาของว่างมากินระหว่างดู...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#124": {
+   "src": "Hmhm, I'll be right back! Continue fighting- And do not worry if you finish before I return! I will be quick!",
+   "dst": "ฮึๆ เดี๋ยวข้ามา! สู้ต่อไป- และไม่ต้องห่วงถ้าเจ้าเสร็จก่อนข้ากลับ! ข้าจะรีบมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#125": {
+   "src": "The pig raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "หมูเงยหน้าขึ้นมองคุณ ดวงตาของมันเป็นประกายเมื่อเห็นชาเขียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

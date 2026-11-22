@@ -1,0 +1,574 @@
+{
+ "_meta": {
+  "quest": "Dearly Departed",
+  "count": 58,
+  "translated": 57,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Dearly Departed#000": {
+   "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+   "dst": "{#} ความแม่นยำนี่ค่อนข้างซับซ้อนนิดนึง ยิ่งมีมาก การโจมตีของคุณก็ยิ่งมีโอกาสทำความเสียหายสองเท่า เจ๋งใช่ไหมล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.955,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#001": {
+   "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+   "dst": "{#} สติปัญญามีไว้สำหรับสายร่ายเวท ช่วยลดค่ามานาในการร่ายเวท และเพิ่มมานาสูงสุดของคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.919,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#002": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "[+{~} Muddy Shovel]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#003": {
+   "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับชาวไร่ Cevalus ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#004": {
+   "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
+   "dst": "อ้า ดูเหมือนจะเป็นทหารใหม่! เห็นประกาศของผมแล้วใช่ไหม? ดี ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#005": {
+   "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
+   "dst": "คือว่า พ่อตาสุดที่รักของผมเพิ่งเสียไป ผมต้องรีบฝังเขาไว้ด้านหลังบ้าน หาบาทหลวงมาทำพิธีฝังให้ถูกต้องไม่ทัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#006": {
+   "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
+   "dst": "โชคร้ายที่แหวนแต่งงานของผมอาจหลุดตกไปตอนที่ผมกำลังฝังเขา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#007": {
+   "src": "I need you to go back there and, well, recover the ring.",
+   "dst": "ผมอยากให้คุณกลับไปที่นั่น แล้วก็ เอ่อ เอาแหวนกลับมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#008": {
+   "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
+   "dst": "แน่นอนว่าผมทำเองก็ได้ แต่ภรรยาเริ่มสงสัยอะไรบางอย่างแล้ว แถมพ่อของเธอเพิ่งจากไปด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#009": {
+   "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
+   "dst": "เห็นไหมว่าผมลำบากแค่ไหน? ช่วยคนน่าสงสารหน่อย แค่ไปหยิบ [Muddy Shovel] ตรงนั้น แล้วกลับมาหาผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#010": {
+   "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
+   "dst": "หยิบพลั่วที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#011": {
+   "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
+   "dst": "[Muddy Shovel] อยู่ตรงนั้นเอง ผมจะซาบซึ้งมากถ้าคุณช่วย ทหารใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#012": {
+   "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "กลับไปหาชาวไร่ Cevalus ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#013": {
+   "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
+   "dst": "ได้พลั่วแล้วเหรอ? เยี่ยม! คุณมีเกราะแข็งแรงกับอาวุธด้วยใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#014": {
+   "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
+   "dst": "ดี ดี กันไว้ดีกว่าแก้... อย่างที่ผมพูดเสมอ! เสมอเลย ฮ่าๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#015": {
+   "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
+   "dst": "อ้อ ไม่มีอะไรหรอก! แค่ให้แน่ใจน่ะ ฮ่าๆ... ด้านหลังนั่นปลอดภัยดีอยู่แล้ว ปลอดภัยสุดๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#017": {
+   "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
+   "dst": "ก็ แต้มค่าสถานะไง! คุณได้มาตอนเลเวลอัป แล้วเอาไปลงเพื่อรับโบนัสในการต่อสู้ ผมไม่ใช่ทหารหรอกนะ แต่ผมก็รู้ว่าคุณควรใช้มัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#019": {
+   "src": "You get it, or do you want me to tell you what they are?",
+   "dst": "เข้าใจไหม หรืออยากให้ผมอธิบายว่ามีอะไรบ้าง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#023": {
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} พลังป้องกันคือตัวเลือกที่ดีที่สุดถ้าคุณเอาตัวรอดยาก ช่วยลดความเสียหายที่ได้รับ แค่นั้นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#024": {
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} ความว่องไว อันนี้สำหรับพวกชอบเสี่ยง ยิ่งมีมาก ก็ยิ่งมีโอกาสหลบการโจมตี ไม่ต้องรับความเสียหายเกือบทั้งหมด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#025": {
+   "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
+   "dst": "ส่วนที่ดีที่สุดคือ คุณผสมมันได้ตามใจ ไม่ว่าจะเป็นคลาสไหนหรือสู้แบบไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#026": {
+   "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
+   "dst": "แค่เปิดเข็มทิศเพื่อลงแต้มค่าสถานะ แล้วพอพร้อมก็เข้าไปเอาแหวนของผมมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#028": {
+   "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
+   "dst": "ไปเลย ทหาร! แสดงพลังของกองทัพ {p} ให้เราเห็น! เอ่อ หมายถึง... เอาแหวนนั่นมาให้ผม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#029": {
+   "src": "What's going on in there, soldier? Have you found the ring yet?",
+   "dst": "ในนั้นเป็นยังไงบ้าง ทหาร? เจอแหวนหรือยัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#030": {
+   "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
+   "dst": "คุณควรรีบหน่อยนะ ก่อนที่... ช่างเถอะ! แค่หาแหวนให้เจอแล้วออกมาจากที่นั่น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#031": {
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
+   "dst": "วัวศักดิ์สิทธิ์! มัน... มัน... เขากลับมาแล้ว! ฆ่ามันเร็ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#032": {
+   "src": "Kill the Corrupted Father-in-Law!",
+   "dst": "ฆ่าพ่อตาแปดเปื้อน!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#033": {
+   "src": "You did it! Come back here now, so I can finally get my ring back.",
+   "dst": "คุณทำได้! กลับมาตรงนี้เลย ผมจะได้แหวนคืนซะที",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#035": {
+   "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
+   "dst": "ตายจริง ตื่นเต้นกว่าที่คิดไว้นิดหน่อยนะ เฮอะ แต่ก็ทำได้ดีมาก! ดีใจที่เรากำจัดสัตว์ประหลาดนั่นได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#036": {
+   "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
+   "dst": "หมายถึง... พ่อตาผู้น่าสงสาร! ไม่รู้จะอธิบายเรื่องนี้กับภรรยายังไงดี...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#037": {
+   "src": "I'll take the ring now, it's rather precious to me...",
+   "dst": "ขอแหวนคืนเลยนะ มันมีค่ากับผมมาก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#038": {
+   "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
+   "dst": "ยังไงก็ตาม รับรางวัลที่สมควรได้นี้ไป สำหรับ เอ่อ สิ่งที่คุณทำวันนี้ บางที ถ้าทำแบบนี้ต่อไป สักวันคุณอาจเป็นวีรบุรุษอย่าง Ragnar ก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#039": {
+   "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
+   "dst": "สวัสดีค่ะ คนแปลกหน้า มีอะไรอยากคุยกับฉันหรือเปล่าคะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#040": {
+   "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
+   "dst": "ฉันควรโกรธนะ แต่... จะแกล้งทำเป็นแปลกใจก็ไม่ได้ เขาเป็นคนซุ่มซ่ามขี้ลืมมาตลอด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#041": {
+   "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
+   "dst": "แต่มันก็อธิบายอะไรได้หลายอย่าง... เขาทำตัวแปลกๆ ตั้งแต่พ่อเสีย คงเป็นเพราะเรื่องนั้นแหละ ขอบคุณที่บอกฉันนะคะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#042": {
+   "src": "That's right. The one and only, ha ha...",
+   "dst": "ใช่ค่ะ คนเดียวเท่านั้นแหละ ฮ่าๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#043": {
+   "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
+   "dst": "เราเป็นแค่ชาวไร่ธรรมดาที่พยายามเอาตัวรอด เราดูแลพ่อของฉันมาจน... ก็... นั่นแหละ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#044": {
+   "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
+   "dst": "ขอบคุณค่ะ... ทุกอย่างเกิดขึ้นกะทันหันมาก วันที่ฉันออกไป {p} พ่อยังแข็งแรงดีอยู่เลย แต่พอกลับมา พ่อก็ถูกฝังไปแล้ว โรคคงมาเร็วมาก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#045": {
+   "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
+   "dst": "แต่ในวัยของพ่อ ฉันก็ไม่แปลกใจหรอก... แค่เสียดายที่หาบาทหลวงมาไม่ทัน พ่อเป็นคนเคร่งศาสนามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#046": {
+   "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
+   "dst": "พ่อ... เหนือสิ่งอื่นใด พ่อเป็นคนใจดีและมีน้ำใจเสมอ พ่อยกไร่ทั้งหมดนี้ให้เรา แล้วก็เคร่งศาสนามาก ศรัทธาแท้จริง บางทีนั่นอาจทำให้พ่ออายุยืน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#047": {
+   "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
+   "dst": "โธ่... ถ้าไม่หยุด ฉันต้องร้องไห้อีกแน่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#048": {
+   "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
+   "dst": "คุณใช้แต้มค่าสถานะแล้วด้วยใช่ไหมคะ? เผื่อมีอะไรเกิดขึ้น มันอาจมีประโยชน์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture",
+   "speaker": "Farmer Kelri"
+  },
+  "Dearly Departed#049": {
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "มีทั้งหมดห้าอย่าง {#} พละกำลัง {#} ความแม่นยำ {#} สติปัญญา {#} พลังป้องกัน และ {#} ความว่องไว แต่ละอย่างให้โบนัสต่างกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#050": {
+   "src": "Why are you asking me that?",
+   "dst": "ถามแบบนั้นทำไม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#051": {
+   "src": "What are Skill Points?",
+   "dst": "แต้มค่าสถานะคืออะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#052": {
+   "src": "I got it.",
+   "dst": "เข้าใจละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#053": {
+   "src": "About Strength.",
+   "dst": "พละกำลัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#054": {
+   "src": "About Dexterity.",
+   "dst": "ความแม่นยำ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#055": {
+   "src": "About Intelligence.",
+   "dst": "สติปัญญา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#056": {
+   "src": "Not yet...",
+   "dst": "ยังเลย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#057": {
+   "src": "Dig up the grave?",
+   "dst": "ขุดหลุมศพ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#058": {
+   "src": "There you go...",
+   "dst": "เอาล่ะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#059": {
+   "src": "Now to see if you can find that ring Cevalus mentioned...",
+   "dst": "ทีนี้ลองหาแหวนที่ Cevalus พูดถึงดู...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#060": {
+   "src": "You manage to pry the ring off the monster's finger...",
+   "dst": "คุณงัดแหวนออกจากนิ้วของสัตว์ประหลาดได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#061": {
+   "src": "About Defence.",
+   "dst": "พลังป้องกัน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#062": {
+   "src": "About Agility.",
+   "dst": "ความว่องไว?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#063": {
+   "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
+   "dst": "{#} พละกำลังมีประโยชน์ถ้าคุณล้มศัตรูได้ยาก มันทำให้การโจมตีแรงขึ้น ง่ายๆ แค่นั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
+  }
+ }
+}

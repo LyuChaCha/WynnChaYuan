@@ -1,0 +1,386 @@
+{
+ "_meta": {
+  "quest": "Jungle Fever",
+  "count": 37,
+  "translated": 37,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Jungle Fever#000": {
+   "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
+   "dst": "วิธีรักษาไข้นี้มีทางเดียวคือดื่มมรกตเหลว! ใช่ ถูกต้อง! *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#001": {
+   "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
+   "dst": "บุกเข้า *ไอ* คลังมรกต แต่ไม่ต้องเอาอะไรมานะ... แล้วกลับมาหาฉันทันที ถ้ารอดออกมาได้ เฮะๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#002": {
+   "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
+   "dst": "เราต้องเปลี่ยนแผน เราจะไม่ขออนุญาตแล้ว ยังไงก็เพื่อช่วยฉันนี่นา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#003": {
+   "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
+   "dst": "ฉันต้องแน่ใจว่าคุณบุกเข้าธนาคารได้ง่ายๆ เลยมาที่นี่เองเพื่อดูว่าคุณทำได้ไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#004": {
+   "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
+   "dst": "คุณพิสูจน์ความสามารถในการลอบเร้นและพละกำลังด้วยการบุกคลังนี้แล้ว ตอนนี้เริ่มงานจริงได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#005": {
+   "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
+   "dst": "ที่นั่นมีโกเลมผู้พิทักษ์ฝึกมาอย่างดีเฝ้าอยู่เพียบ ฆ่าใครก็ได้ในฮิตเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+    "file": "quest/jungle-fever.json",
+    "ratio": 0.832,
+    "reason": "candidate"
+   }
+  },
+  "Jungle Fever#006": {
+   "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
+   "dst": "..หมายถึง *ไอ*.. ฉันป่วยหนักเกินไปเลยกลับมาที่นี่.. *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#007": {
+   "src": "I feel so much better now, thank you for the cure!",
+   "dst": "ตอนนี้รู้สึกดีขึ้นเยอะเลย ขอบคุณสำหรับยารักษานะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#008": {
+   "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Worid ในหมู่บ้านกลางป่าที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#009": {
+   "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
+   "dst": "โอ้ ดีใจจริงๆ ที่ได้เจอคุณ! *ไอ* ฉันเป็นไข้หนักมาก ต้องการความช่วยเหลือจริงๆ! *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#011": {
+   "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
+   "dst": "ช่วยไปถามพนักงานธนาคารที่ {p} ได้ไหม ว่าจะให้ฉัน เอ่อ ไม่รู้สิ [{~} มรกตเหลว] ได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#012": {
+   "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
+   "dst": "ถ้าเขากล้า *ไอ* ปฏิเสธ... คุณต้องใช้กำลังแล้วล่ะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#014": {
+   "src": "Oh, uh... I mean *cough* *cough*",
+   "dst": "อ้อ เอ่อ... หมายถึง *ไอ* *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#015": {
+   "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
+   "dst": "คุยกับพนักงานธนาคารของ {p} เรื่องยารักษาของ Worid ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#016": {
+   "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
+   "dst": "[{~} มรกตเหลว]? เขาบ้าไปแล้ว! มรกตเหลวรักษาใครไม่ได้หรอก นอกจากโรคจน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "The Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#017": {
+   "src": "I will not participate in this pathetic fraud attempt!",
+   "dst": "ฉันไม่ร่วมมือกับการต้มตุ๋นน่าสมเพชนี่แน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "The Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#018": {
+   "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
+   "dst": "เข้าไปในคลังมรกตของ {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#019": {
+   "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
+   "dst": "ไม่นะ! ไม่มีมรกตเหลวแล้วฉันจะรักษาโรคได้ยังไง?... *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#021": {
+   "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
+   "dst": "ก่อนอื่น ฉันต้องแน่ใจว่าคุณบุกเข้าธนาคารได้ง่ายๆ ลองเข้าคลังลับของ {p} ดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#022": {
+   "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
+   "dst": "เสร็จแล้วกลับมาคุยกับฉันอีก ระวังด้วย ที่นั่นอาจมียามอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#023": {
+   "src": "Return to Worid",
+   "dst": "กลับไปหา Worid",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#024": {
+   "src": "What? You're here already. I thought you would take too long so I just went myself.",
+   "dst": "อะไรนะ? มาถึงแล้วเหรอ ฉันนึกว่าคุณจะช้า เลยไปเองซะเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#025": {
+   "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
+   "dst": "อาการป่วยฉันเหรอ? อ้อ ใช่ *ไอ* คุณควรรู้สึกผิดนะที่บังคับคนป่วยให้ทำงานแทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#026": {
+   "src": "Anyway I see you proved yourself, we can start the real thing now.",
+   "dst": "ยังไงก็ตาม คุณพิสูจน์ตัวเองแล้ว เริ่มงานจริงได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#027": {
+   "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
+   "dst": "คือ {p} มีห้องนิรภัยมรกตที่คุ้มกันแน่นหนามาก ชื่อว่า \"เขาวงกตมรกต\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#028": {
+   "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+   "dst": "ที่นั่นมีโกเลมผู้พิทักษ์ฝึกมาอย่างดีเฝ้าอยู่เพียบ ฆ่านักผจญภัยคนไหนก็ได้สบายๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#029": {
+   "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
+   "dst": "พนักงานธนาคารในห้องนิรภัยลับคงเบื่อจนแทบบ้า คงไม่ว่าอะไรถ้าคุณไปเจอเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#030": {
+   "src": "Good luck with that. Haha.. I mean, *cough*.",
+   "dst": "โชคดีนะ ฮ่าๆ.. หมายถึง *ไอ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#031": {
+   "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
+   "dst": "แทรกซึมเข้าเขาวงกตมรกตลับใต้ดินของ {p} ที่ [{~}, {~}, -{~}] แล้วหาพนักงานธนาคารในห้องมรกต",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#032": {
+   "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
+   "dst": "โอ้ เอ่อ! มีคน! ไม่ได้เจอใครมานานมากแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "Almuj Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#033": {
+   "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
+   "dst": "มรกตเหลวเหรอ? ได้ ได้สิ! ฉันมีเพียบ! นี่ เอาไปเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "Almuj Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#034": {
+   "src": "Talk to Worid at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Worid ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#035": {
+   "src": "You are back! Wonderful!",
+   "dst": "กลับมาแล้ว! วิเศษเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#036": {
+   "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
+   "dst": "เงินเยอะเลย ขอบคุณมาก ในที่สุดฉันก็จะได้... *ไอ* รักษาตัวเอง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#037": {
+   "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
+   "dst": "นี่ ส่วนนี้ของคุณ สมควรได้แล้ว ฉันต้องใช้... *ไอ* เงินส่วนใหญ่รักษาตัว เลยจ่ายคุณเป็นกุญแจแทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#038": {
+   "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
+   "dst": "ฉันขโมย- *ไอ* หมายถึงยืมมาจากหัวหน้าเผ่า ว่ากันว่ามันเคยใช้ขังความชั่วร้ายยิ่งใหญ่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#039": {
+   "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
+   "dst": "ไปให้พ้น- *ไอ* เอ่อ... โชคดี ใช่ โชคดีนะ นักผจญภัย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  }
+ }
+}

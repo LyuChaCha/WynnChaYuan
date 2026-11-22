@@ -1,0 +1,390 @@
+{
+ "_meta": {
+  "quest": "The Sewers of Ragni",
+  "count": 38,
+  "translated": 38,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Sewers of Ragni#000": {
+   "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
+   "dst": "ทหาร! สำรวจท่อระบายน้ำมาเหรอ? หวังว่าเตรียมตัวมาดีนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
+   "src": "Soldier! Good timing. We've been requestin' help for ages.",
+   "dst": "ทหาร! มาได้จังหวะพอดี เราขอความช่วยเหลือมานานแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#002": {
+   "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
+   "dst": "พอฝูงแปดเปื้อนอาละวาดในที่ราบ คนก็ย้ายมา {p} มากขึ้นเรื่อยๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#003": {
+   "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
+   "dst": "ปัญหาคือ ท่อระบายน้ำหลักอุดตัน ไม่แปลกที่ไม่มีใครอยากรับงานนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#004": {
+   "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
+   "dst": "ผมต้องให้คุณลงมือเลอะเทอะหน่อย ผมต้องการคนช่วยเรื่องท่ออุดตัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#005": {
+   "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
+   "dst": "แผนคือ เราเข้าไป วางระเบิดลูกเล็กให้สิ่งที่อุดหลุด แล้วออกมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#006": {
+   "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
+   "dst": "เราจะใช้ท่อข้างนี้ ท่อใหญ่ลงเนินไปน่ะ... อย่าเข้าไปลึกนักดีกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#007": {
+   "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
+   "dst": "ข้างในระวังตัวด้วย อะไรก็ซุ่มอยู่ได้ พร้อมไหม? ไปกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#008": {
+   "src": "New Quest Started: The Sewers of {p}",
+   "dst": "เริ่มเควสใหม่: ท่อระบายน้ำแห่ง {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#009": {
+   "src": "Good, ya caught up. Watch your step around this place, soldier.",
+   "dst": "ดี ตามมาทันแล้ว ระวังทางเดินแถวนี้ด้วย ทหาร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#010": {
+   "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
+   "dst": "หน่วยสอดแนมยืนยันว่าแถวนี้ปลอดภัย แต่เลี้ยวผิดทีเดียวอาจหลงเข้าคุกเก่าได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#011": {
+   "src": "I... we really don't want t' end up there.",
+   "dst": "ผม... เราไม่อยากไปจบที่นั่นจริงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#012": {
+   "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
+   "dst": "นี่ระเบิดลูกเล็ก ผมวางไว้ที่จุดอุดตันลูกหนึ่งแล้ว ถ้าลูกนั้นไม่ได้ผล ใช้ลูกนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#013": {
+   "src": "The exit has opened...",
+   "dst": "ทางออกเปิดแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#014": {
+   "src": "The pillar seems very unstable...",
+   "dst": "เสาดูไม่มั่นคงเลย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#015": {
+   "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
+   "dst": "อ้า ยังรอด! ดูเหมือนเราประเมินปริมาณน้ำเสียต่ำไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#016": {
+   "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
+   "dst": "... อ้า ท่อนี้มีประวัติด้วยนะ สมัยการบุกโจมตี {p} เขาซ่อนพลเรือนไว้ที่นี่ ในคุกเก่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#017": {
+   "src": "Let's get out of here. D'you still have the explosive I gave you?",
+   "dst": "ออกไปจากที่นี่กัน ยังมีระเบิดที่ผมให้อยู่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#018": {
+   "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
+   "dst": "เฮ้อ! ดูเหมือนระเบิดลูกแรกจะเคลียร์ท่อได้ ชาว {p} คงดีใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#019": {
+   "src": "... I don't know exactly what's in there, soldier.",
+   "dst": "... ผมไม่รู้แน่ชัดว่าข้างในมีอะไร ทหาร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#020": {
+   "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
+   "dst": "ผมห้ามคุณสำรวจดันเจียนไม่ได้ แต่แนะนำให้เตรียมอุปกรณ์ก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#021": {
+   "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
+   "dst": "ตำนานเล่าว่า Bob นักรบในตำนาน เกิดในนั้นระหว่างการบุกโจมตี {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#022": {
+   "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
+   "dst": "แม่เขาตายตอนคลอด แต่บางคนว่านางนอนอยู่ข้างล่างนั่นหลายปี เน่าเปื่อย รอคอย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#023": {
+   "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
+   "dst": "แต่ก็แค่เรื่องเล่า! ขอบคุณที่ช่วยนะ ทหาร โชคดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#024": {
+   "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
+   "dst": "ร้อยโทที่ [-{~}, {~}, -{~}] ต้องการความช่วยเหลือ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#025": {
+   "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
+   "dst": "เข้าไปในท่อระบายน้ำที่ [-{~}, {~}, -{~}] และหาจุดอุดตัน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#026": {
+   "src": "Explore the sewer and find the blockage.",
+   "dst": "สำรวจท่อระบายน้ำและหาจุดอุดตัน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#027": {
+   "src": "Anyway, I've found the blockage. It's right up ahead.",
+   "dst": "ยังไงก็ตาม ผมเจอจุดอุดตันแล้ว อยู่ข้างหน้านี่เอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#028": {
+   "src": "Find a way to fix the blockage.",
+   "dst": "หาทางแก้จุดอุดตัน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#029": {
+   "src": "Find a way out of the spooky sewer.",
+   "dst": "หาทางออกจากท่อระบายน้ำสุดหลอน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#030": {
+   "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
+   "dst": "ข้างหลังนั่นผมคลาดกับคุณไปพักหนึ่ง พูดตรงๆ โชคดีที่เราเจอกันอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#031": {
+   "src": "I lost you for a bit back there. 's lucky we found each other, t' be honest.",
+   "dst": "ข้างหลังนั่นผมคลาดกับคุณไปพักนึง พูดตรงๆ โชคดีที่เราเจอกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#032": {
+   "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
+   "dst": "บางครั้ง... บางครั้งมันก็ไม่พอ บางคนว่ายังมี... บางอย่างเดินวนอยู่ที่นั่น เศษซากจากการสังหารหมู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#033": {
+   "src": "Good, let's use it on this wall, it looks like we can break right through...",
+   "dst": "ดี ใช้มันกับกำแพงนี้ ดูเหมือนเราจะระเบิดทะลุไปได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#034": {
+   "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Jenprest ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#035": {
+   "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
+   "dst": "แล้วก็ถือว่าโชคดีที่เราไม่เจออะไรน่ากลัวเกินไปในนั้น เรื่องเล่าบางเรื่อง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#037": {
+   "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
+   "dst": "แล้วก็ถือว่าโชคดีนะที่เราไม่เจออะไรน่ากลัวเกินไปในนั้น เรื่องเล่าบางเรื่อง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#038": {
+   "src": "... I don't exactly know what's in there, soldier.",
+   "dst": "... ผมไม่รู้แน่ชัดว่าข้างในมีอะไร ทหาร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  }
+ }
+}
