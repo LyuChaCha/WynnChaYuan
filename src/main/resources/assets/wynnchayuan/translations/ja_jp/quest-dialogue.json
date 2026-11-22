@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24969,
-  "translated": 24966,
+  "count": 24980,
+  "translated": 24977,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -41073,7 +41073,7 @@
    "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
    "dst": "おい、坊や！　あの Enkser おじさんが、お前に初めての馬をくれたって聞いたぞ！　あいつはケチな奴だから、タダでもらえたのはラッキーだと思えよ。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
@@ -41084,7 +41084,7 @@
    "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
    "dst": "ねえ、自分の愛馬ともっと親しくなるために、ちょっとしたゲームをやってみないか？　「{c2}タイムトライアル{/}」ってやつだよ。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
@@ -41095,7 +41095,7 @@
    "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
    "dst": "近所を周回するコースを作ってみたんだ。何人かが試走してくれたんだけど、その中には記録保持者の Enkser もいたよ。あいつと「Betty」は、本当に手強い相手だぜ、本当に。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
@@ -41106,7 +41106,7 @@
    "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
    "dst": "走破時間次第で、{c2}さまざまな報酬{/}が手に入る。エメラルドや装備、そして {c3}Enkser の記録(Aランク){/}を上回れば、さらに別の馬まで手に入る！　これは彼が賭けたものなんです。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
@@ -41117,12 +41117,89 @@
    "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
    "dst": "何より、これで{c2}君の愛馬がもっと強くなる{/}んだ。どうだ、坊や？ 試してみるか？ もし試してみたいなら、{c2}また俺に声をかけてくれ{/}。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
    "note": "{c2}make yer steed stronger{/} , {c2}talk to me again{/}"
+  },
+  "Black Road Runaround#006": {
+   "src": "It's a note from Enkser... Read it?",
+   "dst": "Enkser からのメモだ…読んでみる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Black Road Runaround#007": {
+   "src": "Welp, I'm a man of my word. I lost the bet, so to the victor go the spoils - the daughter of my precious Betty. You take good care of her, hear?",
+   "dst": "{c1}まあ、俺は約束を守る男だ。賭けに負けたから、勝者には景品が与えられる――俺の愛しい Betty の娘だ。彼女をちゃんと大切にしてやってくれよ、いいか？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Welp, I'm a man of my word. I lost the bet, so to the victor go the spoils - the daughter of my precious Betty. You take good care of her, hear?{/}"
+  },
+  "Black Road Runaround#008": {
+   "src": "I suspect you might be wanting to breed her with that other horse I gave you before. It's a good idea; their offspring will have a higher Potential.",
+   "dst": "{c1}たぶん、前に私があげたあの馬と、その{c2}牝馬を交配{c1}させたいと思っているんじゃないか。それはいい考えだ。そうすれば、その子馬の「{c2}潜在能力{c1}」は高くなるだろうから。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}I suspect you might be wanting to {c2}breed her{c1} with that other horse I gave you before. It's a good idea; their offspring will have a {c2}higher Potential{c1}.{/}"
+  },
+  "Black Road Runaround#009": {
+   "src": "A Mount's Potential is basically the sum of all of its Max stats. The higher the Potential, the greater your horse can become.",
+   "dst": "{c1}馬の「ポテンシャル」は、基本的にその馬のすべての{c2}最大ステータス{c1}の合計だ。ポテンシャルが高いほど、その馬はより優れた馬へと成長することができる。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}A Mount's Potential is basically the sum of all of its {c2}Max stats{c1}. The higher the Potential, the greater your horse can become.{/}"
+  },
+  "Black Road Runaround#010": {
+   "src": "If you want to breed a mount, just go to the mount feeder and place the saddle of one mount into the other's trough. Yes, it's weird. Don't ask.",
+   "dst": "{c1}マウントを繁殖させたい場合は、{c2}給餌器{c1}に行き、{c2}一方のマウントの鞍をもう一方の餌箱に入れるだけ{c1}だ。ああ、ちょっと変だが理由は聞かないでくれ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}If you want to breed a mount, just go to the {c2}mount feeder{c1} and {c2}place the saddle of one mount into the other's trough{c1}. Yes, it's weird. Don't ask.{/}"
+  },
+  "Black Road Runaround#011": {
+   "src": "Be warned though - in the process of becoming parents, the two horses you had before will have to retire. We'll take them into our care, and you'll not be able to use them anymore.",
+   "dst": "{c1}ただし、ひとつ注意しておけ。親になる過程で、{c2}以前飼っていた2頭の馬{c1}は引退することになる。私たちがお引き取りし、あなたたちは{c2}もうそれらを使うことはできない。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Be warned though - in the process of becoming parents, the {c2}two horses you had before{c1} will have to retire. We'll take them into our care, and you'll {c2}not be able to use them anymore.{/}"
+  },
+  "Black Road Runaround#012": {
+   "src": "That should be all. If you have any more questions, I left you a book about Mount rearing in the Bank across from the Enclosure. Be good to that horse for me, okay?",
+   "dst": "{c1}これで全部のはずだ。もし他に質問があれば、{c2}囲い{c1}の向かいにある{c2}銀行{c1}に、馬の飼育に関する{c2}本{c1}を置いといた。私の分も、その馬を大切にしてくれ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}That should be all. If you have any more questions, I left you a {c2}book{c1} about Mount rearing in the {c2}Bank{c1} across from {c2}the Enclosure{c1}. Be good to that horse for me, okay?{/}"
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
@@ -115925,18 +116002,19 @@
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#008": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "うん。いいね。キ、キノコがないと…スープがつ、つくれない！つ、ついて来てくれ！く、蜘蛛のところにあ、案内するよ。わ、悪い蜘蛛だ。",
+   "dst": "うん。いいね。キ、キノコがないと…スープがつ、つくれない！{c2}つ、ついて来てくれ{/}！く、蜘蛛のところにあ、案内するよ。わ、悪い蜘蛛だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 2",
    "speaker": "Yahya",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}F-follow me{/}"
   },
   "Mushroom Man#009": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
@@ -115986,7 +116064,8 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "Tasim",
-   "source": "captured"
+   "source": "captured",
+   "note": "really は斜体 , now は太字"
   },
   "Mushroom Man#014": {
    "src": "Right! Right. We've arrived from {p}, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
@@ -116119,7 +116198,7 @@
    "source": "wiki"
   },
   "Mushroom Man#027": {
-   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-But- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
+   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-but- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
    "dst": "ふむ。兵士が一人、ふ、二人…よ、弱そうだな。もっと強いのを見、見たことあるんだ。で、でも、へへ、つ、強い兵士は…ここにいないね。き、君たちで足りるかも。たぶん。",
    "role": "desc",
    "kind": "dialogue",
@@ -116130,7 +116209,7 @@
   },
   "Mushroom Man#028": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
-   "dst": "ぼ、僕のお気に入りのキノコ畑。も、もう使えない。蜘蛛だ。た、たくさんの蜘蛛。の、の、乗っ取られた…キノコが…採れない。く、く、蜘蛛を殺してくれる？キノコ。",
+   "dst": "ぼ、僕のお気に入りのキノコ畑。も、もう使えない。蜘蛛だ。た、たくさんの蜘蛛。の、の、乗っ取られた…キノコが…採れない。く、く、蜘蛛を倒してくれる？キノコ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -116199,8 +116278,8 @@
    "source": "wiki"
   },
   "Mushroom Man#035": {
-   "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
-   "dst": "片付いたみたいですよ。これは…えっと…立派なキノコですね！",
+   "src": "Well, it looks cleared to me. These are... uh... some fine mushrooms!",
+   "dst": "うん、片付いたみたいだ。これは…えっと…立派なキノコだね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -116209,8 +116288,8 @@
    "source": "wiki"
   },
   "Mushroom Man#036": {
-   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
-   "dst": "あ、ありがとう、兵士さんたち！あ、あれは、その、だ、大丈夫、だったと、思う。",
+   "src": "Th-thank you soldiers! That was-... I mean. It was f-fine, I g-... guess.",
+   "dst": "あ、ありがとう兵士さん！すごく― いや。ま、まあまあだった、か、かな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -116220,13 +116299,14 @@
   },
   "Mushroom Man#037": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
-   "dst": "…あ、そうか。今、お、お金を払わなきゃ…だめ？だよね？へへ。[{~} エメラルド] で、い、いいかな…？",
+   "dst": "…あ、そうか。今、お、お金を払わなきゃ…だめ？だよね？へへ。{c2}[{~} エメラルド]{/} で、い、いいかな…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "Yahya",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Emeralds]{/}"
   },
   "Mushroom Man#038": {
    "src": "...Come on.",
@@ -116340,13 +116420,14 @@
   },
   "Mushroom Man#049": {
    "src": "You two are soldiers, yes? I would ask you to continue your travels to {p}. Find an Admiral Aegis- tell him our little village needs aid.",
-   "dst": "君たちは兵士だね？{p} への旅を続けてくれないか。Aegis 提督を探して、この小さな村に援助が必要だと伝えてほしい。",
+   "dst": "君たちは兵士だね？{c2}{p} への旅を続けてくれないか{/}。Aegis 提督を探して、この小さな村に援助が必要だと伝えてほしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Mayor Alvin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}continue your travels to {p}{/}"
   },
   "Mushroom Man#050": {
    "src": "I-... of course. We'll set out immediately. Come on, {u}.",
@@ -116570,13 +116651,14 @@
   },
   "Mushroom Man#072": {
    "src": "Bad news, indeed. Very well, we will make preparations. For the time being, the two of you should rest and hone your skills. Captain Ragon here in the barracks would gladly offer some training.",
-   "dst": "確かに悪い知らせだ。よろしい、準備を進めよう。それまで二人は休んで腕を磨きなさい。兵舎の Ragon 隊長が喜んで訓練してくれるだろう。",
+   "dst": "確かに悪い知らせだ。よろしい、準備を進めよう。それまで二人は休んで腕を磨きなさい。兵舎の {c2}Ragon 隊長{/}が喜んで訓練してくれるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Captain Ragon{/}"
   },
   "Mushroom Man#073": {
    "src": "Thank you, sir. But is there anything we could do to actually help?",
@@ -116590,13 +116672,14 @@
   },
   "Mushroom Man#074": {
    "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I'd suggest you speak with him.",
-   "dst": "やる気があるな！そうだな…西門の外の Fenor 隊長が助けを求めていたはずだ。よければ彼と話してみるといい。",
+   "dst": "やる気があるな！そうだな…{c2}西門の外の Fenor 隊長{/}が助けを求めていたはずだ。よければ彼と話してみるといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Captain Fenor out by the west gate{/}"
   },
   "Mushroom Man#075": {
    "src": "Yes, yes. Well, I must be off. If the threat of Nivla's spiders is growing... we must prepare accordingly. I hope to hear of your future endeavors, all three of you.",
@@ -116716,6 +116799,36 @@
    "quest": "Mushroom Man",
    "stage": "",
    "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#087": {
+   "src": "You know... I'm starting to wonder what I've gotten us into.",
+   "dst": "ねえ……僕たちを一体どんな状況に巻き込んじゃったのか、ちょっと心配になってきたよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#088": {
+   "src": "I'm just hoping this all works out in the end.",
+   "dst": "ただ、最終的にはすべてうまくいくといいな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#089": {
+   "src": "Come on, we need to tell the mayor what happened!",
+   "dst": "さあ、市長に何が起きたのか伝えなきゃ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Off the Rails#000": {
@@ -136387,13 +136500,14 @@
   },
   "Potion Making#002": {
    "src": "Get me... [{~} Red Mushroom], they can be found outside the east gate behind me.",
-   "dst": "持ってきて… [{~} 赤いキノコ]。私の後ろの東門の外で見つかる。",
+   "dst": "持ってきて… {c2}[{~} 赤いキノコ]{/}。私の後ろの{c3}東門{/}の外で見つかる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 1",
    "speaker": "The Assistant",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}[{~} Red Mushroom]{/} , {c3}east gate{/}"
   },
   "Potion Making#003": {
    "src": "You must...ensure that it worked. You...are much stronger than I, stranger...",
@@ -136476,24 +136590,26 @@
    "source": "wiki"
   },
   "Potion Making#011": {
-   "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
-   "dst": "近くのムーシュルームを倒し、[{~} 赤いキノコ] を {p} の助手に届ける",
+   "src": "Slay Mooshrooms near [{~}, {~}, -{~}] and bring [{~} Red Mushrooms] to The Assistant in {p}",
+   "dst": "[{~}, {~}, -{~}]付近にいるムーシュルームを倒し、{c3}[{~} 赤いキノコ]{/} を {p} の助手に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c3}[{~} Red Mushrooms]{/}"
   },
   "Potion Making#012": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
-   "dst": "早く…頼んだ [{~} 赤いキノコ] を…ここから東門を出て {p} を抜けて。",
+   "dst": "早く…頼んだ {c2}[{~} 赤いキノコ] {/}を…ここから東門を出て {p} を抜けて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "The Assistant",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Red Mushroom]{/}"
   },
   "Potion Making#013": {
    "src": "The...the...cows. Steal...from them.",
@@ -136547,13 +136663,14 @@
   },
   "Potion Making#018": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
-   "dst": "キノコを集めていた時、オレンジの魔女帽みたいな屋根の小屋を見た？",
+   "dst": "キノコを集めていた時、{c2}オレンジ{/}の魔女帽みたいな屋根の小屋を見た？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
    "stage": "Stage 2",
    "speaker": "The Assistant",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}orange{/}"
   },
   "Potion Making#019": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
@@ -136576,7 +136693,7 @@
    "source": "wiki"
   },
   "Potion Making#021": {
-   "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
+   "src": "Enter the hut at [{~}, {~}, -{~}], slay Essren, and take his coat",
    "dst": "[{~}, {~}, -{~}] の小屋に入り、Essren を倒して上着を奪う。",
    "role": "desc",
    "kind": "objective",
@@ -167650,23 +167767,25 @@
   },
   "Taking the Tower#003": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
-   "dst": "あ、待って。先に寄る所があるんだ。アイテム強化屋の所までついてきて！",
+   "dst": "あ、待って。先に寄る所があるんだ。{c2}アイテム強化屋の所までついてきて！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Follow me to the Item Upgrader!{/}"
   },
   "Taking the Tower#004": {
-   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
-   "dst": "どうやら塔のてっぺんの親玉は  水属性ダメージに弱いらしい！",
+   "src": "Apparently, the big bad at the top of the tower is weak to {#} Water damage!",
+   "dst": "どうやら塔のてっぺんの親玉は {#} {c2}水属性{/}ダメージに弱いらしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": "{c2}Water{/}"
   },
   "Taking the Tower#005": {
    "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
@@ -167679,24 +167798,26 @@
    "source": "captured"
   },
   "Taking the Tower#006": {
-   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "今回は  水のパウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
+   "src": "In this case, you can apply a {#} Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "今回は {#} {c2}水{/}のパウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 2",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Water{/}"
   },
   "Taking the Tower#007": {
    "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
-   "dst": "…とにかく― はい。この属性パウダーを手に持って、武器を右クリックして。終わったら教えて！",
+   "dst": "…とにかく― はい。{c2}この属性パウダーを手に持って、武器を右クリック{/}して。終わったら教えて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": "{c2}Hold the powder, then Right Click on your weapon{/}"
   },
   "Taking the Tower#008": {
    "src": "[+{~} Water Powder I]",
@@ -167710,33 +167831,36 @@
   },
   "Taking the Tower#009": {
    "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
-   "dst": "このアイテム強化屋が見える？パウダーをより高いティアに強化できるんだ。",
+   "dst": "この{c2}アイテム強化屋{/}が見える？{c3}パウダー{/}をより高いティアに{c3}強化{/}できるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": "{c2}Item Upgrader{/} , {c3}upgrade powders{/}"
   },
   "Taking the Tower#010": {
    "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
-   "dst": "必要ならアイテムからパウダーを外すこともできる― 心配いらない、パウダーは戻ってくるよ！",
+   "dst": "必要ならアイテムから{c2}パウダーを外す{/}こともできる― 心配いらない、パウダーは戻ってくるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": "{c2}remove powders{/}"
   },
   "Taking the Tower#011": {
    "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
-   "dst": "…とにかく、Van 中尉たちは {p} の家が集まってる辺りにいる― 来る途中で見かけたんじゃないかな。",
+   "dst": "…とにかく、Van 中尉たちは {c2}{p} の家が集まってる辺り{/}にいる― 来る途中で見かけたんじゃないかな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 3",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}bunch of houses in the {p}{/}"
   },
   "Taking the Tower#012": {
    "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
@@ -167750,13 +167874,14 @@
   },
   "Taking the Tower#013": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
-   "dst": "撤退が必要な時や腐敗者を倒した時は、ここに集合！分かったか？",
+   "dst": "撤退が必要な時や腐敗者を倒した時は、{c2}ここに集合！{/}分かったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 4",
    "speaker": "Lieutenant Van",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}regroup here!{/}"
   },
   "Taking the Tower#014": {
    "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
@@ -167869,8 +167994,8 @@
    "source": "wiki"
   },
   "Taking the Tower#025": {
-   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
-   "dst": "しばらくはここにいるから。気が変わったら言ってね！",
+   "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
+   "dst": "まあ、任務まで時間があるから、気が変わったら言ってね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -167879,7 +168004,7 @@
    "source": "wiki"
   },
   "Taking the Tower#026": {
-   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "src": "Hey, you're back! Have you changed your mind? Want to join a raid on a corrupted tower?",
    "dst": "やあ、戻ったんだ！気が変わった？腐敗した塔の襲撃に加わらない？",
    "role": "desc",
    "kind": "dialogue",
@@ -167889,8 +168014,8 @@
    "source": "wiki"
   },
   "Taking the Tower#027": {
-   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
-   "dst": "Aledar について [{~}, {~}, -{~}] のパウダーマスターのもとへ行く。",
+   "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
+   "dst": "Aledar について [{~}, {~}, -{~}] のアイテム強化屋のもとへ行く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -167920,13 +168045,14 @@
   },
   "Taking the Tower#030": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
-   "dst": "僕、えっと…属性の話を全部そらでは言えなくて。詳しく知りたいなら兵舎の Ragon 隊長に聞いて。まるまる一つの講座があるから！",
+   "dst": "僕、えっと…属性の話を全部そらでは言えなくて。詳しく知りたいなら兵舎の {c2}Ragon 隊長{/}に聞いて。まるまる一つの講座があるから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 2",
    "speaker": "Aledar",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Captain Ragon{/}"
   },
   "Taking the Tower#031": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
@@ -168040,13 +168166,14 @@
   },
   "Taking the Tower#042": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
-   "dst": "さあ、塔へ向かえ！運がよければ、あそこを占拠した腐敗者どもを一掃できる。",
+   "dst": "さあ、{c2}塔へ向かえ{/}！運がよければ、あそこを占拠した腐敗者どもを一掃できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 4",
    "speaker": "Lieutenant Van",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}head for the tower{/}"
   },
   "Taking the Tower#043": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
@@ -168147,6 +168274,17 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "…さあ、行こう！Van 中尉たちは {c2}{p} の家が集まってる辺り{/}にいるはずだよ、覚えてる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": "{c2}bunch of houses in the {p}{/}"
   },
   "Taproot#007": {
    "src": "New Quest Started: Realm of Light II - Taproot",

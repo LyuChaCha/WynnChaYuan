@@ -38,23 +38,25 @@
   },
   "Taking the Tower#003": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
-   "dst": "あ、待って。先に寄る所があるんだ。アイテム強化屋の所までついてきて！",
+   "dst": "あ、待って。先に寄る所があるんだ。{c2}アイテム強化屋の所までついてきて！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}Follow me to the Item Upgrader!{/}"
   },
   "Taking the Tower#004": {
-   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
-   "dst": "どうやら塔のてっぺんの親玉は  水属性ダメージに弱いらしい！",
+   "src": "Apparently, the big bad at the top of the tower is weak to {#} Water damage!",
+   "dst": "どうやら塔のてっぺんの親玉は {#} {c2}水属性{/}ダメージに弱いらしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":"{c2}Water{/}"
   },
   "Taking the Tower#005": {
    "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
@@ -67,24 +69,26 @@
    "source": "captured"
   },
   "Taking the Tower#006": {
-   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "今回は  水のパウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
+   "src": "In this case, you can apply a {#} Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "今回は {#} {c2}水{/}のパウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 2",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}Water{/}"
   },
   "Taking the Tower#007": {
    "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
-   "dst": "…とにかく― はい。この属性パウダーを手に持って、武器を右クリックして。終わったら教えて！",
+   "dst": "…とにかく― はい。{c2}この属性パウダーを手に持って、武器を右クリック{/}して。終わったら教えて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":"{c2}Hold the powder, then Right Click on your weapon{/}"
   },
   "Taking the Tower#008": {
    "src": "[+{~} Water Powder I]",
@@ -98,33 +102,36 @@
   },
   "Taking the Tower#009": {
    "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
-   "dst": "このアイテム強化屋が見える？パウダーをより高いティアに強化できるんだ。",
+   "dst": "この{c2}アイテム強化屋{/}が見える？{c3}パウダー{/}をより高いティアに{c3}強化{/}できるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":"{c2}Item Upgrader{/} , {c3}upgrade powders{/}"
   },
   "Taking the Tower#010": {
    "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
-   "dst": "必要ならアイテムからパウダーを外すこともできる― 心配いらない、パウダーは戻ってくるよ！",
+   "dst": "必要ならアイテムから{c2}パウダーを外す{/}こともできる― 心配いらない、パウダーは戻ってくるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":"{c2}remove powders{/}"
   },
   "Taking the Tower#011": {
    "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
-   "dst": "…とにかく、Van 中尉たちは {p} の家が集まってる辺りにいる― 来る途中で見かけたんじゃないかな。",
+   "dst": "…とにかく、Van 中尉たちは {c2}{p} の家が集まってる辺り{/}にいる― 来る途中で見かけたんじゃないかな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 3",
    "speaker": "Aledar",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}bunch of houses in the {p}{/}"
   },
   "Taking the Tower#012": {
    "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
@@ -138,13 +145,14 @@
   },
   "Taking the Tower#013": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
-   "dst": "撤退が必要な時や腐敗者を倒した時は、ここに集合！分かったか？",
+   "dst": "撤退が必要な時や腐敗者を倒した時は、{c2}ここに集合！{/}分かったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 4",
    "speaker": "Lieutenant Van",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}regroup here!{/}"
   },
   "Taking the Tower#014": {
    "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
@@ -257,8 +265,8 @@
    "source": "wiki"
   },
   "Taking the Tower#025": {
-   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
-   "dst": "しばらくはここにいるから。気が変わったら言ってね！",
+   "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
+   "dst": "まあ、任務まで時間があるから、気が変わったら言ってね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -267,7 +275,7 @@
    "source": "wiki"
   },
   "Taking the Tower#026": {
-   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "src": "Hey, you're back! Have you changed your mind? Want to join a raid on a corrupted tower?",
    "dst": "やあ、戻ったんだ！気が変わった？腐敗した塔の襲撃に加わらない？",
    "role": "desc",
    "kind": "dialogue",
@@ -277,8 +285,8 @@
    "source": "wiki"
   },
   "Taking the Tower#027": {
-   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
-   "dst": "Aledar について [{~}, {~}, -{~}] のパウダーマスターのもとへ行く。",
+   "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
+   "dst": "Aledar について [{~}, {~}, -{~}] のアイテム強化屋のもとへ行く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -308,13 +316,14 @@
   },
   "Taking the Tower#030": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
-   "dst": "僕、えっと…属性の話を全部そらでは言えなくて。詳しく知りたいなら兵舎の Ragon 隊長に聞いて。まるまる一つの講座があるから！",
+   "dst": "僕、えっと…属性の話を全部そらでは言えなくて。詳しく知りたいなら兵舎の {c2}Ragon 隊長{/}に聞いて。まるまる一つの講座があるから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 2",
    "speaker": "Aledar",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Captain Ragon{/}"
   },
   "Taking the Tower#031": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
@@ -428,13 +437,14 @@
   },
   "Taking the Tower#042": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
-   "dst": "さあ、塔へ向かえ！運がよければ、あそこを占拠した腐敗者どもを一掃できる。",
+   "dst": "さあ、{c2}塔へ向かえ{/}！運がよければ、あそこを占拠した腐敗者どもを一掃できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
    "stage": "Stage 4",
    "speaker": "Lieutenant Van",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}head for the tower{/}"
   },
   "Taking the Tower#043": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
@@ -535,6 +545,17 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "…さあ、行こう！Van 中尉たちは {c2}{p} の家が集まってる辺り{/}にいるはずだよ、覚えてる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":"{c2}bunch of houses in the {p}{/}"
   }
  }
 }
