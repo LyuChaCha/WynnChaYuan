@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "Elemental Exercise",
-  "count": 81,
-  "translated": 81,
+  "count": 90,
+  "translated": 90,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "Mm... Así que si ataco a este, haré más daño de  Aire y menos de  Tierra...",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
+   "dst": "Mm... Así que si ataco a este, haré más daño de {#} Aire{/} y menos de {#} Tierra{/}...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#001": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -107,8 +107,8 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "...¡Oh! ¿Entonces mi hechizo Bash hará daño de  Tierra aunque mi arma solo use  Agua, verdad?",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
+   "dst": "...¡Oh! ¿Entonces mi hechizo Bash hará daño de {#} Tierra{/} aunque mi arma solo use {#} Agua{/}, verdad?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -133,7 +133,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -143,7 +143,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -153,7 +153,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -163,7 +163,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -173,7 +173,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -183,7 +183,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -193,7 +193,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -297,8 +297,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "¡Sí! Son... Fuego, Aire, Tierra, Trueno y... ¿Agua?",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
+   "dst": "¡Sí! Son... {#} Fuego{/}, {#} Aire{/}, {#} Tierra{/}, {#} Trueno{/} y... ¿{#} Agua{/}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -307,8 +307,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "Correcto. Y, por lo general, se superan en ese orden: el Fuego vence al Aire, el Aire a la Tierra, y así.",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
+   "dst": "Correcto. Y, por lo general, se superan en ese orden: el {#} Fuego{/} vence al {#} Aire{/}, el {#} Aire{/} a la {#} Tierra{/}, y así.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -415,16 +415,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "Quiero probar esta arma",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -557,7 +547,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "Capitán, nosotros también sabemos pelear. ¡Permítanos ir y ayudar a rechazar a esos no muertos!",
    "role": "desc",
    "kind": "dialogue",
@@ -587,7 +577,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "... Estaremos bien. Venga, vamos tras el capitán.",
    "role": "desc",
    "kind": "dialogue",
@@ -815,6 +805,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "Venga, vamos hacia la puerta norte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "¡Oh, {u}! ¿Vienes a entrenar? Aledar y yo pensamos practicar un poco antes de... ya sabes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "Va... más o menos como te imaginas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "¡Oye! ¡Va genial, muchas gracias! ¡Cuando vayamos a por esas arañas, estaré bien preparado!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "...Claro. Bueno, {u}, hay muchos maniquíes por aquí si también quieres entrenar. Incluido el que está peleando contra un maniquí del mismo elemento que su arma...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "Que sepas que yo...- vale, es justo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "¡Oh, {u}! Me alegra verte. Solo estoy entrenando un poco antes de enfrentarnos a esas arañas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "¡Y Tasim está aquí para darme apoyo moral!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "Es lo que mejor se me da. Además, puedo avisarte cuando tu postura falla. Cosa que pasa... bastante a menudo. ¡Como ahora mismo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "...¿Desde cuándo eres mejor que yo en esto?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   }
  }
 }

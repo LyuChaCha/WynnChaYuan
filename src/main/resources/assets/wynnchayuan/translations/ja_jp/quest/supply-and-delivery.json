@@ -18,13 +18,14 @@
   },
   "Supply and Delivery#001": {
    "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. It's not that hard!",
-   "dst": "トレードマーケットに行って、補給箱を買ってくれるだけでいい。そんなに難しくないだろ！",
+   "dst": "{c2}トレードマーケットに行って{/}、{c2}補給箱を買ってくれる{/}だけでいい。そんなに難しくないだろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
    "stage": "",
    "speaker": "Ope",
    "source": "captured",
+   "note":"{c2}go over to the Trade Market{/} , {c2}buy the supply crate{/}",
    "similar": {
     "text": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
     "file": "quest/supply-and-delivery.json",
@@ -64,13 +65,14 @@
   },
   "Supply and Delivery#005": {
    "src": "So either you run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "だから、お前が補給品を {p} まで運ぶか…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
+   "dst": "だから、お前が{c2}補給品を {p} まで運ぶ{/}か…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
    "stage": "Stage 3",
    "speaker": "Ope",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}run the supplies to {p}{/}"
   },
   "Supply and Delivery#006": {
    "src": "Howdy! Lookin' to hitch a ride off to {p}? Sorry to say, but the wagon's broken down.",
@@ -94,13 +96,14 @@
   },
   "Supply and Delivery#008": {
    "src": "This fast travel requires Supply and Delivery to use.",
-   "dst": "このファストトラベルを使うには「補給と配達」のクリアが必要だ。",
+   "dst": "このファストトラベルを使うには「{c2}補給と配達{/}」のクリアが必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}Supply and Delivery{/}"
   },
   "Supply and Delivery#009": {
    "src": "I hope these emeralds will suffice. Additionally... we have recently fixed up one of our broken carts, which makes the trip to {p} and back.",
@@ -160,7 +163,8 @@
    "quest": "Supply and Delivery",
    "stage": "Stage 1",
    "speaker": "Ope",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"had は斜体"
   },
   "Supply and Delivery#015": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
@@ -180,7 +184,8 @@
    "quest": "Supply and Delivery",
    "stage": "Stage 1",
    "speaker": "Ope",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"my は斜体"
   },
   "Supply and Delivery#017": {
    "src": "... The point is. I could really use your help right now! I- I promise, I'll pay you back for it this time.",
@@ -194,13 +199,14 @@
   },
   "Supply and Delivery#018": {
    "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
-   "dst": "トレードマーケットに行って、補給箱を買ってくれるだけでいい。頼むよ？",
+   "dst": "{c2}トレードマーケットに行って{/}、{c2}補給箱を買ってくれる{/}だけでいい。頼むよ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
    "stage": "Stage 1",
    "speaker": "Ope",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}go over to the Trade Market{/} , {c2}buy the supply crate{/}"
   },
   "Supply and Delivery#019": {
    "src": "... What? They also banned you from the market?! Well, great. What are we supposed to do now?",
@@ -244,13 +250,14 @@
   },
   "Supply and Delivery#023": {
    "src": "Hey, good work! Now you'll need to pick up the supply crate.",
-   "dst": "おっ、よくやった！次は補給箱を受け取ってきてくれ。",
+   "dst": "おっ、よくやった！{c2}次は補給箱を受け取ってきてくれ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
    "stage": "Stage 2",
    "speaker": "Ope",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}pick up the supply crate{/}"
   },
   "Supply and Delivery#024": {
    "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
@@ -480,7 +487,8 @@
    "quest": "Supply and Delivery",
    "stage": "Stage 3",
    "speaker": "Ope",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"really は斜体"
   },
   "Supply and Delivery#047": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",

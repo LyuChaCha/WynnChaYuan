@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "Elemental Exercise",
-  "count": 81,
-  "translated": 81,
+  "count": 90,
+  "translated": 90,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "อืม... ถ้าฉันตีตัวนี้ ก็จะทำความเสียหาย  ลมมากขึ้นและ  ดินน้อยลง...",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
+   "dst": "อืม... ถ้าฉันตีตัวนี้ ก็จะทำความเสียหาย {#} ลม มากขึ้นและ {#} ดิน น้อยลง...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#001": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -107,8 +107,8 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "...อ้อ! งั้นเวท Bash ของฉันจะยังทำความเสียหาย  ดิน แม้อาวุธจะใช้แค่  น้ำ ใช่ไหม?",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
+   "dst": "...อ้อ! งั้นเวท Bash ของฉันจะยังทำความเสียหาย {#} ดิน แม้อาวุธจะใช้แค่ {#} น้ำ ใช่ไหม?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -133,7 +133,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -143,7 +143,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -153,7 +153,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -163,7 +163,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -173,7 +173,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -183,7 +183,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -193,7 +193,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -297,8 +297,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "รู้ครับ! ธาตุก็คือ... ไฟ ลม ดิน สายฟ้า แล้วก็... น้ำ?",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
+   "dst": "รู้ครับ! ธาตุก็คือ... {#} ไฟ {#} ลม {#} ดิน {#} สายฟ้า แล้วก็... {#} น้ำ?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -307,8 +307,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "ถูกต้อง โดยทั่วไปแต่ละธาตุจะชนะกันตามลำดับนั้น- ไฟชนะลม ลมชนะดิน ไล่ไปเรื่อยๆ",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
+   "dst": "ถูกต้อง โดยทั่วไปแต่ละธาตุจะชนะกันตามลำดับนั้น- {#} ไฟ ชนะ {#} ลม {#} ลม ชนะ {#} ดิน ไล่ไปเรื่อยๆ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -415,16 +415,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "ขอลองอาวุธนี้ดูก่อน",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -557,7 +547,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "กัปตันครับ- พวกเราก็สู้ได้นะครับ ให้เราไปช่วยต้านพวกอันเดดด้วยเถอะ!",
    "role": "desc",
    "kind": "dialogue",
@@ -587,7 +577,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "...เราจะไม่เป็นไร มาเถอะ ตามกัปตันไปกัน",
    "role": "desc",
    "kind": "dialogue",
@@ -815,6 +805,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "มาเถอะ ไปที่ประตูเหนือกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "อ้าว {u}! มาฝึกเหรอ? ผมกับ Aledar ว่าจะซ้อมกันหน่อยก่อนจะ... ก็รู้ๆ อยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "ก็... ประมาณที่คุณคิดไว้นั่นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "เฮ้! ไปได้สวยเลยต่างหาก ขอบคุณมากนะ! ตอนไปสู้กับพวกแมงมุมนั่น ผมจะพร้อมเต็มที่แน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "...ก็ได้ อ้อ {u} ถ้าอยากฝึกด้วย แถวนี้มีหุ่นฝึกเพียบเลย รวมถึงไอ้คนที่กำลังตีหุ่นธาตุเดียวกับอาวุธตัวเองอยู่ด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "บอกไว้ก่อนนะ ผม...- ก็ได้ ยอมรับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "อ้าว {u}! ดีใจที่ได้เจอ- ผมแค่มาฝึกหน่อยก่อนจะไปจัดการพวกแมงมุมนั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "ส่วน Tasim มาเป็นกำลังใจให้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "นั่นแหละสิ่งที่ผมถนัดที่สุด แถมผมยังบอกได้ด้วยว่าท่าของนายผิดตอนไหน ซึ่งก็... บ่อยอยู่นะ รวมถึงตอนนี้ด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "...นายเก่งเรื่องนี้กว่าผมตั้งแต่เมื่อไหร่เนี่ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   }
  }
 }

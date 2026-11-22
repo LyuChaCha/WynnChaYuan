@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24840,
-  "translated": 24723,
+  "count": 24853,
+  "translated": 24722,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -69451,7 +69451,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#001": {
@@ -69461,7 +69461,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -69571,7 +69571,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -69581,7 +69581,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -69591,7 +69591,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -69601,7 +69601,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -69611,7 +69611,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -69621,7 +69621,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -69631,7 +69631,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -69854,16 +69854,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "我想试试这把武器",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
-  },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
    "dst": "那就去吧。准备好继续的时候来找我就行。",
@@ -69995,7 +69985,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "队长——我们也是能打的战士。让我们一起去帮忙击退这些不死生物吧！",
    "role": "desc",
    "kind": "dialogue",
@@ -70025,7 +70015,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "……我们会没事的。来吧，我们跟上队长。",
    "role": "desc",
    "kind": "dialogue",
@@ -70253,6 +70243,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   },
   "Ensemble of Hope#000": {
    "src": "Meet up with your friends in room number {~} in hotel {p} at [-{~}, {~}, -{~}].",
@@ -167046,6 +167136,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   },
   "Taproot#007": {
    "src": "New Quest Started: Realm of Light II - Taproot",

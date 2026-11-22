@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Elemental Exercise",
-  "count": 81,
-  "translated": 81,
+  "count": 90,
+  "translated": 90,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -11,13 +11,13 @@
  },
  "entries": {
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "Hm... Yani buna saldırırsam daha çok  Hava ve daha az  Toprak hasarı vereceğim...",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
+   "dst": "Hm... Yani buna saldırırsam daha çok {#} Hava{/} ve daha az {#} Toprak{/} hasarı vereceğim...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#001": {
@@ -27,7 +27,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -111,8 +111,8 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "...Ah! Yani silahım sadece  Su  kullansa bile Bash büyüm yine de  Toprak hasarı verecek, değil mi?",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
+   "dst": "...Ah! Yani Bash büyüm yine de {#} Toprak{/} hasarı verecek, silahım sadece {#} Su{/} kullansa bile, değil mi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -137,7 +137,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -147,7 +147,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -157,7 +157,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -167,7 +167,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -177,7 +177,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -187,7 +187,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -197,7 +197,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -301,8 +301,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "Var! Elementler... Ateş, Hava, Toprak, Yıldırım ve... Su?",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
+   "dst": "Var! Elementler... {#} Ateş{/}, {#} Hava{/}, {#} Toprak{/}, {#} Yıldırım{/} ve... {#} Su{/}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -311,8 +311,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "Doğru. Genel olarak bu sırayla birbirlerine karşı güçlüdürler- Ateş Havayı, Hava Toprağı yener, böyle devam eder.",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
+   "dst": "Doğru. Genel olarak bu sırayla birbirlerine karşı güçlüdürler- {#} Ateş{/} {#} Havayı{/}, {#} Hava{/} {#} Toprağı{/} yener, böyle devam eder.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -419,16 +419,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "Bu silahı denemek istiyorum",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -561,7 +551,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "Kaptan- biz de yetenekli savaşçılarız. Bizi de götürün, bu ölümsüzleri püskürtmeye yardım edelim!",
    "role": "desc",
    "kind": "dialogue",
@@ -591,7 +581,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "... Bir şeyimiz olmaz. Hadi, kaptanın peşinden gidelim.",
    "role": "desc",
    "kind": "dialogue",
@@ -819,6 +809,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "Hadi, kuzey kapısına doğru yola çıkalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "Ah, {u}! Biraz eğitim için mi geldin? Aledar'la ben şeyden önce... bilirsin, biraz pratik yapalım dedik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "Gidiyor... aşağı yukarı tahmin ettiğin gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "Hey! Gayet iyi gidiyor, çok teşekkür ederim! O örümceklerle savaşmaya gittiğimizde hazır olacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "...Tabii. Neyse {u}, sen de eğitim yapmak istersen etrafta bolca manken var. Silahıyla aynı elementteki bir mankenle dövüşen de dahil...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "Bilesin ki ben...- tamam, haklısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "Ah, {u}! Seni görmek güzel- o örümceklerle uğraşmadan önce burada biraz eğitim yapıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "Tasim de manevi destek için burada!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "En iyi yaptığım şey bu. Ayrıca duruşun bozulduğunda sana söyleyebilirim. Ki bu... epey sık oluyor. Şu an dahil!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "...Sen ne zaman bu işte benden iyi oldun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   }
  }
 }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 53,
-  "translated": 53,
+  "count": 57,
+  "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -535,6 +535,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "我們繼續走吧！Van 中尉他們就在 {c2}{p} 那一片房子{/}那邊，記得吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "很高興見到你，{u}！自從我們奪回狂怒之塔之後，我就沒忙什麼事了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "我一直在等 Tasim 忙完他手上的事。你知道嗎，他從來到這裡之後就一直不停地訓練。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "嘿，也許你也可以跟他一起練！去找那邊的 {c2}Ragon 隊長{/}聊聊，他大概會教你一些東西。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   }
  }
 }

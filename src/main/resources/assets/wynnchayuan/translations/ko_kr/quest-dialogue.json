@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24896,
-  "translated": 24890,
+  "count": 24909,
+  "translated": 24903,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -69735,13 +69735,13 @@
    "source": "captured"
   },
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "흠... 그러니까 이 녀석을 공격하면  바람 피해는 더 주고  대지 피해는 덜 주겠네...",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
+   "dst": "흠... 그러니까 이 녀석을 공격하면 {#}바람{/} 피해는 더 주고 {#}대지{/} 피해는 덜 주겠네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#001": {
@@ -69751,7 +69751,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -69835,8 +69835,8 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "...아! 그럼 무기가  물 원소만 써도 Bash 주문은  대지 피해를 주는 거죠?",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
+   "dst": "...아! 그럼 Bash 주문은 {#}대지{/} 피해를 주는 거죠? 무기가 {#}물{/} 원소만 써도요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -69861,7 +69861,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -69871,7 +69871,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -69881,7 +69881,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -69891,7 +69891,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -69901,7 +69901,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -69911,7 +69911,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -69921,7 +69921,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -70025,8 +70025,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "알아요! 원소는... 화염, 바람, 대지, 번개, 그리고... 물?",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
+   "dst": "알아요! 원소는... {#}화염{/}, {#}바람{/}, {#}대지{/}, {#}번개{/}, 그리고... {#}물{/}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -70035,8 +70035,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "맞네. 대체로 그 순서대로 서로에게 강하지. 화염은 바람을, 바람은 대지를 이기는 식으로.",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
+   "dst": "맞네. 대체로 그 순서대로 서로에게 강하지. {#}화염{/}은 {#}바람{/}을, {#}바람{/}은 {#}대지{/}를 이기는 식으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -70143,16 +70143,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "이 무기를 시험해 보고 싶어",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -70285,7 +70275,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "대장님, 저희도 싸울 수 있어요. 같이 가서 언데드를 물리치게 해 주세요!",
    "role": "desc",
    "kind": "dialogue",
@@ -70315,7 +70305,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "...괜찮을 거야. 가자, 대장님을 따라가자.",
    "role": "desc",
    "kind": "dialogue",
@@ -70543,6 +70533,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "가자, 북문으로 출발하자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "아, {u}! 훈련하러 왔어? Aledar랑 나는... 그거 있잖아, 그 전에 연습 좀 해 두려고.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "그럭저럭... 네가 예상하는 딱 그 정도야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "야! 아주 잘 되고 있거든, 고맙게도! 그 거미들이랑 싸우러 갈 때쯤엔 준비 완벽할 거야!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "...그래. 아무튼 {u}, 너도 훈련하고 싶으면 주변에 허수아비는 많아. 자기 무기랑 같은 원소의 허수아비랑 싸우고 있는 녀석까지 포함해서...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "말해 두는데, 난...- 그래, 그건 인정.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "오, {u}! 반가워- 그 거미들이랑 붙기 전에 여기서 훈련 좀 하고 있어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "Tasim은 응원하러 왔고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "그게 내 특기지. 게다가 자세가 흐트러지면 말해 줄 수도 있고. 그게... 꽤 자주야. 지금도 그렇고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "...너 언제 이런 거 나보다 잘하게 된 거야?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   },
   "Ensemble of Hope#000": {
    "src": "Meet up with your friends in room number {~} in hotel {p} at [-{~}, {~}, -{~}].",
@@ -167336,6 +167426,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "계속 가자! Van 중위님이랑 다들 {c2}{p}의 집들이 모여 있는 곳{/}에 계셔, 기억하지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "반가워, {u}! 분노의 탑을 되찾은 뒤로는 딱히 한 일이 없어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "Tasim이 하던 일 끝나기를 기다리고 있었어. 걔 여기 온 뒤로 쉬지 않고 훈련만 하고 있거든.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "저기, 너도 같이 해 보는 게 좋을지도! 저쪽에 있는 {c2}Ragon 대장{/}에게 말을 걸면 이것저것 가르쳐 줄 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   },
   "Taproot#007": {
    "src": "New Quest Started: Realm of Light II - Taproot",
