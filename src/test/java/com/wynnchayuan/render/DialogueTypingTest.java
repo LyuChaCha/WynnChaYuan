@@ -128,6 +128,8 @@ public final class DialogueTypingTest {
               !out.contains("{#}") && out.startsWith("敏捷"));
         String middle = DialogueTyping.fill("點 {#} 敏捷", parts);
         check("句中的圖示一樣拿掉（實際 " + middle + "）", !middle.contains("{#}"));
+        String numbered = DialogueTyping.fill("點 {#1} 敏捷", parts);
+        check("帶編號的 {#1} 也不會印出來（實際 " + numbered + "）", !numbered.contains("{#"));
     }
 
     private static TranslationStore miniStore(String json) throws Exception {

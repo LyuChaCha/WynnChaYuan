@@ -260,6 +260,10 @@ final class ColourTemplate {
                 flush(text, out);
                 out.add(new Token(Kind.GLYPH, glyph));
                 i += glyph.length();
+            } else if (GlyphSplitter.numberedGlyphAt(template, i) > 0) {
+                flush(text, out);
+                out.add(new Token(Kind.GLYPH, "", GlyphSplitter.numberedGlyphAt(template, i)));
+                i += GlyphSplitter.NUMBERED_GLYPH_LENGTH;
             } else if (template.startsWith(place, i)) {
                 flush(text, out);
                 out.add(new Token(Kind.PLACE, place));

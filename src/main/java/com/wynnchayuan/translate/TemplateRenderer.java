@@ -132,12 +132,19 @@ final class TemplateRenderer {
         long wantNumbers = 0;
         long wantUsers = 0;
         int numbered = 0;
+        int numberedGlyphs = 0;
         for (String line : flowed) {
             List<ColourTemplate.Token> tokens = ColourTemplate.tokenize(line);
             lines.add(tokens);
             for (ColourTemplate.Token token : tokens) {
                 switch (token.kind()) {
-                    case GLYPH -> wantGlyphs++;
+                    case GLYPH -> {
+                        if (token.index() == 0) {
+                            wantGlyphs++;
+                        } else {
+                            numberedGlyphs = Math.max(numberedGlyphs, token.index());
+                        }
+                    }
                     case PLACE -> wantPlaces++;
                     case NUMBER -> {
                         if (token.index() == 0) {
@@ -154,7 +161,10 @@ final class TemplateRenderer {
         boolean numbersOk = numbered == 0
                 ? wantNumbers == numbers.size()
                 : wantNumbers <= numbers.size() && numbered <= numbers.size();
-        if (wantGlyphs != glyphs.size() || wantPlaces != places.size()
+        boolean glyphsOk = numberedGlyphs == 0
+                ? wantGlyphs == glyphs.size()
+                : wantGlyphs <= glyphs.size() && numberedGlyphs <= glyphs.size();
+        if (!glyphsOk || wantPlaces != places.size()
                 || !numbersOk || wantUsers > users.size()) {
             noteUnapplied(parts, store);
             return null;
@@ -190,7 +200,11 @@ final class TemplateRenderer {
                 switch (token.kind()) {
                     case COLOR -> forced = ColourTemplate.colourOf(token, palette, words, textStyle);
                     case GLYPH -> {
-                        LineParts.Piece piece = glyphs.get(glyph++);
+                        int at = token.index() > 0 ? token.index() - 1 : glyph++;
+                        if (at >= glyphs.size()) {
+                            return null;
+                        }
+                        LineParts.Piece piece = glyphs.get(at);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
                         justFilled = null;
                         afterNumber = false;
