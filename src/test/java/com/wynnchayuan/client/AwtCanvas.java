@@ -74,6 +74,7 @@ final class AwtCanvas implements Canvas {
         List<Font> out = new ArrayList<>();
         out.add(file(own));
         out.add(file("sym"));
+        out.add(file("th"));
         for (String other : new String[] {"tc", "sc", "jp", "kr"}) {
             if (!other.equals(own)) {
                 out.add(file(other + "_x"));

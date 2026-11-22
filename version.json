@@ -1,11 +1,38 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.8_1",
+ "latest": "1.0.8_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.8_2": {
+   "headline": "1.0.8_2: Vietnamese and a draggable chat log button",
+   "items": [
+    "Added: Vietnamese (vi_vn) translation and settings screen; Thai (th_th) settings screen; fonts for both languages.",
+    "Added: the Chat log button can be dragged anywhere; right-click puts it back beside the chat.",
+    "Fixed: the Chat log button lines up with the chat when Wynntils chat timestamps are on.",
+    "Translations: complete Brazilian Portuguese translation with fixes by Nicolas Flores; Japanese contributions (thanks yool141)."
+   ],
+   "zh_tw": {
+    "headline": "1.0.8_2：越南文、可拖曳的聊天紀錄按鈕",
+    "items": [
+     "新增：越南文（vi_vn）譯文與設定畫面；ไทย (th_th) 的設定畫面；兩種語言的字型。",
+     "新增：「聊天紀錄」按鈕可以拖曳到任意位置，右鍵還原到聊天框旁。",
+     "修正：開啟 Wynntils 的聊天時間時，「聊天紀錄」按鈕也會對齊聊天框。",
+     "譯文：Português (pt_br) 完整譯文，並由 Nicolas Flores 修正；日文社群貢獻（感謝 yool141）。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.8_2：越南文、可拖动的聊天记录按钮",
+    "items": [
+     "新增：越南文（vi_vn）译文与设置界面；ไทย (th_th) 的设置界面；两种语言的字体。",
+     "新增：「聊天记录」按钮可以拖动到任意位置，右键还原到聊天框旁。",
+     "修正：开启 Wynntils 的聊天时间时，「聊天记录」按钮也会对齐聊天框。",
+     "译文：Português (pt_br) 完整译文，并由 Nicolas Flores 修正；日文社区贡献（感谢 yool141）。"
+    ]
+   }
+  },
   "1.0.8_1": {
    "headline": "1.0.8_1: chat log fixes and original ability names",
    "items": [
