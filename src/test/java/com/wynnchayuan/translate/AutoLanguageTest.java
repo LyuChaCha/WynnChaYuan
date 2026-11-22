@@ -18,12 +18,12 @@ public final class AutoLanguageTest {
         eq("跟隨韓文", "ko_kr", Languages.pick("", "ko_kr"));
         eq("跟隨日文", "ja_jp", Languages.pick("", "ja_jp"));
         eq("跟隨簡中", "zh_cn", Languages.pick("", "zh_cn"));
-        eq("沒打包的語言退回預設", Languages.DEFAULT, Languages.pick("", "fr_fr"));
+        eq("沒打包的語言退回預設", Languages.DEFAULT, Languages.pick("", "it_it"));
         eq("大小寫與連字號都要認得", "ko_kr", Languages.pick("", "KO-KR"));
 
         check("空字串不算問到", !Languages.known(""));
         check("null 不算問到", !Languages.known(null));
-        check("沒打包的語言也不算", !Languages.known("fr_fr"));
+        check("沒打包的語言也不算", !Languages.known("it_it"));
         check("韓文算問到", Languages.known("ko_kr"));
         check("KO-KR 也算", Languages.known("KO-KR"));
         check("繁中算問到", Languages.known(Languages.DEFAULT));
