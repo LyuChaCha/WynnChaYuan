@@ -3,8 +3,8 @@
   "domain": "ability/mage",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 245,
-  "translated": 245,
+  "count": 242,
+  "translated": 241,
   "note": "法师的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
@@ -1323,33 +1323,6 @@
    "ability": "Snake Nest",
    "code": "MAGE-P5-R03-C06"
   },
-  "ability-mage#0095": {
-   "src": "Seance",
-   "dst": "降神会",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "mage/技能名稱"
-   ],
-   "tree": "01/mage/05/003/008",
-   "ability": "Seance",
-   "code": "MAGE-P5-R03-C08"
-  },
-  "ability-mage#0096": {
-   "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "装备上每 {~}/{~}s 生命偷取，\n额外获得 +{~} 法术伤害。(上限 {~})",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Seance"
-   ],
-   "lines": 2,
-   "flat": "For every {~}/{~}s Lifesteal you have from items, gain +{~} Spell Damage. (Max {~})",
-   "_raw": "For every 5/3s Lifesteal you have\nfrom items, gain +1% Spell Damage. (Max 50%)",
-   "tree": "01/mage/05/003/008",
-   "ability": "Seance",
-   "code": "MAGE-P5-R03-C08"
-  },
   "ability-mage#0097": {
    "src": "Orphion's Pulse",
    "dst": "Orphion 之脉",
@@ -1928,33 +1901,6 @@
    "tree": "01/mage/06/004/004",
    "ability": "Time Dilation",
    "code": "MAGE-P6-R04-C04"
-  },
-  "ability-mage#0140": {
-   "src": "Arctic Snake",
-   "dst": "极寒之蛇",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "mage/技能名稱"
-   ],
-   "tree": "01/mage/06/004/007",
-   "ability": "Arctic Snake",
-   "code": "MAGE-P6-R04-C07"
-  },
-  "ability-mage#0141": {
-   "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "{c1}Ice Snake{c2} 会冻结敌人 {c3}{~} 秒{c2}。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Arctic Snake"
-   ],
-   "lines": 1,
-   "flat": "Ice Snake will freeze enemies for {~}s.",
-   "_raw": "Ice Snake will freeze enemies for 2s.",
-   "tree": "01/mage/06/004/007",
-   "ability": "Arctic Snake",
-   "code": "MAGE-P6-R04-C07"
   },
   "ability-mage#0142": {
    "src": "Searing Light",
@@ -3385,6 +3331,21 @@
    "_raw": "Frost Dragon's Breath attacks -0.15s faster\nbut gains -0.5s duration per cast and -2\nMana Bank ✺ per hit.",
    "ability": "Blitz",
    "code": "MAGE"
+  },
+  "ability-mage#0252": {
+   "src": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.\n(Wisp can only hit the same\nenemy once every {~}s.)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 5,
+   "flat": "The Sun will summon solar wisps that move outwards, damaging all enemies and healing all allies in their path. (Wisp can only hit the same enemy once every {~}s.)",
+   "_raw": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.\n(Wisp can only hit the same\nenemy once every 0.1s.)",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
   }
  }
 }

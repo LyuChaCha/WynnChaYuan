@@ -3,7 +3,7 @@
   "domain": "ability/assassin",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 235,
+  "count": 239,
   "translated": 235,
   "note": "刺客的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
@@ -3231,6 +3231,66 @@
    "_raw": "If cast while in Vanish,\nSpin Attack will consume all\nMarks  from nearby enemies.\nFor every 1 Mark  consumed,\nsummon a Knife. (Max 5 Knives)",
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN"
+  },
+  "ability-assassin#0235": {
+   "src": "Gain +{~} Mana for every leftover Mark {#}\nwhen killing an enemy, and for every Mark {#}\nyou consume with your abilities.\n(Max {~} Mana per second)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Harvester"
+   ],
+   "lines": 4,
+   "flat": "Gain +{~} Mana for every leftover Mark {#} when killing an enemy, and for every Mark {#} you consume with your abilities. (Max {~} Mana per second)",
+   "_raw": "Gain +3 Mana for every leftover Mark \nwhen killing an enemy, and for every Mark \nyou consume with your abilities.\n(Max 30 Mana per second)",
+   "tree": "03/assassin/07/001/001",
+   "ability": "Harvester",
+   "code": "ASSASSIN-P7-R01-C01"
+  },
+  "ability-assassin#0236": {
+   "src": "Harvester will give +{~} Mana and increase\nMana gain maximum per second by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Devour"
+   ],
+   "lines": 2,
+   "flat": "Harvester will give +{~} Mana and increase Mana gain maximum per second by +{~}.",
+   "_raw": "Harvester will give +2 Mana and increase\nMana gain maximum per second by +20.",
+   "tree": "03/assassin/07/005/000",
+   "ability": "Devour",
+   "code": "ASSASSIN-P7-R05-C00"
+  },
+  "ability-assassin#0237": {
+   "src": "Gain +{~} Walk Speed after\nhitting a successful Backstab.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Thrill"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Walk Speed after hitting a successful Backstab.",
+   "_raw": "Gain +35% Walk Speed after\nhitting a successful Backstab.",
+   "tree": "03/assassin/08/001/001",
+   "ability": "Thrill",
+   "code": "ASSASSIN-P8-R01-C01"
+  },
+  "ability-assassin#0238": {
+   "src": "Gain a speed boost after\nlosing a Mirror Clone {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Paranoia"
+   ],
+   "lines": 2,
+   "flat": "Gain a speed boost after losing a Mirror Clone {#}.",
+   "_raw": "Gain a speed boost after\nlosing a Mirror Clone .",
+   "tree": "03/assassin/08/002/005",
+   "ability": "Paranoia",
+   "code": "ASSASSIN-P8-R02-C05"
   }
  }
 }

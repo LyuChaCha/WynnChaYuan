@@ -3,8 +3,8 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 237,
-  "translated": 237,
+  "count": 233,
+  "translated": 233,
   "note": "戰士的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "review": {
@@ -667,19 +667,6 @@
    "ability": "Air Shout",
    "code": "WARRIOR-P4-R01-C04"
   },
-  "ability-warrior#0048": {
-   "src": "{#} Total Damage: {~}",
-   "dst": "{#} Toplam Hasar: {~}",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "warrior/Air Shout"
-   ],
-   "_raw": " Total Damage: 75%",
-   "tree": "00/warrior/04/001/004",
-   "ability": "Air Shout",
-   "code": "WARRIOR-P4-R01-C04"
-  },
   "ability-warrior#0049": {
    "src": "Mantle of the Bovemists",
    "dst": "Bovemist Pelerini",
@@ -1157,16 +1144,16 @@
    "code": "WARRIOR-P5-R02-C07"
   },
   "ability-warrior#0084": {
-   "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "{c1}Maks. canının {c2}{~}{c1} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n{c3}(Aynı anda en fazla {~} etkinleşme)",
+   "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s)",
+   "dst": "{c1}Maks. canının {c2}{~1}{c1} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n{c3}({~3} sn içinde en fazla {~2} etkinleşme)",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "warrior/Sparkling Hope"
    ],
    "lines": 3,
-   "flat": "Deals damage to all nearby enemies every time you heal {~} of your max health. (Max {~} activations at once)",
-   "_raw": "Deals damage to all nearby enemies every\ntime you heal 5% of your max health.\n(Max 5 activations at once)",
+   "flat": "Deals damage to all nearby enemies every time you heal {~} of your max health. (Max {~} activations within {~}s)",
+   "_raw": "Deals damage to all nearby enemies every\ntime you heal 5% of your max health.\n(Max 20 activations within 4s)",
    "tree": "00/warrior/05/002/007",
    "ability": "Sparkling Hope",
    "code": "WARRIOR-P5-R02-C07"
@@ -1615,33 +1602,6 @@
    "ability": "Armour Breaker",
    "code": "WARRIOR-P6-R02-C01"
   },
-  "ability-warrior#0118": {
-   "src": "Radiant Devotee",
-   "dst": "Işıltılı Mürit",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "warrior/技能名稱"
-   ],
-   "tree": "00/warrior/06/002/003",
-   "ability": "Radiant Devotee",
-   "code": "WARRIOR-P6-R02-C03"
-  },
-  "ability-warrior#0119": {
-   "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "{c1}Eşyalarından gelen her {c2}{~}{c1} Yansıtma için\n{c2}+{~}/{~} sn{c1} Mana Yenilenmesi kazan. {c3}(Maks. {~}/{~} sn)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "warrior/Radiant Devotee"
-   ],
-   "lines": 2,
-   "flat": "For every {~} Reflection you have from items, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "_raw": "For every 4% Reflection you have from\nitems, gain +1/5s Mana Regen. (Max 10/5s)",
-   "tree": "00/warrior/06/002/003",
-   "ability": "Radiant Devotee",
-   "code": "WARRIOR-P6-R02-C03"
-  },
   "ability-warrior#0120": {
    "src": "Freestream Flow",
    "dst": "Serbest Akış",
@@ -1873,7 +1833,7 @@
    "code": "WARRIOR-P6-R04-C03"
   },
   "ability-warrior#0137": {
-   "src": "Increases the damage and mana cost\nof Uppercut.",
+   "src": "Increases the damage and Mana cost\nof Uppercut.",
    "dst": "Uppercut'ın hasarını ve mana\nmaliyetini artırır.",
    "role": "desc",
    "kind": "block",
@@ -1881,8 +1841,8 @@
     "warrior/Axe Kick"
    ],
    "lines": 2,
-   "flat": "Increases the damage and mana cost of Uppercut.",
-   "_raw": "Increases the damage and mana cost\nof Uppercut.",
+   "flat": "Increases the damage and Mana cost of Uppercut.",
+   "_raw": "Increases the damage and Mana cost\nof Uppercut.",
    "tree": "00/warrior/06/004/003",
    "ability": "Axe Kick",
    "code": "WARRIOR-P6-R04-C03"
@@ -2389,21 +2349,6 @@
    "ctx": [
     "warrior/技能名稱"
    ],
-   "tree": "00/warrior/07/004/002",
-   "ability": "Brink of Madness",
-   "code": "WARRIOR-P7-R04-C02"
-  },
-  "ability-warrior#0175": {
-   "src": "You gain a +{~} Resistance buff\nif your health is at {~} or less.",
-   "dst": "Canın {~2} ya da altındaysa\n+{~1} Direnç güçlendirmesi kazanırsın.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "warrior/Brink of Madness"
-   ],
-   "lines": 2,
-   "flat": "You gain a +{~} Resistance buff if your health is at {~} or less.",
-   "_raw": "You gain a +40% Resistance buff\nif your health is at 25% or less.",
    "tree": "00/warrior/07/004/002",
    "ability": "Brink of Madness",
    "code": "WARRIOR-P7-R04-C02"

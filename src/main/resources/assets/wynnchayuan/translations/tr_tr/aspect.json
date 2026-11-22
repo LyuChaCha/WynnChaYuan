@@ -3,8 +3,8 @@
   "domain": "aspect",
   "lang": "tr_tr",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 131,
-  "translated": 131,
+  "count": 128,
+  "translated": 128,
   "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱受「翻譯物品名稱」開關管（`gearNames: true`）——配裝網站 WynnBuilder 只認英文名，玩家需要按 Shift 看得到原文。見 issue #936。",
   "itemNames": true,
   "gearNames": true,
@@ -123,10 +123,10 @@
    ]
   },
   "aspect#0012": {
-   "src": "Aspect of the Barley-Woven",
-   "dst": "Arpa Örgülü Aspect'i",
+   "src": "Aspect of the Getaway",
+   "dst": "Firar Aspect'i",
    "role": "name",
-   "kind": "sentence",
+   "kind": "term",
    "ctx": [
     "aspect/archer"
    ]
@@ -177,8 +177,8 @@
    ]
   },
   "aspect#0018": {
-   "src": "Aspect of the North Wind",
-   "dst": "Poyraz Aspect'i",
+   "src": "Aspect of the Pincushion",
+   "dst": "İğnelik Aspect'i",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -788,27 +788,9 @@
     "aspect/shaman"
    ]
   },
-  "aspect#0086": {
-   "src": "Aspect of Seismic Sense",
-   "dst": "Sismik His Aspect'i",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
   "aspect#0087": {
    "src": "Aspect of Stances",
    "dst": "Duruşlar Aspect'i",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0088": {
-   "src": "Aspect of Summer Storms",
-   "dst": "Yaz Fırtınaları Aspect'i",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -854,15 +836,6 @@
   "aspect#0093": {
    "src": "Aspect of the Beckoned Legion",
    "dst": "Çağrılan Lejyon Aspect'i",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0094": {
-   "src": "Aspect of the Blurred Line",
-   "dst": "Bulanık Çizgi Aspect'i",
    "role": "name",
    "kind": "sentence",
    "ctx": [
@@ -1121,15 +1094,6 @@
     "aspect/warrior"
    ]
   },
-  "aspect#0123": {
-   "src": "Aspect of the Tightrope Walk",
-   "dst": "İp Cambazı Aspect'i",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/warrior"
-   ]
-  },
   "aspect#0124": {
    "src": "Battle Monk's Embodiment of Complete Synchrony",
    "dst": "Savaş Keşişinin Tam Uyum Timsali",
@@ -1191,6 +1155,15 @@
    "kind": "sentence",
    "ctx": [
     "aspect/warrior"
+   ]
+  },
+  "aspect#0131": {
+   "src": "Aspect of Bile Waters",
+   "dst": "Safra Suları Aspect'i",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "aspect/shaman"
    ]
   }
  }

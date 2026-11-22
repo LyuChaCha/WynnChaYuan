@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "zh_cn",
-  "count": 220,
-  "translated": 220,
+  "count": 231,
+  "translated": 216,
   "note": "Aspect 各阶的能力说明，取自 Wynntils CDN。句式重复度很高，所以是按规则转的——同一个句式永远得到同样的中文。技能名保持原样，交给技能名词表去换。dst 空着表示还没有对应的句式规则，画面上会显示灰色原文。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟这里的道具无关。",
   "gearNames": false
  },
@@ -125,7 +125,7 @@
    "src": "Increase Grappling Hook's range by +{~}.",
    "dst": "Grappling Hook 的射程增加 +{~}。",
    "role": "desc",
-   "aspect": "Aspect of the Barley-Woven",
+   "aspect": "Aspect of the Getaway",
    "class": "archer"
   },
   "aspect-desc#0017": {
@@ -884,25 +884,11 @@
    "aspect": "Aspect of Reverberation",
    "class": "shaman"
   },
-  "aspect-desc#0125": {
-   "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
-   "dst": "Nature's Jolt 的 {#} 作用范围增加 +{~}。",
-   "role": "desc",
-   "aspect": "Aspect of Seismic Sense",
-   "class": "shaman"
-  },
   "aspect-desc#0126": {
    "src": "Mystics Masks bonus effect is increased by {~}x",
    "dst": "Mystic Masks 的额外效果变为 {~} 倍",
    "role": "desc",
    "aspect": "Aspect of Stances",
-   "class": "shaman"
-  },
-  "aspect-desc#0127": {
-   "src": "Increase Storm Dance's pull strength by {~}.",
-   "dst": "Storm Dance 的牵引力增加 {~}。",
-   "role": "desc",
-   "aspect": "Aspect of Summer Storms",
    "class": "shaman"
   },
   "aspect-desc#0128": {
@@ -959,13 +945,6 @@
    "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 伤害: -{~2}) ({#} 气属性伤害: -{~3}) ({#} 地属性伤害: -{~4})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
-   "class": "shaman"
-  },
-  "aspect-desc#0136": {
-   "src": "Corporeal Manifestation spins {~} faster.",
-   "dst": "Corporeal Manifestation 的旋转速度加快 {~}。",
-   "role": "desc",
-   "aspect": "Aspect of the Blurred Line",
    "class": "shaman"
   },
   "aspect-desc#0137": {
@@ -1218,13 +1197,6 @@
    "dst": "你的 Main Attack 和 Bloodied Armory 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Returning Javelin",
-   "class": "warrior"
-  },
-  "aspect-desc#0173": {
-   "src": "Brink of Madness activates at +{~} higher Health.",
-   "dst": "Brink of Madness 的触发生命门槛提高 +{~}。",
-   "role": "desc",
-   "aspect": "Aspect of the Tightrope Walk",
    "class": "warrior"
   },
   "aspect-desc#0174": {
@@ -1484,6 +1456,107 @@
    "src": "Brink of Madness stores +{~} of your maximum health.",
    "dst": "Brink of Madness 多保存你最大生命的 +{~}。",
    "role": "desc"
+  },
+  "aspect-desc#0188": {
+   "src": "Arcane Speed grants +{~} walk speed per cast and +{~} maximum speed.",
+   "dst": "",
+   "role": "desc"
+  },
+  "aspect-desc#0189": {
+   "src": "Buckshot spews +{~} arrows.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of the Pincushion",
+   "class": "archer"
+  },
+  "aspect-desc#0190": {
+   "src": "Dawn lasts +{~}s longer. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
+   "dst": "",
+   "role": "desc"
+  },
+  "aspect-desc#0191": {
+   "src": "Dawn lasts +{~}s longer.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Mage's Embodiment of Morbid Curiosity",
+   "class": "mage"
+  },
+  "aspect-desc#0192": {
+   "src": "Frost Dragon's Breath gains +{~} {#} Range.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of the Ray of Frost",
+   "class": "mage"
+  },
+  "aspect-desc#0193": {
+   "src": "Grape Bomb has reduced spread and gains +{~} {#} Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of Fragmentation Rounds",
+   "class": "archer"
+  },
+  "aspect-desc#0194": {
+   "src": "Increase Escape's velocity by {~}.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of the Getaway",
+   "class": "archer"
+  },
+  "aspect-desc#0195": {
+   "src": "Increase the Static consumed by Aura and Zealot's Bolts by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0196": {
+   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0197": {
+   "src": "Increase your Snake's weakness and poison vulnerability effects by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0198": {
+   "src": "Mystics Masks' positive buffs are {~} stronger.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of Stances",
+   "class": "shaman"
+  },
+  "aspect-desc#0199": {
+   "src": "Rusted Maw gains +{~} {#} Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
+  },
+  "aspect-desc#0200": {
+   "src": "Tangled Traps deal damage +{~} faster.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
+  },
+  "aspect-desc#0201": {
+   "src": "Tangled Traps deal damage +{~} faster and gain +{~} {#} Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
+  },
+  "aspect-desc#0202": {
+   "src": "Your Puppets, Effigies and Nature's Jolt move {~} faster.",
+   "dst": "",
+   "role": "desc",
+   "aspect": "Aspect of Acceleration",
+   "class": "shaman"
   }
  }
 }

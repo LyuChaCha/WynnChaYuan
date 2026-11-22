@@ -3,8 +3,8 @@
   "domain": "ability/shared",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 74,
-  "translated": 74,
+  "count": 75,
+  "translated": 75,
   "note": "不只一個職業共用的條目。改這裡會同時影響好幾個職業，請留意。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "review": {
@@ -974,6 +974,20 @@
    "tree": "03/assassin/04/001/007",
    "ability": "Eldritch Call、Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
+  },
+  "ability-shared#0074": {
+   "src": "{#} Duration: {~}s (Per Stack)",
+   "dst": "{#} Süre: {~} sn (yığın başına)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Arcane Speed",
+    "shaman/Tribal Chants"
+   ],
+   "_raw": " Duration: 2s (Per Stack)",
+   "tree": "01/mage/06/001/006",
+   "ability": "Arcane Speed、Tribal Chants",
+   "code": "MAGE-P6-R01-C06"
   }
  }
 }

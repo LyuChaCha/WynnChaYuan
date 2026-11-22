@@ -3,8 +3,8 @@
   "domain": "ability/mage",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 245,
-  "translated": 245,
+  "count": 238,
+  "translated": 238,
   "note": "法師的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
@@ -1323,33 +1323,6 @@
    "ability": "Snake Nest",
    "code": "MAGE-P5-R03-C06"
   },
-  "ability-mage#0095": {
-   "src": "Seance",
-   "dst": "Gọi hồn",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "mage/技能名稱"
-   ],
-   "tree": "01/mage/05/003/008",
-   "ability": "Seance",
-   "code": "MAGE-P5-R03-C08"
-  },
-  "ability-mage#0096": {
-   "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "Cứ mỗi {~}/{~} giây Hút máu từ\ntrang bị, nhận +{~} Sát thương phép. (Tối đa {~})",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Seance"
-   ],
-   "lines": 2,
-   "flat": "For every {~}/{~}s Lifesteal you have from items, gain +{~} Spell Damage. (Max {~})",
-   "_raw": "For every 5/3s Lifesteal you have\nfrom items, gain +1% Spell Damage. (Max 50%)",
-   "tree": "01/mage/05/003/008",
-   "ability": "Seance",
-   "code": "MAGE-P5-R03-C08"
-  },
   "ability-mage#0097": {
    "src": "Orphion's Pulse",
    "dst": "Nhịp đập của Orphion",
@@ -1607,21 +1580,6 @@
    "ability": "Dimensional Tear",
    "code": "MAGE-P6-R01-C04"
   },
-  "ability-mage#0116": {
-   "src": "The rift damages enemies every {~}s, increases\nyour Distortion {#} gain by +{~} and reduces\ndamage taken while standing in it.",
-   "dst": "Khe nứt gây sát thương kẻ địch mỗi {~}s, tăng\nlượng Biến dạng {#} nhận được thêm +{~} và giảm\nsát thương phải nhận khi bạn đứng trong đó.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Dimensional Tear"
-   ],
-   "lines": 3,
-   "flat": "The rift damages enemies every {~}s, increases your Distortion {#} gain by +{~} and reduces damage taken while standing in it.",
-   "_raw": "The rift damages enemies every 0.4s, increases\nyour Distortion  gain by +25% and reduces\ndamage taken while standing in it.",
-   "tree": "01/mage/06/001/004",
-   "ability": "Dimensional Tear",
-   "code": "MAGE-P6-R01-C04"
-  },
   "ability-mage#0117": {
    "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
    "dst": "Lợi ích và sát thương của khe nứt còn lưu lại\n{~}s sau khi rời khỏi vùng.",
@@ -1645,34 +1603,6 @@
    "ctx": [
     "mage/技能名稱"
    ],
-   "tree": "01/mage/06/001/006",
-   "ability": "Arcane Speed",
-   "code": "MAGE-P6-R01-C06"
-  },
-  "ability-mage#0119": {
-   "src": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
-   "dst": "Bạn được cường hóa tốc độ di chuyển sau khi\nthi triển Heal hoặc Arcane Transfer.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Arcane Speed"
-   ],
-   "lines": 2,
-   "flat": "You gain a walk speed buff after casting Heal or Arcane Transfer.",
-   "_raw": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
-   "tree": "01/mage/06/001/006",
-   "ability": "Arcane Speed",
-   "code": "MAGE-P6-R01-C06"
-  },
-  "ability-mage#0120": {
-   "src": "{#} Effects: +{~} Walk Speed",
-   "dst": "{#} Hiệu ứng: +{~} Tốc độ di chuyển",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "mage/Arcane Speed"
-   ],
-   "_raw": " Effects: +40% Walk Speed",
    "tree": "01/mage/06/001/006",
    "ability": "Arcane Speed",
    "code": "MAGE-P6-R01-C06"
@@ -1928,33 +1858,6 @@
    "tree": "01/mage/06/004/004",
    "ability": "Time Dilation",
    "code": "MAGE-P6-R04-C04"
-  },
-  "ability-mage#0140": {
-   "src": "Arctic Snake",
-   "dst": "Rắn bắc cực",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "mage/技能名稱"
-   ],
-   "tree": "01/mage/06/004/007",
-   "ability": "Arctic Snake",
-   "code": "MAGE-P6-R04-C07"
-  },
-  "ability-mage#0141": {
-   "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake sẽ đóng băng kẻ địch trong {~}s.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "mage/Arctic Snake"
-   ],
-   "lines": 1,
-   "flat": "Ice Snake will freeze enemies for {~}s.",
-   "_raw": "Ice Snake will freeze enemies for 2s.",
-   "tree": "01/mage/06/004/007",
-   "ability": "Arctic Snake",
-   "code": "MAGE-P6-R04-C07"
   },
   "ability-mage#0142": {
    "src": "Searing Light",
@@ -3000,16 +2903,16 @@
    "code": "MAGE-P9-R02-C01"
   },
   "ability-mage#0219": {
-   "src": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.",
-   "dst": "Mặt trời sẽ gọi ra các đốm lửa mặt trời tỏa\nra ngoài, gây sát thương mọi kẻ địch và hồi máu\nmọi đồng minh trên đường đi.",
+   "src": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.\n(Wisp can only hit the same\nenemy once every {~}s.)",
+   "dst": "Mặt trời sẽ gọi ra các đốm lửa mặt trời tỏa\nra ngoài, gây sát thương mọi kẻ địch và hồi máu\nmọi đồng minh trên đường đi.\n(Mỗi đốm lửa chỉ trúng cùng một\nkẻ địch mỗi {~}s.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "mage/Dawn"
    ],
-   "lines": 3,
-   "flat": "The Sun will summon solar wisps that move outwards, damaging all enemies and healing all allies in their path.",
-   "_raw": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.",
+   "lines": 5,
+   "flat": "The Sun will summon solar wisps that move outwards, damaging all enemies and healing all allies in their path. (Wisp can only hit the same enemy once every {~}s.)",
+   "_raw": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.\n(Wisp can only hit the same\nenemy once every 0.1s.)",
    "tree": "01/mage/09/002/001",
    "ability": "Dawn",
    "code": "MAGE-P9-R02-C01"

@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 295,
-  "translated": 295,
+  "count": 300,
+  "translated": 293,
   "note": "萨满的技能树。按游戏里的排版顺序(页 → 行 → 列)，也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -553,20 +553,6 @@
    "flat": "When wearing the {#} Mask of the Lunatic, casting Totem{#} while sneaking will cause it to smash down onto the ground, detonating all Static.",
    "_raw": "When wearing the  Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
    "ability": "Charged Ritual",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0254": {
-   "src": "When wearing the {#} Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "戴着 {#} 赤狂假面时，用 Aura 击杀敌人\n会在该处再施放一次 Aura，\n伤害降低 {~}。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Hymn of Hate"
-   ],
-   "lines": 3,
-   "flat": "When wearing the {#} Mask of the Lunatic, killing an enemy with Aura will cast a new Aura at its location, dealing -{~} of its damage.",
-   "_raw": "When wearing the  Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -50% of its damage.",
-   "ability": "Hymn of Hate",
    "code": "SHAMAN"
   },
   "ability-shaman#0258": {
@@ -1643,18 +1629,6 @@
    "tree": "04/shaman/04/001/003",
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
-  },
-  "ability-shaman#0048": {
-   "src": "Hymn of Hate",
-   "dst": "憎恨圣歌",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/04/001/006",
-   "ability": "Hymn of Hate",
-   "code": "SHAMAN-P4-R01-C06"
   },
   "ability-shaman#0050": {
    "src": "Sacrificial Shrine",
@@ -2999,7 +2973,7 @@
    "code": "SHAMAN-P7-R02-C02"
   },
   "ability-shaman#0170": {
-   "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} mana.",
+   "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} Mana.",
    "dst": "Aura 会暂时提高召唤物的攻速。\n被命中的玩家获得 +{~} 点法力。",
    "role": "desc",
    "kind": "block",
@@ -3007,8 +2981,8 @@
     "shaman/Invigorating Wave"
    ],
    "lines": 3,
-   "flat": "Aura will temporarily increase your Summons' attack speed. Players hit will gain +{~} mana.",
-   "_raw": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +3 mana.",
+   "flat": "Aura will temporarily increase your Summons' attack speed. Players hit will gain +{~} Mana.",
+   "_raw": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +2.25 Mana.",
    "tree": "04/shaman/07/002/002",
    "ability": "Invigorating Wave",
    "code": "SHAMAN-P7-R02-C02"
@@ -4056,6 +4030,101 @@
    "tree": "04/shaman/06/003/004",
    "ability": "Strides of Heresy",
    "code": "SHAMAN-P6-R03-C04"
+  },
+  "ability-shaman#0387": {
+   "src": "Hitting the ground after using Haul\nsummons a log that barrels forward,\ndamaging and slowing enemies it hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "lines": 3,
+   "flat": "Hitting the ground after using Haul summons a log that barrels forward, damaging and slowing enemies it hits.",
+   "_raw": "Hitting the ground after using Haul\nsummons a log that barrels forward,\ndamaging and slowing enemies it hits.",
+   "tree": "04/shaman/03/004/000",
+   "ability": "Nature's Jolt",
+   "code": "SHAMAN-P3-R04-C00"
+  },
+  "ability-shaman#0388": {
+   "src": "{#} Effect: {~} Slowness to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "_raw": " Effect: 30% Slowness to Enemies",
+   "tree": "04/shaman/03/004/000",
+   "ability": "Nature's Jolt",
+   "code": "SHAMAN-P3-R04-C00"
+  },
+  "ability-shaman#0389": {
+   "src": "{#} Area of Effect: {~} Blocks (Rectangle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "_raw": " Area of Effect: 4 Blocks (Rectangle-Shaped)",
+   "tree": "04/shaman/03/004/000",
+   "ability": "Nature's Jolt",
+   "code": "SHAMAN-P3-R04-C00"
+  },
+  "ability-shaman#0390": {
+   "src": "Rollback",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/003/000",
+   "ability": "Rollback",
+   "code": "SHAMAN-P4-R03-C00"
+  },
+  "ability-shaman#0391": {
+   "src": "Nature's Jolt rolls back after hitting\na block or reaching maximum range,\nhitting enemies on the way back.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rollback"
+   ],
+   "lines": 3,
+   "flat": "Nature's Jolt rolls back after hitting a block or reaching maximum range, hitting enemies on the way back.",
+   "_raw": "Nature's Jolt rolls back after hitting\na block or reaching maximum range,\nhitting enemies on the way back.",
+   "tree": "04/shaman/04/003/000",
+   "ability": "Rollback",
+   "code": "SHAMAN-P4-R03-C00"
+  },
+  "ability-shaman#0392": {
+   "src": "Entering the {#} Mask of the Heretic restores {~}\nof your Mana and grants a walk speed boost\nthat starts decaying over {~}s after {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "lines": 3,
+   "flat": "Entering the {#} Mask of the Heretic restores {~} of your Mana and grants a walk speed boost that starts decaying over {~}s after {~}s.",
+   "_raw": "Entering the  Mask of the Heretic restores 25%\nof your Mana and grants a walk speed boost\nthat starts decaying over 6s after 6s.",
+   "tree": "04/shaman/06/003/004",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN-P6-R03-C04"
+  },
+  "ability-shaman#0393": {
+   "src": "Encore",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/003/003",
+   "ability": "Encore",
+   "code": "SHAMAN-P8-R03-C03"
   }
  }
 }

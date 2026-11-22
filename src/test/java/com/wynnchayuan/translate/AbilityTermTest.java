@@ -108,19 +108,18 @@ public final class AbilityTermTest {
     }
 
     private static void underlineStopsAtName(TranslationStore store) {
-        System.out.println("=== Arcane Speed 的底線 ===");
+        System.out.println("=== Blazing Powder 的底線 ===");
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(NAME_COLOUR));
         Style underlined = grey.withUnderlined(true);
-        MutableComponent second = Component.empty();
-        second.append(Component.literal("casting ").withStyle(grey));
-        second.append(Component.literal("Heal").withStyle(underlined));
-        second.append(Component.literal(" or ").withStyle(grey));
-        second.append(Component.literal("Arcane Transfer").withStyle(underlined));
-        second.append(Component.literal(".").withStyle(grey));
+        MutableComponent first = Component.empty();
+        first.append(Component.literal("Spin Attack").withStyle(underlined));
+        first.append(Component.literal(" and ").withStyle(grey));
+        first.append(Component.literal("Lacerate").withStyle(underlined));
+        first.append(Component.literal(" will").withStyle(grey));
         List<StyledText> run = List.of(
-                StyledText.fromComponent(Component.literal("You gain a walk speed buff after")
-                                                  .withStyle(grey)),
-                StyledText.fromComponent(second));
+                StyledText.fromComponent(first),
+                StyledText.fromComponent(Component.literal("deal additional damage.")
+                                                  .withStyle(grey)));
         LineTranslator.measureForTest = c -> {
             int px = 0;
             for (int cp : c.getString().codePoints().toArray()) {
@@ -146,11 +145,11 @@ public final class AbilityTermTest {
             }, Style.EMPTY);
             System.out.println(sb);
         }
-        check("「治療」有底線", underlined(out, "治療") == Boolean.TRUE);
-        check("「祕法回流」有底線", underlined(out, "祕法回流") == Boolean.TRUE);
-        check("「或」沒有底線", underlined(out, "或") == Boolean.FALSE);
-        check("★ 名稱後面的「額外獲得」沒有底線", underlined(out, "額外獲得") == Boolean.FALSE);
-        check("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
+        check("「迴刃斬」有底線", underlined(out, "迴刃斬") == Boolean.TRUE);
+        check("「刃嵐」有底線", underlined(out, "刃嵐") == Boolean.TRUE);
+        check("「與」沒有底線", underlined(out, "與") == Boolean.FALSE);
+        check("★ 名稱後面的「會造成」沒有底線", underlined(out, "會造成") == Boolean.FALSE);
+        check("★ 「額外傷害。」沒有底線", underlined(out, "額外傷害") == Boolean.FALSE);
     }
 
     private static Boolean underlined(List<Component> rows, String needle) {

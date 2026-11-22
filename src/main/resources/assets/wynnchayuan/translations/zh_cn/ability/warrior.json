@@ -3,8 +3,8 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 237,
-  "translated": 237,
+  "count": 236,
+  "translated": 235,
   "note": "战士的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -1611,33 +1611,6 @@
    "ability": "Armour Breaker",
    "code": "WARRIOR-P6-R02-C01"
   },
-  "ability-warrior#0118": {
-   "src": "Radiant Devotee",
-   "dst": "光辉信徒",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "warrior/技能名稱"
-   ],
-   "tree": "00/warrior/06/002/003",
-   "ability": "Radiant Devotee",
-   "code": "WARRIOR-P6-R02-C03"
-  },
-  "ability-warrior#0119": {
-   "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "{c1}装备上每有 {c2}{~1}{c1} 远程反伤，就获得\n{c2}+{~2}/{~3} 秒{c1}法力恢复。{c3}(上限 {~4}/{~5} 秒)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "warrior/Radiant Devotee"
-   ],
-   "lines": 2,
-   "flat": "For every {~} Reflection you have from items, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "_raw": "For every 4% Reflection you have from\nitems, gain +1/5s Mana Regen. (Max 10/5s)",
-   "tree": "00/warrior/06/002/003",
-   "ability": "Radiant Devotee",
-   "code": "WARRIOR-P6-R02-C03"
-  },
   "ability-warrior#0120": {
    "src": "Freestream Flow",
    "dst": "自由流动",
@@ -1869,7 +1842,7 @@
    "code": "WARRIOR-P6-R04-C03"
   },
   "ability-warrior#0137": {
-   "src": "Increases the damage and mana cost\nof Uppercut.",
+   "src": "Increases the damage and Mana cost\nof Uppercut.",
    "dst": "提高 Uppercut 的伤害，\n{c1}法力消耗也一并提高。",
    "role": "desc",
    "kind": "block",
@@ -1877,8 +1850,8 @@
     "warrior/Axe Kick"
    ],
    "lines": 2,
-   "flat": "Increases the damage and mana cost of Uppercut.",
-   "_raw": "Increases the damage and mana cost\nof Uppercut.",
+   "flat": "Increases the damage and Mana cost of Uppercut.",
+   "_raw": "Increases the damage and Mana cost\nof Uppercut.",
    "tree": "00/warrior/06/004/003",
    "ability": "Axe Kick",
    "code": "WARRIOR-P6-R04-C03"
@@ -3235,6 +3208,21 @@
    "_raw": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted ,\notherwise you die.",
    "ability": "Brink of Madness",
    "code": "WARRIOR"
+  },
+  "ability-warrior#0237": {
+   "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Sparkling Hope"
+   ],
+   "lines": 3,
+   "flat": "Deals damage to all nearby enemies every time you heal {~} of your max health. (Max {~} activations within {~}s)",
+   "_raw": "Deals damage to all nearby enemies every\ntime you heal 5% of your max health.\n(Max 20 activations within 4s)",
+   "tree": "00/warrior/05/002/007",
+   "ability": "Sparkling Hope",
+   "code": "WARRIOR-P5-R02-C07"
   }
  }
 }

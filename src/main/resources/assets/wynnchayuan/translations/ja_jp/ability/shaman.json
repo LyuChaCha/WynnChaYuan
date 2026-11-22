@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 297,
-  "translated": 297,
+  "count": 296,
+  "translated": 296,
   "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -108,18 +108,16 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0358": {
-   "src": "Overcharge",
-   "dst": "オーバーチャージ",
+   "src": "Encore",
+   "dst": "アンコール",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
-   "lines": null,
-   "flat": null,
-   "_raw": null,
-   "ability": "Overcharge",
-   "code": "SHAMAN"
+   "ability": "Encore",
+   "code": "SHAMAN-P8-R03-C03",
+   "tree": "04/shaman/08/003/003"
   },
   "ability-shaman#0356": {
    "src": "Ritual Circle",
@@ -527,20 +525,6 @@
    "ability": "Mystic Masks",
    "code": "SHAMAN"
   },
-  "ability-shaman#0247": {
-   "src": "When entering the {#} Mask of the Heretic, knock back\nall nearby enemies, regenerate {~} of your Mana,\nand gain a large Walk Speed boost that decays\nover {~}s.",
-   "dst": "{#} Mask of the Heretic に切り替えると、近くの敵をすべて\nノックバックし、マナを {~} 回復し、\n{~}秒かけて減衰する大幅な\n移動速度ボーナスを得る。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Strides of Heresy"
-   ],
-   "lines": 4,
-   "flat": "When entering the {#} Mask of the Heretic, knock back all nearby enemies, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
-   "_raw": "When entering the  Mask of the Heretic, knock back\nall nearby enemies, regenerate 30% of your Mana,\nand gain a large Walk Speed boost that decays\nover 6s.",
-   "ability": "Strides of Heresy",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0251": {
    "src": "When wearing the {#} Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
    "dst": "{#} Mask of the Lunatic を着けている間、スニーク中に\nトーテム を使うと地面に叩きつけられ、\nすべての Static を爆発させる。",
@@ -553,20 +537,6 @@
    "flat": "When wearing the {#} Mask of the Lunatic, casting Totem while sneaking will cause it to smash down onto the ground, detonating all Static.",
    "_raw": "When wearing the  Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
    "ability": "Charged Ritual",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0254": {
-   "src": "When wearing the {#} Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "{#} Mask of the Lunatic を着けている間、\nAura で敵を倒すとその場所に新たな Aura が発動し、\nダメージは -{~}。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Hymn of Hate"
-   ],
-   "lines": 3,
-   "flat": "When wearing the {#} Mask of the Lunatic, killing an enemy with Aura will cast a new Aura at its location, dealing -{~} of its damage.",
-   "_raw": "When wearing the  Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -50% of its damage.",
-   "ability": "Hymn of Hate",
    "code": "SHAMAN"
   },
   "ability-shaman#0258": {
@@ -1373,16 +1343,16 @@
    "code": "SHAMAN-P3-R04-C00"
   },
   "ability-shaman#0025": {
-   "src": "Hitting the ground after using Haul\nwill deal damage around you.",
-   "dst": "Haul の後に地面に着くと、\n周囲にダメージを与える。",
+   "src": "Hitting the ground after using Haul\nsummons a log that barrels forward,\ndamaging and slowing enemies it hits.",
+   "dst": "Haul の後に地面に着くと丸太を呼び出す。\n丸太は前方へ転がり、\n当たった敵にダメージを与えて減速させる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Nature's Jolt"
    ],
-   "lines": 2,
-   "flat": "Hitting the ground after using Haul will deal damage around you.",
-   "_raw": "Hitting the ground after using Haul\nwill deal damage around you.",
+   "lines": 3,
+   "flat": "Hitting the ground after using Haul summons a log that barrels forward, damaging and slowing enemies it hits.",
+   "_raw": "Hitting the ground after using Haul\nsummons a log that barrels forward,\ndamaging and slowing enemies it hits.",
    "tree": "04/shaman/03/004/000",
    "ability": "Nature's Jolt",
    "code": "SHAMAN-P3-R04-C00"
@@ -1644,18 +1614,6 @@
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
   },
-  "ability-shaman#0048": {
-   "src": "Hymn of Hate",
-   "dst": "憎しみの賛歌",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/04/001/006",
-   "ability": "Hymn of Hate",
-   "code": "SHAMAN-P4-R01-C06"
-  },
   "ability-shaman#0050": {
    "src": "Sacrificial Shrine",
    "dst": "生贄の祭壇",
@@ -1699,30 +1657,30 @@
    "code": "SHAMAN-P4-R01-C08"
   },
   "ability-shaman#0053": {
-   "src": "Stagnation",
-   "dst": "停滞",
+   "src": "Rollback",
+   "dst": "巻き戻し",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/003/000",
-   "ability": "Stagnation",
+   "ability": "Rollback",
    "code": "SHAMAN-P4-R03-C00"
   },
   "ability-shaman#0054": {
-   "src": "Enemies hit by Nature's Jolt\nwill be slowed down.",
-   "dst": "Nature's Jolt が当たった敵は\n減速する。",
+   "src": "Nature's Jolt rolls back after hitting\na block or reaching maximum range,\nhitting enemies on the way back.",
+   "dst": "Nature's Jolt はブロックに当たるか最大射程に達すると\n転がって戻り、戻る途中でも敵に当たる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
-    "shaman/Stagnation"
+    "shaman/Rollback"
    ],
-   "lines": 2,
-   "flat": "Enemies hit by Nature's Jolt will be slowed down.",
-   "_raw": "Enemies hit by Nature's Jolt\nwill be slowed down.",
+   "lines": 3,
+   "flat": "Nature's Jolt rolls back after hitting a block or reaching maximum range, hitting enemies on the way back.",
+   "_raw": "Nature's Jolt rolls back after hitting\na block or reaching maximum range,\nhitting enemies on the way back.",
    "tree": "04/shaman/04/003/000",
-   "ability": "Stagnation",
+   "ability": "Rollback",
    "code": "SHAMAN-P4-R03-C00"
   },
   "ability-shaman#0055": {
@@ -2999,7 +2957,7 @@
    "code": "SHAMAN-P7-R02-C02"
   },
   "ability-shaman#0170": {
-   "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} mana.",
+   "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} Mana.",
    "dst": "Aura が一時的に\n召喚物の攻撃速度を上げる。\n当たったプレイヤーはマナを +{~} 得る。",
    "role": "desc",
    "kind": "block",
@@ -3007,8 +2965,8 @@
     "shaman/Invigorating Wave"
    ],
    "lines": 3,
-   "flat": "Aura will temporarily increase your Summons' attack speed. Players hit will gain +{~} mana.",
-   "_raw": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +3 mana.",
+   "flat": "Aura will temporarily increase your Summons' attack speed. Players hit will gain +{~} Mana.",
+   "_raw": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +2.25 Mana.",
    "tree": "04/shaman/07/002/002",
    "ability": "Invigorating Wave",
    "code": "SHAMAN-P7-R02-C02"
@@ -3919,18 +3877,19 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0377": {
-   "src": "When entering the {#} Mask of the Heretic, regenerate\n{~} of your Mana, and gain a large Walk Speed\nboost that decays over {~}s.",
-   "dst": "{#} Mask of the Heretic に切り替えると、マナを {~} 回復し、\n{~}秒かけて減衰する大幅な\n移動速度ボーナスを得る。",
+   "src": "Entering the {#} Mask of the Heretic restores {~}\nof your Mana and grants a walk speed boost\nthat starts decaying over {~}s after {~}s.",
+   "dst": "{#} Mask of the Heretic に切り替えると、マナを {~1} 回復し、\n移動速度ボーナスを得る。ボーナスは {~3}秒後から\n{~2}秒かけて減衰する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Strides of Heresy"
    ],
    "lines": 3,
-   "flat": "When entering the {#} Mask of the Heretic, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
-   "_raw": "When entering the  Mask of the Heretic, regenerate\n30% of your Mana, and gain a large Walk Speed\nboost that decays over 6s.",
+   "flat": "Entering the {#} Mask of the Heretic restores {~} of your Mana and grants a walk speed boost that starts decaying over {~}s after {~}s.",
+   "_raw": "Entering the  Mask of the Heretic restores 25%\nof your Mana and grants a walk speed boost\nthat starts decaying over 6s after 6s.",
    "ability": "Strides of Heresy",
-   "code": "SHAMAN"
+   "code": "SHAMAN-P6-R03-C04",
+   "tree": "04/shaman/06/003/004"
   },
   "ability-shaman#0378": {
    "src": "When wearing the {#} Mask of the Lunatic, Aura and\nZealot's Bolt will detonate up to {~} Static, damaging\nthem per Static consumed.",
@@ -4085,6 +4044,32 @@
    "tree": "04/shaman/07/004/001",
    "ability": "Soaring Wingbeats",
    "code": "SHAMAN-P7-R04-C01"
+  },
+  "ability-shaman#0389": {
+   "src": "{#} Effect: {~} Slowness to Enemies",
+   "dst": "{#} 効果: 敵に減速 {~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "_raw": " Effect: 30% Slowness to Enemies",
+   "tree": "04/shaman/03/004/000",
+   "ability": "Nature's Jolt",
+   "code": "SHAMAN-P3-R04-C00"
+  },
+  "ability-shaman#0390": {
+   "src": "{#} Area of Effect: {~} Blocks (Rectangle-Shaped)",
+   "dst": "{#} 効果範囲: {~} ブロック (長方形)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "_raw": " Area of Effect: 4 Blocks (Rectangle-Shaped)",
+   "tree": "04/shaman/03/004/000",
+   "ability": "Nature's Jolt",
+   "code": "SHAMAN-P3-R04-C00"
   }
  }
 }

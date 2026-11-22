@@ -3,8 +3,8 @@
   "domain": "aspect",
   "lang": "zh_tw",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 131,
-  "translated": 131,
+  "count": 128,
+  "translated": 128,
   "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱受「翻譯物品名稱」開關管（`gearNames: true`）——配裝網站 WynnBuilder 只認英文名，玩家需要按 Shift 看得到原文。見 issue #936。",
   "itemNames": true,
   "gearNames": true
@@ -119,10 +119,10 @@
    ]
   },
   "aspect#0012": {
-   "src": "Aspect of the Barley-Woven",
-   "dst": "麥索編織意象",
+   "src": "Aspect of the Getaway",
+   "dst": "脫身意象",
    "role": "name",
-   "kind": "sentence",
+   "kind": "term",
    "ctx": [
     "aspect/archer"
    ]
@@ -173,8 +173,8 @@
    ]
   },
   "aspect#0018": {
-   "src": "Aspect of the North Wind",
-   "dst": "北風意象",
+   "src": "Aspect of the Pincushion",
+   "dst": "針插意象",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -784,27 +784,9 @@
     "aspect/shaman"
    ]
   },
-  "aspect#0086": {
-   "src": "Aspect of Seismic Sense",
-   "dst": "地震感知意象",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
   "aspect#0087": {
    "src": "Aspect of Stances",
    "dst": "架式意象",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0088": {
-   "src": "Aspect of Summer Storms",
-   "dst": "夏日風暴意象",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -850,15 +832,6 @@
   "aspect#0093": {
    "src": "Aspect of the Beckoned Legion",
    "dst": "召喚軍團意象",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0094": {
-   "src": "Aspect of the Blurred Line",
-   "dst": "模糊界線意象",
    "role": "name",
    "kind": "sentence",
    "ctx": [
@@ -1117,15 +1090,6 @@
     "aspect/warrior"
    ]
   },
-  "aspect#0123": {
-   "src": "Aspect of the Tightrope Walk",
-   "dst": "走鋼索意象",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/warrior"
-   ]
-  },
   "aspect#0124": {
    "src": "Battle Monk's Embodiment of Complete Synchrony",
    "dst": "武僧的完全同調化身",
@@ -1187,6 +1151,15 @@
    "kind": "sentence",
    "ctx": [
     "aspect/warrior"
+   ]
+  },
+  "aspect#0131": {
+   "src": "Aspect of Bile Waters",
+   "dst": "膽水意象",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "aspect/shaman"
    ]
   }
  }
