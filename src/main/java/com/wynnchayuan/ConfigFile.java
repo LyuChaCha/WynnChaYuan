@@ -54,6 +54,8 @@ final class ConfigFile {
         config.chatCopy = bool(o, "chatCopy", config.chatCopy);
         config.chatCopyMulti = bool(o, "chatCopyMulti", config.chatCopyMulti);
         config.chatLogButton = bool(o, "chatLogButton", config.chatLogButton);
+        config.chatLogButtonX = number(o, "chatLogButtonX", config.chatLogButtonX);
+        config.chatLogButtonY = number(o, "chatLogButtonY", config.chatLogButtonY);
         config.capes = bool(o, "capes", config.capes);
         config.ownCape = bool(o, "ownCape", config.ownCape);
         config.wynntilsUi = bool(o, "wynntilsUi", config.wynntilsUi);
@@ -316,6 +318,8 @@ final class ConfigFile {
             o.addProperty("chatCopy", config.chatCopy);
             o.addProperty("chatCopyMulti", config.chatCopyMulti);
             o.addProperty("chatLogButton", config.chatLogButton);
+            o.addProperty("chatLogButtonX", config.chatLogButtonX);
+            o.addProperty("chatLogButtonY", config.chatLogButtonY);
             o.addProperty("capes", config.capes);
             o.addProperty("ownCape", config.ownCape);
             o.addProperty("wynntilsUi", config.wynntilsUi);
