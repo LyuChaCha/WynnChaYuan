@@ -1,0 +1,590 @@
+{
+ "_meta": {
+  "quest": "Master Piece",
+  "count": 58,
+  "translated": 58,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Master Piece#000": {
+   "src": "Look in your content book! I wrote the locations of the legendary creatures.",
+   "dst": "Xem sách nội dung đi! Tôi đã ghi vị trí các sinh vật huyền thoại vào đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#001": {
+   "src": "This is...just a normal cow. This is supposed to be legendary?",
+   "dst": "Đây là... một con bò bình thường. Thế này mà là huyền thoại à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#002": {
+   "src": "...Caissop seemed to be looking forward to this painting a lot...",
+   "dst": "...Caissop có vẻ rất mong chờ bức tranh này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#003": {
+   "src": "...well, if he's blind, maybe you can fudge the details to give him something better.",
+   "dst": "...chà, nếu ông ấy mù, có lẽ bạn có thể bịa chút chi tiết để đưa ông ấy thứ hay hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#004": {
+   "src": "It's brown all over...",
+   "dst": "Nó nâu toàn thân...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#005": {
+   "src": "It has a large snout...",
+   "dst": "Nó có cái mõm to...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#006": {
+   "src": "That sounds like a villager to you.",
+   "dst": "Nghe như tả một dân làng vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#007": {
+   "src": "Time to head back to Caissop. Hopefully he'll buy it.",
+   "dst": "Đến lúc quay lại chỗ Caissop. Mong là ông ấy tin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#008": {
+   "src": "This is just a normal sheep! Are none of these supposed creatures really legendary?",
+   "dst": "Chỉ là con cừu thường! Chẳng con nào trong mấy sinh vật này huyền thoại thật sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#009": {
+   "src": "You'll need to lie about something to make a mundane sheep seem special...",
+   "dst": "Bạn sẽ phải nói dối gì đó để con cừu tầm thường trông đặc biệt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#010": {
+   "src": "It has large horns- no, say it's just one.",
+   "dst": "Sừng to- không, cứ nói chỉ có một chiếc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#011": {
+   "src": "Clean white wool, instead of black...",
+   "dst": "Lông trắng tinh, thay vì đen...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#012": {
+   "src": "A pure white sheep with one horn...?",
+   "dst": "Cừu trắng muốt, chỉ một sừng...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#013": {
+   "src": "Time to head back to Caissop. Hopefully that's good enough for him.",
+   "dst": "Đến lúc quay lại chỗ Caissop. Mong là thế đủ với ông ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#014": {
+   "src": "Snowy white, a large horn... A Unicorn Sheep, you say?!",
+   "dst": "Trắng như tuyết, một sừng lớn... Cừu Kỳ Lân ư?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "captured"
+  },
+  "Master Piece#015": {
+   "src": "...OH, NO, NO. YES! MORE COLOUR, MORE PAINT! I'M OUT OF RED!",
+   "dst": "...Ồ, KHÔNG, KHÔNG. CÓ! THÊM MÀU, THÊM SƠN! TÔI HẾT ĐỎ RỒI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#016": {
+   "src": "The creatures guarding these animals seem more legendary to you.",
+   "dst": "Mấy sinh vật canh giữ con vật này trông huyền thoại hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#017": {
+   "src": "No way you can describe a pig fantastically. You'll have to outright make something up...",
+   "dst": "Không đời nào tả một con lợn cho kỳ ảo được. Bạn sẽ phải bịa hẳn ra thôi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#018": {
+   "src": "Pink is fine, it's a rare color...",
+   "dst": "Hồng thì được, màu hiếm mà...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#019": {
+   "src": "...what if you say it has wings?",
+   "dst": "...nếu nói nó có cánh thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#020": {
+   "src": "Will he believe a flying pig?",
+   "dst": "Ông ấy tin lợn biết bay chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#021": {
+   "src": "Time to head back to Caissop. Hopefully he won't be able to tell something's amiss.",
+   "dst": "Đến lúc quay lại chỗ Caissop. Mong là ông ấy không nhận ra có gì sai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Master Piece#022": {
+   "src": "Talk to Caissop the artist, in his tent at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với họa sĩ Caissop trong lều của ông ấy tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#023": {
+   "src": "...hm...mh!",
+   "dst": "...hm...ưm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#024": {
+   "src": "Oh sorry, I didn't notice you. Did you want an autograph?",
+   "dst": "Ồ xin lỗi, tôi không để ý bạn. Bạn muốn xin chữ ký à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#025": {
+   "src": "Wait, no? Don't you know who I am?! It seems like you have no taste in art... I am Caissop, the legendary artist!",
+   "dst": "Không à? Bạn không biết tôi là ai sao?! Có vẻ bạn chẳng có gu nghệ thuật... Tôi là Caissop, họa sĩ huyền thoại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#026": {
+   "src": "Though, since you are not a fan... Perhaps you can help me? I am looking for a new assistant.",
+   "dst": "Nhưng vì bạn không phải người hâm mộ... Có lẽ bạn giúp tôi được? Tôi đang tìm trợ lý mới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#027": {
+   "src": "Excellent... I need your help to find three legendary creatures that are hiding in caves around the swamp.",
+   "dst": "Tuyệt... Tôi cần bạn giúp tìm ba sinh vật huyền thoại đang trốn trong các hang quanh đầm lầy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#028": {
+   "src": "I actually know their location, but unfortunately, I am...blind.",
+   "dst": "Thật ra tôi biết chỗ của chúng, nhưng tiếc là tôi... bị mù.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#029": {
+   "src": "For me to do my work I need to imagine them! That's where you come in. I need you to find them and describe them to me!",
+   "dst": "Để làm việc, tôi phải hình dung được chúng! Đó là lúc bạn ra tay. Tôi cần bạn tìm và tả chúng cho tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#030": {
+   "src": "Would you turn your back on a blind man?! I need you to give me an accurate description of them! Once you have found one, come back and describe it to me exactly!",
+   "dst": "Bạn nỡ quay lưng với một người mù sao?! Tôi cần bạn tả chúng thật chính xác! Tìm được con nào thì quay lại tả cho tôi thật kỹ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#031": {
+   "src": "The first cave is up a hill with tall, thin-leafed flowers. They smell pink to me, and of this I am certain.",
+   "dst": "Hang đầu tiên ở trên ngọn đồi có hoa cao, lá mảnh. Với tôi chúng có mùi màu hồng, điều này tôi chắc chắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 1",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#032": {
+   "src": "Search for the first mythical creature in the cave at [-{~}, {~}, -{~}]",
+   "dst": "Tìm sinh vật thần thoại đầu tiên trong hang tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#033": {
+   "src": "Report back with the description of the brown, large-snouted creature to Caissop",
+   "dst": "Quay lại tả cho Caissop sinh vật màu nâu, mõm to",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#034": {
+   "src": "Quick! Describe it to me! Go on!",
+   "dst": "Nhanh! Tả nó cho tôi! Mau lên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#035": {
+   "src": "Brown...big-nosed... A Villager Cow, you say!?",
+   "dst": "Nâu... mũi to... Bò Dân Làng ư!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#036": {
+   "src": "...OH, YES! ......... INSPIRED.",
+   "dst": "...Ồ, ĐÚNG! ......... CẢM HỨNG.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#037": {
+   "src": "...MH, NO, A LITTLE MORE RED!..... YES!",
+   "dst": "...ƯM, KHÔNG, THÊM CHÚT ĐỎ!..... ĐÚNG!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#038": {
+   "src": "Haha! This is WONDERFUL! I'm not going to show it to you before it is finished!",
+   "dst": "Haha! TUYỆT VỜI! Chưa xong thì tôi chưa cho bạn xem đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#039": {
+   "src": "Savor the ideas! So now, I need you to go to the second cave...",
+   "dst": "Hãy thưởng thức ý tưởng! Giờ tôi cần bạn tới hang thứ hai...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#040": {
+   "src": "It is down a road, with short, round-cupped flowers. Those ones smell orange to me!",
+   "dst": "Nó ở dưới một con đường, có hoa thấp, đài tròn. Với tôi chúng có mùi màu cam!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#041": {
+   "src": "Hurry! I'll finish this animal while you are gone. OH, YES. MUY MACHO.",
+   "dst": "Nhanh lên! Tôi sẽ vẽ xong con này khi bạn đi. Ồ, ĐÚNG. MUY MACHO.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 3",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#042": {
+   "src": "Search for the second mythical beast in the cave at [-{~},-{~}]",
+   "dst": "Tìm quái thú thần thoại thứ hai trong hang tại [-{~},-{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#043": {
+   "src": "Report back with the description of the white, big-horned creature to Caissop",
+   "dst": "Quay lại tả cho Caissop sinh vật màu trắng, sừng to",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#044": {
+   "src": "You're here! Quick! Don't look at me, describe it!",
+   "dst": "Bạn đây rồi! Nhanh! Đừng nhìn tôi, tả đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#046": {
+   "src": "...OH YES, THE WOOL IS REAL... MORE SWIPING... OH YES, BIEN!",
+   "dst": "...Ồ ĐÚNG, LÔNG NHƯ THẬT... QUẸT THÊM... Ồ ĐÚNG, BIEN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#047": {
+   "src": "... THIS IS UNIQUE, REMARKABLE, YES. SUPERNATURAL!",
+   "dst": "... ĐỘC NHẤT, PHI THƯỜNG, ĐÚNG. SIÊU NHIÊN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#048": {
+   "src": "The last creature! Red-smelling flowers, prickly thorns, hurry, mucho inspired!",
+   "dst": "Con cuối! Hoa mùi đỏ, gai nhọn, nhanh lên, mucho cảm hứng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#050": {
+   "src": "I'LL JUST USE MY BLOOD! OH! YES! ...INSPIRED! REMARKABLE! Huh? Why are you still here? Go! I need that last description!",
+   "dst": "TÔI SẼ DÙNG MÁU CỦA MÌNH! Ồ! ĐÚNG! ...CẢM HỨNG! PHI THƯỜNG! Hả? Sao bạn còn ở đây? Đi đi! Tôi cần lời tả cuối cùng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 5",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#051": {
+   "src": "Search for the third and last mythical animal in the cave at [-{~},-{~}]",
+   "dst": "Tìm con vật thần thoại thứ ba và cuối cùng trong hang tại [-{~},-{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#052": {
+   "src": "Report back with the description of the pink, flying creature to Caissop",
+   "dst": "Quay lại tả cho Caissop sinh vật màu hồng biết bay",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Master Piece#053": {
+   "src": "You're finally back! I just finished the last one. Go! Describe it!",
+   "dst": "Cuối cùng bạn cũng về! Tôi vừa vẽ xong con cuối. Nào! Tả đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#054": {
+   "src": "...Oh, yes... YES. I LOVE IT.",
+   "dst": "...Ồ, đúng... ĐÚNG. MÊ QUÁ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#055": {
+   "src": "It's...A Pigasus! WHAT A NAME!",
+   "dst": "Đó là... Lợngasus! TÊN HAY!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#056": {
+   "src": "...OH YES, WINGS! EYES FROM HEAVEN! OH, YES.",
+   "dst": "...Ồ ĐÚNG, CÁNH! MẮT THIÊN ĐƯỜNG! Ồ, ĐÚNG.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#057": {
+   "src": "Och, Perfect. The final touch and, done! You were so inspiring that I made two! One for you, and one for me!",
+   "dst": "Ồ, hoàn hảo. Nét cuối và, xong! Bạn truyền cảm hứng đến mức tôi vẽ hai bức! Một cho bạn, một cho tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#058": {
+   "src": "You might want to hold onto that, big-town upper class Villagers pay through the roof for Caissop's work!",
+   "dst": "Giữ kỹ đấy, giới Dân làng thượng lưu ở thành lớn trả giá cắt cổ cho tác phẩm của Caissop!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  },
+  "Master Piece#059": {
+   "src": "Thank you for your assistance, what a rush! Good luck on your Gavel adventure!",
+   "dst": "Cảm ơn bạn đã giúp, phê quá! Chúc may mắn trong chuyến phiêu lưu ở Gavel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Master Piece",
+   "stage": "Stage 7",
+   "speaker": "Caissop",
+   "source": "wiki"
+  }
+ }
+}

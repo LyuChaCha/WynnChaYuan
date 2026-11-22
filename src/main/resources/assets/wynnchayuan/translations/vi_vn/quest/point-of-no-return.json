@@ -1,0 +1,936 @@
+{
+ "_meta": {
+  "quest": "Point of No Return",
+  "count": 92,
+  "translated": 92,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Point of No Return#000": {
+   "src": "Where did your soul go?",
+   "dst": "Hồn bạn đi đâu rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Where did your soul go?!",
+    "file": "quest/point-of-no-return.json",
+    "ratio": 0.979,
+    "reason": "prefix"
+   }
+  },
+  "Point of No Return#001": {
+   "src": "The passage to the next area has opened...",
+   "dst": "Lối sang khu tiếp theo đã mở...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#002": {
+   "src": "When soul and body synchronize, the way is opened...",
+   "dst": "Khi hồn và xác đồng điệu, lối đi sẽ mở...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#003": {
+   "src": "{u}. {u}, {u}, {u}. You can hear me. For once, for one small moment, we are nearly as one again.",
+   "dst": "{u}. {u}, {u}, {u}. Ngươi nghe thấy ta. Lần này, trong khoảnh khắc ngắn, ta gần như lại là một.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#004": {
+   "src": "Who were we?",
+   "dst": "Ta đã là ai?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#005": {
+   "src": "Tying you to something you no longer are.",
+   "dst": "Trói ngươi vào thứ ngươi không còn là.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#006": {
+   "src": "[-{~} Soul Retainer]",
+   "dst": "[-{~} Vật Giữ Hồn]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#007": {
+   "src": "And then, when it was done, we lost what little still was left.",
+   "dst": "Rồi khi mọi sự xong, ta mất nốt chút ít còn sót lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#008": {
+   "src": "What were we?",
+   "dst": "Ta đã là gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#009": {
+   "src": "Who did this to us?",
+   "dst": "Ai làm thế với ta?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#010": {
+   "src": "Did your soul just stop following you?",
+   "dst": "Hồn bạn vừa thôi đi theo bạn à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#011": {
+   "src": "...you have to let it go.",
+   "dst": "...ngươi phải buông nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#012": {
+   "src": "Something which can no longer leave.",
+   "dst": "Thứ không thể rời đi nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#013": {
+   "src": "... Maybe you should talk to that citizen again.",
+   "dst": "... Có lẽ bạn nên nói lại với người dân đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#014": {
+   "src": "You're... free. But, something is...",
+   "dst": "Ngươi... tự do. Nhưng có gì đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#015": {
+   "src": "Live well, {u}. That is all I ask.",
+   "dst": "Sống tốt nhé, {u}. Ta chỉ xin vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#016": {
+   "src": "Retrace the steps of your soul to keep up...",
+   "dst": "Lần theo bước chân hồn bạn để theo kịp...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#017": {
+   "src": "A blood trail?",
+   "dst": "Vệt máu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#018": {
+   "src": "Holding the Soul Retainer seems to switch your location with your soul...",
+   "dst": "Cầm Vật Giữ Hồn dường như đổi chỗ bạn với hồn bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#019": {
+   "src": "Talk to the {p} Citizen at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Người dân {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#020": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#021": {
+   "src": "You... could it be...? Are you... real?",
+   "dst": "Ngươi... lẽ nào...? Ngươi là... thật ư?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#022": {
+   "src": "Ha... ha... you should not have come here.",
+   "dst": "Ha... ha... lẽ ra ngươi không nên đến đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#023": {
+   "src": "Have you seen the others? Barely clinging on to life... hollowed, empty.",
+   "dst": "Thấy những người kia chưa? Thoi thóp sống... rỗng tuếch, trống không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#024": {
+   "src": "Only I persist. And, now... you, too, have been ensnared.",
+   "dst": "Chỉ mình ta còn trụ. Và giờ... ngươi cũng đã sa bẫy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#025": {
+   "src": "Fight against your fate, if you so choose... it makes no difference in the end. Ha... ha... ha...",
+   "dst": "Chống lại số phận nếu ngươi muốn... rốt cuộc cũng chẳng khác gì. Ha... ha... ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#026": {
+   "src": "Explore this happier version of {p}.",
+   "dst": "Khám phá phiên bản vui vẻ hơn này của {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#027": {
+   "src": "Ahh... a newcomer? Welcome, welcome.",
+   "dst": "Ahh... người mới à? Chào mừng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#028": {
+   "src": "Do not worry, you are safe here. The Obelisk protects us all.",
+   "dst": "Đừng lo, ở đây bạn an toàn. Cột đá che chở chúng ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#029": {
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "dst": "Ngọn hải đăng an toàn giữa nỗi kinh hoàng bên ngoài... thật kỳ diệu khi nó chờ ta đúng lúc ta cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#030": {
+   "src": "Rest well, friend. You have made it home. Feel free to familiarize yourself with it.",
+   "dst": "Nghỉ ngơi đi, bạn. Bạn đã về nhà. Cứ tự nhiên làm quen nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#031": {
+   "src": "How long has it been since a new face has joined us? I can't quite seem to recall...",
+   "dst": "Đã bao lâu rồi mới có gương mặt mới đến với ta? Tôi chẳng nhớ nổi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#032": {
+   "src": "Don't be fooled - everything you see around you is very real.",
+   "dst": "Đừng bị lừa - mọi thứ bạn thấy quanh đây đều rất thật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#033": {
+   "src": "Where did your soul go?!",
+   "dst": "Hồn bạn đi đâu rồi?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#034": {
+   "src": "Is this... {p}? It seems different.",
+   "dst": "Đây là... {p}? Có vẻ khác lạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#035": {
+   "src": "You look different in the mirror. It is a reflection of your inner self.",
+   "dst": "Trong gương bạn trông khác. Đó là phản chiếu của nội tâm bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#036": {
+   "src": "You've left the darkness...",
+   "dst": "Bạn đã rời khỏi bóng tối...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#037": {
+   "src": "Something must be left behind. And you must leave.",
+   "dst": "Phải bỏ lại thứ gì đó. Và ngươi phải đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#038": {
+   "src": "...more than anything beyond, at least. The Obelisk protects us, after all.",
+   "dst": "...hơn bất cứ thứ gì ngoài kia, ít nhất. Dù sao Cột đá cũng che chở ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#039": {
+   "src": "Do you feel its pull? It calls to us all, when we arrive.",
+   "dst": "Thấy sức hút của nó chứ? Nó gọi mọi người khi tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#040": {
+   "src": "Why would anyone choose to resist? The world is twisted, wrong... we do not belong there.",
+   "dst": "Sao ai lại chọn kháng cự? Thế giới méo mó, sai trái... ta không thuộc về đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#041": {
+   "src": "It is by the Bovine's grace that the Obelisk has seen fit to bless us with this sanctuary.",
+   "dst": "Nhờ ơn Bò Thánh mà Cột đá đã ban cho ta chốn nương náu này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#042": {
+   "src": "There is no fault in giving in. It only wants to protect us. Is that so wrong?",
+   "dst": "Buông xuôi đâu có lỗi. Nó chỉ muốn bảo vệ ta. Thế là sai sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#043": {
+   "src": "Why would you ever want to leave?",
+   "dst": "Sao bạn lại muốn rời đi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#044": {
+   "src": "{u}.",
+   "dst": "{u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Point of No Return#045": {
+   "src": "Leave Happier {p}.",
+   "dst": "Rời khỏi {p} vui vẻ hơn.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#046": {
+   "src": "If you truly want to leave... no one here will stop you. But are you really willing to go through with it?",
+   "dst": "Nếu thật muốn đi... chẳng ai ở đây cản bạn. Nhưng bạn có thật sự dám làm đến cùng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
+   "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#047": {
+   "src": "Talk to the {p} Citizen who sent you on this journey.",
+   "dst": "Nói chuyện với Người dân {p} đã gửi bạn vào hành trình này.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#048": {
+   "src": "Ha... I saw it there. That flicker in your eyes...",
+   "dst": "Ha... ta đã thấy. Cái ánh lóe trong mắt ngươi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#049": {
+   "src": "You have been... shattered. Just like me, ha, ha, ha...",
+   "dst": "Ngươi đã... vỡ vụn. Giống như ta, ha, ha, ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#050": {
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
+   "dst": "Những kẻ khác... đều đã chịu thua sức hút. Đám sống sót chúng ta... bị bỏ lại, ruồng bỏ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#051": {
+   "src": "I cannot blame them. Such a loss must seem a blessing, compared to life out here...",
+   "dst": "Ta không trách họ. Mất mát như thế hẳn là phước lành, so với cuộc sống ngoài này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#052": {
+   "src": "How long has it been, since we found ourselves trapped here...? Longer than anyone has any right to live... ha, ha...",
+   "dst": "Đã bao lâu rồi, từ khi ta bị kẹt ở đây...? Lâu hơn mức bất kỳ ai được quyền sống... ha, ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#053": {
+   "src": "Perhaps I am already gone. More dead than alive. Hollowed out...",
+   "dst": "Có lẽ ta đã đi rồi. Chết nhiều hơn sống. Rỗng tuếch...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#054": {
+   "src": "All it does is take. More, and more, and more, until nothing is left... ha, ha, ha...",
+   "dst": "Nó chỉ biết lấy đi. Thêm, thêm, thêm nữa, đến khi chẳng còn gì... ha, ha, ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#055": {
+   "src": "It takes... and takes... until...",
+   "dst": "Nó lấy... và lấy... đến khi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#056": {
+   "src": "Your soul seems to be slipping away from reality...",
+   "dst": "Hồn bạn dường như đang trôi khỏi thực tại...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#057": {
+   "src": "Where does all of this lead?",
+   "dst": "Mọi thứ này dẫn tới đâu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#058": {
+   "src": "Your soul runs beneath your feet.",
+   "dst": "Hồn bạn chạy dưới chân bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#059": {
+   "src": "It leads you onwards..",
+   "dst": "Nó dẫn bạn đi tiếp..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#060": {
+   "src": "Your soul drifts further from you. Will you ever get it back?",
+   "dst": "Hồn bạn trôi xa dần. Liệu có lấy lại được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#061": {
+   "src": "Oh, how they tried to bury us...",
+   "dst": "Ôi, chúng cố chôn ta biết bao...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#062": {
+   "src": "Something is holding you back.",
+   "dst": "Có gì đó níu bạn lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#063": {
+   "src": "A distant thread, tying you to... something.",
+   "dst": "Sợi chỉ xa xăm trói bạn vào... gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "Lutho Guard",
+   "source": "captured"
+  },
+  "Point of No Return#064": {
+   "src": "The platforms seem to disappear... You must swap with your soul quickly to make it to the end.",
+   "dst": "Các bệ đỡ dường như biến mất... Bạn phải đổi chỗ với hồn thật nhanh để tới cuối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#065": {
+   "src": "You must look at the mirror and wait for the platforms to appear on the other side before swapping sides...",
+   "dst": "Bạn phải nhìn vào gương, chờ bệ xuất hiện bên kia rồi mới đổi bên...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#069": {
+   "src": "You should try reproducing your soul's steps to find the exit...",
+   "dst": "Thử lặp lại bước đi của hồn bạn để tìm lối ra...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#070": {
+   "src": "Why can you fly here...?",
+   "dst": "Sao ở đây bay được...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#072": {
+   "src": "The floor's rising! You need to escape upwards!",
+   "dst": "Sàn đang dâng lên! Bạn phải thoát lên trên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#073": {
+   "src": "The floor's rising! Don't let it get to you!",
+   "dst": "Sàn đang dâng lên! Đừng để nó bắt kịp!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#074": {
+   "src": "I am... you. {u}. {u}. You can hear me.",
+   "dst": "Ta là... ngươi. {u}. {u}. Nghe thấy ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#075": {
+   "src": "How long, now, has it been? Since they broke us in this way. Since you lost all that you were.",
+   "dst": "Đã bao lâu rồi? Từ khi chúng bẻ gãy ta thế này. Từ khi ngươi mất hết những gì mình từng là.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#077": {
+   "src": "A trap. A snare. A devious thing, which claims to protect.",
+   "dst": "Một cái bẫy. Một cạm bẫy. Thứ quỷ quyệt, xưng là che chở.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#078": {
+   "src": "The soul, the mind, kept safe. All while the body falls prey to the roots and the trees and the gaze of the taken.",
+   "dst": "Hồn, trí, được giữ an toàn. Trong khi thân xác làm mồi cho rễ, cây và ánh mắt của những kẻ bị bắt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#079": {
+   "src": "We have fallen, and we cannot climb free. Not whole, not anymore. Something must be lost.",
+   "dst": "Ta đã sa xuống, không thể leo ra. Không trọn vẹn, không còn nữa. Phải mất đi thứ gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#080": {
+   "src": "And it cannot last. And it will not last.",
+   "dst": "Nó không thể bền. Và sẽ không bền.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#081": {
+   "src": "Who are you now?",
+   "dst": "Giờ ngươi là ai?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#082": {
+   "src": "Even through the struggle, the turmoil, the loss... despite it all, you remain.",
+   "dst": "Dù qua giằng xé, hỗn loạn, mất mát... bất chấp tất cả, ngươi vẫn còn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#083": {
+   "src": "Changed... but still, but still... yourself.",
+   "dst": "Đổi khác... mà vẫn, mà vẫn... là ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#084": {
+   "src": "We lost ourself.",
+   "dst": "Ta mất chính ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#085": {
+   "src": "The world. The shadows. The crown.",
+   "dst": "Thế giới. Bóng tối. Vương miện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#086": {
+   "src": "Was there meaning to it all? Was there purpose, reason?",
+   "dst": "Tất cả có ý nghĩa gì không? Có mục đích, lý do không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#087": {
+   "src": "Was it desperation, fear? Or was it simple routine? We cannot know.",
+   "dst": "Là tuyệt vọng, sợ hãi? Hay chỉ là thói quen? Ta không thể biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#088": {
+   "src": "We were only ever human.",
+   "dst": "Ta chỉ là con người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#089": {
+   "src": "Though once, we were one... now we are split. Separate.",
+   "dst": "Dù từng là một... giờ ta bị tách đôi. Riêng rẽ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#090": {
+   "src": "But the trap does not see it that way. And, so... a chance to break free.",
+   "dst": "Nhưng cái bẫy không thấy vậy. Và thế là... một cơ hội thoát ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#091": {
+   "src": "As one is ensnared, the other will have a moment, an opportunity.",
+   "dst": "Khi một bên bị trói, bên kia sẽ có một khoảnh khắc, một cơ hội.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#092": {
+   "src": "The snare will hold me here. And you can leave.",
+   "dst": "Bẫy sẽ giữ ta lại đây. Và ngươi có thể đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#093": {
+   "src": "I will be lost once more... and you will leave.",
+   "dst": "Ta sẽ lạc mất lần nữa... và ngươi sẽ rời đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#094": {
+   "src": "Without me.",
+   "dst": "Thiếu ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#095": {
+   "src": "You will live. You have lived, already. In my absence, you have built yourself anew.",
+   "dst": "Ngươi sẽ sống. Ngươi đã sống rồi. Vắng ta, ngươi đã tự dựng lại mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#096": {
+   "src": "Do not mourn me. I have long been lost to you already.",
+   "dst": "Đừng khóc thương ta. Ngươi đã mất ta từ lâu rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  }
+ }
+}

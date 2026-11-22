@@ -1,0 +1,730 @@
+{
+ "_meta": {
+  "quest": "An Iron Heart Part II",
+  "count": 72,
+  "translated": 72,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "An Iron Heart Part II#000": {
+   "src": "Have you found any leads since I sent you to my contact, Daxe?",
+   "dst": "Từ khi gặp Daxe, người quen của tôi, bạn có manh mối gì chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#001": {
+   "src": "Duvale mentioned rumors about an illegal factory in the swamp... If Daxe's criminal past had to do with this, maybe the [Mechanical Reactor] will cause him to react. Duvale mentioned he had spares, should they be needed.",
+   "dst": "Duvale có nhắc tin đồn về một nhà máy lậu trong đầm lầy... Nếu quá khứ tội phạm của Daxe dính tới chuyện này, có lẽ [Bộ phản ứng cơ khí] sẽ khiến hắn phản ứng. Duvale bảo ông ấy có đồ dự phòng nếu cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#002": {
+   "src": "The guard golem left...but the reactor has stopped working.",
+   "dst": "Golem hộ vệ đã bỏ đi...nhưng bộ phản ứng đã tắt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#003": {
+   "src": "Go on, search my house. Or are you just here to waste my time?",
+   "dst": "Cứ lục soát nhà ta đi. Hay ngươi chỉ đến để phí thời gian ta?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#004": {
+   "src": "A door has been opened...",
+   "dst": "Một cánh cửa đã mở ra...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#005": {
+   "src": "So what is it? Have you made your decision?",
+   "dst": "Thế nào? Ngươi quyết định chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#006": {
+   "src": "Speak to Detective Hart at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với thám tử Hart tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#007": {
+   "src": "Hotor, Athomo, Arperi, Etyir, Taiyroth, On'omi, Danin, Nesys, Onton. All missing...",
+   "dst": "Hotor, Athomo, Arperi, Etyir, Taiyroth, On'omi, Danin, Nesys, Onton. Mất tích cả...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#008": {
+   "src": "Etan is the latest. You don't happen to know anything about these people, soldier?",
+   "dst": "Etan là người mới nhất. Bạn có biết gì về những người này không, binh sĩ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#009": {
+   "src": "Citizens are going missing at an alarming rate. We have lost {~} people in just {~} weeks. There hasn't been a trace of them anywhere.",
+   "dst": "Người dân mất tích với tốc độ đáng báo động. Chúng tôi mất {~} người chỉ trong {~} tuần. Chẳng thấy tung tích đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#010": {
+   "src": "You wouldn't have expected it, with all the guard golems we've been donated recently! {p} should be safer than ever.",
+   "dst": "Ai mà ngờ, khi gần đây chúng tôi được tặng bao nhiêu golem hộ vệ! {p} lẽ ra phải an toàn hơn bao giờ hết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#011": {
+   "src": "Of course I have my suspicions, there are rumors floating around about...shady business going on.",
+   "dst": "Tất nhiên tôi có nghi ngờ, có tin đồn về...những phi vụ mờ ám.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#012": {
+   "src": "I don't know who to trust in these circumstances, so if you would be willing to aid in this investigation, I'd be rather thankful.",
+   "dst": "Tình hình này tôi chẳng biết tin ai, nên nếu bạn sẵn lòng giúp điều tra, tôi sẽ rất biết ơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#013": {
+   "src": "The “Great” Daxe is a man with a criminal past. He knows things the police don't, but he won't talk with me, given my status.",
+   "dst": "Daxe “Vĩ đại” là kẻ có quá khứ phạm tội. Hắn biết những điều cảnh sát không biết, nhưng không chịu nói với tôi vì địa vị tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#014": {
+   "src": "Can you try to get some information from him? You can find his hut west from here. Next to that Elven girl's camp.",
+   "dst": "Bạn thử moi chút thông tin từ hắn được không? Túp lều của hắn ở phía tây đây. Cạnh trại của cô gái Elf.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#015": {
+   "src": "Follow the west road and speak with Daxe in his home at [-{~}, {~}, -{~}]",
+   "dst": "Đi theo đường phía tây và nói chuyện với Daxe tại nhà hắn ở [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#016": {
+   "src": "Oh, so a human wishes to wander into the home of the great Daxe?",
+   "dst": "Ồ, vậy ra một con người muốn lang thang vào nhà Daxe vĩ đại sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#017": {
+   "src": "Unfortunately for you, I'm not fond of visitors. I've left my criminal past behind.",
+   "dst": "Tiếc cho ngươi, ta không ưa khách khứa. Ta đã gác lại quá khứ tội phạm rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#018": {
+   "src": "So go on. I don't have anything to tell you.",
+   "dst": "Nên đi đi. Ta chẳng có gì để nói với ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#020": {
+   "src": "Unfortunately for you, I'm not fond of visitors. I've left my criminal past behind...mh?",
+   "dst": "Tiếc cho ngươi, ta không ưa khách khứa. Ta đã gác lại quá khứ tội phạm rồi...hửm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#021": {
+   "src": "What's that device you have there? So you already know about this, then...?",
+   "dst": "Thiết bị ngươi cầm là gì vậy? Vậy ra ngươi đã biết chuyện này rồi...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#022": {
+   "src": "Hm! If you already know, what do you need the information for?",
+   "dst": "Hừm! Nếu đã biết rồi, ngươi cần thông tin làm gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#023": {
+   "src": "BZZT. [ERROR]...? Madeleine...?",
+   "dst": "BZZT. [ERROR]...? Madeleine...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Guard Golem",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#024": {
+   "src": "MADELEINE! Where's...wait! What's happening, where am I? WHO'S VOICE IS THIS?!",
+   "dst": "MADELEINE! Đâu rồi...khoan! Chuyện gì vậy, tôi đang ở đâu? GIỌNG CỦA AI ĐÂY?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Guard Golem",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#025": {
+   "src": "Wait, what in the world is going on?! What did you do to my golem?!",
+   "dst": "Khoan, chuyện quái gì thế này?! Ngươi làm gì golem của ta vậy?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#026": {
+   "src": "They... my daughter... SHUT UP! QUIET! Who's giving me orders- NO ORDERS! Cold! COLD!",
+   "dst": "Chúng... con gái tôi... IM ĐI! IM! Ai ra lệnh cho tôi- KHÔNG LỆNH! Lạnh! LẠNH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Guard Golem?",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#027": {
+   "src": "Wait, your daughter?! M-Madeleine...? I...h-how...what...?",
+   "dst": "Khoan, con gái ngươi?! M-Madeleine...? Ta...s-sao...gì...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#028": {
+   "src": "You...you aren't...dead steel? You remember your name...?!",
+   "dst": "Ngươi...không phải...thép chết? Ngươi nhớ tên mình...?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#029": {
+   "src": "STOP GIVING ME ORDERS!! I'M...I'M THEODORE! I'M NOT A SERVANT! I...where has my life gone...? Where is...",
+   "dst": "ĐỪNG RA LỆNH CHO TÔI NỮA!! TÔI...TÔI LÀ THEODORE! TÔI KHÔNG PHẢI ĐẦY TỚ! Tôi...đời tôi đâu rồi...? Đâu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Guard Golem?",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#030": {
+   "src": "Madeleine... Where are you- RE-AFFIRMING DIRECTIVES. BZZT. ... ... ...",
+   "dst": "Madeleine... Con ở đâu- TÁI XÁC NHẬN CHỈ THỊ. BZZT. ... ... ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Guard Golem?",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#031": {
+   "src": "I... I can't believe it. They didn't...they're still...",
+   "dst": "Ta... Ta không tin nổi. Chúng không...họ vẫn còn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#032": {
+   "src": "Dear god, that...that must...I'll talk. I will tell you what I know.",
+   "dst": "Trời ơi, thế...thế thì...Ta sẽ nói. Sẽ kể ngươi những gì ta biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#033": {
+   "src": "I broke into the golem factory for petty thievery...and found them. They gave me this Golem... Theodore...later to keep me quiet.",
+   "dst": "Ta đột nhập nhà máy golem để trộm vặt...và phát hiện ra họ. Sau đó chúng đưa ta con Golem này... Theodore...để bịt miệng ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#034": {
+   "src": "They assured me that they were gone, that every last bit of them was erased. They...those monsters lied to me...",
+   "dst": "Chúng cam đoan rằng họ không còn nữa, rằng mọi thứ của họ đã bị xóa sạch. Chúng...lũ quái vật đó đã lừa ta...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#035": {
+   "src": "Follow this road west and turn right. Look for Urelix. The factory is hidden in a cabin, it won't look like a factory.",
+   "dst": "Theo đường này đi về phía tây rồi rẽ phải. Tìm Urelix. Nhà máy giấu trong một căn nhà gỗ, trông chẳng giống nhà máy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "Daxe",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#036": {
+   "src": "Head to the Golem Factory at [-{~}, {~}, -{~}]",
+   "dst": "Đến nhà máy Golem tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#037": {
+   "src": "Find a way to deactivate the Guard Golem",
+   "dst": "Tìm cách vô hiệu hóa Golem hộ vệ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#038": {
+   "src": "And what do you think you are doing, barging into my humble home like this? Do they not teach humans manners in Wynn?",
+   "dst": "Ngươi nghĩ mình đang làm gì vậy, xông vào tệ xá của ta thế này? Ở Wynn người ta không dạy con người phép lịch sự à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#039": {
+   "src": "Ah, yes. You are correct- I oversee the creation of Guard Golems. What of it?",
+   "dst": "À, phải. Ngươi nói đúng- Ta giám sát việc chế tạo Golem hộ vệ. Thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#040": {
+   "src": "Oh, you believe that our company is illicit somehow? You insult me so!",
+   "dst": "Ồ, ngươi tin công ty ta làm ăn phi pháp sao? Thật là xúc phạm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#041": {
+   "src": "My golems have protected countless people for years. So if you think my company is corrupt, why don't you take a look around?",
+   "dst": "Golem của ta đã bảo vệ vô số người suốt bao năm. Nếu ngươi nghĩ công ty ta bất chính, sao không tự xem xét xung quanh?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#042": {
+   "src": "Go on, search through my house. See if you can find anything.",
+   "dst": "Cứ lục soát nhà ta đi. Xem ngươi có tìm được gì không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#043": {
+   "src": "Find a way into the factory in Urelix's house",
+   "dst": "Tìm lối vào nhà máy trong nhà của Urelix",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#044": {
+   "src": "Escape the Golem Factory and find Urelix.",
+   "dst": "Thoát khỏi nhà máy Golem và tìm Urelix.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#045": {
+   "src": "Initiating Chip Insertion Machine - All personell in machine be advised, avoid the spikes.",
+   "dst": "Khởi động máy cấy chip - Mọi nhân sự trong máy lưu ý, tránh các mũi gai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#046": {
+   "src": "Intruder Detected - Emergency meltdown initiated. Please evacuate immediately via the emergency exit.",
+   "dst": "Phát hiện kẻ xâm nhập - Bắt đầu nung chảy khẩn cấp. Hãy sơ tán ngay qua lối thoát hiểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#047": {
+   "src": "Talk to Dr. Urelix in his office",
+   "dst": "Nói chuyện với tiến sĩ Urelix trong văn phòng của hắn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#048": {
+   "src": "Well well, look at you, here at the end of my factory. I wasn't expecting you to survive the production line. I thought you'd be one of ours by now.",
+   "dst": "Chà chà, nhìn ngươi xem, đã tới cuối nhà máy của ta. Ta không ngờ ngươi sống sót qua dây chuyền sản xuất. Tưởng giờ ngươi đã thành hàng của ta rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#049": {
+   "src": "That's that, I suppose. Yes, this is indeed where all the iron golems you've ever encountered were made, and if you've gotten here, you know how we make them.",
+   "dst": "Thôi thì vậy. Phải, mọi golem sắt ngươi từng gặp đều được làm ra ở đây, và nếu đã tới được đây, ngươi biết bọn ta làm chúng thế nào rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#050": {
+   "src": "Yes, metal forged with flesh...an unbeatable combination. Emotions and memories must be repressed in order to maintain obedience, of course...",
+   "dst": "Phải, kim loại rèn cùng thịt da...một sự kết hợp vô địch. Tất nhiên, cảm xúc và ký ức phải bị đè nén để giữ sự phục tùng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#051": {
+   "src": "Have you ever looked at a golem's eyes? Sometimes they look back, yes. The person they once were is still in there. I almost feel a connection when I make eye contact with them...",
+   "dst": "Ngươi từng nhìn vào mắt golem chưa? Đôi khi chúng nhìn lại đấy. Con người cũ của chúng vẫn còn trong đó. Ta gần như thấy gắn kết khi chạm mắt chúng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#052": {
+   "src": "It's odd, honestly. I'm sure they don't feel much except cold, supposing our safeguards stay in place, of course. I have to assume malfunctions happened to have had you find us out...",
+   "dst": "Thật lạ lùng. Ta chắc chúng chẳng cảm thấy gì ngoài cái lạnh, miễn là các biện pháp an toàn còn hoạt động. Hẳn là có trục trặc nên ngươi mới tìm ra bọn ta...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#053": {
+   "src": "Oh, look at me now, rambling! I must say I have been alone for a while...well, lacking any company that converses! So, I shall make you a deal, human.",
+   "dst": "Ồ, nhìn ta xem, lan man quá! Phải nói ta đã cô độc lâu rồi...à, thiếu người bầu bạn biết trò chuyện! Vậy ta sẽ đề nghị ngươi một giao kèo, con người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#054": {
+   "src": "I will give you a substantial amount of emeralds and a piece of quality iron armor in return for your silence on my little operation here.",
+   "dst": "Ta sẽ cho ngươi một khoản ngọc lục bảo kha khá và một món giáp sắt tốt, đổi lại ngươi giữ im lặng về phi vụ nho nhỏ ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#055": {
+   "src": "I'll advise you to take my deal. Imagine what will happen if you should report my operation to the police. Yes, you'll save a few folk here, but how will the golems be made?",
+   "dst": "Ta khuyên ngươi nhận lời. Thử nghĩ xem nếu ngươi báo cảnh sát thì sao. Phải, ngươi sẽ cứu được vài người ở đây, nhưng golem sẽ làm bằng gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#056": {
+   "src": "Without them, both Gavel and Wynn would struggle under the weight of our wars. Is this operation so immoral, then? Sacrifices must be made in order to survive.",
+   "dst": "Không có chúng, cả Gavel lẫn Wynn sẽ kiệt quệ dưới sức nặng chiến tranh. Vậy việc này vô đạo đức đến thế sao? Muốn sống thì phải hy sinh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#057": {
+   "src": "I'll give you some time to consider my proposition. Take from my chest if you wish to take up my offer, otherwise get out of here and do not return.",
+   "dst": "Ta cho ngươi chút thời gian cân nhắc. Nếu nhận lời thì lấy đồ trong rương của ta, bằng không thì cút khỏi đây và đừng quay lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 7",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#058": {
+   "src": "Either take the bribe or return to Detective Hart",
+   "dst": "Nhận hối lộ hoặc quay về gặp thám tử Hart",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#059": {
+   "src": "Ahh, a wise choice. Production will continue then...and you've earned yourself a pocket full of emeralds at the same time.",
+   "dst": "Ahh, lựa chọn sáng suốt. Vậy việc sản xuất sẽ tiếp tục...và ngươi cũng kiếm được đầy túi ngọc lục bảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#060": {
+   "src": "Whether you truly see things my way or simply understand that my work is necessary, I couldn't care less. What matters is not your morality, but your choice.",
+   "dst": "Ngươi thật lòng đồng tình với ta hay chỉ hiểu rằng việc của ta là cần thiết, ta chẳng bận tâm. Điều quan trọng không phải đạo đức của ngươi, mà là lựa chọn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#061": {
+   "src": "Enjoy your armor and money, and please escort yourself to the exit.",
+   "dst": "Tận hưởng giáp và tiền đi, rồi làm ơn tự ra cửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Dr. Urelix",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#062": {
+   "src": "You've returned, I see. Any news on the situation?",
+   "dst": "Bạn đã về rồi. Có tin gì mới không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#063": {
+   "src": "Yes, we're aware of the Golem factory. Were the criminals using it as a base?",
+   "dst": "Phải, chúng tôi biết nhà máy Golem. Bọn tội phạm dùng nó làm căn cứ à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#064": {
+   "src": "Wha...fleshcrafting?! Golems are powered by suspended villagers?! Is this true, soldier?",
+   "dst": "Cái...rèn thịt người?! Golem chạy bằng dân làng bị phong ấn sao?! Thật vậy sao, binh sĩ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#065": {
+   "src": "We'll need to round up reinforcements immediately, and storm this factory! This cannot go on a moment longer!",
+   "dst": "Phải tập hợp viện binh ngay và tấn công nhà máy! Không thể để chuyện này kéo dài thêm chút nào!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#066": {
+   "src": "Don't think you'll go unrewarded, soldier. There will be justice for this grave defilement of our people.",
+   "dst": "Đừng nghĩ bạn sẽ không được thưởng, binh sĩ. Công lý sẽ đến cho sự báng bổ nặng nề với dân ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 8",
+   "speaker": "Detective Hart",
+   "source": "wiki"
+  },
+  "An Iron Heart Part II#067": {
+   "src": "That golem is a danger to everything around it. Please, follow the trail of scrap and keep it from causing anyone more damage!",
+   "dst": "Con golem đó nguy hiểm cho mọi thứ quanh nó. Làm ơn đi theo vệt sắt vụn và đừng để nó gây hại thêm cho ai!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#068": {
+   "src": "Get [{~} Acidic Sludge]\nto open the door",
+   "dst": "Lấy [{~} Acidic Sludge]\nđể mở cửa",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#069": {
+   "src": "Maybe something can deactivate the golem guarding the entrance",
+   "dst": "Có lẽ thứ gì đó có thể vô hiệu hóa golem canh lối vào",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#070": {
+   "src": "Maybe an item that golems react to could force it away.",
+   "dst": "Có lẽ một vật khiến golem phản ứng sẽ đuổi được nó đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#071": {
+   "src": "Get [Explosive Chip]\nto open the door",
+   "dst": "Lấy [Explosive Chip]\nđể mở cửa",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#072": {
+   "src": "...I hope you always do the right thing.",
+   "dst": "...Mong bạn luôn làm điều đúng đắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "Detective Hart",
+   "source": "captured.json"
+  }
+ }
+}

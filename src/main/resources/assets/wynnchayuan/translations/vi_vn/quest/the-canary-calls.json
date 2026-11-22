@@ -1,0 +1,3346 @@
+{
+ "_meta": {
+  "quest": "The Canary Calls",
+  "count": 332,
+  "translated": 332,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Canary Calls#000": {
+   "src": "Day {~}, {~} AP",
+   "dst": "Ngày {~}, {~} AP",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#001": {
+   "src": "Find out what's happening at the {p} coal mine at [{~}, {~}, -{~}].",
+   "dst": "Tìm hiểu chuyện gì đang xảy ra ở mỏ than {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#002": {
+   "src": "Phew... Everyone make it out alright? That was...one hell of a sprint. I'm absolutely knackered.",
+   "dst": "Phù... Mọi người ra hết an toàn chứ? Chạy một mạch...muốn đứt hơi. Tôi mệt rã rời.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#003": {
+   "src": "I'm not sure, mate. I left a bunch of my stuff down there. Who knows if I'll get it back.",
+   "dst": "Không biết nữa, anh bạn. Tôi bỏ cả đống đồ dưới đó. Chẳng biết có lấy lại được không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Micho",
+   "source": "wiki"
+  },
+  "The Canary Calls#004": {
+   "src": "Forget about that, what are we gonna tell the chief? That chopsy old fool is gonna kill us if he sees us not working.",
+   "dst": "Quên đi, giờ nói gì với quản đốc? Lão già lắm mồm đó sẽ giết bọn mình nếu thấy không làm việc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#005": {
+   "src": "Oi, you! Listen, there was some kind of explosion down in the mines. We're not sure what it was or where it came from, but it surely didn't sound good.",
+   "dst": "Này, cậu kia! Nghe đây, dưới mỏ vừa có một vụ nổ. Bọn tôi không rõ là gì hay từ đâu, nhưng nghe chẳng lành chút nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#006": {
+   "src": "The four of us were the only blokes down in the mines, so everyone should be out safely. But I reckon we can't go back if this issue isn't resolved.",
+   "dst": "Dưới mỏ chỉ có bốn bọn tôi, nên chắc ai cũng ra an toàn. Nhưng tôi đoán chưa giải quyết xong thì không quay lại được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#007": {
+   "src": "You must go to the chief and tell him about the situation. Head down this mineshaft and turn left, and he should be there.",
+   "dst": "Cậu phải tới gặp quản đốc và báo tình hình. Đi xuống đường hầm này rồi rẽ trái, ông ấy ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#008": {
+   "src": "Just, uh... Make sure not to mention us by name. Now, if you'll excuse us, we'll...be on our way.",
+   "dst": "Chỉ là, ờ... Đừng nhắc tên bọn tôi nhé. Giờ, xin phép, bọn tôi...đi đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#009": {
+   "src": "Turn left from the mine's entrance and speak to the chief at [{~}, {~}, -{~}].",
+   "dst": "Rẽ trái từ lối vào mỏ và nói chuyện với quản đốc tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#010": {
+   "src": "That's right, keep it moving! The whole of {p} is going to run out of coal at this pace!",
+   "dst": "Đúng rồi, làm tiếp đi! Cứ đà này cả {p} sẽ hết than mất!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#011": {
+   "src": "Eh? What do you want? Only registered miners are allowed beyond this point. Speak up or get off the premises.",
+   "dst": "Hả? Muốn gì? Chỉ thợ mỏ có đăng ký mới được qua đây. Nói đi hoặc biến khỏi đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#012": {
+   "src": "...An explosion? In the mines? Just now?",
+   "dst": "...Nổ à? Trong mỏ? Vừa nãy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#013": {
+   "src": "EMERGENCY BREAK TIME, YOU GERBILS! EVERYONE COME AND MEET ME BY THE ENTRANCE! NOW!!!",
+   "dst": "NGHỈ GIẢI LAO KHẨN CẤP, LŨ CHUỘT NHẮT! TẤT CẢ RA LỐI VÀO GẶP TÔI! NGAY!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#014": {
+   "src": "Alright, you lot better listen bloody carefully. An explosion has been reported in the mines. You all know what that means, yes?",
+   "dst": "Được rồi, cả lũ nghe cho kỹ vào. Có báo cáo một vụ nổ trong mỏ. Các cậu đều biết thế nghĩa là gì, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#015": {
+   "src": "Early dismissal?",
+   "dst": "Tan làm sớm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#016": {
+   "src": "Month-long vacation?",
+   "dst": "Nghỉ phép cả tháng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#017": {
+   "src": "Paid leave?!",
+   "dst": "Có lương?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#018": {
+   "src": "...Am I getting fired?",
+   "dst": "...Tôi bị đuổi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#019": {
+   "src": "No, you bunch of ingrates! One of you needs to take the ol' canary down to the mines and see whatever the hell's going on.",
+   "dst": "Không, lũ vô ơn! Một đứa phải mang con hoàng yến già xuống mỏ xem cái quái gì đang xảy ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#020": {
+   "src": "Now, which one of you blokes would be willing to-",
+   "dst": "Giờ, đứa nào trong các cậu sẵn lòng-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#021": {
+   "src": "NOT IT!",
+   "dst": "TÔI KHÔNG!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miners",
+   "source": "wiki"
+  },
+  "The Canary Calls#022": {
+   "src": "Right then. I guess that leaves you, young lad. What do you say? Want a job?",
+   "dst": "Được thôi. Vậy còn mỗi cậu, nhóc. Thế nào? Muốn có việc không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#023": {
+   "src": "You sure? I'll pay a lot, and it won't be dangerous. Even if it is, you've got all that armor on you!",
+   "dst": "Chắc chưa? Tôi trả hậu, và chẳng nguy hiểm gì. Mà có thì cậu mặc cả đống giáp kia rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#024": {
+   "src": "You're right. I'll do it.",
+   "dst": "Đúng thật. Tôi làm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#025": {
+   "src": "That's the spirit! Come on then, let me introduce you to our little feathered mascot.",
+   "dst": "Thế mới đúng! Đi nào, để tôi giới thiệu linh vật lông vũ bé nhỏ của bọn tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#026": {
+   "src": "You'll get a bloody mountain of emeralds, god damn it! This is a once in a lifetime opportunity! Do you want it or not?",
+   "dst": "Cậu sẽ được cả núi ngọc lục bảo, chết tiệt! Cơ hội ngàn năm có một đấy! Có muốn hay không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#027": {
+   "src": "Good. Now, hurry up and follow me.",
+   "dst": "Tốt. Giờ nhanh lên và theo tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#028": {
+   "src": "No. I don't care.",
+   "dst": "Không. Kệ chứ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#029": {
+   "src": "You know what? This is ridiculous. The whole of {p} is at danger, and you're playing games with ME?! I know you can do it. Follow me. Now.",
+   "dst": "Biết sao không? Thật nực cười. Cả {p} đang gặp nguy, mà cậu lại đùa với TÔI?! Tôi biết cậu làm được. Theo tôi. Ngay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#030": {
+   "src": "Scared speechless, eh? Don't worry, it'll be an easy job. Come on, follow me to the canary's cage.",
+   "dst": "Sợ cứng họng hả? Đừng lo, việc dễ thôi. Đi nào, theo tôi tới lồng hoàng yến.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#031": {
+   "src": "Meet our canary! She's such a beaut.",
+   "dst": "Gặp hoàng yến của bọn tôi! Đẹp chưa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#032": {
+   "src": "You see, whenever we hear news of an explosion, we always bring our canary with us to check it out. They can detect potential gases much earlier than we can.",
+   "dst": "Cậu thấy đấy, mỗi khi nghe tin có nổ, bọn tôi luôn mang hoàng yến theo kiểm tra. Chúng phát hiện khí độc sớm hơn ta nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#033": {
+   "src": "Let me just get the key and-",
+   "dst": "Để tôi lấy chìa khóa rồi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#034": {
+   "src": "WAIT, WHAT? WHERE'S THE BLOODY KEY? WHICH ONE OF YOU LOT IS RESPONSIBLE?! I SWEAR I'M GONNA...",
+   "dst": "KHOAN, GÌ CƠ? CÁI CHÌA KHÓA CHẾT TIỆT ĐÂU RỒI? ĐỨA NÀO LÀM HẢ?! THỀ LÀ TÔI SẼ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#035": {
+   "src": "[+{~} Chewed-up Toothpick]",
+   "dst": "[+{~} Tăm bị nhai dở]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#036": {
+   "src": "...Listen up, lad. Take this toothpick I've been chewing on. I need you to pick the cage's lock. It's a little wet, but it should do the trick. Understood? Good, now hurry up!",
+   "dst": "...Nghe đây, nhóc. Cầm cái tăm tôi đang nhai này. Tôi cần cậu cạy khóa lồng. Nó hơi ướt, nhưng chắc dùng được. Hiểu chưa? Tốt, giờ nhanh lên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#037": {
+   "src": "Unlock the canary's cage at [{~}, {~}, -{~}]",
+   "dst": "Mở khóa lồng hoàng yến tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#038": {
+   "src": "Doing just fine, lad. Almost there...",
+   "dst": "Ổn lắm, nhóc. Sắp được rồi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#039": {
+   "src": "Little old birdie is getting quite excited! Keep it up.",
+   "dst": "Con chim nhỏ đang phấn khích lắm! Cứ thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#040": {
+   "src": "Right then, lad! It's time to begin the-",
+   "dst": "Được rồi, nhóc! Đến lúc bắt đầu-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#041": {
+   "src": "OW! Bloody hell! Those are some freakishly sharp claws! What are you playing at?!",
+   "dst": "ÁI! Chết tiệt! Móng gì mà sắc kinh khủng! Mày định làm gì hả?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#042": {
+   "src": "Easy, Ryan. We won't lose it. We're in this together. {u} will take care of it.",
+   "dst": "Bình tĩnh, Ryan. Ta không mất nó đâu. Ta cùng làm mà. {u} sẽ lo liệu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "Thesead Coal Miner",
+   "source": "captured",
+   "similar": {
+    "text": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
+    "file": "quest/the-canary-calls.json",
+    "ratio": 0.974,
+    "reason": "placeholders"
+   }
+  },
+  "The Canary Calls#043": {
+   "src": "Well, I think she likes you, lad. Doesn't like me, apparently.",
+   "dst": "Chà, chắc nó thích cậu đấy, nhóc. Có vẻ không thích tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#044": {
+   "src": "I was going to feed her, but I suppose you can do the honors. Or not, seeing as she's been particularly troublesome...",
+   "dst": "Tôi định cho nó ăn, nhưng chắc cậu làm thay được. Hoặc thôi, vì hôm nay nó quậy quá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#045": {
+   "src": "Anyway, do as you please. I'll be waiting by the elevator in the mineshaft. Hurry up, and don't make me wait!",
+   "dst": "Dù sao, tùy cậu. Tôi sẽ đợi ở thang máy trong hầm mỏ. Nhanh lên, đừng để tôi chờ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#046": {
+   "src": "Head to the mine elevator at [{~}, {~}, -{~}].",
+   "dst": "Tới thang máy mỏ tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#047": {
+   "src": "Right then, lad! I suppose you might want to know more about this job.",
+   "dst": "Được rồi, nhóc! Chắc cậu muốn biết thêm về việc này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#048": {
+   "src": "As I said before, when unknown explosions occur in the mines, that's usually a sign that something bad happened.",
+   "dst": "Như tôi nói, khi trong mỏ có vụ nổ không rõ nguồn, thường là có chuyện chẳng lành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#049": {
+   "src": "Most of the time, an awfully putrid gas appears. This is where our canary comes in. Once she verifies that a gas is present, we decide whether or not to temporarily close the mine.",
+   "dst": "Phần lớn là một thứ khí thối kinh khủng xuất hiện. Đó là lúc hoàng yến ra tay. Khi nó xác nhận có khí, bọn tôi quyết định có tạm đóng mỏ hay không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#050": {
+   "src": "I presume you met Daffyd and his group, correct? Thankfully, they were the only ones down in the mines.",
+   "dst": "Chắc cậu đã gặp Daffyd và nhóm của cậu ta, đúng không? May là chỉ có họ ở dưới mỏ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#051": {
+   "src": "...Wait, where the hell even are they? Did I not tell them to...",
+   "dst": "...Khoan, mà bọn chúng đâu rồi? Chẳng phải tôi đã bảo chúng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#052": {
+   "src": "Eh, doesn't matter. Lad, point is, I want you to check whether that gas is still there, if at all.",
+   "dst": "Ờ, sao cũng được. Nhóc, tóm lại tôi cần cậu xem khí đó còn không, nếu có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#053": {
+   "src": "We'll use the elevator behind me to get down into the mines. Just let me pull this here lever to activate it...",
+   "dst": "Ta sẽ dùng thang máy sau lưng tôi để xuống mỏ. Để tôi kéo cần gạt này kích hoạt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#054": {
+   "src": "...WHY ISN'T THIS BLOODY CONTRAPTION WORKING??! WORK, WORK, GOD DAMN IT!!",
+   "dst": "...SAO CÁI MÁY CHẾT TIỆT NÀY KHÔNG CHẠY??! CHẠY ĐI, CHẠY ĐI, CHẾT TIỆT!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#055": {
+   "src": "Must've been Daffyd and his group... No worries, lad. I've got, uh...a last resort, so to speak.",
+   "dst": "Chắc lại là Daffyd và nhóm của nó... Đừng lo, nhóc. Tôi có, ờ...phương án cuối, có thể nói vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#056": {
+   "src": "[+{~} Gear Stick]",
+   "dst": "[+{~} Cần số]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#057": {
+   "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The {u}'.",
+   "dst": "Thích bữa tiệc nhảy chứ? Mấy bước nhảy đó tệ hết chỗ nói, tôi đặt tên luôn là 'Điệu {u}'.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "Canary",
+   "source": "captured",
+   "similar": {
+    "text": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
+    "file": "quest/the-canary-calls.json",
+    "ratio": 0.984,
+    "reason": "placeholders"
+   }
+  },
+  "The Canary Calls#058": {
+   "src": "You'll need to ride a minecart down into the mines. Thing is, we haven't used them to transport people in...years.",
+   "dst": "Cậu phải đi xe goòng xuống mỏ. Có điều, bọn tôi đã không dùng nó chở người từ...mấy năm rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#059": {
+   "src": "Why? Erm, well... See for yourself.",
+   "dst": "Tại sao à? Ờm, thì... Tự xem đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#060": {
+   "src": "Our transporter minecarts are manual. Miners around here prefer automatic.",
+   "dst": "Xe goòng của bọn tôi là số sàn. Thợ mỏ ở đây chuộng số tự động.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#061": {
+   "src": "For you, it should be no issue controlling it. There's instructions attached to the gear stick.",
+   "dst": "Với cậu thì điều khiển nó chắc chẳng khó. Có hướng dẫn gắn ở cần số.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#062": {
+   "src": "Now then, go into the mineshaft, following the rails behind me. You'll be able to summon a minecart there.",
+   "dst": "Giờ thì vào hầm mỏ, đi theo đường ray sau lưng tôi. Ở đó cậu gọi được xe goòng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#063": {
+   "src": "Use the rails to get to the gas leakage.",
+   "dst": "Đi theo đường ray tới chỗ rò rỉ khí.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#064": {
+   "src": "Follow the rail tracks and find a way to escape the mine",
+   "dst": "Đi theo đường ray và tìm cách thoát khỏi mỏ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#065": {
+   "src": "Continue further in the mine to find a way out.",
+   "dst": "Đi sâu hơn vào mỏ để tìm lối ra.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#066": {
+   "src": "Hello.",
+   "dst": "Xin chào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#067": {
+   "src": "Forgive my interference.",
+   "dst": "Thứ lỗi tôi xen vào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#068": {
+   "src": "I am but a figment of your imagination. To you, I am not real.",
+   "dst": "Tôi chỉ là ảo ảnh trong đầu bạn. Với bạn, tôi không có thật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#069": {
+   "src": "The mysterious force that brought death upon me... It changed me.",
+   "dst": "Thế lực bí ẩn đã mang cái chết đến cho tôi... Nó đã thay đổi tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#070": {
+   "src": "So too will it change you. I will make that happen. Just for you.",
+   "dst": "Nó cũng sẽ thay đổi bạn. Tôi sẽ lo việc đó. Chỉ vì bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#071": {
+   "src": "No need to thank me. It is the least I can do.",
+   "dst": "Không cần cảm ơn. Chút việc nhỏ thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#072": {
+   "src": "Moments like these are cherished. Savor the moment with me. Would you like to die with me?",
+   "dst": "Khoảnh khắc thế này thật đáng quý. Tận hưởng cùng tôi nhé. Bạn muốn chết cùng tôi không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#073": {
+   "src": "No. I won't go that easily.",
+   "dst": "Không. Đâu dễ thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#074": {
+   "src": "I see. So you want to make this an unforgettable experience. I appreciate the thoughtfulness.",
+   "dst": "Ra vậy. Bạn muốn biến đây thành trải nghiệm khó quên. Cảm ơn sự chu đáo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#075": {
+   "src": "Let's have some fun.",
+   "dst": "Vui chút nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#076": {
+   "src": "Yes, but make it quick...",
+   "dst": "Ừ, nhưng nhanh lên...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#077": {
+   "src": "I was hoping we could stay for a little longer. If that is your choice, then so be it.",
+   "dst": "Tôi đã mong ta ở lại thêm chút nữa. Nếu đó là lựa chọn của bạn, thì thôi vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#078": {
+   "src": "See you on the other side.",
+   "dst": "Hẹn gặp ở bên kia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#079": {
+   "src": "I would be more than glad to. Sit back and relax.",
+   "dst": "Rất sẵn lòng. Cứ ngả lưng thư giãn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#080": {
+   "src": "How was your day today?",
+   "dst": "Hôm nay bạn thế nào?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#081": {
+   "src": "Mine could have been better. Cramped up in a cage all day, then suddenly witnessing my death in front of an incompetent human.",
+   "dst": "Của tôi thì tệ hơn chút. Bị nhốt trong lồng cả ngày, rồi bỗng chứng kiến cái chết của mình trước một con người bất tài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#082": {
+   "src": "You couldn't even save me. How pathetic.",
+   "dst": "Bạn còn chẳng cứu nổi tôi. Thảm hại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#083": {
+   "src": "So, anyway, do you come here often?",
+   "dst": "Mà này, bạn hay tới đây à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#084": {
+   "src": "Oh, wait. This is your first time. As well as your last time. That's very poetic. Do you want to become a poet?",
+   "dst": "Ồ, khoan. Đây là lần đầu của bạn. Cũng là lần cuối. Thật thơ mộng. Bạn có muốn làm nhà thơ không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#085": {
+   "src": "I know a good poem. Want to hear it?",
+   "dst": "Tôi biết bài thơ hay. Nghe nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#086": {
+   "src": "You don't die often,",
+   "dst": "Bạn ít khi chết,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#087": {
+   "src": "You have maximum soul points,",
+   "dst": "Điểm linh hồn đầy,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#088": {
+   "src": "That's about to change.",
+   "dst": "Sắp đổi thay rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#089": {
+   "src": "You mess up sometimes,",
+   "dst": "Có lúc bạn sai,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#090": {
+   "src": "Mistakes are part of Life,",
+   "dst": "Sai là lẽ thường của Đời,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#091": {
+   "src": "Death is a part too.",
+   "dst": "Chết cũng vậy thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#092": {
+   "src": "Your soul points are low,",
+   "dst": "Điểm linh hồn ít,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#093": {
+   "src": "You will lose a lot of things,",
+   "dst": "Bạn sẽ mất nhiều thứ,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#094": {
+   "src": "Better not get killed.",
+   "dst": "Đừng để bị giết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#095": {
+   "src": "You're a casual,",
+   "dst": "Chơi lấy vui,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#096": {
+   "src": "You likely hate professions,",
+   "dst": "Chắc ghét làm nghề,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#097": {
+   "src": "At least you're with me.",
+   "dst": "Ít ra có tôi đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#098": {
+   "src": "You are well-rounded,",
+   "dst": "Bạn thật toàn diện,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#099": {
+   "src": "You are skilled at everything,",
+   "dst": "Việc gì cũng giỏi,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#100": {
+   "src": "The jack of all trades.",
+   "dst": "Đa tài đa nghệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#101": {
+   "src": "Your level is maxed,",
+   "dst": "Cấp bạn đã tối đa,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#102": {
+   "src": "You spend hours getting that,",
+   "dst": "Cày bao nhiêu giờ,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#103": {
+   "src": "Don't know why you're here.",
+   "dst": "Tới đây làm gì nhỉ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#104": {
+   "src": "You love professions,",
+   "dst": "Bạn mê làm nghề,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#105": {
+   "src": "Love that cannot be defined,",
+   "dst": "Yêu không sao tả xiết,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#106": {
+   "src": "Please go take a break.",
+   "dst": "Đi nghỉ chút đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#107": {
+   "src": "You are average,",
+   "dst": "Bạn thường thôi,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#108": {
+   "src": "The most average Joe I've seen,",
+   "dst": "Thường nhất tôi từng thấy,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#109": {
+   "src": "What more can I say.",
+   "dst": "Biết nói gì hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#110": {
+   "src": "How was that? It was beautiful, wasn't it?",
+   "dst": "Thế nào? Đẹp lắm, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#111": {
+   "src": "Silence is bliss. You must not have very many friends.",
+   "dst": "Im lặng là vàng. Chắc bạn chẳng có mấy bạn bè.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#112": {
+   "src": "That's okay. I am your friend. Am I your friend? Please say yes. I'm very lonely.",
+   "dst": "Không sao. Tôi là bạn bạn mà. Phải không? Nói có đi. Tôi cô đơn lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#113": {
+   "src": "I had friends too, once. They were all taken by a bunch of selfish coal miners. Then died to their incompetence.",
+   "dst": "Tôi cũng từng có bạn. Chúng bị lũ thợ mỏ than ích kỷ bắt đi hết. Rồi chết vì sự bất tài của họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#114": {
+   "src": "But you are different. You are not like the others. I like you. I love you. I love you so much.",
+   "dst": "Nhưng bạn khác. Bạn không như những kẻ kia. Tôi thích bạn. Tôi yêu bạn. Yêu bạn nhiều lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#115": {
+   "src": "Love is patient.",
+   "dst": "Yêu là nhẫn nại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#116": {
+   "src": "Love is kind.",
+   "dst": "Yêu là tử tế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#117": {
+   "src": "Love does not envy.",
+   "dst": "Yêu không ghen tị.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#118": {
+   "src": "Love does not boast.",
+   "dst": "Yêu không vênh vang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#119": {
+   "src": "Love is not arrogant.",
+   "dst": "Yêu không kiêu ngạo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#120": {
+   "src": "Love is not rude.",
+   "dst": "Yêu không thô lỗ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#121": {
+   "src": "Love is not irritible.",
+   "dst": "Yêu không nóng giận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#122": {
+   "src": "Love is not resentful.",
+   "dst": "Yêu không thù hận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#123": {
+   "src": "It bears all things.",
+   "dst": "Tha thứ tất cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#124": {
+   "src": "It hopes all things.",
+   "dst": "Hy vọng tất cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#125": {
+   "src": "It endures all things.",
+   "dst": "Chịu đựng tất cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#126": {
+   "src": "It is everlasting.",
+   "dst": "Mãi mãi bền lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#127": {
+   "src": "Goodbye.",
+   "dst": "Tạm biệt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#128": {
+   "src": "Hello again.",
+   "dst": "Lại là tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#129": {
+   "src": "I will give you another chance to redeem yourself.",
+   "dst": "Tôi sẽ cho bạn thêm một cơ hội chuộc lỗi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#130": {
+   "src": "So kindly, I will tell you again.",
+   "dst": "Tốt bụng thay, tôi nói lại nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#131": {
+   "src": "Fight the Canary.",
+   "dst": "Chiến đấu với Hoàng Yến.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#132": {
+   "src": "Let's do a little warm-up, shall we?",
+   "dst": "Khởi động chút nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#133": {
+   "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
+   "dst": "Thích bữa tiệc nhảy chứ? Mấy bước nhảy đó tệ hết chỗ nói, tôi đặt tên luôn là 'Điệu '.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#134": {
+   "src": "Let's do something I like to call 'The Canary'.",
+   "dst": "Giờ làm trò tôi gọi là 'Hoàng Yến' nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#135": {
+   "src": "Hands off those, if you would be so kind.",
+   "dst": "Bỏ tay khỏi mấy thứ đó, nếu bạn tử tế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#136": {
+   "src": "Amazing... That really hit different.",
+   "dst": "Tuyệt vời... Cú đó đau thật sự.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#137": {
+   "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
+   "dst": "Đúng vậy, bạn là người có thể hủy diệt Cự Thần. (Tiếng Gavel cổ)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#138": {
+   "src": "I suppose this is it.",
+   "dst": "Chắc là hết rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#139": {
+   "src": "It's been fun, kid.",
+   "dst": "Vui đấy, nhóc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#140": {
+   "src": "Alas, time runs short.",
+   "dst": "Than ôi, sắp hết giờ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#141": {
+   "src": "You are about to enter the cruel, real world.",
+   "dst": "Bạn sắp bước vào thế giới thật tàn nhẫn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#142": {
+   "src": "Kill me now, so we can spend our final moments together in bliss.",
+   "dst": "Giết tôi đi, để ta hạnh phúc bên nhau phút cuối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#143": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "Tuyệt vời. Bạn là đỉnh cao của loài người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#144": {
+   "src": "Have fun.",
+   "dst": "Vui nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#145": {
+   "src": "No, I will not.",
+   "dst": "Không đời nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canary Calls#146": {
+   "src": "Kill me. Now.",
+   "dst": "Giết tôi. Mau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#147": {
+   "src": "Kill me now or you'll live to regret it.",
+   "dst": "Giết tôi ngay không thì bạn sẽ hối hận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#148": {
+   "src": "Kill me now or I'll destroy {p}.",
+   "dst": "Giết tôi đi, không tôi phá {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#149": {
+   "src": "Kill me now or I'll destroy Gavel.",
+   "dst": "Giết tôi đi, không tôi phá Gavel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#150": {
+   "src": "Kill me now or I'll ruin every single province.",
+   "dst": "Giết tôi đi, không tôi phá tan mọi tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#151": {
+   "src": "Kill me now or I'll destroy the world.",
+   "dst": "Giết tôi đi, không tôi phá thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#152": {
+   "src": "Okay, so you don't care about the world. In that case, kill me now or I'll kill your friends.",
+   "dst": "Được, vậy bạn chẳng quan tâm thế giới. Thế thì giết tôi đi, không tôi giết bạn bè bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#153": {
+   "src": "Kill me now or I'll do LITERALLY ANYTHING!",
+   "dst": "Giết tôi đi, không tôi làm BẤT KỲ ĐIỀU GÌ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#154": {
+   "src": "No no. No no no no no. No. It's too late.",
+   "dst": "Không, không. Không. Không! Muộn rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#155": {
+   "src": "I just wanted to play again. Oh well.",
+   "dst": "Tôi chỉ muốn chơi lại thôi. Thôi kệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#156": {
+   "src": "At least I'll be in your memories. Forever. And ever.",
+   "dst": "Ít ra tôi sẽ ở trong ký ức bạn. Mãi mãi. Và mãi mãi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#157": {
+   "src": "...Hey! They're waking up!",
+   "dst": "...Này! Họ tỉnh rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Canary Calls#158": {
+   "src": "Keep performing CPR, they're almost awake!",
+   "dst": "Cứ hô hấp nhân tạo tiếp, sắp tỉnh rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#159": {
+   "src": "No way! I actually did it! I saved their life!",
+   "dst": "Thật luôn! Tôi làm được! Cứu được rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#160": {
+   "src": "We better get a raise for this!",
+   "dst": "Phải tăng lương vụ này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#161": {
+   "src": "What the?! Who the hell let you in my house?",
+   "dst": "Cái gì?! Ai cho các người vào nhà tôi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#162": {
+   "src": "Boss! I can explain!",
+   "dst": "Sếp! Nghe tôi nói!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#163": {
+   "src": "No, you can't. Get outta here before I start lowering your salary.",
+   "dst": "Không cần. Biến đi trước khi tôi bắt đầu trừ lương.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#164": {
+   "src": "But, boss! I saved-",
+   "dst": "Sếp! Tôi đã cứu-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#165": {
+   "src": "GO!!",
+   "dst": "ĐI!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#166": {
+   "src": "Well then, lad! Despite their incompetence, they still managed to save your skin.",
+   "dst": "Được rồi, nhóc! Dù bất tài, họ vẫn cứu được cái mạng cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#167": {
+   "src": "Come speak to me for a quick debriefing.",
+   "dst": "Nói chuyện với tôi để báo cáo nhanh nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#168": {
+   "src": "Talk to Chief Clight.",
+   "dst": "Nói chuyện với Quản đốc Clight.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#169": {
+   "src": "I sent my miners down to save you as soon as we felt that earthquake. It was so strong that I genuinely thought the world was ending.",
+   "dst": "Tôi đã cho thợ mỏ xuống cứu cậu ngay khi thấy động đất. Nó mạnh tới mức tôi thật sự tưởng tận thế đến nơi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#170": {
+   "src": "I'm jolly sorry for forcing you to take on this job. This whole situation was completely unexpected.",
+   "dst": "Thật lòng xin lỗi vì đã ép cậu nhận việc này. Mọi chuyện hoàn toàn bất ngờ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#171": {
+   "src": "Typically, gases are cleared up almost instantly. This time, however, it seemed to have been a lot more potent... But how?",
+   "dst": "Bình thường khí tan gần như ngay lập tức. Nhưng lần này nó có vẻ mạnh hơn nhiều... Mà sao lại thế?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#172": {
+   "src": "...{p}. It stirs once more. That thing... It has already caused too much hardship for this area to handle.",
+   "dst": "...{p}. Nó lại cựa quậy. Thứ đó... Nó đã gây quá nhiều khổ đau cho vùng này rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#173": {
+   "src": "It must be destroyed, once and for all. How that will happen, I do not know. But you...",
+   "dst": "Nó phải bị tiêu diệt, một lần cho xong. Bằng cách nào, tôi không biết. Nhưng cậu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#174": {
+   "src": "Tell you what, lad! I'll give you, and only you, permission to access parts of the mine, right where we mine our world-famous {p} coal.",
+   "dst": "Thế này nhé, nhóc! Tôi sẽ cho cậu, và chỉ mình cậu, quyền vào các khu trong mỏ, ngay nơi bọn tôi đào than {p} nổi tiếng thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#175": {
+   "src": "Consider yourself a part-time {p} coal miner. You've earned it, lad.",
+   "dst": "Coi như cậu là thợ mỏ than {p} bán thời gian. Xứng đáng mà, nhóc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#176": {
+   "src": "Can't hit me with that.",
+   "dst": "Thế không trúng đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#177": {
+   "src": "That tickles.",
+   "dst": "Nhột quá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#178": {
+   "src": "Is this the height of your skill?",
+   "dst": "Tài nghệ chỉ đến thế thôi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#179": {
+   "src": "Try harder.",
+   "dst": "Cố hơn đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#180": {
+   "src": "Are you even playing the game?",
+   "dst": "Bạn có đang chơi không vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#181": {
+   "src": "Go ahead. Run right into it.",
+   "dst": "Cứ việc. Lao thẳng vào đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#182": {
+   "src": "Was that you, or will you blame that on lag?",
+   "dst": "Lỗi bạn, hay lại đổ cho lag?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#183": {
+   "src": "Feels nice, doesn't it?",
+   "dst": "Dễ chịu nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#184": {
+   "src": "Even a snail could dodge that.",
+   "dst": "Ốc sên cũng né được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#185": {
+   "src": "You can't escape your doom.",
+   "dst": "Đừng hòng thoát số phận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#186": {
+   "src": "Nice going bozo, you fell off.",
+   "dst": "Giỏi lắm đồ ngốc, rơi rồi kìa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#187": {
+   "src": "Interesting tactic! Do it again.",
+   "dst": "Chiến thuật hay đấy! Làm lại đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#188": {
+   "src": "Nice try, but that won't work.",
+   "dst": "Thử hay đấy, nhưng vô ích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#189": {
+   "src": "Hey up! Aren't you that Wynn soldier we've heard about? You look proper tough, is all.",
+   "dst": "Chào! Cậu là người lính Wynn mà bọn tôi nghe nói phải không? Trông cậu ngầu ra phết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#190": {
+   "src": "No, this is definitely them! The name's {u}, right?",
+   "dst": "Không, chính là người đó! Tên là {u}, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#191": {
+   "src": "Woah, this kid's a soldier? I wish I had that kind of job... I'd imagine it's much better than this crap.",
+   "dst": "Ồ, nhóc này là lính à? Ước gì tôi có việc như thế... Chắc tốt hơn cái việc khỉ gió này nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#192": {
+   "src": "Yeah, I really hate this job, man. That and the chief makes me pull my hair out... In fact, I already went bald because of it!",
+   "dst": "Ừ, tôi ghét việc này lắm, ông bạn. Thêm cả quản đốc nữa làm tôi muốn bứt tóc... Thật ra tôi hói luôn rồi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#193": {
+   "src": "Dude, the chief scares the crap out of me. I'm surprised that I still have this job. Looks like we might lose it if the mines ain't restored fast enough.",
+   "dst": "Ông bạn, quản đốc làm tôi sợ chết khiếp. Lạ là tôi vẫn còn việc. Có vẻ ta sẽ mất việc nếu mỏ không sớm khôi phục.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#194": {
+   "src": "I-I don't want to lose this job, man! I've got a wife and two goldfish!",
+   "dst": "T-tôi không muốn mất việc đâu! Tôi còn vợ và hai con cá vàng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#195": {
+   "src": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
+   "dst": "Bình tĩnh, Ryan. Ta không mất nó đâu. Ta cùng làm mà. sẽ lo liệu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#196": {
+   "src": "Our very lives are in your hands, soldier. Good luck, and be careful. The mines are quite treacherous even for people like you.",
+   "dst": "Mạng sống bọn tôi nằm trong tay cậu, người lính. Chúc may mắn, và cẩn thận. Mỏ này khá hiểm trở ngay cả với người như cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#197": {
+   "src": "We still can't believe we found you. I'm proper shocked.",
+   "dst": "Vẫn chưa tin là tìm thấy cậu. Tôi sốc thật sự.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#198": {
+   "src": "We had to use that blasted archaic minecart system because the elevator was still busted.",
+   "dst": "Bọn tôi phải dùng hệ thống xe goòng cổ lỗ chết tiệt đó vì thang máy vẫn hỏng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#199": {
+   "src": "Everyone was exhausted from it. But just when all hope was seemingly lost, we found you laying on the ground.",
+   "dst": "Ai cũng kiệt sức. Nhưng đúng lúc tưởng hết hy vọng, bọn tôi thấy cậu nằm dưới đất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#200": {
+   "src": "You were violently twitching about, as if you were possessed by something. It was scary.",
+   "dst": "Cậu co giật dữ dội, như bị thứ gì nhập vào. Đáng sợ lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#201": {
+   "src": "Whatever the effects of that gas are, we want absolutely none of it. I'm never stepping foot inside of that bloody mine ever again.",
+   "dst": "Dù khí đó có tác dụng gì, bọn tôi cũng chẳng muốn dính vào. Tôi sẽ không bao giờ đặt chân vào cái mỏ chết tiệt đó nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#202": {
+   "src": "For the sake of our jobs and {p}, the Colossus must be stopped.",
+   "dst": "Vì việc làm của bọn tôi và vì {p}, phải ngăn Cự Thần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#203": {
+   "src": "So, kindly, I will tell you again.",
+   "dst": "Vậy, tử tế thay, tôi nói lại nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#204": {
+   "src": "Very good! Come on then, let me introduce to you our little feathered mascot.",
+   "dst": "Tốt lắm! Đi nào, để tôi giới thiệu linh vật lông vũ bé nhỏ của bọn tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#205": {
+   "src": "I ran into a group of miners from {p}, a small mining settlement not far from where I lived. I've heard about this place.",
+   "dst": "Tôi gặp một nhóm thợ mỏ từ {p}, một khu mỏ nhỏ không xa nơi tôi sống. Tôi từng nghe về nơi này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#206": {
+   "src": "It seems you have failed a lot of times. Would you like to skip this section?",
+   "dst": "Có vẻ bạn đã thất bại nhiều lần. Bạn có muốn bỏ qua đoạn này không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#207": {
+   "src": "It seems that your spells are severely weakened by the gas. You should follow the rail tracks to find a way out of the mine.",
+   "dst": "Có vẻ khí đã làm phép của bạn yếu đi nhiều. Bạn nên theo đường ray để tìm lối ra khỏi mỏ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#208": {
+   "src": "It's blocked. Perhaps there's something around to break through?",
+   "dst": "Bị chặn rồi. Có lẽ quanh đây có thứ gì phá được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#209": {
+   "src": "The town is incredibly poor, yet they're right on top of an extremely rich coal deposit. Their future, just a stone's throw away. And yet...",
+   "dst": "Thị trấn nghèo vô cùng, vậy mà nằm ngay trên một mỏ than cực kỳ giàu. Tương lai của họ chỉ cách một tầm tay. Thế nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#210": {
+   "src": "They still manage to struggle. A struggle that would be incredibly magnified by recent events. Indeed, those miners were also searching for survivors of that earthquake.",
+   "dst": "Họ vẫn chật vật. Sự chật vật mà những biến cố gần đây sẽ đẩy lên gấp bội. Quả vậy, mấy thợ mỏ đó cũng đang tìm người sống sót sau trận động đất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#211": {
+   "src": "Its influence was far and wide, and its strength unlike anything ever seen before. They told me that their town was absolutely devastated beyond recognition by the earthquake.",
+   "dst": "Ảnh hưởng của nó lan rộng, và sức mạnh chưa từng thấy. Họ kể thị trấn của họ bị trận động đất tàn phá tới mức không còn nhận ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#212": {
+   "src": "But words cannot describe the atrocities I saw when I first entered that place.",
+   "dst": "Nhưng lời nào tả nổi những cảnh tàn khốc tôi thấy khi lần đầu bước vào nơi đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#213": {
+   "src": "Families struggling trying to rescue their kin who were trapped by the debris;",
+   "dst": "Những gia đình vật lộn cứu người thân bị kẹt dưới đống đổ nát;",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#214": {
+   "src": "I heard nothing but complete silence, occasionally interrupted by the wails of the town's residents.",
+   "dst": "Tôi chẳng nghe gì ngoài im lặng tuyệt đối, thỉnh thoảng xen tiếng than khóc của dân thị trấn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#215": {
+   "src": "Despite being a grown man in my {~}'s, I could not help but feel like an innocent child at that moment.",
+   "dst": "Dù là một người đàn ông đã ngoài {~}, tôi không khỏi thấy mình như một đứa trẻ ngây thơ lúc ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#216": {
+   "src": "Such a mournful existence. If this life had any meaning to begin with, it was meant for nothing but despair.",
+   "dst": "Một kiếp sống thật bi thương. Nếu đời này vốn có ý nghĩa, thì nó chỉ dành cho tuyệt vọng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#217": {
+   "src": "One of the miners who I met earlier brought me to a nearby area underneath a cliff, which was seemingly untouched by the earthquake.",
+   "dst": "Một thợ mỏ tôi gặp lúc trước đưa tôi tới một khu gần đó dưới chân vách đá, dường như trận động đất chưa chạm tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#218": {
+   "src": "A lot of refugees made their homes here, desperately clinging on to the last thread of life. A lifestyle that I would need to adopt, whether I liked it or not.",
+   "dst": "Rất nhiều người tị nạn đã dựng nhà ở đây, tuyệt vọng bám víu sợi chỉ cuối cùng của sự sống. Một lối sống tôi sẽ phải theo, dù muốn hay không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#219": {
+   "src": "But to my surprise, the miner offered me some money and a job to get me back up on my feet. So incredibly kind of him. He reminded me of my mother.",
+   "dst": "Nhưng tôi bất ngờ khi người thợ mỏ cho tôi ít tiền và một công việc để gượng dậy. Tốt bụng vô cùng. Anh ấy làm tôi nhớ đến mẹ mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#220": {
+   "src": "His name was Clight. Seemed like a nice fellow. Apparently he had gone through a similar situation as I did.",
+   "dst": "Tên anh ấy là Clight. Có vẻ là người tốt. Nghe nói anh ấy từng trải qua chuyện tương tự như tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#221": {
+   "src": "Not as grave as mine, though. Lost his home and everything a few years back. Sought refuge in {p}. Now, he is well off and is seeking to become the chief miner one day.",
+   "dst": "Dù không nặng nề bằng. Vài năm trước anh mất nhà và tất cả. Tìm nơi nương náu ở {p}. Giờ anh sống sung túc và mong một ngày làm quản đốc mỏ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#222": {
+   "src": "You have already pulled this lever.",
+   "dst": "Bạn đã kéo cần gạt này rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#223": {
+   "src": "To return to your previous point, go back into the mineshaft at [{~},-{~}].",
+   "dst": "Để về điểm trước, hãy quay lại hầm mỏ tại [{~},-{~}].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#224": {
+   "src": "I'm not even REAL!",
+   "dst": "Tôi đâu CÓ THẬT!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#225": {
+   "src": "I'm alaready dead, how is this even possible?",
+   "dst": "Tôi chết rồi mà, sao lại thế được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#226": {
+   "src": "Okay, who even put those there in the first place?",
+   "dst": "Được rồi, ai đặt mấy thứ đó ở đó vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#227": {
+   "src": "Seriously... Enough is enough.",
+   "dst": "Thật đấy... Đủ rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#228": {
+   "src": "It felt nice the first time, but now it's...different.",
+   "dst": "Lần đầu thấy dễ chịu, nhưng giờ thì...khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#229": {
+   "src": "Hands off of those, if you would be so kind.",
+   "dst": "Bỏ tay khỏi mấy thứ đó, nếu bạn tử tế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#230": {
+   "src": "Took our canary with us and everything. Just another day in the life.",
+   "dst": "Mang cả hoàng yến theo. Lại một ngày như mọi ngày.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#231": {
+   "src": "I was stood on a ledge overlooking a crevasse, where the gas supposedly was, to get a better look of the area.",
+   "dst": "Tôi đứng trên một gờ đá nhìn xuống khe nứt, nơi có lẽ có khí, để quan sát rõ hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#232": {
+   "src": "And then... He pushed me off. As if I was some kind of piece of trash.",
+   "dst": "Rồi... Hắn đẩy tôi xuống. Như thể tôi là thứ rác rưởi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#233": {
+   "src": "He did it, that mudder Clight. He said those words with no hesitation, no sarcasm, no nothing.",
+   "dst": "Chính hắn, tên Clight khốn kiếp. Hắn nói những lời đó không do dự, không mỉa mai, chẳng gì cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#234": {
+   "src": "It was genuine. Or, at least, I think it was. I glanced at his eyes very briefly, and I saw tears. Tears of joy? Or...sadness?",
+   "dst": "Đó là thật lòng. Hoặc ít nhất, tôi nghĩ vậy. Tôi thoáng nhìn vào mắt hắn, và thấy nước mắt. Nước mắt vui mừng? Hay...buồn bã?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#235": {
+   "src": "I don't even know what to think anymore. Everything I've experienced, all the moments we've shared, all the trust we've had for each other.",
+   "dst": "Tôi chẳng biết nghĩ gì nữa. Mọi điều tôi trải qua, mọi khoảnh khắc ta cùng chia sẻ, mọi niềm tin ta dành cho nhau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#236": {
+   "src": "It was all a blatant lie. An act. And for what? Wealth? Power? Dominion? No... That is not the Clight I know. And yet, somehow, it happened.",
+   "dst": "Tất cả là dối trá. Một màn kịch. Để làm gì? Của cải? Quyền lực? Thống trị? Không... Đó đâu phải Clight tôi biết. Vậy mà nó đã xảy ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#237": {
+   "src": "It happened. Yes, it did happen. It really did happen. Happen. Happen happen happen. Happy. Yes, I am happy. The happiest person in the world. Happiness.",
+   "dst": "Nó đã xảy ra. Phải, đã xảy ra. Thật sự đã xảy ra. Ra. Ra ra ra. Ra vui. Phải, tôi vui. Người vui nhất thế giới. Niềm vui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#238": {
+   "src": "Indeed, happiness is the meaning of life, if you are a naive little kid. Life has no meaning.",
+   "dst": "Phải, hạnh phúc là ý nghĩa đời người, nếu bạn là trẻ con ngây thơ. Đời vô nghĩa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#239": {
+   "src": "How foolish it was of me to think it had any meaning.",
+   "dst": "Tôi thật ngu ngốc khi nghĩ nó có ý nghĩa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#240": {
+   "src": "No... The true meaning of life is to blindly walk a path to find that fabled 'meaning', only to find no end in sight.",
+   "dst": "Không... Ý nghĩa thật của đời là mù quáng bước trên đường tìm thứ 'ý nghĩa' huyền thoại ấy, rồi chẳng thấy điểm cuối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#241": {
+   "src": "Suffering leads to the pursuit of happiness, which only leads back to suffering, and so on.",
+   "dst": "Khổ đau dẫn tới mưu cầu hạnh phúc, thứ chỉ dẫn ngược về khổ đau, cứ thế mãi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#242": {
+   "src": "What is the point, really? Even inside my perfect {p}, people were still suffering.",
+   "dst": "Rốt cuộc thì để làm gì? Ngay cả trong {p} hoàn hảo của tôi, người ta vẫn khổ đau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#243": {
+   "src": "And Clight... Was it all...pointless? Was there...any point in my existence? Maybe I'll just... No.",
+   "dst": "Còn Clight... Tất cả...vô nghĩa sao? Đời tôi...có nghĩa lý gì không? Có lẽ tôi cứ... Không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#244": {
+   "src": "There is only one more thing meant for this world. Destroy what's left of it. People won't need to suffer anymore.",
+   "dst": "Chỉ còn một điều dành cho thế giới này. Hủy diệt những gì còn lại. Người ta sẽ không phải khổ đau nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#245": {
+   "src": "I now finally understand why the Colossus claimed so many lives.",
+   "dst": "Giờ tôi đã hiểu vì sao Cự Thần cướp đi bao sinh mạng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#246": {
+   "src": "I have decided, at long last. My true purpose in life. Kill Clight, destroy {p}, and restore order to the world.",
+   "dst": "Cuối cùng tôi đã quyết định. Mục đích thật của đời tôi. Giết Clight, hủy diệt {p}, lập lại trật tự thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#247": {
+   "src": "We were going down into the mines to investigate a suspicious gas leakage.",
+   "dst": "Bọn tôi đang xuống mỏ điều tra một chỗ rò rỉ khí đáng ngờ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#248": {
+   "src": "I think I'm going insane. Strange apparitions keep appearing in the corner of my eye.",
+   "dst": "Tôi nghĩ mình đang phát điên. Những bóng ma kỳ lạ cứ hiện ra nơi khóe mắt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#249": {
+   "src": "Were they ghosts? Or real people? I couldn't tell. It constantly feels as if I'm zoning out from time to time.",
+   "dst": "Chúng là ma? Hay người thật? Tôi không phân biệt được. Lúc nào cũng thấy như thỉnh thoảng mình lại mất hồn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#250": {
+   "src": "It's as if I am a figment of his imagination, real but not real. His judgment, clouded by perception. Wait, what did I just write?",
+   "dst": "Như thể tôi là sản phẩm tưởng tượng của hắn, thật mà không thật. Phán đoán của hắn, bị nhận thức che mờ. Khoan, tôi vừa viết gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#251": {
+   "src": "No, scratch that. No idea...where that came from... Ugh. My head... The pain is indescribable.",
+   "dst": "Không, gạch đi. Chẳng biết...từ đâu ra... Ư. Đầu tôi... Cơn đau không tả nổi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#252": {
+   "src": "But it feels very good, like a nice little massage. What the...? There it is again.",
+   "dst": "Nhưng lại rất dễ chịu, như được xoa bóp nhẹ. Cái gì...? Lại nữa rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#253": {
+   "src": "It's like time stops, and suddenly there's words on the paper. Are they...the thoughts hidden deep within my subconscious...?",
+   "dst": "Như thể thời gian ngừng lại, rồi bỗng có chữ trên giấy. Phải chăng chúng là...những suy nghĩ giấu sâu trong tiềm thức tôi...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#254": {
+   "src": "One of the strange apparitions I saw recently was what seemed to be a blue canary, like that one I brought with me on that day.",
+   "dst": "Một trong những bóng ma kỳ lạ tôi thấy gần đây trông như một con hoàng yến xanh, giống con tôi mang theo hôm đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#255": {
+   "src": "And it was...talking to me? It seemed like it was incredibly angry at me. It cursed at me, made threats against me, and wished I had never existed.",
+   "dst": "Và nó...nói chuyện với tôi? Có vẻ nó giận tôi vô cùng. Nó nguyền rủa tôi, đe dọa tôi, và ước gì tôi chưa từng tồn tại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#256": {
+   "src": "It didn't throw any regular curses, no, it threw the harshest curses and the most horrific threats at me. Was it real? Or just my imagination?",
+   "dst": "Nó không chửi thường, không, nó ném vào tôi lời nguyền cay độc nhất, lời dọa khủng khiếp nhất. Thật sao? Hay chỉ là tưởng tượng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#257": {
+   "src": "Likely the latter, but... what was it supposed to mean, then? Was it...a warning? Did I...glimpse the future?",
+   "dst": "Có lẽ là vế sau, nhưng... vậy thì nó có nghĩa gì? Là...lời cảnh báo? Tôi đã...thoáng thấy tương lai?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#258": {
+   "src": "Or was it just a manifestation of my thoughts? If so, then... perhaps it was him.",
+   "dst": "Hay chỉ là hiện thân của suy nghĩ tôi? Nếu vậy thì... có lẽ đó là hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#259": {
+   "src": "Indeed. The one who ruined my life and got away with it.",
+   "dst": "Quả vậy. Kẻ đã hủy hoại đời tôi mà chẳng bị trừng phạt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#260": {
+   "src": "No... He will not get away with it. I will not allow that to happen. For the sake of the world, he must be stopped.",
+   "dst": "Không... Hắn sẽ không thoát tội. Tôi sẽ không để chuyện đó xảy ra. Vì thế giới, hắn phải bị ngăn lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#261": {
+   "src": "He... That's him, right? Am I even thinking about the same thing...? Ugh, every part of my body is aching.",
+   "dst": "Hắn... Là hắn, đúng không? Tôi có đang nghĩ về cùng một thứ không...? Ư, khắp người tôi đau nhức.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#262": {
+   "src": "I can't even write anymore. This may be the last entry in my journal. I will continue on while my flame still flickers.",
+   "dst": "Tôi không viết nổi nữa. Có lẽ đây là trang nhật ký cuối. Tôi sẽ tiếp tục khi ngọn lửa đời còn le lói.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#263": {
+   "src": "Rest assured, I will not die here. I cannot die here. I must do...his...bidding.",
+   "dst": "Yên tâm, tôi không chết ở đây đâu. Không thể. Tôi phải làm...theo...ý hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#264": {
+   "src": "I will change my identity, erase my past self from the face of the world, anything... Anything to achieve my goal.",
+   "dst": "Tôi sẽ đổi danh tính, xóa bỏ con người cũ khỏi thế gian, bất cứ điều gì... Bất cứ điều gì để đạt mục tiêu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#265": {
+   "src": "But I will leave this journal here to remind future miners of the fabled 'meaning' they are hopelessly searching for.",
+   "dst": "Nhưng tôi sẽ để cuốn nhật ký này ở đây để nhắc thợ mỏ sau này về thứ 'ý nghĩa' huyền thoại họ đang vô vọng tìm kiếm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#266": {
+   "src": "Stop searching for it, there is no point in finding meaning. If you persist, then... you may end up like me.",
+   "dst": "Đừng tìm nữa, tìm ý nghĩa chẳng để làm gì. Nếu cứ cố, thì... có khi các người sẽ như tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#267": {
+   "src": "Two paths, side by side. Present, and future. One of them is...hopeless. The other is the road I must walk.",
+   "dst": "Hai con đường, song song. Hiện tại, và tương lai. Một con đường...vô vọng. Con kia là đường tôi phải đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#268": {
+   "src": "Our paths won't cross. But... Should we, in fact, ever meet up... On that day...",
+   "dst": "Đường ta sẽ không giao nhau. Nhưng... Nếu ta có gặp lại... Vào ngày đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#269": {
+   "src": "Today, I was nominated for chief of the {p} coal mine. Right hand of the mayor.",
+   "dst": "Hôm nay, tôi được đề cử làm quản đốc mỏ than {p}. Cánh tay phải của thị trưởng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#270": {
+   "src": "Four years of hard work finally paid off. This is my chance to find the answers we are all looking for.",
+   "dst": "Bốn năm vất vả cuối cùng đã được đền đáp. Đây là cơ hội tìm ra câu trả lời mà chúng tôi đang tìm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#271": {
+   "src": "The answers that I once began to search for on that fabled day when I lost everything.",
+   "dst": "Câu trả lời tôi bắt đầu tìm từ cái ngày định mệnh khi tôi mất tất cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#272": {
+   "src": "Finally, a chance to find a way for us to live in peace again. No more tragedy, no more disaster.",
+   "dst": "Cuối cùng, cơ hội tìm cách để ta lại sống trong yên bình. Không còn bi kịch, không còn thảm họa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#273": {
+   "src": "Just...happiness. Happiness, security, and stability. With the power as chief, I will make that my goal.",
+   "dst": "Chỉ...hạnh phúc. Hạnh phúc, an toàn, và ổn định. Với quyền của quản đốc, tôi sẽ lấy đó làm mục tiêu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#274": {
+   "src": "Indeed, the perfect {p} will be realized under my leadership.",
+   "dst": "Quả vậy, {p} hoàn hảo sẽ thành hiện thực dưới tay tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#275": {
+   "src": "In order to achieve security and stability, my first course of action as chief will be to make everyone into miners to ensure that no one is left without a job.",
+   "dst": "Để đạt được an toàn và ổn định, việc đầu tiên tôi làm với tư cách quản đốc là biến mọi người thành thợ mỏ, để không ai thất nghiệp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#276": {
+   "src": "They will work towards a common goal - eliminating the threat of the Colossus. {p} will become a safe haven in the Canyon, a sanctuary in the midst of chaos.",
+   "dst": "Họ sẽ cùng hướng tới một mục tiêu - loại bỏ mối đe dọa từ Cự Thần. {p} sẽ thành nơi trú ẩn an toàn ở Canyon, chốn thánh địa giữa hỗn loạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#277": {
+   "src": "No one will be left homeless or poor, unhappy or misfortuned. Freedom from suffering, in its simplicity. It is...the best existence possible.",
+   "dst": "Không ai vô gia cư hay nghèo khó, bất hạnh hay rủi ro. Thoát khỏi khổ đau, thật giản đơn. Đó là...sự tồn tại tốt đẹp nhất có thể.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#278": {
+   "src": "I was running against Clight. As a man of high respect and trust, I was not surprised he was nominated.",
+   "dst": "Tôi tranh cử với Clight. Là người được kính trọng và tin cậy, anh ấy được đề cử chẳng có gì lạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#279": {
+   "src": "Regardless of whoever wins, I trust that he will do great things. We desire the same thing, after all.",
+   "dst": "Dù ai thắng, tôi tin anh ấy sẽ làm nên chuyện lớn. Dù sao thì chúng tôi cũng cùng chung mong muốn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#280": {
+   "src": "Prevent the Colossus from interfering with our futures. The one who ravaged our homes, ruined our lives, and shattered all hope.",
+   "dst": "Ngăn Cự Thần can thiệp vào tương lai chúng tôi. Kẻ đã tàn phá nhà cửa, hủy hoại cuộc sống, và đập tan mọi hy vọng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#281": {
+   "src": "We wouldn't have to live in fear anymore. I know it's wishful thinking, but... a man can dream.",
+   "dst": "Chúng tôi sẽ không phải sống trong sợ hãi nữa. Tôi biết là mơ hão, nhưng... ai cấm được mơ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#282": {
+   "src": "I think I'm starting to get used to this place. I've been working for a while now as a coal miner.",
+   "dst": "Tôi nghĩ mình bắt đầu quen với nơi này. Tôi đã làm thợ mỏ than được một thời gian.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#283": {
+   "src": "It may not be the easiest job in the world, but I'm at least earning money for a roof over my head and for food on the table.",
+   "dst": "Có thể đây không phải việc dễ nhất thế giới, nhưng ít ra tôi kiếm được tiền để có mái nhà che đầu và cơm ăn hằng ngày.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#284": {
+   "src": "I wake up every day thinking not of the grueling task at the start of the day, but of the rewards I'll reap at the end of the day.",
+   "dst": "Mỗi sáng thức dậy tôi không nghĩ tới công việc nặng nhọc lúc đầu ngày, mà nghĩ tới thành quả gặt hái lúc cuối ngày.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#285": {
+   "src": "It's kind of funny, really. It's funny how much I've changed over such a short period of time.",
+   "dst": "Buồn cười thật. Buồn cười là tôi đã thay đổi nhiều thế nào chỉ trong thời gian ngắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#286": {
+   "src": "That day, when that man Clight offered to help me walk on this twisted, beaten path, I started to look at life differently. Taking the good with the bad, you know?",
+   "dst": "Hôm đó, khi người tên Clight ngỏ ý giúp tôi bước trên con đường quanh co, gập ghềnh này, tôi bắt đầu nhìn đời khác đi. Chấp nhận cả tốt lẫn xấu, bạn hiểu chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#287": {
+   "src": "Clight was like the light at the end of the tunnel. Everyone aspired to be like him.",
+   "dst": "Clight như ánh sáng cuối đường hầm. Ai cũng muốn được như anh ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#288": {
+   "src": "He was a hard worker with relentless determination to make {p} and its residents the best they can be.",
+   "dst": "Anh ấy chăm chỉ, quyết tâm không ngừng để {p} và người dân nơi đây tốt đẹp nhất có thể.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#289": {
+   "src": "When we went to the bar after a long day's work, Clight would often bring us boilo, a sweet citrusy alcoholic beverage originating from {p}.",
+   "dst": "Khi chúng tôi ra quán sau một ngày dài, Clight thường mang cho chúng tôi boilo, một thức uống có cồn ngọt vị cam quýt có nguồn gốc từ {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#290": {
+   "src": "Traditionally, everyone has their own unique take on boilo. My boilo, which I loved making, was something I was always proud of.",
+   "dst": "Theo truyền thống, ai cũng có cách pha boilo riêng. Boilo của tôi, thứ tôi rất thích pha, luôn là niềm tự hào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#291": {
+   "src": "But Clight's boilo? It was by far the best boilo I've ever tasted. He would do that just to put a smile on everyone's faces. Indeed... I've seen that smile, somewhere before.",
+   "dst": "Nhưng boilo của Clight? Đó là boilo ngon nhất tôi từng nếm, bỏ xa mọi thứ. Anh ấy làm vậy chỉ để ai nấy đều mỉm cười. Quả vậy... Tôi đã thấy nụ cười đó, ở đâu đó rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#292": {
+   "src": "Clight was the only person who I really liked. Looked up to, even. He was always there for me in my times of need.",
+   "dst": "Clight là người duy nhất tôi thật sự quý mến. Thậm chí ngưỡng mộ. Anh ấy luôn ở bên khi tôi cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#293": {
+   "src": "I would go as far as saying he's perfect. However, when I look into his eyes... I see imperfection.",
+   "dst": "Tôi dám nói anh ấy hoàn hảo. Thế nhưng, khi nhìn vào mắt anh... tôi thấy sự bất toàn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#294": {
+   "src": "Like a diamond, there is always something flawed about it. Something just... doesn't feel right.",
+   "dst": "Như một viên kim cương, luôn có tì vết nào đó. Có gì đó... không ổn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#295": {
+   "src": "Like he's trying to hide something by acting in such a way. Or perhaps... I see my own reflection. Indeed, we are...the same.",
+   "dst": "Như thể anh ấy cố che giấu điều gì qua cách cư xử ấy. Hoặc có lẽ... tôi thấy bóng mình. Quả vậy, chúng tôi...giống nhau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#296": {
+   "src": "The past couple of years have done wonders for myself and {p}.",
+   "dst": "Vài năm qua đã làm nên điều kỳ diệu cho tôi và {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#297": {
+   "src": "Ever since I became chief, I have not lived a single day that I felt was unfulfilling.",
+   "dst": "Từ khi làm quản đốc, chưa ngày nào tôi thấy trống rỗng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#298": {
+   "src": "I was able to revolutionize the coal industry and bring in much more profit.",
+   "dst": "Tôi đã cách mạng hóa ngành than và mang về lợi nhuận lớn hơn nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#299": {
+   "src": "With that profit, I began planning reconstruction for {p}, as part of my goal in mitigating the Colossus' impact on the city.",
+   "dst": "Với số lợi nhuận đó, tôi lên kế hoạch tái thiết {p}, một phần mục tiêu giảm tác động của Cự Thần lên thành phố.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#300": {
+   "src": "I planned to use expensive materials that would, in theory, prevent earthquakes from touching the city.",
+   "dst": "Tôi định dùng vật liệu đắt tiền mà theo lý thuyết sẽ ngăn động đất chạm tới thành phố.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#301": {
+   "src": "It took many years, but today, the project has finally been completed.",
+   "dst": "Mất nhiều năm, nhưng hôm nay, dự án cuối cùng đã hoàn thành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#302": {
+   "src": "The new {p} is completely unrecognizable compared to the old one, and I daresay it's one of the best looking cities in Gavel, as well as the safest in the Canyon.",
+   "dst": "{p} mới khác hẳn so với trước, và tôi dám nói nó là một trong những thành phố đẹp nhất Gavel, cũng là nơi an toàn nhất Canyon.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#303": {
+   "src": "Clight and I have also been getting along well.",
+   "dst": "Clight và tôi cũng rất hợp nhau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#304": {
+   "src": "Despite losing in the chief election, he has been there by my side.",
+   "dst": "Dù thua trong cuộc bầu quản đốc, anh ấy vẫn luôn ở bên tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#305": {
+   "src": "Second in command, if you will. However, even though we are good friends, we still have arguments from time to time, mostly about how to proceed further with {p}.",
+   "dst": "Có thể gọi là phó chỉ huy. Tuy vậy, dù là bạn tốt, chúng tôi vẫn thỉnh thoảng tranh cãi, chủ yếu về hướng đi tiếp theo cho {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#306": {
+   "src": "He always mentions that rebuilding the city was a waste of money, instead wishing it funded a direct way of dealing with the Colossus, rather than an indirect one.",
+   "dst": "Anh ấy luôn nói việc xây lại thành phố là phí tiền, thay vào đó muốn dùng tiền tìm cách đối phó trực tiếp với Cự Thần, chứ không gián tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#307": {
+   "src": "Truthfully, I don't know if I can answer that. I just... I don't know if I can. I'm... afraid of the consequences.",
+   "dst": "Thật lòng, tôi không biết có trả lời được không. Tôi chỉ... không biết mình có làm được không. Tôi... sợ hậu quả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#308": {
+   "src": "It is a huge task. Anxiety inducing, in fact. I just can't bring myself to face it.",
+   "dst": "Đó là nhiệm vụ khổng lồ. Thậm chí gây lo âu. Tôi không sao đủ can đảm đối mặt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#309": {
+   "src": "And I'm not sure why. I just... want to live a peaceful life. No more problems, no more anxiety, no more fearing the future.",
+   "dst": "Và tôi không rõ vì sao. Tôi chỉ... muốn sống bình yên. Không còn rắc rối, không còn lo âu, không còn sợ tương lai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#310": {
+   "src": "This new {p} can make that happen. Yes... The endless now. {p}, in stasis, forever frozen in time.",
+   "dst": "{p} mới làm được điều đó. Phải... Hiện tại bất tận. {p}, bất động, đóng băng vĩnh viễn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#311": {
+   "src": "Miners forever working to maintain the status quo. As it...should be.",
+   "dst": "Thợ mỏ mãi mãi làm việc để giữ nguyên hiện trạng. Như vậy...mới đúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#312": {
+   "src": "Food and water are incredibly scarce. My clothing is beginning to wear and tear.",
+   "dst": "Thức ăn và nước cực kỳ khan hiếm. Quần áo tôi bắt đầu sờn rách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#313": {
+   "src": "My sanity is dwindling by the minute. Darkness envelops the caverns, and not a soul to be seen.",
+   "dst": "Lý trí tôi cạn dần từng phút. Bóng tối bao trùm hang động, chẳng thấy một bóng người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#314": {
+   "src": "Yet somehow, I've managed to survive down in the mines for a couple days. Perhaps it's luck? Or fate? I don't even know anymore.",
+   "dst": "Vậy mà bằng cách nào đó, tôi đã sống sót dưới mỏ được vài ngày. Có lẽ là may mắn? Hay số phận? Tôi chẳng còn biết nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#315": {
+   "src": "It feels as if my memory and thinking skills are extremely clouded. It hurts me to even write this very passage.",
+   "dst": "Cảm giác như trí nhớ và khả năng suy nghĩ của tôi bị che mờ trầm trọng. Viết đoạn này thôi cũng thấy đau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#316": {
+   "src": "This gas... It's not normal. In fact, I don't even think it's a gas.",
+   "dst": "Khí này... Không bình thường. Thật ra, tôi còn chẳng nghĩ nó là khí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#317": {
+   "src": "It's like... some kind of magical force. There's this constant pressure against my head, as if it's about to explode, and I can't stop coughing.",
+   "dst": "Nó như... một thứ sức mạnh ma thuật. Có một áp lực không ngừng đè lên đầu tôi, như sắp nổ tung, và tôi không ngừng ho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#318": {
+   "src": "I tried casting the handful of Air spells I still remembered from my childhood, and they changed form...?",
+   "dst": "Tôi thử dùng mấy phép Gió còn nhớ từ thuở nhỏ, và chúng biến đổi hình dạng...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#319": {
+   "src": "Although they became a lot weaker. Maybe I'm just misremembering, given that I barely used them. Regardless, I have never experienced anything like this, in all my days of mining.",
+   "dst": "Dù chúng yếu đi nhiều. Có lẽ tôi nhớ nhầm, vì hiếm khi dùng. Dù sao, cả đời làm thợ mỏ tôi chưa từng gặp chuyện như thế này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#320": {
+   "src": "This force... Could it be the Colossus' doing? If it really is, then that means... No...",
+   "dst": "Sức mạnh này... Có phải do Cự Thần? Nếu thật vậy, thì nghĩa là... Không...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#321": {
+   "src": "No matter. Time remains but a mere obstacle in my path.",
+   "dst": "Không sao. Thời gian chỉ là chướng ngại trên đường tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#322": {
+   "src": "It will not stop me from achieving my goal, nor will this force. Nothing will stop me, for I am destined to be this world's saviour.",
+   "dst": "Nó sẽ không cản được tôi đạt mục tiêu, sức mạnh này cũng thế. Chẳng gì cản nổi tôi, vì tôi được định làm vị cứu tinh của thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#323": {
+   "src": "People are born into the passage of fate, doomed to float aimlessly in the sea of suffering.",
+   "dst": "Con người sinh ra trong dòng chảy số phận, bị đày trôi dạt vô định giữa biển khổ đau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#324": {
+   "src": "Many have tried, but none have ever managed to escape its torrential flow. And yet, recent events defy that fate.",
+   "dst": "Nhiều người đã thử, nhưng chưa ai thoát khỏi dòng chảy cuồn cuộn ấy. Vậy mà, biến cố gần đây thách thức số phận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#325": {
+   "src": "I am...the chosen one. Chosen by the Colossus to rid the world of the cycle of suffering, the very nature of the world, the very fabric of reality.",
+   "dst": "Tôi là...người được chọn. Được Cự Thần chọn để giải thoát thế giới khỏi vòng khổ đau, khỏi bản chất thế giới, khỏi chính kết cấu thực tại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#326": {
+   "src": "There is only one meant for this world, and I AM IT. That is ME, and NO ONE ELSE.",
+   "dst": "Chỉ có một người dành cho thế giới này, và đó là TÔI. Là TÔI, KHÔNG AI KHÁC.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#327": {
+   "src": "a child wandering around looking for their missing family; people frantically rummaging through the rubble to find their belongings.",
+   "dst": "một đứa trẻ lang thang tìm gia đình thất lạc; người ta cuống cuồng bới đống đổ nát tìm đồ đạc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#328": {
+   "src": "'When I lost everything, I tried to look towards the future,' he said. 'It was hard, but it's the mentality that keeps me going.' His words inspired me to live on another day.",
+   "dst": "'Khi mất tất cả, tôi đã cố nhìn về tương lai,' anh ấy nói. 'Khó lắm, nhưng chính suy nghĩ đó giữ tôi bước tiếp.' Lời anh cho tôi động lực sống thêm một ngày.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#329": {
+   "src": "indeed... you are the one who can destroy the colossus.",
+   "dst": "quả vậy... bạn là người có thể hủy diệt người khổng lồ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#330": {
+   "src": "'This is for your own good. Goodbye.' Those were the last words I heard from him.",
+   "dst": "'Vì lợi ích của cậu thôi. Vĩnh biệt.' Đó là những lời cuối tôi nghe từ hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canary Calls#331": {
+   "src": "'You're letting this continue to be a problem. Destroy the Colossus and there won't have to be any more worrying,' he says.",
+   "dst": "'Cậu cứ để nó mãi là vấn đề. Hủy diệt Cự Thần là khỏi phải lo nữa,' hắn nói.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  }
+ }
+}

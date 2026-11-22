@@ -1,0 +1,1270 @@
+{
+ "_meta": {
+  "quest": "Enter the Dojo",
+  "count": 126,
+  "translated": 126,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Enter the Dojo#000": {
+   "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
+   "dst": "Thuật chiêu hồn hưng thịnh đến năm {~} AP thì chấm dứt, khi kỹ thuật này bị cấm. Báng bổ người chết, ngăn linh hồn họ siêu thoát...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#001": {
+   "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
+   "dst": "Tốt nhất đừng cho quá nhiều thứ vào trà, vì nhiều vị xung khắc sẽ khiến trà đục và khó uống. Ba nguyên liệu là mức chuẩn tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#002": {
+   "src": "Talk to Sensei Miyagi at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Sensei Miyagi tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#003": {
+   "src": "Oh hohoho! So a human has found their way to my humble dojo? Intriguing! I am called Sensei Miyagi. I welcome you.",
+   "dst": "Ô hô hô! Một con người đã tìm đến võ đường nhỏ của lão sao? Thú vị! Lão là Sensei Miyagi. Hoan nghênh con.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#004": {
+   "src": "This dojo, I have dedicated to honing skills in all of the arts- from martial prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "Võ đường này, lão dành để mài giũa mọi môn nghệ thuật - từ võ công, trí tuệ cho đến tay nghề và nghệ thuật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#005": {
+   "src": "Many have come- traveled from all corners of the earth to this humble one's dojo to train themselves and grow stronger. I am to presume you are the same?",
+   "dst": "Nhiều người đã tới - từ khắp mọi nơi trên đời đến võ đường của lão để rèn luyện và mạnh hơn. Lão đoán con cũng thế?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#006": {
+   "src": "Although, while I have enjoyed my life's work here, I cannot deny I am getting on in years. I seek a successor, a master of many skills to take my place.",
+   "dst": "Dù lão yêu sự nghiệp cả đời ở đây, lão không thể chối rằng mình đã già. Lão tìm người kế vị, một bậc thầy nhiều tài để thay lão.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#007": {
+   "src": "To the one who should master the arts, I would bequeath the Master's Gi, a symbol of resolute skill. Of course, do not feel pressured to take over for me, hoho!",
+   "dst": "Ai làm chủ được các môn, lão sẽ trao lại Master's Gi, biểu tượng của tài nghệ vững vàng. Tất nhiên, con đừng thấy bị ép phải thay lão, hô hô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#008": {
+   "src": "As long as I may teach others and bring them to new heights, I am satisfied. Whether your aim be merely to sharpen your skills or to allow me to retire, you are welcomed.",
+   "dst": "Còn được dạy người khác và đưa họ lên tầm cao mới là lão mãn nguyện. Dù con chỉ muốn mài giũa tài nghệ hay để lão nghỉ hưu, con đều được chào đón.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#009": {
+   "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
+   "dst": "{c1}Khi nào sẵn sàng, hãy thanh tẩy bản thân trong nước {c2}suối sau võ đường{c1}, lão sẽ dẫn con đến thử thách đầu tiên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#010": {
+   "src": "Jump down the water pit to begin the challenges.",
+   "dst": "Nhảy xuống hố nước để bắt đầu các thử thách.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#011": {
+   "src": "Ascend the Lufar Room in the physical strength challenge.",
+   "dst": "Leo lên đỉnh phòng Lufar trong thử thách sức mạnh thể chất.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#012": {
+   "src": "Here we are then- The Lufar Room. Here tests your agility! Even these old bones can scale this room in short order- how shall you fare?",
+   "dst": "Đây rồi - phòng Lufar. Nơi thử sự nhanh nhẹn của con! Đến bộ xương già này còn leo nhanh được - con thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#013": {
+   "src": "Fight your way through the Fiata Room in the combat challenge.",
+   "dst": "Chiến đấu vượt qua phòng Fiata trong thử thách chiến đấu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#014": {
+   "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
+   "dst": "Lão công nhận tài nghệ của con, con đã vượt qua phòng Lufar! Hô hô, nhưng thử thách kế đã đánh bại nhiều đệ tử.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#015": {
+   "src": "Now, comes the Fiata Room! Here, your combat prowess shall be put to the test. Martial skill comes easily to me...but what of your own?",
+   "dst": "Giờ đến phòng Fiata! Ở đây, tài chiến đấu của con sẽ bị thử thách. Võ nghệ với lão thì dễ... còn con thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#016": {
+   "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
+   "dst": "Giải câu đố thị giác trong phòng Cliste ở thử thách thị giác.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#017": {
+   "src": "Next, however, is not a challenge of physical skill, but of observation and logical reasoning, in this- the Cliste Room. Here, a puzzle awaits.",
+   "dst": "Nhưng tiếp theo không phải thử thách thể lực, mà là quan sát và suy luận, ở đây - phòng Cliste. Một câu đố đang chờ con.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#018": {
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as are many things.",
+   "dst": "Con phải tìm ra lối để đưa khối đỏ đến khối vàng. Lý thuyết thì đơn giản... thực hành thì phức tạp, như nhiều chuyện khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#019": {
+   "src": "Remember this as you work- Change your perspective, and the reality changes.",
+   "dst": "Nhớ điều này khi làm - Đổi góc nhìn, thực tại sẽ đổi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#020": {
+   "src": "And there, I recognize your mental acuity! You have passed the Cliste Room. You are doing quite well, but many have gotten to this point and had a single point stymie them.",
+   "dst": "Đó, lão công nhận trí tuệ của con! Con đã qua phòng Cliste. Con làm rất tốt, nhưng nhiều người tới đây đã vấp ở đúng một chỗ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#021": {
+   "src": "Welcome then, to the last challenge I offer you, held within the Sitheach Room and cavern.",
+   "dst": "Vậy chào mừng con đến thử thách cuối, nằm trong phòng và hang Sitheach.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#022": {
+   "src": "Your task here, is to become tranquil, and at peace with nature. What that entails... I leave up to you.",
+   "dst": "Việc của con ở đây là tĩnh tâm, hòa hợp với tự nhiên. Điều đó nghĩa là gì... lão để con tự định.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#023": {
+   "src": "There are many paths to tranquility. Whatever you choose, you will know when you have reached the point of success.",
+   "dst": "Có nhiều con đường đến tĩnh tâm. Dù con chọn gì, con sẽ biết khi mình đã thành công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#024": {
+   "src": "Exit the Sitheach cave through the tunnel near the temple.",
+   "dst": "Ra khỏi hang Sitheach qua đường hầm gần ngôi đền.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#025": {
+   "src": "Speak to Sensei Miyagi.",
+   "dst": "Nói chuyện với Sensei Miyagi.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#026": {
+   "src": "I see it now. The troubled heart you came here with is troubled no longer. I recognize your mastery of the Sitheach Room.",
+   "dst": "Giờ lão thấy rồi. Trái tim bất an con mang đến đây đã yên. Lão công nhận con làm chủ phòng Sitheach.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#027": {
+   "src": "Oh hoho... It is just like a human to do what cannot be done. That is each challenge of my humble dojo, completed!",
+   "dst": "Ô hô hô... Đúng là con người, làm điều không thể. Vậy là con đã xong mọi thử thách ở võ đường nhỏ của lão!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#028": {
+   "src": "So! While I did advise you not to feel pressured of it, I am curious, young master. Do you wish to take my place here, so I may sit these old bones down?",
+   "dst": "Vậy! Dù lão đã dặn con đừng thấy bị ép, lão vẫn tò mò, cao thủ trẻ. Con có muốn thay lão để bộ xương già này được nghỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#029": {
+   "src": "...Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "dst": "...À, tất nhiên là không. Dù con đã tinh thông, đây chỉ là một bước trên hành trình. Đừng lo, lão hiểu cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#030": {
+   "src": "I am certain that I will find a suitable successor before my time comes- and equally as certain that I've many a year to go, hoho!",
+   "dst": "Lão chắc sẽ tìm được người kế vị trước khi tới lúc - và cũng chắc rằng lão còn sống lâu, hô hô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#031": {
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
+   "dst": "Dù sao, con đã vượt qua thử thách của Sensei khiêm tốn này, nên lão sẽ trao con thứ đã hứa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#032": {
+   "src": "Wear this [Master's Gi] with pride, and remember this final lesson- There is never a point in life that you will stop learning. See the world and its lessons every day of your life, young master.",
+   "dst": "Hãy mặc [Master's Gi] này thật tự hào, và nhớ bài học cuối - Trong đời không lúc nào ta ngừng học. Hãy nhìn thế giới và học từ nó mỗi ngày, cao thủ trẻ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#033": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "Lão nghe nhiều về tài chiến đấu của con người, nên lão sẽ tự xem thử thách này. Vào đi, kẻ thách đấu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#034": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "Chiến đấu vượt qua thử thách chiến đấu",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#035": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "Lão công nhận tài chiến đấu của con, và tuyên bố con đã qua phòng Fiata. Làm tốt lắm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#036": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "Khi lập võ đường, lão lấy cảm hứng từ nhiều truyện kể. Lão đã nhiều lần bị chê cười vì tin vào truyền thuyết xưa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Despite this, I am still in great health! Surely the years are catching up to me, but many I know are far less able by the same age.",
+   "dst": "Dù vậy, ta vẫn khỏe mạnh lắm! Tuổi tác hẳn đang đuổi kịp ta, nhưng nhiều người ta biết cùng tuổi đã kém xa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#038": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "Thế mà kết quả đã tự nói lên. Lúc viết những dòng này, năm {~} AP, ta đã {~} tuổi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "Nhiều người quên sức mạnh cơ thể có thể đạt tới, vì phép thuật quá phổ biến. Dù tri thức phép thuật vẫn quan trọng, chính ta cũng có lỗi đã xao nhãng nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "Nhưng truyện và cách rèn luyện của chiến binh, vua chúa xưa như Remikas, hay cả binh sĩ thời nay như Tisaun Sodeta, đều rất quý giá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "Ở đây, ta kể những truyện đã cho ta trí tuệ, sức mạnh và sức khỏe, và truyền tri thức ấy cho bạn đọc thân mến.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "...sách hay thật, nhưng bạn đang trải qua nhiều điều sách tả rồi, mà chúng chẳng mang lại tĩnh tâm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "Hòa làm một với tự nhiên trong phòng và hang",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#044": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "Thiền là gạt bỏ mọi xao lãng và bình thản tự soi - hòa làm một với chính mình, neo mình vào hiện tại, hoặc chỉ để thư giãn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "Rất nên dùng cho ai đang căng thẳng hay đầu óc mù mờ. Dưới đây là các bước cơ bản để tập thiền.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "Trước hết, tìm nơi yên tĩnh, thoải mái. Một nơi bạn thấy an toàn và không bị bên ngoài quấy rầy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "Nếu mới bắt đầu, hãy đặt đồng hồ cát hay chuông báo ngắn thôi. Mười, mười lăm phút là đủ. Buổi ngắn cũng có ích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "Kế đó, ngồi xuống. Tư thế truyền thống là ngồi xếp bằng, tay đặt trên đùi, nhưng miễn thoải mái thì tư thế nào cũng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "Khi đã tìm được chỗ thoải mái, nhắm mắt và thở sâu. Hít sâu, giữ vài giây, thở ra, rồi giữ lâu y như vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "Tập trung vào cảm giác hơi thở, và chỉ cảm giác hơi thở thôi. Nếu tâm trí lang thang, đừng lo - cứ đưa sự chú ý về hơi thở.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "Khi thấy sẵn sàng đứng dậy, hay khi hết giờ, từ từ mở mắt và cảm nhận xung quanh - cảnh vật, âm thanh, và cảm giác cơ thể.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "Dù có những cách thiền phức tạp, công phu hơn, chúng không cần thiết - Giờ đã đọc xong, hãy tự thử bất cứ khi nào rảnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "...nghe có vẻ hứa hẹn. Bạn cẩn thận ngồi xuống và nhắm mắt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "...breathe in...",
+   "dst": "...hít vào...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "...breathe out...",
+   "dst": "...thở ra...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "...bạn không tập trung được. Tâm trí cứ chạy lung tung. Tiếc thật, nhưng vẫn đáng ghi nhớ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "Khi đánh tay không hay với vũ khí như tay đấm sắt, katar hay găng giáp, tư thế là điều tối quan trọng khi đấu với đối thủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "Cách đứng có thể giữ thân vững, giúp chịu đòn mà ít hậu quả hơn, hoặc giúp đủ nhẹ để né đòn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "Mọi võ nghệ tất phải học qua khổ luyện - Không ai thành cao thủ chỉ nhờ đọc sách. Đây là vài tư thế cơ bản để tập luyện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "Tấn trước có hai chân dang rộng, chân sau duỗi thẳng hẳn và thân thẳng đứng. Đây là thế tấn vững để giữ thăng bằng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "Tấn sau có một chân trước một chân, bàn chân sau quay ngang và dồn trọng lượng lên chân sau. Dùng để né đòn đánh vào thân trên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "Tấn mèo cũng dồn trọng lượng lên chân sau, hai chân co, khép sát, chân trước tựa trên gót. Giúp dễ chuẩn bị cú đá trước mạnh mẽ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "Tấn hạc nhấc một chân lên, bàn chân ngang gối chân kia. Cũng dùng để chuẩn bị đá, và để né đòn quét của kẻ địch.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#064": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "Nhiều pháp sư đáng kính đã để lại dấu ấn trong lịch sử. Tên họ được nhắc mãi là có lý do - ta học được nhiều từ những gì họ cho thấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "Đáng tiếc, điều này đúng cả theo mặt tốt lẫn mặt xấu. Ví dụ, một bài học đã thành luật liên quan đến phép trói buộc linh hồn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "...bị xem là tập tục quái ác, vô đạo đức. Giam linh hồn, ép nó tuân lệnh, trong một thân xác mục nát đầy đau đớn, là điều không thể dung thứ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "Từ đó, trói buộc linh hồn là loại phép bị trừng phạt nặng nhất khắp Gavel, hơn cả nghi lễ quỷ dữ, hơn cả thuật chiêu hồn vốn là nơi nó bắt rễ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "...sách này nặng nề quá. Chắc chắn không hợp để tìm tĩnh tâm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "Pha trà là quá trình đơn giản, thiền định, nhưng tự nó có nhiều tinh tế. Giờ ta hãy theo truyền thống ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "Cần nước sạch, tươi mát. Đun sôi nhẹ trong nồi hay vạc, rồi cho thảo mộc và nguyên liệu vào tùy khẩu vị..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "Hái nguyên liệu tươi có thể làm trà thêm đậm đà, dù nguyên liệu nào cũng pha được trà ngon, miễn chưa bị hỏng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "Nguyên liệu thường dùng gồm đường, sả, rễ gừng, hoa cúc và oải hương. Mỗi thứ có công dụng riêng cho trà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "Đường làm dịu vị đắng của vài loại trà và cân bằng hương vị cho êm. Nhưng cho quá nhiều sẽ làm trà ngấy và dính.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Chamomile adds a pleasantly sweet, floral taste to a brew. The delicate flavor helps the body and mind relax- it is oft used as a sleep aid.",
+   "dst": "Hoa cúc cho trà vị ngọt dịu, hương hoa dễ chịu. Vị thanh nhẹ giúp thân và tâm thư giãn - thường dùng để dễ ngủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#075": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "Vị chua nhẹ độc đáo của sả được tôn là đặc trưng của trà xanh. Vị êm, thoảng bạc hà là nền hoàn hảo cho một ấm trà thư giãn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "Dù rễ gừng đắng gắt và chắc chắn át các nguyên liệu khác, nó có dược tính mạnh có thể giúp người ốm hồi sức.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "Oải hương cũng giúp thư giãn, nhưng phải là chủ đạo của trà. Phải ngâm rất lâu, và rất đắng, nên nó át hết các nguyên liệu khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "...nghĩ lại thì, sau bao khổ luyện, một tách trà nghe cũng khá dễ chịu. Có lẽ bạn nên pha một tách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "Nhiều người nghĩ bận rộn thì không thể thư giãn, nhưng thật ra có nhiều việc bạn làm mỗi ngày để thả lỏng mà chẳng tốn bao thời gian.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "Ví dụ, chăm cây cảnh là việc đơn giản. Bạn có thể trồng từ hạt hoặc mua sẵn, và chăm vườn là cách dễ để thư giãn, lại cho bạn một nơi để thư giãn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "Bạn có thể biến mọi căn phòng thành khu vườn chỉ với vài chậu cây, còn ai không dành đủ thời gian được thì có thể thử chăm một cây bonsai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "Chúng chỉ cần nước, nắng, và sự chăm chút bằng kéo làm vườn để tỉa cành cẩn thận. Tạo dáng như vậy tự nó là nghệ thuật, lại có ý nghĩa tâm linh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "Việc này cần tập trung vào lúc đó, nhưng chẳng tốn mấy thời gian, nghĩa là chỉ cần dành chút thời gian ngắn là xong. Lại còn giúp lọc không khí trong nhà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "Một cách dễ khác để thư giãn là làm vườn đá. Không cần nhiều chỗ - chỉ một cái hộp nhỏ cũng được. Đổ đầy sỏi và đá trơn vào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "Dùng cào tay nhỏ vẽ các đường trên sỏi theo hoa văn khác nhau mỗi ngày. Đơn giản vậy thôi - đừng cố vẽ kiểu nào cụ thể, tay vẽ gì thì vẽ nấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "Làm thế giúp kéo sự chú ý khỏi suy nghĩ căng thẳng, đưa bạn về hiện tại, mà còn là đề tài trò chuyện vui, dễ làm và rẻ tiền.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "...ý hay đấy, nhưng tiếc là ở đây không có vườn thiền nào, và bạn cũng chẳng có sẵn cây bonsai hay kéo làm vườn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "Con cừu ngẩng đầu nhìn bạn, rồi lại làm việc của nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "Con bò ngẩng đầu nhìn bạn, rồi lại làm việc của nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "Con lợn ngẩng đầu nhìn bạn, rồi lại làm việc của nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "Trà đã pha xong, hương thơm tỏa khắp phòng, bạn nhẹ nhàng nhấp vài ngụm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "Hơi ấm và vị hoa ngọt dịu của trà sưởi ấm cổ họng và cơ thể. Bạn thấy thư thái hơn, nhưng... chưa hòa hợp với tự nhiên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "...có vài con vật lang thang trong hang. Dâng một chút lễ vật có vẻ là cách đúng, mà trà vẫn còn nhiều...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "...hử? Đây đâu phải sách, mà là hồ sơ. Miyagi để quên ở đây à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "Có vẻ chứa một số thỏa thuận thương mại giữa Sakura Dojo và {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "Có vẻ gần đây đã nhận một lô lớn tơ Hive. Không có ghi chép trả bằng ngọc lục bảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "Một lô anh đào và gạo được gửi đi cùng lúc - hẳn họ đổi hàng trực tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "Ghi chép cũ cho thấy đổi kim loại phế liệu lấy gỗ anh đào, và các lô trà, nguyên liệu được tặng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "...còn có một bức thư. Nét chữ rất cầu kỳ... thư do chính Bà chủ Hive gửi, chỉ vài tháng trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "\"Mong thư này đến khi ngài vẫn mạnh khỏe. Một lần nữa cảm ơn ngài vì cuộc trao đổi. Đoàn buôn từ {p} gần đây thưa thớt, và đồ ngài gửi đã giúp gia nhân khỏi đói.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "\"Dù thường thì tôi sẽ cử vài tạo vật của mình đi lấy hàng, đó là cơn ác mộng về hậu cần lẫn chính trị mà tôi muốn tránh.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "\"Tôi sẽ đền đáp đúng lúc - chắc chắn tôi có thể dành một khoản ngọc lục bảo nếu ngài muốn. Ngài đủ đáng tin để tôi ký séc trắng, nên cứ ra giá.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "\"Tôi cũng sẵn lòng gửi thêm kim loại phế liệu thượng hạng, hoặc thêm tơ hay đá animant cho hình nộm tập luyện của ngài. Xin hồi âm sớm cho biết ý ngài.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "\"Tôi định đi cùng đoàn buôn kế tiếp mang khoản đền đáp tới, và rất mong chuyến thăm. Có lẽ ta sẽ đánh xong ván cờ vây.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "\"Thân ái, Mistress Qira\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "Con bò ngẩng đầu nhìn bạn. Mắt nó sáng lên khi thấy trà xanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "Bạn hào phóng đưa trà về phía con bò, đặt xuống đất cho nó uống. Con bò gật đầu kính cẩn với bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "...nhìn nó uống từ tách như bạn đã uống, bạn thấy một niềm đồng cảm, và cùng nhận ra điều đó là cảm giác bình yên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "Bạn không nhớ lần cuối mình thấy thư thái thế này. Bạn biết chắc mình đã vượt qua thử thách tĩnh tâm. Đến lúc đi rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "Con lợn ngẩng đầu nhìn bạn và gật đầu kính cẩn. Bạn đã có được sự bình yên và tình bạn với tự nhiên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "Con cừu ngẩng đầu nhìn bạn và gật đầu kính cẩn. Bạn đã có được sự bình yên và tình bạn với tự nhiên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "Con bò ngẩng đầu nhìn bạn và gật đầu kính cẩn. Bạn đã có được sự bình yên và tình bạn với tự nhiên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "Bạn hào phóng đưa trà về phía con cừu, đặt xuống đất cho nó uống. Con cừu gật đầu kính cẩn với bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#114": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "Bạn hào phóng đưa trà về phía con lợn, đặt xuống đất cho nó uống. Con lợn gật đầu kính cẩn với bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#115": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "Ra khỏi hang qua đường hầm gần ngôi đền",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#116": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "Hô hô... Phải, lão già này còn sống lâu lắm. Đừng phí tài năng của mình, cao thủ trẻ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "Defeat the dummies, and bring their tokens to the door! Simple, yes?",
+   "dst": "Đánh bại hình nộm và mang thẻ của chúng tới cửa! Đơn giản nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#118": {
+   "src": "Show no fear, challenger! There is no shame in failing.",
+   "dst": "Đừng sợ, kẻ thách đấu! Thất bại không có gì xấu hổ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#119": {
+   "src": "And worry not, the fiata Room is reinforced against all manner of attacks. Run wild, hoho!",
+   "dst": "Đừng lo, phòng Fiata được gia cố chống mọi kiểu tấn công. Cứ thỏa sức, hô hô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#120": {
+   "src": "It is fascinating to see how you battle. Very different from my stylings!",
+   "dst": "Xem con chiến đấu thật thú vị. Khác hẳn lối đánh của lão!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#121": {
+   "src": "Of course, you wield a weapon to battle, so of course it is different from unarmed combat, hoho...",
+   "dst": "Tất nhiên, con dùng vũ khí, nên dĩ nhiên khác với đánh tay không rồi, hô hô...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#122": {
+   "src": "Perhaps you may be interested in learning to fight unarmed after!",
+   "dst": "Có lẽ sau đó con sẽ muốn học đánh tay không!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#123": {
+   "src": "Oh, this is getting quite good. I should get a snack to eat while I watch...",
+   "dst": "Ồ, càng lúc càng hay. Lão nên đi lấy chút đồ ăn vặt để vừa xem...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#124": {
+   "src": "Hmhm, I'll be right back! Continue fighting- And do not worry if you finish before I return! I will be quick!",
+   "dst": "Hừm hừm, lão về ngay! Cứ đánh tiếp - Và đừng lo nếu con xong trước khi lão về! Lão sẽ nhanh thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#125": {
+   "src": "The pig raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "Con lợn ngẩng đầu nhìn bạn. Mắt nó sáng lên khi thấy trà xanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

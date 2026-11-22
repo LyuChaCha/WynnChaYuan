@@ -1,0 +1,450 @@
+{
+ "_meta": {
+  "quest": "Canyon Condor",
+  "count": 44,
+  "translated": 44,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Canyon Condor#000": {
+   "src": "What are you here for, eh kid? Get out. Get!",
+   "dst": "Đến đây làm gì hả nhóc? Biến. Đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Hermit",
+   "source": "captured"
+  },
+  "Canyon Condor#001": {
+   "src": "Yer back again, are ye? Yer ain' gettin' any of me gold, so move along!",
+   "dst": "Lại mò tới à? Đừng hòng lấy được tí vàng nào của ta, đi chỗ khác!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#002": {
+   "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
+   "dst": "Đi lấy cho ta [{~} Gold Chunks] ở cuối hầm mỏ rồi ta chỉ chỗ cho mà đi tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "captured"
+  },
+  "Canyon Condor#003": {
+   "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Svin ở {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#004": {
+   "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
+   "dst": "Tôi là một Người Giữ của {p} vĩ đại. Ở đó chúng tôi cất giữ bí mật của thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#005": {
+   "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
+   "dst": "Tôi đến đây tìm hiểu một truyền thuyết cũ của hẻm núi. Bạn có hứng thú không? Chắc chắn là có!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#006": {
+   "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
+   "dst": "Truyền thuyết kể có một con thú dữ sống giữa các vách đá này. Một loài chim nguy hiểm đã sống sót bao năm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#007": {
+   "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
+   "dst": "Tôi rất muốn đi tìm nó, nhưng dân ở đây mải trộm của nhau quá nên chẳng ai kể cho tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#008": {
+   "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
+   "dst": "Nghe nói gần đây có một ông thợ tìm vàng già đã đi khắp vùng cao nguyên này. Có lẽ ông ấy biết gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#009": {
+   "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
+   "dst": "Ông ấy tên Jankan, sống ở phía đông {p}. Bạn tìm ông ấy hỏi về con thú ghê tởm này được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#010": {
+   "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
+   "dst": "Nếu bạn giúp, tôi sẽ cho bạn dùng các thang máy trong hẻm núi. À thì...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#011": {
+   "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
+   "dst": "Có một ẩn sĩ kỳ quặc đã chiếm lấy chúng, nhưng chắc ta có thể nói lý với ông ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#012": {
+   "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
+   "dst": "Mong bạn tìm được con thú, và nếu được, bạn mang về cho tôi [{~} Beast Egg] làm bằng chứng nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#013": {
+   "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Jankan ở phía đông {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#014": {
+   "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
+   "dst": "Chào nhóc! Chắc nhóc là đứa lạ mặt mà thiên hạ cứ bàn tán.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#015": {
+   "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
+   "dst": "Nhóc mà tìm vàng thì ta nói trước, cái hầm mỏ này chả có tí nào cho nhóc đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#016": {
+   "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
+   "dst": "Ơ.. Nhóc đi tìm con thú có cánh à? Nhóc mất trí rồi hả?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#017": {
+   "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
+   "dst": "Con chim quỷ ấy là hỗn loạn chính hiệu! Một tiếng rít là núi dời! Mấy gã to gấp đôi nhóc nhìn thấy nó còn khóc thét!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#018": {
+   "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
+   "dst": "Chả là ta bị trẹo lưng khi khuân mớ của cải từ cái hang đằng kia, đành bỏ hết lại tận cuối hang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#019": {
+   "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
+   "dst": "Thu thập [{~} Gold Chunks] cho Jankan trong hầm mỏ tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#020": {
+   "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
+   "dst": "Cuối cùng! Lâu dữ vậy, đưa đây! À phải.. nhóc muốn gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#021": {
+   "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
+   "dst": "Ta chả muốn giúp nhóc đi tìm cái chết, nhưng ta có thể gửi nhóc tới một tay trẻ tuổi có khi giúp được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#022": {
+   "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
+   "dst": "Có lão Ẩn sĩ mà nhóc nên gặp, lão ấy điên hết thuốc chữa. Còn cho con chim ăn nữa kìa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#023": {
+   "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
+   "dst": "Chắc nhóc tìm được lão trên núi, bên kia vực thẳm hẻm núi, lão chả thân thiện gì đâu, ta nói trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#024": {
+   "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
+   "dst": "Đi thang máy hẻm núi lên chỗ Ẩn sĩ tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#025": {
+   "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
+   "dst": "Nhóc tưởng nhóc đang làm gì ở đây? Định nhởn nhơ vào tệ xá của ta rồi qua cầu của ta à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#026": {
+   "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
+   "dst": "Ồ, nhóc muốn biết về con chim trên núi? Ha, cọng cỏ dại như nhóc chẳng có cửa đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#027": {
+   "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
+   "dst": "Nó không ưa người lạ đâu nhé. Có lần ta thấy nó biến cả một toán săn trộm thành tro!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#028": {
+   "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
+   "dst": "Muốn qua đây thì phải trả phí. Ồ, ta không cần tiền của nhóc, cần tiền làm gì, ta có mọi thứ rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#029": {
+   "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
+   "dst": "Muốn lên mấy cao nguyên này thì nhóc phải tìm cho ta một bông hoa hiếm cho cái hang nhỏ của ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#030": {
+   "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
+   "dst": "Nó mọc trên đỉnh một cột đá trong vùng cao nguyên, chắc không khó tìm đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#031": {
+   "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
+   "dst": "Mang cho ta [{~} Rare Rose] rồi ta sẽ cho nhóc đi gặp sinh vật của cao nguyên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#032": {
+   "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
+   "dst": "Tìm và thu thập [{~} Rare Rose] tại [{~}, {~}, -{~}] cho Ẩn sĩ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#033": {
+   "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
+   "dst": "A ha! Thế này là hoàn hảo. Chim non của ta sẽ mê lắm! Chắc giờ nhóc qua cầu được rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#034": {
+   "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
+   "dst": "Con thú sống trên đỉnh một trong mấy cao nguyên này. Chịu khó tìm chút là thấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#035": {
+   "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
+   "dst": "Ta cũng cho nhóc dùng thang máy của ta. Dù sao thì nhóc cũng chẳng trụ được lâu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#036": {
+   "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
+   "dst": "Ta chỉ nghe nói có đúng một lữ khách đọ được với con thú. Hình như hắn còn lấy trứng của nó về nuôi, ha!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#037": {
+   "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
+   "dst": "Hắn đi lâu rồi, cũng như nhóc lát nữa thôi. Rất vui vì không được quen nhóc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#038": {
+   "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
+   "dst": "Đánh bại Cockatrice tại [{~}, {~}, -{~}] và lấy một quả trứng cho Svin",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#039": {
+   "src": "Traveler! You have returned! Tell me, what have you learned?",
+   "dst": "Lữ khách! Bạn đã về! Kể tôi nghe, bạn biết được gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#040": {
+   "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
+   "dst": "Bạn tìm thấy nó?! Tin tuyệt vời! Bạn còn lấy được trứng trong tổ nó nữa sao? Bạn thật can đảm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#041": {
+   "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
+   "dst": "Vậy truyền thuyết Cockatrice là thật! Bạn đã thấy nó và đương đầu với nó bằng lòng dũng cảm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#042": {
+   "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
+   "dst": "Giá mà bạn được vào {p}, hỡi tâm hồn dũng cảm! Nhưng có vẻ đến đây là ta chia tay rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#043": {
+   "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
+   "dst": "Đừng lo, tôi sẽ giữ trứng cẩn thận. Rồi huyền thoại của bạn cũng sẽ vang danh như thế!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  }
+ }
+}

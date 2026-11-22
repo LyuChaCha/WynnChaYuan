@@ -1,0 +1,320 @@
+{
+ "_meta": {
+  "quest": "Ice Nations",
+  "count": 31,
+  "translated": 31,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Ice Nations#000": {
+   "src": "Thank you again for bringing peace upon our islands.",
+   "dst": "Lần nữa cảm ơn bạn đã mang hòa bình cho quần đảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "Hallfred",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "You are a great warrior!",
+   "dst": "Bạn là dũng sĩ vĩ đại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "Dujgon Viking",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
+   "src": "It's useless to come back to me if you do not have the treasure.",
+   "dst": "Không có kho báu thì quay lại gặp tôi cũng vô ích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#003": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "...Bạn biết đấy, tàu chúng tôi đắm không phải do thiên tai. Chúng tôi bị tấn công...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "captured"
+  },
+  "Ice Nations#004": {
+   "src": "Have you made any progress?",
+   "dst": "Bạn có tiến triển gì chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#005": {
+   "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Adigard ở {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#006": {
+   "src": "Welcome traveler, to our humble island...",
+   "dst": "Chào lữ khách đến đảo nhỏ của bọn tôi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#007": {
+   "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
+   "dst": "Dân tôi và tôi cập bến đây nhiều năm trước. Tiếc là con tàu không trụ nổi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#008": {
+   "src": "We tried to build a nation on these islands but became divided through the years.",
+   "dst": "Chúng tôi cố dựng một quốc gia trên các đảo này, nhưng năm tháng lại chia rẽ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#009": {
+   "src": "Because of this, we are fighting a useless war with our neighbours.",
+   "dst": "Vì thế, chúng tôi đang đánh một cuộc chiến vô nghĩa với láng giềng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#010": {
+   "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
+   "dst": "Tôi nghĩ nên ký một hòa ước, nhưng tôi sợ bị giết nếu rời đảo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#011": {
+   "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
+   "dst": "Bạn giúp chúng tôi nhé? Hãy bàn với Hallfred về hòa ước. Ông ấy sống trên một đảo băng gần đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#012": {
+   "src": "Talk to Hallfred about the peace treaty",
+   "dst": "Nói chuyện với Hallfred về hòa ước",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#013": {
+   "src": "Welcome traveler! What brings you to our island?",
+   "dst": "Chào lữ khách! Điều gì đưa bạn đến đảo này?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#014": {
+   "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
+   "dst": "Ồ, giờ Adigard hèn đến mức sai người lạ đi thay! Sợ bị giết à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#015": {
+   "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
+   "dst": "Tôi nhắc lại lần cuối: Chúng tôi sẽ ký hòa ước vào ngày Adigard và dân của hắn trả lại cho chúng tôi... kho báu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#016": {
+   "src": "The one that they kept and hid from us after the shipwreck.",
+   "dst": "Kho báu mà bọn họ giữ và giấu chúng tôi sau vụ đắm tàu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#017": {
+   "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
+   "dst": "Vàng ròng, cực kỳ quý hiếm! Bảo hắn tôi đang chờ. Và đừng kể lại câu chuyện ngớ ngẩn đó nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#018": {
+   "src": "Talk back to Adigard about Hallfred's response",
+   "dst": "Báo lại với Adigard câu trả lời của Hallfred",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#019": {
+   "src": "I should have expected that. Hallfred was always very greedy...",
+   "dst": "Lẽ ra tôi phải đoán trước. Hallfred lúc nào cũng tham lam...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#020": {
+   "src": "We tried to make him understand that we do not have the treasure, without much success.",
+   "dst": "Chúng tôi đã cố giải thích là mình không giữ kho báu, nhưng chẳng ăn thua.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#021": {
+   "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
+   "dst": "Bởi ai ư? Lũ xác sống. Ma quỷ lái một con tàu quái dị. Chúng đánh úp chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#022": {
+   "src": "I believe they also stole our treasure during the attack.",
+   "dst": "Tôi tin chúng cũng cướp kho báu khi tấn công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#023": {
+   "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
+   "dst": "Bạn sẽ giúp dân tộc chúng tôi đoàn tụ chứ? Hãy tìm con tàu đó và mang kho báu về cho Hallfred để chúng tôi được sống yên ổn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#024": {
+   "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
+   "dst": "Hãy đi thuyền lên phía bắc. Đó là nơi chúng tấn công chúng tôi năm xưa. Chắc dễ tìm thôi, hẳn chúng vẫn neo ở đó đầy vênh váo... Cảm ơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#025": {
+   "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
+   "dst": "Tìm con tàu ma và mang [Ancient Treasure] về cho Hallfred",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#026": {
+   "src": "Incredible! He actually delivered the treasure!",
+   "dst": "Không thể tin nổi! Hắn thật sự đã giao kho báu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#027": {
+   "src": "I suppose that means the end of the war between our nations!",
+   "dst": "Vậy là chiến tranh giữa hai dân tộc ta đã chấm dứt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#028": {
+   "src": "This is a great day! Here, take this as a reward for helping our nation.",
+   "dst": "Một ngày tuyệt vời! Đây, phần thưởng vì đã giúp dân tộc chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#029": {
+   "src": "I'm sure you'll find a use for this helmet one day!",
+   "dst": "Chắc chắn sẽ có ngày bạn dùng đến chiếc mũ này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#030": {
+   "src": "Find the ghost ship by heading north of the {p} and bring back [Ancient Treasure] to Hallfred at [{~}, {~}, -{~}]",
+   "dst": "Tìm con tàu ma bằng cách đi về phía bắc {p} và mang [Ancient Treasure] về cho Hallfred ở [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

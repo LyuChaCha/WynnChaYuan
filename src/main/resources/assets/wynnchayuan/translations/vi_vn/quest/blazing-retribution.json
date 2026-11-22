@@ -1,0 +1,460 @@
+{
+ "_meta": {
+  "quest": "Blazing Retribution",
+  "count": 45,
+  "translated": 45,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Blazing Retribution#000": {
+   "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
+   "dst": "Con orc đó chạy về phía hồ!! Bắt nó, bắt nó trước khi nó chạy chỗ khác!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#001": {
+   "src": "Nothing for ye to see here youngster. Move along!",
+   "dst": "Ở đây chẳng có gì cho cậu xem đâu, nhóc. Đi đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#002": {
+   "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Piere ở Đồng bằng {p} tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#003": {
+   "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
+   "dst": "Ôi bò thánh ơi, nhà tôi, giờ tôi làm sao? Khoan, bạn là ai?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#004": {
+   "src": "Oh, a Human. Did the {p} authorities send you?",
+   "dst": "Ồ, Con người. Chính quyền {p} cử bạn tới à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#005": {
+   "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
+   "dst": "Thám tử Jackson đã tới đây rồi. Chẳng phải ông ta làm được gì hữu ích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#006": {
+   "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
+   "dst": "Một con orc kiếm được cây rìu phép tẩm lửa và đốt nhà tôi! Jackson còn chẳng gọi lính cứu hỏa!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#007": {
+   "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
+   "dst": "Tôi không biết làm gì, nhưng nếu tìm được Thám tử Jackson, có khi bạn đá đít cho ông ta động đậy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#008": {
+   "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
+   "dst": "Orc vốn đã là lũ man rợ. Nếu chúng thật sự có vũ khí phép, tất cả chúng ta gặp nguy rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#009": {
+   "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
+   "dst": "Tôi nghĩ Thám tử Jackson đang ở cạnh xe hàng \"lên kế hoạch tiếp theo.\" Ông ta không xa đây. Cứ đi qua trang trại tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#010": {
+   "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
+   "dst": "Báo cáo vụ tấn công cho Thám tử Jackson tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#011": {
+   "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
+   "dst": "Xử lý sao đây...? Tôi không thể nhúng tay, mà họ chẳng cho tôi lại gần... Khoan, một con người?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#012": {
+   "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
+   "dst": "...ý bạn là SAO \"tôi đang làm gì?\" Đây là tình huống tế nhị! Tôi cần- khoan... thật ra, có khi bạn chính là người tôi cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#013": {
+   "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
+   "dst": "Tôi sẽ kể vắn tắt - chúng tôi tin lũ orc đã trộm vũ khí phép từ trong {p}, nhất là một cây rìu rực lửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#014": {
+   "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
+   "dst": "Nên tôi bị trói tay. Tuy nhiên, giấy tờ không nhắc gì tới con người, nên bạn sẽ phải lấy nó về.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#015": {
+   "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
+   "dst": "Điều cứu vãn duy nhất là chúng không thể sao chép sức mạnh của nó - orc dốt phép thuật tới buồn cười.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#016": {
+   "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
+   "dst": "Nhưng, vấn đề chính - chắc bạn đã thấy quanh đây có bao nhiêu trại orc. Tìm kiếm sẽ mất rất lâu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#017": {
+   "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
+   "dst": "Manh mối duy nhất là trại \"Sablestone\" và \"Loamsprout\" dạo này có vẻ đang ăn mừng. Nên bắt đầu từ đó, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#018": {
+   "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
+   "dst": "Tóm lại - bạn cần lục soát hai trại đó tìm Rìu của {p}, rồi mang về cho tôi nếu tìm thấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#019": {
+   "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
+   "dst": "Sablestone ở phía bắc, Loamsprout ở phía nam. Chúng có canh gác, nên đừng ngại nện vài cái đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#020": {
+   "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
+   "dst": "Tìm vũ khí bị trộm ở trại orc Sablestone và Loamsprout",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#021": {
+   "src": "Return to Detective Jackson with the news",
+   "dst": "Trở về báo tin cho Thám tử Jackson",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#022": {
+   "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
+   "dst": "Tôi chẳng thấy rìu trong tay bạn, vậy chắc cả Sablestone lẫn Loamsprout đều không có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#023": {
+   "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
+   "dst": "Khoan, thật à? Một cây gậy là vũ khí mạnh nhất chúng có? Còn Loamsprout... ném bữa tối vào bạn...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#024": {
+   "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
+   "dst": "Không thể tin nổi! Sao lũ... lũ THỨ đó lại qua mặt được chúng ta?! Chúng chuyền rìu giữa các trại à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#025": {
+   "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
+   "dst": "Có hơn chục trại của orc và goblin mà chúng có thể chuyền qua lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#026": {
+   "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
+   "dst": "Lỡ lũ GOBLIN có được nó thì sao?! Chúng khôn nhất trong đám, nên đó mới thực sự là mối đe dọa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#027": {
+   "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
+   "dst": "Có Earthpit, rồi Cliffhearth, Shineridge với Stonecave, Sunspark, Mudspring, Holehold, tôi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#028": {
+   "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
+   "dst": "Lửa! Dừng!! Ta có dao thần! NGHE POXPER!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Blazing Retribution#029": {
+   "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
+   "dst": "T-tôi không tin nổi, chắc chắn là nó! ĐUỔI THEO CON ORC ĐÓ, NGAY!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#030": {
+   "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
+   "dst": "Tìm trại ẩn dưới nước gần nhà Piere tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#031": {
+   "src": "GRRRH!! What 'Uthniiazek' mean?!",
+   "dst": "GRRRH!! 'Uthniiazek' nghĩa gì?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 5",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Blazing Retribution#032": {
+   "src": "Kill Orc Leader Poxper",
+   "dst": "Giết thủ lĩnh orc Poxper",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#033": {
+   "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
+   "dst": "Uthniiazek! Uthniiazek!! SAO KHÔNG NGHE Poxper?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#034": {
+   "src": "Stupid Villager magic thing! Why fire no listen?",
+   "dst": "Đồ phép ngu của dân làng! Sao lửa không nghe?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#035": {
+   "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
+   "dst": "Poxper nói thứ và tạo lửa...rìu nói gì nữa? 'Azektoluth?'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#036": {
+   "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
+   "dst": "Hraahah! Poxper khiển lửa! Lửa- cùng Poxper giết Con người! Uthniiazek! Azektoluth!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#037": {
+   "src": "Return the Magic Axe to the Detective",
+   "dst": "Mang Rìu phép về cho thám tử",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#038": {
+   "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
+   "dst": "Trông đúng là rìu của {p}! Nước sơn xanh, sờ vào nóng - giỏi lắm! Tên trùm orc nào đã trộm nó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#039": {
+   "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
+   "dst": "Hmm... Mong là Veretel không nghe phong thanh. Dù sao, bạn đã giúp ích lớn cho dân làng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#040": {
+   "src": "Here's your compensation for that. Thank you for the aid!",
+   "dst": "Đây là phần đền bù cho bạn. Cảm ơn đã giúp!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#041": {
+   "src": "However, there's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
+   "dst": "Tuy nhiên, thỏa thuận ngừng bắn với orc có kẽ hở. Trộm cắp không bị coi là hành vi gây hấn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  },
+  "Blazing Retribution#042": {
+   "src": "Searching the camps one by one will be far too slow, gah!! How am I going to fix this?!",
+   "dst": "Lục từng trại một sẽ quá chậm, trời ạ!! Làm sao tôi sửa chuyện này đây?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  },
+  "Blazing Retribution#043": {
+   "src": "Jackson is twiddling his thumbs off to the southeast. Just continue past my farm!",
+   "dst": "Jackson đang ngồi không ở phía đông nam. Cứ đi qua trang trại tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#044": {
+   "src": "Poxper? That...hm. This could be bad. I've heard that name, and he's a fairly prolific Orc chief. You killed him, right?",
+   "dst": "Poxper? Chuyện đó...hm. Có thể tệ đây. Tôi từng nghe tên hắn, một tù trưởng orc khá khét tiếng. Bạn giết hắn rồi chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  }
+ }
+}

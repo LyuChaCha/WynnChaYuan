@@ -1,0 +1,646 @@
+{
+ "_meta": {
+  "quest": "Supply and Delivery",
+  "count": 63,
+  "translated": 63,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Supply and Delivery#000": {
+   "src": "Well? Did you buy the supply crate yet?",
+   "dst": "Sao? Cậu mua thùng tiếp tế chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope",
+   "source": "captured"
+  },
+  "Supply and Delivery#001": {
+   "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. It's not that hard!",
+   "dst": "Cậu chỉ cần tới Chợ giao dịch và mua thùng tiếp tế giùm tôi. Có khó gì đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope",
+   "source": "captured",
+   "similar": {
+    "text": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
+    "file": "quest/supply-and-delivery.json",
+    "ratio": 0.876,
+    "reason": "candidate"
+   }
+  },
+  "Supply and Delivery#002": {
+   "src": "You bought the crate! Good, good. You still need to pick it up from the Trade Market, though!",
+   "dst": "Cậu mua được thùng rồi! Tốt, tốt. Nhưng cậu vẫn phải tới Chợ giao dịch nhận hàng đấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope",
+   "source": "captured"
+  },
+  "Supply and Delivery#003": {
+   "src": "Hey! I- uh, I can't help but notice that. You're still here. With the crate. You need to bring it to {p}, remember?",
+   "dst": "Này! Tôi- ờ, tôi không thể không để ý. Cậu vẫn ở đây. Cùng cái thùng. Cậu phải mang nó tới {p}, nhớ chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#004": {
+   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
+   "dst": "Gì? Đừng nhìn tôi như thế! Ta đã giao dịch hoàn toàn sòng phẳng, đôi bên cùng lợi. Tôi có cái cây, còn cậu... thì. Cậu có thêm kinh nghiệm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "captured"
+  },
+  "Supply and Delivery#005": {
+   "src": "So either you run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
+   "dst": "Vậy hoặc cậu chở hàng tới {p}... hoặc cả hai ta bỏ trốn làm lại cuộc đời, khỏi gánh hậu quả việc mình làm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "captured"
+  },
+  "Supply and Delivery#006": {
+   "src": "Howdy! Lookin' to hitch a ride off to {p}? Sorry to say, but the wagon's broken down.",
+   "dst": "Chào! Cần quá giang tới {p} hả? Tiếc quá, xe ngựa hỏng mất rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#007": {
+   "src": "I reckon it won't be long 'till it's fixed up, but you'll have to make the journey yourself for now.",
+   "dst": "Tôi đoán chẳng bao lâu nữa là sửa xong, nhưng giờ cậu phải tự đi thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#008": {
+   "src": "This fast travel requires Supply and Delivery to use.",
+   "dst": "Cần xong Tiếp tế và giao hàng để đi nhanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#009": {
+   "src": "I hope these emeralds will suffice. Additionally... we have recently fixed up one of our broken carts, which makes the trip to {p} and back.",
+   "dst": "Mong số ngọc lục bảo này là đủ. Thêm nữa... chúng tôi vừa sửa xong một chiếc xe hỏng, nó chạy tới {p} rồi quay về.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "captured"
+  },
+  "Supply and Delivery#010": {
+   "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Ope ở {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#011": {
+   "src": "Oh, man... What am I going to do now...",
+   "dst": "Trời ơi... Giờ tôi biết làm sao đây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#012": {
+   "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
+   "dst": "Ô-ôi! C-chào chiến sĩ! Chà, trùng hợp ghê, cả hai ta đều ở đây... tại {p}... hôm nay...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#013": {
+   "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
+   "dst": "Thôi được, tôi hiểu rồi! Nhưng đằng nào tôi cũng không trả nổi. Thị trưởng sai tôi tới đây lấy một thùng tiếp tế cho làng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#014": {
+   "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
+   "dst": "Vấn đề là... tôi đã tiêu hết tiền vào- ờ, mấy món chẳng liên quan. Mà kể cả có tiền, tôi cũng chẳng mua được thùng tiếp tế...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#015": {
+   "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
+   "dst": "Hai người đằng kia quản lý chợ đã cấm cửa tôi vĩnh viễn sau khi tôi định mua sạch bột phép trên đời.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#016": {
+   "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
+   "dst": "Này, tôi chơi lớn trên thị trường đâu phải lỗi của tôi. Chỉ là tôi, cậu biết đấy- khôn hơn đám người kia thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#017": {
+   "src": "... The point is. I could really use your help right now! I- I promise, I'll pay you back for it this time.",
+   "dst": "... Ý tôi là. Giờ tôi thật sự cần cậu giúp! Tôi- tôi hứa lần này sẽ trả lại cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#018": {
+   "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
+   "dst": "Cậu chỉ cần tới Chợ giao dịch và mua thùng tiếp tế giùm tôi. Làm ơn nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#019": {
+   "src": "... What? They also banned you from the market?! Well, great. What are we supposed to do now?",
+   "dst": "... Gì cơ? Họ cũng cấm cửa cậu à?! Hay thật. Giờ ta làm gì đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#020": {
+   "src": "Well, do you have any other friends we could get involved? There was... that other soldier guy, right? His name was... Tim. Or something.",
+   "dst": "Thế cậu có người bạn nào khác để lôi vào không? Có... cái anh lính kia, nhỉ? Tên là... Tim. Hay gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#021": {
+   "src": "Look- alright, I get it, I'm a jerk who doesn't remember peoples' names! Could you just ask him to buy the supplies for us?? He's our last hope... probably.",
+   "dst": "Thôi- được rồi, tôi hiểu, tôi là đồ tệ chẳng nhớ nổi tên ai! Cậu nhờ anh ta mua hàng giùm được không?? Anh ta là hy vọng cuối cùng... chắc vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#022": {
+   "src": "Purchase the supply crate from the Trade Market at [{~}, {~}, -{~}].",
+   "dst": "Mua thùng tiếp tế ở Chợ giao dịch tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#023": {
+   "src": "Hey, good work! Now you'll need to pick up the supply crate.",
+   "dst": "Này, làm tốt lắm! Giờ cậu cần đi nhận thùng tiếp tế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#024": {
+   "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
+   "dst": "Tìm Tasim tại [{~}, {~}, -{~}] và thuyết phục cậu ấy mua thùng tiếp tế giùm bạn.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#025": {
+   "src": "Oh, hey {u}! Are you just here to hang out? Or- that look on your face tells me you're here for something else.",
+   "dst": "Ồ, chào {u}! Bạn tới chơi thôi à? Hay- nhìn mặt bạn là biết bạn tới vì chuyện khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#026": {
+   "src": "[{~}] Can you buy something from the Trade Market for me?",
+   "dst": "[{~}] Cậu mua giùm tôi một món ở Chợ giao dịch được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#027": {
+   "src": "I... guess so? Is there a reason you can't do it yourself?",
+   "dst": "Chắc... được? Có lý do gì bạn không tự làm được à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#028": {
+   "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
+   "dst": "...Bạn bị cấm vào chợ? Sao bạn làm được vậy? Ta mới tới {p} có bao lâu đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#029": {
+   "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
+   "dst": "Bạn- cái gì!? Thôi, tôi chẳng muốn biết đâu. Đi nào, dẫn đường đi. Tôi sẽ mua... thứ gì bạn cần cũng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#030": {
+   "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
+   "dst": "...Ồ. Vậy là rõ. Nhưng- có lý do gì bạn không tự lấy được à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#031": {
+   "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
+   "dst": "Bạn- cái gì!? Thôi, tôi chẳng muốn biết đâu. Đi nào, dẫn đường đi. Tôi sẽ mua thứ Ope cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#032": {
+   "src": "Oh, hello . Are you here for training as well? Or- that look on your face tells me you're here for something else.",
+   "dst": "Ồ, chào. Bạn cũng tới tập luyện à? Hay- nhìn mặt bạn là biết bạn tới vì chuyện khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#033": {
+   "src": "Bring Tasim to the Trade Market at [{~}, {~}, -{~}].",
+   "dst": "Dẫn Tasim tới Chợ giao dịch tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2.5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#034": {
+   "src": "Alright. So I'm just buying a supply crate...",
+   "dst": "Được rồi. Vậy tôi chỉ mua một thùng tiếp tế...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2.5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#035": {
+   "src": "Here it is. I wish you luck with... whatever it is you're up to.",
+   "dst": "Đây rồi. Chúc bạn may mắn với... chuyện gì bạn đang toan tính.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2.5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Supply and Delivery#036": {
+   "src": "Return to Ope with the supply crate at [{~}, {~}, -{~}]",
+   "dst": "Mang thùng tiếp tế về cho Ope tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#037": {
+   "src": "Perfect! Now, quickly, come back over here, before those two realize you're working with me!",
+   "dst": "Tuyệt! Giờ mau quay lại đây, trước khi hai người kia nhận ra cậu làm cùng tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#038": {
+   "src": "You got the item? Good. Good, good good.",
+   "dst": "Có hàng chưa? Tốt. Tốt, tốt tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#039": {
+   "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
+   "dst": "Được! Giờ tới bước hai. Cậu thấy đấy, kiện hàng này vẫn cần tới được {p}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#040": {
+   "src": "And. Well. You're the one holding the crate, not me! So... you know!",
+   "dst": "Và. Thì. Người cầm thùng là cậu, đâu phải tôi! Nên... cậu hiểu mà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#041": {
+   "src": "Fine, I'll take the crate to",
+   "dst": "Được, tôi sẽ mang thùng tới",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#042": {
+   "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
+   "dst": "Tuyệt! Giờ chắc cậu thuộc đường rồi! Tôi khỏi cần, ờ, cản đường cậu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#043": {
+   "src": "Just take those supplies to {p}, and. Well. Things will work out.",
+   "dst": "Cứ mang hàng tới {p}, và. Thì. Mọi chuyện sẽ ổn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#044": {
+   "src": "Why can't you just take the",
+   "dst": "Sao cậu không tự mang",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#045": {
+   "src": "...probably.",
+   "dst": "...chắc vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#046": {
+   "src": "Well, you see. I really don't want to do it. And I'm not going to!",
+   "dst": "Thì, cậu thấy đấy. Tôi thật sự không muốn làm. Và tôi sẽ không làm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#047": {
+   "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
+   "dst": "...không à? Không. Được. Thử cũng đáng. Thôi, giờ cậu thuộc đường rồi! Tôi khỏi cần, ờ, cản đường cậu! Hề...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#048": {
+   "src": "He bought you the item? Good. Good, good good. Okay! That was... harder than expected.",
+   "dst": "Cậu ta mua giùm cậu rồi à? Tốt. Tốt, tốt tốt. Được! Vụ đó... khó hơn tôi tưởng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Supply and Delivery#049": {
+   "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
+   "dst": "Mang thùng tiếp tế tới Thị trưởng Alvin ở {p} tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Supply and Delivery#050": {
+   "src": "Ah, hello! What can I do for you today?",
+   "dst": "À, chào! Tôi giúp gì được ngài?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#051": {
+   "src": "I have a supply crate from D",
+   "dst": "Tôi có thùng tiếp tế từ D",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#052": {
+   "src": "Ah... So you do. I thought I had sent Ope to pick that up...",
+   "dst": "À... Đúng thật. Tôi tưởng đã sai Ope đi lấy nó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#053": {
+   "src": "More of his shenanigans, I suppose. I am sorry you have had to deal with him twice.",
+   "dst": "Lại trò quậy của cậu ta, chắc thế. Xin lỗi vì ngài phải đối phó cậu ta hai lần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#054": {
+   "src": "When he returns to the village, I'm going to need to have a word with him... Ah, but of course, I should pay you for your troubles.",
+   "dst": "Khi cậu ta về làng, tôi phải nói chuyện nghiêm túc với cậu ta... À, nhưng tất nhiên, tôi nên trả công ngài vì đã vất vả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#055": {
+   "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
+   "dst": "Ngài cứ dùng nó tùy ý! Coi như lời cảm ơn vì mọi điều ngài làm cho chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#056": {
+   "src": "What's the deal with Ope?",
+   "dst": "Ope bị làm sao vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#057": {
+   "src": "He's a good man, truly. I believe that with my whole heart. It's alright if you don't feel the same way, though. I will not force you to interact with him if you do not wish to.",
+   "dst": "Cậu ấy là người tốt, thật đấy. Tôi tin vậy bằng cả trái tim. Nhưng nếu ngài không nghĩ thế cũng chẳng sao. Tôi sẽ không ép ngài tiếp xúc với cậu ấy nếu ngài không muốn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#058": {
+   "src": "Oh, dear... I suppose it must have been fifteen years ago that I took the position, when the old mayor stepped down.",
+   "dst": "Ôi chao... Chắc cũng mười lăm năm rồi kể từ khi tôi nhận chức, lúc thị trưởng cũ từ chức.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#059": {
+   "src": "He was a kind man, always looking out for the townsfolk. Though, by the time he retired, it was clear he was growing restless in our little town.",
+   "dst": "Ông ấy là người tốt bụng, luôn lo cho dân làng. Nhưng tới lúc nghỉ hưu, rõ là ông đã thấy bức bối ở thị trấn nhỏ của chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#060": {
+   "src": "Well, as soon as he passed down the position to me, he immediately traveled to {p} and enlisted in their army! I hear he's in the business of training soldiers these days.",
+   "dst": "Ngay khi trao lại chức cho tôi, ông lập tức tới {p} và gia nhập quân đội ở đó! Nghe nói giờ ông chuyên huấn luyện binh lính.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#061": {
+   "src": "Ah, but I've tried to live up to his legacy. I like to think I've done well in my time as mayor!",
+   "dst": "À, nhưng tôi đã cố sống xứng với di sản của ông. Tôi nghĩ mình làm thị trưởng khá tốt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Supply and Delivery#062": {
+   "src": "A fine day for passing through! I hope you enjoy your stay.",
+   "dst": "Một ngày đẹp trời để ghé qua! Chúc ngài có kỳ lưu trú vui vẻ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  }
+ }
+}

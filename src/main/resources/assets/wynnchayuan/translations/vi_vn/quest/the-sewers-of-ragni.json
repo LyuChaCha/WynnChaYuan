@@ -1,0 +1,390 @@
+{
+ "_meta": {
+  "quest": "The Sewers of Ragni",
+  "count": 38,
+  "translated": 38,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Sewers of Ragni#000": {
+   "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
+   "dst": "Binh sĩ! Cậu vừa khám phá cống ngầm à? Mong là cậu chuẩn bị kỹ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
+   "src": "Soldier! Good timing. We've been requestin' help for ages.",
+   "dst": "Binh sĩ! Tới đúng lúc lắm. Bọn tôi xin chi viện mãi rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#002": {
+   "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
+   "dst": "Lũ tha hóa hoành hành khắp Đồng Bằng, nên ngày càng nhiều người chuyển tới {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#003": {
+   "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
+   "dst": "Vấn đề là, một ống cống chính bị tắc. Chả trách chẳng ai nhận việc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#004": {
+   "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
+   "dst": "Tôi cần cậu xắn tay vào việc bẩn. Tôi cần giúp xử lý chỗ tắc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#005": {
+   "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
+   "dst": "Kế hoạch thế này. Ta vào, đặt thuốc nổ nhỏ để phá chỗ tắc, rồi ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#006": {
+   "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
+   "dst": "Ta sẽ đi theo ống phụ này. Cái ống lớn dưới dốc thì...cậu đừng nên đi sâu vào đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#007": {
+   "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
+   "dst": "Trong đó phải tỉnh táo. Đủ thứ có thể rình rập. Sẵn sàng chưa? Đi nào!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#008": {
+   "src": "New Quest Started: The Sewers of {p}",
+   "dst": "Nhiệm vụ mới: Cống ngầm {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#009": {
+   "src": "Good, ya caught up. Watch your step around this place, soldier.",
+   "dst": "Tốt, cậu theo kịp rồi. Cẩn thận bước chân ở chỗ này, binh sĩ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#010": {
+   "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
+   "dst": "Trinh sát đã xác nhận khu này an toàn, nhưng rẽ sai một cái là có thể lạc vào khu nhà tù cũ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#011": {
+   "src": "I... we really don't want t' end up there.",
+   "dst": "Tôi... ta thật không muốn lạc vào đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#012": {
+   "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
+   "dst": "Đây là một quả nổ nhỏ. Tôi đã đặt một quả ở chỗ tắc rồi, nếu chỉ vậy không ăn thua thì dùng quả này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#013": {
+   "src": "The exit has opened...",
+   "dst": "Lối ra đã mở...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#014": {
+   "src": "The pillar seems very unstable...",
+   "dst": "Cây cột trông rất lung lay...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#015": {
+   "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
+   "dst": "À, cậu còn sống! Xem ra ta đánh giá thấp lượng nước thải.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#016": {
+   "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
+   "dst": "... à. Cống này có lịch sử đấy, biết không. Hồi các cuộc đột kích {p}, người ta giấu dân thường ở đây, trong nhà tù cũ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#017": {
+   "src": "Let's get out of here. D'you still have the explosive I gave you?",
+   "dst": "Ra khỏi đây thôi. Cậu còn giữ quả nổ tôi đưa không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#018": {
+   "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
+   "dst": "Phù! Xem ra vụ nổ đầu đã thông ống, dân {p} sẽ vui lắm đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#019": {
+   "src": "... I don't know exactly what's in there, soldier.",
+   "dst": "... Tôi không biết chính xác trong đó có gì, binh sĩ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#020": {
+   "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
+   "dst": "Tôi không cản cậu khám phá hầm ngục, nhưng khuyên cậu trang bị kỹ trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#021": {
+   "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
+   "dst": "Truyền thuyết kể Bob, chiến binh huyền thoại, chào đời trong đó hồi một cuộc đột kích {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#022": {
+   "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
+   "dst": "Mẹ ông ấy chết khi sinh nở, nhưng có người bảo bà nằm dưới đó nhiều năm. Thối rữa. Chờ đợi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#023": {
+   "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
+   "dst": "Nhưng chỉ là chuyện kể thôi! Cảm ơn cậu đã giúp, binh sĩ, chúc may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#024": {
+   "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
+   "dst": "Trung úy tại [-{~}, {~}, -{~}] cần giúp đỡ.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#025": {
+   "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
+   "dst": "Vào cống ngầm tại [-{~}, {~}, -{~}] và tìm chỗ tắc.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#026": {
+   "src": "Explore the sewer and find the blockage.",
+   "dst": "Khám phá cống ngầm và tìm chỗ tắc.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#027": {
+   "src": "Anyway, I've found the blockage. It's right up ahead.",
+   "dst": "Dù sao, tôi tìm thấy chỗ tắc rồi. Ngay phía trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#028": {
+   "src": "Find a way to fix the blockage.",
+   "dst": "Tìm cách xử lý chỗ tắc.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#029": {
+   "src": "Find a way out of the spooky sewer.",
+   "dst": "Tìm lối ra khỏi cái cống rùng rợn.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#030": {
+   "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
+   "dst": "Lúc nãy tôi lạc mất cậu một lúc. Nói thật, may mà ta tìm lại được nhau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#031": {
+   "src": "I lost you for a bit back there. 's lucky we found each other, t' be honest.",
+   "dst": "Lúc nãy tôi lạc mất cậu một lúc. May mà ta tìm lại được nhau, nói thật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#032": {
+   "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
+   "dst": "Đôi khi... đôi khi thế vẫn chưa đủ. Có người bảo vẫn còn... những thứ lang thang ở đó. Tàn dư từ các cuộc tàn sát.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#033": {
+   "src": "Good, let's use it on this wall, it looks like we can break right through...",
+   "dst": "Tốt, dùng nó lên bức tường này, có vẻ ta phá xuyên qua được...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#034": {
+   "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Jenprest tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#035": {
+   "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
+   "dst": "Và cậu nên thấy may là trong đó ta không đụng phải thứ gì quá kinh khủng. Mấy câu chuyện...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#037": {
+   "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
+   "dst": "Và cậu nên thấy may là trong đó ta không đụng thứ gì quá kinh. Mấy câu chuyện...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#038": {
+   "src": "... I don't exactly know what's in there, soldier.",
+   "dst": "... Tôi không rõ trong đó có gì, binh sĩ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  }
+ }
+}

@@ -29,12 +29,14 @@ import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "src/main/resources/assets/wynnchayuan"
 FONTS = ASSETS / "font/actionbar"
 SHEETS = ASSETS / "textures/font/selector"
 CORPUS = ASSETS / "translations"
+FALLBACK = ASSETS / "font/unifont_th_vi.otf"
 
 MARKER = "\x01"
 
@@ -112,31 +114,30 @@ def ttf_for(lang):
     raise SystemExit(f"{lang}: selector_name_0.json 裡沒有 ttf provider")
 
 
-def render(lang, chars, ttf):
-    font = ImageFont.truetype(str(ttf), 10)
+def draw_sheet(name, chars, font, cell_h, baseline):
     glyphs = []
     width = 1
     for ch in chars:
         scratch = Image.new("L", (24, 24), 0)
-        ImageDraw.Draw(scratch).text((0, BASELINE), ch, font=font, fill=255, anchor="ls")
+        ImageDraw.Draw(scratch).text((0, baseline), ch, font=font, fill=255, anchor="ls")
         px = scratch.load()
-        cols = [x for x in range(24) for y in range(CELL_H) if px[x, y] > 127]
+        cols = [x for x in range(24) for y in range(cell_h) if px[x, y] > 127]
         w = (max(cols) + 1) if cols else 1
         width = max(width, w)
-        glyphs.append(scratch.crop((0, 0, 24, CELL_H)))
+        glyphs.append(scratch.crop((0, 0, 24, cell_h)))
     rows = (len(chars) + COLS - 1) // COLS
-    sheet = Image.new("RGBA", (COLS * width, rows * CELL_H), (0, 0, 0, 0))
+    sheet = Image.new("RGBA", (COLS * width, rows * cell_h), (0, 0, 0, 0))
     for i, g in enumerate(glyphs):
-        cell = Image.new("RGBA", (width, CELL_H), (0, 0, 0, 0))
+        cell = Image.new("RGBA", (width, cell_h), (0, 0, 0, 0))
         src = g.load()
         dst = cell.load()
-        for y in range(CELL_H):
+        for y in range(cell_h):
             for x in range(width):
                 if src[x, y] > 127:
                     dst[x, y] = (255, 255, 255, 255)
-        sheet.paste(cell, ((i % COLS) * width, (i // COLS) * CELL_H))
+        sheet.paste(cell, ((i % COLS) * width, (i // COLS) * cell_h))
     SHEETS.mkdir(parents=True, exist_ok=True)
-    sheet.save(SHEETS / f"{lang}.png")
+    sheet.save(SHEETS / f"{name}.png")
     table = []
     for r in range(rows):
         row = "".join(chars[r * COLS:(r + 1) * COLS])
@@ -144,7 +145,21 @@ def render(lang, chars, ttf):
     return table, width
 
 
-def write_fonts(lang, table, ttf_provider):
+def render(lang, chars, ttf):
+    own = set(TTFont(str(ttf)).getBestCmap())
+    mine = [c for c in chars if ord(c) in own]
+    rest = [c for c in chars if ord(c) not in own]
+    table, width = draw_sheet(lang, mine, ImageFont.truetype(str(ttf), 10), CELL_H, BASELINE)
+    extra = None
+    old = SHEETS / f"{lang}_x.png"
+    if rest:
+        extra, _ = draw_sheet(lang + "_x", rest, ImageFont.truetype(str(FALLBACK), 16), 18, 16)
+    elif old.exists():
+        old.unlink()
+    return table, width, extra
+
+
+def write_fonts(lang, table, extra, ttf_provider):
     for name, ascent in SLOTS.items():
         path = FONTS / lang / f"{name}.json"
         spec = json.loads(path.read_text(encoding="utf-8"))
@@ -155,7 +170,16 @@ def write_fonts(lang, table, ttf_provider):
             "height": CELL_H,
             "ascent": ascent,
             "chars": table,
-        }, ttf_provider]
+        }]
+        if extra:
+            providers.append({
+                "type": "bitmap",
+                "file": f"wynnchayuan:font/selector/{lang}_x.png",
+                "height": 9,
+                "ascent": ascent - 1,
+                "chars": extra,
+            })
+        providers.append(ttf_provider)
         path.write_text(json.dumps({"providers": providers}, ensure_ascii=False, indent=2)
                         + "\n", encoding="utf-8")
 
@@ -168,8 +192,8 @@ def main():
             print(f"{lang}: 沒有 ASCII 以外的字，跳過")
             continue
         ttf, provider = ttf_for(lang)
-        table, width = render(lang, chars, ttf)
-        write_fonts(lang, table, provider)
+        table, width, extra = render(lang, chars, ttf)
+        write_fonts(lang, table, extra, provider)
         print(f"{lang}: {len(chars)} 個字，格寬 {width} px，{len(table)} 列 -> {SHEETS / (lang + '.png')}")
 
 

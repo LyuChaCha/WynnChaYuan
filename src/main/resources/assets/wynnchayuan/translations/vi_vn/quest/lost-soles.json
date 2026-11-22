@@ -1,0 +1,740 @@
+{
+ "_meta": {
+  "quest": "Lost Soles",
+  "count": 73,
+  "translated": 73,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lost Soles#000": {
+   "src": "You can keep them for now but i will need them back if your mission is successful!",
+   "dst": "Giờ bạn cứ giữ chúng, nhưng nếu nhiệm vụ thành công tôi sẽ cần lấy lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#001": {
+   "src": "Remember, it is imperative you find the {~} digit code to the basement.",
+   "dst": "Nhớ đấy, nhất định phải tìm được mã {~} chữ số của tầng hầm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#002": {
+   "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get to them, maybe you can find out what they mean. Here, try this one:",
+   "dst": "Họ giấu đôi giày trong dinh thự, cùng với cái hộp. Người viết nhật ký này có ghi vài gợi ý để lấy chúng, có lẽ bạn sẽ hiểu ý nghĩa. Đây, thử cái này:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#003": {
+   "src": "Whoever placed down that sign might have meant a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "Ai đặt tấm biển đó có lẽ ám chỉ một lối bí mật lên tầng hai. Đã lâu lắm không lên được, từ khi cầu thang sập. Trừ Leacen, nhưng cô ấy hơi điên...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#004": {
+   "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a hidden passage, can you believe it?",
+   "dst": "Ừ, tôi cũng thử một lúc rồi. Có vài lần tôi tưởng sắp tìm ra! Như ở đây này. Không cuốn nào trong đống sách này mở lối bí mật, tin nổi không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "captured"
+  },
+  "Lost Soles#005": {
+   "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow in the master bedroom for two seconds, and then it disappeared!",
+   "dst": "Đã thế tôi còn mất sổ tay, nên chẳng ghi chép được gì. Tôi chỉ để nó trên gối ở phòng ngủ chính hai giây, thế là biến mất!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "captured"
+  },
+  "Lost Soles#006": {
+   "src": "So you have the container and the boots! I wish I would have gone with you...",
+   "dst": "Vậy là bạn có cả cái hộp lẫn đôi giày! Giá mà tôi đi cùng bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#007": {
+   "src": "Now that the boots are back in place, we only need to repair the mansion, and we can live normally again!",
+   "dst": "Giờ đôi giày đã về chỗ cũ, chỉ cần sửa lại dinh thự là ta có thể sống bình thường trở lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#008": {
+   "src": "Were you not paying attention earlier?",
+   "dst": "Lúc nãy bạn không chú ý à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#009": {
+   "src": "Start by placing your mount in the enclosure. To keep your friend happy and growing you will need to provide it with some tasty food.",
+   "dst": "Bắt đầu bằng việc thả thú cưỡi vào chuồng. Để bạn nhỏ luôn vui và lớn lên, bạn cần cho nó ăn đồ ngon.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#010": {
+   "src": "Materials should do the trick!",
+   "dst": "Vật liệu là được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#011": {
+   "src": "To breed your mount, simply place two of them in the same row in the Feeder.",
+   "dst": "Để nhân giống thú cưỡi, chỉ cần đặt hai con vào cùng một hàng trong Máng ăn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#012": {
+   "src": "Talk to Ferndor at [-{~}, {~}, -{~}], make sure to bring Abysso Galoshes with you.",
+   "dst": "Nói chuyện với Ferndor tại [-{~}, {~}, -{~}], nhớ mang theo Abysso Galoshes.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#013": {
+   "src": "Have you seen boots called Abysso Galoshes on your journey, a pirate stole them from us years ago! I could reward you if you could bring me the Abysso Galoshes and help us!",
+   "dst": "Trên đường đi bạn có thấy đôi giày tên Abysso Galoshes không, một tên cướp biển đã trộm nó nhiều năm trước! Mang Abysso Galoshes tới và giúp chúng tôi, tôi sẽ thưởng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#014": {
+   "src": "Bring back Abysso Galoshes, received during the quest Beneath the Depths.",
+   "dst": "Mang về Abysso Galoshes, nhận được trong nhiệm vụ Dưới vực sâu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#015": {
+   "src": "I see you have the infamous galoshes with you. But do you know even half of the story of them?",
+   "dst": "Tôi thấy bạn mang theo đôi giày khét tiếng. Nhưng bạn có biết nổi nửa câu chuyện về nó không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#016": {
+   "src": "The boots were once owned by my ancestors, who decided to lock it away in this manor years ago.",
+   "dst": "Đôi giày từng thuộc về tổ tiên tôi, họ quyết định khóa nó trong trang viên này nhiều năm trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#017": {
+   "src": "Nobody knows why they decided to hide the boots just after they got into my family's hands. I was told they were acquired from a strange man with pale grey skin.",
+   "dst": "Không ai biết sao họ lại giấu đôi giày ngay sau khi nó về tay gia đình tôi. Tôi nghe kể nó được mua từ một gã lạ mặt da xám nhợt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#018": {
+   "src": "We think they hid the boots in some kind of basement in the manor. You can get to it by following the river to the waterfall, but you will need some kind of code to open it...",
+   "dst": "Chúng tôi nghĩ họ giấu đôi giày trong một tầng hầm nào đó của trang viên. Bạn tới đó bằng cách men theo sông tới thác nước, nhưng sẽ cần mã số để mở...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#019": {
+   "src": "I remember Grandon saying that he found a book which is apparently a diary from one of my ancestors. Ever since that filthy pirate raided our home and stole our treasures, weird things have been happening.",
+   "dst": "Tôi nhớ Grandon nói đã tìm thấy một cuốn sách, hình như là nhật ký của một vị tổ tiên tôi. Từ khi tên cướp biển bẩn thỉu đó đột kích nhà chúng tôi và cướp kho báu, chuyện lạ cứ xảy ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#020": {
+   "src": "Grandon should already have finished reading it. If I allow you to enter my home, would you talk to him?",
+   "dst": "Chắc Grandon đã đọc xong rồi. Nếu tôi cho bạn vào nhà, bạn sẽ nói chuyện với cậu ấy chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#021": {
+   "src": "There are strange things going on in this mansion and I hope that book reveals everything we need to know...",
+   "dst": "Trong dinh thự này có nhiều chuyện lạ, và tôi mong cuốn sách đó sẽ tiết lộ mọi điều ta cần biết...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#022": {
+   "src": "I almost forgot to give you your boots back, I am not sure if I want to have them near me. Remember, it is imperative you find the {~} digit code to the basement.",
+   "dst": "Suýt quên trả giày cho bạn, tôi cũng không chắc có muốn để chúng gần mình không. Nhớ đấy, nhất định phải tìm được mã {~} chữ số của tầng hầm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#023": {
+   "src": "Visit the mansion dining room and ask Grandon about the book",
+   "dst": "Tới phòng ăn của dinh thự và hỏi Grandon về cuốn sách",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#024": {
+   "src": "Ferndor sent you here, correct? That must mean you’re here to help find the hidden {~} digit code in the manor.",
+   "dst": "Ferndor cử bạn tới, đúng không? Vậy hẳn bạn tới để giúp tìm mã {~} chữ số giấu trong trang viên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#025": {
+   "src": "The book is actually a diary written by our ancestors decades ago. It is actually very interesting, how they remodeled almost the whole house.",
+   "dst": "Cuốn sách thật ra là nhật ký tổ tiên chúng tôi viết từ hàng chục năm trước. Thú vị lắm, chuyện họ sửa sang gần như cả ngôi nhà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#026": {
+   "src": "Ferndor probably told you about the boots, right? The diary has some information about them...ah, here, on this page.",
+   "dst": "Chắc Ferndor đã kể bạn nghe về đôi giày, đúng không? Nhật ký có ghi vài điều về nó...à, đây, trang này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#027": {
+   "src": "Here...our family bought them from \"a dark and mysterious humanoid creature\" a long time ago.",
+   "dst": "Đây...gia đình chúng tôi mua nó từ \"một sinh vật hình người tăm tối và bí ẩn\" từ rất lâu rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#028": {
+   "src": "The boots were apparently so valuable that the creature as part of the deal, said they put some kind of spell on them, but that was a lie.",
+   "dst": "Hình như đôi giày quý tới mức, theo thỏa thuận, sinh vật kia nói đã ếm một loại bùa lên nó, nhưng đó là lời nói dối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#029": {
+   "src": "It was found that the boots themselves were horrendously powerful, imbued with dark magic that will deteriorate and decay everything around it over time.",
+   "dst": "Người ta phát hiện bản thân đôi giày mạnh khủng khiếp, thấm đẫm hắc thuật sẽ dần làm hư hỏng và mục rữa mọi thứ xung quanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#030": {
+   "src": "They were given a special boot container with similar effects, but when the Galoshes are within the Container, they cancel each others' effects out.",
+   "dst": "Họ được tặng một hộp đựng giày đặc biệt có hiệu ứng tương tự, nhưng khi Galoshes nằm trong Hộp, hiệu ứng của chúng triệt tiêu nhau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#031": {
+   "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
+   "dst": "\"Khuôn mặt trên sảnh sở hữu chiếc mũi cần nặng hơn để mở lối đi\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#032": {
+   "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
+   "dst": "Hmm, mọi gợi ý đều nằm trong một chương về căn phòng này, phòng ăn. Bạn có biết nó nghĩa là gì không? Lẽ ra phải hiển nhiên lắm, nhưng tôi nghĩ mãi không ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#033": {
+   "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
+   "dst": "\"Khuôn mặt trên sảnh sở hữu chiếc mũi cần nặng hơn để mở lối đi\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#034": {
+   "src": "Talk to Grandon and tell him about your findings",
+   "dst": "Nói chuyện với Grandon và kể về những gì bạn tìm thấy",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#035": {
+   "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
+   "dst": "Một căn phòng giấu dưới cái đầu khổng lồ? Sao tôi không nghĩ ra nhỉ!? Tôi luôn thắc mắc họ phải tự cao cỡ nào mới đặt nó ở đó, ai ngờ nó có công dụng thật!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#036": {
+   "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
+   "dst": "Vậy là có tấm biển bảo bạn tìm hòn đá ở góc? Hm... thú vị đấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#037": {
+   "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
+   "dst": "Dù sao, có vẻ họ đoán trước ta sẽ phải tìm cách trả lại đôi giày nên đã chuẩn bị sẵn. Thế thì tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#038": {
+   "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
+   "dst": "Như tôi đã nói, cầu thang hỏng hết rồi. Tôi chắc chắn không leo nổi mấy mảnh gỗ mục đó. Có lẽ tốt nhất là đi tìm hòn đá kia, hm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#039": {
+   "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
+   "dst": "Nhưng nó ở đâu được nhỉ... ồ? Đây là gợi ý à? Tôi vừa thấy nó ở trang kế tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#040": {
+   "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
+   "dst": "\"Tấm thảm khác màu sẽ chỉ cho bạn hòn đá hé lộ bí mật của chiếc bàn\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#041": {
+   "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
+   "dst": "\"Tấm thảm khác màu sẽ chỉ cho bạn hòn đá hé lộ bí mật của chiếc bàn\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#042": {
+   "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
+   "dst": "Chà! Mấy ông già này đúng là kỹ sư cừ khôi! Chẳng ngờ trong nhà lại có mấy thứ này. Dù sao, có lời nhắn nào không? Nó nói gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#043": {
+   "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
+   "dst": "Cái lỗ chẳng ai muốn? Ông ấy chỉ có thể nói về cái hang chuột ở cuối sảnh này. Mà giờ nó chỉ còn là cái lỗ thôi, chuột đi hết rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#044": {
+   "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
+   "dst": "Chà, tiểu tiết thôi. Bọn tôi chưa từng kiểm tra nó ngoài việc đặt bẫy chuột, nên biết đâu trong đó có gì, xét độ phức tạp của mấy cơ quan này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#045": {
+   "src": "I would say, you look into the hole and then search on top of the blue flags!",
+   "dst": "Theo tôi, bạn hãy xem trong cái lỗ rồi tìm phía trên mấy lá cờ xanh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#046": {
+   "src": "But if that's the way up to the second floor, what does the diary mean by this?",
+   "dst": "Nhưng nếu đó là lối lên tầng hai, thì nhật ký nói thế này nghĩa là gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#047": {
+   "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
+   "dst": "\"Ném thứ gì đó ra sau tấm bản đồ trên tường để lộ một phần mật mã\"? Khoan, chắc là mật mã tầng hầm! Làm xong thì quay lại ngay nhé, tôi còn chuyện muốn nói!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#048": {
+   "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
+   "dst": "\"Ném thứ gì đó ra sau tấm bản đồ trên tường để lộ một phần mật mã\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#049": {
+   "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
+   "dst": "Bạn tìm được một phần mật mã rồi!? Haha, tuyệt! Phải nói là vài phút của bạn hơn cả mấy năm của tôi! Loài người các bạn đúng là phi thường!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#050": {
+   "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
+   "dst": "Giờ nhật ký nói bạn phải lên tầng hai để tìm {~} chữ số còn lại của mật mã.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#051": {
+   "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
+   "dst": "Nhớ nhé, để lên tầng hai, bạn cần dùng nút trong hang chuột để mở lối đi phía trên mấy lá cờ xanh treo trên trần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#052": {
+   "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "Nó không nói chúng ở đâu, chỉ bảo chúng được giấu kỹ và có thêm manh mối quanh nhà. {~} chữ số còn lại hẳn đều ở tầng hai! Có lẽ Leacen cũng đã thấy gì đó về chúng khi ở trên đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#053": {
+   "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
+   "dst": "Khi tìm đủ mật mã, hãy xuống tầng hầm. Có rồi thì cứ đi theo con đường và các tấm biển bên ngoài dinh thự.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#054": {
+   "src": "Open the secret passage above the flags by reaching into the unwanted hole",
+   "dst": "Mở lối đi bí mật phía trên mấy lá cờ bằng cách thò tay vào cái lỗ chẳng ai muốn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#055": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
+   "dst": "Mang [{~} Boot Container] và [Abysso Galoshes] về cho Ferndor",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#056": {
+   "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
+   "dst": "Chán ghê, tớ cứ tưởng một cuốn sách ở đây sẽ mở ra kệ bí mật... ồ, chào bé người. Cậu cũng leo lên cầu thang được à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#057": {
+   "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
+   "dst": "Ồ, lối đi bí mật! Không ngầu bằng leo lên đây, nhưng vẫn giỏi lắm! Tớ đoán cậu đang tìm gợi ý mật mã nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#058": {
+   "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
+   "dst": "Thế này nhé, bé người. Cậu giúp bọn tớ, tớ sẽ cho cậu ít thông tin mà cậu sẽ muốn nghe. Được chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#059": {
+   "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
+   "dst": "Ở tầng trên có vài phòng ngủ và một cầu thang xoắn bắt đầu tại [-{~}, {~}, -{~}]. Đi lên đỉnh cầu thang, nó dẫn ra mái dinh thự. Tấm biển ở [-{~}, {~}, -{~}], ngay mép mái, ghi \"{~} is the first\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "First Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#060": {
+   "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
+   "dst": "Biển của chữ số thứ hai là tấm bạn thấy ở giai đoạn {~}: ném vật phẩm bất kỳ vào bản đồ gần Grandon sẽ thấy chữ số thứ hai là {~}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Second Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#061": {
+   "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
+   "dst": "Ở tầng hai, tại [-{~}, {~}, -{~}], có một cánh cửa sắt với nút bấm bên cạnh. Nhấn nút để mở cửa và vào căn phòng nhỏ; bạn sẽ thấy tấm biển ghi \"He told us that the blue flowers are special...\". Quay lại khu vực bên ngoài cửa sắt, có một bông hoa xanh trên kệ cao cạnh một nút bấm tại [-{~}, {~}, -{~}]. Nút đó mở ra một chiếc thang dẫn tới phòng ngủ ở góc phòng, tại [-{~}, {~}, -{~}]. Tấm biển thứ ba nằm trên tường căn phòng mà thang dẫn tới, tại [-{~}, {~}, -{~}], ghi \"{~} is the third\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Third Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#062": {
+   "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
+   "dst": "Ở tầng ba có cầu thang bắt đầu tại [-{~}, {~}, -{~}] dẫn tới lối đi bắc ngang hành lang. Nhảy khỏi lối đi qua khe hở lan can ở phía bắc, bạn có thể chui vào một cái hốc nhỏ có tấm biển ghi \"He always hid something underneath his pillow...\". Nhảy xuống lại Phòng ngủ chính tại [-{~}, {~}, -{~}] và, như manh mối gợi ý, ném một viên ngọc lục bảo lên gối. Việc này mở ra một căn phòng nhỏ sau kệ cao, tại [-{~}, {~}, -{~}], dẫn tới tấm biển cuối, ghi \"{~} is the fourth\". Lưu ý: nếu không kịp vào phòng, bạn có thể đứng trên kệ rồi ném ngọc lục bảo về phía gối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Fourth Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#063": {
+   "src": "You found the container? I wish I would have gone with you...",
+   "dst": "Bạn tìm thấy cái hộp rồi à? Giá mà tôi đã đi cùng bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#064": {
+   "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
+   "dst": "Ít ra ta có thể chặn sự mục nát chậm chạp của dinh thự! Để tôi đặt đôi giày vào hộp...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#065": {
+   "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
+   "dst": "Dễ thật. Tôi vẫn không tin nổi một thứ nhỏ thế lại gây lắm rắc rối đến vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#066": {
+   "src": "Well, I can not just let you stand there without a reward, right?",
+   "dst": "Chà, tôi đâu thể để bạn về tay không, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#067": {
+   "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
+   "dst": "Đây, ít ngọc lục bảo và đôi giày này thì sao? Đó là gia bảo mà Hội Sodeta, chủ cũ của dinh thự này, tặng gia đình tôi. Tôi hứa chúng không độc ác đâu! Cứ ghé thăm bọn tôi bất cứ lúc nào!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#068": {
+   "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
+   "dst": "Không biết đôi giày đó đã đi đâu rồi... Lâu lắm rồi. Bạn có biết về [Abysso Galoshes] không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#069": {
+   "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
+   "dst": "Một tên cướp biển đã trộm nó nhiều năm trước! Mang [Abysso Galoshes] về giúp bọn tôi, tôi sẽ thưởng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#070": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor at [-{~}, {~}, -{~}]",
+   "dst": "Mang [{~} Boot Container] và [Abysso Galoshes] về cho Ferndor tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#071": {
+   "src": "It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "Lâu lắm rồi không ai lên được đó, từ khi cầu thang sập. Trừ Leacen, mà cô ấy hơi điên...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#072": {
+   "src": "The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "{~} chữ số còn lại hẳn đều ở tầng hai! Có lẽ Leacen cũng đã thấy gì đó về chúng khi ở trên đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "Grandon",
+   "source": "captured"
+  }
+ }
+}

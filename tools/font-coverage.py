@@ -4,7 +4,7 @@
 不然畫面上會出現一排方框——那比留著英文原文糟糕得多。字型的覆蓋率查不出來
 就只能等玩家回報，而回報時看到的已經是壞掉的畫面了。
 
-用法：python tools/font-coverage.py <字型.ttf> <輸出.txt>
+用法：python tools/font-coverage.py <字型.ttf> [<備援字型.ttf> ...] <輸出.txt>
 """
 import struct
 import sys
@@ -61,17 +61,20 @@ def ranges(points):
 
 
 def main():
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print(__doc__)
         raise SystemExit(2)
-    found = ranges(codepoints(sys.argv[1]))
-    with open(sys.argv[2], 'w', encoding='utf-8', newline='\n') as f:
+    points = set()
+    for font in sys.argv[1:-1]:
+        points |= codepoints(font)
+    found = ranges(points)
+    with open(sys.argv[-1], 'w', encoding='utf-8', newline='\n') as f:
         f.write('# 由 tools/font-coverage.py 產生，不要手改\n')
         f.write('# 每一行是一段收錄的碼位（十六進位，含頭含尾）\n')
         for lo, hi in found:
             f.write('%X-%X\n' % (lo, hi))
     print('%s：%d 段、%d 個碼位' % (
-        sys.argv[2], len(found), sum(h - l + 1 for l, h in found)))
+        sys.argv[-1], len(found), sum(h - l + 1 for l, h in found)))
 
 
 if __name__ == '__main__':
