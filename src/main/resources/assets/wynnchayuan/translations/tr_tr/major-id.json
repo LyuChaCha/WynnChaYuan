@@ -3,9 +3,9 @@
   "domain": "major-id",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 331,
+  "count": 366,
   "note": "Major ID。名稱一定對得上；說明會依畫面寬度自動斷行，整段多半對不上，但翻名稱時看得到上下文。由 tools/fetch-majorids.py 從官方 CDN 產生。",
-  "translated": 331,
+  "translated": 366,
   "review": {
    "translator": "claude",
    "proofread": false
@@ -943,8 +943,8 @@
    "_raw": "Arrow and Grape Bombs gain +1 radius and phase through enemies. Bouncing Bomb has decreased velocity and gains +1 bounces, and Grape Bombs gain increased randomness and +2 projectiles."
   },
   "Split Second::desc": {
-   "src": "Aura now travels faster with Invigorating Wave unlocked, but no longer gives mana.",
-   "dst": "Invigorating Wave açıkken Aura daha hızlı ilerler ama artık mana vermez.",
+   "src": "Aura now travels {~} seconds faster with Invigorating Wave unlocked, but no longer gives mana.",
+   "dst": "Invigorating Wave açıkken Aura {~} saniye daha hızlı ilerler ama artık mana vermez.",
    "role": "desc"
   },
   "Geocentrism::desc": {
@@ -953,7 +953,7 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "src": "Mantra will charge Masks {~} faster, but decays them {~} faster and halves their grace period.",
    "dst": "Mantra, Maskeleri {~} daha hızlı aşırı yükler ama onları {~} daha hızlı söndürür ve tolerans sürelerini yarıya indirir.",
    "role": "desc",
    "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
@@ -1110,8 +1110,8 @@
    "_raw": "Curse instead releases a calming wave with a radius of 8 blocks. Allies affected will have their Mana Regen and Mana Steal increased by 25% for 6s."
   },
   "Pirouette::desc": {
-   "src": "Dancing Blade enhances Dash. Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
-   "dst": "Dancing Blade, Dash'i güçlendirir. Bir düşmana Dash yapmak artık seni yukarı fırlatır ve yere değmişsin gibi Dash'i sıfırlar.",
+   "src": "Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
+   "dst": "Bir düşmana doğru Dash yapmak artık seni yukarı fırlatır ve yere değmişsin gibi Dash'i sıfırlar.",
    "role": "desc"
   },
   "major-id#0208": {
@@ -1212,8 +1212,8 @@
    "_raw": "Focus gets +10% damage per stack, but caps at 2. Crepuscular Ray can be cast at 2 Focus with decreased Focus drain, launching you into the air and immobilizing you."
   },
   "major-id#0225": {
-   "src": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to {~}. Tricks application is increased by {~}.",
-   "dst": "Foul Play artık Ayna Klonunu öldürmez ve etkilerini yine sağlar, ama Ayna Klonu sayısı {~} olur. Hile uygulaması {~} artar.",
+   "src": "Mirror Clone count is reduced to {~}. Foul Play will no longer slay a Mirror Clone while still providing its effects.",
+   "dst": "Ayna Klonu sayısı {~} olur. Foul Play artık bir Ayna Klonunu öldürmez ve etkilerini yine sağlar.",
    "role": "desc",
    "_raw": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to 1. Tricks application is increased by 50%."
   },
@@ -1477,7 +1477,7 @@
    "_raw": "Powder Specials can no longer be charged manually, but accumulate 8% charge every second."
   },
   "major-id#0272": {
-   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration",
+   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration.",
    "dst": "Pressure ek etkiler verir: Bash +{~} yarıçap, Uppercut {#}+{~}, War Scream güçlendirmesi +{~} sn süre kazanır",
    "role": "desc",
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
@@ -1585,8 +1585,8 @@
    "role": "desc"
   },
   "major-id#0291": {
-   "src": "Tangled Traps ropes gain +{~} range, can overlap up to {~} times, and deal {#}{~}. Gain +{~} traps with {~} duration that cannot be triggered by enemies.",
-   "dst": "Tangled Traps ipleri +{~1} menzil kazanır, en fazla {~2} kez üst üste binebilir ve {#}{~3} hasar verir. Düşmanların tetikleyemediği, {~5} süreli +{~4} Tuzak kazanırsın.",
+   "src": "Barbed wires from Tangled Traps gain +{~} range, can overlap up to {~} times, and linger for +{~}s. Patient Hunter grants an additional +{~} traps.",
+   "dst": "Tangled Traps'in dikenli telleri +{~} menzil kazanır, en fazla {~} kez üst üste binebilir ve +{~} sn daha uzun kalır. Patient Hunter ek olarak +{~} tuzak verir.",
    "role": "desc",
    "_raw": "Tangled Traps ropes gain +1 range, can overlap up to 3 times, and deal 65%. Gain +12 traps with 66% duration that cannot be triggered by enemies."
   },
@@ -1781,10 +1781,185 @@
    "_raw": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread."
   },
   "Solar Fracture::desc": {
-   "src": "Hand of the Shaman gains +{~} beams.",
+   "src": "Hand of the Shaman gains +{~} beam.",
    "dst": "Hand of the Shaman +{~} ışın kazanır.",
    "role": "desc",
    "_raw": "Hand of the Shaman gains +2 beams."
+  },
+  "Dust to Dust": {
+   "src": "Dust to Dust",
+   "dst": "Tozdan Toza",
+   "role": "name"
+  },
+  "Dust to Dust::desc": {
+   "src": "Feedback Loop causes Arrow Storm to fire {~} waves of arrows, but can grant up to {~} more arrows.",
+   "dst": "Feedback Loop, Arrow Storm'un {~} dalga ok atmasını sağlar ama en fazla {~} ok daha kazandırabilir.",
+   "role": "desc"
+  },
+  "Fractured Halo": {
+   "src": "Fractured Halo",
+   "dst": "Kırık Hale",
+   "role": "name"
+  },
+  "Fractured Halo::desc": {
+   "src": "Ophanim gains +{~} orbs, no longer increases mana cost and has increased fire speed, but shatters immediately upon contact.",
+   "dst": "Ophanim +{~} küre kazanır, artık mana maliyetini artırmaz ve atış hızı artar ama temas eder etmez parçalanır.",
+   "role": "desc"
+  },
+  "Galvanized": {
+   "src": "Galvanized",
+   "dst": "Galvanizli",
+   "role": "name"
+  },
+  "Galvanized::desc": {
+   "src": "While Eldritch Call is active, Blood Connection can be used much further from your Totem.",
+   "dst": "Eldritch Call etkinken Blood Connection, Totem'inden çok daha uzakta kullanılabilir.",
+   "role": "desc"
+  },
+  "Gravitic Defiance": {
+   "src": "Gravitic Defiance",
+   "dst": "Yerçekimine Meydan Okuma",
+   "role": "name"
+  },
+  "Gravitic Defiance::desc": {
+   "src": "Gravity's hold on you is weakened, allowing unrestrained movement.",
+   "dst": "Yerçekiminin üzerindeki etkisi zayıflar ve serbestçe hareket edersin.",
+   "role": "desc"
+  },
+  "Immortal Rot": {
+   "src": "Immortal Rot",
+   "dst": "Ölümsüz Çürüme",
+   "role": "name"
+  },
+  "Immortal Rot::desc": {
+   "src": "For every {~} of health missing, dodging with agility ignores {~} more damage.",
+   "dst": "Eksik her {~} Can için Çeviklikle kaçınma {~} daha fazla hasarı yok sayar.",
+   "role": "desc"
+  },
+  "Mayday": {
+   "src": "Mayday",
+   "dst": "İmdat",
+   "role": "name"
+  },
+  "Mayday::desc": {
+   "src": "Jasmine Bloom deals no damage but makes enemies {~} more vulnerable, and causes Swan Dive to only activate at max Momemtum, dealing {#}+{~}.",
+   "dst": "Jasmine Bloom hasar vermez ama düşmanları {~} daha savunmasız bırakır ve Swan Dive'ın yalnızca maksimum İvmede etkinleşmesini sağlar; {#}+{~} hasar verir.",
+   "role": "desc"
+  },
+  "Molten Rebirth": {
+   "src": "Molten Rebirth",
+   "dst": "Erimiş Diriliş",
+   "role": "name"
+  },
+  "Molten Rebirth::desc": {
+   "src": "Harvester additionally restores {~} health per mark, increasing to {~} with devour.",
+   "dst": "Harvester ayrıca her İşaret için {~} can yeniler, Devour ile bu miktar {~} olur.",
+   "role": "desc"
+  },
+  "Myriad Salvo": {
+   "src": "Myriad Salvo",
+   "dst": "Sayısız Yaylım",
+   "role": "name"
+  },
+  "Myriad Salvo::desc": {
+   "src": "Mirror Image gains +{~} clone and casts all damage spells with Last Laugh, but losing a Mirror Clone slays all Mirror Clones simultaneously.",
+   "dst": "Mirror Image +{~} klon kazanır ve tüm hasar büyülerini Last Laugh ile kullanır ama bir Ayna Klonunu kaybetmek tüm Ayna Klonlarını aynı anda öldürür.",
+   "role": "desc"
+  },
+  "Negation": {
+   "src": "Negation",
+   "dst": "Etkisizleştirme",
+   "role": "name"
+  },
+  "Negation::desc": {
+   "src": "Whatever spell you use to exit Vanish will have no mana cost ({~} second cooldown).",
+   "dst": "Vanish'ten çıkmak için kullandığın büyü mana harcamaz ({~} saniye bekleme süresi).",
+   "role": "desc"
+  },
+  "Pandemic": {
+   "src": "Pandemic",
+   "dst": "Salgın",
+   "role": "name"
+  },
+  "Runic Symphony": {
+   "src": "Runic Symphony",
+   "dst": "Rünik Senfoni",
+   "role": "name"
+  },
+  "Runic Symphony::desc": {
+   "src": "Arrow Bomb gains rotating effects with each cast: {#}: Direct hits deal {#}+{~} damage and freezes for {~}s {#}: Becomes a piercing arrow with increased velocity. {#}: Gains +{~} area and {#}+{~}.",
+   "dst": "Arrow Bomb her kullanımda sırayla değişen etkiler kazanır: {#}: Doğrudan isabetler {#}+{~} hasar verir ve {~} sn dondurur {#}: Hızı artan, delip geçen bir oka dönüşür. {#}: +{~} alan ve {#}+{~} kazanır.",
+   "role": "desc"
+  },
+  "Seeking Totem": {
+   "src": "Seeking Totem",
+   "dst": "Güdümlü Totem",
+   "role": "name"
+  },
+  "Seeking Totem::desc": {
+   "src": "Totem moves towards you when wearing Mask of the Heretic.",
+   "dst": "Sapkının Maskesi takılıyken Totem sana doğru hareket eder.",
+   "role": "desc"
+  },
+  "Serrated Root": {
+   "src": "Serrated Root",
+   "dst": "Tırtıklı Kök",
+   "role": "name"
+  },
+  "Serrated Root::desc": {
+   "src": "Quake channels nature energy into a powerful root, travelling rapidly underground and emerging under the nearest mob for {#}{~}.",
+   "dst": "Deprem doğa enerjisini güçlü bir köke aktarır; kök yeraltında hızla ilerler ve en yakın yaratığın altından çıkıp {#}{~} hasar verir.",
+   "role": "desc"
+  },
+  "Sigil Of Determination": {
+   "src": "Sigil Of Determination",
+   "dst": "Kararlılık Mührü",
+   "role": "name"
+  },
+  "Sigil Of Determination::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Arrow Shield kullanmak yerde {~1} sn süren bir mühür oluşturur ({~2} sn bekleme süresi). Mühürdeki müttefikler her {~4} sn'de toplam Can Yenilenmesi ID'nin {~3} kadarını iyileşme olarak alır.",
+   "role": "desc"
+  },
+  "Sigil Of Undying": {
+   "src": "Sigil Of Undying",
+   "dst": "Ölümsüzlük Mührü",
+   "role": "name"
+  },
+  "Sigil Of Undying::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil gain {~} resistance and are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Arrow Shield kullanmak yerde {~1} sn süren bir mühür oluşturur ({~2} sn bekleme süresi). Mühürdeki müttefikler {~3} direnç kazanır ve her {~5} sn'de toplam Can Yenilenmesi ID'nin {~4} kadarını iyileşme olarak alır.",
+   "role": "desc"
+  },
+  "Soulbinder": {
+   "src": "Soulbinder",
+   "dst": "Ruh Bağlayıcı",
+   "role": "name"
+  },
+  "Soulbinder::desc": {
+   "src": "Hit enemies become Soulbound for {~}s, causing them to take damage whenever you take damage or lose health in any way - equal to {~}x the health lost.",
+   "dst": "Vurulan düşmanlar {~} sn Ruha Bağlı olur; sen hasar aldığında ya da herhangi bir şekilde can kaybettiğinde onlar da kaybedilen canın {~} katı kadar hasar alır.",
+   "role": "desc"
+  },
+  "Thunderous Strike": {
+   "src": "Thunderous Strike",
+   "dst": "Gök Gürültülü Darbe",
+   "role": "name"
+  },
+  "Thunderous Strike::desc": {
+   "src": "Fireworks additionally summons a lightning bolt, dealing {#}{~} and {#}{~} while stunning enemies for {~}s.",
+   "dst": "Fireworks ayrıca bir yıldırım çağırır; {#}{~} ve {#}{~} hasar verir ve düşmanları {~} sn sersemletir.",
+   "role": "desc"
+  },
+  "Woe's Epithet": {
+   "src": "Woe's Epithet",
+   "dst": "Kederin Lakabı",
+   "role": "name"
+  },
+  "Woe's Epithet::desc": {
+   "src": "Shadow Dance's cooldown is reduced by {~}s when vanishing and Shadow Siphon immediately refreshes Vanish. Surprise Strike's multiplier is reduced by -{~}.",
+   "dst": "Vanish ile kaybolduğunda Shadow Dance bekleme süresi {~} sn azalır ve Shadow Siphon, Vanish'i anında yeniler. Surprise Strike çarpanı -{~} azalır.",
+   "role": "desc"
   }
  }
 }

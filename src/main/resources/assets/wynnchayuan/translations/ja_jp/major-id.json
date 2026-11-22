@@ -3,9 +3,9 @@
   "domain": "major-id",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 331,
+  "count": 366,
   "note": "Major ID。名稱一定對得上；說明會依畫面寬度自動斷行，整段多半對不上，但翻名稱時看得到上下文。由 tools/fetch-majorids.py 從官方 CDN 產生。",
-  "translated": 331
+  "translated": 366
  },
  "entries": {
   "Accretion Chain": {
@@ -939,8 +939,8 @@
    "_raw": "Arrow and Grape Bombs gain +1 radius and phase through enemies. Bouncing Bomb has decreased velocity and gains +1 bounces, and Grape Bombs gain increased randomness and +2 projectiles."
   },
   "Split Second::desc": {
-   "src": "Aura now travels faster with Invigorating Wave unlocked, but no longer gives mana.",
-   "dst": "Invigorating Wave を取得していると Aura の広がりが速くなるが、マナは得られなくなる。",
+   "src": "Aura now travels {~} seconds faster with Invigorating Wave unlocked, but no longer gives mana.",
+   "dst": "Invigorating Wave を取得していると Aura の広がりが {~} 秒速くなるが、マナは得られなくなる。",
    "role": "desc"
   },
   "Geocentrism::desc": {
@@ -949,7 +949,7 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "src": "Mantra will charge Masks {~} faster, but decays them {~} faster and halves their grace period.",
    "dst": "Mantra による Masks のオーバーロードが {~} 速くなるが、減衰も {~} 速くなり、猶予時間が半分になる。",
    "role": "desc",
    "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
@@ -1106,8 +1106,8 @@
    "_raw": "Curse instead releases a calming wave with a radius of 8 blocks. Allies affected will have their Mana Regen and Mana Steal increased by 25% for 6s."
   },
   "Pirouette::desc": {
-   "src": "Dancing Blade enhances Dash. Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
-   "dst": "Dancing Blade が Dash を強化する。敵に向かって Dash すると上へ跳ね上がり、地面に触れたときと同じように Dash が回復する。",
+   "src": "Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
+   "dst": "敵に向かって Dash すると上へ跳ね上がり、地面に触れたときと同じように Dash が回復する。",
    "role": "desc"
   },
   "major-id#0208": {
@@ -1208,8 +1208,8 @@
    "_raw": "Focus gets +10% damage per stack, but caps at 2. Crepuscular Ray can be cast at 2 Focus with decreased Focus drain, launching you into the air and immobilizing you."
   },
   "major-id#0225": {
-   "src": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to {~}. Tricks application is increased by {~}.",
-   "dst": "Foul Play が Mirror Clone を消費しなくなり、効果はそのまま得られるが、Mirror Clone の数が {~} に減る。Tricks の付与量は {~} 増える。",
+   "src": "Mirror Clone count is reduced to {~}. Foul Play will no longer slay a Mirror Clone while still providing its effects.",
+   "dst": "Mirror Clone の数が {~} に減る。Foul Play は効果はそのままに、Mirror Clone を消費しなくなる。",
    "role": "desc",
    "_raw": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to 1. Tricks application is increased by 50%."
   },
@@ -1473,7 +1473,7 @@
    "_raw": "Powder Specials can no longer be charged manually, but accumulate 8% charge every second."
   },
   "major-id#0272": {
-   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration",
+   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration.",
    "dst": "Pressure に追加効果がつく。Bash の半径が +{~}、Uppercut が {#}+{~}、War Scream の強化の持続が +{~} 秒延びる",
    "role": "desc",
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
@@ -1581,8 +1581,8 @@
    "role": "desc"
   },
   "major-id#0291": {
-   "src": "Tangled Traps ropes gain +{~} range, can overlap up to {~} times, and deal {#}{~}. Gain +{~} traps with {~} duration that cannot be triggered by enemies.",
-   "dst": "Tangled Traps の縄は射程が +{~} 伸び、最大 {~} 回まで重ねられ、{#}{~} を与える。さらに罠が +{~} 増え、持続は {~} で、敵には作動しない。",
+   "src": "Barbed wires from Tangled Traps gain +{~} range, can overlap up to {~} times, and linger for +{~}s. Patient Hunter grants an additional +{~} traps.",
+   "dst": "Tangled Traps の有刺鉄線は射程が +{~} 伸び、最大 {~} 回まで重ねられ、残る時間が +{~} 秒延びる。Patient Hunter で得られる罠がさらに +{~} 増える。",
    "role": "desc",
    "_raw": "Tangled Traps ropes gain +1 range, can overlap up to 3 times, and deal 65%. Gain +12 traps with 66% duration that cannot be triggered by enemies."
   },
@@ -1777,10 +1777,185 @@
    "_raw": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread."
   },
   "Solar Fracture::desc": {
-   "src": "Hand of the Shaman gains +{~} beams.",
+   "src": "Hand of the Shaman gains +{~} beam.",
    "dst": "Hand of the Shaman のビームが +{~} 本増える。",
    "role": "desc",
    "_raw": "Hand of the Shaman gains +2 beams."
+  },
+  "Dust to Dust": {
+   "src": "Dust to Dust",
+   "dst": "塵は塵に",
+   "role": "name"
+  },
+  "Dust to Dust::desc": {
+   "src": "Feedback Loop causes Arrow Storm to fire {~} waves of arrows, but can grant up to {~} more arrows.",
+   "dst": "Feedback Loop により Arrow Storm が矢を {~} 波放つようになるが、追加で得られる矢は最大 {~} 本までになる。",
+   "role": "desc"
+  },
+  "Fractured Halo": {
+   "src": "Fractured Halo",
+   "dst": "砕けた光輪",
+   "role": "name"
+  },
+  "Fractured Halo::desc": {
+   "src": "Ophanim gains +{~} orbs, no longer increases mana cost and has increased fire speed, but shatters immediately upon contact.",
+   "dst": "Ophanim のオーブが +{~} 増え、マナ消費が上がらなくなり、発射速度も上がるが、何かに触れた瞬間に砕け散る。",
+   "role": "desc"
+  },
+  "Galvanized": {
+   "src": "Galvanized",
+   "dst": "通電",
+   "role": "name"
+  },
+  "Galvanized::desc": {
+   "src": "While Eldritch Call is active, Blood Connection can be used much further from your Totem.",
+   "dst": "Eldritch Call が有効な間、Blood Connection を Totem からはるかに離れた場所でも使えるようになる。",
+   "role": "desc"
+  },
+  "Gravitic Defiance": {
+   "src": "Gravitic Defiance",
+   "dst": "重力への抵抗",
+   "role": "name"
+  },
+  "Gravitic Defiance::desc": {
+   "src": "Gravity's hold on you is weakened, allowing unrestrained movement.",
+   "dst": "重力の束縛が弱まり、自由に動けるようになる。",
+   "role": "desc"
+  },
+  "Immortal Rot": {
+   "src": "Immortal Rot",
+   "dst": "不滅の腐敗",
+   "role": "name"
+  },
+  "Immortal Rot::desc": {
+   "src": "For every {~} of health missing, dodging with agility ignores {~} more damage.",
+   "dst": "失っている体力 {~} ごとに、俊敏さによる回避で無視できるダメージが {~} 増える。",
+   "role": "desc"
+  },
+  "Mayday": {
+   "src": "Mayday",
+   "dst": "メーデー",
+   "role": "name"
+  },
+  "Mayday::desc": {
+   "src": "Jasmine Bloom deals no damage but makes enemies {~} more vulnerable, and causes Swan Dive to only activate at max Momemtum, dealing {#}+{~}.",
+   "dst": "Jasmine Bloom はダメージを与えなくなる代わりに敵の被ダメージを {~} 増やし、Swan Dive は Momentum が最大のときにしか発動しなくなるが、{#}+{~} を与える。",
+   "role": "desc"
+  },
+  "Molten Rebirth": {
+   "src": "Molten Rebirth",
+   "dst": "溶岩の再生",
+   "role": "name"
+  },
+  "Molten Rebirth::desc": {
+   "src": "Harvester additionally restores {~} health per mark, increasing to {~} with devour.",
+   "dst": "Harvester がマーク 1 つにつき体力をさらに {~} 回復し、Devour を使うと {~} に増える。",
+   "role": "desc"
+  },
+  "Myriad Salvo": {
+   "src": "Myriad Salvo",
+   "dst": "無数の斉射",
+   "role": "name"
+  },
+  "Myriad Salvo::desc": {
+   "src": "Mirror Image gains +{~} clone and casts all damage spells with Last Laugh, but losing a Mirror Clone slays all Mirror Clones simultaneously.",
+   "dst": "Mirror Image の分身が +{~} 体増え、すべてのダメージ呪文を Last Laugh で発動するが、Mirror Clone を 1 体失うとすべての Mirror Clone が同時に消える。",
+   "role": "desc"
+  },
+  "Negation": {
+   "src": "Negation",
+   "dst": "無効化",
+   "role": "name"
+  },
+  "Negation::desc": {
+   "src": "Whatever spell you use to exit Vanish will have no mana cost ({~} second cooldown).",
+   "dst": "Vanish を解除するのに使った呪文はマナを消費しない (クールダウン {~} 秒)。",
+   "role": "desc"
+  },
+  "Pandemic": {
+   "src": "Pandemic",
+   "dst": "パンデミック",
+   "role": "name"
+  },
+  "Runic Symphony": {
+   "src": "Runic Symphony",
+   "dst": "ルーンの交響曲",
+   "role": "name"
+  },
+  "Runic Symphony::desc": {
+   "src": "Arrow Bomb gains rotating effects with each cast: {#}: Direct hits deal {#}+{~} damage and freezes for {~}s {#}: Becomes a piercing arrow with increased velocity. {#}: Gains +{~} area and {#}+{~}.",
+   "dst": "Arrow Bomb は発動するたびに効果が切り替わる: {#}: 直撃で {#}+{~} のダメージを与え、{~} 秒間凍結させる。{#}: 速度の上がった貫通する矢になる。{#}: 範囲が +{~} 広がり、{#}+{~} を得る。",
+   "role": "desc"
+  },
+  "Seeking Totem": {
+   "src": "Seeking Totem",
+   "dst": "追尾トーテム",
+   "role": "name"
+  },
+  "Seeking Totem::desc": {
+   "src": "Totem moves towards you when wearing Mask of the Heretic.",
+   "dst": "Mask of the Heretic を着けている間、Totem が自分のほうへ移動する。",
+   "role": "desc"
+  },
+  "Serrated Root": {
+   "src": "Serrated Root",
+   "dst": "鋸歯の根",
+   "role": "name"
+  },
+  "Serrated Root::desc": {
+   "src": "Quake channels nature energy into a powerful root, travelling rapidly underground and emerging under the nearest mob for {#}{~}.",
+   "dst": "Quake が自然の力を強大な根に注ぎ、地中をすばやく進んで最も近い敵の真下から現れ、{#}{~} を与える。",
+   "role": "desc"
+  },
+  "Sigil Of Determination": {
+   "src": "Sigil Of Determination",
+   "dst": "決意の印章",
+   "role": "name"
+  },
+  "Sigil Of Determination::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Arrow Shield を発動すると、地面に印章が {~} 秒間現れる (クールダウン {~} 秒)。印章の中にいる味方は、自分の体力回復 ID の合計の {~} を {~} 秒ごとに回復する。",
+   "role": "desc"
+  },
+  "Sigil Of Undying": {
+   "src": "Sigil Of Undying",
+   "dst": "不死の印章",
+   "role": "name"
+  },
+  "Sigil Of Undying::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil gain {~} resistance and are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Arrow Shield を発動すると、地面に印章が {~} 秒間現れる (クールダウン {~} 秒)。印章の中にいる味方は {~} の耐性を得て、自分の体力回復 ID の合計の {~} を {~} 秒ごとに回復する。",
+   "role": "desc"
+  },
+  "Soulbinder": {
+   "src": "Soulbinder",
+   "dst": "魂を縛る者",
+   "role": "name"
+  },
+  "Soulbinder::desc": {
+   "src": "Hit enemies become Soulbound for {~}s, causing them to take damage whenever you take damage or lose health in any way - equal to {~}x the health lost.",
+   "dst": "命中した敵は {~} 秒間「魂縛」状態になり、自分がダメージを受けたり何らかの形で体力を失ったりするたびに、失った体力の {~} 倍のダメージを受ける。",
+   "role": "desc"
+  },
+  "Thunderous Strike": {
+   "src": "Thunderous Strike",
+   "dst": "雷鳴の一撃",
+   "role": "name"
+  },
+  "Thunderous Strike::desc": {
+   "src": "Fireworks additionally summons a lightning bolt, dealing {#}{~} and {#}{~} while stunning enemies for {~}s.",
+   "dst": "Fireworks がさらに雷を 1 本呼び出し、{#}{~} と {#}{~} を与え、敵を {~} 秒間スタンさせる。",
+   "role": "desc"
+  },
+  "Woe's Epithet": {
+   "src": "Woe's Epithet",
+   "dst": "悲嘆の異名",
+   "role": "name"
+  },
+  "Woe's Epithet::desc": {
+   "src": "Shadow Dance's cooldown is reduced by {~}s when vanishing and Shadow Siphon immediately refreshes Vanish. Surprise Strike's multiplier is reduced by -{~}.",
+   "dst": "Vanish で姿を消すと Shadow Dance のクールダウンが {~} 秒短くなり、Shadow Siphon が Vanish を即座に回復させる。Surprise Strike の倍率が -{~} 下がる。",
+   "role": "desc"
   }
  }
 }
