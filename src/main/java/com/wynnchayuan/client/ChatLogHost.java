@@ -133,7 +133,8 @@ final class ChatLogHost implements ChatLogView.Host {
         float w = (float) ((ChatComponent.getWidth(mc.options.chatWidth().get()) + 8) * scale);
         float h = (float) (ChatComponent.getHeight(mc.options.chatHeightFocused().get()) * scale);
         float bottom = screenH - CHAT_BOTTOM;
-        return new float[] {0, bottom - h, Math.min(screenW - 4, w), h};
+        float shift = WynntilsChatShift.pixels();
+        return new float[] {shift, bottom - h, Math.min(screenW - 4 - shift, w), h};
     }
 
     @Override
@@ -144,7 +145,7 @@ final class ChatLogHost implements ChatLogView.Host {
     static float[] dockRect(int screenW, int screenH) {
         float[] frame = chatFrame(screenW, screenH);
         float bottom = frame[1] + frame[3];
-        float w = Math.max(Math.min(280, screenW - 8), Math.min(screenW - 8, frame[2]));
+        float w = Math.max(Math.min(280, screenW - 8), Math.min(screenW - 8, frame[0] + frame[2] - 2));
         float h = Math.max(Math.min(140, bottom - 6), Math.min(bottom - 6, frame[3] + 46));
         return new float[] {2, bottom - h, w, h};
     }
