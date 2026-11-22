@@ -20,7 +20,6 @@ public final class ChatLogButton {
     private static final float H = 13;
     private static final float GAP = 4;
     private static final float EDGE = 2;
-    private static final float HOTBAR_HALF = 91;
 
     private static boolean open;
     private static float[] press;
@@ -151,7 +150,7 @@ public final class ChatLogButton {
             top = Math.min(top, dock[1]);
         }
         float side = right + GAP;
-        if (side + w <= Math.min(screenW - EDGE, screenW / 2f - HOTBAR_HALF - GAP)) {
+        if (side + w <= screenW - EDGE) {
             return new float[] {side, frame[1] + frame[3] - H, w, H};
         }
         float x = Math.max(EDGE, Math.min(screenW - EDGE - w, right - w));
