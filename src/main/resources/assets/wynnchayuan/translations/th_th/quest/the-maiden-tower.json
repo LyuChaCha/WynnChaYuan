@@ -1,0 +1,510 @@
+{
+ "_meta": {
+  "quest": "The Maiden Tower",
+  "count": 50,
+  "translated": 50,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Maiden Tower#000": {
+   "src": "Get me that urn, Win person. If I go up there covered in guts, I have reason to believe she won't take it well?",
+   "dst": "ไปเอาโกศนั่นมาให้ข้าที คนจาก Win ถ้าข้าขึ้นไปทั้งที่เปื้อนไส้พุง ข้ามีเหตุผลให้เชื่อว่านางคงไม่ปลื้ม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#001": {
+   "src": "Dear diary...",
+   "dst": "บันทึกที่รัก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#002": {
+   "src": "I found this strange creature along the road outside the tower- it dug up from the ground.",
+   "dst": "ฉันเจอสิ่งมีชีวิตประหลาดนี้ริมทางนอกหอคอย- มันขุดขึ้นมาจากพื้นดิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#003": {
+   "src": "It looked so spindly and thin- I decided to take it in as a pet. I've called her Fiona.",
+   "dst": "มันดูผอมแห้งแรงน้อยมาก- ฉันเลยตัดสินใจรับมาเลี้ยง ฉันตั้งชื่อเธอว่า Fiona",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#004": {
+   "src": "My father is confused as to what it is, and I am too, but it needs some loving care for certain...",
+   "dst": "พ่อสงสัยว่ามันคือตัวอะไร ฉันก็สงสัย แต่มันต้องการการดูแลด้วยความรักแน่นอน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#005": {
+   "src": "Fiona quite likes my father, it seems! I keep finding her scratching at his door.",
+   "dst": "ดูเหมือน Fiona จะชอบพ่อของฉันมาก! ฉันเจอเธอข่วนประตูห้องพ่ออยู่เรื่อยเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#006": {
+   "src": "She seems to like to bite, too...it is a habit I'll need to train out of her, given it leaves my skin pale.",
+   "dst": "เธอดูจะชอบกัดด้วย...เป็นนิสัยที่ฉันต้องฝึกให้เลิก เพราะมันทำให้ผิวฉันซีด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "Diary",
+   "source": "captured"
+  },
+  "The Maiden Tower#007": {
+   "src": "My father has died today... I found Fiona atop him. She must have been trying to comfort him...",
+   "dst": "วันนี้พ่อของฉันเสียแล้ว... ฉันเจอ Fiona อยู่บนตัวพ่อ เธอคงพยายามปลอบพ่ออยู่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#008": {
+   "src": "His funeral rites are being sorted. I cannot write more...at least I will have my dear pet.",
+   "dst": "กำลังจัดพิธีศพของพ่ออยู่ ฉันเขียนต่อไม่ไหวแล้ว...อย่างน้อยฉันก็ยังมีสัตว์เลี้ยงที่รัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#009": {
+   "src": "...Fiona was the problem to begin with. I feel sickly and pale, and it all started when she arrived!!",
+   "dst": "...Fiona นี่แหละคือต้นเหตุตั้งแต่แรก ฉันรู้สึกป่วยและซีดเซียว และมันเริ่มตั้งแต่เธอมาถึง!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#010": {
+   "src": "I didn't want to admit it- She is the reason my father died, and the reason that I look like death when I look in the mirror!!",
+   "dst": "ฉันไม่อยากยอมรับเลย- เธอคือเหตุผลที่พ่อตาย และเหตุผลที่ฉันส่องกระจกแล้วเห็นหน้าเหมือนศพ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#011": {
+   "src": "The only consolation is that she seems to have disappeared on her own. Good riddance to her!",
+   "dst": "ที่พอปลอบใจได้คือเธอดูเหมือนจะหายไปเอง ไปให้พ้นซะได้ก็ดี!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#012": {
+   "src": "I dearly need a man to comfort me during these times... Not even a man, anyone will do!!",
+   "dst": "ฉันต้องการผู้ชายสักคนมาปลอบใจในเวลาแบบนี้เหลือเกิน... ไม่ใช่ผู้ชายก็ได้ ใครก็ได้ทั้งนั้น!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#013": {
+   "src": "Fine then. Consider yourself lucky that I'm in a...mood. I'll talk with you instead of crackin' yer bones for my bread.",
+   "dst": "ก็ได้ ถือว่าเจ้าโชคดีที่ข้ากำลัง...อารมณ์ดี ข้าจะคุยกับเจ้าแทนที่จะบดกระดูกเจ้ามาทำขนมปัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "captured"
+  },
+  "The Maiden Tower#014": {
+   "src": "Ogres are tough. We're independent and solitary folks. You don't bother us or interfere with our life, we leave well enough alone.",
+   "dst": "โอเกอร์น่ะแกร่ง เราเป็นพวกพึ่งตัวเองและชอบอยู่คนเดียว ถ้าเจ้าไม่มายุ่งกับชีวิตเรา เราก็ไม่ยุ่งกับเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "captured"
+  },
+  "The Maiden Tower#015": {
+   "src": "And...well, when it's two ogres getting together, it's simple. But... I passed by a tall tower, and heard a maiden's voice from inside...",
+   "dst": "และ...ก็นะ ถ้าโอเกอร์สองตนมาเจอกัน มันก็ง่าย แต่... ข้าเดินผ่านหอคอยสูง แล้วได้ยินเสียงหญิงสาวจากข้างใน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#016": {
+   "src": "If you can help me out, I'd be real grateful. I'm sure I've got somethin' that you'd like in exchange.",
+   "dst": "ถ้าเจ้าช่วยข้าได้ ข้าจะซึ้งใจมาก ข้าคงมีของที่เจ้าชอบไว้แลกเปลี่ยนแน่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "captured"
+  },
+  "The Maiden Tower#017": {
+   "src": "Ohoho! An admirer? Such a lovely, rugged accent! However...if you wish to meet me, I'd like to see your devotion, yes?",
+   "dst": "โอโฮะโฮะ! ผู้ชื่นชมงั้นหรือ? สำเนียงช่างห้าวหาญน่ารักนัก! แต่...หากท่านอยากพบข้า ข้าขอเห็นความภักดีของท่านก่อน นะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#018": {
+   "src": "There is a lovely urn my father had before. He took it with him to the grave, and I do miss my dear father so.",
+   "dst": "พ่อของข้ามีโกศแสนสวยใบหนึ่ง ท่านเอามันลงหลุมไปด้วย และข้าคิดถึงท่านพ่อเหลือเกิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Maiden",
+   "source": "captured"
+  },
+  "The Maiden Tower#019": {
+   "src": "I go into {p}, I'll get attacked. I get attacked, I attack back. They'll come after us...wouldn't want to present her with that. You get that urn for me, alright?",
+   "dst": "ถ้าข้าเข้า {p} ข้าจะโดนโจมตี โดนโจมตี ข้าก็สวนกลับ แล้วพวกมันจะตามล่าเรา...ไม่อยากไปหานางในสภาพนั้น เจ้าไปเอาโกศมาให้ข้านะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#020": {
+   "src": "[-{~} Ancient Urn]",
+   "dst": "[-{~} โกศโบราณ]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#021": {
+   "src": "I've got you some compensation already, so don't worry about gettin' snubbed for credit. Thank you kindly for the help.",
+   "dst": "ข้าเตรียมค่าตอบแทนให้เจ้าไว้แล้ว ไม่ต้องกลัวจะไม่ได้หน้า ขอบใจมากที่ช่วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 3",
+   "speaker": "Sherk",
+   "source": "captured"
+  },
+  "The Maiden Tower#022": {
+   "src": "Ohoho...you're one of those Humans I've read about, aren't you? Did you truly intend to be my suitor, dear?~",
+   "dst": "โอโฮะโฮะ...ท่านเป็นมนุษย์ที่ข้าเคยอ่านเจอสินะ? ท่านตั้งใจมาเป็นผู้มาสู่ขอข้าจริงหรือ ที่รัก?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#023": {
+   "src": "Oh...my...goodness! A big, strong, strapping ogre!! Not a fairytale, my foot! And so polite, too... Oh, you'll make a perfect husband, heehee~",
+   "dst": "โอ้...พระ...เจ้า! โอเกอร์ตัวโต แข็งแรง บึกบึน!! ไม่ใช่เทพนิยายที่ไหนกัน! แถมสุภาพอีก... โอ้ ท่านจะเป็นสามีที่สมบูรณ์แบบ คิกๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#024": {
+   "src": "Now I'm sure you'll find a nice lad somewhere who'll take you for who you are, but until you find someone that has no standards, shove your creepy lips where I can't see 'em!!",
+   "dst": "ข้าแน่ใจว่าเจ้าจะเจอหนุ่มดีๆ สักคนที่รับเจ้าได้อย่างที่เป็น แต่จนกว่าจะเจอใครที่ไม่เลือกเลย เก็บปากน่าขนลุกของเจ้าไปไว้ที่ที่ข้าไม่เห็นซะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Sherk",
+   "source": "captured"
+  },
+  "The Maiden Tower#025": {
+   "src": "...I...I g-guess he was rotten to the core, despite his...l-luscious exterior...but, you'll make me feel better, right, you s-studly human? Right?! RIGHT?!!",
+   "dst": "...ข้า...ข้า ค-คงเป็นเพราะเขาเน่าเฟะถึงแก่น ทั้งที่ภายนอก...ช-ช่างน่าลิ้มลอง...แต่ท่านจะปลอบข้าใช่มั้ย มนุษย์ห-หุ่นแซ่บ? ใช่มั้ย?! ใช่มั้ย?!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Maiden Tower#026": {
+   "src": "Visit Sherk at [-{~}, {~}, -{~}]",
+   "dst": "ไปหา Sherk ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Maiden Tower#027": {
+   "src": "Ah! What are you doing in my swamp?! Don't you know that Ogres live alone for a reason?",
+   "dst": "อ๊ะ! เจ้ามาทำอะไรในหนองน้ำของข้า?! ไม่รู้เหรอว่าโอเกอร์อยู่ตัวคนเดียวก็เพราะมีเหตุผล?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#028": {
+   "src": "Eh? You're from across the sea, a land called Win? You certainly don't look like a winner to me, ya small fry.",
+   "dst": "เอ๊ะ? เจ้ามาจากอีกฟากทะเล ดินแดนที่ชื่อ Win งั้นเหรอ? ดูยังไงเจ้าก็ไม่เหมือน winner เลย ไอ้ตัวจิ๋ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#029": {
+   "src": "That is, until it's time to find ourselves a partner. Then we'll turn over hell and highwater ta be together.",
+   "dst": "จนกว่าจะถึงเวลาหาคู่ แล้วเราจะพลิกฟ้าคว่ำแผ่นดินเพื่อได้อยู่ด้วยกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#030": {
+   "src": "Ogres don't live in fairytale towers, or have a voice that could make flowers grow with its lovely lilt!",
+   "dst": "โอเกอร์ไม่ได้อยู่ในหอคอยในเทพนิยาย หรือมีเสียงหวานจนทำให้ดอกไม้บานได้หรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#031": {
+   "src": "I've been tryin' ta figure out how to approach this... I'm gettin' on in years, I need to find someone, and she's the girl.",
+   "dst": "ข้าพยายามคิดอยู่ว่าจะเข้าหานางยังไง... ข้าแก่ลงทุกวัน ข้าต้องหาใครสักคน และนางคือคนนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#032": {
+   "src": "Follow the rocky-looking path to find the tower. I'll meet with you there- prepare to be a wingman for an ogre.",
+   "dst": "เดินตามทางหินไปจนเจอหอคอย ข้าจะไปเจอเจ้าที่นั่น- เตรียมตัวเป็นแม่สื่อให้โอเกอร์ได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 1",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#033": {
+   "src": "Follow the stones in the path to the tower at [-{~}, {~}, -{~}]",
+   "dst": "เดินตามหินบนทางไปยังหอคอยที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Maiden Tower#034": {
+   "src": "This is the place. She's up at the top... Remember, I won't stop 'til I meet her. Coming here means you're in for the long haul.",
+   "dst": "ที่นี่แหละ นางอยู่บนยอด... จำไว้ ข้าจะไม่หยุดจนกว่าจะได้พบนาง มาถึงนี่แล้วแปลว่าเจ้าต้องอยู่ด้วยกันยาวๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#035": {
+   "src": "I hear a voice outside! Oh, who might it be, I wonder~",
+   "dst": "ข้าได้ยินเสียงข้างนอก! โอ้ ใครกันนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Maiden",
+   "source": "wiki"
+  },
+  "The Maiden Tower#036": {
+   "src": "Here goes... Hello, fair lady of the tower! I am Sherk! I heard your voice on the road- and I must meet you myself! ...that's formal enough, right?",
+   "dst": "เอาละนะ... สวัสดี แม่นางผู้งดงามแห่งหอคอย! ข้าคือ Sherk! ข้าได้ยินเสียงนางบนถนน- และข้าต้องพบนางด้วยตัวเอง! ...ทางการพอใช่มั้ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#037": {
+   "src": "Woman, you have no idea what you're sayin' when you ask for devotion.",
+   "dst": "แม่คุณ นางไม่รู้หรอกว่ากำลังขออะไร เมื่อเรียกร้องความภักดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#038": {
+   "src": "Retrieve the urn for me, so I can have a memento of him. Brave the crypts of {p}, behind the bank... And prove your devotion, dear suitor~",
+   "dst": "นำโกศกลับมาให้ข้า ข้าจะได้มีสิ่งระลึกถึงท่าน ฝ่าสุสานใต้ดินของ {p} หลังธนาคาร... และพิสูจน์ความภักดีของท่าน ผู้มาสู่ขอที่รัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Maiden",
+   "source": "wiki"
+  },
+  "The Maiden Tower#039": {
+   "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
+   "dst": "...ข้าจะกลับมา! นางได้โกศแน่ ไม่ต้องห่วง! ... ...ส่วนข้าก็ได้เตะก้นไปหนึ่งที ข้าไม่อยากสังหารหมู่เพื่อเครื่องปั้นดินเผาใบเดียว คนจาก Win",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 2",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#040": {
+   "src": "Find the urn in the {p} Catacombs, behind the {p} bank at [-{~}, {~}, -{~}]",
+   "dst": "หาโกศในสุสานใต้ดิน {p} หลังธนาคาร {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Maiden Tower#041": {
+   "src": "And this is why I asked your help. As nice as blood spreads on toast, I have to reserve my sensibilities for the miss.",
+   "dst": "นี่แหละเหตุผลที่ข้าขอให้เจ้าช่วย ถึงเลือดจะทาขนมปังปิ้งได้อร่อยแค่ไหน ข้าก็ต้องเก็บมารยาทไว้ให้แม่นาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 3",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#042": {
+   "src": "Just one last thing. I doubt she'll be expecting an ogre of all people to climb up her tower. I don't want her to get frightened away.",
+   "dst": "อีกเรื่องสุดท้าย ข้าสงสัยว่านางคงไม่คิดว่าจะเป็นโอเกอร์ที่ปีนขึ้นหอคอยไป ข้าไม่อยากให้นางตกใจหนี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 3",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#043": {
+   "src": "So, Win person. Care to temper her expectations before I arrive? Head up before me.",
+   "dst": "งั้น คนจาก Win ช่วยลดความคาดหวังของนางก่อนข้าไปถึงหน่อยได้มั้ย? ขึ้นไปก่อนข้าเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 3",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#044": {
+   "src": "Enter the tower and make Sherk confess his love to the maiden.",
+   "dst": "เข้าไปในหอคอย แล้วทำให้ Sherk สารภาพรักกับหญิงสาว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Maiden Tower#045": {
+   "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
+   "dst": "ไม่ใช่ซะทีเดียว แม่นาง! ข้าต่างหากที่ปรารถนาความรักจากนาง- กำลังปีนบันไดขึ้นไป ข้ารู้ว่าข้าอาจไม่ใช่สามีในเทพนิยาย แต่-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#046": {
+   "src": "...ehm. I. Ah.",
+   "dst": "...เอ่อ ข้า อ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#047": {
+   "src": "Aren't your type supposed to be less... Ehm... Clefted? Grizzled? Pale?",
+   "dst": "พวกเจ้าไม่ควรจะ... เอ่อ... คางบุ๋มน้อยกว่านี้? หงอกน้อยกว่านี้? ซีดน้อยกว่านี้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Sherk",
+   "source": "wiki"
+  },
+  "The Maiden Tower#048": {
+   "src": "Oh, come here, Sherky-pie, give me a big kiss! And no need to worry, there's plenty more in store for my big hubby after that~",
+   "dst": "โอ้ มานี่สิ Sherk ที่รักจ๋า จูบข้าแรงๆ! และไม่ต้องห่วง หลังจากนั้นยังมีอีกเพียบสำหรับสามีตัวโตของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Maiden",
+   "source": "wiki"
+  },
+  "The Maiden Tower#049": {
+   "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
+   "dst": "พระเจ้า แม่นาง! ขนาดโอเกอร์ยังว่าเจ้าหนักมือไปหน่อย! อ้า คือว่า โอเกอร์กับคนอย่างเจ้า มีหลายชั้นใช่มั้ย? และชั้นแรกของเจ้าก็... เอ่อ... ...เน่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Maiden Tower",
+   "stage": "Stage 4",
+   "speaker": "Sherk",
+   "source": "wiki"
+  }
+ }
+}

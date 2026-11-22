@@ -1,0 +1,926 @@
+{
+ "_meta": {
+  "quest": "Dwarves and Doguns Part II",
+  "count": 91,
+  "translated": 91,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Dwarves and Doguns Part II#000": {
+   "src": "The Royal Guards escort you and Axelus out of the palace.",
+   "dst": "องครักษ์หลวงคุ้มกันคุณกับ Axelus ออกจากวัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#001": {
+   "src": "Aval...would have us...leave the Heights... But we...would not survive...in large numbers.",
+   "dst": "Aval...อยากให้เรา...ออกจาก Heights... แต่เรา...คงไม่รอด...ถ้าไปกันมากขนาดนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Aval... would have us... leave the Heights... But we... would not survive.",
+    "file": "quest/dwarves-and-doguns-part-ii.json",
+    "ratio": 0.866,
+    "reason": "candidate"
+   }
+  },
+  "Dwarves and Doguns Part II#002": {
+   "src": "Return to the Dogun village with a Dogun Badge of Trust and talk to the leader of the town",
+   "dst": "กลับไปหมู่บ้าน Dogun พร้อม Dogun Badge of Trust แล้วคุยกับผู้นำหมู่บ้าน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#003": {
+   "src": "You are so young...to be fighting...a war so old. Still...it is appreciated.",
+   "dst": "เจ้ายังเยาว์...ที่จะสู้...สงครามเก่าแก่นัก ถึงอย่างนั้น...เราก็ซาบซึ้ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#004": {
+   "src": "Why...would we trust... Why...would we trust... you...of all Dwarves?",
+   "dst": "ทำไม...เราต้องเชื่อ... ทำไม...เราต้องเชื่อ... เจ้า...ในบรรดาคนแคระ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#005": {
+   "src": "We heard what happened, {u}.",
+   "dst": "เรารู้เรื่องแล้ว {u}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#006": {
+   "src": "The war...to you, it would be...ages ago. But...when one has lived for...{~} years...",
+   "dst": "สงคราม...สำหรับเจ้า มันคง...นานมาแล้ว แต่...เมื่อใครสักคนมีชีวิตมา...{~} ปี...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#007": {
+   "src": "We have...few options. We need to discuss...the few we have...available.",
+   "dst": "เรามี...ทางเลือกไม่มาก เราต้องหารือ...ทางเลือกที่ยัง...เหลืออยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#008": {
+   "src": "Enter the meeting.",
+   "dst": "เข้าร่วมการประชุม",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#009": {
+   "src": "I am sorry...to welcome you all...in such troubled times.",
+   "dst": "ข้าเสียใจ...ที่ต้อนรับพวกเจ้า...ในยามยากลำบากเช่นนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#010": {
+   "src": "We thought...we could hide in safety... But there is...no place left to hide.",
+   "dst": "เราคิดว่า...จะซ่อนตัวได้อย่างปลอดภัย... แต่ไม่มี...ที่ให้ซ่อนอีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#011": {
+   "src": "Aval... would have us... leave the Heights... But we... would not survive.",
+   "dst": "Aval... อยากให้เรา... ออกจาก Heights... แต่เรา... คงไม่รอด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#012": {
+   "src": "We must...evacuate the settlement...immediately. They...are coming...again.",
+   "dst": "เราต้อง...อพยพชุมชน...เดี๋ยวนี้ พวกมัน...กำลังมา...อีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#013": {
+   "src": "[New Quest Started: Dwarves and Doguns Part II]",
+   "dst": "[เริ่มเควสใหม่: Dwarves และ Doguns ตอนที่ II]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#014": {
+   "src": "Ouch, I'm sorry... Excuse us.",
+   "dst": "โอ๊ะ ขอโทษ... ขอทางหน่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#015": {
+   "src": "Please! You all know me, I'm not with the side of the government. Hear me out, we can fix this!",
+   "dst": "ได้โปรด! ทุกคนรู้จักข้า ข้าไม่ได้อยู่ฝ่ายรัฐบาล ฟังข้าก่อน เราแก้ไขเรื่องนี้ได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#016": {
+   "src": "Guards...",
+   "dst": "ทหาร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#017": {
+   "src": "Stop! I have been hiding from the Dwarves just as much as anyone here, they've been after me too!",
+   "dst": "หยุด! ข้าเองก็หลบซ่อนจากคนแคระไม่ต่างจากใครที่นี่ พวกมันก็ตามล่าข้าเหมือนกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#018": {
+   "src": "Why... would we... trust you... of all Dwarves?",
+   "dst": "ทำไม... เราต้อง... เชื่อเจ้า... ในบรรดาคนแคระ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#019": {
+   "src": "How...could you even help? They...won't listen to you.",
+   "dst": "เจ้า...จะช่วยได้ยังไง? พวกนั้น...ไม่ฟังเจ้าหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#020": {
+   "src": "I know all the war strategies and weapon cache locations.",
+   "dst": "ข้ารู้ยุทธศาสตร์สงครามทั้งหมด และที่ซ่อนคลังอาวุธทุกแห่ง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#021": {
+   "src": "Treason...against your own kind...? How will you...manage this?",
+   "dst": "ทรยศ...พวกเดียวกันเอง...? เจ้าจะ...ทำได้ยังไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#022": {
+   "src": "The human and I will sneak into the armoury and sabotage their equipment. Korzim will help you Doguns evacuate someplace safer.",
+   "dst": "ข้ากับมนุษย์จะแอบเข้าไปในคลังอาวุธแล้วก่อวินาศกรรมอุปกรณ์ของพวกมัน Korzim จะช่วยพวกท่าน Doguns อพยพไปที่ที่ปลอดภัยกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#023": {
+   "src": "I am...yet wary of you...but we will...follow your plan...Dwarf. Korzim...lead us...to safety.",
+   "dst": "ข้ายัง...ระแวงเจ้าอยู่...แต่เราจะ...ทำตามแผนของเจ้า...คนแคระ Korzim...พาเราไป...ที่ปลอดภัย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#024": {
+   "src": "{u}, follow the southern road from {p}, towards the {p} entrance. I'll be waiting there for you near the armoury.",
+   "dst": "{u} ตามถนนทางใต้จาก {p} มุ่งไปทางเข้า {p} ข้าจะรอเจ้าอยู่ที่นั่น ใกล้คลังอาวุธ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#025": {
+   "src": "Meet up with Axelus at [{~}, {~}, -{~}].",
+   "dst": "ไปพบ Axelus ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#026": {
+   "src": "Shh! Get behind here, and look towards the armoury doors.",
+   "dst": "ชู่ว! มาหลบหลังนี่ แล้วมองไปที่ประตูคลังอาวุธ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#027": {
+   "src": "We need to sneak in when they aren't looking, got it? But we need to be fast.",
+   "dst": "เราต้องแอบเข้าไปตอนพวกมันเผลอ เข้าใจไหม? แต่ต้องเร็ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#028": {
+   "src": "If they close that door, we'll only have one option left, and it's a huge risk. Those Dwarven gates are almost unbreakable.",
+   "dst": "ถ้าพวกมันปิดประตูนั่น เราจะเหลือทางเลือกเดียว และเสี่ยงมาก ประตูคนแคระพวกนั้นแทบทำลายไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#029": {
+   "src": "Alright boys, let's close this up and head to base B.",
+   "dst": "เอาล่ะ พวก ปิดที่นี่แล้วไปฐาน B กัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "Rodoroc Commander",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#030": {
+   "src": "Aaah! Charge them! HEY, STOP RIGHT THERE, SOLDIERS!",
+   "dst": "อ๊าก! บุก! เฮ้ หยุดตรงนั้น ทหาร!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#031": {
+   "src": "Defeat the {p} Guards outside the armory.",
+   "dst": "ปราบทหารยามของ {p} หน้าคลังอาวุธ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#032": {
+   "src": "It's the traitor! Capture them, now! There's only one reason they would be near the armoury!",
+   "dst": "ไอ้คนทรยศ! จับตัวพวกมันเดี๋ยวนี้! มาอยู่ใกล้คลังอาวุธได้ก็มีเหตุผลเดียว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Commander",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#033": {
+   "src": "Is that all of them? We're out of danger, at least, but they still shut the door, damn it!",
+   "dst": "หมดแล้วเหรอ? อย่างน้อยก็พ้นอันตราย แต่พวกมันยังปิดประตูไปได้ ให้ตายสิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#034": {
+   "src": "Gah, all that for nothing! You're not too banged up, are you?",
+   "dst": "เฮอะ เสียแรงเปล่า! เจ้าไม่ได้บาดเจ็บมากใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#035": {
+   "src": "Well, I said there's another way, but it's not a guarantee. Hurry, follow me.",
+   "dst": "ก็ ข้าบอกว่ายังมีอีกทาง แต่ไม่รับประกัน เร็วเข้า ตามข้ามา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#036": {
+   "src": "Urgh, damn it. They almost never bother to close this door, and now of all times...",
+   "dst": "ให้ตายสิ ปกติพวกมันแทบไม่เคยปิดประตูนี้ ดันมาปิดเอาตอนนี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#037": {
+   "src": "There's nothing for it. They'll be sending reinforcements soon, we need a way through here.",
+   "dst": "ไม่มีทางอื่นแล้ว เดี๋ยวพวกมันจะส่งกำลังเสริมมา เราต้องหาทางผ่านไปตรงนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#038": {
+   "src": "Those black bricks look breakable...but that won't solve the door, will it?",
+   "dst": "อิฐสีดำนั่นดูเหมือนทุบได้...แต่ก็ไม่ช่วยเรื่องประตู จริงไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#039": {
+   "src": "Find a way to break through the black bricks outside the wooden door.",
+   "dst": "หาทางทลายอิฐสีดำข้างนอกประตูไม้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#040": {
+   "src": "Sabotage the Dwarven Armoury.",
+   "dst": "ก่อวินาศกรรมคลังอาวุธคนแคระ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#041": {
+   "src": "Alright, let's destroy these machines! You see the two cannons?",
+   "dst": "เอาล่ะ ทำลายเครื่องจักรพวกนี้กัน! เห็นปืนใหญ่สองกระบอกนั่นไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 6",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#042": {
+   "src": "If you use rocks as ammo, you'll destroy the machine it's aiming at, but if you use tnt, it'll selfdestruct. Good luck",
+   "dst": "ถ้าใช้หินเป็นกระสุน จะทำลายเครื่องจักรที่มันเล็งอยู่ แต่ถ้าใช้ tnt มันจะระเบิดตัวเอง ขอให้โชคดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 6",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#043": {
+   "src": "Follow Axelus deeper into {p} and destroy the power source of the city, the {p} Power Core.",
+   "dst": "ตาม Axelus ลึกเข้าไปใน {p} แล้วทำลายแหล่งพลังงานของเมือง แกนพลังงานแห่ง {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#044": {
+   "src": "Nice work! That will slow them down. We're not done yet, we need to pay the king a visit. Let's head further into {p}.",
+   "dst": "เยี่ยม! นั่นจะถ่วงพวกมันได้ แต่ยังไม่จบ เราต้องไปเยี่ยมท่านกษัตริย์ ลึกเข้าไปใน {p} กันเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#045": {
+   "src": "Hurry! Through here, to the power core!",
+   "dst": "เร็ว! ผ่านทางนี้ ไปแกนพลังงาน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#046": {
+   "src": "This is a geothermal power core. If we can disrupt it, it should slow them down.",
+   "dst": "นี่คือแกนพลังงานความร้อนใต้พิภพ ถ้าทำให้มันรวนได้ ก็น่าจะถ่วงพวกมันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#047": {
+   "src": "The hypocrites used Dogun magic to make this... It's lucky, honestly. I know how to work it.",
+   "dst": "พวกหน้าไหว้หลังหลอกใช้เวท Dogun สร้างสิ่งนี้... ก็โชคดีนะ ข้ารู้วิธีใช้มัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#048": {
+   "src": "...hell, they already rallied?! That's the army!",
+   "dst": "...บ้าเอ๊ย พวกมันรวมพลแล้ว?! นั่นกองทัพ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#049": {
+   "src": "That sounds like an entire battalion!! How did they know I was going after this?",
+   "dst": "ฟังดูเหมือนทั้งกองพันเลย!! พวกมันรู้ได้ไงว่าข้าจะมาที่นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#050": {
+   "src": "Dogun magic is slow! Keep me defended, this'll take awhile!",
+   "dst": "เวท Dogun มันช้า! คุ้มกันข้าไว้ นี่ต้องใช้เวลาสักพัก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#051": {
+   "src": "Grr, this is harder than I thought!",
+   "dst": "ก๊ร ยากกว่าที่คิด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#052": {
+   "src": "Ah! Don't let them get too close!",
+   "dst": "อ๊ะ! อย่าให้พวกมันเข้ามาใกล้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#053": {
+   "src": "Look, look! It's working!",
+   "dst": "ดูสิ ดูสิ! ได้ผลแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#054": {
+   "src": "I hate that you're having to fight my people, but I wouldn't be asking for help if it weren't needed.",
+   "dst": "ข้าเกลียดที่เจ้าต้องสู้กับพวกพ้องข้า แต่ถ้าไม่จำเป็นข้าคงไม่ขอให้ช่วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#055": {
+   "src": "Hm...the slums should be behind this wall here. We'll lose them there.",
+   "dst": "อืม...สลัมน่าจะอยู่หลังกำแพงนี้ เราจะสลัดพวกมันได้ที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#056": {
+   "src": "The power's down, but...that cannon should do to get us through. You know how to operate it, right?",
+   "dst": "ไฟดับแล้ว แต่...ปืนใหญ่นั่นน่าจะพาเราผ่านไปได้ เจ้ารู้วิธีใช้ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#057": {
+   "src": "Dwarvern society isn't as great as they make it out to be. The poorest are hidden away.",
+   "dst": "สังคมคนแคระไม่ได้ดีอย่างที่พวกเขาอวดอ้าง คนจนที่สุดถูกซ่อนไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#058": {
+   "src": "The coalition has helped these people through some hard times, we can trust them.",
+   "dst": "แนวร่วมเคยช่วยคนพวกนี้ผ่านช่วงยากลำบาก เราไว้ใจพวกเขาได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#059": {
+   "src": "There's a reason I brought us here. The sewer system is connected to the royal palace. All the way to the kings bathroom.",
+   "dst": "ข้าพาเรามาที่นี่ด้วยเหตุผล ระบบท่อระบายน้ำเชื่อมกับพระราชวัง ไปถึงห้องน้ำของกษัตริย์เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#060": {
+   "src": "We need to find a way to ignite this explosive. Can you take a look around?",
+   "dst": "เราต้องหาวิธีจุดระเบิดนี่ เจ้าช่วยดูรอบๆ หน่อยได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#061": {
+   "src": "Find a way to enter the sewer system.",
+   "dst": "หาทางเข้าระบบท่อระบายน้ำ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#062": {
+   "src": "If we can convince the king that it’s not worth the fight, he may back down.",
+   "dst": "ถ้าเราโน้มน้าวกษัตริย์ได้ว่าไม่คุ้มที่จะสู้ เขาอาจยอมถอย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#063": {
+   "src": "I'm a little ashamed to admit I know my way round the sewers by now.",
+   "dst": "น่าอายนิดหน่อยที่ต้องยอมรับว่าตอนนี้ข้ารู้ทางในท่อระบายน้ำดีแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#064": {
+   "src": "You have to understand.. The people truly think the Doguns are evil incarnate. But the king knows better.",
+   "dst": "เจ้าต้องเข้าใจ.. ประชาชนเชื่อจริงๆ ว่า Doguns คือปีศาจร้าย แต่กษัตริย์รู้ความจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#065": {
+   "src": "Enter the Royal Palace through the sewer pipe and find the king.",
+   "dst": "เข้าพระราชวังผ่านท่อระบายน้ำ แล้วหากษัตริย์ให้เจอ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#066": {
+   "src": "Don't let the guards catch you. Stay out of sight, got it?",
+   "dst": "อย่าให้ทหารยามจับได้ หลบให้พ้นสายตา เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 10",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#067": {
+   "src": "Sneak past the guards and talk to the Dwarven King.",
+   "dst": "แอบผ่านทหารยามไป แล้วคุยกับกษัตริย์คนแคระ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#068": {
+   "src": "I can't say I'm surprised, Axelus. Guards, let them be.",
+   "dst": "ข้าไม่แปลกใจเลย Axelus ทหาร ปล่อยพวกเขาไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#069": {
+   "src": "You know why I'm here, father. We haven't got any more chances to stop this.",
+   "dst": "ท่านรู้ว่าข้ามาที่นี่ทำไม ท่านพ่อ เราไม่มีโอกาสหยุดเรื่องนี้อีกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#070": {
+   "src": "Axelus, you know why we have to maintain the lie. Think about the people, how they would react.",
+   "dst": "Axelus เจ้ารู้ว่าทำไมเราต้องรักษาคำโกหกนี้ไว้ คิดถึงประชาชน ว่าพวกเขาจะมีปฏิกิริยาอย่างไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#071": {
+   "src": "We can not be responsible for the lies of our ancestors! This is ridiculous and you know it!",
+   "dst": "เราจะรับผิดชอบคำโกหกของบรรพบุรุษไม่ได้! นี่มันไร้สาระ และท่านก็รู้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#072": {
+   "src": "Axelus, if the people found out, everything would descend to chaos. There would be riots, revolutions!",
+   "dst": "Axelus ถ้าประชาชนรู้ ทุกอย่างจะดิ่งสู่ความวุ่นวาย จะมีจลาจล มีการปฏิวัติ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#073": {
+   "src": "If you hadn't turned traitor and gone gallivanting off with the Doguns, you would be in a better position to convince me.",
+   "dst": "ถ้าเจ้าไม่กลายเป็นคนทรยศ แล้วไปเที่ยวเตร็ดเตร่กับ Doguns เจ้าคงอยู่ในฐานะที่โน้มน้าวข้าได้ดีกว่านี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#074": {
+   "src": "As it is now, you are too little and too late. The war has already begun.",
+   "dst": "ตอนนี้ เจ้าทำน้อยไปและสายเกินไปแล้ว สงครามเริ่มขึ้นแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#075": {
+   "src": "The armoury that a certain someone decided to sabotage won't make any difference.",
+   "dst": "คลังอาวุธที่ใครบางคนตัดสินใจก่อวินาศกรรมก็ไม่ทำให้อะไรเปลี่ยน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#076": {
+   "src": "You will commit genocide so you don't have to face the consequences of your lies?",
+   "dst": "ท่านจะล้างเผ่าพันธุ์ เพื่อไม่ต้องรับผลจากคำโกหกของตัวเองงั้นหรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#077": {
+   "src": "I will be the hero of our nation, and my name will forever be remembered as the King who brought peace.",
+   "dst": "ข้าจะเป็นวีรบุรุษของชาติ และชื่อข้าจะถูกจดจำตลอดไปในฐานะกษัตริย์ผู้นำสันติภาพมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#078": {
+   "src": "I have nothing left to say to you. See yourselves out behind the throne. I'll let you use the trading tunnel to {p} in the southern caves, if you just step back and let me handle things.",
+   "dst": "ข้าไม่มีอะไรจะพูดกับเจ้าอีก ออกไปทางหลังบัลลังก์เอง ข้าจะให้พวกเจ้าใช้อุโมงค์การค้าไป {p} ในถ้ำทางใต้ ถ้าเจ้าแค่ถอยไปแล้วปล่อยให้ข้าจัดการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 11",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#079": {
+   "src": "Exit the palace",
+   "dst": "ออกจากพระราชวัง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#080": {
+   "src": "I'm not giving up on this. I'm going back in, I know he can be reasoned with!",
+   "dst": "ข้าไม่ยอมแพ้เรื่องนี้หรอก ข้าจะกลับเข้าไป ข้ารู้ว่าเขาพูดกันรู้เรื่อง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#081": {
+   "src": "Give this letter to Korzim in the Dogun village when you reach level {~}.",
+   "dst": "นำจดหมายนี้ไปให้ Korzim ที่หมู่บ้าน Dogun เมื่อถึงเลเวล {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#082": {
+   "src": "I'm going to have one last talk with my father.",
+   "dst": "ข้าจะไปคุยกับท่านพ่อเป็นครั้งสุดท้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#083": {
+   "src": "You shouldn't enter this place yet!",
+   "dst": "คุณยังไม่ควรเข้าไปที่นี่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#084": {
+   "src": "The {p} Power Core has been disrupted!",
+   "dst": "แกนพลังงานแห่ง {p} ถูกก่อกวนแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#085": {
+   "src": "Follow Axelus deeper into {p} and destroy the power source of the city.",
+   "dst": "ตาม Axelus ลึกเข้าไปใน {p} แล้วทำลายแหล่งพลังงานของเมือง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#086": {
+   "src": "Explore the slums of {p}.",
+   "dst": "สำรวจสลัมของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#087": {
+   "src": "Leave the Royal Palace at the end of the palace.",
+   "dst": "ออกจากพระราชวังทางปลายสุดของวัง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#088": {
+   "src": "[{~}/{~}] Commanders",
+   "dst": "[{~}/{~}] ผู้บัญชาการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Leave now and I won't send the Dwarven army on you. You don't want to get hunted like the Doguns, do you?",
+   "dst": "ไปซะตอนนี้ แล้วข้าจะไม่ส่งกองทัพคนแคระตามล่าเจ้า เจ้าคงไม่อยากถูกล่าเหมือน Doguns หรอกนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "And Axelus, leave the city. You are no longer my son.",
+   "dst": "ส่วน Axelus ออกไปจากเมืองซะ เจ้าไม่ใช่ลูกข้าอีกต่อไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  }
+ }
+}

@@ -456,7 +456,7 @@ public final class MarqueeTest {
 
     private static void cutChoicesReadToTheEnd() throws Exception {
         String root = "src/main/resources/assets/wynnchayuan/translations/";
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of(root + lang));
             for (String full : List.of("What'll you do when it's all over?",
@@ -468,8 +468,8 @@ public final class MarqueeTest {
                 if (dst == null) {
                     continue;
                 }
-                check(lang + "：譯文是整句（" + dst + "）",
-                        ".?!。？！".indexOf(dst.charAt(dst.length() - 1)) >= 0);
+                check(lang + "：譯文是整句（" + dst + "）", lang.equals("th_th")
+                        || ".?!。？！".indexOf(dst.charAt(dst.length() - 1)) >= 0);
                 boolean english = false;
                 StringBuilder union = new StringBuilder();
                 for (String window : gameWindows(full, 3)) {

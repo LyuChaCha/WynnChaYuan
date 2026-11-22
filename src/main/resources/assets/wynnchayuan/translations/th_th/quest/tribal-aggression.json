@@ -1,0 +1,300 @@
+{
+ "_meta": {
+  "quest": "Tribal Aggression",
+  "count": 29,
+  "translated": 29,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Tribal Aggression#000": {
+   "src": "Not only did the {p} steal our totem but also stole one of our Idol's eyes!",
+   "dst": "{p} ไม่ได้ขโมยแค่โทเท็มของเรา แต่ยังขโมยตาข้างหนึ่งของรูปเคารพเราไปด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Eagle Tribesman",
+   "source": "captured"
+  },
+  "Tribal Aggression#001": {
+   "src": "The totems hold great protective magical power. Without all the parts, it can not function.",
+   "dst": "โทเท็มมีพลังเวทปกป้องอันยิ่งใหญ่ ถ้าไม่มีครบทุกส่วน มันก็ใช้การไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Eagle Tribesman",
+   "source": "captured"
+  },
+  "Tribal Aggression#002": {
+   "src": "It is probably hiding away somewhere at the {p}. Maybe if there's peace we can return it.",
+   "dst": "มันคงถูกซ่อนไว้ที่ไหนสักแห่งใน {p} ถ้ามีสันติ บางทีเราอาจได้มันคืน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Eagle Tribesman",
+   "source": "captured"
+  },
+  "Tribal Aggression#003": {
+   "src": "You may go now traveler, farewell.",
+   "dst": "ไปได้แล้ว นักเดินทาง ลาก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#004": {
+   "src": "My tribe worries our own business, stranger.",
+   "dst": "เผ่าของข้าดูแลเรื่องของตัวเอง คนแปลกหน้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "captured"
+  },
+  "Tribal Aggression#005": {
+   "src": "I'm sure they hid the totem, but if you are able to find it, I await your return!",
+   "dst": "ข้ามั่นใจว่าพวกมันซ่อนโทเท็มไว้ แต่ถ้าเจ้าหาเจอ ข้าจะรอเจ้ากลับมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "captured"
+  },
+  "Tribal Aggression#006": {
+   "src": "Hopefully, we two camps will never set foot on another's land in an attempt to steal back the totems, and live in peace.",
+   "dst": "หวังว่าสองแคมป์ของเราจะไม่ย่างกรายเข้าดินแดนของอีกฝ่ายเพื่อชิงโทเท็มคืนอีก และอยู่กันอย่างสงบสุข",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "captured"
+  },
+  "Tribal Aggression#007": {
+   "src": "I-Is that, the totem? My, it has been a long time since the owl has been with me. Though I wonder if the Eagle and Owl totem possess the same mystic powers.",
+   "dst": "น-นั่นคือโทเท็มหรือ? โอ้ นานเหลือเกินแล้วที่นกฮูกไม่ได้อยู่กับข้า แต่ข้าก็สงสัยว่าโทเท็มอินทรีกับนกฮูกมีพลังลึกลับเหมือนกันไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "captured"
+  },
+  "Tribal Aggression#008": {
+   "src": "Have you gotten our totem back yet? The Eagle camp is across the river, on the other side of the canyon.",
+   "dst": "เจ้าเอาโทเท็มของเราคืนมาได้หรือยัง? แคมป์อินทรีอยู่ข้ามแม่น้ำ อีกฟากของหุบเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#009": {
+   "src": "Talk to Caras at [{~}, {~}, -{~}]",
+   "dst": "คุยกับ Caras ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#010": {
+   "src": "Oh, my apologies, I did not realize you are a warrior of the province! We would be grateful of your help.",
+   "dst": "โอ้ ขออภัย ข้าไม่รู้ว่าเจ้าเป็นนักรบแห่งแคว้น! เรายินดีรับความช่วยเหลือจากเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#011": {
+   "src": "Our sacred owl totem that we worship was stolen by the cunning Eagle Tribe many years ago. Its magical properties used to bring prosperity to our camp.",
+   "dst": "โทเท็มนกฮูกศักดิ์สิทธิ์ที่เราบูชาถูกเผ่าอินทรีเจ้าเล่ห์ขโมยไปเมื่อหลายปีก่อน พลังวิเศษของมันเคยนำความรุ่งเรืองมาสู่แคมป์เรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#012": {
+   "src": "However, the Eagle tribe are not victorious, we possess their mystic eagle totem, but alas, I do not know who was the original thief.",
+   "dst": "แต่เผ่าอินทรีก็ไม่ได้ชนะ เรามีโทเท็มอินทรีลึกลับของพวกมันอยู่ ทว่าน่าเสียดาย ข้าไม่รู้ว่าใครเป็นขโมยคนแรก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#013": {
+   "src": "We have been at war for years now, despite being neighbors. Without our totem, our rivalry will continue for ages and peace will never again be felt in our hearts.",
+   "dst": "เราทำศึกกันมาหลายปีทั้งที่เป็นเพื่อนบ้าน ถ้าไม่มีโทเท็ม ความบาดหมางจะยืดเยื้อไปอีกนาน และใจเราจะไม่มีวันสงบอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#014": {
+   "src": "Retrieve our totem, and the blessing of the Owl spirit will be with you.",
+   "dst": "นำโทเท็มของเรากลับมา แล้วพรแห่งวิญญาณนกฮูกจะอยู่กับเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#015": {
+   "src": "Now, enter the Eagle Camp across the river, you may have to search the camp, I'm sure they have hidden our totem!",
+   "dst": "ทีนี้ ไปยังแคมป์อินทรีข้ามแม่น้ำ เจ้าอาจต้องค้นทั่วแคมป์ ข้ามั่นใจว่าพวกมันซ่อนโทเท็มของเราไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#016": {
+   "src": "Enter the Eagle Camp and talk to Favian",
+   "dst": "เข้าไปในแคมป์อินทรีแล้วคุยกับ Favian",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#017": {
+   "src": "Greetings, what brings you to the noble Eagle tribe?",
+   "dst": "สวัสดี อะไรพาเจ้ามาหาเผ่าอินทรีผู้สูงศักดิ์?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#018": {
+   "src": "You seek the Owl totem? The cursed Owl tribe trying to retain their lost dignity again.",
+   "dst": "เจ้าตามหาโทเท็มนกฮูกหรือ? เผ่านกฮูกต้องสาปพยายามกู้ศักดิ์ศรีที่สูญไปอีกแล้วสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#019": {
+   "src": "Why should we give you their totem back? They stole our source of enlightenment all those years ago.",
+   "dst": "ทำไมเราต้องคืนโทเท็มของพวกมันให้เจ้า? พวกมันขโมยแหล่งแห่งการรู้แจ้งของเราไปเมื่อหลายปีก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#020": {
+   "src": "Tell you what, if you can retrieve our Eagle Totem, I will allow you to go return the Owl totem.",
+   "dst": "เอาอย่างนี้ ถ้าเจ้านำโทเท็มอินทรีของเราคืนมาได้ ข้าจะยอมให้เจ้านำโทเท็มนกฮูกไปคืน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#021": {
+   "src": "Bring back the Eagle Totem from the Owl Camp",
+   "dst": "นำโทเท็มอินทรีกลับมาจากแคมป์นกฮูก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#022": {
+   "src": "Wonderful! You may now enter the cave to retrieve the blasted Owl totem.",
+   "dst": "ยอดเยี่ยม! ตอนนี้เจ้าเข้าไปในถ้ำเพื่อเอาโทเท็มนกฮูกบ้านั่นได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#023": {
+   "src": "Be careful, there are Eagle guardians in the cave, be prepared traveller.",
+   "dst": "ระวัง ในถ้ำมีผู้พิทักษ์อินทรีอยู่ เตรียมตัวให้พร้อม นักเดินทาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#024": {
+   "src": "Once you get the totem, you may return it to its original tribe.",
+   "dst": "เมื่อได้โทเท็มแล้ว เจ้าจะนำไปคืนเผ่าเดิมของมันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#025": {
+   "src": "Anyways, hurry up, even the thought of the two totems sharing the same space makes me sick.",
+   "dst": "อย่างไรก็ดี รีบเข้า แค่คิดว่าโทเท็มสองอันอยู่ที่เดียวกันข้าก็คลื่นไส้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#026": {
+   "src": "Retrieve the Owl Totem and return it to the Owl Camp",
+   "dst": "เอาโทเท็มนกฮูกแล้วนำไปคืนที่แคมป์นกฮูก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#027": {
+   "src": "To think, such a long war could end so quickly and by the help of a single person.",
+   "dst": "ใครจะคิด สงครามที่ยาวนานขนาดนี้จะจบได้เร็วเพียงนี้ด้วยความช่วยเหลือของคนคนเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#028": {
+   "src": "Many thanks to you! I shall keep my promise, please accept this reward, and may the Owl be forever with you.",
+   "dst": "ขอบคุณมาก! ข้าจะรักษาสัญญา โปรดรับรางวัลนี้ไว้ ขอให้นกฮูกอยู่กับเจ้าตลอดไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "wiki"
+  }
+ }
+}

@@ -1,0 +1,470 @@
+{
+ "_meta": {
+  "quest": "Lava Springs",
+  "count": 46,
+  "translated": 46,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lava Springs#000": {
+   "src": "If you want some of my special brews, elixirs, and potions, go do business with my assistant.",
+   "dst": "ถ้าอยากได้ยาพิเศษ น้ำอมฤต และโพชั่นของฉัน ไปซื้อกับผู้ช่วยของฉันนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "Nami The Healer",
+   "source": "captured"
+  },
+  "Lava Springs#001": {
+   "src": "[{~}/{~} Corrupted Evidence]",
+   "dst": "[{~}/{~} หลักฐานแปดเปื้อน]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#002": {
+   "src": "You've already collected this evidence.",
+   "dst": "คุณเก็บหลักฐานนี้ไปแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#003": {
+   "src": "This should be enough evidence. You should report back to Colonel Gailard.",
+   "dst": "หลักฐานเท่านี้น่าจะพอ คุณควรกลับไปรายงานผู้พัน Gailard",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#004": {
+   "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here named {p}, yeah? There's a healer person there that can help us out.",
+   "dst": "เดี๋ยว... ข้ามีความคิด... เอาละ ฟังให้ดีทหาร! ทางเหนือมีเมืองเล็กๆ ชื่อ {p} ใช่ไหม? ที่นั่นมีหมอรักษาที่ช่วยเราได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#005": {
+   "src": "They're holed up inside of some important well in the center of the town. There's a password ya need to hop into that place, though...",
+   "dst": "เขาไปขลุกอยู่ในบ่อน้ำสำคัญกลางเมือง แต่ต้องมีรหัสผ่านถึงจะเข้าไปได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#006": {
+   "src": "...Corrupted... lava springs...? You realize how stupid that sounds, yeah? Well, I completely believe you.",
+   "dst": "...น้ำพุลาวา... แปดเปื้อน...? รู้ใช่ไหมว่ามันฟังดูโง่แค่ไหน? แต่ฉันเชื่อคุณเต็มที่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "captured"
+  },
+  "Lava Springs#007": {
+   "src": "Now, you have somewhere to be, right? Right. Go and report back to the Colonel, soldier. Tell him I said hi, by the way.",
+   "dst": "ทีนี้ คุณมีที่ต้องไปใช่ไหม? ใช่ ไปรายงานผู้พันเถอะ ทหาร ฝากบอกเขาว่าฉันทักทายด้วยนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "captured"
+  },
+  "Lava Springs#008": {
+   "src": "You can feel your body heat adjusting as the potion courses through your body...",
+   "dst": "คุณรู้สึกได้ว่าอุณหภูมิร่างกายกำลังปรับตัว ขณะที่โพชั่นไหลเวียนไปทั่วร่าง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#009": {
+   "src": "Ye're a good ally, soldier! And a great help to the army, at that!",
+   "dst": "เจ้าเป็นพันธมิตรที่ดี ทหาร! แถมช่วยกองทัพได้มากด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#010": {
+   "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
+   "dst": "โอ้ ดี ดี! ข้าพนันว่าเจ้าเป็นทหาร {p} ใช่ไหมล่ะ? ฟังให้ดีทหาร! ข้ามีงานที่เจ้าช่วยได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#011": {
+   "src": "Ya see that lava spring right there? It just went and popped up out of nowhere! The brass is real concerned about it, mhm?",
+   "dst": "เห็นน้ำพุลาวาตรงนั้นไหม? จู่ๆ มันก็โผล่ขึ้นมาจากไหนไม่รู้! เบื้องบนเป็นห่วงเรื่องนี้มาก เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#012": {
+   "src": "They've been yappin' about it bein' related to the Corruption, and 'ye can bet that that means trouble. BAD trouble.",
+   "dst": "พวกเขาพร่ำบอกว่ามันเกี่ยวกับความแปดเปื้อน และเชื่อข้าเถอะ แปลว่ามีปัญหา ปัญหาใหญ่หลวง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#013": {
+   "src": "Now, this here Savannah has always had some Corruption lurkin' about, but not to the point where it can do this! It won't be safe around here if we don't do somethin' about it!",
+   "dst": "ทุ่งหญ้าสะวันนาแห่งนี้มีความแปดเปื้อนซุ่มอยู่บ้างตลอด แต่ไม่เคยถึงขั้นทำแบบนี้ได้! ถ้าเราไม่ทำอะไร แถวนี้จะไม่ปลอดภัยแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#014": {
+   "src": "Anyways, high command ain't gonna provide support for this until they know there's actual Corruption, so we've gotta find some evidence around the springs, understand?",
+   "dst": "ยังไงก็ตาม กองบัญชาการไม่ส่งกำลังสนับสนุนจนกว่าจะรู้ว่ามีความแปดเปื้อนจริง เราเลยต้องหาหลักฐานรอบน้ำพุ เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#015": {
+   "src": "Take a look around the springs, soldier! Find me some damn evidence around here! [{~} Pieces of Evidence] should be enough! Now, get movin'!",
+   "dst": "ไปดูรอบน้ำพุซะ ทหาร! หาหลักฐานบ้าๆ มาให้ข้า! [หลักฐาน {~} ชิ้น] น่าจะพอ! เอาละ ไปได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#016": {
+   "src": "Look for three pieces of corrupted evidence around the Lava Spring at [{~}, {~}, -{~}]",
+   "dst": "หาหลักฐานความแปดเปื้อนสามชิ้นรอบน้ำพุลาวาที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#017": {
+   "src": "Go back to Colonel Gailard at [{~}, {~}, -{~}]",
+   "dst": "กลับไปหาผู้พัน Gailard ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#018": {
+   "src": "Alright, good! Ya found some evidence, let me take a look at that!",
+   "dst": "เอาละ ดี! เจอหลักฐานแล้ว ขอข้าดูหน่อย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#019": {
+   "src": "Oh... This is bad... very, VERY bad...",
+   "dst": "โอ้... แย่แล้ว... แย่มาก แย่สุดๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#020": {
+   "src": "This here is some physical corruption. If it's gettin' onto the surface, then 'ye can bet one of those weeds is spreadin' underground, right beneath the springs...",
+   "dst": "นี่คือความแปดเปื้อนที่จับต้องได้ ถ้ามันโผล่ขึ้นมาบนผิวดินแล้ว รับรองว่ามีวัชพืชพวกนั้นสักต้นแผ่รากอยู่ใต้ดิน ตรงใต้น้ำพุพอดี...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#021": {
+   "src": "If ya could get underneath the spring, 'ye could probably sever whatever damn root is causing this, but... the heat would be sure to fry your skin off...",
+   "dst": "ถ้าเจ้าลงไปใต้น้ำพุได้ ก็น่าจะตัดรากบ้านั่นที่เป็นต้นเหตุได้ แต่... ความร้อนต้องย่างผิวเจ้าจนหลุดแน่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#022": {
+   "src": "Don't have much to go on, but I'm pretty damn sure the password is Bob, or something. After the hero himself.",
+   "dst": "ข้ารู้ไม่มาก แต่ค่อนข้างแน่ใจว่ารหัสผ่านคือ Bob หรืออะไรสักอย่าง ตั้งตามชื่อวีรบุรุษคนนั้นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#023": {
+   "src": "Right, ye're headin' there to find a potion that can keep ya weak little hide safe from the heat, understand? Here, let me write down the location in that book of yours.",
+   "dst": "เอาละ เจ้าจะไปที่นั่นเพื่อหาโพชั่นที่ปกป้องหนังบางๆ ของเจ้าจากความร้อน เข้าใจไหม? นี่ ข้าจดตำแหน่งไว้ในสมุดของเจ้าให้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#024": {
+   "src": "Talk to Gregor outside the {p} well at [{~}, {~}, -{~}]",
+   "dst": "คุยกับ Gregor ที่หน้าบ่อน้ำของ {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#025": {
+   "src": "Hey, hey hey hey! Darling, what do you think you're doing? You can't just waltz in here without telling me the password!",
+   "dst": "เฮ้ เฮ้ เฮ้ เฮ้! ที่รัก คิดจะทำอะไรน่ะ? จะเดินเข้ามาดื้อๆ โดยไม่บอกรหัสผ่านไม่ได้นะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "wiki"
+  },
+  "Lava Springs#026": {
+   "src": "Hmm... Your face... confidence... it gleans with confidence... yet... you still haven't spoken to me since you arrived...",
+   "dst": "อืม... ใบหน้าของเธอ... ความมั่นใจ... มันฉายแววมั่นใจ... แต่... เธอยังไม่พูดกับฉันสักคำตั้งแต่มาถึง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "wiki"
+  },
+  "Lava Springs#027": {
+   "src": "Could it be... you know that the password is penguin eggs, but you're just too shy to talk? Yeah... yeah, that's gotta be it!",
+   "dst": "หรือว่า... เธอรู้ว่ารหัสผ่านคือไข่เพนกวิน แต่แค่ขี้อายเกินกว่าจะพูด? ใช่... ใช่ ต้องเป็นแบบนั้นแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "wiki"
+  },
+  "Lava Springs#028": {
+   "src": "You've convinced me, little mute darling... You can enter the well. Go on, now!",
+   "dst": "เธอโน้มน้าวฉันได้แล้ว ที่รักผู้เงียบขรึม... เข้าบ่อน้ำได้ ไปเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "wiki"
+  },
+  "Lava Springs#029": {
+   "src": "Enter the {p} well and talk to the healer at [{~}, {~}, -{~}]",
+   "dst": "เข้าไปในบ่อน้ำของ {p} แล้วคุยกับหมอรักษาที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#030": {
+   "src": "G'day to you, friend. How can I help you?",
+   "dst": "สวัสดี เพื่อน ให้ช่วยอะไรไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#031": {
+   "src": "Hm? The Colonel sent you? what for?",
+   "dst": "หืม? ผู้พันส่งคุณมา? เรื่องอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#032": {
+   "src": "Right, you said lava, sooo... You need a heat resistance potion, yes?",
+   "dst": "อ้อ คุณบอกว่าลาวา งั้นนน... ต้องการโพชั่นกันร้อนใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#033": {
+   "src": "Welp, you're in luck, kinda... I have a potion that can resist the heat of lava, but the brew will not let you swim in lava.",
+   "dst": "เอาเถอะ คุณโชคดี ก็ประมาณนั้น... ฉันมีโพชั่นที่ทนความร้อนลาวาได้ แต่มันไม่ได้ทำให้ว่ายในลาวาได้นะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#034": {
+   "src": "Oh that works, you just need to enter a borehole that goes through the lava? Perfect",
+   "dst": "อ้อ งั้นได้ แค่ต้องเข้าหลุมเจาะที่ทะลุลาวาใช่ไหม? เยี่ยม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#035": {
+   "src": "Anyways, if you ever need any more special brews, my assistant will be happy to sell some at a very affordable price.",
+   "dst": "ยังไงก็ตาม ถ้าต้องการยาพิเศษอีก ผู้ช่วยของฉันยินดีขายให้ในราคาย่อมเยามาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
+   "source": "wiki"
+  },
+  "Lava Springs#036": {
+   "src": "Report back to Colonel Gailard at [{~}, {~}, -{~}]",
+   "dst": "กลับไปรายงานผู้พัน Gailard ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#037": {
+   "src": "Report! Ya got the potion yet, soldier? Good, drink it if ya haven't already!",
+   "dst": "รายงาน! ได้โพชั่นมาหรือยัง ทหาร? ดี ถ้ายังไม่ดื่มก็ดื่มซะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#038": {
+   "src": "Right, that's what I like to hear! Now, LOOK TO THE LEFT SOLDIER! There is a borehole out there we dug to try and hit the source of this weed.",
+   "dst": "นั่นแหละที่ข้าอยากได้ยิน! ทีนี้ มองไปทางซ้าย ทหาร! ตรงนั้นมีหลุมเจาะที่เราขุดไว้หวังจะเจาะถึงต้นตอของวัชพืชนี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#039": {
+   "src": "We found a pretty damn hot cave lying underneath the surface! If ya jumped into the borehole, 'ye could probably find the source of the Corruption and stop it.",
+   "dst": "เราเจอถ้ำร้อนระอุอยู่ใต้ผิวดิน! ถ้าเจ้ากระโดดลงหลุมเจาะ ก็น่าจะเจอต้นตอความแปดเปื้อนแล้วหยุดมันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#040": {
+   "src": "Now, the roots and spikes of Corruption are very sturdy, but we ain't never seen something like lava burstin' out of the ground.",
+   "dst": "รากและหนามของความแปดเปื้อนแข็งแรงมาก แต่เราไม่เคยเห็นอะไรอย่างลาวาพุ่งออกมาจากพื้นแบบนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#041": {
+   "src": "Had a small chat with the brass, earlier. They got a hunch that there's a heart to the Corruption that's pumpin' out all the lava!",
+   "dst": "เมื่อกี้ข้าคุยกับเบื้องบนมานิดหน่อย พวกเขาสงสัยว่าความแปดเปื้อนมีหัวใจที่สูบลาวาพวกนี้ออกมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#042": {
+   "src": "That's gotta be our ticket, yeah? If 'ye destroy that, ya should be able to stop the spread of the lava! Now, get movin'! Head into the borehole, soldier!",
+   "dst": "นั่นแหละทางรอดของเรา ใช่ไหม? ถ้าเจ้าทำลายมันได้ ก็น่าจะหยุดลาวาลามได้! เอาละ ไป! ลงหลุมเจาะไปซะ ทหาร!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 6",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  },
+  "Lava Springs#043": {
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "dst": "ดื่มโพชั่นผิวหินออบซิเดียน แล้วเข้าน้ำพุลาวาผ่านหลุมเจาะที่ [{~}, {~}, -{~}] และหาหัวใจแปดเปื้อน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#044": {
+   "src": "Tell Colonel Gailard at [{~}, {~}, -{~}] that you destroyed the heart",
+   "dst": "บอกผู้พัน Gailard ที่ [{~}, {~}, -{~}] ว่าคุณทำลายหัวใจแล้ว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lava Springs",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lava Springs#045": {
+   "src": "Hah! I knew ya'd give me results! Ye're pretty damn reliable, soldier! Here, take this for your trouble!",
+   "dst": "ฮ่า! ข้ารู้ว่าเจ้าต้องทำได้! เจ้าไว้ใจได้จริงๆ ทหาร! นี่ รับไว้เป็นค่าเหนื่อย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 8",
+   "speaker": "Colonel Gailard",
+   "source": "wiki"
+  }
+ }
+}

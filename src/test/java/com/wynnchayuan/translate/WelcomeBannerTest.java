@@ -98,7 +98,7 @@ public final class WelcomeBannerTest {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
         List<String> english = List.of("Welcome", "item", "Trade Market", "Mounts", "mounts",
                                        "feeder", "offline", "sold as well");
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(base.resolve(lang));
             List<StyledText> cases = List.of(
@@ -155,7 +155,7 @@ public final class WelcomeBannerTest {
         bought.append(lit(" Mounts finished eating while you were offline", BROWN, false));
         StyledText boughtMsg = StyledText.fromComponent(bought);
 
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(base.resolve(lang));
             rowColours(lang + " 截圖那一則", LineTranslator.translateChat(shot, store),

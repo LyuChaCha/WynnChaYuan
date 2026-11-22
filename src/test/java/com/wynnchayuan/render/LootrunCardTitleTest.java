@@ -37,7 +37,7 @@ public final class LootrunCardTitleTest {
         rs.loadAll(Files.createTempDirectory("wynnchayuan-lootrun-title-empty"));
         int covered = 0;
         boolean hubrisSeen = false;
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th")) {
             Path real = Path.of("src/main/resources/assets/wynnchayuan/translations", lang);
             if (!Files.isDirectory(real)) {
                 continue;

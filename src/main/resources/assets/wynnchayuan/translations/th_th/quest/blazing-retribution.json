@@ -1,0 +1,460 @@
+{
+ "_meta": {
+  "quest": "Blazing Retribution",
+  "count": 45,
+  "translated": 45,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Blazing Retribution#000": {
+   "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
+   "dst": "ออร์คตัวนั้นวิ่งไปทางทะเลสาบ!! จับมัน จับมันก่อนมันจะหนีไปที่อื่น!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#001": {
+   "src": "Nothing for ye to see here youngster. Move along!",
+   "dst": "ไม่มีอะไรให้ดูหรอก หนุ่มน้อย ไปได้แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#002": {
+   "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Piere ที่ทุ่งราบ {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#003": {
+   "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
+   "dst": "โอ้ วัวน้อยศักดิ์สิทธิ์ บ้านฉัน จะทำยังไงดี? เดี๋ยวนะ คุณเป็นใคร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#004": {
+   "src": "Oh, a Human. Did the {p} authorities send you?",
+   "dst": "อ้อ มนุษย์ ทางการ {p} ส่งคุณมาเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#005": {
+   "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
+   "dst": "นักสืบ Jackson มาที่นี่แล้ว ไม่ใช่ว่าเขาทำอะไรเป็นประโยชน์หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#006": {
+   "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
+   "dst": "ออร์คตัวหนึ่งไปได้ขวานวิเศษอาบไฟมา แล้วเผาบ้านฉันวอด! Jackson ไม่เรียกนักดับเพลิงด้วยซ้ำ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#007": {
+   "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
+   "dst": "ฉันไม่รู้จะทำยังไง แต่ถ้าคุณเจอนักสืบ Jackson บางทีอาจเตะก้นเขาให้ขยับได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#008": {
+   "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
+   "dst": "ออร์คก็ป่าเถื่อนอยู่แล้ว ถ้าพวกมันได้อาวุธวิเศษจริง เราเดือดร้อนกันหมดแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#009": {
+   "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
+   "dst": "ฉันว่านักสืบ Jackson อยู่ที่เกวียนของเขา \"วางแผนขั้นต่อไป\" อยู่ไม่ไกล เดินเลยฟาร์มฉันไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 1",
+   "speaker": "Piere",
+   "source": "wiki"
+  },
+  "Blazing Retribution#010": {
+   "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
+   "dst": "รายงานการโจมตีให้นักสืบ Jackson ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#011": {
+   "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
+   "dst": "จะจัดการเรื่องนี้ยังไงดี...? ฉันลงมือเองไม่ได้ แล้วพวกนั้นก็ไม่ให้เข้าใกล้... เดี๋ยว มนุษย์นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#012": {
+   "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
+   "dst": "...หมายความว่าไง \"ทำอะไรอยู่\"? นี่เป็นสถานการณ์ละเอียดอ่อนนะ! ฉันต้อง- เดี๋ยว...จริงๆ คุณอาจเป็นคนที่ฉันต้องการก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#013": {
+   "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
+   "dst": "สรุปให้ฟัง เราเชื่อว่าพวกออร์คขโมยอาวุธวิเศษไปจาก {p} โดยเฉพาะขวานเพลิง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#014": {
+   "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
+   "dst": "นั่นทำให้ฉันถูกมัดมือ แต่ในบันทึกไม่ได้พูดถึงมนุษย์ คุณเลยต้องไปเอามันคืนมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#015": {
+   "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
+   "dst": "สิ่งเดียวที่ช่วยเราได้คือพวกมันไม่มีทางเลียนแบบพลังของมัน ออร์คห่วยเรื่องเวทจนน่าขำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#016": {
+   "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
+   "dst": "แต่ปัญหาหลักคือ คุณคงเห็นแล้วว่าแถวนี้มีค่ายออร์คมากแค่ไหน ค้นทั้งหมดคงใช้เวลานาน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#017": {
+   "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
+   "dst": "เบาะแสเดียวที่มีคือค่าย \"Sablestone\" กับ \"Loamsprout\" ดูจะฉลองกันอยู่ช่วงนี้ เริ่มจากตรงนั้นดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#018": {
+   "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
+   "dst": "ทวนอีกที คุณต้องค้นสองค่ายนั้นหาขวานแห่ง {p} แล้วเอามาให้ฉันถ้าเจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#019": {
+   "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
+   "dst": "Sablestone อยู่ทางเหนือ Loamsprout อยู่ทางใต้ มีการเฝ้ายาม ไม่ต้องกลัวที่จะซัดสักหน่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#020": {
+   "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
+   "dst": "ค้นหาอาวุธที่ถูกขโมยในค่ายออร์ค Sablestone และ Loamsprout",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#021": {
+   "src": "Return to Detective Jackson with the news",
+   "dst": "กลับไปแจ้งข่าวนักสืบ Jackson",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#022": {
+   "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
+   "dst": "ไม่เห็นขวานในมือคุณ คงต้องสรุปว่าทั้ง Sablestone และ Loamsprout ไม่มี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#023": {
+   "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
+   "dst": "เดี๋ยว จริงเหรอ? อาวุธที่แรงสุดของพวกมันคือไม้? แล้ว Loamsprout...ปาข้าวเย็นใส่คุณ...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#024": {
+   "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
+   "dst": "ไม่อยากเชื่อ! ทำไมไอ้...ไอ้พวกนั้นถึงฉลาดกว่าเรา?! พวกมันส่งขวานวนไปมาระหว่างค่ายเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#025": {
+   "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
+   "dst": "ค่ายของออร์คกับก๊อบลินมีเป็นสิบกว่าแห่งที่พวกมันจะส่งต่อกันได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#026": {
+   "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
+   "dst": "ถ้าพวกก๊อบลินได้มันไปล่ะ?! พวกนั้นฉลาดที่สุดในบรรดาทั้งหมด นั่นอาจเป็นภัยจริงๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#027": {
+   "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
+   "dst": "มีทั้ง Earthpit, Cliffhearth, Shineridge, Stonecave, Sunspark, Mudspring, Holehold แล้วก็-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#028": {
+   "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
+   "dst": "ไฟ! หยุด!! ข้าถือมีดวิเศษ! ฟัง POXPER!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Blazing Retribution#029": {
+   "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
+   "dst": "ไม่- ไม่อยากเชื่อ ต้องเป็นอันนั้นแน่! ตามออร์คนั่นไป เดี๋ยวนี้!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#030": {
+   "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
+   "dst": "หาค่ายลับในน้ำใกล้บ้าน Piere ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#031": {
+   "src": "GRRRH!! What 'Uthniiazek' mean?!",
+   "dst": "แกร่ร์!! 'Uthniiazek' คืออะไร?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 5",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Blazing Retribution#032": {
+   "src": "Kill Orc Leader Poxper",
+   "dst": "สังหารหัวหน้าออร์ค Poxper",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#033": {
+   "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
+   "dst": "Uthniiazek! Uthniiazek!! ทำไมไม่ฟัง Poxper?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#034": {
+   "src": "Stupid Villager magic thing! Why fire no listen?",
+   "dst": "ของวิเศษชาวบ้านโง่! ทำไมไฟไม่ฟัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#035": {
+   "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
+   "dst": "Poxper พูดแล้วไฟออก...ขวานพูดอะไรอีก? 'Azektoluth?'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#036": {
+   "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
+   "dst": "ฮร่าฮ่า! Poxper คุมไฟได้! ไฟ- ฆ่ามนุษย์กับ Poxper! Uthniiazek! Azektoluth!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 6",
+   "speaker": "Poxper",
+   "source": "wiki"
+  },
+  "Blazing Retribution#037": {
+   "src": "Return the Magic Axe to the Detective",
+   "dst": "นำขวานวิเศษไปคืนนักสืบ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Blazing Retribution#038": {
+   "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
+   "dst": "นั่นแหละขวานแห่ง {p}! ผิวสีฟ้า จับแล้วร้อน ยอดมาก! หัวหน้าออร์คตัวไหนขโมยไป?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#039": {
+   "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
+   "dst": "อืม... หวังว่า Veretel คนนั้นจะไม่ได้ข่าว ยังไงก็ตาม คุณช่วยชาวบ้านไว้มากเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#040": {
+   "src": "Here's your compensation for that. Thank you for the aid!",
+   "dst": "นี่ค่าตอบแทนของคุณ ขอบคุณที่ช่วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "wiki"
+  },
+  "Blazing Retribution#041": {
+   "src": "However, there's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
+   "dst": "แต่สัญญาหยุดยิงที่เราทำกับออร์คมีช่องโหว่ การขโมยไม่นับเป็นการรุกราน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  },
+  "Blazing Retribution#042": {
+   "src": "Searching the camps one by one will be far too slow, gah!! How am I going to fix this?!",
+   "dst": "ค้นทีละค่ายช้าเกินไป อ๊ากก!! จะแก้ยังไงเนี่ย?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  },
+  "Blazing Retribution#043": {
+   "src": "Jackson is twiddling his thumbs off to the southeast. Just continue past my farm!",
+   "dst": "Jackson นั่งตบยุงอยู่ทางตะวันออกเฉียงใต้ เดินเลยฟาร์มฉันไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#044": {
+   "src": "Poxper? That...hm. This could be bad. I've heard that name, and he's a fairly prolific Orc chief. You killed him, right?",
+   "dst": "Poxper? นั่น...หืม แย่แล้วสิ ฉันเคยได้ยินชื่อนี้ เป็นหัวหน้าออร์คที่มีชื่อเสียงพอตัว คุณฆ่ามันแล้วใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
+   "source": "captured"
+  }
+ }
+}

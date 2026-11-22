@@ -1,0 +1,490 @@
+{
+ "_meta": {
+  "quest": "Desperate Metal",
+  "count": 48,
+  "translated": 48,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Desperate Metal#000": {
+   "src": "Speak to Phinas.",
+   "dst": "คุยกับ Phinas",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Desperate Metal#001": {
+   "src": "Oh my...",
+   "dst": "โอ้โห...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#002": {
+   "src": "LOOK AT MY HOUSE!",
+   "dst": "ดูบ้านผมสิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#003": {
+   "src": "A bunch of stupid mechs came here and just started ransacking!",
+   "dst": "หุ่นยนต์โง่ๆ พวกหนึ่งมาที่นี่แล้วรื้อค้นเละเทะไปหมด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#004": {
+   "src": "Looks like a bunch of despermechs. That's what we call junk mechs, trying to survive.",
+   "dst": "ดูเหมือนพวก despermech นั่นคือชื่อที่เราเรียกหุ่นยนต์เศษเหล็กที่ดิ้นรนเอาตัวรอด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#005": {
+   "src": "I count three different mech marks. Looks like they split up once they got their parts.",
+   "dst": "ผมนับรอยหุ่นยนต์ได้สามแบบ ดูเหมือนพวกมันแยกย้ายกันไปหลังได้ชิ้นส่วนแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#006": {
+   "src": "You got to help me here, I'm no warrior. Look they've dropped crates on their escape. Follow them and bring me back evidence that you destroyed them and I shall reward you.",
+   "dst": "คุณต้องช่วยผมนะ ผมไม่ใช่นักรบ ดูสิ พวกมันทำลังตกไว้ตอนหนี ตามพวกมันไป แล้วเอาหลักฐานว่าคุณทำลายพวกมันแล้วมาให้ผม แล้วผมจะให้รางวัล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#007": {
+   "src": "Three trails, three thieving despermechs. Be careful, they aren't to be underestimated.",
+   "dst": "สามรอยทาง despermech จอมขโมยสามตัว ระวังนะ อย่าประมาทพวกมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 1",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#008": {
+   "src": "Locate the {~} mechs by following the trails of tools, return to Phinas with evidence that you destroyed the mechs.",
+   "dst": "ตามรอยเครื่องมือไปหาหุ่นยนต์ {~} ตัว แล้วกลับไปหา Phinas พร้อมหลักฐานว่าคุณทำลายพวกมันแล้ว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Desperate Metal#009": {
+   "src": "You Wynn folk sure know your fights.",
+   "dst": "คนจาก Wynn นี่สู้เก่งจริงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#010": {
+   "src": "You found all three? Let's take a look. Hmm....",
+   "dst": "เจอครบสามตัวเลยเหรอ? ขอดูหน่อย อืม....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#011": {
+   "src": "Wait. These aren't Despermechs.. The factory fell over two years ago. These are brand new. Handmade.",
+   "dst": "เดี๋ยว พวกนี้ไม่ใช่ despermech.. โรงงานล่มไปสองปีกว่าแล้ว พวกนี้ใหม่เอี่ยม ทำด้วยมือ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#012": {
+   "src": "Let's take a closer look.",
+   "dst": "มาดูใกล้ๆ กัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#013": {
+   "src": "Would you look at that! Their code!",
+   "dst": "ดูนั่นสิ! โค้ดของพวกมัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#014": {
+   "src": "Here, have them back. Take a close look at the names of these parts.",
+   "dst": "นี่ เอาคืนไป ดูชื่อของชิ้นส่วนพวกนี้ให้ดีๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#015": {
+   "src": "Find out where to go by looking at the pieces of junk.",
+   "dst": "ดูเศษเหล็กพวกนี้เพื่อหาว่าต้องไปที่ไหน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Desperate Metal#016": {
+   "src": "What are these? I have nothing to do with them!",
+   "dst": "นี่อะไร? ฉันไม่เกี่ยวอะไรกับพวกมันนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#017": {
+   "src": "Ahh.. Well, now that I think of it, writing my location on these parts was a bit stupid.",
+   "dst": "อ้า.. คิดดูแล้ว การเขียนที่อยู่ตัวเองไว้บนชิ้นส่วนพวกนี้ก็โง่ไปหน่อย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#018": {
+   "src": "Those mechs were my creation. Corkus can still live with machines.",
+   "dst": "หุ่นยนต์พวกนั้นฉันสร้างเอง Corkus ยังอยู่ร่วมกับเครื่องจักรได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#019": {
+   "src": "The factory was a disaster. That's what happens when a machine controls a machine.",
+   "dst": "โรงงานคือหายนะ นั่นแหละที่เกิดขึ้นเมื่อให้เครื่องจักรควบคุมเครื่องจักร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#020": {
+   "src": "I am living proof that humans can control them. Make use of them.",
+   "dst": "ฉันคือหลักฐานที่มีชีวิตว่ามนุษย์ควบคุมพวกมันได้ ใช้งานพวกมันได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#021": {
+   "src": "The metal shortage has made it difficult to make my machines... Not to mention the new laws..",
+   "dst": "การขาดแคลนโลหะทำให้สร้างเครื่องจักรของฉันยาก... ไม่ต้องพูดถึงกฎหมายใหม่..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#022": {
+   "src": "If you want to turn me in, fine. You'll find all the evidence you need under my pillow.",
+   "dst": "ถ้าอยากแจ้งจับฉันก็เชิญ หลักฐานทั้งหมดที่คุณต้องการอยู่ใต้หมอนฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#023": {
+   "src": "Search Nettik's lighthouse.",
+   "dst": "ค้นประภาคารของ Nettik",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Desperate Metal#024": {
+   "src": "Stranger detected. Security system: activated.",
+   "dst": "ตรวจพบผู้บุกรุก ระบบป้องกัน: เปิดใช้งาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Desperate Metal#025": {
+   "src": "Prepare for fall in {~}",
+   "dst": "เตรียมร่วงลงใน {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Desperate Metal#026": {
+   "src": "Get ready.",
+   "dst": "เตรียมตัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Desperate Metal#027": {
+   "src": "I'm sorry it ended up like this, you should've just ignored that old man.",
+   "dst": "เสียใจที่มันจบแบบนี้ คุณน่าจะไม่สนตาแก่นั่นซะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 4",
+   "speaker": "Nettik",
+   "source": "wiki"
+  },
+  "Desperate Metal#028": {
+   "src": "Find the fourth mech.",
+   "dst": "หาหุ่นยนต์ตัวที่สี่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Desperate Metal#029": {
+   "src": "I was made to be angry. I can't stop myself...",
+   "dst": "ข้าถูกสร้างมาให้โกรธ ข้าหยุดตัวเองไม่ได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 5",
+   "speaker": "Big Boss Mech-DM666",
+   "source": "wiki"
+  },
+  "Desperate Metal#030": {
+   "src": "Prepare for destruc...*vz=Låß¿[øL8ahelp.",
+   "dst": "เตรียมถูกทำลา...*vz=Låß¿[øL8aช่วยด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 5",
+   "speaker": "Big Boss Mech-DM666",
+   "source": "wiki"
+  },
+  "Desperate Metal#031": {
+   "src": "Did you find the source of those odd handmade mechs?",
+   "dst": "คุณเจอต้นตอของหุ่นยนต์ทำมือแปลกๆ พวกนั้นไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#032": {
+   "src": "Nettik? The Light House owner? It's not overly surprising.",
+   "dst": "Nettik เหรอ? เจ้าของประภาคารน่ะนะ? ไม่แปลกใจเท่าไหร่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#033": {
+   "src": "She always did complain about the mech ban.",
+   "dst": "เธอบ่นเรื่องการห้ามหุ่นยนต์มาตลอด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#034": {
+   "src": "You see, many of the Corkian people rely on their machines. Have done for years.",
+   "dst": "คือว่า ชาว Corkian หลายคนพึ่งพาเครื่องจักรของพวกเขา มาหลายปีแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#035": {
+   "src": "So when the factory fell and the new laws were introduced, people's lives changed..",
+   "dst": "พอโรงงานล่มและมีกฎหมายใหม่ ชีวิตผู้คนก็เปลี่ยนไป..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#036": {
+   "src": "People don't like change. Anyway, I can't thank you enough. Have this for your troubles.",
+   "dst": "คนเราไม่ชอบความเปลี่ยนแปลง ยังไงก็ขอบคุณมากจริงๆ รับนี่ไปเป็นค่าเหนื่อยนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "Phinas",
+   "source": "wiki"
+  },
+  "Desperate Metal#037": {
+   "src": "Evasive maneuver inefficient.",
+   "dst": "การหลบหลีกไร้ประสิทธิภาพ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#038": {
+   "src": "Request additional orders from L.H. Defend.",
+   "dst": "ขอคำสั่งเพิ่มเติมจาก L.H. ป้องกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#039": {
+   "src": "Tools acquired, delivered to L.H. Additional orders received.",
+   "dst": "ได้เครื่องมือแล้ว ส่งให้ L.H. แล้ว ได้รับคำสั่งเพิ่มเติม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#040": {
+   "src": "Intruder detected. Camouflage ineffective. Defend.",
+   "dst": "ตรวจพบผู้บุกรุก การพรางตัวไร้ผล ป้องกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#041": {
+   "src": "Strategic mission accomplished. Mechanical parts: procured.",
+   "dst": "ภารกิจเชิงกลยุทธ์สำเร็จ ชิ้นส่วนกลไก: ได้มาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Intelligence Mech-DM3",
+   "source": "captured.json"
+  },
+  "Desperate Metal#042": {
+   "src": "Look in the content book if you forgot what to do.",
+   "dst": "ถ้าลืมว่าต้องทำอะไร ดูในสมุดเนื้อหา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#043": {
+   "src": "I wrote down your task there.",
+   "dst": "ผมจดงานของคุณไว้ในนั้นแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#044": {
+   "src": "What in the world are you doing here!? Get out immediately.",
+   "dst": "คุณมาทำอะไรที่นี่เนี่ย!? ออกไปเดี๋ยวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#045": {
+   "src": "I mean, welcome! Nothing suspicious here at all.",
+   "dst": "หมายถึง ยินดีต้อนรับ! ที่นี่ไม่มีอะไรน่าสงสัยเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#046": {
+   "src": "Security drop-chute engaging. {~}... {~}...",
+   "dst": "ช่องทิ้งรักษาความปลอดภัยทำงาน {~}... {~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "captured.json"
+  },
+  "Desperate Metal#047": {
+   "src": "Report back to Phinas after destroying the mech",
+   "dst": "กลับไปรายงาน Phinas หลังทำลายหุ่นยนต์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  }
+ }
+}

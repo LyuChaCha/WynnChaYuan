@@ -1,0 +1,940 @@
+{
+ "_meta": {
+  "quest": "The Hidden City",
+  "count": 93,
+  "translated": 93,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Hidden City#000": {
+   "src": "Speak to Narder.",
+   "dst": "คุยกับ Narder",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#001": {
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "dst": "มนุษย์? อ๊ะ! ไม่ต้องห่วงเรื่องหาหมอให้ผม ผมคุมสถานการณ์ได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#002": {
+   "src": "It's a broken leg. I'm already getting it treated, but I have a job to do elsewise- and a time sensitive one, too.",
+   "dst": "ขาหัก ผมกำลังรักษาอยู่ แต่ผมมีงานต้องทำที่อื่น- และเป็นงานเร่งด่วนด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#003": {
+   "src": "I won't be able to do it like this, but it doesn't matter if I'm the one who carries it out. It just needs to be done.",
+   "dst": "สภาพแบบนี้ผมทำไม่ได้ แต่ใครทำก็ไม่สำคัญ แค่ต้องทำให้สำเร็จ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#004": {
+   "src": "I don't work for villagers, I was hired to come here by other humans... there's something you must keep secret.",
+   "dst": "ผมไม่ได้ทำงานให้ชาวบ้าน มนุษย์คนอื่นจ้างผมมาที่นี่... มีเรื่องที่คุณต้องเก็บเป็นความลับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#005": {
+   "src": "Swear it! If you're going to take the job, and my payment for it, you must be silent about it!",
+   "dst": "สาบานสิ! ถ้าจะรับงานนี้และค่าจ้างของผม คุณต้องปิดปากเงียบ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#006": {
+   "src": "Do you agree?",
+   "dst": "ตกลงมั้ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#007": {
+   "src": "Good. To business then.",
+   "dst": "ดี งั้นเข้าเรื่องเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#008": {
+   "src": "There is a hidden town in the canyon here. Up in the mountains- it was built and run by humans.",
+   "dst": "มีเมืองลับซ่อนอยู่ในหุบเขานี้ บนภูเขา- มนุษย์เป็นคนสร้างและดูแล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#009": {
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "ชาวบ้านมีกฎเข้มงวดมากเรื่องมนุษย์ตั้งเมืองบนดินแดนของพวกเขา มันผิดกฎหมายอย่างร้ายแรง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#010": {
+   "src": "I was contacted by the Mayor because he is aware that the town may have become... compromised.",
+   "dst": "นายกเทศมนตรีติดต่อผมมา เพราะเขารู้ว่าเมืองอาจ... ถูกเปิดโปงแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#011": {
+   "src": "The job is to figure out who and why, of course. To let this slip could collapse the treatise between our races.",
+   "dst": "งานคือหาว่าใครทำและทำไม แน่นอน ถ้าเรื่องนี้หลุดไป สนธิสัญญาระหว่างเผ่าพันธุ์เราอาจพังทลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#012": {
+   "src": "I've never been to the city in the mountains, but I was given instructions. Here, I'll write down the location in your book.",
+   "dst": "ผมไม่เคยไปเมืองบนภูเขานั่น แต่ได้รับคำแนะนำมา นี่ ผมจะจดตำแหน่งลงในสมุดของคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#013": {
+   "src": "Be aware though, they won't let you in unless the area is safe. They can't risk villagers wandering in.",
+   "dst": "แต่ระวังนะ พวกเขาจะไม่ให้คุณเข้าไปถ้าบริเวณนั้นไม่ปลอดภัย พวกเขาเสี่ยงให้ชาวบ้านหลงเข้าไปไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#014": {
+   "src": "Good luck.",
+   "dst": "โชคดีนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#015": {
+   "src": "Head to [{~}, {~}, -{~}] to find the human town.",
+   "dst": "ไปที่ [{~}, {~}, -{~}] เพื่อหาเมืองของมนุษย์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#016": {
+   "src": "Hm? Oh, a fellow adventurer, I see! I'm sorry, but this discovery is mine to make. There's something strange about that door...",
+   "dst": "หืม? อ้อ นักผจญภัยด้วยกันนี่เอง! ขอโทษนะ แต่การค้นพบนี้เป็นของฉัน ประตูนั่นมีอะไรแปลกๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#017": {
+   "src": "Deadly gasses? Nonsense! As you can see the two of us are breathing just fine.",
+   "dst": "ก๊าซพิษ? ไร้สาระ! อย่างที่เห็น เราสองคนก็หายใจได้ปกติดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#018": {
+   "src": "You want me to leave? Why, so that you can have all of the glory for yourself? Ha, not a chance!",
+   "dst": "อยากให้ฉันไปเหรอ? ทำไม จะได้เอาชื่อเสียงไปคนเดียวงั้นสิ? ฮ่า ไม่มีทาง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#019": {
+   "src": "The only way I'm leaving is if I can get that door open or if the whole cave starts crashing down on us.",
+   "dst": "ฉันจะไปก็ต่อเมื่อเปิดประตูนั่นได้ หรือถ้ำทั้งถ้ำเริ่มถล่มลงมาใส่เรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#020": {
+   "src": "Cause the cave to collapse",
+   "dst": "ทำให้ถ้ำถล่ม",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#021": {
+   "src": "Gweh! I just had to go running my mouth about the cave collapsing! I'm out- if you have any sense you'll leave too!",
+   "dst": "แหวะ! ปากเสียพูดเรื่องถ้ำถล่มแท้ๆ! ฉันไปละ- ถ้าคุณมีสมองก็ไปด้วยเถอะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#022": {
+   "src": "loud mechanical noise can be heard coming from the door",
+   "dst": "ได้ยินเสียงกลไกดังมาจากประตู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#023": {
+   "src": "Go up to the door and inspect the noise.",
+   "dst": "ไปที่ประตูแล้วตรวจสอบเสียง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#024": {
+   "src": "Talk to {p} Guard.",
+   "dst": "คุยกับยามของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#025": {
+   "src": "Thank you for getting rid of that curious villager! We thought he'd never leave.",
+   "dst": "ขอบคุณที่ไล่ชาวบ้านขี้สงสัยคนนั้นไปได้! เรานึกว่าเขาจะไม่ไปซะแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#026": {
+   "src": "I've never seen you before. Who gave you access to the town?",
+   "dst": "ไม่เคยเห็นคุณมาก่อน ใครอนุญาตให้คุณเข้าเมือง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#027": {
+   "src": "You're here in place of the detective the mayor hired?",
+   "dst": "คุณมาแทนนักสืบที่นายกเทศมนตรีจ้างมาเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#028": {
+   "src": "Normally, I wouldn't believe that, but come in. We're desperate.",
+   "dst": "ปกติผมคงไม่เชื่อหรอก แต่เข้ามาเถอะ เราจนตรอกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#029": {
+   "src": "If you ever need to leave and get back, I can simply open the way.",
+   "dst": "ถ้าต้องการออกไปแล้วกลับมา ผมเปิดทางให้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#030": {
+   "src": "You probably should be going now. Our mayor can get impatient.",
+   "dst": "คุณน่าจะไปได้แล้ว นายกเทศมนตรีของเราใจร้อนได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#031": {
+   "src": "Talk to Mayor Eoric in the town hall.",
+   "dst": "คุยกับนายกเทศมนตรี Eoric ที่ศาลาว่าการ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#032": {
+   "src": "What are you doing here? I'm writing an important letter, this better be worth my time.",
+   "dst": "มาทำอะไรที่นี่? ผมกำลังเขียนจดหมายสำคัญ หวังว่าจะคุ้มเวลาผมนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#033": {
+   "src": "What? Narder sent you? Why'd he send a {p} soldier?",
+   "dst": "อะไรนะ? Narder ส่งคุณมา? ทำไมส่งทหารจาก {p} มา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#034": {
+   "src": "I didn't think the army were authorized to know about {p}, especially Fruma recruits.",
+   "dst": "ผมไม่คิดว่ากองทัพจะได้รับอนุญาตให้รู้เรื่อง {p} โดยเฉพาะทหารใหม่จาก Fruma",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#035": {
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "เอาเถอะ ความลับของ {p} กำลังตกอยู่ในอันตรายใหญ่หลวง เราพบหลักฐานว่ามีคนทรยศ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#036": {
+   "src": "We have locked down all of the exits. No one leaves or enters without my permission.",
+   "dst": "เราปิดทางออกทั้งหมดแล้ว ไม่มีใครเข้าออกได้โดยไม่ได้รับอนุญาตจากผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#037": {
+   "src": "We need a detective to sniff out the traitor and expose him.",
+   "dst": "เราต้องการนักสืบมาดมกลิ่นหาคนทรยศและเปิดโปงเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#038": {
+   "src": "Start by asking the citizens around here about anything suspicious they've seen.",
+   "dst": "เริ่มจากถามชาวเมืองแถวนี้ว่าเห็นอะไรน่าสงสัยบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#039": {
+   "src": "When you find the culprit, remember to leave him alive! The guards will take care of him.",
+   "dst": "เมื่อเจอตัวคนผิดแล้ว อย่าลืมไว้ชีวิตเขา! ยามจะจัดการเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#040": {
+   "src": "Ask {p} Citizens about the note.",
+   "dst": "ถามชาวเมือง {p} เกี่ยวกับโน้ต",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#041": {
+   "src": "Sorry, detective, but I haven't seen anything suspicious. In fact, I haven't even left my house for the last week.",
+   "dst": "ขอโทษครับนักสืบ แต่ผมไม่เห็นอะไรน่าสงสัยเลย ที่จริงผมไม่ได้ออกจากบ้านมาทั้งสัปดาห์แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Reder",
+   "source": "wiki"
+  },
+  "The Hidden City#042": {
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
+   "dst": "สิ่งเดียวที่น่าสงสัยคือชายใส่ฮู้ดเดินไปมา คนใน {p} มีไม่เยอะ เลยแปลกดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Nichye",
+   "source": "wiki"
+  },
+  "The Hidden City#043": {
+   "src": "If you want to find out anything, the best person to ask is Lumilda. She's in her bakery, next to the Scroll Shop.",
+   "dst": "ถ้าอยากรู้อะไร คนที่ควรถามที่สุดคือ Lumilda เธออยู่ที่ร้านขนมปัง ข้างร้านม้วนคัมภีร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Sybeth",
+   "source": "wiki"
+  },
+  "The Hidden City#044": {
+   "src": "Ah, detective! What brings you to the sweet Lumilda's Bakery?",
+   "dst": "อ้าว นักสืบ! อะไรพาเธอมาที่ร้านขนมปังแสนหวานของ Lumilda จ๊ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#045": {
+   "src": "Hm, yes, there is a weird person coming through.",
+   "dst": "อืม ใช่ มีคนแปลกๆ ผ่านมาแถวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#046": {
+   "src": "It's a hooded man. Never seen the face. A trouble maker, if you ask me!",
+   "dst": "ผู้ชายใส่ฮู้ด ไม่เคยเห็นหน้า ตัวป่วนแน่ๆ ถ้าให้ฉันว่า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#047": {
+   "src": "He's been here a few times, usually writing things on a piece of paper. That man's a real mystery. No one even knows where he lives.",
+   "dst": "เขามาที่นี่หลายครั้ง มักจะจดอะไรลงกระดาษ ผู้ชายคนนั้นลึกลับจริงๆ ไม่มีใครรู้ด้วยซ้ำว่าเขาอยู่ที่ไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#048": {
+   "src": "One time my grandson couldn't resist and followed the man. Last thing he saw was the man leaving through the Eastern Exit.",
+   "dst": "ครั้งหนึ่งหลานชายฉันอดใจไม่ไหว ตามเขาไป สุดท้ายเห็นเขาออกไปทางทางออกฝั่งตะวันออก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#049": {
+   "src": "Ain't that a place to start, sweetheart?",
+   "dst": "เริ่มจากตรงนั้นก็ได้นะจ๊ะ หนูจ๋า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#050": {
+   "src": "Inspect anything beyond the Eastern Exit.",
+   "dst": "สำรวจสิ่งที่อยู่เลยทางออกฝั่งตะวันออก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#051": {
+   "src": "Inspect the house.",
+   "dst": "สำรวจบ้าน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#052": {
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
+   "dst": "อ้า เจ้าคงเป็นนักสืบสินะ พวก Eltom หัวทึบพวกนั้นไม่มีใครคิดออกหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#053": {
+   "src": "I guess the Grook is out of the pen then.",
+   "dst": "ดูท่า Grook จะหลุดออกจากคอกแล้วสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#054": {
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "เมืองนี้ไม่ควรมีอยู่ด้วยซ้ำ มนุษย์ไม่ได้รับอนุญาตให้ครอบครองที่ดินใน Gavel แบบนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#055": {
+   "src": "These Humans couldn’t be bothered to fight their own war, so they hid an entire city here.",
+   "dst": "มนุษย์พวกนี้ไม่ยอมสู้สงครามของตัวเอง เลยซ่อนทั้งเมืองไว้ที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#056": {
+   "src": "Traitor? I’m no traitor. I'm just looking to carry out the law where it needs to be carried out. Nothing personal, yes?",
+   "dst": "ทรยศ? ข้าไม่ใช่คนทรยศ ข้าแค่อยากให้กฎหมายถูกบังคับใช้ในที่ที่ควรใช้ ไม่ใช่เรื่องส่วนตัวนะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#057": {
+   "src": "Maybe they'll actually use \"Ardulf\" instead of saying \"freak\" once they've seen the good I can do for them!",
+   "dst": "บางทีพวกมันอาจเรียกข้าว่า \"Ardulf\" แทน \"ตัวประหลาด\" ซะที เมื่อเห็นว่าข้าทำดีให้พวกมันได้แค่ไหน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#058": {
+   "src": "Read the note on the table.",
+   "dst": "อ่านโน้ตบนโต๊ะ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#059": {
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
+   "dst": "- เรือเหาะออกจาก {p} {~}:{~} ไป {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "Notes",
+   "source": "wiki"
+  },
+  "The Hidden City#060": {
+   "src": "Head to {p}'s Airbase.",
+   "dst": "ไปที่ฐานทัพอากาศของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#061": {
+   "src": "Talk to Hilan.",
+   "dst": "คุยกับ Hilan",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#062": {
+   "src": "H-h-help!",
+   "dst": "ช-ช่วยด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#063": {
+   "src": "Hooded man... Climbed tower...",
+   "dst": "ชายใส่ฮู้ด... ปีนหอคอย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#064": {
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "เรียกร้องจะใช้เรือ... ผมปฏิเสธ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#065": {
+   "src": "He beat me up... And left...",
+   "dst": "เขาซ้อมผม... แล้วก็ไป...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#066": {
+   "src": "Hurry!",
+   "dst": "เร็ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#067": {
+   "src": "Head up to the Airbase's Tower to confront the hooded man.",
+   "dst": "ขึ้นไปบนหอคอยของฐานทัพอากาศเพื่อเผชิญหน้ากับชายใส่ฮู้ด",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#068": {
+   "src": "Board the {p} Cargo Ship.",
+   "dst": "ขึ้นเรือขนส่งสินค้าของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#069": {
+   "src": "What are you doing here? Why are you protecting this illegal town?",
+   "dst": "เจ้ามาทำอะไรที่นี่? ทำไมเจ้าปกป้องเมืองผิดกฎหมายนี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#070": {
+   "src": "The Villagers will not be happy about {p}. This could seriously harm the Gavel-Wynn relationship.",
+   "dst": "ชาวบ้านจะไม่พอใจเรื่อง {p} แน่ เรื่องนี้อาจทำลายความสัมพันธ์ระหว่าง Gavel กับ Wynn อย่างหนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#071": {
+   "src": "You can't stop me. You wouldn't murder one of your own, would you?",
+   "dst": "เจ้าหยุดข้าไม่ได้หรอก เจ้าคงไม่ฆ่าพวกเดียวกันเองใช่มั้ย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#072": {
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "ข้าจะบอกนายกเทศมนตรีของ {p} ทุกอย่างเกี่ยวกับที่นี่ แล้วรับรางวัล ข้าจะร่ำรวย ถ้าอยากหยุดข้า เจ้าก็ต้องลงมือเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#073": {
+   "src": "...you got snuck up on and knocked out. Where are you now?",
+   "dst": "...คุณถูกลอบเข้ามาจากด้านหลังและถูกทำให้หมดสติ ตอนนี้คุณอยู่ที่ไหน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#074": {
+   "src": "Escape your cell and find a way to sabotage the ship.",
+   "dst": "หนีออกจากห้องขัง แล้วหาทางก่อวินาศกรรมเรือ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#075": {
+   "src": "*To Hilan.",
+   "dst": "*ถึง Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 15",
+   "speaker": "Note",
+   "source": "wiki"
+  },
+  "The Hidden City#076": {
+   "src": "Talk to {p}'s Mayor at the top of {p}.",
+   "dst": "คุยกับนายกเทศมนตรีของ {p} ที่ยอดสุดของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#077": {
+   "src": "What brings a human to my office?",
+   "dst": "อะไรพามนุษย์มาที่ห้องทำงานของผม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "ผมจดตำแหน่งของเมืองไว้ในสมุดเนื้อหาของคุณแล้ว ผมช่วยอะไรได้อีกไม่มากแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "บันทึก:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- ห้องทำงานนายกเทศมนตรีอยู่ชั้นบนสุดของ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- อย่าลืมเปิดบัญชีธนาคารคนแคระ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "ถึง Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "เรือที่คุณดูแลอยู่นี่พังไม่เป็นท่า นี่เป็นครั้งที่สามแล้วที่ผมต้องซ่อมน้ำหล่อเย็นรั่วตรงนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "เครื่องจักรของ Corkian ดีมาก แต่ไม่ได้อยู่ยงคงกระพัน ถ้าเป็นแบบนี้ คุณต้องซื้อเรือใหม่ทุกฤดูหนาว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "เข้าใจยากนักเหรอว่าห้ามมีของเหลวเข้าไปในเครื่องยนต์?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-วิศวกร Bertin",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "จดหมายเหรอ? อ้อ นั่น เรื่อง {p} ใช่มั้ย? ไม่ต้องทำหน้ากังวล ความลับปลอดภัยกับฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "ใช่ ฉันรู้เรื่อง {p} ยังไงนายกเทศมนตรีที่นั่นก็เป็นอดีตสามีของฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "ความรักระหว่างชาวบ้านกับมนุษย์อาจดูแปลก ฉันรู้ แต่เผ่าพันธุ์ไม่ได้ขวางเราจากการรักกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "คนที่ทิ้งจดหมายเรื่อง {p} คือ Ardulf ลูกชายของเรา พอ Eoric รู้เรื่องลูก เขาก็ตื่นตระหนกแล้วทิ้งฉันไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf จะไม่มีวันได้รับการยอมรับเพราะเป็นลูกครึ่ง... ถึงอย่างนั้น ฉันก็หวังว่าเขาจะสบายดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "อ้อ ใช่ อีกเรื่อง สวิตช์ใต้โต๊ะ... กดเลยสิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  }
+ }
+}

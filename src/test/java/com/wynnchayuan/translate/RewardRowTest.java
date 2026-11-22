@@ -100,7 +100,7 @@ public final class RewardRowTest {
                 {"2 Yellow Crystal", "Yellow Crystal"},
                 {"1 Infested Pit Key", "Pit Key"},
         };
-        for (String lang : new String[] {"zh_tw", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn"}) {
+        for (String lang : new String[] {"zh_tw", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"}) {
             TranslationStore real = new TranslationStore();
             real.loadAll(base.resolve(lang));
             for (String[] r : rows) {

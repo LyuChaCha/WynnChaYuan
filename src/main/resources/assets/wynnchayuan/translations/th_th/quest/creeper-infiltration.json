@@ -1,0 +1,480 @@
+{
+ "_meta": {
+  "quest": "Creeper Infiltration",
+  "count": 47,
+  "translated": 47,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Creeper Infiltration#000": {
+   "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
+   "dst": "ถ้าจะไปถ้ำครีปเปอร์ ให้เดินตามทางตะวันตก แล้วเลี้ยวซ้ายที่ค่ายมนุษย์หมู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas",
+   "source": "captured",
+   "similar": {
+    "text": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
+    "file": "quest/creeper-infiltration.json",
+    "ratio": 0.891,
+    "reason": "candidate"
+   }
+  },
+  "Creeper Infiltration#001": {
+   "src": "You had a piece of skin? Well, you don't seem to have it now, so I can't say I believe you.",
+   "dst": "คุณมีชิ้นหนังงั้นเหรอ? แต่ตอนนี้ดูเหมือนคุณไม่มีนะ ผมเลยเชื่อไม่ลงหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#002": {
+   "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
+   "dst": "ผมชื่อ Thomas คอยช่วยดูแลเสบียงของหมู่บ้านในหุบเหวมนุษย์หมูครับ แต่ตอนนี้ผมมีปัญหานิดหน่อย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#003": {
+   "src": "We're running low on ravine grains, which is our main staple we use for our food.",
+   "dst": "ธัญพืชหุบเหวของเราใกล้หมดแล้ว มันเป็นอาหารหลักของพวกเราครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#004": {
+   "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
+   "dst": "ครั้งล่าสุดที่เราเข้าไป ผมได้ยินเสียงระเบิดจากด้านบน กลัวว่ามนุษย์หมูจะเอา TNT ระเบิดเสบียงธัญพืชของเรา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#005": {
+   "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
+   "dst": "ผมมาที่ {p} เพื่อหาคนช่วย แต่ไม่มีใครเลย จนกระทั่งตอนนี้ คุณจะยอมช่วยผมไหมครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#006": {
+   "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
+   "dst": "จริงเหรอครับ? คุณคือผู้ช่วยชีวิตผมเลย เจอกันที่หมู่บ้านนะ แค่เดินตามทางออกจากเมือง แล้วเข้าทางเข้าหุบเหวที่อยู่เหนือสุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#007": {
+   "src": "I'll meet you at the village! Just follow the path out of town and take the northern-most entrance to the ravines.",
+   "dst": "เจอกันที่หมู่บ้านนะครับ! แค่เดินตามทางออกจากเมือง แล้วเข้าทางเข้าหุบเหวที่อยู่เหนือสุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas",
+   "source": "captured"
+  },
+  "Creeper Infiltration#008": {
+   "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
+   "dst": "พอไปถึงแล้ว ให้เลียบผนังด้านขวาของหุบเหว แล้วปีนบันไดขึ้นไปที่ทางเข้า และระวังในอุโมงค์ด้วย มนุษย์หมูใช้ก้อนหินขว้างเป็นอาวุธ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#009": {
+   "src": "Oh, finally, someone has come to this hidden village!",
+   "dst": "โอ้ ในที่สุดก็มีคนมาที่หมู่บ้านลับแห่งนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#010": {
+   "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
+   "dst": "ผมชื่อ Thomas คอยช่วยดูแลเสบียงของหมู่บ้านหุบเหวแห่งนี้ครับ แต่ตอนนี้ผมมีปัญหานิดหน่อย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#011": {
+   "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
+   "dst": "คุณดูแข็งแรงกว่าผมเยอะ บางทีคุณอาจฝ่ามนุษย์หมูในอุโมงค์ไปได้ แล้วจัดการต้นเหตุของระเบิดด้านบน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#012": {
+   "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
+   "dst": "แค่เลียบผนังด้านขวาของหุบเหว แล้วปีนบันไดขึ้นไปที่ทางเข้า และระวังในอุโมงค์ด้วย มนุษย์หมูใช้ก้อนหินขว้างเป็นอาวุธ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#013": {
+   "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
+   "dst": "เข้าอุโมงค์ที่ [-{~}, {~}, -{~}] แล้วขึ้นไปให้ถึงยอดหุบเหว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#014": {
+   "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
+   "dst": "นำ [Creeper Skin] กลับไปให้ Thomas ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#015": {
+   "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
+   "dst": "ไม่คิดเลยว่าคุณจะตกลงมาจากฟ้าแบบนั้น เป็นอะไรไหมครับ หรือให้ผมไปตามพ่อค้ายามารักษาให้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#016": {
+   "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
+   "dst": "ไม่เป็นไรเหรอ? โอ้ ดีแล้ว คุณจัดการมนุษย์หมูกับระเบิดของพวกมันได้หรือเปล่าครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#017": {
+   "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
+   "dst": "สิ่งมีชีวิตสีเขียว? \"ครีปเปอร์\"? ไม่มีอะไรแบบนั้นในโลกนี้หรอก ยิ่งมีมนุษย์หมูอยู่รอบตัวแบบนี้ด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#018": {
+   "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
+   "dst": "โอ้ คุณเอาชิ้นหนังกลับมาด้วย แปลกจัง ผมเคยเห็นหนังแบบนี้มาก่อน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#019": {
+   "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
+   "dst": "มีถ้ำใหญ่อยู่ทางใต้ ผมเคยลองเข้าไป แต่โดนสิ่งมีชีวิตสีเขียวซุ่มโจมตี...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#020": {
+   "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
+   "dst": "ผมนึกว่าแค่ฝันไป แต่ \"ครีปเปอร์\" ที่คุณพูดถึง...อาจอาศัยอยู่ในถ้ำนั้นก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#021": {
+   "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
+   "dst": "ผมมีความคิด ผมต้องรู้ให้แน่ว่าพวกมันอยู่ที่นั่นจริง พ่อค้าทำหน้ากากให้คุณได้ด้วยหนังนี้กับวัสดุอีกอย่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#022": {
+   "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
+   "dst": "มี Pigman Overlord ที่บางทีก็วนเวียนอยู่ในถ้ำใกล้ๆ ถ้าคุณฆ่ามันได้ จะได้หนังมนุษย์หมูที่เหนียวพอจะทำหน้ากาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#023": {
+   "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
+   "dst": "ถ้าคุณเดินตามทางตะวันตกเลยทางเข้าอุโมงค์ไป น่าจะเจอค่ายที่ Overlord อยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#024": {
+   "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
+   "dst": "ไปเอาหนังมนุษย์หมูมา แล้วกลับมาหาผม ผมจะบอกว่าต้องทำอะไรต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#025": {
+   "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
+   "dst": "เอา [{~} Pigman Hide] จาก Pigman Overlord ใกล้ [-{~}, {~}, -{~}] แล้วกลับไปหา Thomas",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#026": {
+   "src": "I see you have the hide. This skin will work perfectly for my plan.",
+   "dst": "เห็นว่าคุณได้หนังมาแล้ว หนังนี้เหมาะกับแผนของผมพอดีเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#027": {
+   "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
+   "dst": "ในหมู่บ้านนี้มีพ่อค้าหน้ากาก เขาทำหน้ากากให้คุณได้ด้วยวัสดุสองอย่างที่ผมมี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#028": {
+   "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
+   "dst": "พอสวมหน้ากากแล้ว คุณจะเข้าไปในถ้ำของ \"ครีปเปอร์\" ได้โดยไม่ถูกจับได้ แค่นั้นเราถึงจะรู้ความจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#029": {
+   "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
+   "dst": "อีกอย่าง ถ้าคุณทำหน้ากากหาย พ่อค้าทำให้ใหม่ได้ ถ้าคุณเอาชิ้นหนังกับหนังมนุษย์หมูไปให้เขาอีกชุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#030": {
+   "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
+   "dst": "นี่วัสดุครับ ระวังตัวด้วยนะ ใครจะรู้ว่าเจ้าสัตว์ประหลาดสีเขียวพวกนั้นจะทำอะไรคุณได้บ้าง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#031": {
+   "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
+   "dst": "ซื้อหน้ากากครีปเปอร์จากพ่อค้า แล้วเข้าไปในรังครีปเปอร์ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#032": {
+   "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
+   "dst": "นำ [{~} Creeper Powder] ไปให้ Thomas ที่ [-{~}, {~}, -{~}] เพื่อพิสูจน์ว่าครีปเปอร์มีอยู่จริงใน Wynn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#033": {
+   "src": "So, what was in the cave? Were there really creepers in there?",
+   "dst": "แล้วในถ้ำมีอะไรครับ? มีครีปเปอร์อยู่ในนั้นจริงๆ เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#034": {
+   "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
+   "dst": "นี่อะไร? กลิ่นเหมือนดินปืน...แต่มีกลิ่นดินมากกว่า แล้วนี่มาจากถ้ำนั้นเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#035": {
+   "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
+   "dst": "ผงนี้ไม่ใช่ของพื้นที่นี้แน่นอน ต้องมาจากพวกครีปเปอร์นั่นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#036": {
+   "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
+   "dst": "ตอนนี้คงปล่อยพวกมันไว้อย่างสงบก่อน ถ้าพวกมันมีอยู่จริง ก็ไม่จำเป็นต้องไล่ล่าจนสูญพันธุ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#037": {
+   "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
+   "dst": "อีกอย่าง ถ้าตัวพวกมันทำจากดินปืน มันอาจระเบิดหุบเหวนี้เป็นชิ้นๆ ได้ง่ายๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#038": {
+   "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
+   "dst": "ขอบคุณที่ช่วยนะครับ คุณคงสมควรได้รางวัลบ้าง เพราะช่วยไขปริศนาใหญ่ของหุบเหวได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#039": {
+   "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
+   "dst": "กลับมาที่หมู่บ้านเราได้ทุกเมื่อเลยครับ ถึงตอนนั้นเสบียงอาหารของเราน่าจะมั่นคงแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#040": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "อ้า ดีใจที่ได้เจอคุณอีก เพื่อน! ขอโทษที่ไม่ได้ชวนไปงานฉลอง แต่คุณดูยุ่งมากเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#041": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "โอ้ คุณนี่เอง! อ๊ากกก... ขอบคุณสำหรับสิ่งที่คุณทำให้พวกเรา มัน... อึกกก... ซาบซึ้งจริงๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#042": {
+   "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
+   "dst": "ใครก็ได้! ใครก็ได้ช่วย- อ้อ สวัสดีครับ คุณดูแข็งแรงพอจะช่วยผมได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#043": {
+   "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
+   "dst": "ปกติพวกเราไปเก็บกันเอง แต่ไม่นานมานี้มนุษย์หมูกลุ่มหนึ่งที่กำลังโกรธยึดอุโมงค์ขึ้นยอดหุบเหวไป ที่นั่นเป็นที่ปลูกธัญพืช",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#044": {
+   "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
+   "dst": "คุณไปถ้ำครีปเปอร์มาหรือยัง? แค่เดินตามทางตะวันตก แล้วเลี้ยวซ้ายที่ค่ายมนุษย์หมู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 4",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#045": {
+   "src": "Thanks again for your help. Now we can truly say creepers exist here in the ravines.",
+   "dst": "ขอบคุณอีกครั้งที่ช่วยครับ ตอนนี้เราพูดได้เต็มปากแล้วว่าในหุบเหวนี้มีครีปเปอร์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas",
+   "source": "captured"
+  },
+  "Creeper Infiltration#046": {
+   "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",
+   "dst": "โอ้ มีแขกเหรอ? น่าสนใจ นึกว่ามีแค่ฉันที่รู้จักถ้ำนี้ เพราะอาจารย์เคยหาว่าฉันบ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  }
+ }
+}

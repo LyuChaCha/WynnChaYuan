@@ -1,0 +1,756 @@
+{
+ "_meta": {
+  "quest": "The Canyon Guides",
+  "count": 74,
+  "translated": 74,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Canyon Guides#000": {
+   "src": "Welcome to Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
+   "dst": "ยินดีต้อนรับสู่วิหาร Bantisu มนุษย์ผู้พเนจร เราช่วยนักเดินทางอย่างคุณให้ผ่านผนังหุบผาที่แปรปรวนได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#001": {
+   "src": "You appear quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
+   "dst": "คุณดูแข็งแกร่ง และมีไหวพริบดี เช่นนั้นเราขอให้คุณช่วยเราได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#002": {
+   "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but be unable to reach him.",
+   "dst": "คือว่า มีชายหลงทางคนหนึ่งตั้งแคมป์อยู่บนหน้าผาใกล้ๆ เราเจ็บปวดที่เห็นเขาแต่ไปถึงตัวเขาไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#003": {
+   "src": "So we ask you to guide Seluc to us. We shall send you to him, and you shall bring him here. If you wish to help, you will be rewarded for your time.",
+   "dst": "เราจึงขอให้คุณนำทาง Seluc มาหาเรา เราจะส่งคุณไปหาเขา แล้วคุณพาเขามาที่นี่ ถ้าคุณยินดีช่วย คุณจะได้รับรางวัลตอบแทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#004": {
+   "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day of cliff diving?",
+   "dst": "เดี๋ยว มนุษย์! อึ๋ย ไม่น่าตั้งความหวังเลย ทำอะไรมาล่ะ ไปกระโดดหน้าผาเล่นทั้งวันเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#005": {
+   "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at doing that, right? Fetching things and people?",
+   "dst": "ถ้าอยากทำตัวมีประโยชน์จริงๆ ก็ไปตามพระ Bantisu มาที่นี่สิ! แกถนัดนี่ ใช่ไหม? ไปตามของตามคนน่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#006": {
+   "src": "Kill them! Kill them now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
+   "dst": "ฆ่ามัน! ฆ่าเดี๋ยวนี้! แล้วพาฉันออกไปจากที่นี่! แกลากฉันเข้ามาในเรื่องวุ่นๆ นี่ ก็พาฉันออกไปซะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#007": {
+   "src": "Are you blind?! You knocked my shoes off in that lake! Follow the path, and don't take any off routes! I don't want to risk cutting up my feet!",
+   "dst": "ตาบอดหรือไง?! แกทำรองเท้าฉันตกทะเลสาบ! เดินตามทางไป อย่าออกนอกเส้นทาง! ฉันไม่อยากเสี่ยงเท้าบาด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#008": {
+   "src": "Trying to ditch on me while I'm talking my coat off? You have an obligation to help me you know!",
+   "dst": "จะทิ้งฉันไว้ตอนฉันถอดเสื้อโค้ตเหรอ? แกมีหน้าที่ต้องช่วยฉันนะ รู้ไว้ด้วย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#009": {
+   "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair!. Besides that...",
+   "dst": "เดินตั้งเยอะ...ฉันจะพักตรงนี้ แกบังคับให้ฉันกระโดดหน้าผา ฉันก็บังคับให้แกช้าลงได้ ยุติธรรมดี! นอกจากนั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#010": {
+   "src": "I only even came out here to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
+   "dst": "ฉันมาที่นี่แค่เพื่อชมวิวเท่านั้นแหละ อย่างน้อยวิวก็พังไม่ได้ ยังไงก็เถอะ วันพักผ่อนกลายเป็นแบบนี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#011": {
+   "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into a lake and made me lose my shoes!",
+   "dst": "อึ๋ย ปวดเท้าจะตาย ทริปเดินป่านี่คงไม่แย่ขนาดนี้ ถ้าไม่มีใครบางคนผลักฉันตกทะเลสาบจนรองเท้าหาย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#012": {
+   "src": "Find me a way up, and fast! I've had enough of this stupid canyon.",
+   "dst": "หาทางขึ้นไปให้ฉันเร็วๆ! ฉันเบื่อหุบผาโง่ๆ นี่เต็มทนแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#013": {
+   "src": "Huff...puff... Well...huff... Wait, there's...there's no way down the other side! Huff...what a waste!!",
+   "dst": "แฮ่ก...แฮ่ก... ก็...แฮ่ก... เดี๋ยว ไม่มี...ไม่มีทางลงอีกฝั่ง! แฮ่ก...เสียแรงเปล่า!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#014": {
+   "src": "You...had better count yourself lucky I haven't broken any bones from this. Agh...but that doesn't mean I'm not aching all over!!",
+   "dst": "แก...ควรนับว่าโชคดีที่ฉันไม่กระดูกหักเพราะเรื่องนี้ อ๊าก...แต่ไม่ได้แปลว่าฉันไม่ปวดไปทั้งตัวนะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#015": {
+   "src": "I paid two weeks' wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
+   "dst": "ฉันจ่ายค่าจ้างสองสัปดาห์ซื้อเสื้อโค้ตที่แกทำเปียกนั่น ฉันไม่ไปไหนถ้าไม่ได้มันคืน และฉันก็เหนื่อยเกินจะเดินกลับลงไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#016": {
+   "src": "[+{~} Ornamental Coat]",
+   "dst": "[+{~} เสื้อโค้ตประดับลาย]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#017": {
+   "src": "Now that you have the coat, you should return to Seluc",
+   "dst": "ตอนนี้คุณได้เสื้อโค้ตแล้ว ควรกลับไปหา Seluc",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#018": {
+   "src": "Seluc doesn't seem to be here any more. Maybe he's moved further.",
+   "dst": "ดูเหมือน Seluc จะไม่อยู่ที่นี่แล้ว เขาอาจไปไกลกว่านี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#019": {
+   "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude to this kind human.",
+   "dst": "จงจำไว้เป็นบทเรียน Seluc คุณโกหกผู้ที่มองเห็นผ่านสายลมไม่ได้ บัดนี้จงแสดงความขอบคุณต่อมนุษย์ผู้ใจดีผู้นี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#020": {
+   "src": "As thanks, we will also grant you access to the Bantisu Air Boosters found around the canyon. I hope they are of assistance to you.",
+   "dst": "เพื่อเป็นการขอบคุณ เราจะให้คุณใช้ Bantisu Air Booster ที่อยู่ทั่วหุบผาได้ หวังว่ามันจะเป็นประโยชน์กับคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured",
+   "similar": {
+    "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
+    "file": "quest/the-canyon-guides.json",
+    "ratio": 0.898,
+    "reason": "candidate"
+   }
+  },
+  "The Canyon Guides#021": {
+   "src": "Speak to Gana at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Gana ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#022": {
+   "src": "We commune with the wind, and she gives us her sight. Wherever the breeze blows, we may see.",
+   "dst": "เราสื่อสารกับสายลม และนางมอบการมองเห็นให้เรา ที่ใดสายลมพัดผ่าน เราย่อมมองเห็น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#023": {
+   "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
+   "dst": "สัตว์ในหุบผาตรงนั้นดุร้าย และเราไม่เหมาะกับการต่อสู้ เราไปถึงตัวเขาได้ แต่เราเองก็จะติดอยู่ที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#024": {
+   "src": "Find Seluc in his camp at [{~}, {~}, -{~}].",
+   "dst": "ตามหา Seluc ที่แคมป์ของเขาที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#025": {
+   "src": "Who's that? Am I finally being rescued!?",
+   "dst": "นั่นใคร? ในที่สุดก็มีคนมาช่วยฉันแล้วเหรอ!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#026": {
+   "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
+   "dst": "ถ้าแกตั้งใจมาช่วยฉันจริงๆ ก็เสียเวลาทั้งแกทั้งฉันเปล่าๆ แน่นอน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#027": {
+   "src": "WHY YOU-",
+   "dst": "แกนี่มัน-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#028": {
+   "src": "You're trying to kill me, aren't you?! What, can't take hearing the truth? Now my coat is drenched, and! AND!",
+   "dst": "แกจะฆ่าฉันใช่ไหม?! อะไร ฟังความจริงไม่ได้เหรอ? ตอนนี้เสื้อโค้ตฉันเปียกโชก แล้วก็! แล้วก็!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#029": {
+   "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
+   "dst": "พวก Jinko จะกระโจนใส่อยู่แล้ว!! ฉันไม่มีอาวุธ แกคิดว่าฉันจะวิ่งไปตะลุมบอนกับพวกมันเหรอ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#030": {
+   "src": "Escort Seluc back to Gana.",
+   "dst": "คุ้มกัน Seluc กลับไปหา Gana",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#031": {
+   "src": "Ugh, all that danger got me flustered. I'm sweating in this coat...and it's all soaked already. Let me just...",
+   "dst": "อึ๋ย อันตรายเยอะแยะทำฉันตื่นตระหนก เหงื่อแตกในเสื้อโค้ตนี่...แล้วมันก็เปียกโชกอยู่แล้ว ขอฉัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#032": {
+   "src": "...set that aside. Congratulations, human! I'm probably never getting that coat back, and it cost me a pretty sum. Thanks for nothing.",
+   "dst": "...วางไว้ก่อน ยินดีด้วยนะมนุษย์! ฉันคงไม่ได้เสื้อโค้ตคืนแล้ว แถมมันแพงด้วย ขอบใจที่ไม่ช่วยอะไรเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#033": {
+   "src": "Wait, what in the world- What's going on?!",
+   "dst": "เดี๋ยว นี่มันอะไร- เกิดอะไรขึ้น?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#034": {
+   "src": "GAH! NOT AGAIN!!!",
+   "dst": "อ๊าก! อีกแล้วเหรอ!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#035": {
+   "src": "NO ONE TELLS ME ANYTHING! The brochure didn't mention earthquakes, YOU didn't tell me either, but what was I expecting from a human anyways?!",
+   "dst": "ไม่มีใครบอกอะไรฉันเลย! ในโบรชัวร์ไม่ได้พูดถึงแผ่นดินไหว แกก็ไม่บอก แต่ฉันจะคาดหวังอะไรจากมนุษย์ล่ะ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#036": {
+   "src": "I'm not a carrot! You'd better get me out of h- ...wait, wait, those...",
+   "dst": "ฉันไม่ใช่แครอทนะ! แกพาฉันออกไปจากที่นี่เดี๋ยว- ...เดี๋ยว เดี๋ยว นั่นมัน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#037": {
+   "src": "H-Hobgoblins. Hobgoblins HOBGOBLINS THERE'S HOBGOBLINS!! KILL THEM! AAAAH! AAH! AAAAAAH!",
+   "dst": "ฮ-ฮอบก็อบลิน ฮอบก็อบลิน ฮอบก็อบลิน มีฮอบก็อบลิน!! ฆ่ามัน! อ๊ากกก! อ๊าก! อ๊ากกกกก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#038": {
+   "src": "Sweet baby bovine I just saw my life flash before my eyes. Ugh...now pull me up. I'm stuck. But easy on the goods, I'm NOT a carrot I'll remind you!",
+   "dst": "พระวัวช่วย ภาพชีวิตทั้งชีวิตเพิ่งแวบผ่านตาฉัน อึ๋ย...ดึงฉันขึ้นไปที ฉันติดอยู่ แต่เบาๆ หน่อย ขอย้ำว่าฉันไม่ใช่แครอท!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#039": {
+   "src": "Great. I'm SO grateful to be covered in mud and hobgoblin blood, and to be lacking my coat, AND to be stuck with a human.",
+   "dst": "เยี่ยมเลย ฉันซาบซึ้งสุดๆ ที่ตัวเปื้อนโคลนกับเลือดฮอบก็อบลิน ไม่มีเสื้อโค้ต แถมยังต้องติดอยู่กับมนุษย์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#040": {
+   "src": "Just get me out of here already. See, if an actual Bantisu monk had come down I'd probably be at home already, sipping tea by the fire!",
+   "dst": "พาฉันออกไปจากที่นี่ซะที เห็นไหม ถ้าพระ Bantisu ตัวจริงลงมา ป่านนี้ฉันคงจิบชาอยู่ข้างเตาผิงที่บ้านแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#041": {
+   "src": "I know you humans are reckless, but I'd have expected you to have SOME concern, since you supposedly wanted to rescue me.",
+   "dst": "ฉันรู้ว่ามนุษย์อย่างพวกแกบ้าบิ่น แต่ก็นึกว่าแกจะห่วงฉันบ้าง ในเมื่ออ้างว่าอยากมาช่วยฉัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#042": {
+   "src": "More earthquakes...? Wait-",
+   "dst": "แผ่นดินไหวอีกแล้ว...? เดี๋ยว-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#043": {
+   "src": "The ridge is collapsing!!",
+   "dst": "สันเขากำลังถล่ม!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#044": {
+   "src": "RUN!",
+   "dst": "วิ่ง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#045": {
+   "src": "...perfect. Just GREAT! The only available path to the temple, and now it's blocked off! Just my luck!!",
+   "dst": "...สมบูรณ์แบบ เยี่ยมไปเลย! ทางเดียวที่ไปวิหารได้ แล้วตอนนี้ก็ถูกปิด! ดวงฉันนี่มัน!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#046": {
+   "src": "...wait. You're reckless and willing to endanger your life, right? There's no way that I could possibly use them, but I see some ledges.",
+   "dst": "...เดี๋ยว แกน่ะบ้าบิ่นและยอมเสี่ยงชีวิตใช่ไหม? ฉันไม่มีทางใช้มันได้หรอก แต่ฉันเห็นชะง่อนหินอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#047": {
+   "src": "See, just to the side of the rockslide? There's some ledges to jump around on.",
+   "dst": "เห็นไหม ข้างๆ หินถล่มน่ะ? มีชะง่อนหินให้กระโดดไปมาได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#048": {
+   "src": "Find a way to get Seluc past the blockage.",
+   "dst": "หาทางพา Seluc ผ่านสิ่งกีดขวาง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#049": {
+   "src": "...of course it's a ladder. I'm going to be feeling this climb for weeks...",
+   "dst": "...ต้องเป็นบันไดอยู่แล้วสินะ ปีนนี้ฉันคงเมื่อยไปอีกหลายสัปดาห์...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#050": {
+   "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
+   "dst": "แกทำอะไรถูกบ้างไหมเนี่ย?! ฉันไม่กระโดดลงไปตรงนั้นแน่ ไอ้บ้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#051": {
+   "src": "YOU-!",
+   "dst": "แก-!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#052": {
+   "src": "When I said you were reckless, I was hoping that maybe you'd keep that side of yourself away from other people!!",
+   "dst": "ตอนฉันบอกว่าแกบ้าบิ่น ฉันหวังว่าแกจะเก็บนิสัยนั้นไว้ห่างจากคนอื่นนะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#053": {
+   "src": "At least we're nearly at the temple now. Come on Seluc, silver linings, silver linings. You're nearly away from this freak...",
+   "dst": "อย่างน้อยตอนนี้ก็ใกล้ถึงวิหารแล้ว เอาน่า Seluc มองโลกในแง่ดี แง่ดี อีกนิดเดียวก็พ้นไอ้ตัวประหลาดนี่แล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#054": {
+   "src": "Okay, you know what? No. You've put me through QUITE a lot here, human, so you're going to do me a favor and I'm not going to move another step til it's done.",
+   "dst": "โอเค รู้อะไรไหม? ไม่ แกทำให้ฉันเจอเรื่องมามากพอแล้ว มนุษย์ แกต้องช่วยฉันอย่างหนึ่ง และฉันจะไม่ขยับไปไหนอีกก้าวจนกว่าจะเสร็จ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#055": {
+   "src": "So you're going back down to the bottom of the ridge, and you're going to get me my coat. It's the least you could do.",
+   "dst": "แกต้องกลับลงไปที่ตีนสันเขา แล้วเอาเสื้อโค้ตฉันมา อย่างน้อยก็ทำแค่นี้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#056": {
+   "src": "And be quick about it! I feel like these quakes are going to make the whole mountain collapse. That looks like it opened up a hole straight to the bottom!",
+   "dst": "แล้วรีบหน่อย! ฉันรู้สึกว่าแผ่นดินไหวพวกนี้จะทำให้ภูเขาถล่มทั้งลูก ดูเหมือนมันจะเปิดรูทะลุลงไปถึงข้างล่างเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#057": {
+   "src": "Retrieve the coat Seluc left behind at [{~}, {~}, -{~}].",
+   "dst": "นำเสื้อโค้ตที่ Seluc ทิ้งไว้กลับมาจาก [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#058": {
+   "src": "Talk to Gana and Seluc.",
+   "dst": "คุยกับ Gana และ Seluc",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#059": {
+   "src": "Took you long enough, coat-fetcher! I'm practically frostbitten up here!",
+   "dst": "ช้าเป็นเต่าเลยนะ ไอ้คนเก็บเสื้อโค้ต! ฉันแทบจะหนาวตายอยู่บนนี้แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#060": {
+   "src": "You see, I was just speaking to Gana about your dirt-poor imitation of their job! You ought to be ashamed- I had to get up here all on my own!",
+   "dst": "รู้ไหม ฉันเพิ่งเล่าให้ Gana ฟังเรื่องที่แกเลียนแบบงานของพวกเขาได้ห่วยแตก! น่าอายนะ- ฉันต้องปีนขึ้นมาเองคนเดียว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#061": {
+   "src": "...hm. I will say, there are many lost around the canyon, Seluc- it may have been a long time before we were able to help you.",
+   "dst": "...อืม ขอพูดว่า ในหุบผานี้มีผู้หลงทางมากมาย Seluc- อาจต้องใช้เวลานานกว่าเราจะช่วยคุณได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#062": {
+   "src": "Anyway! Give me that coat. The monks here are going to provide me some hospitality then guide me out of these wretched canyon walls.",
+   "dst": "ยังไงก็เถอะ! เอาเสื้อโค้ตมา พระที่นี่จะต้อนรับฉัน แล้วนำทางฉันออกไปจากผนังหุบผาบ้าๆ นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#063": {
+   "src": "This is goodbye then, human, I won't be missing you. Shoo!",
+   "dst": "ลาก่อนนะมนุษย์ ฉันไม่คิดถึงแกหรอก ชิ่วๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#064": {
+   "src": "...He did not really guide himself here. Did he.",
+   "dst": "...เขาไม่ได้นำทางตัวเองมาที่นี่จริงๆ ใช่ไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#065": {
+   "src": "It was me who guided him.",
+   "dst": "เราเป็นคนนำทางเขามาเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#066": {
+   "src": "Should you tell Gana the truth?",
+   "dst": "จะบอกความจริงกับ Gana ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#067": {
+   "src": "...uh. ...dang it, why you gotta did that.",
+   "dst": "...เอ่อ ...ให้ตายสิ ทำไมต้องพูดด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#068": {
+   "src": "He's being sincere.",
+   "dst": "เขาพูดจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#069": {
+   "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
+   "dst": "ใช่แล้ว! เห็นไหม Gana? หลังจากทุกอย่าง อย่างน้อยมนุษย์คนนี้ก็ไม่ใช่คนโกหก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#070": {
+   "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
+   "dst": "...เอาล่ะ 'คนเก็บเสื้อโค้ต' การนำเสื้อโค้ตมาให้ชายผู้นี้ก็ยังเป็นความดี และสำหรับสิ่งนั้น คุณจะได้รับรางวัล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#071": {
+   "src": "Maybe you think anything's possible for you since you're a soldier, but I'm just a guy from {p}! I hardly know anything about the canyon outside of what the brochures say!",
+   "dst": "แกอาจคิดว่าทำได้ทุกอย่างเพราะเป็นทหาร แต่ฉันเป็นแค่คนธรรมดาจาก {p}! ฉันแทบไม่รู้อะไรเกี่ยวกับหุบผาเลย นอกจากที่โบรชัวร์บอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#072": {
+   "src": "Seluc hides in a camp northeast of here, atop the cliffs.",
+   "dst": "Seluc ซ่อนอยู่ในแคมป์บนหน้าผาทางตะวันออกเฉียงเหนือ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#073": {
+   "src": "We ask you to guide Seluc to us. If you wish to help, you will be rewarded for your time.",
+   "dst": "เราขอให้คุณนำทาง Seluc มาหาเรา ถ้าคุณยินดีช่วย คุณจะได้รับรางวัลตอบแทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "ja_jp"
+  }
+ }
+}

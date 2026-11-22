@@ -1,0 +1,406 @@
+{
+ "_meta": {
+  "quest": "Lexdale Witch Trials",
+  "count": 39,
+  "translated": 39,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lexdale Witch Trials#000": {
+   "src": "New Quest Started: {p} Witch Trials",
+   "dst": "เริ่มเควสใหม่: การไต่สวนแม่มดแห่ง {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: {p} Trouble",
+    "file": "quest/tempo-town-trouble.json",
+    "ratio": 0.8,
+    "reason": "candidate"
+   }
+  },
+  "Lexdale Witch Trials#001": {
+   "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of dark magic threatens us!",
+   "dst": "มีศัตรูอยู่ในหมู่พวกเราใน {p}! มนตร์ดำผิดกฎหมายของแม่มดนี่คุกคามเรา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#002": {
+   "src": "Ms. Amira's home was found to be plagued with spreading Decay! We must kill the witch to protect our sanctity!",
+   "dst": "บ้านของคุณ Amira ถูกพบว่ามีความเสื่อมสลายลุกลาม! เราต้องฆ่าแม่มดเพื่อปกป้องความศักดิ์สิทธิ์!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#003": {
+   "src": "Further...intruders...? You are not of the worms...the parasites?",
+   "dst": "ผู้บุกรุก...อีก...? เจ้าไม่ใช่พวกหนอน...ปรสิต?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#004": {
+   "src": "We cannot escape, for the sun scorches us. There is no place to go, no place we can burrow that they do not wait.",
+   "dst": "เราหนีไม่ได้ เพราะแดดแผดเผาเรา ไม่มีที่ให้ไป ไม่มีที่ให้ขุดหนีที่พวกมันไม่รออยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#005": {
+   "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive til this torture ends...",
+   "dst": "เจ้า... เจ้า... เจ้ามีชีวิต มีหัวใจ มีกล้ามเนื้อ มีเนื้อ... ให้รอดจนการทรมานนี้จบลง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#006": {
+   "src": "You're stuck! Maybe you can dig yourself out?",
+   "dst": "คุณติดอยู่! ลองขุดตัวเองออกไป?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#007": {
+   "src": "It seems like the creature was knocked out. Now is the time to catch it! The cage seems like a good place to keep it.",
+   "dst": "ดูเหมือนเจ้าสิ่งมีชีวิตนั่นจะสลบไป ถึงเวลาจับแล้ว! กรงนั่นดูเหมาะจะขังมันไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#008": {
+   "src": "Something feels off...",
+   "dst": "รู้สึกแปลกๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#009": {
+   "src": "The creature is out of control!",
+   "dst": "มันคลั่งแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#010": {
+   "src": "It seemed like the creature calmed down... You should show the mayor to free Amira.",
+   "dst": "ดูเหมือนมันสงบลงแล้ว... เอาไปให้นายกเทศมนตรีดูเพื่อปล่อย Amira",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#011": {
+   "src": "...Fine then. This...creature...bug...leech? This whatever-it-is... I'll accept your explanation.",
+   "dst": "...ก็ได้ เจ้า...สิ่งมีชีวิต...แมลง...ปลิง? เจ้าตัวอะไรก็ช่าง... ฉันยอมรับคำอธิบายของคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#012": {
+   "src": "Gah, finally! You're seeing sense! It's almost like something just...took you over one day and never left 'til now!",
+   "dst": "เฮ้อ ในที่สุด! เลิกงมงายซะที! ราวกับว่ามีอะไร...สิงคุณไปวันนึงแล้วไม่ออกไปเลยจนถึงตอนนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#013": {
+   "src": "As for the...THING... Well... I'll be sure to inform the Gavel government.",
+   "dst": "ส่วนเจ้า...ตัวนั้น... เอาเถอะ... ฉันจะแจ้งรัฐบาล Gavel แน่นอน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#014": {
+   "src": "You should follow the creature before it gets away!",
+   "dst": "คุณควรตามมันไปก่อนที่มันจะหนี!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#015": {
+   "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
+   "dst": "ไปดูว่าเกิดอะไรขึ้นกลางเมือง {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#018": {
+   "src": "WAIT! Let me GO already! I told you what was happening!",
+   "dst": "เดี๋ยว! ปล่อยฉันได้แล้ว! ฉันบอกแล้วว่าเกิดอะไรขึ้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#019": {
+   "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
+   "dst": "มนตร์ดำหลอกลวงของคุณใช้ไม่ได้หรอก คุณ Amira ไปอย่างสงบ- ปล่อยเราอยู่อย่างสันติ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#020": {
+   "src": "SHUT UP ALREADY! You can't just single people out like this!!",
+   "dst": "หุบปากได้แล้ว! จะมาชี้หน้าคนแบบนี้ไม่ได้นะ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#021": {
+   "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
+   "dst": "ฟังฉันสักวินาที! ไม่ใช่ฉัน มีอะไรมาทำให้บ้านฉันติดเชื้อ! บ้านถึงได้มืดแบบนั้น!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#022": {
+   "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
+   "dst": "ห้องใต้ดินของฉัน มีตัวประหลาดขุดเข้ามา! มันไปตรงไหน ตรงนั้นก็เหี่ยวเฉาเน่าเปื่อย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#023": {
+   "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
+   "dst": "ในบ้านฉันมีหลักฐานว่าไม่ใช่ฉัน! บ้านหลังนั้นแหละที่เน่าเปื่อยแห้งแล้ง! ถ้าดูก็จะเห็นเอง ไอ้กระหายเลือด!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#024": {
+   "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
+   "dst": "เลิกด่าได้แล้ว! เราจะเลื่อนไว้ก่อน- ถ้าไม่มีหลักฐานว่าแม่มดบริสุทธิ์ นางจะถูกประหาร!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#025": {
+   "src": "Explore the basement of the decayed and barren house.",
+   "dst": "สำรวจห้องใต้ดินของบ้านที่เน่าเปื่อยแห้งแล้ง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#026": {
+   "src": "Follow the creature down the tunnels.",
+   "dst": "ตามเจ้าสิ่งมีชีวิตลงไปในอุโมงค์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#027": {
+   "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
+   "dst": "ตามเจ้าสิ่งมีชีวิตต่อจากอุโมงค์ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#030": {
+   "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
+   "dst": "คนแปลกหน้าอีกคน... เจ้าคงเห็นอุโมงค์แล้ว พวกมันทำให้หินผุ รากเหี่ยว แผ่นดินไร้ชีวิต...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#031": {
+   "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
+   "dst": "และที่นี่ เราอดอยากอย่างโดดเดี่ยว คนของข้าหลงทาง ขณะที่ผืนดินเองบิดเบี้ยวเคลื่อนไหว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#032": {
+   "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
+   "dst": "น้ำนิ่งและขุ่นเทา ไม่มีอะไรประทังชีวิตนอกจากภัยเวทน่าสยดสยองพวกนั้น และตัวหนอนเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#035": {
+   "src": "Stranger, you must perish.",
+   "dst": "คนแปลกหน้า เจ้าต้องตาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#036": {
+   "src": "Defeat the Tunnel Dweller Chieftain.",
+   "dst": "เอาชนะหัวหน้าเผ่าผู้อาศัยในอุโมงค์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#037": {
+   "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
+   "dst": "เดี๋ยว... แผ่นดินไหวนี่! พวกมัน! อ๊ากกกกกก!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#038": {
+   "src": "Dig yourself out of the dirt. Then go after the creature.",
+   "dst": "ขุดตัวเองออกจากดิน แล้วไล่ตามเจ้าสิ่งมีชีวิต",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#039": {
+   "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
+   "dst": "กลับไปที่ {p} แล้วลองเอาเจ้าสิ่งมีชีวิตให้นายกเทศมนตรีดูที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#040": {
+   "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
+   "dst": "กลับมาแล้ว ได้- เดี๋ยว นั่นมันตัวบ้าอะไรน่ะ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#041": {
+   "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
+   "dst": "นั่นไง! นั่นแหละตัวที่อยู่ในห้องใต้ดินฉัน!! ฉันรู้ว่ามนุษย์คนนั้นต้องหาเจอ! ขอบคุณ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#042": {
+   "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
+   "dst": "ตัวนั้นแหละที่แพร่ความเสื่อมสลายไปทั่วบ้านฉัน! ไม่ใช่แม่มดหรือเวทมนตร์อย่างที่คุณตัดสินเองดื้อๆ วันนึง!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#044": {
+   "src": "Step off the podium, Ms. Amira. You're innocent.",
+   "dst": "ลงจากแท่นได้ คุณ Amira คุณบริสุทธิ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#046": {
+   "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
+   "dst": "...อืม นั่น... อืม ช่างเถอะ มนุษย์ คุณพิสูจน์แล้วว่าไว้ใจได้ ประตูเราจะเปิดรับคุณเสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  }
+ }
+}

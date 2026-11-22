@@ -1,0 +1,680 @@
+{
+ "_meta": {
+  "quest": "From the Mountains",
+  "count": 67,
+  "translated": 67,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "From the Mountains#000": {
+   "src": "Mmph! Humnym! Mah houfhs fhs om fifhre! Gft hfrelp, tiff brafze womd strfp!",
+   "dst": "อึ๊บ! มุดดุด! บ้านอ๊บ ไฟไฟ้! ฉ่วยด้วย ไฟมันไม่ดับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
+   "source": "captured"
+  },
+  "From the Mountains#001": {
+   "src": "It's impossible to understand what language this man's speaking, but he's pointing to the house behind him. Is there something that can translate, maybe?",
+   "dst": "ฟังไม่ออกเลยว่าชายคนนี้พูดภาษาอะไร แต่เขาชี้ไปที่บ้านข้างหลัง มีอะไรที่แปลได้ไหมนะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "From the Mountains#002": {
+   "src": "Arnod keeps on pointing at his house. Maybe he needs something that's in there?",
+   "dst": "Arnod ชี้ไปที่บ้านไม่หยุด เขาอาจต้องการอะไรในนั้น?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "From the Mountains#003": {
+   "src": "Arnod takes his dentures, and slides them back in his mouth.",
+   "dst": "Arnod หยิบฟันปลอมใส่กลับเข้าปาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "From the Mountains#004": {
+   "src": "Go, human! Find someone who can help! I'm not going to wait for my house to be burnt to a crisp!",
+   "dst": "ไปสิมนุษย์! หาคนมาช่วย! ฉันไม่รอให้บ้านไหม้เป็นตอตะโกหรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "From the Mountains#005": {
+   "src": "Hm...where am I going to get help now- Mh? You're one of those human types, right? Do you have-",
+   "dst": "หืม...จะไปหาความช่วยเหลือที่ไหนดี- หือ? เจ้าเป็นพวกมนุษย์ใช่ไหม? เจ้ามี-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#006": {
+   "src": "Eh, I'll see when we get there... Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
+   "dst": "เอ่อ ไว้ไปถึงแล้วค่อยดู... อ้อ ข้ามาทำอะไรที่นี่? ใช่ ข้าคงหน้าตาต่างจากที่เจ้าเคยเห็น ข้าเป็นคนแคระ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#007": {
+   "src": "...and where there's smoke, there's fire. This is, uh...that's looking a little more like home, and I'm fairly certain that it isn't supposed to be.",
+   "dst": "...ไม่มีควันถ้าไม่มีไฟ นี่มัน เอ่อ...ดูคล้ายบ้านเกิดข้าขึ้นมาหน่อยแล้ว และข้าค่อนข้างแน่ใจว่ามันไม่ควรเป็นงั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#008": {
+   "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-lighting, then maybe...",
+   "dst": "นั่นคือบ้านสินะ? เอาล่ะ ข้าจะดูว่าทำอะไรได้ อาจดับไม่ได้ แต่ถ้ามันลุกขึ้นใหม่เอง บางที...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#009": {
+   "src": "Hm...didn't think they'd be this far out, but it'd make sense if...",
+   "dst": "หืม...ไม่คิดว่าจะมาไกลถึงนี่ แต่ก็สมเหตุสมผลถ้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#010": {
+   "src": "There's a black market issue in the {p}. Things that you can't find anywhere else are harvested in the Heights for their high value.",
+   "dst": "ใน {p} มีปัญหาตลาดมืด ของที่หาที่อื่นไม่ได้ถูกเก็บจาก Heights เพราะมีค่าสูง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#011": {
+   "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. We still have work to do.",
+   "dst": "ข้าซ่อมเกวียนเสร็จพร้อมแล้ว เจ้าจับ Flerisi ครบหรือยัง? งั้นมาที่เกวียน เรายังมีงานต้องทำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#012": {
+   "src": "...oh. Well, didn't notice that the fires went THAT far earlier. That's a problem, isn't it?",
+   "dst": "...อ้าว ก่อนหน้านี้ไม่ทันสังเกตว่าไฟลามไปไกล ขนาดนั้น มีปัญหาแล้วสินะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#013": {
+   "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed off cinders and fire... And for this much damage to be caused, well...",
+   "dst": "อธิบายนะ Flerisi ไม่ได้ตัวจิ๋วทุกตัวเหมือนที่เราเจอที่นี่ มันกินถ่านและไฟ... และจะสร้างความเสียหายขนาดนี้ได้ ก็...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#014": {
+   "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well...I got a free cart for the ride home. There's a thing for me to attend to there.",
+   "dst": "ข้าจะถามตำรวจท้องถิ่นว่าเจอพวกค้าของเถื่อนไหม ถ้ามันหนีไปแล้ว ก็...ข้าได้เกวียนฟรีกลับบ้าน ที่นั่นมีเรื่องรอข้าอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "captured"
+  },
+  "From the Mountains#015": {
+   "src": "Find out what's going on at [-{~}, {~}, -{~}].",
+   "dst": "ไปดูว่าเกิดอะไรขึ้นที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#016": {
+   "src": "Ouh hff do hflp! I hff nho glue wfhtsh doon fifs!",
+   "dst": "ฉ่วยด้วย! ฉันไม่ยู้เยื่องเยยว่าเกิดอะไยขึ้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#017": {
+   "src": "Find what Arnod wants inside of the house.",
+   "dst": "หาสิ่งที่ Arnod ต้องการในบ้าน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#018": {
+   "src": "...well, that explains why you didn't help. But, uh, did the RAGING FIRE escape your notice somehow?!",
+   "dst": "...อ้อ นั่นอธิบายว่าทำไมไม่ช่วย แต่ เอ่อ ไฟลุกท่วม นั่นมองไม่เห็นหรือไง?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 2",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#019": {
+   "src": "I don't care who it is, get me help!! I don't care if you do it, I don't care if you get someone to do it, but someone's got to help with this crazy re-igniting fire!",
+   "dst": "ฉันไม่สนว่าใคร หาคนมาช่วยที!! จะทำเองหรือหาคนมาทำก็ได้ แต่ต้องมีคนจัดการไฟบ้าๆ ที่ลุกขึ้นใหม่ไม่หยุดนี่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 2",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#020": {
+   "src": "Check around {p} if you need to, but hurry up already! My house is going to burn to ashes if you don't hurry!",
+   "dst": "ถามหาแถว {p} ก็ได้ แต่รีบหน่อย! บ้านฉันจะไหม้เป็นเถ้าถ่านถ้าไม่รีบ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 2",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#021": {
+   "src": "Find someone in {p} who can help you with the fires.",
+   "dst": "หาคนใน {p} ที่ช่วยเรื่องไฟได้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#022": {
+   "src": "Huh? Someone's house is on fire? Guess that's a little more pressing than what I was going to ask. Where is it?",
+   "dst": "หือ? บ้านใครไฟไหม้? คงด่วนกว่าเรื่องที่ข้าจะถาม อยู่ไหนล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#023": {
+   "src": "Oh, that valley by the gate? I think I know where you mean. Let's walk together. So, tell me what exactly happened?",
+   "dst": "อ้อ หุบเขาข้างประตูเมืองนั่น? ข้าว่าข้ารู้ว่าที่ไหน เดินไปด้วยกัน เล่ามาซิว่าเกิดอะไรขึ้นกันแน่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#024": {
+   "src": "Ah, so you're like a mercenary then, and you found this man's house on fire. He said...what? It re-ignited itself? Well, that doesn't make any sense.",
+   "dst": "อา เจ้าเป็นพวกทหารรับจ้าง แล้วเจอบ้านชายคนนี้ไฟไหม้ เขาบอกว่า...อะไรนะ? ไฟลุกขึ้นเอง? ไม่สมเหตุสมผลเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#025": {
+   "src": "Normally I live in the {p}, past the canyons to the east. Guess for yourself what the land is like, considering the name.",
+   "dst": "ปกติข้าอยู่ที่ {p} เลยหุบผาไปทางตะวันออก เดาเอาเองจากชื่อว่าที่นั่นเป็นยังไง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#026": {
+   "src": "Without getting into too much detail, there's... A few problems, with how it's being governed, and I was trying to drum up support over in {p}.",
+   "dst": "ไม่ลงรายละเอียดมากนะ มี... ปัญหาบางอย่างกับการปกครองที่นั่น ข้าเลยพยายามหาแนวร่วมที่ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#027": {
+   "src": "It, uh. Well, I'm used to getting laughed out of the room back home, but I wasn't expecting to see the same thing over there, just with quartz wallpaper.",
+   "dst": "มัน เอ่อ ข้าชินกับการโดนหัวเราะไล่ออกจากห้องที่บ้านแล้ว แต่ไม่นึกว่าที่นั่นก็เหมือนกัน แค่ผนังเป็นควอตซ์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#028": {
+   "src": "I was going to ask if you had any way that you might've been able to help, but...well, I can smell the smoke from here. One thing at a time.",
+   "dst": "ข้าตั้งใจจะถามว่าเจ้าช่วยอะไรได้บ้าง แต่...ได้กลิ่นควันจากตรงนี้แล้ว ทีละเรื่อง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#029": {
+   "src": "Yep, this fire isn't natural at all... Hell, this almost looks like arson to me!",
+   "dst": "ใช่ ไฟนี่ไม่ใช่ไฟธรรมชาติแน่... ให้ตาย ดูเหมือนวางเพลิงเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#030": {
+   "src": "Aha! Here's the problem. It's just a little Fleris. Ehm, to explain, they normally live in the Heights.",
+   "dst": "อ้า! ต้นเหตุอยู่นี่ แค่ Fleris ตัวเล็ก เอ่อ อธิบายนะ ปกติมันอยู่ที่ Heights",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#031": {
+   "src": "Pretty affectionate, good if you can stand the heat, but if you take them away from their mounds they get spooked.",
+   "dst": "ค่อนข้างขี้อ้อน ดีถ้าทนร้อนได้ แต่ถ้าพรากมันจากเนินของมัน มันจะตื่นกลัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#032": {
+   "src": "One fleris could've kept setting this man's house on fire, but all the other fallout...there's certainly more where this one came from.",
+   "dst": "Fleris ตัวเดียวทำบ้านชายคนนี้ไฟไหม้ซ้ำๆ ได้ แต่ความเสียหายอื่นทั้งหมด...ต้องมีอีกหลายตัวแน่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#033": {
+   "src": "Let's go talk to the villager outside. He might've seen where the others got off to, or where they came from.",
+   "dst": "ไปคุยกับชาวบ้านข้างนอกกัน เขาอาจเห็นว่าตัวอื่นไปทางไหน หรือมาจากไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#034": {
+   "src": "Sir, I figured out why your house kept re-igniting and solved that issue, but tell me, have you seen any moving sludgy things around here?",
+   "dst": "ท่าน ข้ารู้แล้วว่าทำไมบ้านท่านไฟลุกซ้ำและแก้ให้แล้ว แต่บอกข้าที เห็นอะไรเหลวๆ เคลื่อนไหวแถวนี้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#035": {
+   "src": "Uhm, I don't really know. I've been trying to douse my house so many times over that I haven't really paid attention!",
+   "dst": "เอ่อ ไม่แน่ใจ ฉันพยายามดับไฟบ้านหลายรอบจนไม่ได้สังเกตอะไรเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#036": {
+   "src": "I remember seeing some tar-looking stuff dripping from the mountains behind my house, but that's it!",
+   "dst": "จำได้ว่าเห็นอะไรคล้ายน้ำมันดินหยดลงมาจากภูเขาหลังบ้าน แค่นั้นแหละ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Arnod",
+   "source": "wiki"
+  },
+  "From the Mountains#037": {
+   "src": "Sounds concrete enough to me. Let's check out what's going on on top of the mountain ridge. Check that book of yours if you need directions.",
+   "dst": "ฟังดูเป็นเบาะแสพอ ไปดูกันว่าบนสันเขาเกิดอะไรขึ้น เปิดสมุดเจ้าดูถ้าต้องการทาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#038": {
+   "src": "Go to the path at [-{~}, {~}, -{~}], and follow it up to the top of the mountain.",
+   "dst": "ไปที่ทางเดินที่ [-{~}, {~}, -{~}] แล้วเดินตามขึ้นไปบนยอดเขา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#039": {
+   "src": "Hm, you're a pretty quick climber. I thought I'd get ahead of you. Well, this looks like the scorched area down in the valley... Hm! I thought so.",
+   "dst": "หืม เจ้าปีนเร็วดีนี่ ข้านึกว่าจะนำหน้าเจ้า ที่นี่ดูเหมือนพื้นที่ไหม้ในหุบเขา... หืม! ว่าแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#040": {
+   "src": "There's only one reason I can think of that there would be so many Flerisi around here... If that wagon's reinforced, then...",
+   "dst": "ข้านึกออกแค่เหตุผลเดียวที่จะมี Flerisi แถวนี้มากขนาดนี้... ถ้าเกวียนนั่นเสริมเกราะไว้ ก็...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#041": {
+   "src": "Gah, I knew it. Traffickers! And incompetent ones, too, considering they couldn't hold the things.",
+   "dst": "เฮอะ ว่าแล้ว พวกค้าของเถื่อน! แถมไร้ฝีมือ ขนาดคุมของไว้ไม่อยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#042": {
+   "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
+   "dst": "Flerisi เป็นหนึ่งในนั้น ที่ Heights เขาเลี้ยงเป็นสัตว์เลี้ยง ค่อนข้างเป็นมิตร ทำให้บ้านอุ่น และไม่ต้องดูแลมาก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#043": {
+   "src": "...But if you take them away from a warm place, they burn everything. To think- Some people use the things as weapons. Can't leave well enough alone...",
+   "dst": "...แต่ถ้าพรากจากที่อุ่น มันจะเผาทุกอย่าง แล้วนึกดู- บางคนเอาไปใช้เป็นอาวุธ ไม่รู้จักพอ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#044": {
+   "src": "We'll need to catch these Flerisi. Here, take this net. While you catch them, I'll repair the cart so we can put them in there later.",
+   "dst": "เราต้องจับ Flerisi พวกนี้ นี่ เอาตาข่ายไป ระหว่างเจ้าจับ ข้าจะซ่อมเกวียนไว้ใส่มันทีหลัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#045": {
+   "src": "Capture all of the rogue Flerisi and bring them to Axelus.",
+   "dst": "จับ Flerisi ที่หลุดออกมาทั้งหมดแล้วนำไปให้ Axelus",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#046": {
+   "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
+   "dst": "ข้าจะเก็บ Flerisi ไว้ในกองไฟเล็กๆ ให้มันสงบ แล้วดูว่าจะพามันกลับ Heights ได้ไหมเมื่อเสร็จเรื่อง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#047": {
+   "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
+   "dst": "ตอนนี้ข้าอยากหาข้อมูลว่าพวกค้าของเถื่อนเป็นใคร ดูซิว่ามันทิ้งอะไรไว้หน้าเกวียนไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#048": {
+   "src": "Methinks this one's getting a bit out of control. This is right next to that big forest, too. Could be a problem if we leave this one be.",
+   "dst": "ข้าว่าตัวนี้ชักคุมไม่อยู่แล้ว แถมอยู่ติดป่าใหญ่ด้วย ปล่อยไว้มีปัญหาแน่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#049": {
+   "src": "We're going to have to track it down and subdue it. Here, follow me. I'll dig us down to the valley. Watch a dwarf at work!",
+   "dst": "เราต้องตามไปปราบมัน มา ตามข้ามา ข้าจะขุดทางลงหุบเขา ดูคนแคระทำงานซะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#050": {
+   "src": "Enter the hole at [-{~}, {~}, -{~}].",
+   "dst": "เข้าไปในหลุมที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#051": {
+   "src": "Investigate the trail of fire.",
+   "dst": "สืบตามรอยไฟ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#052": {
+   "src": "Not bad, eh? Anyways, dunno what that huge gate's for, but it looks like our Fleris friend has commandeered it for a bonfire.",
+   "dst": "ไม่เลวใช่ไหม? ช่างเถอะ ไม่รู้ประตูยักษ์นั่นมีไว้ทำอะไร แต่ดูเหมือนเพื่อน Fleris ของเรายึดไว้ก่อกองไฟ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#053": {
+   "src": "At least it's a little more contained than I thought, being in that cave, but we still have to catch it. Lead the way. I'm right with you.",
+   "dst": "อย่างน้อยอยู่ในถ้ำก็จำกัดวงกว่าที่คิด แต่เรายังต้องจับมัน เจ้านำไป ข้าอยู่ข้างเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#054": {
+   "src": "What the...?! It inflamed the creatures in this cave! Fend 'em off!",
+   "dst": "อะไร...?! มันจุดไฟใส่สัตว์ในถ้ำ! ต้านไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#055": {
+   "src": "There are more of them coming! Get to the end of the cave!",
+   "dst": "มีมาอีก! ไปสุดถ้ำเร็ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#056": {
+   "src": "Gah, more?! Behind you!",
+   "dst": "อีกแล้ว?! ข้างหลังเจ้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#057": {
+   "src": "Both of us stopping is going to make it take too much time, the traffickers might come back!",
+   "dst": "ถ้าหยุดทั้งคู่จะเสียเวลาเกินไป พวกค้าของเถื่อนอาจกลับมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#058": {
+   "src": "Listen up. I'll handle these things, while you go after the Fleris. If it's a big one like we think, it'll be a downhill battle- It should shrink if you attack it!",
+   "dst": "ฟังนะ ข้าจัดการพวกนี้เอง เจ้าไปตาม Fleris ถ้าตัวใหญ่อย่างที่คิด จะสู้ง่ายขึ้นเรื่อยๆ- มันน่าจะหดเมื่อเจ้าโจมตี!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#059": {
+   "src": "Alright, time for a little royal rumble!",
+   "dst": "เอาล่ะ ได้เวลาซัดกันหน่อยแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#060": {
+   "src": "Subdue the Fleris.",
+   "dst": "ปราบ Fleris",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#061": {
+   "src": "Phew, you're alright! Charred and covered in soot, but that's to be expected. Subdued the Fleris, too! I have the net with me, so allow me.",
+   "dst": "เฮ้อ เจ้าไม่เป็นไร! ไหม้เกรียมเปื้อนเขม่า แต่ก็ว่ากันไป ปราบ Fleris ได้ด้วย! ข้ามีตาข่ายอยู่ ให้ข้าจัดการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#062": {
+   "src": "Well, this is probably a bit of thankless work we just did, but so is a lot of work. Let's get out of here. We can talk outside.",
+   "dst": "งานที่เราเพิ่งทำคงไม่มีใครขอบคุณ แต่งานส่วนใหญ่ก็งั้น ออกไปจากที่นี่กัน ไปคุยกันข้างนอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 8",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#063": {
+   "src": "Exit the cave and talk with Axelus at [-{~}, {~}, -{~}].",
+   "dst": "ออกจากถ้ำและคุยกับ Axelus ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "From the Mountains",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "From the Mountains#064": {
+   "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
+   "dst": "ข้าว่างานนี้ไม่มีใครขอบคุณ แต่ก็หยุดข้าไม่ได้ ขอบใจที่ช่วย มนุษย์- ลำพังข้าคงรับไม่ไหว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#065": {
+   "src": "Oh, where are my manners? Never even introduced myself this whole time. The name is Axelus. And yours?",
+   "dst": "โอ้ มารยาทข้าหายไปไหน ยังไม่ได้แนะนำตัวเลย ข้าชื่อ Axelus แล้วเจ้าล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "From the Mountains#066": {
+   "src": "{u}, huh? I'll try and remember that. For now, take this armor for the trouble. Safe travels, {u}!",
+   "dst": "{u} สินะ? ข้าจะพยายามจำ ตอนนี้รับเกราะนี่ไปเป็นค่าเหนื่อย เดินทางปลอดภัย {u}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "From the Mountains",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
+   "source": "wiki"
+  }
+ }
+}

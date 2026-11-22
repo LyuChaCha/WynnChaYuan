@@ -1,0 +1,920 @@
+{
+ "_meta": {
+  "quest": "Hunger of the Gerts Part II",
+  "count": 91,
+  "translated": 91,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Hunger of the Gerts Part II#000": {
+   "src": "This is bad...",
+   "dst": "แย่แล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#001": {
+   "src": "You should warn the Gylia Guards.",
+   "dst": "คุณควรไปเตือนยามของ Gylia",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#002": {
+   "src": "Find out what happens in the Gerten camp at [-{~}, {~}, -{~}].",
+   "dst": "สืบดูว่าเกิดอะไรขึ้นในค่าย Gert ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#003": {
+   "src": "Gert! Gert! Prepare war we are!",
+   "dst": "Gert! Gert! เตรียม สงคราม เรา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "Gert Chief",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#004": {
+   "src": "Look me.",
+   "dst": "มอง ข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "Gert Chief",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#005": {
+   "src": "Today we attack. Today Gerts will take down bad men!",
+   "dst": "วันนี้ เรา บุก วันนี้ Gert โค่น คนเลว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "Gert Chief",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#006": {
+   "src": "But first! We eat food.",
+   "dst": "แต่ก่อน! เรา กิน อาหาร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "Gert Chief",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#007": {
+   "src": "Get axe ready after food. We take back our food!",
+   "dst": "กินเสร็จ เตรียม ขวาน เรา เอา อาหาร คืน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 1",
+   "speaker": "Gert Chief",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#008": {
+   "src": "Head to the Gylia Watch at [-{~}, {~}, -{~}] to warn them about the attack.",
+   "dst": "ไปที่กองรักษาการณ์ Gylia ที่ [-{~}, {~}, -{~}] เพื่อเตือนเรื่องการบุก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#009": {
+   "src": "You again?",
+   "dst": "นี่คุณอีก?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#010": {
+   "src": "This is a very... inconvenient timing for me, you see.",
+   "dst": "ตอนนี้มันเป็นเวลาที่... ไม่สะดวกเลยสำหรับฉันนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#011": {
+   "src": "Gamenight is starting soon. State your issue fast, please.",
+   "dst": "คืนเล่นเกมใกล้จะเริ่มแล้ว ว่ามาเร็วๆ เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#012": {
+   "src": "The Gerts attacking us? HAH! Funny joke.",
+   "dst": "พวก Gert จะบุกเราเหรอ? ฮ่า! ตลกดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#013": {
+   "src": "Those pea brains can't even count to three, I doubt they can take our mighty fine establishment down.",
+   "dst": "พวกสมองถั่วนั่นนับถึงสามยังไม่ได้ ฉันไม่คิดว่าจะล้มสถานที่ชั้นเลิศของเราได้หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#014": {
+   "src": "Now, if you excuse me. Gamenight is starting, I am needed.",
+   "dst": "เอาละ ขอตัวนะ คืนเล่นเกมเริ่มแล้ว เขารอฉันอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Cikal",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#015": {
+   "src": "Psst! Come here, traveler.",
+   "dst": "ชู่ว! มานี่สิ นักเดินทาง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 2",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#016": {
+   "src": "Talk to the other Gylia watchman at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับยามอีกคนของ Gylia ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#017": {
+   "src": "I want to start off by apologizing for Cikal's behavior.",
+   "dst": "ก่อนอื่น ฉันขอโทษแทน Cikal ด้วยที่ทำตัวแบบนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#018": {
+   "src": "I recently started working here and I totally believe you about the attack.",
+   "dst": "ฉันเพิ่งเริ่มทำงานที่นี่ และเชื่อคุณเรื่องการบุกเต็มที่เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#019": {
+   "src": "What's weird is that the guards here don't even believe it's a possibility. It's like their brains have become all scrambled.",
+   "dst": "ที่แปลกคือพวกยามที่นี่ไม่คิดด้วยซ้ำว่ามันเป็นไปได้ เหมือนสมองพวกเขาเละไปหมดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#020": {
+   "src": "I seem to be the only one with any sense left!",
+   "dst": "ดูเหมือนฉันจะเป็นคนเดียวที่ยังมีสติเหลืออยู่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#021": {
+   "src": "When I brought up how wrong it is for us to steal their food rations they just laughed at me like I was crazy.",
+   "dst": "ตอนฉันบอกว่าการขโมยเสบียงอาหารของพวกเขามันผิดแค่ไหน พวกนั้นก็หัวเราะใส่ฉันเหมือนฉันบ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#022": {
+   "src": "Can I ask you for a favor?",
+   "dst": "ขอให้ช่วยอะไรหน่อยได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#023": {
+   "src": "I'll head to {p} to report this to the higher ups. If you can somehow find a way to evacuate the guards here.",
+   "dst": "ฉันจะไป {p} เพื่อรายงานเรื่องนี้ต่อเบื้องบน ถ้าคุณหาทางอพยพยามที่นี่ได้ก็ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#024": {
+   "src": "They may be jerks but we can't just let them die here.",
+   "dst": "ถึงพวกเขาจะนิสัยแย่ แต่เราจะปล่อยให้ตายที่นี่ไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#025": {
+   "src": "I think you should start with the people out in the courtyard.",
+   "dst": "ฉันว่าคุณควรเริ่มจากคนที่อยู่ในลานด้านนอกก่อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 3",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#026": {
+   "src": "Find the Gyila guards out in the courtyard at [-{~}, {~}, -{~}].",
+   "dst": "หายามของ Gylia ที่ลานด้านนอกที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#027": {
+   "src": "Huh?",
+   "dst": "หา?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Alie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#028": {
+   "src": "Right... You are that crazy adventurer Cikal talked about...",
+   "dst": "อ้อ... คุณคือนักผจญภัยบ้าๆ ที่ Cikal พูดถึง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Alie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#029": {
+   "src": "If you don't have any meat you can \"hand\" into the watch, please leave.",
+   "dst": "ถ้าไม่มีเนื้อมา \"ส่งมอบ\" ให้กองรักษาการณ์ ก็ไปซะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Alie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#030": {
+   "src": "I promise we take good care of the food here.",
+   "dst": "รับรองว่าเราดูแลอาหารที่นี่อย่างดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Alie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#031": {
+   "src": "Maybe you can find a way to lure the two guards away using food?",
+   "dst": "บางทีคุณอาจหาทางใช้อาหารล่อยามสองคนนี้ออกไปได้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#032": {
+   "src": "Ya what is it?",
+   "dst": "ว่าไง มีอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Colry",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#033": {
+   "src": "Well... I'd rather avoid any awkward situations so... please leave before I have to throw you out.",
+   "dst": "เอ่อ... ฉันไม่อยากให้มีเรื่องอึดอัด งั้น... ไปซะก่อนที่ฉันจะต้องโยนคุณออกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Colry",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#034": {
+   "src": "You successfully lead the two guards out of the tower. Maybe you should go to the second floor next?",
+   "dst": "คุณล่อยามสองคนออกจากหอคอยได้สำเร็จ ต่อไปลองขึ้นไปชั้นสองดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#035": {
+   "src": "I appreciate it, boss.",
+   "dst": "ขอบใจนะ ลูกพี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Colry",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#036": {
+   "src": "Only thing that could sway me is food, hahaha! We only eat meat around here!",
+   "dst": "สิ่งเดียวที่โน้มน้าวฉันได้คืออาหาร ฮ่าๆๆ! แถวนี้เรากินแต่เนื้อ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 4",
+   "speaker": "Colry",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#037": {
+   "src": "Search for food in the courtyard and create a trail leading out of the Gylia Watch.",
+   "dst": "หาอาหารในลานแล้ววางเป็นทางนำออกจากกองรักษาการณ์ Gylia",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#038": {
+   "src": "Use the elevator in the Gylia Watch and find the guard at [-{~}, {~}, -{~}].",
+   "dst": "ใช้ลิฟต์ในกองรักษาการณ์ Gylia แล้วหายามที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#039": {
+   "src": "Yes?",
+   "dst": "ว่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#040": {
+   "src": "Oh, it's... you.",
+   "dst": "อ้อ... คุณเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#041": {
+   "src": "What could you want?",
+   "dst": "ต้องการอะไรล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#042": {
+   "src": "You need to leave right away",
+   "dst": "คุณต้องออกไปเดี๋ยวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#043": {
+   "src": "Why are you yelling at me?",
+   "dst": "ตะโกนใส่ฉันทำไม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#044": {
+   "src": "And no shot I'm leaving today! We are having our daily game night tonight!",
+   "dst": "วันนี้ไม่มีทางที่ฉันจะไปหรอก! คืนนี้มีคืนเล่นเกมประจำวัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#045": {
+   "src": "Yes. Indeed. Meaning, I'm very busy.",
+   "dst": "ใช่ แน่นอน แปลว่าฉันยุ่งมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#046": {
+   "src": "Every day is a party here. But you. Are. Not. Invited!",
+   "dst": "ที่นี่ปาร์ตี้ทุกวัน แต่คุณ. ไม่. ได้. รับเชิญ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#047": {
+   "src": "Your life is in danger.",
+   "dst": "ชีวิตคุณตกอยู่ในอันตราย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#048": {
+   "src": "That strategy did not work. Maybe you can retry?",
+   "dst": "วิธีนั้นไม่ได้ผล ลองใหม่อีกทีดีไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#049": {
+   "src": "We here at the Gylia Watch are ready to give up our lives!",
+   "dst": "พวกเราแห่งกองรักษาการณ์ Gylia พร้อมสละชีพ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#050": {
+   "src": "Except on Saturdays!",
+   "dst": "ยกเว้นวันเสาร์!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#051": {
+   "src": "Now if you excuse me. I have business to attend to.",
+   "dst": "เอาละ ขอตัวนะ ฉันมีธุระต้องจัดการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#052": {
+   "src": "I'm just patrolling. Someone have to look at the mountains for signs of an ambush.",
+   "dst": "ฉันแค่ลาดตระเวน ต้องมีคนคอยดูภูเขาว่ามีวี่แววซุ่มโจมตีไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#053": {
+   "src": "Well... even though I doubt Gerts can climb...",
+   "dst": "เอ่อ... ถึงฉันจะสงสัยว่า Gert ปีนเขาเป็น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#054": {
+   "src": "The details aren't that important. I am doing my job, anyway.",
+   "dst": "รายละเอียดไม่ได้สำคัญขนาดนั้น ยังไงฉันก็ทำงานของฉันอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#055": {
+   "src": "Was there anything else?",
+   "dst": "มีอะไรอีกไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#056": {
+   "src": "Oh...",
+   "dst": "Oh...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#057": {
+   "src": "You are very welcome.",
+   "dst": "ด้วยความยินดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#058": {
+   "src": "I appreciate your comment!",
+   "dst": "ขอบคุณสำหรับความเห็นนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#059": {
+   "src": "So what's on your mind?",
+   "dst": "แล้วคิดอะไรอยู่ล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#060": {
+   "src": "It is our duty to protect the public from the Gerts!",
+   "dst": "หน้าที่ของเราคือปกป้องประชาชนจาก Gert!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#061": {
+   "src": "If what you are saying is true, we need to stay here!",
+   "dst": "ถ้าที่คุณพูดเป็นความจริง เราต้องอยู่ที่นี่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#062": {
+   "src": "Do you want to go have a sna",
+   "dst": "อยากไปกินของว่างกันไ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#063": {
+   "src": "I don't even think anyone would miss the Gerts if they were to die, hah!",
+   "dst": "ฉันว่าไม่มีใครคิดถึงพวก Gert หรอกถ้าพวกมันตาย ฮ่า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#064": {
+   "src": "You successfully got Bory out of the watch!",
+   "dst": "คุณพา Bory ออกจากกองรักษาการณ์ได้สำเร็จ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#065": {
+   "src": "Maybe it's time to save the people in the basement.",
+   "dst": "บางทีถึงเวลาช่วยคนในห้องใต้ดินแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#066": {
+   "src": "It seems that they locked up the basement...",
+   "dst": "ดูเหมือนพวกเขาจะล็อกห้องใต้ดินไว้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#067": {
+   "src": "Something happened outside!",
+   "dst": "มีอะไรเกิดขึ้นข้างนอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#068": {
+   "src": "This must be a freshly dug tunnel...",
+   "dst": "นี่คงเป็นอุโมงค์ที่เพิ่งขุดใหม่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#069": {
+   "src": "It seems the Gerts have gone on the offence.",
+   "dst": "ดูเหมือนพวก Gert จะเริ่มบุกแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#070": {
+   "src": "That should stop the Gerts.",
+   "dst": "แบบนี้น่าจะหยุดพวก Gert ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#071": {
+   "src": "At least for now. Maybe it's time to check on the Gylia watch again.",
+   "dst": "อย่างน้อยก็ตอนนี้ บางทีถึงเวลากลับไปดูกองรักษาการณ์ Gylia อีกรอบแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#072": {
+   "src": "I can never say no to a snack!",
+   "dst": "ของว่าง ฉันไม่เคยปฏิเสธ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#073": {
+   "src": "What are you thinking?",
+   "dst": "คิดอะไรอยู่เหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#074": {
+   "src": "Ooh! It sounds like you've prepared a whole feast out there!",
+   "dst": "โอ้! ฟังดูเหมือนคุณเตรียมงานเลี้ยงไว้ข้างนอกเต็มเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#075": {
+   "src": "Alright, deal!",
+   "dst": "ได้ ตกลง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#076": {
+   "src": "I'll head outside and wait for you.",
+   "dst": "ฉันจะออกไปรอคุณข้างนอกนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#077": {
+   "src": "I knew that!",
+   "dst": "รู้อยู่แล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 6",
+   "speaker": "Bory",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#078": {
+   "src": "Head towards the basement in the tower at [-{~}, {~}, -{~}].",
+   "dst": "ไปที่ห้องใต้ดินในหอคอยที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#079": {
+   "src": "Go outside towards the sound at [-{~}, {~}, -{~}].",
+   "dst": "ออกไปข้างนอกตามเสียงที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#080": {
+   "src": "Continue through the tunnel.",
+   "dst": "เดินต่อไปตามอุโมงค์",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#081": {
+   "src": "Collapse the Gert tunnel by attacking the weak pillar.",
+   "dst": "ถล่มอุโมงค์ของ Gert ด้วยการโจมตีเสาที่เปราะ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#082": {
+   "src": "Maybe you can collapse the tunnel entrance?",
+   "dst": "บางทีคุณอาจถล่มทางเข้าอุโมงค์ได้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part II#083": {
+   "src": "Return to the Gylia Watch at [-{~}, {~}, -{~}] and check if everyone is safe.",
+   "dst": "กลับไปที่กองรักษาการณ์ Gylia ที่ [-{~}, {~}, -{~}] แล้วดูว่าทุกคนปลอดภัยไหม",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#084": {
+   "src": "Hey!",
+   "dst": "เฮ้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#085": {
+   "src": "Good job on emptying the tower. I explained the situation to the {p} Military and they followed me here.",
+   "dst": "เคลียร์หอคอยได้ดีมาก ฉันอธิบายสถานการณ์ให้กองทัพ {p} ฟังแล้ว พวกเขาก็ตามฉันมาที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#086": {
+   "src": "Good thing you came to us. There is something wrong with this place because I swear... everyone seems to go coockoo.",
+   "dst": "ดีแล้วที่คุณมาหาเรา ที่นี่ต้องมีอะไรผิดปกติแน่ เพราะสาบานเลย... ทุกคนดูเพี้ยนไปหมด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Cinfras Military",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#087": {
+   "src": "Either way. Due to the workers breaking the treaty we have no choice but to charge them for their crimes and fire them on the spot.",
+   "dst": "ยังไงก็ตาม เพราะคนงานพวกนี้ละเมิดสนธิสัญญา เราจึงไม่มีทางเลือกนอกจากดำเนินคดีและไล่ออกทันที",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Cinfras Military",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#088": {
+   "src": "Us three have been put in place as a replacement until further notice.",
+   "dst": "พวกเราสามคนถูกส่งมาประจำแทนจนกว่าจะมีคำสั่งใหม่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#089": {
+   "src": "We will also return the stolen food to the Gerts, and hopefully they can calm them down.",
+   "dst": "เราจะคืนอาหารที่ถูกขโมยให้พวก Gert ด้วย หวังว่าจะทำให้พวกนั้นใจเย็นลงได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Winie",
+   "source": "wiki"
+  },
+  "Hunger of the Gerts Part II#090": {
+   "src": "Your job is finished here, Wynnian. Thank you on behalf of {p}.",
+   "dst": "งานของคุณที่นี่จบแล้ว ชาว Wynn ขอบคุณในนามของ {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part II",
+   "stage": "Stage 11",
+   "speaker": "Winie",
+   "source": "wiki"
+  }
+ }
+}

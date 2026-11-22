@@ -1,0 +1,330 @@
+{
+ "_meta": {
+  "quest": "WynnExcavation Site A",
+  "count": 32,
+  "translated": 32,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "WynnExcavation Site A#000": {
+   "src": "Well, I figured it out soon after you got back. We possess the crystal, don't go looking for Wynn Excavation again, all is not what it seems. Take that as a friendly warning.",
+   "dst": "ฉันรู้ไม่นานหลังเธอกลับไป ผลึกอยู่กับเรา อย่ามาตามหา Wynn Excavation อีก ทุกอย่างไม่ได้เป็นอย่างที่เห็น ถือว่าเตือนด้วยความหวังดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "เริ่มชุดเควส: WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "Oh, Vade sent you?",
+   "dst": "Vade ส่งมาเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "แผ่นจารึกเสร็จหนึ่งแผ่น! เอาไปคืน Vade อ้อ แล้วห้ามอ่าน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "A strange force pushes you back!",
+   "dst": "แรงประหลาดผลักคุณถอยกลับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "ยังทำอะไรอยู่ตรงนี้? ไปทำงานให้เสร็จ! เขียนไว้ในสมุดเนื้อหาของเธอแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#006": {
+   "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
+   "dst": "คุยกับนักขุดค้น Vade ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#007": {
+   "src": "Oh, hey kid. Wanna make some money?",
+   "dst": "อ้อ ไอ้หนู อยากได้เงินไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 1",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#008": {
+   "src": "I need you to translate this ancient text.",
+   "dst": "ฉันต้องการให้เธอแปลข้อความโบราณนี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 1",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#009": {
+   "src": "Just run it down to the lab assistant, Tesha.",
+   "dst": "แค่เอาไปให้ Tesha ผู้ช่วยแล็บ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 1",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#010": {
+   "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
+   "dst": "ฉันจะเอาไปเองก็ได้ แต่ฉันสำคัญเกินกว่าจะทำงานกรรมกร! แล็บอยู่ในเต็นท์ข้างบน และห้ามทำคำแปลเสียหายเด็ดขาด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 1",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#011": {
+   "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
+   "dst": "นำข้อความโบราณไปให้ Tesha ในเต็นท์ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#012": {
+   "src": "Hello, welcome to WynnExcavation Labs!",
+   "dst": "สวัสดีค่ะ นี่คือ WynnExcavation Labs!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#013": {
+   "src": "Oh yes, the tablet I was waiting for!",
+   "dst": "อ้อ ใช่ แผ่นจารึกที่รออยู่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#014": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#015": {
+   "src": "Oh my! This is quite interesting..",
+   "dst": "ตายแล้ว! น่าสนใจมาก..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#016": {
+   "src": "Here, let me finish this up...",
+   "dst": "เดี๋ยวนะ ขอทำให้เสร็จก่อน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#017": {
+   "src": "..and there you are!",
+   "dst": "..เรียบร้อย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#018": {
+   "src": "Return to Excavator Vade with the translated writing",
+   "dst": "กลับไปหานักขุดค้น Vade พร้อมข้อความที่แปลแล้ว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#019": {
+   "src": "Who are you?",
+   "dst": "เธอเป็นใคร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#020": {
+   "src": "Oh right, you're that kid I sent out!",
+   "dst": "อ้อ ใช่ ไอ้หนูที่ฉันส่งไปนี่เอง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#021": {
+   "src": "Well do you have the translated text or not?",
+   "dst": "แล้วได้คำแปลมาหรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#022": {
+   "src": "You do! Brilliant! Let's take a look at that...",
+   "dst": "ได้มา! ยอดเลย! ไหนดูซิ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#023": {
+   "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
+   "dst": "\"โยนสิ่งของเป็นบรรณาการให้ไม้ที่โดดเด่น มุมที่ถูกต้องจะเปิดทาง\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#024": {
+   "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
+   "dst": "สงสัยว่าหมายถึงข้างในวิหารหรือเปล่า... โอ้ เอ่อ ลืมไปว่าเธออยู่ อย่ายุ่งไอ้หนู เรื่องผู้ใหญ่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 3",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#025": {
+   "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
+   "dst": "ไขปริศนานี้ในสุสาน: \"โยนสิ่งของเป็นบรรณาการให้ไม้ที่โดดเด่น มุมที่ถูกต้องจะเปิดทาง\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#026": {
+   "src": "Search the tombs",
+   "dst": "ค้นสุสาน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#027": {
+   "src": "Return and talk to Excavator Vade",
+   "dst": "กลับไปคุยกับนักขุดค้น Vade",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#028": {
+   "src": "Hey kid, did you just come from the tomb?",
+   "dst": "นี่ไอ้หนู เพิ่งออกมาจากสุสานเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 6",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#029": {
+   "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
+   "dst": "รู้แล้วว่าไม่ควรขี้เกียจแล้วใช้คนอื่นไปทำ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 6",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#030": {
+   "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
+   "dst": "ตายล่ะ บอกหัวหน้าเรื่องนี้ไม่ได้ เขาเอาหัวฉันแน่! ตามตัวอักษรเลย! Wynn Excavation ไม่ใช่กลุ่มที่ควรหักหลัง พวกเขามีอำนาจเกินกว่าที่เธอจะรู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 6",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  },
+  "WynnExcavation Site A#031": {
+   "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
+   "dst": "อย่าให้รู้ว่าเอาอะไรไปนะ! นั่นเป็นทรัพย์สินทางการของ WYNNEXCAVATION!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 6",
+   "speaker": "Excavator Vade",
+   "source": "wiki"
+  }
+ }
+}

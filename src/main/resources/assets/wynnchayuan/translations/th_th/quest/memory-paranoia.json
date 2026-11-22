@@ -1,0 +1,1318 @@
+{
+ "_meta": {
+  "quest": "Memory Paranoia",
+  "count": 128,
+  "translated": 128,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Memory Paranoia#000": {
+   "src": "You can't quite make out the messy scribbles in the journal, but it looks very intense.",
+   "dst": "คุณอ่านลายมือยุ่งเหยิงในสมุดบันทึกไม่ค่อยออก แต่ดูเข้มข้นมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#001": {
+   "src": "The check is made out to a charity for a rather large amount of emeralds.",
+   "dst": "เช็คใบนี้สั่งจ่ายให้องค์กรการกุศล เป็นมรกตจำนวนค่อนข้างมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "This check is made out to a charity for a lot of emeralds.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.855,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#002": {
+   "src": "Nothing happened.",
+   "dst": "ไม่มีอะไรเกิดขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#003": {
+   "src": "Oh, a human? If I could beg your pardon a moment... could I talk to you about the mansion here?",
+   "dst": "โอ้ มนุษย์เหรอ? ขอเวลาสักครู่... ผมขอคุยกับคุณเรื่องคฤหาสน์ตรงนี้ได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#004": {
+   "src": "But... Eventually... Erm, we're not entirely sure what happened, only rumours have surfaced over the years, but... things took a turn, shall we say.",
+   "dst": "แต่... ในที่สุด... เอ่อ เราไม่แน่ใจนักว่าเกิดอะไรขึ้น หลายปีมานี้มีแต่ข่าวลือ แต่... เรื่องมันพลิกผัน จะว่าอย่างนั้นก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#005": {
+   "src": "Because, aah... How shall I put this... One day they were all... discovered dead. Murdered. By each other.",
+   "dst": "เพราะ อ่า... จะพูดยังไงดี... วันหนึ่งมีคนพบพวกเขาทุกคน... ตาย ถูกฆาตกรรม โดยฝีมือกันเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#006": {
+   "src": "Since, erm... Since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
+   "dst": "เพราะว่า เอ่อ... เพราะไม่มีใครรอดมาแจ้งเหตุ จึงไม่มีใครรู้จนอีกหลายวันต่อมา เมื่อนักเดินทางที่ผ่านมาสังเกตเห็นคฤหาสน์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#007": {
+   "src": "Yet, I am... scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there... Cursed. I need someone else to uncover my heritage.",
+   "dst": "แต่ผม... กลัวที่นี่ มันคือซากของชีวิตที่ผมควรได้มี วิญญาณของผู้ตายยังอยู่ที่นั่น... ต้องสาป ผมต้องการให้ใครสักคนช่วยเปิดเผยรากเหง้าของผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#008": {
+   "src": "It's so kind of the Caritats to donate these supplies to the struggling people in the forest.",
+   "dst": "ครอบครัว Caritat ใจดีจริงๆ ที่บริจาคเสบียงพวกนี้ให้ผู้คนที่ลำบากในป่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.859,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#009": {
+   "src": "Mr. Caritat is always writing so intensely in that book... I do wonder what he could be saying.",
+   "dst": "คุณ Caritat เขียนหนังสือเล่มนั้นอย่างจดจ่อตลอด... ฉันสงสัยจริงๆ ว่าเขาเขียนอะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#010": {
+   "src": "I'll bet he's writing insults about us or something. He can't be as nice as he appears, no one is!",
+   "dst": "พนันได้เลยว่าเขาเขียนด่าพวกเราหรืออะไรสักอย่าง เขาไม่มีทางดีอย่างที่เห็นหรอก ไม่มีใครดีขนาดนั้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "captured",
+   "similar": {
+    "text": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.849,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#011": {
+   "src": "Come on, Timmy. Mr. Caritat is crazily sweet. I doubt he'd be upset, even if you'd thrown it down there on purpose.",
+   "dst": "ไม่เอาน่า Timmy คุณ Caritat ใจดีสุดๆ เขาคงไม่โกรธหรอก ต่อให้เธอโยนมันลงไปโดยตั้งใจก็ตาม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#012": {
+   "src": "G-g-ghosts?!",
+   "dst": "ผ-ผ-ผีเหรอ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "captured"
+  },
+  "Memory Paranoia#013": {
+   "src": "Mr. Caritat looks very engrossed in his writing... you best not disturb him.",
+   "dst": "คุณ Caritat ดูจดจ่อกับการเขียนมาก... อย่าไปรบกวนเขาดีกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#014": {
+   "src": "I've forgotten, where should I look for my Library Key?",
+   "dst": "ผมลืมไปแล้ว ผมควรไปหา Library Key ที่ไหนนะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#015": {
+   "src": "The drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, you should check there.",
+   "dst": "ป่านนี้ท่อระบายน้ำคงพากุญแจไปที่ห้องใต้ดินมุมตะวันออกเฉียงใต้ของคฤหาสน์แล้ว ลองไปดูที่นั่นสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.829,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#016": {
+   "src": "Page {~}: The Caritats are as nice as people say. They're some of the kindest people I've ever met, let alone work for.",
+   "dst": "หน้า {~}: ครอบครัว Caritat ใจดีอย่างที่ผู้คนว่าจริงๆ เป็นคนที่ใจดีที่สุดคนหนึ่งเท่าที่ฉันเคยพบ ยิ่งในฐานะเจ้านายด้วยแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#017": {
+   "src": "Page {~}: That Timmy boy has been acting rather unusual lately... Uncharacteristically hostile. I wonder what's come over him.",
+   "dst": "หน้า {~}: เด็กชาย Timmy คนนั้นทำตัวแปลกไปมากช่วงนี้... ก้าวร้าวผิดวิสัย ไม่รู้ว่าเกิดอะไรขึ้นกับเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#018": {
+   "src": "Page {~}: I've been hearing strange noises at night. Scratching, and sometimes yelling... I do hope nothing bad is going on.",
+   "dst": "หน้า {~}: ฉันได้ยินเสียงแปลกๆ ตอนกลางคืน เสียงข่วน และบางทีก็เสียงตะโกน... หวังว่าคงไม่มีเรื่องร้ายอะไรเกิดขึ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#019": {
+   "src": "Page {~}: I don't even know how this happened, but Timmy performed dark magic. He shot a fireball! The north wall of the library was wrecked!",
+   "dst": "หน้า {~}: ฉันไม่รู้ด้วยซ้ำว่ามันเกิดขึ้นได้ยังไง แต่ Timmy ใช้เวทมนตร์มืด เขายิงลูกไฟออกมา! ผนังทิศเหนือของห้องสมุดพังยับ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#020": {
+   "src": "It appears that all of the pages have been torn out...",
+   "dst": "ดูเหมือนทุกหน้าจะถูกฉีกออกไปหมดแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#021": {
+   "src": "Aw man, I can't believe I'm not allowed to sit with the adults. I'm nearly twelve!",
+   "dst": "โธ่เอ๊ย ไม่อยากเชื่อเลยว่าผมไม่ได้นั่งกับผู้ใหญ่ ผมจะสิบสองขวบแล้วนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#022": {
+   "src": "They appear to be chatting about local politics.",
+   "dst": "ดูเหมือนพวกเขากำลังคุยเรื่องการเมืองท้องถิ่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#023": {
+   "src": "You hold up the spoon...",
+   "dst": "คุณยกช้อนขึ้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#024": {
+   "src": "It's been depleted of its magic. How disappointing.",
+   "dst": "เวทมนตร์ในนั้นหมดไปแล้ว น่าผิดหวังจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#025": {
+   "src": "Thank you very much, Father, and everyone here. Here's to more years of health-",
+   "dst": "ขอบคุณมากครับพ่อ และทุกคนที่นี่ ขอให้มีสุขภาพดีไปอีกหลายปี-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Timothy",
+   "source": "captured"
+  },
+  "Memory Paranoia#026": {
+   "src": "My god... What is wrong with this place? No matter what I do, what I try...",
+   "dst": "พระเจ้า... ที่นี่มันเป็นอะไรไป? ไม่ว่าผมจะทำอะไร ลองอะไร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#027": {
+   "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you... Were you responsible for this?",
+   "dst": "...Timothy พ่อจะถามอะไรลูกอย่างหนึ่ง และลูกต้องตอบพ่อตามตรง ลูก... ลูกเป็นคนทำเรื่องนี้หรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#028": {
+   "src": "Never, never!! That study is off-limits to everyone, even your mother! If I had known back then, I'd... I'd have... urgh...",
+   "dst": "ไม่มีวัน ไม่มีวัน!! ห้องทำงานนั้นห้ามทุกคนเข้า แม้แต่แม่ของลูก! ถ้าพ่อรู้ตั้งแต่ตอนนั้น พ่อคง... พ่อคง... อึก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#029": {
+   "src": "Page {~}: DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH.",
+   "dst": "หน้า {~}: ตาย ตาย ตาย ตาย ตาย ตาย ตาย ตาย ตาย ตาย ตาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#030": {
+   "src": "Page {~}: There is a dark power beyond our control within this mansion. There is no use trying to fight it.",
+   "dst": "หน้า {~}: ในคฤหาสน์นี้มีพลังมืดที่เกินกว่าเราจะควบคุมได้ ต่อสู้กับมันไปก็ไร้ประโยชน์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#031": {
+   "src": "Page {~}: I felt like all of the skulls were watching me. I have had to turn them all towards the fireplace.",
+   "dst": "หน้า {~}: ฉันรู้สึกเหมือนหัวกะโหลกทุกหัวจ้องมองฉันอยู่ ฉันต้องหันพวกมันทั้งหมดไปทางเตาผิง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#032": {
+   "src": "THAT WHICH STARTED THIS WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
+   "dst": "สิ่งที่เริ่มสงครามนี้จะผงาดขึ้นอีกครั้ง จากอาณาจักรแห่งเงา การหลอกลวง และความเจ็บปวด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#033": {
+   "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. SHALL. RISE. AGAIN!",
+   "dst": "ติดอยู่ชั่วนิรันดร์ ณ ที่ที่มันจากมา ผ่านจุดอ่อนระหว่างอาณาจักร มัน. จะ. ผงาด. อีกครั้ง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#034": {
+   "src": "Dear Anton, the chandelier fell in the main hall. Please fix it as soon as possible.",
+   "dst": "ถึง Anton โคมระย้าในโถงใหญ่ร่วงลงมา ช่วยซ่อมให้เร็วที่สุดด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#035": {
+   "src": "FROM SOILS OF DOOM THE SERVANT LAID",
+   "dst": "จากผืนดินแห่งหายนะที่ผู้รับใช้วางไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#036": {
+   "src": "All you have to do, is go in there and find answers. I'm sure the past won't haunt us both. Something happened here all those years ago... I want to know what.",
+   "dst": "สิ่งที่คุณต้องทำ คือเข้าไปในนั้นแล้วหาคำตอบ ผมมั่นใจว่าอดีตจะไม่ตามหลอกหลอนเราทั้งคู่ มีบางอย่างเกิดขึ้นที่นี่เมื่อหลายปีก่อน... ผมอยากรู้ว่ามันคืออะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#037": {
+   "src": "I don't think it's wise you enter the mansion ever again...",
+   "dst": "ผมว่าคุณไม่ควรเข้าไปในคฤหาสน์นั่นอีกเลย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#038": {
+   "src": "Speak to Atisun.",
+   "dst": "คุยกับ Atisun",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#039": {
+   "src": "It was not always so dilapidated. It once stood tall, a monument to the family of Caritat, who constructed it from the ground up.",
+   "dst": "มันไม่ได้ทรุดโทรมแบบนี้มาตลอด ครั้งหนึ่งมันเคยตั้งตระหง่าน เป็นอนุสรณ์ของตระกูล Caritat ผู้สร้างมันขึ้นมาตั้งแต่ฐานราก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#040": {
+   "src": "The Caritats were unlike any other. Uncharacteristically selfless and helpful. Their wealth was everyone’s wealth as far as they were concerned.",
+   "dst": "ตระกูล Caritat ไม่เหมือนใคร เสียสละและชอบช่วยเหลืออย่างที่หาได้ยาก สำหรับพวกเขา ความมั่งคั่งของพวกเขาคือความมั่งคั่งของทุกคน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#041": {
+   "src": "I am the last remaining descendant, Atisun Caritat. I was the only survivor of the... incident. I was only an infant when I was found by a passerby.",
+   "dst": "ผมคือทายาทคนสุดท้าย Atisun Caritat ผมเป็นผู้รอดชีวิตเพียงคนเดียวจาก... เหตุการณ์นั้น ผมยังเป็นทารกตอนที่คนผ่านทางมาพบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#042": {
+   "src": "I do not believe that my family simply went mad, but I do not know what happened. I want to know the truth. I think this mansion still holds the answers I'm looking for.",
+   "dst": "ผมไม่เชื่อว่าครอบครัวผมจะแค่เสียสติไปเฉยๆ แต่ผมไม่รู้ว่าเกิดอะไรขึ้น ผมอยากรู้ความจริง ผมคิดว่าคฤหาสน์นี้ยังเก็บคำตอบที่ผมตามหาอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#043": {
+   "src": "Don't you worry, like my ancestors, I'm a generous man. If you help me, I will reward you handsomely. All you have to do, is go in there and find answers. I'm sure the past won't haunt us both.",
+   "dst": "ไม่ต้องห่วง ผมใจกว้างเหมือนบรรพบุรุษ ถ้าคุณช่วยผม ผมจะตอบแทนอย่างงาม สิ่งที่คุณต้องทำ คือเข้าไปในนั้นแล้วหาคำตอบ ผมมั่นใจว่าอดีตจะไม่ตามหลอกหลอนเราทั้งคู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#044": {
+   "src": "Enter the {p}.",
+   "dst": "เข้าไปใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#045": {
+   "src": "Learn the story of the Caritat Family.",
+   "dst": "เรียนรู้เรื่องราวของตระกูล Caritat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#046": {
+   "src": "This check is made out to a charity for a lot of emeralds.",
+   "dst": "เช็คใบนี้สั่งจ่ายมรกตจำนวนมากให้องค์กรการกุศล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Check",
+   "source": "wiki"
+  },
+  "Memory Paranoia#047": {
+   "src": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
+   "dst": "ดีจังที่ครอบครัว Caritat บริจาคเสบียงทั้งหมดนี้ให้ผู้คนที่ลำบากในป่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#048": {
+   "src": "He seems to be very engrossed in his writing.",
+   "dst": "เขาดูจดจ่อกับการเขียนมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#049": {
+   "src": "I've heard about weird things happening around the house. People are saying the mansion might be haunted!",
+   "dst": "ฉันได้ยินว่ามีเรื่องแปลกๆ เกิดขึ้นในบ้าน คนพูดกันว่าคฤหาสน์นี้อาจมีผีสิง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#050": {
+   "src": "Ghosts? Preposterous! This mansion isn't haunted, don't believe those silly rumors!",
+   "dst": "ผีเหรอ? ไร้สาระ! คฤหาสน์นี้ไม่มีผีสิงหรอก อย่าไปเชื่อข่าวลือโง่ๆ พวกนั้น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#051": {
+   "src": "Mister Caritat is always writing in that book, always so intensely. I wonder what he is writing.",
+   "dst": "คุณ Caritat เขียนหนังสือเล่มนั้นตลอด จดจ่อทุกครั้งเลย ไม่รู้ว่าเขียนอะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#052": {
+   "src": "He won't even tell me what he's writing.",
+   "dst": "เขาไม่ยอมบอกผมด้วยซ้ำว่าเขียนอะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#053": {
+   "src": "I accidentally dropped my Library Key down the drain, do you think my dad will be angry?",
+   "dst": "ผมทำ Library Key ตกท่อระบายน้ำ คิดว่าพ่อจะโกรธไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#054": {
+   "src": "No, Mister Caritat is very forgiving. I doubt he'd be upset, especially if it was an accident.",
+   "dst": "ไม่หรอก คุณ Caritat ใจกว้างมาก เขาคงไม่โกรธ ยิ่งเป็นอุบัติเหตุด้วยแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#055": {
+   "src": "I still want to find the key though, do you know where I should look?",
+   "dst": "แต่ผมก็ยังอยากหากุญแจให้เจอ รู้ไหมว่าควรไปหาที่ไหน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#056": {
+   "src": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
+   "dst": "ป่านนี้ท่อระบายน้ำคงพากุญแจไปที่ห้องใต้ดินมุมตะวันออกเฉียงใต้ของคฤหาสน์แล้ว น่าจะอยู่ที่นั่นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#057": {
+   "src": "Enter the basement and recover the Library Key.",
+   "dst": "เข้าไปในห้องใต้ดินแล้วเอา Library Key คืนมา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#058": {
+   "src": "Enter the library of {p}.",
+   "dst": "เข้าไปในห้องสมุดของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#059": {
+   "src": "Enter the hole in the wall.",
+   "dst": "เข้าไปในรูบนผนัง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#060": {
+   "src": "Timmy, is something bothering you? You have been acting so weird lately.",
+   "dst": "Timmy มีอะไรกวนใจหรือเปล่า? ช่วงนี้เธอทำตัวแปลกมาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#061": {
+   "src": "You cannot command me, mortal! You and all of your inferior species will bow to the darkness!",
+   "dst": "เจ้าสั่งข้าไม่ได้ มนุษย์! เจ้าและเผ่าพันธุ์อันต่ำต้อยของเจ้าจะต้องก้มหัวให้ความมืด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#062": {
+   "src": "I don't know what game you are playing, Timmy. But I will not stand for it any longer, snap out of it!",
+   "dst": "ไม่รู้ว่าเธอเล่นอะไรอยู่ Timmy แต่ฉันจะไม่ทนอีกแล้ว ได้สติซะที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#063": {
+   "src": "You shall pay for your insolence, mortal!",
+   "dst": "เจ้าต้องชดใช้ความอวดดีของเจ้า มนุษย์!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#064": {
+   "src": "Dark magic? What foul books have you been reading? And what's that in your hand?",
+   "dst": "เวทมนตร์มืดเหรอ? เธอไปอ่านหนังสือชั่วร้ายอะไรมา? แล้วในมือนั่นอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#065": {
+   "src": "Casting spells with a black spoon? I'm going to get rid of this foul thing!",
+   "dst": "ร่ายเวทด้วยช้อนสีดำเหรอ? ฉันจะทิ้งของชั่วร้ายนี่ซะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#066": {
+   "src": "That is an item beyond you, mortal. Give it back to me this instant!",
+   "dst": "นั่นเป็นของที่เกินกว่าเจ้าจะเข้าใจ มนุษย์ คืนมาให้ข้าเดี๋ยวนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#067": {
+   "src": "Return the spoon to the Kitchen.",
+   "dst": "นำช้อนไปคืนที่ห้องครัว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#068": {
+   "src": "Listen to Mr. Caritat's announcement.",
+   "dst": "ฟังประกาศของคุณ Caritat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#069": {
+   "src": "Attention, attention everyone! I have an announcement I'd like to make!",
+   "dst": "ทุกคนโปรดฟังทางนี้! ผมมีเรื่องจะประกาศ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#070": {
+   "src": "My son, Timothy, has just turned eighteen today.",
+   "dst": "ลูกชายผม Timothy อายุครบสิบแปดปีในวันนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#071": {
+   "src": "Now, there have been a few slight hiccups over the years, but we've made it through mostly in one piece.",
+   "dst": "หลายปีมานี้มีเรื่องติดขัดเล็กๆ น้อยๆ บ้าง แต่เราก็ผ่านมาได้แทบไม่บุบสลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#072": {
+   "src": "And I'd like to say, I'm very proud of him. To Timothy, a new man!",
+   "dst": "และผมขอพูดว่า ผมภูมิใจในตัวเขามาก แด่ Timothy ชายหนุ่มคนใหม่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#073": {
+   "src": "Please, everyone stay calm. I'm sure it's just the cooks spilling something...",
+   "dst": "ทุกคนโปรดใจเย็น ผมแน่ใจว่าแค่พ่อครัวทำอะไรหกเท่านั้น...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#074": {
+   "src": "Enter the Kitchen.",
+   "dst": "เข้าไปในห้องครัว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#075": {
+   "src": "Oh my god... what is that thing?!",
+   "dst": "พระเจ้า... นั่นมันตัวอะไร?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "Baker",
+   "source": "wiki"
+  },
+  "Memory Paranoia#076": {
+   "src": "Everyone out, now! We can't fight these things!",
+   "dst": "ทุกคนออกไป เดี๋ยวนี้! เราสู้พวกมันไม่ไหว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "Chef",
+   "source": "wiki"
+  },
+  "Memory Paranoia#077": {
+   "src": "Exit the Kitchen.",
+   "dst": "ออกจากห้องครัว",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#078": {
+   "src": "Speak to people who haven't fled from the disaster.",
+   "dst": "คุยกับคนที่ยังไม่ได้หนีจากภัยพิบัติ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#079": {
+   "src": "How was any of that even possible? What are we going to tell their families?",
+   "dst": "เรื่องแบบนั้นเป็นไปได้ยังไง? เราจะบอกครอบครัวพวกเขาว่ายังไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#080": {
+   "src": "No, of course not! I overcame that years ago, you know that, I can't believe you still suspect me of-",
+   "dst": "ไม่ ไม่ใช่อยู่แล้ว! ผมเลิกไปตั้งหลายปีแล้ว พ่อก็รู้ ไม่อยากเชื่อว่าพ่อยังสงสัยว่าผม-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#081": {
+   "src": "Ah, sir, we did find something rather unusual in the kitchen that might interest you? Maybe?",
+   "dst": "อ่า นายท่าน เราเจอของแปลกๆ ในครัวที่นายท่านอาจสนใจครับ? หรือเปล่า?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#082": {
+   "src": "What- Out with it! What did you find?! Please, please tell me I'm wrong!!",
+   "dst": "อะไร- พูดมาสิ! เจออะไร?! ได้โปรด บอกทีว่าผมคิดผิด!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#083": {
+   "src": "We found this charred-looking black spoon. I've worked here for years, and I've never seen any spoons of this style in the mansion.",
+   "dst": "เราเจอช้อนสีดำที่ดูเหมือนไหม้เกรียมนี่ ผมทำงานที่นี่มาหลายปี ไม่เคยเห็นช้อนแบบนี้ในคฤหาสน์เลยครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#084": {
+   "src": "Wait, that spoon? I remember sneaking into your study that one time to get it, but how did it survive the fire?",
+   "dst": "เดี๋ยวนะ ช้อนนั่นเหรอ? ผมจำได้ว่าเคยแอบเข้าห้องทำงานพ่อไปเอามันครั้งหนึ่ง แต่มันรอดจากไฟมาได้ยังไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#085": {
+   "src": "Unlock the Study.",
+   "dst": "ปลดล็อกห้องทำงาน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#086": {
+   "src": "Enter the Study",
+   "dst": "เข้าไปในห้องทำงาน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#087": {
+   "src": "Leave the Study.",
+   "dst": "ออกจากห้องทำงาน",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#088": {
+   "src": "Speak with the Possessed Mr. Caritat.",
+   "dst": "คุยกับคุณ Caritat ที่ถูกสิง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#089": {
+   "src": "Bring the key to Timmy's bedroom.",
+   "dst": "นำกุญแจไปที่ห้องนอนของ Timmy",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#090": {
+   "src": "Enter Timmy’s bedroom.",
+   "dst": "เข้าไปในห้องนอนของ Timmy",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#091": {
+   "src": "Search Timmy's bedroom.",
+   "dst": "ค้นห้องนอนของ Timmy",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#092": {
+   "src": "Bring the key to the Master Bedroom.",
+   "dst": "นำกุญแจไปที่ห้องนอนใหญ่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#093": {
+   "src": "Enter the Master Bedroom.",
+   "dst": "เข้าไปในห้องนอนใหญ่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#094": {
+   "src": "Harold, please...",
+   "dst": "Harold ได้โปรด...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#095": {
+   "src": "Stop this madness...",
+   "dst": "หยุดบ้าได้แล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#096": {
+   "src": "Harold...?",
+   "dst": "Harold...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#097": {
+   "src": "BREAK THROUGH THE REALMS TO THE LAND OF TRADE.",
+   "dst": "ทะลวงผ่านอาณาจักรสู่ดินแดนแห่งการค้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#098": {
+   "src": "CORRUPT THE WORLD WITH SEEDS OF PAIN",
+   "dst": "หว่านความเจ็บปวดให้โลกแปดเปื้อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#099": {
+   "src": "SO THAT HE...",
+   "dst": "เพื่อให้เขา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#100": {
+   "src": "...MAY RISE AGAIN!",
+   "dst": "...ผงาดขึ้นอีกครั้ง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#101": {
+   "src": "Escape the flaming mansion through the back door.",
+   "dst": "หนีออกจากคฤหาสน์ที่ลุกเป็นไฟทางประตูหลัง",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#102": {
+   "src": "Navigate the Caritat's basement.",
+   "dst": "เดินผ่านห้องใต้ดินของตระกูล Caritat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#103": {
+   "src": "Escape through the mysterious rift.",
+   "dst": "หนีผ่านรอยแยกลึกลับ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#104": {
+   "src": "No, no! I said three feet left, you absolute...",
+   "dst": "ไม่ ไม่! ผมบอกว่าซ้ายสามฟุต ไอ้เจ้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#105": {
+   "src": "Mr. Caritat! What are you doing?!",
+   "dst": "คุณ Caritat! คุณทำอะไรน่ะ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#106": {
+   "src": "What are you doing here, Elf? You need proper equipment to be on this site-",
+   "dst": "มาทำอะไรที่นี่ เอลฟ์? เข้าไซต์ก่อสร้างต้องมีอุปกรณ์ที่เหมาะสม-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#107": {
+   "src": "Mr Caritat, you can't build a house here!",
+   "dst": "คุณ Caritat สร้างบ้านที่นี่ไม่ได้นะคะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#108": {
+   "src": "I can do whatever I like here, I bought the land.",
+   "dst": "ผมจะทำอะไรที่นี่ก็ได้ ผมซื้อที่ดินมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#109": {
+   "src": "You don't understand! This is where it came... this is where the darkness invaded!",
+   "dst": "คุณไม่เข้าใจ! ที่นี่คือที่ที่มัน... ที่ที่ความมืดบุกเข้ามา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#110": {
+   "src": "Don't be preposterous. I'm building here to show the people that there's simply nothing to worry about!",
+   "dst": "อย่าพูดเหลวไหล ผมสร้างที่นี่เพื่อแสดงให้ผู้คนเห็นว่าไม่มีอะไรต้องกังวลเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#111": {
+   "src": "Besides, even if there was something, now that Dullahan's gone, it'll go too.",
+   "dst": "อีกอย่าง ต่อให้มีอะไรจริง ตอนนี้ Dullahan ไปแล้ว มันก็จะไปเหมือนกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#112": {
+   "src": "What?! He wasn't the one causing all this, it was-",
+   "dst": "อะไรนะ?! เขาไม่ใช่ต้นเหตุของเรื่องทั้งหมดนี้ มันคือ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#113": {
+   "src": "Well of course you would think that. You and him had some... history, didn't you?",
+   "dst": "ก็แน่ล่ะ คุณต้องคิดแบบนั้น คุณกับเขาเคยมี... อดีตกันนี่ ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#114": {
+   "src": "I... Please, Mr Caritat. You don't understand what you're doing...",
+   "dst": "ฉัน... ได้โปรดเถอะค่ะ คุณ Caritat คุณไม่เข้าใจว่ากำลังทำอะไรอยู่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#115": {
+   "src": "I am securing some prime real-estate right here. Oh... Perhaps that is why you're here?",
+   "dst": "ผมกำลังจับจองที่ดินทำเลทองตรงนี้ไง อ้อ... หรือนั่นคือเหตุผลที่คุณมาที่นี่?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#116": {
+   "src": "What? No, I-",
+   "dst": "หา? เปล่า ฉัน-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#117": {
+   "src": "Trying to expand elven territories, are you?! Well, I'll be having none of that! Leave, before I have my men escort you!",
+   "dst": "คิดจะขยายดินแดนเอลฟ์ใช่ไหม?! ผมไม่ยอมหรอก! ไปซะ ก่อนที่ผมจะให้คนของผมพาคุณออกไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#118": {
+   "src": "Hey! Human! Are you alright?! Please, calm down, quit flailing around, you're safe!",
+   "dst": "เฮ้! มนุษย์! เป็นอะไรไหม?! ได้โปรดใจเย็นๆ เลิกดิ้นได้แล้ว คุณปลอดภัยแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#119": {
+   "src": "Oh thank goodness, you're back to us. I was so worried... er, you might not recall. Let me explain...",
+   "dst": "ขอบคุณสวรรค์ คุณกลับมาแล้ว ผมเป็นห่วงแทบแย่... เอ่อ คุณอาจจำไม่ได้ ให้ผมอธิบายนะ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#120": {
+   "src": "It... it seemed like you were possessed. You stood in the hall for... I don't know how long. I couldn't snap you out of it, no matter what I tried.",
+   "dst": "ดู... ดูเหมือนคุณถูกสิง คุณยืนอยู่ในโถงนาน... ไม่รู้ว่านานแค่ไหน ผมทำยังไงก็ปลุกคุณไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#121": {
+   "src": "Voices that weren't yours, you spoke out their moments and thoughts. The maids, my father... everyone. I... you said what I needed to hear.",
+   "dst": "คุณพูดด้วยเสียงที่ไม่ใช่ของคุณ เล่าช่วงเวลาและความคิดของพวกเขา สาวใช้ พ่อของผม... ทุกคน ผม... คุณพูดสิ่งที่ผมจำเป็นต้องได้ยิน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#122": {
+   "src": "My great grandfather, wanting to prove to everyone that the forest was still good, built his mansion atop the very spot that was acclaimed to be the cause of the Decay.",
+   "dst": "ทวดของผมอยากพิสูจน์ให้ทุกคนเห็นว่าป่ายังดีอยู่ เลยสร้างคฤหาสน์ทับจุดที่ถูกกล่าวขานว่าเป็นต้นเหตุของความเสื่อมสลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#123": {
+   "src": "My father tried to continue the traditions... but all of it was burned to ashes. I must consider myself lucky that I did not fall with them.",
+   "dst": "พ่อของผมพยายามสืบทอดธรรมเนียม... แต่ทุกอย่างถูกเผาจนเป็นเถ้าถ่าน ผมต้องถือว่าตัวเองโชคดีที่ไม่ได้ตายไปกับพวกเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#124": {
+   "src": "And what emerged from that spot? Who knows... but, whatever it was... the darkness must have lingered, and drove them all to madness.",
+   "dst": "แล้วอะไรโผล่ออกมาจากจุดนั้น? ใครจะรู้... แต่ไม่ว่ามันคืออะไร... ความมืดคงยังวนเวียนอยู่ และทำให้พวกเขาทุกคนเสียสติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#125": {
+   "src": "I'm sorry you went through that ordeal... I would suggest seeing a healer as soon as possible.",
+   "dst": "เสียใจที่คุณต้องเจอเรื่องเลวร้ายแบบนั้น... ผมแนะนำให้ไปหาหมอรักษาโดยเร็วที่สุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#126": {
+   "src": "I will make sure no one enters this house again. It is cursed. Thank you for helping me.",
+   "dst": "ผมจะไม่ให้ใครเข้าบ้านหลังนี้อีก มันถูกสาป ขอบคุณที่ช่วยผมนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#127": {
+   "src": "Look around the chandelier at the stairs.",
+   "dst": "สำรวจรอบโคมระย้าตรงบันได",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

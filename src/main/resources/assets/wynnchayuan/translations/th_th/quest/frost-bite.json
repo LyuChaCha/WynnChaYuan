@@ -1,0 +1,750 @@
+{
+ "_meta": {
+  "quest": "Frost Bite",
+  "count": 74,
+  "translated": 74,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Frost Bite#000": {
+   "src": "I ignored the warning at first, since the bridge is the only path into the jungle...",
+   "dst": "ตอนแรกฉันไม่สนคำเตือน เพราะสะพานเป็นทางเดียวเข้าป่า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#001": {
+   "src": "If you want to ignore the military's warning, I suppose you might benefit from buying some our stock first. Our potions are stronger than any sold in {p}, after all!",
+   "dst": "ถ้าคิดจะไม่สนคำเตือนของกองทัพ ซื้อของของเราก่อนน่าจะดี ยาของเราแรงกว่าที่ขายใน {p} ทุกเจ้า!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#002": {
+   "src": "From the look of your equipment... I'd say you might have a better chance of making it across than us.",
+   "dst": "ดูจากอุปกรณ์ของคุณ... คุณน่าจะมีโอกาสข้ามไปได้มากกว่าพวกเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#003": {
+   "src": "Hey, Guard! Do you know anything about Electromagic? Come up and take a look at the drill, would you?",
+   "dst": "เฮ้ ยาม! รู้เรื่อง Electromagic บ้างไหม? ขึ้นมาดูสว่านหน่อยสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "captured"
+  },
+  "Frost Bite#004": {
+   "src": "Now you've obtained the key, you can enter Theoricks mansion",
+   "dst": "ตอนนี้คุณได้กุญแจแล้ว เข้าคฤหาสน์ของ Theorick ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#005": {
+   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
+   "dst": "ไปคฤหาสน์ด้วยกันเถอะ นี่ ผมมีรถม้าไว้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#006": {
+   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
+   "dst": "ไม่อยากจะเชื่อ.. เขาช่างโลภ- อ๊ากกก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 7",
+   "speaker": "Eppo",
+   "source": "captured"
+  },
+  "Frost Bite#007": {
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "ต้องมีทางเปิดมันได้ ลองดูรอบๆ ว่าเจออะไรบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "captured"
+  },
+  "Frost Bite#008": {
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "ว้าว ต่อให้วัดด้วยมาตรฐานทุกวันนี้ นี่ก็เงินมหาศาล ลองนึกดูว่าเมื่อหลายร้อยปีก่อนจะมากขนาดไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "captured"
+  },
+  "Frost Bite#009": {
+   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
+   "dst": "ตามหา Eppo ที่ [-{~}, {~}, -{~}] ทางเข้าถ้ำของเขาอยู่ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#010": {
+   "src": "Let's give it another try!",
+   "dst": "ลองอีกทีเถอะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#011": {
+   "src": "Ready the drill, men!",
+   "dst": "เตรียมสว่าน ทุกคน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#012": {
+   "src": "Darn. The drill just won't start.",
+   "dst": "แย่จัง สว่านไม่ยอมติด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#013": {
+   "src": "Oh! Never mind, it lit up, back up!",
+   "dst": "โอ้! ไม่เป็นไร ติดแล้ว ถอยไป!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#014": {
+   "src": "For the love of Bob... Why won't you just break?",
+   "dst": "เพื่อความรักของ Bob... ทำไมไม่แตกสักที?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#015": {
+   "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
+   "dst": "น้ำแข็งนี้สร้างโดย Theorick หนึ่งใน Twain ที่ปกป้องพื้นที่นี้เมื่อนานมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#016": {
+   "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
+   "dst": "เมื่อความแปดเปื้อนหนักเกินไป... เขาแช่แข็งทุกอย่าง รวมถึงผู้คน เห็นพวกเขาในนั้นไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#017": {
+   "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
+   "dst": "เราพยายามสุดชีวิตจะเอาพวกเขาออกมา ใช้อุปกรณ์ทุกอย่างที่มี รวมถึงสว่าน Corkian นี่ด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#018": {
+   "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
+   "dst": "บางทีเราต้องรุนแรงกว่านี้... ผู้เชี่ยวชาญการระเบิด Rhudya อยู่ลึกเข้าไปในถ้ำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#019": {
+   "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
+   "dst": "โอกาสน้อย แต่ก็คุ้มลอง คุณไปเอามาให้ได้ไหม ระหว่างผมเคลียร์ที่ตรงนี้?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 1",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#020": {
+   "src": "Go deeper into the cave and speak to Rhudya.",
+   "dst": "เข้าไปลึกในถ้ำและคุยกับ Rhudya",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#021": {
+   "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
+   "dst": "อุ๊บ! นี่ที่ส่วนบุคคลนะ รู้ไหม! อ้อ Eppo ส่งมาเหรอ? งั้นก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 2",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#022": {
+   "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
+   "dst": "งั้นคุณต้องใช้ TNT นี่ แต่อย่าทำหล่นล่ะ อุ๊บ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 2",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#023": {
+   "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
+   "dst": "แค่เดินผ่านถ้ำนี้ไป ก็กลับถึง Eppo สบายๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 2",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#024": {
+   "src": "Return to Eppo with the tnt.",
+   "dst": "นำ TNT กลับไปหา Eppo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#025": {
+   "src": "Very nice, this might do the trick.",
+   "dst": "ดีมาก นี่อาจได้ผล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#026": {
+   "src": "Back up, I'll ignite the explosive.",
+   "dst": "ถอยไป ผมจะจุดระเบิด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#027": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#028": {
+   "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
+   "dst": "ไม่มีอะไร? รอยข่วนยังไม่มี ผมไม่เข้าใจน้ำแข็งของ Theorick.. มันไม่ใช่ของจริง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#029": {
+   "src": "I'm not sure what else we can do then...",
+   "dst": "ผมไม่รู้แล้วว่าจะทำอะไรได้อีก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#030": {
+   "src": "HEY. Eppo, over here! Near the cave!",
+   "dst": "เฮ้ Eppo ทางนี้! ใกล้ถ้ำ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#031": {
+   "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
+   "dst": "ระเบิดไม่ได้ผลเหรอ? ขากลับจากถ้ำฉันเจอเหมืองเก่า มันนำไปถ้ำลาวาเก่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#032": {
+   "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
+   "dst": "อาจหวังลมๆ แล้งๆ แต่ลาวานั่นดูแปลกไป ลองดูไหมล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 3",
+   "speaker": "Rhudya",
+   "source": "wiki"
+  },
+  "Frost Bite#033": {
+   "src": "Travel to the lava springs through the mineshaft.",
+   "dst": "เดินทางผ่านเหมืองไปยังบ่อลาวา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#034": {
+   "src": "Complete the puzzle and bring the lava back to Eppo.",
+   "dst": "ไขปริศนาแล้วนำลาวากลับไปหา Eppo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#035": {
+   "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
+   "dst": "ผมไม่เข้าใจว่าคุณถือลาวาในถังได้ยังไง.. แต่ก็ได้มาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#036": {
+   "src": "Truth is.. We're not retrieving these bodies for no reason.",
+   "dst": "ความจริงคือ.. เราไม่ได้เอาศพพวกนี้ออกมาโดยไร้เหตุผล",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#037": {
+   "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
+   "dst": "เราเชื่อว่าหนึ่งในคนเหล่านี้เคยทำงานให้ Theorick และมีกุญแจคฤหาสน์ของเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#038": {
+   "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
+   "dst": "ชาว {p} อย่างเราคิดว่า Theorick ต้องรับผิดชอบหลายอย่าง เราอยากแบ่งทรัพย์สินของเขาให้คนที่เขาทำร้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#039": {
+   "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
+   "dst": "เอาล่ะ ผมจุ่มไม้นี้ในลาวาวิเศษแล้ว แค่ถือไว้แล้วเดินเข้าไปในน้ำแข็งเพื่อละลายมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#040": {
+   "src": "Look for the corpse with a key, it might be above you. Good luck!",
+   "dst": "หาศพที่มีกุญแจ อาจอยู่เหนือหัวคุณ โชคดีนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 5",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#041": {
+   "src": "Melt the ice and find the Servant's corpse.",
+   "dst": "ละลายน้ำแข็งและหาศพของคนรับใช้",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#042": {
+   "src": "Is that the right one? You got it? Brilliant! Now come back down.",
+   "dst": "ใช่คนนั้นไหม? ได้แล้วเหรอ? เยี่ยม! ลงมาได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#043": {
+   "src": "Lets travel to the mansion together. Here, lets take my horse.",
+   "dst": "ไปคฤหาสน์ด้วยกันเถอะ นี่ ขี่ม้าผมไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#044": {
+   "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
+   "dst": "ระหว่างทาง ผมจะอธิบายเพิ่มว่าเรากำลังทำอะไร ไปกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#045": {
+   "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
+   "dst": "อย่างที่บอก ดินแดนนี้เป็นน้ำแข็งมีสาเหตุ และไม่ใช่เรื่องธรรมชาติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#046": {
+   "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
+   "dst": "หลายปีก่อนยุคของ Bob Wynn พังพินาศเพราะสงครามแห่งความแปดเปื้อน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#047": {
+   "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
+   "dst": "สมัยนั้นมีกลุ่มคนที่มีพรสวรรค์โดยกำเนิดเรียกว่า Twain พวกเขาปกป้องเราทุกคนด้วยเวทธาตุ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#048": {
+   "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
+   "dst": "Theorick เป็นหนึ่งใน Twain เขาควบคุมเวทน้ำแข็งที่ทรงพลังผิดธรรมชาติ ใช้มันปกป้องดินแดนรอบคฤหาสน์",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#049": {
+   "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
+   "dst": "Theorick.. ไม่เหมือน Twain คนอื่น เขาอยากให้คนที่เขาปกป้องจ่ายเงินและเลี้ยงดูเขาเป็นการตอบแทน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#050": {
+   "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
+   "dst": "หลายปีผ่านไป Theorick ร่ำรวย ขณะที่คนที่เขาปกป้องอยู่อย่างยากจนและหวาดกลัว - ไม่ใช่แค่กลัวมอนสเตอร์ แต่กลัว Theorick เองด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#051": {
+   "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
+   "dst": "เขาลงโทษคนที่ฝ่าฝืนเคอร์ฟิว และโกรธถ้าใครพยายามย้ายออก ผู้คนรู้สึกติดกับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#052": {
+   "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
+   "dst": "ในที่สุด เหมือน Twain คนอื่น - Theorick พ่ายแพ้ต่อความแปดเปื้อน แต่ไม่ใช่ก่อนที่เขาจะได้พูดคำสุดท้าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#053": {
+   "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
+   "dst": "เขาแช่แข็งทั้งดินแดน ฆ่าแทบทุกสิ่งทุกคนที่อยู่ข้างนอก ชีวิตนับร้อยสูญสิ้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#054": {
+   "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
+   "dst": "ปรากฏว่าน้ำแข็งชะลอการลามของความแปดเปื้อนจนแทบหยุดนิ่ง และเป็นแบบนี้มาตั้งแต่นั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#055": {
+   "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
+   "dst": "ตอนนี้เราเข้าคฤหาสน์เขาได้แล้ว หวังว่าจะเปิดเผยความลับเวทน้ำแข็งเพื่อคลายมัน และแบ่งทรัพย์สินที่เขากอบโกยจากผู้คน อ้า ถึงแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 6",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#056": {
+   "src": "Enter Theorick's Mansion.",
+   "dst": "เข้าไปในคฤหาสน์ของ Theorick",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#057": {
+   "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
+   "dst": "ที่นี่เหมือนถูกแช่แข็งไว้ในกาลเวลา.. ความหรูหรา.. ก็เขาเอาแต่กอบโกยจากทุกคนรอบตัว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 7",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#058": {
+   "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
+   "dst": "ผมไม่แน่ใจว่าจะเริ่มตรงไหน แต่เดาว่าเขาคงมีระบบป้องกันไว้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 7",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#059": {
+   "src": "... I don't think we should insult him..",
+   "dst": "... ผมว่าเราไม่ควรด่าเขานะ..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 7",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#060": {
+   "src": "Find the riches in Theorick's mansion.",
+   "dst": "หาทรัพย์สมบัติในคฤหาสน์ของ Theorick",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#061": {
+   "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
+   "dst": "อุ๊ย! ไม่ทันตั้งตัว นี่พิสูจน์ทุกอย่างที่ผมพูดถึงเขา ลงโทษคนที่ด่าเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#062": {
+   "src": "Anyway, we should look around for some kind of secret entrance.",
+   "dst": "ยังไงก็ตาม เราควรหาทางเข้าลับแถวนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#063": {
+   "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
+   "dst": "สมกับเป็น Theorick ติดกับดักในบ้านตัวเอง ไอ้ขี้ระแวงหน้าน้ำแข็ง-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#064": {
+   "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
+   "dst": "ไม่สนุกเลยสักนิด มองไม่เห็นอะไรเลย ตอนนี้เราอยู่ไหน ทางตันเหรอ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#065": {
+   "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
+   "dst": "เรารู้ว่าคำด่านำมาซึ่งการลงโทษ บางทีคำชมอาจทำให้เขาพอใจ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#066": {
+   "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
+   "dst": "โอ้ Theorick ผู้แข็งแกร่งที่สุดในหมู่ Twain ท่านคือวีรบุรุษแท้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#067": {
+   "src": "Maybe n-",
+   "dst": "หรือไม่-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#068": {
+   "src": "Looks like we finally found his private quarters, look at that vault door.",
+   "dst": "ดูเหมือนในที่สุดก็เจอห้องส่วนตัวของเขา ดูประตูนิรภัยนั่นสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 8",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#069": {
+   "src": "Find your way into the vault.",
+   "dst": "หาทางเข้าไปในห้องนิรภัย",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Frost Bite#070": {
+   "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
+   "dst": "เอาไปบ้างสิ ถ้าไม่มีคุณเราคงมาไม่ถึงที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#071": {
+   "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
+   "dst": "เดี๋ยว ดูนี่สิ ดูเหมือนชิ้นส่วนเกราะของ Theorick",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#072": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "คุณทำได้! เราเข้าห้องนิรภัยได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#073": {
+   "src": "Surprised it even managed to fit over his fat head.",
+   "dst": "แปลกใจที่มันสวมหัวโตๆ ของเขาได้ด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  }
+ }
+}

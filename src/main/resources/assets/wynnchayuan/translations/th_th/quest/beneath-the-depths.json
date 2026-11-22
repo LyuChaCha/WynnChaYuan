@@ -1,0 +1,450 @@
+{
+ "_meta": {
+  "quest": "Beneath the Depths",
+  "count": 44,
+  "translated": 44,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Beneath the Depths#000": {
+   "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
+   "dst": "ข้าทิ้งแผนที่เดินเรือเก่าไว้ในที่ซ่อนเก่า มันจะบอกว่าทองเก่าของข้าอยู่ไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "captured"
+  },
+  "Beneath the Depths#001": {
+   "src": "Me old hideout's hidden inside that there skull at the entrance to our mighty fine establishment. Bring me that map, lad!",
+   "dst": "ที่ซ่อนข้าอยู่ในหัวกะโหลกตรงทางเข้าร้านหรูของเรา เอาแผนที่มาให้ข้า เจ้าหนุ่ม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#002": {
+   "src": "I'm sorry, that's not enough money. Magic doesn't come cheap! Come back when you have [{~} Emerald Blocks] and we will aid you. Make sure to bring the [{~} Faded Map] too.",
+   "dst": "ขอโทษ เงินแค่นี้ไม่พอ เวทมนตร์ไม่ใช่ของถูก! กลับมาเมื่อมี [{~} บล็อกมรกต] แล้วเราจะช่วย อย่าลืมเอา [{~} แผนที่ซีดจาง] มาด้วยล่ะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#003": {
+   "src": "We only hope that the boots will never fall into the hands of that pirate again, we'd much rather they fall into yours.",
+   "dst": "เราหวังเพียงว่ารองเท้าคู่นั้นจะไม่ตกไปอยู่ในมือโจรสลัดนั่นอีก เราอยากให้มันอยู่กับคุณมากกว่า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "captured"
+  },
+  "Beneath the Depths#004": {
+   "src": "Garh, lad!",
+   "dst": "เฮ้ หนุ่ม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#005": {
+   "src": "Talk to Javier in the Pirate Cove at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Javier ที่ Pirate Cove ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#006": {
+   "src": "Garh, you look like a mighty fine adventurer, lad. But perhaps your pockets are a little lighter than you want, eh?",
+   "dst": "ฮึ่ม เจ้าดูเป็นนักผจญภัยฝีมือดีนะ เจ้าหนุ่ม แต่บางทีกระเป๋าเจ้าอาจเบากว่าที่อยากให้เป็น ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#007": {
+   "src": "Perhaps we be making a deal, lad, and it'll make us both rich!",
+   "dst": "บางทีเราน่าจะตกลงกัน เจ้าหนุ่ม แล้วเราจะรวยกันทั้งคู่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#008": {
+   "src": "Ye see, lad, me treasure has been lost for quite some time, I kept it in a ocean village named Sarnfic, in a secret room.",
+   "dst": "เห็นไหม เจ้าหนุ่ม สมบัติข้าหายไปนานแล้ว ข้าเก็บไว้ในห้องลับที่หมู่บ้านริมทะเลชื่อ Sarnfic",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#009": {
+   "src": "Argh, but lad. The village vanished out of nowhere! Like some kind of dark magic! I swears to ye, I tell no lies!",
+   "dst": "อ้าก แต่เจ้าหนุ่ม หมู่บ้านนั่นหายวับไปเฉยๆ! ราวกับมนตร์ดำ! ข้าสาบาน ข้าไม่ได้โกหก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#010": {
+   "src": "So ye see, in me old age I could use a spot of me lawful gold to see me through me final years.",
+   "dst": "เห็นไหม แก่ป่านนี้ข้าก็อยากได้ทองชอบธรรมของข้าสักหน่อย ไว้ใช้ช่วงบั้นปลาย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#011": {
+   "src": "Don't fret though, chuck, old Javier always kept a back up plan.",
+   "dst": "แต่ไม่ต้องห่วง ไอ้หนู ตาแก่ Javier มีแผนสำรองเสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#012": {
+   "src": "So, lad. Are ya willin' to make ye'self mighty wealthy? Good.",
+   "dst": "ว่าไง เจ้าหนุ่ม? อยากรวยเละไหม? ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#013": {
+   "src": "Find Javier's map, hidden in the skull tomb at the entrance of the island",
+   "dst": "หาแผนที่ของ Javier ที่ซ่อนอยู่ในสุสานหัวกะโหลกตรงทางเข้าเกาะ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#014": {
+   "src": "Halt it there, laddy! The wind has told us that yer looking for treasure map. Ah, ye'll not get it so easily.",
+   "dst": "หยุดตรงนั้น เจ้าหนุ่ม! สายลมบอกเราว่าเจ้าตามหาแผนที่สมบัติ แต่เจ้าไม่ได้มันง่ายๆ หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#015": {
+   "src": "Ye see, us spirits are as greedy as our physical selves were. 'ere's no foolin' 'round there. We want yer money, and only then will we open the paths to the map.",
+   "dst": "เห็นไหม พวกวิญญาณอย่างเราก็โลภเหมือนตอนมีเนื้อหนัง ไม่มีลูกเล่นอะไรทั้งนั้น เราต้องการเงินของเจ้า แล้วเราถึงจะเปิดทางไปหาแผนที่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#016": {
+   "src": "One full stack of emeralds will satisfy our needs. Go to the front of this tomb if ye have what we want.",
+   "dst": "มรกตเต็มหนึ่งกองจะทำให้เราพอใจ ไปที่หน้าสุสานนี้ถ้าเจ้ามีของที่เราต้องการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#017": {
+   "src": "Good luck on that petty journey of yers. Just find the whole path, and yerself'll be just fine...",
+   "dst": "ขอให้โชคดีกับการเดินทางกระจอกๆ ของเจ้า แค่หาเส้นทางให้ครบ เจ้าก็จะไม่เป็นไร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#018": {
+   "src": "Argh, yer talented aren't you lad! Many thanks indeed, now we can see where me treasure be buried.",
+   "dst": "อ้าก เจ้ามีฝีมือนี่ เจ้าหนุ่ม! ขอบใจมาก ทีนี้เราจะรู้แล้วว่าสมบัติข้าฝังอยู่ไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#019": {
+   "src": "Hrmm, well, garr, blast it all",
+   "dst": "ฮึ่ม เอ่อ ฮ่าร์ ให้ตายสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#020": {
+   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
+   "dst": "ข้าอ่านแผนที่ของตัวเองไม่ออก เจ้าหนุ่ม! เจ้าทำอะไรกับมัน? เอาเหรียญขูดหมึกออกรึ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#021": {
+   "src": "Gar, sorry lad. It be the test of time that failed old Javier, not you.",
+   "dst": "ฮ่าร์ ขอโทษ เจ้าหนุ่ม กาลเวลาต่างหากที่เล่นงานตาแก่ Javier ไม่ใช่เจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#022": {
+   "src": "Fear not, lad. There be an old friend of Javier's that can help decipher this old rag.",
+   "dst": "ไม่ต้องกลัว เจ้าหนุ่ม Javier มีเพื่อนเก่าที่ช่วยถอดความผ้าขี้ริ้วนี่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#023": {
+   "src": "Go to the old {p}, there be a man by the name of Dalben who can restore me map to its former glory. Get it done lad, and bring me treasure back!",
+   "dst": "ไปที่ {p} เก่า ที่นั่นมีชายชื่อ Dalben ที่ฟื้นฟูแผนที่ข้าให้กลับมาสมบูรณ์ได้ จัดการซะ เจ้าหนุ่ม แล้วเอาสมบัติข้ากลับมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#024": {
+   "src": "Talk to Dalben on {p} about restoring the map",
+   "dst": "คุยกับ Dalben ที่ {p} เรื่องการฟื้นฟูแผนที่",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#025": {
+   "src": "What's this? A traveller? How might we assist you?",
+   "dst": "อะไรกัน? นักเดินทาง? มีอะไรให้เราช่วย?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#026": {
+   "src": "Ah, I see, you wish to explore the ocean depths? But for what possible reason?",
+   "dst": "อ้อ เข้าใจแล้ว คุณอยากสำรวจใต้ห้วงมหาสมุทร? แต่ด้วยเหตุผลอะไรกัน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#027": {
+   "src": "This map... How did you acquire it? This is enchanted by our people.",
+   "dst": "แผนที่นี้... คุณได้มาอย่างไร? มันถูกร่ายมนตร์โดยคนของเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#028": {
+   "src": "You... You seek Sarnfic, don't you?",
+   "dst": "คุณ... คุณตามหา Sarnfic ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#029": {
+   "src": "Alas, that place has history. We, the Mage Council, banished that city long ago to hide the horrific power hidden within a treasure a pirate hid there.",
+   "dst": "น่าเศร้าที่ที่นั่นมีประวัติ เราสภาจอมเวทเนรเทศเมืองนั้นไปนานแล้ว เพื่อซ่อนพลังน่าสะพรึงในสมบัติที่โจรสลัดคนหนึ่งซ่อนไว้ที่นั่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#030": {
+   "src": "A pair of boots, made from a black material fashioned from the stone of an evil place, incredibly dark magic. But we do not believe the filthy idiotic pirate knew what he'd found.",
+   "dst": "รองเท้าคู่หนึ่ง ทำจากวัสดุสีดำที่หลอมจากหินของสถานที่ชั่วร้าย มนตร์ดำร้ายกาจยิ่ง แต่เราไม่คิดว่าโจรสลัดโง่สกปรกนั่นจะรู้ว่าตัวเองเจออะไร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#031": {
+   "src": "I must say, we, the council regret having to lay waste an entire village over a pair of boots. There was no other way.",
+   "dst": "ต้องยอมรับว่าสภาเสียใจที่ต้องทำลายทั้งหมู่บ้านเพียงเพราะรองเท้าคู่เดียว แต่ไม่มีทางอื่นแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#032": {
+   "src": "Who knows why he even kept the boots. If he had known about their power, I'm sure he would have used it for evil. But we sense no evil in you, so as such we will aid you in your quest.",
+   "dst": "ใครจะรู้ว่าเขาเก็บรองเท้าไว้ทำไม ถ้าเขารู้ถึงพลังของมัน คงนำไปใช้ในทางชั่วแน่ แต่เราไม่รู้สึกถึงความชั่วร้ายในตัวคุณ เราจึงจะช่วยคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#033": {
+   "src": "We hope that you will use the boots for good, despite the dark intentions. We will lift the enchantment once lain upon the charts, but it will cost you.",
+   "dst": "เราหวังว่าคุณจะใช้รองเท้าในทางที่ดี แม้มันจะมีเจตนามืด เราจะถอนมนตร์ที่เคยร่ายไว้บนแผนที่ แต่คุณต้องจ่าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#034": {
+   "src": "Give me [{~} Emerald Blocks], that should cover the cost.",
+   "dst": "ให้ [{~} บล็อกมรกต] มา เท่านี้ก็พอค่าใช้จ่าย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#035": {
+   "src": "Bring back [{~} Blocks of Emerald] to Dalben",
+   "dst": "นำ [{~} บล็อกมรกต] กลับไปให้ Dalben",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#036": {
+   "src": "Brilliant. That seems in order. Here you go.",
+   "dst": "ยอดเลย ดูเรียบร้อยดี นี่ รับไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#037": {
+   "src": "Well? What does it say? Go to that location! Find the treasure!",
+   "dst": "ว่าไง? เขียนว่าอะไร? ไปที่นั่นเลย! หาสมบัติให้เจอ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#038": {
+   "src": "Explore the cave in the ocean, located at [-{~}, {~}, -{~}]",
+   "dst": "สำรวจถ้ำในมหาสมุทรที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#039": {
+   "src": "Find [{~} Ocean Treasure] and bring it back to Javier in Pirate Cove",
+   "dst": "หา [{~} สมบัติมหาสมุทร] แล้วนำกลับไปให้ Javier ที่ Pirate Cove",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#040": {
+   "src": "Gnar, you did it lad! Ye brought back old Javiers gold! And as I promised, heres yer share of the loot.",
+   "dst": "ฮ่าร์ เจ้าทำได้ เจ้าหนุ่ม! เจ้าเอาทองของตาแก่ Javier กลับมา! และตามสัญญา นี่ส่วนแบ่งของเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#041": {
+   "src": "I threw in something extra for ye. It's an old key I salvaged a few years back, from the shipwreck of a legendary pirate.",
+   "dst": "ข้าแถมของพิเศษให้ด้วย เป็นกุญแจเก่าที่ข้ากู้มาเมื่อหลายปีก่อน จากซากเรือของโจรสลัดในตำนาน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#042": {
+   "src": "Who knows what it leads to? Maybe a treasure hoard, or maybe the ol' swashbuckler wanted to lead someone into a trap.",
+   "dst": "ใครจะรู้ว่ามันไขอะไร? อาจเป็นกองสมบัติ หรืออาจเป็นตาโจรสลัดเฒ่านั่นอยากหลอกใครเข้ากับดักก็ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#043": {
+   "src": "Me bones are too old for a grand adventure like that, guess ye'll have to figure it out for yerself.",
+   "dst": "กระดูกข้าแก่เกินจะผจญภัยใหญ่แบบนั้นแล้ว คงต้องให้เจ้าไปหาคำตอบเอง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  }
+ }
+}

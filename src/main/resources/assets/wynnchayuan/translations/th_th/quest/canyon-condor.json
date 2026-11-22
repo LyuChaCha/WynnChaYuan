@@ -1,0 +1,450 @@
+{
+ "_meta": {
+  "quest": "Canyon Condor",
+  "count": 44,
+  "translated": 44,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Canyon Condor#000": {
+   "src": "What are you here for, eh kid? Get out. Get!",
+   "dst": "มาทำอะไรที่นี่ ไอ้หนู? ออกไป ไปเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Hermit",
+   "source": "captured"
+  },
+  "Canyon Condor#001": {
+   "src": "Yer back again, are ye? Yer ain' gettin' any of me gold, so move along!",
+   "dst": "กลับมาอีกแล้วรึ? เอ็งไม่ได้ทองของข้าสักนิดหรอก ไปไกลๆ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#002": {
+   "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
+   "dst": "ไปเอา [{~} Gold Chunks] จากก้นเหมืองมาให้ข้า แล้วข้าจะบอกว่าเอ็งต้องไปไหนต่อ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "captured"
+  },
+  "Canyon Condor#003": {
+   "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Svin ใน {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#004": {
+   "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
+   "dst": "ผมเป็นหนึ่งในผู้รักษาความลับแห่ง {p} อันยิ่งใหญ่ ที่นั่นเราสะสมความลับของโลก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#005": {
+   "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
+   "dst": "ผมมาสืบตำนานเก่าแก่ของหุบผานี้ คุณสนใจไหม? ต้องสนใจแน่!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#006": {
+   "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
+   "dst": "ตำนานเล่าว่ามีสัตว์ดุร้ายอาศัยอยู่บนหน้าผาเหล่านี้ เป็นนกอันตรายที่รอดมาหลายปี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#007": {
+   "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
+   "dst": "ผมอยากตามหามันมาก แต่ชาวบ้านที่นี่มัวแต่ขโมยของกันเองจนไม่บอกอะไรผมเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#008": {
+   "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
+   "dst": "ผมได้ยินว่ามีนักขุดทองแก่ๆ อยู่แถวนี้ เขาเคยเดินทั่วที่ราบสูงนี้ อาจรู้อะไรบ้าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#009": {
+   "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
+   "dst": "เขาชื่อ Jankan อยู่ทางตะวันออกของ {p} ช่วยไปหาเขาแล้วถามเรื่องสัตว์ร้ายนี้ได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#010": {
+   "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
+   "dst": "ถ้าคุณช่วยผม ผมจะให้คุณใช้ลิฟต์ทั่วหุบผา ก็...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#011": {
+   "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
+   "dst": "มีฤๅษีประหลาดคนหนึ่งยึดมันไว้ แต่ผมว่าเราคุยกับเขาได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#012": {
+   "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
+   "dst": "หวังว่าคุณจะเจอสัตว์ร้ายนั้น ถ้าเจอ ช่วยนำ [{~} Beast Egg] มาเป็นหลักฐานได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#013": {
+   "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Jankan ทางตะวันออกของ {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#014": {
+   "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
+   "dst": "ไงไอ้หนู! เอ็งคงเป็นคนแปลกหน้าที่ใครๆ พูดถึง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#015": {
+   "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
+   "dst": "ถ้าเอ็งมาหาทอง ข้าบอกได้เลยว่าในเหมืองนี้ไม่มีให้เอ็งหรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#016": {
+   "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
+   "dst": "อ้อ.. เอ็งหาสัตว์ป่ามีปีกรึ? เอ็งบ้าไปแล้วรึไง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#017": {
+   "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
+   "dst": "นกปีศาจนั่นคือความวุ่นวายล้วนๆ! ร้องทีเดียวภูเขาเคลื่อน! ชายตัวโตกว่าเอ็งสองเท่ายังร้องไห้เมื่อเห็นมัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#018": {
+   "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
+   "dst": "ว่าแล้ว ข้าหลังเคล็ดตอนขนรายได้ออกจากถ้ำนั่น เลยทิ้งไว้ที่ก้นถ้ำโน่น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#019": {
+   "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
+   "dst": "เก็บ [{~} Gold Chunks] ให้ Jankan ในเหมืองที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#020": {
+   "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
+   "dst": "ในที่สุด! ช้าชะมัด เอามานี่! อ้อ จริงสิ.. เอ็งอยากได้อะไรสักอย่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#021": {
+   "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
+   "dst": "ข้าไม่คิดจะช่วยเอ็งไปตายหรอก แต่ส่งเอ็งไปหาเจ้าหนุ่มคนหนึ่งที่อาจช่วยได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#022": {
+   "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
+   "dst": "เอ็งต้องไปคุยกับฤๅษีคนนั้น เพี้ยนสุดๆ เลยไอ้นั่น ถึงขั้นเลี้ยงนกนั่นด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#023": {
+   "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
+   "dst": "ข้าว่าเอ็งหาเขาเจอบนเขา ข้ามเหวหุบผาไป มันไม่ใช่คนใจดีหรอก บอกได้แค่นั้นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 3",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#024": {
+   "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
+   "dst": "ขึ้นลิฟต์หุบผาไปหาฤๅษีที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#025": {
+   "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
+   "dst": "คิดว่ามาทำอะไรที่นี่ ไอ้หนู? คิดว่าจะเดินเข้าบ้านซอมซ่อของข้าแล้วข้ามสะพานข้าไปได้รึ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#026": {
+   "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
+   "dst": "อ้อ อยากรู้เรื่องนกแห่งภูเขางั้นรึ? ฮะ วัชพืชอย่างเจ้าไม่มีทางสู้มันได้หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#027": {
+   "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
+   "dst": "มันไม่ชอบคนแปลกหน้านะรู้ไหม ข้าเคยเห็นมันเผาพวกพรานเถื่อนเป็นเถ้าถ่าน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#028": {
+   "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
+   "dst": "ถ้าจะผ่านตรงนี้ต้องจ่าย อ้อ ข้าไม่เอาเงินเจ้าหรอก จะเอาเงินไปทำไม ข้ามีทุกอย่างแล้ว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#029": {
+   "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
+   "dst": "ถ้าอยากขึ้นที่ราบสูงพวกนี้ เจ้าต้องหาดอกไม้หายากมาให้ถ้ำน้อยๆ ของข้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#030": {
+   "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
+   "dst": "มันอยู่บนยอดเสาหินต้นหนึ่งในที่ราบสูง ไม่น่าหายากนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#031": {
+   "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
+   "dst": "เอา [{~} Rare Rose] มาให้ข้า แล้วข้าจะให้เจ้าผ่านไปหาสัตว์แห่งที่ราบสูง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#032": {
+   "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
+   "dst": "หาและเก็บ [{~} Rare Rose] ที่ [{~}, {~}, -{~}] ให้ฤๅษี",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#033": {
+   "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
+   "dst": "อ้า! อันนี้เหมาะเลย ลูกเจี๊ยบของข้าต้องชอบแน่! งั้นข้ามสะพานไปได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#034": {
+   "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
+   "dst": "สัตว์ร้ายอาศัยบนยอดที่ราบสูงสักแห่ง หาสักหน่อยก็น่าจะเจอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#035": {
+   "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
+   "dst": "ข้าจะให้เจ้าใช้ลิฟต์ของข้าด้วย ยังไงเจ้าก็อยู่ได้ไม่นานหรอก...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#036": {
+   "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
+   "dst": "ข้ารู้จักนักเดินทางแค่คนเดียวที่สู้สัตว์ร้ายนั่นได้ เห็นว่าเขาเอาไข่มันไปเลี้ยง ฮะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#037": {
+   "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
+   "dst": "เขาจากไปนานแล้ว เหมือนที่เจ้าจะเป็นในอีกไม่กี่อึดใจ ยินดีที่ไม่ได้รู้จักนะ ไอ้หนู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 5",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#038": {
+   "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
+   "dst": "เอาชนะ Cockatrice ที่ [{~}, {~}, -{~}] แล้วเก็บไข่มาให้ Svin",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Canyon Condor#039": {
+   "src": "Traveler! You have returned! Tell me, what have you learned?",
+   "dst": "นักเดินทาง! คุณกลับมาแล้ว! บอกผมทีว่าได้อะไรมาบ้าง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#040": {
+   "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
+   "dst": "คุณเจอมันแล้ว?! ข่าวดีจริงๆ! เอาไข่จากรังมันมาด้วยเหรอ? คุณกล้าหาญมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#041": {
+   "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
+   "dst": "ตำนานของ Cockatrice เป็นเรื่องจริง! คุณได้เห็นและสู้กับมันด้วยความกล้าของคุณเอง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#042": {
+   "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
+   "dst": "ถ้าคุณเข้า {p} ได้ก็ดีสิ ผู้กล้า! แต่ดูเหมือนทางของเราต้องแยกกันแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#043": {
+   "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
+   "dst": "ไม่ต้องห่วง ผมจะเก็บไข่ไว้อย่างดี สักวันตำนานของคุณจะถูกเล่าขานไม่แพ้กัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 6",
+   "speaker": "Svin",
+   "source": "wiki"
+  }
+ }
+}

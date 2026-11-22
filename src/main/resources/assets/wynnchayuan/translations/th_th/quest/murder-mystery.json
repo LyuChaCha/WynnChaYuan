@@ -1,0 +1,780 @@
+{
+ "_meta": {
+  "quest": "Murder Mystery",
+  "count": 77,
+  "translated": 77,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Murder Mystery#000": {
+   "src": "It's some kind of snake symbol, but it's probably not useful to you now.",
+   "dst": "เป็นสัญลักษณ์รูปงูอะไรสักอย่าง แต่ตอนนี้คงไม่มีประโยชน์กับคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#001": {
+   "src": "If you find any more leads remember to come to me - and if you find the murder weapon, make sure to bring it to us immediately!",
+   "dst": "ถ้าเจอเบาะแสเพิ่มอย่าลืมมาหาผม และถ้าเจออาวุธสังหาร รีบนำมาให้เราทันที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#002": {
+   "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
+   "dst": "คืบหน้าบ้างไหม? ในนั้นมีหน้าต่างแตกบานหนึ่ง น่าจะเป็นจุดเริ่มต้นที่ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#003": {
+   "src": "It looks like the victim's head was somehow detatched from his body...",
+   "dst": "ดูเหมือนศีรษะของเหยื่อจะถูกแยกออกจากร่างด้วยวิธีใดวิธีหนึ่ง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#004": {
+   "src": "The victim's book collection seems to be exclusively made up of dimestore romance novels.",
+   "dst": "หนังสือที่เหยื่อสะสมดูจะเป็นนิยายรักราคาถูกล้วนๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#005": {
+   "src": "This painting doesn't seem to have anything to do with the murder, but its a nice landscape of {p}.",
+   "dst": "ภาพวาดนี้ดูไม่เกี่ยวกับคดีฆาตกรรม แต่เป็นภาพทิวทัศน์ของ {p} ที่สวยดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#006": {
+   "src": "This half-finished letter seems to be asking for a loan to pay off some kind of debt...",
+   "dst": "จดหมายที่เขียนค้างไว้นี้ดูเหมือนจะขอกู้เงินไปใช้หนี้บางอย่าง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#007": {
+   "src": "It looks like the attacker managed to break in through the window.",
+   "dst": "ดูเหมือนคนร้ายจะงัดเข้ามาทางหน้าต่าง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#008": {
+   "src": "It's a letter addressed to someone called Rohem in House No. {~} in {p}.",
+   "dst": "เป็นจดหมายจ่าหน้าถึงคนชื่อ Rohem บ้านเลขที่ {~} ใน {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Tattered Letter",
+   "source": "captured"
+  },
+  "Murder Mystery#009": {
+   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation.",
+   "dst": "ถ้าคุณหามันเจอ มันจะบอกทางเข้าท่อระบายน้ำ ขอโทษนะครับ ถ้ารู้มากกว่านี้ผมคงบอกไปแล้ว ขอให้โชคดีกับการสืบสวน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "captured"
+  },
+  "Murder Mystery#010": {
+   "src": "Some of those gamblers had a symbol built into their homes, shaped like a snake. If you find it, it'll show you the way into the sewers. Good luck, officer.",
+   "dst": "นักพนันบางคนมีสัญลักษณ์รูปงูติดไว้ในบ้าน ถ้าเจอ มันจะบอกทางเข้าท่อระบายน้ำ โชคดีนะคุณเจ้าหน้าที่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Cinfras Citizen",
+   "source": "captured"
+  },
+  "Murder Mystery#011": {
+   "src": "The barkeeper takes the snake symbol and examines it for a moment before nodding and giving it back to you.",
+   "dst": "บาร์เทนเดอร์รับสัญลักษณ์รูปงูไปพินิจครู่หนึ่ง ก่อนจะพยักหน้าแล้วคืนให้คุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Barkeeper",
+   "source": "captured"
+  },
+  "Murder Mystery#012": {
+   "src": "The barkeeper gestures down to the open trapdoor.",
+   "dst": "บาร์เทนเดอร์ชี้ลงไปที่ประตูกลที่เปิดอยู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#013": {
+   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, til neither of em had anythin' left.",
+   "dst": "แต่วันที่เขาพา Eminar มา เรื่องก็แย่ลงเร็วมาก ยืมมรกตของ Rohem ไปแล้วก็เสียเรื่อยๆ จนไม่เหลืออะไรทั้งคู่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "captured"
+  },
+  "Murder Mystery#014": {
+   "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back 'n we'll be happy to serve ya!",
+   "dst": "ทีนี้ออกไปจากที่นี่ซะ มีทางออกด้านหลังในผนังตรงนั้น แต่ถ้าวันไหนอยากเล่นแบล็กแจ็ก ก็กลับมาได้ ยินดีต้อนรับเสมอ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "captured"
+  },
+  "Murder Mystery#015": {
+   "src": "What are ya lingerin' around 'ere for? I've told ya all I know. Now either take a seat or get out.",
+   "dst": "ยังมาเตร็ดเตร่อยู่แถวนี้ทำไม? ฉันบอกทุกอย่างที่รู้ไปแล้ว จะนั่งเล่นก็นั่ง ไม่งั้นก็ออกไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#016": {
+   "src": "Ya can then hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
+   "dst": "จากนั้นคุณจะจั่วไพ่เพิ่มกี่ครั้งก็ได้ หรือหยุดเพื่อจบตา เป้าหมายคือทำแต้มในมือให้ใกล้ {~} ที่สุด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "captured"
+  },
+  "Murder Mystery#017": {
+   "src": "It seems like you better go have a chat with Rohem...",
+   "dst": "ดูเหมือนคุณควรไปคุยกับ Rohem สักหน่อย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#018": {
+   "src": "You should look around for clues that tie Rohem to the murder.",
+   "dst": "คุณควรหาเบาะแสรอบๆ ที่เชื่อมโยง Rohem กับคดีฆาตกรรม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Rohem",
+   "source": "captured"
+  },
+  "Murder Mystery#019": {
+   "src": "Get out of my house, officer, and don't you dare go rooting around in my property!",
+   "dst": "ออกไปจากบ้านผม คุณเจ้าหน้าที่ และอย่าบังอาจมาค้นทรัพย์สินของผม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Grook",
+   "source": "captured"
+  },
+  "Murder Mystery#020": {
+   "src": "It's a dirty shovel - it must've been used recently to dig something up.",
+   "dst": "พลั่วสกปรกอันหนึ่ง คงเพิ่งถูกใช้ขุดอะไรบางอย่างขึ้นมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#021": {
+   "src": "There's a trail of muddy footprints leading back into the house.",
+   "dst": "มีรอยเท้าเปื้อนโคลนเป็นทางย้อนกลับเข้าไปในบ้าน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#022": {
+   "src": "Whatever, you pale-faced walking cowlick. You're headed to {p} with a charge of first-class murder. Guards, take him away.",
+   "dst": "ช่างเถอะ ไอ้ผมชี้หน้าซีด แกต้องไปเรือนจำ {p} ข้อหาฆาตกรรมโดยเจตนา ทหาร พาตัวมันไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "captured"
+  },
+  "Murder Mystery#023": {
+   "src": "Thank you for your help in catching the perpetrator!",
+   "dst": "ขอบคุณที่ช่วยจับคนร้าย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Detective Lorias",
+   "source": "captured"
+  },
+  "Murder Mystery#024": {
+   "src": "Looks like the symbol has something carved in on the back...",
+   "dst": "ดูเหมือนด้านหลังสัญลักษณ์จะมีอะไรสลักไว้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#025": {
+   "src": "Talk to Detective Lorias at [-{~}, -{~}].",
+   "dst": "คุยกับนักสืบ Lorias ที่ [-{~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#026": {
+   "src": "Stand back, human! This is a crime scene, under my authority. I cannot let you inside.",
+   "dst": "ถอยไป มนุษย์! นี่คือที่เกิดเหตุภายใต้อำนาจของผม ผมให้คุณเข้าไปไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#027": {
+   "src": "Although we are in need of some... assistance... and you are fairly experienced, are you not?",
+   "dst": "แต่เราก็ต้องการ... ความช่วยเหลืออยู่บ้าง... และคุณก็ดูมีประสบการณ์พอตัว ใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#028": {
+   "src": "Well, straight to the point... do you think I might be able to hire you as a private investigator?",
+   "dst": "เข้าเรื่องเลยนะ... ผมขอจ้างคุณเป็นนักสืบเอกชนได้ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#029": {
+   "src": "To put it bluntly, the owner of this house, Eminar, was murdered a few days ago, and what few leads we had have all gone cold.",
+   "dst": "พูดตรงๆ เจ้าของบ้านหลังนี้ Eminar ถูกฆาตกรรมเมื่อไม่กี่วันก่อน และเบาะแสน้อยนิดที่เรามีก็ตันหมดแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#030": {
+   "src": "This is acting outside protocol, of course... but if you manage to catch the killer, I'm sure I could pull some strings and pay you for your work!",
+   "dst": "แน่นอนว่านี่นอกระเบียบ... แต่ถ้าคุณจับฆาตกรได้ ผมมั่นใจว่าพอจะใช้เส้นสายจ่ายค่าตอบแทนให้คุณได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#031": {
+   "src": "I'll make sure no one stops you inside the crime scene. Head inside the house and see if you can find anything helpful.",
+   "dst": "ผมจะไม่ให้ใครขวางคุณในที่เกิดเหตุ เข้าไปในบ้านแล้วดูว่าเจออะไรที่มีประโยชน์ไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#032": {
+   "src": "My soldiers and I will keep watch outside the house, and make sure you're not disturbed. Be careful in there!",
+   "dst": "ผมกับทหารจะเฝ้าอยู่นอกบ้าน ไม่ให้ใครรบกวนคุณ ระวังตัวในนั้นด้วยนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#033": {
+   "src": "Investigate the crime scene at [-{~}, {~}, -{~}] for clues.",
+   "dst": "สืบหาเบาะแสในที่เกิดเหตุที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#034": {
+   "src": "Ah, a human! A refreshing sight these days. You've come to see me, I presume? What brings you here?",
+   "dst": "อ้า มนุษย์! สมัยนี้เห็นแล้วชื่นใจ มาหาผมสินะ? มีธุระอะไรล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#035": {
+   "src": "An investigation!? Eminar? That's... that's absurd. I've done nothing wrong.",
+   "dst": "การสืบสวน!? Eminar? นั่น... นั่นมันไร้สาระ ผมไม่ได้ทำอะไรผิด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#036": {
+   "src": "Still, the poor man. Eminar and I were good friends, you know. If it could help find his killer, I may have some information for you... strictly off-record, of course...",
+   "dst": "ถึงอย่างนั้น น่าสงสารเขา ผมกับ Eminar เป็นเพื่อนที่ดีต่อกันนะ ถ้าช่วยหาฆาตกรได้ ผมอาจมีข้อมูลให้... นอกบันทึกนะ แน่นอน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#037": {
+   "src": "Well. You see, there's an underground gambling den hidden in the city's sewers. Only the elite can get in, and Eminar happened to be a frequent visitor.",
+   "dst": "ก็นะ ในท่อระบายน้ำของเมืองมีบ่อนการพนันใต้ดินซ่อนอยู่ เฉพาะชนชั้นสูงเท่านั้นที่เข้าได้ และ Eminar ก็เป็นขาประจำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#038": {
+   "src": "Once, he even brought me along with him.",
+   "dst": "ครั้งหนึ่งเขาถึงกับพาผมไปด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#039": {
+   "src": "Eminar, though, he often tried to cheat the other gamblers. I suppose it was only a matter of time before they had enough; most do not take cheating lightly.",
+   "dst": "แต่ Eminar มักพยายามโกงนักพนันคนอื่น คงเป็นแค่เรื่องของเวลาก่อนพวกนั้นจะทนไม่ไหว ส่วนใหญ่ไม่ชอบให้ใครโกงหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#040": {
+   "src": "Back to the point, many of them, including poor Eminar, had a symbol built into the sides of their homes, shaped like a snake. A proof of membership, you could say.",
+   "dst": "กลับเข้าเรื่อง หลายคนในนั้น รวมถึง Eminar ผู้น่าสงสาร มีสัญลักษณ์รูปงูติดไว้ข้างบ้าน ถือเป็นหลักฐานการเป็นสมาชิกก็ว่าได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#041": {
+   "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
+   "dst": "กลับไปที่บ้านเหยื่อที่ [-{~}, {~}, -{~}] เพื่อหาสัญลักษณ์รูปงู",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#042": {
+   "src": "Find the gamblers in the {p} sewers.",
+   "dst": "ตามหานักพนันในท่อระบายน้ำของ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#043": {
+   "src": "How did ya find us down 'ere? I don't remember you... you're with the police, aren't ya? Here after Eminar, I suppose?",
+   "dst": "มาเจอพวกเราข้างล่างนี่ได้ยังไง? ฉันจำหน้าคุณไม่ได้... คุณเป็นตำรวจใช่ไหม? มาเรื่อง Eminar สินะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#044": {
+   "src": "Yeah, we've 'eard about what happened to him. Murders don't happen every day up there, ya know. And as it happened, I saw Eminar down here, not too long ago...",
+   "dst": "ใช่ เราได้ยินเรื่องที่เกิดกับเขาแล้ว ข้างบนนั่นไม่ได้มีฆาตกรรมกันทุกวันหรอกนะ แล้วบังเอิญว่าฉันเพิ่งเห็น Eminar ข้างล่างนี่ไม่นานมานี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#045": {
+   "src": "Well... as long as I get a guarantee I won't be shut down, I'll help ya. This is a very profitable place, as I'm sure ya might've guessed.",
+   "dst": "ก็นะ... ถ้ารับประกันว่าที่นี่จะไม่ถูกสั่งปิด ฉันจะช่วย ที่นี่ทำเงินดีมาก คุณคงเดาได้อยู่แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#046": {
+   "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
+   "dst": "วันหนึ่งเพื่อนของเขาพาเขาลงมา Rohem นั่นแหละ ลูกค้าชั้นดีเลยนะ ไม่เคยค้างหนี้สักครั้ง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#047": {
+   "src": "It was a good day for me, for obvious reasons, don'cha see! But Rohem was furious. Dead drunk, too, but what else is new!",
+   "dst": "วันนั้นเป็นวันดีของฉัน ด้วยเหตุผลที่เห็นๆ กันอยู่! แต่ Rohem โกรธจัด เมาหัวราน้ำด้วย แต่ก็เป็นแบบนั้นประจำแหละ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#048": {
+   "src": "Neither of 'em has been back since, though in Eminar's case, I can see why! And I hope that's enough for ya, 'cause that's all I got.",
+   "dst": "ตั้งแต่นั้นก็ไม่มีใครกลับมาอีก แต่กรณีของ Eminar ก็เข้าใจได้! หวังว่าแค่นี้จะพอนะ เพราะฉันรู้แค่นี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#049": {
+   "src": "Confront Rohem about the murder at house #{~} in {p}.",
+   "dst": "เผชิญหน้ากับ Rohem เรื่องคดีฆาตกรรมที่บ้านเลขที่ {~} ใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#050": {
+   "src": "Ah... you again! You're back. I see that. I must admit, I did not expect you to return... so soon...",
+   "dst": "อ้า... คุณอีกแล้ว! กลับมาแล้ว ผมเห็นแล้ว ต้องยอมรับว่าผมไม่คิดว่าคุณจะกลับมา... เร็วขนาดนี้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#051": {
+   "src": "You really did find your way down there? Oh, that's... excellent... I hope the investigation is going well. Now if you'll just leave me be-",
+   "dst": "คุณหาทางลงไปข้างล่างได้จริงๆ เหรอ? โอ้ นั่น... ยอดเลย... หวังว่าการสืบสวนจะไปได้ดี ทีนี้ถ้าคุณจะปล่อยผมไว้คนเดียว-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#052": {
+   "src": "Valimare? Bah! Why would you trust anything he says? He's a criminal! A scam artist! I mean, I did direct you to him, but...",
+   "dst": "Valimare เหรอ? ฮึ! จะไปเชื่ออะไรที่มันพูด? มันเป็นอาชญากร! นักต้มตุ๋น! ก็จริงที่ผมส่งคุณไปหามัน แต่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#053": {
+   "src": "He- He's the one you should be arresting. Eminar was a danger to society, got what he deserved, the fool-",
+   "dst": "มัน- มันต่างหากที่คุณควรจับ Eminar เป็นภัยต่อสังคม สมควรได้รับแล้ว เจ้าคนโง่นั่น-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#054": {
+   "src": "Wait! No! Don't turn me in! Can't you let me finish my drink in peace? Get out, get out, you can't prove anything!",
+   "dst": "เดี๋ยว! ไม่! อย่าส่งตัวผม! ปล่อยให้ผมดื่มให้หมดแก้วอย่างสงบไม่ได้หรือไง? ออกไป ออกไป คุณพิสูจน์อะไรไม่ได้หรอก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#055": {
+   "src": "Besides, have you ever heard of a little thing called evidence? You don't have any proof!",
+   "dst": "อีกอย่าง เคยได้ยินสิ่งที่เรียกว่าหลักฐานไหม? คุณไม่มีหลักฐานเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#056": {
+   "src": "Now, officer, if you don't have a proper warrant, I expect you to vacate my property immediately!",
+   "dst": "ทีนี้ คุณเจ้าหน้าที่ ถ้าไม่มีหมายค้นที่ถูกต้อง ผมขอให้คุณออกไปจากทรัพย์สินของผมเดี๋ยวนี้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#057": {
+   "src": "Find the murder weapon around Rohem's house at house #{~} in {p}.",
+   "dst": "หาอาวุธสังหารรอบบ้านของ Rohem ที่บ้านเลขที่ {~} ใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#058": {
+   "src": "Hi! I'm digging a hole in my garden, just like Mr. Rohem did last night!",
+   "dst": "หวัดดี! หนูกำลังขุดหลุมในสวน เหมือนที่คุณ Rohem ทำเมื่อคืนเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Child",
+   "source": "wiki"
+  },
+  "Murder Mystery#059": {
+   "src": "For the last time officer, would you either show me a warrant or get out of my- what are you doing in my garden?!",
+   "dst": "บอกเป็นครั้งสุดท้ายนะ คุณเจ้าหน้าที่ เอาหมายค้นมาให้ดู ไม่งั้นก็ออกไปจาก- คุณทำอะไรในสวนผมน่ะ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#060": {
+   "src": "A... a hatchet? I don't know what you mean, I- I've never seen that before in my life!",
+   "dst": "ข-ขวานเหรอ? ผมไม่รู้ว่าคุณหมายถึงอะไร ผม- ผมไม่เคยเห็นมันมาก่อนในชีวิต!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#061": {
+   "src": "Gah! Curse you, human! I might be headed to jail, but I can send you straight to hell!",
+   "dst": "อ๊าก! สาปแช่งแก มนุษย์! ฉันอาจต้องติดคุก แต่ฉันส่งแกลงนรกได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#062": {
+   "src": "That's enough, Rohem! Stand down, or the guards will attack.",
+   "dst": "พอได้แล้ว Rohem! ยอมแพ้ซะ ไม่งั้นทหารจะโจมตี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#063": {
+   "src": "Augh! Fine, you've got me. But mark my words, this won't be the last you hear of me, human!",
+   "dst": "อ๊าก! ก็ได้ แกจับฉันได้ แต่จำคำฉันไว้ นี่จะไม่ใช่ครั้งสุดท้ายที่แกได้ยินชื่อฉัน มนุษย์!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#064": {
+   "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
+   "dst": "ส่วนคุณ มนุษย์ ได้โปรดรับความขอบคุณอย่างสุดซึ้งจากผม ถ้าไม่มีคุณ เราคงจับไอ้หนูสกปรกนั่นไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#065": {
+   "src": "On behalf of the city of {p}, please accept these emeralds as compensation for your services. You were a fine detective today!",
+   "dst": "ในนามของเมือง {p} ขอให้รับมรกตเหล่านี้เป็นค่าตอบแทน วันนี้คุณเป็นนักสืบที่ยอดเยี่ยมมาก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#066": {
+   "src": "Heya there! Fancy a quick game of blackjack?",
+   "dst": "หวัดดี! เล่นแบล็กแจ็กสักตาไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#067": {
+   "src": "Alrighty, let's play some blackjack!",
+   "dst": "เอาละ มาเล่นแบล็กแจ็กกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#068": {
+   "src": "Good stuff! Put ya money in the pot and I'll start the deal.",
+   "dst": "เยี่ยม! วางเงินลงกองกลาง แล้วฉันจะเริ่มแจกไพ่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#069": {
+   "src": "Not feelin' up to playin' right now? No worries, just drop by later!",
+   "dst": "ตอนนี้ยังไม่อยากเล่นเหรอ? ไม่เป็นไร แวะมาทีหลังได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#070": {
+   "src": "Not right now? No worries - come back another time!",
+   "dst": "ตอนนี้ไม่เล่นเหรอ? ไม่เป็นไร ไว้มาใหม่นะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#071": {
+   "src": "Ah, new to the game huh? No worries, lemme tell ya all about it!",
+   "dst": "อ้อ มือใหม่สินะ? ไม่เป็นไร เดี๋ยวฉันอธิบายให้ฟังทั้งหมด!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#072": {
+   "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
+   "dst": "กติกาง่ายๆ! ฉันแจกไพ่ให้คุณสองใบคว่ำหน้า และให้ตัวเองสองใบ หงายหนึ่งใบ คว่ำหนึ่งใบ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#073": {
+   "src": "Number cards are worth what they say, all picture cards are worth {~}, and an ace can be worth either {~} or {~}, whichever works best for ya hand.",
+   "dst": "ไพ่ตัวเลขมีแต้มตามตัวเลข ไพ่หน้าคนทุกใบมีค่า {~} และเอซนับเป็น {~} หรือ {~} ก็ได้ แล้วแต่อย่างไหนดีกับมือคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#074": {
+   "src": "Go over {~} and that's it - you're bust! Stand with your current hand and it's my turn to hit or stand to try and beat your hand.",
+   "dst": "เกิน {~} เมื่อไรก็จบ คุณแพ้! ถ้าหยุดที่มือปัจจุบัน ก็ถึงตาฉันจั่วหรือหยุดเพื่อพยายามชนะคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#075": {
+   "src": "And if ya get a blackjack - that's an ace and a picture card or a ten - ya automatically get double ya money back!",
+   "dst": "และถ้าได้แบล็กแจ็ก คือเอซคู่กับไพ่หน้าคนหรือสิบ คุณจะได้เงินคืนสองเท่าทันที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#076": {
+   "src": "Sound fair enough? Alrighty, just right-click me again to play!",
+   "dst": "ฟังดูยุติธรรมไหม? เอาละ คลิกขวาที่ฉันอีกครั้งเพื่อเล่น!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  }
+ }
+}

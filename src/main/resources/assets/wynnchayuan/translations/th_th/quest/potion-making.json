@@ -1,0 +1,350 @@
+{
+ "_meta": {
+  "quest": "Potion Making",
+  "count": 34,
+  "translated": 34,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Potion Making#000": {
+   "src": "Dr. Essren needs to be stopped!",
+   "dst": "ต้องหยุด Dr. Essren ให้ได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "Dr. Essren",
+   "source": "captured"
+  },
+  "Potion Making#001": {
+   "src": "I was...in support of this...but then, he accrued essence of...the corruption. I had to run away...",
+   "dst": "ผม...สนับสนุนเรื่องนี้...แต่แล้ว เขาก็ได้แก่นแท้ของ...ความแปดเปื้อนมา ผมต้องหนีออกมา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "captured"
+  },
+  "Potion Making#002": {
+   "src": "Get me... [{~} Red Mushroom], they can be found outside the east gate behind me.",
+   "dst": "หามาให้ผม... [{~} Red Mushroom] หาได้นอกประตูตะวันออกข้างหลังผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "captured"
+  },
+  "Potion Making#003": {
+   "src": "You must...ensure that it worked. You...are much stronger than I, stranger...",
+   "dst": "คุณต้อง...ตรวจดูว่ามันได้ผล คุณ...แข็งแกร่งกว่าผมมาก คนแปลกหน้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "captured"
+  },
+  "Potion Making#004": {
+   "src": "What have you done to this potion, human!? You will pay for it!",
+   "dst": "เจ้าทำอะไรกับยานี้ มนุษย์!? เจ้าต้องชดใช้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
+   "source": "captured"
+  },
+  "Potion Making#005": {
+   "src": "It's time to head back to The Assistant in {p} and show him the proof.",
+   "dst": "ได้เวลากลับไปหาผู้ช่วยใน {p} แล้วแสดงหลักฐานให้เขาดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#006": {
+   "src": "Talk to The Assistant in {p} at [{~}, {~}, -{~}]",
+   "dst": "คุยกับผู้ช่วยใน {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Potion Making#007": {
+   "src": "Heeh...stranger. I...may need your assistance...",
+   "dst": "เหอะ...คนแปลกหน้า ผม...อาจต้องให้คุณช่วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#008": {
+   "src": "My master...wishes to create a very dangerous potion...a transformative elixir of invincibility...",
+   "dst": "อาจารย์ของผม...ต้องการสร้างยาที่อันตรายมาก...ยาวิเศษแห่งความไร้เทียมทานที่เปลี่ยนร่างได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#009": {
+   "src": "I fear...that he may be going...too far. I need your help...",
+   "dst": "ผมกลัว...ว่าเขาอาจกำลัง...ไปไกลเกินไป ผมต้องให้คุณช่วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#010": {
+   "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
+   "dst": "ผมอยาก...หยุดเขา...แต่ผมต้องให้คุณ...หาวัตถุดิบที่จำเป็น... เพื่อทำให้ยาไร้ผล...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#011": {
+   "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
+   "dst": "กำจัด Mooshroom แถวนี้ แล้วนำ [{~} Red Mushrooms] ไปให้ผู้ช่วยใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Potion Making#012": {
+   "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
+   "dst": "เร็วเข้า หามาให้ผม... [{~} Red Mushroom] ตามที่ขอ... ผ่าน {p} นอกประตูตะวันออกจากตรงนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#013": {
+   "src": "The...the...cows. Steal...from them.",
+   "dst": "พวก...พวก...วัว ขโมย...จากพวกมัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#014": {
+   "src": "Good... Hurry..!",
+   "dst": "ดี... เร็วเข้า..!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#015": {
+   "src": "Good...good. You have the mushrooms.",
+   "dst": "ดี...ดี คุณได้เห็ดมาแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#016": {
+   "src": "I'll... return to my master's house...and sneak the mushrooms into...his potion. Wait for me here...",
+   "dst": "ผมจะ... กลับไปบ้านอาจารย์...แล้วแอบใส่เห็ดลงใน...ยาของเขา รอผมที่นี่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#017": {
+   "src": "I...have returned... He came back...just as I finished slipping the mushrooms in and...told me...to get out.",
+   "dst": "ผม...กลับมาแล้ว... เขากลับมา...ตอนที่ผมเพิ่งแอบใส่เห็ดเสร็จพอดี และ...ไล่ผม...ออกมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#018": {
+   "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
+   "dst": "ตอนเก็บเห็ด คุณเห็นกระท่อมหลังคาทรงหมวกแม่มดสีส้มไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#019": {
+   "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
+   "dst": "นั่นคือบ้านของอาจารย์ผม คุณ...ต้องกลับออกไปทางประตูตะวันออกแล้วเข้าไปในกระท่อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#020": {
+   "src": "You must...make sure...he has not managed...to become invincible... Do what has to be done....",
+   "dst": "คุณต้อง...แน่ใจว่า...เขายังไม่สามารถ...กลายเป็นผู้ไร้เทียมทาน... ทำสิ่งที่ต้องทำ....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 2",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#021": {
+   "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
+   "dst": "เข้าไปในกระท่อมที่ [{~}, {~}, -{~}] กำจัด Essren แล้วเอาเสื้อคลุมของเขามา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Potion Making#022": {
+   "src": "You must go back out the east gate and enter the hut, it is my master's house.",
+   "dst": "คุณต้องกลับออกไปทางประตูตะวันออกแล้วเข้าไปในกระท่อม มันคือบ้านของอาจารย์ผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#023": {
+   "src": "Don't forget... Do what you must...",
+   "dst": "อย่าลืม... ทำสิ่งที่คุณต้องทำ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#024": {
+   "src": "Ah, you must be the one my assistant told me about.",
+   "dst": "อ้า เจ้าคงเป็นคนที่ผู้ช่วยของข้าเล่าให้ฟัง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
+   "source": "wiki"
+  },
+  "Potion Making#025": {
+   "src": "If you are trying to stop me, it's too late. I already drank the pot-...",
+   "dst": "ถ้าเจ้าคิดจะหยุดข้า ก็สายไปแล้ว ข้าดื่มยาไปแ-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
+   "source": "wiki"
+  },
+  "Potion Making#026": {
+   "src": "What is this taste? Mushrooms? This can't b-",
+   "dst": "รสอะไรนี่? เห็ด? เป็นไปไม่ไ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
+   "source": "wiki"
+  },
+  "Potion Making#027": {
+   "src": "Aaaaargh!!!!!",
+   "dst": "อ๊ากกกกก!!!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
+   "source": "wiki"
+  },
+  "Potion Making#028": {
+   "src": "Bring back Essren's Dusty Coat to The Assistant in {p}",
+   "dst": "นำเสื้อคลุมฝุ่นเขรอะของ Essren ไปให้ผู้ช่วยใน {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Potion Making",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Potion Making#029": {
+   "src": "I...must thank you, stranger...",
+   "dst": "ผม...ต้องขอบคุณคุณ คนแปลกหน้า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 4",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#030": {
+   "src": "Don't believe...everything people tell you... If master managed to...discover invincibility... No...too...dangerous.",
+   "dst": "อย่าเชื่อ...ทุกอย่างที่คนอื่นบอก... ถ้าอาจารย์...ค้นพบความไร้เทียมทานได้... ไม่...อันตราย...เกินไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 4",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#031": {
+   "src": "This was...for the better...",
+   "dst": "แบบนี้...ดีที่สุดแล้ว...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 4",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#032": {
+   "src": "Now. I...do not want you saying anything about...these events. Take these, and...never speak of this again.",
+   "dst": "เอาล่ะ ผม...ไม่อยากให้คุณพูดอะไรเกี่ยวกับ...เรื่องนี้ รับนี่ไป และ...อย่าพูดถึงมันอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "Stage 4",
+   "speaker": "The Assistant",
+   "source": "wiki"
+  },
+  "Potion Making#033": {
+   "src": "Never speak of this again...stranger.",
+   "dst": "อย่าพูดถึงเรื่องนี้อีก...คนแปลกหน้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "The Assistant",
+   "source": "captured"
+  }
+ }
+}

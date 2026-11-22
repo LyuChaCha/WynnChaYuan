@@ -1,0 +1,410 @@
+{
+ "_meta": {
+  "quest": "Grand Youth",
+  "count": 40,
+  "translated": 40,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Grand Youth#000": {
+   "src": "There's this group of mages out in Dernel who know how to get the stuff. They're a bunch of tightwads and wouldn't give me any real healing water to sell.",
+   "dst": "มีกลุ่มจอมเวทอยู่ที่ Dernel ที่รู้วิธีหามา พวกนั้นขี้เหนียว ไม่ยอมให้น้ำรักษาของแท้มาขายสักหยด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "captured"
+  },
+  "Grand Youth#001": {
+   "src": "Sorry man, if you haven't got any business with me then I can't talk.",
+   "dst": "โทษทีเพื่อน ถ้าไม่มีธุระกับฉันก็คุยด้วยไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "",
+   "speaker": "Salesman",
+   "source": "captured"
+  },
+  "Grand Youth#002": {
+   "src": "Aha, perfect! If this will not work, then...no, I must have faith.",
+   "dst": "อ้าฮะ เยี่ยม! ถ้าอันนี้ไม่ได้ผล...ไม่ ผมต้องมีศรัทธา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 6",
+   "speaker": "Monte",
+   "source": "captured"
+  },
+  "Grand Youth#003": {
+   "src": "Thank you so much, for aiding our village. I know we are smaller than our brothers from Iboju, but you are always welcome here.",
+   "dst": "ขอบคุณมากที่ช่วยหมู่บ้านเรา ถึงเราจะเล็กกว่าพี่น้องที่ Iboju แต่ที่นี่ยินดีต้อนรับคุณเสมอครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "",
+   "speaker": "Monte",
+   "source": "captured"
+  },
+  "Grand Youth#004": {
+   "src": "Talk to Monte at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับ Monte ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#005": {
+   "src": "Oh, what am I to do...? How am I to be our next elder if I cannot even help him... Oh? Ehm, hello, stranger.",
+   "dst": "โอ้ จะทำยังไงดี...? จะเป็นผู้อาวุโสคนต่อไปได้ยังไงถ้าช่วยท่านไม่ได้... หือ? เอ่อ สวัสดีครับ คนแปลกหน้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#006": {
+   "src": "You most likely heard me. Our elder has fallen ill of some vile disease... I am to be our next elder, but I am not yet ready.",
+   "dst": "คุณคงได้ยินแล้ว ผู้อาวุโสของเราล้มป่วยด้วยโรคร้าย... ผมต้องเป็นผู้อาวุโสคนต่อไป แต่ยังไม่พร้อม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#007": {
+   "src": "We have tried everything we can think of, but our healers and shamans have failed to cure him. We had some hope, however...",
+   "dst": "เราลองทุกวิธีที่คิดออกแล้ว แต่หมอและชาแมนของเรารักษาท่านไม่ได้ ถึงอย่างนั้นเราก็ยังมีความหวัง...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#008": {
+   "src": "A man in your city, {p}, insists that he sells healing water that could cure him, but he is selling it for an exorbitant price that we cannot afford!",
+   "dst": "มีชายคนหนึ่งในเมืองของคุณ {p} ยืนยันว่าขายน้ำรักษาที่รักษาท่านได้ แต่ตั้งราคาสูงลิ่วจนเราจ่ายไม่ไหว!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#009": {
+   "src": "I do not know where else to turn. I must ask you for help. If you can purchase it, I am sure that we could find a way to repay you.",
+   "dst": "ผมไม่รู้จะพึ่งใครแล้ว ต้องขอให้คุณช่วย ถ้าคุณซื้อมาได้ เราจะหาทางตอบแทนคุณแน่นอนครับ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#010": {
+   "src": "I have written directions for you in your content book...please help our village.",
+   "dst": "ผมเขียนทางไว้ในสมุดเนื้อหาของคุณแล้ว...ได้โปรดช่วยหมู่บ้านเราด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 1",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#011": {
+   "src": "Visit the Salesman in {p} near the fountain.",
+   "dst": "ไปหาพ่อค้าใน {p} ใกล้น้ำพุ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#012": {
+   "src": "Oh, why hello there! Come for my patented healing water, have you? Any problem instantly cured! Sniffles beware!",
+   "dst": "โอ้ สวัสดี! มาหาน้ำรักษาสิทธิบัตรของฉันใช่ไหม? หายทุกโรคในพริบตา! หวัดเอ๋ย ระวังตัวไว้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#013": {
+   "src": "You're quite lucky, I only have a couple of bottles left, so it won't go cheap, but this is the good stuff! Only [{~} Liquified Emeralds]!",
+   "dst": "โชคดีนะ ฉันเหลือแค่สองสามขวด เลยไม่ถูกหรอก แต่นี่ของดี! แค่ [{~} มรกตเหลว]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#014": {
+   "src": "What? Don't give me that look! This is the real stuff, very valuable and rare! What do ya take me for, some guy who'd sell lake water for a fortune?!",
+   "dst": "อะไร? อย่ามองแบบนั้น! ของแท้นะ มีค่าและหายากสุดๆ! คิดว่าฉันเป็นพวกเอาน้ำในทะเลสาบมาขายแพงๆ รึไง?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#015": {
+   "src": "Agh, agh! Put away the weapon! Put it away! Jeez, buddy! Alright, I admit it, I'm a fraudster! But, I do know where you get the real stuff, I ain't lying about that much.",
+   "dst": "โอ๊ย โอ๊ย! เก็บอาวุธไป! เก็บไปเลย! โธ่ เพื่อน! ก็ได้ ยอมรับ ฉันเป็นนักต้มตุ๋น! แต่ฉันรู้ว่าของแท้หาได้ที่ไหน อันนี้ไม่ได้โกหก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#016": {
+   "src": "I doubt you'll have any better luck with it, but go on, try your luck.",
+   "dst": "คงไม่โชคดีกว่าฉันหรอก แต่เอาเถอะ ลองเสี่ยงดู",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#017": {
+   "src": "Those tightwad mages are out in Dernel, on the lake with the big island. I doubt you'll convince them to give you any healing water, though.",
+   "dst": "จอมเวทขี้เหนียวพวกนั้นอยู่ที่ Dernel บนทะเลสาบที่มีเกาะใหญ่ แต่ฉันว่านายคงขอน้ำรักษาจากพวกมันไม่ได้หรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
+   "source": "wiki"
+  },
+  "Grand Youth#018": {
+   "src": "Talk to Isfurus in Dernel at [-{~}, {~}, -{~}].",
+   "dst": "คุยกับ Isfurus ใน Dernel ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#019": {
+   "src": "Hm, hm...if it really does that, then...oh, is someone there? Erisk?",
+   "dst": "อืม อืม...ถ้ามันทำแบบนั้นได้จริง...โอ้ มีใครอยู่ตรงนั้นหรือ? Erisk?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#020": {
+   "src": "Oh, a tourist. Heard about the healing water, I presume? Well, if you are here to make a quick buck, you can turn right back around from where you came.",
+   "dst": "อ้อ นักท่องเที่ยว ได้ยินเรื่องน้ำรักษามาสินะ ถ้ามาเพื่อหาเงินง่ายๆ ก็หันหลังกลับไปทางเดิมได้เลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#021": {
+   "src": "Hm...ah. Iboju's sister settlement...I see. I will trust this is an honest venture, then. The tribesmen are honourable.",
+   "dst": "อืม...อ้า หมู่บ้านพี่น้องของ Iboju...เข้าใจแล้ว งั้นผมจะเชื่อว่าเป็นงานสุจริต ชาวเผ่ามีเกียรติ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#022": {
+   "src": "I will provide you a specially-prepared bottle to hold the water in. My colleague, Erisk, is within the fountain here. He can fill up the bottle for you.",
+   "dst": "ผมจะให้ขวดที่เตรียมพิเศษไว้ใส่น้ำ Erisk เพื่อนร่วมงานผมอยู่ในน้ำพุนี่ เขาจะเติมน้ำใส่ขวดให้คุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#023": {
+   "src": "There are a few animals in the fountain, however. They're wild and will most likely attack, but you look well-armoured. I doubt you'll have trouble.",
+   "dst": "แต่ในน้ำพุมีสัตว์อยู่บ้าง พวกมันดุร้ายและคงจะโจมตี แต่คุณดูมีเกราะดี ไม่น่ามีปัญหา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#024": {
+   "src": "The entrance to the heart of the fountain is right below us. Take a deep breath and dive right in.",
+   "dst": "ทางเข้าสู่ใจกลางน้ำพุอยู่ใต้เราพอดี หายใจลึกๆ แล้วดำลงไปเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#025": {
+   "src": "Your directions are in your content book, friend. Always consult it if you are in a bind.",
+   "dst": "ทางอยู่ในสมุดเนื้อหาของคุณแล้ว เพื่อน ถ้าติดขัดก็เปิดดูได้เสมอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 3",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#026": {
+   "src": "Get the bottles filled by Erisk in the heart of the fountain to give Isfurus.",
+   "dst": "ให้ Erisk ในใจกลางน้ำพุเติมน้ำใส่ขวดเพื่อนำไปให้ Isfurus",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#027": {
+   "src": "And who might you be? We certainly don't get many visitors down here.",
+   "dst": "แล้วคุณเป็นใคร? ข้างล่างนี่ไม่ค่อยมีคนมาเยี่ยมหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "Erisk",
+   "source": "wiki"
+  },
+  "Grand Youth#028": {
+   "src": "Aha, Isfurus referred you. Yes, let me bottle this up for you, then. Once I do, make sure you don't drop them! Both the bottles and the water are valuable and difficult to replace.",
+   "dst": "อ้าฮะ Isfurus ส่งมาสินะ ได้ งั้นผมบรรจุขวดให้ พอได้แล้วระวังอย่าทำหล่นล่ะ! ทั้งขวดทั้งน้ำมีค่าและหาทดแทนยาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "Erisk",
+   "source": "wiki"
+  },
+  "Grand Youth#029": {
+   "src": "But what a marvel this place is...water to cure all ailments, even aging! I even hear there is a similar fountain someplace in Gavel, can you believe?",
+   "dst": "ที่นี่มหัศจรรย์จริงๆ...น้ำที่รักษาได้ทุกโรค แม้แต่ความแก่! ได้ยินว่ามีน้ำพุแบบนี้ที่ไหนสักแห่งใน Gavel ด้วย เชื่อไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "Erisk",
+   "source": "wiki"
+  },
+  "Grand Youth#030": {
+   "src": "Oh, I nearly forgot. Just make sure to check back in with Isfurus before you leave! There is just one more step to the process he has to take care of.",
+   "dst": "อ้อ เกือบลืม ก่อนไปอย่าลืมแวะหา Isfurus ล่ะ! ยังเหลืออีกขั้นตอนหนึ่งที่เขาต้องจัดการ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "Erisk",
+   "source": "wiki"
+  },
+  "Grand Youth#031": {
+   "src": "Just make sure to check back in with Isfurus before you leave!",
+   "dst": "ก่อนไปอย่าลืมแวะหา Isfurus ล่ะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 4",
+   "speaker": "Erisk",
+   "source": "wiki"
+  },
+  "Grand Youth#032": {
+   "src": "Talk to Isfurus for Erisk.",
+   "dst": "คุยกับ Isfurus แทน Erisk",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#033": {
+   "src": "Aha. You had no trouble, I assume? Hand the bottle here, I'll finish the seal and remove the impurities...",
+   "dst": "อ้าฮะ ไม่มีปัญหาใช่ไหม? ส่งขวดมา ผมจะปิดผนึกให้เสร็จและขจัดสิ่งเจือปน...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 5",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#034": {
+   "src": "...done. There is much potential here...ancient tribal markings repeat the word \"youth\" over and again. It could be used, or abused...",
+   "dst": "...เสร็จแล้ว ที่นี่มีศักยภาพมาก...อักษรโบราณของชนเผ่าเขียนคำว่า \"เยาว์วัย\" ซ้ำไปมา ใช้ได้ หรือใช้ในทางผิดก็ได้...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 5",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#035": {
+   "src": "Anyways, you have your water. Not to be rude, but I must ask that you leave me to my research now. You have your delivery to make anyway, correct?",
+   "dst": "เอาล่ะ คุณได้น้ำแล้ว ไม่ได้อยากเสียมารยาท แต่ขอให้ปล่อยผมทำวิจัยต่อ คุณเองก็ต้องไปส่งของใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 5",
+   "speaker": "Isfurus",
+   "source": "wiki"
+  },
+  "Grand Youth#036": {
+   "src": "Bring back the bottle of healing water to Monte.",
+   "dst": "นำขวดน้ำรักษากลับไปให้ Monte",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Grand Youth",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Grand Youth#037": {
+   "src": "You have returned, I see. Have you the healing water?",
+   "dst": "คุณกลับมาแล้ว ได้น้ำรักษามาไหมครับ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 6",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#038": {
+   "src": "From the bottom of my heart, thank you. I know we surely will not be able to compensate you for the price of the water...",
+   "dst": "ขอบคุณจากใจจริง ผมรู้ว่าเราคงชดใช้ค่าน้ำให้คุณไม่ไหวแน่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 6",
+   "speaker": "Monte",
+   "source": "wiki"
+  },
+  "Grand Youth#039": {
+   "src": "...but here. This is the summation of our village's riches. For aiding us, consider it yours.",
+   "dst": "...แต่นี่ครับ นี่คือสมบัติทั้งหมดของหมู่บ้าน รับไว้เถอะ เพื่อตอบแทนที่ช่วยเรา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "Stage 6",
+   "speaker": "Monte",
+   "source": "wiki"
+  }
+ }
+}

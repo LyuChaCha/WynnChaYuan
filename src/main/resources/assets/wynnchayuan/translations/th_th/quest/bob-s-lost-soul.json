@@ -1,0 +1,844 @@
+{
+ "_meta": {
+  "quest": "Bob's Lost Soul",
+  "count": 83,
+  "translated": 83,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Bob's Lost Soul#000": {
+   "src": "Brr... It's a little bit cold out there, don't you think?",
+   "dst": "บรื๋อ... ข้างนอกหนาวนิดๆ นะว่าไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "Tarod",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#001": {
+   "src": "Welcome back to our humble little town!",
+   "dst": "ยินดีต้อนรับกลับสู่เมืองเล็กๆ ของเรา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#002": {
+   "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
+   "dst": "คุยกับ Tarod ที่ป่า {p} ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#003": {
+   "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
+   "dst": "คุณเป็นพวกทหารใช่ไหม? ผมชื่อ Tarod ผมต้องการความช่วยเหลือจากคุณจริงๆ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#004": {
+   "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
+   "dst": "หลายปีก่อน ผมได้พบนักรบในตำนานผู้ทรงพลังชื่อ Bob ใช่ Bob คนนั้นแหละ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#005": {
+   "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
+   "dst": "พูดได้เลยว่าเขาเป็นคน เอ่อ น่ายกย่องมาก ผมกับเขาค่อยๆ สนิทกันตลอดหลายปี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#006": {
+   "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
+   "dst": "จนกระทั่งคืนหนึ่ง เขาหายไปไร้ร่องรอย เรื่องที่คนเชื่อกันคือเขาถูกฝูงหมาป่าหิวโหยฆ่า...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#007": {
+   "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
+   "dst": "ผมไม่เชื่อเรื่องนั้นหรอก แต่... ฟังนะ ประเด็นคือเขาจากไปแล้ว และผมอยากรู้ว่าเขาไปจบที่ไหนกันแน่ ซอมบี้ซึมๆ ที่เดินโซเซอยู่แถว {p} ไม่ใช่เขาแน่นอน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#008": {
+   "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
+   "dst": "ผมเชื่อว่าเขาตายแถวนี้ และผมตามหาศพเขามานานแล้ว แต่... ไม่ค่อยสำเร็จ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#009": {
+   "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
+   "dst": "มีข่าวลือว่ามีสุสานอยู่ที่ไหนสักแห่งทางตะวันออกของ {p} แต่ผมไม่เคยหาเจอ ตรงนี้แหละที่ผมต้องให้คุณช่วย นะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#010": {
+   "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
+   "dst": "คุณช่วยผมได้ไหม? ลองค้นแถวนั้นดู แล้วกลับมาบอกผมถ้าเจออะไรน่าสนใจ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#011": {
+   "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
+   "dst": "ผมจะซาบซึ้งไปตลอดกาล ถ้าคุณช่วยเปิดเผยเรื่องจริงของเพื่อนเก่าผม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#012": {
+   "src": "Find Bob's Tomb",
+   "dst": "หาสุสานของ Bob",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#013": {
+   "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
+   "dst": "รายงานสิ่งที่พบให้ Tarod ที่ [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#014": {
+   "src": "Welcome back. Did you find anything worthwhile?",
+   "dst": "กลับมาแล้ว เจออะไรมีประโยชน์ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#015": {
+   "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
+   "dst": "อ้าว? ใช่ ฟังดูเป็นสุสานแน่นอน! เห็นไหมว่าข้างในมีอะไร?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#016": {
+   "src": "No? There's... a magical barrier? Great... just GREAT...",
+   "dst": "ไม่เห็นเหรอ? มี... เกราะเวท? เยี่ยม... เยี่ยมจริงๆ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#017": {
+   "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
+   "dst": "ผมรู้สึกว่าคนที่สร้างสุสานไม่อยากให้ใครเข้าไปหาเขา แต่... ช่างเถอะ เราไม่มีทางอื่น นี่เป็นทางเดียวที่จะให้วิญญาณ Bob ได้พักผ่อนตลอดไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#018": {
+   "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
+   "dst": "ฟังนะ ผมรู้จักคนที่ช่วยเราได้ ชื่อ Wedyf เป็นพวกพ่อมด ถ้ามีใครกำจัดเกราะเวทนั่นได้ ก็คงเป็นเขา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#019": {
+   "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
+   "dst": "เขาอยู่ที่ {p} เมืองเล็กๆ ใกล้ {p} ไปพบเขาสิ ผมจะรอคุณกลับมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#020": {
+   "src": "Talk to the sorcerer Wedyf in {p}.",
+   "dst": "คุยกับพ่อมด Wedyf ที่ {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#021": {
+   "src": "Welcome traveler. Are you looking for something?",
+   "dst": "ยินดีต้อนรับ นักเดินทาง กำลังหาอะไรอยู่หรือ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#022": {
+   "src": "Ooh, it has been a long time since I've released an undead...",
+   "dst": "โอ้ นานแล้วที่ข้าไม่ได้ปลดปล่อยผีดิบ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#023": {
+   "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
+   "dst": "วิญญาณเพื่อนที่ตายของเจ้าคงยังอยู่ที่ไหนสักแห่งในโลกนี้ เราจึงเข้าใกล้ร่างเขาไม่ได้ เวทวิญญาณนั้นลึกลับนัก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#024": {
+   "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
+   "dst": "ไม่ต้องห่วง ข้าทำได้ ข้าเคยได้ยินเรื่องของ Bob มาบ้าง ช่างน่าเศร้า เกราะคุ้มกันที่ไร้ช่องโหว่ของเขาเองถูกใช้เล่นงานเขา...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#025": {
+   "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
+   "dst": "...ช่างเถอะ ไม่ต้องคร่ำครวญถึงอดีต ตอนนี้เราต้องการของสองอย่าง อย่างแรกคือของของ Bob เอง อีกอย่างคือสิ่งสุดท้ายที่ทำให้เขาเลือดตก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#026": {
+   "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
+   "dst": "เลยอีกฝั่งของ {p} ไป มีบ้านไร่สองหลังกับถ้ำเก่าอยู่ตรงกลาง คนขายดอกไม้แก่ๆ เคยอยู่ที่นั่น นางมีกุหลาบที่ Bob เคยโดนบาด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#027": {
+   "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
+   "dst": "แต่ข้าเตือนไว้ก่อน นางถูกทำให้แปดเปื้อนไปนานแล้ว การเอากุหลาบมาอาจไม่ง่าย เตรียมตัวให้ดี",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#028": {
+   "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
+   "dst": "อย่างที่สอง... ของของ Bob ข้าได้ยินข่าวลือว่ามีภาพของเขาเดินเตร่อยู่แถว {p} บางทีเจ้าอาจได้ของมีประโยชน์จากมัน? การฆ่าศัตรูในแถบ {p} ก็อาจคุ้มเวลาเช่นกัน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#029": {
+   "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
+   "dst": "เอา [{~} Rose] กับ [{~} Bob's Tear] มา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#030": {
+   "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
+   "dst": "นำ [{~} Bob's Tear] จาก {p} และ [{~} Rose] จากบ้านในป่า {p} แถว [{~}, {~}, -{~}] ไปให้ Wedyf",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#031": {
+   "src": "Great, you got everything.",
+   "dst": "ดี เจ้าได้ครบแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#032": {
+   "src": "Although... I might have forgot to tell you about something else too...",
+   "dst": "แต่... ข้าอาจลืมบอกเรื่องอื่นไปด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#033": {
+   "src": "We also need a part of the soul of your dead friend.",
+   "dst": "เรายังต้องการเศษวิญญาณของเพื่อนที่ตายของเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#034": {
+   "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
+   "dst": "น่าเสียดายที่ข้าทำเองไม่ได้ มีช่างตีเหล็กใกล้ {p} ที่ทำงานแบบนี้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#035": {
+   "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
+   "dst": "เขาสกัดวิญญาณจากอาวุธของใครก็ได้ มีประโยชน์มากในกรณีแบบนี้ ไปคุยกับเขาสิ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#036": {
+   "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
+   "dst": "เอาวิญญาณมาให้ข้า แล้วข้าจะถอนเวทที่กันไม่ให้เจ้าเข้าสุสานได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#037": {
+   "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
+   "dst": "คุยกับช่างตีเหล็กในชุมชนเล็กๆ ทางตะวันตกเฉียงใต้ของ {p} ที่ [{~}, {~}, -{~}] เรื่องวิญญาณที่หายไปของ Bob",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#038": {
+   "src": "What can I do for ya?",
+   "dst": "มีอะไรให้ช่วยล่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#039": {
+   "src": "Oh yes! I can extract the soul from weapons!",
+   "dst": "อ้อ ใช่! ฉันสกัดวิญญาณจากอาวุธได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#040": {
+   "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
+   "dst": "เอาอาวุธของเพื่อนคุณมา แล้วจะดูว่าทำอะไรได้บ้าง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#041": {
+   "src": "Oh it's... those weapons. Well, if you know what you're doing...",
+   "dst": "อ้อ มัน... อาวุธพวกนั้น ก็ ถ้าคุณรู้ว่ากำลังทำอะไร...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#042": {
+   "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
+   "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] และ [{~} Depressing Shears] ก็พอ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#043": {
+   "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
+   "dst": "ระวังอาวุธด้วย จะได้แค่อย่างละ [ONE] ถ้าทำหาย ต้องไปถามว่ามีใครมีสำรองไหม",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#044": {
+   "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
+   "dst": "อาจมีคนขายอยู่ที่ตลาดใน {p} ก็ได้ ใครจะรู้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#045": {
+   "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
+   "dst": "ศิษย์ฉันตรงนั้นเดินทางมาเยอะ อาจรู้ว่าของอยู่ไหน แต่เตือนไว้ก่อน แปลกๆ นิดหน่อยนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#046": {
+   "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
+   "dst": "อาวุธหม่นหมองรึ? รู้สิ รู้สิ ชุดนั้นรู้ดี! แถว {p} ว่ากันว่าเก็บไว้ที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#047": {
+   "src": "An army of Linx you must clear, in a cave you shall find this spear!",
+   "dst": "กองทัพ Linx ต้องกวาดล้าง ในถ้ำมีหอกวางไว้ข้าง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#048": {
+   "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
+   "dst": "ไปหานักธนูฝีมือดี ชนะนางที่ลานไม้ ธนูเป็นของเจ้าทันที!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#049": {
+   "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
+   "dst": "บนแท่นบูชา ฟองฟู่แอบจ้องอยู่ ทำพิธีให้ครบ รับกรรไกรไปหนึ่งคู่...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#050": {
+   "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
+   "dst": "ในป่า บ้านเยือกแข็งมีหนามหนา ชนะกลไกให้ได้ แล้วไม้จะตามมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#051": {
+   "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
+   "dst": "แต่ระวัง ระวัง! ภัยรออยู่ข้างหน้า และจะคอยขัดขวางเจ้าทุกครา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#052": {
+   "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
+   "dst": "นำ [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] และ [{~} Depressing Shear] ไปให้ช่างตีเหล็ก",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#053": {
+   "src": "Yo, what's up, bud?",
+   "dst": "ว่าไง เพื่อน?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#054": {
+   "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
+   "dst": "ฉันมาสิงอยู่ข้างล่างนี่ ทำเครื่องเทเลพอร์ตอยู่ เครื่องเทเลพอร์ตโดนน้ำแข็งเกาะไปบางส่วน แต่มั่นใจโคตรๆ ว่ายังใช้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#055": {
+   "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
+   "dst": "เฮ้ ถ้าอยากลองก็เชิญเลย! ใช้แกนเทเลพอร์ตข้างๆ ฉันเพื่อเริ่มได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#056": {
+   "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
+   "dst": "คลิกขวาด้วยมันตอนยืนอยู่กลางห้องเทเลพอร์ตที่เป็นน้ำแข็ง แล้วมันจะส่งคุณไปตามทิศหนึ่งยังห้องถัดไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#057": {
+   "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
+   "dst": "แล้วมันจะส่งคุณไปอีกครั้งในทิศที่หมุนตามเข็มนาฬิกา {~} องศา และจะทำแบบนั้นไปเรื่อยๆ ไม่มีวันหยุด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#058": {
+   "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
+   "dst": "กำแพงน้ำแข็งบางอันมีรู และฉันเชื่อว่าถ้าใช้แกนเทเลพอร์ตถูกวิธี คุณจะไปถึงอีกฝั่งที่มีแท่นทองได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#059": {
+   "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
+   "dst": "แต่แกนมันไม่เสถียรนะ ถ้าวิ่งไปไกลเกินจะพัง จำไว้ล่ะ โอเค?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#060": {
+   "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
+   "dst": "อ้อ แล้วฉันทิ้งคทาเก่าไว้ที่แท่นทองด้วย มันหดหู่สุดๆ เลยไม่ใช่เรื่องใหญ่ แต่เฮ้ ถ้าไปถึงก็เอาไปเลย เพื่อน ฟรี!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#061": {
+   "src": "... Hi again. I see you got the weapons.",
+   "dst": "... สวัสดีอีกครั้ง ได้อาวุธมาแล้วสินะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#062": {
+   "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
+   "dst": "อาวุธพวกนี้แผ่ความเศร้าออกมามากเหลือเกิน... คุณคงเคยได้ยินเรื่องของ Bob...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#063": {
+   "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
+   "dst": "นี่วิญญาณ บุบไปหน่อย แต่ใช้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#064": {
+   "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
+   "dst": "ขอให้โชคดีกับเควส Bob เป็นวีรบุรุษผู้ยิ่งใหญ่ อะไรที่ช่วยเขาได้ก็ดีทั้งนั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#065": {
+   "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
+   "dst": "นำ [{~} Bob's Crushed Soul] กลับไปให้ Wedyf",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#066": {
+   "src": "I'm glad to see you again.",
+   "dst": "ดีใจที่ได้เจอเจ้าอีก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#067": {
+   "src": "I only need a part of the soul, you can keep the rest.",
+   "dst": "ข้าต้องการแค่ส่วนหนึ่งของวิญญาณ ที่เหลือเจ้าเก็บไว้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#068": {
+   "src": "Give me a minute, I need to concentrate...",
+   "dst": "ขอเวลาสักครู่ ข้าต้องตั้งสมาธิ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#069": {
+   "src": "... . .. .",
+   "dst": "... . .. .",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#070": {
+   "src": "..... .. ..... . . . . ...",
+   "dst": "..... .. ..... . . . . ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#071": {
+   "src": "It is done. You should be able to enter the tomb now. Be careful.",
+   "dst": "เสร็จแล้ว ตอนนี้เจ้าน่าจะเข้าสุสานได้ ระวังตัวด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#072": {
+   "src": "Find Bob's corpse in his tomb.",
+   "dst": "หาศพของ Bob ในสุสานของเขา",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#073": {
+   "src": "Report back what you've seen to Tarod",
+   "dst": "กลับไปรายงานสิ่งที่เห็นให้ Tarod",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#074": {
+   "src": "You're back... Has he... has he finally been put to rest?",
+   "dst": "คุณกลับมา... เขา... เขาได้พักผ่อนแล้วใช่ไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#075": {
+   "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
+   "dst": "มัน... ฟังแล้วทำใจยาก ที่รู้ว่าเพื่อนเก่าจากไปจริงๆ คราวนี้ แต่... ผมดีใจที่เขาไม่ต้องทนทุกข์ในโลกที่สงครามย่ำยีนี้อีกแม้แต่วินาทีเดียว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#076": {
+   "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
+   "dst": "...ผมอยากให้คุณรับอะไรบางอย่าง นี่คือเกราะอกสำหรับรบตัวเก่าของเขา เขาให้ผมไว้ไม่กี่วันก่อนหายตัวไป ถ้าเขายังอยู่ เขาคงอยากให้คุณรับไว้ ได้โปรดดูแลมันให้ดีด้วย...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#077": {
+   "src": "Out past the other side of {p}, near {p}, there are some arches in the mountains. An old florist lives in a house close by. She has a rose that Bob had once cut himself on.",
+   "dst": "เลยอีกฝั่งของ {p} ไป ใกล้ {p} มีซุ้มโค้งอยู่ในภูเขา คนขายดอกไม้แก่ๆ อาศัยในบ้านใกล้ๆ นางมีกุหลาบที่ Bob เคยโดนบาด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#078": {
+   "src": "Anyway, my apprentice over there has traveled around a lot, they might know where you can find the items for yourself, but I warn you, they are a little bit quirky.",
+   "dst": "ยังไงก็ตาม ศิษย์ฉันตรงนั้นเดินทางมาเยอะ อาจรู้ว่าคุณจะไปหาของพวกนั้นเองได้ที่ไหน แต่เตือนไว้ก่อน แปลกๆ นิดหน่อยนะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#079": {
+   "src": "Hi! My name is Batelu, I've been studying those strange symbols on the walls for quite a while now.",
+   "dst": "สวัสดี! ฉันชื่อ Batelu ฉันศึกษาสัญลักษณ์แปลกๆ บนผนังพวกนั้นมานานแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#080": {
+   "src": "I've learned a lot about Bob. Unfortunately, I do not think I am the person you are looking for.",
+   "dst": "ฉันได้เรียนรู้เรื่อง Bob มามาก แต่น่าเสียดาย ฉันไม่คิดว่าเป็นคนที่คุณตามหา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#081": {
+   "src": "If you are looking for Bob's corpse, it's under the stairs in the icy chamber. Talk to me when you are level {~}, I've got some work for you.",
+   "dst": "ถ้าคุณตามหาศพ Bob มันอยู่ใต้บันไดในห้องเยือกแข็ง มาคุยกับฉันตอนเลเวล {~} ฉันมีงานให้ทำ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#082": {
+   "src": "Thank you for your help. I'm sure Bob thanks you too... wherever he is.",
+   "dst": "ขอบคุณที่ช่วย Bob ก็คงขอบคุณคุณเช่นกัน... ไม่ว่าเขาจะอยู่ที่ไหน",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "Tarod",
+   "source": "captured"
+  }
+ }
+}

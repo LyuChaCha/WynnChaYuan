@@ -1,0 +1,540 @@
+{
+ "_meta": {
+  "quest": "Taking the Tower",
+  "count": 53,
+  "translated": 53,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Taking the Tower#000": {
+   "src": "You look like an adventurer in need of some work, pal. I have need of your services, but you'll need to be level {~} at least.",
+   "dst": "ดูท่าคุณจะเป็นนักผจญภัยที่กำลังหางาน เพื่อน ผมต้องการความช่วยเหลือ แต่คุณต้องมีเลเวลอย่างน้อย {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#001": {
+   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
+   "dst": "Tasim เล่าเรื่องกองกำลังแปดเปื้อนที่พวกคุณจัดการให้ฟังหมดแล้ว อยากอยู่ช่วยด้วยจัง!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#002": {
+   "src": "We did it! Let's get back to Lieutenant Van and tell him the news.",
+   "dst": "เราทำได้! กลับไปหาร้อยโท Van แล้วบอกข่าวกันเถอะ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#003": {
+   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
+   "dst": "อ้อ เดี๋ยวก่อน เราต้องแวะที่หนึ่งก่อน ตามผมไปที่แท่นอัปเกรดไอเทม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#004": {
+   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
+   "dst": "ได้ยินมาว่าตัวร้ายใหญ่บนยอดหอคอยแพ้ความเสียหายธาตุ  น้ำ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#005": {
+   "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
+   "dst": "คุณใส่ผงธาตุต่างๆ ลงในอาวุธได้ ทำให้มันสร้างความเสียหายประเภทที่เดิมอาจทำไม่ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#006": {
+   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "ในกรณีนี้ คุณใส่ผงธาตุ  น้ำ ได้ อาวุธคุณจะได้ใช้ได้ผลกว่ากับศัตรูแปดเปื้อนที่หอคอย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#007": {
+   "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
+   "dst": "...ประเด็นคือ- เอ้านี่ รับผงธาตุนี้ไป ถือผงไว้ แล้วคลิกขวาที่อาวุธ เสร็จแล้วบอกผมนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#008": {
+   "src": "[+{~} Water Powder I]",
+   "dst": "[+{~} Water Powder I]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#009": {
+   "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
+   "dst": "เห็นแท่นอัปเกรดไอเทมนี่ไหม? ใช้อัปเกรดผงธาตุให้ระดับสูงขึ้นได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#010": {
+   "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
+   "dst": "มันยังถอดผงธาตุออกจากไอเทมได้ด้วยถ้าจำเป็น- ไม่ต้องห่วง คุณจะได้ผงคืน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#011": {
+   "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
+   "dst": "...ยังไงก็ตาม ร้อยโท Van กับคนอื่นๆ อยู่แถวบ้านกลุ่มนั้นใน {p}- คุณคงเห็นตอนเดินมา",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#012": {
+   "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
+   "dst": "ใครทำก็ไม่สำคัญ ขอแค่งานสำเร็จ ถ้าเห็นโอกาส- ลุยเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#013": {
+   "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
+   "dst": "ถ้าต้องถอย หรือพวกแปดเปื้อนตายหมด ให้กลับมารวมกันที่นี่! เข้าใจไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#014": {
+   "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
+   "dst": "เฮ้ {u} อยู่นี่เอง! มาเถอะ ไปปีนหอคอยนั่นกัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#015": {
+   "src": "They have, lieutenant! {u} and I reached the top and defeated the corrupted.",
+   "dst": "ใช่ครับ ร้อยโท! {u} กับผมขึ้นไปถึงยอดและกำจัดเจ้าแปดเปื้อนได้แล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#016": {
+   "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
+   "dst": "คุยกับ Aledar ในค่ายทหาร {p} ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#017": {
+   "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
+   "dst": "อ้าว {u}! หวัดดี! ดีใจที่ได้เจอคุณกับ Tasim อีก หวังว่าคงไม่ได้ผจญภัยเยอะเกินไปตอนไม่มีผมนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#018": {
+   "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
+   "dst": "Tasim ไปห้องฝึกแล้ว ถ้าคุณตามหาเขาอยู่ เขาทุ่มเทเต็มที่เลย ซึ่ง... ก็ดี! เราทุกคนต้องแข็งแกร่งขึ้นเพื่อปกป้องแคว้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#019": {
+   "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
+   "dst": "...อ้อ! ไหนๆ คุณก็มาแล้ว- ผมกำลังจะไปสมทบหน่วยของร้อยโท Van เพื่อยึดหอคอยที่ถูกพวกแปดเปื้อนยึดไปคืน คุณมาด้วยกันสิ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#020": {
+   "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
+   "dst": "ว่าไง? คิดว่ายังไง? อยากได้ประสบการณ์รบจริงไหม? ไม่น่านานหรอก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#021": {
+   "src": "Sure, I'll come with you.",
+   "dst": "ได้ ไปด้วย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#022": {
+   "src": "Perfect. Well, no time better than the present! Let's get going.",
+   "dst": "เยี่ยม งั้นไม่มีเวลาไหนดีกว่าตอนนี้แล้ว! ไปกันเลย",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#023": {
+   "src": "I've got something to do her",
+   "dst": "มีธุระต้องทำที่นี่",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#024": {
+   "src": "Oh. Alright.",
+   "dst": "อ้อ โอเค",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#025": {
+   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
+   "dst": "ผมยังอยู่แถวนี้อีกสักพัก ถ้าเปลี่ยนใจก็บอกนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#026": {
+   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "dst": "เฮ้ กลับมาแล้ว! เปลี่ยนใจแล้วเหรอ? อยากร่วมบุกหอคอยแปดเปื้อนไหม?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#027": {
+   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
+   "dst": "ตาม Aledar ไปหาปรมาจารย์ผงธาตุที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#028": {
+   "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
+   "dst": "โอเค คือ มีเรื่องที่ผมได้ยินมาเกี่ยวกับหอคอยที่เราจะบุก ซึ่งเราเตรียมรับมือได้!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#029": {
+   "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
+   "dst": "ได้ยินมาว่าตัวร้ายใหญ่บนยอดหอคอยแพ้ความเสียหาย! เราถึงมาหาปรมาจารย์ผงธาตุไง",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#030": {
+   "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
+   "dst": "ผม เอ่อ... จำคำอธิบายเรื่องธาตุทั้งหมดไม่ได้ ถ้าอยากรู้เพิ่ม ต้องไปคุยกับกัปตัน Ragon ในค่ายทหาร เขามีหลักสูตรเรื่องนี้ทั้งคอร์สเลย!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#031": {
+   "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
+   "dst": "...ประเด็นคือ- เอ้านี่ รับผงธาตุนี้ไป แล้วคุยกับปรมาจารย์ผงธาตุให้ใส่ให้ เสร็จแล้วบอกผมนะ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#032": {
+   "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
+   "dst": "ใส่ผงธาตุน้ำในอาวุธ แล้วบอก Aledar ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#033": {
+   "src": "Got the powder on your weapon? Good, that means we're ready.",
+   "dst": "ใส่ผงในอาวุธแล้ว? ดี แปลว่าเราพร้อมแล้ว",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#034": {
+   "src": "Lead the way! I'll be right behind you.",
+   "dst": "นำไปเลย! ผมจะตามหลังคุณไป",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#035": {
+   "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
+   "dst": "ไปสมทบหน่วยของร้อยโท Van ใกล้หอคอยพิโรธที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#036": {
+   "src": "Ah, Aledar! Good to see you here. Who's this with you?",
+   "dst": "อา Aledar! ดีใจที่เจอนายที่นี่ ใครมากับนายน่ะ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#037": {
+   "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
+   "dst": "นี่คือ {u} ครับ ท่าน มาร่วมบุกกับเรา ถ้าท่านอนุญาต",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#038": {
+   "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
+   "dst": "หืม... ก็ไม่เห็นว่าทำไมจะไม่ได้ ยิ่งคนเยอะยิ่งสนุก ผมว่างั้น",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#039": {
+   "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
+   "dst": "ถ้ามากันครบแล้วก็เริ่มได้ แผนคือ! เราต้องต้านกองกำลังที่ฐานหอคอยไว้ เพื่อให้ใครสักคนปีนขึ้นไปถึงยอด",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#040": {
+   "src": "Yes, sir!",
+   "dst": "ครับผม!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#041": {
+   "src": "Good. Alright soldiers, let's take back that tower!",
+   "dst": "ดี เอาล่ะทหารทั้งหลาย ยึดหอคอยนั่นคืนมา!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#042": {
+   "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
+   "dst": "ไปเลย มุ่งหน้าไปที่หอคอย! ถ้าโชคดี เราจะกวาดล้างพวกแปดเปื้อนที่ยึดมันไว้ได้",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#043": {
+   "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
+   "dst": "บุกหอคอยพิโรธที่ [{~}, {~}, -{~}] และกำจัดมอนสเตอร์บนยอด",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#044": {
+   "src": "Alright. It's time to take on the tower! We've got this, {u}.",
+   "dst": "เอาล่ะ ถึงเวลาบุกหอคอยแล้ว! เราทำได้ {u}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#045": {
+   "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
+   "dst": "รายงานความสำเร็จต่อร้อยโท Van ที่ [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#046": {
+   "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
+   "dst": "เราทำได้ เราฆ่าเจ้าแปดเปื้อนได้แล้ว! มาเถอะ กลับไปบอกข่าวร้อยโท Van กัน!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#047": {
+   "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
+   "dst": "ดูเหมือนทุกคนกลับมากันแล้ว ว่าไง? กำจัดกองกำลังแปดเปื้อนได้หรือยัง?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#048": {
+   "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
+   "dst": "เยี่ยมมาก ทหาร! อีกหนึ่งชัยชนะของกองทัพ {p} เมื่อหัวหน้าของมันตายแล้ว กวาดล้างที่เหลือก็ไม่น่ายาก",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#049": {
+   "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
+   "dst": "ผมจะรายงานชัยชนะวันนี้ของพวกคุณให้พลเรือเอกทราบ และ- นี่ ค่าตอบแทนสำหรับงานของพวกคุณ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#050": {
+   "src": "The two of you have a promising future. I look forward to serving with you in the future!",
+   "dst": "พวกคุณทั้งสองมีอนาคตไกล ผมหวังว่าจะได้รับใช้ร่วมกับพวกคุณอีก!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#051": {
+   "src": "Talking Lieutenant Van",
+   "dst": "คุยกับร้อยโท Van",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#052": {
+   "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
+   "dst": "เราจะจัดการพวกที่หลงเหลือเอง ไม่ต้องห่วง ขอบคุณสำหรับงานวันนี้นะ ทหาร",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  }
+ }
+}
