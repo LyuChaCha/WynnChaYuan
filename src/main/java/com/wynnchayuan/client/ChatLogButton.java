@@ -20,8 +20,11 @@ public final class ChatLogButton {
     private static final float H = 13;
     private static final float GAP = 4;
     private static final float EDGE = 2;
+    private static final float HOTBAR_HALF = 91;
 
     private static boolean open;
+    private static float[] press;
+    private static float[] dragged;
 
     private ChatLogButton() {}
 
@@ -53,17 +56,40 @@ public final class ChatLogButton {
             }
         });
         ScreenMouseEvents.allowMouseClick(chat).register((s, event) -> {
-            if (pill(chat, event.x(), event.y())) {
-                open = !open;
-                CanvasScreen.SHELL.click();
+            float[] b = pill(chat, event.x(), event.y());
+            if (b != null) {
+                if (event.button() == 1) {
+                    WynnChaYuan.config().setChatLogButtonPos(-1, -1);
+                    CanvasScreen.SHELL.click();
+                } else if (event.button() == 0) {
+                    press = new float[] {(float) event.x(), (float) event.y(),
+                            (float) event.x() - b[0], (float) event.y() - b[1]};
+                    dragged = null;
+                }
                 return false;
             }
             return !(active() && view.mouseDown(event.x(), event.y(), event.button()));
         });
-        ScreenMouseEvents.allowMouseDrag(chat).register(
-                (s, event, dx, dy) -> !(active() && view.mouseDrag(event.x(), event.y())));
-        ScreenMouseEvents.allowMouseRelease(chat).register(
-                (s, event) -> !(active() && view.mouseUp()));
+        ScreenMouseEvents.allowMouseDrag(chat).register((s, event, dx, dy) -> {
+            if (press != null) {
+                if (dragged != null || Math.abs(event.x() - press[0]) + Math.abs(event.y() - press[1]) > 3) {
+                    dragged = new float[] {(float) event.x() - press[2], (float) event.y() - press[3]};
+                }
+                return false;
+            }
+            return !(active() && view.mouseDrag(event.x(), event.y()));
+        });
+        ScreenMouseEvents.allowMouseRelease(chat).register((s, event) -> {
+            if (press != null) {
+                release(chat);
+                return false;
+            }
+            return !(active() && view.mouseUp());
+        });
+        ScreenEvents.remove(chat).register(s -> {
+            press = null;
+            dragged = null;
+        });
         ScreenMouseEvents.allowMouseScroll(chat).register((s, x, y, h, v) -> {
             if (active() && view.inside(x, y)) {
                 view.scroll(v);
@@ -75,6 +101,20 @@ public final class ChatLogButton {
             boolean ctrl = (event.modifiers() & (2 | 8)) != 0;
             return !(active() && view.key(event.key(), ctrl));
         });
+    }
+
+    private static void release(ChatScreen chat) {
+        if (dragged == null) {
+            open = !open;
+            CanvasScreen.SHELL.click();
+        } else {
+            float[] b = box(chat);
+            if (b != null) {
+                WynnChaYuan.config().setChatLogButtonPos(b[0] / chat.width, b[1] / chat.height);
+            }
+        }
+        press = null;
+        dragged = null;
     }
 
     private static boolean shown() {
@@ -90,6 +130,14 @@ public final class ChatLogButton {
         GuiCanvas measure = new GuiCanvas(null, chat.getFont(),
                 Minecraft.getInstance().getWindow().getGuiScale());
         float w = measure.width(T.s("chatlog.button")) + 25;
+        if (dragged != null) {
+            return clampTo(dragged[0], dragged[1], w, chat.width, chat.height);
+        }
+        double[] saved = WynnChaYuan.config().chatLogButtonPos();
+        if (saved != null) {
+            return clampTo((float) (saved[0] * chat.width), (float) (saved[1] * chat.height), w,
+                           chat.width, chat.height);
+        }
         float[] frame = ChatLogHost.chatFrame(chat.width, chat.height);
         float[] dock = open ? ChatLogHost.dockRect(chat.width, chat.height) : null;
         return place(frame, dock, w, chat.width);
@@ -103,7 +151,7 @@ public final class ChatLogButton {
             top = Math.min(top, dock[1]);
         }
         float side = right + GAP;
-        if (side + w <= screenW - EDGE) {
+        if (side + w <= Math.min(screenW - EDGE, screenW / 2f - HOTBAR_HALF - GAP)) {
             return new float[] {side, frame[1] + frame[3] - H, w, H};
         }
         float x = Math.max(EDGE, Math.min(screenW - EDGE - w, right - w));
@@ -117,12 +165,18 @@ public final class ChatLogButton {
         return new float[] {x, top + EDGE, w, H};
     }
 
-    private static boolean pill(ChatScreen chat, double x, double y) {
+    static float[] clampTo(float x, float y, float w, float screenW, float screenH) {
+        float cx = Math.max(EDGE, Math.min(screenW - EDGE - w, x));
+        float cy = Math.max(EDGE, Math.min(screenH - EDGE - H, y));
+        return new float[] {cx, cy, w, H};
+    }
+
+    private static float[] pill(ChatScreen chat, double x, double y) {
         if (!shown()) {
-            return false;
+            return null;
         }
         float[] b = box(chat);
-        return b != null && Ui.in(x, y, b[0], b[1], b[2], b[3]);
+        return b != null && Ui.in(x, y, b[0], b[1], b[2], b[3]) ? b : null;
     }
 
     private static void render(ChatScreen chat, ChatLogView view, GuiGraphics g, int mouseX,

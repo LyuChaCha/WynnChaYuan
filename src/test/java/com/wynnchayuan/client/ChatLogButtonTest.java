@@ -9,8 +9,12 @@ public final class ChatLogButtonTest {
 
     public static void main(String[] args) {
         float[] narrow = {0, 50, 328, 180};
-        float[] side = ChatLogButton.place(narrow, null, W, 640);
+        float[] side = ChatLogButton.place(narrow, null, W, 1280);
         check("寬螢幕：按鈕在聊天框右邊", side[0] >= 328 && side[1] + side[3] == 230);
+
+        float[] hud = ChatLogButton.place(narrow, null, W, 640);
+        check("旁邊會碰到中央的快捷列與血條：改放聊天框上方",
+              hud[1] + hud[3] <= 50);
 
         float[] wide = {0, 50, 476, 180};
         float[] above = ChatLogButton.place(wide, null, W, 480);
@@ -30,6 +34,11 @@ public final class ChatLogButtonTest {
         float[] dockRoom = {2, 30, 472, 200};
         float[] overDock = ChatLogButton.place(wide, dockRoom, W, 480);
         check("面板開著時放在面板上方", overDock != null && !overlaps(overDock, dockRoom));
+
+        float[] moved = ChatLogButton.clampTo(600, -20, W, 640, 360);
+        check("拖到畫面外：夾回畫面內", moved[0] + moved[2] <= 638 && moved[1] >= 2);
+        float[] kept = ChatLogButton.clampTo(300, 200, W, 640, 360);
+        check("拖到畫面內：照放開的位置", kept[0] == 300 && kept[1] == 200);
 
         System.out.println(failures == 0 ? "\n聊天紀錄按鈕：全部通過"
                 : "\n聊天紀錄按鈕：" + failures + " 項失敗");
