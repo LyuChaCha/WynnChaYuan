@@ -1,0 +1,382 @@
+{
+ "_meta": {
+  "quest": "Reincarnation",
+  "count": 36,
+  "translated": 36,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Reincarnation#000": {
+   "src": "Talk to Batelu in Bob's Tomb.",
+   "dst": "Fale com Batelu na tumba de Bob.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#001": {
+   "src": "Hello adventurer! I see you want to solve the mystery of Bob's tomb also? Glad to meet you.",
+   "dst": "Olá, aventureiro! Também quer resolver o mistério da tumba de Bob? Prazer em conhecê-lo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#002": {
+   "src": "My name is Batelu. Lately, I've been studying these strange symbols on the walls.",
+   "dst": "Me chamo Batelu. Ultimamente tenho estudado estes símbolos estranhos nas paredes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#003": {
+   "src": "It's about Bob. Hopefully you do not believe the stories of his death, right? Bob couldn't have died so easily. Not to something so mundane as a wolf.",
+   "dst": "É sobre o Bob. Espero que não acredite nas histórias da morte dele, certo? Bob não poderia morrer tão fácil. Não por algo tão banal quanto um lobo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#004": {
+   "src": "He wasn't only strong, he was absolutely un-killable, a master in almost every skill.",
+   "dst": "Ele não era só forte, era absolutamente imatável, um mestre em quase todas as artes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#005": {
+   "src": "I believe he knew he was about to die. How? What of? Nobody knows, but he left this world prepared.",
+   "dst": "Creio que ele sabia que ia morrer. Como? De quê? Ninguém sabe, mas ele deixou este mundo preparado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#006": {
+   "src": "You see, it says here Bob had three loyal animals. Before dying, he scattered them across the ocean.",
+   "dst": "Veja, aqui diz que Bob tinha três animais leais. Antes de morrer, ele os espalhou pelo oceano.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#007": {
+   "src": "I think those animals are the key to accessing his real tomb...",
+   "dst": "Acho que esses animais são a chave da verdadeira tumba dele...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#008": {
+   "src": "You see that little gap right there? It's the entrance...",
+   "dst": "Vê aquela pequena fenda ali? É a entrada...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#009": {
+   "src": "Unfortunately, nobody was able to remove the spell blocking it.",
+   "dst": "Infelizmente, ninguém conseguiu tirar o feitiço que a bloqueia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#010": {
+   "src": "But I can. I know how to open the passage to Bob. This is where the animals will come in useful...",
+   "dst": "Mas eu consigo. Sei como abrir a passagem até Bob. É aqui que os animais vão ser úteis...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#011": {
+   "src": "Bring me [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] if you can find them.",
+   "dst": "Traga [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] se conseguir achá-los.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.962,
+    "reason": "placeholders"
+   }
+  },
+  "Reincarnation#012": {
+   "src": "How is your quest going along?",
+   "dst": "Como vai a sua missão?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reincarnation#013": {
+   "src": "I am not worthy enough to enter it. I did not complete the task of the animals, I merely read it. You shall go alone. Be careful.",
+   "dst": "Não sou digno de entrar. Não completei a tarefa dos animais, só a li. Você vai sozinho. Tome cuidado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.977,
+    "reason": "名字或框架差一個字就是另一條，原文沒有改"
+   }
+  },
+  "Reincarnation#014": {
+   "src": "I believe Bob did something to those animals. I think if we could reunite them in some way, we could open the passage.",
+   "dst": "Acho que Bob fez algo com esses animais. Se pudéssemos reuni-los de algum jeito, poderíamos abrir a passagem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#015": {
+   "src": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
+   "dst": "Traga {~} Cluckles' Favourite Feather, {~} Baab's Wool e {~} Mooington's Skin se conseguir achá-los.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#016": {
+   "src": "I am sure that together, we can open the passage. Good luck.",
+   "dst": "Tenho certeza de que juntos abriremos a passagem. Boa sorte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#017": {
+   "src": "Bring back {~} Cluckles' Favourite Feather, Baab's Wool, and Mooington's Skin to Batelu.",
+   "dst": "Leve {~} Cluckles' Favourite Feather, Baab's Wool e Mooington's Skin de volta para Batelu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#018": {
+   "src": "Wonderful! We can now open the passage to the true tomb of Bob...",
+   "dst": "Ótimo! Já dá para abrir a passagem à verdadeira tumba de Bob...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#019": {
+   "src": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
+   "dst": "Não sou digno de entrar. Não completei a tarefa dos animais, apenas a li. Você vai sozinho, tome cuidado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#020": {
+   "src": "Kill Bob's Reincarnation.",
+   "dst": "Mate a Reencarnação de Bob.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#021": {
+   "src": "I am Bob, master of the arts of Wynn.",
+   "dst": "Eu sou Bob, mestre das artes de Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#022": {
+   "src": "Let me explain why you are here.",
+   "dst": "Vou explicar por que está aqui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#023": {
+   "src": "My animals, were my greatest allies in my travels through the world.",
+   "dst": "Meus animais foram meus maiores aliados nas viagens pelo mundo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#024": {
+   "src": "I travelled too far, mined too deep, and of course challenged what should not be challenged. My time in Wynn was coming to an end.",
+   "dst": "Viajei longe demais, cavei fundo demais e, claro, desafiei o que não devia ser desafiado. Meu tempo em Wynn chegava ao fim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#025": {
+   "src": "I knew so, too. But I refused to leave without giving the power i had attained to those worthy of it.",
+   "dst": "Eu também sabia. Mas me recusei a partir sem dar o poder que alcancei aos que fossem dignos dele.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#026": {
+   "src": "Using what ability I had left to me, I transferred my power to my animals, in three pieces. In the hope that those worthy to harness it will seek them out.",
+   "dst": "Com o que me restava de habilidade, transferi meu poder aos meus animais, em três partes. Na esperança de que os dignos de dominá-lo os procurassem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#027": {
+   "src": "The spell I placed on the door to this realm will only break to the one who collects my power. But it cannot have escaped your notice, you do not have my power.",
+   "dst": "O feitiço que pus na porta deste reino só se quebra para quem reunir meu poder. Mas não deve ter passado despercebido: você não tem o meu poder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#028": {
+   "src": "The truth is, you must pass a test, the ultimate test. Hone your skills you have learnt throughout your travels, and face me. Face me, and earn your place amongst soldiers of Wynn.",
+   "dst": "A verdade é que você deve passar por uma prova, a prova final. Afie o que aprendeu nas suas viagens e me enfrente. Me enfrente e ganhe seu lugar entre os soldados de Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#029": {
+   "src": "Bring back {~} Bob's Seal of Approval to Batelu.",
+   "dst": "Leve {~} Bob's Seal of Approval de volta para Batelu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#030": {
+   "src": "Ah! You have returned! Tell me, what did you find within?",
+   "dst": "Ah! Você voltou! Diga, o que encontrou lá dentro?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#031": {
+   "src": "...You faced Bob himself in combat? And you triumphed? That's quite remarkable!",
+   "dst": "...Você enfrentou o próprio Bob em combate? E venceu? Que notável!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#032": {
+   "src": "And he gave you his Seal of Approval... Hm. If that is the case, then there is something I may do for you.",
+   "dst": "E ele te deu o selo de aprovação dele... Hm. Se for assim, há algo que posso fazer por você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#033": {
+   "src": "Before Bob passed, he left his mythical weapons with a trusted friend. They were, so he said, to be kept for one who would be worthy to wield them...",
+   "dst": "Antes de morrer, Bob deixou suas armas míticas com um amigo de confiança. Deviam, segundo ele, ser guardadas para alguém digno de empunhá-las...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#034": {
+   "src": "Yes... Yes, I am certain. You have proven yourself worthy. Take this relic, the Stone of Myths, and bring it to the Temple of the Legends.",
+   "dst": "Sim... Sim, tenho certeza. Você provou ser digno. Pegue esta relíquia, a Pedra dos Mitos, e leve-a ao Templo das Lendas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#035": {
+   "src": "Within, you will find a merchant who will offer you a weapon in exchange for it. I wish you luck with your future travels.",
+   "dst": "Lá dentro, vai encontrar um mercador que vai te oferecer uma arma em troca dela. Desejo sorte nas suas próximas viagens.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  }
+ }
+}

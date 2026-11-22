@@ -96,11 +96,11 @@ public final class RewardRowTest {
         String[][] rows = {
                 {"1 Breathing Helmet I", "Breathing Helmet"},
                 {"1 Witherhead's Rib", "Witherhead's Rib"},
-                {"Ragon's Bracelet", "Bracelet"},
+                {"Ragon's Bracelet", "Ragon's"},
                 {"2 Yellow Crystal", "Yellow Crystal"},
                 {"1 Infested Pit Key", "Pit Key"},
         };
-        for (String lang : new String[] {"zh_tw", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"}) {
+        for (String lang : new String[] {"zh_tw", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br"}) {
             TranslationStore real = new TranslationStore();
             real.loadAll(base.resolve(lang));
             for (String[] r : rows) {

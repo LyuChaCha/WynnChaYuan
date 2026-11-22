@@ -456,7 +456,7 @@ public final class MarqueeTest {
 
     private static void cutChoicesReadToTheEnd() throws Exception {
         String root = "src/main/resources/assets/wynnchayuan/translations/";
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of(root + lang));
             for (String full : List.of("What'll you do when it's all over?",

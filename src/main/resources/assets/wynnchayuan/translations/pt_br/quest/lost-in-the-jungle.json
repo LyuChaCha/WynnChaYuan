@@ -1,0 +1,340 @@
+{
+ "_meta": {
+  "quest": "Lost in the Jungle",
+  "count": 33,
+  "translated": 33,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lost in the Jungle#000": {
+   "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
+   "dst": "Porém... ele também trouxe uma estranha gema roxa. Nosso xamã viu como mau presságio, mas eu estava tão envolvido na festa que nem liguei.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#001": {
+   "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
+   "dst": "Hm, só agora vejo um rastro estranho no chão... é da cor da gema! Pode te levar até ele, por favor, siga!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#002": {
+   "src": "You should talk to Aryn now...",
+   "dst": "Fale com Aryn agora...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#003": {
+   "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
+   "dst": "Ah... Meu pai te mandou? Estou impressionado, guerreiro de Wynn. Luta com a ferocidade dos nossos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "captured"
+  },
+  "Lost in the Jungle#004": {
+   "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
+   "dst": "Mas isso não vem ao caso. Você diz que destruiu o espírito, e ela não parece mais maculada, então vou confiar em você.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#005": {
+   "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "Fale com Gracen em [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#006": {
+   "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
+   "dst": "Com licença, viajante... Lamento muito pedir isso, mas preciso da sua ajuda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#007": {
+   "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
+   "dst": "Veja, meu filho, Aryn. Há pouco ele passou por uma cerimônia tradicional de maioridade da nossa tribo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#008": {
+   "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
+   "dst": "A tarefa dele era entrar na perigosa {p}, logo ao sul daqui, e enfrentar a mata por três dias. Voltou um homem de verdade, vitorioso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#009": {
+   "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
+   "dst": "Coisas estranhas começaram a acontecer na aldeia. Aryn andava à noite, falando com alguém, mas não havia mais ninguém com ele.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#010": {
+   "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
+   "dst": "Ontem ao amanhecer, ele sumiu de vez. Fomos procurá-lo, mas nem nossos guerreiros mais fortes conseguiram entrar fundo na selva.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#011": {
+   "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
+   "dst": "Voltamos de mãos vazias, tendo perdido nosso mais novo membro. A aldeia está arrasada, e sinto que a culpa é minha.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#012": {
+   "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
+   "dst": "Mas vocês, guerreiros de Wynn... há grandes histórias dos seus feitos. Você consegue enfrentar a selva, não?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#013": {
+   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
+   "dst": "Eu te imploro, por favor, encontre meu filho. Não sei bem onde ele está, mas sem dúvida foi levado bem para dentro...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#014": {
+   "src": "Search the {p} for Aryn",
+   "dst": "Procure Aryn em {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#015": {
+   "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
+   "dst": "P-por favor, eu imploro, espírito, me solte! A tribo deve estar tão preocupada-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#016": {
+   "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
+   "dst": "NÃO RESISTA, GAROTO! SEU CORPO É MEU. FIQUEI PRESO NAQUELA PEDRA POR MILÊNIOS, E AGORA ESTOU LIVRE.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#017": {
+   "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
+   "dst": "Arrá, ouço alguém! Com certeza alguém da tribo vindo me salvar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#018": {
+   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
+   "dst": "Oh! Se for assim, o corpo deste guerreiro vai me servir bem melhor! Me dê seu poder, garoto! Preciso derrotá-lo antes de possuí-lo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#019": {
+   "src": "Defeat the spirit possessing Aryn",
+   "dst": "Derrote o espírito que possui Aryn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#020": {
+   "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
+   "dst": "Veja se Aryn está a salvo em [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#021": {
+   "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
+   "dst": "Haha, toma, espectro maligno! Jamais vai igualar o poder da nossa tribo-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#022": {
+   "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
+   "dst": "E-espera, você não é da nossa tribo! Quem é você, por que veio aqui?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#023": {
+   "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
+   "dst": "Eu...não posso dizer o mesmo. Aquele espírito me dominou por completo, ainda não consigo me mexer...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#024": {
+   "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
+   "dst": "Por ora, por favor, leve esta gema. Ela causou tudo isso, não quero perto de mim um amuleto de azar desses.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#025": {
+   "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
+   "dst": "Diga à tribo que vou voltar sozinho. Consegui uma vez, consigo de novo quando estiver preparado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#026": {
+   "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "Leve a Gema Misteriosa a Gracen em [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#027": {
+   "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
+   "dst": "Minha nossa... Aryn foi possuído por um espírito que vivia na gema?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#028": {
+   "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
+   "dst": "Que vergonha... Nosso xamã nunca errou antes, por que ignorei o aviso dele...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#029": {
+   "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
+   "dst": "Olhando agora, esta pedra é bem valiosa. Moída até virar pó, serve para os amuletos especiais que fazemos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#030": {
+   "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
+   "dst": "Aqui, deixe-me moer isto para você. Pode ficar com os fragmentos para o que quiser usá-los no futuro.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#031": {
+   "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
+   "dst": "Nossa tribo, e principalmente eu... agradecemos seu serviço. De hoje em diante, você será considerado um dos nossos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#032": {
+   "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
+   "dst": "Na verdade, se quiser, pode até entrar na minha casa aqui quando quiser.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  }
+ }
+}

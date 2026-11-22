@@ -1,0 +1,214 @@
+{
+ "_meta": {
+  "quest": "Cook Assistant",
+  "count": 21,
+  "translated": 21,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Cook Assistant#000": {
+   "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
+   "dst": "Fale com o Cozinheiro em {p}, em [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#001": {
+   "src": "The King ordered me to bake cakes for all those new recruits!",
+   "dst": "O Rei me mandou assar bolos para todos os recrutas novos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#002": {
+   "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
+   "dst": "Só que um Grook levou meu último bolo, e acabaram meus ingredientes!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#003": {
+   "src": "Now can you help...",
+   "dst": "Pode me ajudar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#004": {
+   "src": "That's the Grook! Go chase it down and get my cake back!",
+   "dst": "É o Grook! Vá atrás dele e recupere meu bolo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#005": {
+   "src": "Follow the pesky Grook.",
+   "dst": "Siga o Grook encrenqueiro.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#006": {
+   "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
+   "dst": "O Grook fugiu! Volte ao Cozinheiro em [-{~}, {~}, -{~}] para decidir o que fazer.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#007": {
+   "src": "What are you doing? Go after the Grook...",
+   "dst": "O que está fazendo? Vá atrás do Grook...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#008": {
+   "src": "It got away!",
+   "dst": "Ele fugiu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#009": {
+   "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
+   "dst": "Bem, acho que você vai ter que me ajudar a achar os ingredientes e assar outro...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#010": {
+   "src": "There he is again! After him!",
+   "dst": "Ele de novo! Atrás dele!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#011": {
+   "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
+   "dst": "Descubra para onde o Grook voou em [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#012": {
+   "src": "Find where the Grook flew up to at [-{~}, {~}, -{~}]",
+   "dst": "Descubra para onde o Grook voou em [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cook Assistant#013": {
+   "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
+   "dst": "Volte ao cozinheiro em [-{~}, {~}, -{~}]. Use um pergaminho para chegar mais rápido.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#014": {
+   "src": "Return to the cook at [-{~}, {~}, -{~}] Use a Scroll to get there faster",
+   "dst": "Volte ao cozinheiro em [-{~}, {~}, -{~}] Um pergaminho é mais rápido",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cook Assistant#015": {
+   "src": "Great! You got the cake!",
+   "dst": "Ótimo! Pegou o bolo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#016": {
+   "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
+   "dst": "Não sei como agradecer! Tome estas esmeraldas e armadura pelo trabalho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#017": {
+   "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
+   "dst": "Explore por aí para ficar mais forte. Ouvi dizer que talvez haja trabalho em {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#018": {
+   "src": "I can't believe what is happening to me...",
+   "dst": "Não acredito no que está havendo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#019": {
+   "src": "Now, how can you help...",
+   "dst": "E aí, pode ajudar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#020": {
+   "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
+   "dst": "Espera! É o Grook! Vá atrás dele e recupere meu bolo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  }
+ }
+}
