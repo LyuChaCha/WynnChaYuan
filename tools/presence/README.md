@@ -41,7 +41,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `textures/`、`demo-textures.js` | 預覽畫面用的材質：遊戲裡真的那幾張（物品說明的框、背包、對話框與頭像、生命與魔力、快捷列、通用的小圖示）、沒穿裝備的格子裡那幾個影子、各稀有度的說明框與徽記、官方的物品圖示、兩張實機截圖當背景（都在 Detlas 一帶，跟預覽裡 22 等的人物同一個等級；街上那一張是真的 NPC，頭上的名牌從截圖上拿掉、改由網頁畫，才能跟著語言換）、背包裡那個人的皮膚（`skin.png`，使用者自己的；網頁用 CSS 的 3D 把它貼成方塊人，會看著滑鼠）。**這些圖是 Wynncraft 的（© Wynncraft），不在這個倉庫的授權範圍裡**，只用在網站的預覽上、不進模組的 jar；頁尾有一句說明。`python tools/presence/build-textures.py` 把 `textures/` 打包成 `demo-textures.js`（`--check` 比對）；要重做材質本身：`--pack` 從資源包重組（玩過 Wynncraft 的客戶端 `downloads/` 底下有快取；那個 zip 被動過手腳，腳本自己解）、`--icons` 重抓官方 CDN 的物品圖示、`--shots <資料夾>` 重做背景（資料夾裡要有 `world.png` 與 `street.png`）、`--skin <玩家名字>` 重抓皮膚。Worker 當成 `/tex/<檔名>` 送出去 |
 | `cape-templates.js` | 披風範本每一種尺寸、兩份說明圖（中文、英文）與一張會動的示範，從 `capes/templates/` 打包的。`node tools/presence/build-cape-templates.mjs`（`--check` 比對）；範本改了要重跑。Worker 當成 `/template/<檔名>` 送出去，披風一覽與帳號頁的下載鈕用它 |
 | `cape-preview.js` | 披風的預覽圖（`/api/cape-preview/<雜湊>`，Discord 機器人的 `/cape` 用）：跟披風一覽的卡片一樣只露出背面、像素放大、墊上卡片的深綠底。Worker 沒有 canvas，PNG 與 GIF 的解碼、編碼都在這支裡（不靠套件；GIF 逐格切、每格自己的調色盤） |
-| `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
+| `icons.js` | 網站的圖示（`make-icons.py` 從本機的 `logo/2026`（不進倉庫）縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs`、`dev-data.mjs` | 在本機用假資料開網站來看；`dev-data.mjs` 是示範資料，`golden.mjs` 也用它 |
 | `golden.mjs`、`golden/` | 路由快照：重構前後比對行為有沒有變 |
