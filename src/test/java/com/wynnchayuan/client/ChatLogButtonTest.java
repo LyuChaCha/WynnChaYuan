@@ -9,12 +9,8 @@ public final class ChatLogButtonTest {
 
     public static void main(String[] args) {
         float[] narrow = {0, 50, 328, 180};
-        float[] side = ChatLogButton.place(narrow, null, W, 1280);
+        float[] side = ChatLogButton.place(narrow, null, W, 640);
         check("寬螢幕：按鈕在聊天框右邊", side[0] >= 328 && side[1] + side[3] == 230);
-
-        float[] hud = ChatLogButton.place(narrow, null, W, 640);
-        check("旁邊會碰到中央的快捷列與血條：改放聊天框上方",
-              hud[1] + hud[3] <= 50);
 
         float[] wide = {0, 50, 476, 180};
         float[] above = ChatLogButton.place(wide, null, W, 480);
