@@ -215,6 +215,8 @@ public final class UpgradeSafetyTest {
         expected.addProperty("dataDeletePending", false);
         expected.addProperty("chatCopyMulti", true);
         expected.addProperty("chatLogButton", true);
+        expected.addProperty("chatLogButtonX", -1.0);
+        expected.addProperty("chatLogButtonY", -1.0);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));
