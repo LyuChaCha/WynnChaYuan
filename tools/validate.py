@@ -59,6 +59,7 @@ BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~pu]\s*[｝}]")
 
 # 帶編號的數值佔位符：{~1} 到 {~9}。指名要原文的第幾個數值。
 NUMBERED = re.compile(r"\{~[1-9]\}")
+NUMBERED_GLYPH = re.compile(r"\{#[1-9]\}")
 
 # 顏色佔位符。只出現在<b>譯文</b>——原文的鍵是遊戲送來的字，不會有這種東西。
 #
@@ -284,8 +285,18 @@ def check_pair(path: str, key: str, src: str, dst: str,
     # 佔位符：數量必須一模一樣。少一個 -> 遊戲裡那個數字／符號會憑空消失；
     # 多一個 -> 會有多餘的符號被塞進去或直接顯示成 {~}
     numbered = len(NUMBERED.findall(dst))
+    numbered_glyphs = len(NUMBERED_GLYPH.findall(dst))
     for ph in PLACEHOLDERS:
         want, got = src.count(ph), dst.count(ph)
+        if ph == "{#}" and numbered_glyphs:
+            highest = max(int(m[2]) for m in NUMBERED_GLYPH.findall(dst))
+            if highest > want:
+                out.append(Problem("error", path, key,
+                                   f"佔位符 {{#{highest}}} 超出範圍：原文只有 {want} 個圖示"))
+                continue
+            if got + numbered_glyphs >= want and got <= want:
+                continue
+            got += numbered_glyphs
         if ph == "{~}":
             # 帶編號的 {~1} 指名要第幾個數值，中文語序跟英文相反時會用到。
             # 它不算「消耗一個」，所以只要「沒編號的 + 帶編號的」湊得出來就行。
@@ -337,12 +348,12 @@ def check_pair(path: str, key: str, src: str, dst: str,
     # （見 DialogueIcons），那個 {/} 有作用。
     stray_end = 0
     open_span = False
-    for piece in re.split(r"(\{(?:[cw][1-9]|c:[^}]+)\}|\{/\}|\{#\})", dst):
+    for piece in re.split(r"(\{(?:[cw][1-9]|c:[^}]+)\}|\{/\}|\{#[1-9]?\})", dst):
         if piece == COLOUR_END:
             if not open_span:
                 stray_end += 1
             open_span = False
-        elif COLOUR.fullmatch(piece or "") or piece == "{#}":
+        elif COLOUR.fullmatch(piece or "") or NUMBERED_GLYPH.fullmatch(piece or "") or piece == "{#}":
             open_span = True
     if stray_end:
         out.append(Problem("warn", path, key,

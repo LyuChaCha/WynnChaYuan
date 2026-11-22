@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo/2026/wynnchayuan-banner-animated-680x240.gif" width="680" alt="WynnChaYuan">
+  <img src=".github/banner.gif" width="680" alt="WynnChaYuan">
 </p>
 
 # WynnChaYuan

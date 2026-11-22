@@ -350,21 +350,28 @@ public final class DialogueIcons {
     }
 
     public static String spans(String dst, List<LineParts.Piece> glyphs) {
-        if (dst == null || !dst.contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+        if (dst == null || !dst.contains("{#")) {
             return dst;
         }
         StringBuilder out = new StringBuilder(dst.length() + 32);
         int glyph = 0;
         int i = 0;
         while (i < dst.length()) {
-            if (!dst.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER, i)) {
+            int numbered = GlyphSplitter.numberedGlyphAt(dst, i);
+            int at;
+            if (numbered > 0) {
+                out.append(dst, i, i + GlyphSplitter.NUMBERED_GLYPH_LENGTH);
+                i += GlyphSplitter.NUMBERED_GLYPH_LENGTH;
+                at = numbered - 1;
+            } else if (dst.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER, i)) {
+                i += GlyphSplitter.GLYPH_PLACEHOLDER.length();
+                out.append(GlyphSplitter.GLYPH_PLACEHOLDER);
+                at = glyph++;
+            } else {
                 out.append(dst.charAt(i++));
                 continue;
             }
-            i += GlyphSplitter.GLYPH_PLACEHOLDER.length();
-            out.append(GlyphSplitter.GLYPH_PLACEHOLDER);
-            LineParts.Piece piece = glyph < glyphs.size() ? glyphs.get(glyph) : null;
-            glyph++;
+            LineParts.Piece piece = at < glyphs.size() ? glyphs.get(at) : null;
             TextColor colour = piece == null || !hasIcon(piece.text()) || piece.style() == null
                     ? null : piece.style().getColor();
             if (colour != null && closes(dst, i) > 0) {
@@ -380,7 +387,7 @@ public final class DialogueIcons {
             return -1;
         }
         String between = dst.substring(from, end);
-        if (between.contains(GlyphSplitter.GLYPH_PLACEHOLDER) || between.contains("{c")
+        if (between.contains("{#") || between.contains("{c")
                 || between.contains("{w") || between.indexOf('\n') >= 0) {
             return -1;
         }

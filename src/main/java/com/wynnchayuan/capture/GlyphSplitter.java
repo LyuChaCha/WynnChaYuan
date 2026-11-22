@@ -123,6 +123,17 @@ public final class GlyphSplitter {
         return s.isEmpty() ? s : NUMBERS.matcher(s).replaceAll(NUMBER_PLACEHOLDER);
     }
 
+    public static final int NUMBERED_GLYPH_LENGTH = 4;
+
+    public static int numberedGlyphAt(String s, int at) {
+        if (at + NUMBERED_GLYPH_LENGTH > s.length() || s.charAt(at) != '{'
+                || s.charAt(at + 1) != '#' || s.charAt(at + 3) != '}') {
+            return 0;
+        }
+        char digit = s.charAt(at + 2);
+        return digit >= '1' && digit <= '9' ? digit - '0' : 0;
+    }
+
     public static Matcher numberMatcher(String s) {
         return NUMBERS.matcher(s);
     }

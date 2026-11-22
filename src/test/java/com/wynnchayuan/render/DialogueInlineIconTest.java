@@ -114,6 +114,9 @@ public final class DialogueInlineIconTest {
                 "{#}火、{#}風".equals(DialogueIcons.spans("{#}火、{#}風", glyphs)));
         check("{/} 之前又出現 {#} 時，前一個不算、後一個照算",
                 "{#}火{#}{c:#FFFFFF}風{/}".equals(DialogueIcons.spans("{#}火{#}風{/}", glyphs)));
+        check("{#2}…{#1} 照編號拿圖示的色碼（語序跟原文相反）",
+                "{#2}{c:#FFFFFF}風{/}、{#1}{c:#FF5555}火{/}".equals(
+                        DialogueIcons.spans("{#2}風{/}、{#1}火{/}", glyphs)));
     }
 
     private record Seg(String text, Style style) {}
