@@ -428,11 +428,12 @@ def main(argv: list[str]) -> int:
                            capture_output=True, text=True).stdout.strip()
     rows = language_totals()
     write_progress_doc(rows)
-    if len(rows) > 1:
-        body = coverage_note(rows, stamp, "docs/PROGRESS.md")
+    started = [row for row in rows if row[1]]
+    if len(started) > 1:
+        body = coverage_note(started, stamp, "docs/PROGRESS.md")
         # 商店頁（CurseForge、Modrinth）是整段貼到別的網站上的：
         # 相對連結會斷，所以連結換成絕對網址。
-        store = coverage_note(rows, stamp, f"{REPO}/blob/main/docs/PROGRESS.md")
+        store = coverage_note(started, stamp, f"{REPO}/blob/main/docs/PROGRESS.md")
     else:
         body = (f"**目前進度 {done:,} / {total:,}"
                 f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")
