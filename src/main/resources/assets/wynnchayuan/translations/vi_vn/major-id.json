@@ -3,9 +3,9 @@
   "domain": "major-id",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 331,
+  "count": 366,
   "note": "Major ID。名稱一定對得上；說明會依畫面寬度自動斷行，整段多半對不上，但翻名稱時看得到上下文。由 tools/fetch-majorids.py 從官方 CDN 產生。",
-  "translated": 331
+  "translated": 366
  },
  "entries": {
   "Accretion Chain": {
@@ -939,8 +939,8 @@
    "_raw": "Arrow and Grape Bombs gain +1 radius and phase through enemies. Bouncing Bomb has decreased velocity and gains +1 bounces, and Grape Bombs gain increased randomness and +2 projectiles."
   },
   "Split Second::desc": {
-   "src": "Aura now travels faster with Invigorating Wave unlocked, but no longer gives mana.",
-   "dst": "Khi đã mở khóa Invigorating Wave, Aura lan nhanh hơn, nhưng không còn cho mana.",
+   "src": "Aura now travels {~} seconds faster with Invigorating Wave unlocked, but no longer gives mana.",
+   "dst": "Khi đã mở khóa Invigorating Wave, Aura giờ lan nhanh hơn {~} giây, nhưng không còn cho mana.",
    "role": "desc"
   },
   "Geocentrism::desc": {
@@ -949,7 +949,7 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "src": "Mantra will charge Masks {~} faster, but decays them {~} faster and halves their grace period.",
    "dst": "Mantra làm quá tải Mặt nạ nhanh hơn {~}, nhưng hao mòn chúng nhanh hơn {~} và giảm một nửa thời gian ân hạn.",
    "role": "desc",
    "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
@@ -1106,8 +1106,8 @@
    "_raw": "Curse instead releases a calming wave with a radius of 8 blocks. Allies affected will have their Mana Regen and Mana Steal increased by 25% for 6s."
   },
   "Pirouette::desc": {
-   "src": "Dancing Blade enhances Dash. Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
-   "dst": "Dancing Blade cường hóa Lướt. Lướt vào kẻ địch giờ sẽ hất bạn lên cao và làm mới Lướt như thể bạn đã chạm đất.",
+   "src": "Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
+   "dst": "Lướt vào kẻ địch giờ sẽ hất bạn lên cao và làm mới Lướt như thể bạn vừa chạm đất.",
    "role": "desc"
   },
   "major-id#0208": {
@@ -1208,8 +1208,8 @@
    "_raw": "Focus gets +10% damage per stack, but caps at 2. Crepuscular Ray can be cast at 2 Focus with decreased Focus drain, launching you into the air and immobilizing you."
   },
   "major-id#0225": {
-   "src": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to {~}. Tricks application is increased by {~}.",
-   "dst": "Foul Play không còn tiêu diệt Phân thân gương mà vẫn cho hiệu ứng, nhưng số Phân thân gương giảm còn {~}. Lượng Mánh khóe gây ra tăng {~}.",
+   "src": "Mirror Clone count is reduced to {~}. Foul Play will no longer slay a Mirror Clone while still providing its effects.",
+   "dst": "Số Phân thân gương giảm còn {~}. Foul Play không còn tiêu diệt Phân thân gương mà vẫn giữ hiệu ứng.",
    "role": "desc",
    "_raw": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to 1. Tricks application is increased by 50%."
   },
@@ -1473,7 +1473,7 @@
    "_raw": "Powder Specials can no longer be charged manually, but accumulate 8% charge every second."
   },
   "major-id#0272": {
-   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration",
+   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration.",
    "dst": "Pressure cho thêm hiệu ứng: Bash nhận +{~} bán kính, Uppercut nhận {#}+{~}, và cường hóa của War Scream kéo dài thêm +{~}s",
    "role": "desc",
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
@@ -1581,8 +1581,8 @@
    "role": "desc"
   },
   "major-id#0291": {
-   "src": "Tangled Traps ropes gain +{~} range, can overlap up to {~} times, and deal {#}{~}. Gain +{~} traps with {~} duration that cannot be triggered by enemies.",
-   "dst": "Dây của Tangled Traps nhận +{~} tầm xa, có thể chồng lên nhau tối đa {~} lần và gây {#}{~}. Nhận thêm +{~} bẫy với {~} thời lượng mà kẻ địch không thể kích hoạt.",
+   "src": "Barbed wires from Tangled Traps gain +{~} range, can overlap up to {~} times, and linger for +{~}s. Patient Hunter grants an additional +{~} traps.",
+   "dst": "Dây thép gai của Tangled Traps nhận +{~} tầm, có thể chồng lên nhau tối đa {~} lần và tồn tại thêm +{~}s. Patient Hunter cho thêm +{~} bẫy.",
    "role": "desc",
    "_raw": "Tangled Traps ropes gain +1 range, can overlap up to 3 times, and deal 65%. Gain +12 traps with 66% duration that cannot be triggered by enemies."
   },
@@ -1777,10 +1777,185 @@
    "_raw": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread."
   },
   "Solar Fracture::desc": {
-   "src": "Hand of the Shaman gains +{~} beams.",
+   "src": "Hand of the Shaman gains +{~} beam.",
    "dst": "Hand of the Shaman bắn thêm +{~} tia.",
    "role": "desc",
    "_raw": "Hand of the Shaman gains +2 beams."
+  },
+  "Dust to Dust": {
+   "src": "Dust to Dust",
+   "dst": "Cát bụi trở về cát bụi",
+   "role": "name"
+  },
+  "Dust to Dust::desc": {
+   "src": "Feedback Loop causes Arrow Storm to fire {~} waves of arrows, but can grant up to {~} more arrows.",
+   "dst": "Feedback Loop khiến Arrow Storm bắn {~} đợt tên, nhưng có thể cho thêm tối đa {~} mũi tên.",
+   "role": "desc"
+  },
+  "Fractured Halo": {
+   "src": "Fractured Halo",
+   "dst": "Vầng hào quang rạn vỡ",
+   "role": "name"
+  },
+  "Fractured Halo::desc": {
+   "src": "Ophanim gains +{~} orbs, no longer increases mana cost and has increased fire speed, but shatters immediately upon contact.",
+   "dst": "Ophanim có thêm +{~} quả cầu, không còn tăng tiêu hao mana và bắn nhanh hơn, nhưng vỡ ngay khi va chạm.",
+   "role": "desc"
+  },
+  "Galvanized": {
+   "src": "Galvanized",
+   "dst": "Mạ kẽm",
+   "role": "name"
+  },
+  "Galvanized::desc": {
+   "src": "While Eldritch Call is active, Blood Connection can be used much further from your Totem.",
+   "dst": "Khi Eldritch Call đang kích hoạt, có thể dùng Blood Connection ở xa Totem hơn nhiều.",
+   "role": "desc"
+  },
+  "Gravitic Defiance": {
+   "src": "Gravitic Defiance",
+   "dst": "Thách thức trọng lực",
+   "role": "name"
+  },
+  "Gravitic Defiance::desc": {
+   "src": "Gravity's hold on you is weakened, allowing unrestrained movement.",
+   "dst": "Lực hút của trọng lực lên bạn yếu đi, giúp bạn di chuyển tự do.",
+   "role": "desc"
+  },
+  "Immortal Rot": {
+   "src": "Immortal Rot",
+   "dst": "Mục rữa bất tử",
+   "role": "name"
+  },
+  "Immortal Rot::desc": {
+   "src": "For every {~} of health missing, dodging with agility ignores {~} more damage.",
+   "dst": "Cứ mỗi {~} máu đã mất, né tránh nhờ Nhanh nhẹn bỏ qua thêm {~} sát thương.",
+   "role": "desc"
+  },
+  "Mayday": {
+   "src": "Mayday",
+   "dst": "Cầu cứu",
+   "role": "name"
+  },
+  "Mayday::desc": {
+   "src": "Jasmine Bloom deals no damage but makes enemies {~} more vulnerable, and causes Swan Dive to only activate at max Momemtum, dealing {#}+{~}.",
+   "dst": "Jasmine Bloom không gây sát thương nhưng khiến kẻ địch chịu thêm {~} sát thương, và khiến Swan Dive chỉ kích hoạt khi Đà đạt tối đa, gây {#}+{~}.",
+   "role": "desc"
+  },
+  "Molten Rebirth": {
+   "src": "Molten Rebirth",
+   "dst": "Tái sinh nóng chảy",
+   "role": "name"
+  },
+  "Molten Rebirth::desc": {
+   "src": "Harvester additionally restores {~} health per mark, increasing to {~} with devour.",
+   "dst": "Harvester còn hồi {~} máu cho mỗi Dấu ấn, tăng lên {~} khi dùng Devour.",
+   "role": "desc"
+  },
+  "Myriad Salvo": {
+   "src": "Myriad Salvo",
+   "dst": "Loạt bắn dồn dập",
+   "role": "name"
+  },
+  "Myriad Salvo::desc": {
+   "src": "Mirror Image gains +{~} clone and casts all damage spells with Last Laugh, but losing a Mirror Clone slays all Mirror Clones simultaneously.",
+   "dst": "Mirror Image nhận +{~} phân thân và thi triển mọi phép sát thương cùng Last Laugh, nhưng mất một Phân thân gương sẽ khiến mọi Phân thân gương chết cùng lúc.",
+   "role": "desc"
+  },
+  "Negation": {
+   "src": "Negation",
+   "dst": "Vô hiệu hóa",
+   "role": "name"
+  },
+  "Negation::desc": {
+   "src": "Whatever spell you use to exit Vanish will have no mana cost ({~} second cooldown).",
+   "dst": "Phép bạn dùng để thoát Vanish sẽ không tốn mana (hồi chiêu {~} giây).",
+   "role": "desc"
+  },
+  "Pandemic": {
+   "src": "Pandemic",
+   "dst": "Đại dịch",
+   "role": "name"
+  },
+  "Runic Symphony": {
+   "src": "Runic Symphony",
+   "dst": "Giao hưởng phù văn",
+   "role": "name"
+  },
+  "Runic Symphony::desc": {
+   "src": "Arrow Bomb gains rotating effects with each cast: {#}: Direct hits deal {#}+{~} damage and freezes for {~}s {#}: Becomes a piercing arrow with increased velocity. {#}: Gains +{~} area and {#}+{~}.",
+   "dst": "Arrow Bomb nhận hiệu ứng luân phiên mỗi lần thi triển: {#}: Đòn trúng trực tiếp gây {#}+{~} sát thương và đóng băng trong {~}s {#}: Trở thành mũi tên xuyên thấu với tốc độ cao hơn. {#}: Nhận +{~} vùng ảnh hưởng và {#}+{~}.",
+   "role": "desc"
+  },
+  "Seeking Totem": {
+   "src": "Seeking Totem",
+   "dst": "Totem truy đuổi",
+   "role": "name"
+  },
+  "Seeking Totem::desc": {
+   "src": "Totem moves towards you when wearing Mask of the Heretic.",
+   "dst": "Totem di chuyển về phía bạn khi đeo Mặt nạ Kẻ Dị Giáo.",
+   "role": "desc"
+  },
+  "Serrated Root": {
+   "src": "Serrated Root",
+   "dst": "Rễ răng cưa",
+   "role": "name"
+  },
+  "Serrated Root::desc": {
+   "src": "Quake channels nature energy into a powerful root, travelling rapidly underground and emerging under the nearest mob for {#}{~}.",
+   "dst": "Động đất dồn năng lượng thiên nhiên vào một rễ cây mạnh mẽ, lao nhanh ngầm dưới đất rồi trồi lên dưới con quái gần nhất, gây {#}{~}.",
+   "role": "desc"
+  },
+  "Sigil Of Determination": {
+   "src": "Sigil Of Determination",
+   "dst": "Ấn quyết tâm",
+   "role": "name"
+  },
+  "Sigil Of Determination::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Thi triển Arrow Shield tạo một ấn chú trên mặt đất trong {~}s (hồi chiêu {~}s). Đồng minh trong ấn chú được hồi {~} tổng ID Hồi máu của bạn mỗi {~}s.",
+   "role": "desc"
+  },
+  "Sigil Of Undying": {
+   "src": "Sigil Of Undying",
+   "dst": "Ấn bất diệt",
+   "role": "name"
+  },
+  "Sigil Of Undying::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil gain {~} resistance and are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Thi triển Arrow Shield tạo một ấn chú trên mặt đất trong {~}s (hồi chiêu {~}s). Đồng minh trong ấn chú nhận {~} kháng cự và được hồi {~} tổng ID Hồi máu của bạn mỗi {~}s.",
+   "role": "desc"
+  },
+  "Soulbinder": {
+   "src": "Soulbinder",
+   "dst": "Kẻ trói hồn",
+   "role": "name"
+  },
+  "Soulbinder::desc": {
+   "src": "Hit enemies become Soulbound for {~}s, causing them to take damage whenever you take damage or lose health in any way - equal to {~}x the health lost.",
+   "dst": "Kẻ địch trúng đòn bị Gắn linh hồn trong {~}s, khiến chúng chịu sát thương mỗi khi bạn chịu sát thương hoặc mất máu theo bất kỳ cách nào, bằng {~} lần lượng máu đã mất.",
+   "role": "desc"
+  },
+  "Thunderous Strike": {
+   "src": "Thunderous Strike",
+   "dst": "Đòn sấm sét",
+   "role": "name"
+  },
+  "Thunderous Strike::desc": {
+   "src": "Fireworks additionally summons a lightning bolt, dealing {#}{~} and {#}{~} while stunning enemies for {~}s.",
+   "dst": "Fireworks còn triệu hồi thêm một tia sét, gây {#}{~} và {#}{~} đồng thời làm choáng kẻ địch trong {~}s.",
+   "role": "desc"
+  },
+  "Woe's Epithet": {
+   "src": "Woe's Epithet",
+   "dst": "Danh xưng sầu bi",
+   "role": "name"
+  },
+  "Woe's Epithet::desc": {
+   "src": "Shadow Dance's cooldown is reduced by {~}s when vanishing and Shadow Siphon immediately refreshes Vanish. Surprise Strike's multiplier is reduced by -{~}.",
+   "dst": "Hồi chiêu của Shadow Dance giảm {~}s khi vào Vanish và Shadow Siphon làm mới Vanish ngay lập tức. Hệ số của Surprise Strike giảm -{~}.",
+   "role": "desc"
   }
  }
 }
