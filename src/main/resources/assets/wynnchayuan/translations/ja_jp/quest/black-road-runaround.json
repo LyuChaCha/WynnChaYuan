@@ -10,56 +10,133 @@
    "src": "'Ey, there, kid! I heard ol' Enkser gave ya yer first horse! That feller's a tight one, so consider it lucky ya got it fer free.",
    "dst": "おい、坊や！　あの Enkser おじさんが、お前に初めての馬をくれたって聞いたぞ！　あいつはケチな奴だから、タダでもらえたのはラッキーだと思えよ。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
-   "note":""
+   "note": ""
   },
   "Black Road Runaround#002": {
    "src": "Say, d'ya wanna play a little game to get more familiar with yer steed? 's called a Time Trial.",
    "dst": "ねえ、自分の愛馬ともっと親しくなるために、ちょっとしたゲームをやってみないか？　「{c2}タイムトライアル{/}」ってやつだよ。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
-   "note":"{c2}Time Trial{/}"
+   "note": "{c2}Time Trial{/}"
   },
   "Black Road Runaround#003": {
    "src": "I've made a track 'round the local area. A few folks've tried it out, includin' Enkser, who holds the record. Him and 'is Betty're a force t'be reckoned with, I tells ya.",
    "dst": "近所を周回するコースを作ってみたんだ。何人かが試走してくれたんだけど、その中には記録保持者の Enkser もいたよ。あいつと「Betty」は、本当に手強い相手だぜ、本当に。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
-   "note":""
+   "note": ""
   },
   "Black Road Runaround#004": {
    "src": "Dependin' on yer time, y'can get different rewards. Emeralds, gear, and if ya beat Enkser's time (A-Rank), even another horse! It's a bet he made.",
    "dst": "走破時間次第で、{c2}さまざまな報酬{/}が手に入る。エメラルドや装備、そして {c3}Enkser の記録(Aランク){/}を上回れば、さらに別の馬まで手に入る！　これは彼が賭けたものなんです。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
-   "note":"{c2}different rewards{/} , {c3}Enkser's time (A-Rank){/}"
+   "note": "{c2}different rewards{/} , {c3}Enkser's time (A-Rank){/}"
   },
   "Black Road Runaround#005": {
    "src": "Best of all, it'll help make yer steed stronger. So how about it, kid? Want to try it out? If you do, talk to me again.",
    "dst": "何より、これで{c2}君の愛馬がもっと強くなる{/}んだ。どうだ、坊や？ 試してみるか？ もし試してみたいなら、{c2}また俺に声をかけてくれ{/}。",
    "role": "desc",
-   "kind": "Floating Text",
+   "kind": "dialogue",
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
    "source": "captured.json",
-   "note":"{c2}make yer steed stronger{/} , {c2}talk to me again{/}"
+   "note": "{c2}make yer steed stronger{/} , {c2}talk to me again{/}"
+  },
+  "Black Road Runaround#006": {
+   "src": "It's a note from Enkser... Read it?",
+   "dst": "Enkser からのメモだ…読んでみる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Black Road Runaround#007": {
+   "src": "Welp, I'm a man of my word. I lost the bet, so to the victor go the spoils - the daughter of my precious Betty. You take good care of her, hear?",
+   "dst": "{c1}まあ、俺は約束を守る男だ。賭けに負けたから、勝者には景品が与えられる――俺の愛しい Betty の娘だ。彼女をちゃんと大切にしてやってくれよ、いいか？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Welp, I'm a man of my word. I lost the bet, so to the victor go the spoils - the daughter of my precious Betty. You take good care of her, hear?{/}"
+  },
+  "Black Road Runaround#008": {
+   "src": "I suspect you might be wanting to breed her with that other horse I gave you before. It's a good idea; their offspring will have a higher Potential.",
+   "dst": "{c1}たぶん、前に私があげたあの馬と、その{c2}牝馬を交配{c1}させたいと思っているんじゃないか。それはいい考えだ。そうすれば、その子馬の「{c2}潜在能力{c1}」は高くなるだろうから。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}I suspect you might be wanting to {c2}breed her{c1} with that other horse I gave you before. It's a good idea; their offspring will have a {c2}higher Potential{c1}.{/}"
+  },
+  "Black Road Runaround#009": {
+   "src": "A Mount's Potential is basically the sum of all of its Max stats. The higher the Potential, the greater your horse can become.",
+   "dst": "{c1}馬の「ポテンシャル」は、基本的にその馬のすべての{c2}最大ステータス{c1}の合計だ。ポテンシャルが高いほど、その馬はより優れた馬へと成長することができる。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}A Mount's Potential is basically the sum of all of its {c2}Max stats{c1}. The higher the Potential, the greater your horse can become.{/}"
+  },
+  "Black Road Runaround#010": {
+   "src": "If you want to breed a mount, just go to the mount feeder and place the saddle of one mount into the other's trough. Yes, it's weird. Don't ask.",
+   "dst": "{c1}マウントを繁殖させたい場合は、{c2}給餌器{c1}に行き、{c2}一方のマウントの鞍をもう一方の餌箱に入れるだけ{c1}だ。ああ、ちょっと変だが理由は聞かないでくれ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}If you want to breed a mount, just go to the {c2}mount feeder{c1} and {c2}place the saddle of one mount into the other's trough{c1}. Yes, it's weird. Don't ask.{/}"
+  },
+  "Black Road Runaround#011": {
+   "src": "Be warned though - in the process of becoming parents, the two horses you had before will have to retire. We'll take them into our care, and you'll not be able to use them anymore.",
+   "dst": "{c1}ただし、ひとつ注意しておけ。親になる過程で、{c2}以前飼っていた2頭の馬{c1}は引退することになる。私たちがお引き取りし、あなたたちは{c2}もうそれらを使うことはできない。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Be warned though - in the process of becoming parents, the {c2}two horses you had before{c1} will have to retire. We'll take them into our care, and you'll {c2}not be able to use them anymore.{/}"
+  },
+  "Black Road Runaround#012": {
+   "src": "That should be all. If you have any more questions, I left you a book about Mount rearing in the Bank across from the Enclosure. Be good to that horse for me, okay?",
+   "dst": "{c1}これで全部のはずだ。もし他に質問があれば、{c2}囲い{c1}の向かいにある{c2}銀行{c1}に、馬の飼育に関する{c2}本{c1}を置いといた。私の分も、その馬を大切にしてくれ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}That should be all. If you have any more questions, I left you a {c2}book{c1} about Mount rearing in the {c2}Bank{c1} across from {c2}the Enclosure{c1}. Be good to that horse for me, okay?{/}"
   }
  }
 }
