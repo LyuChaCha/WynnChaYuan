@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24909,
-  "translated": 24903,
+  "count": 24912,
+  "translated": 24906,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -170094,6 +170094,36 @@
    "dst": "잊지 마, 길잡이가 필요하면 콘텐츠 북을 확인해.",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#145": {
+   "src": "This is the Light Dust that Jorkin mentioned! He said to bring it back to him...",
+   "dst": "이게 Jorkin이 말한 Light Dust다! 그에게 가져오라고 했었지...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#146": {
+   "src": "Give [{~} Sky Vapor] and the Light Dust to Rayshyroth at [{~}, {~}, -{~}]",
+   "dst": "[{~2}, {~3}, -{~4}]의 Rayshyroth에게 [{~1} Sky Vapor]와 Light Dust를 주세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#147": {
+   "src": "Find Garull, the Creeper obsessed craftsman, somewhere in the Pigmen's Ravines located around [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] 부근의 Pigmen's Ravines 어딘가에서 크리퍼에 집착하는 장인 Garull을 찾으세요",
+   "role": "desc",
+   "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
    "stage": "",
    "speaker": "",
