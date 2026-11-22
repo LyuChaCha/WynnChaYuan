@@ -67,7 +67,7 @@ NEAR = 0.9
 
 
 def marks(text: str):
-    return sorted(re.findall(r"\{[#~pu]\}", re.sub(r"\{~\d+\}", "{~}", text)))
+    return sorted(re.findall(r"\{[#~pu]\}", re.sub(r"\{([#~])\d+\}", r"{\1}", text)))
 
 
 def near(src: str, candidates: list[tuple[str, str]]):

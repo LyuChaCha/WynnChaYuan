@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.capture.OverflowAudit;
 import com.wynnchayuan.capture.SelfNames;
@@ -45,11 +46,13 @@ final class DialogueTyping {
                 current = token[1] == 0 ? null
                         : DialogueIcons.resolve(translated.substring(i, i + token[0]));
                 i += token[0];
-            } else if (translated.startsWith("{#}", i)) {
-                LineParts.Piece piece = glyph < parts.glyphs().size()
-                        ? parts.glyphs().get(glyph) : null;
-                glyph++;
-                i += 3;
+            } else if (translated.startsWith("{#}", i)
+                    || GlyphSplitter.numberedGlyphAt(translated, i) > 0) {
+                int numbered = GlyphSplitter.numberedGlyphAt(translated, i);
+                int at = numbered > 0 ? numbered - 1 : glyph++;
+                LineParts.Piece piece = at < parts.glyphs().size()
+                        ? parts.glyphs().get(at) : null;
+                i += numbered > 0 ? GlyphSplitter.NUMBERED_GLYPH_LENGTH : 3;
                 if (piece != null && DialogueIcons.hasIcon(piece.text())
                         && DialogueIcons.styleOf(piece.text().codePointAt(0)) != null) {
                     String icon = DialogueAccents.iconsOf(piece.text());
