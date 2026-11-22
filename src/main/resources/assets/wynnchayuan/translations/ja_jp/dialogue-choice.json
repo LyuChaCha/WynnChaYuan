@@ -1,8 +1,8 @@
 {
  "_meta": {
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 1352,
-  "translated": 1350
+  "count": 1358,
+  "translated": 1356
  },
  "entries": {
   "choice#c000": {
@@ -14317,6 +14317,63 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "choice/Elemental Exercise#001": {
+   "src": "I'd like to try out this wea",
+   "dst": "この武器をもう少し試してみたい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I'd like to try out this weapon some more.",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Elemental Exercise#002": {
+   "src": "I'm ready. Let's do this.",
+   "dst": "準備はできた。さあ、やろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Elemental Exercise#003": {
+   "src": "I still need more time.",
+   "dst": "もう少し時間が欲しい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#004": {
+   "src": "What are enemy spells?",
+   "dst": "{c1}敵の呪文？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c1}What are enemy spells?{/}"
+  },
+  "choice/npc#005": {
+   "src": "What is a Spell Combo?",
+   "dst": "{c1}スペルコンボって何？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c1}What is a Spell Combo?{/}"
   }
  }
 }

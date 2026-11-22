@@ -1,20 +1,21 @@
 {
  "_meta": {
   "quest": "Elemental Exercise",
-  "count": 81,
-  "translated": 81,
+  "count": 90,
+  "translated": 90,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "うーん…じゃあこいつを攻撃すれば、  風ダメージが増えて  地ダメージが減るのか…",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
+   "dst": "うーん…じゃあこいつを攻撃すれば、 {#} {c2}風{/}ダメージが増えて {#} {c3}地{/}ダメージが減るのか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Tasim",
+   "source": "captured",
+   "note":"{c2}Air{/} , {c3}Earth{/}"
   },
   "Elemental Exercise#001": {
    "src": "Oh, {u}. Don't mind me, I'm just trying to wrap my head around this all.",
@@ -23,7 +24,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#002": {
@@ -107,14 +108,15 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "…あっ！じゃあ武器が水属性だけでも、バッシュは地属性ダメージになるんですね？",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
+   "dst": "…あっ！じゃあ武器が{#2} {c3}水属性{/}だけでも、バッシュは{#1} {c2}地属性{/}ダメージになるんですね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 3",
    "speaker": "Tasim",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}Earth{/} , {c3}Water{/}"
   },
   "Elemental Exercise#011": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a safe environment.",
@@ -133,7 +135,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#013": {
@@ -143,7 +145,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#014": {
@@ -153,7 +155,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#015": {
@@ -163,7 +165,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#016": {
@@ -173,7 +175,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#017": {
@@ -183,7 +185,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -193,7 +195,7 @@
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#019": {
@@ -278,7 +280,7 @@
   },
   "Elemental Exercise#027": {
    "src": "...Oh! {u}, hello. Are you here for training as well?",
-   "dst": "…あっ！{u}、こんにちは。君も訓練に来たの？",
+   "dst": "…あっ！{u}、やあ。君も訓練に来たの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -297,24 +299,26 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "知ってます！属性は…火、風、地、雷、それと…水？",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
+   "dst": "知ってます！属性は…{#} {c2}火{/}、{#} {c3}風{/}、{#} {c4}地{/}、{#} {c5}雷{/}、それと…{#} {c6}水{/}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 2",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Fire{/} , {c3}Air{/} , {c4}Earth{/} , {c5}Thunder{/} , {c6}Water{/}"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "その通り。そして大抵はその順に有利を取る。火は風に、風は地に強い、という具合だ。",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
+   "dst": "その通り。そして大抵はその順に有利を取る。{#} {c2}火{/}は{#} {c3}風{/}に、{#} {c3}風{/}は{#} {c4}地{/}に強い、という具合だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 2",
    "speaker": "Captain Ragon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Fire{/} , {c3}Air{/} , {c4}Earth{/}"
   },
   "Elemental Exercise#031": {
    "src": "Elemental weaknesses may vary based on the enemy, but that order holds true in most cases.",
@@ -328,23 +332,25 @@
   },
   "Elemental Exercise#032": {
    "src": "Enemies will take more damage from elements they're weak to, and take less damage from elements they resist. This change to your damage is always a flat value, and it varies from enemy to enemy.",
-   "dst": "敵は弱点属性の攻撃でより多くダメージを受け、耐性のある属性ではダメージが減る。この増減は常に固定値で、敵ごとに違う。",
+   "dst": "敵は弱点属性の攻撃でより多くダメージを受け、耐性のある属性ではダメージが減る。この増減は常に{c2}固定値{/}で、敵ごとに違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 2",
    "speaker": "Captain Ragon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}flat value{/}"
   },
   "Elemental Exercise#033": {
    "src": "Now. For training purposes, you'll be given an elemental weapon to try out on these training dummies. Take note of how each elemental defense and weakness affects your damage dealt. Speak to me once you feel you understand the concept.",
-   "dst": "さて。訓練として属性武器を渡すから、人形で試してみたまえ。各属性の防御と弱点が与ダメージにどう影響するか注目するように。理解できたら私に声をかけてくれ。",
+   "dst": "さて。訓練として{c2}属性武器{/}を渡すから、人形で試してみたまえ。各属性の防御と弱点が与ダメージにどう影響するか注目するように。理解できたら私に声をかけてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 2",
    "speaker": "Captain Ragon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}elemental weapon{/}"
   },
   "Elemental Exercise#034": {
    "src": "Test out the elemental training weapons on the dummies, then speak to Captain Ragon at [{~}, {~}, -{~}].",
@@ -415,16 +421,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "この武器を試してみたい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -557,7 +553,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "隊長、僕たちも戦えます。一緒に行って、アンデッドの撃退を手伝わせてください！",
    "role": "desc",
    "kind": "dialogue",
@@ -568,13 +564,14 @@
   },
   "Elemental Exercise#056": {
    "src": "Hm... As I see it, this is a fine opportunity for you to gain some firsthand experience! Very well. Prepare yourselves, and come to {p}' north gate when you're ready.",
-   "dst": "ふむ…これは君たちが実戦経験を積む良い機会だな！よかろう。準備を整え、終わったら {p} の北門へ来たまえ。",
+   "dst": "ふむ…これは君たちが実戦経験を積む良い機会だな！よかろう。準備を整え、終わったら {c2}{p} の北門へ来たまえ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 5",
    "speaker": "Captain Ragon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}come to {p}' north gate{/}"
   },
   "Elemental Exercise#057": {
    "src": "This is exciting! But... I'm a little bit nervous, still.",
@@ -587,7 +584,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "…大丈夫、きっと。さあ、隊長について行こう。",
    "role": "desc",
    "kind": "dialogue",
@@ -658,13 +655,14 @@
   },
   "Elemental Exercise#065": {
    "src": "Stronger foes such as this one will cast spells one after the other, in a specific order. These spell combos can be dangerous, so make sure to take note of them.",
-   "dst": "こうした強敵は、決まった順番で次々と呪文を放ってくる。この連続呪文は危険だから、よく注意するように。",
+   "dst": "こうした強敵は、決まった順番で{c2}次々と呪文を放ってくる{/}。この連続呪文は危険だから、よく注意するように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
    "stage": "Stage 6",
    "speaker": "Captain Ragon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}cast spells one after the other{/}"
   },
   "Elemental Exercise#066": {
    "src": "We'll be fighting all around you, so shout if you're in need of aid. Alright, soldiers, let's defend our city!",
@@ -815,6 +813,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "さあ、北門へ向かおう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "あっ、{u}！ トレーニングしに来たの？ Aledar と僕は、その……その前にちょっと練習しておこうかと思ってね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "状況は……まあ、予想通りの感じだね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "やあ！ すごく順調だよ、本当にありがとう！ あのクモたちと戦うときは、しっかり準備して臨むよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "…ああ、そうだね。まあ、{u}、君も練習したいなら、周りにダミーは山ほどいるよ。自分の武器と同じ属性のダミーと戦っている人も含めてね……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "言っておくけど、僕は……――ああ、まあ、それも一理あるね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "おっ、{u}！会えてよかった。あのクモたちと戦う前に、ちょっとここで訓練してるんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "それに、Tasim も精神的な支えとして来てくれたんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "それが僕の得意分野なんだ。それに、君のフォームが崩れている時も指摘できるよ。まあ……結構頻繁にね。今だってそうだし！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "…いつの間に、これに関しては僕より上手くなったの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   }
  }
 }

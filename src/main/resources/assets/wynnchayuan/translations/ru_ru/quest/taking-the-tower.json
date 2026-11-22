@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 53,
-  "translated": 53,
+  "count": 57,
+  "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -535,6 +535,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "Идём дальше! Лейтенант Van и остальные у {c2}тех домов в {p}{/}, помнишь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "Рад тебя видеть, {u}! С тех пор как мы отбили Бушующую башню, я особо ничем не занимался.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "Я жду, пока Tasim закончит, чем бы он там ни занимался. Он ведь тренируется без передышки с тех пор, как сюда попал.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "Слушай, может, тебе стоит к нему присоединиться! Поговори вон с {c2}капитаном Ragon{/} - он, наверное, чему-нибудь тебя научит.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   }
  }
 }
