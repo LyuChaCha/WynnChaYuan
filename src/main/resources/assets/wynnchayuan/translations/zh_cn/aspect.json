@@ -3,7 +3,7 @@
   "domain": "aspect",
   "lang": "zh_cn",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 131,
+  "count": 128,
   "translated": 0,
   "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。 名称受「翻译物品名称」开关管（`gearNames: true`）——配装网站 WynnBuilder 只认英文名，玩家需要按 Shift 才看得到原文。见 issue #936。",
   "itemNames": true,
@@ -119,10 +119,10 @@
    ]
   },
   "aspect#0012": {
-   "src": "Aspect of the Barley-Woven",
+   "src": "Aspect of the Getaway",
    "dst": "",
    "role": "name",
-   "kind": "sentence",
+   "kind": "term",
    "ctx": [
     "aspect/archer"
    ]
@@ -173,7 +173,7 @@
    ]
   },
   "aspect#0018": {
-   "src": "Aspect of the North Wind",
+   "src": "Aspect of the Pincushion",
    "dst": "",
    "role": "name",
    "kind": "term",
@@ -784,26 +784,8 @@
     "aspect/shaman"
    ]
   },
-  "aspect#0086": {
-   "src": "Aspect of Seismic Sense",
-   "dst": "",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
   "aspect#0087": {
    "src": "Aspect of Stances",
-   "dst": "",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0088": {
-   "src": "Aspect of Summer Storms",
    "dst": "",
    "role": "name",
    "kind": "term",
@@ -849,15 +831,6 @@
   },
   "aspect#0093": {
    "src": "Aspect of the Beckoned Legion",
-   "dst": "",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0094": {
-   "src": "Aspect of the Blurred Line",
    "dst": "",
    "role": "name",
    "kind": "sentence",
@@ -1117,15 +1090,6 @@
     "aspect/warrior"
    ]
   },
-  "aspect#0123": {
-   "src": "Aspect of the Tightrope Walk",
-   "dst": "",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/warrior"
-   ]
-  },
   "aspect#0124": {
    "src": "Battle Monk's Embodiment of Complete Synchrony",
    "dst": "",
@@ -1187,6 +1151,15 @@
    "kind": "sentence",
    "ctx": [
     "aspect/warrior"
+   ]
+  },
+  "aspect#0131": {
+   "src": "Aspect of Bile Waters",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "aspect/shaman"
    ]
   }
  }

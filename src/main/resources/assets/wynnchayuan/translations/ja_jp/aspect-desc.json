@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "ja_jp",
-  "count": 220,
-  "translated": 220,
+  "count": 215,
+  "translated": 215,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
   "gearNames": false
  },
@@ -80,15 +80,8 @@
    "class": "archer"
   },
   "aspect-desc#0010": {
-   "src": "Grape Bomb deals additional damage.",
-   "dst": "Grape Bomb が追加ダメージを与える。",
-   "role": "desc",
-   "aspect": "Aspect of Fragmentation Rounds",
-   "class": "archer"
-  },
-  "aspect-desc#0011": {
-   "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
-   "dst": "{#} 総ダメージ: +{~1} (DPSに対して) ({#} ダメージ: +{~2})",
+   "src": "Grape Bomb has reduced spread and gains +{~} {#} Area of Effect.",
+   "dst": "Grape Bomb の拡散が狭まり、{#} 効果範囲が +{~} 広がる。",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
@@ -125,7 +118,7 @@
    "src": "Increase Grappling Hook's range by +{~}.",
    "dst": "Grappling Hook の射程が +{~} 伸びる。",
    "role": "desc",
-   "aspect": "Aspect of the Barley-Woven",
+   "aspect": "Aspect of the Getaway",
    "class": "archer"
   },
   "aspect-desc#0017": {
@@ -150,8 +143,8 @@
    "class": "archer"
   },
   "aspect-desc#0020": {
-   "src": "Increase your Snake's weakness effect by +{~}.",
-   "dst": "Snake の弱体化効果が +{~} 強まる。",
+   "src": "Increase your Snake's weakness and poison vulnerability effects by +{~}.",
+   "dst": "Snake の弱体化効果と毒被ダメージ増加効果が +{~} 強まる。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
@@ -164,7 +157,7 @@
    "class": "archer"
   },
   "aspect-desc#0022": {
-   "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
+   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
    "dst": "Hound の攻撃速度が +{~1}、移動速度が +{~2} 上がる。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
@@ -206,10 +199,10 @@
    "class": "archer"
   },
   "aspect-desc#0028": {
-   "src": "Snow Storm gains +{~} {#} Range.",
-   "dst": "Snow Storm の {#} 射程が +{~} 伸びる。",
+   "src": "Buckshot spews +{~} arrows.",
+   "dst": "Buckshot で放つ矢が +{~} 本増える。",
    "role": "desc",
-   "aspect": "Aspect of the North Wind",
+   "aspect": "Aspect of the Pincushion",
    "class": "archer"
   },
   "aspect-desc#0029": {
@@ -262,15 +255,15 @@
    "class": "archer"
   },
   "aspect-desc#0036": {
-   "src": "Patient Hunter gains +{~} damage per second.",
-   "dst": "Patient Hunter の毎秒ダメージが +{~} 増える。",
+   "src": "Tangled Traps deal damage +{~} faster.",
+   "dst": "Tangled Traps がダメージを与える速さが +{~} 上がる。",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
   },
   "aspect-desc#0037": {
-   "src": "Chilling Snare gains +{~}s {#} Duration.",
-   "dst": "Chilling Snare の {#} 持続時間が +{~}秒 延びる。",
+   "src": "Rusted Maw gains +{~} {#} Area of Effect.",
+   "dst": "Rusted Maw の {#} 効果範囲が +{~} 広がる。",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
@@ -632,13 +625,6 @@
    "aspect": "Aspect of Shining Status",
    "class": "mage"
   },
-  "aspect-desc#0089": {
-   "src": "Arcane Speed gains +{~} speed.",
-   "dst": "Arcane Speed の速度が +{~} 上がる。",
-   "role": "desc",
-   "aspect": "Aspect of Wind Walking",
-   "class": "mage"
-  },
   "aspect-desc#0090": {
    "src": "Pyrokinesis gains +{~} {#} Area of Effect.",
    "dst": "Pyrokinesis の {#} 効果範囲が +{~} 広がる。",
@@ -766,8 +752,8 @@
    "class": "mage"
   },
   "aspect-desc#0108": {
-   "src": "Dawn spawns +{~} more wisps.",
-   "dst": "Dawn の光の精が +{~} 体増える。",
+   "src": "Dawn lasts +{~}s longer.",
+   "dst": "Dawn の持続時間が +{~}秒 延びる。",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
@@ -815,8 +801,8 @@
    "class": "shaman"
   },
   "aspect-desc#0115": {
-   "src": "Your Puppets and Effigies move {~} faster.",
-   "dst": "Puppets と Effigies の移動が {~} 速くなる。",
+   "src": "Your Puppets, Effigies and Nature's Jolt move {~} faster.",
+   "dst": "Puppets、Effigies、Nature's Jolt の移動が {~} 速くなる。",
    "role": "desc",
    "aspect": "Aspect of Acceleration",
    "class": "shaman"
@@ -884,25 +870,11 @@
    "aspect": "Aspect of Reverberation",
    "class": "shaman"
   },
-  "aspect-desc#0125": {
-   "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
-   "dst": "Nature's Jolt の {#} 効果範囲が +{~} 広がる。",
-   "role": "desc",
-   "aspect": "Aspect of Seismic Sense",
-   "class": "shaman"
-  },
   "aspect-desc#0126": {
-   "src": "Mystics Masks bonus effect is increased by {~}x",
-   "dst": "Mystic Masks のボーナス効果が {~}倍になる",
+   "src": "Mystics Masks' positive buffs are {~} stronger.",
+   "dst": "Mystic Masks の良い効果が {~} 強まる。",
    "role": "desc",
    "aspect": "Aspect of Stances",
-   "class": "shaman"
-  },
-  "aspect-desc#0127": {
-   "src": "Increase Storm Dance's pull strength by {~}.",
-   "dst": "Storm Dance の引き寄せる力が {~} 強まる。",
-   "role": "desc",
-   "aspect": "Aspect of Summer Storms",
    "class": "shaman"
   },
   "aspect-desc#0128": {
@@ -961,13 +933,6 @@
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
-  "aspect-desc#0136": {
-   "src": "Corporeal Manifestation spins {~} faster.",
-   "dst": "Corporeal Manifestation の回転が {~} 速くなる。",
-   "role": "desc",
-   "aspect": "Aspect of the Blurred Line",
-   "class": "shaman"
-  },
   "aspect-desc#0137": {
    "src": "Fortified Formation grants +{~} ❁ Resistance.",
    "dst": "Fortified Formation が与える ❁ 耐性が +{~} 上がる。",
@@ -987,20 +952,6 @@
    "dst": "{c1}Totem{c2} の {#} 持続時間が {c3}+{~}秒{c2} 延びる。",
    "role": "desc",
    "aspect": "Aspect of the Monolith",
-   "class": "shaman"
-  },
-  "aspect-desc#0140": {
-   "src": "Awakened requires -{~} mana to activate.",
-   "dst": "Awakened の発動に必要なマナが -{~} 減る。",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
-   "class": "shaman"
-  },
-  "aspect-desc#0141": {
-   "src": "Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened の {#} 持続時間が +{~}秒 延びる。",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
   },
   "aspect-desc#0142": {
@@ -1220,13 +1171,6 @@
    "aspect": "Aspect of the Returning Javelin",
    "class": "warrior"
   },
-  "aspect-desc#0173": {
-   "src": "Brink of Madness activates at +{~} higher Health.",
-   "dst": "Brink of Madness が体力 +{~} 高い時点で発動する。",
-   "role": "desc",
-   "aspect": "Aspect of the Tightrope Walk",
-   "class": "warrior"
-  },
   "aspect-desc#0174": {
    "src": "Pressure is stronger.",
    "dst": "Pressure が強くなる。",
@@ -1366,8 +1310,8 @@
    "role": "desc"
   },
   "blk008": {
-   "src": "Dawn spawns +{~} more wisps. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
-   "dst": "{c1}Dawn{c2} の光の精が {c3}+{~1}{c2} 体増える。{c1}Gravitational Collapse{c2} の持続時間が {c3}+{~2}秒{c2} 延びる。{c1}Tangled Origin{c2} の攻撃が {c3}+{~3}{c2} 速くなる。",
+   "src": "Dawn lasts +{~}s longer. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
+   "dst": "{c1}Dawn{c2} の持続時間が {c3}+{~1}秒{c2} 延びる。{c1}Gravitational Collapse{c2} の持続時間が {c3}+{~2}秒{c2} 延びる。{c1}Tangled Origin{c2} の攻撃が {c3}+{~3}{c2} 速くなる。",
    "role": "desc"
   },
   "blk009": {
@@ -1383,11 +1327,6 @@
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
    "dst": "Puppet Master の Puppets が +{~1} 体増える。{#} 総ダメージ: -{~2} (DPSに対して) ({#} ダメージ: -{~3}) ({#} 風: -{~4}) ({#} 地: -{~5})",
-   "role": "desc"
-  },
-  "blk012": {
-   "src": "Awakened requires -{~} mana to activate. Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened の発動に必要なマナが -{~1} 減る。Awakened の {#} 持続時間が +{~2}秒 延びる。",
    "role": "desc"
   },
   "blk013": {
@@ -1431,8 +1370,8 @@
    "role": "desc"
   },
   "blk021": {
-   "src": "Arcane Speed gains +{~} speed per cast and +{~} maximum speed.",
-   "dst": "Arcane Speed の詠唱ごとの速度が +{~1}、最大速度が +{~2} 上がる。",
+   "src": "Arcane Speed grants +{~} walk speed per cast and +{~} maximum speed.",
+   "dst": "Arcane Speed の詠唱ごとの移動速度が +{~1}、最大速度が +{~2} 上がる。",
    "role": "desc"
   },
   "blk022": {
@@ -1484,6 +1423,34 @@
    "src": "Brink of Madness stores +{~} of your maximum health.",
    "dst": "Brink of Madness が最大体力の +{~} を蓄える。",
    "role": "desc"
+  },
+  "aspect-desc#0188": {
+   "src": "Frost Dragon's Breath gains +{~} {#} Range.",
+   "dst": "Frost Dragon's Breath の {#} 射程が +{~} 伸びる。",
+   "role": "desc",
+   "aspect": "Aspect of the Ray of Frost",
+   "class": "mage"
+  },
+  "aspect-desc#0189": {
+   "src": "Increase Escape's velocity by {~}.",
+   "dst": "Escape の速度が {~} 上がる。",
+   "role": "desc",
+   "aspect": "Aspect of the Getaway",
+   "class": "archer"
+  },
+  "aspect-desc#0190": {
+   "src": "Increase the Static consumed by Aura and Zealot's Bolts by +{~}.",
+   "dst": "Aura と Zealot's Bolts が消費する Static が +{~} 増える。",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0191": {
+   "src": "Tangled Traps deal damage +{~} faster and gain +{~} {#} Area of Effect.",
+   "dst": "Tangled Traps がダメージを与える速さが +{~1}、{#} 効果範囲が +{~2} 上がる。",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
   }
  }
 }

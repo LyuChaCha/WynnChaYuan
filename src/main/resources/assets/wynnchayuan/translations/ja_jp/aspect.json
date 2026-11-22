@@ -3,8 +3,8 @@
   "domain": "aspect",
   "lang": "ja_jp",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 131,
-  "translated": 131,
+  "count": 128,
+  "translated": 128,
   "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱受「翻譯物品名稱」開關管（`gearNames: true`）——配裝網站 WynnBuilder 只認英文名，玩家需要按 Shift 看得到原文。見 issue #936。",
   "itemNames": true,
   "gearNames": true
@@ -119,10 +119,10 @@
    ]
   },
   "aspect#0012": {
-   "src": "Aspect of the Barley-Woven",
-   "dst": "大麦織りのアスペクト",
+   "src": "Aspect of the Getaway",
+   "dst": "逃走のアスペクト",
    "role": "name",
-   "kind": "sentence",
+   "kind": "term",
    "ctx": [
     "aspect/archer"
    ]
@@ -173,8 +173,8 @@
    ]
   },
   "aspect#0018": {
-   "src": "Aspect of the North Wind",
-   "dst": "北風のアスペクト",
+   "src": "Aspect of the Pincushion",
+   "dst": "針山のアスペクト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -784,27 +784,9 @@
     "aspect/shaman"
    ]
   },
-  "aspect#0086": {
-   "src": "Aspect of Seismic Sense",
-   "dst": "地震感知のアスペクト",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
   "aspect#0087": {
    "src": "Aspect of Stances",
    "dst": "構えのアスペクト",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0088": {
-   "src": "Aspect of Summer Storms",
-   "dst": "夏の嵐のアスペクト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -850,15 +832,6 @@
   "aspect#0093": {
    "src": "Aspect of the Beckoned Legion",
    "dst": "招かれし軍勢のアスペクト",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/shaman"
-   ]
-  },
-  "aspect#0094": {
-   "src": "Aspect of the Blurred Line",
-   "dst": "曖昧な境界のアスペクト",
    "role": "name",
    "kind": "sentence",
    "ctx": [
@@ -1117,15 +1090,6 @@
     "aspect/warrior"
    ]
   },
-  "aspect#0123": {
-   "src": "Aspect of the Tightrope Walk",
-   "dst": "綱渡りのアスペクト",
-   "role": "name",
-   "kind": "sentence",
-   "ctx": [
-    "aspect/warrior"
-   ]
-  },
   "aspect#0124": {
    "src": "Battle Monk's Embodiment of Complete Synchrony",
    "dst": "バトルモンクの化身：完全なる同調",
@@ -1187,6 +1151,15 @@
    "kind": "sentence",
    "ctx": [
     "aspect/warrior"
+   ]
+  },
+  "aspect#0131": {
+   "src": "Aspect of Bile Waters",
+   "dst": "胆汁の水のアスペクト",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "aspect/shaman"
    ]
   }
  }

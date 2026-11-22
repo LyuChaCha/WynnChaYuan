@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "es_es",
-  "count": 220,
-  "translated": 220,
+  "count": 215,
+  "translated": 215,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
   "gearNames": false
  },
@@ -80,15 +80,8 @@
    "class": "archer"
   },
   "aspect-desc#0010": {
-   "src": "Grape Bomb deals additional damage.",
-   "dst": "Grape Bomb inflige daño adicional.",
-   "role": "desc",
-   "aspect": "Aspect of Fragmentation Rounds",
-   "class": "archer"
-  },
-  "aspect-desc#0011": {
-   "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
-   "dst": "{#} Daño total: +{~} (de tu DPS) ({#} Daño: +{~})",
+   "src": "Grape Bomb has reduced spread and gains +{~} {#} Area of Effect.",
+   "dst": "Grape Bomb tiene menos dispersión y obtiene +{~} de {#} área de efecto.",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
@@ -125,7 +118,7 @@
    "src": "Increase Grappling Hook's range by +{~}.",
    "dst": "Aumenta el alcance de Grappling Hook en +{~}.",
    "role": "desc",
-   "aspect": "Aspect of the Barley-Woven",
+   "aspect": "Aspect of the Getaway",
    "class": "archer"
   },
   "aspect-desc#0017": {
@@ -150,8 +143,8 @@
    "class": "archer"
   },
   "aspect-desc#0020": {
-   "src": "Increase your Snake's weakness effect by +{~}.",
-   "dst": "Aumenta el efecto de debilidad de tu Snake en +{~}.",
+   "src": "Increase your Snake's weakness and poison vulnerability effects by +{~}.",
+   "dst": "Aumenta los efectos de debilidad y vulnerabilidad al veneno de tu Snake en +{~}.",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
@@ -164,7 +157,7 @@
    "class": "archer"
   },
   "aspect-desc#0022": {
-   "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
+   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
    "dst": "Aumenta la velocidad de ataque de tu Hound en +{~} y su velocidad de movimiento en +{~}.",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
@@ -206,10 +199,10 @@
    "class": "archer"
   },
   "aspect-desc#0028": {
-   "src": "Snow Storm gains +{~} {#} Range.",
-   "dst": "Snow Storm obtiene +{~} de {#} alcance.",
+   "src": "Buckshot spews +{~} arrows.",
+   "dst": "Buckshot escupe +{~} flechas más.",
    "role": "desc",
-   "aspect": "Aspect of the North Wind",
+   "aspect": "Aspect of the Pincushion",
    "class": "archer"
   },
   "aspect-desc#0029": {
@@ -262,15 +255,15 @@
    "class": "archer"
   },
   "aspect-desc#0036": {
-   "src": "Patient Hunter gains +{~} damage per second.",
-   "dst": "Patient Hunter obtiene +{~} de daño por segundo.",
+   "src": "Tangled Traps deal damage +{~} faster.",
+   "dst": "Tangled Traps inflige daño un +{~} más rápido.",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
   },
   "aspect-desc#0037": {
-   "src": "Chilling Snare gains +{~}s {#} Duration.",
-   "dst": "Chilling Snare obtiene +{~}s de {#} duración.",
+   "src": "Rusted Maw gains +{~} {#} Area of Effect.",
+   "dst": "Rusted Maw obtiene +{~} de {#} área de efecto.",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
@@ -632,13 +625,6 @@
    "aspect": "Aspect of Shining Status",
    "class": "mage"
   },
-  "aspect-desc#0089": {
-   "src": "Arcane Speed gains +{~} speed.",
-   "dst": "Arcane Speed obtiene +{~} de velocidad.",
-   "role": "desc",
-   "aspect": "Aspect of Wind Walking",
-   "class": "mage"
-  },
   "aspect-desc#0090": {
    "src": "Pyrokinesis gains +{~} {#} Area of Effect.",
    "dst": "Pyrokinesis obtiene +{~} de {#} área de efecto.",
@@ -766,8 +752,8 @@
    "class": "mage"
   },
   "aspect-desc#0108": {
-   "src": "Dawn spawns +{~} more wisps.",
-   "dst": "Dawn genera +{~} fuegos fatuos más.",
+   "src": "Dawn lasts +{~}s longer.",
+   "dst": "Dawn dura +{~}s más.",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
@@ -815,8 +801,8 @@
    "class": "shaman"
   },
   "aspect-desc#0115": {
-   "src": "Your Puppets and Effigies move {~} faster.",
-   "dst": "Tus Puppets y Effigies se mueven un {~} más rápido.",
+   "src": "Your Puppets, Effigies and Nature's Jolt move {~} faster.",
+   "dst": "Tus Puppets, Effigies y Nature's Jolt se mueven un {~} más rápido.",
    "role": "desc",
    "aspect": "Aspect of Acceleration",
    "class": "shaman"
@@ -884,25 +870,11 @@
    "aspect": "Aspect of Reverberation",
    "class": "shaman"
   },
-  "aspect-desc#0125": {
-   "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
-   "dst": "Nature's Jolt obtiene +{~} de {#} área de efecto.",
-   "role": "desc",
-   "aspect": "Aspect of Seismic Sense",
-   "class": "shaman"
-  },
   "aspect-desc#0126": {
-   "src": "Mystics Masks bonus effect is increased by {~}x",
-   "dst": "El efecto extra de Mystics Masks se multiplica por {~}",
+   "src": "Mystics Masks' positive buffs are {~} stronger.",
+   "dst": "Las mejoras positivas de Mystics Masks son un {~} más fuertes.",
    "role": "desc",
    "aspect": "Aspect of Stances",
-   "class": "shaman"
-  },
-  "aspect-desc#0127": {
-   "src": "Increase Storm Dance's pull strength by {~}.",
-   "dst": "Aumenta la fuerza de atracción de Storm Dance en {~}.",
-   "role": "desc",
-   "aspect": "Aspect of Summer Storms",
    "class": "shaman"
   },
   "aspect-desc#0128": {
@@ -961,13 +933,6 @@
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
-  "aspect-desc#0136": {
-   "src": "Corporeal Manifestation spins {~} faster.",
-   "dst": "Corporeal Manifestation gira un {~} más rápido.",
-   "role": "desc",
-   "aspect": "Aspect of the Blurred Line",
-   "class": "shaman"
-  },
   "aspect-desc#0137": {
    "src": "Fortified Formation grants +{~} ❁ Resistance.",
    "dst": "Fortified Formation otorga +{~} de ❁ resistencia.",
@@ -987,20 +952,6 @@
    "dst": "{c1}Totem{c2} obtiene {c3}+{~}s{c2} de {#} duración.",
    "role": "desc",
    "aspect": "Aspect of the Monolith",
-   "class": "shaman"
-  },
-  "aspect-desc#0140": {
-   "src": "Awakened requires -{~} mana to activate.",
-   "dst": "Awakened requiere -{~} de maná para activarse.",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
-   "class": "shaman"
-  },
-  "aspect-desc#0141": {
-   "src": "Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened obtiene +{~}s de {#} duración.",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
   },
   "aspect-desc#0142": {
@@ -1220,13 +1171,6 @@
    "aspect": "Aspect of the Returning Javelin",
    "class": "warrior"
   },
-  "aspect-desc#0173": {
-   "src": "Brink of Madness activates at +{~} higher Health.",
-   "dst": "Brink of Madness se activa con un +{~} más de vida.",
-   "role": "desc",
-   "aspect": "Aspect of the Tightrope Walk",
-   "class": "warrior"
-  },
   "aspect-desc#0174": {
    "src": "Pressure is stronger.",
    "dst": "Pressure es más fuerte.",
@@ -1366,8 +1310,8 @@
    "role": "desc"
   },
   "blk008": {
-   "src": "Dawn spawns +{~} more wisps. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
-   "dst": "{c1}Dawn{c2} genera {c3}+{~}{c2} fuegos fatuos más. {c1}Gravitational Collapse{c2} dura {c3}+{~}s{c2} más. {c1}Tangled Origin{c2} ataca un {c3}+{~}{c2} más rápido.",
+   "src": "Dawn lasts +{~}s longer. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
+   "dst": "{c1}Dawn{c2} dura {c3}+{~}s{c2} más. {c1}Gravitational Collapse{c2} dura {c3}+{~}s{c2} más. {c1}Tangled Origin{c2} ataca un {c3}+{~}{c2} más rápido.",
    "role": "desc"
   },
   "blk009": {
@@ -1383,11 +1327,6 @@
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
    "dst": "Puppet Master obtiene +{~} Puppets. {#} Daño total: -{~} (de tu DPS) ({#} Daño: -{~}) ({#} Aire: -{~}) ({#} Tierra: -{~})",
-   "role": "desc"
-  },
-  "blk012": {
-   "src": "Awakened requires -{~} mana to activate. Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened requiere -{~} de maná para activarse. Awakened obtiene +{~}s de {#} duración.",
    "role": "desc"
   },
   "blk013": {
@@ -1431,8 +1370,8 @@
    "role": "desc"
   },
   "blk021": {
-   "src": "Arcane Speed gains +{~} speed per cast and +{~} maximum speed.",
-   "dst": "Arcane Speed obtiene +{~} de velocidad por lanzamiento y +{~} de velocidad máxima.",
+   "src": "Arcane Speed grants +{~} walk speed per cast and +{~} maximum speed.",
+   "dst": "Arcane Speed otorga +{~} de velocidad de movimiento por lanzamiento y +{~} de velocidad máxima.",
    "role": "desc"
   },
   "blk022": {
@@ -1484,6 +1423,34 @@
    "src": "Brink of Madness stores +{~} of your maximum health.",
    "dst": "Brink of Madness almacena +{~} de tu vida máxima.",
    "role": "desc"
+  },
+  "aspect-desc#0188": {
+   "src": "Frost Dragon's Breath gains +{~} {#} Range.",
+   "dst": "Frost Dragon's Breath obtiene +{~} de {#} alcance.",
+   "role": "desc",
+   "aspect": "Aspect of the Ray of Frost",
+   "class": "mage"
+  },
+  "aspect-desc#0189": {
+   "src": "Increase Escape's velocity by {~}.",
+   "dst": "Aumenta la velocidad de Escape en {~}.",
+   "role": "desc",
+   "aspect": "Aspect of the Getaway",
+   "class": "archer"
+  },
+  "aspect-desc#0190": {
+   "src": "Increase the Static consumed by Aura and Zealot's Bolts by +{~}.",
+   "dst": "Aumenta en +{~} la Estática que consumen Aura y Zealot's Bolts.",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0191": {
+   "src": "Tangled Traps deal damage +{~} faster and gain +{~} {#} Area of Effect.",
+   "dst": "Tangled Traps inflige daño un +{~} más rápido y obtiene +{~} de {#} área de efecto.",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
   }
  }
 }

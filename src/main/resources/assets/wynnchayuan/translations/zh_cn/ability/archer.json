@@ -3,8 +3,8 @@
   "domain": "ability/archer",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 234,
-  "translated": 234,
+  "count": 266,
+  "translated": 224,
   "note": "弓箭手的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -1049,9 +1049,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/04/005/003",
+   "tree": "02/archer/05/003/005",
    "ability": "Murder Flock",
-   "code": "ARCHER-P4-R05-C03"
+   "code": "ARCHER-P5-R03-C05"
   },
   "ability-archer#0076": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
@@ -1064,9 +1064,9 @@
    "lines": 3,
    "flat": "Basaltic Trap summons a Crow upon detonation that will peck at aggressive enemies every {~}s. (Max {~}) Damaged enemies will be distracted for {~}s.",
    "_raw": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every 0.9s. (Max 2)\nDamaged enemies will be distracted for 0.2s.",
-   "tree": "02/archer/04/005/003",
+   "tree": "02/archer/05/003/005",
    "ability": "Murder Flock",
-   "code": "ARCHER-P4-R05-C03"
+   "code": "ARCHER-P5-R03-C05"
   },
   "ability-archer#0077": {
    "src": "Refined Gunpowder",
@@ -1333,9 +1333,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/05/002/005",
+   "tree": "02/archer/05/005/005",
    "ability": "Rocket Jump",
-   "code": "ARCHER-P5-R02-C05"
+   "code": "ARCHER-P5-R05-C05"
   },
   "ability-archer#0097": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
@@ -1348,9 +1348,9 @@
    "lines": 2,
    "flat": "Arrow Bomb's recoil is increased, and its self-damage is reduced to {~}.",
    "_raw": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to 1%.",
-   "tree": "02/archer/05/002/005",
+   "tree": "02/archer/05/005/005",
    "ability": "Rocket Jump",
-   "code": "ARCHER-P5-R02-C05"
+   "code": "ARCHER-P5-R05-C05"
   },
   "ability-archer#0098": {
    "src": "Scorched Earth",
@@ -1392,18 +1392,6 @@
    "tree": "02/archer/05/002/007",
    "ability": "Scorched Earth、Stormy Feet",
    "code": "ARCHER-P5-R02-C07"
-  },
-  "ability-archer#0101": {
-   "src": "More Traps",
-   "dst": "更多陷阱",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/05/003/003",
-   "ability": "More Traps",
-   "code": "ARCHER-P5-R03-C03"
   },
   "ability-archer#0102": {
    "src": "Divine Intervention",
@@ -1648,9 +1636,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/05/005/005",
+   "tree": "02/archer/06/005/006",
    "ability": "Homing Shots",
-   "code": "ARCHER-P5-R05-C05"
+   "code": "ARCHER-P6-R05-C06"
   },
   "ability-archer#0120": {
    "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
@@ -1663,9 +1651,9 @@
    "lines": 2,
    "flat": "Your Main Attack arrows will follow nearby enemies and will be unaffected by gravity.",
    "_raw": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
-   "tree": "02/archer/05/005/005",
+   "tree": "02/archer/06/005/006",
    "ability": "Homing Shots",
-   "code": "ARCHER-P5-R05-C05"
+   "code": "ARCHER-P6-R05-C06"
   },
   "ability-archer#0121": {
    "src": "Recycling",
@@ -1702,9 +1690,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/06/001/003",
+   "tree": "02/archer/05/003/003",
    "ability": "Mana Trap",
-   "code": "ARCHER-P6-R01-C03"
+   "code": "ARCHER-P5-R03-C03"
   },
   "ability-archer#0124": {
    "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
@@ -1717,9 +1705,9 @@
    "lines": 3,
    "flat": "Your Traps will give you {~} Mana per second and {~} Mana when they explode.",
    "_raw": "Your Traps will give you 0.5 Mana\nper second and 10 Mana\nwhen they explode.",
-   "tree": "02/archer/06/001/003",
+   "tree": "02/archer/05/003/003",
    "ability": "Mana Trap",
-   "code": "ARCHER-P6-R01-C03"
+   "code": "ARCHER-P5-R03-C03"
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
@@ -1823,9 +1811,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/06/002/002",
+   "tree": "02/archer/06/004/002",
    "ability": "Vigilant Sentinels",
-   "code": "ARCHER-P6-R02-C02"
+   "code": "ARCHER-P6-R04-C02"
   },
   "ability-archer#0133": {
    "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
@@ -1838,9 +1826,9 @@
    "lines": 2,
    "flat": "Casting Arrow Shield while Guardian Angels are active will also cast Buckshot. Increase Buckshot's damage.",
    "_raw": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
-   "tree": "02/archer/06/002/002",
+   "tree": "02/archer/06/004/002",
    "ability": "Vigilant Sentinels",
-   "code": "ARCHER-P6-R02-C02"
+   "code": "ARCHER-P6-R04-C02"
   },
   "ability-archer#0134": {
    "src": "Increase Guardian Angels' range and damage.",
@@ -1853,9 +1841,9 @@
    "lines": 1,
    "flat": "Increase Guardian Angels' range and damage.",
    "_raw": "Increase Guardian Angels' range and damage.",
-   "tree": "02/archer/06/002/002",
+   "tree": "02/archer/06/004/002",
    "ability": "Vigilant Sentinels",
-   "code": "ARCHER-P6-R02-C02"
+   "code": "ARCHER-P6-R04-C02"
   },
   "ability-archer#0135": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
@@ -1866,9 +1854,9 @@
     "archer/Vigilant Sentinels"
    ],
    "_raw": " Total Damage: +3% (of your DPS, for Buckshot, per arrow)",
-   "tree": "02/archer/06/002/002",
+   "tree": "02/archer/06/004/002",
    "ability": "Vigilant Sentinels",
-   "code": "ARCHER-P6-R02-C02"
+   "code": "ARCHER-P6-R04-C02"
   },
   "ability-archer#0136": {
    "src": "Call of the Hound",
@@ -2041,9 +2029,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/06/004/002",
+   "tree": "02/archer/06/002/002",
    "ability": "Bouncing Bomb",
-   "code": "ARCHER-P6-R04-C02"
+   "code": "ARCHER-P6-R02-C02"
   },
   "ability-archer#0149": {
    "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
@@ -2056,9 +2044,9 @@
    "lines": 2,
    "flat": "Arrow Bomb will travel {~} slower and bounce once when hitting a block or enemy.",
    "_raw": "Arrow Bomb will travel 20% slower and\nbounce once when hitting a block or enemy.",
-   "tree": "02/archer/06/004/002",
+   "tree": "02/archer/06/002/002",
    "ability": "Bouncing Bomb",
-   "code": "ARCHER-P6-R04-C02"
+   "code": "ARCHER-P6-R02-C02"
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
@@ -2083,33 +2071,6 @@
    "tree": "02/archer/06/004/007",
    "ability": "Cheaper Arrow Shield II",
    "code": "ARCHER-P6-R04-C07"
-  },
-  "ability-archer#0152": {
-   "src": "Hookshot",
-   "dst": "钩索",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/06/005/006",
-   "ability": "Hookshot",
-   "code": "ARCHER-P6-R05-C06"
-  },
-  "ability-archer#0153": {
-   "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "提高 Grappling Hook 的\n射程、速度与力道。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "archer/Hookshot"
-   ],
-   "lines": 2,
-   "flat": "Increases your Grappling Hook's range, speed and strength.",
-   "_raw": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "tree": "02/archer/06/005/006",
-   "ability": "Hookshot",
-   "code": "ARCHER-P6-R05-C06"
   },
   "ability-archer#0154": {
    "src": "Ghostly Trigger",
@@ -2188,9 +2149,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/07/001/003",
+   "tree": "02/archer/07/001/005",
    "ability": "Beast Lore",
-   "code": "ARCHER-P7-R01-C03"
+   "code": "ARCHER-P7-R01-C05"
   },
   "ability-archer#0160": {
    "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
@@ -2203,9 +2164,9 @@
    "lines": 3,
    "flat": "Increase your maximum Snakes by +{~}. Increase your maximum Crows by +{~}. Increase the damage of your Hound.",
    "_raw": "Increase your maximum Snakes by +1.\nIncrease your maximum Crows by +2.\nIncrease the damage of your Hound.",
-   "tree": "02/archer/07/001/003",
+   "tree": "02/archer/07/001/005",
    "ability": "Beast Lore",
-   "code": "ARCHER-P7-R01-C03"
+   "code": "ARCHER-P7-R01-C05"
   },
   "ability-archer#0161": {
    "src": "Tangled Traps",
@@ -2215,9 +2176,9 @@
    "ctx": [
     "archer/技能名稱"
    ],
-   "tree": "02/archer/07/001/005",
+   "tree": "02/archer/07/002/004",
    "ability": "Tangled Traps",
-   "code": "ARCHER-P7-R01-C05"
+   "code": "ARCHER-P7-R02-C04"
   },
   "ability-archer#0162": {
    "src": "Grape Bomb gains +{~} grape.",
@@ -2230,9 +2191,9 @@
    "lines": 1,
    "flat": "Grape Bomb gains +{~} grape.",
    "_raw": "Grape Bomb gains +1 grape.",
-   "tree": "02/archer/07/001/005",
+   "tree": "02/archer/07/002/004",
    "ability": "Tangled Traps",
-   "code": "ARCHER-P7-R01-C05"
+   "code": "ARCHER-P7-R02-C04"
   },
   "ability-archer#0163": {
    "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
@@ -2245,9 +2206,9 @@
    "lines": 2,
    "flat": "Your Traps will be connected by a rope that deals damage to enemies every {~}s.",
    "_raw": "Your Traps will be connected by a rope\nthat deals damage to enemies every 0.2s.",
-   "tree": "02/archer/07/001/005",
+   "tree": "02/archer/07/002/004",
    "ability": "Tangled Traps",
-   "code": "ARCHER-P7-R01-C05"
+   "code": "ARCHER-P7-R02-C04"
   },
   "ability-archer#0164": {
    "src": "Coursing Restraints",
@@ -2316,33 +2277,6 @@
    "ability": "Elusive",
    "code": "ARCHER-P7-R02-C02"
   },
-  "ability-archer#0169": {
-   "src": "Chilling Snare",
-   "dst": "寒霜陷套",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/07/002/004",
-   "ability": "Chilling Snare",
-   "code": "ARCHER-P7-R02-C04"
-  },
-  "ability-archer#0170": {
-   "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "为 Basaltic Trap 附上一道冰霜陷套，\n引爆后每 {~} 秒大幅削弱附近的敌人\n并造成伤害。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "archer/Chilling Snare"
-   ],
-   "lines": 3,
-   "flat": "Attach an icy snare to Basaltic Trap, drastically inhibiting and damaging nearby enemies every {~}s after it detonates.",
-   "_raw": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every 0.2s after it detonates.",
-   "tree": "02/archer/07/002/004",
-   "ability": "Chilling Snare",
-   "code": "ARCHER-P7-R02-C04"
-  },
   "ability-archer#0171": {
    "src": "Feedback Loop",
    "dst": "反馈循环",
@@ -2369,33 +2303,6 @@
    "tree": "02/archer/07/003/000",
    "ability": "Feedback Loop",
    "code": "ARCHER-P7-R03-C00"
-  },
-  "ability-archer#0173": {
-   "src": "Swift Primer",
-   "dst": "速燃引信",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/07/003/003",
-   "ability": "Swift Primer",
-   "code": "ARCHER-P7-R03-C03"
-  },
-  "ability-archer#0174": {
-   "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
-   "dst": "Patient Hunter 每秒提高的伤害增加 +{~1}，\n它的伤害上限提高 +{~2}。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "archer/Swift Primer"
-   ],
-   "lines": 2,
-   "flat": "Patient Hunter will increase its damage by +{~} per second, and increase its Max Damage by +{~}.",
-   "_raw": "Patient Hunter will increase its damage by +10%\nper second, and increase its Max Damage by +100%.",
-   "tree": "02/archer/07/003/003",
-   "ability": "Swift Primer",
-   "code": "ARCHER-P7-R03-C03"
   },
   "ability-archer#0175": {
    "src": "Crepuscular Ray",
@@ -2465,33 +2372,6 @@
    "tree": "02/archer/07/004/001",
    "ability": "Transience",
    "code": "ARCHER-P7-R04-C01"
-  },
-  "ability-archer#0180": {
-   "src": "Snow Storm",
-   "dst": "暴风雪",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/07/004/004",
-   "ability": "Snow Storm",
-   "code": "ARCHER-P7-R04-C04"
-  },
-  "ability-archer#0181": {
-   "src": "Enemies near you will be slowed down.",
-   "dst": "你附近的敌人会被减速。",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "archer/Snow Storm"
-   ],
-   "lines": 1,
-   "flat": "Enemies near you will be slowed down.",
-   "_raw": "Enemies near you will be slowed down.",
-   "tree": "02/archer/07/004/004",
-   "ability": "Snow Storm",
-   "code": "ARCHER-P7-R04-C04"
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
@@ -2843,18 +2723,6 @@
    "ability": "Pyrotechnics",
    "code": "ARCHER-P8-R04-C01"
   },
-  "ability-archer#0208": {
-   "src": "Canine Colleague",
-   "dst": "犬类同僚",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "archer/技能名稱"
-   ],
-   "tree": "02/archer/08/004/003",
-   "ability": "Canine Colleague",
-   "code": "ARCHER-P8-R04-C03"
-  },
   "ability-archer#0209": {
    "src": "Increase your maximum Hounds by +{~}.",
    "dst": "猎犬的上限提高 +{~}。",
@@ -3204,6 +3072,611 @@
    "tree": "02/archer/04/003/005",
    "ability": "Implosion",
    "code": "ARCHER-P4-R03-C05"
+  },
+  "ability-archer#0234": {
+   "src": "Arrow Bomb will leave a trail of fire for {~}s.\nEnemies that walk into it or get hit by the bomb\nare ignited, taking damage every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Fire Creep"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb will leave a trail of fire for {~}s. Enemies that walk into it or get hit by the bomb are ignited, taking damage every {~}s.",
+   "_raw": "Arrow Bomb will leave a trail of fire for 6s.\nEnemies that walk into it or get hit by the bomb\nare ignited, taking damage every 0.6s.",
+   "tree": "02/archer/03/004/006",
+   "ability": "Fire Creep",
+   "code": "ARCHER-P3-R04-C06"
+  },
+  "ability-archer#0235": {
+   "src": "When you hit the ground with Arrow Bomb, leave\nan Explosive Trap that damages enemies. (Max {~} Traps)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Basaltic Trap"
+   ],
+   "lines": 2,
+   "flat": "When you hit the ground with Arrow Bomb, leave an Explosive Trap that damages enemies. (Max {~} Traps)",
+   "_raw": "When you hit the ground with Arrow Bomb, leave\nan Explosive Trap that damages enemies. (Max 2 Traps)",
+   "tree": "02/archer/04/001/004",
+   "ability": "Basaltic Trap",
+   "code": "ARCHER-P4-R01-C04"
+  },
+  "ability-archer#0236": {
+   "src": "Arrow Bomb pulls enemies together.\nIf an Explosive Trap is nearby,\nenemies are pulled towards it instead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Implosion"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb pulls enemies together. If an Explosive Trap is nearby, enemies are pulled towards it instead.",
+   "_raw": "Arrow Bomb pulls enemies together.\nIf an Explosive Trap is nearby,\nenemies are pulled towards it instead.",
+   "tree": "02/archer/04/003/005",
+   "ability": "Implosion",
+   "code": "ARCHER-P4-R03-C05"
+  },
+  "ability-archer#0237": {
+   "src": "Increases Arrow Bomb's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Implosion"
+   ],
+   "lines": 1,
+   "flat": "Increases Arrow Bomb's damage.",
+   "_raw": "Increases Arrow Bomb's damage.",
+   "tree": "02/archer/04/003/005",
+   "ability": "Implosion",
+   "code": "ARCHER-P4-R03-C05"
+  },
+  "ability-archer#0238": {
+   "src": "Your Explosive Traps will deal +{~} more damage\nfor every second they are active. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Patient Hunter"
+   ],
+   "lines": 2,
+   "flat": "Your Explosive Traps will deal +{~} more damage for every second they are active. (Max +{~})",
+   "_raw": "Your Explosive Traps will deal +20% more damage\nfor every second they are active. (Max +100%)",
+   "tree": "02/archer/04/004/004",
+   "ability": "Patient Hunter",
+   "code": "ARCHER-P4-R04-C04"
+  },
+  "ability-archer#0239": {
+   "src": "Increase your maximum Explosive Traps by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Patient Hunter",
+    "archer/Mana Trap",
+    "archer/Garrote"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Explosive Traps by +{~}.",
+   "_raw": "Increase your maximum Explosive Traps by +2.",
+   "tree": "02/archer/04/004/004",
+   "ability": "Patient Hunter、Mana Trap、Garrote",
+   "code": "ARCHER-P4-R04-C04"
+  },
+  "ability-archer#0240": {
+   "src": "Sneaking while casting will\npull any enemy you hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Grappling Hook"
+   ],
+   "lines": 2,
+   "flat": "Sneaking while casting will pull any enemy you hit.",
+   "_raw": "Sneaking while casting will\npull any enemy you hit.",
+   "tree": "02/archer/04/004/006",
+   "ability": "Grappling Hook",
+   "code": "ARCHER-P4-R04-C06"
+  },
+  "ability-archer#0241": {
+   "src": "Controlled Blast",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/005/003",
+   "ability": "Controlled Blast",
+   "code": "ARCHER-P4-R05-C03"
+  },
+  "ability-archer#0242": {
+   "src": "Your Explosive Traps will not be triggered by\nenemies until Patient Hunter is fully charged\nand will not get replaced by new ones.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Controlled Blast"
+   ],
+   "lines": 3,
+   "flat": "Your Explosive Traps will not be triggered by enemies until Patient Hunter is fully charged and will not get replaced by new ones.",
+   "_raw": "Your Explosive Traps will not be triggered by\nenemies until Patient Hunter is fully charged\nand will not get replaced by new ones.",
+   "tree": "02/archer/04/005/003",
+   "ability": "Controlled Blast",
+   "code": "ARCHER-P4-R05-C03"
+  },
+  "ability-archer#0243": {
+   "src": "Sneaking will allow you to select an area.\nCast Arrow Bomb while sneaking to\ndetonate all Explosive Traps inside of it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Controlled Blast"
+   ],
+   "lines": 3,
+   "flat": "Sneaking will allow you to select an area. Cast Arrow Bomb while sneaking to detonate all Explosive Traps inside of it.",
+   "_raw": "Sneaking will allow you to select an area.\nCast Arrow Bomb while sneaking to\ndetonate all Explosive Traps inside of it.",
+   "tree": "02/archer/04/005/003",
+   "ability": "Controlled Blast",
+   "code": "ARCHER-P4-R05-C03"
+  },
+  "ability-archer#0244": {
+   "src": "{#} Trap Duration: -{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "archer/Controlled Blast"
+   ],
+   "_raw": " Trap Duration: -10s",
+   "tree": "02/archer/04/005/003",
+   "ability": "Controlled Blast",
+   "code": "ARCHER-P4-R05-C03"
+  },
+  "ability-archer#0245": {
+   "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit venom at\naggressive enemies every {~}s. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Ivyroot Mamba"
+   ],
+   "lines": 3,
+   "flat": "Bryophyte Roots summons a Snake after disappearing that will spit venom at aggressive enemies every {~}s. (Max {~})",
+   "_raw": "Bryophyte Roots summons a Snake after\ndisappearing that will spit venom at\naggressive enemies every 1s. (Max 1)",
+   "tree": "02/archer/05/001/006",
+   "ability": "Ivyroot Mamba",
+   "code": "ARCHER-P5-R01-C06"
+  },
+  "ability-archer#0246": {
+   "src": "Enemies splashed by the venom will be weakened\nand take increased poison damage for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Ivyroot Mamba"
+   ],
+   "lines": 2,
+   "flat": "Enemies splashed by the venom will be weakened and take increased poison damage for {~}s.",
+   "_raw": "Enemies splashed by the venom will be weakened\nand take increased poison damage for 1.5s.",
+   "tree": "02/archer/05/001/006",
+   "ability": "Ivyroot Mamba",
+   "code": "ARCHER-P5-R01-C06"
+  },
+  "ability-archer#0247": {
+   "src": "ÀÀÀÀ-{~} Poison Resistance ({#}) to Enemies",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Ivyroot Mamba"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀ-{~} Poison Resistance ({#}) to Enemies",
+   "_raw": "-10% Poison Resistance () to Enemies",
+   "tree": "02/archer/05/001/006",
+   "ability": "Ivyroot Mamba",
+   "code": "ARCHER-P5-R01-C06"
+  },
+  "ability-archer#0248": {
+   "src": "{#} Splash Radius: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Ivyroot Mamba"
+   ],
+   "_raw": " Splash Radius: 4 Blocks (Circle-Shaped)",
+   "tree": "02/archer/05/001/006",
+   "ability": "Ivyroot Mamba",
+   "code": "ARCHER-P5-R01-C06"
+  },
+  "ability-archer#0249": {
+   "src": "Hitting an enemy will give you a brief buff of\n+{~} Walk Speed, up to {~} times per second. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Frenzy"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy will give you a brief buff of +{~} Walk Speed, up to {~} times per second. (Max +{~})",
+   "_raw": "Hitting an enemy will give you a brief buff of\n+1% Walk Speed, up to 12 times per second. (Max +50%)",
+   "tree": "02/archer/05/002/000",
+   "ability": "Frenzy",
+   "code": "ARCHER-P5-R02-C00"
+  },
+  "ability-archer#0250": {
+   "src": "Lose {~} of the bonus each second after\nnot hitting enemies for {~} seconds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Frenzy"
+   ],
+   "lines": 2,
+   "flat": "Lose {~} of the bonus each second after not hitting enemies for {~} seconds.",
+   "_raw": "Lose 4% of the bonus each second after\nnot hitting enemies for 2 seconds.",
+   "tree": "02/archer/05/002/000",
+   "ability": "Frenzy",
+   "code": "ARCHER-P5-R02-C00"
+  },
+  "ability-archer#0251": {
+   "src": "Fire Creep deals more damage and covers a larger area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Scorched Earth"
+   ],
+   "lines": 1,
+   "flat": "Fire Creep deals more damage and covers a larger area.",
+   "_raw": "Fire Creep deals more damage and covers a larger area.",
+   "tree": "02/archer/05/002/007",
+   "ability": "Scorched Earth",
+   "code": "ARCHER-P5-R02-C07"
+  },
+  "ability-archer#0252": {
+   "src": "Your Traps will give you {~} Mana when they\nactivate, scaling with Patient Hunter.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Mana Trap"
+   ],
+   "lines": 2,
+   "flat": "Your Traps will give you {~} Mana when they activate, scaling with Patient Hunter.",
+   "_raw": "Your Traps will give you 2 Mana when they\nactivate, scaling with Patient Hunter.",
+   "tree": "02/archer/05/003/003",
+   "ability": "Mana Trap",
+   "code": "ARCHER-P5-R03-C03"
+  },
+  "ability-archer#0253": {
+   "src": "Windy Feet will last longer and grant a stronger\nspeed buff to you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Stormy Feet"
+   ],
+   "lines": 2,
+   "flat": "Windy Feet will last longer and grant a stronger speed buff to you.",
+   "_raw": "Windy Feet will last longer and grant a stronger\nspeed buff to you.",
+   "tree": "02/archer/05/005/000",
+   "ability": "Stormy Feet",
+   "code": "ARCHER-P5-R05-C00"
+  },
+  "ability-archer#0254": {
+   "src": "{#} Effect: +{~} Speed Bonus (➲) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Stormy Feet"
+   ],
+   "_raw": " Effect: +60% Speed Bonus (➲) to Self",
+   "tree": "02/archer/05/005/000",
+   "ability": "Stormy Feet",
+   "code": "ARCHER-P5-R05-C00"
+  },
+  "ability-archer#0255": {
+   "src": "Rusted Maw",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/001/003",
+   "ability": "Rusted Maw",
+   "code": "ARCHER-P6-R01-C03"
+  },
+  "ability-archer#0256": {
+   "src": "Casting Arrow Shield launches a Bear Trap\nthat clamps down on enemies when activated,\nlocking them in place, damaging them and\ninflicting +{~}s of Bleeding {#} (Max {~}s)\n(Max {~} Trap)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Rusted Maw"
+   ],
+   "lines": 5,
+   "flat": "Casting Arrow Shield launches a Bear Trap that clamps down on enemies when activated, locking them in place, damaging them and inflicting +{~}s of Bleeding {#} (Max {~}s) (Max {~} Trap)",
+   "_raw": "Casting Arrow Shield launches a Bear Trap\nthat clamps down on enemies when activated,\nlocking them in place, damaging them and\ninflicting +4s of Bleeding  (Max 6s)\n(Max 1 Trap)",
+   "tree": "02/archer/06/001/003",
+   "ability": "Rusted Maw",
+   "code": "ARCHER-P6-R01-C03"
+  },
+  "ability-archer#0257": {
+   "src": "Bleeding {#} enemies take damage every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Rusted Maw"
+   ],
+   "lines": 1,
+   "flat": "Bleeding {#} enemies take damage every {~}s.",
+   "_raw": "Bleeding  enemies take damage every 0.5s.",
+   "tree": "02/archer/06/001/003",
+   "ability": "Rusted Maw",
+   "code": "ARCHER-P6-R01-C03"
+  },
+  "ability-archer#0258": {
+   "src": "Implosion's pull is {~} weaker.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Bouncing Bomb"
+   ],
+   "lines": 1,
+   "flat": "Implosion's pull is {~} weaker.",
+   "_raw": "Implosion's pull is 30% weaker.",
+   "tree": "02/archer/06/002/002",
+   "ability": "Bouncing Bomb",
+   "code": "ARCHER-P6-R02-C02"
+  },
+  "ability-archer#0259": {
+   "src": "Arrow Storm summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Call of the Hound"
+   ],
+   "lines": 3,
+   "flat": "Arrow Storm summons a Hound that will attack aggressive enemies every {~}s and drag them towards your traps.",
+   "_raw": "Arrow Storm summons a Hound that will\nattack aggressive enemies every 0.25s\nand drag them towards your traps.",
+   "tree": "02/archer/06/002/004",
+   "ability": "Call of the Hound",
+   "code": "ARCHER-P6-R02-C04"
+  },
+  "ability-archer#0260": {
+   "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing {~} less damage to secondary targets.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Phasing Beam"
+   ],
+   "lines": 3,
+   "flat": "Twain's Arc charges {~} faster, and can now pierce through up to {~} enemies, dealing {~} less damage to secondary targets.",
+   "_raw": "Twain's Arc charges 25% faster, and\ncan now pierce through up to 5 enemies,\ndealing 20% less damage to secondary targets.",
+   "tree": "02/archer/06/002/008",
+   "ability": "Phasing Beam",
+   "code": "ARCHER-P6-R02-C08"
+  },
+  "ability-archer#0261": {
+   "src": "Minefield",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/001/003",
+   "ability": "Minefield",
+   "code": "ARCHER-P7-R01-C03"
+  },
+  "ability-archer#0262": {
+   "src": "Increases your maximum Explosive Traps\nby +{~} and maximum Bear Traps by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Minefield"
+   ],
+   "lines": 2,
+   "flat": "Increases your maximum Explosive Traps by +{~} and maximum Bear Traps by +{~}.",
+   "_raw": "Increases your maximum Explosive Traps\nby +3 and maximum Bear Traps by +1.",
+   "tree": "02/archer/07/001/003",
+   "ability": "Minefield",
+   "code": "ARCHER-P7-R01-C03"
+  },
+  "ability-archer#0263": {
+   "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease your maximum Hounds by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Beast Lore"
+   ],
+   "lines": 3,
+   "flat": "Increase your maximum Snakes by +{~}. Increase your maximum Crows by +{~}. Increase your maximum Hounds by +{~}.",
+   "_raw": "Increase your maximum Snakes by +1.\nIncrease your maximum Crows by +2.\nIncrease your maximum Hounds by +1.",
+   "tree": "02/archer/07/001/005",
+   "ability": "Beast Lore",
+   "code": "ARCHER-P7-R01-C05"
+  },
+  "ability-archer#0264": {
+   "src": "Your Explosive Traps will be connected by barbed wires\nthat gradually slow and damage enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "lines": 2,
+   "flat": "Your Explosive Traps will be connected by barbed wires that gradually slow and damage enemies every {~}s.",
+   "_raw": "Your Explosive Traps will be connected by barbed wires\nthat gradually slow and damage enemies every 0.25s.",
+   "tree": "02/archer/07/002/004",
+   "ability": "Tangled Traps",
+   "code": "ARCHER-P7-R02-C04"
+  },
+  "ability-archer#0265": {
+   "src": "The wires scale with Patient Hunter and will\nlinger for {~}s after the trap is detonated.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "lines": 2,
+   "flat": "The wires scale with Patient Hunter and will linger for {~}s after the trap is detonated.",
+   "_raw": "The wires scale with Patient Hunter and will\nlinger for 2s after the trap is detonated.",
+   "tree": "02/archer/07/002/004",
+   "ability": "Tangled Traps",
+   "code": "ARCHER-P7-R02-C04"
+  },
+  "ability-archer#0266": {
+   "src": "{#} Effect: {~} Slowness ({#}) to Enemies (Max {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "_raw": " Effect: 4% Slowness () to Enemies (Max 40%)",
+   "tree": "02/archer/07/002/004",
+   "ability": "Tangled Traps",
+   "code": "ARCHER-P7-R02-C04"
+  },
+  "ability-archer#0267": {
+   "src": "{#} Area of Effect: {~} Block",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "_raw": " Area of Effect: 1 Block",
+   "tree": "02/archer/07/002/004",
+   "ability": "Tangled Traps",
+   "code": "ARCHER-P7-R02-C04"
+  },
+  "ability-archer#0268": {
+   "src": "Barbed Barrage",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/004/003",
+   "ability": "Barbed Barrage",
+   "code": "ARCHER-P7-R04-C03"
+  },
+  "ability-archer#0269": {
+   "src": "Your Arrow Storm now inflicts enemies\nwith Bleeding {#} for +{~}s per hit. (Max {~}s).",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Barbed Barrage"
+   ],
+   "lines": 2,
+   "flat": "Your Arrow Storm now inflicts enemies with Bleeding {#} for +{~}s per hit. (Max {~}s).",
+   "_raw": "Your Arrow Storm now inflicts enemies\nwith Bleeding  for +0.5s per hit. (Max 6s).",
+   "tree": "02/archer/07/004/003",
+   "ability": "Barbed Barrage",
+   "code": "ARCHER-P7-R04-C03"
+  },
+  "ability-archer#0270": {
+   "src": "Bleeding {#} enemies take damage every {~}s,\ntake increased damage from your Beasts,\nand are prioritized by them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Barbed Barrage"
+   ],
+   "lines": 3,
+   "flat": "Bleeding {#} enemies take damage every {~}s, take increased damage from your Beasts, and are prioritized by them.",
+   "_raw": "Bleeding  enemies take damage every 0.5s,\ntake increased damage from your Beasts,\nand are prioritized by them.",
+   "tree": "02/archer/07/004/003",
+   "ability": "Barbed Barrage",
+   "code": "ARCHER-P7-R04-C03"
+  },
+  "ability-archer#0271": {
+   "src": "{#} Effect: +{~} Damage Bonus to Pets",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Barbed Barrage"
+   ],
+   "_raw": " Effect: +20% Damage Bonus to Pets",
+   "tree": "02/archer/07/004/003",
+   "ability": "Barbed Barrage",
+   "code": "ARCHER-P7-R04-C03"
+  },
+  "ability-archer#0272": {
+   "src": "Garrote",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/001/005",
+   "ability": "Garrote",
+   "code": "ARCHER-P8-R01-C05"
+  },
+  "ability-archer#0273": {
+   "src": "Enemies take {~} increased damage from\nTangled Traps when it reaches maximum slow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Garrote"
+   ],
+   "lines": 2,
+   "flat": "Enemies take {~} increased damage from Tangled Traps when it reaches maximum slow.",
+   "_raw": "Enemies take 100% increased damage from\nTangled Traps when it reaches maximum slow.",
+   "tree": "02/archer/08/001/005",
+   "ability": "Garrote",
+   "code": "ARCHER-P8-R01-C05"
+  },
+  "ability-archer#0274": {
+   "src": "Guardian Angels will have {~} additional range\nand trigger Buckshot after firing {~} volleys.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Guardian Angels will have {~} additional range and trigger Buckshot after firing {~} volleys.",
+   "_raw": "Guardian Angels will have 5 additional range\nand trigger Buckshot after firing 14 volleys.",
+   "tree": "02/archer/09/002/001",
+   "ability": "Angelic Ascension",
+   "code": "ARCHER-P9-R02-C01"
+  },
+  "ability-archer#0275": {
+   "src": "Bombs will leave behind Basaltic Traps\nand occasionally Rusted Maws.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Extinction Event"
+   ],
+   "lines": 2,
+   "flat": "Bombs will leave behind Basaltic Traps and occasionally Rusted Maws.",
+   "_raw": "Bombs will leave behind Basaltic Traps\nand occasionally Rusted Maws.",
+   "tree": "02/archer/09/003/004",
+   "ability": "Extinction Event",
+   "code": "ARCHER-P9-R03-C04"
   }
  }
 }

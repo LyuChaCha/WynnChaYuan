@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "zh_tw",
-  "count": 220,
-  "translated": 220,
+  "count": 215,
+  "translated": 215,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
   "gearNames": false
  },
@@ -80,15 +80,8 @@
    "class": "archer"
   },
   "aspect-desc#0010": {
-   "src": "Grape Bomb deals additional damage.",
-   "dst": "Grape Bomb สร้างความเสียหายเพิ่มเติม",
-   "role": "desc",
-   "aspect": "Aspect of Fragmentation Rounds",
-   "class": "archer"
-  },
-  "aspect-desc#0011": {
-   "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
-   "dst": "{#} ความเสียหายรวม: +{~} (ของ DPS คุณ) ({#} ความเสียหาย: +{~})",
+   "src": "Grape Bomb has reduced spread and gains +{~} {#} Area of Effect.",
+   "dst": "Grape Bomb กระจายตัวน้อยลงและได้รับ {#} พื้นที่ส่งผล +{~}",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
@@ -125,7 +118,7 @@
    "src": "Increase Grappling Hook's range by +{~}.",
    "dst": "เพิ่มระยะของ Grappling Hook +{~}",
    "role": "desc",
-   "aspect": "Aspect of the Barley-Woven",
+   "aspect": "Aspect of the Getaway",
    "class": "archer"
   },
   "aspect-desc#0017": {
@@ -150,8 +143,8 @@
    "class": "archer"
   },
   "aspect-desc#0020": {
-   "src": "Increase your Snake's weakness effect by +{~}.",
-   "dst": "เพิ่มเอฟเฟกต์บั่นทอนของ Snake +{~}",
+   "src": "Increase your Snake's weakness and poison vulnerability effects by +{~}.",
+   "dst": "เพิ่มเอฟเฟกต์บั่นทอนและความเปราะบางต่อพิษของ Snake +{~}",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
@@ -164,7 +157,7 @@
    "class": "archer"
   },
   "aspect-desc#0022": {
-   "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
+   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
    "dst": "เพิ่มความเร็วโจมตีของ Hound +{~} และความเร็วเคลื่อนที่ +{~}",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
@@ -206,10 +199,10 @@
    "class": "archer"
   },
   "aspect-desc#0028": {
-   "src": "Snow Storm gains +{~} {#} Range.",
-   "dst": "Snow Storm ได้รับ {#} ระยะ +{~}",
+   "src": "Buckshot spews +{~} arrows.",
+   "dst": "Buckshot ยิงลูกธนูเพิ่ม +{~} ดอก",
    "role": "desc",
-   "aspect": "Aspect of the North Wind",
+   "aspect": "Aspect of the Pincushion",
    "class": "archer"
   },
   "aspect-desc#0029": {
@@ -262,15 +255,15 @@
    "class": "archer"
   },
   "aspect-desc#0036": {
-   "src": "Patient Hunter gains +{~} damage per second.",
-   "dst": "Patient Hunter ได้รับความเสียหายต่อวินาที +{~}",
+   "src": "Tangled Traps deal damage +{~} faster.",
+   "dst": "Tangled Traps สร้างความเสียหายเร็วขึ้น +{~}",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
   },
   "aspect-desc#0037": {
-   "src": "Chilling Snare gains +{~}s {#} Duration.",
-   "dst": "Chilling Snare ได้รับ {#} ระยะเวลา +{~} วินาที",
+   "src": "Rusted Maw gains +{~} {#} Area of Effect.",
+   "dst": "Rusted Maw ได้รับ {#} พื้นที่ส่งผล +{~}",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
@@ -632,13 +625,6 @@
    "aspect": "Aspect of Shining Status",
    "class": "mage"
   },
-  "aspect-desc#0089": {
-   "src": "Arcane Speed gains +{~} speed.",
-   "dst": "Arcane Speed ได้รับความเร็ว +{~}",
-   "role": "desc",
-   "aspect": "Aspect of Wind Walking",
-   "class": "mage"
-  },
   "aspect-desc#0090": {
    "src": "Pyrokinesis gains +{~} {#} Area of Effect.",
    "dst": "Pyrokinesis ได้รับ {#} พื้นที่ส่งผล +{~}",
@@ -766,8 +752,8 @@
    "class": "mage"
   },
   "aspect-desc#0108": {
-   "src": "Dawn spawns +{~} more wisps.",
-   "dst": "Dawn สร้างดวงไฟผีเพิ่ม +{~} ดวง",
+   "src": "Dawn lasts +{~}s longer.",
+   "dst": "Dawn คงอยู่นานขึ้น +{~} วินาที",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
@@ -815,8 +801,8 @@
    "class": "shaman"
   },
   "aspect-desc#0115": {
-   "src": "Your Puppets and Effigies move {~} faster.",
-   "dst": "Puppets และ Effigies ของคุณเคลื่อนที่เร็วขึ้น {~}",
+   "src": "Your Puppets, Effigies and Nature's Jolt move {~} faster.",
+   "dst": "Puppets, Effigies และ Nature's Jolt ของคุณเคลื่อนที่เร็วขึ้น {~}",
    "role": "desc",
    "aspect": "Aspect of Acceleration",
    "class": "shaman"
@@ -884,25 +870,11 @@
    "aspect": "Aspect of Reverberation",
    "class": "shaman"
   },
-  "aspect-desc#0125": {
-   "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
-   "dst": "Nature's Jolt ได้รับ {#} พื้นที่ส่งผล +{~}",
-   "role": "desc",
-   "aspect": "Aspect of Seismic Sense",
-   "class": "shaman"
-  },
   "aspect-desc#0126": {
-   "src": "Mystics Masks bonus effect is increased by {~}x",
-   "dst": "เอฟเฟกต์โบนัสของ Mystics Masks เพิ่มขึ้น {~} เท่า",
+   "src": "Mystics Masks' positive buffs are {~} stronger.",
+   "dst": "ผลดีของ Mystics Masks แรงขึ้น {~}",
    "role": "desc",
    "aspect": "Aspect of Stances",
-   "class": "shaman"
-  },
-  "aspect-desc#0127": {
-   "src": "Increase Storm Dance's pull strength by {~}.",
-   "dst": "เพิ่มแรงดึงของ Storm Dance {~}",
-   "role": "desc",
-   "aspect": "Aspect of Summer Storms",
    "class": "shaman"
   },
   "aspect-desc#0128": {
@@ -961,13 +933,6 @@
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
-  "aspect-desc#0136": {
-   "src": "Corporeal Manifestation spins {~} faster.",
-   "dst": "Corporeal Manifestation หมุนเร็วขึ้น {~}",
-   "role": "desc",
-   "aspect": "Aspect of the Blurred Line",
-   "class": "shaman"
-  },
   "aspect-desc#0137": {
    "src": "Fortified Formation grants +{~} ❁ Resistance.",
    "dst": "Fortified Formation มอบ ❁ ค่าต้านทาน +{~}",
@@ -987,20 +952,6 @@
    "dst": "Totem ได้รับ {#} ระยะเวลา +{~} วินาที",
    "role": "desc",
    "aspect": "Aspect of the Monolith",
-   "class": "shaman"
-  },
-  "aspect-desc#0140": {
-   "src": "Awakened requires -{~} mana to activate.",
-   "dst": "Awakened ใช้มานาน้อยลง -{~} เพื่อเปิดใช้",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
-   "class": "shaman"
-  },
-  "aspect-desc#0141": {
-   "src": "Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened ได้รับ {#} ระยะเวลา +{~} วินาที",
-   "role": "desc",
-   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
   },
   "aspect-desc#0142": {
@@ -1220,13 +1171,6 @@
    "aspect": "Aspect of the Returning Javelin",
    "class": "warrior"
   },
-  "aspect-desc#0173": {
-   "src": "Brink of Madness activates at +{~} higher Health.",
-   "dst": "Brink of Madness ทำงานเมื่อพลังชีวิตสูงกว่าเดิม +{~}",
-   "role": "desc",
-   "aspect": "Aspect of the Tightrope Walk",
-   "class": "warrior"
-  },
   "aspect-desc#0174": {
    "src": "Pressure is stronger.",
    "dst": "Pressure แรงขึ้น",
@@ -1366,8 +1310,8 @@
    "role": "desc"
   },
   "blk008": {
-   "src": "Dawn spawns +{~} more wisps. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
-   "dst": "Dawn สร้างดวงไฟผีเพิ่ม +{~} ดวง Gravitational Collapse คงอยู่นานขึ้น +{~} วินาที Tangled Origin โจมตีเร็วขึ้น +{~}",
+   "src": "Dawn lasts +{~}s longer. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
+   "dst": "Dawn คงอยู่นานขึ้น +{~} วินาที Gravitational Collapse คงอยู่นานขึ้น +{~} วินาที Tangled Origin โจมตีเร็วขึ้น +{~}",
    "role": "desc"
   },
   "blk009": {
@@ -1383,11 +1327,6 @@
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
    "dst": "Puppet Master ได้รับ Puppets เพิ่ม +{~} ตัว {#} ความเสียหายรวม: -{~} (ของ DPS คุณ) ({#} ความเสียหาย: -{~}) ({#} ลม: -{~}) ({#} ดิน: -{~})",
-   "role": "desc"
-  },
-  "blk012": {
-   "src": "Awakened requires -{~} mana to activate. Awakened gains +{~}s {#} Duration.",
-   "dst": "Awakened ใช้มานาน้อยลง -{~} เพื่อเปิดใช้ Awakened ได้รับ {#} ระยะเวลา +{~} วินาที",
    "role": "desc"
   },
   "blk013": {
@@ -1431,8 +1370,8 @@
    "role": "desc"
   },
   "blk021": {
-   "src": "Arcane Speed gains +{~} speed per cast and +{~} maximum speed.",
-   "dst": "Arcane Speed ได้รับความเร็ว +{~} ต่อการร่าย และความเร็วสูงสุด +{~}",
+   "src": "Arcane Speed grants +{~} walk speed per cast and +{~} maximum speed.",
+   "dst": "Arcane Speed ให้ความเร็วเดิน +{~} ต่อการร่าย และความเร็วสูงสุด +{~}",
    "role": "desc"
   },
   "blk022": {
@@ -1484,6 +1423,34 @@
    "src": "Brink of Madness stores +{~} of your maximum health.",
    "dst": "Brink of Madness กักเก็บพลังชีวิตสูงสุดของคุณ +{~}",
    "role": "desc"
+  },
+  "aspect-desc#0188": {
+   "src": "Frost Dragon's Breath gains +{~} {#} Range.",
+   "dst": "Frost Dragon's Breath ได้รับ {#} ระยะ +{~}",
+   "role": "desc",
+   "aspect": "Aspect of the Ray of Frost",
+   "class": "mage"
+  },
+  "aspect-desc#0189": {
+   "src": "Increase Escape's velocity by {~}.",
+   "dst": "เพิ่มความเร็วของ Escape {~}",
+   "role": "desc",
+   "aspect": "Aspect of the Getaway",
+   "class": "archer"
+  },
+  "aspect-desc#0190": {
+   "src": "Increase the Static consumed by Aura and Zealot's Bolts by +{~}.",
+   "dst": "เพิ่ม Static ที่ Aura และ Zealot's Bolts ใช้ +{~}",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0191": {
+   "src": "Tangled Traps deal damage +{~} faster and gain +{~} {#} Area of Effect.",
+   "dst": "Tangled Traps สร้างความเสียหายเร็วขึ้น +{~} และได้รับ {#} พื้นที่ส่งผล +{~}",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
   }
  }
 }
