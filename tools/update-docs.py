@@ -186,7 +186,8 @@ LANG_NAMES = {
     "es_es": "Español",
     "tr_tr": "Türkçe",
     "pt_br": "Português (Brasil)",
-    "pt_br": "Português",
+    "vi_vn": "Tiếng Việt",
+    "th_th": "ไทย",
 }
 
 

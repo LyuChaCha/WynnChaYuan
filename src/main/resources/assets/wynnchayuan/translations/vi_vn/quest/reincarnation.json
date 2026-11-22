@@ -1,0 +1,382 @@
+{
+ "_meta": {
+  "quest": "Reincarnation",
+  "count": 36,
+  "translated": 36,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Reincarnation#000": {
+   "src": "Talk to Batelu in Bob's Tomb.",
+   "dst": "Nói chuyện với Batelu ở mộ của Bob.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#001": {
+   "src": "Hello adventurer! I see you want to solve the mystery of Bob's tomb also? Glad to meet you.",
+   "dst": "Chào nhà thám hiểm! Bạn cũng muốn giải bí ẩn mộ Bob à? Rất vui được gặp bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#002": {
+   "src": "My name is Batelu. Lately, I've been studying these strange symbols on the walls.",
+   "dst": "Tôi là Batelu. Gần đây tôi đang nghiên cứu những ký hiệu lạ trên tường.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#003": {
+   "src": "It's about Bob. Hopefully you do not believe the stories of his death, right? Bob couldn't have died so easily. Not to something so mundane as a wolf.",
+   "dst": "Là về Bob. Mong là bạn không tin mấy chuyện về cái chết của ông ấy, nhỉ? Bob không thể chết dễ thế. Nhất là vì thứ tầm thường như một con sói.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#004": {
+   "src": "He wasn't only strong, he was absolutely un-killable, a master in almost every skill.",
+   "dst": "Ông ấy không chỉ mạnh, mà còn bất tử, bậc thầy ở hầu hết mọi kỹ năng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#005": {
+   "src": "I believe he knew he was about to die. How? What of? Nobody knows, but he left this world prepared.",
+   "dst": "Tôi tin ông biết mình sắp chết. Sao biết? Vì gì? Không ai rõ, nhưng ông ra đi có chuẩn bị.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#006": {
+   "src": "You see, it says here Bob had three loyal animals. Before dying, he scattered them across the ocean.",
+   "dst": "Bạn thấy đấy, ở đây ghi Bob có ba con thú trung thành. Trước khi chết, ông rải chúng khắp đại dương.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#007": {
+   "src": "I think those animals are the key to accessing his real tomb...",
+   "dst": "Tôi nghĩ những con thú ấy là chìa khóa vào mộ thật của ông...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#008": {
+   "src": "You see that little gap right there? It's the entrance...",
+   "dst": "Bạn thấy khe nhỏ ngay đó không? Đó là lối vào...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#009": {
+   "src": "Unfortunately, nobody was able to remove the spell blocking it.",
+   "dst": "Tiếc là chưa ai gỡ được phép chặn nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#010": {
+   "src": "But I can. I know how to open the passage to Bob. This is where the animals will come in useful...",
+   "dst": "Nhưng tôi thì được. Tôi biết cách mở lối tới Bob. Đây là lúc lũ thú có ích...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#011": {
+   "src": "Bring me [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] if you can find them.",
+   "dst": "Mang cho tôi [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] nếu tìm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.962,
+    "reason": "placeholders"
+   }
+  },
+  "Reincarnation#012": {
+   "src": "How is your quest going along?",
+   "dst": "Nhiệm vụ của bạn sao rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reincarnation#013": {
+   "src": "I am not worthy enough to enter it. I did not complete the task of the animals, I merely read it. You shall go alone. Be careful.",
+   "dst": "Tôi không đủ xứng đáng để vào. Tôi không làm thử thách của lũ thú, chỉ đọc về nó. Bạn đi một mình nhé. Cẩn thận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.977,
+    "reason": "名字或框架差一個字就是另一條，原文沒有改"
+   }
+  },
+  "Reincarnation#014": {
+   "src": "I believe Bob did something to those animals. I think if we could reunite them in some way, we could open the passage.",
+   "dst": "Tôi tin Bob đã làm gì đó với lũ thú. Nếu tập hợp chúng lại được, ta sẽ mở được lối đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#015": {
+   "src": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
+   "dst": "Mang cho tôi {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin nếu tìm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#016": {
+   "src": "I am sure that together, we can open the passage. Good luck.",
+   "dst": "Tôi chắc rằng cùng nhau, ta sẽ mở được lối đi. Chúc may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 1",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#017": {
+   "src": "Bring back {~} Cluckles' Favourite Feather, Baab's Wool, and Mooington's Skin to Batelu.",
+   "dst": "Mang {~} Cluckles' Favourite Feather, Baab's Wool và Mooington's Skin về cho Batelu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#018": {
+   "src": "Wonderful! We can now open the passage to the true tomb of Bob...",
+   "dst": "Tuyệt vời! Giờ ta có thể mở lối vào mộ thật của Bob...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#019": {
+   "src": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
+   "dst": "Tôi không đủ xứng đáng để vào. Tôi không làm thử thách của lũ thú, chỉ đọc nó. Bạn đi một mình nhé, cẩn thận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 2",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#020": {
+   "src": "Kill Bob's Reincarnation.",
+   "dst": "Tiêu diệt Bob tái sinh.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#021": {
+   "src": "I am Bob, master of the arts of Wynn.",
+   "dst": "Ta là Bob, bậc thầy tuyệt nghệ Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#022": {
+   "src": "Let me explain why you are here.",
+   "dst": "Ta sẽ nói vì sao ngươi ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#023": {
+   "src": "My animals, were my greatest allies in my travels through the world.",
+   "dst": "Lũ thú là đồng minh lớn nhất của ta khi chu du khắp thế giới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#024": {
+   "src": "I travelled too far, mined too deep, and of course challenged what should not be challenged. My time in Wynn was coming to an end.",
+   "dst": "Ta đã đi quá xa, đào quá sâu, và tất nhiên thách thức thứ không nên thách thức. Thời gian của ta ở Wynn sắp hết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#025": {
+   "src": "I knew so, too. But I refused to leave without giving the power i had attained to those worthy of it.",
+   "dst": "Ta cũng biết thế. Nhưng ta không chịu ra đi khi chưa trao sức mạnh của mình cho kẻ xứng đáng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#026": {
+   "src": "Using what ability I had left to me, I transferred my power to my animals, in three pieces. In the hope that those worthy to harness it will seek them out.",
+   "dst": "Dùng chút năng lực còn lại, ta chia sức mạnh làm ba phần, trao cho lũ thú. Mong rằng kẻ xứng đáng sẽ tìm đến chúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#027": {
+   "src": "The spell I placed on the door to this realm will only break to the one who collects my power. But it cannot have escaped your notice, you do not have my power.",
+   "dst": "Phép ta đặt lên cánh cửa cõi này chỉ mở cho kẻ thu được sức mạnh của ta. Nhưng hẳn ngươi đã nhận ra, ngươi không có sức mạnh đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#028": {
+   "src": "The truth is, you must pass a test, the ultimate test. Hone your skills you have learnt throughout your travels, and face me. Face me, and earn your place amongst soldiers of Wynn.",
+   "dst": "Sự thật là ngươi phải vượt một thử thách, thử thách tối thượng. Mài giũa những gì đã học trên đường, và đối mặt với ta. Đối mặt với ta, và giành chỗ giữa các chiến binh của Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 3",
+   "speaker": "Bob",
+   "source": "wiki"
+  },
+  "Reincarnation#029": {
+   "src": "Bring back {~} Bob's Seal of Approval to Batelu.",
+   "dst": "Mang {~} Bob's Seal of Approval về cho Batelu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Reincarnation#030": {
+   "src": "Ah! You have returned! Tell me, what did you find within?",
+   "dst": "À! Bạn về rồi! Kể tôi nghe, bạn thấy gì trong đó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#031": {
+   "src": "...You faced Bob himself in combat? And you triumphed? That's quite remarkable!",
+   "dst": "...Bạn đã giao chiến với chính Bob? Và còn thắng? Thật phi thường!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#032": {
+   "src": "And he gave you his Seal of Approval... Hm. If that is the case, then there is something I may do for you.",
+   "dst": "Và ông ấy trao cho bạn con dấu chấp thuận... Hừm. Nếu vậy, tôi có thể làm một việc cho bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#033": {
+   "src": "Before Bob passed, he left his mythical weapons with a trusted friend. They were, so he said, to be kept for one who would be worthy to wield them...",
+   "dst": "Trước khi mất, Bob để vũ khí thần thoại lại cho một người bạn tin cẩn. Ông nói chúng được giữ cho người xứng đáng sử dụng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#034": {
+   "src": "Yes... Yes, I am certain. You have proven yourself worthy. Take this relic, the Stone of Myths, and bring it to the Temple of the Legends.",
+   "dst": "Phải... Phải, tôi chắc chắn. Bạn đã chứng tỏ mình xứng đáng. Cầm di vật này, Đá Thần Thoại, và mang nó tới Đền Huyền Thoại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  },
+  "Reincarnation#035": {
+   "src": "Within, you will find a merchant who will offer you a weapon in exchange for it. I wish you luck with your future travels.",
+   "dst": "Trong đó, bạn sẽ gặp một thương nhân đổi nó lấy một món vũ khí. Chúc bạn may mắn trên những chuyến đi sau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "Stage 4",
+   "speaker": "Batelu",
+   "source": "wiki"
+  }
+ }
+}

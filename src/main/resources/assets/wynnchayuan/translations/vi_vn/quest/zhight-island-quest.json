@@ -1,0 +1,552 @@
+{
+ "_meta": {
+  "quest": "Zhight Island (Quest)",
+  "count": 53,
+  "translated": 53,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Zhight Island (Quest)#000": {
+   "src": "Talk to Zhight of {p} at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Zhight của {p} tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#001": {
+   "src": "Hello, esteemed tourist sir or madame! I see you have found my illustrious resort, {p}!",
+   "dst": "Kính chào quý ông hay quý bà! Quý khách đã tìm thấy khu nghỉ dưỡng lừng danh {p}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#002": {
+   "src": "Normally, you'd need a reservation to stay here, but our human visitors are ALWAYS welcome! Ehm...",
+   "dst": "Thường thì phải đặt chỗ mới ở được, nhưng khách loài người LUÔN được chào đón! Ơ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#003": {
+   "src": "...w-well, actually...wait, no, it's nothing, nothing, friend! I guarantee you'll enjoy your stay here!",
+   "dst": "...ừ-ừm, thật ra... khoan, không, không có gì, bạn ơi! Đảm bảo quý khách sẽ vui khi ở đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#004": {
+   "src": "Even if m-my usual supplies haven't arrived in weeks, I, um, I'm TOTALLY sure we can accommodate for you!",
+   "dst": "Dù đ-đồ tiếp tế của tôi mấy tuần chưa tới, tôi, ờ, tôi CHẮC CHẮN vẫn phục vụ được quý khách!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#005": {
+   "src": "We can just...um...w-well, I won't impose on you, dearest most welcomest traveller, no sir! Or madame!",
+   "dst": "Bọn tôi có thể... ờ... th-thôi, tôi không làm phiền vị khách quý nhất, không thưa ngài! Hay thưa bà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#006": {
+   "src": "B-But, if, perchance, you were to, um...happen to find my supplier, Phief, who hasn't come around in weeks the bas-",
+   "dst": "N-Nhưng nếu, tình cờ, quý khách, ờ... gặp người cung cấp của tôi, Phief, mấy tuần chưa ló mặt, cái đồ khố-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#007": {
+   "src": "I! I mean! Nothing, nothing! Just, ehm, our extra reliable supplier often stops by {p} for supplies...",
+   "dst": "Tôi! Ý tôi là! Không có gì! Chỉ là, ờ, người cung cấp cực uy tín của tôi hay ghé {p} lấy hàng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#008": {
+   "src": "S-So, if you just happen to stop by there after your lovely stay here, and tell him to get off his sorry butt and send me my supplies that'd be just peachy!",
+   "dst": "N-Nên nếu quý khách tình cờ ghé đó sau kỳ nghỉ tuyệt vời này, bảo hắn nhấc cái mông lười lên gửi hàng cho tôi thì tuyệt hết ý!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#009": {
+   "src": "Look for Phief at {p}",
+   "dst": "Tìm Phief ở {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#010": {
+   "src": "Hello there. I see Zhight has sent you, correct?",
+   "dst": "Chào. Zhight cử bạn tới, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#011": {
+   "src": "I do hope he isn't mad at me. I fully intended to bring the supplies to him.",
+   "dst": "Mong ông ấy không giận tôi. Tôi định mang hàng tới thật mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#012": {
+   "src": "But things took a turn for the worst quickly, and I no longer have access to my ship.",
+   "dst": "Nhưng mọi chuyện xấu đi rất nhanh, và tôi mất luôn con tàu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#013": {
+   "src": "A madman jumped onto my ship, overpowered me, and held me hostage!",
+   "dst": "Một gã điên nhảy lên tàu, khống chế và bắt tôi làm con tin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#014": {
+   "src": "He was telling me how he wanted to \"take back what was stolen from him\", and it looked like he was heading to {p}.",
+   "dst": "Hắn cứ nói muốn \"lấy lại thứ bị cướp mất\", và có vẻ hắn đang tới {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#015": {
+   "src": "I have no clue whether he was deranged, paranoid, or if someone really did take something from him.",
+   "dst": "Tôi không rõ hắn mất trí, hoang tưởng, hay thật sự có người lấy đồ của hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#016": {
+   "src": "I am certain of one thing. Nobody is going to sail my boat but me. I took my first chance to escape, broke the controls.",
+   "dst": "Một điều chắc chắn: không ai được lái tàu tôi ngoài tôi. Có dịp là tôi trốn, phá luôn bánh lái.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#017": {
+   "src": "And I swam back to land, here. Problem is, I haven't exactly decided how I'll get the ship back for myself.",
+   "dst": "Rồi tôi bơi về bờ, ở đây. Vấn đề là tôi chưa nghĩ ra cách lấy lại tàu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#018": {
+   "src": "Find Phief's ship, and return it to its rightful owner",
+   "dst": "Tìm con tàu của Phief và trả nó về cho chủ nhân chính đáng",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#019": {
+   "src": "He told you what?! That fumbleknuckle...",
+   "dst": "Ông ta bảo bạn gì cơ?! Cái đồ hậu đậu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#020": {
+   "src": "We didn't steal the ship from Phief, we were taking back what he stole from us years ago!",
+   "dst": "Bọn tôi không cướp tàu của Phief, mà đòi lại thứ hắn cướp từ nhiều năm trước!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#021": {
+   "src": "He attacked us on our way home to {p}, kicked us off the boat, and sailed it to who-knows-where.",
+   "dst": "Hắn tấn công khi bọn tôi về {p}, đá bọn tôi khỏi tàu rồi lái đi đâu chẳng rõ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#022": {
+   "src": "We didn't think we would ever get it back, until we started seeing him sailing to that doofbumble Zhight.",
+   "dst": "Tưởng chẳng bao giờ lấy lại được, cho tới khi thấy hắn lái tàu tới chỗ gã ngố Zhight.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#023": {
+   "src": "Luckily, he decided to claim an island so close to {p}, or else we would have never seen him.",
+   "dst": "May mà hắn chiếm một hòn đảo sát {p}, không thì chẳng bao giờ thấy hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#024": {
+   "src": "My father started following him with a small sailboat he made, and decided on the perfect place to attack.",
+   "dst": "Cha tôi bám theo hắn bằng chiếc thuyền buồm nhỏ tự đóng, rồi chọn chỗ hoàn hảo để ra tay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#025": {
+   "src": "But then Phief just had to throw a hissy fit and leave us stranded here.",
+   "dst": "Nhưng Phief lại nổi cơn tam bành, bỏ bọn tôi kẹt ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#026": {
+   "src": "My father took a paddleboat back to {p} to gather supplies. He took the cargo the ship had with him.",
+   "dst": "Cha tôi chèo thuyền về {p} lấy đồ tiếp tế. Ông mang theo hàng trên tàu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#027": {
+   "src": "If you need that, you should go talk to him. His name is Czytash.",
+   "dst": "Nếu cần hàng thì đi gặp ông ấy. Ông tên Czytash.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#028": {
+   "src": "Get Zhight's supplies from Czytash at {p}",
+   "dst": "Lấy hàng tiếp tế của Zhight từ Czytash ở {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#029": {
+   "src": "Ah, yes, I did find plenty o' supplies on that ship.",
+   "dst": "À phải, ta có thấy cả đống hàng trên tàu đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#030": {
+   "src": "I assumed it was more of Phief's thiefed goods, so I took it home to use it myself.",
+   "dst": "Ta tưởng lại là đồ Phief cướp, nên mang về nhà xài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#031": {
+   "src": "It is Zhight's supplies you say?",
+   "dst": "Cậu nói là hàng của Zhight?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#032": {
+   "src": "Aye, of course it had to be that idiot's.",
+   "dst": "Phải rồi, dĩ nhiên là của gã ngốc đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#033": {
+   "src": "I guess me thinking he's dumber'n a box o' rocks is no reason for me to let him starve... Here, take the crate.",
+   "dst": "Ta nghĩ gã ngu hơn cục đá, nhưng đâu phải lý do để gã chết đói... Đây, cầm thùng hàng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#034": {
+   "src": "I haven't opened it yet, so everything is left exactly how he ordered it.",
+   "dst": "Ta chưa mở ra, mọi thứ y như gã đặt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#035": {
+   "src": "I wonder what is on that numbskull's menu, that crate smelled rancid. Almost threw it off me boat.",
+   "dst": "Không biết thực đơn của gã đầu đất có gì, thùng bốc mùi ôi. Suýt ta quăng xuống biển.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#036": {
+   "src": "Anyways, good luck on your adventure matey.",
+   "dst": "Thôi, chúc cậu phiêu lưu may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#037": {
+   "src": "Sorry, what was that? My son?",
+   "dst": "Xin lỗi, gì cơ? Con trai ta?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#038": {
+   "src": "Ah, I figured it is about time he learned how to maneuver a boat. I fixed everything before I left.",
+   "dst": "À, ta nghĩ đã đến lúc nó học lái tàu. Ta sửa hết rồi mới đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#039": {
+   "src": "When he returns, he will return a man.",
+   "dst": "Khi về, nó sẽ là đàn ông.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#040": {
+   "src": "Wait, why am I telling you this? Butt out of my personal life, and just bring the man his crate.",
+   "dst": "Khoan, sao ta kể cậu nghe? Đừng xía vào chuyện riêng, mang thùng cho gã đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#041": {
+   "src": "Give Zhight his supplies",
+   "dst": "Giao hàng tiếp tế cho Zhight",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#042": {
+   "src": "Ahaaa, esteemed sir! Or madame! I can't actually tell under all that armour...",
+   "dst": "Ahaaa, thưa quý ông! Hay quý bà! Giáp dày quá tôi chẳng nhìn ra...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#043": {
+   "src": "ER! I MEAN! N-No trouble at all, esteemed visitor! We at {p} Resort are always welcoming!",
+   "dst": "Ơ! Ý TÔI LÀ! K-Không sao cả, quý khách! Khu nghỉ dưỡng {p} luôn mến khách!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#044": {
+   "src": "...wait, is that the... Oh my! The supply crate! You went out and found Phief?! What an upstanding fellow you are!",
+   "dst": "...khoan, có phải... Trời ơi! Thùng hàng! Quý khách đi tìm Phief à?! Thật là người tử tế!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#045": {
+   "src": "Wait, he was a boat thief? Well, good thing you've told me, we can't have pirates here at our resort! I'll blacklist him ASAP!",
+   "dst": "Khoan, hắn là kẻ trộm tàu? Thế thì may mà quý khách báo, khu nghỉ dưỡng không chứa cướp biển! Tôi sẽ cấm cửa hắn ngay!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#046": {
+   "src": "You're only a visitor but you've been more help today than anyone else, really, I'm honestly in your debt.",
+   "dst": "Quý khách chỉ là khách mà giúp tôi hơn bất kỳ ai hôm nay, thật đấy, tôi nợ quý khách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#047": {
+   "src": "So here! The repairs at the Zhight Grand Exchange and Zhight Treasure Tour have just finished, so you can head in and see the fruits of your labor!",
+   "dst": "Nên đây! Sàn Giao dịch Lớn Zhight và Tour Kho báu Zhight vừa sửa xong, quý khách vào xem thành quả của mình nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#048": {
+   "src": "And, as a token of my thanks, some exclusive currency for our resort, Zhight Money, on the house and just for you! I hope you enjoy your stay!",
+   "dst": "Và để cảm ơn, một ít tiền riêng của khu nghỉ dưỡng, Zhight Money, miễn phí cho quý khách! Chúc quý khách vui vẻ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#049": {
+   "src": "Terribly sorry but the Zhight Grand Exchange is under repairs right now! You can't go in yet!",
+   "dst": "Thành thật xin lỗi, Sàn Giao dịch Lớn Zhight đang sửa chữa! Chưa vào được đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#050": {
+   "src": "Maybe you can help me with that. The ship should still be stuck, due north of here, it has a red and white sail. I'd love to get my sea legs back.",
+   "dst": "Có lẽ bạn giúp được. Con tàu chắc vẫn mắc cạn, ngay phía bắc đây, buồm đỏ trắng. Tôi rất muốn lại được ra khơi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "captured",
+   "similar": {
+    "text": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
+    "file": "quest/zhight-island-quest.json",
+    "ratio": 0.89,
+    "reason": "candidate"
+   }
+  },
+  "Zhight Island (Quest)#051": {
+   "src": "Welcome traveller, to our island.",
+   "dst": "Chào mừng lữ khách tới đảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Loot Chest [✫✫✫✫]",
+   "source": "captured",
+   "similar": {
+    "text": "Welcome traveler, to our humble island...",
+    "file": "quest/ice-nations.json",
+    "ratio": 0.865,
+    "reason": "candidate"
+   }
+  },
+  "Zhight Island (Quest)#052": {
+   "src": "Oh? Well, greetings. What brings you all the way up here?",
+   "dst": "Ồ? Chà, chào. Sao lại lên tận đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

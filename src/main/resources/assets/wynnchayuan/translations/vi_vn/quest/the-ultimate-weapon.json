@@ -1,0 +1,850 @@
+{
+ "_meta": {
+  "quest": "The Ultimate Weapon",
+  "count": 84,
+  "translated": 84,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Ultimate Weapon#000": {
+   "src": "These must be the Wood Sprites Dodegar was talking about...",
+   "dst": "Đây hẳn là những Tinh linh gỗ mà Dodegar đã nói...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#001": {
+   "src": "Dodegar carefully grabs the piece of wood and begins carving.",
+   "dst": "Dodegar cẩn thận cầm mẩu gỗ và bắt đầu chạm khắc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#002": {
+   "src": "Hmmm...?",
+   "dst": "Hửm...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "Gogedar",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#003": {
+   "src": "Speak to Dodegar Bandysnoot at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Dodegar Bandysnoot ở [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#004": {
+   "src": "I'm glad you came along, I could do with a little help if you're not too busy.",
+   "dst": "Mừng là cậu ghé qua, tôi đang cần chút trợ giúp nếu cậu không bận lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#005": {
+   "src": "I'm Dodegar Bandysnoot, the world famous Hobbit swordsmith! Perhaps you've heard of me?",
+   "dst": "Tôi là Dodegar Bandysnoot, thợ rèn kiếm hobbit lừng danh! Chắc cậu từng nghe về tôi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#006": {
+   "src": "No? Oh... Well, I've had an idea about how I could make the best weapon that the world has ever seen!",
+   "dst": "Không à? Ồ... Dù sao, tôi có ý tưởng chế tạo vũ khí tuyệt nhất mà thế giới từng thấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#007": {
+   "src": "But, I need some help getting the special resources to make it.",
+   "dst": "Nhưng tôi cần người giúp kiếm nguyên liệu đặc biệt để làm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#008": {
+   "src": "You'll help?! Excellent! We shall gather enough resources to make one for each of us!",
+   "dst": "Cậu giúp à?! Tuyệt vời! Ta sẽ gom đủ nguyên liệu để làm cho mỗi người một cái!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#009": {
+   "src": "So firstly, I need some living wood for the handle, [{~} Enchanted Stick] should be enough.",
+   "dst": "Trước hết, tôi cần gỗ sống làm chuôi, [{~} Enchanted Stick] là đủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#010": {
+   "src": "The wood sprites located across the river to the west, in a big tree trunk, have magical properties! The handle can then mold to the user's hand! One shouldn't be too hard to come across!",
+   "dst": "Tinh linh gỗ ở bên kia sông phía tây, trong một thân cây lớn, có đặc tính ma thuật! Nhờ vậy chuôi sẽ ôm khít tay người cầm! Kiếm một cái chẳng khó đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#011": {
+   "src": "I hope you are prepared, this will be your best quest yet!",
+   "dst": "Mong cậu đã sẵn sàng, đây sẽ là nhiệm vụ hay nhất của cậu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#012": {
+   "src": "Collect [{~} Enchanted Stick] from Wood Sprites at [-{~}, {~}, -{~}] and return them to Dodegar",
+   "dst": "Thu thập [{~} Enchanted Stick] từ Tinh linh gỗ ở [-{~}, {~}, -{~}] và mang về cho Dodegar",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#013": {
+   "src": "Wow! You got the wood I needed, thanks!",
+   "dst": "Chà! Cậu mang gỗ về rồi, cảm ơn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#014": {
+   "src": "While I'm making the handle, could you help me with the blade?",
+   "dst": "Trong lúc tôi làm chuôi, cậu giúp tôi phần lưỡi nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#015": {
+   "src": "Since we want this weapon to be as good as possible we need to find some sacred Hobbit metal!",
+   "dst": "Vì muốn vũ khí này tốt nhất có thể, ta phải tìm kim loại thiêng của hobbit!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#016": {
+   "src": "The hobbit village, The Shiar, is really close! Follow the southern road. My brother Gogedar should be there!",
+   "dst": "Làng hobbit Shiar ở rất gần! Đi theo đường phía nam. Anh tôi là Gogedar chắc đang ở đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#017": {
+   "src": "Dodegar needs [{~} Sacred Hobbit Metal] from the Shiar at [-{~}, {~}, -{~}]",
+   "dst": "Dodegar cần [{~} Sacred Hobbit Metal] từ Shiar ở [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#018": {
+   "src": "My brother you say... Trying to create a weapon...",
+   "dst": "Em tôi à... Muốn chế tạo vũ khí...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#019": {
+   "src": "Hmmm...",
+   "dst": "Hmmm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#020": {
+   "src": "Oh he needs Sacred Hobbit Metal!?",
+   "dst": "Nó cần kim loại thiêng hobbit!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#021": {
+   "src": "Hmm...!",
+   "dst": "Hừm...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#022": {
+   "src": "Sorry can't help you. I don't really know what that is.",
+   "dst": "Xin lỗi, không giúp được. Tôi chẳng rõ thứ đó là gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#023": {
+   "src": "Maybe ask our cousin, Togedar?",
+   "dst": "Thử hỏi anh họ Togedar xem?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#024": {
+   "src": "Find Togedar in the Shiar.",
+   "dst": "Tìm Togedar ở Shiar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#025": {
+   "src": "Dodegar? Does not really ring a bell I'm afraid.",
+   "dst": "Dodegar? E là chẳng nhớ ra ai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#026": {
+   "src": "Oh! Gogedar's brother, why didn't you tell me that.",
+   "dst": "À! Em của Gogedar, sao không nói sớm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#027": {
+   "src": "Sacred Hobbit Metal... This is a metal forged by master blacksmith hobbits within our village. It is a bit expensive to get by but holds great potential, if used properly.",
+   "dst": "Kim loại thiêng của hobbit... Là kim loại do các bậc thầy thợ rèn hobbit trong làng rèn nên. Hơi đắt để có được nhưng tiềm năng lớn, nếu dùng đúng cách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#028": {
+   "src": "Oh. You need a piece?",
+   "dst": "Ồ. Cần một miếng à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#029": {
+   "src": "I don't have any. Maybe ask my nephew's brother Alegdar?",
+   "dst": "Tôi không có. Thử hỏi anh của cháu tôi, Alegdar xem?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#030": {
+   "src": "Find Alegdar in the Shiar.",
+   "dst": "Tìm Alegdar ở Shiar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#031": {
+   "src": "Oh?",
+   "dst": "Hả?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#032": {
+   "src": "I actually don't know much about... anything.",
+   "dst": "Thật ra tôi chẳng biết nhiều về... gì cả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#033": {
+   "src": "I kind of just... stand around here.",
+   "dst": "Tôi chỉ... đứng quanh đây thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#034": {
+   "src": "Everyone I have ever met just calls me annoying and useless. So I decided to stop trying.",
+   "dst": "Ai tôi gặp cũng bảo tôi phiền phức và vô dụng. Nên tôi thôi không cố nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#035": {
+   "src": "You know, life is hard. We all just have to fight through, and then eventually, we might become happy.",
+   "dst": "Cậu biết đấy, đời khó khăn lắm. Ta chỉ cần cố vượt qua, rồi biết đâu sẽ hạnh phúc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#036": {
+   "src": "Right sorry... Ask Balegar for any information. He is way smarter.",
+   "dst": "À xin lỗi... Hỏi Balegar ấy. Anh ta thông minh hơn nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#037": {
+   "src": "Find Balegar in the Shiar.",
+   "dst": "Tìm Balegar ở Shiar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#038": {
+   "src": "My cousin's nephew's dad has had a rough year... I feel bad for him.",
+   "dst": "Bố của cháu của anh họ tôi vừa qua một năm khó khăn... Tội ông ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#039": {
+   "src": "Oh well!",
+   "dst": "Thôi kệ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#040": {
+   "src": "I have nooooo clue about that metal. I heard it was just as valuable as a normal rock.",
+   "dst": "Tôi hoàààn toàn không biết gì về kim loại đó. Nghe nói nó quý ngang cục đá thường.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#041": {
+   "src": "Dodegar takes the piece of metal and starts welding it.",
+   "dst": "Dodegar cầm miếng kim loại và bắt đầu hàn nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#042": {
+   "src": "Maybe my cousin Reyoretrsed knows anything about it.",
+   "dst": "Có lẽ anh họ tôi Reyoretrsed biết gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#043": {
+   "src": "Find Reyoretrsed in the Shiar.",
+   "dst": "Tìm Reyoretrsed ở Shiar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#044": {
+   "src": "Reyoretrsed? That's me!",
+   "dst": "Reyoretrsed? Tôi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#045": {
+   "src": "You are wondering how my name is pronounced? What a rude question.",
+   "dst": "Cậu thắc mắc tên tôi đọc thế nào? Hỏi gì mà bất lịch sự thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#046": {
+   "src": "Ray-ore-tree-sed, obviously. What is a human doing here?",
+   "dst": "Rây-o-tri-xét, hiển nhiên rồi. Con người làm gì ở đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#047": {
+   "src": "You are wondering if I have Sacred whatever metal?",
+   "dst": "Cậu hỏi tôi có kim loại thiêng gì gì đó không à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#048": {
+   "src": "I'm {~}. Now if you excuse me, I am busy standing still. Go bother Richard or something.",
+   "dst": "Tôi {~} tuổi. Giờ xin phép, tôi đang bận đứng yên. Đi làm phiền Richard hay ai đó đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#049": {
+   "src": "Find Richard in the Shiar.",
+   "dst": "Tìm Richard ở Shiar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#050": {
+   "src": "I've been trying to tell you that I have what you need.",
+   "dst": "Tôi cố nói với cậu nãy giờ là tôi có thứ cậu cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#051": {
+   "src": "You humans really need to practice your communication skills, please.",
+   "dst": "Con người các cậu nên luyện kỹ năng giao tiếp đi, làm ơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#052": {
+   "src": "Anyway, here. Take it! This metal is just a scam anyway, nothing special with it.",
+   "dst": "Dù sao, đây. Cầm lấy! Kim loại này chỉ là trò lừa thôi, chẳng có gì đặc biệt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#053": {
+   "src": "Return to Dodegar with the metal.",
+   "dst": "Mang kim loại về cho Dodegar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#054": {
+   "src": "I hope it wasn't too much of an issue to get!",
+   "dst": "Mong là kiếm nó không quá vất vả!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#055": {
+   "src": "... I forgot a step. I can't attach a blade without a binder material.",
+   "dst": "... Tôi quên một bước. Không thể gắn lưỡi nếu thiếu chất kết dính.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#056": {
+   "src": "I need the nectar of a native flower of the forest to attach it. [{~} Diplacus Aurantiacus] would do the trick.",
+   "dst": "Tôi cần mật hoa của một loài hoa bản địa trong rừng để gắn nó. [{~} Diplacus Aurantiacus] là được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#057": {
+   "src": "Finding the flower can be rather difficult, here's a riddle on how to find it.",
+   "dst": "Tìm loài hoa này khá khó, đây là câu đố chỉ đường tới nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#058": {
+   "src": "On the side of a hut, hidden inside a hole. Resting in a forest of light, without plight. Whatever that would mean.",
+   "dst": "Bên hông túp lều, giấu trong một cái hốc. Nằm giữa rừng ánh sáng, chẳng ưu phiền. Chẳng biết nghĩa là gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#059": {
+   "src": "Find the Diplacus Aurantiacus by following the riddle to [-{~}, {~}, -{~}].",
+   "dst": "Tìm Diplacus Aurantiacus theo câu đố tới [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#060": {
+   "src": "Hold up! This feels waaay, toooo easy.",
+   "dst": "Khoan đã! Thế này dễ quááá rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#061": {
+   "src": "If I'm going to give you this amazingly, incredible, showstopping, crazy item practically for free, you need to at least work for it!",
+   "dst": "Nếu tôi đưa cậu món đồ tuyệt vời, khó tin, choáng ngợp, điên rồ này gần như miễn phí, thì ít ra cậu phải bỏ công chứ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#062": {
+   "src": "Give me that!",
+   "dst": "Đưa đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#063": {
+   "src": "Let me just...",
+   "dst": "Để tớ thử...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#064": {
+   "src": "This looks so much better! Anyway, bring me that flower now!",
+   "dst": "Trông đẹp hơn nhiều rồi! Giờ thì mang hoa đó cho tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#065": {
+   "src": "Talk to Dodegar with the Diplacus Aurantiacus.",
+   "dst": "Mang Diplacus Aurantiacus đến nói chuyện với Dodegar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#066": {
+   "src": "Took you a while, did it not?",
+   "dst": "Cậu mất khá lâu đấy nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#067": {
+   "src": "It's starting to look pretty amazing! Just like it's supposed to I'm sure!",
+   "dst": "Trông nó bắt đầu tuyệt vời rồi! Chắc chắn đúng như nó phải thế!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#068": {
+   "src": "Maybe this will actually work out. Either way, last ingredient we need!",
+   "dst": "Biết đâu lần này thành công thật. Dù sao, đây là nguyên liệu cuối cùng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#069": {
+   "src": "So to finalize and apply some magical properties to this uniquely amazing item we need something known as Luster Blood.",
+   "dst": "Để hoàn thiện và ban đặc tính ma thuật cho món đồ độc nhất tuyệt vời này, ta cần thứ gọi là máu ánh kim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#070": {
+   "src": "The only known creature in the west, probably the whole world if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
+   "dst": "Sinh vật duy nhất được biết ở phía tây, nói thật có lẽ cả thế giới, là Bọ Lá Bụi Lân Quang Âm Phủ, chẳng biết cái tên ở đâu ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#071": {
+   "src": "I happen to know that this Beetle lives in a cave in the eastern ravine thingy! If you walk straight east you will stumble upon it, I promise!",
+   "dst": "Tôi tình cờ biết con bọ này sống trong hang ở cái khe núi phía đông! Cứ đi thẳng về phía đông là cậu sẽ thấy, tôi hứa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#072": {
+   "src": "Since when do Beetles talk...",
+   "dst": "Từ khi nào bọ biết nói thế...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#073": {
+   "src": "You should return to Dodegar with the blood, he should be nearby.",
+   "dst": "Bạn nên mang máu về cho Dodegar, chắc anh ta ở gần đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#074": {
+   "src": "Dodegar smears the weapon with the glowing blood.",
+   "dst": "Dodegar bôi máu phát sáng lên vũ khí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#075": {
+   "src": "Oh! Almost forgot to mention, about {~} Luster Blood is probably enough.",
+   "dst": "Ồ! Suýt quên nói, chừng {~} máu ánh kim chắc là đủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#076": {
+   "src": "Find the cave at [-{~}, {~}, -{~}] and bring back [{~} Luster Blood] and bring it back to Dodegar.",
+   "dst": "Tìm hang ở [-{~}, {~}, -{~}], lấy [{~} Luster Blood] và mang về cho Dodegar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#077": {
+   "src": "Do not step any closer... Or I will be forced to obliterate you!",
+   "dst": "Đừng tiến thêm... Không thì ta buộc phải hủy diệt ngươi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#078": {
+   "src": "The final component! It is finally here!",
+   "dst": "Thành phần cuối cùng! Có rồi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#079": {
+   "src": "Oh my Orphion!",
+   "dst": "Ôi Orphion ơi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#080": {
+   "src": "Do you see how it's glowing, sparkling and... and radiating!",
+   "dst": "Cậu có thấy nó phát sáng, lấp lánh và... và tỏa rạng không!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#081": {
+   "src": "You don't? Uhm... maybe you need glasses humie.",
+   "dst": "Không à? Ừm... chắc cậu cần kính đấy, bé người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#082": {
+   "src": "As promised! Here you go! Always happy to practice the art of weapon creation.",
+   "dst": "Như đã hứa! Của cậu đây! Luôn vui được rèn luyện nghệ thuật chế tạo vũ khí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#083": {
+   "src": "The metal is rather rare so I don't know if you can even find it...",
+   "dst": "Kim loại này khá hiếm nên chẳng biết cậu có tìm được không nữa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

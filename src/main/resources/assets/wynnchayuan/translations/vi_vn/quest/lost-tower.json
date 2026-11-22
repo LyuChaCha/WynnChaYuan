@@ -1,0 +1,100 @@
+{
+ "_meta": {
+  "quest": "Lost Tower",
+  "count": 9,
+  "translated": 9,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lost Tower#000": {
+   "src": "Hey, adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
+   "dst": "Này, nhà thám hiểm! Giúp tôi một lát được không? Tôi đang gặp chút rắc rối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "captured"
+  },
+  "Lost Tower#001": {
+   "src": "A long time ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
+   "dst": "Xưa kia, trước khi {p} bị hủy diệt, gia đình tôi có một cuốn sách rất thú vị, chứa tri thức về những nơi chốn và sinh vật quyền năng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "captured"
+  },
+  "Lost Tower#005": {
+   "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
+   "dst": "Tiếc là một sinh vật đã cướp nó trong trận tấn công khiến {p} bị hủy diệt, và từ đó không ai thấy nó nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#006": {
+   "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
+   "dst": "Nếu muốn giúp, hãy mang cho tôi [{~} Book of the Bones], tôi tin cuốn sách giờ nằm trong tay lũ bộ xương, ở một tòa tháp cũ tại {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#007": {
+   "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
+   "dst": "Xem bạn có tìm được tòa tháp đó không, chắc một con bộ xương trong đó đang giữ cuốn sách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#008": {
+   "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
+   "dst": "Tìm tòa tháp thất lạc ở {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#009": {
+   "src": "Find the book in the tower, and bring it back to Laen.",
+   "dst": "Tìm cuốn sách trong tòa tháp và mang về cho Laen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#010": {
+   "src": "Bring back the book to Laen.",
+   "dst": "Mang cuốn sách về cho Laen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#011": {
+   "src": "Great! This will be very interesting to read, thank you!",
+   "dst": "Tuyệt! Đọc chắc thú vị lắm đây, cảm ơn bạn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 4",
+   "speaker": "Laen",
+   "source": "wiki"
+  }
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "_meta": {
+  "quest": "Clearing the Camps",
+  "count": 15,
+  "translated": 15,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Clearing the Camps#000": {
+   "src": "The orc chiefs seem to hide in the camps with green flags - search the plains, and return once they're subdued!",
+   "dst": "Có vẻ các tù trưởng Orc trốn trong những trại cắm cờ xanh - hãy lục soát đồng bằng, khuất phục chúng rồi quay lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "Bạn nghe về những lời cầu cứu từ dân làng gửi tới chưa? Họ nói lũ 'Orc' và 'Goblin' đang đe dọa thị trấn và thành phố của họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "Những sinh vật nguyên thủy, tàn bạo, có vẻ chẳng hơn lũ zombie ta quen là mấy, ít nhất theo quân đội {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "Trinh sát của ta đã xác định ba tù trưởng Orc trong vùng- Elisu, Ceifko và Veltu. Nhưng lạ là Veltu lúc nào cũng có goblin vây quanh...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "Dù sao thì, ta cần ở lại đây bảo vệ {p}. Bạn lo được bọn tù trưởng chứ? Chúng có vẻ trốn trong những trại cắm cờ xanh - lục soát đồng bằng, xử xong thì quay lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "Thế thì... tàn nhẫn hơn tôi định, nhưng được việc... Dân làng đâu quan tâm chúng sống hay chết, miễn được giải quyết. Phần thưởng của bạn đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "Lúc ra ngoài bạn thấy sinh vật ở Gavel khác hẳn ở Wynn rồi chứ? Chúng, à... sung sức hơn bình thường. Liệu mà quen dần đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Đại úy Kymer ngoài {p} tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Clearing the Camps#008": {
+   "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
+   "dst": "A ha, thêm một người lính {p} hả? Chào mừng bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "wiki"
+  },
+  "Clearing the Camps#009": {
+   "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
+   "dst": "Vậy nên chúng tôi đoán nếu với chúng mạnh được yếu thua, thì hạ thủ lĩnh sẽ khiến chúng sợ mà quy phục.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
+   "source": "wiki"
+  },
+  "Clearing the Camps#010": {
+   "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
+   "dst": "Tìm và tiêu diệt các tù trưởng Orc Elisu, Veltu và Ceifko trong các trại quanh {p}- tìm cờ xanh",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Clearing the Camps#011": {
+   "src": "Report back to Captain Kymer once you have the three heads.",
+   "dst": "Quay lại gặp Đại úy Kymer khi có đủ ba cái đầu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Clearing the Camps#012": {
+   "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
+   "dst": "A, người lính lúc nãy! Bạn về rồi. Có hạ được bọn- ...eo ơi. Đó là đầu của chúng à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
+   "source": "wiki"
+  },
+  "Clearing the Camps#013": {
+   "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
+   "dst": "Một đòn chính xác thế này sẽ giúp tránh chiến tranh toàn diện với Orc. Chẳng ai muốn phải lo một cuộc chiến quy mô lớn ở mỗi tỉnh, ha!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
+   "source": "wiki"
+  },
+  "Clearing the Camps#014": {
+   "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
+   "dst": "Khu định cư lớn kế tiếp là {p}, trong đầm lầy phía bắc, nhưng nghe nói ogre đầm lầy cứng hơn hẳn bọn ở đồng bằng. Tôi mà là bạn thì ở lại đây luyện thêm đã.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
+   "source": "wiki"
+  }
+ }
+}

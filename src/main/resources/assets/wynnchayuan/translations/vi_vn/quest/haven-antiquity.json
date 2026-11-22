@@ -1,0 +1,600 @@
+{
+ "_meta": {
+  "quest": "Haven Antiquity",
+  "count": 59,
+  "translated": 59,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Haven Antiquity#000": {
+   "src": "Did you talk with the old creepy man in the mansion yet? I'm sure he knows something.",
+   "dst": "Bạn nói chuyện với ông già đáng sợ trong dinh thự chưa? Tôi chắc ông ta biết gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#001": {
+   "src": "I'd sit and tell you, but I feel you might get a better experience first hand....",
+   "dst": "Ta có thể ngồi kể, nhưng ngươi tự trải nghiệm thì hay hơn....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "captured"
+  },
+  "Haven Antiquity#002": {
+   "src": "I can not cast the spell without the [{~} Umbral Essences] I asked for.",
+   "dst": "Ta không thể thi phép nếu thiếu [{~} Umbral Essences] đã dặn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "Old Siwel",
+   "source": "captured"
+  },
+  "Haven Antiquity#003": {
+   "src": "Mumbles a strange, dead language...",
+   "dst": "Lẩm bẩm một thứ tử ngữ kỳ lạ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "captured"
+  },
+  "Haven Antiquity#004": {
+   "src": "Mumbles a strange, dead language....",
+   "dst": "Lẩm bẩm một thứ tử ngữ kỳ lạ....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#005": {
+   "src": "If you die in the memory, you die in reality too.... Best of luck....",
+   "dst": "Chết trong ký ức là chết thật đấy.... Chúc may mắn....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#006": {
+   "src": "Please go check out that egg. I am very worried about its behavior. Don't forget the [{~} Monster Hides] as evidence.",
+   "dst": "Hãy đi xem quả trứng đó. Tôi rất lo về nó. Đừng quên mang [{~} Monster Hides] làm bằng chứng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#007": {
+   "src": "Thank you for your work! I will be returning home. Perhaps we will meet again!",
+   "dst": "Cảm ơn bạn đã giúp! Tôi sẽ về nhà. Có lẽ ta sẽ gặp lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#008": {
+   "src": "Talk to {p} on the docks at {p} at [{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với {p} ở bến tàu {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#009": {
+   "src": "Hey there adventurer, can I speak with you for a second? I need you to do a spot of detective work for me.",
+   "dst": "Chào nhà thám hiểm, nói chuyện với tôi một chút được không? Tôi cần bạn làm thám tử giúp tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#010": {
+   "src": "My grandfather once told me how beautiful this place was, and how to visit here if I wanted to relax.",
+   "dst": "Ông tôi từng kể nơi này đẹp thế nào, và bảo muốn thư giãn thì hãy đến đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#011": {
+   "src": "But as you can see, this island is the least bit relaxing. It is a sorrowful place, corrupted and dark.",
+   "dst": "Nhưng như bạn thấy, hòn đảo này chẳng thư thái chút nào. Đây là nơi u sầu, tha hóa và tăm tối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#012": {
+   "src": "This can't be right. My grandfather was an honest man, he wouldn't have lied.",
+   "dst": "Không thể nào. Ông tôi là người thật thà, ông ấy không nói dối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#013": {
+   "src": "I figure something must have happened. I really want to know how it got like this.",
+   "dst": "Hẳn đã có chuyện gì xảy ra. Tôi rất muốn biết vì sao nơi này thành ra thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#014": {
+   "src": "There's an old creepy man living up on that hill in a big mansion who seems just old enough to know what happened. It might be a good place to start.",
+   "dst": "Trên ngọn đồi kia có một ông già đáng sợ sống trong dinh thự lớn, có vẻ đủ già để biết chuyện. Bắt đầu từ đó có lẽ là hay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 1",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#015": {
+   "src": "Investigate Old Siwel in the dead Mansion at [{~}, {~}, -{~}]",
+   "dst": "Điều tra lão Siwel trong dinh thự chết tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#016": {
+   "src": "What do you want? I'm busy. Brewing potions takes focus, you know....",
+   "dst": "Ngươi muốn gì? Ta đang bận. Pha thuốc cần tập trung đấy....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#017": {
+   "src": "Oh, you want to know about the island's history? Well you certainly came to the right man. I've lived here for a very long time.",
+   "dst": "Ồ, ngươi muốn biết lịch sử hòn đảo? Vậy là tìm đúng người rồi. Ta đã sống ở đây rất, rất lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#018": {
+   "src": "There is a way for you to see for yourself what happened here. It's quite... an interesting tale, too.",
+   "dst": "Có một cách để ngươi tận mắt thấy chuyện đã xảy ra. Một câu chuyện khá... thú vị.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#019": {
+   "src": "Using some of the more... frowned upon methods in the alchemists library I am able to send you into the 'memory' of a dead person that lived here at the time.",
+   "dst": "Nhờ vài phương pháp... không mấy chính đáng trong thư viện giả kim, ta có thể đưa ngươi vào 'ký ức' của một người chết từng sống ở đây khi ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#020": {
+   "src": "It will require a little work from you though, if you wish to proceed....",
+   "dst": "Nhưng ngươi phải làm chút việc, nếu muốn tiếp tục....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#021": {
+   "src": "Bring me [{~} Umbral Essences] and I will be able to cast a spell on you which will allow you to pass into the 'memory' of the deceased.",
+   "dst": "Mang cho ta [{~} Umbral Essences], ta sẽ thi phép đưa ngươi vào 'ký ức' của người đã khuất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 2",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#022": {
+   "src": "Acquire [{~} Umbral Essences] for Old Siwel",
+   "dst": "Thu thập [{~} Umbral Essences] cho lão Siwel",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#023": {
+   "src": "Excellent. You acquired the ingredients. Just give me a second and I'll prepare you for your journey into the mind of the dead.",
+   "dst": "Tuyệt lắm. Ngươi có nguyên liệu rồi. Chờ ta một chút để chuẩn bị cho chuyến đi vào tâm trí người chết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#024": {
+   "src": "There, look into my eyes. Yes, you're ready. Ah, there is a drawback though....",
+   "dst": "Đó, nhìn vào mắt ta. Phải, ngươi sẵn sàng rồi. À, nhưng có một cái giá....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#025": {
+   "src": "Once you are inside the memory, it will feel like you are actually there. You won't be able to return until you have succeeded in your task.",
+   "dst": "Khi vào ký ức, ngươi sẽ thấy như đang thật sự ở đó. Ngươi không thể trở về cho đến khi hoàn thành nhiệm vụ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#026": {
+   "src": "To enter the memory, you need to find the dead man at the end of the crypt in the graveyard.",
+   "dst": "Để vào ký ức, hãy tìm người chết ở cuối hầm mộ trong nghĩa địa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#027": {
+   "src": "The dead roam those caves in heavy numbers, so watch your step.",
+   "dst": "Người chết lang thang đầy những hang đó, cẩn thận bước chân.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#028": {
+   "src": "Oh and one more thing, If you die in the memory, you die in reality too....",
+   "dst": "À còn điều này, chết trong ký ức là chết ngoài đời luôn....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#029": {
+   "src": "Best of luck....",
+   "dst": "Chúc may mắn....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#030": {
+   "src": "Locate the Crypt under the church at [{~}, {~}, -{~}] and pass through a dead man's memory",
+   "dst": "Tìm hầm mộ dưới nhà thờ tại [{~}, {~}, -{~}] và đi qua ký ức của một người chết",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#031": {
+   "src": "Investigate Siwel at [-{~}, {~}, -{~}] on Alive Island",
+   "dst": "Điều tra Siwel tại [-{~}, {~}, -{~}] trên Đảo Người Sống",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#032": {
+   "src": "Oh, hello there. Would you mind helping me with something for a second?",
+   "dst": "Ồ, chào bạn. Giúp tôi một việc nhỏ được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#033": {
+   "src": "Recently, some strange things have been happening to the miners around here. New diseases, unexplained disappearances, and things like that.",
+   "dst": "Gần đây thợ mỏ quanh đây gặp nhiều chuyện lạ. Bệnh mới, mất tích không rõ lý do, đại loại thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#034": {
+   "src": "The villagers have been getting very worried. So, in an attempt to protect the island, I bought a strange egg and placed it in a cave close to town.",
+   "dst": "Dân làng rất lo lắng. Nên để bảo vệ hòn đảo, tôi đã mua một quả trứng lạ và đặt nó trong hang gần thị trấn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#035": {
+   "src": "The egg, however, isn't what I thought it was. It is producing monsters and giving off some sort of dark aura.",
+   "dst": "Nhưng quả trứng không như tôi nghĩ. Nó đang sinh ra quái vật và tỏa ra một luồng khí đen tối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#036": {
+   "src": "I want you to go check out that egg. See if you can get rid of whatever it is producing. Bring me [{~} Monster Hides] as evidence.",
+   "dst": "Bạn hãy đi xem quả trứng. Thử diệt hết thứ nó sinh ra. Mang cho tôi [{~} Monster Hides] làm bằng chứng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 5",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#037": {
+   "src": "Confront the cave under the mansion at [-{~}, {~}, -{~}] and retrieve [{~} Monster Hides] for Siwel from the monsters within",
+   "dst": "Vào hang dưới dinh thự tại [-{~}, {~}, -{~}] và lấy [{~} Monster Hides] từ lũ quái bên trong cho Siwel",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#038": {
+   "src": "You're back! Were you able to stop that egg?",
+   "dst": "Bạn về rồi! Có ngăn được quả trứng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#039": {
+   "src": "No? Well, I guess we'll have to wait and see what it hatches into.",
+   "dst": "Không à? Vậy đành chờ xem nó nở ra thứ gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#040": {
+   "src": "I see you got some rather rare dark monster hide. Maybe I could use those in a potion for something, maybe to prolong life.",
+   "dst": "Bạn lấy được da quái vật bóng tối khá hiếm đấy. Có lẽ tôi dùng nó pha thuốc gì đó, biết đâu để kéo dài tuổi thọ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#041": {
+   "src": "Some of the villagers believe that it is unwise for myself to dabble in the dark arts, dealing with mysterious eggs and brewing potions of death.",
+   "dst": "Vài người dân cho rằng tôi không nên dính vào hắc thuật, nghịch trứng bí ẩn và pha thuốc tử thần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#042": {
+   "src": "I'll outlive them all, you'll see!",
+   "dst": "Tôi sẽ sống lâu hơn tất cả, rồi xem!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#043": {
+   "src": "As for you, you have done what I asked. You may return to your personal affairs now.",
+   "dst": "Còn bạn, bạn đã làm xong việc tôi nhờ. Giờ bạn có thể lo việc riêng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#044": {
+   "src": "Thank you for your work, though. Only time will tell what that egg will hatch into.",
+   "dst": "Dù sao cũng cảm ơn bạn. Chỉ thời gian mới biết quả trứng sẽ nở ra gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 6",
+   "speaker": "Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#045": {
+   "src": "Return to Old Siwel in the dead Mansion at [{~}, {~}, -{~}]",
+   "dst": "Quay lại gặp lão Siwel trong dinh thự chết tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#046": {
+   "src": "What? You... you made it back? Oh... Very well. Alchemy can be a... dangerous practice.",
+   "dst": "Gì? Ngươi... ngươi về được ư? Ồ... Thôi được. Giả kim có thể là... nghề nguy hiểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#047": {
+   "src": "Anyone who tried to find out the island's history came to me at some point, and I sent them on a one way street to a memory. But not you....",
+   "dst": "Ai muốn tìm hiểu lịch sử đảo rồi cũng tìm đến ta, và ta tống họ vào ký ức không lối về. Nhưng ngươi thì không....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#048": {
+   "src": "So now you know my dreadful secret, I am racked with guilt and cursed with eternal life.",
+   "dst": "Giờ ngươi đã biết bí mật kinh khủng của ta, ta bị dằn vặt và bị nguyền phải sống mãi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#049": {
+   "src": "There is no need to fight me, I am suffering enough for what I... wrought on this island.",
+   "dst": "Không cần đánh ta, ta đã chịu đủ khổ vì những gì ta... gây ra cho hòn đảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#050": {
+   "src": "I could not destroy the egg. It hatched into a... monstrous beast that cursed this island until this very day.",
+   "dst": "Ta không thể hủy quả trứng. Nó nở ra một... con quái thú đã nguyền rủa hòn đảo đến tận hôm nay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#051": {
+   "src": "A powerful warrior from... {p} slew the beast, yet the island did not rejuvenate....",
+   "dst": "Một chiến binh mạnh mẽ từ... {p} đã giết con thú, nhưng hòn đảo không hồi sinh....",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#052": {
+   "src": "I leave the bones of the beast as a reminder of my failure, the destruction it brought still... lingers in the monsters it left behind.",
+   "dst": "Ta để lại xương con thú để nhắc về thất bại của mình, sự tàn phá nó gây ra vẫn... còn trong lũ quái nó để lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#053": {
+   "src": "So adventurer, now you have the knowledge of what I have done. You may tell the others down in the village, as it is no longer a secret.",
+   "dst": "Vậy đó, nhà thám hiểm, giờ ngươi đã biết việc ta làm. Cứ kể với dân dưới làng, giờ chẳng còn là bí mật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 7",
+   "speaker": "Old Siwel",
+   "source": "wiki"
+  },
+  "Haven Antiquity#054": {
+   "src": "Talk to {p} on the docks at [{~}, {~}, -{~}] about the mystery",
+   "dst": "Nói chuyện với {p} ở bến tàu tại [{~}, {~}, -{~}] về bí ẩn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Haven Antiquity#055": {
+   "src": "So, did you find out what happened?",
+   "dst": "Sao, bạn tìm ra chuyện gì rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 8",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#056": {
+   "src": "Siwel was the one who caused this sorrow? He does have a very dark presence about him, doesn't he?",
+   "dst": "Siwel là người gây ra nỗi đau này ư? Ông ta quả có vẻ rất u ám nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 8",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#057": {
+   "src": "Thank you for your work! I know it must have been tough getting that out of him.",
+   "dst": "Cảm ơn bạn! Moi được chuyện đó từ ông ta hẳn vất vả lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 8",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  },
+  "Haven Antiquity#058": {
+   "src": "Now that this mystery is solved I will be returning home. I hope we will meet again!",
+   "dst": "Bí ẩn đã được giải, tôi sẽ về nhà. Mong sẽ gặp lại bạn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "Stage 8",
+   "speaker": "Cinfras",
+   "source": "wiki"
+  }
+ }
+}

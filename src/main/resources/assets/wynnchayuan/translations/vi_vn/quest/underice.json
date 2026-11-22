@@ -1,0 +1,640 @@
+{
+ "_meta": {
+  "quest": "Underice",
+  "count": 63,
+  "translated": 63,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Underice#000": {
+   "src": "Where is the [Breathing Helmet I] I asked you for?",
+   "dst": "[Breathing Helmet I] tôi nhờ bạn đâu rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "Cold Fang",
+   "source": "captured"
+  },
+  "Underice#001": {
+   "src": "Your best bet is to go to the woodcutting camp northwest of {p}, there should be some bait there. Just catch it in the river by the dock when you get it.",
+   "dst": "Tốt nhất là tới trại đốn gỗ phía tây bắc {p}, ở đó chắc có mồi. Có mồi rồi thì cứ câu trong sông cạnh bến.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "Gernald",
+   "source": "captured"
+  },
+  "Underice#002": {
+   "src": "I know you might need the pufferfish for something else, but please think about giving it to me. It would warm my heart.",
+   "dst": "Tôi biết có thể bạn cần con cá nóc cho việc khác, nhưng xin hãy nghĩ tới việc đưa nó cho tôi. Lòng tôi sẽ ấm lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#003": {
+   "src": "I wonder how Strato made that bait...",
+   "dst": "Strato làm mồi đó thế nào nhỉ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "Gernald",
+   "source": "captured"
+  },
+  "Underice#004": {
+   "src": "+ Mythical Everlasting Pufferfish",
+   "dst": "+ Cá nóc vĩnh cửu thần thoại",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#005": {
+   "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
+   "dst": "Gần đây cá trong hồ của chúng tôi có vấn đề và tôi chắc nguyên nhân nằm ngay trong hồ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#006": {
+   "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
+   "dst": "Tôi muốn nhờ bạn điều tra, nhưng hồ lạnh cóng nên bạn cần thứ gì đó bảo vệ. Nghe nói dân {p} trên bờ biển Wynn có thứ giúp được bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#007": {
+   "src": "Would you mind coming back with a [Breathing Helmet I]? I think that should be everything you need.",
+   "dst": "Bạn mang về giúp tôi một [Breathing Helmet I] nhé? Tôi nghĩ thế là đủ mọi thứ bạn cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#008": {
+   "src": "Return to {p} and bring Fredris a [Breathing Helmet I]",
+   "dst": "Quay lại {p} và mang cho Fredris một [Breathing Helmet I]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#009": {
+   "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [Breathing Helmet I] does not look like it's going to keep you protected.",
+   "dst": "Cái này là gì vậy? Tôi thật sự cảm kích bạn giúp, nhưng cái [Breathing Helmet I] này trông chẳng bảo vệ được bạn đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#010": {
+   "src": "Would you mind heading to our local armour merchant and buying one of our [Breathing Helmet II]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
+   "dst": "Bạn tới chỗ thương nhân bán giáp ở đây mua giúp một cái [Breathing Helmet II] nhé? Tôi không muốn bạn chết đuối. Mang mũ về rồi tôi sẽ kể vấn đề của mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#011": {
+   "src": "Buy a [Breathing Helmet II] and find the underwater cave",
+   "dst": "Mua một [Breathing Helmet II] và tìm hang dưới nước",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#012": {
+   "src": "Explore the cave underneath the frozen lake in {p}",
+   "dst": "Khám phá hang bên dưới hồ băng ở {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#013": {
+   "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
+   "dst": "Bạn là ai? Trông không giống đám dân làng mà chúng tôi trộm cá... Khoan, họ không sai bạn tới lấy lại cá \"của họ\" đấy chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#014": {
+   "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
+   "dst": "Bao năm nay chúng tôi, cư dân thực sự của hồ, để họ dùng chung hồ, chúng tôi khiêm tốn và chỉ lấy đủ dùng, để phần còn lại cho họ câu. Nhưng rồi họ quá đáng, câu quá nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#015": {
+   "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
+   "dst": "Chúng tôi không đủ ăn, buộc phải trộm cá của họ, không thì chết đói. Giờ họ muốn đòi lại cá của họ, cá của chúng tôi? Không được đâu, mong bạn hiểu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#016": {
+   "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
+   "dst": "Nếu muốn giúp chúng tôi lẫn dân làng, cứ đi theo dòng suối chảy vào hồ này về phía nam, bạn sẽ thấy bãi câu tốt nhất ở đó. Cá nóc chắc cũng ở quanh đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#017": {
+   "src": "Follow the river south to find the fishing dock",
+   "dst": "Đi theo sông về phía nam để tìm bến câu cá",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#018": {
+   "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
+   "dst": "Ồ, trông bạn hơi lạc đường, để tôi giúp, tôi sống ở đây lâu lắm rồi, biết từng ngóc ngách và từng bông tuyết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#019": {
+   "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
+   "dst": "Tiếc là Strato không còn nữa. Ông ấy từng sống và làm việc ở trại đốn gỗ phía tây bắc {p}. Chúng tôi hay gặp ở đây, câu cá và kể chuyện cho nhau nghe. Tôi nhớ những ngày đó lắm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#020": {
+   "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
+   "dst": "Tôi hỏi bạn chút được không? Như bạn thấy, tôi chẳng giàu, cũng chẳng trẻ. Nếu bạn câu được con cá đó, đưa nó cho tôi được không? Biết là mới gặp, nhưng bạn có vẻ là người sẽ giúp một ông già.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#021": {
+   "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
+   "dst": "Lấy mồi ở trại đốn gỗ phía tây bắc {p}, dùng nó câu cá rồi đưa cho Calamaro hoặc Gernald",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#022": {
+   "src": "Just look at those fish, I told you they love this bait.",
+   "dst": "Nhìn đàn cá kìa, tôi đã bảo chúng mê mồi này mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#023": {
+   "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
+   "dst": "Nó đến rồi, [Mythic Everlasting Pufferfish], không thể tin nổi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#024": {
+   "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
+   "dst": "Bạn tìm được cá nóc rồi! Ai ngờ một thứ nhỏ thế lại giải quyết được vấn đề của chúng tôi. Tôi sẽ bắt đầu trả cá lại ngay, nhưng trước hết phải nấu một nồi súp nóng đã. Xin nhận cái này làm tiền công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#025": {
+   "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
+   "dst": "Bạn có thể đổi nó ở cửa hàng ngay đằng kia, khó mà không thấy. Lời khuyên cuối: đừng có ăn con cá nhớt đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#026": {
+   "src": "Meet up with Fredris in {p} and claim your reward",
+   "dst": "Gặp Fredris ở {p} và nhận phần thưởng",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#027": {
+   "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
+   "dst": "Ồ, bạn xong việc gì đó rồi à? Nghe nói bạn chạy khắp nơi, không biết tôi nhờ bạn có đúng người không...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#028": {
+   "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
+   "dst": "Thôi tôi nhờ người kế tiếp ghé qua vậy, không cần bạn chạy cả ngày. Nhận cái này đi, cảm ơn bạn đã cố gắng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#029": {
+   "src": "A real disaster! I can't believe this is happening to me!",
+   "dst": "Thảm họa! Không tin nổi chuyện này xảy ra với tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#030": {
+   "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
+   "dst": "Mấy hôm nay tôi câu mà chẳng được con nào! Không một con! Thế này không bình thường!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#031": {
+   "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
+   "dst": "Cả đời tôi câu cá ở vùng này! Ước gì tôi lặn được xuống dưới lớp băng để tự giải quyết...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#032": {
+   "src": "Do you think you could help me? You might actually be exactly what I need!",
+   "dst": "Bạn giúp tôi được không? Có khi bạn đúng là người tôi cần!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#033": {
+   "src": "Enter my shack, there you will find the entrance... Good luck!",
+   "dst": "Vào lều của tôi, bạn sẽ thấy lối vào... Chúc may mắn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#034": {
+   "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
+   "dst": "Khám phá dưới lớp băng để tìm nguyên nhân vụ cá. Bạn sẽ cần Breathing Helmet.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#035": {
+   "src": "Talk to Squidward in the Squid Village.",
+   "dst": "Nói chuyện với Squidward ở Làng Mực.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#036": {
+   "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
+   "dst": "Thấy cá không á? Dĩ nhiên là không! Tôi còn chẳng biết cá trông ra sao!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#037": {
+   "src": "Who could be stealing all those fish? I wonder! Actually...",
+   "dst": "Ai có thể trộm hết chỗ cá đó nhỉ? Lạ thật! Thật ra thì...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#038": {
+   "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
+   "dst": "Chắc chắn là Calamaro! Hắn đúng loại người đó. Hắn sống ở căn nhà dưới kia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#039": {
+   "src": "Find Calamaro in the Squid Village.",
+   "dst": "Tìm Calamaro ở Làng Mực.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#040": {
+   "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
+   "dst": "Tôi? Trộm cá? Bạn điên à! Rõ ràng là Kroken trộm chứ ai!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#041": {
+   "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
+   "dst": "Hắn sống ngay trên đỉnh thác nước kia kìa, nếu bạn muốn tới nói chuyện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#042": {
+   "src": "Find Kroken in the Squid Village.",
+   "dst": "Tìm Kroken ở Làng Mực.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#043": {
+   "src": "Do I look like someone who steals fish?",
+   "dst": "Trông tôi giống kẻ trộm cá lắm à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Kroken",
+   "source": "wiki"
+  },
+  "Underice#044": {
+   "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
+   "dst": "Rõ ràng là Squidward rồi, hắn có cả đống thùng đầy cá!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Kroken",
+   "source": "wiki"
+  },
+  "Underice#045": {
+   "src": "Talk back to Squidward.",
+   "dst": "Quay lại nói chuyện với Squidward.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#046": {
+   "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
+   "dst": "Rồi, rồi, thôi được! Là tôi đấy... Biết rồi, sốc lắm nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#047": {
+   "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
+   "dst": "Được, tôi có đề nghị này. Mang cho tôi [{~} Raw Fish] là tôi thôi, chịu không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#048": {
+   "src": "Deal.",
+   "dst": "Chịu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#049": {
+   "src": "Bring back {~} Raw Fish to Squidward.",
+   "dst": "Mang {~} Raw Fish về cho Squidward.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#050": {
+   "src": "Good, you got the fish!",
+   "dst": "Tốt, bạn có cá rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#051": {
+   "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
+   "dst": "Cứ tin tôi, tôi sẽ không đụng tới cá ở hồ băng nữa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#052": {
+   "src": "Talk to Fredris to collect your reward.",
+   "dst": "Nói chuyện với Fredris để nhận phần thưởng.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#053": {
+   "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
+   "dst": "Chuyện của bạn chẳng hợp lý chút nào. Dân làng sống trong làng mực dưới hồ? Xì!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#054": {
+   "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
+   "dst": "Tuy vậy, nếu bạn đảm bảo vấn đề của tôi đã hết, tôi sẽ tin bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#055": {
+   "src": "Thank you for your help. Here, take these...",
+   "dst": "Cảm ơn bạn đã giúp. Đây, nhận lấy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#056": {
+   "src": "Have you found the issue yet? I'm still waiting!",
+   "dst": "Bạn tìm ra vấn đề chưa? Tôi vẫn đang đợi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#057": {
+   "src": "Have you seen that weird structure near the lake? I heard quite a lot of stories about it, but nobody is sure about what you can find there.",
+   "dst": "Bạn thấy công trình kỳ lạ gần hồ chưa? Tôi nghe khá nhiều chuyện về nó, nhưng chẳng ai chắc ở đó có gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#058": {
+   "src": "However we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
+   "dst": "Nhưng ta không cần tranh nhau cá trong hồ, chúng tôi chỉ cần một [Mythic Everlasting Pufferfish], vậy là đủ, không cần gì khác. Chúng tôi chưa bao giờ muốn trộm cá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "captured"
+  },
+  "Underice#059": {
+   "src": "You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
+   "dst": "Bạn đang tìm [Mythic Everlasting Pufferfish]? Hừm, tôi từng nghe cái tên đó, bạn tôi là Strato đã kể cho tôi từ nhiều năm trước. Nếu nhớ không lầm, nó là vô tận, chỉ một con cá đó có thể nuôi sống mọi người ở mọi tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "captured"
+  },
+  "Underice#060": {
+   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in the water, maybe that will attract the pufferfish.",
+   "dst": "Có lẽ bạn tìm được mồi ở đó, ông ấy có loại mồi tốt nhất tôi từng thấy. Bạn kiếm một ít rồi thả xuống nước, có khi sẽ dụ được cá nóc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "captured"
+  },
+  "Underice#061": {
+   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift please, promise me to never change.",
+   "dst": "Bạn quyết định đưa cá cho tôi sao? Giá Strato còn đây, ông ấy hẳn kinh ngạc lắm. Tôi không nói hết được điều này ý nghĩa thế nào, nhưng xin nhận món quà nhỏ này, hứa đừng bao giờ thay đổi nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "captured"
+  },
+  "Underice#062": {
+   "src": "I wish we could have avoided this whole scenario.",
+   "dst": "Giá mà ta tránh được cả chuyện này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

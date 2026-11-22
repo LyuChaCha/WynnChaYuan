@@ -1,0 +1,574 @@
+{
+ "_meta": {
+  "quest": "Dearly Departed",
+  "count": 58,
+  "translated": 57,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Dearly Departed#000": {
+   "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+   "dst": "{#} Khéo léo hơi khó nhằn. Càng có nhiều, đòn đánh của bạn càng dễ gây gấp đôi sát thương. Hay đấy chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.955,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#001": {
+   "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+   "dst": "{#} Trí tuệ dành cho người dùng phép, nó giảm tiêu hao khi thi triển phép và tăng mana tối đa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.919,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#002": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "[+{~} Muddy Shovel]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#003": {
+   "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với nông dân Cevalus ở [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#004": {
+   "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
+   "dst": "À, trông như tân binh mới! Bạn thấy tin tôi dán chưa? Tốt, tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#005": {
+   "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
+   "dst": "Bạn thấy đó, bố vợ tôi vừa qua đời, tôi phải chôn ông vội sau nhà. Không kịp mời linh mục tới chôn cất đàng hoàng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#006": {
+   "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
+   "dst": "Không may thay, hình như nhẫn cưới của tôi đã tuột mất lúc tôi an táng ông...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#007": {
+   "src": "I need you to go back there and, well, recover the ring.",
+   "dst": "Tôi cần bạn ra đó và, ờ, lấy lại chiếc nhẫn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#008": {
+   "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
+   "dst": "Tất nhiên tôi tự làm cũng được, nhưng vợ tôi đã nghi ngờ gì đó rồi, mà bố cô ấy lại vừa mới mất...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#009": {
+   "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
+   "dst": "Bạn thấy hoàn cảnh của tôi rồi đấy? Giúp kẻ khốn khổ này đi, cứ ra lấy cái [Muddy Shovel] đằng kia, rồi quay lại gặp tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#010": {
+   "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
+   "dst": "Nhặt cái xẻng ở [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#011": {
+   "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
+   "dst": "Cái [Muddy Shovel] ở ngay đằng kia. Tôi rất cảm kích, tân binh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#012": {
+   "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "Quay lại gặp nông dân Cevalus ở [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#013": {
+   "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
+   "dst": "Bạn có xẻng rồi à? Tuyệt! Chắc bạn cũng có giáp chắc chắn và vũ khí chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#014": {
+   "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
+   "dst": "Tốt, tốt. Cẩn tắc vô áy náy... Tôi luôn nói thế! Luôn luôn, ha ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#015": {
+   "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
+   "dst": "Ồ, chẳng vì sao cả! Chỉ để chắc ăn thôi, ha ha... Đằng sau đó chắc an toàn lắm, cực kỳ an toàn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#017": {
+   "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
+   "dst": "À, đó là Điểm thuộc tính! Bạn nhận được khi lên cấp, rồi phân bổ để mạnh hơn khi chiến đấu. Nghe này, tôi chẳng phải lính, nhưng đến tôi cũng biết bạn nên dùng chúng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#019": {
+   "src": "You get it, or do you want me to tell you what they are?",
+   "dst": "Bạn hiểu chưa, hay muốn tôi giải thích từng loại?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#023": {
+   "src": "{#} Defence is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "{#} Phòng thủ là lựa chọn tốt nhất nếu bạn khó sống sót. Giảm sát thương bạn nhận, thế thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#024": {
+   "src": "{#} Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "{#} Nhanh nhẹn, cái này dành cho người ưa mạo hiểm. Càng nhiều, bạn càng dễ né đòn, vô hiệu gần hết sát thương.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#025": {
+   "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
+   "dst": "Hay nhất là bạn kết hợp chúng tùy thích, bất kể lớp nhân vật hay lối đánh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#026": {
+   "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
+   "dst": "Cứ mở la bàn để phân bổ Điểm thuộc tính. Rồi khi sẵn sàng, vào đó lấy nhẫn cho tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#028": {
+   "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
+   "dst": "Đi đi, chiến sĩ! Cho thấy sức mạnh quân đội {p}! Ờ, ý tôi là... lấy nhẫn cho tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#029": {
+   "src": "What's going on in there, soldier? Have you found the ring yet?",
+   "dst": "Trong đó sao rồi, chiến sĩ? Tìm được nhẫn chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#030": {
+   "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
+   "dst": "Bạn nên nhanh lên, trước khi... mà thôi! Cứ tìm nhẫn rồi ra khỏi đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#031": {
+   "src": "Holy Bovine! It's... It's... He's back! Kill it, quickly!",
+   "dst": "Bò Thánh ơi! Là... Là... Ông ấy về rồi! Giết nó, mau!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#032": {
+   "src": "Kill the Corrupted Father-in-Law!",
+   "dst": "Giết Bố Vợ Bị Tha Hóa!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#033": {
+   "src": "You did it! Come back here now, so I can finally get my ring back.",
+   "dst": "Bạn làm được rồi! Quay lại đây đi, để tôi lấy lại nhẫn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#035": {
+   "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
+   "dst": "Trời ạ, chuyện đó kịch tính hơn tôi tưởng, hừm. Dù sao, làm tốt lắm! Mừng là ta đã diệt được con quái vật đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#036": {
+   "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
+   "dst": "Ý tôi là... tội nghiệp bố vợ! Không biết giải thích với vợ thế nào đây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#037": {
+   "src": "I'll take the ring now, it's rather precious to me...",
+   "dst": "Giờ đưa nhẫn cho tôi nhé, nó quý giá với tôi lắm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#038": {
+   "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
+   "dst": "Dù sao thì, nhận phần thưởng xứng đáng này cho, ờ, những gì bạn làm hôm nay. Nếu cứ thế, biết đâu một ngày bạn sẽ thành anh hùng như Ragnar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#039": {
+   "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
+   "dst": "Chào người lạ. Bạn có điều gì muốn nói với tôi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#040": {
+   "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
+   "dst": "Lẽ ra tôi phải giận nhưng... tôi chẳng bất ngờ. Anh ấy xưa nay vẫn ngờ nghệch, hay quên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#041": {
+   "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
+   "dst": "Nhưng điều đó giải thích nhiều chuyện... Dạo này anh ấy cư xử lạ lắm, từ khi bố mất. Hẳn là chuyện đó, nên cảm ơn bạn đã cho tôi biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#042": {
+   "src": "That's right. The one and only, ha ha...",
+   "dst": "Đúng thế. Không ai khác, ha ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#043": {
+   "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
+   "dst": "Chúng tôi chỉ là nông dân bình thường, sống qua ngày. Đã chăm bố tôi cho đến khi... ờ... ừ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#044": {
+   "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
+   "dst": "Cảm ơn bạn... Mọi chuyện quá đột ngột. Hôm tôi đi {p}, bố vẫn khỏe mạnh như thường, vậy mà lúc về thì ông đã được chôn rồi. Hẳn bệnh đến nhanh lắm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#045": {
+   "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
+   "dst": "Nhưng ở tuổi ông, tôi cũng không bất ngờ... Chỉ tiếc là không kịp mời linh mục tới, bố là người rất mộ đạo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#046": {
+   "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
+   "dst": "Bố... Trên hết, ông tốt bụng và luôn hào phóng. Ông để lại cả trang trại này. Lại rất mộ đạo, một tín đồ thật sự. Có lẽ vì thế ông sống thọ vậy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#047": {
+   "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
+   "dst": "Ôi trời... Không thôi là tôi lại khóc mất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#048": {
+   "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
+   "dst": "Bạn cũng đã dùng Điểm thuộc tính rồi chứ? Chúng có thể có ích, lỡ có chuyện gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture",
+   "speaker": "Farmer Kelri"
+  },
+  "Dearly Departed#049": {
+   "src": "There's five of them. {#} Strength, {#} Dexterity, {#} Intelligence, {#} Defence, and {#} Agility, each with different bonuses.",
+   "dst": "Có năm loại. {#} Sức mạnh, {#} Khéo léo, {#} Trí tuệ, {#} Phòng thủ, và {#} Nhanh nhẹn, mỗi loại một lợi ích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#050": {
+   "src": "Why are you asking me that?",
+   "dst": "Sao bạn hỏi tôi chuyện đó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#051": {
+   "src": "What are Skill Points?",
+   "dst": "Điểm thuộc tính là gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#052": {
+   "src": "I got it.",
+   "dst": "Hiểu rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#053": {
+   "src": "About Strength.",
+   "dst": "Về Sức mạnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#054": {
+   "src": "About Dexterity.",
+   "dst": "Về Khéo léo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#055": {
+   "src": "About Intelligence.",
+   "dst": "Về Trí tuệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#056": {
+   "src": "Not yet...",
+   "dst": "Chưa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#057": {
+   "src": "Dig up the grave?",
+   "dst": "Đào mộ lên?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#058": {
+   "src": "There you go...",
+   "dst": "Đây rồi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#059": {
+   "src": "Now to see if you can find that ring Cevalus mentioned...",
+   "dst": "Giờ xem có tìm được chiếc nhẫn Cevalus nhắc tới không...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#060": {
+   "src": "You manage to pry the ring off the monster's finger...",
+   "dst": "Bạn cạy được chiếc nhẫn khỏi ngón tay con quái vật...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#061": {
+   "src": "About Defence.",
+   "dst": "Về Phòng thủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#062": {
+   "src": "About Agility.",
+   "dst": "Về Nhanh nhẹn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#063": {
+   "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
+   "dst": "{#} Sức mạnh có ích nếu bạn khó hạ gục kẻ địch. Nó làm đòn đánh của bạn mạnh hơn, đơn giản vậy thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured"
+  },
+  "Dearly Departed#064": {
+   "src": "Thank you dearly for your help, soldier. You really saved me... Don't know what I would have told the wife, ha ha...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "note": ""
+  }
+ }
+}

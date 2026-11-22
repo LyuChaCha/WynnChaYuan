@@ -30,7 +30,7 @@ public final class SettingsViewTest {
         }
     }
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "en_us"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "en_us"};
     private static final String[] TABS = {"overview", "look", "lang", "data", "badge"};
 
     public static void main(String[] args) throws Exception {

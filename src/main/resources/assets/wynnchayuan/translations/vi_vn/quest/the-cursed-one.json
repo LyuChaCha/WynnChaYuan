@@ -1,0 +1,5226 @@
+{
+ "_meta": {
+  "quest": "The Cursed One",
+  "count": 521,
+  "translated": 521,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Cursed One#000": {
+   "src": "[+{~} Crystal Focus]",
+   "dst": "[+{~} Pha lê hội tụ]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#001": {
+   "src": "[-{~} Crystal Focus]",
+   "dst": "[-{~} Pha lê hội tụ]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#002": {
+   "src": "It has been restarted...",
+   "dst": "Nó đã khởi động lại...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "Espren Citizen",
+   "source": "captured"
+  },
+  "The Cursed One#003": {
+   "src": "For all that the festival revolves around the crown, I've always appreciated its representation of our culture.",
+   "dst": "Dù lễ hội xoay quanh Hoàng gia, tôi luôn trân trọng cách nó thể hiện văn hóa của chúng ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "The Cursed One#004": {
+   "src": "Good job friend! You showed those mudkins!",
+   "dst": "Làm tốt lắm bạn! Cho lũ Mudkin biết tay!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#005": {
+   "src": "As of late, I have felt a distinct lack of impact in our actions. Certainly- we've done good for the downtrodden and overlooked! But we have failed to make any real change.",
+   "dst": "Gần đây, tôi thấy hành động của chúng ta thiếu hẳn sức ảnh hưởng. Chắc chắn- ta đã giúp kẻ bị chà đạp và bị lãng quên! Nhưng ta chưa tạo ra thay đổi thật sự nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "captured"
+  },
+  "The Cursed One#006": {
+   "src": "Yeah, curses, blessings - whatever. So, what, you think all of us could just... use \"magic\"? What would that even look like?",
+   "dst": "Ừ, lời nguyền, phước lành - sao cũng được. Vậy sao, cậu nghĩ bọn tớ cứ thế... dùng \"phép thuật\" à? Trông sẽ thế nào chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "captured"
+  },
+  "The Cursed One#007": {
+   "src": "However, the traditional \"cursed one\" mythos has the afflicted wielding such power without the use of any blessed artifacts.",
+   "dst": "Tuy nhiên, theo truyền thuyết \"kẻ bị nguyền\" xưa, người mắc nguyền nắm sức mạnh đó mà không cần cổ vật ban phước nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "captured"
+  },
+  "The Cursed One#008": {
+   "src": "As an example- I learned that I have an affinity for the fire element, but I didn't know what form that would take until I actually received my blessing.",
+   "dst": "Ví dụ- tôi biết mình có thiên hướng với nguyên tố Lửa, nhưng không biết nó mang hình thái gì cho tới khi thật sự nhận phước lành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "The Cursed One#009": {
+   "src": "Return to the resistance camp at [-{~}, {~}, -{~}].",
+   "dst": "Quay về trại Kháng Chiến tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#010": {
+   "src": "{u}, it's good to see you. Have you been well?",
+   "dst": "{u}, gặp lại bạn thật vui. Dạo này bạn ổn chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#011": {
+   "src": "...no one has recognized you in {p}, have they?",
+   "dst": "...ở {p} chưa ai nhận ra bạn, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#012": {
+   "src": "Good, good. Be sure to tell me if it does happen, and we'll figure out what to do from there.",
+   "dst": "Tốt, tốt. Nếu có chuyện đó thì nhớ báo tôi, rồi ta tính tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#013": {
+   "src": "Anyway, since you're here, I'd like to follow up on our earlier discussion. About... magic.",
+   "dst": "Dù sao, nhân tiện bạn ở đây, tôi muốn tiếp tục chuyện lúc trước. Về... phép thuật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#014": {
+   "src": "I would like for you to describe what you know of it, how you use it, and how most people in your province can wield it.",
+   "dst": "Tôi muốn bạn mô tả những gì bạn biết về nó, cách bạn dùng nó, và cách đa số người ở tỉnh của bạn sử dụng nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#015": {
+   "src": "I've informed the Leaves about our plans, and those interested will join us. Though, I will not force anyone to attend if they do not wish to. Are you ready?",
+   "dst": "Tôi đã báo kế hoạch cho các Lá, ai quan tâm sẽ tham gia. Nhưng tôi sẽ không ép ai không muốn. Bạn sẵn sàng chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#016": {
+   "src": "Alright, everyone! It's meeting time!",
+   "dst": "Mọi người ơi! Tới giờ họp rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 1",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#017": {
+   "src": "Teach the Leaves in the Wind magic.",
+   "dst": "Dạy phép thuật cho Lá Trong Gió.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#018": {
+   "src": "Hello, everyone. Hm... has anyone seen Sui?",
+   "dst": "Chào mọi người. Hừm... ai thấy Sui không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#019": {
+   "src": "She told me she did not feel particularly comfortable listening in on this discussion, so I did not push her further.",
+   "dst": "Cô ấy bảo không thoải mái lắm khi nghe cuộc thảo luận này, nên tôi không ép thêm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#020": {
+   "src": "I see. I think it would be good for her to hear this, though. Could someone fetch her for me?",
+   "dst": "Ra vậy. Dù thế, tôi nghĩ cô ấy nên nghe chuyện này. Ai đi gọi cô ấy giúp tôi được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#021": {
+   "src": "I can go find her, ma'am.",
+   "dst": "Tôi đi tìm, thưa cô.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#022": {
+   "src": "Thank you, Rex.",
+   "dst": "Cảm ơn, Rex.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#023": {
+   "src": "What's up with Sui?",
+   "dst": "Sui bị sao vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#024": {
+   "src": "It... isn't something you need to worry about. Not yet, at least.",
+   "dst": "Đó... không phải chuyện bạn cần lo. Ít ra là chưa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#025": {
+   "src": "Magic... or, rather, curses have a tendency to be associated with bad memories.",
+   "dst": "Phép thuật... hay đúng hơn, lời nguyền, thường gắn với những ký ức tồi tệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#026": {
+   "src": "It's not my place to tell you why. Sui can share more if she wants to, later.",
+   "dst": "Tôi không có quyền nói lý do. Sui có thể kể thêm sau, nếu cô ấy muốn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#027": {
+   "src": "Sui is... the exception.",
+   "dst": "Sui là... ngoại lệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#028": {
+   "src": "I have my reasons for it. I believe it would be better for her to hear this now, rather than later.",
+   "dst": "Tôi có lý do. Tôi tin cô ấy nên nghe chuyện này bây giờ, hơn là để sau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#029": {
+   "src": "Here we are! So, could we get started already? Some of us actually have responsibilities.",
+   "dst": "Tới rồi đây! Vậy bắt đầu luôn được chưa? Có vài người ở đây còn việc phải làm đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#030": {
+   "src": "Seeing as everyone is here, yes, Rex, we may. {u}, let us start with the basics.",
+   "dst": "Mọi người đã đủ, vậy được, Rex. {u}, ta bắt đầu từ cơ bản.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#031": {
+   "src": "Magic is... in everything.",
+   "dst": "Phép thuật... ở khắp nơi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#032": {
+   "src": "Ah, yes, such as the cursed... the stories do tell of the original evil lurking within us. It would follow that it exists in all things.",
+   "dst": "À, phải, như kẻ bị nguyền... các câu chuyện có kể về cái ác nguyên thủy ẩn trong ta. Vậy nó tồn tại trong vạn vật cũng hợp lý.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#033": {
+   "src": "Indeed. So {u}, how do you wield your magic?",
+   "dst": "Quả vậy. Vậy {u}, bạn dùng phép thế nào?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#034": {
+   "src": "Similar to the blessed implements of the crown's commanders, yes? I remember hearing of this from the military recruiters.",
+   "dst": "Giống những khí cụ được ban phước của các chỉ huy Hoàng gia, phải không? Tôi nhớ từng nghe điều này từ người tuyển quân.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#035": {
+   "src": "Don't those usually only have one specific blessing attached to them? I don't remember them being as... uh, flexible, I guess.",
+   "dst": "Mấy thứ đó chẳng phải thường chỉ gắn một phước lành cụ thể thôi sao? Tớ không nhớ chúng... ờ, linh hoạt vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#036": {
+   "src": "You'd be correct, Rex, though the same principle applies. A blessed weapon is referred to as a \"focus\" by the crown. They allow the wielder to more easily access the blessing placed within.",
+   "dst": "Em nói đúng, Rex, nhưng nguyên lý thì như nhau. Hoàng gia gọi vũ khí ban phước là \"vật hội tụ\". Chúng giúp người dùng tiếp cận phước lành bên trong dễ hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#037": {
+   "src": "Ah, I do have experience with this. We call it mana. Once one receives a blessing, it takes time to learn how to draw from your own source of mana.",
+   "dst": "À, cái này thì tôi có kinh nghiệm. Ta gọi nó là mana. Sau khi nhận phước lành, phải mất thời gian học cách rút từ nguồn mana của chính mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#038": {
+   "src": "This is where foci come into play - they are crafted or forged from mana-dense materials, and so provide a more easily accessible source to power one's blessing.",
+   "dst": "Đó là lúc vật hội tụ phát huy - chúng được chế tác hay rèn từ vật liệu đậm đặc mana, nên cho một nguồn dễ tiếp cận hơn để kích hoạt phước lành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#039": {
+   "src": "Most people in Wynn could us",
+   "dst": "Đa số người ở Wynn dùng đượ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#040": {
+   "src": "And, so... what? You think any of us could just... do it? That's hard to believe.",
+   "dst": "Rồi... sao? Cậu nghĩ bọn tớ ai cũng cứ thế... làm được à? Khó tin quá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#041": {
+   "src": "If given the right tools and",
+   "dst": "Nếu có đúng công cụ và",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#042": {
+   "src": "Ha! If it were truly the case, would there not be many, many more cursed ones running around? I concur with Rex, it seems outlandish.",
+   "dst": "Ha! Nếu đúng thế thật, chẳng phải sẽ có rất, rất nhiều kẻ bị nguyền chạy khắp nơi sao? Tôi đồng ý với Rex, nghe thật hoang đường.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#043": {
+   "src": "I d- d- don't know... {u} doesn't seem like they're l- ly- like they're lying. What- wh- what if it is true?",
+   "dst": "Tớ k- k- không biết... {u} trông không giống đang n- nó- nói dối. Lỡ- lỡ- lỡ như là thật thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#044": {
+   "src": "It would explain certain aspects of the crown's response to cursed ones...",
+   "dst": "Nó sẽ giải thích vài điều trong cách Hoàng gia đối xử với kẻ bị nguyền...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#045": {
+   "src": "But... if you didn't receive a blessing, doesn't it still make you cursed?",
+   "dst": "Nhưng... nếu không nhận phước lành, chẳng phải vẫn là kẻ bị nguyền sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#046": {
+   "src": "Yes, precisely! My sister is correct. Any... \"magic\" not sourced from the crown is innately tainted, from my understanding.",
+   "dst": "Phải, chính xác! Em gái tôi nói đúng. Theo tôi hiểu, mọi... \"phép thuật\" không đến từ Hoàng gia vốn đã ô uế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#047": {
+   "src": "Ha. Right, sure. \"Belief.\" So if I think hard enough, I can just start calling down lightning strikes?",
+   "dst": "Ha. Ừ, chắc rồi. \"Niềm tin.\" Vậy nếu tớ nghĩ đủ mạnh, tớ cứ thế gọi sét xuống được à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#048": {
+   "src": "Ugh. This was a waste of time.",
+   "dst": "Ư. Phí thời gian.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#049": {
+   "src": "Now, now, Rex. Don't be so hasty in writing it off entirely. You have seen with your own eyes what {u} can do!",
+   "dst": "Nào, nào, Rex. Đừng vội gạt bỏ hết thế. Em đã tận mắt thấy {u} làm được gì!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#050": {
+   "src": "Belief... I- I- I can do that.",
+   "dst": "Niềm tin... t- t- tớ làm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#051": {
+   "src": "Oh, come on Zeph, really? You can't seriously-",
+   "dst": "Ôi, thôi nào Zeph, thật à? Cậu đâu nghiêm túc-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#052": {
+   "src": "We're getting off track. {u}, what else is there?",
+   "dst": "Chúng ta lạc đề rồi. {u}, còn gì nữa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#053": {
+   "src": "So... s- so you don't even know what your m- ma- magic will look like?",
+   "dst": "Vậy... v- vậy cậu còn không biết p- ph- phép của mình sẽ ra sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#054": {
+   "src": "Correct. There are aptitude tests which the crown uses before giving out blessings, but those only provide an idea of the general typing.",
+   "dst": "Đúng vậy. Hoàng gia có các bài kiểm tra năng khiếu trước khi ban phước, nhưng chúng chỉ cho biết đại khái kiểu loại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#055": {
+   "src": "Oh! S- s- so, what type of magic do you think I w- would- I would have?",
+   "dst": "Ồ! V- v- vậy, cậu nghĩ tớ s- sẽ- tớ sẽ có loại phép gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#056": {
+   "src": "Something with wind, probably. You have that sort of... feel to you. Hey- we'll be the Leaves, and you can be the Wind!",
+   "dst": "Chắc là gì đó về gió. Cậu có cái... khí chất đó. Này- bọn tớ sẽ là Lá, còn cậu làm Gió!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#057": {
+   "src": "He- hey! That... oh, that would be c- c- cool, actually...",
+   "dst": "N- này! Cái đó... ồ, thật ra thế thì n- n- ngầu đấy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#058": {
+   "src": "If I may interrupt- thus far, you have spoken at length on casting through the use of a focus.",
+   "dst": "Cho phép tôi xen vào- tới giờ, bạn đã nói rất nhiều về việc thi triển qua vật hội tụ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#059": {
+   "src": "There are people like that i",
+   "dst": "Có những người như thế ở",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#060": {
+   "src": "Aha. Of course, then those must be the dangerous ones.",
+   "dst": "À há. Dĩ nhiên, vậy những người đó hẳn là nguy hiểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#061": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#062": {
+   "src": "Uncommon, but still common enough to maintain the reputation the cursed have... It would make sense.",
+   "dst": "Không phổ biến, nhưng vẫn đủ để giữ tiếng xấu của kẻ bị nguyền... Cũng hợp lý.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#063": {
+   "src": "Well, thank you for your time, {u}. I think we'll call it there. You're all dismissed.",
+   "dst": "Chà, cảm ơn bạn đã dành thời gian, {u}. Tôi nghĩ ta dừng ở đây. Mọi người giải tán.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#064": {
+   "src": "...So what, is- is that it? We talk about th- th- theory for a while, and th- a- and then do nothing?",
+   "dst": "...Vậy sao, ch- chỉ thế thôi à? Ta bàn l- l- lý thuyết một lúc, r- rồ- rồi chẳng làm gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#065": {
+   "src": "Zeph, even if {u}'s information is true, it doesn't mean it's immediately applicable.",
+   "dst": "Zeph, dù thông tin của {u} là thật, không có nghĩa là áp dụng ngay được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#066": {
+   "src": "If I could be certain that experimenting with cur-... magic... would be safe, maybe there could be an opportunity here. As it stands... it's too risky.",
+   "dst": "Nếu tôi chắc chắn thử nghiệm lời ng-... phép thuật... là an toàn, có lẽ ở đây có cơ hội. Còn hiện giờ... quá mạo hiểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#067": {
+   "src": "R- ris- risky... maybe the reason we've been stuck is because we d- d- we don't take risks!",
+   "dst": "M- mạo- mạo hiểm... có khi vì thế mà ta mãi giậm chân, vì ta k- k- ta không dám mạo hiểm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#068": {
+   "src": "The per- perfect opportunity to be a- a- able to hold our own against the c- cr- crown, a- and- and we're gonna do n- no- nothing? Are you h- hear- hearing yourself?",
+   "dst": "Cơ hội h- hoàn- hoàn hảo để c- c- có thể chống lại H- Hoà- Hoàng gia, v- và- và ta lại chẳng làm g- gì- gì sao? Cô có n- ngh- nghe mình nói không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#069": {
+   "src": "Zeph...",
+   "dst": "Zeph...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#070": {
+   "src": "No, I- I'm gonna ta- take the chance. Even- e- even if no- nobody else will. Come- c- come on, {u}, let's go.",
+   "dst": "Không, t- tớ sẽ th- thử. Kể- k- kể cả khi kh- không ai khác làm. Đi- đ- đi nào, {u}, ta đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 2",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#071": {
+   "src": "Talk to Zeph at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Zeph tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#072": {
+   "src": "Sigh. I suppose I should have expected something like this. Of all the children, he's the one with the most to prove...",
+   "dst": "Haizz. Lẽ ra tôi nên đoán trước chuyện này. Trong mấy đứa trẻ, cậu ấy là đứa muốn chứng tỏ nhất...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#073": {
+   "src": "You may as well go with him, {u}. Maybe you'll be able to prove my worries wrong.",
+   "dst": "Bạn cứ đi cùng cậu ấy đi, {u}. Biết đâu bạn sẽ chứng minh nỗi lo của tôi là thừa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#074": {
+   "src": "Hum... I suppose the pieces fit together, yet...",
+   "dst": "Hừm... các mảnh ghép có vẻ khớp, thế nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#075": {
+   "src": "I... I may have gotten a bit h- he- heated there...",
+   "dst": "Tớ... tớ có lẽ hơi n- nó- nóng quá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#076": {
+   "src": "It's just... all so- s- so frustrating! So often, people are h- hur- hurt by the crown, and- and th- there's nothing we can do about it! If we had m- m- if we had m- magic, we'd be able to- to sta- stand up to them!",
+   "dst": "Chỉ là... mọi thứ thật b- b- bực bội! Hoàng gia cứ l- là- làm tổn thương mọi người, v- và ch- chẳng làm gì được! Nếu ta có p- p- nếu ta có p- phép thuật, ta đã có thể đ- đứ- đứng lên chống lại họ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#077": {
+   "src": "But, they don't... eugh. What- wh- whatever. We can just-",
+   "dst": "Nhưng họ lại không... ư. S- s- sao cũng được. Ta cứ việc-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#078": {
+   "src": "Hey, wait up!",
+   "dst": "Này, đợi đã!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#079": {
+   "src": "R- Rex? What are you-",
+   "dst": "R- Rex? Cậu làm gì-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#080": {
+   "src": "Well, I can't just let you go off and do this on your own. Even if I think it's stupid and reckless.",
+   "dst": "Chà, tớ đâu thể để cậu tự đi làm chuyện này một mình. Dù tớ thấy nó ngu ngốc và liều lĩnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#081": {
+   "src": "So, what's the plan? You didn't just run off without one, right?",
+   "dst": "Vậy, kế hoạch là gì? Cậu không chạy đi tay trắng, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#082": {
+   "src": "Um...",
+   "dst": "Ờm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#083": {
+   "src": "Zeph. Come on.",
+   "dst": "Zeph. Thôi mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#084": {
+   "src": "Hey! I know that I- I need a f- fo- focus, right? We just need to find some... s- some magical materials to ma- make it out of. Even if I- I- I don't know where to... look.",
+   "dst": "Này! Tớ biết tớ c- cần một v- vậ- vật hội tụ, đúng không? Chỉ cần tìm ít... v- vật liệu ma thuật để l- làm ra nó. Dù t- t- tớ không biết tìm... ở đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#085": {
+   "src": "Sigh. Okay. Well, luckily for you, I know a spot. Remember that cave to the west of the festival grounds? Soldiers were swarming the place a week or two ago. Blocked it off 'cause of... cursed activity, or something.",
+   "dst": "Haizz. Được rồi. May cho cậu là tớ biết một chỗ. Nhớ cái hang phía tây khu lễ hội không? Một hai tuần trước lính tráng kéo tới đầy. Họ phong tỏa nó vì... hoạt động của kẻ bị nguyền, hay gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#086": {
+   "src": "And... y- you- you think there might be s- some- something there?",
+   "dst": "Và... c- cậu- cậu nghĩ có th- thứ- thứ gì ở đó à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#087": {
+   "src": "Yep! Why else would they prevent people from going there for so long? There's gotta be something.",
+   "dst": "Ừ! Không thì sao họ cấm người ta tới đó lâu thế? Chắc chắn có gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#088": {
+   "src": "Okay. It's w- worth a shot... Thanks for the help, Rex.",
+   "dst": "Được. Đ- đáng thử... Cảm ơn cậu giúp, Rex.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#089": {
+   "src": "Don't mention it. We'll just have to follow those blue flowers, they'll lead us right to the cave. I'll stand guard outside while you two search it.",
+   "dst": "Có gì đâu. Cứ đi theo mấy bông hoa xanh, chúng sẽ dẫn thẳng tới hang. Tớ sẽ canh bên ngoài trong lúc hai người lục soát.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#090": {
+   "src": "Sounds g- good. Let's go!",
+   "dst": "Ng- nghe ổn đấy. Đi thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 3",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#091": {
+   "src": "Head to the blocked off cave at [-{~}, {~}, -{~}].",
+   "dst": "Tới cái hang bị phong tỏa tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#092": {
+   "src": "...Hm? What? I'm not here for you, just to be clear.",
+   "dst": "...Hửm? Gì? Nói rõ nhé, tớ không ở đây vì cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#093": {
+   "src": "You should stop wasting time talking to me, and hurry up after Zeph already.",
+   "dst": "Cậu đừng phí thời gian nói chuyện với tớ nữa, mau đuổi theo Zeph đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#094": {
+   "src": "He's probably trying to compete with you to see who can get to the end fastest, and every second you spend here is not doing you any favors in beating him.",
+   "dst": "Chắc cậu ấy đang đua với cậu xem ai tới cuối nhanh hơn, và mỗi giây cậu đứng đây chẳng giúp gì cho việc thắng cậu ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#095": {
+   "src": "Heh. Not that you'd win anyway!",
+   "dst": "Hê. Cậu cũng chẳng thắng nổi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#096": {
+   "src": "Hah! Too s- sl- slow! I guess I probably sh- should- should've warned you about the r- roly-bugs...",
+   "dst": "Ha! Ch- ch- chậm quá! Chắc tớ n- nê- nên báo trước cho cậu về b- bọ Roly...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#097": {
+   "src": "If you're quiet en- enough, they usually don't bother you. I th- th- I think you even woke up the lea- leader of the colony!",
+   "dst": "Nếu đủ y- yên lặng, chúng thường không làm phiền. T- t- tớ nghĩ cậu còn đánh thức cả th- thủ lĩnh bầy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#098": {
+   "src": "Anyway... I think Rex was right. Lo- look at these crystals! If- if a- any- anything's magical, it's got to be them!",
+   "dst": "Dù sao... tớ nghĩ Rex nói đúng. Nh- nhìn mấy tinh thể này xem! Nếu c- c- có thứ gì ma thuật, thì phải là chúng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#099": {
+   "src": "Let's grab some and g- get- get out of here. We don't want to get c- cau- caught in a res- restricted area.",
+   "dst": "Lấy ít rồi r- ra- ra khỏi đây thôi. Ta không muốn bị b- bắ- bắt ở khu v- vực cấm đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#100": {
+   "src": "I'll take one... M- may- maybe we should take some more? In ca- c- in case anyone else wants to- y- you know. Co- coming back here again later would be da- dangerous.",
+   "dst": "Tớ lấy một viên... C- có- có khi nên lấy thêm? Ph- ph- phòng khi có ai khác muốn- c- cậu biết đấy. Qu- quay lại đây sau sẽ ng- nguy hiểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 4",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#101": {
+   "src": "Grab a crystal before you leave.",
+   "dst": "Lấy một viên tinh thể trước khi rời đi.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#102": {
+   "src": "Took you long enough! So, who won the race?",
+   "dst": "Lâu thế! Vậy, ai thắng cuộc đua?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#103": {
+   "src": "You say that like you don't a- al- already know, Rex!",
+   "dst": "Cậu nói cứ như chưa b- bi- biết rồi ấy, Rex!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#104": {
+   "src": "I didn't know we were racing",
+   "dst": "Tôi đâu biết là đang đua",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#105": {
+   "src": "Excuses, excuses. You should always have your guard up around Zeph. You never know when he'll strike with a surprise race.",
+   "dst": "Ngụy biện, ngụy biện. Ở cạnh Zeph lúc nào cũng phải cảnh giác. Không biết khi nào cậu ấy sẽ tung ra một cuộc đua bất ngờ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#106": {
+   "src": "Am I tha- that predictable?",
+   "dst": "Tớ d- dễ đoán thế sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#107": {
+   "src": "Uh... yeah? Obviously?",
+   "dst": "Ờ... ừ? Rõ quá còn gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#108": {
+   "src": "Well... it- it's fun!",
+   "dst": "Thì... v- vui mà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#109": {
+   "src": "Sure, Zeph. Well, what'd you find? I haven't seen anybody out here, so I think we're in the clear to go if we're done here.",
+   "dst": "Ừ, Zeph. Thế, tìm được gì? Tớ chưa thấy ai ngoài này, nên nếu xong rồi thì ta đi được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#110": {
+   "src": "We fou- found some crystals growing at the end of the cave. They f- fe- feel magical to me, so... they should w- wor- work. Let's get going back.",
+   "dst": "Bọn tớ t- tìm thấy mấy tinh thể mọc ở cuối hang. Tớ c- cả- cảm thấy chúng có phép, nên... chắc sẽ d- dù- dùng được. Về thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 5",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#111": {
+   "src": "Come on. Just because we're in the clear now doesn't mean we can dilly-dally. Let's go.",
+   "dst": "Đi nào. Giờ an toàn không có nghĩa là được la cà. Đi thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#112": {
+   "src": "Let's get going back. I r- really hope these crystals w- wor- work.",
+   "dst": "Về thôi. Tớ th- thật mong mấy tinh thể này d- dù- dùng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#113": {
+   "src": "...Ah! You return! I'd best inform miss Syndra of your arrival.",
+   "dst": "...À! Các cậu về rồi! Tôi nên báo cho cô Syndra biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#114": {
+   "src": "You were wai- waiting for us? Why?",
+   "dst": "Anh đ- đợ- đợi bọn em à? Sao vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#115": {
+   "src": "Hrm... I suppose your words resonated with me, in the end. Having taken some time to mull it over while you were gone... I must admit, you make a solid point.",
+   "dst": "Hừm... chắc rốt cuộc lời cậu đã chạm tới tôi. Có thời gian ngẫm nghĩ khi các cậu đi vắng... tôi phải thừa nhận, cậu nói có lý.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#116": {
+   "src": "Well, you're not the only one feeling that way, if it makes you feel any better. I think Syndra's the same.",
+   "dst": "Chà, anh không phải người duy nhất thấy vậy, nếu thế khiến anh thấy khá hơn. Tôi nghĩ Syndra cũng thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#117": {
+   "src": "Even more reason to try something new, then! This... magic, as you call it- if indeed it is what you have described, though I still have my doubts-",
+   "dst": "Vậy càng có lý do thử điều mới! Thứ... phép thuật này, như cậu gọi- nếu đúng như cậu tả, dù tôi vẫn còn ngờ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#118": {
+   "src": "I do too.",
+   "dst": "Tôi nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#119": {
+   "src": "Yes, Rex, I appreciate the encouragement- as I was saying, it could be just what we need to truly make a difference.",
+   "dst": "Phải, Rex, cảm ơn lời cổ vũ- như tôi đang nói, nó có thể đúng là thứ ta cần để thật sự tạo nên khác biệt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#120": {
+   "src": "...I h- ho- hope so. Um... you said you were g- go- going to tell Syndra we were back?",
+   "dst": "...Em m- mo- mong vậy. Ờm... anh bảo sẽ đ- đi- đi báo Syndra là bọn em về mà?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#121": {
+   "src": "So I was! Allow me one moment, please.",
+   "dst": "Đúng rồi! Xin đợi một chút.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#122": {
+   "src": "...You're really sure you want to go through with this, Zeph?",
+   "dst": "...Cậu thật sự chắc muốn làm chuyện này chứ, Zeph?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#123": {
+   "src": "I- I am. I w- wa- I want to try it! Maybe then, I could...",
+   "dst": "T- tớ chắc. Tớ m- mu- tớ muốn thử! Có khi lúc đó, tớ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#124": {
+   "src": "Okay! Okay. It's your choice. I just worry sometimes!",
+   "dst": "Được! Được rồi. Tùy cậu. Tớ chỉ hơi lo thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#125": {
+   "src": "I... I ne- need to get into the r- r- right mood for it, I thi- I- I think. I'm... kind of ner- nervous, actually.",
+   "dst": "Tớ... tớ c- cần vào đúng t- t- tâm trạng, tớ ng- t- tớ nghĩ vậy. Tớ... thật ra hơi h- hồi hộp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#126": {
+   "src": "...Hey, {u}, could you... do- d- do some magic. As a- a d- dem- demonstration!",
+   "dst": "...Này, {u}, cậu có thể... l- l- làm ít phép thuật không. Để m- mi- minh họa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#127": {
+   "src": "Is that safe?",
+   "dst": "An toàn chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#128": {
+   "src": "Rex is right, I'm not sure t",
+   "dst": "Rex nói đúng, tôi không chắc",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#129": {
+   "src": "N- no, she- she's just paranoid. It'll be f- f- fine! You were casting sp- spells in the cave a- and- and nothing bad happened!",
+   "dst": "K- không, cậu- cậu ấy chỉ đa nghi thôi. Sẽ ổ- ổ- ổn mà! Cậu dùng ph- phép trong hang m- mà- mà có sao đâu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#130": {
+   "src": "Sigh. If you insist, Zeph. Whatever you do had better be cool though, {u}.",
+   "dst": "Haizz. Nếu cậu nhất quyết, Zeph. Nhưng làm gì thì phải ngầu đấy nhé, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#131": {
+   "src": "Probably! It should be fine.",
+   "dst": "Chắc vậy! Chắc sẽ ổn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#132": {
+   "src": "Hm, I don't quite like the sound of \"probably.\"",
+   "dst": "Hừm, tớ chẳng thích nghe chữ \"chắc vậy\" lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#133": {
+   "src": "Good- g- good enough for me! Come on, {u}, sh- show- show me a spell!",
+   "dst": "Th- th- thế là đủ với tớ! Nào, {u}, ch- cho- cho tớ xem một phép đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#134": {
+   "src": "Showcase magic by casting spells in the resistance camp.",
+   "dst": "Biểu diễn phép thuật bằng cách thi triển phép trong trại Kháng Chiến.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#135": {
+   "src": "Woah! That w- was cool! Can you d- do- do it again?",
+   "dst": "Oa! Ng- ngầu thật! Cậu l- là- làm lại được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#136": {
+   "src": "...Hm. I guess it was alright.",
+   "dst": "...Hừm. Chắc là cũng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#137": {
+   "src": "What's going on out here? I heard-",
+   "dst": "Chuyện gì ngoài này thế? Tôi nghe-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#138": {
+   "src": "{u} is show- sh- showing me some magic!",
+   "dst": "{u} đang ch- c- cho em xem phép thuật!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#139": {
+   "src": "... I take it you found what you were looking for then?",
+   "dst": "... Vậy tôi đoán các em đã tìm được thứ cần tìm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#140": {
+   "src": "Yup. Cursed crystals from the roly-nest.",
+   "dst": "Vâng. Tinh thể bị nguyền từ tổ Roly.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#141": {
+   "src": "The... of all places, you went to the roly-nest?! Did you even consider the risk?!",
+   "dst": "Cái... bao nhiêu chỗ, các em lại tới tổ Roly?! Có nghĩ tới nguy hiểm không hả?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#142": {
+   "src": "What if you were caught? We are only able to operate here because we avoid drawing attention to ourselves. If you had been seen-",
+   "dst": "Lỡ bị bắt thì sao? Ta hoạt động được ở đây là nhờ tránh gây chú ý. Nếu các em bị nhìn thấy-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#143": {
+   "src": "But we weren't. I know the shift schedule of the guards, nobody was going to stop by while we were there.",
+   "dst": "Nhưng có ai thấy đâu. Em biết lịch đổi ca của lính gác, chẳng ai ghé qua khi bọn em ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#144": {
+   "src": "...sigh. You children, you'll be the death of me. Fine. You found the crystals, and you weren't spotted - good.",
+   "dst": "...haizz. Lũ trẻ các em, rồi tôi chết vì các em mất. Thôi được. Có tinh thể, lại không bị phát hiện - tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#145": {
+   "src": "Um... not to interrupt, or, anything, but... I missed the c- magic. Could you... show us some more?",
+   "dst": "Ờm... không định ngắt lời, hay, gì cả, nhưng... tớ lỡ màn ng- phép thuật. Cho bọn tớ xem thêm nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#146": {
+   "src": "Hmph. Impressive!",
+   "dst": "Hừm. Ấn tượng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#147": {
+   "src": "Indeed. Thank you for the demonstration, {u}. Now, we should-",
+   "dst": "Quả vậy. Cảm ơn bạn đã minh họa, {u}. Giờ ta nên-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#148": {
+   "src": "Oh! Syndra, do- d- do you think you could show us something t- t- too? You're b- bl- blessed, so maybe it'd be-",
+   "dst": "Ồ! Syndra, c- c- cô có thể cho bọn em xem gì đó n- n- nữa không? Cô được b- ba- ban phước, nên có lẽ sẽ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#149": {
+   "src": "No.",
+   "dst": "No.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#150": {
+   "src": "... O- o- okay! If- if you s- say- say so...",
+   "dst": "... Đ- đ- được! N- nếu cô n- nó- nói thế...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#151": {
+   "src": "If we're done with the demonstrations, we should discuss-",
+   "dst": "Nếu đã xong phần minh họa, ta nên bàn-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#152": {
+   "src": "But- b- but I want to tr- try now! I have a- a fo- focus, so I sh- should- I should be able to do... something.",
+   "dst": "Nhưng- nh- nhưng em muốn th- thử ngay! Em có v- vậ- vật hội tụ rồi, nên em s- sẽ- em sẽ làm được... gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#153": {
+   "src": "Sigh. Yes, alright, Zeph. But let me guide you through it, would you?",
+   "dst": "Haizz. Được rồi, Zeph. Nhưng để tôi hướng dẫn em, nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 7",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#154": {
+   "src": "Watch Zeph attempt magic.",
+   "dst": "Xem Zeph thử dùng phép thuật.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#155": {
+   "src": "Take your position, Zeph. Everyone else, let's move out of the way.",
+   "dst": "Vào vị trí đi, Zeph. Mọi người, ta tránh ra nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#156": {
+   "src": "Yes, indeed, it would not do well for us to be injured, unintentionally or otherwise. Come on, Sui!",
+   "dst": "Phải, quả vậy, ta không nên bị thương, dù vô tình hay không. Đi nào, Sui!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#157": {
+   "src": "And we're sure this is safe?",
+   "dst": "Và ta chắc là an toàn chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#158": {
+   "src": "We have all seen {u} in action, and they appear to be unharmed, no?",
+   "dst": "Ta đều đã thấy {u} ra tay, và trông người ấy chẳng sao, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#159": {
+   "src": "Okay, sure, but what if someone sees? It's not like we're especially hidden here.",
+   "dst": "Được, ừ, nhưng lỡ có ai thấy thì sao? Ở đây ta đâu có kín đáo gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#160": {
+   "src": "You know as well as I that the only ones showing up in these parts are outcasts and drunks!",
+   "dst": "Bạn biết rõ như tôi, quanh đây chỉ toàn kẻ bị ruồng bỏ với bợm rượu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#161": {
+   "src": "In any case, we can make it quick. Zeph, are you ready?",
+   "dst": "Dù sao thì ta làm nhanh thôi. Zeph, em sẵn sàng chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#162": {
+   "src": "Yes! I- I- I'm ready.",
+   "dst": "Rồi! E- e- em sẵn sàng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#163": {
+   "src": "Close your eyes, and hold the crystal close to your chest. Concentrate on the points of contact. Your hands, your chest. Do you feel anything?",
+   "dst": "Nhắm mắt lại, ôm viên pha lê sát ngực. Tập trung vào những điểm tiếp xúc. Hai bàn tay, lồng ngực. Em có cảm thấy gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#164": {
+   "src": "...oh! I- I do! It's l- l- like... st- static electricity, li- little sparks bouncing around...",
+   "dst": "...ồ! C- có! Nó g- g- giống như... t- tĩnh điện, n- những tia lửa nhỏ nảy khắp nơi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#165": {
+   "src": "Good. Now, you'll try to draw your focus inwards. Imagine the sparks being pulled towards the center of your body. Feel them gathering together.",
+   "dst": "Tốt. Giờ thử hướng sự chú ý vào bên trong. Hình dung những tia lửa bị kéo về giữa cơ thể em. Cảm nhận chúng tụ lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#166": {
+   "src": "I... okay.",
+   "dst": "Em... vâng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#167": {
+   "src": "Now, finally, try releasing that energy. Concentrate on the crystal again, the points of contact. Imagine pushing the sparks back into it, and then further, sending them out through the crystal",
+   "dst": "Cuối cùng, thử giải phóng nguồn năng lượng đó. Tập trung lại vào viên pha lê, vào điểm tiếp xúc. Hình dung đẩy tia lửa ngược vào nó, rồi xa hơn nữa, phóng chúng ra qua viên pha lê",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#168": {
+   "src": "A-ah! That- th- that was...",
+   "dst": "Á-á! V- v- vừa rồi là...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#169": {
+   "src": "Hey! Are you okay? Not hurt? I don't see anything visible, but-",
+   "dst": "Này! Cậu ổn chứ? Không đau chứ? Tôi không thấy gì lạ, nhưng-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#170": {
+   "src": "W- would you s- st- stop, already? I'm fine!",
+   "dst": "C- cậu d- d- dừng lại được chưa? Mình ổn mà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#171": {
+   "src": "Ow! What- wh- what was that for?!",
+   "dst": "Ui! S- s- sao lại đánh mình?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#172": {
+   "src": "For being annoying, idiot.",
+   "dst": "Vì cậu phiền, đồ ngốc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#173": {
+   "src": "Well done, Zeph. You've done just as well as any of the soldiers I've seen receive blessings. Just... as well...",
+   "dst": "Giỏi lắm, Zeph. Em làm tốt chẳng kém những người lính chị từng thấy nhận phước lành. Chẳng... kém gì...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#174": {
+   "src": "...was it really that easy all this time?",
+   "dst": "...lẽ nào bấy lâu nay lại dễ đến thế?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#175": {
+   "src": "...um, Syndra. Are you...",
+   "dst": "...ừm, Syndra. Chị có...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#176": {
+   "src": "Yes... yes, I'm alright. {u}, I apologize for doubting you. It would seem... you were right all along.",
+   "dst": "Ừ... ừ, chị ổn. {u}, xin lỗi vì đã nghi ngờ bạn. Có vẻ... bạn đã đúng ngay từ đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#177": {
+   "src": "Or maybe Zeph's just cursed...",
+   "dst": "Hay Zeph bị nguyền sẵn rồi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#178": {
+   "src": "Rex.",
+   "dst": "Rex.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#179": {
+   "src": "Sorry! Sorry. No, you're right. It was... cool, I guess. It's just... weird.",
+   "dst": "Xin lỗi! Xin lỗi. Không, cậu nói đúng. Nó... cũng hay. Chỉ là... lạ thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#180": {
+   "src": "A- a little, I guess. But it f- f- felt right. Like- l- like I always co- could have done it. Even if it was just sp- spark- sparkles.",
+   "dst": "M- một chút, chắc vậy. Nhưng c- c- cảm giác đúng lắm. N- như thể mình l- luôn làm được. Dù chỉ là v- vài t- tia lấp lánh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#181": {
+   "src": "That's part of the process. You'll need a proper focus to do more... specially-forged weapons have always done the trick, in my experience.",
+   "dst": "Đó là một phần của quá trình. Em sẽ cần một vật dẫn thật sự để làm hơn thế... theo chị thấy, vũ khí rèn riêng luôn hiệu quả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#182": {
+   "src": "Specially-forged weapons, you say? Miss, is there anything in particular one would need to create one? With the right materials, I'm certain I could forge Zeph what he needs.",
+   "dst": "Vũ khí rèn riêng ư? Cô ơi, có cần gì đặc biệt để làm một cái không? Có đủ vật liệu, tôi chắc chắn rèn được thứ Zeph cần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#183": {
+   "src": "A- a new weapon? That I ca- can cast ma- magic with?",
+   "dst": "V- vũ khí mới? Thứ em d- dùng được ph- phép thuật?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#184": {
+   "src": "I could see it coming in use. We'll want more sturdy materials than usual- preferably something that is magical in and of itself... Zeph, do you think you could-",
+   "dst": "Chị thấy sẽ có ích. Ta cần vật liệu chắc hơn thường lệ- tốt nhất là thứ tự thân đã có phép thuật... Zeph, em nghĩ em có thể-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#185": {
+   "src": "Yes!!! I- I mean, uh, y- yes, I can do that.",
+   "dst": "Có!!! E- em là, ờ, đ- được, em làm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#186": {
+   "src": "...Okay! {u}, I kn- I- I know where to start! Me- meet me by the big tree to the n- nor- northeast! The one for the riddle!",
+   "dst": "...Được rồi! {u}, m- m- mình biết bắt đầu từ đâu rồi! G- gặp mình ở cái cây lớn phía đ- đông- đông bắc! Cây trong câu đố!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 8",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#187": {
+   "src": "Head to the big tree and find Zeph at [-{~}, {~}, -{~}].",
+   "dst": "Đến cái cây lớn và tìm Zeph tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#188": {
+   "src": "I suppose I should get around to firing up the forge... Sui, will you need me for anything?",
+   "dst": "Chắc tôi nên đi nhóm lò rèn thôi... Sui, em có cần tôi giúp gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#189": {
+   "src": "Um... n-no, I don't think so.",
+   "dst": "Ừm... k-không, chắc không ạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#190": {
+   "src": "He's taken to it remarkably well, hasn't he? Better than I could have hoped.",
+   "dst": "Thằng bé tiếp thu tốt bất ngờ, phải không? Hơn cả chị mong đợi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#191": {
+   "src": "{u}... you have opened a path for me that I never could have imagined. Thank you.",
+   "dst": "{u}... bạn đã mở cho tôi một con đường tôi chưa từng dám nghĩ tới. Cảm ơn bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#192": {
+   "src": "Enthusiastic as always, isn't he?",
+   "dst": "Hăng hái như mọi khi, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#193": {
+   "src": "...don't talk to me.",
+   "dst": "...đừng nói chuyện với tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#194": {
+   "src": "Magic... Hoh!",
+   "dst": "Phép thuật... Hô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#195": {
+   "src": "Never in my life did I expect to have my whole world view challenged, hoh!",
+   "dst": "Cả đời chưa từng nghĩ cả thế giới quan của mình bị lung lay, hô!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#196": {
+   "src": "Admittedly, this information will take some time to progress...",
+   "dst": "Phải thừa nhận, tôi sẽ cần thời gian để thấm chuyện này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#197": {
+   "src": "I'll most likely seek you out later with some follow up questions.",
+   "dst": "Chắc lát nữa tôi sẽ tìm bạn để hỏi thêm vài điều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#198": {
+   "src": "...well, Synny, don't suppose any of this changes your usual approach?",
+   "dst": "...thế, Synny, chắc mấy chuyện này chẳng đổi cách làm của cô nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Kaio",
+   "source": "wiki"
+  },
+  "The Cursed One#199": {
+   "src": "Sigh... You know it does, Kaio. If there's a possibility more of our members could wield magic, then...",
+   "dst": "Hầy... Ông biết là có mà, Kaio. Nếu thêm người của ta dùng được phép thuật, thì...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#200": {
+   "src": "Then?",
+   "dst": "Thì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Kaio",
+   "source": "wiki"
+  },
+  "The Cursed One#201": {
+   "src": "... I don't know. I don't know if it'll work, yet.",
+   "dst": "... Tôi không biết. Chưa biết có thành không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#202": {
+   "src": "Mmn. I don't like it.",
+   "dst": "Hừm. Lão không thích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Kaio",
+   "source": "wiki"
+  },
+  "The Cursed One#203": {
+   "src": "You don't like anything, Kaio.",
+   "dst": "Ông có thích gì đâu, Kaio.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#204": {
+   "src": "Yes, well, I especially don't like this. Don't like the ideas you're gettin' all up there in your head. It's a risk.",
+   "dst": "Ừ, nhưng cái này lão càng không thích. Không thích mấy ý tưởng đang nảy ra trong đầu cô. Liều lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Kaio",
+   "source": "wiki"
+  },
+  "The Cursed One#205": {
+   "src": "Everything is a risk. But it doesn't matter yet. It'll depend on what Quill has to tell me during the festival.",
+   "dst": "Cái gì cũng liều. Nhưng giờ chưa quan trọng. Còn tùy Quill sẽ nói gì với tôi trong lễ hội.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#206": {
+   "src": "So...",
+   "dst": "Vậy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#207": {
+   "src": "When I m- ma- when I make my weapon... do you think I'll be a- a- able to cast real spells? And not just... poofs of sp- s- sparkles?",
+   "dst": "Khi m- mình- khi mình làm xong vũ khí... cậu nghĩ mình có t- t- thể dùng phép thật không? Chứ không chỉ... phụt ra vài t- t- tia lửa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#208": {
+   "src": "Having a weapon helps me cas",
+   "dst": "Có vũ khí giúp tôi thi triển",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#209": {
+   "src": "Oh...",
+   "dst": "Oh...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#210": {
+   "src": "Sigh... I was h- h- hoping that- th- that I could do... I- I don't know! Something! A- any- anything to help. But... you're right.",
+   "dst": "Hầy... mình đã m- m- mong là- là- là mình có thể... m- mình không biết! Gì đó! B- bất- bất cứ gì để giúp. Nhưng... cậu nói đúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#211": {
+   "src": "Oh. O- okay! That means it- it m- might help me, too. Thank you.",
+   "dst": "Ồ. Đ- được! Vậy là nó c- cũng có thể giúp mình. Cảm ơn cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#212": {
+   "src": "So, what are we doing here?",
+   "dst": "Vậy ta làm gì ở đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#213": {
+   "src": "Oh! R- ri- right! Well, Syndra said we sh- should find something magical, right? Well, I- I don't know for- f- for sure if it's magical or not, but...",
+   "dst": "Ồ! Ph- ph- phải rồi! Syndra bảo ta n- nên tìm thứ có phép thuật, đúng không? Mình k- không chắc n- nó có phép thuật không, nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#214": {
+   "src": "A long, long time ago, th- this- this tree was more than just a stump! It had long arms st- str- stretching out over the whole forest, watching over th- the people and w- wi- wildlife.",
+   "dst": "Ngày xửa ngày xưa, c- cái- cái cây này đâu chỉ là gốc cụt! Nó có những cánh tay dài v- v- vươn khắp khu rừng, che chở c- con người và m- m- muông thú.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#215": {
+   "src": "When anyone was hurt, o- or- or unwell, the tree would reach out with its br- branches and grow fruit- fruit that was said to he- h- heal all injuries and illnesses.",
+   "dst": "Hễ ai bị thương h- h- hay ốm đau, cây sẽ vươn c- cành ra và kết trái- trái mà người ta bảo c- c- chữa được mọi vết thương và bệnh tật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#216": {
+   "src": "It took care of the people, and the p- people took care of the tree. But then- then the c- cur- curse took hold of the people.",
+   "dst": "Cây chăm sóc con người, và c- con người chăm sóc cây. Rồi- rồi l- lời- lời nguyền chiếm lấy con người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#217": {
+   "src": "In the chaos and d- des- destruction caused by the cursed ones, the tree was hurt. It stopped gr- grow- growing its gifts, and went to sleep... f- forever.",
+   "dst": "Giữa hỗn loạn và t- tàn- tàn phá do kẻ bị nguyền gây ra, cái cây bị thương. Nó thôi k- kết- kết quà tặng, rồi chìm vào giấc ngủ... m- mãi mãi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#218": {
+   "src": "Even after the Queen arrived a- and blessed the people, the tree di- didn't- didn't wake up. Its trust had been broken...",
+   "dst": "Kể cả khi Nữ hoàng tới v- và ban phước cho dân, cây v- vẫn- vẫn không tỉnh. Lòng tin của nó đã vỡ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#219": {
+   "src": "Ev- even though it's just a story... I hope s- some- someday the tree can trust us again. We could- c- could- we could really use its help, these days...",
+   "dst": "D- dù chỉ là chuyện kể... mình mong m- một- một ngày cây lại tin ta. Ta thật- t- thật- ta thật sự cần nó giúp lúc này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#220": {
+   "src": "... A- a- anyway! The cavern you met Syndra in is also said to be s- sa- sacred. And the feel of the crystals reminds me of h- how I feel there.",
+   "dst": "... D- d- dù sao thì! Cái hang cậu gặp Syndra cũng được cho là l- li- linh thiêng. Cảm giác từ pha lê gợi mình nhớ c- cảm giác ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#221": {
+   "src": "So- s- so if we can find our way into the tree... we co- could find some m- ma- s- some magical wood. Follow me!",
+   "dst": "N- n- nên nếu ta tìm được lối vào trong cây... ta c- có thể tìm thấy g- g- gỗ- gỗ có phép thuật. Theo mình!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 9",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#222": {
+   "src": "Head to the top of the giant tree at [-{~}, {~}, -{~}].",
+   "dst": "Leo lên ngọn cây khổng lồ tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#223": {
+   "src": "Hey! F- faster than last time! Keep up the im- im- improvement, and maybe soon I'll have to put in mo- more than {~}!",
+   "dst": "Này! N- nhanh hơn lần trước! Cứ t- t- tiến bộ thế, chắc sắp tới mình phải đặt cược h- hơn {~}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#224": {
+   "src": "Ha... yeah... Um, earlier you m- me- mentioned that magic can be found in- in everything.",
+   "dst": "Ha... ừ... Ừm, lúc nãy cậu c- c- có nói phép thuật có t- trong mọi thứ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#225": {
+   "src": "So... so ma- maybe we didn't need to come to- to- to this old tree... But- b- but it feels right to me.",
+   "dst": "Nên... nên c- có lẽ ta đâu cần t- t- tới cái cây già này... N- n- nhưng mình thấy đúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#226": {
+   "src": "... Thank you for c- c- coming along.",
+   "dst": "... Cảm ơn cậu đã đ- đ- đi cùng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#227": {
+   "src": "It's a breath of fresh air, having someone n- n- new around! I don't know, having you around just f- fe- feels... good! Like- like anything is possible!",
+   "dst": "Có người m- m- mới bên cạnh như được hít khí trời! Không biết nữa, có cậu ở đây c- c- cảm giác... thật tốt! Như- như cái gì cũng làm được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#228": {
+   "src": "... Oh, I- I- I'm getting too sappy. Sorry, sorry!",
+   "dst": "... Ôi, m- m- mình sến quá rồi. Xin lỗi, xin lỗi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#229": {
+   "src": "Well... my h- h- my heart is telling me that this wood is what I w- w- what I want!",
+   "dst": "Thì... t- t- tim mình mách bảo gỗ này là thứ mình m- m- thứ mình muốn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#230": {
+   "src": "That old tale... it's one of the o- o- only things I still remember from my childhood.",
+   "dst": "Chuyện cổ ấy... là một trong số í- í- ít thứ mình còn nhớ từ hồi nhỏ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#231": {
+   "src": "So, s- so this is definitely what I want my w- we- weapon to be made out of.",
+   "dst": "N- nên chắc chắn mình muốn v- v- vũ khí làm từ thứ này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#232": {
+   "src": "We might as well just have g",
+   "dst": "Thế thì gỗ nào chẳng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#233": {
+   "src": "Oh... y- y- yeah. Maybe you're right...",
+   "dst": "Ồ... ừ- ừ- ừ. Chắc cậu nói đúng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#234": {
+   "src": "I just thought... choosing s- some- something special to me would- would be b- best.",
+   "dst": "Mình chỉ nghĩ... chọn thứ g- gì- gì đó đặc biệt với mình s- sẽ tốt nhất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#235": {
+   "src": "B- but we're here now any- a- anyway, aren't we? So we can just use the- the- the wood here...",
+   "dst": "N- nhưng đằng nào cũng t- t- tới đây rồi, phải không? Thế thì cứ dùng g- g- gỗ ở đây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#236": {
+   "src": "So, we've gotta find a way into the tr- the tree...",
+   "dst": "Vậy, phải tìm cách vào trong c- cái cây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#237": {
+   "src": "Ha, I- I'm not exactly a wood- woodcutting expert... maybe it'd have been smart to ask Mora t- to- to join us?",
+   "dst": "Ha, m- mình đâu phải chuyên gia đ- đốn gỗ... có khi nên rủ Mora đ- đi- đi cùng nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#238": {
+   "src": "... Do- do you have any ideas? May- maybe you could break through with a sp- spe- spell?",
+   "dst": "... C- cậu có ý gì không? C- c- có khi cậu phá được bằng p- p- phép?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 10",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#239": {
+   "src": "Cast a spell ontop of the tree at [-{~}, {~}, -{~}].",
+   "dst": "Thi triển phép trên ngọn cây tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#240": {
+   "src": "Maybe you could break through with a sp- spe- spell?",
+   "dst": "C- c- có khi cậu phá được bằng p- p- phép?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 11",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#241": {
+   "src": "Woah! What just happened?!",
+   "dst": "Ối! Chuyện gì vừa xảy ra?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 11",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#242": {
+   "src": "... Do- do you think the t- tr- the tree heard me earlier? Is it...",
+   "dst": "... C- cậu nghĩ c- c- cái cây nghe thấy mình lúc nãy à? Lẽ nào...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 11",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#243": {
+   "src": "This- th- this has to be a sign! Come on, let's go in!",
+   "dst": "C- c- cái này phải là điềm báo! Đi nào, vào thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 11",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#244": {
+   "src": "Find the wood Zeph wants at the end of the root system.",
+   "dst": "Tìm khúc gỗ Zeph muốn ở cuối hệ rễ.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#245": {
+   "src": "Th- th- there! That should- sh- should be a big enough chunk for Mora... right?",
+   "dst": "Đ- đ- đó! Khúc này đ- đ- đủ lớn cho Mora... nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 12",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#246": {
+   "src": "A- and- you're still not fast enough to beat me to th- th- to the end!",
+   "dst": "V- v- và- cậu vẫn chưa đủ nhanh để tới đ- đ- đích trước mình!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 12",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#247": {
+   "src": "Okay, next... We- weapons are usually made of m- me- metal, right? That's why Mora has a f- fo- a forge.",
+   "dst": "Rồi, tiếp theo... V- vũ khí thường làm bằng k- k- kim loại, đúng không? Vì thế Mora mới có l- l- lò rèn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 12",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#248": {
+   "src": "...I have a- an- an idea! Let's meet up near {p}, wh- where we first met.",
+   "dst": "...M- m- mình có ý này! Gặp nhau gần {p}, c- chỗ ta gặp lần đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 12",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#249": {
+   "src": "Find Zeph at near {p}.",
+   "dst": "Tìm Zeph ở gần {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#250": {
+   "src": "O- okay, so. The crown usually uses t- ti- titanium for their equipment. Th- that's what Mora says, at least.",
+   "dst": "Đ- được rồi. Hoàng gia thường dùng t- t- titan cho trang bị. Ít nhất Mora b- bảo thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#251": {
+   "src": "But- b- but, it can be hard to come by, b- be- because the crown keeps most of it for themselves.",
+   "dst": "N- n- nhưng khó kiếm lắm, v- v- vì Hoàng gia giữ gần hết cho mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#252": {
+   "src": "Luckily, it's F- F- Festival time, so a bunch of m- merchants are in town! And they're fr- from all over the p- pr- province, not just here!",
+   "dst": "May là đang mùa L- L- Lễ hội, nên có cả đống t- thương nhân trong thị trấn! Họ đến t- từ khắp t- t- tỉnh, chứ không chỉ ở đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#253": {
+   "src": "So someone m- must have titanium, somewhere... we'll j- just- just have to look around.",
+   "dst": "Nên chắc c- c- có ai đó có titan... ta c- c- chỉ cần tìm quanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#254": {
+   "src": "Ah! Th- that- that's the Sovereign!",
+   "dst": "A! Đ- đ- đó là Quân Chủ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#255": {
+   "src": "...and alongside that, does she really think it's safe to hold the festival right now, sir? That opens up a really big risk!",
+   "dst": "...và ngoài ra, Người thật sự nghĩ tổ chức lễ hội lúc này là an toàn sao, thưa ngài? Rủi ro lớn lắm ạ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#256": {
+   "src": "What do you th- th- think they're t- talking about? Come on, let- l- let's shadow them.",
+   "dst": "C- c- cậu nghĩ họ đang nói gì? Đi nào, t- t- ta bám theo họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#257": {
+   "src": "If the cursed thinks they can get past both myself and Her Majesty, they're out of their vector. You don't need to worry about the people.",
+   "dst": "Nếu kẻ bị nguyền tưởng lọt qua được cả tôi lẫn Bệ hạ, thì hắn lệch hẳn khỏi trục tọa độ rồi. Cậu khỏi lo cho dân chúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#258": {
+   "src": "I was more worried about... ...um... W-well, never mind that! If you think we'll all be safe, sir, I'll take you at your word!",
+   "dst": "Tôi lo hơn về... ...ừm... T-thôi, không sao! Nếu ngài nghĩ ta đều an toàn, thưa ngài, tôi tin lời ngài!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#259": {
+   "src": "Let me rephrase- you don't need to worry about anyone. ...heh. Any- wait. What's that noise?",
+   "dst": "Nói lại nhé- cậu chẳng cần lo cho ai cả. ...hê. Ai- khoan. Tiếng gì thế?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#260": {
+   "src": "Just someone out on a random walk? Back to the point- is everything for the festival shaping up according to schedule?",
+   "dst": "Chắc ai đó đi dạo ngẫu nhiên thôi? Quay lại vấn đề- mọi việc cho lễ hội có đúng tiến độ không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#261": {
+   "src": "Oh- yes! Yes it is, sir! The vendors have all been assigned, the game stands have all been constructed, we've commissioned a local band... The one you liked last year!",
+   "dst": "Ồ- vâng! Đúng ạ, thưa ngài! Các gian hàng đã phân xong, quầy trò chơi dựng xong hết, chúng tôi đã thuê một ban nhạc địa phương... Ban ngài thích năm ngoái!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#262": {
+   "src": "Golden. That rendition of \"CHASE\" is what really sold me on them.",
+   "dst": "Tỉ lệ vàng. Bản \"CHASE\" của họ mới thật sự thuyết phục tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#263": {
+   "src": "That just leaves your speech, sir! Have you- Oh, who am I kidding, you already have it memorized.",
+   "dst": "Vậy chỉ còn bài phát biểu của ngài! Ngài đã- Ôi, ai lại hỏi thế, ngài thuộc lòng rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#264": {
+   "src": "Naturally, Xao. We have the whole festival set down to the last point, it looks like. Any more business to factor out?",
+   "dst": "Đương nhiên, Xao. Có vẻ lễ hội đã được định đến từng điểm cuối cùng. Còn việc gì cần phân tích nữa không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#265": {
+   "src": "Yes, sir! I've received word that Inquisitor Renn will be arriving tonight, as you sent me to request for!",
+   "dst": "Có ạ, thưa ngài! Tôi nhận tin Quan thẩm tra Renn sẽ đến tối nay, đúng như ngài sai tôi đi mời!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#266": {
+   "src": "Fantastic job. I have to remember that the Inquisitors aren't like me. When they're busy they can't just go triple-time... Still, good to have that problem solved.",
+   "dst": "Làm tốt lắm. Phải nhớ các Quan thẩm tra không như tôi. Bận rộn thì họ đâu thể tăng tốc gấp ba... Dù sao, giải được bài toán đó là tốt rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#267": {
+   "src": "You know, they should check your work. This is proof positive they can keep pace with me like you can.",
+   "dst": "Biết không, họ nên xem cách cậu làm việc. Đây là phép chứng minh rằng họ theo kịp tôi như cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#268": {
+   "src": "Well! Sir! You know I've had to insist you stop and rest sometimes, and Inquisitors do serve the whole of the province, so...",
+   "dst": "Thì! Thưa ngài! Ngài biết đôi khi tôi phải nài ngài dừng lại nghỉ, mà Quan thẩm tra phục vụ cả tỉnh, nên...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Xao",
+   "source": "wiki"
+  },
+  "The Cursed One#269": {
+   "src": "Hmm... ev- even with us r- r- raiding Nixeph, he isn't concerned...",
+   "dst": "Hừm... d- dù ta đ- đ- đột kích Nixeph, ông ta chẳng lo gì...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#270": {
+   "src": "A- and- an Inquisitor! Th- that- that's not good. We need to tell the others to be c- ca- careful...",
+   "dst": "V- v- và một Quan thẩm tra! C- c- chuyện này không ổn. Phải báo mọi người c- c- cẩn thận...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#271": {
+   "src": "Oh! R- r- right! You're not from here. They're, uh, b- b- bad news. They're sent to d- d- deal with... um, c- cursed ones, and other s- si- similar stuff.",
+   "dst": "Ồ! Ph- ph- phải rồi! Cậu không phải người ở đây. Họ, ờ, là t- t- tin xấu. Họ được cử đi x- x- xử lý... ừm, k- kẻ bị nguyền và những chuyện t- tương tự.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#272": {
+   "src": "If one's a- around... we have to b- be careful. But, since w- we- since we're here, we should still find the t- ti- titanium.",
+   "dst": "Nếu có một người q- quanh đây... ta phải c- cẩn thận. Nhưng đ- đã- đã tới đây rồi, ta vẫn nên tìm t- t- titan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#273": {
+   "src": "There's a b- b- bazaar in the tunnel... if anyone wi- will have it, they'll be there.",
+   "dst": "Có một c- c- khu chợ trong đường hầm... nếu ai c- có, họ sẽ ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#274": {
+   "src": "Find the metal merchant at [-{~}, {~}, -{~}].",
+   "dst": "Tìm thương nhân kim loại tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#275": {
+   "src": "Fine quality metals, fine quality metals for- Ah, hello, hello! Might you be interested in my stock, friends?",
+   "dst": "Kim loại thượng hạng, kim loại thượng hạng cho- À, chào, chào! Các bạn có muốn xem hàng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#276": {
+   "src": "I've got all sorts for sale. Ingots, pre-made bangles and bracelets and trinkets- I've got hold of this lovely iron leaf, in fact. Quite fine decor, I might think!",
+   "dst": "Tôi bán đủ thứ. Thỏi kim loại, vòng xuyến, vòng tay, đồ trang sức làm sẵn- tôi còn kiếm được chiếc lá sắt xinh xắn này. Đồ trang trí tuyệt hảo, tôi nghĩ vậy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#277": {
+   "src": "Hello! We're a- ac- actually looking for titanium! Would you h- ha- happen to have any in stock?",
+   "dst": "Chào! Thật r- r- ra bọn mình đang tìm titan! Ông c- c- có sẵn không ạ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#278": {
+   "src": "Aha, you're in luck then! I've managed to obtain some from a passing {p} merchant! Straight from the {p}- and so I'm told, quite good quality!",
+   "dst": "A ha, vậy các bạn gặp may rồi! Tôi mua được ít titan từ một thương nhân {p} ghé qua! Hàng thẳng từ {p}- và nghe nói chất lượng rất tốt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#279": {
+   "src": "I think the man was struck dumb by the offer of leaves I handed in return, he left with such a bewildered face- but I digress! Would you like ingots, or anything pre-hewn?",
+   "dst": "Hình như ông ta cứng họng khi tôi trả bằng lá, bỏ đi với vẻ mặt ngơ ngác lắm- nhưng tôi lạc đề rồi! Các bạn muốn thỏi, hay đồ đã gia công sẵn?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#280": {
+   "src": "Uh... just- j- just some ingots would be fine.",
+   "dst": "Ờ... c- c- chỉ cần vài thỏi là được ạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#281": {
+   "src": "Indeed, then! It is always fine to see those interested in the crafting trades. For this, I might say ten Liff Leaves would be an agreeable price, yes?",
+   "dst": "Vậy thì được! Lúc nào cũng vui khi thấy người mê nghề thủ công. Món này, tôi nghĩ mười lá Liff là giá hợp lý, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#282": {
+   "src": "Ten!? Oh, f- fine... you said h- high- high quality? It's pr- probably worth the price. Here.",
+   "dst": "Mười!? Ồ, đ- được... ông bảo c- c- chất lượng cao à? C- chắc đáng giá. Đây ạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#283": {
+   "src": "Indeed, friend, so I have been assured! May you have fine fortune in your endeavors!",
+   "dst": "Đúng vậy, bạn ạ, người ta đảm bảo với tôi thế! Chúc các bạn gặp vận may!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Metal Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#284": {
+   "src": "{u}, let's go.",
+   "dst": "{u}, đi thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#285": {
+   "src": "Hm... I d- don't- I don't think titanium is meant to have th- these purple streaks...",
+   "dst": "Hừm... mình k- k- không nghĩ titan lại có m- mấy vệt tím này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#286": {
+   "src": "But I- I- I'm not the blacksmith, so... a- a- and it's not like anyone else is s- se- selling titanium, so.",
+   "dst": "Nhưng m- m- mình đâu phải thợ rèn, nên... v- v- và cũng chẳng ai khác b- b- bán titan, nên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#287": {
+   "src": "Huh? Oh, r- r- right, I keep forgetting you don't know e- ev- everything around here.",
+   "dst": "Hả? À, ph- ph- phải, mình cứ quên cậu chưa biết h- h- hết chuyện ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#288": {
+   "src": "The Auburn F- Fo- Forest may be a poorer area, so we d- do- don't have many emeralds...",
+   "dst": "Rừng Auburn l- l- là vùng nghèo, nên bọn mình k- k- không có mấy ngọc lục bảo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#289": {
+   "src": "But we make up for it by u- u- using all the varied m- materials from the forest! People here v- val- value things from the wild more than e- em- emeralds.",
+   "dst": "Nhưng bù lại bọn mình d- d- dùng đủ loại v- vật liệu từ rừng! Ở đây người ta q- q- quý đồ hoang dã hơn n- n- ngọc lục bảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#290": {
+   "src": "Liff Leaves especially are in high d- d- demand due to their versatility.",
+   "dst": "Đặc biệt lá Liff được c- c- chuộng vì dùng được đủ việc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#291": {
+   "src": "You don't need a- an- anything else? Then I'm r- ready to go.",
+   "dst": "Cậu không cần g- g- gì nữa à? Vậy mình s- sẵn sàng đi rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#292": {
+   "src": "Want to tr- travel back with me?",
+   "dst": "Muốn v- v- về cùng mình không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#293": {
+   "src": "Let's return together.",
+   "dst": "Cùng về thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#294": {
+   "src": "Alrighty! Let's go.",
+   "dst": "Được luôn! Đi nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#295": {
+   "src": "Okay! I'll m- m- meet you later, then.",
+   "dst": "Được! Vậy l- l- lát gặp cậu nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#296": {
+   "src": "We're back!",
+   "dst": "Về rồi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#297": {
+   "src": "Ah! Good, you're just in time.",
+   "dst": "A! Tốt, các em về vừa kịp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#298": {
+   "src": "Uh... in time for wh- what? A- and- and where is everybody?",
+   "dst": "Ờ... kịp g- gì ạ? V- v- và mọi người đâu hết rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#299": {
+   "src": "Have you forgotten? The Festival of the Queen is about to start!",
+   "dst": "Em quên rồi à? Lễ hội Nữ hoàng sắp bắt đầu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#300": {
+   "src": "Wh- th- that was today?! Oh, man, I g- g- got so excited about the m- m- the ma- magic... I forgot!",
+   "dst": "H- h- hôm nay á?! Trời ơi, em m- m- mải mê ph- ph- phép thuật quá... quên mất!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#301": {
+   "src": "Wait... w- wait, before I go- Syndra, we o- ov- overheard something in town. The S- S- Sovereign said an In- Inquisitor would be arriving t- t- tonight!",
+   "dst": "Khoan... k- khoan, trước khi em đi- Syndra, bọn em n- n- nghe lỏm chuyện trong thị trấn. Q- Q- Quân Chủ bảo một Q- Quan thẩm tra sẽ tới t- t- tối nay!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#302": {
+   "src": "...ah. Well, that pushes ahead our timeline significantly...",
+   "dst": "...à. Chà, vậy kế hoạch của ta phải đẩy sớm lên nhiều...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#303": {
+   "src": "Hopefully, they're just here to clear out that cave you found the crystals in, but... better to be safe than sorry.",
+   "dst": "Mong là họ chỉ tới dọn cái hang nơi các em tìm thấy pha lê, nhưng... cẩn tắc vô áy náy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#304": {
+   "src": "That can wait until after the festival, though. You should go on ahead and enjoy yourself.",
+   "dst": "Nhưng chuyện đó để sau lễ hội. Em cứ đi trước mà vui chơi đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#305": {
+   "src": "...if you s- s- say so, Syndra. {u}, you should c- come to the festival too! See you there!",
+   "dst": "...nếu chị đ- đ- đã nói vậy, Syndra. {u}, cậu c- cũng nên tới lễ hội! Gặp ở đó nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#306": {
+   "src": "Ah... there he goes. Well, what do you say? Will you join us for the festival?",
+   "dst": "À... thằng bé đi rồi. Thế bạn tính sao? Có đi lễ hội cùng chúng tôi không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#307": {
+   "src": "It is a celebration of the crown... but you have a limited time here, and it is still a part of our culture. You wouldn't want to miss it.",
+   "dst": "Đó là lễ tôn vinh Hoàng gia... nhưng bạn chẳng ở đây được lâu, mà nó vẫn là một phần văn hóa của chúng tôi. Đừng bỏ lỡ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#308": {
+   "src": "It's a day for everyone to relax and enjoy themselves. The children certainly do... it's good for them, I think, to have some normalcy.",
+   "dst": "Đó là ngày để mọi người thư giãn và vui chơi. Lũ trẻ thì chắc chắn rồi... tôi nghĩ có chút bình thường cũng tốt cho chúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#309": {
+   "src": "I'll finish packing some things here, then I'll head on over. You should meet me there. If you head south, the river will lead you right to it.",
+   "dst": "Tôi thu dọn nốt vài thứ ở đây rồi sẽ qua. Bạn tới đó gặp tôi nhé. Cứ đi về phía nam, theo dòng sông là tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 15",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#310": {
+   "src": "Join Syndra at the festival at [-{~}, {~}, -{~}].",
+   "dst": "Gặp Syndra ở lễ hội tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#311": {
+   "src": "I'll head on over soon. I just need to take care of some things before I leave.",
+   "dst": "Tôi sẽ qua ngay. Chỉ cần lo nốt vài việc trước khi đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#312": {
+   "src": "You're here! Allow me to welcome you to the annual Festival of the Crown.",
+   "dst": "Bạn tới rồi! Chào mừng bạn đến với Lễ hội Hoàng gia thường niên.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#313": {
+   "src": "I have some business to attend to, so Zeph, would you be able to show {u} around?",
+   "dst": "Chị có chút việc cần lo, nên Zeph, em dẫn {u} đi tham quan được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#314": {
+   "src": "Sure! L- le- let's go!",
+   "dst": "Được ạ! Đ- đ- đi thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#315": {
+   "src": "So there's some g- games over there... and right here is the f- foo- food and beverages s- s- stand!",
+   "dst": "Đằng kia có mấy t- trò chơi... còn ngay đây là q- q- quầy đồ ăn và đ- đ- đồ uống!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#316": {
+   "src": "They sell re- r- regional food and drinks. And, a- ac- according to Rex... they've even im- im- imported some fancy alcohol from the h- high- highlands!",
+   "dst": "Họ bán đồ ăn thức uống đ- đ- địa phương. Và t- t- theo lời Rex... họ còn n- n- nhập cả rượu sang từ C- C- Cao nguyên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#317": {
+   "src": "Here are some at- attractions, and an animal exhibit! I, uh, d- d- don't- I don't like the Mudkins game very much...",
+   "dst": "Đây là k- khu vui chơi, và một khu trưng bày thú! Mình, ờ, k- k- không- mình không thích trò Mudkin lắm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#318": {
+   "src": "I th- think I saw Sui back there, so... I'm gonna go h- ha- hang out with her. You sh- should check out some of the stalls!",
+   "dst": "M- mình thấy Sui ở đằng kia, nên... mình đi c- c- chơi với cậu ấy đây. C- cậu nên ghé mấy gian hàng xem!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 16",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#319": {
+   "src": "Complete {~} festival activities.",
+   "dst": "Hoàn thành {~} hoạt động lễ hội.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#320": {
+   "src": "...thank you, Jiro. It's always good to hear from-",
+   "dst": "...cảm ơn anh, Jiro. Lúc nào được nghe tin từ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#321": {
+   "src": "Ahem! Hello, stranger.",
+   "dst": "E hèm! Chào người lạ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Jiro",
+   "source": "wiki"
+  },
+  "The Cursed One#322": {
+   "src": "Hm? Oh, that's just {u}- they're who I was hoping to write to Quill about. {u}, this is Jiro, my contact from the Roughworks.",
+   "dst": "Hử? À, đó là {u}- người tôi định viết thư cho Quill. {u}, đây là Jiro, người liên lạc của tôi ở Roughworks.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#323": {
+   "src": "Ah. Well, it's good to meet you then.",
+   "dst": "À. Vậy hân hạnh được gặp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Jiro",
+   "source": "wiki"
+  },
+  "The Cursed One#324": {
+   "src": "Quill is... an old friend. It can be hard for us to stay in contact... discretely... so we often send messages this way.",
+   "dst": "Quill là... một người bạn cũ. Chúng tôi khó giữ liên lạc... một cách kín đáo... nên thường gửi tin theo cách này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#325": {
+   "src": "Wasn't going to use my yearly rail pass for anything anyway, so might as well.",
+   "dst": "Đằng nào tôi cũng chẳng dùng vé tàu cả năm vào việc gì, nên cũng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Jiro",
+   "source": "wiki"
+  },
+  "The Cursed One#326": {
+   "src": "Well, it's more than I'm able to do, so I appreciate it. In any case, Quill runs his own... organization, shall we say.",
+   "dst": "Chà, vậy là hơn những gì tôi làm được, nên cảm ơn anh. Dù sao, Quill điều hành một... tổ chức riêng, tạm gọi vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#327": {
+   "src": "...huh? You don't know the-",
+   "dst": "...hả? Bạn không biết về-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Jiro",
+   "source": "wiki"
+  },
+  "The Cursed One#328": {
+   "src": "The Roughworks is the region directly to the south of here, just past the wall. Officially, it's known as the {p}.",
+   "dst": "Roughworks là vùng nằm ngay phía nam, qua khỏi tường thành. Tên chính thức là {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#329": {
+   "src": "I can fill you in on it later. This isn't the place for it.",
+   "dst": "Để sau tôi kể bạn nghe. Đây không phải chỗ thích hợp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#330": {
+   "src": "...ahem. Should we get back to it then?",
+   "dst": "...e hèm. Ta quay lại việc chính chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Jiro",
+   "source": "wiki"
+  },
+  "The Cursed One#331": {
+   "src": "We should. {u}, take a look around the stalls and come back later.",
+   "dst": "Ừ. {u}, bạn đi xem các gian hàng rồi quay lại sau nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#332": {
+   "src": "{u}, take a look around the stalls and come back later.",
+   "dst": "{u}, bạn đi xem các gian hàng rồi quay lại sau nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#333": {
+   "src": "Heeey!",
+   "dst": "Chàooo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Highlands Tourist",
+   "source": "wiki"
+  },
+  "The Cursed One#334": {
+   "src": "You're here visiting too I see!",
+   "dst": "Thấy bạn cũng tới chơi nhỉ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Highlands Tourist",
+   "source": "wiki"
+  },
+  "The Cursed One#335": {
+   "src": "I plan on touring the whole festival this year around. Next up for me is the {p}!",
+   "dst": "Năm nay tôi định đi hết các lễ hội. Điểm tới tiếp theo của tôi là {p}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Highlands Tourist",
+   "source": "wiki"
+  },
+  "The Cursed One#336": {
+   "src": "But the Auburn festival is known for the best food and beverages around the province. Trust me! Those rumours are true.",
+   "dst": "Nhưng lễ hội Auburn nổi tiếng có đồ ăn thức uống ngon nhất tỉnh. Tin tôi đi! Lời đồn là thật đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Highlands Tourist",
+   "source": "wiki"
+  },
+  "The Cursed One#337": {
+   "src": "Will that be enough boar meat, ma'am?",
+   "dst": "Từng này thịt lợn rừng đủ chưa cô?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#338": {
+   "src": "Yes, dear. Thank you for always being so kind-hearted, helping us out each and every year.",
+   "dst": "Đủ rồi cháu. Cảm ơn cháu lúc nào cũng tốt bụng, năm nào cũng giúp đỡ chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#339": {
+   "src": "No worries, Oya! Hope you sell-... oh. It's you.",
+   "dst": "Không có gì, cô Oya! Mong cô bán-... ồ. Là cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#340": {
+   "src": "...what do you want?",
+   "dst": "...cậu muốn gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#341": {
+   "src": "You- what? Why?",
+   "dst": "Cậu- gì cơ? Sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#342": {
+   "src": "Huh? I'm just here with a delivery. Nothing much.",
+   "dst": "Hả? Tôi chỉ tới giao hàng. Có gì đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#343": {
+   "src": "...ugh, why am I humoring you?!",
+   "dst": "...ui, sao tôi lại chiều theo cậu?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#344": {
+   "src": "Just cause you've got everyone else wrapped around your finger, doesn't mean I have to be fine with you!",
+   "dst": "Cậu khiến ai cũng răm rắp nghe theo, không có nghĩa tôi phải chấp nhận cậu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#345": {
+   "src": "Everything was fine until you showed up. I- I- I'd gotten over it! I made a home here, and now- and now, you-",
+   "dst": "Mọi thứ vẫn ổn cho tới khi cậu xuất hiện. T- t- tôi đã vượt qua rồi! Tôi có nhà ở đây, vậy mà giờ- giờ cậu-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#346": {
+   "src": "And- and sure, I'm happy for Zeph, but your- your- your everything, it's got Syndra plotting, and- and we were safe, and you've ruined that.",
+   "dst": "Và- và đúng, tôi mừng cho Zeph, nhưng cậu- cậu- mọi thứ của cậu khiến Syndra tính kế, mà- mà ta đang yên ổn, và cậu phá hết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#347": {
+   "src": "So... so, no, I don't have to be okay with you. I don't trust you, I don't trust where you're from, and I definitely don't trust your... your c-",
+   "dst": "Nên... nên không, tôi không phải chấp nhận cậu. Tôi không tin cậu, không tin nơi cậu đến, và chắc chắn không tin... lời ng-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#348": {
+   "src": "...don't talk to me. Okay?",
+   "dst": "...đừng nói chuyện với tôi. Rõ chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Rex",
+   "source": "wiki"
+  },
+  "The Cursed One#349": {
+   "src": "{u}, hey!",
+   "dst": "{u}, này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#350": {
+   "src": "Have you seen an- any- anyone else yet?",
+   "dst": "Cậu gặp a- ai- ai khác chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#351": {
+   "src": "I was, um, looking for Mora... earlier. I, ah, didn't find him.",
+   "dst": "Mình đang, ừm, tìm Mora... lúc nãy. Mình, à, không thấy anh ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#352": {
+   "src": "We, uh, s- saw Rex run past just a bit ago. Did s- so- something happen?",
+   "dst": "Bọn mình, ờ, v- vừa thấy Rex chạy qua. C- c- có chuyện gì à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#353": {
+   "src": "I can... um, take a guess.",
+   "dst": "Mình có thể... ừm, đoán được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#354": {
+   "src": "An- anyway, how are you liking the f- fes- festival?",
+   "dst": "D- dù sao, cậu thấy l- l- lễ hội thế nào?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#355": {
+   "src": "Hey, th- that's good to hear!",
+   "dst": "Này, n- nghe vậy mừng ghê!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#356": {
+   "src": "Have you, um, had the chance to, to taste any of the food? From the... food stall?",
+   "dst": "Cậu đã, ừm, được, được nếm món nào chưa? Ở... quầy đồ ăn ấy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#357": {
+   "src": "Hahaha, as if th- th- there's any left after y- you- you ate so much!",
+   "dst": "Hahaha, như thể c- c- còn sót lại gì sau khi c- c- cậu ăn ngần ấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#358": {
+   "src": "Okay... well, I, I was hungry! That's... not my fault.",
+   "dst": "Thôi... thì, thì mình đói mà! Đâu... phải lỗi mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#359": {
+   "src": "Oh... finally, someone else who, um, who gets it.",
+   "dst": "Ồ... cuối cùng, cũng có người, ừm, người hiểu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#360": {
+   "src": "Wh- wh- what?! Sui, you don't like the f- fes- festival?",
+   "dst": "C- c- cái gì?! Sui, cậu không thích l- l- lễ hội à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#361": {
+   "src": "I- I didn't, say that. It's just... a little boring. There's, um, not much to do.",
+   "dst": "M- mình đâu, nói thế. Chỉ là... hơi chán. Chẳng có, ừm, mấy thứ để làm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#362": {
+   "src": "There's good f- food, fun rides a- and- and games... okay, m- maybe except the Mudkin g- game...",
+   "dst": "Có đồ ă- ăn ngon, trò chơi v- v- vui... thôi được, c- có lẽ trừ trò Mudkin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#363": {
+   "src": "Why don't you, um, like the Mudkins? I... I think they're fun.",
+   "dst": "Sao cậu, ừm, không thích Mudkin? Mình... mình thấy vui mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#364": {
+   "src": "They're s- s- so- there's no strategy! You j- just pick a random one, and- a- and sometimes you win!",
+   "dst": "Nó q- q- quá- chẳng có chiến thuật gì! Cứ c- chọn đại một con, và- v- và thỉnh thoảng thắng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#365": {
+   "src": "Um... okay? And?",
+   "dst": "Ừm... rồi sao? Thì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#366": {
+   "src": "Unbelievable. {u}, a- a- are you hearing this?",
+   "dst": "Không tin nổi. {u}, c- c- cậu nghe chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#367": {
+   "src": "Okay, wh- whatever... Sui, let's go t- try out the zipline. I wonder if th- th- they changed it this year.",
+   "dst": "Thôi, s- sao cũng được... Sui, đi c- chơi đu dây đi. Không biết năm nay h- h- họ có đổi không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#368": {
+   "src": "...could we, um, get food first? I'm hungry.",
+   "dst": "...mình, ừm, ăn trước được không? Mình đói.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#369": {
+   "src": "A- ag- again?! No, we should do the z- z- zipline first. I don't want you th- thr- throwing up all over me.",
+   "dst": "L- l- lại nữa?! Không, đu d- d- dây trước. Mình không muốn cậu n- n- nôn đầy người mình đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#370": {
+   "src": "Oh, shut it. Dummy.",
+   "dst": "Ôi, im đi. Đồ ngốc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "The Cursed One#371": {
+   "src": "You kn- know I'm right! Oh, uh, {u}, you can j- j- join us if you want! It's fun, I pr- promise.",
+   "dst": "C- cậu biết mình đúng mà! À, ờ, {u}, cậu c- c- cũng đi cùng nhé! Vui lắm, mình h- hứa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zeph",
+   "source": "wiki"
+  },
+  "The Cursed One#372": {
+   "src": "I absolutely love the music.",
+   "dst": "Tôi mê nhạc ở đây quá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Festival Goer",
+   "source": "wiki"
+  },
+  "The Cursed One#373": {
+   "src": "The {p} orchestra is definitely the best in all of Fruma! Well, not that I've heard any other orchestras.",
+   "dst": "Dàn nhạc {p} chắc chắn hay nhất Fruma! À thì, tôi cũng chưa nghe dàn nhạc nào khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Festival Goer",
+   "source": "wiki"
+  },
+  "The Cursed One#374": {
+   "src": "Aha! Hello there, {u}! Enjoying our festival, are you?",
+   "dst": "A ha! Chào {u}! Đang vui lễ hội đấy à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#375": {
+   "src": "I trust you and Zeph have acquired all the necessary materials in the time since we last spoke?",
+   "dst": "Chắc bạn và Zeph đã gom đủ vật liệu cần thiết từ lần trước ta nói chuyện rồi nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#376": {
+   "src": "As soon as the festival concludes, I shall get right to smithing. I have a good feeling about this one!",
+   "dst": "Lễ hội vừa xong là tôi bắt tay vào rèn ngay. Tôi có linh cảm tốt về món này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#377": {
+   "src": "I, ah... am still learning. But I have greatly improved since I started, worry not!",
+   "dst": "Tôi, à... vẫn đang học. Nhưng tôi tiến bộ nhiều lắm từ hồi mới bắt đầu, đừng lo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#378": {
+   "src": "...ehm. I suppose I should return to my report...",
+   "dst": "...e hèm. Chắc tôi nên quay lại bản báo cáo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#379": {
+   "src": "Hm? Ah, yes, I forget this is your first year. First week, even.",
+   "dst": "Hử? À, tôi quên đây là năm đầu của bạn. Tuần đầu, thậm chí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#380": {
+   "src": "I am... gathering data. Recording the changes since last year's festival- guard positioning and numbers, types of stands, amount of attendees- and so on.",
+   "dst": "Tôi đang... thu thập dữ liệu. Ghi lại thay đổi so với lễ hội năm ngoái- vị trí và số lính gác, kiểu gian hàng, lượng khách- đại loại thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#381": {
+   "src": "It is... perhaps unnecessarily thorough. Much of this data has not proven to be useful thus far... but it is something for me to do, and I do it well.",
+   "dst": "Có lẽ... kỹ lưỡng quá mức cần thiết. Phần lớn dữ liệu này đến giờ chưa có ích gì... nhưng đó là việc tôi làm được, và làm tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#382": {
+   "src": "These festivals... I suppose our discomfort is something Syndra and I share. It can be hard for us to enjoy ourselves, knowing what we do.",
+   "dst": "Những lễ hội này... chắc tôi và Syndra cùng chung nỗi khó chịu. Biết những gì chúng tôi biết, khó mà vui vẻ được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#383": {
+   "src": "I am grateful that the younger Leaves can still find joy here. Perhaps you might as well, given your... relative lack of history.",
+   "dst": "Tôi mừng vì những chiếc Lá trẻ vẫn tìm được niềm vui ở đây. Có lẽ bạn cũng vậy, vì bạn... chưa vướng bận quá khứ gì ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#384": {
+   "src": "Ah, but I am rambling. If you will excuse me, I need to get back to... counting all the new food items... hm.",
+   "dst": "À, tôi lại lan man rồi. Xin phép nhé, tôi phải quay lại... đếm mấy món ăn mới... hừm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Mora",
+   "source": "wiki"
+  },
+  "The Cursed One#385": {
+   "src": "Welcome. Can I interest you in buying anything?",
+   "dst": "Chào quý khách. Quý khách muốn mua gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#386": {
+   "src": "Perhaps would you like to hear what we have to offer?",
+   "dst": "Hay quý khách muốn nghe chúng tôi có những gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#387": {
+   "src": "What do you say?",
+   "dst": "Quý khách thấy sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#388": {
+   "src": "We are selling both the raw ingredients and some freshly brewed tea.",
+   "dst": "Chúng tôi bán cả nguyên liệu thô lẫn trà mới pha.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#389": {
+   "src": "Let me bring you on a history lesson to learn about the finest ingredients the forest has to offer.",
+   "dst": "Để tôi dẫn quý khách qua một bài học lịch sử về những nguyên liệu tuyệt nhất của khu rừng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#390": {
+   "src": "Tea is very popular in Auburn and the people have managed to make tea out of almost any plant you can find! Some are... more tasty than others.",
+   "dst": "Trà rất được ưa chuộng ở Auburn, và người dân pha được trà từ gần như mọi loài cây! Có loại thì... ngon hơn loại khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#391": {
+   "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from bitter to a rich spicy flavour!",
+   "dst": "Như nấm Linh chi chẳng hạn! Pha trà chỉ với nấm thường bị... đắng. Thêm thảo mộc và gia vị, vị đắng biến thành hương cay nồng đậm đà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#392": {
+   "src": "The mushroom itself is said to help keep you healthy. It is also said to boost your resistances!",
+   "dst": "Người ta nói bản thân loại nấm này giúp giữ sức khỏe. Còn bảo nó tăng sức kháng cự nữa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#393": {
+   "src": "The Tea Tree Mushroom on the other hand is perfect for a good tea blend. The mushroom alone gives it a sweet and earthy flavour.",
+   "dst": "Còn nấm Cây Trà thì hoàn hảo để phối trà. Riêng nó đã cho vị ngọt và mùi đất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#394": {
+   "src": "This mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
+   "dst": "Người ta cũng nói nấm này giúp hồi phục sức khỏe và xua tan mệt mỏi! Tuyệt vời làm sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#395": {
+   "src": "If you feel like buying something, please talk to my assistant.",
+   "dst": "Nếu muốn mua gì, quý khách cứ nói với trợ lý của tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#396": {
+   "src": "Alright! Enjoy the festival.",
+   "dst": "Được rồi! Chúc quý khách vui lễ hội.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Tea Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#397": {
+   "src": "*Hic* Aheyo!",
+   "dst": "*Hức* Chàooo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#398": {
+   "src": "It's festival time! *hic* that means... drinking time!!!",
+   "dst": "Lễ hội tới rồi! *hức* tức là... tới giờ nhậu!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#399": {
+   "src": "Inteeeerested in any of our mouth-watering beverages?",
+   "dst": "Muốn thử món đồ uống thơm ngon nào khôôông?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#400": {
+   "src": "*Hic* Todaaaay, we have a couple of imported drinks as well as our classic Autumn Amaretto.",
+   "dst": "*Hức* Hôm naaay có vài loại nhập khẩu, với Autumn Amaretto kinh điển của bọn tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#401": {
+   "src": "Seen them blue fruits in the trees around here? Most of 'em are inedible Liffberries, buuut, some of 'em are actually a more edible fruit called Autumn Fruit, which carry a high value!",
+   "dst": "Thấy mấy trái xanh lam trên cây quanh đây chưa? Phần lớn là Liffberries không ăn được, nhưưưng có vài trái là loại ăn được tên Autumn Fruit, giá cao lắm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#402": {
+   "src": "Isn't alcohol making interesssting *hic*!",
+   "dst": "Nấu rượu thú vị ghêêê *hức*!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#403": {
+   "src": "We have also imported the faaaamed Heather Beer from the rich highlands.",
+   "dst": "Bọn tôi còn nhập loại Heather Beer nổi tiếếng từ Cao nguyên giàu có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#404": {
+   "src": "We also have an imported the faaaamed Heather Beer from the rich highlands.",
+   "dst": "Bọn tôi còn có loại Heather Beer nổi tiếếng nhập từ Cao nguyên giàu có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "captured"
+  },
+  "The Cursed One#405": {
+   "src": "A beer infused with the most beautiful heather grown across the highlands. *hic* You can almost taste the richness of the aristocrats.",
+   "dst": "Bia ngâm hoa thạch nam đẹp nhất trồng khắp Cao nguyên. *hức* Uống vào như nếm được cả sự xa hoa của giới quý tộc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#406": {
+   "src": "*hic* If I were you, I would deeefinitely try this drink. Stuff like this doesn't come to Auburn often.",
+   "dst": "*hức* Là tôi thì chắc chắắắn phải thử món này. Đồ thế này ít khi tới Auburn lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#407": {
+   "src": "If you feel like blessing your taste buds, talk to my brother over there. *hic*",
+   "dst": "Muốn chiều cái lưỡi thì nói với anh tôi đằng kia nhé. *hức*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#408": {
+   "src": "*hic* Your loss!",
+   "dst": "*hức* Thiệt cho cậu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Alcohol Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#409": {
+   "src": "Hi dear. Feeling peckish?",
+   "dst": "Chào cháu. Đói bụng chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#410": {
+   "src": "We have freshly cooked and baked regional goods.",
+   "dst": "Cô có đồ địa phương mới nấu, mới nướng đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#411": {
+   "src": "Would you like to hear about our menu, dear?",
+   "dst": "Cháu muốn nghe thực đơn không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#412": {
+   "src": "Just perfect! Auburn is famous for their bold, earthy and cosy flavours!",
+   "dst": "Tuyệt! Auburn nổi tiếng với hương vị đậm đà, mộc mạc và ấm cúng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#413": {
+   "src": "We also love to cook using our wild animals and resources, but I'm sure you already know all of this, haha.",
+   "dst": "Bọn cô cũng thích nấu bằng thú rừng và sản vật ở đây, mà chắc cháu biết hết rồi, haha.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#414": {
+   "src": "Let me go over some of our special dishes for today, dear.",
+   "dst": "Để cô kể vài món đặc biệt hôm nay nhé, cháu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#415": {
+   "src": "The most important dish in Auburn, is of course the \"Gift of the Forest\". A wonderful meat and fruit mixture inside a steamed leaf wrap.",
+   "dst": "Món quan trọng nhất ở Auburn đương nhiên là \"Quà của Rừng\". Thịt trộn trái cây tuyệt hảo, gói trong lá rồi hấp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#416": {
+   "src": "We have hand wrapped all of our gifts this morning and they are steamed to go!",
+   "dst": "Sáng nay bọn cô gói tay hết rồi, hấp nóng mang đi luôn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#417": {
+   "src": "If that doesn't interest you, we also have the classic \"Forest Feast\". A grilled piece of boar meat with a mud-kin salad.",
+   "dst": "Nếu không thích món đó, còn có \"Tiệc Rừng\" kinh điển. Thịt lợn rừng nướng ăn kèm gỏi mudkin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#418": {
+   "src": "I'm afraid we have run out of ingredients at the moment. Please come back later!",
+   "dst": "Tiếc là giờ hết nguyên liệu rồi. Lát cháu quay lại nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#419": {
+   "src": "Have a lovely day.",
+   "dst": "Chúc cháu một ngày vui.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Food Stand Merchant",
+   "source": "wiki"
+  },
+  "The Cursed One#420": {
+   "src": "Hey! You look like a tourist to me!",
+   "dst": "Này! Trông bạn như khách du lịch ấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#421": {
+   "src": "I'm glad you decided to check out my little exhibition here.",
+   "dst": "Mừng là bạn ghé xem khu trưng bày nho nhỏ của tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#422": {
+   "src": "Is it your first time in this part of the region? Would you perhaps want to hear some fun facts about our animals?",
+   "dst": "Lần đầu tới vùng này à? Bạn có muốn nghe vài điều thú vị về các con vật ở đây không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#423": {
+   "src": "Marvelous!",
+   "dst": "Tuyệt vời!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#424": {
+   "src": "First we have our Roly-bugs here! These little buggers are a pest to the people here.",
+   "dst": "Đầu tiên là bọ Roly đây! Mấy con nhãi này là nỗi khổ của dân ở đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#425": {
+   "src": "They love gnawing on our houses. Luckily, we built most of our structures on stilts aaaand those bugs can't climb.",
+   "dst": "Chúng mê gặm nhà cửa. May là nhà ở đây phần lớn dựng trên cột, vàaa bọ thì không leo được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#426": {
+   "src": "Now! Frogs! The north-western bog is the best place for frog-watching. Just be careful of the bog monster.",
+   "dst": "Giờ thì! Ếch! Đầm lầy phía tây bắc là nơi ngắm ếch tốt nhất. Chỉ cần cẩn thận quái vật đầm lầy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#427": {
+   "src": "Frogs might be a good source of food but we like to see them more as... pets!",
+   "dst": "Ếch có thể là nguồn thức ăn, nhưng bọn tôi coi chúng là... thú cưng thì hơn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#428": {
+   "src": "Lastly, we have foxes! These little cuties are very shy in nature. But beware, there are bigger versions of them, known as Foxhounds.",
+   "dst": "Cuối cùng là cáo! Mấy bé dễ thương này rất nhút nhát. Nhưng coi chừng, có loại to hơn, gọi là Foxhound.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#429": {
+   "src": "Those are not as shy... or peaceful, as their smaller cousins. They are just as cute though!",
+   "dst": "Bọn đó không nhút nhát... hay hiền như mấy đứa em họ nhỏ. Nhưng dễ thương y như vậy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#430": {
+   "src": "Please have a looksie around! You can also pet them.",
+   "dst": "Cứ đi xem một vòng nhé! Bạn còn được vuốt ve chúng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#431": {
+   "src": "Have a loooovely day!",
+   "dst": "Chúc một ngày vui vẻẻẻ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Zoo Keeper",
+   "source": "wiki"
+  },
+  "The Cursed One#432": {
+   "src": "Howdy and welcome to a mudkin farm!",
+   "dst": "Chào nhá, mừng tới trại mudkin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#433": {
+   "src": "Mudkins are popular vegetables in food around here. They grow underground and you have to yoikn em' out!",
+   "dst": "Mudkin là rau được ưa chuộng trong món ăn ở đây. Chúng mọc dưới đất, phải nhổ phựt lên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#434": {
+   "src": "Are ya interested in a game of Mudkin Picking?",
+   "dst": "Muốn chơi một ván Nhổ Mudkin không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#435": {
+   "src": "Basically, ye goal is to get as many points as possible before the time runs out.",
+   "dst": "Đại khái, mục tiêu là kiếm càng nhiều điểm càng tốt trước khi hết giờ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#436": {
+   "src": "There are three sizes of Mudkins, each size gives a set of points. However! There are two ginger roots that give negative points.",
+   "dst": "Mudkin có ba cỡ, mỗi cỡ được số điểm khác nhau. Nhưng mà! Có hai củ gừng sẽ bị trừ điểm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#437": {
+   "src": "Simply click on the dirt particles appearing in the field. There are five spots for ya to pick.",
+   "dst": "Chỉ cần nhấp vào chỗ bụi đất bốc lên trên ruộng. Có năm chỗ cho cậu nhổ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#438": {
+   "src": "So! Are ya ready?",
+   "dst": "Thế! Sẵn sàng chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#439": {
+   "src": "Enjoy the festival!",
+   "dst": "Vui lễ hội nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "Kabo",
+   "source": "wiki"
+  },
+  "The Cursed One#440": {
+   "src": "Return to Syndra at or keep exploring the festival.",
+   "dst": "Quay về với Syndra hoặc tiếp tục khám phá lễ hội.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#441": {
+   "src": "Ah. There you are. Have you been enjoying yourself?",
+   "dst": "À. Bạn đây rồi. Chơi vui không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#442": {
+   "src": "That's good to hear.",
+   "dst": "Nghe vậy tôi mừng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#443": {
+   "src": "I hope your experience with the crown has not ruined your perception of our province... there are still many things to celebrate.",
+   "dst": "Mong là những gì bạn trải qua với Hoàng gia không làm bạn thấy tệ về tỉnh này... vẫn còn nhiều điều đáng ăn mừng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#444": {
+   "src": "Sometimes, it can be nice to set aside your woes, and... take things as they are. Breathe, a little.",
+   "dst": "Đôi khi, gác nỗi muộn phiền sang một bên cũng hay... chấp nhận mọi thứ như vốn có. Thở một chút.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#445": {
+   "src": "Better than nothing, I suppose.",
+   "dst": "Có còn hơn không, chắc vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#446": {
+   "src": "It's hard to enjoy yourself with your experiences with the crown weighing you down, isn't it? I know the feeling.",
+   "dst": "Khó mà vui khi những gì trải qua với Hoàng gia cứ đè nặng, phải không? Tôi hiểu cảm giác đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#447": {
+   "src": "Mmn. I'd suggest to take what you can get. Happy moments like this can be fleeting, in my experience.",
+   "dst": "Ừm. Tôi khuyên bạn cứ tận hưởng những gì có thể. Theo tôi, những phút vui thế này thường thoáng qua.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#448": {
+   "src": "If there's even the smallest spark of joy... take hold of it before it's gone. Cherish it while you still can. Try not to grow old and jaded like I have, would you?",
+   "dst": "Dù chỉ là một tia vui nhỏ nhất... hãy nắm lấy trước khi nó tắt. Trân trọng khi còn có thể. Đừng già đi và chai sạn như tôi, nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#449": {
+   "src": "Ha! It's alright. Neither have I.",
+   "dst": "Ha! Không sao. Tôi cũng vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#450": {
+   "src": "Every year... every single year, the crown hosts these festivals. Starting here, and moving around in a ring around the province.",
+   "dst": "Mỗi năm... năm nào cũng thế, Hoàng gia tổ chức những lễ hội này. Bắt đầu từ đây, rồi đi vòng quanh khắp tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#451": {
+   "src": "The festival's a holiday, a day of rest, of celebration. What a gift it is, not needing to work for a time! How generous.",
+   "dst": "Lễ hội là ngày nghỉ, ngày được ngơi tay, ngày ăn mừng. Món quà to lớn biết bao, được nghỉ làm một lúc! Hào phóng làm sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#452": {
+   "src": "I can't stand it here... Every year, I convince myself I can bear it. The reminder it brings, of memories long passed. Every year, I'm proven wrong.",
+   "dst": "Tôi không chịu nổi nơi này... Năm nào tôi cũng tự nhủ mình chịu được. Những gì nó gợi lại, ký ức đã xa. Năm nào tôi cũng sai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#453": {
+   "src": "...Ah. It's time. The main event is about to begin.",
+   "dst": "...À. Tới giờ rồi. Sự kiện chính sắp bắt đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#454": {
+   "src": "What's the main event?",
+   "dst": "Sự kiện chính là gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#455": {
+   "src": "Why, Her Majesty's annual speech, of course! It wouldn't be a Festival of the Crown if she didn't make an appearance, would it?",
+   "dst": "Còn gì nữa, bài phát biểu thường niên của Bệ hạ! Lễ hội Hoàng gia mà Người không xuất hiện thì còn gì là lễ hội, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#456": {
+   "src": "Ha! No, no. Of course not. It wouldn't be a Festival of the Crown without a speech from Her Majesty herself, would it?",
+   "dst": "Ha! Không, không. Dĩ nhiên không. Lễ hội Hoàng gia mà thiếu bài phát biểu của chính Bệ hạ thì còn gì nữa, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#457": {
+   "src": "Now... observe. Behold our enemy, take note of how she presents herself, what she says, what she doesn't say.",
+   "dst": "Giờ thì... quan sát đi. Nhìn kẻ thù của ta, để ý cách bà ta thể hiện, điều bà ta nói, và điều bà ta giấu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#458": {
+   "src": "Ah... beloved people of the {p}! What a joy, what an honor it is to stand amongst you once again.",
+   "dst": "À... hỡi thần dân yêu quý của {p}! Thật vui, thật vinh dự khi ta lại được đứng giữa các ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#459": {
+   "src": "Some will claim the stunning {p} to be our most beautiful region, with its vibrant blossoming trees and grand historic castles...",
+   "dst": "Có người sẽ cho rằng {p} lộng lẫy là vùng đẹp nhất, với những hàng cây nở hoa rực rỡ và tòa lâu đài cổ hùng vĩ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#460": {
+   "src": "But I've always held a special regard for this place. The leaves and their warm shades, blowing in the soft breeze... all the woes of the world would be worth this sight.",
+   "dst": "Nhưng ta luôn dành tình cảm đặc biệt cho nơi này. Những chiếc lá sắc ấm, bay trong làn gió nhẹ... mọi ưu phiền trên đời cũng đáng đổi lấy cảnh này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#461": {
+   "src": "If I were able, perhaps I could stay here year-round! Ah, but alas... work in the Citadel keeps us all occupied!",
+   "dst": "Giá được, có lẽ ta sẽ ở đây quanh năm! Ôi, nhưng tiếc thay... việc ở Thành trì khiến ai cũng bận rộn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#462": {
+   "src": "We have many plans for the coming year. Increased imports from the other regions, easier access to travel for all, and additional openings in military positions!",
+   "dst": "Ta có nhiều kế hoạch cho năm tới. Tăng nhập hàng từ các vùng khác, đi lại dễ dàng hơn cho mọi người, và mở thêm vị trí trong quân đội!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#463": {
+   "src": "More will be revealed soon. Now, some words from your beloved Sovereign.",
+   "dst": "Sẽ sớm tiết lộ thêm. Giờ, vài lời từ Quân Chủ yêu quý của các ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#464": {
+   "src": "...ah. The one thing I miscalculated. The mic height. Oh well- Testing, testing, one two three...",
+   "dst": "...à. Thứ duy nhất tôi tính sai. Độ cao của micro. Thôi kệ- Thử, thử, một hai ba...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#465": {
+   "src": "Welcome one and all! I'm your Sovereign, Zhiraok. It's an honor to be here before you all again today.",
+   "dst": "Chào mừng tất cả! Tôi là Quân Chủ của các bạn, Zhiraok. Thật vinh dự lại được đứng trước mọi người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#466": {
+   "src": "Two decades of work in the {p}. Twenty years. It feels like I've been here for so much longer- this place, these people, really have become my home.",
+   "dst": "Hai thập kỷ làm việc ở {p}. Hai mươi năm. Cứ như tôi đã ở đây lâu hơn thế nhiều- nơi này, những con người này, đã thật sự thành nhà tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#467": {
+   "src": "My duty is not just to serve the Crown, but also to serve you. To make your lives better, to raise this region we live in to new heights.",
+   "dst": "Bổn phận của tôi không chỉ là phụng sự Hoàng gia, mà còn phụng sự các bạn. Làm đời sống các bạn tốt hơn, nâng vùng đất này lên tầm cao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#468": {
+   "src": "Whether that's by increasing production of Liff Leaves to share our resources and knowledge the province over, which we owe to your hard work...",
+   "dst": "Dù là tăng sản lượng lá Liff để chia sẻ tài nguyên và hiểu biết của ta cho khắp tỉnh, điều có được nhờ công sức các bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#469": {
+   "src": "...or through sharpening our infrastructure to exponentiate your quality of life, in thanks for what you do!",
+   "dst": "...hay mài giũa hạ tầng để nâng chất lượng sống của các bạn lên lũy thừa, để cảm ơn những gì các bạn làm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#470": {
+   "src": "I'd be here all day listing all the improvements over the last year, but I'll summarize- Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
+   "dst": "Liệt kê hết cải tiến năm qua thì tôi đứng đây cả ngày, nên tôi tóm gọn- Nhiều tuyến đường chính được nâng cấp, vô số việc làm mới, nhân bội số đội tuần tra để giữ an toàn cho các bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#471": {
+   "src": "The place we came from twenty years ago is unrecognizable now. My vow is that twenty years ahead, I can say the same thing for how much more we, together, improve our home.",
+   "dst": "Nơi ta xuất phát hai mươi năm trước giờ đã không còn nhận ra. Tôi thề rằng hai mươi năm nữa, tôi sẽ nói được điều tương tự về những gì ta cùng nhau cải thiện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#472": {
+   "src": "'til the day we sum up to the grandeur of {p}- Thank you all! Enjoy the festivities!",
+   "dst": "Cho tới ngày ta cộng dồn thành sự huy hoàng của {p}- Cảm ơn mọi người! Vui lễ hội!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#473": {
+   "src": "What fine work Sovereign Zhiraok has done for our province! Truly, there could have been no better choice to fill that role!",
+   "dst": "Quân Chủ Zhiraok đã làm việc thật tuyệt cho tỉnh ta! Quả thật, không thể có ai xứng đáng hơn cho vị trí ấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#474": {
+   "src": "The {p} flourishes under his governance, and I could not be more pleased by the progress he has made.",
+   "dst": "{p} hưng thịnh dưới sự cai quản của hắn, và ta không thể hài lòng hơn với những tiến bộ hắn đạt được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#475": {
+   "src": "One final message before we conclude. These past years, we have seen fewer and fewer reports of the cursed - a sign of our strength as a people.",
+   "dst": "Một lời cuối trước khi kết thúc. Những năm qua, báo cáo về kẻ bị nguyền ngày càng ít - dấu hiệu sức mạnh của dân tộc ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#476": {
+   "src": "And it is all thanks to you! Your diligent reporting of suspicious activity makes all the difference in keeping our province safe.",
+   "dst": "Tất cả là nhờ các ngươi! Việc các ngươi siêng năng báo cáo hành vi khả nghi là điều quyết định để giữ tỉnh ta an toàn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#477": {
+   "src": "We must stand strong, together! We will not allow this evil its victory, we will not let our province fall like so many others have beyond our walls!",
+   "dst": "Ta phải cùng nhau đứng vững! Ta sẽ không để cái ác này chiến thắng, không để tỉnh ta sụp đổ như bao nơi khác ngoài tường thành!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#478": {
+   "src": "With that, let the celebrations begin!",
+   "dst": "Vậy thì, lễ hội bắt đầu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "The Cursed One#479": {
+   "src": "Hm... The standard, then.",
+   "dst": "Hừm... Vẫn như mọi khi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#480": {
+   "src": "Did anything stand out to you?",
+   "dst": "Bạn có để ý điều gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#481": {
+   "src": "Indeed, it is. It's quite puzzling, isn't it? It's a sort of reverence she never displays elsewhere.",
+   "dst": "Đúng vậy. Khó hiểu lắm, phải không? Một kiểu tôn kính mà bà ta chưa từng thể hiện ở nơi khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#482": {
+   "src": "And if there is one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
+   "dst": "Và nếu có điều gì tôi chắc bà ta nói thật, thì là điều này. Mà thế lại càng kỳ lạ hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#483": {
+   "src": "Yes, yes... improvements. Life has improved since he ascended to that position. I'll give him that. He's invested in Auburn.",
+   "dst": "Ừ, ừ... cải tiến. Cuộc sống đã khá hơn từ khi ông ta lên chức. Điều đó tôi công nhận. Ông ta dốc sức cho Auburn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#484": {
+   "src": "But he is still working under the crown. Don't forget that. For every improvement he has made, there's another he has left ignored.",
+   "dst": "Nhưng ông ta vẫn làm việc cho Hoàng gia. Đừng quên điều đó. Cứ một cải tiến ông ta làm, lại có một chỗ bị bỏ mặc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#485": {
+   "src": "They didn't mention Torann.",
+   "dst": "Họ không nhắc tới Torann.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#486": {
+   "src": "No, I suppose they wouldn't. Better to leave the public unaware of such failures.",
+   "dst": "Không, hẳn là không. Tốt nhất để dân chúng không biết những thất bại như vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#487": {
+   "src": "But rest assured that internally, they have not forgotten. They will keep searching for you.",
+   "dst": "Nhưng yên tâm, trong nội bộ họ chưa quên đâu. Họ sẽ còn tiếp tục truy tìm bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#488": {
+   "src": "Yes... the cursed. The crown needs to keep the people afraid. If there's another enemy out there that the crown supposedly protects them from...",
+   "dst": "Phải... kẻ bị nguyền. Hoàng gia cần giữ cho dân chúng sợ hãi. Nếu ngoài kia còn một kẻ thù khác mà Hoàng gia được cho là đang bảo vệ họ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#489": {
+   "src": "There's a reason they want people to believe the outside world is destroyed. Any contact could break the illusion.",
+   "dst": "Họ muốn dân tin thế giới bên ngoài đã bị hủy diệt là có lý do. Mọi sự tiếp xúc đều có thể phá vỡ ảo tưởng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#490": {
+   "src": "They'll be closing out the festival soon... so, our work here is done. We should be leaving before the crowd thins enough for us to be spotted.",
+   "dst": "Họ sắp bế mạc lễ hội... vậy là việc ở đây xong rồi. Ta nên đi trước khi đám đông thưa bớt và chúng ta bị phát hiện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#491": {
+   "src": "I've scheduled a meeting for tomorrow- I'd like for you to attend. It'll be about our next steps, now that the crown has moved on. I'll see you there.",
+   "dst": "Tôi đã hẹn một cuộc họp ngày mai- tôi muốn bạn tham dự. Sẽ bàn bước tiếp theo, giờ Hoàng gia đã rời đi. Gặp bạn ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Syndra",
+   "source": "wiki"
+  },
+  "The Cursed One#492": {
+   "src": "Sovereign, a word?",
+   "dst": "Quân Chủ, nói chuyện chút?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#493": {
+   "src": "I think I've had just about enough of people sneaking into my office. Care to knock next time?",
+   "dst": "Tôi chán ngấy cảnh người ta lẻn vào văn phòng tôi rồi. Lần sau gõ cửa được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#494": {
+   "src": "Mmn. It's more interesting this way. I have news from the capital - your request for additional troops has been granted. Reassignments should come through by the end of the week.",
+   "dst": "Hừm. Thế này thú vị hơn. Tôi có tin từ thủ đô - yêu cầu tăng quân của ngài đã được chấp thuận. Lệnh điều chuyển sẽ tới trước cuối tuần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#495": {
+   "src": "Well, that'll solve some problems. But that's not the whole message, is it? What obtuse remark has he got for me this time?",
+   "dst": "Chà, vậy giải được vài bài toán. Nhưng đâu phải cả lời nhắn, đúng không? Lần này hắn gửi cho tôi câu nhận xét tù độn nào?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#496": {
+   "src": "Merely a reminder to... ''get your act together,'' as it were.",
+   "dst": "Chỉ là lời nhắc... \"chấn chỉnh lại bản thân\", đại loại thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#497": {
+   "src": "Get my act toge- That floundering fractal's developed less in his quadrant in a hundred-fifty years than I've done in two, in the last ten!",
+   "dst": "Chấn chỉnh lại- Cái fractal lạc lối đó trăm rưỡi năm phát triển góc phần tư của hắn còn kém hơn tôi làm hai lần trong mười năm qua!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#498": {
+   "src": "I- Ugh, focus, Z... He's not even here, don't let him get under your skin...",
+   "dst": "Tôi- Ui, tập trung nào, Z... Hắn còn chẳng ở đây, đừng để hắn chọc tức...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#499": {
+   "src": "I'll get off that tangent. If that was all you had to say, it'd be a waste of your time. What do you need to say that a courier can't send in a letter?",
+   "dst": "Tôi sẽ rời khỏi đường tiếp tuyến đó. Nếu chỉ có thế thì cô phí thời gian rồi. Có gì phải nói mà người đưa thư không gửi được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#500": {
+   "src": "The intruder. Does your administration believe it can get the situation under control?",
+   "dst": "Kẻ đột nhập. Chính quyền của ngài có tin là kiểm soát được tình hình không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#501": {
+   "src": "There it is. Listen, I've got their number, alright? There's no way in or out of the district where they won't be detected. We'll track them down.",
+   "dst": "Đây rồi. Nghe này, tôi đã giải ra ẩn số của hắn, được chưa? Không có đường ra vào quận nào mà không bị phát hiện. Ta sẽ lần ra hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#502": {
+   "src": "Though unlike some people, my ego isn't so massive I can't recognize when an ally can be of use. Your types have an expertise here, so if you could spare a set or two of eyes it'd be much appreciated.",
+   "dst": "Nhưng khác vài người, cái tôi của tôi không lớn tới mức không nhận ra lúc nào đồng minh có ích. Người của cô thạo việc này, nên nếu cô cho mượn vài cặp mắt thì tôi rất cảm kích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#503": {
+   "src": "I'll see what I can do. There happens to be an ongoing operation in the area already, we can discuss redirecting the agent once it's concluded.",
+   "dst": "Để tôi xem sao. Tình cờ trong vùng đang có một chiến dịch, khi nó kết thúc ta có thể bàn chuyện điều đặc vụ sang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#504": {
+   "src": "One last thing- the identity of the intruder has been made clear to you already, yes?",
+   "dst": "Còn một việc- danh tính kẻ đột nhập ngài đã được cho biết rồi, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#505": {
+   "src": "Mhm. Like I said, I've got their number.",
+   "dst": "Ừm. Như tôi nói, tôi giải ra ẩn số rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#506": {
+   "src": "Then you will understand Her Majesty's order not to speak of this ordeal to our newest. Ascension is a difficult process, and it would be... unwise to add additional distractions to it.",
+   "dst": "Vậy ngài sẽ hiểu lệnh của Bệ hạ: không được nói chuyện này với người mới nhất của chúng ta. Thăng hoa là quá trình khó khăn, và thêm phân tâm thì... không khôn ngoan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Cursed One#507": {
+   "src": "Wouldn't want to distract a hard worker like him, right. But if that's everything, Spymaster? My to-do list is getting more added by the minute.",
+   "dst": "Không nên làm phân tâm một người chăm chỉ như cậu ta, phải rồi. Nhưng hết chưa, Trưởng tình báo? Danh sách việc của tôi dài ra từng phút.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Sovereign Zhiraok",
+   "source": "wiki"
+  },
+  "The Cursed One#508": {
+   "src": "An Inquisitor?",
+   "dst": "Một Quan thẩm tra?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#509": {
+   "src": "Alas, the swing is occupied.",
+   "dst": "Tiếc thay, xích đu có người rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#510": {
+   "src": "What'd you pay with?",
+   "dst": "Cậu trả bằng gì vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#511": {
+   "src": "Let's get back to the others",
+   "dst": "Quay về với mọi người thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured",
+   "full": "Let's get back to the others."
+  },
+  "The Cursed One#512": {
+   "src": "I'll walk.",
+   "dst": "Tôi đi bộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#513": {
+   "src": "It's nice.",
+   "dst": "Hay lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#514": {
+   "src": "It's kind of boring.",
+   "dst": "Hơi chán.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#515": {
+   "src": "Maybe it's time to find Syndra near the stage. But there is still time to check out the festival more too...",
+   "dst": "Có lẽ tới lúc tìm Syndra gần sân khấu rồi. Nhưng vẫn còn thời gian để dạo lễ hội thêm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Tea Stand Merchant",
+   "source": "captured"
+  },
+  "The Cursed One#516": {
+   "src": "I have!",
+   "dst": "Có!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#517": {
+   "src": "It's not the orchestra?",
+   "dst": "Không phải dàn nhạc à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#518": {
+   "src": "How she talks about Auburn.",
+   "dst": "Cách bà ta nói về Auburn. Nó... khác lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured",
+   "full": "How she talks about Auburn. It's... different."
+  },
+  "The Cursed One#519": {
+   "src": "Zhiraok's speech.",
+   "dst": "Bài phát biểu của Zhiraok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#520": {
+   "src": "The Fox seems to be fast asleep...",
+   "dst": "Con cáo có vẻ đang ngủ say...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

@@ -1,0 +1,730 @@
+{
+ "_meta": {
+  "quest": "Corrupted Betrayal",
+  "count": 72,
+  "translated": 72,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Corrupted Betrayal#000": {
+   "src": "{u}, good to see you again! Been a while, huh?",
+   "dst": "{u}, gặp lại bạn vui quá! Lâu rồi nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#001": {
+   "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
+   "dst": "Chúng tôi gặp rắc rối lớn với pháo đài cũ này. Nó cứ phun ra lũ slime chết tiệt, mà lại quá gần {p} nên sinh chuyện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#002": {
+   "src": "You lean in close to read the riddle inscribed on the ancient stone...",
+   "dst": "Bạn cúi sát để đọc câu đố khắc trên phiến đá cổ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#003": {
+   "src": "[+{~} Mage's Riddle]",
+   "dst": "[+{~} Câu đố của pháp sư]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#004": {
+   "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
+   "dst": "Có vẻ bạn đã rơi vào một phế tích cổ nào đó. Có lẽ câu thần chú nằm đâu đó bên trong...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#005": {
+   "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
+   "dst": "Nhà vua cầu cứu một thầy pháp tên Slykaar. Thầy pháp dùng mạng sống vật tế để gây sát thương. Hắc thuật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#006": {
+   "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
+   "dst": "Slykaar đã bảo vệ {p}. Với cái giá khủng khiếp. Slykaar mê được chú ý và quyền lực. Hắn khống chế cả thành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#007": {
+   "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
+   "dst": "{p} khổ sở nhiều năm vì các đợt tấn công lẫn những cuộc hiến tế bất tận của Slykaar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#008": {
+   "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
+   "dst": "Rồi... Bob xuất hiện. Dân {p} lập tức bỏ gã thầy pháp ghê tởm để theo người anh hùng thuần khiết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#009": {
+   "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
+   "dst": "Slykaar, cay đắng và nhục nhã, lẩn xuống lòng đất tiếp tục thí nghiệm quỷ dữ để lập một đội quân.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#010": {
+   "src": "It appears the mutant contained the key for that door.",
+   "dst": "Có vẻ con quái đột biến mang chìa khóa của cánh cửa đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#011": {
+   "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
+   "dst": "Đó là một cuốn nhật ký cũ phủ bụi. Có vẻ nó được để mở sẵn một trang. Tò mò, bạn bắt đầu đọc...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#012": {
+   "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
+   "dst": "...{p} bắt đầu nghi ngờ ta...một gã tên Robert vừa đến thị trấn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#013": {
+   "src": "...I know they will banish me...he is too good...too nice...",
+   "dst": "...ta biết chúng sẽ trục xuất ta...hắn quá tốt...quá tử tế...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#014": {
+   "src": "...I must open a portal...make a dimension to become more powerful...",
+   "dst": "...ta phải mở một cánh cổng...tạo một chiều không gian để mạnh hơn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#015": {
+   "src": "...the books...I have prepared well for this...",
+   "dst": "...những cuốn sách...ta đã chuẩn bị kỹ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#016": {
+   "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
+   "dst": "...ta sẽ đục một phòng bí mật...sau bức tường hữu hình...để tạo thế giới của ta...báo thù...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#017": {
+   "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
+   "dst": "Cứ đi vui chơi khi còn có thể. Dù sao ngươi cũng chẳng còn sống được bao lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#018": {
+   "src": "You should head back to Lanu...",
+   "dst": "Bạn nên quay lại chỗ Lanu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#019": {
+   "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
+   "dst": "À, bạn về rồi. Tìm được gì thú vị không? Tôi thì cứ đập mấy con slime thỉnh thoảng chui ra khỏi hang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#020": {
+   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
+   "dst": "Năm {~} AP, {p} quỳ gối. Đạo quân xác sống làm tê liệt quân đội và lâu đài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#021": {
+   "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Lanu tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#022": {
+   "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
+   "dst": "Này, người lính! Phải, bạn! Rảnh chút giúp một tay không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#023": {
+   "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
+   "dst": "Lính tráng mất nửa ca gác để băm lũ sinh vật thành bùn. Tốt nhất là đột nhập hang, diệt tận gốc, nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#024": {
+   "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
+   "dst": "Chỗ này có lịch sử. Toàn chuyện ghê rợn. Tôi không muốn mò vào mù quáng, nên đang tìm manh mối xem bên trong có gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#025": {
+   "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
+   "dst": "Chẳng tìm được mấy... ngoài mấy câu thơ khắc trên bức tường đằng kia. Đi xem thử rồi nói tôi nghe bạn nghĩ sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#026": {
+   "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
+   "dst": "Tôi thấy toàn chuyện nhảm. Chắc bọn trẻ ở {p} bày trò. Nhưng ngoài nó ra chẳng có gì khác, nên... nếu rảnh, bạn xem thử giúp tôi nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#027": {
+   "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
+   "dst": "Câu đầu rõ là nói về Great Bridge, nhưng phần còn lại thì tôi chịu. Đến đó, nhìn quanh xem, thấy gì thú vị thì báo tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#028": {
+   "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
+   "dst": "Đã tìm thấy gì thú vị quanh câu đố chưa? Bạn cần nghe lại không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#029": {
+   "src": "Near a corrupted bridge, a ruin past its prime..",
+   "dst": "Cạnh cây cầu tha hóa, phế tích đã tan tành..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#030": {
+   "src": "Lives a cursed sheep, with the color of lime...",
+   "dst": "Có cừu bị nguyền rủa, mang màu chanh xanh...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#031": {
+   "src": "Lead it down the trail, headed to the slime...",
+   "dst": "Dắt nó theo lối mòn, tới nơi slime vây quanh…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#032": {
+   "src": "Sacrifice its soul, in the blood and the grime.",
+   "dst": "Hiến tế linh hồn nó, giữa máu và bùn tanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#033": {
+   "src": "Alrighty. Let me know what when you've got something then.",
+   "dst": "Được thôi. Có gì thì báo tôi nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#034": {
+   "src": "Use the Mage's riddle to figure out where it leads",
+   "dst": "Dùng câu đố của pháp sư để tìm ra nó dẫn tới đâu",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#035": {
+   "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
+   "dst": "Nếu bạn đi về phía Great Bridge, hãy cẩn thận ở đồng bằng gần lối vào rừng rậm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#036": {
+   "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
+   "dst": "Tôi nhận được báo cáo về một con cừu bị nguyền kỳ lạ trú ẩn trong một phế tích kiên cố quanh đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#037": {
+   "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
+   "dst": "Theo tôi biết, cây rừng rậm nhốt nó trong phế tích, nhưng nếu phát quang thì có thể nó sẽ thoát ra...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#038": {
+   "src": "You find a tattered journal on the ground in front of this slimy cave. You skim through some of the pages...",
+   "dst": "Bạn thấy một cuốn nhật ký rách nát trên đất trước cửa hang nhầy nhụa này. Bạn lướt qua vài trang...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#039": {
+   "src": "...this cave...for some reason it seems to erupt with fresh slime masses every minute...",
+   "dst": "...cái hang này...chẳng hiểu sao mỗi phút lại phun ra những khối slime mới...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#040": {
+   "src": "...the bottom...has a weird pit...maybe used to sacrifice something...",
+   "dst": "...dưới đáy...có một cái hố lạ...có lẽ dùng để hiến tế thứ gì đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#041": {
+   "src": "...maybe...if you bring a mob there...by letting it follow you...you can do something...dark ...",
+   "dst": "...có lẽ...dẫn một con quái tới đó...bằng cách để nó đi theo...sẽ làm được gì đó...đen tối ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#042": {
+   "src": "Explore the temple for a way to break the barrier.",
+   "dst": "Khám phá ngôi đền để tìm cách phá kết giới.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#043": {
+   "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
+   "dst": "Đến nơi ở của Slykaar tại [-{~}, {~}, -{~}] để tìm hiểu thứ được giấu ở đó.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#044": {
+   "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
+   "dst": "Theo lệnh thành {p}, tôi ở đây để ngăn những người dân khác vào căn nhà này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#045": {
+   "src": "From past experiences, everyone who has entered this house has vanished from existence...",
+   "dst": "Theo những gì từng xảy ra, ai bước vào căn nhà này cũng biến mất khỏi cõi đời...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#046": {
+   "src": "I would advise not going inside unless you know what you are doing.",
+   "dst": "Tôi khuyên bạn đừng vào trừ khi biết mình đang làm gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#047": {
+   "src": "Well, I guess you must know who I am.",
+   "dst": "Chà, chắc ngươi biết ta là ai rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#048": {
+   "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
+   "dst": "Chào mừng đến lãnh địa ta. Ta, Slykaar, anh hùng của {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#049": {
+   "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
+   "dst": "Chà, từng là. Bị chính những kẻ cầu xin ta giúp trục xuất. Thảm hại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#050": {
+   "src": "They couldn't give me a few peasants for their safety? Weak.",
+   "dst": "Chẳng lẽ không đổi nổi vài nông dân lấy an toàn? Yếu đuối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#051": {
+   "src": "Journey through Slykaar's dimension.",
+   "dst": "Băng qua chiều không gian của Slykaar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#052": {
+   "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
+   "dst": "Ta đã thí nghiệm thuật thầy pháp nhiều năm dưới lòng đất để tạo ra giống quái vật hoàn hảo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#053": {
+   "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
+   "dst": "Phần lớn thành slime ghê tởm. Hung hăng, mạnh mẽ, nhưng than ôi, chỉ là slime.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#054": {
+   "src": "Then I found this place. A dark land. A dark god. A source of power.",
+   "dst": "Rồi ta tìm ra nơi này. Đất tối. Thần tối. Nguồn sức mạnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#055": {
+   "src": "You mediocre wielders of magic have no idea what this world holds.",
+   "dst": "Lũ pháp sư tầm thường các ngươi chẳng biết thế giới này ẩn chứa gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#056": {
+   "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
+   "dst": "Các ngươi đều mơ thành “Bob”, anh hùng của anh hùng, nhưng sự thật là: hắn lạc lối. Ngươi cũng vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#057": {
+   "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
+   "dst": "Không ai ở tỉnh Wynn dám hy sinh như ta để có sức mạnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#058": {
+   "src": "If you want power, you have to give some. Sacrifice a few to save many.",
+   "dst": "Muốn có sức mạnh, phải trả giá. Hy sinh số ít để cứu số đông.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#059": {
+   "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
+   "dst": "Năm {~}, chúng sẵn lòng cho ta vài tên nông dân, khi đạo quân kia vượt cầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#060": {
+   "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
+   "dst": "Nhà vua sẵn lòng vứt mạng người để cứu mạng mình. Nhưng vài năm sau gã anh hùng của Wynn nhởn nhơ bước tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#061": {
+   "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
+   "dst": "Chúng trục xuất ta như trái thối. Anh hùng, người bảo vệ của chúng. Vài trăm kẻ vô danh chết thì đã sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#062": {
+   "src": "Looks like we have a Bob aspirer. Pale imitation.",
+   "dst": "Xem ra có kẻ muốn làm Bob đây. Bản sao nhạt nhẽo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#063": {
+   "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
+   "dst": "Vậy đấy. Cứ việc xuống dưới thăm ta, mang cả sức mạnh quân đội {p} đến đánh ta. Vẫn chưa đủ đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#064": {
+   "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
+   "dst": "Ta đã sẵn sàng. Sắp tới {p} sẽ thành đổ nát. Và ta sẽ báo thù.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#065": {
+   "src": "Report back to Lanu about what you've learned.",
+   "dst": "Báo lại cho Lanu những gì bạn biết được.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#066": {
+   "src": "You... saw Slykaar? In another dimension?!",
+   "dst": "Bạn... gặp Slykaar? Ở chiều không gian khác?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#067": {
+   "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
+   "dst": "Tệ rồi. Nếu hắn hiện hình được ngoài hang, dù chỉ trong tâm trí... thì hắn đang mạnh lên. Thế mới giải thích lũ slime, các đợt tấn công {p}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#068": {
+   "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
+   "dst": "Hắn là một thầy pháp cực mạnh, {u}. Phải ngăn hắn, nhưng {p} sẽ mất cả đời mới huy động được lực lượng đánh hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#069": {
+   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends to watch your back.",
+   "dst": "Nếu được, bạn nên vào đó và... kết liễu hắn. Nhưng trang bị kỹ trước đã, và tìm vài người bạn yểm trợ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#070": {
+   "src": "{u}, how's it going? Run into another shaman hallucination at all?",
+   "dst": "{u}, thế nào rồi? Có gặp thêm ảo ảnh thầy pháp nào không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#071": {
+   "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
+   "dst": "Dù sao thì, chúc may mắn trong hang. Nếu chọn vào thì cẩn thận đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  }
+ }
+}

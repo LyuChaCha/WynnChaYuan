@@ -1,0 +1,316 @@
+{
+ "_meta": {
+  "quest": "Underwater",
+  "count": 30,
+  "translated": 30,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Underwater#000": {
+   "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
+   "dst": "Muốn cái mũ thì tôi cần chỗ [{~} Gudgeon Meat] trong hang đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underwater#001": {
+   "src": "Glad to see you again!",
+   "dst": "Mừng được gặp lại bạn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I'm glad to see you again.",
+    "file": "quest/bob-s-lost-soul.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "Underwater#002": {
+   "src": "But recently, a small hole has opened in the shipwreck here. It is believed that our fortune is hidden within it.",
+   "dst": "Nhưng gần đây, một lỗ nhỏ đã mở ra trên xác tàu này. Người ta tin rằng kho báu của chúng tôi giấu trong đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "captured"
+  },
+  "Underwater#003": {
+   "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Omango ở phía Bắc {p} tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underwater#004": {
+   "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
+   "dst": "Chào, tôi là Omango. Tôi sống ở làng {p}, trên đỉnh đồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#005": {
+   "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
+   "dst": "Có lẽ bạn đã biết, dân tôi tới vùng đất của bạn nhiều năm trước, đây là con tàu họ đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#006": {
+   "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
+   "dst": "Họ mang theo rất nhiều hàng xa xỉ. Phần lớn đã mất trong vụ đắm tàu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#007": {
+   "src": "Unfortunately, nobody has been able to explore it. It is too deep, no creature can survive underwater that long!",
+   "dst": "Tiếc là chưa ai khám phá được. Nó quá sâu, không sinh vật nào sống nổi dưới nước lâu vậy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#008": {
+   "src": "However, my old friend Sayrr is a fisherman, and I know that he has a very special helmet...",
+   "dst": "Nhưng bạn cũ của tôi, Sayrr, là ngư dân, và tôi biết ông ấy có một cái mũ rất đặc biệt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#009": {
+   "src": "If you convince him to give you this helmet, and find the treasure, I'll give you a part of it!",
+   "dst": "Nếu bạn thuyết phục được ông ấy đưa mũ, rồi tìm ra kho báu, tôi sẽ chia cho bạn một phần!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#010": {
+   "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
+   "dst": "Sayrr đang ở trên thuyền, nhưng cái hang cạnh tôi là lối tắt tới chỗ ông ấy câu cá. Có điều, đi đường cẩn thận nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#011": {
+   "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
+   "dst": "Khi có được mũ, hãy khám phá con tàu và mang về cho tôi [{~} Ancient Treasure]. Chúc may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 1",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#012": {
+   "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
+   "dst": "Đi qua hang tại [-{~}, {~}, -{~}] để tìm Sayrr trên thuyền ở phía bên kia",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underwater#013": {
+   "src": "Why ya looking at me like that? Is it cause I'm small, eh? I'll have you know that I caught fish that were twice your size!",
+   "dst": "Sao nhìn tôi kiểu đó? Vì tôi nhỏ con hả? Nói cho mà biết, tôi từng câu được cá to gấp đôi bạn đấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#014": {
+   "src": "...or, well, I used to be able to. Nothing's biting recently- wait a sec, why'd you hop on my boat anyways, stranger?",
+   "dst": "...hoặc, à, từng câu được. Dạo này chẳng con nào cắn câu- khoan đã, sao bạn lại nhảy lên thuyền tôi thế, người lạ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#015": {
+   "src": "Ahah! Yes, I still have that old breathing helmet. You want it? You'll have to do something for me first.",
+   "dst": "A ha! Phải, tôi vẫn còn cái mũ thở cũ đó. Muốn không? Bạn phải làm giúp tôi một việc trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#016": {
+   "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
+   "dst": "Chắc bạn nghe rồi, cá ở quanh đây chẳng cắn câu nữa! Tôi phải kiếm sống chứ! Trong hang đó có ít cá, nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#017": {
+   "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
+   "dst": "...hơi nguy hiểm. Thế này nhé, tôi đưa bạn cần câu, bạn xuống đó câu cho tôi, chẳng hạn, [{~} Gudgeon Meat].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#018": {
+   "src": "The helmet will be all yours after that.",
+   "dst": "Sau đó cái mũ là của bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 2",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#019": {
+   "src": "Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}] to Sayrr",
+   "dst": "Mang [{~} Gudgeon Meat] trong hang tại [-{~}, {~}, -{~}] về cho Sayrr",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underwater#020": {
+   "src": "Ah! Welcome back! Any luck with the fish?",
+   "dst": "A! Về rồi đấy à! Câu được gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#021": {
+   "src": "Great, and I'll thank you kindly. Here's your helmet, have fun with that.",
+   "dst": "Tuyệt, cảm ơn bạn nhiều. Mũ của bạn đây, chơi vui nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "wiki"
+  },
+  "Underwater#022": {
+   "src": "Explore the crashed ship for a lost treasure at [-{~}, {~}, -{~}]",
+   "dst": "Khám phá con tàu đắm để tìm kho báu thất lạc tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underwater#023": {
+   "src": "Break the crate and bring [{~} Old Treasure] to Omango at [-{~}, {~}, -{~}]",
+   "dst": "Đập thùng và mang [{~} Old Treasure] cho Omango tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underwater",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underwater#024": {
+   "src": "You got it! You found the treasure!",
+   "dst": "Được rồi! Bạn tìm ra kho báu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 5",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#025": {
+   "src": "As promised, here's your part of the loot.",
+   "dst": "Như đã hứa, phần của bạn đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 5",
+   "speaker": "Omango",
+   "source": "wiki"
+  },
+  "Underwater#026": {
+   "src": "You have lost the helmet already?",
+   "dst": "Bạn làm mất mũ rồi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#027": {
+   "src": "Let me help you then! Bring me back [{~} Gudgeon Meat] from the cave just like last time and i will give you one back! Deal?",
+   "dst": "Vậy để tôi giúp! Mang [{~} Gudgeon Meat] từ hang về như lần trước rồi tôi sẽ đưa bạn cái khác! Chịu không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#028": {
+   "src": "You should go see Omango back near the crashed ship!",
+   "dst": "Bạn nên quay lại gặp Omango gần con tàu đắm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "Stage 3",
+   "speaker": "Sayrr",
+   "source": "captured.json"
+  },
+  "Underwater#029": {
+   "src": "This must be the treasure Omango was talking about!",
+   "dst": "Đây hẳn là kho báu Omango đã nói!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Underwater",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  }
+ }
+}

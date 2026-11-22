@@ -43,7 +43,8 @@ public final class Languages {
                     Map.entry("ko_kr", "한국어"), Map.entry("ru_ru", "Русский"),
                     Map.entry("de_de", "Deutsch"), Map.entry("fr_fr", "Français"),
                     Map.entry("es_es", "Español"), Map.entry("pt_br", "Português"),
-                    Map.entry("tr_tr", "Türkçe"), Map.entry("en_us", "English"));
+                    Map.entry("tr_tr", "Türkçe"), Map.entry("vi_vn", "Tiếng Việt"),
+                    Map.entry("th_th", "ไทย"), Map.entry("en_us", "English"));
 
     public static List<String> known() {
         return NATIVE.keySet().stream().sorted().toList();
