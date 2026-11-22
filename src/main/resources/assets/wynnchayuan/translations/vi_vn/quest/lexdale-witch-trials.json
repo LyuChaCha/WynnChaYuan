@@ -1,0 +1,406 @@
+{
+ "_meta": {
+  "quest": "Lexdale Witch Trials",
+  "count": 39,
+  "translated": 39,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lexdale Witch Trials#000": {
+   "src": "New Quest Started: {p} Witch Trials",
+   "dst": "Nhiệm vụ mới: Phiên xử phù thủy {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: {p} Trouble",
+    "file": "quest/tempo-town-trouble.json",
+    "ratio": 0.8,
+    "reason": "candidate"
+   }
+  },
+  "Lexdale Witch Trials#001": {
+   "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of dark magic threatens us!",
+   "dst": "Có kẻ thù ngay giữa chúng ta ở {p}! Ả phù thủy dùng hắc thuật bất hợp pháp đang đe dọa chúng ta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#002": {
+   "src": "Ms. Amira's home was found to be plagued with spreading Decay! We must kill the witch to protect our sanctity!",
+   "dst": "Nhà của bà Amira bị Sự Mục Rữa lan tràn! Phải giết phù thủy để giữ sự thánh thiện của chúng ta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#003": {
+   "src": "Further...intruders...? You are not of the worms...the parasites?",
+   "dst": "Thêm...kẻ xâm nhập...? Ngươi không phải lũ sâu...lũ ký sinh?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#004": {
+   "src": "We cannot escape, for the sun scorches us. There is no place to go, no place we can burrow that they do not wait.",
+   "dst": "Ta không thể trốn, vì mặt trời thiêu đốt ta. Chẳng nơi nào để đi, chẳng chỗ nào đào hang mà chúng không chờ sẵn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#005": {
+   "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive til this torture ends...",
+   "dst": "Ngươi... Ngươi... Ngươi có sự sống. Có tim, cơ bắp, và thịt... Để sống sót tới khi cực hình này dứt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#006": {
+   "src": "You're stuck! Maybe you can dig yourself out?",
+   "dst": "Bạn bị kẹt rồi! Có lẽ tự đào đường ra được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#007": {
+   "src": "It seems like the creature was knocked out. Now is the time to catch it! The cage seems like a good place to keep it.",
+   "dst": "Có vẻ sinh vật đã bất tỉnh. Đến lúc bắt nó rồi! Cái lồng có vẻ là chỗ tốt để nhốt nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#008": {
+   "src": "Something feels off...",
+   "dst": "Có gì đó không ổn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#009": {
+   "src": "The creature is out of control!",
+   "dst": "Sinh vật mất kiểm soát rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#010": {
+   "src": "It seemed like the creature calmed down... You should show the mayor to free Amira.",
+   "dst": "Có vẻ sinh vật đã bình tĩnh lại... Bạn nên cho thị trưởng xem để giải thoát Amira.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#011": {
+   "src": "...Fine then. This...creature...bug...leech? This whatever-it-is... I'll accept your explanation.",
+   "dst": "...Được thôi. Cái...sinh vật...con bọ...con đỉa? Thứ-gì-đó này... Ta chấp nhận lời giải thích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#012": {
+   "src": "Gah, finally! You're seeing sense! It's almost like something just...took you over one day and never left 'til now!",
+   "dst": "Hừ, cuối cùng! Ông cũng tỉnh ra! Cứ như có thứ gì đó...nhập vào ông một ngày rồi tới giờ mới chịu đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#013": {
+   "src": "As for the...THING... Well... I'll be sure to inform the Gavel government.",
+   "dst": "Còn về...CÁI THỨ... Chà... Ta sẽ báo cho chính quyền Gavel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#014": {
+   "src": "You should follow the creature before it gets away!",
+   "dst": "Bạn nên đuổi theo sinh vật trước khi nó chạy mất!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#015": {
+   "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
+   "dst": "Xem chuyện gì đang xảy ra ở trung tâm {p} tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#018": {
+   "src": "WAIT! Let me GO already! I told you what was happening!",
+   "dst": "KHOAN! THẢ tôi ra! Tôi đã nói chuyện gì xảy ra rồi mà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#019": {
+   "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
+   "dst": "Trò hắc thuật lừa bịp của bà vô dụng thôi, bà Amira. Đi cho yên- để chúng tôi yên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#020": {
+   "src": "SHUT UP ALREADY! You can't just single people out like this!!",
+   "dst": "IM ĐI! Ông không thể cứ chỉ mặt người ta thế này được!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#021": {
+   "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
+   "dst": "Nghe tôi một giây thôi! Không phải tôi, có thứ làm nhà tôi nhiễm bệnh! Vì thế nên nó mới tối như vậy!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#022": {
+   "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
+   "dst": "Tầng hầm nhà tôi, có thứ quái dị đào vào đó! Nó đi tới đâu, chỗ đó héo úa và mục rữa tới đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#023": {
+   "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
+   "dst": "Trong nhà tôi có bằng chứng không phải tôi! Nó mới là thứ mục rữa và cằn cỗi! NHÌN là thấy, đồ khát máu!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#024": {
+   "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
+   "dst": "Thôi lăng mạ đi! Tạm hoãn đã- Nếu không có bằng chứng phù thủy vô tội, ả sẽ bị xử tử!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#025": {
+   "src": "Explore the basement of the decayed and barren house.",
+   "dst": "Khám phá tầng hầm của ngôi nhà mục rữa và cằn cỗi.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#026": {
+   "src": "Follow the creature down the tunnels.",
+   "dst": "Đuổi theo sinh vật xuống các đường hầm.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#027": {
+   "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
+   "dst": "Tiếp tục đuổi theo sinh vật từ đường hầm tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#030": {
+   "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
+   "dst": "Lại một kẻ lạ... Hẳn ngươi đã thấy các đường hầm. Chúng làm đá tàn lụi, rễ héo khô, đất đai mất sự sống...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#031": {
+   "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
+   "dst": "Còn ở đây, ta chết đói trong cô lập. Dân ta lạc lối, khi chính mặt đất biến dạng, xê dịch.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#032": {
+   "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
+   "dst": "Nước tù đọng và xám xịt. Chẳng có gì ngoài lũ tai ương ma thuật kinh tởm, và chính lũ sâu để sống qua ngày.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#035": {
+   "src": "Stranger, you must perish.",
+   "dst": "Kẻ lạ, ngươi phải chết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#036": {
+   "src": "Defeat the Tunnel Dweller Chieftain.",
+   "dst": "Đánh bại Tù trưởng Cư dân Đường hầm.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#037": {
+   "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
+   "dst": "Khoan... Động đất này! LÀ CHÚNG! AAAAAAAAAAA!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#038": {
+   "src": "Dig yourself out of the dirt. Then go after the creature.",
+   "dst": "Tự đào đường ra khỏi đất. Rồi đuổi theo sinh vật.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#039": {
+   "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
+   "dst": "Quay lại {p} và thử cho thị trưởng xem sinh vật tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#040": {
+   "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
+   "dst": "Ngươi về rồi. Có- Khoan, CÁI GÌ thế kia?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#041": {
+   "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
+   "dst": "Đó! Đó là thứ trong tầng hầm nhà tôi!! Tôi biết con người đó sẽ tìm ra mà! Cảm ơn!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#042": {
+   "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
+   "dst": "Thứ đó làm mục rữa lan khắp nhà tôi! KHÔNG phải phù thủy hay ma thuật như ông tự dưng QUYẾT ĐỊNH một ngày nọ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#044": {
+   "src": "Step off the podium, Ms. Amira. You're innocent.",
+   "dst": "Bước xuống bục đi, bà Amira. Bà vô tội.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#046": {
+   "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
+   "dst": "...hừm. Cái đó... Ừm. Dù sao. Con người, ngươi đã chứng tỏ mình đáng tin. Cửa nhà chúng ta sẽ luôn mở cho ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  }
+ }
+}

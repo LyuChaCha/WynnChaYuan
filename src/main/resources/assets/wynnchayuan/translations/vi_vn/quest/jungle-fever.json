@@ -1,0 +1,386 @@
+{
+ "_meta": {
+  "quest": "Jungle Fever",
+  "count": 37,
+  "translated": 37,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Jungle Fever#000": {
+   "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
+   "dst": "Thuốc duy nhất trị cơn sốt này là uống Ngọc lục bảo lỏng! Đúng, chuẩn! *khụ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#001": {
+   "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
+   "dst": "Đột nhập *khụ* kho ngọc lục bảo, nhưng đừng lấy gì... xong thì quay lại gặp tôi ngay, nếu còn sống mà ra, hehe...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#002": {
+   "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
+   "dst": "Ta phải đổi chiến lược, không xin phép nữa. Dù sao cũng là để giúp tôi mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "captured"
+  },
+  "Jungle Fever#003": {
+   "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
+   "dst": "Tôi cần chắc là bạn đột nhập ngân hàng dễ dàng. Nên tôi tự tới đây xem bạn có làm được không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#004": {
+   "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
+   "dst": "Đột nhập được kho này, bạn đã chứng tỏ sự lén lút và sức mạnh, giờ ta bắt đầu việc thật được rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#005": {
+   "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
+   "dst": "Nơi đó có hàng đống Golem hộ vệ thiện chiến, giết bất kỳ ai chỉ bằng một đòn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+    "file": "quest/jungle-fever.json",
+    "ratio": 0.832,
+    "reason": "candidate"
+   }
+  },
+  "Jungle Fever#006": {
+   "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
+   "dst": "..Ý tôi là *khụ*.. tôi ốm quá nên quay về đây.. *khụ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#007": {
+   "src": "I feel so much better now, thank you for the cure!",
+   "dst": "Giờ tôi khỏe hơn nhiều rồi, cảm ơn vì thuốc chữa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#008": {
+   "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Worid ở ngôi làng trong rừng rậm tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#009": {
+   "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
+   "dst": "Ôi, gặp bạn mừng quá! *khụ*, tôi bị sốt nặng lắm, tôi thật sự cần giúp! *khụ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#011": {
+   "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
+   "dst": "Bạn hỏi Chủ ngân hàng ở {p} xem có thể cho tôi, ồ tôi chẳng biết nữa, [{~} Ngọc lục bảo lỏng] được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#012": {
+   "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
+   "dst": "Nếu ông ta dám *khụ* từ chối... bạn sẽ phải dùng vũ lực...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#014": {
+   "src": "Oh, uh... I mean *cough* *cough*",
+   "dst": "Ồ, ờ... Ý tôi là *khụ* *khụ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 1",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#015": {
+   "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
+   "dst": "Nói với Chủ ngân hàng của {p} về thuốc chữa cho Worid tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#016": {
+   "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
+   "dst": "[{~} Ngọc lục bảo lỏng]? Hắn điên rồi! Ngọc lục bảo lỏng chẳng chữa được bệnh gì, trừ bệnh nghèo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "The Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#017": {
+   "src": "I will not participate in this pathetic fraud attempt!",
+   "dst": "Tôi sẽ không tham gia trò lừa đảo thảm hại này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 2",
+   "speaker": "The Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#018": {
+   "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
+   "dst": "Vào Kho ngọc lục bảo của {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#019": {
+   "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
+   "dst": "Ôi không! Không có Ngọc lục bảo lỏng thì sao tôi chữa bệnh được đây?... *khụ*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#021": {
+   "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
+   "dst": "Trước tiên, tôi cần chắc là bạn đột nhập ngân hàng dễ dàng. Thử vào Kho bí mật của {p} xem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#022": {
+   "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
+   "dst": "Xong thì nói chuyện lại với tôi. Cẩn thận đấy, có thể có lính gác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 3",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#023": {
+   "src": "Return to Worid",
+   "dst": "Quay lại gặp Worid",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#024": {
+   "src": "What? You're here already. I thought you would take too long so I just went myself.",
+   "dst": "Gì? Bạn đến rồi à. Tôi tưởng bạn sẽ lâu lắm nên tôi tự đi luôn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#025": {
+   "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
+   "dst": "Bệnh của tôi? À PHẢI. *khụ* Bạn nên thấy áy náy vì bắt người ốm làm việc của mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#026": {
+   "src": "Anyway I see you proved yourself, we can start the real thing now.",
+   "dst": "Dù sao bạn đã chứng tỏ mình, giờ bắt đầu việc thật được rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#027": {
+   "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
+   "dst": "{p} có một hầm ngọc lục bảo canh gác cực kỹ, tên là \"Mê cung Ngọc lục bảo\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#028": {
+   "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+   "dst": "Nơi đó có hàng đống Golem hộ vệ được huấn luyện kỹ, giết nhà phiêu lưu nào cũng dễ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#029": {
+   "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
+   "dst": "Chủ ngân hàng trong hầm bí mật hẳn đang chán muốn chết, chắc không phiền nếu bạn tìm tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#030": {
+   "src": "Good luck with that. Haha.. I mean, *cough*.",
+   "dst": "Chúc may mắn. Haha.. ý tôi là, *khụ*.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 4",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#031": {
+   "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
+   "dst": "Xâm nhập Mê cung Ngọc lục bảo bí mật dưới lòng đất của {p} tại [{~}, {~}, -{~}] và tìm Chủ ngân hàng trong Phòng Ngọc lục bảo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#032": {
+   "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
+   "dst": "Ồ, ơ! Có người! Lâu lắm rồi tôi mới thấy ai!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "Almuj Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#033": {
+   "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
+   "dst": "Ngọc lục bảo lỏng? Tất nhiên, tất nhiên! Tôi có cả đống! Đây, cầm lấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 5",
+   "speaker": "Almuj Banker",
+   "source": "wiki"
+  },
+  "Jungle Fever#034": {
+   "src": "Talk to Worid at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Worid tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Jungle Fever#035": {
+   "src": "You are back! Wonderful!",
+   "dst": "Bạn về rồi! Tuyệt quá!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#036": {
+   "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
+   "dst": "Nhiều tiền quá, cảm ơn bạn rất nhiều, cuối cùng tôi cũng có thể... *khụ* chữa bệnh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#037": {
+   "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
+   "dst": "Đây, phần này của bạn, bạn xứng đáng. Tôi phải dùng gần hết... *khụ* tiền để chữa bệnh, nên tôi trả bạn bằng một chiếc chìa khóa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#038": {
+   "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
+   "dst": "Tôi trộm- *khụ* ý tôi là, mượn nó từ tù trưởng bộ lạc. Nghe nói nó từng dùng để phong ấn một đại ác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  },
+  "Jungle Fever#039": {
+   "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
+   "dst": "Đi luôn- *khụ* Ờ... may mắn. Ừ, may mắn nhé, nhà phiêu lưu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "Stage 6",
+   "speaker": "Worid",
+   "source": "wiki"
+  }
+ }
+}

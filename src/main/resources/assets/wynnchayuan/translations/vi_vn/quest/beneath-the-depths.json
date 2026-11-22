@@ -1,0 +1,450 @@
+{
+ "_meta": {
+  "quest": "Beneath the Depths",
+  "count": 44,
+  "translated": 44,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Beneath the Depths#000": {
+   "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
+   "dst": "Lão để tấm hải đồ cũ trong hang ổ cũ, nó sẽ chỉ cho nhóc chỗ ta tìm được vàng của lão.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "captured"
+  },
+  "Beneath the Depths#001": {
+   "src": "Me old hideout's hidden inside that there skull at the entrance to our mighty fine establishment. Bring me that map, lad!",
+   "dst": "Hang ổ cũ của lão giấu trong cái đầu lâu ở lối vào quán xá tuyệt vời của bọn ta. Mang bản đồ về cho lão, nhóc!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#002": {
+   "src": "I'm sorry, that's not enough money. Magic doesn't come cheap! Come back when you have [{~} Emerald Blocks] and we will aid you. Make sure to bring the [{~} Faded Map] too.",
+   "dst": "Xin lỗi, chừng đó tiền không đủ. Phép thuật đâu có rẻ! Hãy quay lại khi có [{~} Khối ngọc lục bảo] và chúng tôi sẽ giúp. Nhớ mang theo [{~} Bản đồ phai màu].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#003": {
+   "src": "We only hope that the boots will never fall into the hands of that pirate again, we'd much rather they fall into yours.",
+   "dst": "Chúng tôi chỉ mong đôi giày sẽ không bao giờ rơi vào tay tên cướp biển đó nữa, thà để chúng vào tay bạn còn hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "captured"
+  },
+  "Beneath the Depths#004": {
+   "src": "Garh, lad!",
+   "dst": "Gừ, nhóc!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#005": {
+   "src": "Talk to Javier in the Pirate Cove at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Javier ở Pirate Cove tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#006": {
+   "src": "Garh, you look like a mighty fine adventurer, lad. But perhaps your pockets are a little lighter than you want, eh?",
+   "dst": "Garh, trông nhóc như một nhà thám hiểm cừ khôi đấy. Nhưng có khi túi nhóc hơi nhẹ hơn nhóc muốn, hả?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#007": {
+   "src": "Perhaps we be making a deal, lad, and it'll make us both rich!",
+   "dst": "Có khi ta làm một vụ giao kèo, nhóc à, cả hai cùng giàu to!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#008": {
+   "src": "Ye see, lad, me treasure has been lost for quite some time, I kept it in a ocean village named Sarnfic, in a secret room.",
+   "dst": "Nhóc thấy đấy, kho báu của lão thất lạc lâu rồi, lão cất nó ở làng biển tên Sarnfic, trong một căn phòng bí mật.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#009": {
+   "src": "Argh, but lad. The village vanished out of nowhere! Like some kind of dark magic! I swears to ye, I tell no lies!",
+   "dst": "Argh, nhưng nhóc à. Ngôi làng tự dưng biến mất! Như ma thuật hắc ám vậy! Lão thề với nhóc, lão không nói dối!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#010": {
+   "src": "So ye see, in me old age I could use a spot of me lawful gold to see me through me final years.",
+   "dst": "Nên nhóc thấy đấy, tuổi già như lão cần chút vàng chính đáng để sống nốt những năm cuối.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#011": {
+   "src": "Don't fret though, chuck, old Javier always kept a back up plan.",
+   "dst": "Nhưng đừng lo, nhóc, lão Javier luôn có kế hoạch dự phòng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#012": {
+   "src": "So, lad. Are ya willin' to make ye'self mighty wealthy? Good.",
+   "dst": "Vậy, nhóc. Có muốn làm mình giàu to không? Tốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#013": {
+   "src": "Find Javier's map, hidden in the skull tomb at the entrance of the island",
+   "dst": "Tìm bản đồ của Javier, giấu trong mộ đầu lâu ở lối vào hòn đảo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#014": {
+   "src": "Halt it there, laddy! The wind has told us that yer looking for treasure map. Ah, ye'll not get it so easily.",
+   "dst": "Đứng lại đó, nhóc! Gió đã báo bọn ta rằng ngươi đang tìm bản đồ kho báu. À, ngươi không dễ gì lấy được đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#015": {
+   "src": "Ye see, us spirits are as greedy as our physical selves were. 'ere's no foolin' 'round there. We want yer money, and only then will we open the paths to the map.",
+   "dst": "Ngươi thấy đấy, bọn ma ta tham lam y như lúc còn xác thịt. Chẳng đùa giỡn gì ở đây. Bọn ta muốn tiền của ngươi, và chỉ khi đó mới mở đường tới bản đồ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#016": {
+   "src": "One full stack of emeralds will satisfy our needs. Go to the front of this tomb if ye have what we want.",
+   "dst": "Một chồng ngọc lục bảo đầy sẽ thỏa mãn bọn ta. Ra phía trước ngôi mộ này nếu ngươi có thứ bọn ta muốn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#017": {
+   "src": "Good luck on that petty journey of yers. Just find the whole path, and yerself'll be just fine...",
+   "dst": "Chúc may cho chuyến đi vặt vãnh của ngươi. Cứ tìm trọn con đường, rồi ngươi sẽ ổn thôi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#018": {
+   "src": "Argh, yer talented aren't you lad! Many thanks indeed, now we can see where me treasure be buried.",
+   "dst": "Argh, nhóc tài giỏi đấy nhỉ! Cảm ơn nhiều lắm, giờ ta có thể thấy kho báu của lão chôn ở đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#019": {
+   "src": "Hrmm, well, garr, blast it all",
+   "dst": "Hừm, chà, garr, chết tiệt thật",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#020": {
+   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
+   "dst": "Lão không đọc nổi cái bản đồ quỷ của mình, nhóc! Nhóc làm gì nó vậy? Lấy xu cạo mực à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#021": {
+   "src": "Gar, sorry lad. It be the test of time that failed old Javier, not you.",
+   "dst": "Gar, xin lỗi nhóc. Là thời gian đã phụ lão Javier, không phải nhóc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#022": {
+   "src": "Fear not, lad. There be an old friend of Javier's that can help decipher this old rag.",
+   "dst": "Đừng sợ, nhóc. Lão Javier có ông bạn già có thể giải mã cái giẻ rách này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#023": {
+   "src": "Go to the old {p}, there be a man by the name of Dalben who can restore me map to its former glory. Get it done lad, and bring me treasure back!",
+   "dst": "Tới {p} cũ, ở đó có một người tên Dalben có thể khôi phục bản đồ của lão như xưa. Làm xong đi nhóc, rồi mang kho báu của lão về!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#024": {
+   "src": "Talk to Dalben on {p} about restoring the map",
+   "dst": "Nói chuyện với Dalben ở {p} về việc khôi phục bản đồ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#025": {
+   "src": "What's this? A traveller? How might we assist you?",
+   "dst": "Gì đây? Lữ khách sao? Chúng tôi giúp gì được bạn?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#026": {
+   "src": "Ah, I see, you wish to explore the ocean depths? But for what possible reason?",
+   "dst": "À, tôi hiểu, bạn muốn khám phá đáy đại dương? Nhưng vì lý do gì chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#027": {
+   "src": "This map... How did you acquire it? This is enchanted by our people.",
+   "dst": "Bản đồ này... Sao bạn có nó? Nó được người của chúng tôi yểm bùa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#028": {
+   "src": "You... You seek Sarnfic, don't you?",
+   "dst": "Bạn... Bạn tìm Sarnfic, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#029": {
+   "src": "Alas, that place has history. We, the Mage Council, banished that city long ago to hide the horrific power hidden within a treasure a pirate hid there.",
+   "dst": "Than ôi, nơi đó có quá khứ. Hội đồng Pháp sư đã phong ấn thành ấy từ lâu, để giấu sức mạnh ghê rợn trong kho báu một tên cướp biển cất ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#030": {
+   "src": "A pair of boots, made from a black material fashioned from the stone of an evil place, incredibly dark magic. But we do not believe the filthy idiotic pirate knew what he'd found.",
+   "dst": "Một đôi giày, làm từ chất liệu đen rèn từ đá của một nơi tà ác, ma thuật cực kỳ hắc ám. Nhưng chúng tôi không tin tên cướp biển ngu xuẩn bẩn thỉu đó biết hắn đã tìm thấy gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#031": {
+   "src": "I must say, we, the council regret having to lay waste an entire village over a pair of boots. There was no other way.",
+   "dst": "Phải nói rằng, Hội đồng chúng tôi rất tiếc phải tàn phá cả một ngôi làng chỉ vì một đôi giày. Không còn cách nào khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#032": {
+   "src": "Who knows why he even kept the boots. If he had known about their power, I'm sure he would have used it for evil. But we sense no evil in you, so as such we will aid you in your quest.",
+   "dst": "Ai biết sao hắn còn giữ đôi giày. Nếu biết sức mạnh của chúng, chắc chắn hắn đã dùng cho điều ác. Nhưng chúng tôi không thấy cái ác trong bạn, nên sẽ giúp bạn trong nhiệm vụ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#033": {
+   "src": "We hope that you will use the boots for good, despite the dark intentions. We will lift the enchantment once lain upon the charts, but it will cost you.",
+   "dst": "Chúng tôi mong bạn sẽ dùng đôi giày cho điều tốt, dù chúng mang ý đồ đen tối. Chúng tôi sẽ giải bùa yểm trên hải đồ, nhưng sẽ tốn của bạn đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#034": {
+   "src": "Give me [{~} Emerald Blocks], that should cover the cost.",
+   "dst": "Đưa tôi [{~} Khối ngọc lục bảo], thế là đủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#035": {
+   "src": "Bring back [{~} Blocks of Emerald] to Dalben",
+   "dst": "Mang [{~} Khối ngọc lục bảo] về cho Dalben",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#036": {
+   "src": "Brilliant. That seems in order. Here you go.",
+   "dst": "Tuyệt. Có vẻ ổn cả. Của bạn đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#037": {
+   "src": "Well? What does it say? Go to that location! Find the treasure!",
+   "dst": "Sao? Nó ghi gì? Tới chỗ đó đi! Tìm kho báu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#038": {
+   "src": "Explore the cave in the ocean, located at [-{~}, {~}, -{~}]",
+   "dst": "Khám phá hang động dưới đại dương, tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#039": {
+   "src": "Find [{~} Ocean Treasure] and bring it back to Javier in Pirate Cove",
+   "dst": "Tìm [{~} Kho báu đại dương] và mang về cho Javier ở Pirate Cove",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#040": {
+   "src": "Gnar, you did it lad! Ye brought back old Javiers gold! And as I promised, heres yer share of the loot.",
+   "dst": "Gnar, nhóc làm được rồi! Mang được vàng của lão Javier về! Như đã hứa, phần chia của nhóc đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#041": {
+   "src": "I threw in something extra for ye. It's an old key I salvaged a few years back, from the shipwreck of a legendary pirate.",
+   "dst": "Lão thêm cho nhóc chút quà. Một chìa khóa cũ lão vớt được vài năm trước, từ xác tàu của một tên cướp biển huyền thoại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#042": {
+   "src": "Who knows what it leads to? Maybe a treasure hoard, or maybe the ol' swashbuckler wanted to lead someone into a trap.",
+   "dst": "Ai biết nó dẫn tới đâu? Có thể là kho báu, hoặc có thể lão hải tặc già muốn dụ ai đó vào bẫy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#043": {
+   "src": "Me bones are too old for a grand adventure like that, guess ye'll have to figure it out for yerself.",
+   "dst": "Xương cốt lão già quá rồi cho chuyến phiêu lưu lớn như thế, chắc nhóc phải tự tìm hiểu thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  }
+ }
+}

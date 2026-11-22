@@ -1,0 +1,886 @@
+{
+ "_meta": {
+  "quest": "Mushroom Man",
+  "count": 87,
+  "translated": 87,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Mushroom Man#000": {
+   "src": "I'm sorry, recruit, but that passage is blocked. We used to use it, but not anymore...",
+   "dst": "Xin lỗi, tân binh, lối đi đó bị chặn rồi. Bọn tôi từng dùng, nhưng giờ thì không...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#001": {
+   "src": "He's... difficult. He's the son of my sister, who we lost to spiders some time ago.",
+   "dst": "Nó... khó bảo. Nó là con của em gái tôi, người đã mất vì lũ nhện cách đây ít lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "He's... difficult. He's the son of my sister, who was unfortunately killed by spiders some time ago.",
+    "file": "quest/supply-and-delivery.json",
+    "ratio": 0.852,
+    "reason": "candidate"
+   }
+  },
+  "Mushroom Man#002": {
+   "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken its toll on us both.",
+   "dst": "Cha nó không còn, nên tôi phải nhận nuôi. Giờ nó đã lớn, đúng vậy, nhưng... tôi sợ mất mát ấy đã để lại vết hằn trên cả hai chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#003": {
+   "src": "I truly hope he will cease with these ridiculous ploys soon... but I can't bring myself to do more than give him a stern talking to.",
+   "dst": "Tôi thật lòng mong nó sớm thôi mấy trò lố bịch này... nhưng tôi chẳng nỡ làm gì hơn ngoài mắng nó một trận.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#004": {
+   "src": "He's a good man, truly. I believe that with my whole heart. I only wish he would show that side of himself to others.",
+   "dst": "Nó là người tốt, thật đấy. Tôi tin vậy bằng cả trái tim. Tôi chỉ mong nó cho người khác thấy mặt đó của mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#005": {
+   "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
+   "dst": "{u}, chào! Chỗ này đẹp thật, nhỉ? Tôi muốn ở lại thêm chút rồi mới đi tiếp tới {p}, nhưng sắp xong rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#006": {
+   "src": "You need to be Woodcutting Lv. {~} to start this Mini-Quest.",
+   "dst": "Bạn cần cấp Đốn gỗ {~} để bắt đầu Nhiệm vụ nhỏ này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#007": {
+   "src": "We can kill spiders! Right, {u}? Come on, this is what we're here to do! We became soldiers to help the people of Wynn, didn't we? We'll help you get your mushrooms back, sir.",
+   "dst": "Bọn tôi giết nhện được mà! Phải không, {u}? Thôi nào, ta tới đây là để làm việc này! Ta làm lính để giúp người dân Wynn, đúng không? Bọn tôi sẽ giúp ông lấy lại nấm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#008": {
+   "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
+   "dst": "H-hừm. Tốt. Tôi k-không nấu súp được nếu... không có nấm. T-theo tôi, tôi dẫn tới chỗ-... lũ nhện. N-nhện xấu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#009": {
+   "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
+   "dst": "À, hai cậu hẳn là những tân binh Aledar hay kể. Rất vui cuối cùng được gặp, dù tôi không khỏi để ý các cậu tới có vẻ vội vã.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "captured"
+  },
+  "Mushroom Man#010": {
+   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushrooms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-why wouldn't it b-be?",
+   "dst": "Ô-ồ! Không, k-không có gì đâu. Chẳng có g-gì cả. N-n-nấm của tôi... chúng ổn. Sao l-lại hỏi? M-... mọi thứ đều t-tốt. S-sao lại không t-tốt chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#011": {
+   "src": "Soon... s-soon I will have my m-mushrooms again...",
+   "dst": "Sớm thôi... s-sớm thôi tôi sẽ lại có n-nấm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#012": {
+   "src": "G-gah! D-don't you know it's rude to-... to e-eavesdrop?",
+   "dst": "Ặ-ặc! K-không biết nghe lén là-... là b-bất lịch sự à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#013": {
+   "src": "I-... this is bad. This is really bad. We need to tell the Mayor, now.",
+   "dst": "Tôi-... chuyện này tệ rồi. Tệ lắm. Ta phải báo Thị trưởng, ngay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#014": {
+   "src": "Right! Right. We've arrived from {p}, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
+   "dst": "Vâng! Vâng. Bọn tôi từ {p} tới, mang tin xấu và lời cầu viện. Lũ nhện trong rừng đã trở nên thù địch, đe dọa thị trấn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#015": {
+   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with him.",
+   "dst": "Và Trung úy Van đang lên kế hoạch tấn công một thành trì bị tha hóa! Chắc ông ấy sẽ vui nếu có thêm quân.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Mushroom Man#016": {
+   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Tasim ở {p} tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#017": {
+   "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
+   "dst": "Trong lúc chờ, tôi nghĩ xem ta có thể làm gì giúp nơi này... Tôi có ý này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#018": {
+   "src": "Take a look at that villager over there. He's acting a little off, like he's got something going on. I wonder...",
+   "dst": "Nhìn người dân làng đằng kia kìa. Ông ta cư xử hơi lạ, như có chuyện gì đó. Không biết...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#019": {
+   "src": "Alright, I've decided. I'm feeling a little restless, so let's go over there and see if there's anything we can help with!",
+   "dst": "Được rồi, quyết rồi. Tôi đang hơi bồn chồn, nên qua đó xem có giúp được gì không!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#020": {
+   "src": "Maybe we can leave this place better off than it was when we got here!",
+   "dst": "Biết đâu ta để lại nơi này tốt hơn lúc mới tới!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#021": {
+   "src": "Speak to the strange man at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với người đàn ông lạ tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#022": {
+   "src": "Speak to the strange man at [-{~}, {~}, -{~}]",
+   "dst": "Gặp người đàn ông lạ tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#023": {
+   "src": "G-... Hi! H-how can I help you on this... this p-perfectly fine and n-n-normal day!",
+   "dst": "G-... Chào! T-tôi giúp gì được trong... trong ngày h-hoàn toàn b-b-bình thường này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#024": {
+   "src": "Sorry to interrupt- we're soldiers traveling through this town, and you looked like the sort of person who might need the kind of help soldiers can provide. Anything we can help with?",
+   "dst": "Xin lỗi làm phiền- bọn tôi là lính đi ngang thị trấn, và trông ông như kiểu người cần sự giúp đỡ mà lính có thể làm. Bọn tôi giúp được gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#025": {
+   "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
+   "dst": "...Đ-được rồi, cậu b-bắt quả tang tôi rồi! Nấm của tôi... n-nấm của tôi không ổn! T-thậm chí còn tệ! Cậu v-vui... vui chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#026": {
+   "src": "Ehm- no, but that's why we're here! Is there anything we can do to help your... uh. Your mushrooms?",
+   "dst": "Ơ- không, nhưng bọn tôi ở đây là vì thế! Bọn tôi giúp gì được cho... ờ. Cho nấm của ông?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#027": {
+   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-But- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
+   "dst": "Hừm. Một lính, hai l-lính... T-trông yếu quá. Tôi từng th-... thấy người khỏe hơn. N-nhưng- hề, mấy- mấy l-lính khỏe hơn thì... không có ở đây. C-cũng tạm được. Chắc thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#028": {
+   "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
+   "dst": "Tôi- chỗ hái nấm yêu thích của tôi. Tôi k-không dùng được-... được nữa. Nhện. N-nhiều nhện lắm. Chúng c-c-chiếm mất rồi... Tôi không hái được... nấm. Cậu g-giết lũ n-n-nhện được không? Nấm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#029": {
+   "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}].",
+   "dst": "Theo Yahya tới bãi nấm bị nhện chiếm tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#030": {
+   "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}]",
+   "dst": "Theo Yahya tới bãi nấm bị nhện chiếm tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#031": {
+   "src": "H-here we are. I- I can f-feel the m-m-mushrooms... from here. And the s-spiders! No-... no good.",
+   "dst": "Đ-đây rồi. T-tôi c-cảm thấy n-n-nấm... từ đây. Cả l-lũ nhện nữa! Không-... không ổn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#032": {
+   "src": "S-so! Mushrooms. Those-... those bad c-creepy c-crawly s-s-spiders... Kill them. P-please?",
+   "dst": "V-vậy! Nấm. Mấy-... mấy con n-nhện b-bò lổm ngổm g-g-ghê tởm... Giết chúng đi. L-làm ơn?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#033": {
+   "src": "We wouldn't have come here if we weren't planning to. Alright, {u}, let's clear out some spiders!",
+   "dst": "Không định làm thì bọn tôi đã chẳng tới. Được rồi, {u}, dọn nhện thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#034": {
+   "src": "Clear out the spiders from Yahya's favorite mushroom patch at [-{~}, {~}, -{~}], then return and talk to Yahya.",
+   "dst": "Dọn sạch nhện khỏi bãi nấm yêu thích của Yahya tại [-{~}, {~}, -{~}], rồi quay lại nói chuyện với Yahya.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#035": {
+   "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
+   "dst": "Tôi thấy sạch rồi. Mấy cây nấm này... ờ... ngon đấy chứ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#036": {
+   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
+   "dst": "C-cảm ơn các lính! V-vừa rồi-... Ý tôi là. C-cũng t-tạm được, chắc v-... vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#037": {
+   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
+   "dst": "...Ô-ồ. Giờ tôi c-cần trả tiền... à? Hề. [{~} ngọc lục bảo] được k-không..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#038": {
+   "src": "...Come on.",
+   "dst": "...Thôi mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#039": {
+   "src": "Oho okay, ok-... okay! It was a joke, don't get all ex-... ex-... excited. Here, just take-",
+   "dst": "Ồ được, đư-... được! Đùa thôi mà, đừng có k-... k-... kích động. Đây, cứ cầm-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#040": {
+   "src": "G-gah! C-creepy! C-c-crawly! S-s-s-spiders!!!",
+   "dst": "Ặ-ặc! G-ghê quá! B-b-bò lổm ngổm! N-n-nhện!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
+  "Mushroom Man#041": {
+   "src": "Yahya! No!",
+   "dst": "Yahya! Đừng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#042": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#043": {
+   "src": "Return to Mayor Alvin at [-{~}, {~}, -{~}] with news about the spiders.",
+   "dst": "Quay lại gặp Thị trưởng Alvin tại [-{~}, {~}, -{~}] báo tin về lũ nhện.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#044": {
+   "src": "Ah, hello travelers. You seem to be in a rush- has something happened?",
+   "dst": "À, chào các lữ khách. Có vẻ các cậu đang vội- có chuyện gì sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#045": {
+   "src": "Yes! Yes, something- something has happened. We went with Yahya to help him with a problem he was having with spiders-",
+   "dst": "Vâng! Vâng, có chuyện- có chuyện rồi. Bọn tôi đi với Yahya giúp ông ấy giải quyết vụ nhện-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#046": {
+   "src": "Yes, yes, I know of Yahya's antics... He doesn't seem to be with you. Has he ran off on you, just as Ope did?",
+   "dst": "Phải, phải, tôi biết mấy trò của Yahya... Có vẻ nó không đi cùng các cậu. Nó bỏ các cậu chạy mất, như Ope à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#047": {
+   "src": "No- no. When we finished clearing out the spiders, we were swarmed- and they took him!",
+   "dst": "Không- không. Khi bọn tôi dọn xong nhện, chúng kéo tới cả bầy- và bắt ông ấy đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#048": {
+   "src": "...Oh. Oh, dear. That isn't good at all. If they're making moves such as this, unprovoked...",
+   "dst": "...Ồ. Ôi trời. Thế thì không ổn chút nào. Nếu chúng làm vậy mà không bị khiêu khích...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#049": {
+   "src": "You two are soldiers, yes? I would ask you to continue your travels to {p}. Find an Admiral Aegis- tell him our little village needs aid.",
+   "dst": "Hai cậu là lính, đúng không? Tôi nhờ các cậu tiếp tục tới {p}. Tìm Đô đốc Aegis- bảo ông ấy ngôi làng nhỏ này cần cứu viện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Mushroom Man#050": {
+   "src": "I-... of course. We'll set out immediately. Come on, {u}.",
+   "dst": "Tôi-... dĩ nhiên. Bọn tôi sẽ lên đường ngay. Đi nào, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#051": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
+   "dst": "Tới {p} để xin quân đội ở đó giúp đỡ tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Mushroom Man#052": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}]",
+   "dst": "Tới {p} để xin quân đội ở đó giúp đỡ tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#053": {
+   "src": "Wait. Did you hear that?",
+   "dst": "Khoan. Nghe thấy không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#054": {
+   "src": "Gah! {u}, look out!",
+   "dst": "Á! {u}, coi chừng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#055": {
+   "src": "Another one of these? We've fought one of them before, we can do it again!",
+   "dst": "Lại một con nữa? Ta từng đánh một con rồi, giờ làm lại được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#056": {
+   "src": "Phew. I think that went about as well as it could have!",
+   "dst": "Phù. Tôi nghĩ thế là ổn nhất có thể rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#057": {
+   "src": "We're both in one piece, the corrupted is dead... Good. That's good!",
+   "dst": "Cả hai ta đều lành lặn, kẻ bị tha hóa đã chết... Tốt. Thế là tốt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#058": {
+   "src": "Let's keep moving towards {p}. I don't think it's too much further, if we keep heading east from here.",
+   "dst": "Tiếp tục tới {p} thôi. Nếu cứ đi về phía đông từ đây, chắc không còn xa đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#059": {
+   "src": "Wait up!",
+   "dst": "Đợi với!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#060": {
+   "src": "Why'd you just leave me there? If we couldn't fight that thing off together, what made you think I could do it alone?",
+   "dst": "Sao cậu bỏ tôi lại đó? Nếu cả hai còn không đánh lại thứ đó, sao cậu nghĩ một mình tôi làm được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#061": {
+   "src": "I managed to get away, but... still. What if I couldn't? Would you have just left me for dead?",
+   "dst": "Tôi thoát được, nhưng... vẫn vậy. Lỡ tôi không thoát thì sao? Cậu sẽ bỏ mặc tôi chết à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#062": {
+   "src": "...Whatever. I'm alive, you're alive... that's probably good enough. Let's go find Admiral Aegis",
+   "dst": "...Thôi kệ. Tôi còn sống, cậu còn sống... chắc vậy là đủ. Đi tìm Đô đốc Aegis thôi",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#063": {
+   "src": "...Oh, {u}, you're awake! I was really worried there for a bit...",
+   "dst": "...Ồ, {u}, cậu tỉnh rồi! Lúc nãy tôi lo quá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#064": {
+   "src": "After you went down, I managed to hold my own long enough for some nearby soldiers to arrive and help. I can't thank Lieutenant Van enough.",
+   "dst": "Sau khi cậu gục, tôi cầm cự được đủ lâu để vài người lính gần đó tới giúp. Tôi không biết cảm ơn Trung úy Van sao cho đủ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#065": {
+   "src": "We, uh... brought you back here to rest up. Aledar's around here somewhere, I think.",
+   "dst": "Bọn tôi, ờ... đưa cậu về đây nghỉ ngơi. Hình như Aledar ở đâu quanh đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#066": {
+   "src": "Oh, I spoke to Admiral Aegis about the spider problem already. He said he wants to speak to you about it, too. He should be downstairs",
+   "dst": "À, tôi đã báo Đô đốc Aegis về vụ nhện rồi. Ông ấy bảo cũng muốn nói với cậu. Chắc ông ấy ở tầng dưới",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#067": {
+   "src": "...and that's how we managed to defeat that undead swarm, sir!",
+   "dst": "...và đó là cách bọn tôi đánh bại bầy xác sống đó, thưa ngài!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Mushroom Man#068": {
+   "src": "That's good to hear. Thank you for your work, Aledar. I'll speak to Lieutenant Van and see if he'd be willing to take you into his squad.",
+   "dst": "Nghe vậy thật tốt. Cảm ơn công sức của cậu, Aledar. Tôi sẽ nói với Trung úy Van xem cậu ấy có muốn nhận cậu vào đội không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#069": {
+   "src": "Thank you for the opportunity, sir. I won't let you down-... Wait, is that- Tasim and {u}?",
+   "dst": "Cảm ơn ngài đã cho cơ hội. Tôi sẽ không làm ngài thất vọng-... Khoan, đó là- Tasim và {u}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Mushroom Man#070": {
+   "src": "Aledar! We've finally made it to {p}. We've had... something of an adventure, getting here.",
+   "dst": "Aledar! Cuối cùng bọn tôi cũng tới {p}. Đường tới đây là... cả một chuyến phiêu lưu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#071": {
+   "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
+   "dst": "Một người dân của họ bị bắt đi ngay trước mắt bọn tôi. Thị trưởng Alvin cử bọn tôi tới xin quân đội {p} cứu viện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#072": {
+   "src": "Bad news, indeed. Very well, we will make preparations. For the time being, the two of you should rest and hone your skills. Captain Ragon here in the barracks would gladly offer some training.",
+   "dst": "Tin xấu thật. Được, ta sẽ chuẩn bị. Trước mắt, hai cậu nên nghỉ ngơi và rèn luyện kỹ năng. Đội trưởng Ragon ở doanh trại này sẵn lòng huấn luyện cho các cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#073": {
+   "src": "Thank you, sir. But is there anything we could do to actually help?",
+   "dst": "Cảm ơn ngài. Nhưng bọn tôi có thể thật sự giúp gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#074": {
+   "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I'd suggest you speak with him.",
+   "dst": "Hăng hái nhỉ! Để tôi nghĩ... Hình như Đội trưởng Fenor ở cổng tây đang cần giúp. Nếu muốn, các cậu nên nói chuyện với anh ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#075": {
+   "src": "Yes, yes. Well, I must be off. If the threat of Nivla's spiders is growing... we must prepare accordingly. I hope to hear of your future endeavors, all three of you.",
+   "dst": "Phải, phải. Thôi, tôi phải đi. Nếu mối đe dọa từ lũ nhện Nivla lớn dần... ta phải chuẩn bị tương xứng. Mong được nghe về những chiến công sau này của cả ba cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#076": {
+   "src": "...so, Captain, what do you think? We'll need to start training soldiers more quickly, but I hope that won't be a problem.",
+   "dst": "...vậy, Đội trưởng, anh nghĩ sao? Ta cần huấn luyện lính nhanh hơn, mong là không thành vấn đề.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#077": {
+   "src": "Of course, Admiral, I'll see what I can do.",
+   "dst": "Tất nhiên, thưa Đô đốc, tôi sẽ xem xét.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Captain Ragon",
+   "source": "wiki"
+  },
+  "Mushroom Man#078": {
+   "src": "Excellent. Now- ah, {u}. Good to see you're up and about again. You gave us quite a shock!",
+   "dst": "Tuyệt. Giờ- à, {u}. Mừng thấy cậu đi lại được rồi. Cậu làm bọn tôi hết hồn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#079": {
+   "src": "Van tells me that goliath the two of you faced was a dangerous foe. He was impressed you managed to damage it as much as you did, even if you ended up needing rescue.",
+   "dst": "Van bảo tôi con Goliath hai cậu đối mặt là kẻ thù nguy hiểm. Cậu ấy ấn tượng vì các cậu gây được nhiều sát thương đến thế, dù cuối cùng phải cần cứu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#080": {
+   "src": "Now, to business. We've already begun planning for our assault on the spiders, but we'll need more well-trained soldiers. Captain Ragon here should be able to help you hone your skills.",
+   "dst": "Giờ, vào việc. Bọn tôi đã bắt đầu lên kế hoạch tấn công lũ nhện, nhưng cần thêm lính được huấn luyện tốt. Đội trưởng Ragon đây có thể giúp cậu rèn luyện kỹ năng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#081": {
+   "src": "And if we wanted to help out, sir? I'm getting a little stir-crazy in here.",
+   "dst": "Còn nếu bọn tôi muốn giúp thì sao, thưa ngài? Ở đây mãi tôi bứt rứt lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#082": {
+   "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I suggest you speak with him.",
+   "dst": "Hăng hái nhỉ! Để tôi nghĩ... Hình như Đội trưởng Fenor ở cổng tây đang cần giúp. Nếu muốn, các cậu nên nói chuyện với anh ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#083": {
+   "src": "In addition, Lieutenant Van was highly impressed by your fight with the goliath! He told me to pass on that he'd appreciate your help in a raid he's planning on a nearby corrupted stronghold. I believe your friend Aledar was involved.",
+   "dst": "Ngoài ra, Trung úy Van rất ấn tượng với trận đánh với con Goliath! Cậu ấy nhắn sẽ rất cảm kích nếu cậu giúp cuộc tấn công cậu ấy đang chuẩn bị vào thành trì bị tha hóa gần đây. Hình như bạn cậu, Aledar, cũng tham gia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#084": {
+   "src": "With that, I must be off. We have many preparations to make, and the enemy never rests. I hope to hear of your future endeavors, both of you.",
+   "dst": "Vậy thôi, tôi phải đi. Còn nhiều việc phải chuẩn bị, và kẻ thù không bao giờ nghỉ. Mong được nghe về những chiến công sau này của cả hai cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
+   "source": "wiki"
+  },
+  "Mushroom Man#085": {
+   "src": "I am everywhere. M-mushroom soup, stew, soup m-makes me fast!",
+   "dst": "Tôi ở khắp nơi. S-súp nấm, món hầm, súp làm tôi n-nhanh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#086": {
+   "src": "...Oh. It's- you. Hello.",
+   "dst": "...Ồ. Là- cậu. Chào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Yahya",
+   "source": "captured"
+  }
+ }
+}

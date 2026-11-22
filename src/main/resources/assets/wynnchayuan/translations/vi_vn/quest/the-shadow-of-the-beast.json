@@ -1,0 +1,906 @@
+{
+ "_meta": {
+  "quest": "The Shadow of the Beast",
+  "count": 89,
+  "translated": 89,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Shadow of the Beast#000": {
+   "src": "See the blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
+   "dst": "Thấy máu trên đất không? Còn tươi đấy. Lần theo nó, xem nó dẫn tới đâu, và săn con quái thú trước khi nó làm điều khủng khiếp!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#001": {
+   "src": "The blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
+   "dst": "Vệt máu hẳn sẽ dẫn bạn tới chỗ con quái thú. Săn nó vì tất cả chúng tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#002": {
+   "src": "[+{~} Emerald Blocks]",
+   "dst": "[+{~} Khối ngọc lục bảo]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "[+{~} Emeralds]",
+    "file": "gui.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "The Shadow of the Beast#003": {
+   "src": "If you are done fixing my house, it looks like there're tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "Nếu đã sửa xong nhà tôi, có vẻ có dấu chân về phía đông...dấu chân lớn. Chúc may mắn lần theo, giữ an toàn nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#004": {
+   "src": "Looks like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "Có vẻ có dấu chân về phía đông...dấu chân lớn. Chúc may mắn lần theo, giữ an toàn nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#005": {
+   "src": "Aah, there's so many people hurt already, don't make it worse, please!",
+   "dst": "Aah, bao người bị thương rồi, đừng làm tệ thêm nữa, làm ơn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#006": {
+   "src": "Ugh, think Rileen! You have the herbs, what else goes into those poultices...",
+   "dst": "Ugh, nghĩ đi Rileen! Có thảo dược rồi, thuốc đắp còn cần gì nữa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#007": {
+   "src": "She just keeps worrying over what she can do. Seems like getting the oil might help her calm down.",
+   "dst": "Cô ấy cứ lo mình làm được gì. Có vẻ kiếm dầu cho cô ấy sẽ giúp cô ấy bình tĩnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#008": {
+   "src": "She's still freaking out. She mentioned needing [{~} Salmon Oil] for medicine, and a pond out back full of fish...",
+   "dst": "Cô ấy vẫn hoảng loạn. Cô ấy nhắc cần [{~} Salmon Oil] làm thuốc, và có cái ao phía sau đầy cá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#009": {
+   "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "dst": "Tôi nghĩ nó đã vào cái hang phía đông. Đi đi! Chặn thứ đó trước khi nó gây thêm thiệt hại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#010": {
+   "src": "Talk to Dereg in his house at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Dereg trong nhà ông ấy tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#011": {
+   "src": "Oh, you look tough. You must be one of those humans I keep hearing about, right? People talk about your kind all the time.",
+   "dst": "Ồ, trông bạn rắn rỏi đấy. Hẳn bạn là một trong mấy con người tôi hay nghe kể, nhỉ? Người ta nói về giống loài bạn suốt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#012": {
+   "src": "You know, that you're all scrappers. Tough as nails, and willing to kill all sorts of beasts, you know?",
+   "dst": "Bạn biết đấy, rằng các bạn đều là dân máu chiến. Cứng như thép, sẵn sàng giết đủ loại quái thú, hiểu không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#013": {
+   "src": "I think you know what I'm getting at. I saw some massive thing lumbering around the swamp one night! Tall as the trees, it was.",
+   "dst": "Tôi nghĩ bạn hiểu ý tôi. Một đêm tôi thấy một thứ khổng lồ lừ đừ đi quanh đầm lầy! Cao ngang ngọn cây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#014": {
+   "src": "I couldn't make out the details, but if its size was any indication, it could just step over the {p} walls and wreck the whole town!",
+   "dst": "Tôi không nhìn rõ chi tiết, nhưng với cỡ ấy, nó có thể bước qua tường {p} và san phẳng cả thị trấn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#015": {
+   "src": "Of course, there's so many scam artists around here trying to sell anti-monster underwear or whatever that no one believes me.",
+   "dst": "Tất nhiên, quanh đây lắm kẻ lừa đảo bán đồ lót chống quái vật hay gì đó, nên chẳng ai tin tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#016": {
+   "src": "So, that means it's up to you! Ehm, supposing that you're willing to help out, at least... The one thing I know for sure is that it was eating something.",
+   "dst": "Nên việc này trông cậy vào bạn! Ờm, giả sử bạn sẵn lòng giúp... Điều duy nhất tôi chắc là nó đang ăn gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#017": {
+   "src": "Follow the trail of blood left by the beast.",
+   "dst": "Lần theo vệt máu con quái thú để lại.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#018": {
+   "src": "Oh, this is such a mess! And my axe is busted, too...how am I going to get this fixed?!",
+   "dst": "Ôi, bừa bộn quá! Rìu của tôi cũng hỏng nữa...làm sao sửa được đây?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#019": {
+   "src": "I can't pay for- AAAH! H-Human! What do you want?! Not a good time!",
+   "dst": "Tôi không trả nổi- AAAH! C-Con người! Muốn gì?! Không phải lúc!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#020": {
+   "src": "Something destroyed my cow pen and wrecked up my entire farm!",
+   "dst": "Có thứ gì phá chuồng bò và làm tan hoang cả trang trại của tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#021": {
+   "src": "And they were solid, good-quality Willow, too...uff...",
+   "dst": "Mà toàn gỗ Willow chắc, hàng tốt nữa...uff...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#022": {
+   "src": "Wait, what? You're hunting the thing? Well, that's fine and dandy, but do you think you could help here first?",
+   "dst": "Khoan, gì? Bạn đang săn thứ đó? Hay lắm, nhưng bạn giúp tôi ở đây trước được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#023": {
+   "src": "I have an idea of where it went, so...you scratch my back, I scratch yours?",
+   "dst": "Tôi đoán được nó đi đâu, nên...có qua có lại nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#024": {
+   "src": "Okay, this can work, this can work! I have to figure out how to fix this, and some of my cows ran off in a panic.",
+   "dst": "Rồi, được đấy, được đấy! Tôi phải tính cách sửa chỗ này, mà mấy con bò hoảng sợ chạy mất rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#025": {
+   "src": "So, you can take care of them while I re-plan my fencing. Simple enough, right?",
+   "dst": "Nên bạn lo tụi nó trong lúc tôi tính lại hàng rào. Dễ ợt, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#026": {
+   "src": "Three of my cows ran off. Look around the farm for them. They were eating, so look for fallen wheat on the ground!",
+   "dst": "Ba con bò của tôi chạy mất rồi. Tìm quanh trang trại. Chúng đang ăn, nên tìm lúa mì rơi trên đất!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#027": {
+   "src": "Go on, hop to it! I'm waiting for you right here!",
+   "dst": "Đi đi, nhanh lên! Tôi chờ bạn ngay đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#028": {
+   "src": "Deal with the three escaped cows near the house and in the cave under the farm.",
+   "dst": "Xử lý ba con bò xổng chuồng gần nhà và trong hang dưới trang trại.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#029": {
+   "src": "Oh, back aleady? I haven't even finished my stuff, where are the cows?",
+   "dst": "Ồ, về rồi à? Tôi còn chưa xong việc, bò đâu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#030": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#031": {
+   "src": "...eheh. You. You're. This is a joke, right? We're having a chuckle?!",
+   "dst": "...hêhê. Bạn. Bạn đã. Đùa phải không? Ta đang cười chơi hả?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#032": {
+   "src": "WE'RE JOKING, RIGHT?! FOR THE LOVE OF ALL THAT'S HOLY TELL ME THIS IS A JOKE!",
+   "dst": "TA ĐANG ĐÙA, PHẢI KHÔNG?! VÌ MỌI ĐIỀU THIÊNG LIÊNG, NÓI ĐÂY LÀ ĐÙA ĐI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#033": {
+   "src": "WHAT IS THIS?! ARE YOU BRAINDEAD?!",
+   "dst": "CÁI GÌ THẾ NÀY?! ĐẦU BẠN RỖNG À?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#034": {
+   "src": "NO, WAIT, YOU'RE HUMAN, THAT'S THE PROBLEM! IDIOT THUGS, ALL OF YOU!",
+   "dst": "KHÔNG, KHOAN, BẠN LÀ CON NGƯỜI, VẤN ĐỀ LÀ Ở ĐÓ! LŨ CÔN ĐỒ NGU NGỐC, CẢ LŨ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#035": {
+   "src": "DID I NEED TO SPECIFY THAT I WANTED THEM BACK ALIVE? WAS THAT NOT OBVIOUS TO YOU?!",
+   "dst": "TÔI CÓ CẦN NÓI RÕ LÀ MUỐN CHÚNG CÒN SỐNG KHÔNG? CHUYỆN ĐÓ KHÔNG HIỂN NHIÊN À?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#036": {
+   "src": "Hff...haah...hrrgh...I...I can't bellevue...bellevue? Believe! I can't believe this!",
+   "dst": "Hff...haah...hrrgh...Tôi...tôi không thể tiên...tiên? Tin! Tôi không tin nổi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#037": {
+   "src": "Uff, settle down, Tolem, settle down...you can still salvage this...",
+   "dst": "Uff, bình tĩnh, Tolem, bình tĩnh...vẫn còn cứu vãn được...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#038": {
+   "src": "Alright, two things. Your new name is Idiot, and I'm changing our deal. You owe me [{~} Willow Planks].",
+   "dst": "Được rồi, hai việc. Tên mới của bạn là Đồ Ngốc, và tôi đổi thỏa thuận. Bạn nợ tôi [{~} Willow Planks].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#039": {
+   "src": "You're going to help me get at least one thing around here working. You get the wood, I'll keep looking over the fencing.",
+   "dst": "Bạn sẽ giúp tôi làm cho ít nhất một thứ ở đây chạy được. Bạn kiếm gỗ, tôi tiếp tục xem hàng rào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#040": {
+   "src": "Gather [{~} Willow Planks] for Tolem.",
+   "dst": "Thu thập [{~} Willow Planks] cho Tolem.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#041": {
+   "src": "Oh lovely. Idiot's back! Joy of joys. Willow planks, please.",
+   "dst": "Ồ tuyệt. Đồ Ngốc về rồi! Vui ơi là vui. Ván Willow, làm ơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#042": {
+   "src": "Good. Even if you've got murder on the mind constantly, you have decent woodcutting arms.",
+   "dst": "Tốt. Dù đầu óc lúc nào cũng chỉ nghĩ chuyện giết chóc, bạn có đôi tay đốn gỗ khá đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#043": {
+   "src": "I'll sell the remainder of these planks to try and recoup the money for my cows you mulched.",
+   "dst": "Tôi sẽ bán chỗ ván còn lại để gỡ lại tiền mấy con bò bạn băm vằm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#044": {
+   "src": "So go on, get out of here now. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
+   "dst": "Thôi đi đi, biến khỏi đây ngay. Làm gì có ích đi, lần theo dấu chân khổng lồ trên đất. Săn thứ CẦN bị săn ấy, thay vì gia súc!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#045": {
+   "src": "Go on, get out of here. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
+   "dst": "Đi đi, biến khỏi đây. Làm gì có ích đi, lần theo dấu chân khổng lồ trên đất. Săn thứ CẦN bị săn ấy, thay vì gia súc!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#046": {
+   "src": "Follow the footprints from Tolem's house at [-{~}, {~}, -{~}].",
+   "dst": "Lần theo dấu chân từ nhà Tolem tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#047": {
+   "src": "Oh, I'll never be able to fix this with my back in this state...",
+   "dst": "Ôi, với cái lưng thế này tôi chẳng bao giờ sửa nổi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 5",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#048": {
+   "src": "Talk to Kroac at [-{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Kroac tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#049": {
+   "src": "Oh, look at this...all my years of carpentry and my bad back does my poor house in.",
+   "dst": "Ôi, nhìn xem này...bao năm làm thợ mộc mà cái lưng đau lại hại căn nhà tội nghiệp của tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#050": {
+   "src": "What on earth could have done this?! It must be the biggest beast in the swamp!",
+   "dst": "Cái gì có thể làm thế này chứ?! Hẳn là con quái thú lớn nhất đầm lầy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#051": {
+   "src": "I was just sitting inside having some dinner, I hear some rumbling, and suddenly my house is falling apart!",
+   "dst": "Tôi đang ngồi trong nhà ăn tối, nghe tiếng ầm ầm, thế là nhà tôi bỗng đổ sập!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#052": {
+   "src": "You human folk are good with physical labor, I hear? Do you think you could help me out here?",
+   "dst": "Nghe nói con người các bạn giỏi việc tay chân? Bạn giúp tôi chút được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#053": {
+   "src": "There's a mine just over there. Think you can get [{~} Cobblestone] out of it?",
+   "dst": "Có một mỏ ngay đằng kia. Bạn lấy được [{~} Cobblestone] từ đó không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#054": {
+   "src": "I'll go find someone who's selling any spare wood for the roof...",
+   "dst": "Tôi sẽ đi tìm ai bán gỗ thừa để làm mái...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#055": {
+   "src": "Think you could help fix my house? You'll need [{~} Cobblestone] to do it.",
+   "dst": "Bạn giúp sửa nhà tôi được không? Bạn sẽ cần [{~} Cobblestone].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#056": {
+   "src": "Enter Kroac's mine and gather [{~} Cobblestone].",
+   "dst": "Vào mỏ của Kroac và thu thập [{~} Cobblestone].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#057": {
+   "src": "Did you get enough cobblestone? I found a guy down the street selling this top-quality Willow...",
+   "dst": "Bạn lấy đủ đá cuội chưa? Tôi tìm được một gã dưới phố bán gỗ Willow hảo hạng này...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#058": {
+   "src": "Good, perfect. That should be enough. Though, I do have one other thing to ask you, soldier.",
+   "dst": "Tốt, hoàn hảo. Thế chắc đủ. Nhưng tôi còn một việc muốn nhờ, binh sĩ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#059": {
+   "src": "My back's already screaming at me just from lugging the wood over here, there's no way I can climb up there and fix the roof like this.",
+   "dst": "Lưng tôi đã kêu trời chỉ vì khiêng gỗ tới đây, chẳng đời nào tôi trèo lên sửa mái nổi như thế này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#060": {
+   "src": "I can compensate you for the trouble, but d'you think you could do some patchwork for me with that cobble?",
+   "dst": "Tôi sẽ đền công cho bạn, nhưng bạn vá giúp tôi bằng chỗ đá cuội đó được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#061": {
+   "src": "Oh, you're a saint. Can't imagine why the guy was grumbling about humans... Just climb right on up the ladder!",
+   "dst": "Ôi, bạn đúng là thánh. Chẳng hiểu sao gã kia lại cằn nhằn về con người... Cứ trèo lên thang đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#062": {
+   "src": "Repair Kroac's house using the cobblestone from the mine.",
+   "dst": "Sửa nhà Kroac bằng đá cuội từ mỏ.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#063": {
+   "src": "I'm sorry, but your patchjob fell apart. You'll need something like {~} cobblestone to help fix this.",
+   "dst": "Xin lỗi, nhưng chỗ vá của bạn sập rồi. Bạn cần khoảng {~} đá cuội để sửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#064": {
+   "src": "That'll do just fine, kind soldier! You're a lifesaver, really, you are.",
+   "dst": "Thế là ổn rồi, binh sĩ tốt bụng! Bạn đúng là cứu tinh, thật đấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#065": {
+   "src": "Wait, you're going after the thing that did this? Really?! Fantastic! That's a load off my mind.",
+   "dst": "Khoan, bạn đi săn thứ đã làm chuyện này? Thật sao?! Tuyệt quá! Tôi nhẹ cả người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#066": {
+   "src": "Keep following the tracks of the beast.",
+   "dst": "Tiếp tục lần theo dấu vết con quái thú.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#067": {
+   "src": "EVERYONE, MOVE! THE BEAST IS ON A RAMPAGE!",
+   "dst": "MỌI NGƯỜI, CHẠY! QUÁI THÚ ĐANG NỔI ĐIÊN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#068": {
+   "src": "Aah, no! There were people in that house!",
+   "dst": "Aah, không! Trong nhà đó có người!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#069": {
+   "src": "Wah! H-Human! Get away, there's nothing you can help with here!",
+   "dst": "Oa! C-Con người! Tránh ra, ở đây chẳng có gì bạn giúp được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#070": {
+   "src": "All your type does is break and hurt! You have more in common with the giant there than any of us!",
+   "dst": "Giống bạn chỉ biết phá phách, gây thương tích! Bạn giống tên khổng lồ kia hơn bất kỳ ai trong chúng tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#071": {
+   "src": "We don't even have any medicine...",
+   "dst": "Chúng tôi còn chẳng có thuốc...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#072": {
+   "src": "Oh, right! Fish oil...but I don't have a rod, gah!",
+   "dst": "À phải! Dầu cá...mà tôi không có cần câu, gah!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#073": {
+   "src": "There's no way I can get [{~} Salmon Oil], even if that pond out back is teeming with fish...",
+   "dst": "Tôi không cách nào kiếm được [{~} Salmon Oil], dù cái ao phía sau đầy cá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#074": {
+   "src": "Gather [{~} Salmon Oil] for Rileen.",
+   "dst": "Thu thập [{~} Salmon Oil] cho Rileen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#075": {
+   "src": "No, there's no time to make a fishing spear- AAH! You're still here? What do you WANT?!",
+   "dst": "Không, không kịp làm xiên cá đâu- AAH! Bạn vẫn ở đây? Bạn MUỐN gì?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#076": {
+   "src": "W-wait, what's...is this... This is salmon oil! Ten bottles of it! You...you heard me talking?",
+   "dst": "K-khoan, cái...đây là... Đây là dầu cá hồi! Mười chai! Bạn...bạn nghe tôi nói à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#077": {
+   "src": "And you went out of your way to... What kind of a human are you? I've only ever heard horror stories about your kind.",
+   "dst": "Và bạn đã chịu khó... Bạn là kiểu con người gì vậy? Tôi chỉ toàn nghe chuyện kinh dị về giống loài bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#078": {
+   "src": "...maybe you're not so bad. I don't have anything that I can give you in return, but thank you, still.",
+   "dst": "...có lẽ bạn không tệ đến thế. Tôi chẳng có gì đền đáp, nhưng vẫn cảm ơn bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#079": {
+   "src": "Wait, you were chasing the giant? That's why you were here? That...that's amazing news!",
+   "dst": "Khoan, bạn đang đuổi theo tên khổng lồ? Vì thế bạn mới ở đây? Đó...đó là tin tuyệt vời!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#080": {
+   "src": "Find the cave of the beast by following the footprints behind Rileen's house.",
+   "dst": "Tìm hang của con quái thú bằng cách lần theo dấu chân sau nhà Rileen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#081": {
+   "src": "Kill the beast and return to Dereg with proof of its death at [-{~}, {~}, -{~}].",
+   "dst": "Giết con quái thú và mang bằng chứng về cho Dereg tại [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#082": {
+   "src": "You're back! Any luck hunting the thing down?",
+   "dst": "Bạn về rồi! Săn thứ đó có may mắn gì không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#083": {
+   "src": "What? You actually found the beast?! Heck of a hunting job, human!",
+   "dst": "Gì? Bạn tìm thấy con quái thú thật à?! Săn giỏi đấy, con người!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#084": {
+   "src": "You wouldn't be back here if you didn't manage to kill it...which means our problems are solved, right?",
+   "dst": "Bạn sẽ không quay lại đây nếu không giết được nó...nghĩa là rắc rối của ta đã xong, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#085": {
+   "src": "Heheh! That bone powder looks giant enough to me! Great job, bucko!",
+   "dst": "Hêhê! Bột xương đó trông đủ khổng lồ với tôi! Làm tốt lắm, anh bạn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#086": {
+   "src": "Y'know, come to think of it, I remember something that might be interesting to your sort.",
+   "dst": "Mà này, nghĩ lại thì, tôi nhớ ra một chuyện có thể khiến loại người như bạn hứng thú.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#087": {
+   "src": "The weapon merchant in {p} researches cryptids as a hobby, and that beast seemed one-of-a-kind to me.",
+   "dst": "Thương nhân vũ khí ở {p} nghiên cứu sinh vật bí ẩn như thú vui, và con quái thú đó có vẻ độc nhất vô nhị.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#088": {
+   "src": "You should show him that bone powder! He might have some good gear for you.",
+   "dst": "Bạn nên cho ông ấy xem bột xương đó! Biết đâu ông ấy có trang bị tốt cho bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  }
+ }
+}

@@ -1,0 +1,380 @@
+{
+ "_meta": {
+  "quest": "Stable Story",
+  "count": 37,
+  "translated": 37,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Stable Story#000": {
+   "src": "Hey! Get out of here! Scram! Shoo!",
+   "dst": "Này! Cút khỏi đây! Biến! Xùy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#001": {
+   "src": "Moo. Are you trying to run away, human? Moo. Only one of us can leave this place alive. Moo.",
+   "dst": "Ụm. Định bỏ chạy à, con người? Ụm. Chỉ một trong hai ta được sống mà rời khỏi đây. Ụm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#002": {
+   "src": "I see you don't have any grain on you. Here, take these [{~} Wheat Grains] and use them to feed your new buddy.",
+   "dst": "Thấy cậu chẳng mang hạt nào. Đây, cầm lấy [{~} Wheat Grains] mà cho bạn mới của cậu ăn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#003": {
+   "src": "I wish you luck in the horse training career, young friend! Make me and Betty proud!",
+   "dst": "Chúc cậu may mắn với nghề luyện ngựa, bạn trẻ! Làm tôi và Betty tự hào nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#004": {
+   "src": "Howdy! Lookin' to hitch a ride off to {p}? Well, lucky you! The wagon's been fixed up all nice and new!",
+   "dst": "Chào! Cần quá giang tới {p} hả? Cậu gặp may rồi! Xe ngựa vừa sửa xong, mới tinh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#005": {
+   "src": "Just hop on aboard, and I'll get you to {p} in a jiffy!",
+   "dst": "Cứ nhảy lên xe, tôi đưa cậu tới {p} trong nháy mắt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#006": {
+   "src": "Ain't far to {p} from here! We'll be there in a jiffy, just you wait.",
+   "dst": "{p} cách đây chẳng xa! Ta tới nơi trong nháy mắt, cứ chờ xem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#007": {
+   "src": "Usually, I'd be charging a high price for these horses- Not to be rude, but one you couldn't afford.",
+   "dst": "Bình thường tôi bán mấy con ngựa này giá cao lắm- Nói thẳng nhé, cao hơn mức cậu trả nổi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#008": {
+   "src": "So, let's cut a deal- They stole my stable key. If you can go to my barn in {p}...",
+   "dst": "Ta thỏa thuận nhé- Chúng trộm chìa khóa chuồng. Nếu cậu tới chuồng của tôi ở {p}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#009": {
+   "src": "And return that key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
+   "dst": "Và đem chìa khóa về cho tôi, tôi sẽ hào phóng tặng cậu một con ngựa. Vụ này còn hời hơn cậu tưởng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#010": {
+   "src": "Hm. Cows, huh? Ah- who knows!? Life is full of mysteries, huh?",
+   "dst": "Hừm. Bò à? Chà- ai mà biết!? Đời đầy bí ẩn, nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#011": {
+   "src": "Either way. As the great bovine above is my witness if I see the smallest bruise on Betty I will-",
+   "dst": "Thôi kệ. Có Bò Thánh trên cao chứng giám, tôi mà thấy Betty trầy xước chút nào là tôi sẽ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#012": {
+   "src": "Ah! I can't just hand you a horse without telling you how to care for that beautiful creature, can I?",
+   "dst": "À! Tôi đâu thể giao ngựa mà không dạy cậu cách chăm sinh vật xinh đẹp ấy, đúng không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#013": {
+   "src": "Those rich {p} folk have no respect for horses, let me tell you!",
+   "dst": "Đám nhà giàu {p} đó chẳng biết quý ngựa gì cả, tôi nói cậu nghe!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#014": {
+   "src": "Now! Right Click the Feeder and place your [Horse Saddle] in there.",
+   "dst": "Giờ! Nhấp chuột phải vào Máng ăn và đặt [Horse Saddle] của cậu vào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#015": {
+   "src": "Use the [{~} Wheat Grains] I gave you earlier to feed your new friend.",
+   "dst": "Dùng [{~} Wheat Grains] tôi đưa lúc nãy để cho bạn mới của cậu ăn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#016": {
+   "src": "Just Right Click the Feeder again.",
+   "dst": "Nhấp chuột phải vào Máng ăn lần nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#017": {
+   "src": "Horses are sensitive creatures, you see. They don't grow strong over night, they require patience and a good stable diet.",
+   "dst": "Ngựa là loài nhạy cảm, cậu biết đấy. Chúng không khỏe lên sau một đêm, chúng cần kiên nhẫn và bữa ăn ổn định.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#018": {
+   "src": "However, you also need to take them out on walks so they get some well needed exercise, otherwise they will never reach their full potential.",
+   "dst": "Nhưng cậu cũng phải dắt chúng đi dạo cho vận động, không thì chúng chẳng bao giờ phát huy hết tiềm năng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#019": {
+   "src": "I almost forgot! If you really want to master the art of a horse trainer you can breed two horses using the Feeder.",
+   "dst": "Suýt quên! Nếu thật muốn thành thạo nghề luyện ngựa, cậu có thể nhân giống hai con ngựa bằng Máng ăn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#020": {
+   "src": "Anyway! I wish you luck on your horse training career!",
+   "dst": "Dù sao thì! Chúc cậu may mắn với nghề luyện ngựa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#021": {
+   "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Enkser bên ngoài {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Stable Story#022": {
+   "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
+   "dst": "Cần tìm nhà thám hiểm khỏe mạnh! Tốt nhất là không bạn bè, không gia đình, nhưng tôi không kén!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#023": {
+   "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
+   "dst": "Tôi là lái buôn ngựa. Sống nhờ bán mấy em đẹp này cho nhà thám hiểm như cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#024": {
+   "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
+   "dst": "Tôi làm ở chuồng ngựa này, bán ngựa tôi nuôi ở {p} cho đám nhà giàu {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#025": {
+   "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
+   "dst": "Cho tới khi lũ gây rối đó cho nổ một đường hầm xuyên chuồng ngựa và lén dắt ngựa CỦA TÔI đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#026": {
+   "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
+   "dst": "Betty sẽ ở đó giúp cậu! Dù nó khỏe, cậu mà DÁM để chúng đụng vào nó thì biết tay!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#027": {
+   "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
+   "dst": "Tôi sẽ tự mình tới {p} để đảm bảo Betty an toàn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#028": {
+   "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
+   "dst": "Giờ thì lên đường đi. {p} nằm khá xa dọc theo {p} từ đây, về hướng đông.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#029": {
+   "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at [{~}, {~}, -{~}]",
+   "dst": "Mang [{~} Stable Key] từ đường hầm tại [{~}, {~}, -{~}] về cho Enkser",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Stable Story#030": {
+   "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
+   "dst": "Này, tìm được [{~} Stable Key] của tôi chưa? Nó phải ở đâu đó trong {p} phía đông.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#031": {
+   "src": "Looking for able-bodied adventurers, preferably with no friends or-",
+   "dst": "Cần tìm nhà thám hiểm khỏe mạnh, tốt nhất là không bạn bè hay-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#032": {
+   "src": "Hey, it's you! Got my barn key yet?",
+   "dst": "Này, cậu đây rồi! Có chìa khóa chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#033": {
+   "src": "Ah, god bless. And I presume Betty did all the work while you just- lounged around.",
+   "dst": "À, tạ ơn trời. Và tôi đoán Betty làm hết việc trong khi cậu chỉ- nằm ườn ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "wiki"
+  },
+  "Stable Story#034": {
+   "src": "Ah, bless. And I presume Betty did all the work while you just- lounged around.",
+   "dst": "Ôi, thương ghê. Và tôi đoán Betty làm hết việc trong khi cậu chỉ- nằm ườn ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "captured"
+  },
+  "Stable Story#035": {
+   "src": "What were those cows...?",
+   "dst": "Mấy con bò đó là gì vậy...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#036": {
+   "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
+   "dst": "Thôi bỏ qua chuyện đó. Ngựa tôi đã hứa thì ngựa cậu sẽ có. Cảm ơn cậu nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
+   "source": "wiki"
+  }
+ }
+}

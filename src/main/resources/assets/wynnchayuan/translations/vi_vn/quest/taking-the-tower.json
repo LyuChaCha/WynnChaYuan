@@ -1,0 +1,540 @@
+{
+ "_meta": {
+  "quest": "Taking the Tower",
+  "count": 53,
+  "translated": 53,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Taking the Tower#000": {
+   "src": "You look like an adventurer in need of some work, pal. I have need of your services, but you'll need to be level {~} at least.",
+   "dst": "Trông cậu như nhà thám hiểm đang cần việc đấy, anh bạn. Tôi cần cậu giúp, nhưng cậu phải đạt ít nhất cấp {~}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#001": {
+   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
+   "dst": "Tasim kể hết cho tôi về đám quân bị tha hóa mà hai người đã hạ. Ước gì tôi có mặt để giúp!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#002": {
+   "src": "We did it! Let's get back to Lieutenant Van and tell him the news.",
+   "dst": "Ta làm được rồi! Quay về báo tin cho Trung úy Van thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#003": {
+   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
+   "dst": "Ồ, khoan. Ta phải ghé một chỗ trước đã. Theo tôi tới Máy nâng cấp vật phẩm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#004": {
+   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
+   "dst": "Nghe nói tên trùm trên đỉnh tháp yếu trước sát thương  Nước!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#005": {
+   "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
+   "dst": "Bạn có thể gắn nhiều loại bột nguyên tố lên vũ khí, giúp chúng gây ra những loại sát thương trước đây không gây được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#006": {
+   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "Lần này, bạn có thể gắn bột  Nước để vũ khí hiệu quả hơn trước kẻ địch bị tha hóa ở tòa tháp!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#007": {
+   "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
+   "dst": "...Ý tôi là- đây. Lấy bột nguyên tố này, cầm nó trên tay rồi nhấp chuột phải vào vũ khí. Xong thì báo tôi nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#008": {
+   "src": "[+{~} Water Powder I]",
+   "dst": "[+{~} Water Powder I]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#009": {
+   "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
+   "dst": "Thấy Máy nâng cấp vật phẩm này chứ? Nó dùng để nâng bột lên bậc cao hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#010": {
+   "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
+   "dst": "Nó cũng gỡ được bột khỏi vật phẩm nếu bạn cần- đừng lo, bạn sẽ nhận lại bột!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#011": {
+   "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
+   "dst": "...Dù sao thì, Trung úy Van và mọi người ở cạnh cụm nhà trong {p}- chắc bạn đã thấy trên đường tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#012": {
+   "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
+   "dst": "Ai làm cũng được, miễn là xong việc. Nếu thấy cơ hội- cứ làm tới!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#013": {
+   "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
+   "dst": "Nếu phải rút lui, hoặc lũ bị tha hóa đã bị hạ, tập hợp lại đây! Rõ chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#014": {
+   "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
+   "dst": "Này, {u}, bạn đây rồi! Đi nào, leo lên tòa tháp đó thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#015": {
+   "src": "They have, lieutenant! {u} and I reached the top and defeated the corrupted.",
+   "dst": "Đúng vậy, trung úy! {u} và tôi đã lên tới đỉnh và đánh bại kẻ bị tha hóa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#016": {
+   "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Aledar ở doanh trại {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#017": {
+   "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
+   "dst": "Ồ, {u}! Chào! Vui được gặp lại bạn và Tasim. Mong là hai người không phiêu lưu nhiều quá khi thiếu tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#018": {
+   "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
+   "dst": "Tasim đi tới phòng tập rồi, nếu bạn đang tìm cậu ấy. Cậu ấy lao vào luyện tập ngay, mà... thế là tốt! Ta đều phải mạnh hơn để bảo vệ tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#019": {
+   "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
+   "dst": "...Ồ! Bạn tới đúng lúc- tôi sắp đi nhập đội của Trung úy Van để chiếm lại một tòa tháp bị lũ bị tha hóa chiếm. Bạn cũng nên đi cùng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#020": {
+   "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
+   "dst": "Sao? Bạn nghĩ sao? Muốn có chút kinh nghiệm thực chiến không? Chắc không lâu đâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#021": {
+   "src": "Sure, I'll come with you.",
+   "dst": "Được, tôi đi cùng bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#022": {
+   "src": "Perfect. Well, no time better than the present! Let's get going.",
+   "dst": "Tuyệt. Chẳng lúc nào tốt hơn bây giờ! Lên đường thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#023": {
+   "src": "I've got something to do her",
+   "dst": "Tôi có việc cần làm ở đây",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#024": {
+   "src": "Oh. Alright.",
+   "dst": "Ồ. Được thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#025": {
+   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
+   "dst": "Thôi, tôi còn ở đây một lúc. Nếu đổi ý thì báo tôi nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#026": {
+   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "dst": "Này, bạn quay lại rồi! Đổi ý chưa? Muốn cùng đánh chiếm một tòa tháp bị tha hóa không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#027": {
+   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
+   "dst": "Theo Aledar tới Bậc thầy bột tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#028": {
+   "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
+   "dst": "Được rồi, nghe này. Tôi được kể một điều về tòa tháp ta sắp tấn công mà ta có thể chuẩn bị trước!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#029": {
+   "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
+   "dst": "Nghe nói tên trùm trên đỉnh tháp yếu trước sát thương! Vì thế ta mới tới chỗ Bậc thầy bột.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#030": {
+   "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
+   "dst": "Tôi, ờ... không nhớ nguyên bài giảng về nguyên tố. Muốn biết thêm thì bạn phải hỏi Đội trưởng Ragon ở doanh trại. Ông ấy có hẳn một khóa học về nó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#031": {
+   "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
+   "dst": "...Ý tôi là- đây. Lấy bột nguyên tố này và nói chuyện với Bậc thầy bột để gắn nó. Xong thì báo tôi nhé!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#032": {
+   "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
+   "dst": "Gắn Bột Nước vào vũ khí, rồi báo cho Aledar tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#033": {
+   "src": "Got the powder on your weapon? Good, that means we're ready.",
+   "dst": "Đã gắn bột vào vũ khí chưa? Tốt, vậy là ta sẵn sàng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#034": {
+   "src": "Lead the way! I'll be right behind you.",
+   "dst": "Dẫn đường đi! Tôi theo ngay sau bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#035": {
+   "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
+   "dst": "Gặp đội của Trung úy Van gần Tháp Cuồng Nộ tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#036": {
+   "src": "Ah, Aledar! Good to see you here. Who's this with you?",
+   "dst": "À, Aledar! Mừng gặp cậu ở đây. Ai đi cùng cậu thế?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#037": {
+   "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
+   "dst": "Đây là {u}, thưa ngài. Bạn ấy tới để cùng tấn công, nếu ngài cho phép.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#038": {
+   "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
+   "dst": "Hừm... Sao lại không chứ. Càng đông càng vui, tôi vẫn bảo thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#039": {
+   "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
+   "dst": "Nếu đủ cả rồi, ta bắt đầu. Kế hoạch thế này! Ta phải đẩy lùi một phần lực lượng dưới chân tháp, để có người leo lên đỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#040": {
+   "src": "Yes, sir!",
+   "dst": "Rõ ạ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#041": {
+   "src": "Good. Alright soldiers, let's take back that tower!",
+   "dst": "Tốt. Nào các chiến sĩ, chiếm lại tòa tháp đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#042": {
+   "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
+   "dst": "Đi đi, tiến tới tòa tháp! Nếu may mắn, ta sẽ quét sạch lũ bị tha hóa đã chiếm nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#043": {
+   "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
+   "dst": "Tấn công Tháp Cuồng Nộ tại [{~}, {~}, -{~}] và đánh bại con quái trên đỉnh.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#044": {
+   "src": "Alright. It's time to take on the tower! We've got this, {u}.",
+   "dst": "Được rồi. Tới lúc chiếm tháp! Ta làm được mà, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#045": {
+   "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
+   "dst": "Báo cáo thành công với Trung úy Van tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#046": {
+   "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
+   "dst": "Ta làm được rồi, ta đã giết kẻ bị tha hóa! Đi nào, về báo tin cho Trung úy Van!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#047": {
+   "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
+   "dst": "Có vẻ mọi người đã về. Sao? Lực lượng bị tha hóa đã bị tiêu diệt chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#048": {
+   "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
+   "dst": "Làm tốt lắm, các chiến sĩ! Thêm một chiến thắng lớn cho quân đội {p}. Thủ lĩnh đã chết, dọn nốt phần còn lại chắc không khó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#049": {
+   "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
+   "dst": "Tôi sẽ báo Đô đốc về chiến thắng hôm nay của các cậu. Và- đây, chút tiền công cho các cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#050": {
+   "src": "The two of you have a promising future. I look forward to serving with you in the future!",
+   "dst": "Hai cậu có tương lai đầy hứa hẹn. Mong được sát cánh cùng các cậu sau này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#051": {
+   "src": "Talking Lieutenant Van",
+   "dst": "Đang nói chuyện với Trung úy Van",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#052": {
+   "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
+   "dst": "Bọn tôi sẽ lo nốt đám còn sót lại, đừng lo. Cảm ơn công sức hôm nay của cậu, chiến sĩ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  }
+ }
+}

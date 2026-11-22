@@ -1,0 +1,2604 @@
+{
+ "_meta": {
+  "quest": "The Hero of Gavel",
+  "count": 259,
+  "translated": 259,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Hero of Gavel#000": {
+   "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
+   "dst": "Tìm hiểu chuyện gì xảy ra ở trung tâm {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#001": {
+   "src": "Hmm.. I might have just enough for one tier {~}... Why are you standing there?",
+   "dst": "Hừm.. Chắc đủ tiền cho một món bậc {~}... Sao cậu đứng đó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#002": {
+   "src": "What all these people are here for? Don't tell me you don't know about the Siegfried contest.",
+   "dst": "Đám đông này tới làm gì á? Đừng nói cậu không biết cuộc thi Siegfried nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#003": {
+   "src": "Are you SERIOUS?! It's the biggest thing happening since the last contest last month!",
+   "dst": "Cậu NÓI THẬT à?! Đó là sự kiện lớn nhất kể từ cuộc thi tháng trước!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#004": {
+   "src": "Whoever wins the big scavenger hunt gets to go on an adventure with Siegfried himself.",
+   "dst": "Ai thắng cuộc săn kho báu lớn sẽ được phiêu lưu cùng chính Siegfried.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#005": {
+   "src": "This year, I think I even have a good chance to win!",
+   "dst": "Năm nay tôi nghĩ mình còn có cơ hội thắng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#006": {
+   "src": "Huh? Oh, you want this ticket? No way, this one's mine. Go get your own at that little shop.",
+   "dst": "Hả? Ồ, muốn vé này à? Không đời nào, của tôi. Ra cửa hàng nhỏ kia mà mua.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#007": {
+   "src": "Hey, that's the mug I dropped!",
+   "dst": "Này, cốc tôi làm rơi mà!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 1",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#008": {
+   "src": "No, this is mine.",
+   "dst": "Không, của tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#009": {
+   "src": "THIEF! GIVE IT BACK!",
+   "dst": "ĂN TRỘM! TRẢ ĐÂY!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 1",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#010": {
+   "src": "Ow! Fine, take it!",
+   "dst": "Ui! Được, cầm đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#011": {
+   "src": "How can I win an adventure now?",
+   "dst": "Giờ sao thắng nổi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#012": {
+   "src": "Get a Siegfried Scavenger Hunt ticket in the center of {p} at [{~}, {~}, -{~}]",
+   "dst": "Lấy vé Săn kho báu Siegfried ở trung tâm {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#013": {
+   "src": "Tickets for sale! You! Would you like to join the great Siegfried Scavenger Hunt?",
+   "dst": "Bán vé đây! Cậu kia! Muốn tham gia Cuộc săn kho báu Siegfried không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#014": {
+   "src": "Entry is completely free, and if you win, you'll get to adventure with Siegfried himself!",
+   "dst": "Tham gia hoàn toàn miễn phí, thắng thì được phiêu lưu cùng chính Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#015": {
+   "src": "You're interested? Great! Here, it's all quite simple.",
+   "dst": "Hứng thú à? Tuyệt! Đây, đơn giản lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#016": {
+   "src": "The ticket shows what items you need to find. It's split into three tiers.",
+   "dst": "Vé ghi những món cần tìm. Chia làm ba bậc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#017": {
+   "src": "The first two, they're for the common folk. But if you REALLY want to win, you need a tier {~} item.",
+   "dst": "Hai bậc đầu dành cho dân thường. Nhưng nếu THẬT SỰ muốn thắng, cần món bậc {~}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#018": {
+   "src": "Heh, you can even bring all three and you're practically guaranteed to win!",
+   "dst": "Hê, mang cả ba thì gần như chắc thắng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#019": {
+   "src": "Here, take the ticket. Come back with your items and you'll be entered into the draw.",
+   "dst": "Đây, cầm vé. Mang đồ về đây là được vào bốc thăm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#020": {
+   "src": "Bring all three limited Siegfried Collection items to the merchant in {p} Center at [{~}, {~}, -{~}]",
+   "dst": "Mang cả ba món Bộ sưu tập Siegfried giới hạn tới thương nhân ở trung tâm {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#021": {
+   "src": "You’re back! Let me see your items.",
+   "dst": "Về rồi! Cho xem đồ nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#022": {
+   "src": "This… Wow, all of them? Let me take a look at these…",
+   "dst": "Cái này… Chà, đủ cả ba? Để xem…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#023": {
+   "src": "They’re all authentic! You must be ri-I mean, you must be a huge fan of Siegfried!",
+   "dst": "Đều là hàng thật! Cậu hẳn là gi- à, hẳn là fan cuồng của Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#025": {
+   "src": "Okay, I’ve entered you into the draw. The event’s taking place at the Golden Eagle Theatre.",
+   "dst": "Xong, tôi cho cậu vào bốc thăm rồi. Sự kiện tổ chức ở Golden Eagle Theatre.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#026": {
+   "src": "Just turn toward the bank and follow the signs, the winner will be selected when everyone gets there.",
+   "dst": "Cứ rẽ về phía ngân hàng rồi theo biển chỉ, đủ người là sẽ chọn người thắng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#027": {
+   "src": "Go to the Golden Eagle Theatre behind the Bank in {p} at [{~}, {~}, -{~}] for the winners to be announced.",
+   "dst": "Tới Golden Eagle Theatre sau Ngân hàng ở {p} tại [{~}, {~}, -{~}] để nghe công bố người thắng.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#028": {
+   "src": "Welcome, welcome everyone! We’re only waiting on a few more people before we begin.",
+   "dst": "Chào mừng, chào mừng mọi người! Chỉ đợi thêm vài người nữa là bắt đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#029": {
+   "src": "Ah, there we go! I believe we’re all set now.",
+   "dst": "À, đây rồi! Giờ đủ cả rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#030": {
+   "src": "Welcome everyone, to the monthly SIEGFRIED FESTIVAL SCAVENGER HUNT!",
+   "dst": "Chào mừng tới CUỘC SĂN KHO BÁU LỄ HỘI SIEGFRIED hằng tháng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#031": {
+   "src": "Today, we are once again celebrating the heroic deeds of Siegfried!",
+   "dst": "Hôm nay, ta lại tôn vinh chiến công anh hùng của Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#032": {
+   "src": "All of you, my fellow gavellians, have adventured far and wide to gather rare items across the province.",
+   "dst": "Các bạn, những người con Gavel, đã đi khắp nơi gom đồ hiếm trên toàn tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#033": {
+   "src": "And yet, I cannot announce the winner…",
+   "dst": "Thế nhưng, tôi không thể công bố…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#034": {
+   "src": "BECAUSE SIEGFRIED WILL!",
+   "dst": "VÌ SIEGFRIED SẼ LÀM!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#035": {
+   "src": "SIEGFRIED!!",
+   "dst": "SIEGFRIED!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#036": {
+   "src": "It's SIEGFRIED!",
+   "dst": "Là SIEGFRIED!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#037": {
+   "src": "It's him!",
+   "dst": "Là anh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#038": {
+   "src": "SIEGFRIED PICK MEEE!",
+   "dst": "SIEGFRIED CHỌN EMMM!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#039": {
+   "src": "SIEEEGGFRIEED!",
+   "dst": "SIEEEGGFRIEED!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#040": {
+   "src": "Stay back!",
+   "dst": "Lùi lại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Agent",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#042": {
+   "src": "Hello, Citizens of Gavel!",
+   "dst": "Chào dân Gavel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#043": {
+   "src": "Thank you all for participating in this fantastic scavenger hunt around Gavel! Siegfried: The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "Cảm ơn mọi người đã tham gia cuộc săn kho báu tuyệt vời khắp Gavel! Siegfried: Người thắng sẽ có vinh dự cùng ta tham gia một cuộc phiêu lưu có một không hai, hoàn toàn thật!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#044": {
+   "src": "Now, without further ado: I shall announce the winner!",
+   "dst": "Giờ, không dài dòng nữa: ta xin công bố người thắng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#045": {
+   "src": "And the winner is…",
+   "dst": "Và người thắng là…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#046": {
+   "src": "Finally!",
+   "dst": "Cuối cùng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#047": {
+   "src": "I better win, I bought his mug!",
+   "dst": "Phải thắng chứ, mua cốc rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#048": {
+   "src": "Maybe I'll win this time?",
+   "dst": "Lần này mình thắng chăng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#049": {
+   "src": "{u}!! Congratulations!",
+   "dst": "{u}!! Chúc mừng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#050": {
+   "src": "THE HUMAN?!",
+   "dst": "CON NGƯỜI?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#051": {
+   "src": "{u}, please head to the backstage area to my right for your adventure. Thank you everyone!!",
+   "dst": "{u}, mời tới hậu trường bên phải ta để bắt đầu phiêu lưu. Cảm ơn mọi người!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#052": {
+   "src": "Meet Siegfried backstage in the Golden Eagle Theatre to go on your adventure!",
+   "dst": "Gặp Siegfried ở hậu trường Golden Eagle Theatre để đi phiêu lưu!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#053": {
+   "src": "Welcome {u}! Congratulations on winning the scavenger hunt!",
+   "dst": "Chào {u}! Chúc mừng cậu thắng cuộc săn kho báu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#054": {
+   "src": "Today, you’ll be going with me on one of my glorious adventures.",
+   "dst": "Hôm nay cậu sẽ cùng ta đi một chuyến phiêu lưu vinh quang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#055": {
+   "src": "And to get there, we’ll ride in the great Siegfried Airship!",
+   "dst": "Và để tới đó, ta sẽ đi Phi thuyền Siegfried vĩ đại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#056": {
+   "src": "It's up at the airship docks - I'll teleport us there!",
+   "dst": "Nó ở bến phi thuyền - ta sẽ dịch chuyển tới đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#057": {
+   "src": "magical magicky magic magicspell, Teleport!",
+   "dst": "phép phép phép phép thần chú, Dịch chuyển!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#058": {
+   "src": "TELEPORT!",
+   "dst": "BIẾN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#059": {
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~}, -{~}]",
+   "dst": "Đi cùng Siegfried trên phi thuyền ở bến phi thuyền {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#060": {
+   "src": "Here, follow me onto the airship!",
+   "dst": "Đây, theo ta lên phi thuyền!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#061": {
+   "src": "And away we go!",
+   "dst": "Ta đi thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#062": {
+   "src": "Impressed by my piloting skills? Dodging these islands isn’t a challenge at all for the mighty Siegfried!",
+   "dst": "Ấn tượng với tài lái của ta chứ? Né mấy hòn đảo này chẳng là gì với Siegfried hùng mạnh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#063": {
+   "src": "I rode an airship much like this one when I saved {p} from the dragon.",
+   "dst": "Ta lái chiếc phi thuyền như thế này khi cứu {p} khỏi con rồng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#064": {
+   "src": "Right now we’re heading to a cave on the far east of the region.",
+   "dst": "Giờ ta đang tới một hang động ở cực đông vùng này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#065": {
+   "src": "We’ll have to navigate its treacherous corridors and defeat terrible beasts to get to the treasure at the end.",
+   "dst": "Ta phải vượt qua những hành lang hiểm trở, hạ lũ quái thú đáng sợ để tới kho báu cuối hang.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#066": {
+   "src": "Why don’t you go get my map from the upper level of the airship, and we’ll get ready for our adventure.",
+   "dst": "Cậu lên tầng trên phi thuyền lấy bản đồ cho ta nhé, rồi ta chuẩn bị cho chuyến phiêu lưu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#067": {
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "Còn bao l- Ồ, cậu mang bản đồ rồi! Cảm ơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#068": {
+   "src": "We’ll need to use this map to navigate the dangerous cave we’re going to.",
+   "dst": "Ta cần bản đồ này để đi trong cái hang nguy hiểm sắp tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#069": {
+   "src": "How did I get this? Well-er- I always prepare before my adventures!",
+   "dst": "Sao ta có nó? À-ờ- ta luôn chuẩn bị trước mỗi chuyến phiêu lưu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#070": {
+   "src": "Anyway, we're about to land now - be careful not to fall off!",
+   "dst": "Dù sao, sắp hạ cánh rồi - cẩn thận đừng ngã!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#071": {
+   "src": "Enter the perilous cave on the eastern edge of {p} with Siegfried at [{~}, {~}, -{~}]",
+   "dst": "Cùng Siegfried vào hang hiểm trở ở rìa đông {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#072": {
+   "src": "Here we are, the great Cave of Treasure-Hoarding Evil Creatures!",
+   "dst": "Tới rồi, Hang Ác Thú Giữ Kho Báu vĩ đại!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#073": {
+   "src": "Speak to me when you’re fully prepared for this dangerous adventure.",
+   "dst": "Khi nào sẵn sàng cho chuyến phiêu lưu nguy hiểm thì nói với ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#074": {
+   "src": "This cave is exceedingly dangerous, so make sure to follow my instructions.",
+   "dst": "Hang này cực kỳ nguy hiểm, nên hãy làm theo chỉ dẫn của ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#075": {
+   "src": "I’ve got decades of experience bravely adventuring in these caves, so I know what I’m doing.",
+   "dst": "Ta đã dũng cảm phiêu lưu trong những hang này hàng chục năm, nên ta biết mình làm gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#076": {
+   "src": "Onwards! {u}, stay right behind me!",
+   "dst": "Tiến lên! {u}, theo sát ta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#077": {
+   "src": "Follow Siegfried through the cave on the eastern edge of {p} at [{~}, {~}, -{~}]",
+   "dst": "Theo Siegfried đi qua hang ở rìa đông {p} tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#078": {
+   "src": "You sure took your time getting here! No matter.",
+   "dst": "Cậu tới chậm thật đấy! Không sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#079": {
+   "src": "I adventure in caves such as these often to get rid of the evil beasts dwelling within.",
+   "dst": "Ta hay phiêu lưu trong những hang thế này để diệt lũ quái thú ác ở trong.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#080": {
+   "src": "If it wasn’t for me defeating them before they could even--",
+   "dst": "Nếu không nhờ ta hạ chúng trước khi chúng kịp--",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#081": {
+   "src": "Woah, stop! This might look like a harmless decoration, but it’s a trap!",
+   "dst": "Ối, dừng! Trông như đồ trang trí vô hại, nhưng là bẫy đấy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#082": {
+   "src": "Stay behind me, I'll open it with my magical spell. open!",
+   "dst": "Đứng sau ta, ta sẽ mở bằng phép thuật. mở ra!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#083": {
+   "src": "Aha! I’ll protect you from the guardian, you deal with the rat!",
+   "dst": "Aha! Ta bảo vệ cậu khỏi tên canh gác, cậu lo con chuột!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#084": {
+   "src": "Take THIS!",
+   "dst": "Đỡ NÀY!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#085": {
+   "src": "Ow- I mean, hah! That was easier than swatting a fly for the mighty Siegfried!",
+   "dst": "Ui- à, ha! Dễ hơn đập ruồi với Siegfried hùng mạnh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#086": {
+   "src": "Seems like we’re done here! That must have been a very difficult fight for you.",
+   "dst": "Có vẻ xong ở đây rồi! Hẳn đó là trận rất khó với cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#087": {
+   "src": "The caves I adventure in are filled with terrifying beasts similar to those.",
+   "dst": "Hang ta phiêu lưu đầy quái thú đáng sợ giống thế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#088": {
+   "src": "WAIT! Don’t move, that boulder is about to fall!",
+   "dst": "KHOAN! Đứng yên, tảng đá kia sắp rơi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#089": {
+   "src": "Wow, that was close! Of course, I saw that coming and had no risk at all.",
+   "dst": "Chà, suýt nữa! Tất nhiên ta đã lường trước, chẳng có rủi ro gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#090": {
+   "src": "You might say that we can’t go further, as it’s blocking our way. But I can fix that!",
+   "dst": "Cậu sẽ nghĩ ta không đi tiếp được vì nó chặn đường. Nhưng ta xử được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#091": {
+   "src": "And no more boulder! Only one as powerful as I can do that.",
+   "dst": "Hết tảng đá! Chỉ kẻ mạnh như ta mới làm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#092": {
+   "src": "All we must do now is cross a perilous bridge over the Endless Chasm.",
+   "dst": "Giờ chỉ cần qua một cây cầu hiểm trở bắc qua Endless Chasm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#093": {
+   "src": "Aa, why did- Woah, careful! It looks like the bridge fell.",
+   "dst": "Ơ, sao lại- Ối, cẩn thận! Hình như cầu sập rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#094": {
+   "src": "But this is not such an obstacle as you might think, for I can, uh, jump over this chasm!",
+   "dst": "Nhưng đây không phải trở ngại như cậu nghĩ, vì ta có thể, ờ, nhảy qua vực!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#095": {
+   "src": "Here I go!",
+   "dst": "Đi đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#096": {
+   "src": "WAIT!",
+   "dst": "ĐỢI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#097": {
+   "src": "The spell--",
+   "dst": "Phép--",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#098": {
+   "src": "AAAAAAAAAAAAAH!",
+   "dst": "AAAAAAAAAAAAAH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#099": {
+   "src": "Jump after Siegfried into the pit at the end of the cave.",
+   "dst": "Nhảy theo Siegfried xuống hố cuối hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#100": {
+   "src": "Find a way to wake Siegfried.",
+   "dst": "Tìm cách đánh thức Siegfried.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#101": {
+   "src": "AAAAAAGH!!",
+   "dst": "AAAAAAAA!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#102": {
+   "src": "Aaaaggggh my LEGS MY LEGS AAAGGH SO COLD!",
+   "dst": "Aaaaaa CHÂN TÔI CHÂN TÔI AAAA LẠNH QUÁ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#103": {
+   "src": "SO COLD so PAINFUL…",
+   "dst": "LẠNH QUÁ ĐAU QUÁ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#104": {
+   "src": "Why couldn’t I THINK when I signed that STUPID CONTRACT that I’d end up here!?",
+   "dst": "Sao lúc ký cái HỢP ĐỒNG NGU NGỐC đó tôi KHÔNG NGHĨ sẽ kết thúc ở đây!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#105": {
+   "src": "…Well, this is it.",
+   "dst": "…Thôi, hết rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#106": {
+   "src": "They aren’t gonna come rescue us, you know. We’re on our own.",
+   "dst": "Họ không tới cứu đâu, biết không. Ta tự lo thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#107": {
+   "src": "Why are you so calm? DON’T YOU SEE?!",
+   "dst": "Sao bình tĩnh thế? KHÔNG THẤY À?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#108": {
+   "src": "WE'RE ON OUR OWN! This is REAL now! No coming back after 'dying', no more obvious traps, no more Siegfried! If I die here, I DIE! No coming back!",
+   "dst": "TA PHẢI TỰ LO! Giờ là THẬT! Không có 'chết' rồi sống lại, không bẫy lộ liễu, không Siegfried! Chết ở đây là CHẾT! Hết đường về!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#109": {
+   "src": "I.. I can’t do this. We’ll just starve here, in this cave… where nobody will ever find our bodies.",
+   "dst": "Tôi.. Tôi không làm nổi. Ta sẽ chết đói ở đây, trong hang này… nơi chẳng ai tìm thấy xác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#110": {
+   "src": "Stop looking at me! You figure out how to get us out of here, I’m just a worthless actor! Tell me if you find anything, I- I need a moment alone.",
+   "dst": "Đừng nhìn tôi! Cậu tự tìm đường ra đi, tôi chỉ là diễn viên vô dụng! Tìm được gì thì bảo, t- tôi cần ở một mình.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#111": {
+   "src": "You found something? Ok, I'll.. follow you then.",
+   "dst": "Cậu tìm được gì à? Được, tôi.. đi theo cậu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#112": {
+   "src": "WHAT WAS THAT SOUND?! A- are you sure we should go into there?",
+   "dst": "TIẾNG GÌ THẾ?! C- cậu chắc ta nên vào đó không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#113": {
+   "src": "MY ARM! IT HIT MY ARM!",
+   "dst": "TAY TÔI! NÓ ĐÁNH TAY!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#114": {
+   "src": "… I think I can manage.. OW!",
+   "dst": "… Chắc tôi chịu được.. ÁI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#115": {
+   "src": "Venture deeper into the cave with Siegfried.",
+   "dst": "Cùng Siegfried đi sâu hơn vào hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#116": {
+   "src": "You.. You got us out of there!",
+   "dst": "Cậu.. Cậu đưa ta ra được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#117": {
+   "src": "I didn’t think we’d ever find a way out of there…",
+   "dst": "Tôi chưa từng nghĩ ta sẽ tìm được lối ra…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#118": {
+   "src": "… Well, I guess we should keep going. M- Maybe there’s a way out?",
+   "dst": "… Chà, chắc phải đi tiếp. C- có khi có lối ra?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#119": {
+   "src": "L- Look! There’s plants and light up ahead! A WAY OUT!",
+   "dst": "N- Nhìn kìa! Phía trước có cây và ánh sáng! LỐI RA!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#120": {
+   "src": "Come on, follow me!",
+   "dst": "Nào, theo tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#121": {
+   "src": "AAAH!",
+   "dst": "ÁÁÁ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#122": {
+   "src": "Rescue Siegfried from the trap OR leave him there.",
+   "dst": "Cứu Siegfried khỏi bẫy HOẶC bỏ mặc hắn.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#123": {
+   "src": "W- What just happened?! I’m trapped in here!",
+   "dst": "C- Chuyện gì vậy?! Tôi bị nhốt trong này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#124": {
+   "src": "… It’s… some sort of trap. I can feel the ground heating up!!",
+   "dst": "… Là… một kiểu bẫy. Tôi thấy mặt đất đang nóng lên!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#125": {
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "Đ-đáng sợ quá... C-cậu cứu mạng tôi. Cảm ơn, {u}... Tôi chưa sẵn sàng cho hiểm nguy thật thế này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#126": {
+   "src": "Rest before continuing through the cave.",
+   "dst": "Nghỉ ngơi trước khi đi tiếp trong hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#127": {
+   "src": "…What? Houses, and a well? All the way down here?",
+   "dst": "…Gì? Nhà, cả giếng? Tận dưới này?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#128": {
+   "src": "It’s… empty. And the houses sure don’t look like anyone’s lived here for.. centuries.",
+   "dst": "Nó… trống trơn. Mấy căn nhà như chẳng ai ở suốt.. hàng thế kỷ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#129": {
+   "src": "OW! MY LEGS! And my arms, too! E- Everything hurts so much.. I need to sit down. I think I turned my arm the wrong way.",
+   "dst": "ÁI! CHÂN TÔI! Cả tay nữa! M- Mọi chỗ đều đau quá.. Phải ngồi đã. Chắc tôi trẹo ngược tay rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#130": {
+   "src": "I’ll just.. rest here a bit. W- would you mind taking a look around for something we can eat? I can.. hardly move.",
+   "dst": "Tôi sẽ.. nghỉ đây chút. C- cậu xem quanh đây có gì ăn được không? Tôi.. gần như không cử động nổi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#131": {
+   "src": "… Was this a sandwich at some point?",
+   "dst": "… Đây từng là bánh mì kẹp à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#132": {
+   "src": "It barely has any resemblance to one.",
+   "dst": "Chẳng giống chút nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#133": {
+   "src": "Well… I doubt there’s anything better around here. I- I’ll take it.",
+   "dst": "Chà… Chắc quanh đây chẳng có gì hơn. T- tôi ăn vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#134": {
+   "src": "OW!! I think I broke my teeth! This is like eating stone!",
+   "dst": "ÁI!! Chắc gãy răng rồi! Như ăn đá vậy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#135": {
+   "src": "… I th-ow-ink I’m ready to- ow- move on. Let’s get go-oow-ing.",
+   "dst": "… Tôi ng-ui-hĩ tôi sẵn sàng- ui- đi tiếp. Đi th-uiii-ôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#136": {
+   "src": "... Is this the food you found?",
+   "dst": "... Đây là đồ cậu tìm được à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#137": {
+   "src": "I guess it's... the best that could be found here. You say you cooked it yourself?",
+   "dst": "Chắc đây là... thứ tốt nhất ở đây rồi. Cậu bảo tự nấu à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#138": {
+   "src": "I'll give it a try, then. Doubt there's anything better around here.",
+   "dst": "Vậy tôi thử. Chắc quanh đây chẳng có gì hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#139": {
+   "src": "These are... amazing!",
+   "dst": "Ngon... tuyệt vời!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#140": {
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
+   "dst": "Cảm ơn, {u}! Tôi thấy khỏe hơn nhiều, cậu sẵn sàng là đi sâu tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#141": {
+   "src": "... These look disgusting.",
+   "dst": "... Trông kinh quá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#142": {
+   "src": "I guess... I'll eat it, if it's the only food around.",
+   "dst": "Chắc... tôi sẽ ăn, nếu chỉ có thứ này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#143": {
+   "src": "Let's see... How do i even eat these?",
+   "dst": "Xem nào... Ăn kiểu gì đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#144": {
+   "src": "Ughh... These are awful.",
+   "dst": "Ọe... Dở tệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#145": {
+   "src": "Venture deeper into the cave.",
+   "dst": "Đi sâu hơn vào hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#146": {
+   "src": "You know… my name is actually Gurix.",
+   "dst": "Biết không… tên thật tôi là Gurix.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#147": {
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "dst": "Nghe rất Corkian, tôi biết. Họ bắt tôi dùng tên Siegfried vì nghe ít ngoại lai hơn, chắc vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#148": {
+   "src": "AAAH! Get away!",
+   "dst": "ÁÁ! Tránh ra!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#149": {
+   "src": "OW! {u}, I think this web is poisoned! Quick, get me out with one of your spells!",
+   "dst": "ÁI! {u}, hình như mạng nhện này có độc! Mau, dùng phép gỡ tôi ra!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#150": {
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "Cảm ơn, {u}. Từ giờ tôi.. tôi sẽ theo cậu. Rõ là cậu chuẩn bị tốt hơn tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#151": {
+   "src": "Find your way through the spider burrows.",
+   "dst": "Tìm đường qua các hang nhện.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#152": {
+   "src": "{u}? I think that giant web there is being held up by the platforms on the walls.",
+   "dst": "{u}? Hình như mạng nhện khổng lồ kia được các bệ trên tường giữ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#153": {
+   "src": "I think… Maybe you can cut them down? I’ll stay here, I think it’s the safest place. I’ll call for you if a spider webs me again.",
+   "dst": "Tôi nghĩ… Cậu cắt chúng được không? Tôi ở đây, chắc chỗ này an toàn nhất. Nếu nhện lại quấn tôi, tôi sẽ gọi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#154": {
+   "src": "You did it! The web fell!",
+   "dst": "Được rồi! Mạng rơi rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#155": {
+   "src": "Let’s head onwards, I don’t want to deal with any more spiders.",
+   "dst": "Đi tiếp thôi, tôi không muốn gặp thêm con nhện nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#157": {
+   "src": "Hey, wait up! Thanks for saving me there.",
+   "dst": "Này, đợi với! Cảm ơn đã cứu tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#158": {
+   "src": "Woah... This is enormous! Who knows what this used to be?",
+   "dst": "Chà... To quá! Ai biết trước đây nó là gì?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#159": {
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
+   "dst": "Đường đi có vẻ qua mấy mảnh vàng kia, đi qua được không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#160": {
+   "src": "Find a way to escape through the skylight at the end of the cave.",
+   "dst": "Tìm cách thoát qua giếng trời cuối hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#161": {
+   "src": "Another town? Or another part of the same one? I’m not sure..",
+   "dst": "Một thị trấn khác? Hay phần khác của cái cũ? Tôi không chắc..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#162": {
+   "src": "This one even seems to have a forge and a tailor.. It was a full, proper village!",
+   "dst": "Chỗ này còn có lò rèn và tiệm may.. Từng là cả một ngôi làng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#163": {
+   "src": "That.. is that sunlight?",
+   "dst": "Kia.. ánh nắng à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#164": {
+   "src": "{u}, look! I can see the sky from here! M- maybe there’s a way to get up!",
+   "dst": "{u}, nhìn kìa! Từ đây thấy được trời! C- có khi có cách lên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#165": {
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "dst": "Tôi nghĩ.. hay dùng mạch nước phun này được? Trông như ngủ yên, nhưng chắc kích hoạt lại được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#166": {
+   "src": "You take a look around, I’ll be resting a little. I don’t think I’ve ever walked this much in my life…",
+   "dst": "Cậu xem quanh đi, tôi nghỉ chút. Chắc cả đời tôi chưa từng đi bộ nhiều thế này…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#167": {
+   "src": "Woah! The geyser’s active!",
+   "dst": "Ồ! Mạch nước phun rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#168": {
+   "src": "W-Wait.. that’ll be quite a long fall after we get launched up. Can you try making some safety equipment, like a parachute or some really soft boots?",
+   "dst": "Đ-Đợi đã.. bị bắn lên rồi sẽ rơi rất xa. Cậu làm đồ bảo hộ được không, như dù hay ủng thật êm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#169": {
+   "src": "You’ve already made something? Let me see.",
+   "dst": "Làm xong rồi à? Cho tôi xem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#170": {
+   "src": "This looks… usable? It’s something, at least.",
+   "dst": "Trông… dùng được? Ít ra cũng có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#171": {
+   "src": "Probably the best we’ll get down here. Are you sure you don’t need anything for yourself? No? Okay.",
+   "dst": "Chắc đây là tốt nhất ở dưới này rồi. Cậu chắc không cần gì cho mình chứ? Không? Được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#172": {
+   "src": "I can’t wait to see the look on their faces when we get back. We’ve just saved the legacy of Siegfried!",
+   "dst": "Nóng lòng muốn thấy mặt họ khi ta trở về. Ta vừa cứu di sản của Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#173": {
+   "src": "Escape the cave!",
+   "dst": "Thoát khỏi hang!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#174": {
+   "src": "Woah! The parachute worked!",
+   "dst": "Ồ! Dù hoạt động!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 21",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#175": {
+   "src": "???",
+   "dst": "???",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#176": {
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "T-thoát rồi? ...{u}, LÀM ĐƯỢC RỒI! VỀ RỒI! HAHAA! TÔI CÒN SỐNG!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#177": {
+   "src": "Hello there! It is I, Siegfried, and I just stopped the threat that was this cave!",
+   "dst": "Xin chào! Chính ta, Siegfried, vừa dẹp yên mối đe dọa của cái hang này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#178": {
+   "src": "Hah, that’s a great costume you have there! Looks just like me!",
+   "dst": "Ha, bộ đồ hóa trang đẹp đấy! Y hệt ta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#179": {
+   "src": "What? I- I’ve been REPLACED?",
+   "dst": "Gì? T- Tôi bị THAY rồi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#180": {
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
+   "dst": "Ha, đừng để ý tay hề đằng kia. Nhưng đồ hóa trang của hắn ấn tượng thật!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#181": {
+   "src": "W-what's going on here? You can't replace me!",
+   "dst": "C-chuyện gì đây? Không thể thay tôi được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#182": {
+   "src": "This way, please.",
+   "dst": "Lối này, mời ông.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#183": {
+   "src": "Look over there! Those must be fireworks to celebrate my victory!",
+   "dst": "Nhìn kìa! Chắc là pháo hoa mừng chiến thắng của ta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#184": {
+   "src": "Wait, wha-",
+   "dst": "Khoan, gì-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#185": {
+   "src": "Well, anyways! You had a really bad fall in that cave there. I carried you out myself, you must’ve had some wild hallucinations.",
+   "dst": "Dù sao thì! Cậu ngã rất nặng trong hang đó. Chính ta cõng cậu ra, chắc cậu bị ảo giác dữ lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#186": {
+   "src": "Even though it was your own mistake, I’ll return you the emeralds you spent on the scavenger hunt.. and some more as compensation. That'll be.. [{~} Liquified Emeralds]!",
+   "dst": "Dù là lỗi của cậu, ta sẽ hoàn lại số ngọc lục bảo đã tiêu cho cuộc săn kho báu.. cùng chút đền bù. Tổng cộng.. [{~} Ngọc lục bảo lỏng]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#187": {
+   "src": "I must return to {p} for the celebration now. Perhaps we will meet again at the next scavenger hunt!",
+   "dst": "Giờ ta phải về {p} dự lễ mừng. Có lẽ ta sẽ gặp lại ở cuộc săn kho báu tới!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#188": {
+   "src": "Hello there, human! It is I, Siegfried! You must have just missed how I expertly ended the threat of this monster-ridden cave!",
+   "dst": "Xin chào, con người! Chính ta, Siegfried! Cậu vừa lỡ mất cảnh ta điêu luyện dẹp yên cái hang đầy quái vật này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#189": {
+   "src": "Wait!",
+   "dst": "Đợi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#190": {
+   "src": "*inaudible*",
+   "dst": "*inaudible*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#191": {
+   "src": "{u}, I'm glad to see you managed to get out alive. That must have been quite a fall into the chasm.",
+   "dst": "{u}, mừng là cậu thoát ra còn sống. Rơi xuống vực như vậy hẳn ghê lắm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#192": {
+   "src": "Of course, I got out easily using my spells and great knowledge of caves! Well, I must be off now. Maybe we may meet again if you win the next scavenger hunt!",
+   "dst": "Tất nhiên ta thoát ra dễ dàng nhờ phép thuật và hiểu biết về hang động! Giờ ta phải đi. Có lẽ ta gặp lại nếu cậu thắng cuộc săn kho báu tới!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#193": {
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items, and some more as compensation.",
+   "dst": "Để đền bù cho tai nạn đáng tiếc của quý vị, Siegfried sẽ hoàn lại số ngọc lục bảo đã tiêu mua đồ săn kho báu, cùng thêm một khoản đền bù.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#194": {
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried, The Hero of Gavel!",
+   "dst": "Tổng cộng là... {~} Ngọc lục bảo lỏng. Xin lỗi vì những khó khăn quý vị gặp phải trong chuyến phiêu lưu cùng Siegfried, Anh hùng của Gavel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#195": {
+   "src": "- Sky's Kitchen: Cooking with Siegfried!",
+   "dst": "- Sky's Kitchen: Nấu ăn cùng Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Coming Soon",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#197": {
+   "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",
+   "dst": "Tôi dành dụm cả năm cho cuộc săn kho báu này, không thể thua được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#198": {
+   "src": "Participating in the Siegfried Scavenger Hunt? If you are, the theatre's right behind me.",
+   "dst": "Tham gia Săn kho báu Siegfried à? Nếu vậy, nhà hát ngay sau lưng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#199": {
+   "src": "The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "Người thắng sẽ có vinh dự cùng ta tham gia một cuộc phiêu lưu có một không hai, hoàn toàn thật!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#200": {
+   "src": "*whistling*",
+   "dst": "*huýt sáo*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#201": {
+   "src": "The map's in the upper level of the airship. Ignore anything else you find there.",
+   "dst": "Bản đồ ở tầng trên phi thuyền. Đừng để ý thứ gì khác ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#202": {
+   "src": "Maybe you should get the rope too...",
+   "dst": "Có lẽ nên lấy cả sợi dây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#203": {
+   "src": "This rope may be useful later on...",
+   "dst": "Sợi dây này có thể có ích sau...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#204": {
+   "src": "Hey, I told you to stay behind me! I have to enter the cave first!",
+   "dst": "Này, ta bảo cậu đứng sau ta! Ta phải vào hang trước!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#205": {
+   "src": "You should jump in after him.",
+   "dst": "Bạn nên nhảy theo hắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#206": {
+   "src": "[!] This quest uses particles to display some information. It is recommended to have at least some particles enabled to enhance your experience.",
+   "dst": "[!] Nhiệm vụ này dùng hạt hiệu ứng để hiển thị một số thông tin. Nên bật ít nhất một phần hạt hiệu ứng để trải nghiệm tốt hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#207": {
+   "src": "He's unconscious. Perhaps there's something around here to wake him up?",
+   "dst": "Hắn bất tỉnh. Có lẽ quanh đây có gì đánh thức được hắn?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#208": {
+   "src": "This should wake Siegfried.",
+   "dst": "Thứ này gọi Siegfried dậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#209": {
+   "src": "This boulder is stopping the portcullis chains... You'd need a pickaxe to break it, however.",
+   "dst": "Tảng đá này chặn xích cửa sập... Nhưng cần cuốc chim mới đập vỡ được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#210": {
+   "src": "It's an old mining expedition's log:",
+   "dst": "Là nhật ký một đoàn khai mỏ cũ:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#211": {
+   "src": "Supplies are limited, excavation yielding little success.",
+   "dst": "Tiếp tế có hạn, đào bới gần như chẳng thu được gì.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#212": {
+   "src": "We've attempted going around the portcullis, but the beast in the only cave past it killed one of our crew.",
+   "dst": "Bọn tôi thử đi vòng qua cửa sập, nhưng con quái trong hang duy nhất phía sau đã giết một người.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#213": {
+   "src": "Apart from the portcullis, there are no signs of villagers or of the town itself. The team is beginning to doubt its existence.",
+   "dst": "Ngoài cửa sập, chẳng có dấu vết dân làng hay chính thị trấn. Cả đội bắt đầu nghi nó có thật không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#214": {
+   "src": "The return crew is lowering the crane tomorrow, so it's unlikely we can find anything before then. Logs will be left for use of any future excavations.",
+   "dst": "Đội đón về sẽ hạ cần cẩu vào ngày mai, nên khó tìm được gì trước đó. Nhật ký sẽ để lại cho các đợt khai quật sau.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#215": {
+   "src": "The rest of the log lists geological information about the cave and a supply manifest.",
+   "dst": "Phần còn lại ghi thông tin địa chất về hang và danh sách tiếp tế.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#216": {
+   "src": "Find a way deeper into the cave and lead Siegfried there with you.",
+   "dst": "Tìm đường đi sâu hơn vào hang và dẫn Siegfried theo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#217": {
+   "src": "Why would you need this?",
+   "dst": "Bạn cần thứ này làm gì?",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#218": {
+   "src": "The cage fell! You should go help Siegfried out.",
+   "dst": "Lồng rơi rồi! Mau tới giúp Siegfried.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#219": {
+   "src": "Siegfried has died in the cage. You'll have to find your way out yourself.",
+   "dst": "Siegfried đã chết trong lồng. Bạn phải tự tìm đường ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#220": {
+   "src": "It seems the trap machinery broke down!",
+   "dst": "Có vẻ cơ cấu bẫy hỏng rồi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#221": {
+   "src": "This area seems like a good place to rest before moving on. Siegfried would have been overjoyed to see this.",
+   "dst": "Chỗ này có vẻ hợp để nghỉ trước khi đi tiếp. Siegfried hẳn sẽ mừng rỡ khi thấy nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#222": {
+   "src": "This is a wood wall.",
+   "dst": "Đây là vách gỗ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#223": {
+   "src": "Maybe that web would fall if you cut the ones supporting it?",
+   "dst": "Có lẽ mạng nhện kia sẽ rơi nếu cắt các sợi giữ nó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#224": {
+   "src": "It looks like the way forward is across the yellow shards...",
+   "dst": "Có vẻ đường đi tiếp là băng qua các mảnh vàng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#225": {
+   "src": "Picking up lava with your bare hands seems like a bad idea.",
+   "dst": "Bốc dung nham bằng tay không có vẻ không hay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#226": {
+   "src": "... Is that sunlight at the other side of the cave?",
+   "dst": "... Phía bên kia hang là ánh nắng sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#227": {
+   "src": "This is a sewing machine.. It still seems to work.",
+   "dst": "Đây là máy may.. Hình như vẫn chạy được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#228": {
+   "src": "It's a tailor's notes on how to create some items:",
+   "dst": "Là ghi chép của thợ may về cách làm vài món:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#229": {
+   "src": "To Sarnim - If you really wanted to learn the craft, here's some simple items to get you started.",
+   "dst": "Gửi Sarnim - Nếu thật muốn học nghề, đây là vài món đơn giản để bắt đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#230": {
+   "src": "Parachute: Some cloth and rope. I haven't found any rope since the shattering, I don't think there's any in the storage either.",
+   "dst": "Dù: Ít vải và dây. Từ sau Đại Đổ Vỡ tôi chưa thấy sợi dây nào, chắc trong kho cũng không còn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#231": {
+   "src": "Soft Boots: Cloth, and some soft slime. I usually get my slime from the spider burrows past the gate.",
+   "dst": "Ủng mềm: Vải, và ít chất nhầy mềm. Tôi hay lấy chất nhầy ở hang nhện sau cổng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#232": {
+   "src": "Hard Boots: Cloth and leather. These hurt quite a bit, so be careful. There should be some leather in the storage if you make these.",
+   "dst": "Ủng cứng: Vải và da. Đi khá đau, nên cẩn thận. Nếu làm thì trong kho chắc còn ít da.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#233": {
+   "src": "It's an old notebook listing some research about geysers:",
+   "dst": "Là cuốn sổ cũ ghi nghiên cứu về mạch nước phun:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#234": {
+   "src": "The geyser was active back before the shattering, but it seems to have filled up.",
+   "dst": "Mạch nước phun từng hoạt động trước Đại Đổ Vỡ, nhưng hình như đã bị lấp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#235": {
+   "src": "It hasn't erupted in weeks. However! My studies on the small geysers have proven lava can activate them again!",
+   "dst": "Nó không phun cả tuần rồi. Nhưng mà! Nghiên cứu mạch nhỏ cho thấy dung nham kích hoạt lại được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#236": {
+   "src": "Hannux still refuses to give me molten metal from his forge, though. My next tests ought to convince him.",
+   "dst": "Nhưng Hannux vẫn không chịu đưa kim loại nóng chảy từ lò rèn. Lần thử tới chắc sẽ thuyết phục được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#237": {
+   "src": "It's an old, tattered book labelled 'Sustainable Food in the Caverns, by Hannux and Ilorav'",
+   "dst": "Là cuốn sách cũ rách tên 'Thực phẩm bền vững trong hang động, Hannux và Ilorav'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#238": {
+   "src": "This document should outline a sustainable method for the continued survival of our town for however long we may be in these caverns.",
+   "dst": "Tài liệu này phác thảo cách bền vững để thị trấn ta sống sót lâu dài, dù phải ở trong hang bao lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#239": {
+   "src": "Multiple varieties of mushrooms have grown in the years after the shattering. These are edible and a primary source of food.",
+   "dst": "Nhiều loại nấm đã mọc lên trong những năm sau Đại Đổ Vỡ. Chúng ăn được và là nguồn thức ăn chính.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#240": {
+   "src": "A bioluminescent material allows for trees and grass to grow, albeit very slowly.",
+   "dst": "Một chất phát quang sinh học giúp cây và cỏ mọc lên, dù rất chậm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#241": {
+   "src": "We recommend taking good care of the trees, grass, and bushes - they may become a valuable source of food in the future.",
+   "dst": "Nên chăm kỹ cây, cỏ và bụi rậm - chúng có thể thành nguồn thức ăn quý trong tương lai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#242": {
+   "src": "We have also found that there is very little edible plant life outside of our section of the cave.",
+   "dst": "Chúng tôi cũng thấy ngoài khu hang của mình có rất ít thực vật ăn được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#243": {
+   "src": "A smaller group was far less lucky than us and ended up in an area with virtually no edible material - we found the remains of their homes in a recent expedition.",
+   "dst": "Một nhóm nhỏ kém may hơn nhiều, rơi vào khu gần như chẳng có gì ăn được - đợt thám hiểm gần đây thấy tàn tích nhà họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#244": {
+   "src": "A species of spiders and creeping mold has appeared as well. These are not suitable for consumption, and should be left alone. They are peaceful unless attacked.",
+   "dst": "Cũng đã xuất hiện một loài nhện và nấm mốc bò. Chúng không ăn được, nên để yên. Chúng hiền lành trừ khi bị tấn công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#245": {
+   "src": "The rest of the book seems to be repeating the same information but in extreme detail.",
+   "dst": "Phần còn lại có vẻ lặp lại thông tin cũ nhưng cực kỳ chi tiết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} Vé săn kho báu]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Chữ ký Siegfried]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "Đợi tôi chút...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "Bán vé đây! Vé Săn kho báu Siegfried ở đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "Bạn có cảm giác đang quay lại đường cũ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "Cần thuốc nổ mới vô hiệu được. Nhưng ở đây có vẻ chẳng có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "Bạn có cảm giác đang đi lùi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "Quanh đây có mấy hang nhỏ.. Có khi có gì ăn được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "Tôi không... khỏe lắm. Chắc.. vẫn đi tiếp được, cậu sẵn sàng là đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "Cái lò này hình như vẫn dùng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "Mấy sợi tơ kia giữ mạng nhện lớn. Cắt cả ba thì có thể nó sẽ đứt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "Bạn có cảm giác đang đi sai đường...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "May mà qua được vực đó! Đi tiếp thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": ".. {u}... cậu chắc mấy quả trứng s-sống đó.. an toàn chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "Ực.. tôi thấy.. không ổn..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "Tôi thấy.. có gì.. trong--- ÁÁÁÁÁÁÁÁ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} Thuốc nổ khai mỏ]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

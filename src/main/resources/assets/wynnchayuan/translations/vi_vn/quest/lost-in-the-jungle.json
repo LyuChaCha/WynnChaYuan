@@ -1,0 +1,340 @@
+{
+ "_meta": {
+  "quest": "Lost in the Jungle",
+  "count": 33,
+  "translated": 33,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Lost in the Jungle#000": {
+   "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
+   "dst": "Nhưng... nó cũng mang về một viên đá quý màu tím kỳ lạ. Thầy pháp của bọn tôi coi đó là điềm gở, nhưng tôi mải ăn mừng nên gạt đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#001": {
+   "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
+   "dst": "Hừm, giờ tôi mới thấy một vệt lạ trên mặt đất... cùng màu với viên đá! Có thể nó dẫn bạn tới chỗ thằng bé, làm ơn, đi theo nó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#002": {
+   "src": "You should talk to Aryn now...",
+   "dst": "Giờ nên nói chuyện với Aryn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#003": {
+   "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
+   "dst": "Ồ... Cha tôi cử bạn tới? Chà, tôi rất ấn tượng, chiến binh Wynn. Bạn chiến đấu dữ như người bộ tộc tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "captured"
+  },
+  "Lost in the Jungle#004": {
+   "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
+   "dst": "Nhưng chuyện đó không quan trọng. Bạn nói đã tiêu diệt linh hồn, và viên đá không còn vẩn đục nữa, nên tôi sẽ tin bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#005": {
+   "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Gracen tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#006": {
+   "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
+   "dst": "Xin lỗi, lữ khách... Thật ngại phải nhờ bạn, nhưng tôi cần bạn giúp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#007": {
+   "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
+   "dst": "Bạn biết đấy, con trai tôi, Aryn. Mới đây, nó trải qua lễ trưởng thành truyền thống của bộ tộc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#008": {
+   "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
+   "dst": "Nó phải vào {p} hiểm nguy, ngay phía nam đây, và trụ giữa hoang dã ba ngày. Nó trở về thành công, thành người đàn ông thực thụ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#009": {
+   "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
+   "dst": "Rồi chuyện lạ bắt đầu xảy ra quanh làng. Aryn đi lang thang ban đêm, nói chuyện với ai đó, nhưng chẳng có ai bên cạnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#010": {
+   "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
+   "dst": "Mới bình minh hôm qua, nó biến mất hẳn. Bọn tôi đã đi tìm, nhưng cả chiến binh dày dạn nhất cũng không vào sâu trong rừng được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#011": {
+   "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
+   "dst": "Bọn tôi về tay trắng, mất đi người trẻ nhất bộ tộc. Cả làng rất suy sụp, và tôi thấy như mình có lỗi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#012": {
+   "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
+   "dst": "Nhưng chiến binh Wynn... người ta kể nhiều chuyện lẫy lừng về các bạn. Chắc chắn bạn vượt qua được khu rừng, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#013": {
+   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
+   "dst": "Tôi van bạn, làm ơn, hãy tìm con tôi. Tôi không rõ nó ở đâu, nhưng chắc chắn nó đã bị đưa vào rất sâu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#014": {
+   "src": "Search the {p} for Aryn",
+   "dst": "Tìm Aryn trong {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#015": {
+   "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
+   "dst": "L-làm ơn, linh hồn, thả tôi ra! Người trong bộ tộc chắc lo lắm-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#016": {
+   "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
+   "dst": "ĐỪNG CHỐNG CỰ, NHÃI RANH! THÂN XÁC NGƯƠI LÀ CỦA TA. TA BỊ GIAM TRONG ĐÁ NGÀN NĂM, GIỜ TA ĐÃ TỰ DO.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#017": {
+   "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
+   "dst": "A ha, có người đang tới! Chắc là người bộ tộc tới cứu tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#018": {
+   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
+   "dst": "Ồ! Nếu vậy, thân xác chiến binh này sẽ hợp với ta hơn nhiều! Trao sức mạnh cho ta, nhãi ranh! Ta phải đánh gục nó trước rồi mới nhập được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#019": {
+   "src": "Defeat the spirit possessing Aryn",
+   "dst": "Đánh bại linh hồn đang nhập vào Aryn",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#020": {
+   "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
+   "dst": "Đảm bảo Aryn an toàn tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#021": {
+   "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
+   "dst": "Haha, nếm đòn đi, ác linh! Ngươi sẽ không bao giờ sánh được bộ tộc ta-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#022": {
+   "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
+   "dst": "K-khoan, bạn không phải người bộ tộc! Bạn là ai, sao bạn tới đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#023": {
+   "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
+   "dst": "Tôi... thì chẳng được vậy. Linh hồn đó đã chiếm trọn tôi, giờ tôi vẫn chưa cử động được...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#024": {
+   "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
+   "dst": "Giờ thì, làm ơn. Mang viên đá này đi. Nó gây ra mọi chuyện, tôi không muốn ở gần thứ xui xẻo như vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#025": {
+   "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
+   "dst": "Hãy bảo bộ tộc là tôi sẽ tự về. Tôi đã về được một lần, khi sẵn sàng tôi sẽ làm lại được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#026": {
+   "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "Mang Viên đá bí ẩn tới cho Gracen tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#027": {
+   "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
+   "dst": "Trời ơi... Aryn bị một linh hồn trong viên đá nhập vào ư?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#028": {
+   "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
+   "dst": "Thật xấu hổ... Thầy pháp bọn tôi chưa từng sai, sao tôi lại phớt lờ lời cảnh báo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#029": {
+   "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
+   "dst": "Giờ nhìn kỹ, đây thật ra là viên đá khá quý. Nghiền thành bột, nó dùng được trong những lá bùa đặc biệt bọn tôi làm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#030": {
+   "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
+   "dst": "Đây, để tôi nghiền nó cho bạn. Bạn giữ lấy mảnh vụn, sau này cần dùng gì thì dùng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#031": {
+   "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
+   "dst": "Bộ tộc chúng tôi, và nhất là tôi... cảm ơn bạn đã giúp đỡ. Từ hôm nay, bạn là người của chúng tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#032": {
+   "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
+   "dst": "Thật ra, nếu muốn, bạn có thể vào nhà tôi bất cứ lúc nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  }
+ }
+}

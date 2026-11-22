@@ -1,0 +1,3240 @@
+{
+ "_meta": {
+  "quest": "The Breaking Point",
+  "count": 322,
+  "translated": 322,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Breaking Point#000": {
+   "src": "Hey, keep up! We need to get this part into the machine as quickly as we can!",
+   "dst": "Này, theo kịp đi! Ta phải lắp bộ phận này vào máy càng nhanh càng tốt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#001": {
+   "src": "Amazing work! I'll get us back to Kandon Beda with that capacitor as quick as possible.",
+   "dst": "Giỏi lắm! Tôi sẽ đưa ta về Kandon Beda với tụ điện đó nhanh nhất có thể.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#002": {
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
+   "dst": "Ta... hiểu. {u}... Ozoth nói... Ngọn Lửa Vĩnh Cửu... sẽ giải thoát Trưởng lão.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "captured",
+   "similar": {
+    "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
+    "file": "quest/the-breaking-point.json",
+    "ratio": 0.98,
+    "reason": "placeholders"
+   }
+  },
+  "The Breaking Point#003": {
+   "src": "Where can we find one?",
+   "dst": "Tìm nó ở đâu được?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#004": {
+   "src": "You need to get onto the path up to {p}. There should be signposts outside of {p}...",
+   "dst": "Ngươi phải lên con đường tới {p}. Bên ngoài {p} hẳn có biển chỉ đường...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#005": {
+   "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
+   "dst": "Nói chuyện với Tướng quân Elix tại [{~}, {~}, -{~}] ở {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#006": {
+   "src": "... Alright, let's see here... Private! Give me a report!",
+   "dst": "... Được rồi, xem nào... Binh nhì! Báo cáo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#007": {
+   "src": "Sir, our readings are positive! Stability is at {~}, and shows no sign of dropping.",
+   "dst": "Thưa ngài, chỉ số khả quan! Độ ổn định ở mức {~}, không có dấu hiệu giảm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#008": {
+   "src": "Readings are positive!",
+   "dst": "Chỉ số khả quan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#009": {
+   "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find... -",
+   "dst": "Tốt lắm. Theo dõi mọi thứ, có gì thì báo ta. Giờ ta phải đi tìm... -",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#010": {
+   "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
+   "dst": "Hừ. Ngươi là ai vậy? Khu vực này cấm dân thường.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#011": {
+   "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
+   "dst": "Nhà thám hiểm. Hẳn rồi. Chà, ta đang làm việc khá nguy hiểm ở đây. Ta phải yêu cầu ngươi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#012": {
+   "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
+   "dst": "... Máy ổn định? Ta đang làm việc khá nguy hiểm, giữ yên thứ bên kia vách đá. Nên ta phải yêu cầu ngươi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#013": {
+   "src": "General! Stability is dropping, and fast!",
+   "dst": "Tướng quân! Độ ổn định đang tụt nhanh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#014": {
+   "src": "General!",
+   "dst": "Tướng quân!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#015": {
+   "src": "What?! Of all times for it to-",
+   "dst": "Gì?! Sao lại đúng lúc này-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#016": {
+   "src": "Urgh... Soldiers, follow protocol! Secure what you can, leave what you can't! And- you! I haven't forgotten about you. As soon as this all clears up, we'll-",
+   "dst": "Ugh... Các chiến sĩ, làm theo quy trình! Giữ được gì thì giữ, bỏ được gì thì bỏ! Còn- ngươi! Ta chưa quên ngươi đâu. Ngay khi mọi chuyện lắng xuống, ta sẽ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#017": {
+   "src": "Gah! This damned Colossus! What I wouldn't give to...",
+   "dst": "Gah! Cự Thần chết tiệt! Ta sẵn sàng đổi mọi thứ để...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#018": {
+   "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
+   "dst": "... Xong rồi. Walder! Kiểm tra hư hại thiết bị! Morec! Đếm số người bị thương quanh căn cứ, đảm bảo mọi người an toàn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#019": {
+   "src": "Yes sir!",
+   "dst": "Rõ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#020": {
+   "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
+   "dst": "Tướng quân! Bọn tôi tới ngay khi có thể- bọn tôi ở dưới thư viện và lối ra bị- Ồ. Chà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#021": {
+   "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
+   "dst": "Chà, Rhay, cô tới rồi, đúng chứ? Cô nghĩ sao, sửa được không? Phải cho nó chạy lại trước khi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#022": {
+   "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
+   "dst": "Sửa được- Không, tất nhiên là tôi không sửa được! Một mình thì không, nhất là khi ở đây không có thiết bị phù hợp! Ugh, từ lần trước tới giờ là bao lâu rồi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#023": {
+   "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
+   "dst": "Đã... ba ngày... chừng đó. Rhay... cô biết ta không thể cứ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#024": {
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
+   "dst": "Máy ổn định vẫn chạy tốt tới giờ mà, Ineos! Nó là một trong những công nghệ tốt nhất tỉnh chúng tôi có, và nó vẫn chạy tốt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#025": {
+   "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
+   "dst": "Rhay, cô biết... rõ như ta... rằng nó đang tệ đi. Đấng Bảo Hộ... đang dần kháng lại... máy của cô. Ta cần... kế hoạch mới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#026": {
+   "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
+   "dst": "Ừ, thì, ngay khi ông nghĩ ra, tôi rất sẵn lòng nghe! Nhưng tới giờ, ông hầu như chẳng tìm được gì-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#027": {
+   "src": "...",
+   "dst": "...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#028": {
+   "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
+   "dst": "... Xin lỗi. Tôi xin lỗi, tôi không có ý đó. Tướng quân, trả lời câu hỏi của ngài... Máy ổn định bị hỏng, nhưng ở đây hẳn có đủ thứ để sửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#029": {
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "dst": "Vấn đề là bảng điều khiển có vẻ cháy rụi rồi! Mà ở đây không có linh kiện thay thế. Ta phải quay về Corkus, và...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#030": {
+   "src": "... Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
+   "dst": "... Phải. Ngươi. Ngươi là nhà thám hiểm, đúng không? Và trông ngươi trang bị đầy đủ. Vậy ngươi sẽ tới Corkus cùng Rhay, và hỗ trợ bất cứ việc gì cần ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#031": {
+   "src": "Huh?",
+   "dst": "Hả?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#032": {
+   "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
+   "dst": "Khoan, Tướng quân-... Phải. Được thôi. Vậy thì... tôi cho bạn thời gian chuẩn bị. Ta sẽ đi khinh khí cầu tới Corkus, gặp bạn ở đó. Không còn thời gian để phí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#033": {
+   "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
+   "dst": "Còn ta sẽ... về thư viện. Ta tin... các ngươi sẽ thành công... Nhưng phải... chuẩn bị cho... điều tệ nhất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#034": {
+   "src": "Alright...",
+   "dst": "Được rồi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#035": {
+   "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "Gặp Rhay ở khinh khí cầu tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#036": {
+   "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
+   "dst": "À, bạn tới rồi! Nếu sẵn sàng thì ta nên đi thôi. Cứ lên khinh khí cầu, thuyền trưởng sẽ đưa ta tới nơi cần tới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#037": {
+   "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
+   "dst": "Tôi kể thêm trên đường đi, nhưng ta phải đi nhanh. Không biết ta còn bao nhiêu thời gian trước khi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#038": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
+   "dst": "Phải, phải. Đừng để ý, tôi chỉ hơi căng thẳng, vì... à, lý do thì rõ rồi. Cứ lên đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#039": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, for obvious reasons. Just hop aboard.",
+   "dst": "Phải, phải. Đừng để ý, tôi chỉ hơi căng thẳng, vì... à, vì lý do rõ ràng thôi. Cứ lên đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#040": {
+   "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "Đi tới {p} bằng khinh khí cầu tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#041": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
+   "dst": "Kia rồi! Chính là Cự Thần Hẻm Núi. Nguồn cơn mọi rắc rối của bọn tôi ở {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#042": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all of our problems here at {p}.",
+   "dst": "Kia rồi! Chính là Cự Thần Hẻm Núi. Nguồn cơn của mọi rắc rối của bọn tôi ở {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#043": {
+   "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
+   "dst": "Nào! Bạn đã biết bao nhiêu rồi? Tôi biết bọn tôi lôi bạn vào chuyện này mà chẳng kể gì mấy, nên... tôi kể chi tiết cho.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#044": {
+   "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
+   "dst": "Ồ, ông ấy kể rồi à? Phải, hợp lý. Chà, bạn đúng khi nói nó gây ra động đất, nhưng còn hơn thế nữa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#045": {
+   "src": "You've seen the {p}, right? Heard of the Fracturing. From what we can tell, what happened to that region a thousand years ago is happening again, here and now.",
+   "dst": "Bạn đã thấy {p} rồi chứ? Nghe về Sự Rạn Vỡ rồi. Theo bọn tôi biết, chuyện xảy ra với vùng đó nghìn năm trước đang tái diễn, ngay tại đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#046": {
+   "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
+   "dst": "Phải, chính xác. Nó trục trặc lâu lắm rồi, và đang bắt đầu xé toạc hẻm núi. Đó là lúc bọn tôi vào cuộc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#047": {
+   "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
+   "dst": "Thì... Trước hết, nó là thứ cổ xưa. Nó có từ trước cả những gì Doguns còn nhớ, mà họ đã sống ở vùng này hàng nghìn năm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#048": {
+   "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
+   "dst": "Theo Ineos, Doguns từng là người giữ nó yên ổn, nhưng từ khi người lùn tới và gây chiến, hiểu biết đó đã mai một.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#049": {
+   "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
+   "dst": "Mà đó... là vấn đề! {p} đã trục trặc hàng trăm năm, và đang tới bờ vực đổ vỡ. Nếu không ngăn lại, nó sẽ xé toạc hẻm núi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#050": {
+   "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
+   "dst": "Ồ? Vậy bạn đã đi khắp hẻm núi rồi. Ừ, vậy bạn đã thấy hẻm núi uốn vặn và đổi thay ra sao.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#051": {
+   "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
+   "dst": "Nó phá hủy nhà cửa, nhốt người ta sâu trong những thung lũng như mê cung... Và gần đây, nó còn xé một lỗ vào Hư Không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#052": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "Thứ này cổ xưa, và bọn tôi không biết nó hoạt động thế nào. Tốt nhất là cố ngăn nó tới bờ vực đổ vỡ, để hẻm núi không chung số phận với {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#053": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try and keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "Thứ này cổ xưa, và bọn tôi không biết nó hoạt động thế nào. Tốt nhất là cố ngăn nó tới bờ vực đổ vỡ, để hẻm núi không chung số phận với {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#054": {
+   "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
+   "dst": "Thế là, ít lâu trước chính quyền Gavel liên lạc với bọn tôi ở Corkus, nhờ giúp đối phó mối đe dọa này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#055": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
+   "dst": "Hội đồng bọn tôi đồng ý, và bọn tôi bắt tay thiết kế cỗ máy mô phỏng phép thuật Dogun từng xoa dịu Cự Thần đó từ lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#056": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified the Colossus long ago.",
+   "dst": "Hội đồng bọn tôi đồng ý, và bọn tôi bắt tay thiết kế cỗ máy mô phỏng phép thuật Dogun từng xoa dịu Cự Thần từ lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#057": {
+   "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
+   "dst": "Ineos đã giúp bọn tôi việc đó. Ông ấy và tôi làm việc ở {p} để mọi thứ suôn sẻ. Mà... rõ ràng là không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#058": {
+   "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
+   "dst": "... Rồi sẽ ổn thôi! Ta sẽ gặp chồng tôi ở Corkus, anh ấy sẽ biết phải làm gì. Lúc nào anh ấy cũng biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#059": {
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "dst": "Người của bọn tôi ở đó sẽ kiếm được linh kiện để sửa thiết bị. Đây... đây không phải lần đầu nó nổ tung. Tôi đã mong lần này nó ổn định, nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#060": {
+   "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
+   "dst": "Nhưng mà này! Bọn tôi kiểm soát được. Lần nào bọn tôi cũng sửa kịp để nó chạy trong khi Cự Thần hoạt động.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#061": {
+   "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
+   "dst": "Ồ! Phải. Anh ấy là người thiết kế và chế tạo thiết bị này. Anh ấy có tài thiết kế mấy thứ như vậy, không có anh ấy... à, tình hình còn tệ hơn bây giờ nhiều.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#062": {
+   "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
+   "dst": "Tôi sẽ vui được gặp lại anh ấy. Lâu rồi tôi không phải tới Corkus, và... Chà, tôi tin anh ấy sẽ biết phải làm gì. Lúc nào anh ấy cũng biết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#063": {
+   "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
+   "dst": "... Phải! Này, có vẻ ta sắp tới rồi. Ta sẽ giải quyết xong mọi chuyện, và quay về {p} ngay thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#064": {
+   "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
+   "dst": "Tìm người liên lạc trong nhà máy tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#065": {
+   "src": "Alright, let's just head on in. My husband should be around here somewhere...",
+   "dst": "Được rồi, ta vào thôi. Chồng tôi chắc đang ở quanh đây...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#066": {
+   "src": "Rhay, love! You're back already? Our next routine maintenance isn't for another- Wait, {u}? What are you doing here?",
+   "dst": "Rhay, em yêu! Em về rồi à? Đợt bảo trì định kỳ tới còn- Khoan, {u}? Cậu làm gì ở đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#067": {
+   "src": "I... You two know each other?",
+   "dst": "Tôi... Hai người quen nhau à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#068": {
+   "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
+   "dst": "Tất nhiên rồi - cậu ấy là người giúp anh vụ Nhà máy! Hai người gặp nhau thế nào?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#069": {
+   "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
+   "dst": "Bạn ấy vừa tới {p} và nhận giúp bọn em với... - Sao bạn không nói sớm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#070": {
+   "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
+   "dst": "Chắc là...- phải. Chà, nếu vậy thì bạn càng đủ sức giúp bọn tôi, chắc thế! Không tin nổi là tôi không nhận ra bạn...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#071": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
+   "dst": "Được rồi, quay lại câu hỏi - hai người làm gì ở đây sớm thế? Còn vài ngày nữa mới tới đợt bảo trì định kỳ, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#072": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maintenance, isn't there?",
+   "dst": "Được rồi, quay lại câu hỏi - hai người làm gì ở đây sớm thế? Còn vài ngày nữa mới tới đợt bảo trì định kỳ, phải không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#073": {
+   "src": "I did send you an invite! I gave it to... you know, the one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
+   "dst": "Tôi có gửi thiệp mời cậu mà! Tôi đưa cho... cậu biết đấy, ông thuyền trưởng chuyên chở người khắp nơi! Nhưng cậu không tới đám cưới, nên chắc nó không tới tay cậu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#074": {
+   "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
+   "dst": "Nghe này, cậu khó liên lạc lắm! Giờ cậu đã đi khắp thế giới, cả {p} nữa chứ- nhân tiện, sao hai người lại ở đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#075": {
+   "src": "!!!",
+   "dst": "!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#076": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
+   "dst": "Phải! Phải. Em hơi lạc đề... Ờ, bọn em gặp sự cố ở {p}. Có một trận địa chấn không phát hiện được, và thiết bị hư hại nặng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#077": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an unexpected seismic event, and the device was heavily damaged.",
+   "dst": "Phải! Phải. Em hơi lạc đề... Ờ, bọn em gặp sự cố ở {p}. Có một trận địa chấn bất ngờ, và thiết bị hư hại nặng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#078": {
+   "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
+   "dst": "Bọn em sửa được phần lớn bằng vật liệu ở đó, nhưng thiếu một tụ điện Magmaflux cho bảng điều khiển.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#079": {
+   "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maintenance. So... I'm not sure what we-",
+   "dst": "... Ồ. Vậy thì gay đây. Bọn anh chưa có dịp làm thêm linh kiện - từ đợt bảo trì trước tới giờ chưa đủ lâu. Nên... anh không chắc ta-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#080": {
+   "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
+   "dst": "Tôi nghe lỏm từ đằng kia- nhân tiện, mừng gặp lại cô, Rhay- Nhưng. Trên này có thể hết tụ điện, nhưng tôi biết chỗ kiếm được một cái.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#081": {
+   "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
+   "dst": "Bọn tôi cải tạo nhà máy này cho nhu cầu của mình, nhưng nó được xây để xử lý tài nguyên từ các mỏ bên dưới.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#082": {
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "dst": "Dù đã ngừng hoạt động, rất có thể dưới đó vẫn còn mech thợ mỏ- và vài mẫu mạnh hơn dùng mạch rất giống tụ điện ta dùng ngày nay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#083": {
+   "src": "...You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
+   "dst": "...Đúng rồi! Nếu chúng vẫn ở dưới đó, ta có thể tháo một con bot để tận dụng mạch. {u}, ta cử bạn xuống mỏ tìm thứ cần, trong khi bọn tôi chuẩn bị trên này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#084": {
+   "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
+   "dst": "Được rồi... Chúc may mắn dưới đó! Tìm con bot, phá nó, và mang tụ điện lên! Sẵn sàng thì cứ bước lên bệ giữa nhà máy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#085": {
+   "src": "I need to prepare first.",
+   "dst": "Tôi cần chuẩn bị trước đã.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#086": {
+   "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
+   "dst": "Được. Không sao, nhưng nhanh lên nhé! Bạn biết ta không thể phí thời gian mà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#087": {
+   "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
+   "dst": "Lấy bộ phận từ hang tại [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#088": {
+   "src": "Door opening in {~}...",
+   "dst": "Cửa mở sau {~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#089": {
+   "src": "{~}...",
+   "dst": "{~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#090": {
+   "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
+   "dst": "PHÁT HIỆN KẺ XÂM NHẬP. CHO PHÉP GIAO CHIẾN.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#091": {
+   "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
+   "dst": "TRIỂN KHAI BIỆN PHÁP CHỐNG XÂM NHẬP THỨ CẤP.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#092": {
+   "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
+   "dst": "ĐIỀU TOÀN BỘ ĐƠN VỊ KHẢ DỤNG CHẶN KẺ XÂM NHẬP.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#093": {
+   "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER...",
+   "dst": "ĐÂY LÀ KHU VỰC HẠN CHẾ. YÊU CẦU CẤP PHÉP DÙNG VŨ LỰC CHẾT NGƯỜI VỚI KẺ XÂM NHẬP...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#094": {
+   "src": "AUTHORISATION GRANTED.",
+   "dst": "ĐÃ CẤP PHÉP.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#095": {
+   "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
+   "dst": "ĐIỀU MECH THỢ MỎ CHẶN KẺ XÂM NHẬP.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#096": {
+   "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
+   "dst": "Quay lại khinh khí cầu tại [-{~}, {~}, -{~}] cùng tụ điện Magmaflux.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#097": {
+   "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
+   "dst": "Mừng được gặp lại cậu, {u}. Chúc may mắn với Cự Thần. Còn Rhay... về nhà sớm nhé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#098": {
+   "src": "Fly safe, both of you.",
+   "dst": "Bay an toàn nhé, cả hai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#099": {
+   "src": "Return to General Elix with the Corkian Stabiliser",
+   "dst": "Mang máy ổn định Corkian về cho Tướng quân Elix",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#100": {
+   "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
+   "dst": "Chà... thật ra suôn sẻ hơn tôi tưởng. Tôi vẫn không tin nổi bạn không nói là đã quen Maxie.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#101": {
+   "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
+   "dst": "Ồ, chà. Có vẻ họ đã sửa cỗ máy khá ổn, xét mọi chuyện. Chỉ còn bộ phận này là nó chạy lại được...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#102": {
+   "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
+   "dst": "Hừ. Rhay, cô đây rồi. Thấy cô đã về, ta đoán mọi chuyện ở Corkus suôn sẻ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#103": {
+   "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
+   "dst": "Khá suôn sẻ, Tướng quân! Bọn tôi có đủ thứ để sửa bảng điều khiển. Máy ổn định sẽ chạy lại được!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#104": {
+   "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
+   "dst": "Thế thì?! Còn chờ gì nữa? Sửa nốt đi, ta không thể phí thời gian khi Cự Thần chết tiệt đó lù lù trên đầu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#105": {
+   "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
+   "dst": "Rõ, thưa ngài! Được rồi. {u}, cắm tụ điện vào ngay... đó. Tôi sẽ đảm bảo nó chạy trơn tru.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#106": {
+   "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
+   "dst": "Xong rồi. Giờ, cho thứ này chạy lại nào! Walder, theo dõi độ ổn định! Và... Rhay. Cô chắc nó sẽ hiệu quả chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#107": {
+   "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
+   "dst": "T-tôi chắc. Đây là cơ hội cuối của chúng ta. Ta phải hy vọng máy ổn định sẽ trụ được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#108": {
+   "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
+   "dst": "Được, được... Giờ hoặc không bao giờ... Trụ đi, máy ổn định, trụ đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#109": {
+   "src": "... Oh. That's... that's it, then. It's over. We failed.",
+   "dst": "... Ồ. Vậy là... vậy là hết. Kết thúc rồi. Ta thất bại rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#110": {
+   "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
+   "dst": "Ta... xin lỗi, Rhay. Ta đã... mong nó hiệu quả. Thật ra... ta cũng không có... kế hoạch... nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#111": {
+   "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
+   "dst": "Các Trưởng lão... hẳn sẽ biết... phải làm gì... Nhưng họ đã... mất từ lâu. Chỉ còn lại... phế tích.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#112": {
+   "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and as wise... as the earth itself...",
+   "dst": "Các Trưởng lão... Họ là... những Dogun... vĩ đại nhất. Già... như những tảng đá cổ nhất... và thông thái... như chính đất mẹ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#113": {
+   "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
+   "dst": "Họ có thể... dùng phép thuật... vượt xa mọi thứ... chúng ta làm được. Chỉ họ... mới xoa dịu được... Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#114": {
+   "src": "What happened to the Elders?",
+   "dst": "Các Trưởng lão bị sao vậy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#115": {
+   "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
+   "dst": "Họ đã bị... phong ấn. Đóng băng trong... lớp băng... sâu nhất. Khi người lùn... giết Garaheth... các Trưởng lão... cũng ngã theo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#116": {
+   "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
+   "dst": "Những tội ác ấy... Chiến tranh... Dân ta... Nhưng giờ không phải... lúc nghĩ tới. Có việc... quan trọng hơn... trước mắt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#117": {
+   "src": "But the war is over. The dwa",
+   "dst": "Chiến tranh đã hết rồi. Người lù",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#118": {
+   "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
+   "dst": "Ta... ta không... biết chuyện này. Dân tộc ta... đã tự do? Đã bao lâu... từ khi ta... thấy quê nhà?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#119": {
+   "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
+   "dst": "Ngươi... Nhà thám hiểm. Ta phải... gặp dân ta. Tù trưởng... sẽ biết... cách giải thoát... các Trưởng lão.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#120": {
+   "src": "If there's a chance... We have to take it. Ineos, {u}, take the balloon. We'll do what we can here. Now, go! There's no time to waste!",
+   "dst": "Nếu còn cơ hội... Ta phải nắm lấy. Ineos, {u}, đi khinh khí cầu đi. Bọn tôi sẽ cố hết sức ở đây. Đi ngay! Không còn thời gian để phí!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#121": {
+   "src": "It looks like Ozoth's body is trying to prevent you from getting the Everflame!",
+   "dst": "Có vẻ cơ thể Ozoth đang ngăn bạn lấy Ngọn Lửa Vĩnh Cửu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#122": {
+   "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
+   "dst": "Gặp Ineos và Rhay ở khinh khí cầu tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#123": {
+   "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
+   "dst": "Ta chưa từng... thấy Heights... từ trên cao. Không biết... ánh sáng của chúng... có mạnh như... khi nhìn từ dưới...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#124": {
+   "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
+   "dst": "Ta chỉ mong... Trưởng lão... chưa ra đi... mãi mãi. Chúng ta rất cần... trí tuệ của họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#125": {
+   "src": "Ah... I believe us... to be landing...",
+   "dst": "À... ta nghĩ... ta đang hạ cánh...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#126": {
+   "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "Đi tới {p} cùng Ineos bằng khinh khí cầu tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#127": {
+   "src": "{u}... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
+   "dst": "{u}... Chào. Thật là... cảnh lạ lùng... thấy ngươi hạ cánh... xuống làng ta... bằng cái máy đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#128": {
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
+   "dst": "Và... đó là... Ineos? Chúng ta tưởng... người lùn... đã đập ông thành đá vụn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#129": {
+   "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
+   "dst": "Ta đã trốn thoát... Chuyện dài lắm... Korzim. Không... có thời gian. Cha ngươi... đâu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#130": {
+   "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
+   "dst": "Ông ấy... ở dưới. Họ đang... giải thoát người bị đóng băng... ở New Taloka. Sao ông... muốn gặp... ông ấy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#131": {
+   "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
+   "dst": "Đấng Bảo Hộ... đang nổi giận. Ta phải tìm... các Trưởng lão. Họ sẽ biết... cách xoa dịu ngài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#132": {
+   "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
+   "dst": "Đấng... Bảo Hộ... Ta hiểu. Ta sẽ... đưa hai người... tới gặp ông ấy. Sidio... Raetin... giao... cho hai ngươi quản.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#133": {
+   "src": "Now, let us... travel. Through flame... and through stone...",
+   "dst": "Giờ, chúng ta... lên đường. Xuyên qua lửa... và xuyên qua đá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#134": {
+   "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
+   "dst": "Nói chuyện với Vua của {p} và Tù trưởng Dogun ở New Taloka tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#135": {
+   "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
+   "dst": "Tới... nơi rồi. Taloka... sụp đổ sớm nhất... trong chiến tranh. Chúng ta đang... cùng người lùn... khôi phục nó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#136": {
+   "src": "Are we all ready?",
+   "dst": "Sẵn sàng hết chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#137": {
+   "src": "Ready...",
+   "dst": "Sẵn sàng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Edac",
+   "source": "wiki"
+  },
+  "The Breaking Point#138": {
+   "src": "Ready!",
+   "dst": "Sẵn sàng!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#139": {
+   "src": "Very well. Begin on three. One... Two... Three!",
+   "dst": "Tốt lắm. Bắt đầu khi đếm tới ba. Một... Hai... Ba!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#140": {
+   "src": "Beginning reheating cycle! Stand back from the subject.",
+   "dst": "Bắt đầu chu trình làm ấm! Tránh xa đối tượng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#141": {
+   "src": "... Where... am... I? How long... has it... been...?",
+   "dst": "... Ta... đang ở... đâu? Đã... bao lâu... rồi...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#142": {
+   "src": "...Dwarf... You... you froze me... I will... I will...!",
+   "dst": "...Người lùn... Ngươi... đóng băng ta... Ta sẽ... ta sẽ...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#143": {
+   "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
+   "dst": "Bình tĩnh... Delg. Chiến tranh... đã hết. Ta... tự do rồi. Ngươi đã được... giải thoát.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#144": {
+   "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
+   "dst": "... Tự do? Hàng trăm... năm... chiến tranh... Giờ ta... được tự do?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dogun Delg",
+   "source": "wiki"
+  },
+  "The Breaking Point#145": {
+   "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
+   "dst": "Phải. Chúng ta lại được tự do... đi khắp quê nhà. Edac... Đưa Delg đi... và giúp anh ấy làm quen lại... với Heights.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#146": {
+   "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
+   "dst": "À, {u}! Vui được gặp lại cậu. Từ sau... từ sau khi mọi chuyện kết thúc, ta chưa thấy cậu quanh đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#147": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
+   "dst": "Phải. Chúng ta đã... làm việc miệt mài... mấy tuần qua. Taloka sắp... được dựng lại. Và nhiều... đồng bào bị phong ấn... đã được hồi sinh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#148": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed brethren... have been returned to life.",
+   "dst": "Phải. Chúng ta đã... làm việc miệt mài... mấy tuần qua. Taloka sắp... được dựng lại. Và nhiều... đồng bào bị phong ấn... đã được hồi sinh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#149": {
+   "src": "[-{~} Magmaflux Capacitor]",
+   "dst": "[-{~} Tụ điện Magmaflux]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#150": {
+   "src": "You use the grappling hook to swing back to the King in a dazzling feat of trapeze consisting of mid-air flips and acrobatic flourishes.",
+   "dst": "Bạn dùng móc câu đu về chỗ nhà vua bằng màn đu dây ngoạn mục, với những cú lộn nhào trên không và động tác điêu luyện.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#151": {
+   "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
+   "dst": "À, nhưng chuyện đó để sau. Nói ta nghe, hôm nay điều gì đưa cậu tới đây? Cậu cần gì ở chúng ta chăng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#152": {
+   "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "Tình hình... rất nguy cấp. Đấng Bảo Hộ Vĩ Đại... đã bị bỏ mặc... quá lâu. Chúng ta cần... sự thông thái... của các Trưởng lão. Ngài có biết... họ bị phong ấn ở đâu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#153": {
+   "src": "The situation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "Tình hình... rất nguy cấp. Đấng Bảo Hộ Vĩ Đại... đã bị bỏ mặc... quá lâu. Chúng ta cần... sự thông thái... của các Trưởng lão. Ngài có biết... họ bị phong ấn ở đâu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#154": {
+   "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
+   "dst": "Các Trưởng lão?! Phải, chúng ta biết họ bị phong ấn ở đâu. Nhưng đưa họ ra không hề đơn giản. Phải mất nhiều năm mới phá được hàng phòng thủ, và còn vô số Dogun khác cần giải thoát trước.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#155": {
+   "src": "The Protector?!",
+   "dst": "Đấng Bảo Hộ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#156": {
+   "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
+   "dst": "Ineos... ta muốn các Trưởng lão được tự do... như ông vậy. Nhưng Đấng Bảo Hộ... đã đứng vững... hàng trăm năm. Ngài có thể trụ... thêm-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#157": {
+   "src": "No... Has it truly... fallen this far..?",
+   "dst": "Không... Thật sự đã... tệ tới mức này..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#158": {
+   "src": "... That was your Protector? How powerful is it, if it can reach this far?",
+   "dst": "... Đó là Đấng Bảo Hộ của các ông? Mạnh cỡ nào mới vươn tới tận đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#159": {
+   "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
+   "dst": "Nếu Đấng Bảo Hộ... làm rung chuyển được cả Heights... Ngài có thể hủy diệt... nửa tỉnh này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#160": {
+   "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
+   "dst": "Draani... phải giải thoát các Trưởng lão. Chỉ họ... mới xoa dịu được ngài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#161": {
+   "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
+   "dst": "Phải... ta hiểu. Được thôi. {u}, ta sẽ đưa cậu tới hầm của các Trưởng lão. Ta giữ chìa khóa mở đường. Paku, tập hợp người của ngươi. Xem có ai có giải pháp khác không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#162": {
+   "src": "We will... search for one. I cannot... promise that one exists.",
+   "dst": "Chúng ta sẽ... tìm. Ta không thể... hứa là có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#163": {
+   "src": "{u}, let us go. It sounds as if we have very little time to waste.",
+   "dst": "{u}, đi thôi. Nghe như ta chẳng còn mấy thời gian.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#164": {
+   "src": "I will make preparations, and meet you at the Vault of Ice.",
+   "dst": "Ta sẽ chuẩn bị, và gặp cậu ở Hầm Băng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#165": {
+   "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
+   "dst": "Vào Hầm Dogun ở tầng dưới Freezing Heights tại [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#166": {
+   "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
+   "dst": "... E hèm. Vậy đây là lối vào. Một trong những bí mật giữ kín nhất của chúng ta... Ta đã mong khỏi phải đối mặt lời nhắc này thêm một thời gian...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#167": {
+   "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
+   "dst": "Nhưng giờ có vẻ chúng ta hết lựa chọn rồi. Tôi có chìa khóa, vào thôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#168": {
+   "src": "Unlock the Dogun Vault to find the Elders.",
+   "dst": "Mở Hầm Dogun để tìm các Trưởng lão.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#169": {
+   "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns here forever. I'll be glad to disappoint them.",
+   "dst": "Trong này lạnh nhỉ? Một căn hầm tạc vào True Ice của một con drake... Chắc tổ tiên tôi mong phong ấn người Dogun ở đây mãi mãi. Tôi sẽ vui lòng làm họ thất vọng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#170": {
+   "src": "Quickly, then, let us proceed to the primary door. I pray the Elders' will be responsive to our situation with the Colossus.",
+   "dst": "Vậy nhanh lên, tới cửa chính thôi. Mong các Trưởng lão sẽ chịu nghe về chuyện Cự Thần.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#171": {
+   "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
+   "dst": "Dù sao thì... Để tôi xem có mở được cánh cổng thứ hai không. Chắc chỉ cần...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#172": {
+   "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "Hừm. Không... ăn thua. Phép thuật này cổ xưa, mà tôi chưa từng chịu học cho tử tế... Thôi được. Ta còn cách khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#173": {
+   "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
+   "dst": "Nếu tôi nhớ không lầm, bên kia vực này có một công tắc thủ công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#174": {
+   "src": "Hm. That... didn't work. This magic is old, and I never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "Hừm. Không... ăn thua. Phép thuật này cổ xưa, mà tôi chưa từng chịu học cho tử tế... Thôi được. Ta còn cách khác.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#175": {
+   "src": "If my memory serves correctly, there should be a manual override on the other end of this chasm.",
+   "dst": "Nếu tôi nhớ không lầm, ở đầu bên kia vực này có một công tắc thủ công.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#176": {
+   "src": "[+{~} Trusty Grappling Hook]",
+   "dst": "[+{~} Trusty Grappling Hook]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#177": {
+   "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
+   "dst": "Vấn đề là vũng dung nham hiểm trở trên đường... và tôi không nghĩ đầu gối mình đủ sức nhảy qua hết.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#178": {
+   "src": "I would never usually do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
+   "dst": "Bình thường tôi chẳng bao giờ làm thế, nhưng thời thế khó khăn. Đây, cầm Grappling Hook thân thuộc của tôi. Nó sẽ giúp bạn tới chỗ công tắc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#179": {
+   "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
+   "dst": "Nó có giới hạn đấy. Nó chỉ bám được vào mấy tảng đá xanh trên vách - và xong việc là tôi lấy lại đấy nhé, cảm ơn nhiều!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#180": {
+   "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
+   "dst": "Này, {u}! Có vẻ bạn đang làm tốt, nhưng nếu bị kẹt thì nhớ là có thể nhảy rồi móc giữa không trung, sẽ đỡ hơn ở mấy bục khó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#181": {
+   "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
+   "dst": "Có vẻ nó mở rồi, {u}! Quay lại đây đi, tôi sẽ mở cửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#182": {
+   "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
+   "dst": "Xong rồi! Làm tốt lắm. Bạn dùng cái móc như một chuyên gia thực thụ! À, làm tôi nhớ lại cái lần-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#183": {
+   "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
+   "dst": "...E hèm. Quả là xuất sắc. Công tắc thủ công đã bật, phần còn lại để mở cổng tôi lo được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#184": {
+   "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
+   "dst": "Nhưng trước tiên, trả tôi cái móc! Nghĩ xem chuyện gì sẽ xảy ra nếu bạn tha hồ dùng nó khắp nơi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#185": {
+   "src": "And so... I believe we have gone as far as we can.",
+   "dst": "Vậy là... tôi nghĩ ta đã đi xa hết mức rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#186": {
+   "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
+   "dst": "Đây là True Ice, {u}. Nó đã hằn sẹo lên vùng Heights này hàng thế kỷ, từ khi một con rồng băng tạo ra nó trong cuộc chinh phạt của tổ tiên tôi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#187": {
+   "src": "When were the elders first i",
+   "dst": "Các Trưởng lão bị giam từ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#188": {
+   "src": "It cannot be melted or burned through by any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
+   "dst": "Không cách nào làm tan hay đốt thủng nó. Vì thế nơi này được chọn làm mộ của họ. Tôi e là chúng ta hết cách rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#189": {
+   "src": "At the end of the war, I imagine.",
+   "dst": "Chắc là vào cuối cuộc chiến.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#190": {
+   "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
+   "dst": "Khi các khu định cư cuối cùng của người Dogun thất thủ, và Garaheth bị giết lần đầu, tổ tiên tôi hẳn đã phong ấn họ sâu trong băng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#191": {
+   "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
+   "dst": "Những... việc người lùn làm sau khi thắng trận đều được ghi chép rõ. Tôi chẳng lạ nếu sử sách của chúng tôi gọi việc giam cầm này là đại thắng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#192": {
+   "src": "Who put them here?",
+   "dst": "Ai nhốt họ ở đây?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#193": {
+   "src": "The Dwarves, of course. Who else?",
+   "dst": "Người lùn, dĩ nhiên. Còn ai khác?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#194": {
+   "src": "I believe it was General Algard of the Dwarven army who ordered the Elders' imprisonments",
+   "dst": "Tôi tin là Tướng Algard của quân đội người lùn đã ra lệnh giam các Trưởng lão",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#195": {
+   "src": "He was lauded as a hero, naturally. Now... now we must reap the consequences of such a decision.",
+   "dst": "Ông ta được tôn vinh là anh hùng, dĩ nhiên. Giờ... giờ ta phải gánh hậu quả của quyết định ấy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#196": {
+   "src": "True Ice is a material which cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
+   "dst": "True Ice là thứ không cách nào làm tan hay đốt thủng. Ngay cả phép thuật Dogun cũng chẳng làm nó sứt mẻ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#197": {
+   "src": "... I imagine this is why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
+   "dst": "... Chắc vì thế mà nơi này được chọn để giam các Trưởng lão. Một nhà tù mà họ không bao giờ thoát ra được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#198": {
+   "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
+   "dst": "Người ta biết nó tự hình thành trong điều kiện khắc nghiệt... Nhưng băng ở đây chẳng tự nhiên chút nào.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#199": {
+   "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
+   "dst": "Nó được tạo từ hơi thở của một con Ice Drake giữa cuộc chiến- và, à, như bạn thấy, nó vẫn nằm đây từ đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#200": {
+   "src": "Just another remnant of our past mistakes, I suppose...",
+   "dst": "Lại một tàn tích của sai lầm xưa, tôi đoán vậy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#201": {
+   "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
+   "dst": "E hèm. Dù sao- như tôi nói, True Ice không thể xuyên thủng, kể cả bằng ngọn lửa nóng nhất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#202": {
+   "src": "If an Ice Drake formed this",
+   "dst": "Nếu một Ice Drake tạo ra nó",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#203": {
+   "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
+   "dst": "Tôi... tôi cho là hơi thở của rồng có thể làm tan nó. Lý lẽ đó nghe hợp lý.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#204": {
+   "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
+   "dst": "Có điều chúng tôi biết rất ít về loài rồng. Khi chúng tuyệt chủng, thông tin đó trở nên... vô dụng. Và thế là thất truyền.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#205": {
+   "src": "If anyone would know more about dragons, it would be the doguns.",
+   "dst": "Nếu có ai biết nhiều hơn về rồng, thì đó là người Dogun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#206": {
+   "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
+   "dst": "Nhưng chuyện đó chẳng quan trọng. Dù sao rồng cũng chết hết rồi. Chúng ta vẫn hết cách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#207": {
+   "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too big a threat.",
+   "dst": "Chúng tuyệt chủng thôi. Khi các nền văn minh ở Gavel lớn mạnh, sự hung dữ và vóc dáng của rồng là mối đe dọa quá lớn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#208": {
+   "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
+   "dst": "Một số bị săn. Một số chết đói. Trứng bị lấy khỏi tổ và đập vỡ trên đá cho chim ăn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#209": {
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
+   "dst": "Giờ chỉ còn rồng con - tiếng vọng của tổ tiên vĩ đại một thời, với chút lửa chẳng đủ làm sém giáp bạn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#210": {
+   "src": "Not all of the dragons are g",
+   "dst": "Không phải rồng đã tuyệt c",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#211": {
+   "src": "You- what? Near {p}?",
+   "dst": "Bạn- gì? Gần {p} á?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#212": {
+   "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
+   "dst": "Một con rồng còn sống... Bạn làm nhiều chuyện ghê nhỉ? Dừng chiến tranh, dời cả rồng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#213": {
+   "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
+   "dst": "Chà... nếu ở {p} có một con rồng còn sống... Thì chúng ta vẫn còn hy vọng! {u}, ta phải nhờ nó giúp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#214": {
+   "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
+   "dst": "Hãy về với những người khác. Tôi đã bảo họ đợi ngoài {p}... có lẽ họ sẽ xác nhận được hơi thở rồng có làm được việc không.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#215": {
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "dst": "Đúng vậy. Rồng lửa đã đứng về phía họ trong chiến tranh. Chắc bạn đã thấy bộ xương ngay bên ngoài Freezing Heights?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#216": {
+   "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
+   "dst": "Phải, ừm... người lùn cần thứ để chống lại sức mạnh khủng khiếp của rồng lửa trên chiến trường, nên họ bắt rồng và drake của các nguyên tố khác làm nô lệ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#217": {
+   "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
+   "dst": "Như con Ice Drake đã tạo ra căn hầm này, bọc các Trưởng lão trong thứ băng thật nhất.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#218": {
+   "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
+   "dst": "... À, từng có một cuốn tiểu thuyết rất hay về một sinh vật như thế ở Shiar, phải tới Heights cùng chiếc nhẫn được thừa kế-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#219": {
+   "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
+   "dst": "Nhưng thú thật, mấy câu hỏi này gần như chẳng liên quan. Chúng ta có việc gấp hơn, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#220": {
+   "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
+   "dst": "Băng này còn cứng hơn cả hắc diện thạch. Các tinh thể tạo nên nó được gắn kết bằng phép thuật cổ xưa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#221": {
+   "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
+   "dst": "Đập vỡ nó bằng mấy công cụ đó là không thể. Có lẽ có vũ khí phá được nó, sâu trong kho vũ khí của chúng tôi- dù sao căn hầm này cũng phải được tạc bằng cách nào đó...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#222": {
+   "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
+   "dst": "Tuy vậy, trong tình hình này, tôi không nghĩ ta có thời gian tìm nó. Kể cả bắt đầu ngay, kho vũ khí của chúng tôi rất lớn. Phải mất hàng tuần mới tìm ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#223": {
+   "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
+   "dst": "Dung nham ở Heights chẳng qua chỉ là đá nóng chảy. Tàn dư của thời các hang động này hình thành.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#224": {
+   "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
+   "dst": "Nó chẳng đủ nóng để làm tan True Ice. Nếu đủ, Freezing Heights đã biến mất từ lâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#225": {
+   "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
+   "dst": "Tôi... ừm... xanh lá cũng đẹp, nhỉ? Dù chẳng hợp người lùn lắm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#226": {
+   "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
+   "dst": "Vậy thì đỏ. Hoặc cam! ...Dù ga giường của tôi có màu xanh hải quân đẹp tuyệt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#227": {
+   "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
+   "dst": "Bữa sáng... Tôi ăn mấy quả trứng, chắc vậy. Nhưng tôi đâu biết đó là bữa sáng cuối cùng, phải không..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#228": {
+   "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
+   "dst": "Hừm... Nếu biết trước, có lẽ tôi đã chọn khác. Có lẽ tôi đã-... thôi bỏ đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#229": {
+   "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
+   "dst": "Tập hợp bên ngoài {p} tại [{~}, {~}, -{~}] để tìm cách giải thoát các Trưởng lão.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#230": {
+   "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... đó là tình cảnh của chúng ta lúc này. Paku, ông nghĩ sao? Kế hoạch này có ổn không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#231": {
+   "src": "... so that is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... đó là tình cảnh của chúng ta lúc này. Paku, ông nghĩ sao? Kế hoạch này có ổn không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#232": {
+   "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
+   "dst": "Hừm... Có lẽ ngươi đúng... Draani. Phép thuật trong... hơi thở rồng... rất mạnh. Không ngờ... Ozoth hùng mạnh vẫn sống... suốt ngần ấy năm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#233": {
+   "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
+   "dst": "Nếu Ozoth còn sống... ta phải nhờ bà giúp. Nếu người Dogun... cầu xin, bà sẽ... ra tay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#234": {
+   "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
+   "dst": "Chà, kế hoạch này cũng được. {u}, bạn sẽ đi xin lời khuyên của con rồng đó, cùng với... Ineos, phải không? Chúc may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#235": {
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "Ngươi nên... đi Đường hầm giao thương... {u}. Ta sẽ ghi tọa độ... vào Sách nội dung của ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#236": {
+   "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
+   "dst": "Dùng đường hầm giao thương {p} tại [{~}, {~}, -{~}] để tới {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#237": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] to attempt to speak with her.",
+   "dst": "Tới {p} tại [{~}, {~}, -{~}] để thử nói chuyện với bà ấy.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#238": {
+   "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
+   "dst": "À... thật vui... được gặp ngươi. Chúng ta phải... tới chỗ Ozoth... thật nhanh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#239": {
+   "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
+   "dst": "Rồng Ozoth... Đấng Nhóm Lửa Bất Tận... chúng tôi tới... xin người giúp đỡ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#240": {
+   "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
+   "dst": "Chúng tôi đang tìm... cách... làm tan thứ băng... chân chính nhất. Số phận... của Gavel... đang lâm nguy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#241": {
+   "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
+   "dst": "Dogun... và Rồng... vận mệnh gắn bó... qua bao thế kỷ. Giờ chúng tôi khẩn cầu... Đấng Nhóm Lửa Bất Tận... cứu lấy tỉnh này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#242": {
+   "src": "... well...",
+   "dst": "... chà...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#243": {
+   "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
+   "dst": "Đấng Nhóm Lửa Bất Tận... sẵn lòng trao đi... ngọn lửa của bà. Ngươi phải... lấy nó... từ bụng bà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#244": {
+   "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
+   "dst": "Ta khuyên ngươi... đừng nghĩ... nhiều quá về chuyện này. Khi... ngươi sẵn sàng... hãy vào miệng Ozoth và lấy... ngọn lửa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#245": {
+   "src": "Descend into Ozoth's belly to retrieve an Everflame.",
+   "dst": "Xuống bụng Ozoth để lấy Ngọn Lửa Vĩnh Cửu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#246": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
+   "dst": "Tới {p} tại [{~}, {~}, -{~}] cùng Ngọn Lửa Vĩnh Cửu.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#247": {
+   "src": "{u}! Have you retrieved... the Eternal Flame?",
+   "dst": "{u}! Có... Ngọn Lửa Vĩnh Cửu chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#248": {
+   "src": "{u}! Have you retrieved... the Everflame?",
+   "dst": "{u}! Có... Ngọn Lửa Vĩnh Cửu chưa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#249": {
+   "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
+   "dst": "Tuyệt lắm. Đấng Nhóm Lửa Bất Tận... cảm tạ người... vì sự hy sinh. Ta sẽ lo... ngọn lửa của người... được trả lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#250": {
+   "src": "Ozoth apologises... if it was a bit hot... in there.",
+   "dst": "Ozoth xin lỗi... nếu trong đó... hơi nóng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#251": {
+   "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
+   "dst": "Giờ thì, {u}... ta chưa bao giờ giỏi... phép thuật cổ xưa... nhưng mong là ta đủ sức... đưa chúng ta về đường tắt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#252": {
+   "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
+   "dst": "Hai người về rồi! Có tin gì từ {p} không? Con rồng có giúp không?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#253": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
+   "dst": "Có... Ozoth đã hy sinh rất lớn... vì tỉnh này... và chúng ta có Ngọn Lửa Vĩnh Cửu... để làm tan băng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#254": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Everflame... to melt the ice.",
+   "dst": "Có... Ozoth đã hy sinh rất lớn... vì tỉnh này... và chúng ta có Ngọn Lửa Vĩnh Cửu... để làm tan băng.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#255": {
+   "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
+   "dst": "Làm tốt lắm... cả hai. Ta sẽ đảm bảo... người Dogun cảm tạ bà... tử tế. Người lùn cũng nên... làm như vậy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#256": {
+   "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
+   "dst": "Phải, phải, nhưng giờ không có thời gian lo chuyện đó. Nhanh, quay lại-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#257": {
+   "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
+   "dst": "Hãy cẩn thận... với các Trưởng lão... Draani. Họ khó mà vui vẻ... sau khi bị giam cầm. Điều tối quan trọng... là ngươi giải thích... cho họ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#258": {
+   "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
+   "dst": "Ta muốn đi cùng... cả hai... nhưng băng giá không hợp... với giống loài ta. Chúc hai người... thật nhiều may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#259": {
+   "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "...phải. Ừ. Chà, không tránh được rồi. Đi nào, {u}. Ta phải làm tan băng cho các Trưởng lão và khiến họ chịu nghe. Mang lửa theo, tôi đợi bạn ở Hầm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#260": {
+   "src": "... right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "... phải. Ừ. Chà, không tránh được rồi. Đi nào, {u}. Ta phải làm tan băng cho các Trưởng lão và khiến họ chịu nghe. Mang lửa theo, tôi đợi bạn ở Hầm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#261": {
+   "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
+   "dst": "Quay lại Hầm Dogun tại [{~}, {~}, -{~}] để giải thoát các Trưởng lão Dogun.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#262": {
+   "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
+   "dst": "Vậy còn chờ gì nữa! Giải thoát các Trưởng lão thôi nhỉ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#263": {
+   "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
+   "dst": "Cứ mang Ngọn Lửa Vĩnh Cửu tới từng phòng giam, làm tan lớp True Ice đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#264": {
+   "src": "Excellent! We've done it! Now we just need to explain the situation-...",
+   "dst": "Tuyệt! Ta làm được rồi! Giờ chỉ cần giải thích tình hình-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#265": {
+   "src": "We are freed.",
+   "dst": "Ta tự do rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#266": {
+   "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
+   "dst": "...À. Chắc tôi đã không... tính kỹ. Ờm. Thưa Trưởng lão, tôi xin lỗ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#267": {
+   "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
+   "dst": "Người lùn... Hừm. Tội ác... của tổ tiên ngươi... phải đền trả.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#268": {
+   "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
+   "dst": "Tuy nhiên. Ta... đã nghe ngươi nói. Ta... đã biết... tình trạng của Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#269": {
+   "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
+   "dst": "Món nợ của ngươi... ta sẽ tính... sau. Chuyện này... cấp bách... hơn. Phải xoa dịu... Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#270": {
+   "src": "...Yes. You. Human. That was... dragonfire... was it not?",
+   "dst": "...Phải. Ngươi. Con người. Đó là... lửa rồng... đúng chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#271": {
+   "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
+   "dst": "Vậy hãy cho ta... mượn nó. Sức mạnh của nó... sẽ giúp chúng ta... hồi phục. Giờ... ai đang giữ... danh hiệu... Tù trưởng?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#272": {
+   "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
+   "dst": "Ơ-à! Giờ Paku là Tù trưởng Dogun. Ông ấy chắc đang ở... Ở Taloka.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#273": {
+   "src": "Very well... We shall travel... through flame... and through stone...",
+   "dst": "Được lắm... Chúng ta sẽ đi... xuyên qua lửa... và xuyên qua đá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#274": {
+   "src": "...The Elders... after all this time... to see you, again... in the flesh...",
+   "dst": "...Các Trưởng lão... sau ngần ấy năm... gặp lại các ngài... tận mắt...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#275": {
+   "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
+   "dst": "Chào ngươi, Paku. Có nhiều... chuyện cần bàn. Nhưng trước hết... phải tới... chỗ Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#276": {
+   "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
+   "dst": "Đi cùng ta... Ineos và Paku. Còn... rất ít thời gian... để phí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#277": {
+   "src": "Now, let us travel... Through flame... and through stone...",
+   "dst": "Giờ, hãy lên đường... Xuyên qua lửa... và xuyên qua đá...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#278": {
+   "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
+   "dst": "Korzim... con ta... đi cùng đi. Trưởng lão phải tới... Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#279": {
+   "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
+   "dst": "Iscor... Astal... Desint... đã... quá lâu rồi. Ta sẽ đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#280": {
+   "src": "earth and flame... fire and stone... transport us through your form!",
+   "dst": "đất và lửa... lửa và đá... đưa chúng ta xuyên qua thân người!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#281": {
+   "src": "-have to trust that they'll return!",
+   "dst": "-phải tin là họ sẽ quay về!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#282": {
+   "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demolition mages on standby the past few days, our only choice is to-",
+   "dst": "Không còn thời gian! Tôi thấy cái nền đất chết tiệt đang nứt dưới chân, phải dùng phương án cuối. Mấy ngày nay ta có pháp sư phá dỡ túc trực, cách duy nhất là-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#283": {
+   "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
+   "dst": "Rhay. Elix. Trưởng lão... của ta... đã tự do. Họ tới đây... giúp... Đấng Bảo Hộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#284": {
+   "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
+   "dst": "Đi cùng ta... những kẻ dũng cảm. Các ngươi sẽ thấy... nỗ lực cứu Tỉnh này... không hề uổng phí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#285": {
+   "src": "flames of the earth... take us to the great protector... to make our plea!",
+   "dst": "lửa của đất... đưa chúng ta tới đấng hộ vệ vĩ đại... để dâng lời khẩn cầu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#286": {
+   "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
+   "dst": "Tới Cự Thần Hẻm Núi tại [{~}, {~}, -{~}] để thử xoa dịu nó.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#287": {
+   "src": "Great Protector... It is furious.",
+   "dst": "Đấng Bảo Hộ... Ngài đang phẫn nộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#288": {
+   "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
+   "dst": "Hừ. Lũ người lùn ngu ngốc... Hậu quả...của cuộc chiến vô nghĩa... May cho các ngươi...đã kịp thả chúng ta...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#289": {
+   "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
+   "dst": "Desint... Iscor... Ta sẽ chuẩn bị... nghi lễ. Bảo vệ ta... trong lúc đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#290": {
+   "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
+   "dst": "Con người. Chúng ta sẽ kéo Đấng Bảo Hộ... lùi khỏi bờ vực. Chỉ làm được vậy thôi. Dồn hết sức mạnh... chúng ta có.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#291": {
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
+   "dst": "Ngươi phải tiến vào... vùng đất thiêng này. Chiến đấu tới cùng... Làm Ngài... tỉnh ngộ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#292": {
+   "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
+   "dst": "Nhà thám hiểm... Ta trông cậy...vào ngươi. Chúng ta sẽ cố...hỗ trợ ngươi hết sức.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#293": {
+   "src": "We'll do the best we can out here! I have some ideas already...",
+   "dst": "Ở ngoài này chúng tôi sẽ cố hết sức! Tôi có vài ý tưởng rồi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#294": {
+   "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
+   "dst": "Rhay, không phải lúc. Con người. Chúng tôi yểm trợ bạn. Bạn làm được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#295": {
+   "src": "You have faced...worse odds before...have you not? You will face them...again.",
+   "dst": "Ngươi từng đối mặt...nghịch cảnh tệ hơn...đúng không? Ngươi sẽ lại...vượt qua.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#296": {
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
+   "dst": "Xong rồi. Desint... Iscor... Vào vị trí. Chúng ta phải... kìm Ngài lại.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#297": {
+   "src": "great protector, lord of stone, hear our burning call. your fury clouds your vision, your anger burns and twists our home.",
+   "dst": "đấng hộ vệ, chúa tể của đá, hãy nghe tiếng gọi rực lửa. cơn giận che mắt ngài, thiêu đốt và vặn xoắn quê hương ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#298": {
+   "src": "we, the doguns, who now hold the final flame of a fallen god... we will hold you back. we will keep this land intact!",
+   "dst": "chúng tôi, người dogun, giữ ngọn lửa cuối của một vị thần đã ngã... sẽ kìm ngài lại. sẽ giữ vẹn mảnh đất này!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#299": {
+   "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
+   "dst": "Chúng ta sẽ... giữ Ngài từ đây... con người. Giờ... đi đi! Ta không thể... giữ Ngài... lâu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#300": {
+   "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
+   "dst": "Viên pha lê này...giúp ngươi dùng...lửa của ta. Dùng nó...để phá...phòng thủ của Ngài.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#301": {
+   "src": "{u}... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
+   "dst": "{u}... Trước khi đi. Ta trao ngươi... những thánh tích hùng mạnh này. Dân ta... đã giữ chúng... lâu hơn cả đời ta. Có lẽ chúng... sẽ giúp ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#302": {
+   "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
+   "dst": "Tôi không thể cho bạn thứ độc nhất như của Paku, nhưng vẫn có thể cho mượn một khoản từ ngân khố. Dùng sao tùy bạn, miễn là xoa dịu được thứ đó. Chúc may mắn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} Tụ điện Magmaflux]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#304": {
+   "src": "Have you flown to Corkus with Rhay yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "Bạn đã bay tới Corkus cùng Rhay chưa? Nhanh, tới khinh khí cầu ở phía nam!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#305": {
+   "src": "Just step on the iron platform and we'll send you down!",
+   "dst": "Cứ bước lên bệ sắt là chúng tôi đưa bạn xuống!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#306": {
+   "src": "[!] Central bore tunnel opening! Exercise caution around the deep drop.",
+   "dst": "[!] Đường hầm khoan trung tâm đang mở! Cẩn thận với vực sâu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#307": {
+   "src": "You got the part! Head back to the balloon and I'll meet you there.",
+   "dst": "Lấy được linh kiện rồi! Quay về khinh khí cầu, tôi sẽ gặp bạn ở đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Breaking Point#308": {
+   "src": "Have you flown to the Heights with Ineos yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "Bạn đã bay tới Heights cùng Ineos chưa? Nhanh, tới khinh khí cầu ở phía nam!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#309": {
+   "src": "I... will meet you... by the airship. I am... eager... to see my home... again.",
+   "dst": "Ta... sẽ gặp ngươi... bên phi thuyền. Ta... nóng lòng... thấy lại... quê nhà.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#310": {
+   "src": "Well... That's it, then! I'll see you two off, and then... Then I'll figure out how to clean up here.",
+   "dst": "Chà... Vậy là xong! Tôi sẽ tiễn hai người, rồi... Rồi tôi tính cách dọn dẹp chỗ này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#311": {
+   "src": "I... I really did hope we could do it. I thought that our magic could save the day, that it could stop this thing!",
+   "dst": "Tôi... tôi thật lòng mong chúng ta làm được. Tôi tưởng phép thuật của chúng tôi sẽ cứu nguy, sẽ ngăn được thứ đó!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#312": {
+   "src": "... Nothing to do about it now, of course! Good luck out there. We're counting on you two now. Go find those Elders!",
+   "dst": "... Giờ thì đành chịu thôi! Chúc may mắn. Giờ chúng tôi trông cậy vào hai người. Đi tìm các Trưởng lão đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#313": {
+   "src": "It has been... many years... since I fled the Heights. I am... grateful to... the Corkians... for taking me in.",
+   "dst": "Đã... nhiều năm... từ khi ta trốn khỏi Heights. Ta... biết ơn... người Corkian... đã cưu mang ta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#314": {
+   "src": "But... The war... has ended. I can finally... go home...",
+   "dst": "Nhưng... Chiến tranh... hết rồi. Ta có thể... về nhà...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#315": {
+   "src": "... {p} first... though. We still... have work to do...",
+   "dst": "... Nhưng trước hết... {p}. Ta còn... việc phải làm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "captured"
+  },
+  "The Breaking Point#316": {
+   "src": "What are you waiting for? Use my hook to get to the override switch at the end of this cave!",
+   "dst": "Còn chờ gì nữa? Dùng móc của tôi để tới công tắc thủ công ở cuối hang!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "King Draani",
+   "source": "captured"
+  },
+  "The Breaking Point#317": {
+   "src": "Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "Đi nào, {u}. Ta phải làm tan băng cho các Trưởng lão và khiến họ chịu nghe. Mang lửa theo, tôi đợi bạn ở Hầm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "Sao? Còn chờ gì nữa- đi thôi, tới Corkus nào!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "Còn chờ gì nữa?! Lắp linh kiện vào máy đi, nhanh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "Chúc may mắn ở Heights, {u}. Tôi... sẽ xem có vớt vát được gì từ cái máy không, nhưng có vẻ không ổn. Các Trưởng lão của Ineos có thể là hy vọng duy nhất...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "Ngươi nên... đi Đường hầm giao thương... {u}. Ta đã ghi tọa độ... vào Sách nội dung của ngươi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
+  }
+ }
+}

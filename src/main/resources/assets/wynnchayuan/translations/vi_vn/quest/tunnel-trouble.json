@@ -1,0 +1,700 @@
+{
+ "_meta": {
+  "quest": "Tunnel Trouble",
+  "count": 69,
+  "translated": 69,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Tunnel Trouble#000": {
+   "src": "You shouldn't go in here just yet.",
+   "dst": "Bạn chưa nên vào đây lúc này.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#001": {
+   "src": "Halt! You cannot go down this cave, it is blocked.",
+   "dst": "Đứng lại! Không được xuống hang này, đã bị chặn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "Sergeant Klafson",
+   "source": "captured"
+  },
+  "Tunnel Trouble#002": {
+   "src": "Now, here's where you come in- I need you to clear out that cave route so we can use it once more! Good luck, soldier!",
+   "dst": "Giờ đến phần của cậu- tôi cần cậu dọn sạch tuyến hang đó để ta dùng lại được! Chúc may mắn, binh sĩ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#003": {
+   "src": "I can see the other side! Just a little bit more...",
+   "dst": "Thấy đầu bên kia rồi! Chỉ chút nữa thôi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "captured"
+  },
+  "Tunnel Trouble#004": {
+   "src": "[!] Right-Click the gates of the cow pens to open them and free the cows!",
+   "dst": "[!] Nhấp chuột phải vào cổng chuồng bò để mở và thả bò ra!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#005": {
+   "src": "Go free those cows from the farmers before they're taken to the slaughterhouse! Oh man, the slaughterhouse...",
+   "dst": "Đi thả bò khỏi tay mấy tay nông dân trước khi chúng bị đưa vào lò mổ! Trời ơi, lò mổ...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "Drale",
+   "source": "captured"
+  },
+  "Tunnel Trouble#006": {
+   "src": "Looks like you freed the cows successfully! You should return to Drale, before-",
+   "dst": "Có vẻ bạn đã thả bò thành công! Nên quay về chỗ Drale, trước khi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#007": {
+   "src": "An intruder! What are you doing with my cows!? Guard golem! Attack!",
+   "dst": "Kẻ đột nhập! Ngươi làm gì với bò của ta!? Golem hộ vệ! Tấn công!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#008": {
+   "src": "You've defeated Bylvis' Guard Golem! You're in the clear now, and the cows are saved! You should return to Drale.",
+   "dst": "Bạn đã đánh bại Golem hộ vệ của Bylvis! Giờ đã an toàn, bò cũng được cứu! Nên quay về chỗ Drale.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#009": {
+   "src": "Hello again, friend! I'm here with the help! Cows, to me!",
+   "dst": "Chào lần nữa, bạn! Tôi mang cứu viện tới! Bò ơi, lại đây!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "captured"
+  },
+  "Tunnel Trouble#010": {
+   "src": "You can... go on ahead. Tell whoever's on the other end that we succeeded. And while you do that, I'll be searching for a better career.",
+   "dst": "Cậu... cứ đi tiếp đi. Báo ai ở đầu kia rằng ta đã thành công. Còn tôi sẽ đi tìm nghề khác tốt hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "captured"
+  },
+  "Tunnel Trouble#011": {
+   "src": "Talk to Captain Fenor in front of {p} at [{~}, {~}, -{~}].",
+   "dst": "Nói chuyện với Đội trưởng Fenor trước {p} tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#012": {
+   "src": "Ah! You must be a new recruit! Well, I've got a mission for you.",
+   "dst": "À! Cậu hẳn là tân binh mới! Tôi có nhiệm vụ cho cậu đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#013": {
+   "src": "There's an old cave behind me. It was used in the Corruption Wars...",
+   "dst": "Sau lưng tôi có hang cũ. Từng dùng trong Chiến tranh Tha Hóa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#014": {
+   "src": "We used it for quick and easy travel between {p} and {p}. It's been abandoned for years.",
+   "dst": "Bọn tôi dùng nó để đi nhanh giữa {p} và {p}. Nó bị bỏ hoang nhiều năm rồi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#015": {
+   "src": "This cave could prove to be very useful for future recruits who need to travel between {p} and {p}.",
+   "dst": "Hang này có thể rất hữu ích cho tân binh sau này cần đi lại giữa {p} và {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#016": {
+   "src": "Enter the cave behind Captain Fenor at [{~}, {~}, -{~}].",
+   "dst": "Vào hang phía sau Đội trưởng Fenor tại [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#017": {
+   "src": "...Oh! Shoot, is it time to get to work already?",
+   "dst": "...Ồ! Chết, đến giờ làm rồi à?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#018": {
+   "src": "Guess you're the soldier, then?",
+   "dst": "Vậy cậu là binh sĩ hả?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#019": {
+   "src": "Uh... well, to start, we'll need to clear that debris. Just... give it a shove, or something. That'll probably do it.",
+   "dst": "Ờ... à, trước hết phải dọn đống đổ nát kia. Cứ... đẩy nó một cái, hay gì đó. Chắc vậy là được.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#020": {
+   "src": "Help Miner Linton remove the debris blocking the path.",
+   "dst": "Giúp Thợ mỏ Linton dọn đống đổ nát chặn đường.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#021": {
+   "src": "Pretty easy, huh? Hey, maybe you can just go on ahead, and do the rest yourself?",
+   "dst": "Dễ ợt, hả? Này, hay cậu đi tiếp, tự làm nốt phần còn lại?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#022": {
+   "src": "...Yeah, no, I should probably do my job. Let me grab my pickaxe, and we can keep going forward.",
+   "dst": "...Ờ, thôi, chắc tôi nên làm việc của mình. Để tôi lấy cuốc, rồi ta đi tiếp.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#023": {
+   "src": "Clear the cave of possible roadblocks.",
+   "dst": "Dọn sạch chướng ngại có thể có trong hang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#024": {
+   "src": "Oh, come on... Hey, soldier, do your job! Get rid of those monsters, would you?",
+   "dst": "Ôi, thôi nào... Này, binh sĩ, làm việc đi! Dẹp lũ quái kia giùm cái?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#025": {
+   "src": "Huh?!",
+   "dst": "Hả?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#026": {
+   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
+   "dst": "Sập hang? Thật à? Thêm việc cho tôi... Tôi sẽ mở đường, cậu cứ đánh tiếp lũ bị tha hóa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#027": {
+   "src": "Halfway there... Ugh, I knew I should have brought explosives...",
+   "dst": "Được nửa đường... Haizz, biết thế mang thuốc nổ theo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#028": {
+   "src": "There we go, I've made us a hole! Get over here, quickly!",
+   "dst": "Xong rồi, có lỗ rồi! Lại đây, nhanh lên!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#029": {
+   "src": "...Oh, come on. You've got to be kidding me. Another cave-in? Really?",
+   "dst": "...Ôi, thôi nào. Đùa nhau à. Lại sập nữa? Thật sao?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#030": {
+   "src": "And of course it's bigger than the last one. What's my pickaxe going to do against this thing?!",
+   "dst": "Và dĩ nhiên lần này to hơn. Cái cuốc của tôi làm gì được cái đống này?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#031": {
+   "src": "Really should have thought to bring explosives. Well, soldier, we tried our best! Nobody'll blame us if we give up now.",
+   "dst": "Lẽ ra phải nghĩ tới chuyện mang thuốc nổ. Thôi, binh sĩ, ta cố hết sức rồi! Bỏ cuộc giờ cũng chẳng ai trách.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#032": {
+   "src": "...What? Don't look at me like that. Fine, we can- huh? Do you hear that? Over there, to the right.",
+   "dst": "...Gì? Đừng nhìn tôi thế. Được rồi, ta có thể- hả? Nghe thấy không? Đằng kia, bên phải.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#033": {
+   "src": "Oh, uh... Hi... Well, this is a little awkward... I'll just... Go.",
+   "dst": "Ồ, ờ... Chào... Chà, hơi ngượng nhỉ... Tôi... đi đây.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#034": {
+   "src": "...You know what? I'm not going to ask. As far as I'm concerned, that didn't happen.",
+   "dst": "...Biết sao không? Tôi không hỏi đâu. Với tôi, chuyện đó chưa từng xảy ra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#035": {
+   "src": "Right, of course you want to check it out. Fine! Go ahead. I'll just... sit here and twiddle my thumbs 'till you're back.",
+   "dst": "Phải rồi, dĩ nhiên cậu muốn đi xem. Được! Đi đi. Tôi sẽ... ngồi đây ngồi không cho tới khi cậu về.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#036": {
+   "src": "Investigate the small hole to the right of the large pile of debris.",
+   "dst": "Điều tra cái lỗ nhỏ bên phải đống đổ nát lớn.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#037": {
+   "src": "Oh... Didn't expect you to follow me... Well, um... Hi! This will sound mad but...",
+   "dst": "Ồ... Không ngờ bạn theo tôi... Chà, ừm... Chào! Nghe thì điên nhưng...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#038": {
+   "src": "I'm Drale, and I'm on a mission to free these cows from the enslavement of {p}.",
+   "dst": "Tôi là Drale, đang quyết giải phóng đàn bò này khỏi ách nô lệ của {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#039": {
+   "src": "Those farmers stole those cows. They are sacred animals. Now they're about to turn them into steak! If you were to help me, maybe I could help you...",
+   "dst": "Đám nông dân đó trộm bò. Bò là loài vật thiêng. Giờ chúng sắp bị biến thành bít tết! Nếu bạn giúp tôi, có lẽ tôi cũng giúp được bạn...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#040": {
+   "src": "Go free those innocent cows from enslavement! Qu-quickly! Before that farmer gets back...",
+   "dst": "Đi giải phóng đàn bò vô tội khỏi ách nô lệ! N-nhanh! Trước khi lão nông kia quay lại...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#041": {
+   "src": "Where are you going? Come here and talk to me first.",
+   "dst": "Bạn đi đâu đấy? Lại đây nói chuyện với tôi trước đã.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#042": {
+   "src": "Free the cows without being seen by the farmer.",
+   "dst": "Thả bò mà không để nông dân nhìn thấy.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#043": {
+   "src": "Ah, good to see my cows are all in tip-top shape! Welp, time to- gah!",
+   "dst": "À, thấy đàn bò của ta khỏe re thật vui! Thôi, đến lúc- á!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "Bylvis",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#044": {
+   "src": "Defeat the farmer's Guard Golem.",
+   "dst": "Đánh bại Golem hộ vệ của nông dân.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#045": {
+   "src": "Golem! No! That cost me thousands of emeralds!",
+   "dst": "Golem! Không! Ta tốn cả nghìn ngọc lục bảo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 7",
+   "speaker": "Bylvis",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#046": {
+   "src": "Return to Drale about your success.",
+   "dst": "Quay lại báo tin thắng lợi cho Drale.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#047": {
+   "src": "Thank you so much, but we're not done yet. We need to get these cows out the province.",
+   "dst": "Cảm ơn bạn nhiều lắm, nhưng chưa xong đâu. Phải đưa đàn bò ra khỏi tỉnh.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#048": {
+   "src": "There's a small opening behind me. Go through it and help me get these cows on a raft to Gavel!",
+   "dst": "Sau lưng tôi có một khe nhỏ. Đi qua đó và giúp tôi đưa đàn bò lên bè tới Gavel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#049": {
+   "src": "Help Drale push the raft with the cows out to sea.",
+   "dst": "Giúp Drale đẩy bè chở bò ra biển.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#050": {
+   "src": "There's the raft! Help me push it for the cows!",
+   "dst": "Bè đây rồi! Giúp tôi đẩy nó vì đàn bò nào!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#051": {
+   "src": "And, that should do it! Be free, my friends! A new life awaits!",
+   "dst": "Vậy là xong! Tự do đi, các bạn của tôi! Cuộc đời mới đang chờ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#052": {
+   "src": "Again, thank you so much for what you have done this day. These cows deserve a better life than being farm animals.",
+   "dst": "Một lần nữa, cảm ơn bạn rất nhiều vì những gì đã làm hôm nay. Đàn bò này xứng đáng sống tốt hơn làm gia súc.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#053": {
+   "src": "...Oh! Right! You were busy with something before you came to help me, weren't you? Hm... I think I might be able to help you with that as well! Let's go back to the tunnel!",
+   "dst": "...Ồ! Phải rồi! Trước khi giúp tôi bạn đang bận việc gì đó, đúng không? Hừm... Tôi nghĩ tôi cũng giúp được việc đó! Quay lại đường hầm thôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#054": {
+   "src": "Return to Miner Linton back in the abandoned cave.",
+   "dst": "Quay lại chỗ Thợ mỏ Linton trong hang bỏ hoang.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#055": {
+   "src": "Oh, good, you're back. It's been, like, an hour! What were you even doing for that long!",
+   "dst": "Ồ, tốt, cậu về rồi. Gần cả tiếng rồi đấy! Cậu làm gì lâu thế!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#056": {
+   "src": "...You helped some crazy cow-obsessed lunatic steal some cows? I don't think you're allowed to do that. There's a law against that, or something.",
+   "dst": "...Cậu giúp một gã điên mê bò trộm bò á? Tôi không nghĩ được phép làm thế. Có luật cấm đấy, hay gì đó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#057": {
+   "src": "Eh. Not that I really care, either way. I've certainly done worse.",
+   "dst": "Hừ. Mà tôi cũng chẳng quan tâm mấy. Tôi từng làm chuyện tệ hơn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#058": {
+   "src": "Well then! Ready to call it quits? We're definitely not going to make any progress, so we might as we-",
+   "dst": "Thế thì! Sẵn sàng bỏ cuộc chưa? Chắc chắn ta chẳng tiến thêm được, nên thôi thì-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#059": {
+   "src": "Wh- huh?!",
+   "dst": "C- hả?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#060": {
+   "src": "Since you helped me with my problem, I thought I should repay that favor by helping you!",
+   "dst": "Vì bạn giúp tôi giải quyết vấn đề, tôi nghĩ nên trả ơn bằng cách giúp lại bạn!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#061": {
+   "src": "Welp, see ya! Oh, and nice to meet you, miner! Now, let's get going my cows!",
+   "dst": "Thôi, tạm biệt! À, rất vui được gặp, thợ mỏ! Nào, đi thôi đàn bò của tôi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#062": {
+   "src": "...I- huh. You saw that too, right? I didn't just imagine that?",
+   "dst": "...Tôi- hả. Cậu cũng thấy chứ? Không phải tôi tưởng tượng chứ?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#063": {
+   "src": "You know what? I think I quit. I think this has finally pushed me to my limit! I didn't know that I had one, but apparently I do!",
+   "dst": "Biết sao không? Chắc tôi nghỉ việc. Chuyện này cuối cùng đã đẩy tôi tới giới hạn! Tôi đâu biết mình có giới hạn, mà hóa ra là có!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#064": {
+   "src": "See you around, I guess!",
+   "dst": "Hẹn gặp lại, chắc vậy!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#065": {
+   "src": "Speak to Sergeant Klafson next to the {p} entrance of the cave.",
+   "dst": "Nói chuyện với Trung sĩ Klafson cạnh lối vào hang phía {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#066": {
+   "src": "Recruit, Captain Fenor told me to meet you here, said if you came out on this side of that tunnel then you completed your mission!",
+   "dst": "Tân binh, Đội trưởng Fenor bảo tôi gặp cậu ở đây, nói rằng nếu cậu ra ở đầu đường hầm này thì nhiệm vụ đã hoàn thành!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "Sergeant Klafson",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#067": {
+   "src": "You did a great deed today, soldier! We can now use this cave to travel easily between {p} and {p}! Great job!",
+   "dst": "Hôm nay cậu lập công lớn, binh sĩ! Giờ ta có thể dùng hang này để đi lại dễ dàng giữa {p} và {p}! Giỏi lắm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "Sergeant Klafson",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#068": {
+   "src": "You have your orders, recruit. Carry them out!",
+   "dst": "Cậu đã có lệnh, tân binh. Thi hành đi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "captured.json"
+  }
+ }
+}

@@ -71,13 +71,15 @@ SOURCES = {
     "kr": ["NotoSansKR[wght].ttf"],
     # 打勾、打叉、小三角：上面幾顆都沒有，狀態列的訊息卻天天在用
     "sym": ["NotoSansSymbols2-Regular.ttf"],
+    "th": ["NotoSansThai[wdth,wght].ttf"],
 }
 SYMBOLS = "✔✘✓✗▸▾▴◂"
 # 語料裡最常用的幾個字要收。
 TOP = {"tc": 1800, "sc": 1800, "jp": 1500, "kr": 1200}
 CORPUS = {"tc": "zh_tw", "sc": "zh_cn", "jp": "ja_jp", "kr": "ko_kr"}
 
-NATIVE = ["繁體中文", "简体中文", "日本語", "한국어", "Русский", "Español", "English"]
+NATIVE = ["繁體中文", "简体中文", "日本語", "한국어", "Русский", "Español", "Português", "Türkçe",
+          "Tiếng Việt", "ไทย", "English"]
 
 
 def ranges(*pairs):
@@ -191,6 +193,8 @@ def shared_chars():
 def wanted(family):
     if family == "sym":
         return {ord(c) for c in SYMBOLS}
+    if family == "th":
+        return ranges((0x0E00, 0x0E7F))
     out = set(BASE)
     lang_dir = os.path.join(ASSETS, "lang")
     if family == "latin":
@@ -272,7 +276,7 @@ def definition(lang, dots):
         return {"type": "ttf", "file": "wynnchayuan:ui/" + name + ".ttf", "size": SIZE,
                 "oversample": float(dots), "shift": [0.0, 0.0]}
 
-    providers = [ttf(own), ttf("sym")]
+    providers = [ttf(own), ttf("sym"), ttf("th")]
     for other in ("tc", "sc", "jp", "kr"):
         if other != own:
             providers.append(ttf(other + "_x"))
@@ -298,7 +302,7 @@ def main():
         size = os.path.getsize(path)
         total += size
         print(f"{family}.ttf  {len(kept):5d} 字  {size / 1024:7.0f} KB")
-        if family not in ("latin", "sym"):
+        if family not in ("latin", "sym", "th"):
             path = os.path.join(OUT, family + "_x.ttf")
             kept = cut(source, extra, path)
             size = os.path.getsize(path)
