@@ -8,13 +8,14 @@
  "entries": {
   "Arachnids' Ascent#000": {
    "src": "Best route to the den's through that road with the burn marks. 'sends ya straight to the cap'n!",
-   "dst": "巣への一番の道は、あの焦げ跡のある道だ。隊長のとこへ一直線だぜ！",
+   "dst": "巣への一番の道は、あの{c2}焦げ跡のある道{/}だ。隊長のとこへ一直線だぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "stage": "Stage 2",
+   "speaker": "Private Cob",
+   "source": "wiki",
+   "note":"{c2}that road with the burn marks{/}"
   },
   "Arachnids' Ascent#001": {
    "src": "So, you've taken out their queen! Well done, soldier. I'll have to let the nearby village know.",
@@ -23,7 +24,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#002": {
@@ -63,7 +64,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Private Cob",
    "source": "captured"
   },
   "Arachnids' Ascent#006": {
@@ -93,7 +94,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#009": {
@@ -133,7 +134,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#013": {
@@ -158,23 +159,25 @@
   },
   "Arachnids' Ascent#015": {
    "src": ".......sacred.......protection.......",
-   "dst": "……聖なる……守り……",
+   "dst": "{c1}……聖なる……守り……{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "???",
+   "source": "captured",
+   "note":"全て揺れている"
   },
   "Arachnids' Ascent#016": {
    "src": ".......queen's.......blessing.......protect......!",
-   "dst": "……女王の……祝福……守れ……！",
+   "dst": "{c1}……女王の……祝福……守れ……！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "???",
+   "source": "captured",
+   "note":"全て揺れている"
   },
   "Arachnids' Ascent#017": {
    "src": "[+{~} Mount Wynn's Flame]",
@@ -208,13 +211,14 @@
   },
   "Arachnids' Ascent#020": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
-   "dst": "ついて来い。私の執務室で話がある。兵舎の最上階だ。",
+   "dst": "ついて来い。私の執務室で話がある。{c2}兵舎の最上階{/}だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}the top floor of the barracks{/}"
   },
   "Arachnids' Ascent#021": {
    "src": "...ahem. Now that we're here, we can discuss the matter of {p}.",
@@ -248,13 +252,14 @@
   },
   "Arachnids' Ascent#024": {
    "src": "We've sent out several soldiers ahead of time to make preparations on site. You'll want to first speak to Private Cob on the {p}, who will have supplies for you.",
-   "dst": "現地の準備のため、兵を何人か先に送ってある。まずは {p} の Cob 二等兵に会え。補給品を渡してくれる。",
+   "dst": "現地の準備のため、兵を何人か先に送ってある。まずは {c2}{p} の Cob 二等兵に会え{/}。補給品を渡してくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}speak to Private Cob on the {p}{/}"
   },
   "Arachnids' Ascent#025": {
    "src": "I expect this mission will hold some danger, but I trust the three of you will be able to deal with anything you come across. Good luck, soldiers!",
@@ -378,13 +383,14 @@
   },
   "Arachnids' Ascent#037": {
    "src": "That's the spirit! If ya want the best route to the den, follow that road with the burn marks. It'll send ya straight to the cap'n!",
-   "dst": "その意気だ！巣への一番の近道は、焼け跡のついたあの道をたどることだ。隊長のとこへ一直線だぜ！",
+   "dst": "その意気だ！巣への一番の近道は、{c2}焼け跡のついたあの道をたどる{/}ことだ。隊長のとこへ一直線だぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 2",
    "speaker": "Private Cob",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}follow that road with the burn marks{/}"
   },
   "Arachnids' Ascent#038": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
@@ -598,13 +604,14 @@
   },
   "Arachnids' Ascent#059": {
    "src": "We've got to run for it! Come on, jump!",
-   "dst": "走るぞ！ほら、跳べ！",
+   "dst": "走るぞ！ほら、{c2}跳べ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 4",
    "speaker": "Aledar",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}jump!{/}"
   },
   "Arachnids' Ascent#060": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
@@ -1108,7 +1115,7 @@
   },
   "Arachnids' Ascent#110": {
    "src": "Oh, hello {u}. I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
-   "dst": "ああ、こんにちは {u}。ここにはあまり長くいないと思う。南の {p} の防衛を任されたんだ。",
+   "dst": "あっ、やあ {u}。ここにはあまり長くいないと思う。南の {p} の防衛を任されたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -1135,6 +1142,61 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "Arachnids' Ascent#113": {
+   "src": "You'll want to start by speaking to Private Cob on the {p}. He'll have supplies for you to bring along with you.",
+   "dst": "まずは {c2}{p} の Cob 二等兵に会え{/}。必要な補給品を渡してくれるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
+   "source": "captured",
+   "note":"{c2}speaking to Private Cob on the {p}{/}"
+  },
+  "Arachnids' Ascent#114": {
+   "src": "We're counting on you, soldier! Go climb that volcano! The cave entrance is not far from here.",
+   "dst": "頼むぞ、兵士！さあ、あの火山に登ってこい！洞窟の入り口はここからそう遠くない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
+   "source": "captured",
+   "note":""
+  },
+  "Arachnids' Ascent#115": {
+   "src": "We should get moving, {u}. I don't want to make those two fight more spiders than they need to.",
+   "dst": "そろそろ行こう、{u}。あの人たちに、必要以上にたくさんのクモと戦わせたくないからね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "captured",
+   "note":""
+  },
+  "Arachnids' Ascent#116": {
+   "src": "Well, are you ready? When you are, let's head in and fight those spiders!",
+   "dst": "さて、準備はいいか？できたら中に入って、あのクモたちと一戦やろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured",
+   "note":""
+  },
+  "Arachnids' Ascent#117": {
+   "src": "Do you need to prepare? We'll wait here for you until you're ready.",
+   "dst": "準備が必要？用意ができるまでここで待っているよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured",
+   "note":""
   }
  }
 }
