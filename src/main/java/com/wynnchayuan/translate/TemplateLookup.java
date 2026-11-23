@@ -832,24 +832,51 @@ final class TemplateLookup {
             String name = withPercent(rest, store, percent);
             String word = store.lookup(prefix.strip());
             if (name != null && word != null) {
-                return word + (store.namesWithOriginal() ? qualityInOriginal(name, prefix, rest) : name);
+                return qualified(prefix, word, name, rest, store);
             }
         }
         return null;
     }
 
+    private static String qualified(String prefix, String word, String name, String rest,
+                                    TranslationStore store) {
+        int original = store.namesWithOriginal() ? originalAt(name, rest) : -1;
+        String shown = original < 0 ? name : qualityInOriginal(name, prefix, rest);
+        String form = store.lookup(prefix + QUALITY_SLOT);
+        if (form == null || !form.contains(QUALITY_SLOT)) {
+            return word + shown;
+        }
+        int end = original >= 0 ? original : nameEnd(name, rest);
+        return form.replace(QUALITY_SLOT, shown.substring(0, end)) + shown.substring(end);
+    }
+
+    private static int nameEnd(String name, String rest) {
+        Matcher tail = NAME_TAIL.matcher(rest);
+        if (!tail.find() || tail.start() == 0 || !name.endsWith(tail.group())) {
+            return name.length();
+        }
+        int end = name.length() - tail.group().length();
+        return end > 0 ? end : name.length();
+    }
+
     static String qualityInOriginal(String name, String prefix, String rest) {
+        int open = originalAt(name, rest);
+        return open < 0 ? name : name.substring(0, open + 2) + prefix + name.substring(open + 2);
+    }
+
+    private static int originalAt(String name, String rest) {
         int open = name.lastIndexOf(" (");
         int close = open < 0 ? -1 : name.indexOf(')', open);
         if (close < 0) {
-            return name;
+            return -1;
         }
         String original = name.substring(open + 2, close);
-        if (original.isBlank() || !rest.strip().startsWith(original)) {
-            return name;
-        }
-        return name.substring(0, open + 2) + prefix + original + name.substring(close);
+        return original.isBlank() || !rest.strip().startsWith(original) ? -1 : open;
     }
+
+    private static final String QUALITY_SLOT = "{item}";
+
+    private static final Pattern NAME_TAIL = Pattern.compile("(?:\\s*(?:\\[[^\\]]*]|\\{[^}]*}))+$");
 
     private static final String[] QUALITY_PREFIXES = {"Perfect ", "Defective "};
 }
