@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24995,
-  "translated": 24992,
+  "count": 25015,
+  "translated": 25012,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -37651,13 +37651,14 @@
   },
   "Arachnids' Ascent#000": {
    "src": "Best route to the den's through that road with the burn marks. 'sends ya straight to the cap'n!",
-   "dst": "巣への一番の道は、あの焦げ跡のある道だ。隊長のとこへ一直線だぜ！",
+   "dst": "巣への一番の道は、あの{c2}焦げ跡のある道{/}だ。隊長のとこへ一直線だぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "stage": "Stage 2",
+   "speaker": "Private Cob",
+   "source": "wiki",
+   "note": "{c2}that road with the burn marks{/}"
   },
   "Arachnids' Ascent#001": {
    "src": "So, you've taken out their queen! Well done, soldier. I'll have to let the nearby village know.",
@@ -37666,7 +37667,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#002": {
@@ -37706,7 +37707,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Private Cob",
    "source": "captured"
   },
   "Arachnids' Ascent#006": {
@@ -37736,7 +37737,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#009": {
@@ -37776,7 +37777,7 @@
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#013": {
@@ -37801,23 +37802,25 @@
   },
   "Arachnids' Ascent#015": {
    "src": ".......sacred.......protection.......",
-   "dst": "……聖なる……守り……",
+   "dst": "{c1}……聖なる……守り……{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "???",
+   "source": "captured",
+   "note": "全て揺れている"
   },
   "Arachnids' Ascent#016": {
    "src": ".......queen's.......blessing.......protect......!",
-   "dst": "……女王の……祝福……守れ……！",
+   "dst": "{c1}……女王の……祝福……守れ……！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "???",
+   "source": "captured",
+   "note": "全て揺れている"
   },
   "Arachnids' Ascent#017": {
    "src": "[+{~} Mount Wynn's Flame]",
@@ -37851,13 +37854,14 @@
   },
   "Arachnids' Ascent#020": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
-   "dst": "ついて来い。私の執務室で話がある。兵舎の最上階だ。",
+   "dst": "ついて来い。私の執務室で話がある。{c2}兵舎の最上階{/}だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the top floor of the barracks{/}"
   },
   "Arachnids' Ascent#021": {
    "src": "...ahem. Now that we're here, we can discuss the matter of {p}.",
@@ -37891,13 +37895,14 @@
   },
   "Arachnids' Ascent#024": {
    "src": "We've sent out several soldiers ahead of time to make preparations on site. You'll want to first speak to Private Cob on the {p}, who will have supplies for you.",
-   "dst": "現地の準備のため、兵を何人か先に送ってある。まずは {p} の Cob 二等兵に会え。補給品を渡してくれる。",
+   "dst": "現地の準備のため、兵を何人か先に送ってある。まずは {c2}{p} の Cob 二等兵に会え{/}。補給品を渡してくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}speak to Private Cob on the {p}{/}"
   },
   "Arachnids' Ascent#025": {
    "src": "I expect this mission will hold some danger, but I trust the three of you will be able to deal with anything you come across. Good luck, soldiers!",
@@ -38021,13 +38026,14 @@
   },
   "Arachnids' Ascent#037": {
    "src": "That's the spirit! If ya want the best route to the den, follow that road with the burn marks. It'll send ya straight to the cap'n!",
-   "dst": "その意気だ！巣への一番の近道は、焼け跡のついたあの道をたどることだ。隊長のとこへ一直線だぜ！",
+   "dst": "その意気だ！巣への一番の近道は、{c2}焼け跡のついたあの道をたどる{/}ことだ。隊長のとこへ一直線だぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 2",
    "speaker": "Private Cob",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}follow that road with the burn marks{/}"
   },
   "Arachnids' Ascent#038": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
@@ -38241,13 +38247,14 @@
   },
   "Arachnids' Ascent#059": {
    "src": "We've got to run for it! Come on, jump!",
-   "dst": "走るぞ！ほら、跳べ！",
+   "dst": "走るぞ！ほら、{c2}跳べ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
    "stage": "Stage 4",
    "speaker": "Aledar",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}jump!{/}"
   },
   "Arachnids' Ascent#060": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
@@ -38751,7 +38758,7 @@
   },
   "Arachnids' Ascent#110": {
    "src": "Oh, hello {u}. I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
-   "dst": "ああ、こんにちは {u}。ここにはあまり長くいないと思う。南の {p} の防衛を任されたんだ。",
+   "dst": "あっ、やあ {u}。ここにはあまり長くいないと思う。南の {p} の防衛を任されたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -38778,6 +38785,61 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "Arachnids' Ascent#113": {
+   "src": "You'll want to start by speaking to Private Cob on the {p}. He'll have supplies for you to bring along with you.",
+   "dst": "まずは {c2}{p} の Cob 二等兵に会え{/}。必要な補給品を渡してくれるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
+   "source": "captured",
+   "note": "{c2}speaking to Private Cob on the {p}{/}"
+  },
+  "Arachnids' Ascent#114": {
+   "src": "We're counting on you, soldier! Go climb that volcano! The cave entrance is not far from here.",
+   "dst": "頼むぞ、兵士！さあ、あの火山に登ってこい！洞窟の入り口はここからそう遠くない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
+   "source": "captured",
+   "note": ""
+  },
+  "Arachnids' Ascent#115": {
+   "src": "We should get moving, {u}. I don't want to make those two fight more spiders than they need to.",
+   "dst": "そろそろ行こう、{u}。あの人たちに、必要以上にたくさんのクモと戦わせたくないからね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "captured",
+   "note": ""
+  },
+  "Arachnids' Ascent#116": {
+   "src": "Well, are you ready? When you are, let's head in and fight those spiders!",
+   "dst": "さて、準備はいいか？できたら中に入って、あのクモたちと一戦やろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured",
+   "note": ""
+  },
+  "Arachnids' Ascent#117": {
+   "src": "Do you need to prepare? We'll wait here for you until you're ready.",
+   "dst": "準備が必要？用意ができるまでここで待っているよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured",
+   "note": ""
   },
   "Beneath the Depths#000": {
    "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
@@ -102278,6 +102340,156 @@
    "quest": "Ice Nations",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "Infested Pit#001": {
+   "src": "Oh, it seems I have some guests. You're just in time for dinner... hehe..",
+   "dst": "おや、お客さんのようだね。ちょうど晩餐の時間だよ……ふふ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "Infested Pit#002": {
+   "src": "My poor babies are starving. But what shall they feast on? How about... you?",
+   "dst": "かわいい子どもたちが飢えているの。でも何をごちそうにしましょうか？そうね……あなたたちは？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "Infested Pit#003": {
+   "src": "Alright, we're in. Keep your guards up, you two. Don't want to get picked off by the spiders!",
+   "dst": "よし、入ったぞ。二人とも警戒を切らすな。クモに一人ずつやられたくはないだろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Infested Pit#004": {
+   "src": "Ha. No, we wouldn't want that... we'll proceed with caution.",
+   "dst": "はは。たしかに、それは困る……慎重に進もう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Infested Pit#005": {
+   "src": "There's more spiders here than I expected... Nothing we can't handle, of course, but- still.",
+   "dst": "思ったよりクモが多いな…もちろん手に負えないほどじゃないが――それでもね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Infested Pit#006": {
+   "src": "Oh, hey- watch your step! Don't want to fall and get stuck in those webs down there, yeah?",
+   "dst": "おっと、気をつけて！ 転んで、あそこの蜘蛛の巣に引っかからないようにね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Infested Pit#007": {
+   "src": "So you freed the Mushroom Man... no matter. My babies think you three look just as delicious... You will make a fine replacement, hehehe...",
+   "dst": "キノコ男を逃がしたのね……かまわないわ。子どもたちはあなたたち三人も同じくらいおいしそうだと思っているの……代わりとしては上等よ、ふふふ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Arakadicus",
+   "source": "captured"
+  },
+  "Infested Pit#008": {
+   "src": "I can't imagine it's much further from here. Just a few more jumps to make, a few more spiders to fight through, and we'll be there.",
+   "dst": "ここからそう遠くはないはずだ。あと何回か跳んで、あと何匹かクモを突破すれば着く。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Infested Pit#009": {
+   "src": "Here we are, then. The spider queen must be through here.",
+   "dst": "さて、着いたぞ。クモの女王はこの先にいるに違いない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Infested Pit#010": {
+   "src": "Alright. Let's rest a moment, then head on in and take her out. If we work together, these spiders won't stand a chance!",
+   "dst": "よし。少し休んで、それから中に入って片付けよう。力を合わせれば、このクモたちに勝ち目はない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Infested Pit#011": {
+   "src": "Ah, the main course has arrived. You look so good, I think I'll have a taste of you myself!",
+   "dst": "ああ、メインディッシュが来たわね。とてもおいしそう。わたし自ら味見させてもらうわ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Arakadicus",
+   "source": "wiki"
+  },
+  "Infested Pit#012": {
+   "src": "Well, we're not going to make it easy for you! We'll take you down!",
+   "dst": "ふん、そう簡単にはいかせないぞ！お前を倒してやる！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Infested Pit#013": {
+   "src": "The people living in the forest are more than just food for you spiders! We won't let you attack them anymore!",
+   "dst": "森に住む人々は、あなたたちクモにとって単なる餌なんかじゃない！もう二度と彼らを襲わせるわけにはいかない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Pit#014": {
+   "src": "Oh, it seems I have a guest. You're just in time for dinner... hehe..",
+   "dst": "おや、お客さんのようだね。ちょうど晩餐の時間だよ……ふふ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "Infested Pit#015": {
+   "src": "You've come so far, haven't you? And my babies are just so hungry... You'll make a fine meal for them... hehehe...",
+   "dst": "よくここまで来たものね。しかも子どもたちはとてもお腹をすかせているの……あなたは子どもたちのいいごはんになるわ……ふふふ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Pit",
+   "stage": "",
+   "speaker": "Arakadicus",
    "source": "captured"
   },
   "Infested Plants#000": {
