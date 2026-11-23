@@ -38,23 +38,25 @@
   },
   "Lost Tower#006": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
-   "dst": "手伝ってくれるなら [{~} Book of the Bones] を持ってきてください。今は {p} の古い塔で、骸骨の手にあるはずです。",
+   "dst": "手伝ってくれるなら {c2}[{~} Book of the Bones]{/} を持ってきてください。今は {c3}{p} の古い塔{/}で、骸骨の手にあるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
    "stage": "Stage 1",
    "speaker": "Laen",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Book of the Bones]{/} , {c3}in an old tower in {p}{/}"
   },
   "Lost Tower#007": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
-   "dst": "その塔を探してみてください。中の骸骨のどれかが本を持っているはずです。",
+   "dst": "{c2}その塔を探して{/}みてください。中の骸骨のどれかが本を持っているはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
    "stage": "Stage 1",
    "speaker": "Laen",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}find this tower{/}"
   },
   "Lost Tower#008": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
@@ -95,6 +97,16 @@
    "stage": "Stage 4",
    "speaker": "Laen",
    "source": "wiki"
+  },
+  "Lost Tower#012": {
+   "src": "Talk to Laen in {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} の [{~}, {~}, -{~}] にいる Laen と話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
