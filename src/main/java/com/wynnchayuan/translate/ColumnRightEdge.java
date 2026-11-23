@@ -50,7 +50,7 @@ public final class ColumnRightEdge {
         for (int i = 1; i < runs.size(); i++) {
             Run gap = runs.get(i);
             Run before = runs.get(i - 1);
-            if (!gap.space() || before.space()) {
+            if (!gap.space() || before.space() || !hasLetterOrDigit(before.text())) {
                 continue;
             }
             int label = LineTranslator.widthOf(DisplayStyles.literal(before.text(), before.style()));
@@ -89,12 +89,16 @@ public final class ColumnRightEdge {
                 out.append(Component.literal(SpaceOffset.encode(px)).withStyle(SpaceOffset.styleFor(style)));
                 done[0] = true;
             }
-            if (!s.isBlank() && !SpaceOffset.isOffsetRun(s)) {
+            if (!SpaceOffset.isOffsetRun(s) && hasLetterOrDigit(s)) {
                 text[0] = true;
             }
             out.append(Component.literal(s).withStyle(style));
             return Optional.empty();
         }, Style.EMPTY);
         return done[0] ? out : null;
+    }
+
+    private static boolean hasLetterOrDigit(String text) {
+        return text != null && text.codePoints().anyMatch(Character::isLetterOrDigit);
     }
 }
