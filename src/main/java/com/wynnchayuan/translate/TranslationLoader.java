@@ -114,11 +114,9 @@ final class TranslationLoader {
                 Map<String, String> into =
                         translations.scopedOnly.computeIfAbsent(scope, k -> new HashMap<>());
                 for (String key : obj.keySet()) {
-                    JsonElement v = obj.get(key);
-                    if (!key.startsWith("_") && v.isJsonPrimitive()
-                            && !v.getAsString().isBlank()) {
-                        into.put(key.strip(), DisplayStyles.deIcon(
-                                v.getAsString().strip()));
+                    String dst = shownValue(obj.get(key));
+                    if (!key.startsWith("_") && dst != null && !dst.isBlank()) {
+                        into.put(key.strip(), dst);
                     }
                 }
             } catch (Exception e) {
@@ -179,17 +177,14 @@ final class TranslationLoader {
                     String name = PageNames.nameOfTitle(key);
                     if (name != null && name.indexOf('{') < 0) {
                         translations.pageNames.add(name.strip());
-                        JsonElement value = obj.get(key);
-                        if (value != null && value.isJsonPrimitive()) {
-                            translations.notePageTitle(name.strip(), value.getAsString());
-                        }
+                        translations.notePageTitle(name.strip(), shownValue(obj.get(key)));
                     }
                 }
                 if (file.getFileName().toString().equals(QUEST_NAMES)) {
                     for (String key : obj.keySet()) {
-                        JsonElement value = obj.get(key);
-                        if (!key.startsWith("_") && value.isJsonPrimitive()) {
-                            translations.noteQuestName(key.strip(), value.getAsString().strip());
+                        String name = shownValue(obj.get(key));
+                        if (!key.startsWith("_") && name != null) {
+                            translations.noteQuestName(key.strip(), name);
                         }
                     }
                 }
@@ -267,7 +262,7 @@ final class TranslationLoader {
             }
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
-            String dst = DisplayStyles.deIcon(optString(e, "dst"));
+            String dst = shownValue(e.get("dst"));
             if (gearNames && src != null && !src.isBlank()
                     && (dst == null || dst.isBlank())
                     && "name".equals(optString(e, "role"))) {
@@ -354,10 +349,9 @@ final class TranslationLoader {
             if (key.startsWith("_")) {
                 continue;
             }
-            JsonElement v = obj.get(key);
             translations.seenSources.add(key.strip());
-            if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                String flat = DisplayStyles.deIcon(v.getAsString().strip());
+            String flat = shownValue(obj.get(key));
+            if (flat != null && !flat.isBlank()) {
                 translations.entries.put(key.strip(), flat);
                 translations.nameRules.otherOwners.add(key.strip());
                 translations.nameRules.nonItemOwners.add(key.strip());
@@ -389,6 +383,11 @@ final class TranslationLoader {
             return;
         }
         layered(translations.flat, "flat", normalise(key), value);
+    }
+
+    private static String shownValue(JsonElement value) {
+        return value != null && value.isJsonPrimitive()
+                ? DisplayStyles.deIcon(value.getAsString().strip()) : null;
     }
 
     private static String optString(JsonObject o, String field) {

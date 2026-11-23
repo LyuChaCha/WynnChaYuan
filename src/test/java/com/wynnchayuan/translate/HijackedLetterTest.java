@@ -30,6 +30,21 @@ public final class HijackedLetterTest {
                   "Open the door": "ÁBRETE"
                 }
                 """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("discovery-name.json"), """
+                {
+                  "Water of the Past": "Água do passado"
+                }
+                """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("misc.json"), """
+                {
+                  "Water of the Past [Secret Discovery]": "Água do passado [Descoberta secreta]"
+                }
+                """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("quest-name.json"), """
+                {
+                  "Emissaries of Light": "Ánh Sáng Sứ Giả"
+                }
+                """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         STORE = store;
@@ -37,6 +52,7 @@ public final class HijackedLetterTest {
         chatLine(store);
         corpusKeepsAccent(dir);
         originalKept(store);
+        contentBookNames(store);
 
         System.out.println(failures == 0
                 ? "HijackedLetterTest 全部通過" : failures + " 項失敗");
@@ -66,6 +82,13 @@ public final class HijackedLetterTest {
                 store);
         check("查不到譯文就不碰（實際 " + (out == null ? "沒翻" : out.getString()) + "）",
               out == null || "Á".equals(out.getString()));
+    }
+
+    private static void contentBookNames(TranslationStore store) {
+        String card = store.pageTitleName("Water of the Past");
+        check("卡片標題拿到的名字也換掉了（實際 " + card + "）", "Agua do passado".equals(card));
+        String quest = store.pageTitleName("Emissaries of Light");
+        check("任務名稱表拿到的名字也換掉了（實際 " + quest + "）", "Anh Sáng Sứ Giả".equals(quest));
     }
 
     private static String shown(String text, Style style, TranslationStore store) {
