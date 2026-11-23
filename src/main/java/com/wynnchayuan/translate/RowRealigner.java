@@ -70,6 +70,7 @@ final class RowRealigner {
         int drift = 0;
         int lastAdjusted = -1;
         int[] gapPx = SpaceRuns.gapPixels(made);
+        boolean[] columns = new boolean[spaces];
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
             if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
@@ -77,6 +78,7 @@ final class RowRealigner {
                 adjust[k] = -drift;
                 drift = 0;
                 lastAdjusted = k;
+                columns[k] = true;
             }
         }
 
@@ -85,6 +87,7 @@ final class RowRealigner {
                 && SpaceRuns.labelledRun(made, lastAdjusted)) {
             adjust[lastAdjusted] -= tail;
         }
+        keepClearOfText(adjust, columns, SpaceRuns.gapPixels(orig), gapPx);
 
         if (log == null) {
             log = new StringBuilder();
@@ -153,6 +156,17 @@ final class RowRealigner {
             x += px;
         }
         return out;
+    }
+
+    private static void keepClearOfText(int[] adjust, boolean[] columns,
+                                        int[] origGap, int[] madeGap) {
+        for (int k = 0; k < adjust.length && k < origGap.length && k < madeGap.length; k++) {
+            if (!columns[k] || origGap[k] <= 0) {
+                continue;
+            }
+            int floor = Math.min(ColumnAligner.MIN_GAP, origGap[k]);
+            adjust[k] = Math.max(adjust[k], floor - madeGap[k]);
+        }
     }
 
     // 退回量是伺服器算的標籤寬，跟這邊量的會差幾 px；欄位起點照它算
@@ -294,14 +308,17 @@ final class RowRealigner {
         }
         int drift = 0;
         int[] gapPx = SpaceRuns.gapPixels(made);
+        boolean[] columns = new boolean[spaces];
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
             if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
                     && !SpaceRuns.overlayGap(made, k, gapPx[k])) {
                 adjust[k] = -drift;
                 drift = 0;
+                columns[k] = true;
             }
         }
+        keepClearOfText(adjust, columns, SpaceRuns.gapPixels(orig), gapPx);
         if (log != null) {
             log.append(describeRow(origSeg, madeSeg, adjust, leading))
                .append("  譯文=「").append(SpaceRuns.rowText(made)).append("」")
