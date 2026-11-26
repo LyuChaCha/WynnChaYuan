@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Jungle Fever",
   "count": 37,
-  "translated": 0,
+  "translated": 37,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
    "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
-   "dst": "",
+   "dst": "Seul remède contre cette fièvre: boire des émeraudes liquides! Oui, exactement! *tousse*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -18,7 +18,7 @@
   },
   "Jungle Fever#001": {
    "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
-   "dst": "",
+   "dst": "Introduis-toi *tousse* dans la réserve d'émeraudes, mais ne prends rien... reviens me voir aussitôt, si tu t'en sors vivant, héhé...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -28,7 +28,7 @@
   },
   "Jungle Fever#002": {
    "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
-   "dst": "",
+   "dst": "Changeons de stratégie: on ne demande pas la permission. C'est pour m'aider, après tout.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -38,7 +38,7 @@
   },
   "Jungle Fever#003": {
    "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
-   "dst": "",
+   "dst": "Je devais m'assurer que tu pouvais entrer facilement dans une banque. Alors je suis venu seul ici voir si tu y arrivais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -48,7 +48,7 @@
   },
   "Jungle Fever#004": {
    "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
-   "dst": "",
+   "dst": "En entrant dans cette réserve, tu as prouvé ta discrétion et ta force, on peut passer aux choses sérieuses.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -58,7 +58,7 @@
   },
   "Jungle Fever#005": {
    "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
-   "dst": "",
+   "dst": "Elle est gardée par des tas de golems gardiens entraînés, qui tuent n'importe qui d'un coup.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -74,7 +74,7 @@
   },
   "Jungle Fever#006": {
    "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
-   "dst": "",
+   "dst": "..enfin *tousse*.. J'étais trop malade, alors je suis revenu.. *tousse*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -84,7 +84,7 @@
   },
   "Jungle Fever#007": {
    "src": "I feel so much better now, thank you for the cure!",
-   "dst": "",
+   "dst": "Je me sens beaucoup mieux, merci pour le remède!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -94,7 +94,7 @@
   },
   "Jungle Fever#008": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Parlez à Worid dans le village de la jungle en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -104,7 +104,7 @@
   },
   "Jungle Fever#009": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
-   "dst": "",
+   "dst": "Oh, que je suis content de te voir! *tousse*, j'ai une fièvre terrible, il me faut de l'aide! *tousse*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -114,7 +114,7 @@
   },
   "Jungle Fever#011": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
-   "dst": "",
+   "dst": "Tu pourrais demander au Banquier de {p} de me donner, oh je ne sais pas, [{~} émeraudes liquides]?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -124,7 +124,7 @@
   },
   "Jungle Fever#012": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
-   "dst": "",
+   "dst": "S'il a l'audace de *tousse* refuser... tu devras employer la force...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -134,7 +134,7 @@
   },
   "Jungle Fever#014": {
    "src": "Oh, uh... I mean *cough* *cough*",
-   "dst": "",
+   "dst": "Oh, euh... je veux dire *tousse* *tousse*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -144,7 +144,7 @@
   },
   "Jungle Fever#015": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Parlez au Banquier de {p} du remède pour Worid en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -154,7 +154,7 @@
   },
   "Jungle Fever#016": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
-   "dst": "",
+   "dst": "[{~} émeraudes liquides]? Il est fou! Les émeraudes liquides ne guérissent de rien, sauf de la pauvreté!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -164,7 +164,7 @@
   },
   "Jungle Fever#017": {
    "src": "I will not participate in this pathetic fraud attempt!",
-   "dst": "",
+   "dst": "Je refuse de participer à cette pitoyable escroquerie!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -174,7 +174,7 @@
   },
   "Jungle Fever#018": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Entrez dans la réserve d'émeraudes de {p} en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -184,7 +184,7 @@
   },
   "Jungle Fever#019": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
-   "dst": "",
+   "dst": "Oh non! Comment guérir de ma maladie sans émeraudes liquides?... *tousse*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -194,7 +194,7 @@
   },
   "Jungle Fever#021": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
-   "dst": "",
+   "dst": "D'abord, vérifions que tu sais entrer dans une banque. Essaie la réserve secrète de {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -204,7 +204,7 @@
   },
   "Jungle Fever#022": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
-   "dst": "",
+   "dst": "Quand tu auras fini, reviens me voir. Et prudence, il y a peut-être des gardes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -214,7 +214,7 @@
   },
   "Jungle Fever#023": {
    "src": "Return to Worid",
-   "dst": "",
+   "dst": "Retournez voir Worid",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -224,7 +224,7 @@
   },
   "Jungle Fever#024": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
-   "dst": "",
+   "dst": "Quoi? Déjà là? Je pensais que tu mettrais trop de temps, alors j'y suis allé moi-même.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -234,7 +234,7 @@
   },
   "Jungle Fever#025": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
-   "dst": "",
+   "dst": "Ma maladie? AH OUI. *tousse* Tu devrais avoir honte de forcer un malade à faire ton travail.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -244,7 +244,7 @@
   },
   "Jungle Fever#026": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
-   "dst": "",
+   "dst": "Bref, tu as fait tes preuves, on peut passer aux choses sérieuses.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -254,7 +254,7 @@
   },
   "Jungle Fever#027": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
-   "dst": "",
+   "dst": "Vois-tu, {p} a une chambre forte très gardée appelée \"Le Labyrinthe d'émeraude\".",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -264,7 +264,7 @@
   },
   "Jungle Fever#028": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
-   "dst": "",
+   "dst": "Elle est gardée par une foule de golems gardiens bien entraînés, qui tuent sans mal tout aventurier.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -274,7 +274,7 @@
   },
   "Jungle Fever#029": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
-   "dst": "",
+   "dst": "Le Banquier de la chambre secrète doit s'ennuyer à mourir, il ne t'en voudra pas de le trouver.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -284,7 +284,7 @@
   },
   "Jungle Fever#030": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
-   "dst": "",
+   "dst": "Bonne chance. Haha.. enfin, *tousse*.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -294,7 +294,7 @@
   },
   "Jungle Fever#031": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
-   "dst": "",
+   "dst": "Infiltrez le Labyrinthe d'émeraude secret de {p}, sous terre en [{~}, {~}, -{~}], et trouvez le Banquier dans la salle des émeraudes",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -304,7 +304,7 @@
   },
   "Jungle Fever#032": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
-   "dst": "",
+   "dst": "Oh, euh! Quelqu'un! Ça fait si longtemps que je n'ai vu personne!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -314,7 +314,7 @@
   },
   "Jungle Fever#033": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
-   "dst": "",
+   "dst": "Des émeraudes liquides? Bien sûr, bien sûr! J'en ai des tas! Tiens, prends-les.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -324,7 +324,7 @@
   },
   "Jungle Fever#034": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Parlez à Worid en [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -334,7 +334,7 @@
   },
   "Jungle Fever#035": {
    "src": "You are back! Wonderful!",
-   "dst": "",
+   "dst": "Te revoilà! Formidable!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -344,7 +344,7 @@
   },
   "Jungle Fever#036": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
-   "dst": "",
+   "dst": "C'est beaucoup d'argent, merci infiniment, je vais enfin pouvoir... *tousse* me soigner!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -354,7 +354,7 @@
   },
   "Jungle Fever#037": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
-   "dst": "",
+   "dst": "Tiens, cette part est pour toi. L'essentiel de l'... *tousse* argent ira à ma guérison, alors je te paie avec une clé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -364,7 +364,7 @@
   },
   "Jungle Fever#038": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
-   "dst": "",
+   "dst": "Je l'ai volée- *tousse* enfin, empruntée au chef de notre tribu. Elle aurait servi à enfermer un grand mal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -374,7 +374,7 @@
   },
   "Jungle Fever#039": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
-   "dst": "",
+   "dst": "Bon débarr- *tousse* Euh... courage. Oui, bon courage, aventurier!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",

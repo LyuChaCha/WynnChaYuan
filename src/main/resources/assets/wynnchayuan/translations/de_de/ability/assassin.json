@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 235,
-  "translated": 0,
+  "translated": 228,
   "note": "刺客的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-assassin#0000": {
    "src": "Spin Attack",
-   "dst": "",
+   "dst": "Wirbelangriff",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -23,7 +23,7 @@
   },
   "ability-assassin#0001": {
    "src": "Slashes rapidly around you,\ndamaging enemies over a large area.",
-   "dst": "",
+   "dst": "Schlägt schnell um dich herum zu\nund trifft Gegner in einem großen Bereich.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -38,7 +38,7 @@
   },
   "ability-assassin#0002": {
    "src": "Cheaper Spin Attack",
-   "dst": "",
+   "dst": "Günstigerer Wirbelangriff",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -50,7 +50,7 @@
   },
   "ability-assassin#0003": {
    "src": "Reduce the Mana cost of Spin Attack.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Spin Attack.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -66,7 +66,7 @@
   },
   "ability-assassin#0004": {
    "src": "Dagger Proficiency I",
-   "dst": "",
+   "dst": "Dolchbeherrschung I",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -78,7 +78,7 @@
   },
   "ability-assassin#0005": {
    "src": "Increases your Walk Speed and\nMain Attack's damage by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deine Laufgeschwindigkeit und den\nSchaden deines Hauptangriffs um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -93,7 +93,7 @@
   },
   "ability-assassin#0006": {
    "src": "Double Spin",
-   "dst": "",
+   "dst": "Doppelwirbel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -105,7 +105,7 @@
   },
   "ability-assassin#0007": {
    "src": "Spin Attack will activate twice, with a\nlarger area of effect on the second spin.",
-   "dst": "",
+   "dst": "Spin Attack wird zweimal ausgelöst, mit\ngrößerem Wirkungsbereich beim zweiten Wirbel.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -120,7 +120,7 @@
   },
   "ability-assassin#0008": {
    "src": "Poisoned Blade",
-   "dst": "",
+   "dst": "Vergiftete Klinge",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -132,7 +132,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "",
+   "dst": "Für je {~} bzw. {~} Hauptangriffsschaden (fester Wert) aus Gegenständen\nerhältst du +{~}/{~}s Giftschaden. (Max. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -147,7 +147,7 @@
   },
   "ability-assassin#0010": {
    "src": "Your Main Attack gains additional range.",
-   "dst": "",
+   "dst": "Dein Hauptangriff erhält zusätzliche Reichweite.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -162,7 +162,7 @@
   },
   "ability-assassin#0011": {
    "src": "Dash",
-   "dst": "",
+   "dst": "Vorstoß",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -174,7 +174,7 @@
   },
   "ability-assassin#0012": {
    "src": "Dash in the direction\nyou're facing.",
-   "dst": "",
+   "dst": "Stoße in die Richtung vor,\nin die du blickst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -189,7 +189,7 @@
   },
   "ability-assassin#0013": {
    "src": "Double Slice",
-   "dst": "",
+   "dst": "Doppelschnitt",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -201,7 +201,7 @@
   },
   "ability-assassin#0014": {
    "src": "Your Main Attack will hit twice,\nbut deal -{~} damage per hit.",
-   "dst": "",
+   "dst": "Dein Hauptangriff trifft zweimal,\nverursacht aber -{~} Schaden pro Treffer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -216,7 +216,7 @@
   },
   "ability-assassin#0015": {
    "src": "Smoke Bomb",
-   "dst": "",
+   "dst": "Rauchbombe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "",
+   "dst": "Wirft eine Bombe, die langsam Rauch verströmt\nund allen Gegnern darin alle {~}s Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -243,7 +243,7 @@
   },
   "ability-assassin#0017": {
    "src": "Cheaper Dash",
-   "dst": "",
+   "dst": "Günstigerer Vorstoß",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -255,7 +255,7 @@
   },
   "ability-assassin#0018": {
    "src": "Reduce the Mana cost of Dash.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Dash.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -271,7 +271,7 @@
   },
   "ability-assassin#0019": {
    "src": "Multihit",
-   "dst": "",
+   "dst": "Mehrfachschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -283,7 +283,7 @@
   },
   "ability-assassin#0020": {
    "src": "Unleashes a rapid flurry of {~} hits to enemies\nfacing you, dealing heavy damage.",
-   "dst": "",
+   "dst": "Entfesselt eine schnelle Serie von {~} Treffern gegen Gegner\nvor dir, die hohen Schaden verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -298,7 +298,7 @@
   },
   "ability-assassin#0021": {
    "src": "{#} Range: {~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#} Reichweite: {~} Blöcke (Kegelförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -311,7 +311,7 @@
   },
   "ability-assassin#0022": {
    "src": "Sticky Bomb",
-   "dst": "",
+   "dst": "Haftbombe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -323,7 +323,7 @@
   },
   "ability-assassin#0023": {
    "src": "Smoke Bomb will stick to enemies\nand deal additional damage.",
-   "dst": "",
+   "dst": "Smoke Bomb haftet an Gegnern\nund verursacht zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -338,7 +338,7 @@
   },
   "ability-assassin#0024": {
    "src": "Ripple",
-   "dst": "",
+   "dst": "Wellenschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -350,7 +350,7 @@
   },
   "ability-assassin#0025": {
    "src": "Falling {~} blocks or more deals\ndamage around you when you land.",
-   "dst": "",
+   "dst": "Fällst du {~} Blöcke oder mehr, verursachst du\nbei der Landung Schaden um dich herum.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-assassin#0026": {
    "src": "This damage is increased by +{~}\nfor every additional block you fall\nafterwards, up to +{~} blocks.",
-   "dst": "",
+   "dst": "Dieser Schaden steigt um +{~}\nfür jeden weiteren Block, den du danach\nfällst, bis zu +{~} Blöcke.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -380,7 +380,7 @@
   },
   "ability-assassin#0027": {
    "src": "Backstab",
-   "dst": "",
+   "dst": "Meuchelstoß",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "",
+   "dst": "Macht aus Multihit einen einzigen verheerenden Treffer.\nTriffst du einen Gegner von hinten,\nverursacht er doppelten Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-assassin#0029": {
    "src": "Vanish",
-   "dst": "",
+   "dst": "Verschwinden",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -419,7 +419,7 @@
   },
   "ability-assassin#0030": {
    "src": "Dash will hide you into the shadows. You\ncannot heal or gain mana while in this state.\n(Attack or get hit to cancel)",
-   "dst": "",
+   "dst": "Dash verbirgt dich in den Schatten. In diesem Zustand\nkannst du dich nicht heilen und kein Mana erhalten.\n(Greif an oder werde getroffen, um abzubrechen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-assassin#0031": {
    "src": "{#} Effect: Invisibility to Self",
-   "dst": "",
+   "dst": "{#} Effekt: Unsichtbarkeit für dich",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -447,7 +447,7 @@
   },
   "ability-assassin#0032": {
    "src": "Bamboozle",
-   "dst": "",
+   "dst": "Übertölpeln",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-assassin#0033": {
    "src": "Multihit will instead teleport you forward\nand strike with a brutal fiery slash.",
-   "dst": "",
+   "dst": "Multihit teleportiert dich stattdessen nach vorn\nund trifft mit einem brutalen feurigen Hieb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-assassin#0035": {
    "src": "Leap in the direction of your\nmovement when you double jump.",
-   "dst": "",
+   "dst": "Mach bei einem Doppelsprung einen Satz in\ndeine Bewegungsrichtung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -501,7 +501,7 @@
   },
   "ability-assassin#0036": {
    "src": "Surprise Strike",
-   "dst": "",
+   "dst": "Überraschungsschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -513,7 +513,7 @@
   },
   "ability-assassin#0037": {
    "src": "Your first hit after casting Vanish\nwill deal +{~} more damage.",
-   "dst": "",
+   "dst": "Dein erster Treffer nach dem Wirken von Vanish\nverursacht +{~} mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -528,7 +528,7 @@
   },
   "ability-assassin#0038": {
    "src": "Mirror Image",
-   "dst": "",
+   "dst": "Spiegelbild",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -540,7 +540,7 @@
   },
   "ability-assassin#0039": {
    "src": "Summon {~} Mirror Clones {#} after reappearing\nfrom Vanish that will follow and protect you.",
-   "dst": "",
+   "dst": "Beschwört {~} Spiegelklone {#}, wenn du aus\nVanish wieder auftauchst; sie folgen dir und beschützen dich.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "",
+   "dst": "Wirst du getroffen, verlierst du einen Spiegelklon {#}, der\n-{~} des eingehenden Schadens abfängt und dir\n{~}s lang einen Schadensbonus gewährt. ({~}s Abklingzeit)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -570,7 +570,7 @@
   },
   "ability-assassin#0041": {
    "src": "{#} Effect: {~} Damage Bonus (⚔) to Self",
-   "dst": "",
+   "dst": "{#} Effekt: {~} Schadensbonus (⚔) für dich",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -583,7 +583,7 @@
   },
   "ability-assassin#0042": {
    "src": "Lacerate",
-   "dst": "",
+   "dst": "Zerfleischen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -595,7 +595,7 @@
   },
   "ability-assassin#0043": {
    "src": "Spin Attack will lunge you forward,\ndeal {~} strikes and then lunge you upward.",
-   "dst": "",
+   "dst": "Spin Attack lässt dich nach vorn stürzen,\n{~} Hiebe ausführen und dann nach oben schnellen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -610,7 +610,7 @@
   },
   "ability-assassin#0044": {
    "src": "Using Hop while Lacerate is active launches you further.",
-   "dst": "",
+   "dst": "Nutzt du Hüpfer, während Lacerate aktiv ist, fliegst du weiter.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -625,7 +625,7 @@
   },
   "ability-assassin#0045": {
    "src": "Silent Killer",
-   "dst": "",
+   "dst": "Stiller Mörder",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -637,7 +637,7 @@
   },
   "ability-assassin#0046": {
    "src": "Resets Vanish's cooldown\nafter killing an enemy.",
-   "dst": "",
+   "dst": "Setzt die Abklingzeit von Vanish zurück,\nnachdem du einen Gegner getötet hast.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -652,7 +652,7 @@
   },
   "ability-assassin#0047": {
    "src": "Foul Play",
-   "dst": "",
+   "dst": "Falsches Spiel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -664,7 +664,7 @@
   },
   "ability-assassin#0048": {
    "src": "Reduce the Mana cost of Multihit.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Multihit.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -681,7 +681,7 @@
   },
   "ability-assassin#0049": {
    "src": "While Mirror Image is active,\nBamboozle will slay a Mirror Clone {#}\ninstead of having a cooldown.",
-   "dst": "",
+   "dst": "Während Mirror Image aktiv ist,\nopfert Bamboozle einen Spiegelklon {#},\nstatt eine Abklingzeit zu haben.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -696,7 +696,7 @@
   },
   "ability-assassin#0050": {
    "src": "Wall of Smoke",
-   "dst": "",
+   "dst": "Rauchwand",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -708,7 +708,7 @@
   },
   "ability-assassin#0051": {
    "src": "Smoke Bomb will throw +{~} bombs.",
-   "dst": "",
+   "dst": "Smoke Bomb wirft +{~} Bomben.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -723,7 +723,7 @@
   },
   "ability-assassin#0052": {
    "src": "Last Laugh",
-   "dst": "",
+   "dst": "Das letzte Lachen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -735,7 +735,7 @@
   },
   "ability-assassin#0053": {
    "src": "Mirror Clones {#} will cast Multihit\nbefore dying.",
-   "dst": "",
+   "dst": "Spiegelklone {#} wirken vor ihrem Tod\nMultihit.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -750,7 +750,7 @@
   },
   "ability-assassin#0054": {
    "src": "When losing any Clone {#}{#}{#}, it will cast\none of your spells before dying.",
-   "dst": "",
+   "dst": "Verlierst du einen Klon {#}{#}{#}, wirkt er\nvor seinem Tod einen deiner Zauber.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -765,7 +765,7 @@
   },
   "ability-assassin#0055": {
    "src": "Psithurism",
-   "dst": "",
+   "dst": "Blätterrauschen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -777,7 +777,7 @@
   },
   "ability-assassin#0056": {
    "src": "Increase your Walk Speed by +{~}\nand your Jump Height by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deine Laufgeschwindigkeit um +{~}\nund deine Sprunghöhe um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -792,7 +792,7 @@
   },
   "ability-assassin#0057": {
    "src": "Rolling Fog",
-   "dst": "",
+   "dst": "Wallender Nebel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -804,7 +804,7 @@
   },
   "ability-assassin#0058": {
    "src": "Increase Smoke Bomb's range\nand area of effect.",
-   "dst": "",
+   "dst": "Erhöht Reichweite und Wirkungsbereich\nvon Smoke Bomb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -819,7 +819,7 @@
   },
   "ability-assassin#0059": {
    "src": "Shadow Travel",
-   "dst": "",
+   "dst": "Schattenreise",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -831,7 +831,7 @@
   },
   "ability-assassin#0060": {
    "src": "Gain +{~} Walk Speed (➲)\nwhen in Vanish.",
-   "dst": "",
+   "dst": "Erhalte +{~} Laufgeschwindigkeit (➲),\nwährend du in Vanish bist.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -846,7 +846,7 @@
   },
   "ability-assassin#0061": {
    "src": "Cheaper Multihit",
-   "dst": "",
+   "dst": "Günstigerer Mehrfachschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -858,7 +858,7 @@
   },
   "ability-assassin#0062": {
    "src": "Finality",
-   "dst": "",
+   "dst": "Endgültigkeit",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -870,7 +870,7 @@
   },
   "ability-assassin#0063": {
    "src": "Multihit's damage ramps up every\nhit, dealing additional damage.\nDamage bonus caps at {~} hits.",
-   "dst": "",
+   "dst": "Der Schaden von Multihit steigt mit jedem\nTreffer und verursacht zusätzlichen Schaden.\nDer Schadensbonus erreicht nach {~} Treffern sein Maximum.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -885,7 +885,7 @@
   },
   "ability-assassin#0064": {
    "src": "{#} Total Damage: +{~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, pro Treffer)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -898,7 +898,7 @@
   },
   "ability-assassin#0065": {
    "src": "Shadow Siphon",
-   "dst": "",
+   "dst": "Schattensog",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "",
+   "dst": "Senkt die Abklingzeit von Vanish um -{~}s, nachdem\ndu einen Gegner mit Backstab von hinten getroffen hast.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -925,7 +925,7 @@
   },
   "ability-assassin#0067": {
    "src": "Mirage",
-   "dst": "",
+   "dst": "Trugbild",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -937,7 +937,7 @@
   },
   "ability-assassin#0068": {
    "src": "After using Bamboozle or Shadow Projection\nto teleport, leave behind a Mirage Clone {#}\nwhich draws mobs within {~} blocks towards it.",
-   "dst": "",
+   "dst": "Teleportierst du dich mit Bamboozle oder Shadow Projection,\nhinterlässt du einen Trugbildklon {#},\nder Mobs im Umkreis von {~} Blöcken anlockt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "ability-assassin#0069": {
    "src": "Mirage Clones {#} disappear when an enemy\nis within {~} blocks or when they expire,\nand will cast Smoke Bomb with Last Laugh.",
-   "dst": "",
+   "dst": "Trugbildklone {#} verschwinden, wenn ein Gegner\ninnerhalb von {~} Blöcken ist oder sie ablaufen,\nund wirken mit Last Laugh Smoke Bomb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -967,7 +967,7 @@
   },
   "ability-assassin#0070": {
    "src": "Cheaper Smoke Bomb",
-   "dst": "",
+   "dst": "Günstigere Rauchbombe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -979,7 +979,7 @@
   },
   "ability-assassin#0071": {
    "src": "Reduce the Mana cost of Smoke Bomb.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Smoke Bomb.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -995,7 +995,7 @@
   },
   "ability-assassin#0072": {
    "src": "Blazing Powder",
-   "dst": "",
+   "dst": "Glühendes Pulver",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1007,7 +1007,7 @@
   },
   "ability-assassin#0073": {
    "src": "Spin Attack and Lacerate will\ndeal additional damage.",
-   "dst": "",
+   "dst": "Spin Attack und Lacerate\nverursachen zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1022,7 +1022,7 @@
   },
   "ability-assassin#0074": {
    "src": "Weightless",
-   "dst": "",
+   "dst": "Schwerelos",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1034,7 +1034,7 @@
   },
   "ability-assassin#0075": {
    "src": "You gain +{~} Mana if you\nhit an enemy while airborne.\n({~}+ blocks off the\nground to be airborne)",
-   "dst": "",
+   "dst": "Du erhältst +{~} Mana, wenn du\neinen Gegner in der Luft triffst.\n(Du musst {~}+ Blöcke über dem\nBoden sein, um in der Luft zu sein)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1049,7 +1049,7 @@
   },
   "ability-assassin#0076": {
    "src": "Black Hole",
-   "dst": "",
+   "dst": "Schwarzes Loch",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1061,7 +1061,7 @@
   },
   "ability-assassin#0077": {
    "src": "Smoke Bomb will pull nearby enemies.",
-   "dst": "",
+   "dst": "Smoke Bomb zieht Gegner in der Nähe an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1076,7 +1076,7 @@
   },
   "ability-assassin#0078": {
    "src": "Sandbagging",
-   "dst": "",
+   "dst": "Tiefstapeln",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1088,7 +1088,7 @@
   },
   "ability-assassin#0079": {
    "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#} lures an enemy.",
-   "dst": "",
+   "dst": "Senkt die Abklingzeit all deiner\nFähigkeiten um {~}, jedes Mal wenn du\nfür weniger als {~} deines max. Lebens getroffen wirst oder\ndein Trugbildklon {#} einen Gegner anlockt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1103,7 +1103,7 @@
   },
   "ability-assassin#0080": {
    "src": "Mutilate",
-   "dst": "",
+   "dst": "Verstümmeln",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1115,7 +1115,7 @@
   },
   "ability-assassin#0081": {
    "src": "Increase Finality's damage cap by +{~} hits.",
-   "dst": "",
+   "dst": "Erhöht die Schadensobergrenze von Finality um +{~} Treffer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1130,7 +1130,7 @@
   },
   "ability-assassin#0082": {
    "src": "Increase Multihit's amount of hits by +{~}.",
-   "dst": "",
+   "dst": "Erhöht die Trefferzahl von Multihit um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1145,7 +1145,7 @@
   },
   "ability-assassin#0083": {
    "src": "Swan Dive",
-   "dst": "",
+   "dst": "Schwanensprung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1157,7 +1157,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "",
+   "dst": "Landest du in der Luft {~} Treffer gegen einen Gegner,\nerhältst du +{~} Schwung {#}. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1172,7 +1172,7 @@
   },
   "ability-assassin#0085": {
    "src": "Ripple consumes your Momentum {#},\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum {#}, this\nexplosion deals +{~} more damage.",
-   "dst": "",
+   "dst": "Ripple verbraucht deinen Schwung {#}\nund löst eine gewaltige Explosion aus, die\nmassiven Schaden verursacht und Gegner kurz blendet.\nFür jeden Stapel Schwung {#} verursacht diese\nExplosion +{~} mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1187,7 +1187,7 @@
   },
   "ability-assassin#0086": {
    "src": "While midair, hold shift to quickly drop down.",
-   "dst": "",
+   "dst": "Halte in der Luft Shift gedrückt, um schnell herabzustürzen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1202,7 +1202,7 @@
   },
   "ability-assassin#0087": {
    "src": "{#} Total Damage: {~} (of your DPS, over {~} hits)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, über {~} Treffer)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1215,7 +1215,7 @@
   },
   "ability-assassin#0088": {
    "src": "Violent Vortex",
-   "dst": "",
+   "dst": "Tosender Wirbel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "",
+   "dst": "Verursachst du mit einem Treffer mehr als das\n{~}x deines max. Lebens an Schaden, erleiden\nandere Gegner in der Nähe {~} davon.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1242,7 +1242,7 @@
   },
   "ability-assassin#0090": {
    "src": "Duplicity",
-   "dst": "",
+   "dst": "Doppelspiel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1254,7 +1254,7 @@
   },
   "ability-assassin#0091": {
    "src": "Summon +{~} additional Mirror Clones {#}\nwith Mirror Image.",
-   "dst": "",
+   "dst": "Beschwört mit Mirror Image +{~} zusätzliche\nSpiegelklone {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1269,7 +1269,7 @@
   },
   "ability-assassin#0092": {
    "src": "{#} Cooldown: +{~}s",
-   "dst": "",
+   "dst": "{#} Abklingzeit: +{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1282,7 +1282,7 @@
   },
   "ability-assassin#0093": {
    "src": "Righting Reflex",
-   "dst": "",
+   "dst": "Katzenreflex",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1294,7 +1294,7 @@
   },
   "ability-assassin#0094": {
    "src": "When you hold shift while airborne, slowly\nglide and become immune to fall damage. (Max {~}s)",
-   "dst": "",
+   "dst": "Hältst du in der Luft Shift gedrückt, gleitest du\nlangsam und bist immun gegen Fallschaden. (Max. {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1309,7 +1309,7 @@
   },
   "ability-assassin#0095": {
    "src": "Marked",
-   "dst": "",
+   "dst": "Markiert",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1321,7 +1321,7 @@
   },
   "ability-assassin#0096": {
    "src": "Marked {#} enemies will take +{~} damage\nfrom attacks for each mark they have.",
-   "dst": "",
+   "dst": "Markierte {#} Gegner erleiden für jede Markierung\n+{~} Schaden durch Angriffe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1336,7 +1336,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "",
+   "dst": "Markierungen {#} zerfallen einmal alle {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1351,7 +1351,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "",
+   "dst": "Smoke Bomb fügt getroffenen Gegnern +{~} Markierung {#}\nhinzu. (Max. {~}, {~}s Abklingzeit)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1366,7 +1366,7 @@
   },
   "ability-assassin#0099": {
    "src": "Malicious Mockery",
-   "dst": "",
+   "dst": "Bösartiger Spott",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1378,7 +1378,7 @@
   },
   "ability-assassin#0100": {
    "src": "Casting Dash while sneaking will detonate\nall nearby stored Tricks {#}, dealing damage\nbased on how many stacks were consumed.",
-   "dst": "",
+   "dst": "Wirkst du Dash beim Schleichen, detonieren\nalle gespeicherten Tricks {#} in der Nähe und verursachen Schaden\nje nach Anzahl der verbrauchten Stapel.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "",
+   "dst": "Last Laugh speichert eine Anzahl Tricks {#} auf\nGegnern, abhängig von der Art des Klons {#}{#}{#}.\n(Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1408,7 +1408,7 @@
   },
   "ability-assassin#0102": {
    "src": "Mirror Clones {#} apply +{~} Trick {#} per hit.\nMirage Clones {#} apply +{~} Tricks {#} per hit.\nShadow Clones {#} apply +{~} Tricks {#} per hit.",
-   "dst": "",
+   "dst": "Spiegelklone {#} verteilen +{~} Trick {#} pro Treffer.\nTrugbildklone {#} verteilen +{~} Tricks {#} pro Treffer.\nSchattenklone {#} verteilen +{~} Tricks {#} pro Treffer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1423,7 +1423,7 @@
   },
   "ability-assassin#0103": {
    "src": "{#} Total Damage: {~} (of your DPS, per Trick)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro Trick)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1448,7 +1448,7 @@
   },
   "ability-assassin#0105": {
    "src": "After using Dash, you prepare\n+{~} shurikens. (Max {~})",
-   "dst": "",
+   "dst": "Nach dem Einsatz von Dash bereitest du\n+{~} Shuriken vor. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1463,7 +1463,7 @@
   },
   "ability-assassin#0106": {
    "src": "Your next Main Attack will throw all\nyour prepared shurikens.",
-   "dst": "",
+   "dst": "Dein nächster Hauptangriff wirft alle\nvorbereiteten Shuriken.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1478,7 +1478,7 @@
   },
   "ability-assassin#0107": {
    "src": "{#} Total Damage: {~} (of your DPS, per shuriken)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro Shuriken)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-assassin#0108": {
    "src": "Blade Fury",
-   "dst": "",
+   "dst": "Klingenwut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1503,7 +1503,7 @@
   },
   "ability-assassin#0109": {
    "src": "Multihit gains extra damage and\ncan be aimed in all directions.",
-   "dst": "",
+   "dst": "Multihit erhält zusätzlichen Schaden und\nkann in alle Richtungen gezielt werden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1518,7 +1518,7 @@
   },
   "ability-assassin#0110": {
    "src": "{#} Multihit Damage: +{~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#} Schaden von Multihit: +{~} (deines DPS, pro Treffer)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1531,7 +1531,7 @@
   },
   "ability-assassin#0111": {
    "src": "Hoodwink",
-   "dst": "",
+   "dst": "Täuschungsmanöver",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1543,7 +1543,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "",
+   "dst": "Tötest du einen Gegner, rettest du {~}\nseiner Tricks {#}. (Max. {~} pro Mob, {~} insgesamt)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1558,7 +1558,7 @@
   },
   "ability-assassin#0113": {
    "src": "Casting Spin Attack while sneaking will\ntransfer salvaged Tricks {#} onto enemies\nand immediately detonate them.",
-   "dst": "",
+   "dst": "Wirkst du Spin Attack beim Schleichen,\nwerden gerettete Tricks {#} auf Gegner übertragen\nund sofort detoniert.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1573,7 +1573,7 @@
   },
   "ability-assassin#0114": {
    "src": "Dancing Blade",
-   "dst": "",
+   "dst": "Tanzende Klinge",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "",
+   "dst": "Nutzt du Swan Dive mit {~}+ Schwung {#},\nspringst du {~}s nach der Landung wieder in die Luft.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1600,7 +1600,7 @@
   },
   "ability-assassin#0116": {
    "src": "Ambush",
-   "dst": "",
+   "dst": "Hinterhalt",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1612,7 +1612,7 @@
   },
   "ability-assassin#0117": {
    "src": "Increases Surprise Strike's\ndamage by +{~}.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Surprise Strike\num +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1627,7 +1627,7 @@
   },
   "ability-assassin#0118": {
    "src": "Death Magnet",
-   "dst": "",
+   "dst": "Todesmagnet",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1639,7 +1639,7 @@
   },
   "ability-assassin#0119": {
    "src": "When exiting Vanish, pull all\nnearby Marked {#} mobs towards\nwhere you entered Vanish.",
-   "dst": "",
+   "dst": "Verlässt du Vanish, ziehst du alle\nmarkierten {#} Mobs in der Nähe zu der Stelle,\nan der du Vanish betreten hast.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1654,7 +1654,7 @@
   },
   "ability-assassin#0120": {
    "src": "Distraction",
-   "dst": "",
+   "dst": "Ablenkung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "",
+   "dst": "Negative Effekte durch Tricks {#} halten\n+{~}s länger für jeden zusätzlichen Trick {#},\nder über die Anforderung hinaus detoniert wird.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1681,7 +1681,7 @@
   },
   "ability-assassin#0122": {
    "src": "Detonating {~}+ Tricks {#} on enemies will\ntemporarily reduce their damage.",
-   "dst": "",
+   "dst": "Detonierst du {~}+ Tricks {#} auf Gegnern, wird\nihr Schaden vorübergehend verringert.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1696,7 +1696,7 @@
   },
   "ability-assassin#0123": {
    "src": "Wall Jump",
-   "dst": "",
+   "dst": "Wandsprung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1708,7 +1708,7 @@
   },
   "ability-assassin#0124": {
    "src": "Reduces Hop's cooldown by\n-{~}s. Using Hop into a wall\nwill bounce you backward.\n(Hold shift to cancel)",
-   "dst": "",
+   "dst": "Senkt die Abklingzeit von Hüpfer um\n-{~}s. Nutzt du Hüpfer gegen eine Wand,\nprallst du nach hinten ab.\n(Halte Shift gedrückt, um abzubrechen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1723,7 +1723,7 @@
   },
   "ability-assassin#0125": {
    "src": "Cheaper Dash II",
-   "dst": "",
+   "dst": "Günstigerer Vorstoß II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1735,7 +1735,7 @@
   },
   "ability-assassin#0126": {
    "src": "Misdirection",
-   "dst": "",
+   "dst": "Irreführung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1747,7 +1747,7 @@
   },
   "ability-assassin#0127": {
    "src": "Confused {#} enemies take +{~} more",
-   "dst": "",
+   "dst": "Verwirrte {#} Gegner erleiden +{~} mehr",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1762,7 +1762,7 @@
   },
   "ability-assassin#0128": {
    "src": "Detonating {~}+ Tricks {#} on enemies\nwill make them Confused {#}.",
-   "dst": "",
+   "dst": "Detonierst du {~}+ Tricks {#} auf Gegnern,\nwerden sie Verwirrt {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1777,7 +1777,7 @@
   },
   "ability-assassin#0129": {
    "src": "You may store +{~} more Tricks {#} on enemies.",
-   "dst": "",
+   "dst": "Du kannst +{~} weitere Tricks {#} auf Gegnern speichern.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1793,7 +1793,7 @@
   },
   "ability-assassin#0130": {
    "src": "will take damage whenever they attack.",
-   "dst": "",
+   "dst": "erleiden Schaden, wann immer sie angreifen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1808,7 +1808,7 @@
   },
   "ability-assassin#0131": {
    "src": "{#} Thunder damage from you and",
-   "dst": "",
+   "dst": "{#} Donnerschaden von dir und",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1821,7 +1821,7 @@
   },
   "ability-assassin#0132": {
    "src": "Nightcloak Knives",
-   "dst": "",
+   "dst": "Nachtmantel-Messer",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1833,7 +1833,7 @@
   },
   "ability-assassin#0133": {
    "src": "Dealing damage will send your\nKnives to your target, dealing {~}\nof the damage you dealt per Knife.",
-   "dst": "",
+   "dst": "Verursachst du Schaden, fliegen deine\nMesser zu deinem Ziel und verursachen pro Messer {~}\ndes von dir verursachten Schadens.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1863,7 +1863,7 @@
   },
   "ability-assassin#0135": {
    "src": "Cheaper Multihit II",
-   "dst": "",
+   "dst": "Günstigerer Mehrfachschlag II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1875,7 +1875,7 @@
   },
   "ability-assassin#0136": {
    "src": "Shadow Projection",
-   "dst": "",
+   "dst": "Schattenprojektion",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1887,7 +1887,7 @@
   },
   "ability-assassin#0137": {
    "src": "Double jump again while sneaking to\nteleport to the clone, detonating it.",
-   "dst": "",
+   "dst": "Springe beim Schleichen erneut doppelt, um dich\nzum Klon zu teleportieren und ihn zu detonieren.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1902,7 +1902,7 @@
   },
   "ability-assassin#0138": {
    "src": "Shadow Clones {#} will cast Spin Attack\nwith Last Laugh.",
-   "dst": "",
+   "dst": "Schattenklone {#} wirken mit Last Laugh\nSpin Attack.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1917,7 +1917,7 @@
   },
   "ability-assassin#0139": {
    "src": "When you double jump, throw a Shadow Clone {#}\nin the direction you are facing.",
-   "dst": "",
+   "dst": "Springst du doppelt, wirfst du einen Schattenklon {#}\nin deine Blickrichtung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1932,7 +1932,7 @@
   },
   "ability-assassin#0140": {
    "src": "Cheaper Spin Attack II",
-   "dst": "",
+   "dst": "Günstigerer Wirbelangriff II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1944,7 +1944,7 @@
   },
   "ability-assassin#0141": {
    "src": "Aerial Ace",
-   "dst": "",
+   "dst": "Luftass",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1956,7 +1956,7 @@
   },
   "ability-assassin#0142": {
    "src": "Hitting an enemy with Swan Dive\ngives you a damage boost.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit Swan Dive,\nerhältst du einen Schadensschub.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1971,7 +1971,7 @@
   },
   "ability-assassin#0143": {
    "src": "Fatal Spin",
-   "dst": "",
+   "dst": "Tödlicher Wirbel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1983,7 +1983,7 @@
   },
   "ability-assassin#0144": {
    "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#} to enemies hit.",
-   "dst": "",
+   "dst": "Erhöht Reichweite und Schaden von Spin Attack und Lacerate\nund fügt getroffenen Gegnern +{~} Markierung {#} hinzu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1998,7 +1998,7 @@
   },
   "ability-assassin#0145": {
    "src": "Toxic Sludge",
-   "dst": "",
+   "dst": "Giftschlamm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2010,7 +2010,7 @@
   },
   "ability-assassin#0146": {
    "src": "Contaminated {#} enemies take +{~} more",
-   "dst": "",
+   "dst": "Verseuchte {#} Gegner erleiden +{~} mehr",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2025,7 +2025,7 @@
   },
   "ability-assassin#0147": {
    "src": "Detonating {~}+ Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
-   "dst": "",
+   "dst": "Detonierst du {~}+ Tricks {#} auf Gegnern,\nwerden sie mit giftigem Schleim Verseucht {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2040,7 +2040,7 @@
   },
   "ability-assassin#0148": {
    "src": "You may store +{~} more Tricks {#} on\nenemies.",
-   "dst": "",
+   "dst": "Du kannst +{~} weitere Tricks {#} auf\nGegnern speichern.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2055,7 +2055,7 @@
   },
   "ability-assassin#0149": {
    "src": "on death, damaging nearby enemies.",
-   "dst": "",
+   "dst": "beim Tod und schädigen Gegner in der Nähe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2070,7 +2070,7 @@
   },
   "ability-assassin#0150": {
    "src": "{#} Earth damage from you and will explode",
-   "dst": "",
+   "dst": "{#} Erdschaden von dir und explodieren",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2083,7 +2083,7 @@
   },
   "ability-assassin#0151": {
    "src": "Echo",
-   "dst": "",
+   "dst": "Echo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2095,7 +2095,7 @@
   },
   "ability-assassin#0152": {
    "src": "After losing a Mirror Clone {#}, your\nnext Spin Attack or Smoke Bomb will be\ncopied by all active Clones {#}{#}{#}, but deal\n-{~} damage.",
-   "dst": "",
+   "dst": "Verlierst du einen Spiegelklon {#}, wird dein\nnächster Spin Attack oder Smoke Bomb von\nallen aktiven Klonen {#}{#}{#} kopiert, verursacht aber\n-{~} Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2110,7 +2110,7 @@
   },
   "ability-assassin#0153": {
    "src": "Eviscerate",
-   "dst": "",
+   "dst": "Ausweiden",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2122,7 +2122,7 @@
   },
   "ability-assassin#0154": {
    "src": "Lacerate deals more damage,\nand will slash +{~} more time.\nLacerate has increased range.",
-   "dst": "",
+   "dst": "Lacerate verursacht mehr Schaden\nund schlägt +{~}-mal öfter zu.\nLacerate hat eine höhere Reichweite.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2137,7 +2137,7 @@
   },
   "ability-assassin#0155": {
    "src": "Bladestorm",
-   "dst": "",
+   "dst": "Klingensturm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2149,7 +2149,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Violent Vortex\num +{~} und hebt die Schadensanforderung\nauf das {~}x deines max. Lebens an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2164,7 +2164,7 @@
   },
   "ability-assassin#0157": {
    "src": "Dissolution",
-   "dst": "",
+   "dst": "Auflösung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2176,7 +2176,7 @@
   },
   "ability-assassin#0158": {
    "src": "When entering and exiting Vanish, become immune to\nknockback and gain resistance for a brief moment.",
-   "dst": "",
+   "dst": "Betrittst und verlässt du Vanish, wirst du kurz immun gegen\nRückstoß und erhältst Resistenz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2191,7 +2191,7 @@
   },
   "ability-assassin#0159": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Self",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} Resistenzbonus (❁) für dich",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2204,7 +2204,7 @@
   },
   "ability-assassin#0160": {
    "src": "Harvester",
-   "dst": "",
+   "dst": "Ernter",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2231,7 +2231,7 @@
   },
   "ability-assassin#0162": {
    "src": "Cheaper Smoke Bomb II",
-   "dst": "",
+   "dst": "Günstigere Rauchbombe II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2243,7 +2243,7 @@
   },
   "ability-assassin#0163": {
    "src": "Far Reach",
-   "dst": "",
+   "dst": "Langer Arm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2255,7 +2255,7 @@
   },
   "ability-assassin#0164": {
    "src": "Increase the range of Multihit.",
-   "dst": "",
+   "dst": "Erhöht die Reichweite von Multihit.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2270,7 +2270,7 @@
   },
   "ability-assassin#0165": {
    "src": "More Marks",
-   "dst": "",
+   "dst": "Mehr Markierungen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2282,7 +2282,7 @@
   },
   "ability-assassin#0166": {
    "src": "Increase your maximum Marks {#} by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deine maximale Anzahl an Markierungen {#} um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2297,7 +2297,7 @@
   },
   "ability-assassin#0167": {
    "src": "Deflagrate",
-   "dst": "",
+   "dst": "Verpuffung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2309,7 +2309,7 @@
   },
   "ability-assassin#0168": {
    "src": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +{~} Enkindled {#}\nwhenever you strike them.",
-   "dst": "",
+   "dst": "Bamboozle überzieht getroffene Gegner mit einem\nentzündlichen Katalysator, der ihnen +{~} Entfacht {#}\nverleiht, wann immer du sie triffst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2324,7 +2324,7 @@
   },
   "ability-assassin#0169": {
    "src": "Enkindled {#} enemies take +{~} more",
-   "dst": "",
+   "dst": "Entfachte {#} Gegner erleiden +{~} mehr",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2339,7 +2339,7 @@
   },
   "ability-assassin#0170": {
    "src": "The catalyst flares up when it reaches {~}\nor at the end of its duration, dealing damage\nbased on how Enkindled {#} the target was.",
-   "dst": "",
+   "dst": "Der Katalysator flammt auf, wenn er {~} erreicht\noder seine Dauer endet, und verursacht Schaden\nabhängig davon, wie stark das Ziel Entfacht {#} war.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2354,7 +2354,7 @@
   },
   "ability-assassin#0171": {
    "src": "{#} Fire damage from you.",
-   "dst": "",
+   "dst": "{#} Feuerschaden von dir.",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2367,7 +2367,7 @@
   },
   "ability-assassin#0172": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro {~} Entfachen)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2380,7 +2380,7 @@
   },
   "ability-assassin#0173": {
    "src": "Ricochets",
-   "dst": "",
+   "dst": "Querschläger",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2392,7 +2392,7 @@
   },
   "ability-assassin#0174": {
    "src": "Your Shurikens will bounce {~} times\nbetween enemies upon impact.",
-   "dst": "",
+   "dst": "Deine Shuriken prallen beim Aufprall {~}-mal\nzwischen Gegnern hin und her.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2407,7 +2407,7 @@
   },
   "ability-assassin#0175": {
    "src": "Satsujin",
-   "dst": "",
+   "dst": "Satsujin",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2419,7 +2419,7 @@
   },
   "ability-assassin#0176": {
    "src": "Both consume all Marks {#} on the enemy.",
-   "dst": "",
+   "dst": "Beide verbrauchen alle Markierungen {#} des Gegners.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2434,7 +2434,7 @@
   },
   "ability-assassin#0177": {
    "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab will deal +{~} damage, or your next\nPowder Special will deal +{~} damage.",
-   "dst": "",
+   "dst": "Hat ein Gegner {~}+ Markierungen {#}, verursacht dein nächster\nBackstab +{~} Schaden oder dein nächster\nPulver-Spezialeffekt +{~} Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2449,7 +2449,7 @@
   },
   "ability-assassin#0178": {
    "src": "Noxious Haze",
-   "dst": "",
+   "dst": "Giftiger Dunst",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2461,7 +2461,7 @@
   },
   "ability-assassin#0179": {
    "src": "Smoke Bomb makes you and any allies\nbecome Noxious {#} while standing in it,\nwhich lingers after leaving the area.",
-   "dst": "",
+   "dst": "Smoke Bomb macht dich und alle Verbündeten,\ndie darin stehen, Toxisch {#}; das hält\nauch nach Verlassen des Bereichs an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2476,7 +2476,7 @@
   },
   "ability-assassin#0180": {
    "src": "While Noxious {#}, deal +{~} damage to\nenemies for every debuff they have. (Max {~})\nAllies only receive {~} of the bonus.",
-   "dst": "",
+   "dst": "Solange du Toxisch {#} bist, verursachst du +{~} Schaden an\nGegnern für jeden negativen Effekt auf ihnen. (Max. {~})\nVerbündete erhalten nur {~} des Bonus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2491,7 +2491,7 @@
   },
   "ability-assassin#0181": {
    "src": "Jasmine Bloom",
-   "dst": "",
+   "dst": "Jasminblüte",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2503,7 +2503,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "",
+   "dst": "Nachdem du {~} Mana ausgegeben oder {~} Schwung {#} erhalten hast,\nerblüht ein Bereich unter dir und fügt\nGegnern darauf alle {~}s Schaden zu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2518,7 +2518,7 @@
   },
   "ability-assassin#0183": {
    "src": "The duration is reset and the radius is\nincreased after every bloom. (Max {~} Blooms)",
-   "dst": "",
+   "dst": "Die Dauer wird zurückgesetzt und der Radius\nnach jeder Blüte vergrößert. (Max. {~} Blüten)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2533,7 +2533,7 @@
   },
   "ability-assassin#0184": {
    "src": "{#} Area of Effect: +{~} Blocks (per bloom)",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: +{~} Blöcke (pro Blüte)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2546,7 +2546,7 @@
   },
   "ability-assassin#0185": {
    "src": "Soul Siphon",
-   "dst": "",
+   "dst": "Seelensog",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2558,7 +2558,7 @@
   },
   "ability-assassin#0186": {
    "src": "Detonating {~}+ Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
-   "dst": "",
+   "dst": "Detonierst du {~}+ Tricks {#} auf Gegnern, werden sie\n{~} Ausgelaugt {#} und erleiden\n+{~} mehr {#} Wasserschaden von dir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2573,7 +2573,7 @@
   },
   "ability-assassin#0187": {
    "src": "Whenever you or an ally attacks a\nDrained {#} enemy, siphon {~} of it,\nconverting it into {~} Overhealth ❤\nthat decays over {~}s. (Max {~})",
-   "dst": "",
+   "dst": "Greifst du oder ein Verbündeter einen\nAusgelaugten {#} Gegner an, saugst du {~} davon ab\nund wandelst es in {~} Zusatzleben ❤ um,\ndas über {~}s zerfällt. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2588,7 +2588,7 @@
   },
   "ability-assassin#0188": {
    "src": "Braced Impact",
-   "dst": "",
+   "dst": "Abgefederter Aufprall",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2600,7 +2600,7 @@
   },
   "ability-assassin#0189": {
    "src": "Landing with Swan Dive briefly\ngrants you resistance.",
-   "dst": "",
+   "dst": "Landest du mit Swan Dive,\nerhältst du kurz Resistenz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2615,7 +2615,7 @@
   },
   "ability-assassin#0190": {
    "src": "Devour",
-   "dst": "",
+   "dst": "Verschlingen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2642,7 +2642,7 @@
   },
   "ability-assassin#0192": {
    "src": "Marked for Death",
-   "dst": "",
+   "dst": "Todgeweiht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2654,7 +2654,7 @@
   },
   "ability-assassin#0193": {
    "src": "Increases Marked's damage\nbonus by +{~}.",
-   "dst": "",
+   "dst": "Erhöht den Schadensbonus\nvon Marked um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2669,7 +2669,7 @@
   },
   "ability-assassin#0194": {
    "src": "Thrill",
-   "dst": "",
+   "dst": "Nervenkitzel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2696,7 +2696,7 @@
   },
   "ability-assassin#0196": {
    "src": "Doppelganger",
-   "dst": "",
+   "dst": "Doppelgänger",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2708,7 +2708,7 @@
   },
   "ability-assassin#0197": {
    "src": "Summon +{~} additional Mirror Clone {#}\nwith Mirror Image.",
-   "dst": "",
+   "dst": "Beschwört mit Mirror Image +{~} zusätzlichen\nSpiegelklon {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2723,7 +2723,7 @@
   },
   "ability-assassin#0198": {
    "src": "Celerity",
-   "dst": "",
+   "dst": "Behändigkeit",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2735,7 +2735,7 @@
   },
   "ability-assassin#0199": {
    "src": "Dash's horizontal velocity is increased by {~}.",
-   "dst": "",
+   "dst": "Die horizontale Geschwindigkeit von Dash steigt um {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2750,7 +2750,7 @@
   },
   "ability-assassin#0200": {
    "src": "Each {~} Momentum {#} grants +{~}\nmore damage to Swan Dive.",
-   "dst": "",
+   "dst": "Je {~} Schwung {#} gewähren Swan Dive +{~}\nmehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2765,7 +2765,7 @@
   },
   "ability-assassin#0201": {
    "src": "Shadow Dance",
-   "dst": "",
+   "dst": "Schattentanz",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2777,7 +2777,7 @@
   },
   "ability-assassin#0202": {
    "src": "Your second hit after casting\nVanish will deal +{~} damage.",
-   "dst": "",
+   "dst": "Dein zweiter Treffer nach dem Wirken\nvon Vanish verursacht +{~} Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2792,7 +2792,7 @@
   },
   "ability-assassin#0203": {
    "src": "Paranoia",
-   "dst": "",
+   "dst": "Paranoia",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2819,7 +2819,7 @@
   },
   "ability-assassin#0205": {
    "src": "Petal Storm",
-   "dst": "",
+   "dst": "Blütensturm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2831,7 +2831,7 @@
   },
   "ability-assassin#0206": {
    "src": "A maximum sized Jasmine Bloom will transform\nSwan Dive into a huge petal storm, consuming\nyour bloom to give it increased damage and range",
-   "dst": "",
+   "dst": "Eine Jasmine Bloom maximaler Größe verwandelt\nSwan Dive in einen riesigen Blütensturm und verbraucht\ndeine Blüte, um Schaden und Reichweite zu erhöhen",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2846,7 +2846,7 @@
   },
   "ability-assassin#0207": {
    "src": "{#} Explosion Damage: +{~}",
-   "dst": "",
+   "dst": "{#} Explosionsschaden: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2859,7 +2859,7 @@
   },
   "ability-assassin#0208": {
    "src": "Billowing Death",
-   "dst": "",
+   "dst": "Wogender Tod",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2871,7 +2871,7 @@
   },
   "ability-assassin#0209": {
    "src": "When you hit an enemy with {~}+ Marks {#}\nwith a successful Backstab, send out\na cloud of smoke which applies {~}\nof the enemy's Marks {#} to other enemies.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit {~}+ Markierungen {#}\nmit einem erfolgreichen Backstab, setzt du\neine Rauchwolke frei, die {~}\nder Markierungen {#} des Gegners auf andere Gegner überträgt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2886,7 +2886,7 @@
   },
   "ability-assassin#0210": {
    "src": "Looming Presence",
-   "dst": "",
+   "dst": "Drohende Präsenz",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2898,7 +2898,7 @@
   },
   "ability-assassin#0211": {
    "src": "Increases the range of Backstab.",
-   "dst": "",
+   "dst": "Erhöht die Reichweite von Backstab.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2913,7 +2913,7 @@
   },
   "ability-assassin#0212": {
    "src": "Disappearing Act",
-   "dst": "",
+   "dst": "Verschwindetrick",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2925,7 +2925,7 @@
   },
   "ability-assassin#0213": {
    "src": "After losing all of your Mirror Clones {#}, create\nan explosion the next time you enter Vanish.",
-   "dst": "",
+   "dst": "Hast du alle Spiegelklone {#} verloren, erzeugst du\nbeim nächsten Betreten von Vanish eine Explosion.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2940,7 +2940,7 @@
   },
   "ability-assassin#0214": {
    "src": "Dextrous Hands",
-   "dst": "",
+   "dst": "Geschickte Hände",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2952,7 +2952,7 @@
   },
   "ability-assassin#0215": {
    "src": "Hop will now prepare {~} shurikens.\nYou can prepare +{~} total shurikens. (Max {~})",
-   "dst": "",
+   "dst": "Hüpfer bereitet nun {~} Shuriken vor.\nDu kannst insgesamt +{~} Shuriken vorbereiten. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2967,7 +2967,7 @@
   },
   "ability-assassin#0216": {
    "src": "Thermobaric Smoke",
-   "dst": "",
+   "dst": "Thermobarischer Rauch",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2979,7 +2979,7 @@
   },
   "ability-assassin#0217": {
    "src": "Inject volatile chemicals into your\nSmoke Bomb, causing it to combust\ninstantaneously upon landing,\ndealing its damage {~}s faster.",
-   "dst": "",
+   "dst": "Versetze deine\nSmoke Bomb mit flüchtigen Chemikalien, sodass sie\nbeim Aufkommen sofort verbrennt\nund ihren Schaden {~}s schneller verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2994,7 +2994,7 @@
   },
   "ability-assassin#0218": {
    "src": "Reduce Smoke Bomb's duration by {~}s.",
-   "dst": "",
+   "dst": "Verringert die Dauer von Smoke Bomb um {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3009,7 +3009,7 @@
   },
   "ability-assassin#0219": {
    "src": "{#} Duration: -{~}s",
-   "dst": "",
+   "dst": "{#} Dauer: -{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3022,7 +3022,7 @@
   },
   "ability-assassin#0220": {
    "src": "Choke Bomb",
-   "dst": "",
+   "dst": "Erstickungsbombe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3034,7 +3034,7 @@
   },
   "ability-assassin#0221": {
    "src": "Enemies suffering from Hypoxia {#}\nare slowed by {~} and take +{~}\nmore {#} Air damage from you.",
-   "dst": "",
+   "dst": "Gegner mit Hypoxie {#}\nwerden um {~} verlangsamt und erleiden +{~}\nmehr {#} Luftschaden von dir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "",
+   "dst": "Smoke Bomb setzt alle {~}s eine Staubwolke\nfrei, die +{~}s Hypoxie {#} verursacht.\n(Max. {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3064,7 +3064,7 @@
   },
   "ability-assassin#0223": {
    "src": "Pierce the Veil",
-   "dst": "",
+   "dst": "Den Schleier durchdringen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3076,7 +3076,7 @@
   },
   "ability-assassin#0224": {
    "src": "Cloak yourself in shadow, gaining all\nbenefits of Vanish for the duration.\nHealth and mana will still generate, and\nthis state cannot be canceled.",
-   "dst": "",
+   "dst": "Hülle dich in Schatten und erhalte für die Dauer\nalle Vorteile von Vanish.\nLeben und Mana regenerieren sich weiterhin, und\ndieser Zustand kann nicht abgebrochen werden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3091,7 +3091,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "",
+   "dst": "Während du verhüllt bist, erhalten Gegner in der Nähe\n+{~} Markierung {#} alle {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3106,7 +3106,7 @@
   },
   "ability-assassin#0226": {
    "src": "Serpent's Garden",
-   "dst": "",
+   "dst": "Garten der Schlange",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3118,7 +3118,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "",
+   "dst": "Springe in die Luft, bevor du\nzur Erde stürzt und einen Blumengarten\nzu deinen Füßen sprießen lässt, der\nGegnern alle {~}s Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "",
+   "dst": "Über deinem Garten lädt sich dein Schwung {#}\ndoppelt so schnell auf und erhält\n+{~} maximale Stapel.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3148,7 +3148,7 @@
   },
   "ability-assassin#0229": {
    "src": "Another Self",
-   "dst": "",
+   "dst": "Ein anderes Ich",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3160,7 +3160,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "",
+   "dst": "Wirkst du F erneut, tauscht ihr die Positionen,\nTricks {#} auf Gegnern in der Nähe detonieren, und\ndein Klon wirkt alle verfügbaren Schadenszauber.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3175,7 +3175,7 @@
   },
   "ability-assassin#0231": {
    "src": "Create a perfect clone of yourself to\nwork with as a united duet, it copying\nevery spell you cast.",
-   "dst": "",
+   "dst": "Erschaffe einen perfekten Klon von dir, um\nals vereintes Duett zu kämpfen; er kopiert\njeden Zauber, den du wirkst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "",
+   "dst": "Hatte kein Gegner beim Tausch mehr als {~} detonierte Tricks {#},\nverliert der Klon -{~} Leben. Doch\nfür jeden Trick {#} über dem Schwellenwert\nverursachen diese Schadenszauber {~} mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "",
+   "dst": "Das Leben des Klons entspricht anteilig deinem\neigenen effektiven Leben, und solange er lebt,\nwird die Wirksamkeit deiner negativen Effekte verdoppelt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3220,7 +3220,7 @@
   },
   "ability-assassin#0234": {
    "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Mark {#} consumed,\nsummon a Knife. (Max {~} Knives)",
-   "dst": "",
+   "dst": "Wirkst du ihn in Vanish,\nverbraucht Spin Attack alle\nMarkierungen {#} von Gegnern in der Nähe.\nFür je {~} verbrauchte Markierung {#}\nbeschwörst du ein Messer. (Max. {~} Messer)",
    "role": "desc",
    "kind": "block",
    "ctx": [

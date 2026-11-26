@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Collect White Lilies",
   "count": 9,
-  "translated": 0,
+  "translated": 9,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Collect White Lilies#001": {
    "src": "Request from Jayba: Someone, please! I planned on giving my partner a bouquet of lilies for our anniversary, but I simply forgot!",
-   "dst": "",
+   "dst": "Gesuch von Jayba: Bitte, irgendwer! Ich wollte meinem Schatz zum Jahrestag einen Lilienstrauß schenken, aber ich habe es einfach vergessen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -18,7 +18,7 @@
   },
   "Collect White Lilies#002": {
    "src": "With the festival coming up, they're all sold out! I'd rather not muddy my clothes to get some; especially with the nasty rumors regarding enemies of the state.",
-   "dst": "",
+   "dst": "Mit dem Fest vor der Tür sind alle ausverkauft! Ich will mir ungern die Kleider schmutzig machen, um welche zu holen, besonders bei den üblen Gerüchten über Staatsfeinde.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -28,7 +28,7 @@
   },
   "Collect White Lilies#003": {
    "src": "{~} White Lilies should do the trick. These lone flowers can be found in grassy areas, usually near blossom trees. Do keep an eye out, they're quite small.",
-   "dst": "",
+   "dst": "{~} Weiße Lilien sollten reichen. Diese einsamen Blumen findet man auf Grasflächen, meist in der Nähe von Blütenbäumen. Halte die Augen offen, sie sind recht klein.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -38,7 +38,7 @@
   },
   "Collect White Lilies#004": {
    "src": "If you stick to the roads, you should be able to come across a few. Careful to not get disturbed whilst picking them though! You may want to clear the area beforehand, especially with all the Moorbadgers around...",
-   "dst": "",
+   "dst": "Wenn du auf den Wegen bleibst, solltest du ein paar finden. Aber pass auf, dass du beim Pflücken nicht gestört wirst! Räum die Gegend vielleicht vorher, vor allem bei den vielen Moordachsen hier...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -48,7 +48,7 @@
   },
   "Collect White Lilies#005": {
    "src": "Unfortunately, all lilies close to town have been picked already. Do bring back the flowers to this post once you're done. Thank you!",
-   "dst": "",
+   "dst": "Leider wurden alle Lilien in Stadtnähe schon gepflückt. {c2}Bring die Blumen zu diesem Brett{/}, wenn du fertig bist. Danke!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -58,7 +58,7 @@
   },
   "Collect White Lilies#006": {
    "src": "Bring [{~} White Lilies] near Blossom trees in the {p} to the Slaying Post at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Bring {c2}[{~} Weiße Lilie]{/} von den Blütenbäumen in {p} zur Jagdtafel bei {c3}[-{~}, {~}, -{~}]{/}",
    "role": "desc",
    "kind": "objective",
    "quest": "Collect White Lilies",
@@ -68,7 +68,7 @@
   },
   "Collect White Lilies#007": {
    "src": "As you pick up this lonely flower, you feel light on your feet!",
-   "dst": "",
+   "dst": "Als du diese einsame Blume pflückst, fühlst du dich leichtfüßig!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -78,7 +78,7 @@
   },
   "Collect White Lilies#008": {
    "src": "The board mentioned the flowers are really small and sparse. Make sure to look around patches of blossom trees...",
-   "dst": "",
+   "dst": "Am Brett stand, die Blumen seien sehr klein und selten. Such gründlich rund um {c2}Gruppen von Blütenbäumen{/}...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",
@@ -88,7 +88,7 @@
   },
   "Collect White Lilies#009": {
    "src": "You've gathered enough White Lilies. You should return to the Slaying Post to collect your reward.",
-   "dst": "",
+   "dst": "Du hast genug Weiße Lilien gesammelt. {c2}Kehre zur Jagdtafel zurück{/}, um deine Belohnung abzuholen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Collect White Lilies",

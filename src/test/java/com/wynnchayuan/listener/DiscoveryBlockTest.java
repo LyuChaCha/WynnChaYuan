@@ -34,7 +34,7 @@ public final class DiscoveryBlockTest {
 
     private static final Path TRANSLATIONS = Path.of("src/main/resources/assets/wynnchayuan/translations");
 
-    private static final String[] LANGUAGES = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"};
+    private static final String[] LANGUAGES = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"};
 
     private static final String ISSUE_SENTENCE = "Between Realms of physicality and influence lies the"
             + " vast nothingness of the void. Some islands have broken from the lands and drift"

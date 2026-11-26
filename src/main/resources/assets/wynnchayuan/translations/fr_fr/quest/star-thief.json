@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Star Thief",
   "count": 30,
-  "translated": 0,
+  "translated": 30,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Star Thief#000": {
    "src": "This pile of gravel appears to have blocked the entrance... Maybe there's a shovel nearby?",
-   "dst": "",
+   "dst": "Ce tas de gravier semble bloquer l'entrée... Il y a peut-être une pelle dans le coin?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -18,7 +18,7 @@
   },
   "Star Thief#001": {
    "src": "[{~}/{~}] Thief: .... I can't control myself...fjfjfj This rock...",
-   "dst": "",
+   "dst": "[{~}/{~}] Voleur: .... Je ne peux pas me contrôler...fjfjfj Cette roche...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -28,7 +28,7 @@
   },
   "Star Thief#002": {
    "src": "Look into the rumors of strange weather near the Imal Inn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Enquêtez sur les rumeurs de temps étrange près de l'Imal Inn, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -38,7 +38,7 @@
   },
   "Star Thief#003": {
    "src": "Find the meteor's crash site at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Trouvez le lieu d'impact du météore, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -48,7 +48,7 @@
   },
   "Star Thief#004": {
    "src": "Hey you! Human. What are you doing here?",
-   "dst": "",
+   "dst": "Hé, vous! Humain. Que faites-vous ici?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -58,7 +58,7 @@
   },
   "Star Thief#005": {
    "src": "Under Villager law any extra terrestrial or extra voidal entities are prohibited and owned by the state.",
-   "dst": "",
+   "dst": "Selon la loi villageoise, toute entité extraterrestre ou venue du Vide est interdite et propriété de l'État.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -68,7 +68,7 @@
   },
   "Star Thief#006": {
    "src": "Seeing as you are new to the land, I can't see you being prosecuted, especially a {p} Guard.",
-   "dst": "",
+   "dst": "Comme vous êtes nouveau dans la région, je doute qu'on vous poursuive, surtout un garde de {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -78,7 +78,7 @@
   },
   "Star Thief#007": {
    "src": "This meteor is different to what we've seen before. We suspect that direct contact with the meteor is dangerous.",
-   "dst": "",
+   "dst": "Ce météore est différent de ceux que nous avons vus. Nous pensons que tout contact direct avec lui est dangereux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -88,7 +88,7 @@
   },
   "Star Thief#008": {
    "src": "The magical radiation doesn't seem to be affecting you at all though. Do you not feel anything? Perhaps you could help me locate it.",
-   "dst": "",
+   "dst": "Pourtant, la radiation magique ne semble pas du tout vous affecter. Vous ne sentez rien? Vous pourriez m'aider à le localiser.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -98,7 +98,7 @@
   },
   "Star Thief#009": {
    "src": "Explore the cave that the meteor crashed into.",
-   "dst": "",
+   "dst": "Explorez la grotte où le météore s'est écrasé.",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -108,7 +108,7 @@
   },
   "Star Thief#010": {
    "src": "It's... mine.",
-   "dst": "",
+   "dst": "C'est... à moi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -118,7 +118,7 @@
   },
   "Star Thief#011": {
    "src": "Escape the collapsing cave.",
-   "dst": "",
+   "dst": "Échappez-vous de la grotte qui s'effondre.",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -128,7 +128,7 @@
   },
   "Star Thief#012": {
    "src": "Follow the trail leading off to the east from the cave.",
-   "dst": "",
+   "dst": "Suivez la piste qui part de la grotte vers l'est.",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -138,7 +138,7 @@
   },
   "Star Thief#013": {
    "src": "Explore the cave at [-{~}, {~}, -{~}] and defeat the insane thief.",
-   "dst": "",
+   "dst": "Explorez la grotte en [-{~}, {~}, -{~}] et battez le voleur dément.",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -148,7 +148,7 @@
   },
   "Star Thief#014": {
    "src": ".... I can't control myself...fjfjfj This rock...",
-   "dst": "",
+   "dst": ".... Je ne peux pas me contrôler...fjfjfj Cette roche...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -158,7 +158,7 @@
   },
   "Star Thief#015": {
    "src": "What is... this feeling... No I won't listen..",
-   "dst": "",
+   "dst": "Qu'est-ce que... cette sensation... Non, je n'écouterai pas..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -168,7 +168,7 @@
   },
   "Star Thief#016": {
    "src": "Bring back the piece of meteor to the secret agent at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Rapportez le fragment de météore à l'agent secret, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -178,7 +178,7 @@
   },
   "Star Thief#017": {
    "src": "Hello again. Did you find the meteor down there? Why on earth are you holding some?!",
-   "dst": "",
+   "dst": "Re-bonjour. Avez-vous trouvé le météore là-dessous? Pourquoi diable en tenez-vous un morceau?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -188,7 +188,7 @@
   },
   "Star Thief#018": {
    "src": "I see. This material is incredibly rare and magically powerful. Meteors fall all over Gavel and come in a variety of colours and potency.",
-   "dst": "",
+   "dst": "Je vois. Ce matériau est extrêmement rare et d'une grande puissance magique. Des météores tombent partout sur Gavel, de couleurs et de puissances variées.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -198,7 +198,7 @@
   },
   "Star Thief#019": {
    "src": "We don't fully understand them, but we know they are dangerous. Every scientist who has studied them has lost their minds.",
-   "dst": "",
+   "dst": "Nous ne les comprenons pas entièrement, mais nous savons qu'ils sont dangereux. Tous les savants qui les ont étudiés ont perdu la raison.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -208,7 +208,7 @@
   },
   "Star Thief#020": {
    "src": "The meteors hold many secrets and powers, maybe the ones we need to end your war. Thank you, here's a small reward for helping us.",
-   "dst": "",
+   "dst": "Les météores recèlent bien des secrets et pouvoirs, peut-être de quoi finir votre guerre. Merci, voici une petite récompense pour votre aide.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -218,7 +218,7 @@
   },
   "Star Thief#021": {
    "src": "Hello again. Did you find the meteor down there? No? Maybe go back and try to find it?",
-   "dst": "",
+   "dst": "Re-bonjour. Vous avez trouvé le météore là-dessous? Non? Retournez donc le chercher?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -228,7 +228,7 @@
   },
   "Star Thief#022": {
    "src": "Remember... Just follow the white trail leading to the cave!",
-   "dst": "",
+   "dst": "Rappelez-vous... Suivez simplement la piste blanche jusqu'à la grotte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -238,7 +238,7 @@
   },
   "Star Thief#023": {
    "src": "I can't... control... my mind... end me.",
-   "dst": "",
+   "dst": "Je ne peux pas... contrôler... mon esprit... achevez-moi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -248,7 +248,7 @@
   },
   "Star Thief#024": {
    "src": "What's that noise...?",
-   "dst": "",
+   "dst": "Quel est ce bruit...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -258,7 +258,7 @@
   },
   "Star Thief#025": {
    "src": "It's coming from the west.",
-   "dst": "",
+   "dst": "Ça vient de l'ouest.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -268,7 +268,7 @@
   },
   "Star Thief#026": {
    "src": "What was that? It seems to have landed nearby, maybe you should go investigate.",
-   "dst": "",
+   "dst": "Qu'est-ce que c'était? On dirait que c'est tombé tout près, vous devriez peut-être aller voir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -278,7 +278,7 @@
   },
   "Star Thief#027": {
    "src": "It seems like the meteor crashed into a cave.",
-   "dst": "",
+   "dst": "On dirait que le météore s'est écrasé dans une grotte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -288,7 +288,7 @@
   },
   "Star Thief#028": {
    "src": "The meteor shard is radiating an odd and unfamiliar magical energy",
-   "dst": "",
+   "dst": "Le fragment de météore dégage une énergie magique étrange et inconnue",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -298,7 +298,7 @@
   },
   "Star Thief#029": {
    "src": "Thank you again for your help!",
-   "dst": "",
+   "dst": "Merci encore pour votre aide!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",

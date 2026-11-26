@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Pirate's Trove",
   "count": 20,
-  "translated": 0,
+  "translated": 20,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
-   "dst": "",
+   "dst": "Aber genug der Höflichkeiten. Sag... Kennst du die Geschichte vom großen Piraten Kapitän Hastor? Er segelte vor langer Zeit über die Meere.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -18,7 +18,7 @@
   },
   "Pirate's Trove#001": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
-   "dst": "",
+   "dst": "Der Legende nach versteckte er sein Vermögen irgendwo in den Mauern, als {p} vor all den Jahren wieder aufgebaut wurde!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -28,7 +28,7 @@
   },
   "Pirate's Trove#002": {
    "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
-   "dst": "",
+   "dst": "Das erste Rätsel lautet so: Gen Sonnenuntergang, zwischen nördlichen Blumen im Schatten von Quarz.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -38,7 +38,7 @@
   },
   "Pirate's Trove#003": {
    "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
-   "dst": "",
+   "dst": "Wie läuft die Suche? Ich habe dir den ersten Hinweis ins Buch geschrieben. Die anderen sollen in Blöcke aus schwarzem Stein gemeißelt sein; such vielleicht nach denen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -48,7 +48,7 @@
   },
   "Pirate's Trove#004": {
    "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
-   "dst": "",
+   "dst": "In den Sockel ist eine Botschaft gemeißelt: Wo man Dinge identifiziert, über den Blättern und zwischen dem Glas",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -58,7 +58,7 @@
   },
   "Pirate's Trove#005": {
    "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
-   "dst": "",
+   "dst": "In den Obsidian ist eine Botschaft gemeißelt: In einem Smaragdbrunnen, umgeben vom Reichtum der Dorfbewohner",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -68,7 +68,7 @@
   },
   "Pirate's Trove#006": {
    "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
-   "dst": "",
+   "dst": "In den Obsidian ist eine Botschaft gemeißelt: Unter der Kapuze eines östlichen Titanen, der über unseren Köpfen wacht",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -78,7 +78,7 @@
   },
   "Pirate's Trove#007": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Sprich mit Damiral außerhalb von {p} bei [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -88,7 +88,7 @@
   },
   "Pirate's Trove#008": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
-   "dst": "",
+   "dst": "Heda, Abenteurer! Willkommen in der großen Provinz Gavel, Heimat der Dorfbewohner und meiner Wenigkeit. Bald betrittst du die große Zitadelle von {p}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -98,7 +98,7 @@
   },
   "Pirate's Trove#009": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
-   "dst": "",
+   "dst": "Ich bin zwar Seemann im Ruhestand, aber ein paar Smaragde aus dem Schatz könnte ich gut gebrauchen. Vielleicht, wenn du magst... kommen wir ins Geschäft?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -108,7 +108,7 @@
   },
   "Pirate's Trove#010": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
-   "dst": "",
+   "dst": "Ich habe ein Rätsel, den ersten von mehreren Hinweisen zu Hastors Versteck, aber ich komme beim besten Willen nicht drauf.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -118,7 +118,7 @@
   },
   "Pirate's Trove#011": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
-   "dst": "",
+   "dst": "Vielleicht kannst du es lösen. Wenn ja, teile ich den Schatz mit dir, versprochen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -128,7 +128,7 @@
   },
   "Pirate's Trove#012": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
-   "dst": "",
+   "dst": "Ich wünsche dir viel Glück, Abenteurer! Denk dran, alles, was du für die Hinweise brauchst, findest du irgendwo in {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -138,7 +138,7 @@
   },
   "Pirate's Trove#013": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
-   "dst": "",
+   "dst": "Hinweis I: Gen Sonnenuntergang, zwischen nördlichen Blumen im Schatten von Quarz",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -148,7 +148,7 @@
   },
   "Pirate's Trove#014": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
-   "dst": "",
+   "dst": "Hinweis II: Wo man Dinge identifiziert, über den Blättern und zwischen dem Glas",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -158,7 +158,7 @@
   },
   "Pirate's Trove#015": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
-   "dst": "",
+   "dst": "Hinweis III: In einem Smaragdbrunnen, umgeben vom Reichtum der Dorfbewohner",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -168,7 +168,7 @@
   },
   "Pirate's Trove#016": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
-   "dst": "",
+   "dst": "Hinweis IV: Unter der Kapuze eines östlichen Titanen, der über unseren Köpfen wacht",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -178,7 +178,7 @@
   },
   "Pirate's Trove#017": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
-   "dst": "",
+   "dst": "Aha! Ich wollte fragen, wie's läuft, da sah ich dich hier rüberspringen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -188,7 +188,7 @@
   },
   "Pirate's Trove#018": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
-   "dst": "",
+   "dst": "Großartige Arbeit, Gefährte. Aber du erinnerst dich doch an unseren Handel?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -198,7 +198,7 @@
   },
   "Pirate's Trove#019": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
-   "dst": "",
+   "dst": "Du findest den Schatz, ich gebe dir einen Anteil. Ich nehm mir nur meinen Teil und bin weg!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",

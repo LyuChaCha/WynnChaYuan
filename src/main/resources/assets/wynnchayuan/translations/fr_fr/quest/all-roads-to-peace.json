@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "All Roads to Peace",
   "count": 504,
-  "translated": 0,
+  "translated": 504,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -12,7 +12,7 @@
  "entries": {
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
-   "dst": "",
+   "dst": "Parlez au capitaine Goruca en [-{~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -22,7 +22,7 @@
   },
   "All Roads to Peace#001": {
    "src": "Hm. It's been long enough, we should've heard back from the diplomacy squad by now...",
-   "dst": "",
+   "dst": "Hm. Ça fait assez longtemps, on aurait déjà dû avoir des nouvelles de l'escouade diplomatique...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -32,7 +32,7 @@
   },
   "All Roads to Peace#002": {
    "src": "Ah, hello there, Wynn soldier. You should stick around! We were just launching a counterattack against the orc citadel.",
-   "dst": "",
+   "dst": "Ah, bonjour, soldat de Wynn. Restez donc! Nous lancions justement une contre-attaque contre la citadelle orque.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -42,7 +42,7 @@
   },
   "All Roads to Peace#003": {
    "src": "Since you've helped with curbing the orcs elsewhere, you can join in the festivities- Oh, that's them coming over the hills!",
-   "dst": "",
+   "dst": "Puisque vous avez aidé à contenir les orques ailleurs, joignez-vous à la fête- Oh, les voilà qui passent les collines!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -52,7 +52,7 @@
   },
   "All Roads to Peace#004": {
    "src": "I don't know, but they just decimated our golems with it. How are we supposed to deal with that chieftain without our protection?",
-   "dst": "",
+   "dst": "Je ne sais pas, mais ils viennent de pulvériser nos golems avec. Comment affronter ce chef sans notre protection?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -62,7 +62,7 @@
   },
   "All Roads to Peace#005": {
    "src": "Let's just get to the medical tent and go from there. The captain will need to hear about this.",
-   "dst": "",
+   "dst": "Allons à la tente médicale, on verra après. Le capitaine doit être mis au courant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -72,7 +72,7 @@
   },
   "All Roads to Peace#006": {
    "src": "...why do you always have to embarrass me in front of the humans, you idiots...",
-   "dst": "",
+   "dst": "...pourquoi me ridiculisez-vous toujours devant les humains, bande d'idiots...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -82,7 +82,7 @@
   },
   "All Roads to Peace#007": {
    "src": "Follow the captain to the medical tent at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Suivez le capitaine jusqu'à la tente médicale en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -92,7 +92,7 @@
   },
   "All Roads to Peace#008": {
    "src": "You lot are useless, you are! We had you sent off with thirty golems! THIRTY! And you come back with nothing to show? Do you have any idea how much that cost us?!",
-   "dst": "",
+   "dst": "Vous êtes des incapables, voilà ce que vous êtes! On vous a envoyés avec trente golems! TRENTE! Et vous revenez les mains vides? Vous savez combien ça nous a coûté?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -102,7 +102,7 @@
   },
   "All Roads to Peace#009": {
    "src": "...fine. I suppose you have a point. And that means it's a good thing we have a human here to pick up all your slack.",
-   "dst": "",
+   "dst": "...soit. Tu marques un point. Et heureusement qu'on a un humain ici pour rattraper vos lacunes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -112,7 +112,7 @@
   },
   "All Roads to Peace#010": {
    "src": "There have been many attacks here at town, and we've been struggling to fend them off. Thanks to the incompetence of our troops, we haven't been able to-",
-   "dst": "",
+   "dst": "Le village subit de nombreuses attaques, et nous avons du mal à les repousser. Grâce à l'incompétence de nos troupes, nous n'avons pas pu-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -122,7 +122,7 @@
   },
   "All Roads to Peace#011": {
    "src": "ORC CATAPULT!! ORC CATAPULT!! Listen to the words I am telling you! ORC! CATAPULT!",
-   "dst": "",
+   "dst": "CATAPULTE ORQUE!! CATAPULTE ORQUE!! Écoutez ce que je vous dis! CATAPULTE! ORQUE!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -132,7 +132,7 @@
   },
   "All Roads to Peace#012": {
    "src": "...we haven't been able to get the orc chieftain to listen to reason and sign a new ceasefire yet. If this keeps up, we'll be overwhelmed. The brutes only seem to listen to force...",
-   "dst": "",
+   "dst": "...nous n'avons pas encore réussi à faire entendre raison au chef orque pour qu'il signe un nouveau cessez-le-feu. Si ça continue, nous serons submergés. Ces brutes ne comprennent que la force...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -142,7 +142,7 @@
   },
   "All Roads to Peace#013": {
    "src": "The fortress is off to the northeast, it's visible from town. Don't come back without a ceasefire- Or the chieftain's head, if peace is out of the question!",
-   "dst": "",
+   "dst": "La forteresse est au nord-est, on la voit depuis le village. Ne revenez pas sans un cessez-le-feu- Ou la tête du chef, si la paix est impossible!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -152,7 +152,7 @@
   },
   "All Roads to Peace#014": {
    "src": "Enter the Orcish Fortress at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Entrez dans la forteresse orque en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -162,7 +162,7 @@
   },
   "All Roads to Peace#015": {
    "src": "Hmh! Human! Just like say, Serepe. Villager fail, then send human to kill.",
-   "dst": "",
+   "dst": "Hmh! Humain! Comme dire Serepe. Villageois échouer, puis envoyer humain tuer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -172,7 +172,7 @@
   },
   "All Roads to Peace#016": {
    "src": "Idiot big-noses! Human strong, but only one. Need more to break Centerworld!",
-   "dst": "",
+   "dst": "Gros-nez idiots! Humain fort, mais seul. Falloir plus pour briser Centerworld!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -182,7 +182,7 @@
   },
   "All Roads to Peace#017": {
    "src": "KNOCK HUMAN DOWN!!",
-   "dst": "",
+   "dst": "ABATTRE HUMAIN!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -192,7 +192,7 @@
   },
   "All Roads to Peace#018": {
    "src": "Idiot. Idiot human. Will die in open. Come.",
-   "dst": "",
+   "dst": "Idiot. Humain idiot. Mourir à découvert. Venir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -202,7 +202,7 @@
   },
   "All Roads to Peace#019": {
    "src": "RRRGHH! Armor heavy! How human carry much weight, but so weak without?!",
-   "dst": "",
+   "dst": "RRRGHH! Armure lourde! Comment humain porter tant de poids, mais si faible sans?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -212,7 +212,7 @@
   },
   "All Roads to Peace#020": {
    "src": "Need medicine for...urgh. Blood... Where yarrow root...",
-   "dst": "",
+   "dst": "Besoin remède pour... urgh. Sang... Où racine d'achillée...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -222,7 +222,7 @@
   },
   "All Roads to Peace#021": {
    "src": "Name Zuett. Your name, Idiot. But only because taught wrong. So will help idiot. Take medicine.",
-   "dst": "",
+   "dst": "Nom Zuett. Ton nom, Idiot. Mais seulement car mal appris. Donc aider idiot. Prendre remède.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -232,7 +232,7 @@
   },
   "All Roads to Peace#022": {
    "src": "Hmh! Better than silly magic potion. Earth heals best...",
-   "dst": "",
+   "dst": "Hmh! Mieux que bête potion magique. Terre soigner mieux...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -242,7 +242,7 @@
   },
   "All Roads to Peace#023": {
    "src": "Hmh. Mhm, mhm. Yes, idiot villagers come by, lots of metal villager too. Say want peace- just want kill. Evil war machines.",
-   "dst": "",
+   "dst": "Hmh. Mhm, mhm. Oui, villageois idiots venir, plein villageois de métal aussi. Dire vouloir paix- juste vouloir tuer. Machines de mort.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -252,7 +252,7 @@
   },
   "All Roads to Peace#024": {
    "src": "Human really want peace? Then listen to Zuett. Killing not the way. Orcs strong, but not killers. Villager say, but villager wrong.",
-   "dst": "",
+   "dst": "Humain vraiment vouloir paix? Alors écouter Zuett. Tuer pas solution. Orques forts, mais pas tueurs. Villageois dire, mais villageois avoir tort.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -262,7 +262,7 @@
   },
   "All Roads to Peace#025": {
    "src": "We... Orcs... Not listen to just force. Orcs see strength, not idiot-killing. Human been idiot-killing. Time to stop.",
-   "dst": "",
+   "dst": "Nous... Orques... Pas écouter seulement force. Orques voir force, pas tuerie idiote. Humain faire tuerie idiote. Temps d'arrêter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -272,7 +272,7 @@
   },
   "All Roads to Peace#026": {
    "src": "Whole war stupid. War killing us. Not all Orcs meant to fight. Human need learn first.",
-   "dst": "",
+   "dst": "Toute guerre stupide. Guerre nous tuer. Pas tous Orques nés guerriers. Humain apprendre d'abord.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -282,7 +282,7 @@
   },
   "All Roads to Peace#027": {
    "src": "Need talk with Arrai-Veretel. But first, need trust. To start trust, listen to Zuett.",
-   "dst": "",
+   "dst": "Besoin parler Arrai-Veretel. Mais d'abord, confiance. Pour commencer confiance, écouter Zuett.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -292,7 +292,7 @@
   },
   "All Roads to Peace#028": {
    "src": "Will give guards peace offer. [Elite Boar Meat]. Go hunt. Look bushes up north.",
-   "dst": "",
+   "dst": "Offrir aux gardes cadeau de paix. [Elite Boar Meat]. Chasser. Chercher buissons au nord.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -302,7 +302,7 @@
   },
   "All Roads to Peace#029": {
    "src": "If want walk away like coward, do now. If human trust me...meet by fort after get meat.",
-   "dst": "",
+   "dst": "Si vouloir fuir comme lâche, faire maintenant. Si humain confiance... voir au fort après viande.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -312,7 +312,7 @@
   },
   "All Roads to Peace#030": {
    "src": "Travel to the hunting grounds at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Rendez-vous au terrain de chasse en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -322,7 +322,7 @@
   },
   "All Roads to Peace#031": {
    "src": "Speak to Zuett with the Elite Boar Meat at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Parlez à Zuett avec l'Elite Boar Meat en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -332,7 +332,7 @@
   },
   "All Roads to Peace#032": {
    "src": "Hmh. Hunt like child, but succeed anyway. Human should rely less on magic. Human serious, though.",
-   "dst": "",
+   "dst": "Hmh. Chasser comme enfant, mais réussir quand même. Humain devoir moins compter sur magie. Mais humain sérieux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -342,7 +342,7 @@
   },
   "All Roads to Peace#033": {
    "src": "Good. Human really want peace. Help stop stupid war... Even though human and villager start anyway...",
-   "dst": "",
+   "dst": "Bien. Humain vraiment vouloir paix. Aider finir guerre stupide... Même si humain et villageois commencer...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -352,7 +352,7 @@
   },
   "All Roads to Peace#034": {
    "src": "Follow. We go Centerworld. Guards still angry, but can say good for you. Stay quiet- Zuett do talk.",
-   "dst": "",
+   "dst": "Suivre. Aller Centerworld. Gardes encore fâchés, mais pouvoir parler pour toi. Silence- Zuett parler.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -362,7 +362,7 @@
   },
   "All Roads to Peace#035": {
    "src": "Zuett! What you do? Thought drag away human to kill for good! Why bringing back now?",
-   "dst": "",
+   "dst": "Zuett! Toi faire quoi? Croire emmener humain pour tuer pour de bon! Pourquoi ramener maintenant?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -372,7 +372,7 @@
   },
   "All Roads to Peace#036": {
    "src": "Zuett bleeding heart. Strong in compassion. Saw hurt, thought help. Stupid, but can respect.",
-   "dst": "",
+   "dst": "Zuett coeur tendre. Fort en compassion. Voir blessé, penser aider. Stupide, mais respecter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -382,7 +382,7 @@
   },
   "All Roads to Peace#037": {
    "src": "Listen to Zuett! Human want peace. Came for peace, but was taught peace come from idiot-killing by villager.",
-   "dst": "",
+   "dst": "Écouter Zuett! Humain vouloir paix. Venir pour paix, mais villageois apprendre que paix venir de tuerie idiote.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -392,7 +392,7 @@
   },
   "All Roads to Peace#038": {
    "src": "Grrrh! All human say! What special about this human?",
-   "dst": "",
+   "dst": "Grrrh! Tous humains dire ça! Quoi spécial chez cet humain?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -402,7 +402,7 @@
   },
   "All Roads to Peace#039": {
    "src": "Human listen to Zuett. Hunt spineback boar, bring meat. See? If human not care, human not listen. Not hunt.",
-   "dst": "",
+   "dst": "Humain écouter Zuett. Chasser sanglier dos-épineux, rapporter viande. Voir? Si humain s'en ficher, pas écouter. Pas chasser.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -412,7 +412,7 @@
   },
   "All Roads to Peace#040": {
    "src": "But strong not mean trust! Strength of body only one thing.",
-   "dst": "",
+   "dst": "Mais fort pas vouloir dire confiance! Force du corps juste une chose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -422,7 +422,7 @@
   },
   "All Roads to Peace#041": {
    "src": "RESSINTER HURT! RESSINTER HURT BAD! NEED HELP!! HELP NOW!!",
-   "dst": "",
+   "dst": "RESSINTER BLESSÉ! RESSINTER TRÈS BLESSÉ! BESOIN AIDE!! AIDE MAINTENANT!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -432,7 +432,7 @@
   },
   "All Roads to Peace#042": {
    "src": "Onluk! Tell what happen! Ressinter...healer hurt?",
-   "dst": "",
+   "dst": "Onluk! Dire quoi arriver! Ressinter... guérisseur blessé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -442,7 +442,7 @@
   },
   "All Roads to Peace#043": {
    "src": "KREIMU! Get Kreimu! Mudspring camp! She good healer!",
-   "dst": "",
+   "dst": "KREIMU! Chercher Kreimu! Camp Mudspring! Elle bonne guérisseuse!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -452,7 +452,7 @@
   },
   "All Roads to Peace#044": {
    "src": "Will go! Fast runner! Ressinter no die today! Serepe, deal with human!",
-   "dst": "",
+   "dst": "Moi aller! Courir vite! Ressinter pas mourir aujourd'hui! Serepe, garder humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -462,7 +462,7 @@
   },
   "All Roads to Peace#045": {
    "src": "Gwuh?! Zuett! Lying bad! Human idiot no hea-",
-   "dst": "",
+   "dst": "Gwuh?! Zuett! Mentir mal! Humain idiot pas soi-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -472,7 +472,7 @@
   },
   "All Roads to Peace#046": {
    "src": "RESSINTER DYING! NO CARE IF LIE! ANY HEALER BETTER THAN NO HEALER!",
-   "dst": "",
+   "dst": "RESSINTER MOURIR! MENSONGE PAS GRAVE! GUÉRISSEUR MIEUX QUE PAS GUÉRISSEUR!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -482,7 +482,7 @@
   },
   "All Roads to Peace#047": {
    "src": "HEY! ONLUK IDIOT! NO LET HUMAN IN!",
-   "dst": "",
+   "dst": "HÉ! ONLUK IDIOT! PAS LAISSER HUMAIN ENTRER!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -492,7 +492,7 @@
   },
   "All Roads to Peace#048": {
    "src": "Onluk, tell! How Ressinter hurt?",
-   "dst": "",
+   "dst": "Onluk, dire! Comment Ressinter blessé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -502,7 +502,7 @@
   },
   "All Roads to Peace#049": {
    "src": "Follow Onluk to the Medicine Tent through the fortress",
-   "dst": "",
+   "dst": "Suivez Onluk à travers la forteresse jusqu'à la tente des remèdes",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -512,7 +512,7 @@
   },
   "All Roads to Peace#050": {
    "src": "Cannon backfire! Caught in blast! Cut up all over, bleeding bad! Healer already brought medicine tent!",
-   "dst": "",
+   "dst": "Canon exploser! Pris dans souffle! Coupures partout, saigner beaucoup! Guérisseur déjà amené tente des remèdes!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -522,7 +522,7 @@
   },
   "All Roads to Peace#051": {
    "src": "Hhhgh. Bad injury... Human. Heal Ressinter, fast!",
-   "dst": "",
+   "dst": "Hhhgh. Blessure grave... Humain. Soigner Ressinter, vite!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -532,7 +532,7 @@
   },
   "All Roads to Peace#052": {
    "src": "Make balm to keep healer alive! Even if only keep alive for Kreimu to heal, keep Ressinter alive!",
-   "dst": "",
+   "dst": "Faire baume pour garder guérisseur en vie! Même si juste tenir jusqu'à Kreimu, garder Ressinter en vie!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -542,7 +542,7 @@
   },
   "All Roads to Peace#053": {
    "src": "Mix herbs. Use medicine book. And stay in tent!",
-   "dst": "",
+   "dst": "Mélanger herbes. Utiliser livre de remèdes. Et rester dans tente!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -552,7 +552,7 @@
   },
   "All Roads to Peace#054": {
    "src": "Save the injured orc, or keep it alive until rescue arrives",
-   "dst": "",
+   "dst": "Sauvez l'orque blessé, ou maintenez-le en vie jusqu'à l'arrivée des secours",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -562,7 +562,7 @@
   },
   "All Roads to Peace#055": {
    "src": "This is the medicine book Zuett talked about...but almost all of the words are in Orcish! There are pictures of each plant, and readable names, but...",
-   "dst": "",
+   "dst": "Voici le livre de remèdes dont parlait Zuett...mais presque tout est en orque! Il y a des dessins de chaque plante et des noms lisibles, mais...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -572,7 +572,7 @@
   },
   "All Roads to Peace#056": {
    "src": "Look up Sweetgale.",
-   "dst": "",
+   "dst": "Chercher le myrte des marais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -582,7 +582,7 @@
   },
   "All Roads to Peace#057": {
    "src": "KREIMU HERE! HEAL RESSINTER!! NOW!!!",
-   "dst": "",
+   "dst": "KREIMU ICI! SOIGNER RESSINTER!! MAINTENANT!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -592,7 +592,7 @@
   },
   "All Roads to Peace#058": {
    "src": "Gwuh, yes! Stop shouting! I- Urgh!",
-   "dst": "",
+   "dst": "Gwuh, oui! Arrêter crier! Je- Urgh!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -602,7 +602,7 @@
   },
   "All Roads to Peace#059": {
    "src": "Here in time. Ressinter still alive...why other balm on cuts?",
-   "dst": "",
+   "dst": "Arriver à temps. Ressinter encore vivant...pourquoi autre baume sur coupures?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -612,7 +612,7 @@
   },
   "All Roads to Peace#060": {
    "src": "Wait, why human here? Ressinter hurt because human?",
-   "dst": "",
+   "dst": "Attendre, pourquoi humain ici? Ressinter blessé à cause humain?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -622,7 +622,7 @@
   },
   "All Roads to Peace#061": {
    "src": "No, human try heal Ressinter!",
-   "dst": "",
+   "dst": "Non, humain essayer soigner Ressinter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -632,7 +632,7 @@
   },
   "All Roads to Peace#062": {
    "src": "Human try heal Ressinter. Thought better healer than Zuett. Try hard to keep Ressinter alive.",
-   "dst": "",
+   "dst": "Humain essayer soigner Ressinter. Croire meilleur que Zuett. Tout faire pour garder Ressinter en vie.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -642,7 +642,7 @@
   },
   "All Roads to Peace#063": {
    "src": "... ... ...Nunexetor. You sensible. Is true? Human try heal Ressinter?",
-   "dst": "",
+   "dst": "... ... ...Nunexetor. Toi sensé. Vrai? Humain essayer soigner Ressinter?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -652,7 +652,7 @@
   },
   "All Roads to Peace#064": {
    "src": "Yes. The human made herb balms and tried to heal Ressinter.",
-   "dst": "",
+   "dst": "Oui. L'humain a préparé des baumes d'herbes et a tenté de soigner Ressinter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -662,7 +662,7 @@
   },
   "All Roads to Peace#065": {
    "src": "So Zuett not lie. Human care about orc?",
-   "dst": "",
+   "dst": "Donc Zuett pas mentir. Humain se soucier d'orque?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -672,7 +672,7 @@
   },
   "All Roads to Peace#066": {
    "src": "See? Human try. Maybe not heal Ressinter full, but try save life of someone call enemy by idiot Villager.",
-   "dst": "",
+   "dst": "Voir? Humain essayer. Pas soigner Ressinter tout à fait, mais essayer sauver vie d'ennemi de Villageois idiot.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -682,7 +682,7 @@
   },
   "All Roads to Peace#067": {
    "src": "Human learn Villagers lie. Trying learn about us. War only because Villagers trick! Not because human bad!",
-   "dst": "",
+   "dst": "Humain apprendre Villageois mentir. Essayer nous connaître. Guerre juste car Villageois tromper! Pas car humain mauvais!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -692,7 +692,7 @@
   },
   "All Roads to Peace#068": {
    "src": "...hmh! Can respect. Strong in mind if able to learn.",
-   "dst": "",
+   "dst": "...hmh! Pouvoir respecter. Esprit fort si capable apprendre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -702,7 +702,7 @@
   },
   "All Roads to Peace#069": {
    "src": "Agree with Bitteliso and Zuett!",
-   "dst": "",
+   "dst": "D'accord avec Bitteliso et Zuett!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -712,7 +712,7 @@
   },
   "All Roads to Peace#070": {
    "src": "Will stay for while in case Ressinter need medicine more.",
-   "dst": "",
+   "dst": "Rester un peu au cas où Ressinter besoin plus remède.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -722,7 +722,7 @@
   },
   "All Roads to Peace#071": {
    "src": "Sorry to put human up to task sudden, but now more orc trust you.",
-   "dst": "",
+   "dst": "Pardon tâche soudaine, humain, mais maintenant plus d'orques confiance en toi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -732,7 +732,7 @@
   },
   "All Roads to Peace#072": {
    "src": "Since orc trust...maybe can talk to Arrai-Veretel now. Follow.",
-   "dst": "",
+   "dst": "Puisque orques confiance... peut-être parler à Arrai-Veretel maintenant. Suivre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -742,7 +742,7 @@
   },
   "All Roads to Peace#073": {
    "src": "Whuh! LOMOSTER! LOMOSTER HURT!",
-   "dst": "",
+   "dst": "Whuh! LOMOSTER! LOMOSTER BLESSÉ!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -752,7 +752,7 @@
   },
   "All Roads to Peace#074": {
    "src": "No! Lomoster okay! Ressinter not okay- Wait. Ressinter sort of okay! Need rest still!",
-   "dst": "",
+   "dst": "Non! Lomoster bien! Ressinter pas bien- Attendre. Ressinter à peu près bien! Encore besoin repos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -762,7 +762,7 @@
   },
   "All Roads to Peace#075": {
    "src": "But Lomoster at cannon when explode!",
-   "dst": "",
+   "dst": "Mais Lomoster près canon quand exploser!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -772,7 +772,7 @@
   },
   "All Roads to Peace#076": {
    "src": "Lomoster wear armor. Armor took hurt, Lomoster okay!",
-   "dst": "",
+   "dst": "Lomoster porter armure. Armure prendre coup, Lomoster bien!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -782,7 +782,7 @@
   },
   "All Roads to Peace#077": {
    "src": "...mmmh, fine... Wait, why human here?",
-   "dst": "",
+   "dst": "...mmmh, bon... Attendre, pourquoi humain ici?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -792,7 +792,7 @@
   },
   "All Roads to Peace#078": {
    "src": "Human heal Ressinter. See? Human good healer!",
-   "dst": "",
+   "dst": "Humain soigner Ressinter. Voir? Humain bon guérisseur!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -802,7 +802,7 @@
   },
   "All Roads to Peace#079": {
    "src": "I don't believe it. How did-",
-   "dst": "",
+   "dst": "Je n'y crois pas. Comment a-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -812,7 +812,7 @@
   },
   "All Roads to Peace#080": {
    "src": "Gwuh, yes! Stop shouting! I- Whuh...",
-   "dst": "",
+   "dst": "Gwuh, oui! Arrêter crier! Je- Whuh...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -822,7 +822,7 @@
   },
   "All Roads to Peace#081": {
    "src": "Ressinter already okay! Bitteliso lying?!",
-   "dst": "",
+   "dst": "Ressinter déjà bien! Bitteliso mentir?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -832,7 +832,7 @@
   },
   "All Roads to Peace#082": {
    "src": "Wait, Ressinter okay? How did- HUMAN?! WHY HUMAN IN CAMP?!",
-   "dst": "",
+   "dst": "Attendre, Ressinter bien? Comment- HUMAIN?! POURQUOI HUMAIN DANS CAMP?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -842,7 +842,7 @@
   },
   "All Roads to Peace#083": {
    "src": "Human heal Ressinter! Not know how, but human save Ressinter life!",
-   "dst": "",
+   "dst": "Humain soigner Ressinter! Pas savoir comment, mais humain sauver vie Ressinter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -852,7 +852,7 @@
   },
   "All Roads to Peace#084": {
    "src": "Told Bitteliso. Human learning! Save life of orc, even though idiot Villager say kill.",
-   "dst": "",
+   "dst": "Dire à Bitteliso. Humain apprendre! Sauver vie d'orque, même si Villageois idiot dire tuer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -862,7 +862,7 @@
   },
   "All Roads to Peace#085": {
    "src": "...how. How. HOW! How human so good at healing?! Why human help?",
-   "dst": "",
+   "dst": "...comment. Comment. COMMENT! Humain si bon guérisseur?! Pourquoi aider?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -872,7 +872,7 @@
   },
   "All Roads to Peace#086": {
    "src": "Can trust human. Human try unlearn bad villager teach.",
-   "dst": "",
+   "dst": "Pouvoir faire confiance humain. Humain essayer oublier leçons de villageois.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -882,7 +882,7 @@
   },
   "All Roads to Peace#087": {
    "src": "...fine. Good human, not stupid human. Bitteliso sorry for beating. Here.",
-   "dst": "",
+   "dst": "...bon. Bon humain, pas humain stupide. Bitteliso désolé pour raclée. Tenir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -892,7 +892,7 @@
   },
   "All Roads to Peace#088": {
    "src": "Shouldn't we get back to what we were doing?",
-   "dst": "",
+   "dst": "Ne devrions-nous pas reprendre ce que nous faisions?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -902,7 +902,7 @@
   },
   "All Roads to Peace#089": {
    "src": "...will stay in case Ressinter need help.",
-   "dst": "",
+   "dst": "...rester au cas où Ressinter besoin aide.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -912,7 +912,7 @@
   },
   "All Roads to Peace#090": {
    "src": "Ressinter not old man! No need sitter!",
-   "dst": "",
+   "dst": "Ressinter pas vieillard! Pas besoin nounou!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -922,7 +922,7 @@
   },
   "All Roads to Peace#091": {
    "src": "Not know that human actually good at heal! Very good! Healer, not hunter. More orc trust you now.",
-   "dst": "",
+   "dst": "Pas savoir humain vraiment bon soigner! Très bon! Guérisseur, pas chasseur. Plus d'orques confiance en toi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -932,7 +932,7 @@
   },
   "All Roads to Peace#092": {
    "src": "Since orc trust...maybe can talk to Arrai-Veretel now. Follow!",
-   "dst": "",
+   "dst": "Puisque orques confiance... peut-être parler à Arrai-Veretel maintenant. Suivre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -942,7 +942,7 @@
   },
   "All Roads to Peace#093": {
    "src": "Follow Zuett through the Orcish Fortress",
-   "dst": "",
+   "dst": "Suivez Zuett à travers la forteresse orque",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -952,7 +952,7 @@
   },
   "All Roads to Peace#094": {
    "src": "No enter! Much camp see human heal, but still no trust human!",
-   "dst": "",
+   "dst": "Pas entrer! Beaucoup camp voir humain soigner, mais toujours pas confiance humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -962,7 +962,7 @@
   },
   "All Roads to Peace#095": {
    "src": "Ureietun! Human save Ressinter life! Why no trust?",
-   "dst": "",
+   "dst": "Ureietun! Humain sauver vie Ressinter! Pourquoi pas confiance?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -972,7 +972,7 @@
   },
   "All Roads to Peace#096": {
    "src": "Human being led by you. Human led by villager too! Teach good thing, yes, but what if human just copying?",
-   "dst": "",
+   "dst": "Humain guidé par toi. Humain guidé par villageois aussi! Apprendre bonne chose, oui, mais si humain juste copier?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -982,7 +982,7 @@
   },
   "All Roads to Peace#097": {
    "src": "Human can earn trust alone! Zuett, stay in Arrai-room.",
-   "dst": "",
+   "dst": "Humain gagner confiance seul! Zuett, rester dans salle d'Arrai.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -992,7 +992,7 @@
   },
   "All Roads to Peace#098": {
    "src": "But-",
-   "dst": "",
+   "dst": "Mais-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1002,7 +1002,7 @@
   },
   "All Roads to Peace#099": {
    "src": "RRRRRGH! STUPID ZUETT! WAR HAPPEN FOR REASON! GO AWAY!",
-   "dst": "",
+   "dst": "RRRRRGH! ZUETT STUPIDE! GUERRE ARRIVER POUR RAISON! PARTIR!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1012,7 +1012,7 @@
   },
   "All Roads to Peace#100": {
    "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
-   "dst": "",
+   "dst": "Pouvoir croire humain pas tuer. Humain marcher dans Centerworld. Mais pas voir Arrai-Veretel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1022,7 +1022,7 @@
   },
   "All Roads to Peace#101": {
    "src": "Ask various orcs if they need any help at the Orcish Fortress at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Demandez à divers orques s'ils ont besoin d'aide dans la forteresse orque en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -1032,7 +1032,7 @@
   },
   "All Roads to Peace#102": {
    "src": "Hm! Human, hunter, healer, halfwit soldier. Many things! Human also runner?",
-   "dst": "",
+   "dst": "Hm! Humain, chasseur, guérisseur, soldat benêt. Beaucoup choses! Humain aussi coureur?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1042,7 +1042,7 @@
   },
   "All Roads to Peace#103": {
    "src": "Peloros from Holehold. Camp home to messengers and runners. Have thing to deliver to Fruludir in green tower.",
-   "dst": "",
+   "dst": "Peloros de Holehold. Camp de messagers et coureurs. Avoir chose à livrer à Fruludir dans tour verte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1052,7 +1052,7 @@
   },
   "All Roads to Peace#104": {
    "src": "Sure, I can try.",
-   "dst": "",
+   "dst": "Bien sûr, je peux essayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1062,7 +1062,7 @@
   },
   "All Roads to Peace#105": {
    "src": "Then human run fast to green tower- deliver in {~} seconds! Or else come back. Not urgent delivery, so delay fine.",
-   "dst": "",
+   "dst": "Alors humain courir vite à tour verte- livrer en {~} secondes! Sinon revenir. Pas urgent, retard pas grave.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1072,7 +1072,7 @@
   },
   "All Roads to Peace#106": {
    "src": "Will know human delivered in time. How? Human will see if run fast!",
-   "dst": "",
+   "dst": "Savoir si humain livrer à temps. Comment? Humain voir si courir vite!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1082,7 +1082,7 @@
   },
   "All Roads to Peace#107": {
    "src": "Um, human no runner.",
-   "dst": "",
+   "dst": "Euh, humain pas coureur.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1092,7 +1092,7 @@
   },
   "All Roads to Peace#108": {
    "src": "RGH! Can understand just fine, just not speak as good! No mock us!",
-   "dst": "",
+   "dst": "RGH! Comprendre très bien, juste pas parler aussi bien! Pas se moquer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1102,7 +1102,7 @@
   },
   "All Roads to Peace#109": {
    "src": "Hm! Human have Peloros box. Peloros give human run training. Give here.",
-   "dst": "",
+   "dst": "Hm! Humain avoir boîte Peloros. Peloros faire courir humain. Donner ici.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1112,7 +1112,7 @@
   },
   "All Roads to Peace#110": {
    "src": "More than Zuett with human? Good sign. Maybe fighting stop soon.",
-   "dst": "",
+   "dst": "Plus que Zuett avec humain? Bon signe. Peut-être combats finir bientôt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1122,7 +1122,7 @@
   },
   "All Roads to Peace#111": {
    "src": "Patience, human. Box full of signal flare. Will light one to show Peloros human got here in time.",
-   "dst": "",
+   "dst": "Patience, humain. Boîte pleine fusées éclairantes. Allumer une pour montrer à Peloros humain arrivé à temps.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1132,7 +1132,7 @@
   },
   "All Roads to Peace#112": {
    "src": "Saw the firework. Human did well, finishing single morning exercise!",
-   "dst": "",
+   "dst": "Voir feu d'artifice. Humain bien faire, finir exercice du matin!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1142,7 +1142,7 @@
   },
   "All Roads to Peace#113": {
    "src": "Orc do much training to stay strong. Orc runners must be fast and not tire to become Marathon!",
-   "dst": "",
+   "dst": "Orque s'entraîner beaucoup pour rester fort. Coureurs orques rapides, infatigables, pour devenir Marathon!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1152,7 +1152,7 @@
   },
   "All Roads to Peace#114": {
    "src": "Here. Human take. Train harder. Maybe visit Holehold- also place for relax, not just run. Stamina good for all.",
-   "dst": "",
+   "dst": "Tenir. Prendre. S'entraîner plus. Visiter Holehold- lieu de détente aussi, pas juste course. Endurance bonne pour tous.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1162,7 +1162,7 @@
   },
   "All Roads to Peace#115": {
    "src": "Oh. Human who help Ressinter. You are strange. Not like other human at all.",
-   "dst": "",
+   "dst": "Oh. Humain qui aider Ressinter. Toi bizarre. Pas du tout comme autres humains.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1172,7 +1172,7 @@
   },
   "All Roads to Peace#116": {
    "src": "This? This food storage. Mostly for meats and roots. Though, large ritual happening soon.",
-   "dst": "",
+   "dst": "Ça? Ça réserve de nourriture. Surtout viandes et racines. Mais grand rituel bientôt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1182,7 +1182,7 @@
   },
   "All Roads to Peace#117": {
    "src": "Festival with Earthpit. Will be coming soon- so stocking up food for that.",
-   "dst": "",
+   "dst": "Fête avec Earthpit. Arriver bientôt- donc faire réserves de nourriture.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1192,7 +1192,7 @@
   },
   "All Roads to Peace#118": {
    "src": "...human look like want help. You...really are strange. I suppose...if you want help with food, could do some fishing.",
-   "dst": "",
+   "dst": "...humain avoir l'air vouloir aider. Toi... vraiment bizarre. Je suppose... si vouloir aider pour nourriture, pouvoir pêcher.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1202,7 +1202,7 @@
   },
   "All Roads to Peace#119": {
    "src": "Won't ask human to do everything- just [{~} Carp Meat] enough to help. Though, could bring more if wanted.",
-   "dst": "",
+   "dst": "Pas demander tout à humain- juste [{~} Carp Meat], assez pour aider. Mais pouvoir rapporter plus si vouloir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1212,7 +1212,7 @@
   },
   "All Roads to Peace#120": {
    "src": "If want bring more than {~}, will accept more than {~}.",
-   "dst": "",
+   "dst": "Si vouloir rapporter plus de {~}, accepter plus de {~}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1222,7 +1222,7 @@
   },
   "All Roads to Peace#121": {
    "src": "Mhm, mhm. You are strange human, but not bad human. This enough meat.",
-   "dst": "",
+   "dst": "Mhm, mhm. Toi humain bizarre, mais pas mauvais humain. Ça assez viande.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1232,7 +1232,7 @@
   },
   "All Roads to Peace#122": {
    "src": "Festival will still be long time away, but here. Since human help, you get reward. Only fair.",
-   "dst": "",
+   "dst": "Fête encore loin, mais tenir. Humain aider, donc toi avoir récompense. Normal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1242,7 +1242,7 @@
   },
   "All Roads to Peace#123": {
    "src": "Oh, you brought more fish than asked. Twice as much as asked!",
-   "dst": "",
+   "dst": "Oh, toi rapporter plus de poisson que demandé. Deux fois plus!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1252,7 +1252,7 @@
   },
   "All Roads to Peace#124": {
    "src": "You are good human. Strange, but not bad. Willing to put in extra effort.",
-   "dst": "",
+   "dst": "Toi bon humain. Bizarre, mais pas mauvais. Prêt à faire effort en plus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1262,7 +1262,7 @@
   },
   "All Roads to Peace#125": {
    "src": "Here- will also share some meat that won't be for festival. Other rewards too.",
-   "dst": "",
+   "dst": "Tenir- partager aussi viande pas pour fête. Autres récompenses aussi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1272,7 +1272,7 @@
   },
   "All Roads to Peace#126": {
    "src": "...that is...much fish. You heard me when I said five, right?",
-   "dst": "",
+   "dst": "...ça... beaucoup poisson. Toi entendre quand dire cinq, hein?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1282,7 +1282,7 @@
   },
   "All Roads to Peace#127": {
    "src": "Four times as much as fair share. Why human like this?",
-   "dst": "",
+   "dst": "Quatre fois part juste. Pourquoi humain comme ça?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1292,7 +1292,7 @@
   },
   "All Roads to Peace#128": {
    "src": "Humans are supposed to be selfish. Listen to villager and kill orc. But you are not like that at all.",
-   "dst": "",
+   "dst": "Humains censés être égoïstes. Écouter villageois et tuer orque. Mais toi pas du tout comme ça.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1302,7 +1302,7 @@
   },
   "All Roads to Peace#129": {
    "src": "Then here- Will share extra meat. Not for festival, but still good. Other thing too. Thank you very much, human.",
-   "dst": "",
+   "dst": "Alors tenir- Partager viande en plus. Pas pour fête, mais bonne quand même. Autre chose aussi. Merci beaucoup, humain.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1312,7 +1312,7 @@
   },
   "All Roads to Peace#130": {
    "src": "I. What. Human, you... That.",
-   "dst": "",
+   "dst": "Je. Quoi. Humain, toi... Ça.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1322,7 +1322,7 @@
   },
   "All Roads to Peace#131": {
    "src": "Said five. You have thirty. I...how and why.",
-   "dst": "",
+   "dst": "Dire cinq. Toi avoir trente. Je... comment et pourquoi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1332,7 +1332,7 @@
   },
   "All Roads to Peace#132": {
    "src": "You just did work of six orc. You are...overachieving human. But that is not bad thing!",
-   "dst": "",
+   "dst": "Toi faire travail de six orques. Toi... humain qui en fait trop. Mais pas mauvaise chose!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1342,7 +1342,7 @@
   },
   "All Roads to Peace#133": {
    "src": "Here, then. This meat not for festival, but you deserve hearty meal for all effort!",
-   "dst": "",
+   "dst": "Alors tenir. Viande pas pour fête, mais toi mériter bon repas pour tout effort!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1352,7 +1352,7 @@
   },
   "All Roads to Peace#134": {
    "src": "That much fish actually meet quota! Thank you so much, strange, kind human!",
-   "dst": "",
+   "dst": "Tant de poisson remplir quota! Merci beaucoup, humain bizarre et gentil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1362,7 +1362,7 @@
   },
   "All Roads to Peace#135": {
    "src": "Human OFFERING help- Hmh! Very good human! Task simple. Southeast of fort, past ridge, Teiren old camp.",
-   "dst": "",
+   "dst": "Humain PROPOSER aide- Hmh! Très bon humain! Tâche simple. Sud-est du fort, après crête, vieux camp de Teiren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1372,7 +1372,7 @@
   },
   "All Roads to Peace#136": {
    "src": "Used to live, but left because Freelancer jump down from mountain. Forgot important thing there!",
-   "dst": "",
+   "dst": "Vivre là avant, mais partir car Freelancer sauter de montagne. Oublier chose importante là-bas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1382,7 +1382,7 @@
   },
   "All Roads to Peace#137": {
    "src": "Need stay here, make sure stupid Peloros no run into firepit. Has done before. So, you go get!",
-   "dst": "",
+   "dst": "Devoir rester ici, empêcher Peloros stupide courir dans feu. Déjà arriver. Donc toi aller chercher!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1392,7 +1392,7 @@
   },
   "All Roads to Peace#138": {
    "src": "Oi, oi! Y'oughta gimme 'at back right now, li'l lady!",
-   "dst": "",
+   "dst": "Hé, hé! Tu vas m'rendre ça tout d'suite, ma p'tite dame!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1402,7 +1402,7 @@
   },
   "All Roads to Peace#139": {
    "src": "Absolutely NOT, you craven wind spirit! This belongs to me now!",
-   "dst": "",
+   "dst": "Certainement PAS, lâche esprit du vent! Ceci m'appartient désormais!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1412,7 +1412,7 @@
   },
   "All Roads to Peace#140": {
    "src": "Nonsense! This camp was built by those who respected the earth and its bounties. Now that its inhabitants have left, nature is free to reclaim it, as is right!",
-   "dst": "",
+   "dst": "Sottises! Ce camp fut bâti par ceux qui respectaient la terre et ses bienfaits. Ses habitants partis, la nature est libre de le reprendre, comme il se doit!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1422,7 +1422,7 @@
   },
   "All Roads to Peace#141": {
    "src": "Aw yeah? Issat it? You're a peach, gal, but I'll clip those petals, you don't give it up right now!",
-   "dst": "",
+   "dst": "Ah ouais? C'est ça? T'es mignonne, ma jolie, mais j'vais t'couper les pétales si tu m'rends pas ça tout d'suite!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1432,7 +1432,7 @@
   },
   "All Roads to Peace#142": {
    "src": "What a brutish lout you are, threatening an embodiment of nature! I won't give this up without a fight!",
-   "dst": "",
+   "dst": "Quel rustre brutal vous faites, à menacer une incarnation de la nature! Je ne céderai pas sans me battre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1442,7 +1442,7 @@
   },
   "All Roads to Peace#143": {
    "src": "...hm? And who might you be? What brings a human to this disused place?",
-   "dst": "",
+   "dst": "...hm? Et qui êtes-vous donc? Qu'est-ce qui amène un humain en ce lieu abandonné?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1452,7 +1452,7 @@
   },
   "All Roads to Peace#144": {
    "src": "Oh no, you want this too?! I have claimed it for my own! Leave me be, go! Get out of here!",
-   "dst": "",
+   "dst": "Oh non, vous le voulez aussi?! Je l'ai revendiqué! Laissez-moi, partez! Hors d'ici!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1462,7 +1462,7 @@
   },
   "All Roads to Peace#145": {
    "src": "Shouldn'ta crossed me, doll! Remember who spreads your pollen next time, huh?! Now to just take this back up the mountain...",
-   "dst": "",
+   "dst": "Fallait pas m'chercher, poupée! La prochaine fois, souviens-toi qui répand ton pollen, hein?! Bon, plus qu'à remonter ça sur la montagne...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1472,7 +1472,7 @@
   },
   "All Roads to Peace#146": {
    "src": "OI! Who's THIS joker now? You lookin' ta empty your wallet for me or something?",
-   "dst": "",
+   "dst": "HÉ! C'est qui, CE guignol? Tu viens vider ton porte-monnaie pour moi ou quoi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1482,7 +1482,7 @@
   },
   "All Roads to Peace#147": {
    "src": "What, you want this thing too?! It's mine, y'hear? MINE! You can't have it!",
-   "dst": "",
+   "dst": "Quoi, tu veux ce truc toi aussi?! C'est à moi, t'entends? A MOI! Tu l'auras pas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1492,7 +1492,7 @@
   },
   "All Roads to Peace#148": {
    "src": "Human! Was right to send out. Peloros fall over chair and almost burn! Did find thing? Very distinctive, only thing left at camp.",
-   "dst": "",
+   "dst": "Humain! Bien faire d'envoyer. Peloros tomber de chaise et presque brûler! Trouver chose? Très reconnaissable, seule chose restée au camp.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1502,7 +1502,7 @@
   },
   "All Roads to Peace#149": {
    "src": "Hmhm!! Yes! This what looking for! Very good human! Human deserve reward for be good human!",
-   "dst": "",
+   "dst": "Hmhm!! Oui! Ça ce que chercher! Très bon humain! Humain mériter récompense pour être bon humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1512,7 +1512,7 @@
   },
   "All Roads to Peace#150": {
    "src": "Oh? Human not know what thing is? Want know?",
-   "dst": "",
+   "dst": "Oh? Humain pas savoir quoi être chose? Vouloir savoir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1522,7 +1522,7 @@
   },
   "All Roads to Peace#151": {
    "src": "Silly! If human not know what thing is, no tell! Can learn for self.",
-   "dst": "",
+   "dst": "Bête! Si humain pas savoir quoi être chose, pas dire! Pouvoir apprendre seul.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1532,7 +1532,7 @@
   },
   "All Roads to Peace#152": {
    "src": "Still. Here, for good human!",
-   "dst": "",
+   "dst": "Quand même. Tenir, pour bon humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1542,7 +1542,7 @@
   },
   "All Roads to Peace#153": {
    "src": "Grrh...stupid Jixy. Dumb human language!",
-   "dst": "",
+   "dst": "Grrh... Jixy stupide. Langue humaine bête!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1552,7 +1552,7 @@
   },
   "All Roads to Peace#154": {
    "src": "Hrrh! Human! You language dumb! Name smart, flow like water in Orc language, look like dungpile on paper in human language!",
-   "dst": "",
+   "dst": "Hrrh! Humain! Ta langue bête! Nom intelligent, couler comme eau en orque, ressembler à tas de fumier en lettres humaines!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1562,7 +1562,7 @@
   },
   "All Roads to Peace#155": {
    "src": "Say name! Look at spell, say name! Try!! TRY!!!",
-   "dst": "",
+   "dst": "Dire nom! Regarder lettres, dire nom! Essayer!! ESSAYER!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1572,7 +1572,7 @@
   },
   "All Roads to Peace#156": {
    "src": "GRRRH! Confusing name! Not confusing in orcish! Human say all wrong!",
-   "dst": "",
+   "dst": "GRRRH! Nom confus! Pas confus en orque! Humain tout dire mal!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1582,7 +1582,7 @@
   },
   "All Roads to Peace#157": {
    "src": "Hmh. That right, human. Willing to try at least. See how bad name look?",
-   "dst": "",
+   "dst": "Hmh. Ça juste, humain. Au moins prêt à essayer. Voir comme nom moche écrit?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1592,7 +1592,7 @@
   },
   "All Roads to Peace#158": {
    "src": "Said \"shoon-bur.\" Not even LOOK like that in human letter!",
-   "dst": "",
+   "dst": "Dire \"choune-beur\". Même pas RESSEMBLER à ça en lettres humaines!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1602,7 +1602,7 @@
   },
   "All Roads to Peace#159": {
    "src": "Here. Needed show anger at stupid language, not show anger at human.",
-   "dst": "",
+   "dst": "Tenir. Besoin montrer colère contre langue stupide, pas contre humain.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1612,7 +1612,7 @@
   },
   "All Roads to Peace#160": {
    "src": "Stupid stupid STUPID! Not at all say like spell! See stupid language now?!",
-   "dst": "",
+   "dst": "Stupide stupide STUPIDE! Pas dire comme écrire! Voir langue stupide maintenant?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1622,7 +1622,7 @@
   },
   "All Roads to Peace#161": {
    "src": "GAAAH!! No, no, no, no!!! Why need learn human language?!",
-   "dst": "",
+   "dst": "GAAAH!! Non, non, non, non!!! Pourquoi devoir apprendre langue humaine?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1632,7 +1632,7 @@
   },
   "All Roads to Peace#162": {
    "src": "NAME NOT JOE! WHAT KIND NAME JOE?! JOE STUPID NAME!!! AAAAHH!!",
-   "dst": "",
+   "dst": "NOM PAS JOE! QUEL GENRE NOM JOE?! JOE NOM STUPIDE!!! AAAAHH!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1642,7 +1642,7 @@
   },
   "All Roads to Peace#163": {
    "src": "HRRRGH!",
-   "dst": "",
+   "dst": "HRRRGH!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1652,7 +1652,7 @@
   },
   "All Roads to Peace#164": {
    "src": "GRRGH! GRRGAAAH! MOOOOOOVE!",
-   "dst": "",
+   "dst": "GRRGH! GRRGAAAH! BOOOOOUGE!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1662,7 +1662,7 @@
   },
   "All Roads to Peace#165": {
    "src": "YUNELSU NOT BEATEN...HRRRK...BY ROCK!!",
-   "dst": "",
+   "dst": "YUNELSU PAS VAINCU...HRRRK...PAR ROCHER!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1672,7 +1672,7 @@
   },
   "All Roads to Peace#166": {
    "src": "Hrrf...haaah...hhhuman! Weird...weird kind human!",
-   "dst": "",
+   "dst": "Hrrf...haaah...hhhumain! Bizarre...humain bizarre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1682,7 +1682,7 @@
   },
   "All Roads to Peace#167": {
    "src": "Rock stuck. Trying to lift- for train strength! No one able to lift rock.",
-   "dst": "",
+   "dst": "Rocher coincé. Essayer soulever- entraîner force! Personne capable soulever rocher.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1692,7 +1692,7 @@
   },
   "All Roads to Peace#168": {
    "src": "Yunelsu try throw rock into river! Have thrown other rock, not this one.",
-   "dst": "",
+   "dst": "Yunelsu essayer jeter rocher dans rivière! Avoir jeté autres rochers, pas celui-là.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1702,7 +1702,7 @@
   },
   "All Roads to Peace#169": {
    "src": "Hmm...human magic strong, but rock still not moving.",
-   "dst": "",
+   "dst": "Hmm...magie humain forte, mais rocher toujours pas bouger.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1712,7 +1712,7 @@
   },
   "All Roads to Peace#170": {
    "src": "Work together! Cast magic at rock, I try lift again! Ready!",
-   "dst": "",
+   "dst": "Travailler ensemble! Lancer magie sur rocher, moi essayer soulever encore! Prêt!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1722,7 +1722,7 @@
   },
   "All Roads to Peace#171": {
    "src": "HGGGGRRK! GO!",
-   "dst": "",
+   "dst": "HGGGGRRK! VAS-Y!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1732,7 +1732,7 @@
   },
   "All Roads to Peace#172": {
    "src": "Hrrgh... Hrrf. Must be...old earth rock.",
-   "dst": "",
+   "dst": "Hrrgh... Hrrf. Devoir être...vieux rocher de la terre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1742,7 +1742,7 @@
   },
   "All Roads to Peace#173": {
    "src": "Been here very long time. Stuck here, rock where earth wants rock to be.",
-   "dst": "",
+   "dst": "Être ici très longtemps. Coincé ici, rocher où terre vouloir rocher.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1752,7 +1752,7 @@
   },
   "All Roads to Peace#174": {
    "src": "Yunelsu find other rock then. Sometimes rock break, though.",
-   "dst": "",
+   "dst": "Alors Yunelsu trouver autre rocher. Mais parfois rocher casser.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1762,7 +1762,7 @@
   },
   "All Roads to Peace#175": {
    "src": "See? Many broken rock. Hear can be good for armor though. You take.",
-   "dst": "",
+   "dst": "Voir? Beaucoup rochers cassés. Entendre bon pour armure, par contre. Toi prendre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1772,7 +1772,7 @@
   },
   "All Roads to Peace#176": {
    "src": "Oh! You! Saw Zuett dragging you to camp. And saw other thing.",
-   "dst": "",
+   "dst": "Oh! Toi! Voir Zuett traîner toi au camp. Et voir autre chose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1782,7 +1782,7 @@
   },
   "All Roads to Peace#177": {
    "src": "And you helped Ressinter! Will apologize later. Was my fault. Human seen Freelancers?",
-   "dst": "",
+   "dst": "Et toi aider Ressinter! S'excuser plus tard. Ma faute. Humain voir Freelancers?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1792,7 +1792,7 @@
   },
   "All Roads to Peace#178": {
    "src": "Freelancers think everything belong to them. Loiter around fortress a lot, try to jump in sometimes.",
-   "dst": "",
+   "dst": "Freelancers croire tout leur appartenir. Traîner beaucoup autour forteresse, parfois essayer sauter dedans.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1802,7 +1802,7 @@
   },
   "All Roads to Peace#179": {
    "src": "Was trying to shoot flying one down, but cannon broke, and cannonball explode.",
-   "dst": "",
+   "dst": "Essayer abattre un volant, mais canon cassé, et boulet exploser.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1812,7 +1812,7 @@
   },
   "All Roads to Peace#180": {
    "src": "Now Ressinter okay, but still need repair cannon. Human feel like helping, will need [{~} Iron Ingots] to repair.",
-   "dst": "",
+   "dst": "Ressinter bien maintenant, mais toujours réparer canon. Si humain vouloir aider, besoin [{~} Iron Ingots] pour réparer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1822,7 +1822,7 @@
   },
   "All Roads to Peace#181": {
    "src": "Long walk, but there iron in valley east of villager quarry. There also other villager there, with weapons. Not sure why.",
-   "dst": "",
+   "dst": "Long trajet, mais fer dans vallée à l'est de carrière villageoise. Aussi autres villageois là-bas, avec armes. Pas savoir pourquoi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1832,7 +1832,7 @@
   },
   "All Roads to Peace#182": {
    "src": "Human being weirdly helpful. That good though! Make Lomoster job of shooting enemy easier.",
-   "dst": "",
+   "dst": "Humain étrangement serviable. Mais bien! Rendre travail de Lomoster, tirer sur ennemi, plus facile.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1842,7 +1842,7 @@
   },
   "All Roads to Peace#183": {
    "src": "Here. Freelancer like steal metal and other thing too, have found a lot from shooting. Human can have.",
-   "dst": "",
+   "dst": "Tenir. Freelancer aimer voler métal et autres choses, beaucoup trouvé en tirant. Humain pouvoir garder.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1852,7 +1852,7 @@
   },
   "All Roads to Peace#184": {
    "src": "Not good for repair cannon, but probably good for make other thing.",
-   "dst": "",
+   "dst": "Pas bon pour réparer canon, mais sûrement bon pour fabriquer autre chose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1862,7 +1862,7 @@
   },
   "All Roads to Peace#185": {
    "src": "Her name, my name, sound same. Don't sound same in Orcish! But in YOUR language, sound same!",
-   "dst": "",
+   "dst": "Son nom, mon nom, sonner pareil. Pas pareil en orque! Mais dans TA langue, sonner pareil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1872,7 +1872,7 @@
   },
   "All Roads to Peace#186": {
    "src": "Grrmbl... Dumb Kreimu... Human have stalks?",
-   "dst": "",
+   "dst": "Grrmbl... Kreimu bête... Humain avoir tiges?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1882,7 +1882,7 @@
   },
   "All Roads to Peace#187": {
    "src": "Good. Can take these, then- Alraune girl have sometimes. Tasty, but not good medicine.",
-   "dst": "",
+   "dst": "Bien. Pouvoir prendre ça, alors- fille Alraune en avoir parfois. Bon goût, mais pas bon remède.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1892,7 +1892,7 @@
   },
   "All Roads to Peace#188": {
    "src": "Durbeo might like, actually. Durbeo orc in food storage tower behind me. Maybe he want help too?",
-   "dst": "",
+   "dst": "Durbeo aimer peut-être, en fait. Durbeo orque dans tour de réserve derrière moi. Peut-être vouloir aide aussi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1902,7 +1902,7 @@
   },
   "All Roads to Peace#189": {
    "src": "Oh, that human who healed Ressinter. Yes, I've heard of you already. News travels fast here.",
-   "dst": "",
+   "dst": "Oh, l'humain qui a soigné Ressinter. Oui, j'ai déjà entendu parler de toi. Les nouvelles vont vite ici.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1912,7 +1912,7 @@
   },
   "All Roads to Peace#190": {
    "src": "You have a weird face. Uh, a weird look on your face, I mean. What, not used to a more eloquent orc?",
-   "dst": "",
+   "dst": "Tu as une drôle de tête. Euh, une drôle d'expression, je veux dire. Quoi, pas habitué à un orque éloquent?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1922,7 +1922,7 @@
   },
   "All Roads to Peace#191": {
    "src": "I'm studying languages, is why. I haven't got everything known yet, so if you feel like helping, I could use it.",
-   "dst": "",
+   "dst": "J'étudie les langues, voilà pourquoi. Je ne sais pas encore tout, donc si tu veux aider, ça me rendrait service.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1932,7 +1932,7 @@
   },
   "All Roads to Peace#192": {
    "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they left behind any language books.",
-   "dst": "",
+   "dst": "J'avais un ami hobbit très malin qui vivait près d'ici. Il est parti, mais j'aimerais que tu fouilles son terrier, voir s'il a laissé des livres de langues.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1942,7 +1942,7 @@
   },
   "All Roads to Peace#193": {
    "src": "It should be close to the blue tower on the hill. That should be easy, right?",
-   "dst": "",
+   "dst": "Ça devrait être près de la tour bleue sur la colline. Facile, non?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1952,7 +1952,7 @@
   },
   "All Roads to Peace#194": {
    "src": "Oh, good, they did leave a book behind. This even completes the collection I have. I have the first, second, fourth, fifth, and sixth volumes of this.",
-   "dst": "",
+   "dst": "Oh, bien, il a laissé un livre. Ça complète même ma collection. J'ai les tomes un, deux, quatre, cinq et six.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1962,7 +1962,7 @@
   },
   "All Roads to Peace#195": {
    "src": "Hopefully I can learn something new here. I still don't understand what all these weird \"figures of speech\" are supposed to mean...",
-   "dst": "",
+   "dst": "J'espère apprendre quelque chose de nouveau. Je ne comprends toujours pas le sens de toutes ces drôles d'\"expressions\"...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1972,7 +1972,7 @@
   },
   "All Roads to Peace#196": {
    "src": "What does busting your hump mean? Or two shakes of a lamb tail? Well, anyway. You probably know, so me trying to guess is boring.",
-   "dst": "",
+   "dst": "Que veut dire \"se mettre en quatre\"? Ou \"en deux temps trois mouvements\"? Bref. Tu le sais sûrement, donc deviner, c'est ennuyeux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1982,7 +1982,7 @@
   },
   "All Roads to Peace#197": {
    "src": "Here, then. That friend of mine wrote everything he came across down in some diaries, and he gave me them to keep, but I can't read them.",
-   "dst": "",
+   "dst": "Tiens, alors. Cet ami notait tout ce qu'il voyait dans des carnets, et me les a confiés, mais je ne peux pas les lire.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1992,7 +1992,7 @@
   },
   "All Roads to Peace#198": {
    "src": "The pages are too flimsy- I'll rip them if I turn them. It's a good thing the book you gave me is bound with strong leather, but I still need to be careful not to ruin it...",
-   "dst": "",
+   "dst": "Les pages sont trop fragiles- je les déchirerais en les tournant. Heureusement, le livre que tu m'as donné est relié en cuir solide, mais je dois quand même faire attention...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2002,7 +2002,7 @@
   },
   "All Roads to Peace#199": {
    "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
-   "dst": "",
+   "dst": "Bon, si tu lis ce qu'ils contiennent, tu pourras peut-être apprendre des choses toi-même.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2012,7 +2012,7 @@
   },
   "All Roads to Peace#200": {
    "src": "Huh. You again. That weird human who helped Ressinter. Something wrong?",
-   "dst": "",
+   "dst": "Tiens. Encore toi. L'humain bizarre qui a aidé Ressinter. Un problème?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2022,7 +2022,7 @@
   },
   "All Roads to Peace#201": {
    "src": "Hm. Looking to help out still? What is it with you looking to be helpful? Have to say I'm not used to this. But, I can think of something.",
-   "dst": "",
+   "dst": "Hm. Toujours envie d'aider? Qu'est-ce que t'as à vouloir rendre service? Je n'ai pas l'habitude, je l'avoue. Mais j'ai une idée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2032,7 +2032,7 @@
   },
   "All Roads to Peace#202": {
    "src": "HEY! Any of you feel like playing a game?",
-   "dst": "",
+   "dst": "HÉ! Quelqu'un veut jouer à un jeu?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2042,7 +2042,7 @@
   },
   "All Roads to Peace#203": {
    "src": "Ugh, yeah! We're so BORED in here!",
-   "dst": "",
+   "dst": "Oh oui! On s'ENNUIE tellement ici!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2052,7 +2052,7 @@
   },
   "All Roads to Peace#204": {
    "src": "Well, sure, but...even if you say this one isn't so scary, I know I don't wanna tell them my real name!",
-   "dst": "",
+   "dst": "Bon, d'accord, mais... même si tu dis que celui-là fait pas si peur, je veux pas lui dire mon vrai nom!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2062,7 +2062,7 @@
   },
   "All Roads to Peace#205": {
    "src": "Didn't we just eat a bunch of fruit though? We can use those as fake names!",
-   "dst": "",
+   "dst": "On vient pas de manger plein de fruits? On peut s'en servir comme faux noms!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2072,7 +2072,7 @@
   },
   "All Roads to Peace#206": {
    "src": "Okay then. Well, call me Mango then, weird human!",
-   "dst": "",
+   "dst": "D'accord. Bon, appelle-moi Mango, humain bizarre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2082,7 +2082,7 @@
   },
   "All Roads to Peace#207": {
    "src": "I just ate a bunch of blueberries, so I guess I'm Blueberry for now?",
-   "dst": "",
+   "dst": "J'ai mangé plein de myrtilles, alors je suis Blueberry pour l'instant?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2092,7 +2092,7 @@
   },
   "All Roads to Peace#208": {
    "src": "Hey, I wouldn't mind being called Grapes by anyone, really!",
-   "dst": "",
+   "dst": "Hé, ça me dérangerait pas qu'on m'appelle Grapes, franchement!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2102,7 +2102,7 @@
   },
   "All Roads to Peace#209": {
    "src": "Then I'm Peaches! So we're just doing a little hide and seek game?",
-   "dst": "",
+   "dst": "Alors moi, je suis Peaches! On fait juste une petite partie de cache-cache?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2112,7 +2112,7 @@
   },
   "All Roads to Peace#210": {
    "src": "Yes. Just hide around the fort someplace. If the human doesn't find you, you win.",
-   "dst": "",
+   "dst": "Oui. Cachez-vous quelque part dans le fort. Si l'humain ne vous trouve pas, vous gagnez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2122,7 +2122,7 @@
   },
   "All Roads to Peace#211": {
    "src": "Well, that's kinda boring, so I'm gonna go find a really tough to reach spot!",
-   "dst": "",
+   "dst": "Bon, c'est un peu nul, alors je vais me trouver une cachette super dure à atteindre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2132,7 +2132,7 @@
   },
   "All Roads to Peace#212": {
    "src": "NYAHAHA! Everyone scatter!!",
-   "dst": "",
+   "dst": "NYAHAHA! Tout le monde se disperse!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2142,7 +2142,7 @@
   },
   "All Roads to Peace#213": {
    "src": "Well, there you go. I'll tell you how many you have left to find if you talk with me.",
-   "dst": "",
+   "dst": "Et voilà. Je te dirai combien il t'en reste à trouver si tu viens me parler.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2152,7 +2152,7 @@
   },
   "All Roads to Peace#214": {
    "src": "...wow. You're good. I thought you might be able to see me up here, but I didn't think you'd be able to reach me!",
-   "dst": "",
+   "dst": "...waouh. Chapeau. Je pensais que tu me verrais peut-être ici, mais pas que tu pourrais m'atteindre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2162,7 +2162,7 @@
   },
   "All Roads to Peace#215": {
    "src": "I don't really care about the fact you're human. As long as I get my entertainment I'm happy. Which kinda isn't so great, cause there isn't a lot here to tinker with.",
-   "dst": "",
+   "dst": "Que tu sois humain, je m'en fiche. Tant que je m'amuse, je suis contente. Ce qui est pas génial, vu qu'il y a pas grand-chose à bricoler ici.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2172,7 +2172,7 @@
   },
   "All Roads to Peace#216": {
    "src": "Tinkernook is so much better about having machines and metals and things to experiment and build than here is.",
-   "dst": "",
+   "dst": "A Tinkernook, il y a bien plus de machines, de métaux et de trucs pour expérimenter et construire qu'ici.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2182,7 +2182,7 @@
   },
   "All Roads to Peace#217": {
    "src": "Anyways, you win, I lose, so I better get back to stick-in-the-mud Nunexetor. See ya!",
-   "dst": "",
+   "dst": "Bref, t'as gagné, j'ai perdu, alors je retourne voir ce rabat-joie de Nunexetor. A plus!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2192,7 +2192,7 @@
   },
   "All Roads to Peace#218": {
    "src": "NYACK! For such a big human you really know how to sneak up on someone!!",
-   "dst": "",
+   "dst": "NYACK! Pour un humain si grand, tu sais vraiment surprendre les gens!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2202,7 +2202,7 @@
   },
   "All Roads to Peace#219": {
    "src": "Gah, I thought I was a goner for a second there... If Nunny says you're okay then I'll trust him, but that doesn't make you less intimidating!",
-   "dst": "",
+   "dst": "Gah, j'ai cru que j'étais fichu une seconde... Si Nunny dit que t'es réglo, je le crois, mais ça te rend pas moins impressionnant!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2212,7 +2212,7 @@
   },
   "All Roads to Peace#220": {
    "src": "And, I guess out in the open like this, the other orcs wouldn't let you bully us, so...",
-   "dst": "",
+   "dst": "Et puis, à découvert comme ça, les autres orques te laisseraient pas nous embêter, donc...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2222,7 +2222,7 @@
   },
   "All Roads to Peace#221": {
    "src": "Suppose you're alright, maybe. But even still, you found me, so I lose. Unless you can't find everyone else!",
-   "dst": "",
+   "dst": "T'es peut-être correct, va. Mais quand même, tu m'as trouvé, donc j'ai perdu. Sauf si tu trouves pas les autres!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2232,7 +2232,7 @@
   },
   "All Roads to Peace#222": {
    "src": "I bet you'll NEVER find Mango, hahaah! She always takes these games SUPER seriously!",
-   "dst": "",
+   "dst": "Je parie que tu trouveras JAMAIS Mango, hahaah! Elle prend toujours ces jeux SUPER au sérieux!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2242,7 +2242,7 @@
   },
   "All Roads to Peace#223": {
    "src": "Aw darn it. I guess it's pretty easy to see me up here.",
-   "dst": "",
+   "dst": "Oh zut. Je suppose qu'on me voit facilement ici en haut.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2252,7 +2252,7 @@
   },
   "All Roads to Peace#224": {
    "src": "I mean, I knew that, but I thought you wouldn't think to climb the tower!",
-   "dst": "",
+   "dst": "Enfin, je le savais, mais je pensais pas que t'aurais l'idée de grimper sur la tour!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2262,7 +2262,7 @@
   },
   "All Roads to Peace#225": {
    "src": "Well, anyway...you really went and tried to heal Ressinter? That's pretty admirable!",
-   "dst": "",
+   "dst": "Bref... t'as vraiment essayé de soigner Ressinter? C'est plutôt admirable!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2272,7 +2272,7 @@
   },
   "All Roads to Peace#226": {
    "src": "Aaaand then a human went and killed her, because I guess they got told to do so! At least you seem halfway decent.",
-   "dst": "",
+   "dst": "Eeeet ensuite un humain est venu la tuer, sûrement parce qu'on lui avait ordonné! Toi au moins, t'as l'air à peu près correct.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2282,7 +2282,7 @@
   },
   "All Roads to Peace#227": {
    "src": "Anyway, back to the quiet ol' grouch with me!",
-   "dst": "",
+   "dst": "Bref, je retourne voir le vieux grincheux silencieux!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2292,7 +2292,7 @@
   },
   "All Roads to Peace#228": {
    "src": "Ack! Thought you wouldn't notice me behind the stairs!",
-   "dst": "",
+   "dst": "Aïe! Je pensais que tu me verrais pas derrière l'escalier!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2302,7 +2302,7 @@
   },
   "All Roads to Peace#229": {
    "src": "Ugh, you...you human types are scary up close. Is Nunexetor really sure you're not a bad guy?",
-   "dst": "",
+   "dst": "Beurk, vous... vous les humains, vous faites peur de près. Nunexetor est sûr que t'es pas un méchant?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2312,7 +2312,7 @@
   },
   "All Roads to Peace#230": {
    "src": "I mean, look at your armor! You, you look like you could splat me against the wall in a snap!",
-   "dst": "",
+   "dst": "Enfin, regarde ton armure! Tu, tu as l'air de pouvoir m'écraser contre le mur en un clin d'oeil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2322,7 +2322,7 @@
   },
   "All Roads to Peace#231": {
    "src": "...I feel like I just gave you an idea and I'm not sticking around to find out! You win!",
-   "dst": "",
+   "dst": "...j'ai l'impression de t'avoir donné une idée et je reste pas pour vérifier! T'as gagné!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2332,7 +2332,7 @@
   },
   "All Roads to Peace#232": {
    "src": "Looks like the human wins. Guess I know how you managed to find that spineback boar.",
-   "dst": "",
+   "dst": "On dirait que l'humain gagne. Je comprends comment tu as trouvé ce sanglier dos-épineux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2342,7 +2342,7 @@
   },
   "All Roads to Peace#233": {
    "src": "There's no way you REALLY hunted one of those things. Those even give the orc hunters trouble!",
-   "dst": "",
+   "dst": "Impossible que t'aies VRAIMENT chassé une de ces bêtes. Même les chasseurs orques en bavent!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2352,7 +2352,7 @@
   },
   "All Roads to Peace#234": {
    "src": "Are you kidding me? Humans are terrifying, Blueberry! They've hunted way stronger stuff than some stupid pig!",
-   "dst": "",
+   "dst": "Tu rigoles? Les humains sont terrifiants, Blueberry! Ils ont chassé des trucs bien plus forts qu'un cochon débile!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2362,7 +2362,7 @@
   },
   "All Roads to Peace#235": {
    "src": "But, the game was fun, right?",
-   "dst": "",
+   "dst": "Mais c'était amusant, non?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2372,7 +2372,7 @@
   },
   "All Roads to Peace#236": {
    "src": "That's all I wanted from you. Can go back to whatever it was you were doing now.",
-   "dst": "",
+   "dst": "C'est tout ce que je voulais. Vous pouvez retourner à ce que vous faisiez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2382,7 +2382,7 @@
   },
   "All Roads to Peace#237": {
    "src": "Yes, finally! I don't have to spend time wondering if the human's gonna try and poke my eyes out!",
-   "dst": "",
+   "dst": "Oui, enfin! Plus besoin de me demander si l'humain va essayer de m'arracher les yeux!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2392,7 +2392,7 @@
   },
   "All Roads to Peace#238": {
    "src": "Oh, quit being such a scaredy-baby. This one's nice!",
-   "dst": "",
+   "dst": "Oh, arrête de faire le bébé trouillard. Celui-là est gentil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2402,7 +2402,7 @@
   },
   "All Roads to Peace#239": {
    "src": "Good game, I guess! Back to being bored again.",
-   "dst": "",
+   "dst": "Bien joué, j'imagine! Retour à l'ennui.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2412,7 +2412,7 @@
   },
   "All Roads to Peace#240": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2422,7 +2422,7 @@
   },
   "All Roads to Peace#241": {
    "src": "What, nothing to say?",
-   "dst": "",
+   "dst": "Quoi, rien à dire?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2432,7 +2432,7 @@
   },
   "All Roads to Peace#242": {
    "src": "What? You aren't even wearing those kinds of shoes.",
-   "dst": "",
+   "dst": "Quoi? Tu ne portes même pas ce genre de chaussures.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2442,7 +2442,7 @@
   },
   "All Roads to Peace#243": {
    "src": "Anyways, to the winner goes the spoils. Here, for entertaining them for a bit.",
-   "dst": "",
+   "dst": "Bref, au vainqueur le butin. Tiens, pour les avoir divertis un peu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2452,7 +2452,7 @@
   },
   "All Roads to Peace#244": {
    "src": "They have me watch the goblins but I'm no good at having fun with them, so thanks I suppose.",
-   "dst": "",
+   "dst": "On me fait surveiller les gobelins, mais je ne sais pas m'amuser avec eux, alors merci, je suppose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2462,7 +2462,7 @@
   },
   "All Roads to Peace#245": {
    "src": "Ah, the weird human. Why you looking to be helpful?",
-   "dst": "",
+   "dst": "Ah, humain bizarre. Pourquoi vouloir aider?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2472,7 +2472,7 @@
   },
   "All Roads to Peace#246": {
    "src": "The cave outside the villager bridge, with the pond and arch by it. Go in, and there will be blue flowers.",
-   "dst": "",
+   "dst": "Grotte près pont villageois, avec étang et arche à côté. Entrer, et fleurs bleues là.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2482,7 +2482,7 @@
   },
   "All Roads to Peace#247": {
    "src": "Get [{~} Terramarine Buds] so can make more dyes. Don't know why you helping, but won't turn down help either.",
-   "dst": "",
+   "dst": "Rapporter [{~} Terramarine Buds] pour faire plus teintures. Pas savoir pourquoi toi aider, mais pas refuser aide.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2492,7 +2492,7 @@
   },
   "All Roads to Peace#248": {
    "src": "The weird human again? You all covered in blue powder. You found the flowers then!",
-   "dst": "",
+   "dst": "Humain bizarre encore? Toi couvert poudre bleue. Donc trouver fleurs!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2502,7 +2502,7 @@
   },
   "All Roads to Peace#249": {
    "src": "Here. Will get that for you. The buds are enough for what need, but you can keep the dust.",
-   "dst": "",
+   "dst": "Tenir. Prendre ça. Boutons assez pour besoin, mais toi garder poussière.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2512,7 +2512,7 @@
   },
   "All Roads to Peace#250": {
    "src": "Little more, too. But, again- why you looking to be helpful? Don't understand. Humans kill orcs a lot.",
-   "dst": "",
+   "dst": "Un peu plus, aussi. Mais, encore- pourquoi vouloir aider? Pas comprendre. Humains tuer beaucoup orques.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2522,7 +2522,7 @@
   },
   "All Roads to Peace#251": {
    "src": "You that weird human helping instead killing, right? Nunexetor and little goblins talking about you.",
-   "dst": "",
+   "dst": "Toi humain bizarre qui aider au lieu tuer, hein? Nunexetor et petits gobelins parler de toi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2532,7 +2532,7 @@
   },
   "All Roads to Peace#252": {
    "src": "Trying to make weapons and tools better. Training, but running out of grindstones. Etemitoro- that is me, my name... That how say it?",
-   "dst": "",
+   "dst": "Essayer améliorer armes et outils. S'entraîner, mais plus de pierres à aiguiser. Etemitoro- ça moi, mon nom... Ça comment dire?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2542,7 +2542,7 @@
   },
   "All Roads to Peace#253": {
    "src": "Weird human language. Anyway, know where good grindstone is- top of mountain east of fortress.",
-   "dst": "",
+   "dst": "Langue humaine bizarre. Bref, savoir où bonne pierre à aiguiser- sommet montagne à l'est de forteresse.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2552,7 +2552,7 @@
   },
   "All Roads to Peace#254": {
    "src": "There shortcut running through top by Ledant cave. Maybe dangerous, but not too much. Follow dead bushes on road and can get to top quickly.",
-   "dst": "",
+   "dst": "Raccourci par sommet près grotte Ledant. Peut-être dangereux, mais pas trop. Suivre buissons morts sur route pour arriver vite en haut.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2562,7 +2562,7 @@
   },
   "All Roads to Peace#255": {
    "src": "May have something useful if bring me [Leaden Stone] for grind metal.",
-   "dst": "",
+   "dst": "Peut-être avoir chose utile si rapporter [Leaden Stone] pour aiguiser métal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2572,7 +2572,7 @@
   },
   "All Roads to Peace#256": {
    "src": "Look- human want help? Then get Etemitoro- that is me, my name... Get-",
-   "dst": "",
+   "dst": "Écouter- humain vouloir aider? Alors chercher Etemitoro- ça moi, mon nom... Chercher-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2582,7 +2582,7 @@
   },
   "All Roads to Peace#257": {
    "src": "Oh! You have [Leaden Stone]! Was focusing on work, didn't notice.",
-   "dst": "",
+   "dst": "Oh! Toi avoir [Leaden Stone]! Concentré sur travail, pas remarquer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2592,7 +2592,7 @@
   },
   "All Roads to Peace#258": {
    "src": "Here. Human like green gem for money, right? Not good for smithing though.",
-   "dst": "",
+   "dst": "Tenir. Humain aimer pierre verte pour argent, hein? Mais pas bon pour forge.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2602,7 +2602,7 @@
   },
   "All Roads to Peace#259": {
    "src": "Hm, healer human. Could swear, saw you walking around plains some time ago. What here for? Ressinter hurt again?",
-   "dst": "",
+   "dst": "Hm, humain guérisseur. Pouvoir jurer, voir toi marcher dans plaines il y a quelque temps. Pourquoi ici? Ressinter encore blessé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2612,7 +2612,7 @@
   },
   "All Roads to Peace#260": {
    "src": "No? Well, am curious now. You try heal Ressinter...luck, maybe? Or did human really know what herbs do?",
-   "dst": "",
+   "dst": "Non? Bon, maintenant curieuse. Toi soigner Ressinter... chance, peut-être? Ou humain vraiment connaître herbes?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2622,7 +2622,7 @@
   },
   "All Roads to Peace#261": {
    "src": "Want review. Want see human medicine knowledge. Will ask questions, human give answer. Simple. Ready?",
-   "dst": "",
+   "dst": "Vouloir vérifier. Vouloir voir savoir médical humain. Poser questions, humain répondre. Simple. Prêt?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2632,7 +2632,7 @@
   },
   "All Roads to Peace#262": {
    "src": "Yes, I'm ready.",
-   "dst": "",
+   "dst": "Oui, allons-y.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2642,7 +2642,7 @@
   },
   "All Roads to Peace#263": {
    "src": "Good! So, first question. Ginkgo Leaf. What Gingko Leaf good for?",
-   "dst": "",
+   "dst": "Bien! Alors, première question. Feuille de ginkgo. Feuille de ginkgo bonne pour quoi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2652,7 +2652,7 @@
   },
   "All Roads to Peace#264": {
    "src": "Yes! Good. Gingko leaf help brain. Make feel better when stress, but make blood runny. Can be good for sometimes, but can be dangerous.",
-   "dst": "",
+   "dst": "Oui! Bien. Feuille de ginkgo aider cerveau. Calmer stress, mais rendre sang fluide. Parfois bon, mais pouvoir être dangereux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2662,7 +2662,7 @@
   },
   "All Roads to Peace#265": {
    "src": "So, second question. Sweetgale. What Sweetgale good for?",
-   "dst": "",
+   "dst": "Alors, deuxième question. Myrte des marais. Myrte des marais bon pour quoi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2672,7 +2672,7 @@
   },
   "All Roads to Peace#266": {
    "src": "It helps lessen bruises.",
-   "dst": "",
+   "dst": "Ça aide à réduire les bleus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2682,7 +2682,7 @@
   },
   "All Roads to Peace#267": {
    "src": "Nope. Sweetgale not for helping with that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "Non. Myrte pas pour ça. Hm, peut-être humain soigner Ressinter par chance... Pouvoir réessayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2692,7 +2692,7 @@
   },
   "All Roads to Peace#268": {
    "src": "It sweetens mixtures.",
-   "dst": "",
+   "dst": "Ça adoucit les mélanges.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2702,7 +2702,7 @@
   },
   "All Roads to Peace#269": {
    "src": "It repels bugs.",
-   "dst": "",
+   "dst": "Ça repousse les insectes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2712,7 +2712,7 @@
   },
   "All Roads to Peace#270": {
    "src": "Here third question. Elderberry. Elderberry good for two thing. What Elderberry good for?",
-   "dst": "",
+   "dst": "Voilà troisième question. Sureau. Sureau bon pour deux choses. Sureau bon pour quoi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2722,7 +2722,7 @@
   },
   "All Roads to Peace#271": {
    "src": "No, Elderberry not good for those. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "Non, sureau pas bon pour ça. Hm, peut-être humain soigner Ressinter par chance... Pouvoir réessayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2732,7 +2732,7 @@
   },
   "All Roads to Peace#272": {
    "src": "It soothes pain and treats c",
-   "dst": "",
+   "dst": "Ça calme la douleur et soigne les maux comme le rhume.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2742,7 +2742,7 @@
   },
   "All Roads to Peace#273": {
    "src": "Yes! Though, Elderberry also good for third thing. Can make good drink! Get drunk if ferment Elderberry, but that not medicine.",
-   "dst": "",
+   "dst": "Oui! Mais sureau bon pour troisième chose aussi. Faire bonne boisson! Saoul si fermenter sureau, mais ça pas remède.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2752,7 +2752,7 @@
   },
   "All Roads to Peace#274": {
    "src": "Last question for human. Feverfew. What Feverfew NOT help with?",
-   "dst": "",
+   "dst": "Dernière question. Grande camomille. Grande camomille PAS aider pour quoi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2762,7 +2762,7 @@
   },
   "All Roads to Peace#275": {
    "src": "Lessening fevers.",
-   "dst": "",
+   "dst": "Faire baisser la fièvre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2772,7 +2772,7 @@
   },
   "All Roads to Peace#276": {
    "src": "Feverfew very good for heal that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "Grande camomille très bonne pour ça. Hm, peut-être humain soigner Ressinter par chance... Pouvoir réessayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2782,7 +2782,7 @@
   },
   "All Roads to Peace#277": {
    "src": "Soothing stomach pains.",
-   "dst": "",
+   "dst": "Calmer les maux de ventre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2792,7 +2792,7 @@
   },
   "All Roads to Peace#278": {
    "src": "Getting a date with you.",
-   "dst": "",
+   "dst": "Obtenir un rendez-vous avec toi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2802,7 +2802,7 @@
   },
   "All Roads to Peace#279": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "... ... ...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2812,7 +2812,7 @@
   },
   "All Roads to Peace#280": {
    "src": "Pfff...hawhawhawhaw!!! H-Human, yahoo! I- Harhar!",
-   "dst": "",
+   "dst": "Pfff...hawhawhawhaw!!! H-Humain, youhou! Je- Harhar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2822,7 +2822,7 @@
   },
   "All Roads to Peace#281": {
    "src": "That...correct! Not right, but correct! You...haha, you only help Ressinter through luck, right? Human not actually healer.",
-   "dst": "",
+   "dst": "Ça... bonne réponse! Pas vraie, mais bonne! Toi... haha, toi aider Ressinter juste par chance, hein? Humain pas vrai guérisseur.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2832,7 +2832,7 @@
   },
   "All Roads to Peace#282": {
    "src": "Human have humor though! And human try hard to help. More than can say for most humans. Here then- try more heal, instead of be soldier.",
-   "dst": "",
+   "dst": "Mais humain avoir humour! Et humain beaucoup essayer aider. Plus que plupart humains. Tenir- essayer soigner plus, au lieu être soldat.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2842,7 +2842,7 @@
   },
   "All Roads to Peace#283": {
    "src": "World need more people to help other people. That human was willing to try mean many good thing.",
-   "dst": "",
+   "dst": "Monde avoir besoin plus de gens pour aider autres gens. Humain vouloir essayer, ça vouloir dire beaucoup.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2852,7 +2852,7 @@
   },
   "All Roads to Peace#284": {
    "src": "It aids in sleep and soothes",
-   "dst": "",
+   "dst": "Ça aide à dormir et apaise l'inflammation.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2862,7 +2862,7 @@
   },
   "All Roads to Peace#285": {
    "src": "No. Gingko Leaf bad for that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "Non. Ginkgo mauvais pour ça. Hm, peut-être humain soigner Ressinter par chance... Pouvoir réessayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2872,7 +2872,7 @@
   },
   "All Roads to Peace#286": {
    "src": "It lessens bleeding.",
-   "dst": "",
+   "dst": "Ça réduit les saignements.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2882,7 +2882,7 @@
   },
   "All Roads to Peace#287": {
    "src": "Give me a moment, actually.",
-   "dst": "",
+   "dst": "En fait, laisse-moi un moment.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2892,7 +2892,7 @@
   },
   "All Roads to Peace#288": {
    "src": "Fine. Take your time. Will be here for while to make sure other healer okay.",
-   "dst": "",
+   "dst": "Bon. Prendre ton temps. Rester ici un moment pour vérifier autre guérisseur bien.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2902,7 +2902,7 @@
   },
   "All Roads to Peace#289": {
    "src": "Human healer! Hello! This Onluk tower. Onluk tower two! Human help, so human welcome.",
-   "dst": "",
+   "dst": "Humain guérisseur! Salut! Ça tour d'Onluk. Tour d'Onluk deux! Humain aider, donc humain bienvenu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2912,7 +2912,7 @@
   },
   "All Roads to Peace#290": {
    "src": "Tower one call tower one cause Onluk build tower one! This not usual spot for Onluk.",
-   "dst": "",
+   "dst": "Tour un appeler tour un car Onluk construire tour un! Ici pas place habituelle d'Onluk.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2922,7 +2922,7 @@
   },
   "All Roads to Peace#291": {
    "src": "Usually at tower on small hill, across bridge. But because build tower by self, tower rickety.",
-   "dst": "",
+   "dst": "D'habitude à tour sur petite colline, après pont. Mais construire tour seul, donc tour branlante.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2932,7 +2932,7 @@
   },
   "All Roads to Peace#292": {
    "src": "Human helpful. Human get sturdy wood for fix tower? {p} has sturdy wood. Forest has wood too, but more magical than sturdy.",
-   "dst": "",
+   "dst": "Humain serviable. Humain chercher bois solide pour réparer tour? {p} avoir bois solide. Forêt avoir bois aussi, mais plus magique que solide.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2942,7 +2942,7 @@
   },
   "All Roads to Peace#293": {
    "src": "Aha! Human have willow wood! Onluk fix tower now!",
-   "dst": "",
+   "dst": "Aha! Humain avoir bois de saule! Onluk réparer tour maintenant!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2952,7 +2952,7 @@
   },
   "All Roads to Peace#294": {
    "src": "Will repair Onluk tower one! Come see after fix!",
-   "dst": "",
+   "dst": "Réparer tour d'Onluk un! Venir voir après réparation!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2962,7 +2962,7 @@
   },
   "All Roads to Peace#295": {
    "src": "TOWER ONE REPAIRED! Hrahaaah! Yes! Human very helpful!",
-   "dst": "",
+   "dst": "TOUR UN RÉPARÉE! Hrahaaah! Oui! Humain très serviable!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2972,7 +2972,7 @@
   },
   "All Roads to Peace#296": {
    "src": "Should go and see! Climb tower, shoot crossbow at Freelancer!",
-   "dst": "",
+   "dst": "Devoir aller voir! Grimper tour, tirer arbalète sur Freelancer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2982,7 +2982,7 @@
   },
   "All Roads to Peace#297": {
    "src": "See? Onluk tower one much better than Onluk tower two! Cozy up here, and can see Fruludir tower too!",
-   "dst": "",
+   "dst": "Voir? Tour d'Onluk un bien mieux que tour d'Onluk deux! Confortable ici, et voir tour de Fruludir aussi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2992,7 +2992,7 @@
   },
   "All Roads to Peace#298": {
    "src": "Human very helpful. Healer and woodcutter! Repairer of tower- Well, human not repair tower. Helper of repairer of tower!",
-   "dst": "",
+   "dst": "Humain très serviable. Guérisseur et bûcheron! Réparateur de tour- Enfin, humain pas réparer tour. Aide de réparateur de tour!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3002,7 +3002,7 @@
   },
   "All Roads to Peace#299": {
    "src": "Here, for help repair Onluk tower one!",
-   "dst": "",
+   "dst": "Tenir, pour aider réparer tour d'Onluk un!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3012,7 +3012,7 @@
   },
   "All Roads to Peace#300": {
    "src": "Speak to Ureietun at [-{~}, {~}, -{~}] to gain access to the Chieftess' hut",
-   "dst": "",
+   "dst": "Parlez à Ureietun en [-{~}, {~}, -{~}] pour accéder à la hutte de la cheffe",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3022,7 +3022,7 @@
   },
   "All Roads to Peace#301": {
    "src": "...fine. Maybe human not so bad.",
-   "dst": "",
+   "dst": "...bon. Peut-être humain pas si mauvais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3032,7 +3032,7 @@
   },
   "All Roads to Peace#302": {
    "src": "Human want talk Arrai-Veretel. In hut. Follow.",
-   "dst": "",
+   "dst": "Humain vouloir parler Arrai-Veretel. Dans hutte. Suivre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3042,7 +3042,7 @@
   },
   "All Roads to Peace#303": {
    "src": "Arrai-Veretel! Human try help orc around fortress. Want talk.",
-   "dst": "",
+   "dst": "Arrai-Veretel! Humain essayer aider orques autour forteresse. Vouloir parler.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3052,7 +3052,7 @@
   },
   "All Roads to Peace#304": {
    "src": "Up to human now. Will not help more- choice is up to Arrai-Veretel.",
-   "dst": "",
+   "dst": "Maintenant, à humain de jouer. Pas aider plus- choix à Arrai-Veretel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3062,7 +3062,7 @@
   },
   "All Roads to Peace#305": {
    "src": "Hmh. Zuett spoke about you. So you are human trying to end war?",
-   "dst": "",
+   "dst": "Hmh. Zuett parler de toi. Donc toi humain qui essayer finir guerre?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3072,7 +3072,7 @@
   },
   "All Roads to Peace#306": {
    "src": "!!!",
-   "dst": "",
+   "dst": "!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3082,7 +3082,7 @@
   },
   "All Roads to Peace#307": {
    "src": "YOU! You human who kill Rai-Poxper! You human who attack other fort!",
-   "dst": "",
+   "dst": "TOI! Toi humain qui tuer Rai-Poxper! Toi humain qui attaquer autre fort!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3092,7 +3092,7 @@
   },
   "All Roads to Peace#308": {
    "src": "Need talk with Zuett again. You follow. And you stay quiet. Understand?",
-   "dst": "",
+   "dst": "Besoin reparler avec Zuett. Toi suivre. Et toi silence. Compris?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3102,7 +3102,7 @@
   },
   "All Roads to Peace#309": {
    "src": "Follow Arrai-Veretel into the meeting room at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Suivez Arrai-Veretel jusqu'à la salle de réunion en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3112,7 +3112,7 @@
   },
   "All Roads to Peace#310": {
    "src": "ZUETT! You say human want peace. Do you know who human is?!",
-   "dst": "",
+   "dst": "ZUETT! Toi dire humain vouloir paix. Toi savoir qui être humain?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3122,7 +3122,7 @@
   },
   "All Roads to Peace#311": {
    "src": "Whuh- This good human! Heal Ressinter-",
-   "dst": "",
+   "dst": "Whuh- Ça bon humain! Soigner Ressinter-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3132,7 +3132,7 @@
   },
   "All Roads to Peace#312": {
    "src": "Human ALSO kill Rai-Poxper!",
-   "dst": "",
+   "dst": "Humain AUSSI tuer Rai-Poxper!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3142,7 +3142,7 @@
   },
   "All Roads to Peace#313": {
    "src": "Wha- no-",
-   "dst": "",
+   "dst": "Qu- non-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3152,7 +3152,7 @@
   },
   "All Roads to Peace#314": {
    "src": "Human ALSO attack other fort! Many orcs dead because this human!",
-   "dst": "",
+   "dst": "Humain AUSSI attaquer autre fort! Beaucoup orques morts à cause humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3162,7 +3162,7 @@
   },
   "All Roads to Peace#315": {
    "src": "Only because villager-",
-   "dst": "",
+   "dst": "Seulement car villageois-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3172,7 +3172,7 @@
   },
   "All Roads to Peace#316": {
    "src": "Human attack! Rai-Poxper take rightful toll for break cease-fire, but not war yet. Take magic axe from Villager city while magic power gone bad.",
-   "dst": "",
+   "dst": "Humain attaquer! Rai-Poxper prendre juste tribut pour trêve rompue, mais pas encore guerre. Prendre hache magique dans cité villageoise pendant magie détraquée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3182,7 +3182,7 @@
   },
   "All Roads to Peace#317": {
    "src": "Villager and human attack first, but attack orc for take rightful toll like orc attack first! And human kill Rai-Poxper!",
-   "dst": "",
+   "dst": "Villageois et humain attaquer d'abord, mais attaquer orque pour juste tribut comme si orque attaquer d'abord! Et humain tuer Rai-Poxper!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3192,7 +3192,7 @@
   },
   "All Roads to Peace#318": {
    "src": "Then same human who kill Rai-Poxper come, kill bathing orc, break in fort, kill many Centerworld orc! Villager start, orc finish, villager no respect end!",
-   "dst": "",
+   "dst": "Puis même humain venir, tuer orque au bain, entrer dans fort, tuer beaucoup orques Centerworld! Villageois commencer, orque finir, villageois pas respecter fin!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3202,7 +3202,7 @@
   },
   "All Roads to Peace#319": {
    "src": "Yes, human tricked by Villager. But human still attack orc. Human still kill many orc! Human say want peace now?",
-   "dst": "",
+   "dst": "Oui, humain trompé par Villageois. Mais humain attaquer orque quand même. Tuer beaucoup orques! Et maintenant vouloir paix?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3212,7 +3212,7 @@
   },
   "All Roads to Peace#320": {
    "src": "What human done? Hunt boar? Help healer? Done busywork for other orc? That not make up for life lost.",
-   "dst": "",
+   "dst": "Humain faire quoi? Chasser sanglier? Aider guérisseur? Faire corvées pour orques? Ça pas compenser vies perdues.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3222,7 +3222,7 @@
   },
   "All Roads to Peace#321": {
    "src": "...Arrai-Veretel right. What human done good, not make up for that. But, human still trying. If one human try to stop, more human can try to stop.",
-   "dst": "",
+   "dst": "...Arrai-Veretel avoir raison. Bien fait par humain, pas compenser ça. Mais humain continuer essayer. Si un humain essayer arrêter, plus humains pouvoir essayer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3232,7 +3232,7 @@
   },
   "All Roads to Peace#322": {
    "src": "Maybe. Maybe more orc be dead instead. Zuett, you cannot say what would happened. Wishful thinking, and I wish would happened too!",
-   "dst": "",
+   "dst": "Peut-être. Peut-être plus orques morts à la place. Zuett, toi pas pouvoir dire ce qui arriver. Doux rêve, et moi aussi rêver ça!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3242,7 +3242,7 @@
   },
   "All Roads to Peace#323": {
    "src": "But with unfinished Wynnic, orc cannot talk well. YOU try learn language when idiot killing you! All sound stupid, and no time to learn for most!",
-   "dst": "",
+   "dst": "Mais avec langue de Wynn à moitié apprise, orque mal parler. TOI apprendre langue quand idiot te tuer! Tout sonner stupide, et pas temps apprendre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3252,7 +3252,7 @@
   },
   "All Roads to Peace#324": {
    "src": "But human listen to Zuett, even if not sound smart. Arrai-Veretel not respect human. Justified, but still cause problem.",
-   "dst": "",
+   "dst": "Mais humain écouter Zuett, même si pas parler intelligent. Arrai-Veretel pas respecter humain. Justifié, mais causer problème quand même.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3262,7 +3262,7 @@
   },
   "All Roads to Peace#325": {
    "src": "Grrh. FINE! Zuett want peace so bad? Human want peace so bad? Human spilled much orc blood. Only way out of war, is through. We will battle.",
-   "dst": "",
+   "dst": "Grrh. BIEN! Zuett vouloir paix tant que ça? Humain aussi? Humain verser beaucoup sang orque. Seule sortie de guerre, la traverser. Nous combattre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3272,7 +3272,7 @@
   },
   "All Roads to Peace#326": {
    "src": "No tricks. No backup. Nothing but battle between human and myself. If human can fight in ritual arena and win, then will listen.",
-   "dst": "",
+   "dst": "Pas de ruse. Pas de renfort. Rien que combat entre humain et moi. Si humain combattre dans arène rituelle et gagner, alors écouter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3282,7 +3282,7 @@
   },
   "All Roads to Peace#327": {
    "src": "Try threaten us with iron corpse machine! So, battle will happen. Will prepare ritual and gather crowd. Prepare, human.",
-   "dst": "",
+   "dst": "Essayer menacer nous avec machine-cadavre de fer! Donc, combat avoir lieu. Préparer rituel et rassembler foule. Prépare-toi, humain.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3292,7 +3292,7 @@
   },
   "All Roads to Peace#328": {
    "src": "Defeat Arrai-Veretel in combat in the arena below the orcish meeting room.",
-   "dst": "",
+   "dst": "Battez Arrai-Veretel dans l'arène sous la salle de réunion orque.",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3302,7 +3302,7 @@
   },
   "All Roads to Peace#329": {
    "src": "May the earth herself hear us... Though we do not speak as we once have...",
-   "dst": "",
+   "dst": "Que la terre elle-même nous entende... Même si nous ne parlons plus comme jadis...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3312,7 +3312,7 @@
   },
   "All Roads to Peace#330": {
    "src": "We, as humble inhabitants of the land she has gifted us, pledge this show in honor of her.",
-   "dst": "",
+   "dst": "Nous, humbles habitants de la terre qu'elle nous a offerte, lui dédions ce combat en son honneur.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3322,7 +3322,7 @@
   },
   "All Roads to Peace#331": {
    "src": "May she be sated, grow healthy, and honor us in turn for this offering.",
-   "dst": "",
+   "dst": "Puisse-t-elle être rassasiée, prospérer, et nous honorer pour cette offrande.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3332,7 +3332,7 @@
   },
   "All Roads to Peace#332": {
    "src": "HMH! HAH!",
-   "dst": "",
+   "dst": "HMH! HAH!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3342,7 +3342,7 @@
   },
   "All Roads to Peace#333": {
    "src": "Now...begin!",
-   "dst": "",
+   "dst": "Maintenant...commencer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3352,7 +3352,7 @@
   },
   "All Roads to Peace#334": {
    "src": "HMH! Human tough. Fine- Will take battle seriously now!",
-   "dst": "",
+   "dst": "HMH! Humain coriace. Bien- Combattre sérieusement maintenant!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3362,7 +3362,7 @@
   },
   "All Roads to Peace#335": {
    "src": "For sake of those killed before me, I will not lose!",
-   "dst": "",
+   "dst": "Pour ceux tombés avant moi, je ne perdrai pas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3372,7 +3372,7 @@
   },
   "All Roads to Peace#336": {
    "src": "Ghh...hrrgh...",
-   "dst": "",
+   "dst": "Ghh...hrrgh...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3382,7 +3382,7 @@
   },
   "All Roads to Peace#337": {
    "src": "Arrai-Veretel...lose?!",
-   "dst": "",
+   "dst": "Arrai-Veretel...perdre?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3392,7 +3392,7 @@
   },
   "All Roads to Peace#338": {
    "src": "No, no! Arrai-Veretel hurt bad! Human try kill Arrai-Veretel!!",
-   "dst": "",
+   "dst": "Non, non! Arrai-Veretel très blessée! Humain essayer tuer Arrai-Veretel!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3402,7 +3402,7 @@
   },
   "All Roads to Peace#339": {
    "src": "AM FINE! Stupid, idiot! No interrupting while ritual fight!",
-   "dst": "",
+   "dst": "MOI BIEN! Stupide, idiot! Pas interrompre pendant combat rituel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3412,7 +3412,7 @@
   },
   "All Roads to Peace#340": {
    "src": "Human win. Hate to say, but human win. Not even try kill me.",
-   "dst": "",
+   "dst": "Humain gagner. Détester dire, mais humain gagner. Même pas essayer tuer moi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3422,7 +3422,7 @@
   },
   "All Roads to Peace#341": {
    "src": "Give time. Battle hard-fought- Need to wind down. Wait in meeting room. Will...discuss terms.",
-   "dst": "",
+   "dst": "Donner temps. Combat difficile- Besoin récupérer. Attendre dans salle de réunion. Discuter...conditions.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3432,7 +3432,7 @@
   },
   "All Roads to Peace#342": {
    "src": "Feel like insult to stop war we did not start. But, gave promise. Human strong. Still not make up for so much death...",
-   "dst": "",
+   "dst": "Sentir comme insulte arrêter guerre que nous pas commencer. Mais promesse donnée. Humain fort. Toujours pas compenser tant de morts...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3442,7 +3442,7 @@
   },
   "All Roads to Peace#343": {
    "src": "But human trying. Really, really trying. Will admit, did not know about human killing all when saw... Still. If war ending, deaths also ending.",
-   "dst": "",
+   "dst": "Mais humain essayer. Vraiment, vraiment essayer. Admettre, pas savoir humain tuer tous quand voir... Quand même. Si guerre finir, morts aussi finir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3452,7 +3452,7 @@
   },
   "All Roads to Peace#344": {
    "src": "Will stop attacking cities. Orcs still defend selves! Will not turn bellies for spears. Still not trust villagers- only give cease-fire.",
-   "dst": "",
+   "dst": "Arrêter attaquer cités. Orques toujours se défendre! Pas offrir ventre aux lances. Toujours pas confiance villageois- seulement donner cessez-le-feu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3462,7 +3462,7 @@
   },
   "All Roads to Peace#345": {
    "src": "Will say- many orc hold grudge, in plains. Many orc probably still attack. If so, human also can defend self. But, human should avoid fight there.",
-   "dst": "",
+   "dst": "Prévenir- beaucoup orques garder rancune, dans plaines. Beaucoup orques sûrement encore attaquer. Si oui, humain pouvoir se défendre. Mais humain éviter combat là-bas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3472,7 +3472,7 @@
   },
   "All Roads to Peace#346": {
    "src": "...if villager continue attack, will defend selves as before. Human, make sure villager know this.",
-   "dst": "",
+   "dst": "...si villageois continuer attaquer, se défendre comme avant. Humain, faire savoir ça à villageois.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3482,7 +3482,7 @@
   },
   "All Roads to Peace#347": {
    "src": "Mhm. Villager more stupid than human. Villager do many terrible thing. But endless war not help fix.",
-   "dst": "",
+   "dst": "Mhm. Villageois plus stupide qu'humain. Villageois faire choses terribles. Mais guerre sans fin pas réparer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3492,7 +3492,7 @@
   },
   "All Roads to Peace#348": {
    "src": "So Zuett not naive. Some things...cannot...be...forgiven. Villager treading line close.",
-   "dst": "",
+   "dst": "Donc Zuett pas naïf. Certaines choses...pas...pouvoir...être pardonnées. Villageois frôler limite.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3502,7 +3502,7 @@
   },
   "All Roads to Peace#349": {
    "src": "Human seen earth rotting in north. Have to have, since took fort in rotting place. Forest used to be living thing. Now dying. Dead in north-east.",
-   "dst": "",
+   "dst": "Humain voir terre pourrir au nord. Forcément, puisque prendre fort dans lieu pourri. Forêt avant être vivante. Maintenant mourir. Morte au nord-est.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3512,7 +3512,7 @@
   },
   "All Roads to Peace#350": {
    "src": "Start happening only few decades before Villager leave across ocean! Villager always run away from problem.",
-   "dst": "",
+   "dst": "Commencer seulement quelques décennies avant Villageois partir de l'autre côté océan! Villageois toujours fuir problème.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3522,7 +3522,7 @@
   },
   "All Roads to Peace#351": {
    "src": "And villager create own problems. Can only mean villager hurt earth, and make her die, slow and sure. Many orc used to live there.",
-   "dst": "",
+   "dst": "Et villageois créer propres problèmes. Donc villageois blesser terre, la faire mourir, lentement, sûrement. Beaucoup orques vivre là avant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3532,7 +3532,7 @@
   },
   "All Roads to Peace#352": {
    "src": "Even after villager move in, try kick orc out, many orc live there...then earth start to die. Has not come south- and we are south!",
-   "dst": "",
+   "dst": "Même après arrivée villageois, qui chasser orques, beaucoup orques vivre là...puis terre commencer mourir. Pas encore au sud- et nous au sud!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3542,7 +3542,7 @@
   },
   "All Roads to Peace#353": {
    "src": "But...that off-track. No more war. Give this to whatever villager need to see it.",
-   "dst": "",
+   "dst": "Mais...ça hors sujet. Plus de guerre. Donner ça à villageois qui devoir voir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3552,7 +3552,7 @@
   },
   "All Roads to Peace#354": {
    "src": "Show Captain Goruca the Cease-Fire Agreement.",
-   "dst": "",
+   "dst": "Montrez l'accord de cessez-le-feu au capitaine Goruca.",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3562,7 +3562,7 @@
   },
   "All Roads to Peace#355": {
    "src": "Human! You're back! That certainly took you a while. I suppose all things considered I shouldn't be surprised. Those orcs are tough.",
-   "dst": "",
+   "dst": "Humain! Vous voilà de retour! Vous en avez mis, du temps. Remarquez, vu les circonstances, ça ne devrait pas m'étonner. Ces orques sont coriaces.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3572,7 +3572,7 @@
   },
   "All Roads to Peace#356": {
    "src": "What's this? You actually managed to get the brutes to sign a ceasefire?! I was expecting you to come back with a bloody prize, not a signature!",
-   "dst": "",
+   "dst": "Qu'est-ce que c'est? Vous avez vraiment fait signer un cessez-le-feu à ces brutes?! Je m'attendais à un trophée sanglant, pas à une signature!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3582,7 +3582,7 @@
   },
   "All Roads to Peace#357": {
    "src": "Still, this is good! The terms are a bit more airtight than I'd prefer, but I suppose as long as they're out of our hair anything will do.",
-   "dst": "",
+   "dst": "Quoi qu'il en soit, c'est une bonne nouvelle! Les conditions sont plus strictes que je ne voudrais, mais tant qu'ils nous fichent la paix, ça me va.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3592,7 +3592,7 @@
   },
   "All Roads to Peace#358": {
    "src": "Hm? The orcs were talking about the decay up north? Not sure how that matters. It isn't like anyone knows what's causing it.",
-   "dst": "",
+   "dst": "Hm? Les orques parlaient de la Décadence au nord? Je ne vois pas le rapport. Personne ne sait ce qui la cause.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3602,7 +3602,7 @@
   },
   "All Roads to Peace#359": {
    "src": "I mean, have you heard the rumors flying from {p}? Saying witches are cursing the land, hah! Well, that's besides the point.",
-   "dst": "",
+   "dst": "Enfin, vous avez entendu les rumeurs qui viennent de {p}? Il paraît que des sorcières maudissent la terre, ha! Bref, là n'est pas la question.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3612,7 +3612,7 @@
   },
   "All Roads to Peace#360": {
    "src": "Here- your reward. I'd intended on giving you the mask so you could try and sneak in like one of them, but I...well, I forgot about it til you'd already left.",
-   "dst": "",
+   "dst": "Tenez- votre récompense. Je comptais vous donner le masque pour vous infiltrer parmi eux, mais... eh bien, je l'ai oublié jusqu'à votre départ.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3622,7 +3622,7 @@
   },
   "All Roads to Peace#361": {
    "src": "But I DID magically fortify it into a potent piece of gear instead! So it ought to serve you well. We thank you for your service, human!",
-   "dst": "",
+   "dst": "Mais je l'ai BIEN renforcé par magie pour en faire un équipement redoutable! Il devrait vous être utile. Merci pour vos services, humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3632,7 +3632,7 @@
   },
   "All Roads to Peace#362": {
    "src": "...A CATAPULT! Since when did orcs have the knowhow to make a CATAPULT?!",
-   "dst": "",
+   "dst": "...UNE CATAPULTE! Depuis quand les orques savent fabriquer une CATAPULTE?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3642,7 +3642,7 @@
   },
   "All Roads to Peace#363": {
    "src": "Nonono, you don't understand- a CATAPULT?! Seriously, I can't get over this! Orc catapult! What's the world coming to?!",
-   "dst": "",
+   "dst": "Non non non, vous ne comprenez pas- une CATAPULTE?! Sérieusement, je n'en reviens pas! Une catapulte orque! Où va le monde?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3652,7 +3652,7 @@
   },
   "All Roads to Peace#364": {
    "src": "Obviously it seems we need some backup, soldier. Would you mind coming along to the medical tent with me?",
-   "dst": "",
+   "dst": "Visiblement, il nous faut du renfort, soldat. Ça vous dérangerait de m'accompagner à la tente médicale?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3662,7 +3662,7 @@
   },
   "All Roads to Peace#365": {
    "src": "ORC CATAPULT! I'm telling you, Captain! They crushed our guard golems with huge honking boulders! What are we supposed to do against that?!",
-   "dst": "",
+   "dst": "CATAPULTE ORQUE! Je vous le dis, capitaine! Ils ont écrasé nos golems de garde avec d'énormes rochers! Qu'est-ce qu'on est censés faire contre ça?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3672,7 +3672,7 @@
   },
   "All Roads to Peace#366": {
    "src": "He's right, captain. After the golems were crushed, the orcs spilled out from the fortress. If we didn't retreat we would've been killed, with just the four of us.",
-   "dst": "",
+   "dst": "Il a raison, capitaine. Une fois les golems écrasés, les orques ont déferlé de la forteresse. Sans retraite, on se serait fait tuer, à quatre seulement.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3682,7 +3682,7 @@
   },
   "All Roads to Peace#367": {
    "src": "Human! Let me give you the lowdown. Since you helped us reclaim the outpost up north, the orcs have gotten much more aggressive.",
-   "dst": "",
+   "dst": "Humain! Je vous mets au parfum. Depuis que vous nous avez aidés à reprendre l'avant-poste du nord, les orques sont devenus bien plus agressifs.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3692,7 +3692,7 @@
   },
   "All Roads to Peace#368": {
    "src": "And that's where you come in, soldier. We need you to go to the orc fortress and break through their line of defenses. Maybe if we show them we can equal their force, they'll listen, right?",
-   "dst": "",
+   "dst": "Et c'est là que vous intervenez, soldat. Allez à la forteresse orque et percez leur ligne de défense. Si on leur montre qu'on peut égaler leur force, ils écouteront peut-être, non?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3702,7 +3702,7 @@
   },
   "All Roads to Peace#369": {
    "src": "One against four... Human not beat even one. Ismikku! Hulve!",
-   "dst": "",
+   "dst": "Un contre quatre... Humain pas battre même un seul. Ismikku! Hulve!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3712,7 +3712,7 @@
   },
   "All Roads to Peace#370": {
    "src": "Mmh. Get up. Human! Get up! See human breathing, you awake!",
-   "dst": "",
+   "dst": "Mmh. Debout. Humain! Debout! Voir humain respirer, toi réveillé!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3722,7 +3722,7 @@
   },
   "All Roads to Peace#371": {
    "src": "Anyway. Why you here? Why now? Give me good reason. Because kill orcs for \"peace\"?",
-   "dst": "",
+   "dst": "Bref. Pourquoi toi ici? Pourquoi maintenant? Bonne raison. Parce que tuer orques pour la \"paix\"?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3732,7 +3732,7 @@
   },
   "All Roads to Peace#372": {
    "src": "[!] An Elite Boar has been spotted. The hunt begins!",
-   "dst": "",
+   "dst": "[!] Un Elite Boar a été repéré. Que la chasse commence!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3742,7 +3742,7 @@
   },
   "All Roads to Peace#373": {
    "src": "[!] The Elite Boar can be identified by the particles above it's head.",
-   "dst": "",
+   "dst": "[!] On reconnaît l'Elite Boar aux particules au-dessus de sa tête.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3752,7 +3752,7 @@
   },
   "All Roads to Peace#374": {
    "src": "[!] The boars will try to hide in the bushes around the hunting grounds.",
-   "dst": "",
+   "dst": "[!] Les sangliers vont tenter de se cacher dans les buissons autour du terrain de chasse.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3762,7 +3762,7 @@
   },
   "All Roads to Peace#375": {
    "src": "[!] Pay attention to what bush the Elite Boar is hiding in and give that bush a rustle with right-click to get the boars out of their hiding spots.",
-   "dst": "",
+   "dst": "[!] Repérez dans quel buisson se cache l'Elite Boar et secouez-le d'un clic droit pour faire sortir les sangliers de leur cachette.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3772,7 +3772,7 @@
   },
   "All Roads to Peace#376": {
    "src": "...hm. ... ... ...can respect human strength. Can hunt spineback, mean strong.",
-   "dst": "",
+   "dst": "...hm. ... ... ...pouvoir respecter force d'humain. Chasser dos-épineux, vouloir dire fort.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3782,7 +3782,7 @@
   },
   "All Roads to Peace#377": {
    "src": "!! Ressinter only healer! Zuett want be healer, Creinu want be healer, but not!",
-   "dst": "",
+   "dst": "!! Ressinter seul soigneur! Zuett vouloir soigner, Creinu vouloir soigner, mais non!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3798,7 +3798,7 @@
   },
   "All Roads to Peace#378": {
    "src": "Hm... HM!! Human, uh, human good healer! Heal own injury with medicine! Human will help!",
-   "dst": "",
+   "dst": "Hm... HM!! Humain, euh, humain bon guérisseur! Soigner propre blessure avec remède! Humain va aider!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3808,7 +3808,7 @@
   },
   "All Roads to Peace#379": {
    "src": "The book depicts a tall, vine-like plant with red buds.",
-   "dst": "",
+   "dst": "Le livre montre une grande plante grimpante aux bourgeons rouges.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3818,7 +3818,7 @@
   },
   "All Roads to Peace#380": {
    "src": "The illustration shows a body with splotchy red patches, and seems to depict pulped buds being applied to them.",
-   "dst": "",
+   "dst": "L'illustration montre un corps couvert de plaques rouges, sur lesquelles on semble appliquer des bourgeons écrasés.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3828,7 +3828,7 @@
   },
   "All Roads to Peace#381": {
    "src": "There's a picture of fire on the skin...? Is it trying to say that sweetgale helps heal inflammation?",
-   "dst": "",
+   "dst": "Il y a un dessin de feu sur la peau...? Ça voudrait dire que le myrte des marais aide à soigner l'inflammation?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3838,7 +3838,7 @@
   },
   "All Roads to Peace#382": {
    "src": "Another diagram shows grubs on the body, and seems to show that applying the pulped buds kills the bugs? That's what the big red X over the grub implies...",
-   "dst": "",
+   "dst": "Un autre schéma montre des larves sur le corps, et semble indiquer que les bourgeons écrasés tuent les bestioles? C'est ce que suggère le gros X rouge sur la larve...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3848,7 +3848,7 @@
   },
   "All Roads to Peace#383": {
    "src": "Look up Yarrow.",
-   "dst": "",
+   "dst": "Chercher l'achillée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3858,7 +3858,7 @@
   },
   "All Roads to Peace#384": {
    "src": "The book depicts large groups of flowers in various colors, but primarily yellow.",
-   "dst": "",
+   "dst": "Le livre montre de grandes grappes de fleurs de couleurs variées, surtout jaunes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3868,7 +3868,7 @@
   },
   "All Roads to Peace#385": {
    "src": "Seems like yarrow can do a lot- there's a lot of disparate illustrations. One depicts a sneezing orc with two yarrow plants pointing at it, and the sneezing stopping.",
-   "dst": "",
+   "dst": "L'achillée semble servir à beaucoup de choses: les illustrations sont très variées. L'une montre un orque qui éternue, deux plants d'achillée pointés vers lui, puis les éternuements cessent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3878,7 +3878,7 @@
   },
   "All Roads to Peace#386": {
    "src": "A similar illustration shows an orc that appears to be having stomach cramps, if its hands being crossed over its stomach is any indication, with two yarrow plants pointed at it.",
-   "dst": "",
+   "dst": "Une illustration semblable montre un orque qui semble avoir des crampes d'estomac, à en juger par ses mains croisées sur le ventre, avec deux plants d'achillée pointés vers lui.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3888,7 +3888,7 @@
   },
   "All Roads to Peace#387": {
    "src": "The third one shows an orc seemingly cut up, with red droplets coming off it. Again, two yarrow plants are pointed at it, and the next picture shows the cuts and droplets gone.",
-   "dst": "",
+   "dst": "La troisième montre un orque apparemment tailladé, d'où tombent des gouttes rouges. Là encore, deux plants d'achillée sont pointés vers lui, et sur l'image suivante, coupures et gouttes ont disparu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3898,7 +3898,7 @@
   },
   "All Roads to Peace#388": {
    "src": "Look up Chamomile.",
-   "dst": "",
+   "dst": "Chercher la camomille.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3908,7 +3908,7 @@
   },
   "All Roads to Peace#389": {
    "src": "The book depicts small, dainty flowers with white petals.",
-   "dst": "",
+   "dst": "Le livre montre de petites fleurs délicates aux pétales blancs.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3918,7 +3918,7 @@
   },
   "All Roads to Peace#390": {
    "src": "There's a detailed picture of the plant, with arrows pointing to multiple different illustrated orcs each showing different things.",
-   "dst": "",
+   "dst": "Il y a un dessin détaillé de la plante, avec des flèches pointant vers plusieurs orques illustrés, chacun montrant quelque chose de différent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3928,7 +3928,7 @@
   },
   "All Roads to Peace#391": {
    "src": "One orc is shown to be agitated, and then subsequently sleeping. Another is...shown with red patches on the skin, and fire next to it, which is replaced with water droplets in the next drawing. The red patches are gone.",
-   "dst": "",
+   "dst": "Un orque est d'abord agité, puis endormi. Un autre est... dessiné avec des plaques rouges sur la peau et du feu à côté, remplacé par des gouttes d'eau sur le dessin suivant. Les plaques rouges ont disparu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3938,7 +3938,7 @@
   },
   "All Roads to Peace#392": {
    "src": "The last one shows various cuts and gashes on a third orc that's emitting red droplets, and then smaller cuts without any red drops on the next depiction...",
-   "dst": "",
+   "dst": "Le dernier montre diverses coupures et entailles sur un troisième orque d'où tombent des gouttes rouges, puis des coupures plus petites, sans gouttes, sur l'image suivante...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3948,7 +3948,7 @@
   },
   "All Roads to Peace#393": {
    "src": "...but the next page is showing an orc with X's over its eyes, and arrows from multiple chamomile plants pointing to it. Does that mean too much chamomile is bad?",
-   "dst": "",
+   "dst": "...mais la page suivante montre un orque avec des X sur les yeux, et des flèches allant de plusieurs plants de camomille vers lui. Trop de camomille serait donc mauvais?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3958,7 +3958,7 @@
   },
   "All Roads to Peace#394": {
    "src": "Look up Feverfew.",
-   "dst": "",
+   "dst": "Chercher la matricaire.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3968,7 +3968,7 @@
   },
   "All Roads to Peace#395": {
    "src": "The book depicts a shrub-like plant with white petals and buds.",
-   "dst": "",
+   "dst": "Le livre montre une plante buissonnante aux pétales et bourgeons blancs.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3978,7 +3978,7 @@
   },
   "All Roads to Peace#396": {
    "src": "It looks like this is good for healing a lot of things. The pictures show a sweating, feverish orc, one clutching its stomach, a female one clutching her stomach, and what can be assumed to be an orc with...a toothache?",
-   "dst": "",
+   "dst": "On dirait que ça soigne beaucoup de choses. Les dessins montrent un orque fiévreux en sueur, un autre qui se tient le ventre, une orque qui se tient le ventre, et ce qui semble être un orque avec... une rage de dents?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3988,7 +3988,7 @@
   },
   "All Roads to Peace#397": {
    "src": "Seems to imply that feverfew is good for dealing with all of those kinds of maladies.",
-   "dst": "",
+   "dst": "La matricaire serait donc efficace contre tous ces maux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3998,7 +3998,7 @@
   },
   "All Roads to Peace#398": {
    "src": "Look up Gingko Leaf.",
-   "dst": "",
+   "dst": "Chercher la feuille de ginkgo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4008,7 +4008,7 @@
   },
   "All Roads to Peace#399": {
    "src": "The bleeding seems to have slowed down a little bit, but the medicine orc is still badly injured. The balm must not have been effective. You'll have to make another one.",
-   "dst": "",
+   "dst": "Le saignement semble avoir un peu ralenti, mais l'orque des remèdes est toujours gravement blessé. Le baume n'a pas dû fonctionner. Il va falloir en préparer un autre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4018,7 +4018,7 @@
   },
   "All Roads to Peace#400": {
    "src": "Not know much about medicine yet. Medicine give to you, last one- Was made before. Know this though.",
-   "dst": "",
+   "dst": "Pas savoir beaucoup sur remèdes encore. Remède donné à toi, le dernier- Fait avant. Mais savoir ça.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4028,7 +4028,7 @@
   },
   "All Roads to Peace#401": {
    "src": "Ressinter bleeding bad. Find herb good for bleeding. Won't need more than two herb of type, too.",
-   "dst": "",
+   "dst": "Ressinter saigner beaucoup. Trouver herbe bonne pour saignement. Pas plus de deux herbes par sorte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4038,7 +4038,7 @@
   },
   "All Roads to Peace#402": {
    "src": "The book depicts broad, yellow-green leaves.",
-   "dst": "",
+   "dst": "Le livre montre de larges feuilles vert-jaune.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4048,7 +4048,7 @@
   },
   "All Roads to Peace#403": {
    "src": "There's an image of an orc with red droplets coming off it, and an arrow with a picture of a gingko leaf pointing at it- the arrow is crossed out. That could mean multiple things.",
-   "dst": "",
+   "dst": "On voit un orque d'où tombent des gouttes rouges, et une flèche ornée d'une feuille de ginkgo pointée vers lui; la flèche est barrée. Ça pourrait vouloir dire plusieurs choses.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4058,7 +4058,7 @@
   },
   "All Roads to Peace#404": {
    "src": "The next page shows a gingko leaf pointed at an illustration of a brain, and a similar arrow points from a frowning orc to a smiling one.",
-   "dst": "",
+   "dst": "La page suivante montre une feuille de ginkgo pointée vers le dessin d'un cerveau, et une flèche semblable va d'un orque renfrogné à un orque souriant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4068,7 +4068,7 @@
   },
   "All Roads to Peace#405": {
    "src": "So that means it's good for mood and mental health...and that it does something with bleeding, but you can't tell whether it would be good or bad for it.",
-   "dst": "",
+   "dst": "Donc c'est bon pour l'humeur et la santé mentale... et ça agit sur les saignements, mais impossible de dire si c'est en bien ou en mal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4078,7 +4078,7 @@
   },
   "All Roads to Peace#406": {
    "src": "Look up Pyrola.",
-   "dst": "",
+   "dst": "Chercher la pyrole.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4088,7 +4088,7 @@
   },
   "All Roads to Peace#407": {
    "src": "The book depicts red-orange flowering stalks, almost like cattails.",
-   "dst": "",
+   "dst": "Le livre montre des tiges fleuries rouge orangé, presque comme des massettes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4098,7 +4098,7 @@
   },
   "All Roads to Peace#408": {
    "src": "There's a large illustration of an orc with big purple blotches all over it, and next to it there's a similar illustration with orange splotches instead.",
-   "dst": "",
+   "dst": "Il y a une grande illustration d'un orque couvert de grosses taches violettes, et à côté, une illustration semblable avec des taches orange à la place.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4108,7 +4108,7 @@
   },
   "All Roads to Peace#409": {
    "src": "That implies that ground-up pyrola goes on there...probably depicting bruises.",
-   "dst": "",
+   "dst": "Il faudrait donc appliquer de la pyrole broyée là... sûrement sur des bleus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4118,7 +4118,7 @@
   },
   "All Roads to Peace#410": {
    "src": "Similar orange splotches are shown applied to what is clearly a cut, and the next illustration over shows the same cut having become smaller.",
-   "dst": "",
+   "dst": "Des taches orange semblables sont appliquées sur ce qui est clairement une coupure, et l'illustration suivante montre cette même coupure, devenue plus petite.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4128,7 +4128,7 @@
   },
   "All Roads to Peace#411": {
    "src": "Then there's illustrations of what look like...veins? There's a lot of orcish script next to it, so you can't make heads or tails of what that much could mean.",
-   "dst": "",
+   "dst": "Puis viennent des illustrations de ce qui ressemble à... des veines? Il y a beaucoup d'écriture orque à côté, impossible d'y comprendre quoi que ce soit.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4138,7 +4138,7 @@
   },
   "All Roads to Peace#412": {
    "src": "Look up Elderberry.",
-   "dst": "",
+   "dst": "Chercher la baie de sureau.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4148,7 +4148,7 @@
   },
   "All Roads to Peace#413": {
    "src": "The book depicts a short shrub covered in vibrant red berries on small stalks.",
-   "dst": "",
+   "dst": "Le livre montre un petit arbuste couvert de baies rouge vif sur de fines tiges.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4158,7 +4158,7 @@
   },
   "All Roads to Peace#414": {
    "src": "There are multiple illustrations of what look like sick orcs- sneezing and coughing shown in pictures.",
-   "dst": "",
+   "dst": "Il y a plusieurs illustrations de ce qui ressemble à des orques malades: éternuements et toux sont dessinés.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4168,7 +4168,7 @@
   },
   "All Roads to Peace#415": {
    "src": "One illustration shows what looks to be an orc in great pain, and arrows pointing from the elderberries to those figures.",
-   "dst": "",
+   "dst": "Une illustration montre ce qui semble être un orque qui souffre beaucoup, et des flèches allant des baies de sureau vers ces silhouettes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4178,7 +4178,7 @@
   },
   "All Roads to Peace#416": {
    "src": "Your best guess is that elderberries are good for healing mild illnesses, and maybe for dulling pain.",
-   "dst": "",
+   "dst": "Votre meilleure hypothèse: les baies de sureau soignent les maladies bénignes, et calment peut-être la douleur.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4188,7 +4188,7 @@
   },
   "All Roads to Peace#417": {
    "src": "Close the book.",
-   "dst": "",
+   "dst": "Fermer le livre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4198,7 +4198,7 @@
   },
   "All Roads to Peace#418": {
    "src": "The balm doesn't seem to have worked this time either. He's still bleeding badly. Maybe you can just...cover up all the cuts and hope for the best? Or maybe that's not a good idea.",
-   "dst": "",
+   "dst": "Le baume ne semble pas avoir marché cette fois non plus. Il saigne toujours beaucoup. Peut-être simplement... couvrir toutes les coupures et espérer le mieux? Ou peut-être pas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4208,7 +4208,7 @@
   },
   "All Roads to Peace#419": {
    "src": "Still no significant effect. The orc's breathing is getting shallower...",
-   "dst": "",
+   "dst": "Toujours aucun effet notable. La respiration de l'orque faiblit...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4218,7 +4218,7 @@
   },
   "All Roads to Peace#420": {
    "src": "... Agreed. We should get back to our tasks though.",
-   "dst": "",
+   "dst": "... D'accord. Mais nous devrions retourner à nos tâches.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4228,7 +4228,7 @@
   },
   "All Roads to Peace#421": {
    "src": "If she's worried about you just following orders, then if you go and help out some orcs on your own, Ureietun might change her mind.",
-   "dst": "",
+   "dst": "Si elle craint que vous ne fassiez qu'obéir aux ordres, aider quelques orques de votre propre chef pourrait faire changer d'avis Ureietun.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4238,7 +4238,7 @@
   },
   "All Roads to Peace#422": {
    "src": "There are lots of orcs around. Asking them if they need help should be simple enough.",
-   "dst": "",
+   "dst": "Il y a plein d'orques dans le coin. Leur demander s'ils ont besoin d'aide devrait être assez simple.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4248,7 +4248,7 @@
   },
   "All Roads to Peace#423": {
    "src": "Human stupid? I say no see Arrai-Veretel!",
-   "dst": "",
+   "dst": "Humain stupide? Moi dire pas voir Arrai-Veretel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4258,7 +4258,7 @@
   },
   "All Roads to Peace#424": {
    "src": "Suppose that's that, then- Fruludir has his package. Time to go back to Peloros.",
-   "dst": "",
+   "dst": "Bon, voilà qui est fait: Fruludir a son colis. Il est temps de retourner voir Peloros.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4268,7 +4268,7 @@
   },
   "All Roads to Peace#425": {
    "src": "Peloros train hard. Peloros work hard. Peloros work everyone hard, do everything hard.",
-   "dst": "",
+   "dst": "Peloros entraîner dur. Peloros travailler dur. Peloros faire bosser tous dur, tout faire dur.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4278,7 +4278,7 @@
   },
   "All Roads to Peace#426": {
    "src": "Heard that Peloros thinking of making more race spot.",
-   "dst": "",
+   "dst": "Entendu que Peloros penser faire plus de pistes de course.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4288,7 +4288,7 @@
   },
   "All Roads to Peace#427": {
    "src": "Maybe if war stop, then all orc can try run. Maybe human try run too.",
-   "dst": "",
+   "dst": "Si guerre finir, tous orques essayer courir. Humain aussi, peut-être.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4298,7 +4298,7 @@
   },
   "All Roads to Peace#428": {
    "src": "NO! Wrong! Say wrong, all wrong! Sound even stupider than normal!",
-   "dst": "",
+   "dst": "NON! Faux! Dire faux, tout faux! Sonner encore plus bête que d'habitude!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4308,7 +4308,7 @@
   },
   "All Roads to Peace#429": {
    "src": "Want human try again! Feel pain of good name in stupid language! SAY NAME!",
-   "dst": "",
+   "dst": "Vouloir humain réessayer! Sentir douleur de bon nom dans langue stupide! DIRE NOM!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4318,7 +4318,7 @@
   },
   "All Roads to Peace#430": {
    "src": "Supposed to learn human language for peace. Show orc good because big-nose grub say bad.",
-   "dst": "",
+   "dst": "Devoir apprendre langue humaine pour paix. Montrer orque bon, parce que larves à gros nez dire mauvais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4328,7 +4328,7 @@
   },
   "All Roads to Peace#431": {
    "src": "Idiot villager get human before orc, so human greet orc with weapon and death!",
-   "dst": "",
+   "dst": "Villageois idiots atteindre humain avant orque, alors humain saluer orque avec arme et mort!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4338,7 +4338,7 @@
   },
   "All Roads to Peace#432": {
    "src": "Now learn language but only in half, and name all stupid!",
-   "dst": "",
+   "dst": "Maintenant apprendre langue qu'à moitié, et noms tous stupides!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4348,7 +4348,7 @@
   },
   "All Roads to Peace#433": {
    "src": "His breathing is steady...better let him sleep.",
-   "dst": "",
+   "dst": "Il respire normalement... mieux vaut le laisser dormir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4358,7 +4358,7 @@
   },
   "All Roads to Peace#434": {
    "src": "Just need [{~} Carp Meat] from human. Could bring more if wanted, but will not force you.",
-   "dst": "",
+   "dst": "Juste besoin [{~} Carp Meat] de humain. Pouvoir apporter plus si vouloir, mais pas forcer toi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4368,7 +4368,7 @@
   },
   "All Roads to Peace#435": {
    "src": "All must work together to survive on earth. All have places, all have paths.",
-   "dst": "",
+   "dst": "Tous travailler ensemble pour survivre sur terre. Tous avoir place, tous avoir chemin.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4378,7 +4378,7 @@
   },
   "All Roads to Peace#436": {
    "src": "Many just take and not give. Villager, bugs, other human... You are different.",
-   "dst": "",
+   "dst": "Beaucoup prendre sans donner. Villageois, bestioles, autres humains... Toi différent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4388,7 +4388,7 @@
   },
   "All Roads to Peace#437": {
    "src": "Still not understand why helping so much. It good, but was not expecting from human.",
-   "dst": "",
+   "dst": "Toujours pas comprendre pourquoi aider autant. C'est bien, mais pas attendre ça de humain.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4398,7 +4398,7 @@
   },
   "All Roads to Peace#438": {
    "src": "Can say, happy to be wrong about this.",
-   "dst": "",
+   "dst": "Pouvoir dire, content avoir tort pour ça.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4408,7 +4408,7 @@
   },
   "All Roads to Peace#439": {
    "src": "Well, it seems like just trying to lift it won't work. Maybe casting some spells at it will dislodge it? Try casting multiple spells in a row.",
-   "dst": "",
+   "dst": "Bon, essayer de la soulever ne suffira pas. Peut-être qu'en lui lançant quelques sorts, elle se décrochera? Essayez de lancer plusieurs sorts d'affilée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4418,7 +4418,7 @@
   },
   "All Roads to Peace#440": {
    "src": "Human! Try move rock, use magic!",
-   "dst": "",
+   "dst": "Humain! Bouger rocher avec magie!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4428,7 +4428,7 @@
   },
   "All Roads to Peace#441": {
    "src": "Human can't find iron? There some in valley east of villager quarry, around villager with weapons.",
-   "dst": "",
+   "dst": "Humain pas trouver fer? Y en avoir dans vallée à l'est de carrière des villageois, près des villageois armés.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4438,7 +4438,7 @@
   },
   "All Roads to Peace#442": {
    "src": "Maybe someplace closer. If so, not know where. Need [{~} Iron Ingots] total though.",
-   "dst": "",
+   "dst": "Peut-être endroit plus près. Si oui, pas savoir où. Mais besoin [{~} Iron Ingots] en tout.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4448,7 +4448,7 @@
   },
   "All Roads to Peace#443": {
    "src": "Grrmb. Dumb Kreimu. Stupid Wynn language...Gavel language...pfeh. Whatever language. Not orc language.",
-   "dst": "",
+   "dst": "Grrmb. Kreimu bête. Langue de Wynn stupide... langue de Gavel... pfeh. Peu importe langue. Pas langue orque.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4458,7 +4458,7 @@
   },
   "All Roads to Peace#444": {
    "src": "Not just that- Learning to be medicine orc. She medicine orc too! Healer, brewer, herbalist, whatever. Too much same!",
-   "dst": "",
+   "dst": "Pas juste ça- Apprendre à être orque des remèdes. Elle orque des remèdes aussi! Guérisseuse, brasseuse, herboriste, peu importe. Trop pareil!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4468,7 +4468,7 @@
   },
   "All Roads to Peace#445": {
    "src": "Angry about it. Been distracting from training too. Human want help like help with Ressinter? Get Creinu- Crei...nu...not Kreimu...ingredient for medicine.",
-   "dst": "",
+   "dst": "En colère pour ça. Distraire de l'entraînement aussi. Humain vouloir aider comme Ressinter? Trouver pour Creinu- Crei...nu...pas Kreimu...ingrédient pour remède.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4478,7 +4478,7 @@
   },
   "All Roads to Peace#446": {
    "src": "[{~} Leafy Stalk]. Need to learn how to make much medicine out of little herb. Easy?",
-   "dst": "",
+   "dst": "[{~} Leafy Stalk]. Devoir apprendre faire beaucoup remède avec peu d'herbe. Facile?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4488,7 +4488,7 @@
   },
   "All Roads to Peace#447": {
    "src": "[{~}/{~}] Onluk [{~} Willow Planks] enough to make tower better, maybe. Willow strong wood! Can get?",
-   "dst": "",
+   "dst": "[{~}/{~}] Onluk [{~} Willow Planks] assez pour rendre tour meilleure, peut-être. Saule bois solide! Pouvoir trouver?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4504,7 +4504,7 @@
   },
   "All Roads to Peace#448": {
    "src": "Human welcome in Onluk tower two, but Onluk tower one better. Not safe to be on without fix tower though.",
-   "dst": "",
+   "dst": "Humain bienvenu sur tour deux d'Onluk, mais tour un d'Onluk meilleure. Mais pas sûr de monter sans réparer tour.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4514,7 +4514,7 @@
   },
   "All Roads to Peace#449": {
    "src": "If want go on Onluk tower one, bring [{~} Willow Planks] so Onluk can fix!",
-   "dst": "",
+   "dst": "Si vouloir monter sur tour un d'Onluk, apporter [{~} Willow Planks] pour réparer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4524,7 +4524,7 @@
   },
   "All Roads to Peace#450": {
    "src": "If bring up lots of arrow, maybe can shoot Freelancer. Like to run through sky. Cause problem for everyone, and Freelancer never actually die, just dissipate.",
-   "dst": "",
+   "dst": "Si monter beaucoup de flèches, peut-être tirer sur Freelancer. Aimer courir dans ciel. Causer problèmes à tous, et Freelancer jamais vraiment mourir, juste se dissiper.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4534,7 +4534,7 @@
   },
   "All Roads to Peace#451": {
    "src": "Fun time sometimes! Though sometimes Freelancer shoot back. That how Onluk tower one broke.",
-   "dst": "",
+   "dst": "Parfois bien rigoler! Mais parfois Freelancer tirer aussi. Comme ça que tour un d'Onluk cassée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4544,7 +4544,7 @@
   },
   "All Roads to Peace#452": {
    "src": "Must be some reason. Not sure if tired of fighting or some other reason, but if human feel like helping, can use some help.",
-   "dst": "",
+   "dst": "Devoir avoir une raison. Pas sûr si fatigué de combattre ou autre raison, mais si humain vouloir aider, aide bienvenue.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4554,7 +4554,7 @@
   },
   "All Roads to Peace#453": {
    "src": "Running low on blue dyes. Have plenty of the other colors, but need blue. Know where to get them, too.",
-   "dst": "",
+   "dst": "Plus beaucoup de teinture bleue. Avoir plein d'autres couleurs, mais besoin bleu. Savoir où trouver, aussi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4564,7 +4564,7 @@
   },
   "All Roads to Peace#454": {
    "src": "Can't find the cave? Is outside the villager bridge, with the pond and arch by it.",
-   "dst": "",
+   "dst": "Pas trouver la grotte? Être dehors du pont des villageois, avec mare et arche à côté.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4574,7 +4574,7 @@
   },
   "All Roads to Peace#455": {
    "src": "Get [{~} Terramarine Buds] so can make more dyes. Bright blue flowers, very dusty.",
-   "dst": "",
+   "dst": "Apporter [{~} Terramarine Buds] pour plus de teintures. Fleurs bleu vif, très poussiéreuses.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4584,7 +4584,7 @@
   },
   "All Roads to Peace#456": {
    "src": "You unlearn villager stupidity, maybe? In the middle of unlearning? Perhaps a sign from the earth things will heal. Perhaps not. We will see.",
-   "dst": "",
+   "dst": "Toi désapprendre bêtise villageoise, peut-être? En train de désapprendre? Peut-être signe de la terre que choses guérir. Peut-être pas. On verra.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4594,7 +4594,7 @@
   },
   "All Roads to Peace#457": {
    "src": "Mhm. Good! Sweetgale pulp make bugs avoid. Also make irritated skin soothe. Very good for bug bite.",
-   "dst": "",
+   "dst": "Mhm. Bien! Pulpe de myrte faire fuir bestioles. Aussi apaiser peau irritée. Très bon pour piqûres.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4604,7 +4604,7 @@
   },
   "All Roads to Peace#458": {
    "src": "Broken weapon parts not good alone, but still sharp. Can be used to make other weapons! Reuse good for earth- waste not!",
-   "dst": "",
+   "dst": "Morceaux d'arme cassée pas bons seuls, mais encore tranchants. Servir à faire autres armes! Réutiliser bon pour terre- pas gaspiller!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4614,7 +4614,7 @@
   },
   "All Roads to Peace#459": {
    "src": "What in the... HEY! Why's one of those big, scary humans in here?! Nunny, I thought you said we were gonna play a game!",
-   "dst": "",
+   "dst": "Qu'est-ce que... HÉ! Pourquoi y a un de ces grands humains effrayants ici?! Nunny, tu avais dit qu'on allait jouer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4624,7 +4624,7 @@
   },
   "All Roads to Peace#460": {
    "src": "We are. This human isn't actually so bad. Care to introduce yourselves?",
-   "dst": "",
+   "dst": "C'est le cas. Cet humain n'est pas si méchant. Vous vous présentez?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4634,7 +4634,7 @@
   },
   "All Roads to Peace#461": {
    "src": "Silly little goblins. Who goes and names themself after fruits?",
-   "dst": "",
+   "dst": "Petits gobelins idiots. Qui irait se donner un nom de fruit?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4644,7 +4644,7 @@
   },
   "All Roads to Peace#462": {
    "src": "Guess goblins are just sort of fickle like that. But again, you just have to find all four of them.",
-   "dst": "",
+   "dst": "Les gobelins sont sans doute capricieux comme ça. Mais encore une fois, il suffit de trouver les quatre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4654,7 +4654,7 @@
   },
   "All Roads to Peace#463": {
    "src": "None of them will have left the fortress, so it shouldn't take too long.",
-   "dst": "",
+   "dst": "Aucun d'eux n'aura quitté le fort, ça ne devrait pas être trop long.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4664,7 +4664,7 @@
   },
   "All Roads to Peace#464": {
    "src": "I hear most humans are bullies. It's why Veltu over at the Trunkstump camp was training us to be tougher.",
-   "dst": "",
+   "dst": "Il paraît que les humains sont des brutes. C'est pour ça que Veltu, du camp Trunkstump, nous endurcissait.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4674,7 +4674,7 @@
   },
   "All Roads to Peace#465": {
    "src": "I lost, so I don't care about the game anymore. I saw Blueberry over by that one orc who keeps trying to lift that rock.",
-   "dst": "",
+   "dst": "J'ai perdu, alors le jeu ne m'intéresse plus. J'ai vu Blueberry près de cet orque qui n'arrête pas d'essayer de soulever ce rocher.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4684,7 +4684,7 @@
   },
   "All Roads to Peace#466": {
    "src": "Ack! I saw Grapes on the hanging flag! Don't hurt me!",
-   "dst": "",
+   "dst": "Aïe! J'ai vu Grapes sur le drapeau! Me fais pas mal!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4694,7 +4694,7 @@
   },
   "All Roads to Peace#467": {
    "src": "Y'know, I probably shouldn't tell you this, but I could actually see Mango over in the other tower! She probably figured it was tough to get to.",
-   "dst": "",
+   "dst": "Tu sais, je ne devrais sûrement pas te le dire, mais je vois Mango dans l'autre tour! Elle a dû se dire que c'était dur d'y accéder.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4704,7 +4704,7 @@
   },
   "All Roads to Peace#468": {
    "src": "Uh... I wonder where Peaches went? I know he loves playing in the creeks at Waterway, so... Oh. I shouldn't spoil their spot.",
-   "dst": "",
+   "dst": "Euh... Où est passé Peaches? Je sais qu'il adore jouer dans les ruisseaux de Waterway, alors... Oh. Je ne devrais pas trahir sa cachette.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4714,7 +4714,7 @@
   },
   "All Roads to Peace#469": {
    "src": "Yeah, I guess it wasn't as boring as I thought.",
-   "dst": "",
+   "dst": "Ouais, c'était pas aussi ennuyeux que je pensais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4724,7 +4724,7 @@
   },
   "All Roads to Peace#470": {
    "src": "...Your shoe's unlaced, human.",
-   "dst": "",
+   "dst": "...Ton lacet est défait, humain.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4734,7 +4734,7 @@
   },
   "All Roads to Peace#471": {
    "src": "Not much else to say. Was fun, I suppose.",
-   "dst": "",
+   "dst": "Rien d'autre à dire. C'était drôle, je suppose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4744,7 +4744,7 @@
   },
   "All Roads to Peace#472": {
    "src": "Hey! Human! Human who hunt spineback boar and help heal healer!",
-   "dst": "",
+   "dst": "Hé! Humain! Humain qui chasser dos-épineux et aider soigner guérisseur!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4754,7 +4754,7 @@
   },
   "All Roads to Peace#473": {
    "src": "Not stupid human who go around kill other orc! Good human! Can trust. So trust, will ask for small thing.",
-   "dst": "",
+   "dst": "Pas humain stupide qui tuer autres orques! Bon humain! Pouvoir faire confiance. Alors confiance, demander petite chose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4764,7 +4764,7 @@
   },
   "All Roads to Peace#474": {
    "src": "Oh, human forget. Teiren tell again! Southeast of fort, past ridge, Teiren old camp.",
-   "dst": "",
+   "dst": "Oh, humain oublier. Teiren redire! Au sud-est du fort, après la crête, vieux camp de Teiren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4774,7 +4774,7 @@
   },
   "All Roads to Peace#475": {
    "src": "Forgot important thing there. Need make sure Peloros no run into firepit. So, you go get!",
-   "dst": "",
+   "dst": "Oublié chose importante là-bas. Vérifier Peloros pas courir dans foyer. Toi aller chercher!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4784,7 +4784,7 @@
   },
   "All Roads to Peace#476": {
    "src": "Lady, everything the wind touches is OURS! Not ta mention we're so close to the mountains we live on! This camp's our property, and that thing you got's part of the camp!",
-   "dst": "",
+   "dst": "Ma p'tite dame, tout ce que touche le vent est A NOUS! Sans compter qu'on est tout près des montagnes où on vit! Ce camp est à nous, et ce truc que t'as fait partie du camp!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4794,7 +4794,7 @@
   },
   "All Roads to Peace#477": {
    "src": "One so brazen as yourself could never share in the bounties of nature! Now begone, and leave me be!",
-   "dst": "",
+   "dst": "Un être si effronté ne partagera jamais les bienfaits de la nature! Hors d'ici, laisse-moi en paix!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4804,7 +4804,7 @@
   },
   "All Roads to Peace#478": {
    "src": "Will say, got thing from Earthpit. Was brought by Holehold gofer during party.",
-   "dst": "",
+   "dst": "Pour dire, chose venir d'Earthpit. Apportée par coursier de Holehold pendant la fête.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4814,7 +4814,7 @@
   },
   "All Roads to Peace#479": {
    "src": "Special thing! Kept for long time. Important, so was bad to forget.",
-   "dst": "",
+   "dst": "Chose spéciale! Gardée longtemps. Importante, alors mal d'oublier.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4824,7 +4824,7 @@
   },
   "All Roads to Peace#480": {
    "src": "Will maybe invite human to next party!",
-   "dst": "",
+   "dst": "Peut-être inviter humain à prochaine fête!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4834,7 +4834,7 @@
   },
   "All Roads to Peace#481": {
    "src": "Earth say what earth should be. Only need to listen to her.",
-   "dst": "",
+   "dst": "Terre dire ce que terre doit être. Seulement besoin de l'écouter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4844,7 +4844,7 @@
   },
   "All Roads to Peace#482": {
    "src": "Earth say rock should stay here, then rock stays here. Simple.",
-   "dst": "",
+   "dst": "Terre dire rocher rester ici, alors rocher reste ici. Simple.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4854,7 +4854,7 @@
   },
   "All Roads to Peace#483": {
    "src": "Hurts, seeing earth rot in north. Big-nose grubs should feel her pain too- they make earth sick!",
-   "dst": "",
+   "dst": "Mal de voir terre pourrir au nord. Larves à gros nez devoir sentir sa douleur- elles rendre terre malade!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4864,7 +4864,7 @@
   },
   "All Roads to Peace#484": {
    "src": "How can Zuett say human trying end war, when human START WAR AGAIN?!",
-   "dst": "",
+   "dst": "Comment Zuett dire humain essayer finir guerre, quand humain RECOMMENCER GUERRE?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4874,7 +4874,7 @@
   },
   "All Roads to Peace#485": {
    "src": "THAT. IS. THE. POINT!! Villager get human to fight for them! Cease-fire say Villager not attack orc. Then, human come over ocean. Try make peace- get attack!",
-   "dst": "",
+   "dst": "C'EST. TOUT. LE. PROBLÈME!! Villageois faire combattre humain pour eux! Trêve dire villageois pas attaquer orque. Puis humain traverser océan. Essayer paix- être attaqué!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4884,7 +4884,7 @@
   },
   "All Roads to Peace#486": {
    "src": "See human attack. Villager get human to attack, say lies to trick humans. Orcs defend self. Then, three Rai-orc die at Earthpit, Cliffhearth, Trunkstump goblin camp.",
-   "dst": "",
+   "dst": "Voir humain attaquer. Villageois pousser humain à attaquer, mentir pour tromper humains. Orques se défendre. Puis trois orques Rai mourir à Earthpit, Cliffhearth, camp gobelin de Trunkstump.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4894,7 +4894,7 @@
   },
   "All Roads to Peace#487": {
    "src": "Orc take human fort built in dying earth forest. Cannot know if human planning another attack! But not kill human. Hold human instead.",
-   "dst": "",
+   "dst": "Orque prendre fort humain bâti dans forêt de terre mourante. Impossible savoir si humain préparer autre attaque! Mais pas tuer humain. Garder humain plutôt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4904,7 +4904,7 @@
   },
   "All Roads to Peace#488": {
    "src": "War only killing us! If tried talk to human instead of go to sharpen spear and fight back, maybe human would learned faster than now.",
-   "dst": "",
+   "dst": "Guerre seulement nous tuer! Si essayer parler à humain au lieu d'aiguiser lance et riposter, peut-être humain apprendre plus vite que maintenant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4914,7 +4914,7 @@
   },
   "All Roads to Peace#489": {
    "src": "Listen. Zuett. I want war stop too. But you must understand the risk here. Cannot make decision lightly. Villager go back on word- see writing, find way around writing.",
-   "dst": "",
+   "dst": "Écoute. Zuett. Moi vouloir fin de guerre aussi. Mais toi devoir comprendre risque. Pas décider à la légère. Villageois revenir sur parole- voir écrit, trouver moyen contourner écrit.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4924,7 +4924,7 @@
   },
   "All Roads to Peace#490": {
    "src": "...that right. Prepare, human. Arrai-Veretel strongest orc. Strong in everything. Mind, body, power, spirit.",
-   "dst": "",
+   "dst": "...c'est vrai. Prépare-toi, humain. Arrai-Veretel orque la plus forte. Forte en tout. Esprit, corps, puissance, âme.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4934,7 +4934,7 @@
   },
   "All Roads to Peace#491": {
    "src": "Zuett still think human trying to be good. Still think can help stupid war end. Knock sense into Arrai-Veretel. Arena is down stairs.",
-   "dst": "",
+   "dst": "Zuett encore penser humain essayer être bon. Encore penser pouvoir aider finir guerre stupide. Ramener Arrai-Veretel à la raison. Arène en bas des marches.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4944,7 +4944,7 @@
   },
   "All Roads to Peace#492": {
    "src": "Before fight... Must perform ritual. This challenge need respect. I do not respect you, human, but will show respect anyway.",
-   "dst": "",
+   "dst": "Avant combat... Devoir faire rituel. Ce défi demander respect. Moi pas te respecter, humain, mais montrer respect quand même.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4954,7 +4954,7 @@
   },
   "All Roads to Peace#493": {
    "src": "Hmh. Human probably trying end war to start with. Just on wrong side. Can agree, Zuett.",
-   "dst": "",
+   "dst": "Hmh. Humain sûrement vouloir finir guerre depuis début. Juste mauvais camp. Être d'accord, Zuett.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4964,7 +4964,7 @@
   },
   "All Roads to Peace#494": {
    "src": "Give opportunity for human to learn and villager to show respect. They not attack, then will be open to more negotiation.",
-   "dst": "",
+   "dst": "Donner chance à humain d'apprendre et à villageois de montrer respect. Eux pas attaquer, alors ouverts à plus de négociation.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4974,7 +4974,7 @@
   },
   "All Roads to Peace#495": {
    "src": "Peace first step to heal. ...unless villager keep doing stupid thing. Then may need fight anyway.",
-   "dst": "",
+   "dst": "Paix premier pas pour guérir. ...sauf si villageois faire bêtises. Alors peut-être combattre quand même.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4984,7 +4984,7 @@
   },
   "All Roads to Peace#496": {
    "src": "That's the cease-fire agreement! You need to hand this to Captain Goruca- He should be waiting in {p} still.",
-   "dst": "",
+   "dst": "C'est l'accord de cessez-le-feu! Vous devez le remettre au capitaine Goruca- il devrait toujours attendre à {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4994,7 +4994,7 @@
   },
   "All Roads to Peace#497": {
    "src": "Maybe see human again soon. Hopefully in good spirit and on good faith.",
-   "dst": "",
+   "dst": "Peut-être revoir humain bientôt. Espérer avec bon esprit et bonne foi.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5004,7 +5004,7 @@
   },
   "All Roads to Peace#498": {
    "src": "Go on. Give to whatever villager need to see it. Let them learn.",
-   "dst": "",
+   "dst": "Aller. Donner à villageois qui devoir voir. Les laisser apprendre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5014,7 +5014,7 @@
   },
   "All Roads to Peace#499": {
    "src": "...Think new thoughts. Difficult ones, from now on.",
-   "dst": "",
+   "dst": "...Penser pensées nouvelles. Difficiles, désormais.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5024,7 +5024,7 @@
   },
   "All Roads to Peace#500": {
    "src": "Keep thinking too. Not just copy what see. Figure for self what good and bad.",
-   "dst": "",
+   "dst": "Continuer penser aussi. Pas copier ce que voir. Trouver soi-même bien et mal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5034,7 +5034,7 @@
   },
   "All Roads to Peace#501": {
    "src": "After the way they so savagely attacked our outpost and the way they've rebuffed our diplomacy squads, I wasn't expecting this.",
-   "dst": "",
+   "dst": "Vu la sauvagerie de leur attaque contre notre avant-poste et la façon dont ils ont repoussé nos diplomates, je ne m'attendais pas à ça.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5044,7 +5044,7 @@
   },
   "All Roads to Peace#502": {
    "src": "You know, that one guy was going off about that orc catapult or whatever the entire time you were gone. He's shut up now, but criminy!",
-   "dst": "",
+   "dst": "Ce type n'a pas cessé de râler sur cette catapulte orque ou je ne sais quoi pendant votre absence. Il s'est tu, mais bon sang!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -5054,7 +5054,7 @@
   },
   "All Roads to Peace#503": {
    "src": "The cuts are closing underneath the balm, and his breathing is becoming more steady. Did you do it...?",
-   "dst": "",
+   "dst": "Les coupures se referment sous le baume, et sa respiration devient plus régulière. Vous avez réussi...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",

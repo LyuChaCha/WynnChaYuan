@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "One Thousand Meters Under",
   "count": 127,
-  "translated": 0,
+  "translated": 127,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Lies das Schild \"Hilfe gesucht\" in {p} bei [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -18,7 +18,7 @@
   },
   "One Thousand Meters Under#002": {
    "src": "Talk to The Secretary at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sprich mit der Sekretärin bei [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -28,7 +28,7 @@
   },
   "One Thousand Meters Under#003": {
    "src": "Hello, welcome to Ynnos' facility.",
-   "dst": "",
+   "dst": "Hallo, willkommen in Ynnos' Labor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -38,7 +38,7 @@
   },
   "One Thousand Meters Under#004": {
    "src": "Oh, you're here about the job vacancy? Well, you're a little late.",
-   "dst": "",
+   "dst": "Oh, du kommst wegen der freien Stelle? Da bist du etwas spät dran.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -48,7 +48,7 @@
   },
   "One Thousand Meters Under#005": {
    "src": "There might still be time, just sneak in to the conference room behind me.",
-   "dst": "",
+   "dst": "Vielleicht reicht die Zeit noch, schleich dich einfach in den Konferenzraum hinter mir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -58,7 +58,7 @@
   },
   "One Thousand Meters Under#006": {
    "src": "Enter the conference room and listen to the scientist.",
-   "dst": "",
+   "dst": "Betritt den Konferenzraum und hör dem Wissenschaftler zu.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -68,7 +68,7 @@
   },
   "One Thousand Meters Under#007": {
    "src": "*Ahem* Welcome, everyone.",
-   "dst": "",
+   "dst": "*Räusper* Willkommen, alle zusammen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -78,7 +78,7 @@
   },
   "One Thousand Meters Under#008": {
    "src": "I am Ynnos, one of the leading scientists in Gavel. You're here because... Well you read the help wanted sign.",
-   "dst": "",
+   "dst": "Ich bin Ynnos, einer der führenden Wissenschaftler in Gavel. Ihr seid hier, weil... nun, ihr habt das Schild gelesen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -88,7 +88,7 @@
   },
   "One Thousand Meters Under#009": {
    "src": "Allow me to explain the situation we're in. It's a series of unfortunate events. I study the amazing properties of crystals and other geodes.",
-   "dst": "",
+   "dst": "Lasst mich unsere Lage erklären. Eine Reihe unglücklicher Ereignisse. Ich erforsche die erstaunlichen Eigenschaften von Kristallen und anderen Geoden.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -98,7 +98,7 @@
   },
   "One Thousand Meters Under#010": {
    "src": "I am funded by a private organization, however that seems to have stopped. So... We had to make cuts in the budget.",
-   "dst": "",
+   "dst": "Mich finanziert eine private Organisation, doch das hat anscheinend aufgehört. Also... mussten wir das Budget kürzen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -108,7 +108,7 @@
   },
   "One Thousand Meters Under#011": {
    "src": "One of these, was using cheaper rope. While moving the crystal across {p}, well, it snapped. The crystal fell.",
-   "dst": "",
+   "dst": "Eine Kürzung war billigeres Seil. Als wir den Kristall über {p} transportierten, nun, riss es. Der Kristall fiel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -118,7 +118,7 @@
   },
   "One Thousand Meters Under#012": {
    "src": "I can not stress the value of that crystal. It had many unique properties that are allowing me to understand why the {p} float the way they do.",
-   "dst": "",
+   "dst": "Ich kann den Wert dieses Kristalls nicht genug betonen. Seine einzigartigen Eigenschaften zeigten mir allmählich, warum {p} so schweben, wie sie es tun.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -128,7 +128,7 @@
   },
   "One Thousand Meters Under#013": {
    "src": "They hold the very key to restoring this land to being whole once more... But it's gone.",
-   "dst": "",
+   "dst": "Sie bergen den Schlüssel, um dieses Land wieder zu vereinen... Doch er ist weg.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -138,7 +138,7 @@
   },
   "One Thousand Meters Under#014": {
    "src": "Fortunately, I detected an impact. It's hit something down in the void. We're not sure what, however or how deep.",
-   "dst": "",
+   "dst": "Zum Glück habe ich einen Aufprall gemessen. Er ist unten in der Leere auf etwas gestoßen. Worauf und wie tief, wissen wir nicht.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -148,7 +148,7 @@
   },
   "One Thousand Meters Under#015": {
    "src": "Your mission will be to retrieve the crystal in a specially designed ship to withstand the void. We barely scraped it out of the budget, so try to bring it back in one piece.",
-   "dst": "",
+   "dst": "Eure Mission: den Kristall mit einem eigens für die Leere gebauten Schiff bergen. Wir konnten es uns kaum leisten, also bringt es heil zurück.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -158,7 +158,7 @@
   },
   "One Thousand Meters Under#016": {
    "src": "If you think you are not up for the challenge, leave now...",
-   "dst": "",
+   "dst": "Wer sich der Herausforderung nicht gewachsen fühlt, geht jetzt...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -168,7 +168,7 @@
   },
   "One Thousand Meters Under#017": {
    "src": "When you think you are ready, exit the room behind me and meet me at the dock as soon as possible.",
-   "dst": "",
+   "dst": "Wenn ihr bereit seid, verlasst den Raum hinter mir und trefft mich so schnell wie möglich am Dock.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -178,7 +178,7 @@
   },
   "One Thousand Meters Under#018": {
    "src": "Enter the submarine at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Steig bei [{~}, {~}, -{~}] in das U-Boot.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -188,7 +188,7 @@
   },
   "One Thousand Meters Under#019": {
    "src": "Wait for the submarine to arrive at the void islands.",
-   "dst": "",
+   "dst": "Warte, bis das U-Boot die Inseln der Leere erreicht.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -198,7 +198,7 @@
   },
   "One Thousand Meters Under#020": {
    "src": "Attention crew members.",
-   "dst": "",
+   "dst": "Achtung, Besatzung.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -208,7 +208,7 @@
   },
   "One Thousand Meters Under#021": {
    "src": "This is the ship's mechanic. There appears to be a fault on the lower deck. I request urgent assistance.",
-   "dst": "",
+   "dst": "Hier spricht der Mechaniker. Auf dem Unterdeck scheint es eine Störung zu geben. Ich bitte dringend um Hilfe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -218,7 +218,7 @@
   },
   "One Thousand Meters Under#022": {
    "src": "I wonder what the mechanic is doing?",
-   "dst": "",
+   "dst": "Was der Mechaniker wohl macht?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -228,7 +228,7 @@
   },
   "One Thousand Meters Under#023": {
    "src": "He has been screaming and crying for a while now. I hope everything is alright down there.",
-   "dst": "",
+   "dst": "Er schreit und heult schon eine ganze Weile. Hoffentlich ist da unten alles in Ordnung.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -238,7 +238,7 @@
   },
   "One Thousand Meters Under#024": {
    "src": "Ah finally! One of the air pipes has shattered, we need to patch it up ASAP!",
-   "dst": "",
+   "dst": "Ah, endlich! Eines der Luftrohre ist geplatzt, wir müssen es sofort flicken!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -248,7 +248,7 @@
   },
   "One Thousand Meters Under#025": {
    "src": "Quick, head into the room behind me and line up the white glass with the blue blocks. I'll control things from here!",
-   "dst": "",
+   "dst": "Schnell, geh in den Raum hinter mir und richte das weiße Glas an den blauen Blöcken aus. Ich steuere von hier!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -258,7 +258,7 @@
   },
   "One Thousand Meters Under#026": {
    "src": "Take a nap in the resting room.",
-   "dst": "",
+   "dst": "Mach ein Nickerchen im Ruheraum.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -268,7 +268,7 @@
   },
   "One Thousand Meters Under#027": {
    "src": "Oh wow, thanks for the help! You should head up to the resting room and take a nap before we arrive at the first island.",
-   "dst": "",
+   "dst": "Oh wow, danke für die Hilfe! Geh hoch in den Ruheraum und mach ein Nickerchen, bevor wir die erste Insel erreichen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -278,7 +278,7 @@
   },
   "One Thousand Meters Under#028": {
    "src": "Talk to the captain outside of the submarine.",
-   "dst": "",
+   "dst": "Sprich mit dem Kapitän außerhalb des U-Boots.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -288,7 +288,7 @@
   },
   "One Thousand Meters Under#029": {
    "src": "We have encountered out first island, {~}m down. Crew members, climb up the ladder and search the island for the crystal.",
-   "dst": "",
+   "dst": "Wir haben unsere erste Insel erreicht, {~}m tief. Besatzung, steigt die Leiter hinauf und sucht auf der Insel nach dem Kristall.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -298,7 +298,7 @@
   },
   "One Thousand Meters Under#030": {
    "src": "We've arrived at the next void island.",
-   "dst": "",
+   "dst": "Wir haben die nächste Insel der Leere erreicht.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -308,7 +308,7 @@
   },
   "One Thousand Meters Under#031": {
    "src": "The void islands are really different from Gavel... Or are we still even in Gavel?",
-   "dst": "",
+   "dst": "Die Inseln der Leere sind ganz anders als Gavel... Oder sind wir überhaupt noch in Gavel?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -318,7 +318,7 @@
   },
   "One Thousand Meters Under#032": {
    "src": "Anyway, let's explore the island, look for the crystal, and return to {p}!",
-   "dst": "",
+   "dst": "Wie auch immer, erkunden wir die Insel, suchen den Kristall und kehren nach {p} zurück!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -328,7 +328,7 @@
   },
   "One Thousand Meters Under#033": {
    "src": "Explore the island and look for the crystal.",
-   "dst": "",
+   "dst": "Erkunde die Insel und such nach dem Kristall.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -338,7 +338,7 @@
   },
   "One Thousand Meters Under#034": {
    "src": "Return to the submarine and continue your journey.",
-   "dst": "",
+   "dst": "Kehr zum U-Boot zurück und setz deine Reise fort.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -348,7 +348,7 @@
   },
   "One Thousand Meters Under#035": {
    "src": "Continue your journey.",
-   "dst": "",
+   "dst": "Setz deine Reise fort.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -358,7 +358,7 @@
   },
   "One Thousand Meters Under#036": {
    "src": "Oh my, what are these creatures!?",
-   "dst": "",
+   "dst": "Oh je, was sind das für Kreaturen!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -368,7 +368,7 @@
   },
   "One Thousand Meters Under#037": {
    "src": "They are attacking the windshield in the front room, it looks like it's about to break any moment!",
-   "dst": "",
+   "dst": "Sie greifen die Frontscheibe im vorderen Raum an, gleich bricht sie!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -378,7 +378,7 @@
   },
   "One Thousand Meters Under#038": {
    "src": "Quick, you! Come to the cockpit and press on the window to scare them off!",
-   "dst": "",
+   "dst": "Schnell, du! Komm ins Cockpit und drück gegen das Fenster, um sie zu verscheuchen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -388,7 +388,7 @@
   },
   "One Thousand Meters Under#039": {
    "src": "This is not good, the creatures destroyed part of the windshield.",
-   "dst": "",
+   "dst": "Nicht gut, die Kreaturen haben einen Teil der Frontscheibe zerstört.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -398,7 +398,7 @@
   },
   "One Thousand Meters Under#040": {
    "src": "We can't continue much longer with a broken windshield, we'll have to repair it at another island.",
-   "dst": "",
+   "dst": "Mit kaputter Frontscheibe kommen wir nicht mehr weit, wir müssen sie auf einer anderen Insel reparieren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -408,7 +408,7 @@
   },
   "One Thousand Meters Under#041": {
    "src": "Ynnos said the void has pockets of toxic gas... Go take a nap, I'll wake you up when we're there.",
-   "dst": "",
+   "dst": "Ynnos meinte, die Leere hat Taschen voller Giftgas... Mach ein Nickerchen, ich wecke dich, wenn wir da sind.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -418,7 +418,7 @@
   },
   "One Thousand Meters Under#042": {
    "src": "Head to the resting room.",
-   "dst": "",
+   "dst": "Geh in den Ruheraum.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -428,7 +428,7 @@
   },
   "One Thousand Meters Under#043": {
    "src": "Meet up with the captain outside the submarine.",
-   "dst": "",
+   "dst": "Triff dich mit dem Kapitän außerhalb des U-Boots.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -438,7 +438,7 @@
   },
   "One Thousand Meters Under#044": {
    "src": "Attention crew. We have arrived at the second island, {~}m down. We cannot progress without making some emergency repairs.",
-   "dst": "",
+   "dst": "Achtung, Besatzung. Wir haben die zweite Insel erreicht, {~}m tief. Ohne Notreparaturen kommen wir nicht weiter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -448,7 +448,7 @@
   },
   "One Thousand Meters Under#045": {
    "src": "Crew, please disembark and search resources to help repair the ship. We need glass and some kind of glue.",
-   "dst": "",
+   "dst": "Besatzung, geht bitte von Bord und sucht Material für die Reparatur. Wir brauchen Glas und irgendeine Art Kleber.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -458,7 +458,7 @@
   },
   "One Thousand Meters Under#046": {
    "src": "The void creatures did heavy damage to our craft, we need to repair the submarine.",
-   "dst": "",
+   "dst": "Die Kreaturen der Leere haben unser Schiff schwer beschädigt, wir müssen das U-Boot reparieren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -468,7 +468,7 @@
   },
   "One Thousand Meters Under#047": {
    "src": "I'm not sure what we'll find here, but we'll need some glue and glass...",
-   "dst": "",
+   "dst": "Ich weiß nicht, was wir hier finden, aber wir brauchen Kleber und Glas...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -478,7 +478,7 @@
   },
   "One Thousand Meters Under#048": {
    "src": "I doubt we'll find those exact things, so get resourceful!",
-   "dst": "",
+   "dst": "Genau das finden wir hier wohl kaum, also sei erfinderisch!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -488,7 +488,7 @@
   },
   "One Thousand Meters Under#049": {
    "src": "Bring me [{~} Sand Substitutes] and [{~} Glue Substitutes], that should be enough.",
-   "dst": "",
+   "dst": "Bring mir [{~} Sand Substitutes] und [{~} Glue Substitutes], das sollte reichen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -498,7 +498,7 @@
   },
   "One Thousand Meters Under#050": {
    "src": "Find [{~} Sand] and [{~} Glue] on the void island.",
-   "dst": "",
+   "dst": "Finde [{~} Sand] und [{~} Glue] auf der Insel der Leere.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -508,7 +508,7 @@
   },
   "One Thousand Meters Under#051": {
    "src": "Ech! What is this stuff? Well, this should do the trick.",
-   "dst": "",
+   "dst": "Igitt! Was ist das für Zeug? Na ja, das sollte gehen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -518,7 +518,7 @@
   },
   "One Thousand Meters Under#052": {
    "src": "The mechanic and I will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "",
+   "dst": "Der Mechaniker und ich fangen mit der Reparatur an. Das dauert, also geh ins U-Boot und ruh dich aus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -528,7 +528,7 @@
   },
   "One Thousand Meters Under#053": {
    "src": "We'll continue the trip when we've repaired the ship.",
-   "dst": "",
+   "dst": "Wir setzen die Reise fort, sobald das Schiff repariert ist.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -538,7 +538,7 @@
   },
   "One Thousand Meters Under#055": {
    "src": "This is the mechanic, requesting urgent assistance in the basement!",
-   "dst": "",
+   "dst": "Hier spricht der Mechaniker, ich bitte dringend um Hilfe im Unterdeck!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -548,7 +548,7 @@
   },
   "One Thousand Meters Under#056": {
    "src": "Toxic gas has leaked in through the submarine's vents, someone will have to manually close them.",
-   "dst": "",
+   "dst": "Giftgas ist durch die Lüftung ins U-Boot gedrungen, jemand muss sie von Hand schließen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -558,7 +558,7 @@
   },
   "One Thousand Meters Under#057": {
    "src": "I'll control things from here, someone get down to the lowest level and close those vents!",
-   "dst": "",
+   "dst": "Ich steuere von hier, jemand muss ganz nach unten und diese Lüftungen schließen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -568,7 +568,7 @@
   },
   "One Thousand Meters Under#058": {
    "src": "Attention crew. We have arrived at the next island {~}m down.",
-   "dst": "",
+   "dst": "Achtung, Besatzung. Wir haben die nächste Insel erreicht, {~}m tief.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -578,7 +578,7 @@
   },
   "One Thousand Meters Under#059": {
    "src": "Disembark and start the search for the crystal.",
-   "dst": "",
+   "dst": "Geht von Bord und beginnt mit der Suche nach dem Kristall.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -588,7 +588,7 @@
   },
   "One Thousand Meters Under#060": {
    "src": "Let's hope it's here... I don't know how much more void my body can handle.",
-   "dst": "",
+   "dst": "Hoffentlich ist er hier... Ich weiß nicht, wie viel Leere mein Körper noch aushält.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -598,7 +598,7 @@
   },
   "One Thousand Meters Under#061": {
    "src": "Look out! {u}, we'll build a bridge to the other island whilst you defend us from the mobs!",
-   "dst": "",
+   "dst": "Pass auf! {u}, wir bauen eine Brücke zur anderen Insel, und du hältst uns die Monster vom Leib!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -608,7 +608,7 @@
   },
   "One Thousand Meters Under#062": {
    "src": "Don't die back there!",
-   "dst": "",
+   "dst": "Stirb da hinten nicht!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -618,7 +618,7 @@
   },
   "One Thousand Meters Under#063": {
    "src": "Keep fighting! We're almost halfway to the other side!",
-   "dst": "",
+   "dst": "Kämpf weiter! Wir sind fast auf halbem Weg!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -628,7 +628,7 @@
   },
   "One Thousand Meters Under#064": {
    "src": "Almost done!",
-   "dst": "",
+   "dst": "Fast fertig!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -638,7 +638,7 @@
   },
   "One Thousand Meters Under#065": {
    "src": "Hey, the bridge is ready!",
-   "dst": "",
+   "dst": "Hey, die Brücke steht!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -648,7 +648,7 @@
   },
   "One Thousand Meters Under#066": {
    "src": "Return to the submarine and continue the journey.",
-   "dst": "",
+   "dst": "Kehr zum U-Boot zurück und setz die Reise fort.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -658,7 +658,7 @@
   },
   "One Thousand Meters Under#067": {
    "src": "We didn't find the crystal here either. Maybe it just fell in the void?",
-   "dst": "",
+   "dst": "Hier ist der Kristall auch nicht. Vielleicht ist er einfach in die Leere gefallen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -668,7 +668,7 @@
   },
   "One Thousand Meters Under#068": {
    "src": "No, it must have hit an island. The scientist said he detected a collision.",
-   "dst": "",
+   "dst": "Nein, er muss auf eine Insel gestürzt sein. Der Forscher hat einen Aufprall gemessen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -678,7 +678,7 @@
   },
   "One Thousand Meters Under#069": {
    "src": "Wait... What's that sound?",
-   "dst": "",
+   "dst": "Wartet... Was ist das für ein Geräusch?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -688,7 +688,7 @@
   },
   "One Thousand Meters Under#070": {
    "src": "The ropes are snapping! Quick! Abandon ship!",
-   "dst": "",
+   "dst": "Die Seile reißen! Schnell! Verlasst das Schiff!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -698,7 +698,7 @@
   },
   "One Thousand Meters Under#072": {
    "src": "Whoooooooo are you!?",
-   "dst": "",
+   "dst": "Weeeeeer bist du!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -708,7 +708,7 @@
   },
   "One Thousand Meters Under#073": {
    "src": "A...HUUUUUUMAN!? In the void?",
-   "dst": "",
+   "dst": "Ein... MEEEEENSCH!? In der Leere?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -718,7 +718,7 @@
   },
   "One Thousand Meters Under#074": {
    "src": "Someone dropped a boooook about you people! Warriors! Workers!",
-   "dst": "",
+   "dst": "Jemand hat ein Buuuuch über euch fallen lassen! Krieger! Arbeiter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -728,7 +728,7 @@
   },
   "One Thousand Meters Under#075": {
    "src": "Ah. Yoooou want to know about this place?",
-   "dst": "",
+   "dst": "Ah. Duuuu willst etwas über diesen Ort wissen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -738,7 +738,7 @@
   },
   "One Thousand Meters Under#076": {
    "src": "Well... We were once Villagers. I think we still are, a bit.",
-   "dst": "",
+   "dst": "Nun... Einst waren wir Dorfbewohner. Ein bisschen sind wir's noch.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -748,7 +748,7 @@
   },
   "One Thousand Meters Under#077": {
    "src": "For some reason, {~} years agoooo. The sky islands ruptured.",
-   "dst": "",
+   "dst": "Aus irgendeinem Grund, vor {~} Jaaahren, zerbrachen die Himmelsinseln.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -758,7 +758,7 @@
   },
   "One Thousand Meters Under#078": {
    "src": "Some stayed. Others fell. We somehow survived the fall into the vooooid.",
-   "dst": "",
+   "dst": "Manche blieben. Andere fielen. Irgendwie überlebten wir den Sturz in die Leeeeere.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -768,7 +768,7 @@
   },
   "One Thousand Meters Under#079": {
    "src": "How we have lived for so long, I doooo not know. But one thing we know for sure. The void provides.",
-   "dst": "",
+   "dst": "Wie wir so lange überlebt haben, weiß ich niiiicht. Aber eines wissen wir sicher. Die Leere sorgt für uns.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -778,7 +778,7 @@
   },
   "One Thousand Meters Under#080": {
    "src": "We are stuck here now. The void has forever changed our physiology.",
-   "dst": "",
+   "dst": "Jetzt sitzen wir hier fest. Die Leere hat unseren Körper für immer verändert.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -788,7 +788,7 @@
   },
   "One Thousand Meters Under#081": {
    "src": "The crystal yoooou are looking for fell on this island. But...",
-   "dst": "",
+   "dst": "Der Kristall, den duuuu suchst, ist auf diese Insel gefallen. Aber...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -798,7 +798,7 @@
   },
   "One Thousand Meters Under#082": {
    "src": "We need it. It will aid us for years.",
-   "dst": "",
+   "dst": "Wir brauchen ihn. Er wird uns jahrelang helfen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -808,7 +808,7 @@
   },
   "One Thousand Meters Under#083": {
    "src": "We have very limited resources here. That's why a power source like this is soooo valuable.",
-   "dst": "",
+   "dst": "Wir haben hier sehr wenige Ressourcen. Darum ist so eine Energiequelle sooo wertvoll.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -818,7 +818,7 @@
   },
   "One Thousand Meters Under#084": {
    "src": "If you go to the east, you will find Rontaid, our chief scientist. He'll know what to doooo.",
-   "dst": "",
+   "dst": "Geh nach Osten, dort findest du Rontaid, unseren obersten Wissenschaftler. Er weiß, was zu tuuuun ist.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -828,7 +828,7 @@
   },
   "One Thousand Meters Under#085": {
    "src": "Talk to Rontaid outside the town at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sprich mit Rontaid außerhalb des Dorfes bei [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -838,7 +838,7 @@
   },
   "One Thousand Meters Under#086": {
    "src": "WHAT...WHO...Humans in the void!?",
-   "dst": "",
+   "dst": "WAS... WER... Menschen in der Leere!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -848,7 +848,7 @@
   },
   "One Thousand Meters Under#087": {
    "src": "Well, looks like the book we found wasn't fiction after all!",
-   "dst": "",
+   "dst": "Na, das Buch, das wir gefunden haben, war wohl doch keine Erfindung!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -858,7 +858,7 @@
   },
   "One Thousand Meters Under#088": {
    "src": "This crystal is going toooo be our saviour. I was trying to create one of my own, you know.",
-   "dst": "",
+   "dst": "Dieser Kristall wiiird unsere Rettung sein. Weißt du, ich wollte selbst einen herstellen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -868,7 +868,7 @@
   },
   "One Thousand Meters Under#089": {
    "src": "I think I have the formula, but we don't have what we need to make it.",
-   "dst": "",
+   "dst": "Ich glaube, ich habe die Formel, aber uns fehlt das Material dafür.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -878,7 +878,7 @@
   },
   "One Thousand Meters Under#090": {
    "src": "Instead of taking this crystal back, why don't I exchange it for the recipe?",
-   "dst": "",
+   "dst": "Statt diesen Kristall zurückzunehmen, wie wär's, wenn ich ihn gegen das Rezept tausche?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -888,7 +888,7 @@
   },
   "One Thousand Meters Under#091": {
    "src": "That way, you can make however many crystals youuuu want, and we can keep this one.",
-   "dst": "",
+   "dst": "So kannst du so viele Kristalle machen, wie duuuu willst, und wir behalten diesen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -898,7 +898,7 @@
   },
   "One Thousand Meters Under#092": {
    "src": "Here's the recipe, give it to a scientist or someone a bit...smarter than yourself. No offense.",
-   "dst": "",
+   "dst": "Hier, das Rezept, gib es einem Forscher oder jemandem, der etwas... klüger ist als du. Nichts für ungut.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -908,7 +908,7 @@
   },
   "One Thousand Meters Under#093": {
    "src": "A platform was lowered from the surface a while ago at your crash site, as well. If youuuu wish to return, follow this path, I made a shortcut.",
-   "dst": "",
+   "dst": "An eurer Absturzstelle wurde vor einer Weile auch eine Plattform von oben herabgelassen. Willst duuuu zurück, folg diesem Weg, ich hab eine Abkürzung gebaut.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -918,7 +918,7 @@
   },
   "One Thousand Meters Under#094": {
    "src": "Return to the crash site by following the road.",
-   "dst": "",
+   "dst": "Folge dem Weg zurück zur Absturzstelle.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -928,7 +928,7 @@
   },
   "One Thousand Meters Under#095": {
    "src": "Return to the scientist and tell him the news.",
-   "dst": "",
+   "dst": "Kehr zum Wissenschaftler zurück und berichte ihm.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -938,7 +938,7 @@
   },
   "One Thousand Meters Under#096": {
    "src": "You survived! Where is everyone else?",
-   "dst": "",
+   "dst": "Du hast überlebt! Wo sind die anderen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -948,7 +948,7 @@
   },
   "One Thousand Meters Under#097": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -958,7 +958,7 @@
   },
   "One Thousand Meters Under#098": {
    "src": "I knew some must have died... But all of them?",
-   "dst": "",
+   "dst": "Ich wusste, dass manche sterben würden... Aber alle?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -968,7 +968,7 @@
   },
   "One Thousand Meters Under#099": {
    "src": "Well... At least I don't have to pay them! Hah!",
-   "dst": "",
+   "dst": "Na ja... Wenigstens muss ich sie nicht bezahlen! Hah!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -978,7 +978,7 @@
   },
   "One Thousand Meters Under#100": {
    "src": "...That was heartless of me, I'm sorry. The rope we used was too weak to hold you down there.",
-   "dst": "",
+   "dst": "...Das war herzlos von mir, tut mir leid. Das Seil war zu schwach, um euch dort unten zu halten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -988,7 +988,7 @@
   },
   "One Thousand Meters Under#101": {
    "src": "My calculations didn't account for the void's physics, it seems.",
-   "dst": "",
+   "dst": "Meine Berechnungen haben die Physik der Leere wohl nicht berücksichtigt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -998,7 +998,7 @@
   },
   "One Thousand Meters Under#102": {
    "src": "At least we got you back in one piece. You can tell us what happened.",
-   "dst": "",
+   "dst": "Wenigstens bist du heil zurück. Du kannst uns erzählen, was passiert ist.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1008,7 +1008,7 @@
   },
   "One Thousand Meters Under#104": {
    "src": "Well I'll be damned. I'll start sending post down there! We can work together.",
-   "dst": "",
+   "dst": "Ich glaub's ja nicht. Ich schicke ab jetzt Post da runter! Wir können zusammenarbeiten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1018,7 +1018,7 @@
   },
   "One Thousand Meters Under#105": {
    "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this, as well as your money.",
-   "dst": "",
+   "dst": "Behalten wir das, was hier geschehen ist, lieber für uns. Ich will meine paar Fördergelder nicht verlieren. Dieses Rezept ist genial! Hier, nimm das und deinen Lohn.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1028,7 +1028,7 @@
   },
   "One Thousand Meters Under#106": {
    "src": "How's the mission going?",
-   "dst": "",
+   "dst": "Wie läuft die Mission?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1038,7 +1038,7 @@
   },
   "One Thousand Meters Under#107": {
    "src": "It looks like everyone already went inside the submarine.",
-   "dst": "",
+   "dst": "Anscheinend sind schon alle im U-Boot.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1048,7 +1048,7 @@
   },
   "One Thousand Meters Under#108": {
    "src": "The intercom crackles into life...",
-   "dst": "",
+   "dst": "Die Sprechanlage knistert und erwacht zum Leben...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1058,7 +1058,7 @@
   },
   "One Thousand Meters Under#109": {
    "src": "Looks like you managed to fix the pipe! You should tell the mechanic.",
-   "dst": "",
+   "dst": "Sieht aus, als hättest du das Rohr repariert! Sag dem Mechaniker Bescheid.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1068,7 +1068,7 @@
   },
   "One Thousand Meters Under#110": {
    "src": "Who would've thought that the crystal fell that far...",
-   "dst": "",
+   "dst": "Wer hätte gedacht, dass der Kristall so tief gefallen ist...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1078,7 +1078,7 @@
   },
   "One Thousand Meters Under#111": {
    "src": "But after all, there's still a lot ahead of us!",
-   "dst": "",
+   "dst": "Aber es liegt noch viel vor uns!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1088,7 +1088,7 @@
   },
   "One Thousand Meters Under#112": {
    "src": "Have you looked around for the island for the crystal yet?",
-   "dst": "",
+   "dst": "Hast du die Insel schon nach dem Kristall abgesucht?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1098,7 +1098,7 @@
   },
   "One Thousand Meters Under#113": {
    "src": "If you haven't found anything, jump back in the submarine and I'll take us down to the next one.",
-   "dst": "",
+   "dst": "Wenn du nichts gefunden hast, steig wieder ins U-Boot, dann bringe ich uns zur nächsten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1108,7 +1108,7 @@
   },
   "One Thousand Meters Under#114": {
    "src": "I've been hearing a lot of strange sounds...",
-   "dst": "",
+   "dst": "Ich höre ständig seltsame Geräusche...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1118,7 +1118,7 @@
   },
   "One Thousand Meters Under#115": {
    "src": "Pfft. I would've done a better job saving the windshield.",
-   "dst": "",
+   "dst": "Pff. Ich hätte die Frontscheibe besser gerettet.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1128,7 +1128,7 @@
   },
   "One Thousand Meters Under#116": {
    "src": "Too bad I was in another room.",
-   "dst": "",
+   "dst": "Schade, dass ich in einem anderen Raum war.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1138,7 +1138,7 @@
   },
   "One Thousand Meters Under#117": {
    "src": "Oh no, this isn't good. The windshield is destroyed...",
-   "dst": "",
+   "dst": "Oh nein, das ist nicht gut. Die Frontscheibe ist zerstört...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1148,7 +1148,7 @@
   },
   "One Thousand Meters Under#118": {
    "src": "I thought this trip was going to be easy.",
-   "dst": "",
+   "dst": "Ich dachte, diese Reise wird einfach.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1158,7 +1158,7 @@
   },
   "One Thousand Meters Under#119": {
    "src": "Huh, sand?",
-   "dst": "",
+   "dst": "Hm, Sand?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1168,7 +1168,7 @@
   },
   "One Thousand Meters Under#120": {
    "src": "This sand must've fallen from the sky islands, but why is it red?",
-   "dst": "",
+   "dst": "Dieser Sand muss von den Himmelsinseln gefallen sein, aber warum ist er rot?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1178,7 +1178,7 @@
   },
   "One Thousand Meters Under#121": {
    "src": "What's that smell?",
-   "dst": "",
+   "dst": "Was ist das für ein Geruch?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1188,7 +1188,7 @@
   },
   "One Thousand Meters Under#122": {
    "src": "It smells really...sterile? Does this mean I have to work...?",
-   "dst": "",
+   "dst": "Es riecht richtig... steril? Heißt das, ich muss arbeiten...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1198,7 +1198,7 @@
   },
   "One Thousand Meters Under#123": {
    "src": "We need this crystal. Go see Rontaid on the eastern part of the island, he can figure something out.",
-   "dst": "",
+   "dst": "Wir brauchen diesen Kristall. Geh zu Rontaid im Osten der Insel, ihm fällt sicher etwas ein.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1208,7 +1208,7 @@
   },
   "One Thousand Meters Under#124": {
    "src": "I hope you make use of our science.",
-   "dst": "",
+   "dst": "Hoffentlich nutzt du unsere Wissenschaft gut.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1218,7 +1218,7 @@
   },
   "One Thousand Meters Under#125": {
    "src": "We don't want another village to fall down here... I'm not sure we could provide for even more people.",
-   "dst": "",
+   "dst": "Wir wollen nicht, dass noch ein Dorf hier herunterfällt... Ich weiß nicht, ob wir noch mehr Leute versorgen könnten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1228,7 +1228,7 @@
   },
   "One Thousand Meters Under#126": {
    "src": "Looks like the backup team have lowered a crane down to the island, this is your way out!",
-   "dst": "",
+   "dst": "Sieht aus, als hätte das Hilfsteam einen Kran zur Insel herabgelassen, das ist dein Weg nach draußen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1238,7 +1238,7 @@
   },
   "One Thousand Meters Under#127": {
    "src": "I'm working on a replacement for the crystal now...",
-   "dst": "",
+   "dst": "Ich arbeite gerade an einem Ersatz für den Kristall...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1248,7 +1248,7 @@
   },
   "One Thousand Meters Under#128": {
    "src": "These void villagers are rather smart, but their handwriting is utterly atrocious.",
-   "dst": "",
+   "dst": "Diese Leere-Dorfbewohner sind recht klug, aber ihre Handschrift ist absolut grauenhaft.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1258,7 +1258,7 @@
   },
   "One Thousand Meters Under#129": {
    "src": "The crystal you're looking for is purple, not blue.",
-   "dst": "",
+   "dst": "Der Kristall, den du suchst, ist lila, nicht blau.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1268,7 +1268,7 @@
   },
   "One Thousand Meters Under#130": {
    "src": "You probably could've seen that from the other side.",
-   "dst": "",
+   "dst": "Das hättest du wohl auch von der anderen Seite sehen können.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",

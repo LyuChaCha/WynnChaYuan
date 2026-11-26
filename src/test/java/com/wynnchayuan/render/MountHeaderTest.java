@@ -24,7 +24,7 @@ import static com.wynnchayuan.Check.failures;
 
 public final class MountHeaderTest {
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"};
 
     private static final Map<String, Integer> SERVER_PX = Map.of(
             "Speed", 25, "Acceleration", 54, "Toughness", 46, "Training", 35,

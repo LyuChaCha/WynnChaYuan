@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Purple and Blue",
   "count": 103,
-  "translated": 0,
+  "translated": 103,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Purple and Blue#000": {
    "src": "Talk to Korun near {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Parlez à Korun près de {p}, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -18,7 +18,7 @@
   },
   "Purple and Blue#001": {
    "src": "W-Woah there, short nose! What are you doing, barging into my home?!",
-   "dst": "",
+   "dst": "H-hé, doucement, petit nez! Qu'est-ce que tu fais à débarquer chez moi?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -28,7 +28,7 @@
   },
   "Purple and Blue#002": {
    "src": "Did {p} send you? Well, welcome to {p}! I could actually make use of some assistance.",
-   "dst": "",
+   "dst": "C'est {p} qui t'envoie? Eh bien, bienvenue à {p}! J'aurais justement besoin d'un coup de main.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -38,7 +38,7 @@
   },
   "Purple and Blue#003": {
    "src": "The magic here in this place is so potent; you can actually see the mystical properties!",
-   "dst": "",
+   "dst": "La magie ici est si puissante qu'on peut voir ses propriétés mystiques!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -48,7 +48,7 @@
   },
   "Purple and Blue#004": {
    "src": "I've been a scientist for many years, but I have never seen anything like this lake.",
-   "dst": "",
+   "dst": "Je suis scientifique depuis des années, mais je n'ai jamais rien vu de pareil à ce lac.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -58,7 +58,7 @@
   },
   "Purple and Blue#005": {
    "src": "That's why I set up a small laboratory and started living here to study the place. It's pretty rudimentary but it does the job done.",
-   "dst": "",
+   "dst": "C'est pour ça que j'ai monté un petit labo et que je vis ici pour étudier les lieux. C'est assez rudimentaire, mais ça fait l'affaire.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -68,7 +68,7 @@
   },
   "Purple and Blue#006": {
    "src": "The deeper into the lake you dive, the stronger the magical power becomes. I think something strange is occurring in the heart of the lake. I believe a lot of answers lie inside.",
-   "dst": "",
+   "dst": "Plus on plonge profond dans le lac, plus le pouvoir magique est fort. Je crois qu'il se passe quelque chose d'étrange au coeur du lac. Bien des réponses s'y trouvent, j'en suis sûr.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -78,7 +78,7 @@
   },
   "Purple and Blue#007": {
    "src": "Alright, that's enough context! You see, there's another... \"scientist\" across the lake. We're kind of rivals? The guy's awful, I hate him, AND... Well...",
-   "dst": "",
+   "dst": "Bon, assez de contexte! Vois-tu, il y a un autre... \"scientifique\" de l'autre côté du lac. On est un peu rivaux? Ce type est affreux, je le déteste, ET... Enfin...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -88,7 +88,7 @@
   },
   "Purple and Blue#008": {
    "src": "He's been missing.",
-   "dst": "",
+   "dst": "Il a disparu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -98,7 +98,7 @@
   },
   "Purple and Blue#009": {
    "src": "And while I somewhat hope he's gotten himself in trouble, he might've figured something out about the lake.",
-   "dst": "",
+   "dst": "Et même si j'espère un peu qu'il s'est attiré des ennuis, il a peut-être découvert quelque chose sur le lac.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -108,7 +108,7 @@
   },
   "Purple and Blue#010": {
    "src": "There's a note here. You start reading it...",
-   "dst": "",
+   "dst": "Il y a une note ici. Vous commencez à la lire...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -118,7 +118,7 @@
   },
   "Purple and Blue#011": {
    "src": "IMPORTANT NOTES: The map to the talisman is in the basement!! That fool Korun will never see all this coming.",
-   "dst": "",
+   "dst": "NOTES IMPORTANTES: La carte du talisman est au sous-sol!! Cet idiot de Korun ne verra rien venir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -128,7 +128,7 @@
   },
   "Purple and Blue#012": {
    "src": "If everything goes right, it should grant access to the heart of the mountain... I can't wait!",
-   "dst": "",
+   "dst": "Si tout se passe bien, il devrait donner accès au coeur de la montagne... J'ai hâte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -138,7 +138,7 @@
   },
   "Purple and Blue#013": {
    "src": "It looks like there are extra notes on the back. What should you do?",
-   "dst": "",
+   "dst": "On dirait qu'il y a d'autres notes au verso. Que faire?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -148,7 +148,7 @@
   },
   "Purple and Blue#014": {
    "src": "I needn't forget to input the total number of lit candles inside the house in order to get in the basement... That's why I made that tube! I'm so good at handling security!! No need for blasted overpriced Corkian equipment!",
-   "dst": "",
+   "dst": "Je ne dois pas oublier d'entrer le nombre total de bougies allumées dans la maison pour accéder au sous-sol... C'est pour ça que j'ai fait ce tube! Je suis si doué en sécurité!! Pas besoin de ce fichu matériel Corkian hors de prix!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -158,7 +158,7 @@
   },
   "Purple and Blue#015": {
    "src": "You read what's behind the note...",
-   "dst": "",
+   "dst": "Vous lisez ce qu'il y a au dos de la note...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -168,7 +168,7 @@
   },
   "Purple and Blue#016": {
    "src": "I actually don't know if I'm making it out of this, but I absolutely have to find out what's inside the lake.",
-   "dst": "",
+   "dst": "Je ne sais pas si je m'en sortirai, mais je dois absolument découvrir ce qu'il y a dans le lac.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -178,7 +178,7 @@
   },
   "Purple and Blue#017": {
    "src": "One part of me wants to bring Korun along. As much as we hate each other, it'd surely increase our chance of survival.",
-   "dst": "",
+   "dst": "Une part de moi veut emmener Korun. On a beau se détester, ça augmenterait sûrement nos chances de survie.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -188,7 +188,7 @@
   },
   "Purple and Blue#018": {
    "src": "And, who knows, maybe the heart of the mountain is actually perfectly safe?",
-   "dst": "",
+   "dst": "Et, qui sait, peut-être que le coeur de la montagne est en fait parfaitement sûr?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -198,7 +198,7 @@
   },
   "Purple and Blue#019": {
    "src": "Though, I mustn't forget that three of the greatest minds of our time got lost to cosmic powers...",
-   "dst": "",
+   "dst": "Mais je ne dois pas oublier que trois des plus grands esprits de l'époque ont été perdus face au cosmos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -208,7 +208,7 @@
   },
   "Purple and Blue#020": {
    "src": "No matter what, if you really want to join me, I left you enough clues.",
-   "dst": "",
+   "dst": "Quoi qu'il arrive, si tu veux vraiment me rejoindre, je t'ai laissé assez d'indices.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -218,7 +218,7 @@
   },
   "Purple and Blue#021": {
    "src": "See you later, Korun.",
-   "dst": "",
+   "dst": "A plus tard, Korun.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -228,7 +228,7 @@
   },
   "Purple and Blue#022": {
    "src": "[+{~} Gylia Treasure Map]",
-   "dst": "",
+   "dst": "[+{~} Carte au trésor de Gylia]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -238,7 +238,7 @@
   },
   "Purple and Blue#023": {
    "src": "This map seems to lead towards a particular location nearby...",
-   "dst": "",
+   "dst": "Cette carte semble mener à un endroit précis tout près...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -248,7 +248,7 @@
   },
   "Purple and Blue#024": {
    "src": "Some mechanisms can be heard... There's probably another lever to press.",
-   "dst": "",
+   "dst": "On entend des mécanismes... Il y a sans doute un autre levier à actionner.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -258,7 +258,7 @@
   },
   "Purple and Blue#025": {
    "src": "Upon touching the crystal, you notice a peculiar device...",
-   "dst": "",
+   "dst": "En touchant le cristal, vous remarquez un étrange dispositif...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -268,7 +268,7 @@
   },
   "Purple and Blue#026": {
    "src": "It begins to change shape!",
-   "dst": "",
+   "dst": "Il commence à changer de forme!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -278,7 +278,7 @@
   },
   "Purple and Blue#027": {
    "src": "The crystal finished forming something, you should retrieve it.",
-   "dst": "",
+   "dst": "Le cristal a fini de former quelque chose, vous devriez le récupérer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -288,7 +288,7 @@
   },
   "Purple and Blue#028": {
    "src": "[+{~} Cosmic Stone]",
-   "dst": "",
+   "dst": "[+{~} Pierre cosmique]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -298,7 +298,7 @@
   },
   "Purple and Blue#029": {
    "src": "Looks like you can leave this place now.",
-   "dst": "",
+   "dst": "On dirait que vous pouvez partir maintenant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -308,7 +308,7 @@
   },
   "Purple and Blue#030": {
    "src": "[+{~} Impervious Talisman]",
-   "dst": "",
+   "dst": "[+{~} Talisman impénétrable]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -318,7 +318,7 @@
   },
   "Purple and Blue#031": {
    "src": "I suspect he's gone in to the heart of the lake... Come with me a moment, please.",
-   "dst": "",
+   "dst": "Je soupçonne qu'il est entré au coeur du lac... Viens avec moi un instant, s'il te plaît.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -328,7 +328,7 @@
   },
   "Purple and Blue#032": {
    "src": "Alright, this leads underwater where the heart is. How about you try and enter?",
-   "dst": "",
+   "dst": "Bon, ça mène sous l'eau, là où se trouve le coeur. Et si tu essayais d'entrer?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -338,7 +338,7 @@
   },
   "Purple and Blue#033": {
    "src": "...just as I thought, you can't get in just like me. We'll need to gather more information.",
-   "dst": "",
+   "dst": "...comme je le pensais, tu ne peux pas entrer, pas plus que moi. Il nous faut plus d'informations.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -348,7 +348,7 @@
   },
   "Purple and Blue#034": {
    "src": "Human, investigate Nikoler's house for me. It's north down the coast.",
-   "dst": "",
+   "dst": "Humain, va fouiller chez Nikoler pour moi. C'est au nord, en bas de la côte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -358,7 +358,7 @@
   },
   "Purple and Blue#035": {
    "src": "Where could he be... There's no way he found access to- Hey!",
-   "dst": "",
+   "dst": "Où peut-il bien être... Impossible qu'il ait trouvé un accès au- Hé!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -368,7 +368,7 @@
   },
   "Purple and Blue#036": {
    "src": "Don't just listen to me mumbling! Have you found Nikoler?!",
-   "dst": "",
+   "dst": "Ne reste pas là à m'écouter marmonner! Tu as trouvé Nikoler?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -378,7 +378,7 @@
   },
   "Purple and Blue#037": {
    "src": "Investigate Nikoler's house for clues at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Fouillez la maison de Nikoler en quête d'indices, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -388,7 +388,7 @@
   },
   "Purple and Blue#038": {
    "src": "Follow the hints in the cellar to the mysterious cave.",
-   "dst": "",
+   "dst": "Suivez les indices du sous-sol jusqu'à la grotte mystérieuse.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -398,7 +398,7 @@
   },
   "Purple and Blue#039": {
    "src": "Enter and explore the mysterious cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Entrez dans la grotte mystérieuse en [-{~}, {~}, -{~}] et explorez-la.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -408,7 +408,7 @@
   },
   "Purple and Blue#040": {
    "src": "Return to Korun in his home at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Retournez voir Korun chez lui, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -418,7 +418,7 @@
   },
   "Purple and Blue#041": {
    "src": "Y-you've actually found a lead?! There were clues in his basement? And you found a... talisman? This must be it, then!",
-   "dst": "",
+   "dst": "T-tu as vraiment trouvé une piste?! Il y avait des indices dans son sous-sol? Et tu as trouvé un... talisman? Alors c'est forcément ça!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -428,7 +428,7 @@
   },
   "Purple and Blue#042": {
    "src": "This might very well be the key to enter the heart, especially if it was as well-guarded with cosmic creatures as you say.",
-   "dst": "",
+   "dst": "Ça pourrait bien être la clé pour entrer dans le coeur, surtout s'il était aussi bien gardé par des créatures cosmiques que tu le dis.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -438,7 +438,7 @@
   },
   "Purple and Blue#043": {
    "src": "Alright then! This might be too dangerous for me, so I'm entrusting this task to you once more. Enter the tunnel in my basement, and explore as much as you can!",
-   "dst": "",
+   "dst": "Très bien! C'est peut-être trop dangereux pour moi, alors je te confie encore cette tâche. Entre dans le tunnel de mon sous-sol, et explore autant que tu peux!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -448,7 +448,7 @@
   },
   "Purple and Blue#044": {
    "src": "If you can bring me samples of any kind, I'll try to reward you handsomely. However, if you find Nikoler alive... Please bring him back.",
-   "dst": "",
+   "dst": "Si tu me rapportes des échantillons, quels qu'ils soient, je tâcherai de bien te récompenser. Mais si tu trouves Nikoler vivant... Ramène-le, s'il te plaît.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -458,7 +458,7 @@
   },
   "Purple and Blue#045": {
    "src": "As for the talisman, make sure you hold it whilst in the tunnel. Be careful, you're in uncharted territory from now on.",
-   "dst": "",
+   "dst": "Quant au talisman, tiens-le bien en main dans le tunnel. Fais attention, tu entres en territoire inexploré.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -468,7 +468,7 @@
   },
   "Purple and Blue#046": {
    "src": "As Korun said, it's probably better to hold that talisman to traverse the tunnel...",
-   "dst": "",
+   "dst": "Comme l'a dit Korun, mieux vaut sans doute tenir ce talisman pour traverser le tunnel...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -478,7 +478,7 @@
   },
   "Purple and Blue#047": {
    "src": "Good luck, human. Please bring me back Nikoler, or any sample you might find.",
-   "dst": "",
+   "dst": "Bonne chance, humain. Ramène-moi Nikoler, ou tout échantillon trouvé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -488,7 +488,7 @@
   },
   "Purple and Blue#048": {
    "src": "Enter the heart of Gylia from under the lake.",
-   "dst": "",
+   "dst": "Entrez dans le Coeur de Gylia par le fond du lac.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -498,7 +498,7 @@
   },
   "Purple and Blue#049": {
    "src": "Explore the Heart of Gylia.",
-   "dst": "",
+   "dst": "Explorez le Coeur de Gylia.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -508,7 +508,7 @@
   },
   "Purple and Blue#050": {
    "src": "The drill should be ready by now... In just a little bit, I'll have single-handedly conquered the heart of the mountain...!",
-   "dst": "",
+   "dst": "La foreuse devrait être prête maintenant... Dans un instant, j'aurai conquis à moi seul le coeur de la montagne...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -518,7 +518,7 @@
   },
   "Purple and Blue#051": {
    "src": "A human!? W...What? Did you read the notes I left for Korun? I'll have you know that's theft!! I - you...!",
-   "dst": "",
+   "dst": "Un humain!? Q...Quoi? Tu as lu les notes que j'ai laissées pour Korun? Sache que c'est du vol!! Je - toi...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -528,7 +528,7 @@
   },
   "Purple and Blue#052": {
    "src": "Don't get any closer!! I'll destroy the path if I have to!!",
-   "dst": "",
+   "dst": "N'approche pas!! Je détruirai le chemin s'il le faut!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -538,7 +538,7 @@
   },
   "Purple and Blue#053": {
    "src": "This is MY story! Don't you dare interfere!!",
-   "dst": "",
+   "dst": "C'est MON histoire! N'ose pas t'en mêler!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -548,7 +548,7 @@
   },
   "Purple and Blue#054": {
    "src": "You're... persistent. Are you trying to steal from these meteors I'VE found?! Do you have any idea how much research I did to get this far??",
-   "dst": "",
+   "dst": "Tu es... tenace. Tu veux voler ces météorites que J'AI trouvées?! Tu as une idée du travail qu'il m'a fallu pour en arriver là??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -558,7 +558,7 @@
   },
   "Purple and Blue#055": {
    "src": "It's too late! I've already drilled a piece. Once I show Korun, I'll be known as the better researcher...",
-   "dst": "",
+   "dst": "Trop tard! J'en ai déjà foré un morceau. Dès que Korun le verra, on me reconnaîtra comme le meilleur chercheur...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -568,7 +568,7 @@
   },
   "Purple and Blue#056": {
    "src": "Ah... how good this'll b-",
-   "dst": "",
+   "dst": "Ah... comme ça va être b-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -578,7 +578,7 @@
   },
   "Purple and Blue#057": {
    "src": "N-no!",
-   "dst": "",
+   "dst": "N-non!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -588,7 +588,7 @@
   },
   "Purple and Blue#058": {
    "src": "No no no no no no! This CAN'T be happening!",
-   "dst": "",
+   "dst": "Non non non non non non! Ce n'est PAS possible!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -598,7 +598,7 @@
   },
   "Purple and Blue#059": {
    "src": "Tampering with the meteors must be making the cave instable! I... I thought this'd happen and yet-",
-   "dst": "",
+   "dst": "Toucher aux météorites doit rendre la grotte instable! Je... je me doutais que ça arriverait et pourtant-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -608,7 +608,7 @@
   },
   "Purple and Blue#060": {
    "src": "This is all YOUR fault! Why'd you have to come and make me panic? We're both DOOMED!",
-   "dst": "",
+   "dst": "Tout ça, c'est TA faute! Pourquoi venir me faire paniquer? On est FICHUS tous les deux!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -618,7 +618,7 @@
   },
   "Purple and Blue#061": {
    "src": "No... I can't die here, I can't die now, what will he think...",
-   "dst": "",
+   "dst": "Non... je ne peux pas mourir ici, pas maintenant, que va-t-il penser...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -628,7 +628,7 @@
   },
   "Purple and Blue#062": {
    "src": "I... We might still have a shot at escaping... And then, human, I'll report you to the authorities!!",
-   "dst": "",
+   "dst": "Je... On a peut-être encore une chance de s'échapper... Et ensuite, humain, je te dénonce aux autorités!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -638,7 +638,7 @@
   },
   "Purple and Blue#063": {
    "src": "I'm STUCK! Urgh... No... Not like this, please, not like this...",
-   "dst": "",
+   "dst": "Je suis COINCÉ! Argh... Non... Pas comme ça, pitié, pas comme ça...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -648,7 +648,7 @@
   },
   "Purple and Blue#064": {
    "src": "You... Why? You came to get me? Not the... meteors?",
-   "dst": "",
+   "dst": "Toi... Pourquoi? Tu es là pour moi? Pas pour les... météorites?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -658,7 +658,7 @@
   },
   "Purple and Blue#065": {
    "src": "I... Fine then. Let's make a run for it, human!",
-   "dst": "",
+   "dst": "Je... Bon. Filons d'ici, humain!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -668,7 +668,7 @@
   },
   "Purple and Blue#066": {
    "src": "Escape the Heart of Gylia.",
-   "dst": "",
+   "dst": "Échappez-vous du Coeur de Gylia.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -678,7 +678,7 @@
   },
   "Purple and Blue#067": {
    "src": "Rats! That dynamite went and backfired on us! Quick, try to run in to the rubble with me, we need to hurry!",
-   "dst": "",
+   "dst": "Zut! Cette dynamite s'est retournée contre nous! Vite, cours avec moi vers les décombres, il faut se dépêcher!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -688,7 +688,7 @@
   },
   "Purple and Blue#068": {
    "src": "AH-",
-   "dst": "",
+   "dst": "AH-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -698,7 +698,7 @@
   },
   "Purple and Blue#069": {
    "src": "Welcome back! I see you're completely drenched! How did things go? I assume you've explored the place thoroughly.",
-   "dst": "",
+   "dst": "Te revoilà! Tu dégoulines! Comment ça s'est passé? Je suppose que tu as exploré les lieux à fond.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -708,7 +708,7 @@
   },
   "Purple and Blue#070": {
    "src": "YOU! Y-You're alive!!",
-   "dst": "",
+   "dst": "TOI! T-tu es vivant!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -718,7 +718,7 @@
   },
   "Purple and Blue#071": {
    "src": "...were you worrying about me? What a fool. This mountain could never do so much as scratch me!",
-   "dst": "",
+   "dst": "...tu t'inquiétais pour moi? Quel idiot. Cette montagne ne pourrait même pas m'égratigner!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -728,7 +728,7 @@
   },
   "Purple and Blue#072": {
    "src": "This human right here actually saved me, right after endangering me. You don't mean to tell me you sent them for me?",
-   "dst": "",
+   "dst": "Cet humain-là m'a sauvé, juste après m'avoir mis en danger. Ne me dis pas que c'est toi qui l'as envoyé me chercher?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -738,7 +738,7 @@
   },
   "Purple and Blue#073": {
    "src": "Well, it's very simple. Where's the fun in our rivalry if you just go off and die somewhere?",
-   "dst": "",
+   "dst": "Eh bien, c'est très simple. Quel intérêt aurait notre rivalité si tu allais mourir dans un coin?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -748,7 +748,7 @@
   },
   "Purple and Blue#074": {
    "src": "That aside, what did you find in there? What happened?",
-   "dst": "",
+   "dst": "Mis à part ça, qu'as-tu trouvé là-dedans? Que s'est-il passé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -758,7 +758,7 @@
   },
   "Purple and Blue#075": {
    "src": "I found them, Korun. I found the meteors! They still seemed potent somehow, but the cave collapsed and...",
-   "dst": "",
+   "dst": "Je les ai trouvées, Korun. Les météorites! Elles semblaient encore puissantes, mais la grotte s'est effondrée et...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -768,7 +768,7 @@
   },
   "Purple and Blue#076": {
    "src": "That's... fine. We can always go back and try clearing the rubble. There's always opportunities to take a hold of. Next time, please don't just go off on your own!",
-   "dst": "",
+   "dst": "Ce n'est... pas grave. On peut toujours y retourner et essayer de dégager les décombres. Il y a toujours des occasions à saisir. La prochaine fois, s'il te plaît, ne pars pas tout seul!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -778,7 +778,7 @@
   },
   "Purple and Blue#077": {
    "src": "Human, you made the right choice... Without Nikoler, our efforts would have been in vain. I'll try to work with him a bit more, as it seems like the logical course of action now. Thank you.",
-   "dst": "",
+   "dst": "Humain, tu as fait le bon choix... Sans Nikoler, nos efforts auraient été vains. Je vais essayer de travailler un peu plus avec lui, ça me semble logique maintenant. Merci.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -788,7 +788,7 @@
   },
   "Purple and Blue#078": {
    "src": "H-Hey! I never agreed to-",
-   "dst": "",
+   "dst": "H-hé! Je n'ai jamais accepté de-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -798,7 +798,7 @@
   },
   "Purple and Blue#079": {
    "src": "I see you're completely drenched! There's this odd aura around you... What happened?",
-   "dst": "",
+   "dst": "Tu dégoulines! Et il y a une aura étrange autour de toi... Que s'est-il passé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -808,7 +808,7 @@
   },
   "Purple and Blue#080": {
    "src": "You... You actually found a meteor shard! That's amazing! That's... that's... um...",
-   "dst": "",
+   "dst": "Tu... Tu as vraiment trouvé un éclat de météorite! C'est incroyable! C'est... c'est... euh...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -818,7 +818,7 @@
   },
   "Purple and Blue#081": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died...?",
-   "dst": "",
+   "dst": "Euh, tu viens de d-dire quoi? La grotte s'est effondrée et Nikoler est m-mort...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -828,7 +828,7 @@
   },
   "Purple and Blue#082": {
    "src": "That's, um, haha... That doesn't sound right, he can't die, he can't leave like that, he can't-",
-   "dst": "",
+   "dst": "C'est, euh, haha... C'est pas possible, il peut pas mourir, il peut pas partir comme ça, il peut pas-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -838,7 +838,7 @@
   },
   "Purple and Blue#083": {
    "src": "S-Sorry. I'm just a little shocked is all. I do have to thank you for the shard...",
-   "dst": "",
+   "dst": "P-pardon. Je suis juste un peu sous le choc. Je dois te remercier pour l'éclat...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -848,7 +848,7 @@
   },
   "Purple and Blue#084": {
    "src": "A-at the very least, you saw this through... I have to commend you for that... I think.",
-   "dst": "",
+   "dst": "A-au moins, tu as tenu jusqu'au bout... Je dois te féliciter pour ça... je crois.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -858,7 +858,7 @@
   },
   "Purple and Blue#085": {
    "src": "Just take these, and go. I have much to think about.",
-   "dst": "",
+   "dst": "Prends ça, et va-t'en. J'ai beaucoup à réfléchir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -868,7 +868,7 @@
   },
   "Purple and Blue#086": {
    "src": "You explored thoroughly, and couldn't find a shard? Well, we still have much to discover I suppose.",
-   "dst": "",
+   "dst": "Tu as tout exploré, et tu n'as trouvé aucun éclat? Bon, il nous reste beaucoup à découvrir, je suppose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -878,7 +878,7 @@
   },
   "Purple and Blue#087": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died..?",
-   "dst": "",
+   "dst": "Euh, tu viens de d-dire quoi? La grotte s'est effondrée et Nikoler est m-mort..?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -888,7 +888,7 @@
   },
   "Purple and Blue#088": {
    "src": "S-Sorry. I'm just a little shocked is all. And you came back empty-handed... This was just a loss with everyone involved.",
-   "dst": "",
+   "dst": "P-pardon. Je suis juste un peu sous le choc. Et tu reviens les mains vides... Tout le monde y a perdu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -898,7 +898,7 @@
   },
   "Purple and Blue#089": {
    "src": "I see you're completely drenched, so I suppose you thoroughly explored the place. How did it go?",
-   "dst": "",
+   "dst": "Tu dégoulines, alors je suppose que tu as bien exploré les lieux. Comment ça s'est passé?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -908,7 +908,7 @@
   },
   "Purple and Blue#090": {
    "src": "You found... Nothing? Really? And the meteors were too unstable to temper with?",
-   "dst": "",
+   "dst": "Tu n'as... rien trouvé? Vraiment? Et les météorites étaient trop instables pour y toucher?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -918,7 +918,7 @@
   },
   "Purple and Blue#091": {
    "src": "Actually, how would you know about tempering with the- wait...",
-   "dst": "",
+   "dst": "Au fait, comment tu sais qu'on ne peut pas y toucher- attends...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -928,7 +928,7 @@
   },
   "Purple and Blue#092": {
    "src": "Did you find him? Please... please tell me you found him, there's no way he'd die just like that. I...",
-   "dst": "",
+   "dst": "Tu l'as trouvé? Pitié... dis-moi que tu l'as trouvé, il ne peut pas être mort comme ça. Je...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -938,7 +938,7 @@
   },
   "Purple and Blue#093": {
    "src": "W-what? The whole cave COLLAPSED on him? And you couldn't even save him?! N-no, it can't be your fault, I... I'm sorry.",
-   "dst": "",
+   "dst": "Q-quoi? La grotte entière s'est EFFONDRÉE sur lui? Et tu n'as même pas pu le sauver?! N-non, ce n'est pas ta faute, je... Je suis désolé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -948,7 +948,7 @@
   },
   "Purple and Blue#094": {
    "src": "This is all way too much to take in for me, but I suppose you've explored and served the purpose I gave you.",
-   "dst": "",
+   "dst": "C'est beaucoup trop à encaisser pour moi, mais je suppose que tu as exploré et rempli la mission que je t'avais confiée.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -958,7 +958,7 @@
   },
   "Purple and Blue#095": {
    "src": "Here's your reward, then. Now please, just leave me be. There's a lot I have to think about.",
-   "dst": "",
+   "dst": "Voici ta récompense, alors. Maintenant, s'il te plaît, laisse-moi seul. J'ai beaucoup à réfléchir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -968,7 +968,7 @@
   },
   "Purple and Blue#096": {
    "src": "It's you! Glad to have crossed paths again!",
-   "dst": "",
+   "dst": "C'est toi! Content de te recroiser!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -978,7 +978,7 @@
   },
   "Purple and Blue#097": {
    "src": "Since the incident, I've decided to start fishing as a hobby.",
-   "dst": "",
+   "dst": "Depuis l'incident, je me suis mis à la pêche.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -988,7 +988,7 @@
   },
   "Purple and Blue#098": {
    "src": "Take this- for all I care, you can own this!",
-   "dst": "",
+   "dst": "Prends ça- franchement, tu peux le garder!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -998,7 +998,7 @@
   },
   "Purple and Blue#099": {
    "src": "Thank you... for saving me.",
-   "dst": "",
+   "dst": "Merci... de m'avoir sauvé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -1008,7 +1008,7 @@
   },
   "Purple and Blue#100": {
    "src": "Check up on Korun from time to time for me, will you?",
-   "dst": "",
+   "dst": "Passe voir Korun de temps en temps pour moi, d'accord?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -1018,7 +1018,7 @@
   },
   "Purple and Blue#101": {
    "src": "I'm still taking a break from all the science stuff... But he definitely hasn't seen the last of me!",
-   "dst": "",
+   "dst": "Je fais encore une pause dans tous ces trucs scientifiques... Mais il n'en a pas fini avec moi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -1028,7 +1028,7 @@
   },
   "Purple and Blue#102": {
    "src": "After all, I'm the one who got to the heart of the mountain! I'm even able to sleep soundly knowing that I've won...",
-   "dst": "",
+   "dst": "Après tout, c'est moi qui ai atteint le coeur de la montagne! Je dors même sur mes deux oreilles en sachant que j'ai gagné...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
