@@ -4,7 +4,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 245,
-  "translated": 0,
+  "translated": 236,
   "note": "法師的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
@@ -12,7 +12,7 @@
  "entries": {
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
-   "dst": "",
+   "dst": "Meteor, Hauptangriff und Pulver-Spezialeffekte\nverbrauchen Instabil {#}, um +{~} Schaden zu verursachen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -26,7 +26,7 @@
   },
   "ability-mage#0000": {
    "src": "Meteor",
-   "dst": "",
+   "dst": "Meteor",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -38,7 +38,7 @@
   },
   "ability-mage#0001": {
    "src": "Conjures a slow but powerful meteor\nfrom the sky, dealing massive\ndamage over a large area.",
-   "dst": "",
+   "dst": "Beschwört einen langsamen, aber mächtigen Meteor\nvom Himmel, der massiven Schaden\nin einem großen Bereich verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-mage#0002": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: {~} Blöcke (Kreisförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -69,7 +69,7 @@
   },
   "ability-mage#0003": {
    "src": "{#} Mana Cost: {~}",
-   "dst": "",
+   "dst": "{#} Manakosten: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -85,7 +85,7 @@
   },
   "ability-mage#0004": {
    "src": "{#} Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#} Reichweite: {~} Blöcke",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -101,7 +101,7 @@
   },
   "ability-mage#0005": {
    "src": "{#} Total Damage: {~} (of your DPS)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -117,7 +117,7 @@
   },
   "ability-mage#0006": {
    "src": "Wand Proficiency I",
-   "dst": "",
+   "dst": "Zauberstabbeherrschung I",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -129,7 +129,7 @@
   },
   "ability-mage#0007": {
    "src": "Improve your Main Attack's damage\nand range when using a wand.",
-   "dst": "",
+   "dst": "Verbessert Schaden und Reichweite deines\nHauptangriffs mit einem Zauberstab.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -145,7 +145,7 @@
   },
   "ability-mage#0008": {
    "src": "Cheaper Meteor",
-   "dst": "",
+   "dst": "Günstigerer Meteor",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -157,7 +157,7 @@
   },
   "ability-mage#0009": {
    "src": "Reduce the mana cost of Meteor.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Meteor.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -173,7 +173,7 @@
   },
   "ability-mage#0010": {
    "src": "{#} Mana Cost: -{~}",
-   "dst": "",
+   "dst": "{#} Manakosten: -{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -189,7 +189,7 @@
   },
   "ability-mage#0011": {
    "src": "Shooting Star",
-   "dst": "",
+   "dst": "Sternschnuppe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -201,7 +201,7 @@
   },
   "ability-mage#0012": {
    "src": "Drastically increase the\nspeed of your Meteor ability.",
-   "dst": "",
+   "dst": "Erhöht die Geschwindigkeit deiner\nFähigkeit Meteor drastisch.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -216,7 +216,7 @@
   },
   "ability-mage#0013": {
    "src": "Wand Proficiency II",
-   "dst": "",
+   "dst": "Zauberstabbeherrschung II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-mage#0014": {
    "src": "Teleport",
-   "dst": "",
+   "dst": "Teleport",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -240,7 +240,7 @@
   },
   "ability-mage#0015": {
    "src": "Instantly teleport in the\ndirection you're facing.",
-   "dst": "",
+   "dst": "Teleportiere dich sofort in\ndeine Blickrichtung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -255,7 +255,7 @@
   },
   "ability-mage#0016": {
    "src": "Wisdom",
-   "dst": "",
+   "dst": "Weisheit",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "",
+   "dst": "Für je {~} bzw. {~} Zauberschaden (fester Wert) aus Gegenständen\nerhältst du +{~}/{~}s Manaregeneration (Max. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -282,7 +282,7 @@
   },
   "ability-mage#0018": {
    "src": "Heal",
-   "dst": "",
+   "dst": "Heilung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "",
+   "dst": "Heilt dich und Verbündete in einem\ngroßen Bereich um dich herum.\n(Andere kannst du um höchstens\n{~} ihres max. Lebens heilen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -309,7 +309,7 @@
   },
   "ability-mage#0020": {
    "src": "{#} Duration: {~}s",
-   "dst": "",
+   "dst": "{#} Dauer: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -325,7 +325,7 @@
   },
   "ability-mage#0021": {
    "src": "Cheaper Teleport",
-   "dst": "",
+   "dst": "Günstigerer Teleport",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -337,7 +337,7 @@
   },
   "ability-mage#0022": {
    "src": "Reduce the mana cost of Teleport.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Teleport.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -353,7 +353,7 @@
   },
   "ability-mage#0023": {
    "src": "Ice Snake",
-   "dst": "",
+   "dst": "Eisschlange",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-mage#0024": {
    "src": "Conjures a fast-moving ice snake that\ndamages and slows enemies.",
-   "dst": "",
+   "dst": "Beschwört eine schnelle Eisschlange, die\nGegner schädigt und verlangsamt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -380,7 +380,7 @@
   },
   "ability-mage#0025": {
    "src": "Sunshower",
-   "dst": "",
+   "dst": "Sonnenregen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "",
+   "dst": "Arcane Transfer schädigt Gegner in der Nähe,\nwenn {~}+ Mana übertragen werden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "",
+   "dst": "Heal strahlt ein helles Licht aus,\ndas Gegner in der Nähe schädigt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -422,7 +422,7 @@
   },
   "ability-mage#0028": {
    "src": "Burning Sigil",
-   "dst": "",
+   "dst": "Brennendes Siegel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "",
+   "dst": "Meteor und Ophanim hinterlassen ein Feuersiegel\nam Boden, das Gegnern alle {~}s Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -449,7 +449,7 @@
   },
   "ability-mage#0031": {
    "src": "{#} Cooldown: {~}s",
-   "dst": "",
+   "dst": "{#} Abklingzeit: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -465,7 +465,7 @@
   },
   "ability-mage#0032": {
    "src": "Etheric Slash",
-   "dst": "",
+   "dst": "Ätherischer Hieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -477,7 +477,7 @@
   },
   "ability-mage#0033": {
    "src": "When using Teleport, slash through reality\nand deal damage to enemies you pierce.",
-   "dst": "",
+   "dst": "Beim Einsatz von Teleport zerschneidest du die Realität\nund fügst durchquerten Gegnern Schaden zu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -492,7 +492,7 @@
   },
   "ability-mage#0034": {
    "src": "Crashing Comet",
-   "dst": "",
+   "dst": "Einschlagender Komet",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -504,7 +504,7 @@
   },
   "ability-mage#0035": {
    "src": "Increase the damage of Meteor.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Meteor.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -519,7 +519,7 @@
   },
   "ability-mage#0037": {
    "src": "{#} Total Damage: +{~} (of your DPS)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -535,7 +535,7 @@
   },
   "ability-mage#0038": {
    "src": "Ophanim",
-   "dst": "",
+   "dst": "Ophanim",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -547,7 +547,7 @@
   },
   "ability-mage#0039": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "",
+   "dst": "Wirkst du Meteor, beschwörst du stattdessen\n{~} Lichtkugeln mit {~} Leben, die\nangreifen, wenn du deinen Hauptangriff einsetzt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -562,7 +562,7 @@
   },
   "ability-mage#0040": {
    "src": "When they damage an enemy, they lose {~}\nof their Health. They can be healed back.",
-   "dst": "",
+   "dst": "Schädigen sie einen Gegner, verlieren sie {~}\nihres Lebens. Sie können wieder geheilt werden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -589,7 +589,7 @@
   },
   "ability-mage#0042": {
    "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
-   "dst": "",
+   "dst": "Jede Verzerrung {#} gibt +{~} Schaden (fester Wert)\nund zerfällt mit -{~} pro Sekunde,\nwas mit steigender Verzerrung {#} zunimmt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit Etheric Slash, erhältst du\nbis zu +{~} Verzerrung {#} pro {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -619,7 +619,7 @@
   },
   "ability-mage#0044": {
    "src": "Displacement",
-   "dst": "",
+   "dst": "Versetzung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -631,7 +631,7 @@
   },
   "ability-mage#0045": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "",
+   "dst": "Wirkst du Teleport beim Schleichen, hinterlässt du\nein ätherisches Abbild von dir an deiner Position.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -646,7 +646,7 @@
   },
   "ability-mage#0046": {
    "src": "You're teleported to its location upon recasting it.",
-   "dst": "",
+   "dst": "Wirkst du es erneut, teleportierst du dich zu ihm.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -661,7 +661,7 @@
   },
   "ability-mage#0047": {
    "src": "Arcane Transfer",
-   "dst": "",
+   "dst": "Arkane Übertragung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -673,7 +673,7 @@
   },
   "ability-mage#0048": {
    "src": "Heal will now transfer the contents of your\nMana Bank ✺ into usable Mana instead of healing.",
-   "dst": "",
+   "dst": "Heal überträgt nun den Inhalt deines\nManaspeichers ✺ in nutzbares Mana, statt zu heilen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -688,7 +688,7 @@
   },
   "ability-mage#0049": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "",
+   "dst": "Meteor, Ice Snake und Etheric Slash fügen deinem\nManaspeicher ✺ +{~} Mana pro getroffenem aggressivem Gegner hinzu.\nFrozen Tornado und Meteor Shower fügen +{~} Mana hinzu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -703,7 +703,7 @@
   },
   "ability-mage#0050": {
    "src": "Astral Fragmentation",
-   "dst": "",
+   "dst": "Astrale Zersplitterung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -715,7 +715,7 @@
   },
   "ability-mage#0051": {
    "src": "Meteor scatters into debris upon\nlanding, dealing additional damage.",
-   "dst": "",
+   "dst": "Meteor zerfällt beim Aufschlag\nin Trümmer und verursacht zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -730,7 +730,7 @@
   },
   "ability-mage#0052": {
    "src": "Ophanim draws light from the\nstars, dealing additional damage.",
-   "dst": "",
+   "dst": "Ophanim schöpft Licht aus den\nSternen und verursacht zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -745,7 +745,7 @@
   },
   "ability-mage#0053": {
    "src": "{#} Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich von Meteor: {~} Blöcke (Kreisförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -758,7 +758,7 @@
   },
   "ability-mage#0054": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Meteor)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Meteor)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -771,7 +771,7 @@
   },
   "ability-mage#0055": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Ophanim)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -784,7 +784,7 @@
   },
   "ability-mage#0056": {
    "src": "Purification",
-   "dst": "",
+   "dst": "Läuterung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -796,7 +796,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "",
+   "dst": "Heal und Arcane Transfer befreien\nVerbündete von allen negativen Effekten und Feuer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -811,7 +811,7 @@
   },
   "ability-mage#0058": {
    "src": "Cheaper Heal",
-   "dst": "",
+   "dst": "Günstigere Heilung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -823,7 +823,7 @@
   },
   "ability-mage#0059": {
    "src": "Reduce the mana cost of Heal.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Heal.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -839,7 +839,7 @@
   },
   "ability-mage#0060": {
    "src": "Frozen Tornado",
-   "dst": "",
+   "dst": "Gefrorener Tornado",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "",
+   "dst": "Ice Snake beschwört stattdessen einen gefrorenen\nTornado, der alle {~}s Schaden verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -866,7 +866,7 @@
   },
   "ability-mage#0062": {
    "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
-   "dst": "",
+   "dst": "Für je +{~} Verzerrung {#} erhält der Tornado\n+{~} {#} Wirkungsbereich und +{~} {#} Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -881,7 +881,7 @@
   },
   "ability-mage#0063": {
    "src": "{#} Slow Duration: {~}s",
-   "dst": "",
+   "dst": "{#} Verlangsamungsdauer: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -894,7 +894,7 @@
   },
   "ability-mage#0064": {
    "src": "{#} Tornado Duration: {~}s",
-   "dst": "",
+   "dst": "{#} Tornadodauer: {~}s",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -907,7 +907,7 @@
   },
   "ability-mage#0065": {
    "src": "Sentient Snake",
-   "dst": "",
+   "dst": "Beseelte Schlange",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -919,7 +919,7 @@
   },
   "ability-mage#0066": {
    "src": "Frozen Tornado drifts towards nearby enemies.",
-   "dst": "",
+   "dst": "Frozen Tornado treibt auf Gegner in der Nähe zu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -934,7 +934,7 @@
   },
   "ability-mage#0067": {
    "src": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
-   "dst": "",
+   "dst": "Ice Snake folgt deiner Blickrichtung,\nsodass du sie steuern kannst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -949,7 +949,7 @@
   },
   "ability-mage#0068": {
    "src": "({#} Water: {~})",
-   "dst": "",
+   "dst": "({#} Wasser: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -965,7 +965,7 @@
   },
   "ability-mage#0069": {
    "src": "{#} Drift Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#} Driftreichweite: {~} Blöcke",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -978,7 +978,7 @@
   },
   "ability-mage#0070": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Frozen Tornado)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -993,7 +993,7 @@
   },
   "ability-mage#0071": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ice Snake)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Ice Snake)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1009,7 +1009,7 @@
   },
   "ability-mage#0072": {
    "src": "Larger Heal",
-   "dst": "",
+   "dst": "Größere Heilung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1021,7 +1021,7 @@
   },
   "ability-mage#0073": {
    "src": "Increase your Heal's range.",
-   "dst": "",
+   "dst": "Erhöht die Reichweite deines Heal.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1036,7 +1036,7 @@
   },
   "ability-mage#0074": {
    "src": "Warp Blast",
-   "dst": "",
+   "dst": "Warpstoß",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit dem Hauptangriff, erhältst du\nbis zu +{~} Verzerrung {#} pro {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1063,7 +1063,7 @@
   },
   "ability-mage#0076": {
    "src": "Larger Mana Bank",
-   "dst": "",
+   "dst": "Größerer Manaspeicher",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1075,7 +1075,7 @@
   },
   "ability-mage#0077": {
    "src": "Increase your maximum\nMana Bank ✺ by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deinen maximalen\nManaspeicher ✺ um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1092,7 +1092,7 @@
   },
   "ability-mage#0078": {
    "src": "Cheaper Teleport II",
-   "dst": "",
+   "dst": "Günstigerer Teleport II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1104,7 +1104,7 @@
   },
   "ability-mage#0079": {
    "src": "Fortitude",
-   "dst": "",
+   "dst": "Standhaftigkeit",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "",
+   "dst": "Heilst du {~} deines max. Lebens\ninnerhalb von {~}s, erhält jeder\ngeheilte Spieler einen Schadensbonus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1131,7 +1131,7 @@
   },
   "ability-mage#0081": {
    "src": "{#} Effect: {~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} Effekt: {~} Schadensbonus (⚔) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1144,7 +1144,7 @@
   },
   "ability-mage#0082": {
    "src": "Cheaper Ice Snake",
-   "dst": "",
+   "dst": "Günstigere Eisschlange",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1156,7 +1156,7 @@
   },
   "ability-mage#0083": {
    "src": "Reduce the mana cost of Ice Snake.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Ice Snake.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1172,7 +1172,7 @@
   },
   "ability-mage#0084": {
    "src": "Pyrokinesis",
-   "dst": "",
+   "dst": "Pyrokinese",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1184,7 +1184,7 @@
   },
   "ability-mage#0085": {
    "src": "When your Mana Bank ✺ reaches {~},\nyour Main Attack will explode\nupon impact with enemies.",
-   "dst": "",
+   "dst": "Erreicht dein Manaspeicher ✺ {~},\nexplodiert dein Hauptangriff\nbeim Aufprall auf Gegner.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1199,7 +1199,7 @@
   },
   "ability-mage#0086": {
    "src": "Freezing Sigil",
-   "dst": "",
+   "dst": "Eisiges Siegel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "",
+   "dst": "Ice Snake hinterlässt unter dir ein Eissiegel,\ndas Gegner alle {~}s verlangsamt und\nschädigt. Verbündete auf\ndem Siegel sind immun gegen Rückstoß.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1226,7 +1226,7 @@
   },
   "ability-mage#0088": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Rückstoßimmunität an Verbündete",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1241,7 +1241,7 @@
   },
   "ability-mage#0089": {
    "src": "Vacuokinesis",
-   "dst": "",
+   "dst": "Vakuokinese",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1253,7 +1253,7 @@
   },
   "ability-mage#0090": {
    "src": "For every +{~} Distortion {#}, Vacuokinesis\ndeals +{~} {#} Damage.",
-   "dst": "",
+   "dst": "Für je +{~} Verzerrung {#} verursacht Vacuokinesis\n+{~} {#} Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1268,7 +1268,7 @@
   },
   "ability-mage#0091": {
    "src": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
-   "dst": "",
+   "dst": "Dein Hauptangriff ist mit Vakuum erfüllt\nund verursacht zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1283,7 +1283,7 @@
   },
   "ability-mage#0092": {
    "src": "Snake Nest",
-   "dst": "",
+   "dst": "Schlangennest",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1295,7 +1295,7 @@
   },
   "ability-mage#0093": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "",
+   "dst": "Frozen Tornado beschwört {~} Tornados.\n(Gegner können nicht von mehreren\nTornados oder Schlangen gleichzeitig geschädigt werden.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1310,7 +1310,7 @@
   },
   "ability-mage#0094": {
    "src": "Ice Snake will summon {~} snakes.",
-   "dst": "",
+   "dst": "Ice Snake beschwört {~} Schlangen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1352,7 +1352,7 @@
   },
   "ability-mage#0097": {
    "src": "Orphion's Pulse",
-   "dst": "",
+   "dst": "Orphions Puls",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1364,7 +1364,7 @@
   },
   "ability-mage#0098": {
    "src": "Heal becomes slower and stronger,\npulsing {~} more times for greater healing.",
-   "dst": "",
+   "dst": "Heal wird langsamer und stärker\nund pulsiert {~}-mal öfter für mehr Heilung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1379,7 +1379,7 @@
   },
   "ability-mage#0099": {
    "src": "{#} Delay: {~}s (per pulse)",
-   "dst": "",
+   "dst": "{#} Verzögerung: {~}s (pro Puls)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1392,7 +1392,7 @@
   },
   "ability-mage#0100": {
    "src": "{#} Pulse Self Heal: {~} (of your max health)",
-   "dst": "",
+   "dst": "{#} Selbstheilung pro Puls: {~} (deines maximalen Lebens)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1405,7 +1405,7 @@
   },
   "ability-mage#0101": {
    "src": "Meteor Shower",
-   "dst": "",
+   "dst": "Meteorschauer",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1417,7 +1417,7 @@
   },
   "ability-mage#0102": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~} Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "",
+   "dst": "Wirkst du Meteor, beschwörst du nahe dem\nZielort einen zusätzlichen Meteor für\nje {~} Verzerrung {#}, die du hast.\n(Max. {~} Meteore, nur ein Meteor\nShower kann gleichzeitig aktiv sein.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1432,7 +1432,7 @@
   },
   "ability-mage#0103": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Meteor und Astral Fragmentation werden\nkleiner, verursachen -{~} {#} Schaden und\nverlieren -{~} {#} Wirkungsbereich.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1447,7 +1447,7 @@
   },
   "ability-mage#0104": {
    "src": "{#} Target Radius: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} Zielradius: {~} Blöcke (Kreisförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1460,7 +1460,7 @@
   },
   "ability-mage#0105": {
    "src": "Arcane Restoration",
-   "dst": "",
+   "dst": "Arkane Wiederherstellung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "",
+   "dst": "Pyrokinesis fügt deinem Manaspeicher ✺\n+{~} Mana alle {~}s hinzu, wenn du\neinen aggressiven Gegner triffst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1487,7 +1487,7 @@
   },
   "ability-mage#0107": {
    "src": "Resilient Light",
-   "dst": "",
+   "dst": "Beständiges Licht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1499,7 +1499,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "",
+   "dst": "Erhöht das Leben der Kugeln von\nOphanim um +{~} und verringert den\nSchaden, den sie beim Angreifen erleiden, um -{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1514,7 +1514,7 @@
   },
   "ability-mage#0109": {
    "src": "Incandescence",
-   "dst": "",
+   "dst": "Weißglut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1526,7 +1526,7 @@
   },
   "ability-mage#0110": {
    "src": "Increase the damage of Ophanim.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Ophanim.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1542,7 +1542,7 @@
   },
   "ability-mage#0111": {
    "src": "Lightweaver",
-   "dst": "",
+   "dst": "Lichtweber",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "",
+   "dst": "Heilst du {~} deines max. Lebens innerhalb\nvon {~}s, beschwörst du eine kreisende Kugel, die\nGegnern bei Berührung Schaden zufügt. (Max. {~} Kugeln)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1569,7 +1569,7 @@
   },
   "ability-mage#0113": {
    "src": "{#} Area of Effect: {~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: {~} Block (Kreisförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1582,7 +1582,7 @@
   },
   "ability-mage#0114": {
    "src": "Dimensional Tear",
-   "dst": "",
+   "dst": "Dimensionsriss",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1594,7 +1594,7 @@
   },
   "ability-mage#0115": {
    "src": "Hitting an enemy with Etheric Slash tears\nopen a dimensional rift between you\nand your destination.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit Etheric Slash, reißt\nein Dimensionsspalt zwischen dir\nund deinem Ziel auf.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1624,7 +1624,7 @@
   },
   "ability-mage#0117": {
    "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
-   "dst": "",
+   "dst": "Vorteile und Schaden des Spalts halten\nnach Verlassen seines Bereichs {~}s lang an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1639,7 +1639,7 @@
   },
   "ability-mage#0118": {
    "src": "Arcane Speed",
-   "dst": "",
+   "dst": "Arkane Geschwindigkeit",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-mage#0121": {
    "src": "Larger Mana Bank II",
-   "dst": "",
+   "dst": "Größerer Manaspeicher II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1691,7 +1691,7 @@
   },
   "ability-mage#0122": {
    "src": "Cheaper Meteor II",
-   "dst": "",
+   "dst": "Günstigerer Meteor II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1703,7 +1703,7 @@
   },
   "ability-mage#0123": {
    "src": "Rift Rupture",
-   "dst": "",
+   "dst": "Spaltbruch",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1715,7 +1715,7 @@
   },
   "ability-mage#0124": {
    "src": "Dimensional Tear erupts violently when\ncreated, damaging enemies inside it.",
-   "dst": "",
+   "dst": "Dimensional Tear bricht beim Entstehen\nheftig aus und schädigt Gegner darin.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1730,7 +1730,7 @@
   },
   "ability-mage#0125": {
    "src": "While Riftbound, Etheric Slash implodes your\nbound rift instead, damaging nearby enemies.",
-   "dst": "",
+   "dst": "Bist du Riftbound, lässt Etheric Slash stattdessen\ndeinen gebundenen Spalt implodieren und schädigt Gegner in der Nähe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1745,7 +1745,7 @@
   },
   "ability-mage#0126": {
    "src": "{#} Cooldown: {~}s (Riftbound)",
-   "dst": "",
+   "dst": "{#} Abklingzeit: {~}s (Riftbound)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1758,7 +1758,7 @@
   },
   "ability-mage#0127": {
    "src": "Cheaper Ice Snake II",
-   "dst": "",
+   "dst": "Günstigere Eisschlange II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1770,7 +1770,7 @@
   },
   "ability-mage#0128": {
    "src": "Psychokinesis",
-   "dst": "",
+   "dst": "Psychokinese",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1782,7 +1782,7 @@
   },
   "ability-mage#0129": {
    "src": "Shoots Meteor from you as a slow projectile.",
-   "dst": "",
+   "dst": "Feuert Meteor als langsames Projektil von dir aus ab.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1797,7 +1797,7 @@
   },
   "ability-mage#0130": {
    "src": "Chaos Explosion",
-   "dst": "",
+   "dst": "Chaosexplosion",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1809,7 +1809,7 @@
   },
   "ability-mage#0131": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer will rapidly unleash\nthe last {~} spells you've cast in order.",
-   "dst": "",
+   "dst": "Erreicht dein Manaspeicher ✺ {~},\nentfesselt Arcane Transfer schnell der Reihe nach\ndie letzten {~} Zauber, die du gewirkt hast.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1824,7 +1824,7 @@
   },
   "ability-mage#0132": {
    "src": "Augury",
-   "dst": "",
+   "dst": "Weissagung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1836,7 +1836,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deine maximale Anzahl an Kugeln\nvon Ophanim um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1851,7 +1851,7 @@
   },
   "ability-mage#0134": {
    "src": "Frigid Grasp",
-   "dst": "",
+   "dst": "Eisiger Griff",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1863,7 +1863,7 @@
   },
   "ability-mage#0135": {
    "src": "Ice Snake and Frozen Tornado now deal\nincreased damage and their slow is stronger.",
-   "dst": "",
+   "dst": "Ice Snake und Frozen Tornado verursachen nun\nmehr Schaden und verlangsamen stärker.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1878,7 +1878,7 @@
   },
   "ability-mage#0136": {
    "src": "{#} Effect: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} Langsamkeit ({#}) an Gegner",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1891,7 +1891,7 @@
   },
   "ability-mage#0137": {
    "src": "Time Dilation",
-   "dst": "",
+   "dst": "Zeitdehnung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1903,7 +1903,7 @@
   },
   "ability-mage#0138": {
    "src": "Creates an area of effect when sprinting\nthat increases the walk speed of all\nallies the longer they run in it.\n(You lose {~} Walk Speed Bonus every second\nonce you stop running)",
-   "dst": "",
+   "dst": "Erzeugt beim Sprinten einen Wirkungsbereich,\nder die Laufgeschwindigkeit aller Verbündeten\nerhöht, je länger sie darin laufen.\n(Du verlierst pro Sekunde {~} Laufgeschwindigkeitsbonus,\nsobald du aufhörst zu laufen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1918,7 +1918,7 @@
   },
   "ability-mage#0139": {
    "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} Laufgeschwindigkeit an Verbündete (pro {~}s, max. +{~})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1958,7 +1958,7 @@
   },
   "ability-mage#0142": {
    "src": "Searing Light",
-   "dst": "",
+   "dst": "Sengendes Licht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Sunshower.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1985,7 +1985,7 @@
   },
   "ability-mage#0144": {
    "src": "Accelerated Strike",
-   "dst": "",
+   "dst": "Beschleunigter Schlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit deinem Hauptangriff,\nzerfällt Time Dilation {~}s lang nicht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2012,7 +2012,7 @@
   },
   "ability-mage#0146": {
    "src": "Time Dilation increases your Main Attack damage\nfor every {~} Walk Speed you gain from it.",
-   "dst": "",
+   "dst": "Time Dilation erhöht deinen Hauptangriffsschaden\nfür je {~} Laufgeschwindigkeit, die es dir gewährt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2027,7 +2027,7 @@
   },
   "ability-mage#0147": {
    "src": "{#} Main Attack Damage: +{~} (per {~} Walk Speed)",
-   "dst": "",
+   "dst": "{#} Hauptangriffsschaden: +{~} (pro {~} Laufgeschwindigkeit)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2040,7 +2040,7 @@
   },
   "ability-mage#0148": {
    "src": "Arcane Power",
-   "dst": "",
+   "dst": "Arkane Macht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "",
+   "dst": "Arcane Restoration stellt Mana {~}s schneller wieder her.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2067,7 +2067,7 @@
   },
   "ability-mage#0150": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "",
+   "dst": "Meteor, Ice Snake und Etheric Slash fügen deinem\nManaspeicher ✺ +{~} Mana pro getroffenem aggressivem Gegner hinzu.\nFrozen Tornado und Meteor Shower fügen +{~} Mana hinzu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2082,7 +2082,7 @@
   },
   "ability-mage#0151": {
    "src": "Everlasting Light",
-   "dst": "",
+   "dst": "Ewiges Licht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2094,7 +2094,7 @@
   },
   "ability-mage#0152": {
    "src": "Increase the health of your orbs\nfrom Ophanim by +{~}.",
-   "dst": "",
+   "dst": "Erhöht das Leben deiner Kugeln\nvon Ophanim um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2109,7 +2109,7 @@
   },
   "ability-mage#0153": {
    "src": "Devitalize",
-   "dst": "",
+   "dst": "Entkräften",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2121,7 +2121,7 @@
   },
   "ability-mage#0154": {
    "src": "Heal and Arcane Transfer weaken nearby enemies.",
-   "dst": "",
+   "dst": "Heal und Arcane Transfer schwächen Gegner in der Nähe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2136,7 +2136,7 @@
   },
   "ability-mage#0155": {
    "src": "You gain +{~} Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "",
+   "dst": "Du erhältst +{~} Verzerrung {#} für jeden geschwächten Gegner.\n(Bis zu +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2151,7 +2151,7 @@
   },
   "ability-mage#0156": {
    "src": "{#} Effect: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} Effekt: -{~} Schadensbonus ({#}) an Gegner",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2164,7 +2164,7 @@
   },
   "ability-mage#0157": {
    "src": "Influx Shift",
-   "dst": "",
+   "dst": "Zustromwechsel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2176,7 +2176,7 @@
   },
   "ability-mage#0158": {
    "src": "Increase the effects gained from Distortion {#} by +{~}.",
-   "dst": "",
+   "dst": "Erhöht die Effekte von Verzerrung {#} um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2191,7 +2191,7 @@
   },
   "ability-mage#0159": {
    "src": "Larger Mana Bank III",
-   "dst": "",
+   "dst": "Größerer Manaspeicher III",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2203,7 +2203,7 @@
   },
   "ability-mage#0160": {
    "src": "Divination",
-   "dst": "",
+   "dst": "Wahrsagung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "",
+   "dst": "Erhöht deine maximale Anzahl an Kugeln\nvon Ophanim um +{~} und\nverringert ihren Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2230,7 +2230,7 @@
   },
   "ability-mage#0162": {
    "src": "Void Acceleration",
-   "dst": "",
+   "dst": "Leerenbeschleunigung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "",
+   "dst": "Verdoppelt die Geschwindigkeit von Meteor und erhöht seinen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "",
+   "dst": "Meteor Shower beschwört Meteore +{~} schneller.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2272,7 +2272,7 @@
   },
   "ability-mage#0165": {
    "src": "Riftbound",
-   "dst": "",
+   "dst": "Spaltgebunden",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "",
+   "dst": "Wirkst du Heal beim Schleichen, bindest du dich an deinen\nDimensional Tear und wirst Riftbound.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2299,7 +2299,7 @@
   },
   "ability-mage#0167": {
    "src": "While Riftbound, your Dimensional Tear follows you,\nreaches further and your Distortion {#} stops decaying.",
-   "dst": "",
+   "dst": "Bist du Riftbound, folgt dir dein Dimensional Tear,\nreicht weiter und deine Verzerrung {#} zerfällt nicht mehr.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2314,7 +2314,7 @@
   },
   "ability-mage#0168": {
    "src": "Sunflare",
-   "dst": "",
+   "dst": "Sonneneruption",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2326,7 +2326,7 @@
   },
   "ability-mage#0169": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "",
+   "dst": "Heilst du {~} deines max. Lebens innerhalb von {~}s,\naktiviert dein nächstes Heal Sunflare.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2341,7 +2341,7 @@
   },
   "ability-mage#0170": {
    "src": "While Sunflare is active, you will restore\nhealth and mana to all nearby allies, and\nyour Ophanim orbs will attack constantly.",
-   "dst": "",
+   "dst": "Während Sunflare aktiv ist, stellst du\nallen Verbündeten in der Nähe Leben und Mana wieder her, und\ndeine Ophanim-Kugeln greifen ununterbrochen an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2356,7 +2356,7 @@
   },
   "ability-mage#0171": {
    "src": "{#} Health Regen: {~} per second (of your max health)",
-   "dst": "",
+   "dst": "{#} Lebensregeneration: {~} pro Sekunde (deines maximalen Lebens)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2369,7 +2369,7 @@
   },
   "ability-mage#0172": {
    "src": "{#} Mana Regen: {~} per second (of your max mana)",
-   "dst": "",
+   "dst": "{#} Manaregeneration: {~} pro Sekunde (deines maximalen Manas)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2382,7 +2382,7 @@
   },
   "ability-mage#0173": {
    "src": "Cheaper Heal II",
-   "dst": "",
+   "dst": "Günstigere Heilung II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2394,7 +2394,7 @@
   },
   "ability-mage#0174": {
    "src": "Manastorm",
-   "dst": "",
+   "dst": "Manasturm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2406,7 +2406,7 @@
   },
   "ability-mage#0175": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "",
+   "dst": "Hast du mehr als {~}\nMana, gibt dir das Wirken eines Zaubers\n+{~} Mana über {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2421,7 +2421,7 @@
   },
   "ability-mage#0176": {
    "src": "Judrajim",
-   "dst": "",
+   "dst": "Judrajim",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2433,7 +2433,7 @@
   },
   "ability-mage#0177": {
    "src": "Mana cost and damage increase by\n{~} every time it deals damage.",
-   "dst": "",
+   "dst": "Manakosten und Schaden steigen\njedes Mal um {~}, wenn er Schaden verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "",
+   "dst": "Erreicht dein Manaspeicher ✺ {~},\nbeschwört Arcane Transfer beim Schleichen\neinen Kugelblitz, der Gegnern\nin der Nähe Schaden zufügt und\n{~} Mana alle {~}s verbraucht, bis dir\ndas Mana ausgeht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2463,7 +2463,7 @@
   },
   "ability-mage#0179": {
    "src": "Halo",
-   "dst": "",
+   "dst": "Halo",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "",
+   "dst": "Erhöht deine maximale Anzahl an Kugeln\nvon Lightweaver um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2490,7 +2490,7 @@
   },
   "ability-mage#0181": {
    "src": "Memory Recollection",
-   "dst": "",
+   "dst": "Erinnerungsabruf",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2502,7 +2502,7 @@
   },
   "ability-mage#0182": {
    "src": "Chaos Explosion will cast +{~} spells.",
-   "dst": "",
+   "dst": "Chaos Explosion wirkt +{~} Zauber.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2517,7 +2517,7 @@
   },
   "ability-mage#0183": {
    "src": "Interweave",
-   "dst": "",
+   "dst": "Verflechten",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2529,7 +2529,7 @@
   },
   "ability-mage#0184": {
    "src": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining {#}.",
-   "dst": "",
+   "dst": "Triffst du einen Verbündeten mit einer Lightweaver-Kugel,\nwird die Kugel verbraucht und wendet Strahlend {#} an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2544,7 +2544,7 @@
   },
   "ability-mage#0185": {
    "src": "Shining {#} players can be healed from\nany distance, and they deal the orb's\ndamage to nearby enemies.",
-   "dst": "",
+   "dst": "Strahlende {#} Spieler können aus\njeder Entfernung geheilt werden und fügen Gegnern\nin der Nähe den Schaden der Kugel zu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2559,7 +2559,7 @@
   },
   "ability-mage#0186": {
    "src": "Time Vortex",
-   "dst": "",
+   "dst": "Zeitstrudel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2571,7 +2571,7 @@
   },
   "ability-mage#0187": {
    "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
-   "dst": "",
+   "dst": "Wirkst du Frozen Tornado in deinem Dimensional\nTear, wird er mit jenseitigen Energien erfüllt\nund zu einem Time Vortex.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2586,7 +2586,7 @@
   },
   "ability-mage#0188": {
    "src": "Time Vortex deals damage {~} faster, lasts\nlonger and grants +{~} Distortion {#} every\ntime it deals damage to an enemy.",
-   "dst": "",
+   "dst": "Time Vortex verursacht Schaden {~} schneller, hält\nlänger und gewährt +{~} Verzerrung {#} jedes\nMal, wenn er einem Gegner Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2601,7 +2601,7 @@
   },
   "ability-mage#0189": {
    "src": "{#} Tornado Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} Tornadodauer: +{~}s",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2614,7 +2614,7 @@
   },
   "ability-mage#0190": {
    "src": "Arcane Overflow",
-   "dst": "",
+   "dst": "Arkaner Überfluss",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2626,7 +2626,7 @@
   },
   "ability-mage#0191": {
    "src": "Arcane Transfer will allow you to overflow\nyour mana over its maximum limits. (Max {~})",
-   "dst": "",
+   "dst": "Mit Arcane Transfer kann dein Mana\nüber seine Obergrenze hinaus überlaufen. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2641,7 +2641,7 @@
   },
   "ability-mage#0192": {
    "src": "Gospel of Light",
-   "dst": "",
+   "dst": "Evangelium des Lichts",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2653,7 +2653,7 @@
   },
   "ability-mage#0193": {
    "src": "Nearby players gain {~}\nof the Mana you gain from\nMana Regen and Mana Steal.",
-   "dst": "",
+   "dst": "Spieler in der Nähe erhalten {~}\ndes Manas, das du durch\nManaregeneration und Manaraub erhältst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2668,7 +2668,7 @@
   },
   "ability-mage#0194": {
    "src": "Blitz",
-   "dst": "",
+   "dst": "Blitzangriff",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2680,7 +2680,7 @@
   },
   "ability-mage#0195": {
    "src": "Increase the damage of Frozen Tornado\nby an additional +{~} every time\nthe tornado damages an enemy.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Frozen Tornado\njedes Mal um zusätzliche +{~}, wenn\nder Tornado einem Gegner Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Ice Snake\nund verdoppelt ihre Geschwindigkeit.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2710,7 +2710,7 @@
   },
   "ability-mage#0197": {
    "src": "Crystallize",
-   "dst": "",
+   "dst": "Kristallisieren",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2722,7 +2722,7 @@
   },
   "ability-mage#0198": {
    "src": "Casting Ice Snake shatters\nenemies with {~} Crystallized {#},\ndamaging and slowing them.",
-   "dst": "",
+   "dst": "Wirkst du Ice Snake, zerschmetterst du\nGegner mit {~} Kristallisiert {#},\nschädigst und verlangsamst sie.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2737,7 +2737,7 @@
   },
   "ability-mage#0199": {
    "src": "Crystallized {#} starts decaying at\na rate of -{~} every second if\nnone is applied for {~}s.",
-   "dst": "",
+   "dst": "Kristallisiert {#} beginnt mit -{~} pro\nSekunde zu zerfallen, wenn\n{~}s lang keines angewendet wird.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2752,7 +2752,7 @@
   },
   "ability-mage#0200": {
    "src": "Lightweaver applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "",
+   "dst": "Lightweaver wendet +{~} Kristallisiert {#}\nauf getroffene Gegner an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2767,7 +2767,7 @@
   },
   "ability-mage#0201": {
    "src": "Gleam",
-   "dst": "",
+   "dst": "Schimmer",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2779,7 +2779,7 @@
   },
   "ability-mage#0202": {
    "src": "Portal to the Beyond",
-   "dst": "",
+   "dst": "Portal ins Jenseits",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "",
+   "dst": "Dimensional Tear wird, solange er aktiv ist,\nvon einer Spaltbrut bewohnt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2806,7 +2806,7 @@
   },
   "ability-mage#0204": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "",
+   "dst": "Die Spaltbrut feuert alle {~}s zielsuchende\nVerzerrungsstöße auf Gegner in der Nähe,\ndie Schaden verursachen und deine\nVerzerrung {#} um +{~} erhöhen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2821,7 +2821,7 @@
   },
   "ability-mage#0205": {
    "src": "Paradox",
-   "dst": "",
+   "dst": "Paradoxon",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2833,7 +2833,7 @@
   },
   "ability-mage#0206": {
    "src": "For every +{~} Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "",
+   "dst": "Für je +{~} Verzerrung {#} wird das\nMana -{~}s schneller zurückerstattet.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2848,7 +2848,7 @@
   },
   "ability-mage#0207": {
    "src": "You send {~} of the damage you take\nto the future, dealing it over {~}s and\nborrow mana from the past, refunding\n{~} of your spent mana over {~}s.",
-   "dst": "",
+   "dst": "Du schickst {~} des erlittenen Schadens\nin die Zukunft und erleidest ihn über {~}s, und\nleihst dir Mana aus der Vergangenheit, wodurch\n{~} deines ausgegebenen Manas über {~}s erstattet wird.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2863,7 +2863,7 @@
   },
   "ability-mage#0208": {
    "src": "Induced Instability",
-   "dst": "",
+   "dst": "Herbeigeführte Instabilität",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2875,7 +2875,7 @@
   },
   "ability-mage#0209": {
    "src": "Judrajim applies Unstable {#} to enemies.",
-   "dst": "",
+   "dst": "Judrajim wendet Instabil {#} auf Gegner an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2890,7 +2890,7 @@
   },
   "ability-mage#0211": {
    "src": "Diffraction",
-   "dst": "",
+   "dst": "Beugung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2902,7 +2902,7 @@
   },
   "ability-mage#0212": {
    "src": "Ophanim also applies +{~} Crystallized {#}.",
-   "dst": "",
+   "dst": "Ophanim wendet auch +{~} Kristallisiert {#} an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2917,7 +2917,7 @@
   },
   "ability-mage#0213": {
    "src": "When an enemy dies, leftover Crystallized {#}\nis transferred to other nearby enemies.",
-   "dst": "",
+   "dst": "Stirbt ein Gegner, wird übriges Kristallisiert {#}\nauf andere Gegner in der Nähe übertragen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2932,7 +2932,7 @@
   },
   "ability-mage#0214": {
    "src": "Thunderstorm",
-   "dst": "",
+   "dst": "Gewitter",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2944,7 +2944,7 @@
   },
   "ability-mage#0215": {
    "src": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +{~} Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
-   "dst": "",
+   "dst": "Nach dem Wirken von Meteor schlägt nahe dem\nEinschlagpunkt ein Blitz ein, der\ndeinem Manaspeicher ✺ +{~} Mana\npro getroffenem aggressivem Gegner hinzufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2959,7 +2959,7 @@
   },
   "ability-mage#0216": {
    "src": "Dawn",
-   "dst": "",
+   "dst": "Morgendämmerung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2971,7 +2971,7 @@
   },
   "ability-mage#0217": {
    "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "",
+   "dst": "Aktiviere Fähigkeiten oder heile, um\ndeine Ultimate-Leiste {#} auf {~} aufzuladen",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2986,7 +2986,7 @@
   },
   "ability-mage#0218": {
    "src": "Channel the power of Orphion and summon\nthe sun itself above you.",
-   "dst": "",
+   "dst": "Kanalisiere die Macht von Orphion und beschwöre\ndie Sonne selbst über dir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3016,7 +3016,7 @@
   },
   "ability-mage#0220": {
    "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro Irrlicht)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3029,7 +3029,7 @@
   },
   "ability-mage#0221": {
    "src": "{#} Total Heal: {~} (of max health)",
-   "dst": "",
+   "dst": "{#} Gesamtheilung: {~} (des max. Lebens)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3042,7 +3042,7 @@
   },
   "ability-mage#0222": {
    "src": "Tangled Origin",
-   "dst": "",
+   "dst": "Verworrener Ursprung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3054,7 +3054,7 @@
   },
   "ability-mage#0223": {
    "src": "Summon a Thunder Serpent and a Fire\nSerpent, which will attack nearby enemies.",
-   "dst": "",
+   "dst": "Beschwört eine Donnerschlange und\neine Feuerschlange, die Gegner in der Nähe angreifen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "",
+   "dst": "Die Feuerschlange schießt auf Ziele mit Instabil {#}\nalle {~}s und erhält den Schadensbonus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "",
+   "dst": "Die Donnerschlange trifft bis zu\n{~} Gegner mit überspringenden Blitzen\nalle {~}s und macht sie Instabil {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3099,7 +3099,7 @@
   },
   "ability-mage#0226": {
    "src": "{#} Total Damage: {~} (of your DPS, Fire)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Feuer)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3112,7 +3112,7 @@
   },
   "ability-mage#0227": {
    "src": "{#} Total Damage: {~} (of your DPS, Thunder)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Donner)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3125,7 +3125,7 @@
   },
   "ability-mage#0228": {
    "src": "{#} Vision: {~} Blocks",
-   "dst": "",
+   "dst": "{#} Sicht: {~} Blöcke",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3138,7 +3138,7 @@
   },
   "ability-mage#0229": {
    "src": "Gravitational Collapse",
-   "dst": "",
+   "dst": "Gravitationskollaps",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3150,7 +3150,7 @@
   },
   "ability-mage#0230": {
    "src": "The Dimensional Tear collapses when it expires,\ndealing massive damage to nearby enemies.",
-   "dst": "",
+   "dst": "Dimensional Tear kollabiert, wenn er abläuft,\nund verursacht massiven Schaden an Gegnern in der Nähe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3165,7 +3165,7 @@
   },
   "ability-mage#0231": {
    "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
-   "dst": "",
+   "dst": "Solange er überladen ist, verursacht er +{~} mehr\nSchaden, macht deinen Teleport zu einem tödlichen Strahl,\nder {~}-mal rasch hintereinander feuert,\nermöglicht Flug und verhindert Manaverbrauch.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3180,7 +3180,7 @@
   },
   "ability-mage#0232": {
    "src": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
-   "dst": "",
+   "dst": "Dein Dimensional Tear wird überladen, wächst\nin Größe und Schaden und zieht alle Gegner hinein.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3195,7 +3195,7 @@
   },
   "ability-mage#0233": {
    "src": "{#} Area of Effect: +{~}",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3208,7 +3208,7 @@
   },
   "ability-mage#0234": {
    "src": "{#} Total Damage: {~} (of your DPS, Collapse)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Kollaps)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3221,7 +3221,7 @@
   },
   "ability-mage#0235": {
    "src": "{#} Total Damage: {~} (of your DPS, Deadly Beam)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Todesstrahl)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3234,7 +3234,7 @@
   },
   "ability-mage#0241": {
    "src": "Runic Searing",
-   "dst": "",
+   "dst": "Runenbrand",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3248,7 +3248,7 @@
   },
   "ability-mage#0242": {
    "src": "Burning Sigil will deal damage {~}\nfaster and deal more damage.",
-   "dst": "",
+   "dst": "Burning Sigil verursacht {~}\nschneller und mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "",
+   "dst": "Der Spalt fügt Gegnern alle {~}s Schaden zu und\nerhöht deinen Zuwachs an Verzerrung {#}\num +{~}, solange du darin stehst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3276,7 +3276,7 @@
   },
   "ability-mage#0244": {
    "src": "You gain a stacking walk speed buff\neach time you cast a spell. (Max {~})",
-   "dst": "",
+   "dst": "Du erhältst bei jedem gewirkten Zauber eine stapelbare\nStärkung der Laufgeschwindigkeit. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3290,7 +3290,7 @@
   },
   "ability-mage#0245": {
    "src": "{#} Effects: +{~} Walk Speed per Cast",
-   "dst": "",
+   "dst": "{#} Effekte: +{~} Laufgeschwindigkeit pro Zauber",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3304,7 +3304,7 @@
   },
   "ability-mage#0246": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.\nFrost Dragon's Breath will add +{~} Mana.",
-   "dst": "",
+   "dst": "Meteor, Ice Snake und Etheric Slash fügen deinem\nManaspeicher ✺ +{~} Mana pro getroffenem aggressivem Gegner hinzu.\nFrozen Tornado und Meteor Shower fügen +{~} Mana hinzu.\nFrost Dragon's Breath fügt +{~} Mana hinzu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3318,7 +3318,7 @@
   },
   "ability-mage#0247": {
    "src": "Frost Dragon's Breath",
-   "dst": "",
+   "dst": "Atem des Frostdrachen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3332,7 +3332,7 @@
   },
   "ability-mage#0248": {
    "src": "Ice Snake being casted by Chaos Explosion\nwill instead spew forth a cone of icy breath,\ndealing damage and granting +{~} Mana Bank ✺\nper hit every {~}s.",
-   "dst": "",
+   "dst": "Wird Ice Snake von Chaos Explosion gewirkt,\nspeit sie stattdessen einen Kegel eisigen Atems,\nder Schaden verursacht und +{~} Manaspeicher ✺\npro Treffer alle {~}s gewährt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3346,7 +3346,7 @@
   },
   "ability-mage#0249": {
    "src": "The duration increases by +{~}s with each\nsubsequent cast.",
-   "dst": "",
+   "dst": "Die Dauer steigt mit jedem weiteren\nWirken um +{~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3360,7 +3360,7 @@
   },
   "ability-mage#0250": {
    "src": "{#} Duration: {~}s (Max {~}s)",
-   "dst": "",
+   "dst": "{#} Dauer: {~}s (Max. {~}s)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3374,7 +3374,7 @@
   },
   "ability-mage#0251": {
    "src": "Frost Dragon's Breath attacks -{~}s faster\nbut gains -{~}s duration per cast and -{~}\nMana Bank ✺ per hit.",
-   "dst": "",
+   "dst": "Frost Dragon's Breath greift -{~}s schneller an,\nerhält aber -{~}s Dauer pro Wirken und -{~}\nManaspeicher ✺ pro Treffer.",
    "role": "desc",
    "kind": "block",
    "ctx": [

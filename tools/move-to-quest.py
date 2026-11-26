@@ -43,7 +43,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TR = ROOT / "src/main/resources/assets/wynnchayuan/translations"
-LANGS = ["zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"]
+LANGS = ["zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"]
 FLAT_LINE = re.compile(r'^\s*("(?:[^"\\]|\\.)*")\s*:\s*("(?:[^"\\]|\\.)*")\s*,?\s*$')
 
 

@@ -136,7 +136,7 @@ public final class NpcChatLineTest {
                 {"Scientist Ynnos", "*Ahem* Welcome, everyone."},
                 {"Axelus", "Ah! Don't let them get too close!"},
         };
-        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"}) {
+        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"}) {
             TranslationStore real = new TranslationStore();
             real.loadAll(base.resolve(lang));
             for (String[] l : lines) {

@@ -18,6 +18,8 @@ public final class MarketIdFilterTest {
     private static final int GREEN = 0x55FF55;
     private static final int GREY = 0xAAAAAA;
 
+    private static final java.util.Set<String> SAME_WORD = java.util.Set.of("fr_fr");
+
     private static final String[][] ROWS = {
             {"Sprint Regen Identification Only", "Must have the Sprint Regen", "identification"},
             {"Critical Damage Identification Only", "Must have the Critical Damage", "identification"},
@@ -39,7 +41,7 @@ public final class MarketIdFilterTest {
     };
 
     public static void main(String[] args) {
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th")) {
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr")) {
             System.out.println("=== 市場詞條篩選 " + lang + " ===");
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
@@ -59,14 +61,14 @@ public final class MarketIdFilterTest {
                 System.out.println("  " + shown);
                 check(lang + "：" + row[1] + " 有譯文", out != null);
                 check(lang + "：" + String.join(" / ", row).substring(row[0].length() + 3) + " 沒有留英文",
-                        !shown.contains("Must have") && !shown.contains("identification")
-                        && !shown.contains("Identification"));
+                        !shown.contains("Must have") && (SAME_WORD.contains(lang)
+                        || !shown.contains("identification") && !shown.contains("Identification")));
                 boolean english = false;
                 for (String line : row) {
-                    english |= shown.contains(line);
+                    english |= shown.contains(line) && !(SAME_WORD.contains(lang) && line.equals("identification"));
                 }
                 check(lang + "：" + row[0] + " 標題與說明都換掉了", !english);
-                check(lang + "：數字照原文填回", !row[1].contains("{sp3}") || shown.contains("3"));
+                check(lang + "：數字照原文填回", !row[1].contains("{sp3}") || shown.contains("3") && !shown.contains("{sp"));
                 check(lang + "：等級範圍照原文填回", !row[0].startsWith("Level ")
                         || shown.contains(row[0].substring(6, row[0].indexOf('-')))
                         && shown.contains(row[0].substring(row[0].indexOf('-') + 1, row[0].indexOf(" Only"))));

@@ -159,7 +159,7 @@ public final class CountdownBoardTest {
                 {"Bomb Offer", "45s", "", "10% OFF Bombs"},
         };
         Pattern english = Pattern.compile("Offer|FREE|Extra Bonus|higher|Get |\\b\\d+[dhms]\\b");
-        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"}) {
+        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"}) {
             TranslationStore real = new TranslationStore();
             real.loadAll(base.resolve(lang));
             for (String[] rows : boards) {

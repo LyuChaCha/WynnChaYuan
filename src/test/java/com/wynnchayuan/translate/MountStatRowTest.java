@@ -19,9 +19,9 @@ public final class MountStatRowTest {
         "Speed", "Acceleration", "Altitude", "Energy", "Handling", "Toughness", "Boost", "Training"
     };
 
-    private static final java.util.Set<String> SAME_WORD = java.util.Set.of("pt_br:Altitude");
+    private static final java.util.Set<String> SAME_WORD = java.util.Set.of("pt_br:Altitude", "fr_fr:Altitude", "de_de:Training");
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "pt_br", "vi_vn", "th_th", "de_de", "fr_fr"};
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();

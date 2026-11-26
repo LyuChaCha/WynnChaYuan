@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Infested Plants",
   "count": 62,
-  "translated": 0,
+  "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Infested Plants#000": {
    "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
-   "dst": "",
+   "dst": "Je pars devant. Suis les coordonnées de ton livre de contenu pour trouver la grotte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -18,7 +18,7 @@
   },
   "Infested Plants#001": {
    "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
-   "dst": "",
+   "dst": "...mm, c'est un peu juste, mais... oh! Tu es, euh, encore là...! D'accord. D'accord- tu dois entrer dans cette grotte, tu te souviens?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -28,7 +28,7 @@
   },
   "Infested Plants#002": {
    "src": "[+{~} Saccharum Plant]",
-   "dst": "",
+   "dst": "[+{~} Plante de Saccharum]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -38,7 +38,7 @@
   },
   "Infested Plants#003": {
    "src": "[-{~} Saccharum Plant]",
-   "dst": "",
+   "dst": "[-{~} Plante de Saccharum]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -48,7 +48,7 @@
   },
   "Infested Plants#004": {
    "src": "Meet up with Tasim at the entrance to {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Retrouvez Tasim à l'entrée de {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -58,7 +58,7 @@
   },
   "Infested Plants#005": {
    "src": "Oh, {u}! There you are. It's good to see you. Are you ready to continue on towards {p}?",
-   "dst": "",
+   "dst": "Oh, {u}! Te voilà. Content de te voir. Prêt à continuer vers {p}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -68,7 +68,7 @@
   },
   "Infested Plants#006": {
    "src": "H-hey! You two! You're soldiers, right? I can tell from your weird fashion sense. You folk are supposed to help people! So. Help!",
-   "dst": "",
+   "dst": "H-hé! Vous deux! Vous êtes soldats, non? Ça se voit à vos drôles de tenues. Vous êtes censés aider les gens! Alors. Aidez-moi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -78,7 +78,7 @@
   },
   "Infested Plants#007": {
    "src": "Huh? Oh- yes, of course! What's your name? What do you need help with?",
-   "dst": "",
+   "dst": "Hein? Oh- oui, bien sûr! Comment t'appelles-tu? De quoi as-tu besoin?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -88,7 +88,7 @@
   },
   "Infested Plants#008": {
    "src": "I'm Ope! I was recently... uh... bit by a spider! And now I need your help to get a rare medicinal herb to heal me!",
-   "dst": "",
+   "dst": "Je suis Ope! Je me suis... euh... fait mordre par une araignée! Il me faut une herbe médicinale rare pour guérir!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -98,7 +98,7 @@
   },
   "Infested Plants#009": {
    "src": "It only grows in an infested cave filled with creepy crawlies. And I'm clearly in no condition to go get it myself!",
-   "dst": "",
+   "dst": "Elle ne pousse que dans une grotte infestée de bestioles. Et je ne suis pas en état d'y aller moi-même!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -108,7 +108,7 @@
   },
   "Infested Plants#010": {
    "src": "Well, alright! We're here to help, after all, so... We'll get you that herb!",
-   "dst": "",
+   "dst": "Bon, d'accord! On est là pour aider, après tout... On va te trouver cette herbe!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -118,7 +118,7 @@
   },
   "Infested Plants#011": {
    "src": "Follow Ope to the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Suivez Ope jusqu'à la grotte en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -128,7 +128,7 @@
   },
   "Infested Plants#012": {
    "src": "Hm... There's two of you. Good! One of your can climb up into that cave, and the other can protect me from the crawly spiders down here!",
-   "dst": "",
+   "dst": "Hm... Vous êtes deux. Parfait! L'un grimpe dans la grotte, l'autre me protège des araignées ici en bas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -138,7 +138,7 @@
   },
   "Infested Plants#013": {
    "src": "Alright! {u}, you can go into the cave, and I can defend Ope here while you do that.",
-   "dst": "",
+   "dst": "D'accord! {u}, va dans la grotte, et je protège Ope ici en attendant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -148,7 +148,7 @@
   },
   "Infested Plants#014": {
    "src": "Locate the medicine in the spider cave behind Ope at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Trouvez le remède dans la grotte aux araignées derrière Ope en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -158,7 +158,7 @@
   },
   "Infested Plants#015": {
    "src": "Exit the cave at [-{~}, {~}, -{~}] with the medicinal herb.",
-   "dst": "",
+   "dst": "Sortez de la grotte en [-{~}, {~}, -{~}] avec l'herbe médicinale.",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -168,7 +168,7 @@
   },
   "Infested Plants#016": {
    "src": "There you are! It feels like we've been waiting for hours.",
-   "dst": "",
+   "dst": "Te voilà! On a l'impression d'avoir attendu des heures.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -178,7 +178,7 @@
   },
   "Infested Plants#017": {
    "src": "It... really hasn't been that long. Maybe ten minutes at most.",
-   "dst": "",
+   "dst": "Ça... n'a pas été si long. Dix minutes tout au plus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -188,7 +188,7 @@
   },
   "Infested Plants#018": {
    "src": "Well-... Anyway! Do you have the herb? It's very- uh, important! To cure me. Yep.",
-   "dst": "",
+   "dst": "Bon-... Bref! Vous avez l'herbe? C'est très- euh, important! Pour me guérir. Voilà.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -198,7 +198,7 @@
   },
   "Infested Plants#019": {
    "src": "Well. Goodbye!",
-   "dst": "",
+   "dst": "Bon. Au revoir!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -208,7 +208,7 @@
   },
   "Infested Plants#020": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -218,7 +218,7 @@
   },
   "Infested Plants#021": {
    "src": "That's... frustrating. He seemed shady from the start, I should have-... Well. What's done is done. Let's go speak to that mayor.",
-   "dst": "",
+   "dst": "C'est... frustrant. Il avait l'air louche dès le début, j'aurais dû-... Bon. Ce qui est fait est fait. Allons voir ce maire.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -228,7 +228,7 @@
   },
   "Infested Plants#022": {
    "src": "Speak to Mayor Alvin in Alekin Village at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Parlez au maire Alvin à Alekin Village en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -238,7 +238,7 @@
   },
   "Infested Plants#023": {
    "src": "Speak to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Parlez au maire Alvin à {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -248,7 +248,7 @@
   },
   "Infested Plants#024": {
    "src": "Ah, travelers... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
-   "dst": "",
+   "dst": "Ah, voyageurs... bienvenue dans notre humble village forestier. Venez-vous rester, ou êtes-vous de passage?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -258,7 +258,7 @@
   },
   "Infested Plants#025": {
    "src": "Probably the latter. Though, we ran into a man named Ope, who directed us to speak with you.",
-   "dst": "",
+   "dst": "Plutôt de passage. Mais nous avons croisé un certain Ope, qui nous a dit de venir vous voir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -268,7 +268,7 @@
   },
   "Infested Plants#026": {
    "src": "Here, I may offer you a small sum of emeralds as an apology. I hope he has not soured your opinion of our small town, here...",
-   "dst": "",
+   "dst": "Tenez, permettez-moi de vous offrir quelques émeraudes en guise d'excuses. J'espère qu'il ne vous a pas dégoûtés de notre petit village...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -278,7 +278,7 @@
   },
   "Infested Plants#027": {
    "src": "Oh... Thank you. That's very kind of you. We'll probably stay for a while, before we continue towards {p}.",
-   "dst": "",
+   "dst": "Oh... Merci. C'est très aimable. Nous resterons sans doute un peu avant de repartir vers {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -288,7 +288,7 @@
   },
   "Infested Plants#028": {
    "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
-   "dst": "",
+   "dst": "Oh, {u}! Te voilà. Content de te voir. On devrait continuer vers {p}, mais...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -296,7 +296,7 @@
   },
   "Infested Plants#029": {
    "src": "It looks like we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... and the undead are a danger, as always... but between you and me, we should be-",
-   "dst": "",
+   "dst": "On dirait qu'il faut d'abord traverser {p}. Il paraît que la forêt grouille d'araignées... et les morts-vivants sont dangereux, comme toujours... mais entre nous, on devrait-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -304,7 +304,7 @@
   },
   "Infested Plants#030": {
    "src": "H-hey! You two! You're soldiers, right?",
-   "dst": "",
+   "dst": "H-hé! Vous deux! Vous êtes soldats, non?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -312,7 +312,7 @@
   },
   "Infested Plants#031": {
    "src": "Uh- yes, we are, but-",
-   "dst": "",
+   "dst": "Euh- oui, mais-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -320,7 +320,7 @@
   },
   "Infested Plants#032": {
    "src": "Yep, I could tell from your weird fashion sense! You folk are supposed to help people, right? So. Help!",
-   "dst": "",
+   "dst": "Oui, ça se voit à vos drôles de tenues! Vous êtes censés aider les gens, non? Alors. Aidez-moi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -328,7 +328,7 @@
   },
   "Infested Plants#033": {
    "src": "Well, sure- but who are you? Why are you out on your own, isn't it dangerous? Aren't the undead...",
-   "dst": "",
+   "dst": "Bien sûr- mais qui es-tu? Pourquoi es-tu seul ici, ce n'est pas dangereux? Les morts-vivants...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -336,7 +336,7 @@
   },
   "Infested Plants#034": {
    "src": "I'm Ope! And the undead... eh, there's not as many of them around here. The spiders aren't picky 'bout who they go for.",
-   "dst": "",
+   "dst": "Je suis Ope! Et les morts-vivants... bah, y en a pas tant que ça par ici. Les araignées, elles, s'en prennent à tout le monde.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -344,7 +344,7 @@
   },
   "Infested Plants#035": {
    "src": "Right... okay. That makes sense. What did you need help with?",
-   "dst": "",
+   "dst": "D'accord... bon. Ça se tient. De quoi avais-tu besoin?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -352,7 +352,7 @@
   },
   "Infested Plants#036": {
    "src": "I... uh... so, there's this rare medicinal herb that grows in these woods, right? And it's important. But the only place I know to find it is an infested cave, filled with creepy crawly spiders.",
-   "dst": "",
+   "dst": "Je... euh... bon, il y a une herbe médicinale rare qui pousse dans ces bois, d'accord? Et c'est important. Mais le seul endroit que je connais, c'est une grotte infestée d'araignées répugnantes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -360,7 +360,7 @@
   },
   "Infested Plants#037": {
    "src": "And, y'know, I- I'm no soldier! Can't just go in there and get it myself! So, I was hoping you could help me out.",
-   "dst": "",
+   "dst": "Et, vous savez, je- je suis pas soldat, moi! Je peux pas aller la chercher moi-même! Alors j'espérais que vous m'aideriez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -368,7 +368,7 @@
   },
   "Infested Plants#038": {
    "src": "Well... we came to Wynn to help out, after all. So... we can get you that herb!",
-   "dst": "",
+   "dst": "Bon... on est venus à Wynn pour aider. Alors... on va te trouver cette herbe!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -376,7 +376,7 @@
   },
   "Infested Plants#039": {
    "src": "Great. Great! I'll bring you to the cave, and you can do the rest from there. Follow me!",
-   "dst": "",
+   "dst": "Super. Super! Je vous mène à la grotte, vous ferez le reste. Suivez-moi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -384,7 +384,7 @@
   },
   "Infested Plants#040": {
    "src": "Well, here we are! That's the cave right over there- just climb up the rocks and jump into it. It's safe! Uh, probably.",
-   "dst": "",
+   "dst": "Bon, nous y voilà! La grotte est juste là- grimpez sur les rochers et sautez dedans. C'est sans danger! Euh, sans doute.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -392,7 +392,7 @@
   },
   "Infested Plants#041": {
    "src": "...eek. There's a lot of spiders even up here... hey, since there's two of you- one of you can go get the herb, and the other can, uh... protect me from the crawly spiders?",
-   "dst": "",
+   "dst": "...hiii. Il y a plein d'araignées même ici... dites, vous êtes deux- l'un va chercher l'herbe, et l'autre, euh... me protège des araignées?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -400,7 +400,7 @@
   },
   "Infested Plants#042": {
    "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
-   "dst": "",
+   "dst": "Ça me va. {u}, va dans la grotte, et je protège Ope ici en attendant.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -408,7 +408,7 @@
   },
   "Infested Plants#043": {
    "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
-   "dst": "",
+   "dst": "Oui... bien! Bien, bien! Bonne, euh, chance là-haut! Tâche de pas trop te faire mordre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -416,7 +416,7 @@
   },
   "Infested Plants#044": {
    "src": "...ah- there you are!! What took you so long, it feels like we've been waiting for hours!",
-   "dst": "",
+   "dst": "...ah- te voilà!! Pourquoi c'était si long, on a l'impression d'avoir attendu des heures!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -424,7 +424,7 @@
   },
   "Infested Plants#045": {
    "src": "It-... mm. A-anyway! Do you have the herb? It's very important, yep.",
-   "dst": "",
+   "dst": "C'est-... mm. B-bref! Tu as l'herbe? C'est très important, voilà.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -432,7 +432,7 @@
   },
   "Infested Plants#046": {
    "src": "Come to think of it... I don't think you ever mentioned what you needed it for.",
-   "dst": "",
+   "dst": "J'y pense... tu ne nous as jamais dit à quoi elle te servait.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -440,7 +440,7 @@
   },
   "Infested Plants#047": {
    "src": "Oh, I- eheh, it... I... uh, it's n-none of your business, actually.",
-   "dst": "",
+   "dst": "Oh, je- héhé, c'est... je... euh, ça v-vous regarde pas, en fait.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -448,7 +448,7 @@
   },
   "Infested Plants#048": {
    "src": "I- I thank you kindly for your work, soldiers! Now, about your payment... let's see, what do I have...",
-   "dst": "",
+   "dst": "J- je vous remercie bien pour votre travail, soldats! Bon, pour votre paie... voyons ce que j'ai...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -456,7 +456,7 @@
   },
   "Infested Plants#049": {
    "src": "Oh. I seem to be out of emeralds. Well- then, I- I can offer some advice! There's lots to find in this forest. Plenty of other caves with valuables to explore! Might be worth your time!",
-   "dst": "",
+   "dst": "Oh. On dirait que je n'ai plus d'émeraudes. Eh bien- alors, je- je peux vous donner un conseil! Cette forêt regorge de choses. Plein d'autres grottes à trésors à explorer! Ça vaut peut-être le coup!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -464,7 +464,7 @@
   },
   "Infested Plants#050": {
    "src": "Wait, what? Hey, are you seriously not going to-",
-   "dst": "",
+   "dst": "Attends, quoi? Hé, tu ne vas sérieusement pas-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -472,7 +472,7 @@
   },
   "Infested Plants#051": {
    "src": "It has been a time soldiers, but I- I truly must be going! Important things to get to! We're near {p}, you should stop on by! Just keep going east down the main road!",
-   "dst": "",
+   "dst": "C'était un plaisir, soldats, mais je- je dois vraiment filer! Des choses importantes m'attendent! On est près de {p}, passez donc! Suivez la route principale vers l'est!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -480,7 +480,7 @@
   },
   "Infested Plants#052": {
    "src": "You can, uh, go speak to the mayor! He can cover my expenses!",
-   "dst": "",
+   "dst": "Vous pouvez, euh, aller voir le maire! Il couvrira mes frais!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -488,7 +488,7 @@
   },
   "Infested Plants#053": {
    "src": "...well. Goodbye!",
-   "dst": "",
+   "dst": "...bon. Au revoir!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -496,7 +496,7 @@
   },
   "Infested Plants#054": {
    "src": "That's... frustrating. I really did just want to know... well. What's done is done. Let's just go talk to that mayor he mentioned.",
-   "dst": "",
+   "dst": "C'est... frustrant. Je voulais juste savoir... bon. Ce qui est fait est fait. Allons voir ce maire dont il parlait.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -504,7 +504,7 @@
   },
   "Infested Plants#055": {
    "src": "I'm going to go on ahead. I'll meet you in {p}, it's just down the main road to the east.",
-   "dst": "",
+   "dst": "Je pars devant. On se retrouve à {p}, c'est tout droit sur la route principale vers l'est.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -512,7 +512,7 @@
   },
   "Infested Plants#056": {
    "src": "Ah, recruits... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
-   "dst": "",
+   "dst": "Ah, des recrues... bienvenue dans notre humble village forestier. Venez-vous rester, ou êtes-vous de passage?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -520,7 +520,7 @@
   },
   "Infested Plants#057": {
    "src": "Just passing through, our destination is {p}. Though... we ran into a man named Ope, who directed us to speak with you.",
-   "dst": "",
+   "dst": "De passage, nous allons à {p}. Mais... nous avons croisé un certain Ope, qui nous a dit de venir vous voir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -528,7 +528,7 @@
   },
   "Infested Plants#058": {
    "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with sometimes.",
-   "dst": "",
+   "dst": "Oh, Ope... La rencontre s'est mal passée, je suppose? Je vous présente mes excuses, il est... difficile à vivre parfois.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -536,7 +536,7 @@
   },
   "Infested Plants#059": {
    "src": "Oh... thank you. That's very kind of you. We'll probably stay a while, before we continue towards {p}.",
-   "dst": "",
+   "dst": "Oh... merci. C'est très aimable. Nous resterons sans doute un peu avant de repartir vers {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -544,7 +544,7 @@
   },
   "Infested Plants#060": {
    "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay.",
-   "dst": "",
+   "dst": "Alors faites comme chez vous! Tous les voyageurs sont les bienvenus ici, quelle que soit la durée de leur séjour.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -552,7 +552,7 @@
   },
   "Infested Plants#061": {
    "src": "I'm going to go rest up a little. I'll be ready for more adventures soon though, don't worry!",
-   "dst": "",
+   "dst": "Je vais me reposer un peu. Mais je serai vite prêt pour d'autres aventures, t'en fais pas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",

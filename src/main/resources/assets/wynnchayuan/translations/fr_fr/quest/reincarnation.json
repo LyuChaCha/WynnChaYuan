@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Reincarnation",
   "count": 36,
-  "translated": 0,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Reincarnation#000": {
    "src": "Talk to Batelu in Bob's Tomb.",
-   "dst": "",
+   "dst": "Parlez à Batelu dans la tombe de Bob.",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -18,7 +18,7 @@
   },
   "Reincarnation#001": {
    "src": "Hello adventurer! I see you want to solve the mystery of Bob's tomb also? Glad to meet you.",
-   "dst": "",
+   "dst": "Bonjour, aventurier! Vous aussi, vous voulez percer le mystère de la tombe de Bob? Ravi de vous rencontrer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -28,7 +28,7 @@
   },
   "Reincarnation#002": {
    "src": "My name is Batelu. Lately, I've been studying these strange symbols on the walls.",
-   "dst": "",
+   "dst": "Je m'appelle Batelu. Ces derniers temps, j'étudie ces étranges symboles sur les murs.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -38,7 +38,7 @@
   },
   "Reincarnation#003": {
    "src": "It's about Bob. Hopefully you do not believe the stories of his death, right? Bob couldn't have died so easily. Not to something so mundane as a wolf.",
-   "dst": "",
+   "dst": "Il s'agit de Bob. Vous ne croyez pas aux histoires sur sa mort, j'espère? Bob n'a pas pu mourir si facilement. Pas à cause d'une chose aussi banale qu'un loup.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -48,7 +48,7 @@
   },
   "Reincarnation#004": {
    "src": "He wasn't only strong, he was absolutely un-killable, a master in almost every skill.",
-   "dst": "",
+   "dst": "Il n'était pas seulement fort, il était absolument intuable, un maître dans presque tous les arts.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -58,7 +58,7 @@
   },
   "Reincarnation#005": {
    "src": "I believe he knew he was about to die. How? What of? Nobody knows, but he left this world prepared.",
-   "dst": "",
+   "dst": "Je crois qu'il savait qu'il allait mourir. Comment? De quoi? Nul ne le sait, mais il a quitté ce monde préparé.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -68,7 +68,7 @@
   },
   "Reincarnation#006": {
    "src": "You see, it says here Bob had three loyal animals. Before dying, he scattered them across the ocean.",
-   "dst": "",
+   "dst": "Voyez-vous, il est écrit ici que Bob avait trois animaux fidèles. Avant de mourir, il les a dispersés sur l'océan.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -78,7 +78,7 @@
   },
   "Reincarnation#007": {
    "src": "I think those animals are the key to accessing his real tomb...",
-   "dst": "",
+   "dst": "Je pense que ces animaux sont la clé de sa véritable tombe...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -88,7 +88,7 @@
   },
   "Reincarnation#008": {
    "src": "You see that little gap right there? It's the entrance...",
-   "dst": "",
+   "dst": "Vous voyez cette petite fente, juste là? C'est l'entrée...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -98,7 +98,7 @@
   },
   "Reincarnation#009": {
    "src": "Unfortunately, nobody was able to remove the spell blocking it.",
-   "dst": "",
+   "dst": "Malheureusement, personne n'a réussi à lever le sort qui la bloque.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -108,7 +108,7 @@
   },
   "Reincarnation#010": {
    "src": "But I can. I know how to open the passage to Bob. This is where the animals will come in useful...",
-   "dst": "",
+   "dst": "Mais moi, je peux. Je sais comment ouvrir le passage vers Bob. C'est là que les animaux seront utiles...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -118,7 +118,7 @@
   },
   "Reincarnation#011": {
    "src": "Bring me [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] if you can find them.",
-   "dst": "",
+   "dst": "Apportez-moi [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] si vous les trouvez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -134,7 +134,7 @@
   },
   "Reincarnation#012": {
    "src": "How is your quest going along?",
-   "dst": "",
+   "dst": "Comment avance votre quête?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -144,7 +144,7 @@
   },
   "Reincarnation#013": {
    "src": "I am not worthy enough to enter it. I did not complete the task of the animals, I merely read it. You shall go alone. Be careful.",
-   "dst": "",
+   "dst": "Je ne suis pas digne d'y entrer. Je n'ai pas accompli l'épreuve des animaux, je l'ai seulement lue. Vous irez seul. Soyez prudent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -160,7 +160,7 @@
   },
   "Reincarnation#014": {
    "src": "I believe Bob did something to those animals. I think if we could reunite them in some way, we could open the passage.",
-   "dst": "",
+   "dst": "Je crois que Bob a fait quelque chose à ces animaux. Si nous pouvions les réunir d'une façon ou d'une autre, nous ouvririons le passage.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -170,7 +170,7 @@
   },
   "Reincarnation#015": {
    "src": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
-   "dst": "",
+   "dst": "Apportez-moi {~} Cluckles' Favourite Feather, {~} Baab's Wool et {~} Mooington's Skin si vous les trouvez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -180,7 +180,7 @@
   },
   "Reincarnation#016": {
    "src": "I am sure that together, we can open the passage. Good luck.",
-   "dst": "",
+   "dst": "Je suis sûr qu'ensemble, nous pourrons ouvrir le passage. Bonne chance.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -190,7 +190,7 @@
   },
   "Reincarnation#017": {
    "src": "Bring back {~} Cluckles' Favourite Feather, Baab's Wool, and Mooington's Skin to Batelu.",
-   "dst": "",
+   "dst": "Rapportez {~} Cluckles' Favourite Feather, Baab's Wool et Mooington's Skin à Batelu.",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -200,7 +200,7 @@
   },
   "Reincarnation#018": {
    "src": "Wonderful! We can now open the passage to the true tomb of Bob...",
-   "dst": "",
+   "dst": "Merveilleux! Nous pouvons maintenant ouvrir le passage vers la véritable tombe de Bob...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -210,7 +210,7 @@
   },
   "Reincarnation#019": {
    "src": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
-   "dst": "",
+   "dst": "Je ne suis pas digne d'y entrer. Je n'ai pas accompli l'épreuve des animaux, je l'ai seulement lue. Vous irez seul, soyez prudent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -220,7 +220,7 @@
   },
   "Reincarnation#020": {
    "src": "Kill Bob's Reincarnation.",
-   "dst": "",
+   "dst": "Tuez la Réincarnation de Bob.",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -230,7 +230,7 @@
   },
   "Reincarnation#021": {
    "src": "I am Bob, master of the arts of Wynn.",
-   "dst": "",
+   "dst": "Je suis Bob, maître des arts de Wynn.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -240,7 +240,7 @@
   },
   "Reincarnation#022": {
    "src": "Let me explain why you are here.",
-   "dst": "",
+   "dst": "Laissez-moi vous expliquer pourquoi vous êtes ici.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -250,7 +250,7 @@
   },
   "Reincarnation#023": {
    "src": "My animals, were my greatest allies in my travels through the world.",
-   "dst": "",
+   "dst": "Mes animaux ont été mes plus grands alliés dans mes voyages à travers le monde.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -260,7 +260,7 @@
   },
   "Reincarnation#024": {
    "src": "I travelled too far, mined too deep, and of course challenged what should not be challenged. My time in Wynn was coming to an end.",
-   "dst": "",
+   "dst": "J'ai voyagé trop loin, creusé trop profond et, bien sûr, défié ce qui ne devait pas l'être. Mon temps à Wynn touchait à sa fin.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -270,7 +270,7 @@
   },
   "Reincarnation#025": {
    "src": "I knew so, too. But I refused to leave without giving the power i had attained to those worthy of it.",
-   "dst": "",
+   "dst": "Je le savais aussi. Mais je refusais de partir sans léguer le pouvoir acquis à ceux qui en seraient dignes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -280,7 +280,7 @@
   },
   "Reincarnation#026": {
    "src": "Using what ability I had left to me, I transferred my power to my animals, in three pieces. In the hope that those worthy to harness it will seek them out.",
-   "dst": "",
+   "dst": "Avec ce qui me restait de forces, j'ai transféré mon pouvoir à mes animaux, en trois fragments. Dans l'espoir que ceux qui sont dignes de le maîtriser les cherchent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -290,7 +290,7 @@
   },
   "Reincarnation#027": {
    "src": "The spell I placed on the door to this realm will only break to the one who collects my power. But it cannot have escaped your notice, you do not have my power.",
-   "dst": "",
+   "dst": "Le sort que j'ai placé sur la porte de ce royaume ne se brisera que pour qui rassemble mon pouvoir. Mais vous l'aurez sûrement remarqué: vous n'avez pas mon pouvoir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -300,7 +300,7 @@
   },
   "Reincarnation#028": {
    "src": "The truth is, you must pass a test, the ultimate test. Hone your skills you have learnt throughout your travels, and face me. Face me, and earn your place amongst soldiers of Wynn.",
-   "dst": "",
+   "dst": "La vérité, c'est que vous devez passer une épreuve, l'épreuve ultime. Aiguisez les talents acquis au fil de vos voyages, et affrontez-moi. Affrontez-moi, et gagnez votre place parmi les soldats de Wynn.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -310,7 +310,7 @@
   },
   "Reincarnation#029": {
    "src": "Bring back {~} Bob's Seal of Approval to Batelu.",
-   "dst": "",
+   "dst": "Rapportez {~} Bob's Seal of Approval à Batelu.",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -320,7 +320,7 @@
   },
   "Reincarnation#030": {
    "src": "Ah! You have returned! Tell me, what did you find within?",
-   "dst": "",
+   "dst": "Ah! Vous êtes revenu! Dites-moi, qu'avez-vous trouvé là-dedans?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -330,7 +330,7 @@
   },
   "Reincarnation#031": {
    "src": "...You faced Bob himself in combat? And you triumphed? That's quite remarkable!",
-   "dst": "",
+   "dst": "...Vous avez affronté Bob en personne? Et vous avez triomphé? C'est tout à fait remarquable!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -340,7 +340,7 @@
   },
   "Reincarnation#032": {
    "src": "And he gave you his Seal of Approval... Hm. If that is the case, then there is something I may do for you.",
-   "dst": "",
+   "dst": "Et il vous a donné son sceau d'approbation... Hm. Dans ce cas, il y a quelque chose que je peux faire pour vous.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -350,7 +350,7 @@
   },
   "Reincarnation#033": {
    "src": "Before Bob passed, he left his mythical weapons with a trusted friend. They were, so he said, to be kept for one who would be worthy to wield them...",
-   "dst": "",
+   "dst": "Avant de s'éteindre, Bob a confié ses armes mythiques à un ami de confiance. Elles devaient, disait-il, être gardées pour qui serait digne de les manier...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -360,7 +360,7 @@
   },
   "Reincarnation#034": {
    "src": "Yes... Yes, I am certain. You have proven yourself worthy. Take this relic, the Stone of Myths, and bring it to the Temple of the Legends.",
-   "dst": "",
+   "dst": "Oui... Oui, j'en suis certain. Vous avez prouvé votre valeur. Prenez cette relique, la Pierre des Mythes, et portez-la au Temple des Légendes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -370,7 +370,7 @@
   },
   "Reincarnation#035": {
    "src": "Within, you will find a merchant who will offer you a weapon in exchange for it. I wish you luck with your future travels.",
-   "dst": "",
+   "dst": "Vous y trouverez un marchand qui vous offrira une arme en échange. Je vous souhaite bonne chance pour vos futurs voyages.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",

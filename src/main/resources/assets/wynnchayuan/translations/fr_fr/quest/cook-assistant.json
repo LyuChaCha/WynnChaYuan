@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cook Assistant",
   "count": 21,
-  "translated": 0,
+  "translated": 21,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Parlez au Cuisinier à {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -18,7 +18,7 @@
   },
   "Cook Assistant#001": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
-   "dst": "",
+   "dst": "Le roi m'a ordonné de préparer des gâteaux pour toutes ces nouvelles recrues!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -28,7 +28,7 @@
   },
   "Cook Assistant#002": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
-   "dst": "",
+   "dst": "Malheureusement, un Grook a pris mon dernier gâteau, et je n'ai plus d'ingrédients!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -38,7 +38,7 @@
   },
   "Cook Assistant#003": {
    "src": "Now can you help...",
-   "dst": "",
+   "dst": "Pourriez-vous m'aider...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -48,7 +48,7 @@
   },
   "Cook Assistant#004": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "C'est le Grook! Poursuivez-le et récupérez mon gâteau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -58,7 +58,7 @@
   },
   "Cook Assistant#005": {
    "src": "Follow the pesky Grook.",
-   "dst": "",
+   "dst": "Suivez ce maudit Grook.",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -68,7 +68,7 @@
   },
   "Cook Assistant#006": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
-   "dst": "",
+   "dst": "Le Grook s'est échappé! Retournez voir le Cuisinier en [-{~}, {~}, -{~}] pour savoir quoi faire.",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -78,7 +78,7 @@
   },
   "Cook Assistant#007": {
    "src": "What are you doing? Go after the Grook...",
-   "dst": "",
+   "dst": "Qu'est-ce que vous faites? Poursuivez le Grook...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -88,7 +88,7 @@
   },
   "Cook Assistant#008": {
    "src": "It got away!",
-   "dst": "",
+   "dst": "Il s'est échappé!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -98,7 +98,7 @@
   },
   "Cook Assistant#009": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
-   "dst": "",
+   "dst": "Bon, je suppose que vous allez devoir m'aider à trouver les ingrédients pour en préparer un autre...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -108,7 +108,7 @@
   },
   "Cook Assistant#010": {
    "src": "There he is again! After him!",
-   "dst": "",
+   "dst": "Le revoilà! Après lui!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -118,7 +118,7 @@
   },
   "Cook Assistant#011": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Découvrez où le Grook s'est envolé en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -128,7 +128,7 @@
   },
   "Cook Assistant#012": {
    "src": "Find where the Grook flew up to at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Découvrez où le Grook s'est envolé en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -138,7 +138,7 @@
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
-   "dst": "",
+   "dst": "Retournez voir le Cuisinier en [-{~}, {~}, -{~}]. Utilisez un parchemin pour y aller plus vite.",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -148,7 +148,7 @@
   },
   "Cook Assistant#014": {
    "src": "Return to the cook at [-{~}, {~}, -{~}] Use a Scroll to get there faster",
-   "dst": "",
+   "dst": "Retournez voir le Cuisinier en [-{~}, {~}, -{~}] Utilisez un parchemin pour y aller plus vite",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -158,7 +158,7 @@
   },
   "Cook Assistant#015": {
    "src": "Great! You got the cake!",
-   "dst": "",
+   "dst": "Génial! Vous avez le gâteau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -168,7 +168,7 @@
   },
   "Cook Assistant#016": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
-   "dst": "",
+   "dst": "Je ne vous remercierai jamais assez! Tenez, prenez ces émeraudes et cette armure pour votre peine.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -178,7 +178,7 @@
   },
   "Cook Assistant#017": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
-   "dst": "",
+   "dst": "Vous devriez explorer les environs pour gagner en puissance. On dit qu'il y aurait du travail à {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -188,7 +188,7 @@
   },
   "Cook Assistant#018": {
    "src": "I can't believe what is happening to me...",
-   "dst": "",
+   "dst": "Je n'arrive pas à croire ce qui m'arrive...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -196,7 +196,7 @@
   },
   "Cook Assistant#019": {
    "src": "Now, how can you help...",
-   "dst": "",
+   "dst": "Alors, comment pouvez-vous aider...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -204,7 +204,7 @@
   },
   "Cook Assistant#020": {
    "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "Attendez! C'est le Grook! Poursuivez-le et récupérez mon gâteau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",

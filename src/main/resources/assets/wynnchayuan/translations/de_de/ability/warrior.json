@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 237,
-  "translated": 0,
+  "translated": 230,
   "note": "戰士的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-warrior#0000": {
    "src": "Bash",
-   "dst": "",
+   "dst": "Hieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -23,7 +23,7 @@
   },
   "ability-warrior#0001": {
    "src": "Violently bash the ground, dealing\nhigh damage in a large area.",
-   "dst": "",
+   "dst": "Schlägt heftig auf den Boden und verursacht\nhohen Schaden in einem großen Bereich.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -38,7 +38,7 @@
   },
   "ability-warrior#0002": {
    "src": "Cheaper Bash",
-   "dst": "",
+   "dst": "Günstigerer Hieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -50,7 +50,7 @@
   },
   "ability-warrior#0003": {
    "src": "Reduce the Mana cost of Bash.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Bash.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -66,7 +66,7 @@
   },
   "ability-warrior#0004": {
    "src": "Spear Proficiency I",
-   "dst": "",
+   "dst": "Speerbeherrschung I",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -78,7 +78,7 @@
   },
   "ability-warrior#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a spear.",
-   "dst": "",
+   "dst": "Verbessert Schaden und Reichweite deines\nHauptangriffs mit einem Speer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -94,7 +94,7 @@
   },
   "ability-warrior#0006": {
    "src": "{#} Main Attack Range: +{~} Block",
-   "dst": "",
+   "dst": "{#} Hauptangriffsreichweite: +{~} Block",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -107,7 +107,7 @@
   },
   "ability-warrior#0007": {
    "src": "Double Bash",
-   "dst": "",
+   "dst": "Doppelhieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -119,7 +119,7 @@
   },
   "ability-warrior#0008": {
    "src": "Bash will hit a second\ntime at a farther range.",
-   "dst": "",
+   "dst": "Bash trifft ein zweites\nMal in größerer Entfernung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -134,7 +134,7 @@
   },
   "ability-warrior#0009": {
    "src": "{#} Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: -{~} (deines DPS, pro Hieb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -148,7 +148,7 @@
   },
   "ability-warrior#0010": {
    "src": "Vehement",
-   "dst": "",
+   "dst": "Ungestüm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -160,7 +160,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "",
+   "dst": "Für je {~} bzw. {~} Hauptangriffsschaden\n(fester Wert) aus Gegenständen\nerhältst du +{~} Laufgeschwindigkeit. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -175,7 +175,7 @@
   },
   "ability-warrior#0012": {
    "src": "{#} Damage Bonus: +{~} (Raw)",
-   "dst": "",
+   "dst": "{#} Schadensbonus: +{~} (fester Wert)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -188,7 +188,7 @@
   },
   "ability-warrior#0013": {
    "src": "Charge",
-   "dst": "",
+   "dst": "Ansturm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -200,7 +200,7 @@
   },
   "ability-warrior#0014": {
    "src": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
-   "dst": "",
+   "dst": "Stürme mit hoher Geschwindigkeit vorwärts.\n(Halte während des Ansturms Shift gedrückt, um abzubrechen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -215,7 +215,7 @@
   },
   "ability-warrior#0015": {
    "src": "Tougher Skin",
-   "dst": "",
+   "dst": "Zähere Haut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -227,7 +227,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "",
+   "dst": "Für je {~} bzw. {~} Lebensregeneration (fester Wert) aus\nGegenständen erhältst du +{~} Leben. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -242,7 +242,7 @@
   },
   "ability-warrior#0017": {
    "src": "Harden your skin and gain\n+{~} Base Resistance.",
-   "dst": "",
+   "dst": "Härte deine Haut und erhalte\n+{~} Grundresistenz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -257,7 +257,7 @@
   },
   "ability-warrior#0018": {
    "src": "Uppercut",
-   "dst": "",
+   "dst": "Aufwärtshaken",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -269,7 +269,7 @@
   },
   "ability-warrior#0019": {
    "src": "Hurls enemies upwards and\ndeals massive damage.",
-   "dst": "",
+   "dst": "Schleudert Gegner nach oben und\nverursacht massiven Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -284,7 +284,7 @@
   },
   "ability-warrior#0020": {
    "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: {~}-{~} Blöcke (Kegelförmig)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -298,7 +298,7 @@
   },
   "ability-warrior#0021": {
    "src": "Cheaper Charge",
-   "dst": "",
+   "dst": "Günstigerer Ansturm",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -310,7 +310,7 @@
   },
   "ability-warrior#0022": {
    "src": "Reduce the Mana cost of Charge.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Charge.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -325,7 +325,7 @@
   },
   "ability-warrior#0023": {
    "src": "War Scream",
-   "dst": "",
+   "dst": "Kriegsschrei",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -337,7 +337,7 @@
   },
   "ability-warrior#0024": {
    "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
-   "dst": "",
+   "dst": "Stößt ein Brüllen aus, das Schaden verursacht,\nGegner in der Nähe heranzieht und dir und\nSpielern in der Nähe Resistenz gewährt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -352,7 +352,7 @@
   },
   "ability-warrior#0025": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} Effekt: {~} Resistenzbonus (❁) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-warrior#0026": {
    "src": "Flyby Slam",
-   "dst": "",
+   "dst": "Sturzflugschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -377,7 +377,7 @@
   },
   "ability-warrior#0027": {
    "src": "After using Charge, violently crash\ndown unto the ground and deal damage.",
-   "dst": "",
+   "dst": "Nach dem Einsatz von Charge krachst du\nheftig auf den Boden und verursachst Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-warrior#0028": {
    "src": "Charge damages enemies in your way.",
-   "dst": "",
+   "dst": "Charge schädigt Gegner auf deinem Weg.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-warrior#0029": {
    "src": "{#} Area of Effect: {~} Blocks",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: {~} Blöcke",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -423,7 +423,7 @@
   },
   "ability-warrior#0030": {
    "src": "{#} Total Damage: {~} (of your DPS, airborne)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, in der Luft)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -436,7 +436,7 @@
   },
   "ability-warrior#0031": {
    "src": "{#} Total Damage: {~} (of your DPS, landing)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Landung)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -449,7 +449,7 @@
   },
   "ability-warrior#0032": {
    "src": "Final Crush",
-   "dst": "",
+   "dst": "Finales Zermalmen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -461,7 +461,7 @@
   },
   "ability-warrior#0033": {
    "src": "Bash's last hit is delayed, but deals\n+{~} damage and has +{~} radius.",
-   "dst": "",
+   "dst": "Der letzte Treffer von Bash ist verzögert, verursacht aber\n+{~} Schaden und hat +{~} Radius.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -476,7 +476,7 @@
   },
   "ability-warrior#0034": {
    "src": "Fireworks",
-   "dst": "",
+   "dst": "Feuerwerk",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -488,7 +488,7 @@
   },
   "ability-warrior#0035": {
    "src": "Mobs hit by Uppercut will explode\nmid-air and receive additional damage.",
-   "dst": "",
+   "dst": "Von Uppercut getroffene Mobs explodieren\nin der Luft und erleiden zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -503,7 +503,7 @@
   },
   "ability-warrior#0036": {
    "src": "Quadruple Bash",
-   "dst": "",
+   "dst": "Vierfachhieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -515,7 +515,7 @@
   },
   "ability-warrior#0037": {
    "src": "Bash will cast {~} times consecutively\nat double the speed.",
-   "dst": "",
+   "dst": "Bash wird {~}-mal hintereinander\nmit doppelter Geschwindigkeit gewirkt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -530,7 +530,7 @@
   },
   "ability-warrior#0038": {
    "src": "Flaming Uppercut",
-   "dst": "",
+   "dst": "Flammender Aufwärtshaken",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -542,7 +542,7 @@
   },
   "ability-warrior#0039": {
    "src": "Uppercut will light mobs on fire,\ndealing damage every {~} seconds.",
-   "dst": "",
+   "dst": "Uppercut setzt Mobs in Brand\nund verursacht alle {~} Sekunden Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -557,7 +557,7 @@
   },
   "ability-warrior#0040": {
    "src": "Half-Moon Swipe",
-   "dst": "",
+   "dst": "Halbmondhieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -569,7 +569,7 @@
   },
   "ability-warrior#0041": {
    "src": "Uppercut will deal a footsweep\nattack at a longer and wider angle.",
-   "dst": "",
+   "dst": "Uppercut führt einen Fußfeger\nmit größerer Reichweite und weiterem Winkel aus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -584,7 +584,7 @@
   },
   "ability-warrior#0042": {
    "src": "Iron Lungs",
-   "dst": "",
+   "dst": "Eiserne Lunge",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -596,7 +596,7 @@
   },
   "ability-warrior#0043": {
    "src": "War Scream will deal more damage.",
-   "dst": "",
+   "dst": "War Scream verursacht mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -611,7 +611,7 @@
   },
   "ability-warrior#0044": {
    "src": "Generalist",
-   "dst": "",
+   "dst": "Generalist",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -623,7 +623,7 @@
   },
   "ability-warrior#0045": {
    "src": "After casting {~} different spells\nin a row, your next spell will cost {~} Mana.",
-   "dst": "",
+   "dst": "Hast du {~} verschiedene Zauber\nhintereinander gewirkt, kostet dein nächster Zauber {~} Mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -638,7 +638,7 @@
   },
   "ability-warrior#0046": {
    "src": "Air Shout",
-   "dst": "",
+   "dst": "Luftschrei",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -650,7 +650,7 @@
   },
   "ability-warrior#0047": {
    "src": "War Scream will fire a projectile that can\ngo through walls and deal damage up to {~} times.",
-   "dst": "",
+   "dst": "War Scream feuert ein Projektil ab, das\ndurch Wände dringt und bis zu {~}-mal Schaden verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -678,7 +678,7 @@
   },
   "ability-warrior#0049": {
    "src": "Mantle of the Bovemists",
-   "dst": "",
+   "dst": "Mantel der Bovemists",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -690,7 +690,7 @@
   },
   "ability-warrior#0050": {
    "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
-   "dst": "",
+   "dst": "Wirkst du War Scream, erschaffst du einen heiligen\nSchild um dich, der allen\neingehenden Schaden um -{~} verringert, für {~} Treffer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -705,7 +705,7 @@
   },
   "ability-warrior#0051": {
    "src": "Bak'al's Grasp",
-   "dst": "",
+   "dst": "Bak'als Griff",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -717,7 +717,7 @@
   },
   "ability-warrior#0052": {
    "src": "Casting War Scream will make you Corrupted {#},\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
-   "dst": "",
+   "dst": "Wirkst du War Scream, wirst du Corrupted {#},\nerhältst aber keine Resistenz mehr.\n(Shift + War Scream zum Abbrechen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -732,7 +732,7 @@
   },
   "ability-warrior#0053": {
    "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Erhalte +{~} Schaden (fester Wert) pro {~} Corrupted {#}. (Max. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -747,7 +747,7 @@
   },
   "ability-warrior#0054": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
-   "dst": "",
+   "dst": "Solange du Corrupted {#} bist, kannst du dich\nnicht heilen, und je {~} verlorenes Leben\ngewährt dir +{~} Corrupted {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -762,7 +762,7 @@
   },
   "ability-warrior#0055": {
    "src": "Spear Proficiency II",
-   "dst": "",
+   "dst": "Speerbeherrschung II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -774,7 +774,7 @@
   },
   "ability-warrior#0056": {
    "src": "Cheaper Uppercut",
-   "dst": "",
+   "dst": "Günstigerer Aufwärtshaken",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -786,7 +786,7 @@
   },
   "ability-warrior#0057": {
    "src": "Reduce the Mana cost of Uppercut.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Uppercut.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -802,7 +802,7 @@
   },
   "ability-warrior#0058": {
    "src": "Aerodynamics",
-   "dst": "",
+   "dst": "Aerodynamik",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -814,7 +814,7 @@
   },
   "ability-warrior#0059": {
    "src": "During Charge, you can\nsteer and change direction.",
-   "dst": "",
+   "dst": "Während Charge kannst du\nlenken und die Richtung ändern.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -829,7 +829,7 @@
   },
   "ability-warrior#0060": {
    "src": "Manachism",
-   "dst": "",
+   "dst": "Manachismus",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -841,7 +841,7 @@
   },
   "ability-warrior#0061": {
    "src": "If you receive a hit that's less than\n{~} of your max health, gain {~} Mana.",
-   "dst": "",
+   "dst": "Erleidest du einen Treffer, der weniger als\n{~} deines max. Lebens beträgt, erhältst du {~} Mana.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -856,7 +856,7 @@
   },
   "ability-warrior#0062": {
    "src": "Intoxicating Blood",
-   "dst": "",
+   "dst": "Berauschendes Blut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -868,7 +868,7 @@
   },
   "ability-warrior#0063": {
    "src": "After leaving Corrupted {#}, gain {~} of\nmissing health back for each hit dealt and\nenemy killed while Corrupted {#}.",
-   "dst": "",
+   "dst": "Nach dem Verlassen von Corrupted {#} erhältst du {~}\ndes fehlenden Lebens für jeden Treffer und\njeden getöteten Gegner während Corrupted {#} zurück.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -883,7 +883,7 @@
   },
   "ability-warrior#0064": {
    "src": "{#} Cooldown: {~}s (for hits)",
-   "dst": "",
+   "dst": "{#} Abklingzeit: {~}s (für Treffer)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -896,7 +896,7 @@
   },
   "ability-warrior#0065": {
    "src": "Counter",
-   "dst": "",
+   "dst": "Konter",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -908,7 +908,7 @@
   },
   "ability-warrior#0066": {
    "src": "You take {~} reduced damage and\nattack back when hit by an enemy attack.",
-   "dst": "",
+   "dst": "Du erleidest {~} weniger Schaden und\nschlägst zurück, wenn dich ein feindlicher Angriff trifft.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -923,7 +923,7 @@
   },
   "ability-warrior#0067": {
    "src": "Shield Strike",
-   "dst": "",
+   "dst": "Schildschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -935,7 +935,7 @@
   },
   "ability-warrior#0068": {
    "src": "Hitting an enemy with Bash sends all broken\nmantles at them, dealing damage to nearby enemies.",
-   "dst": "",
+   "dst": "Triffst du einen Gegner mit Bash, schleuderst du alle zerbrochenen\nMäntel auf ihn und schädigst Gegner in der Nähe.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -950,7 +950,7 @@
   },
   "ability-warrior#0069": {
    "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
-   "dst": "",
+   "dst": "Du erhältst einen zerbrochenen Mantel, wann immer\nMantle of the Bovemists eine Ladung verliert.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -965,7 +965,7 @@
   },
   "ability-warrior#0070": {
    "src": "{#} Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro zerbrochenem Mantel)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -978,7 +978,7 @@
   },
   "ability-warrior#0071": {
    "src": "Blood Pact",
-   "dst": "",
+   "dst": "Blutpakt",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -990,7 +990,7 @@
   },
   "ability-warrior#0072": {
    "src": "A spell cast using health will\ndeal +{~} to +{~} bonus damage, depending\non how much of its cost is paid in blood.",
-   "dst": "",
+   "dst": "Ein mit Leben gewirkter Zauber verursacht\n+{~} bis +{~} Bonusschaden, je nachdem,\nwie viel seiner Kosten mit Blut bezahlt wird.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1005,7 +1005,7 @@
   },
   "ability-warrior#0073": {
    "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
-   "dst": "",
+   "dst": "Hast du nicht genug Mana, um\neinen Zauber zu wirken, gibst du stattdessen Leben aus.\n({~} Leben pro Mana)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1020,7 +1020,7 @@
   },
   "ability-warrior#0074": {
    "src": "Flying Kick",
-   "dst": "",
+   "dst": "Fliegender Tritt",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1032,7 +1032,7 @@
   },
   "ability-warrior#0075": {
    "src": "Hitting mobs with Charge will halt your\nmomentum and knock them away.",
-   "dst": "",
+   "dst": "Triffst du Mobs mit Charge, stoppt dein\nSchwung und sie werden weggeschleudert.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1047,7 +1047,7 @@
   },
   "ability-warrior#0076": {
    "src": "Crushing Blow",
-   "dst": "",
+   "dst": "Vernichtender Schlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1059,7 +1059,7 @@
   },
   "ability-warrior#0077": {
    "src": "Increase the damage of Bash.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Bash.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1074,7 +1074,7 @@
   },
   "ability-warrior#0078": {
    "src": "{#} Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, pro Hieb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1088,7 +1088,7 @@
   },
   "ability-warrior#0079": {
    "src": "Rejuvenating Skin",
-   "dst": "",
+   "dst": "Verjüngende Haut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "",
+   "dst": "Für jeden erlittenen Schaden\nregenerierst du {~} dieses\nSchadens über die nächsten {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1115,7 +1115,7 @@
   },
   "ability-warrior#0081": {
    "src": "Enraged Blow",
-   "dst": "",
+   "dst": "Wütender Schlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1127,7 +1127,7 @@
   },
   "ability-warrior#0082": {
    "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Erhalte +{~} Schaden pro {~} Corrupted {#}. (Max. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1142,7 +1142,7 @@
   },
   "ability-warrior#0083": {
    "src": "Sparkling Hope",
-   "dst": "",
+   "dst": "Funkelnde Hoffnung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1169,7 +1169,7 @@
   },
   "ability-warrior#0085": {
    "src": "Exhilarate",
-   "dst": "",
+   "dst": "Beflügeln",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1181,7 +1181,7 @@
   },
   "ability-warrior#0086": {
    "src": "After leaving Corrupted {#}, restore {~}\nof your Corrupted {#} bar as max health.",
-   "dst": "",
+   "dst": "Nach dem Verlassen von Corrupted {#} stellst du {~}\ndeiner Corrupted {#}-Leiste als max. Leben wieder her.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1196,7 +1196,7 @@
   },
   "ability-warrior#0087": {
    "src": "Comet",
-   "dst": "",
+   "dst": "Komet",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1208,7 +1208,7 @@
   },
   "ability-warrior#0088": {
    "src": "After being hit by Fireworks, enemies will crash\nunto the ground and receive more damage.",
-   "dst": "",
+   "dst": "Nachdem sie von Fireworks getroffen wurden, krachen Gegner\nauf den Boden und erleiden mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1223,7 +1223,7 @@
   },
   "ability-warrior#0089": {
    "src": "Spirit of the Rabbit",
-   "dst": "",
+   "dst": "Geist des Hasen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1235,7 +1235,7 @@
   },
   "ability-warrior#0090": {
    "src": "Reduce the Mana cost of Charge\nand increase your Walk Speed by +{~}.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von Charge\nund erhöht deine Laufgeschwindigkeit um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1250,7 +1250,7 @@
   },
   "ability-warrior#0091": {
    "src": "Cleansing Breeze",
-   "dst": "",
+   "dst": "Reinigende Brise",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1262,7 +1262,7 @@
   },
   "ability-warrior#0092": {
    "src": "Charge will cleanse you of all\nnegative effects and fire, as well\nas any allies you pass through.",
-   "dst": "",
+   "dst": "Charge befreit dich von allen\nnegativen Effekten und Feuer, ebenso\nalle Verbündeten, die du durchquerst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1277,7 +1277,7 @@
   },
   "ability-warrior#0093": {
    "src": "Cheaper Bash II",
-   "dst": "",
+   "dst": "Günstigerer Hieb II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1289,7 +1289,7 @@
   },
   "ability-warrior#0094": {
    "src": "Boiling Blood",
-   "dst": "",
+   "dst": "Kochendes Blut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1301,7 +1301,7 @@
   },
   "ability-warrior#0095": {
    "src": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every {~} seconds.",
-   "dst": "",
+   "dst": "Bash hinterlässt nach seiner letzten Explosion eine Lache\nkochenden Blutes, die Gegner darin verlangsamt\nund ihnen alle {~} Sekunden Schaden zufügt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1316,7 +1316,7 @@
   },
   "ability-warrior#0096": {
    "src": "Collide",
-   "dst": "",
+   "dst": "Kollision",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1328,7 +1328,7 @@
   },
   "ability-warrior#0097": {
    "src": "Enemies thrown into walls from Flying Kick\nwill explode and receive additional damage.",
-   "dst": "",
+   "dst": "Durch Flying Kick gegen Wände geschleuderte Gegner\nexplodieren und erleiden zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1343,7 +1343,7 @@
   },
   "ability-warrior#0098": {
    "src": "Sacred Surge",
-   "dst": "",
+   "dst": "Heilige Woge",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1355,7 +1355,7 @@
   },
   "ability-warrior#0099": {
    "src": "Gain the ability to unleash a Sacred Surge ✧.\nWhenever any of your spells or abilities are\ntriggered, increase your Holy Power ✧ by {~}.",
-   "dst": "",
+   "dst": "Erhalte die Fähigkeit, eine Sacred Surge ✧ zu entfesseln.\nWann immer einer deiner Zauber oder eine Fähigkeit\nausgelöst wird, steigt deine Holy Power ✧ um {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1370,7 +1370,7 @@
   },
   "ability-warrior#0100": {
    "src": "Uppercut will spend {~} Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
-   "dst": "",
+   "dst": "Uppercut verbraucht {~} Holy Power ✧,\num getroffene Gegner mit heiliger Energie zu strafen\nund zusätzlichen Schaden zu verursachen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1385,7 +1385,7 @@
   },
   "ability-warrior#0101": {
    "src": "Massacre",
-   "dst": "",
+   "dst": "Massaker",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "",
+   "dst": "Solange du Corrupted {#} bist, fügt ein Treffer\nan einem Gegner mit deinem Hauptangriff\n+{~} Corruption {#} hinzu,\npro Sekunde.\n(Pulver-Spezialeffekte fügen immer +{~} hinzu)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1412,7 +1412,7 @@
   },
   "ability-warrior#0103": {
    "src": "Emboldening Cry",
-   "dst": "",
+   "dst": "Ermutigender Schrei",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1424,7 +1424,7 @@
   },
   "ability-warrior#0104": {
    "src": "War Scream bolsters courage,\ngranting players a damage bonus\nand additional resistance.",
-   "dst": "",
+   "dst": "War Scream stärkt den Mut\nund gewährt Spielern einen Schadensbonus\nund zusätzliche Resistenz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1439,7 +1439,7 @@
   },
   "ability-warrior#0105": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} Resistenzbonus (❁) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1452,7 +1452,7 @@
   },
   "ability-warrior#0106": {
    "src": "Uncontainable Corruption",
-   "dst": "",
+   "dst": "Unbändige Verderbnis",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "",
+   "dst": "Senkt die Abklingzeit von Bak'al's Grasp\num -{~}s und erhöht den festen Schaden,\nden du für je {~} verlorenes Leben erhältst, um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1479,7 +1479,7 @@
   },
   "ability-warrior#0108": {
    "src": "Tempest",
-   "dst": "",
+   "dst": "Unwetter",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-warrior#0109": {
    "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
-   "dst": "",
+   "dst": "War Scream lässt den Boden beben und\nfügt Gegnern {~}-mal in einem großen\nBereich alle {~}s Schaden zu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1506,7 +1506,7 @@
   },
   "ability-warrior#0110": {
    "src": "{#} Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro Welle)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1519,7 +1519,7 @@
   },
   "ability-warrior#0111": {
    "src": "Whirlwind Strike",
-   "dst": "",
+   "dst": "Wirbelwindschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1531,7 +1531,7 @@
   },
   "ability-warrior#0112": {
    "src": "Uppercut will create a strong gust of air,\nlaunching you upward with enemies.\n(Hold shift to stay grounded)",
-   "dst": "",
+   "dst": "Uppercut erzeugt einen starken Windstoß,\nder dich mit den Gegnern nach oben schleudert.\n(Halte Shift gedrückt, um am Boden zu bleiben)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1546,7 +1546,7 @@
   },
   "ability-warrior#0113": {
    "src": "{#} Area of Effect: Circle-Shaped",
-   "dst": "",
+   "dst": "{#} Wirkungsbereich: Kreisförmig",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1559,7 +1559,7 @@
   },
   "ability-warrior#0114": {
    "src": "Mythril Skin",
-   "dst": "",
+   "dst": "Mithrilhaut",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1571,7 +1571,7 @@
   },
   "ability-warrior#0115": {
    "src": "Gain +{~} Base Resistance and\nbecome immune to knockback.",
-   "dst": "",
+   "dst": "Erhalte +{~} Grundresistenz und\nwerde immun gegen Rückstoß.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1586,7 +1586,7 @@
   },
   "ability-warrior#0116": {
    "src": "Armour Breaker",
-   "dst": "",
+   "dst": "Rüstungsbrecher",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1598,7 +1598,7 @@
   },
   "ability-warrior#0117": {
    "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "Erhältst du {~} Corrupted {#}, gewährt dir dein\nnächster Uppercut einen Schadensschub.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1640,7 +1640,7 @@
   },
   "ability-warrior#0120": {
    "src": "Freestream Flow",
-   "dst": "",
+   "dst": "Freier Strom",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1652,7 +1652,7 @@
   },
   "ability-warrior#0121": {
    "src": "You fall more slowly during Charge.",
-   "dst": "",
+   "dst": "Während Charge fällst du langsamer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1667,7 +1667,7 @@
   },
   "ability-warrior#0122": {
    "src": "Riposte",
-   "dst": "",
+   "dst": "Riposte",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Counter und senkt seine\nAbklingzeit um -{~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1694,7 +1694,7 @@
   },
   "ability-warrior#0124": {
    "src": "Increase the damage reduction of Counter by +{~}.",
-   "dst": "",
+   "dst": "Erhöht die Schadensreduktion von Counter um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1709,7 +1709,7 @@
   },
   "ability-warrior#0125": {
    "src": "Cheaper War Scream",
-   "dst": "",
+   "dst": "Günstigerer Kriegsschrei",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1721,7 +1721,7 @@
   },
   "ability-warrior#0126": {
    "src": "Reduce the Mana cost of War Scream.",
-   "dst": "",
+   "dst": "Senkt die Manakosten von War Scream.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1738,7 +1738,7 @@
   },
   "ability-warrior#0127": {
    "src": "Luster Purge",
-   "dst": "",
+   "dst": "Läuternder Glanz",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1750,7 +1750,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "Solange du {~} Holy Power ✧ hast,\nsind deine Hauptangriffe verstärkt\nund gewähren dir {~} Holy Power.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1765,7 +1765,7 @@
   },
   "ability-warrior#0129": {
    "src": "{#} Cooldown: {~}s (for Holy Power)",
-   "dst": "",
+   "dst": "{#} Abklingzeit: {~}s (für Holy Power)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1778,7 +1778,7 @@
   },
   "ability-warrior#0130": {
    "src": "{#} Main Attack Damage Bonus: +{~}",
-   "dst": "",
+   "dst": "{#} Schadensbonus (Hauptangriff): +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1791,7 +1791,7 @@
   },
   "ability-warrior#0131": {
    "src": "{#} Main Attack Range: +{~}",
-   "dst": "",
+   "dst": "{#} Hauptangriffsreichweite: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1804,7 +1804,7 @@
   },
   "ability-warrior#0132": {
    "src": "Hallowed Blaze",
-   "dst": "",
+   "dst": "Geheiligte Lohe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1816,7 +1816,7 @@
   },
   "ability-warrior#0133": {
    "src": "Flaming Uppercut will deal more damage\nand grant {~} Holy Power ✧ whenever\nit deals damage.",
-   "dst": "",
+   "dst": "Flaming Uppercut verursacht mehr Schaden\nund gewährt {~} Holy Power ✧, wann immer\ner Schaden verursacht.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1831,7 +1831,7 @@
   },
   "ability-warrior#0134": {
    "src": "Massive Bash",
-   "dst": "",
+   "dst": "Gewaltiger Hieb",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1843,7 +1843,7 @@
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Erhöht den Wirkungsradius von Bash\num +{~} pro {~} Corrupted {#}. (Max. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1858,7 +1858,7 @@
   },
   "ability-warrior#0136": {
    "src": "Axe Kick",
-   "dst": "",
+   "dst": "Axttritt",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1885,7 +1885,7 @@
   },
   "ability-warrior#0138": {
    "src": "Blessed Bulwark",
-   "dst": "",
+   "dst": "Gesegnetes Bollwerk",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1897,7 +1897,7 @@
   },
   "ability-warrior#0139": {
    "src": "Add +{~} additional charges and\n+{~} damage reduction to\nMantle of the Bovemists.",
-   "dst": "",
+   "dst": "Gewährt Mantle of the Bovemists\n+{~} zusätzliche Ladungen und\n+{~} Schadensreduktion.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1912,7 +1912,7 @@
   },
   "ability-warrior#0140": {
    "src": "Mindless Slaughter",
-   "dst": "",
+   "dst": "Sinnloses Gemetzel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1924,7 +1924,7 @@
   },
   "ability-warrior#0141": {
    "src": "Massacre adds twice as much Corruption {#}.",
-   "dst": "",
+   "dst": "Massacre fügt doppelt so viel Corruption {#} hinzu.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1939,7 +1939,7 @@
   },
   "ability-warrior#0142": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "",
+   "dst": "Solange du Corrupted bist, kosten Hauptangriff\nund Pulver-Spezialeffekte {~} Leben pro\nEinsatz und aktivieren Blood Pact.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1954,7 +1954,7 @@
   },
   "ability-warrior#0143": {
    "src": "Provoke",
-   "dst": "",
+   "dst": "Provozieren",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1966,7 +1966,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "",
+   "dst": "Von War Scream getroffene Gegner\nwerden Provoked {#} und greifen\nmindestens {~}s lang nur dich an.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1981,7 +1981,7 @@
   },
   "ability-warrior#0145": {
    "src": "Cheaper War Scream II",
-   "dst": "",
+   "dst": "Günstigerer Kriegsschrei II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1993,7 +1993,7 @@
   },
   "ability-warrior#0146": {
    "src": "Overwhelming Rage",
-   "dst": "",
+   "dst": "Überwältigender Zorn",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2005,7 +2005,7 @@
   },
   "ability-warrior#0147": {
    "src": "Increase the cap of Enraged Blow by +{~}.",
-   "dst": "",
+   "dst": "Erhöht die Obergrenze von Enraged Blow um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2021,7 +2021,7 @@
   },
   "ability-warrior#0148": {
    "src": "Cyclone",
-   "dst": "",
+   "dst": "Zyklon",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2033,7 +2033,7 @@
   },
   "ability-warrior#0149": {
    "src": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every {~}s.",
-   "dst": "",
+   "dst": "Nach dem Wirken von War Scream umgibt dich\nein Wirbel, der nahe Gegner alle {~}s trifft.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2048,7 +2048,7 @@
   },
   "ability-warrior#0150": {
    "src": "Pressure",
-   "dst": "",
+   "dst": "Druck",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2060,7 +2060,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "",
+   "dst": "Bash trifft {~}x so oft und ist {~}s schneller.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2075,7 +2075,7 @@
   },
   "ability-warrior#0152": {
    "src": "Uppercut deals additional damage.",
-   "dst": "",
+   "dst": "Uppercut verursacht zusätzlichen Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2090,7 +2090,7 @@
   },
   "ability-warrior#0153": {
    "src": "War Scream grants a damage boost,\nbut effect duration is reduced.",
-   "dst": "",
+   "dst": "War Scream gewährt einen Schadensbonus,\naber die Effektdauer ist kürzer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2105,7 +2105,7 @@
   },
   "ability-warrior#0154": {
    "src": "When Generalist acts on a spell, it is enhanced.",
-   "dst": "",
+   "dst": "Wenn Generalist auf einen Zauber wirkt, wird dieser verstärkt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2120,7 +2120,7 @@
   },
   "ability-warrior#0156": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} Schadensbonus (⚔) an Spieler",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2133,7 +2133,7 @@
   },
   "ability-warrior#0155": {
    "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}{#}{#}{#}{#}Schaden: +{~})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2146,7 +2146,7 @@
   },
   "ability-warrior#0157": {
    "src": "Thunderclap",
-   "dst": "",
+   "dst": "Donnerschlag",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2158,7 +2158,7 @@
   },
   "ability-warrior#0158": {
    "src": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
-   "dst": "",
+   "dst": "Bash wird an der Position des Spielers mit\ndoppeltem Tempo und größerem Wirkungsbereich gewirkt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2173,7 +2173,7 @@
   },
   "ability-warrior#0159": {
    "src": "With Quadruple Bash, gain less damage.",
-   "dst": "",
+   "dst": "Mit Quadruple Bash fällt der Schadensbonus geringer aus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2188,7 +2188,7 @@
   },
   "ability-warrior#0160": {
    "src": "Radiance",
-   "dst": "",
+   "dst": "Strahlkraft",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2200,7 +2200,7 @@
   },
   "ability-warrior#0161": {
    "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
-   "dst": "",
+   "dst": "Bash verstärkt positive IDs\nvon dir und deinen Verbündeten.\n(Max. Mana, EP-Bonus, Beutebonus, Beutequalität,\nSammel-EP-Bonus und Sammeltempo-Bonus\nsind ausgenommen)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-warrior#0162": {
    "src": "{#} Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "{#} Effekt: +{~} ID-Effektivität (❈) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2229,7 +2229,7 @@
   },
   "ability-warrior#0163": {
    "src": "Bloodlust",
-   "dst": "",
+   "dst": "Blutdurst",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2241,7 +2241,7 @@
   },
   "ability-warrior#0164": {
    "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
-   "dst": "",
+   "dst": "Nach dem Verlassen von Corrupted {#} vernichtest du\nalle Gegner um dich herum. Pro {~} Corrupted {#},\ndie du hattest, steigt der Schaden um {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2256,7 +2256,7 @@
   },
   "ability-warrior#0165": {
    "src": "Discombobulate",
-   "dst": "",
+   "dst": "Desorientieren",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2268,7 +2268,7 @@
   },
   "ability-warrior#0166": {
    "src": "Damaging enemies will inflict them\nwith +{~} Discombobulated ⚙. (Max {~})",
-   "dst": "",
+   "dst": "Gegnern Schaden zuzufügen belegt sie\nmit +{~} Discombobulated ⚙. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2283,7 +2283,7 @@
   },
   "ability-warrior#0167": {
    "src": "You will deal +{~} damage to enemies\nfor every Discombobulated ⚙ they have.\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "Du verursachst +{~} Schaden an Gegnern\nfür jedes Discombobulated ⚙ auf ihnen.\nJede Sekunde verfällt -{~} des Bonus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2298,7 +2298,7 @@
   },
   "ability-warrior#0168": {
    "src": "Reverberance",
-   "dst": "",
+   "dst": "Nachhall",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2310,7 +2310,7 @@
   },
   "ability-warrior#0169": {
    "src": "Air Shout can hit +{~} times,\nand deals more damage.",
-   "dst": "",
+   "dst": "Air Shout kann +{~}-mal treffen\nund verursacht mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2325,7 +2325,7 @@
   },
   "ability-warrior#0170": {
    "src": "Consecration",
-   "dst": "",
+   "dst": "Weihe",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2337,7 +2337,7 @@
   },
   "ability-warrior#0171": {
    "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
-   "dst": "",
+   "dst": "Sacred Surge gewährt +{~} Holy Power ✧\nfür jeden ausgelösten Zauber und jede Fähigkeit\nund verursacht mehr Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2352,7 +2352,7 @@
   },
   "ability-warrior#0172": {
    "src": "Haemorrhage",
-   "dst": "",
+   "dst": "Blutsturz",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2364,7 +2364,7 @@
   },
   "ability-warrior#0173": {
    "src": "Reduce Blood Pact's health cost.\n({~} health per mana)",
-   "dst": "",
+   "dst": "Senkt die Lebenskosten von Blood Pact.\n({~} Leben pro Mana)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2379,7 +2379,7 @@
   },
   "ability-warrior#0174": {
    "src": "Brink of Madness",
-   "dst": "",
+   "dst": "Am Rande des Wahnsinns",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2406,7 +2406,7 @@
   },
   "ability-warrior#0176": {
    "src": "Cheaper Uppercut II",
-   "dst": "",
+   "dst": "Günstigerer Aufwärtshaken II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2418,7 +2418,7 @@
   },
   "ability-warrior#0177": {
    "src": "Heavenly Trumpet",
-   "dst": "",
+   "dst": "Himmlische Trompete",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2430,7 +2430,7 @@
   },
   "ability-warrior#0178": {
    "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "Alle Verbündeten in der Nähe erhalten +{~} Overhealth ❤\npro verbrauchtem Punkt Holy Power ✧.\nOverhealth ❤ verfällt über {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2445,7 +2445,7 @@
   },
   "ability-warrior#0179": {
    "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "Wirkst du War Scream mit gedrückter Umschalttaste\nund mindestens {~} Holy Power ✧, verbrauchst\ndu alles für eine schützende Trompete.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2460,7 +2460,7 @@
   },
   "ability-warrior#0180": {
    "src": "Concussion",
-   "dst": "",
+   "dst": "Gehirnerschütterung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2472,7 +2472,7 @@
   },
   "ability-warrior#0181": {
    "src": "Final Crush will deal additional +{~} damage to\nenemies damaged by the previous Bash hit.",
-   "dst": "",
+   "dst": "Final Crush verursacht zusätzlich +{~} Schaden an\nGegnern, die der vorherige Bash-Treffer erwischt hat.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2487,7 +2487,7 @@
   },
   "ability-warrior#0182": {
    "src": "Second Chance",
-   "dst": "",
+   "dst": "Zweite Chance",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2499,7 +2499,7 @@
   },
   "ability-warrior#0183": {
    "src": "Keeps you alive with {~} of your health\nremaining and makes all nearby allies invincible\nafter receiving a fatal blow.",
-   "dst": "",
+   "dst": "Hält dich nach einem tödlichen Schlag mit {~}\ndeines Lebens am Leben und macht alle Verbündeten\nin der Nähe unverwundbar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2514,7 +2514,7 @@
   },
   "ability-warrior#0184": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "",
+   "dst": "{#} Abklingzeit: {~}m",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2527,7 +2527,7 @@
   },
   "ability-warrior#0185": {
    "src": "{#} Effect: Invincibility (☗) to Allies",
-   "dst": "",
+   "dst": "{#} Effekt: Unverwundbarkeit (☗) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2540,7 +2540,7 @@
   },
   "ability-warrior#0186": {
    "src": "Rumble",
-   "dst": "",
+   "dst": "Grollen",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2552,7 +2552,7 @@
   },
   "ability-warrior#0187": {
    "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Bash um {~}\npro {~} {#} Wirkungsbereich.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2567,7 +2567,7 @@
   },
   "ability-warrior#0188": {
    "src": "Tempestuous Winds",
-   "dst": "",
+   "dst": "Stürmische Winde",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2579,7 +2579,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "",
+   "dst": "Cyclone verursacht {~}s schneller Schaden.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2594,7 +2594,7 @@
   },
   "ability-warrior#0190": {
    "src": "Increase Tempest's damage.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Tempest.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2609,7 +2609,7 @@
   },
   "ability-warrior#0191": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Tempest)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2634,7 +2634,7 @@
   },
   "ability-warrior#0193": {
    "src": "Increase Flying Kick's damage\nby +{~} per block travelled.\n(Max +{~})",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Flying Kick\num +{~} pro zurückgelegtem Block.\n(Max. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2649,7 +2649,7 @@
   },
   "ability-warrior#0194": {
    "src": "Shine",
-   "dst": "",
+   "dst": "Leuchten",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2661,7 +2661,7 @@
   },
   "ability-warrior#0195": {
    "src": "Increase Radiance's effectiveness.",
-   "dst": "",
+   "dst": "Erhöht die Wirksamkeit von Radiance.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2676,7 +2676,7 @@
   },
   "ability-warrior#0196": {
    "src": "Bloodied Armory",
-   "dst": "",
+   "dst": "Blutiges Arsenal",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2688,7 +2688,7 @@
   },
   "ability-warrior#0197": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Das Aktivieren von Blood Pact fügt deinem nächsten\nHauptangriff einen Blutschnitt hinzu. (Max. {~})\n(Der Schaden zählt als Hauptangriffsschaden)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2703,7 +2703,7 @@
   },
   "ability-warrior#0198": {
    "src": "{#} Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, pro Schnitt)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2716,7 +2716,7 @@
   },
   "ability-warrior#0199": {
    "src": "Ecstasy",
-   "dst": "",
+   "dst": "Ekstase",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2728,7 +2728,7 @@
   },
   "ability-warrior#0200": {
    "src": "Increase Bloodlust's bonus damage per\n{~} Corrupted {#} by +{~}.",
-   "dst": "",
+   "dst": "Erhöht den Bonusschaden von Bloodlust pro\n{~} Corrupted {#} um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2743,7 +2743,7 @@
   },
   "ability-warrior#0201": {
    "src": "Baffling Blows",
-   "dst": "",
+   "dst": "Verwirrende Schläge",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2755,7 +2755,7 @@
   },
   "ability-warrior#0202": {
    "src": "Increase your maximum\nDiscombobulated ⚙ by +{~}.",
-   "dst": "",
+   "dst": "Erhöht dein Maximum an\nDiscombobulated ⚙ um +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2770,7 +2770,7 @@
   },
   "ability-warrior#0203": {
    "src": "Harmony",
-   "dst": "",
+   "dst": "Harmonie",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "",
+   "dst": "Das Aktivieren von Generalist gewährt\n+{~} Harmony für {~}s. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2797,7 +2797,7 @@
   },
   "ability-warrior#0205": {
    "src": "Gain +{~} Damage per {~} Harmony.",
-   "dst": "",
+   "dst": "Erhalte +{~} Schaden pro {~} Harmony.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2812,7 +2812,7 @@
   },
   "ability-warrior#0206": {
    "src": "Buried Light",
-   "dst": "",
+   "dst": "Begrabenes Licht",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "",
+   "dst": "Wirkst du Bash im Schleichen, verbrauchst du\n{~} Holy Power ✧ und beschwörst einen Lichtstrahl,\nder langsam vorwärts wandert und\nGegner alle {~}s trifft.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2839,7 +2839,7 @@
   },
   "ability-warrior#0208": {
    "src": "Spectacle",
-   "dst": "",
+   "dst": "Spektakel",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2851,7 +2851,7 @@
   },
   "ability-warrior#0209": {
    "src": "Increase Fireworks' and Comet's damage.",
-   "dst": "",
+   "dst": "Erhöht den Schaden von Fireworks und Comet.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2866,7 +2866,7 @@
   },
   "ability-warrior#0210": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Comet)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2879,7 +2879,7 @@
   },
   "ability-warrior#0211": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: +{~} (deines DPS, für Fireworks)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2892,7 +2892,7 @@
   },
   "ability-warrior#0212": {
    "src": "Devout Union",
-   "dst": "",
+   "dst": "Frommer Bund",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2904,7 +2904,7 @@
   },
   "ability-warrior#0213": {
    "src": "Gain +{~} Base Resistance.",
-   "dst": "",
+   "dst": "Erhalte +{~} Basisresistenz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2919,7 +2919,7 @@
   },
   "ability-warrior#0214": {
    "src": "{~} of damage taken by nearby\nallies is redirected to you.",
-   "dst": "",
+   "dst": "{~} des Schadens, den Verbündete in der Nähe\nerleiden, wird auf dich umgeleitet.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2934,7 +2934,7 @@
   },
   "ability-warrior#0215": {
    "src": "Enlightenment",
-   "dst": "",
+   "dst": "Erleuchtung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2946,7 +2946,7 @@
   },
   "ability-warrior#0216": {
    "src": "Add +{~} additional charge\nto Mantle of the Bovemists.",
-   "dst": "",
+   "dst": "Gewährt Mantle of the Bovemists\n+{~} zusätzliche Ladung.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "",
+   "dst": "Shield Strike verursacht mehr Schaden und gewährt\nVerbündeten in der Nähe {~} Ladung Mantle of the Bovemists\npro {~} genutzten zerbrochenen Mänteln. (Max. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2976,7 +2976,7 @@
   },
   "ability-warrior#0218": {
    "src": "Beyond Salvation",
-   "dst": "",
+   "dst": "Jenseits der Rettung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "Hauptangriff oder Uppercut auf einen Stachel\nlässt ihn explodieren, verursacht Schaden und gewährt\n{~} Overhealth ❤, selbst wenn du Corrupted bist.\nDas Bonusleben verfällt über {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3003,7 +3003,7 @@
   },
   "ability-warrior#0220": {
    "src": "Summons {~} Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
-   "dst": "",
+   "dst": "Beschwört {~} verderbte Stacheln, die um dich\naus der Erde brechen und Schaden verursachen.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3018,7 +3018,7 @@
   },
   "ability-warrior#0221": {
    "src": "{#} Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#} Reichweite: {~}~{~} Blöcke",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3031,7 +3031,7 @@
   },
   "ability-warrior#0222": {
    "src": "{#} Total Damage: {~} (of your DPS, detonate)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Explosion)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3044,7 +3044,7 @@
   },
   "ability-warrior#0223": {
    "src": "{#} Total Damage: {~} (of your DPS, summon)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Beschwörung)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3057,7 +3057,7 @@
   },
   "ability-warrior#0224": {
    "src": "Judgement",
-   "dst": "",
+   "dst": "Urteil",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-warrior#0225": {
    "src": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
-   "dst": "",
+   "dst": "Rufe eine Klinge vom Himmel herab,\ndie beim Aufprall Schaden verursacht\nund Verbündeten in der Nähe Stärkungen gewährt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-warrior#0226": {
    "src": "À  +{~} Resistance Bonus (❁) to Allies\nÀ  +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "À  +{~} Resistenzbonus (❁) an Verbündete\nÀ  +{~} ID-Effektivität (❈) an Verbündete",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3099,7 +3099,7 @@
   },
   "ability-warrior#0227": {
    "src": "{#} Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} Effekte: +{~} Schadensbonus (⚔) an Verbündete",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3112,7 +3112,7 @@
   },
   "ability-warrior#0228": {
    "src": "Zenith Stance",
-   "dst": "",
+   "dst": "Zenit-Haltung",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3124,7 +3124,7 @@
   },
   "ability-warrior#0229": {
    "src": "Casting F switches them\nbetween Spell and Main Attack form.",
-   "dst": "",
+   "dst": "Mit F wechselst du sie\nzwischen Zauber- und Hauptangriffsform.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3139,7 +3139,7 @@
   },
   "ability-warrior#0230": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "",
+   "dst": "In Zauberform löst ein Zauber\neinen Angriff aus. In Hauptangriffsform\nlösen stattdessen Hauptangriffe einen aus.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3154,7 +3154,7 @@
   },
   "ability-warrior#0231": {
    "src": "Manifest your combat mastery as two floating\nfists that you freely command.",
-   "dst": "",
+   "dst": "Manifestiere deine Kampfkunst als zwei schwebende\nFäuste, die du frei befehligst.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3169,7 +3169,7 @@
   },
   "ability-warrior#0232": {
    "src": "{#} Total Damage: {~} (of your DPS, spell)",
-   "dst": "",
+   "dst": "{#} Gesamtschaden: {~} (deines DPS, Zauber)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3182,7 +3182,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "",
+   "dst": "Verursacht Schaden an allen nahen Gegnern, jedes\nMal wenn du {~} deines max. Lebens heilst.\n(Max. {~} Auslösungen innerhalb von {~}s.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3196,7 +3196,7 @@
   },
   "ability-warrior#0234": {
    "src": "Taking lethal damage while Corrupted {#}\ngrants resistance, disables Corrupted {#}\nand allows you to take additional damage\nup to {~} of your maximum health.",
-   "dst": "",
+   "dst": "Tödlicher Schaden, während du Corrupted {#} bist,\ngewährt Resistenz, deaktiviert Corrupted {#}\nund lässt dich zusätzlichen Schaden erleiden,\nbis zu {~} deines max. Lebens.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3210,7 +3210,7 @@
   },
   "ability-warrior#0235": {
    "src": "Surviving after the effect ends\nactivates effects that happen\nwhen leaving Corrupted {#}.",
-   "dst": "",
+   "dst": "Überlebst du das Ende des Effekts,\nwerden Effekte ausgelöst, die beim\nVerlassen von Corrupted {#} eintreten.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3224,7 +3224,7 @@
   },
   "ability-warrior#0236": {
    "src": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted {#},\notherwise you die.",
-   "dst": "",
+   "dst": "Endet der Effekt ohne gespeicherten Schaden,\nwerden Effekte ausgelöst, die beim\nVerlassen von Corrupted {#} eintreten,\nandernfalls stirbst du.",
    "role": "desc",
    "kind": "block",
    "ctx": [

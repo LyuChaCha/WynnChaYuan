@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lexdale Witch Trials",
   "count": 39,
-  "translated": 0,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lexdale Witch Trials#000": {
    "src": "New Quest Started: {p} Witch Trials",
-   "dst": "",
+   "dst": "Nouvelle quête: Les procès des sorcières de {p}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -24,7 +24,7 @@
   },
   "Lexdale Witch Trials#001": {
    "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of dark magic threatens us!",
-   "dst": "",
+   "dst": "Nous avons un ennemi parmi nous à {p}! La magie noire illégale de cette sorcière nous menace!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -34,7 +34,7 @@
   },
   "Lexdale Witch Trials#002": {
    "src": "Ms. Amira's home was found to be plagued with spreading Decay! We must kill the witch to protect our sanctity!",
-   "dst": "",
+   "dst": "La maison de Mme Amira est rongée par la Décadence! Il faut tuer la sorcière pour préserver notre pureté!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -44,7 +44,7 @@
   },
   "Lexdale Witch Trials#003": {
    "src": "Further...intruders...? You are not of the worms...the parasites?",
-   "dst": "",
+   "dst": "D'autres...intrus...? Tu n'es pas des vers...des parasites?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -54,7 +54,7 @@
   },
   "Lexdale Witch Trials#004": {
    "src": "We cannot escape, for the sun scorches us. There is no place to go, no place we can burrow that they do not wait.",
-   "dst": "",
+   "dst": "Nous ne pouvons fuir, le soleil nous brûle. Nulle part où aller, nul terrier où ils ne nous attendent.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -64,7 +64,7 @@
   },
   "Lexdale Witch Trials#005": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive til this torture ends...",
-   "dst": "",
+   "dst": "Toi... Toi... Toi, tu as la vie. Un coeur, des muscles, de la chair... Pour survivre jusqu'à la fin de ce supplice...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -74,7 +74,7 @@
   },
   "Lexdale Witch Trials#006": {
    "src": "You're stuck! Maybe you can dig yourself out?",
-   "dst": "",
+   "dst": "Vous êtes coincé! Et si vous creusiez pour sortir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -84,7 +84,7 @@
   },
   "Lexdale Witch Trials#007": {
    "src": "It seems like the creature was knocked out. Now is the time to catch it! The cage seems like a good place to keep it.",
-   "dst": "",
+   "dst": "La créature semble assommée. C'est le moment de la capturer! La cage semble un bon endroit pour la garder.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -94,7 +94,7 @@
   },
   "Lexdale Witch Trials#008": {
    "src": "Something feels off...",
-   "dst": "",
+   "dst": "Quelque chose cloche...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -104,7 +104,7 @@
   },
   "Lexdale Witch Trials#009": {
    "src": "The creature is out of control!",
-   "dst": "",
+   "dst": "La créature est incontrôlable!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -114,7 +114,7 @@
   },
   "Lexdale Witch Trials#010": {
    "src": "It seemed like the creature calmed down... You should show the mayor to free Amira.",
-   "dst": "",
+   "dst": "La créature s'est calmée, on dirait... Montrez-la au maire pour libérer Amira.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -124,7 +124,7 @@
   },
   "Lexdale Witch Trials#011": {
    "src": "...Fine then. This...creature...bug...leech? This whatever-it-is... I'll accept your explanation.",
-   "dst": "",
+   "dst": "...Soit. Cette... créature... bestiole... sangsue? Ce machin, quoi qu'il soit... J'accepte votre explication.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -134,7 +134,7 @@
   },
   "Lexdale Witch Trials#012": {
    "src": "Gah, finally! You're seeing sense! It's almost like something just...took you over one day and never left 'til now!",
-   "dst": "",
+   "dst": "Bah, enfin! Tu entends raison! Comme si quelque chose t'avait... possédé un jour et ne t'avait quitté que maintenant!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -144,7 +144,7 @@
   },
   "Lexdale Witch Trials#013": {
    "src": "As for the...THING... Well... I'll be sure to inform the Gavel government.",
-   "dst": "",
+   "dst": "Quant à la... CHOSE... Eh bien... j'en informerai le gouvernement de Gavel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -154,7 +154,7 @@
   },
   "Lexdale Witch Trials#014": {
    "src": "You should follow the creature before it gets away!",
-   "dst": "",
+   "dst": "Suivez la créature avant qu'elle s'échappe!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -164,7 +164,7 @@
   },
   "Lexdale Witch Trials#015": {
    "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Voyez ce qui se passe au centre de {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -174,7 +174,7 @@
   },
   "Lexdale Witch Trials#018": {
    "src": "WAIT! Let me GO already! I told you what was happening!",
-   "dst": "",
+   "dst": "ATTENDEZ! LÂCHEZ-MOI enfin! Je vous ai dit ce qui se passait!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -184,7 +184,7 @@
   },
   "Lexdale Witch Trials#019": {
    "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
-   "dst": "",
+   "dst": "Les ruses de votre magie noire n'y feront rien, Mme Amira. Partez sans histoires- laissez-nous en paix!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -194,7 +194,7 @@
   },
   "Lexdale Witch Trials#020": {
    "src": "SHUT UP ALREADY! You can't just single people out like this!!",
-   "dst": "",
+   "dst": "TAIS-TOI DONC! Tu ne peux pas désigner les gens comme ça!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -204,7 +204,7 @@
   },
   "Lexdale Witch Trials#021": {
    "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
-   "dst": "",
+   "dst": "Écoute-moi une seconde! Ce n'est pas moi, quelque chose a infecté ma maison! C'est pour ça qu'elle était si sombre!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -214,7 +214,7 @@
   },
   "Lexdale Witch Trials#022": {
    "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
-   "dst": "",
+   "dst": "Ma cave, une chose bizarre l'a creusée! Partout où elle passait, tout se flétrissait et pourrissait!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -224,7 +224,7 @@
   },
   "Lexdale Witch Trials#023": {
    "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
-   "dst": "",
+   "dst": "La preuve que ce n'est pas moi est chez moi! C'est la maison pourrie et stérile! Tu verras si tu REGARDES, sanguinaire!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -234,7 +234,7 @@
   },
   "Lexdale Witch Trials#024": {
    "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
-   "dst": "",
+   "dst": "Assez d'insultes! On ajourne pour l'instant- Sans preuve de son innocence, la sorcière sera exécutée!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -244,7 +244,7 @@
   },
   "Lexdale Witch Trials#025": {
    "src": "Explore the basement of the decayed and barren house.",
-   "dst": "",
+   "dst": "Explorez la cave de la maison pourrie et stérile.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -254,7 +254,7 @@
   },
   "Lexdale Witch Trials#026": {
    "src": "Follow the creature down the tunnels.",
-   "dst": "",
+   "dst": "Suivez la créature dans les tunnels.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -264,7 +264,7 @@
   },
   "Lexdale Witch Trials#027": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Continuez de suivre la créature depuis le tunnel en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -274,7 +274,7 @@
   },
   "Lexdale Witch Trials#030": {
    "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
-   "dst": "",
+   "dst": "Encore un étranger... Tu as dû voir les tunnels. Ils flétrissent la pierre, dessèchent les racines, rendent la terre stérile...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -284,7 +284,7 @@
   },
   "Lexdale Witch Trials#031": {
    "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
-   "dst": "",
+   "dst": "Et ici, nous dépérissons, isolés. Mon peuple est perdu, car la terre elle-même se tord et bouge.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -294,7 +294,7 @@
   },
   "Lexdale Witch Trials#032": {
    "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
-   "dst": "",
+   "dst": "L'eau, stagnante et grise. Rien pour subsister que ces horribles fléaux magiques, et les vers eux-mêmes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -304,7 +304,7 @@
   },
   "Lexdale Witch Trials#035": {
    "src": "Stranger, you must perish.",
-   "dst": "",
+   "dst": "Étranger, tu dois périr.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -314,7 +314,7 @@
   },
   "Lexdale Witch Trials#036": {
    "src": "Defeat the Tunnel Dweller Chieftain.",
-   "dst": "",
+   "dst": "Battez le chef des habitants des tunnels.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -324,7 +324,7 @@
   },
   "Lexdale Witch Trials#037": {
    "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
-   "dst": "",
+   "dst": "Attends... Ces secousses! C'EST EUX! AGHHHHHHHHHHH!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -334,7 +334,7 @@
   },
   "Lexdale Witch Trials#038": {
    "src": "Dig yourself out of the dirt. Then go after the creature.",
-   "dst": "",
+   "dst": "Creusez pour sortir de la terre. Puis poursuivez la créature.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -344,7 +344,7 @@
   },
   "Lexdale Witch Trials#039": {
    "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Retournez à {p} et tentez de montrer la créature au maire en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -354,7 +354,7 @@
   },
   "Lexdale Witch Trials#040": {
    "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
-   "dst": "",
+   "dst": "Vous revoilà. Avez- Attendez, mais qu'est-ce que c'est que ÇA?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -364,7 +364,7 @@
   },
   "Lexdale Witch Trials#041": {
    "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
-   "dst": "",
+   "dst": "Ça! C'est ça qui était dans ma cave!! Je savais que cet humain la trouverait! Merci!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -374,7 +374,7 @@
   },
   "Lexdale Witch Trials#042": {
    "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
-   "dst": "",
+   "dst": "Cette chose répandait la pourriture chez moi! Ce n'est PAS des sorcières ou de la magie comme tu l'as DÉCIDÉ un beau jour!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -384,7 +384,7 @@
   },
   "Lexdale Witch Trials#044": {
    "src": "Step off the podium, Ms. Amira. You're innocent.",
-   "dst": "",
+   "dst": "Descendez de l'estrade, Mme Amira. Vous êtes innocente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -394,7 +394,7 @@
   },
   "Lexdale Witch Trials#046": {
    "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
-   "dst": "",
+   "dst": "...hm. Ça... Mmh. Peu importe. Humain, vous avez prouvé qu'on pouvait vous faire confiance. Nos portes vous restent ouvertes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",

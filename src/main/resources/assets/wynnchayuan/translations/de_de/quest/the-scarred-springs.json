@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "The Scarred Springs",
   "count": 179,
-  "translated": 0,
+  "translated": 179,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -12,7 +12,7 @@
  "entries": {
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sprich mit Maripe in Pishlas bei [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -22,7 +22,7 @@
   },
   "The Scarred Springs#001": {
    "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress. I suppose you've heard about the hot springs!",
-   "dst": "",
+   "dst": "Oh! Na, hallo, Tourist! Du bist doch Tourist, oder? Das sieht nicht nach hiesiger Kleidung aus. Du hast bestimmt von den heißen Quellen gehört!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -32,7 +32,7 @@
   },
   "The Scarred Springs#002": {
    "src": "Well, ah...unfortunately, Pishlas is closed for renovations. You see, it's been closed for a long time... My family has run it for generations, but trouble started.",
-   "dst": "",
+   "dst": "Na ja, äh... leider ist Pishlas wegen Renovierung geschlossen. Schon sehr lange... Meine Familie führt es seit Generationen, aber dann gab es Ärger.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -42,7 +42,7 @@
   },
   "The Scarred Springs#003": {
    "src": "With my mother having been stricken ill for so long, my father and all our family, we've had to abandon this place to care for her. It's fallen into disrepair.",
-   "dst": "",
+   "dst": "Weil meine Mutter so lange krank war, mussten mein Vater und die ganze Familie den Ort aufgeben, um sie zu pflegen. Er ist verfallen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -52,7 +52,7 @@
   },
   "The Scarred Springs#004": {
    "src": "She's well enough now that she doesn't need someone looking after her every hour, so I'm taking it on myself to return this place to its former glory!",
-   "dst": "",
+   "dst": "Jetzt geht es ihr gut genug, dass nicht ständig jemand bei ihr sein muss, also bringe ich den Ort selbst zu altem Glanz zurück!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -62,7 +62,7 @@
   },
   "The Scarred Springs#005": {
    "src": "It's been hard work...and it should be opening soon- but I'm not quite done. Again, I'm so sorry you came all this way for nothing.",
-   "dst": "",
+   "dst": "Es war harte Arbeit... und bald sollte eröffnet werden- aber ich bin noch nicht ganz fertig. Tut mir echt leid, dass du umsonst gekommen bist.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -72,7 +72,7 @@
   },
   "The Scarred Springs#006": {
    "src": "I- excuse me? You want to...",
-   "dst": "",
+   "dst": "Ich- wie bitte? Du willst...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -82,7 +82,7 @@
   },
   "The Scarred Springs#007": {
    "src": "That'd... That'd be absolutely fantastic!! I've been working alone on this for months now!! I'm NEARLY done, but-",
-   "dst": "",
+   "dst": "Das wäre... Das wäre absolut fantastisch!! Ich arbeite seit Monaten allein daran!! Ich bin FAST fertig, aber-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -92,7 +92,7 @@
   },
   "The Scarred Springs#008": {
    "src": "Come on, come on! I'll show you around! Let's go, let's go!!",
-   "dst": "",
+   "dst": "Komm, komm! Ich führ dich rum! Los, los!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -102,7 +102,7 @@
   },
   "The Scarred Springs#009": {
    "src": "Hopefully you'll be able to visit before you have to go home, then!",
-   "dst": "",
+   "dst": "Hoffentlich kannst du sie besuchen, bevor du heim musst!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -112,7 +112,7 @@
   },
   "The Scarred Springs#010": {
    "src": "Okay, okay, what's next on the list... C'mon, think like Sovereign Zhiraok!",
-   "dst": "",
+   "dst": "Okay, okay, was kommt als Nächstes... Komm schon, denk wie Herrscher Zhiraok!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -122,7 +122,7 @@
   },
   "The Scarred Springs#011": {
    "src": "Let Maripe show you around at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Lass dich von Maripe bei [-{~}, {~}, -{~}] herumführen.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -132,7 +132,7 @@
   },
   "The Scarred Springs#012": {
    "src": "Okay, so! These are the main pools- Frankly, I have no idea how all these frogs got here, given the bog is clear across the whole forest...",
-   "dst": "",
+   "dst": "Also! Das sind die Hauptbecken- Ehrlich, keine Ahnung, wie all die Frösche herkamen, wo der Sumpf doch am anderen Ende vom Wald liegt...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -142,7 +142,7 @@
   },
   "The Scarred Springs#013": {
    "src": "But they've got to go. Sure, they're cute, but no one's going to want to take a soak with them... Or with all these fallen leaves in the pools.",
-   "dst": "",
+   "dst": "Aber sie müssen weg. Klar, sie sind süß, aber keiner will mit ihnen baden... Oder mit all dem Laub in den Becken.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -152,7 +152,7 @@
   },
   "The Scarred Springs#014": {
    "src": "The side pool over here is just as important to clean out. Need to have clear pools for the guests! And maybe even for the Sovereign!",
-   "dst": "",
+   "dst": "Das Seitenbecken hier muss genauso sauber werden. Die Gäste brauchen klares Wasser! Und vielleicht sogar der Herrscher!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -162,7 +162,7 @@
   },
   "The Scarred Springs#015": {
    "src": "I've already put a lot of time into fixing up these huts. I do carpentry work. These used to be in so much worse shape... I'm a little glad my grandparents didn't end up seeing it like this.",
-   "dst": "",
+   "dst": "In die Hütten hier hab ich schon viel Zeit gesteckt. Ich mache Zimmermannsarbeit. Die waren viel schlimmer dran... Fast gut, dass meine Großeltern das nicht mehr sahen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -172,7 +172,7 @@
   },
   "The Scarred Springs#016": {
    "src": "I have such fond memories of playing around here when I was younger... What would they think, seeing it fall apart? That thought has been giving me motivation this whole time.",
-   "dst": "",
+   "dst": "Ich hab so schöne Erinnerungen, wie ich als Kind hier gespielt hab... Was würden sie denken, wenn es zerfällt? Der Gedanke hat mich die ganze Zeit angetrieben.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -182,7 +182,7 @@
   },
   "The Scarred Springs#017": {
    "src": "It'd be a disgrace to let Pishlas fall completely apart. Even Sovereign Zhiraok agreed! Did you know he dropped by, when I was first starting- Oh, wait! There's one other place!",
-   "dst": "",
+   "dst": "Es wäre eine Schande, Pishlas ganz zerfallen zu lassen. Sogar Herrscher Zhiraok fand das! Weißt du, er kam vorbei, als ich anfing- Oh, warte! Da ist noch ein Ort!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -192,7 +192,7 @@
   },
   "The Scarred Springs#018": {
    "src": "The teahouse! Refreshments, hot drinks, a place to sit out of the water... This is one of the big remaining projects. I'll take care of this- but, back about the Sovereign?",
-   "dst": "",
+   "dst": "Das Teehaus! Erfrischungen, heiße Getränke, ein Platz außerhalb des Wassers... Eines der großen offenen Projekte. Darum kümmere ich mich- aber, zurück zum Herrscher?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -202,7 +202,7 @@
   },
   "The Scarred Springs#019": {
    "src": "He visited one day, while I was starting on fixing the place, and he told me this would be a fantastic community service! Since it's been so long since Pishlas has been usable, I mean.",
-   "dst": "",
+   "dst": "Er kam eines Tages vorbei, als ich mit der Reparatur anfing, und sagte, das wäre ein toller Dienst an der Gemeinschaft! Weil Pishlas so lange nicht nutzbar war.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -212,7 +212,7 @@
   },
   "The Scarred Springs#020": {
    "src": "This used to be a big community center. Losing it was a blow to all Auburn residents... He's promised some great things if I can clean this all up! So let's get to it!",
-   "dst": "",
+   "dst": "Das war mal ein großer Treffpunkt. Sein Verlust traf ganz Auburn hart... Er hat tolle Sachen versprochen, wenn ich alles herrichte! Also, an die Arbeit!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -222,7 +222,7 @@
   },
   "The Scarred Springs#021": {
    "src": "You go gather up the frogs! There's a pond to the southwest you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "",
+   "dst": "Du sammelst die Frösche ein! Im Südwesten gibt's einen Teich, da kannst du sie freilassen. Dann... das Laub! Fisch es aus den Becken. Dann... dann komm zurück, und wir sehen weiter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -232,7 +232,7 @@
   },
   "The Scarred Springs#022": {
    "src": "Pick up the frogs around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sammle die Frösche bei [-{~}, {~}, -{~}] ein.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -242,7 +242,7 @@
   },
   "The Scarred Springs#023": {
    "src": "How's it coming? Still working on this. Will be for a bit, but I'm energized! Maybe I can get this done today, even! Uh...right, right! Frogs!",
-   "dst": "",
+   "dst": "Wie läuft's? Ich bin noch dran. Dauert noch, aber ich bin voller Energie! Vielleicht schaff ich's sogar heute! Äh... genau, genau! Frösche!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -252,7 +252,7 @@
   },
   "The Scarred Springs#024": {
    "src": "Okay, there were five, and you're holding... Alright, so there's {~} left to get!",
-   "dst": "",
+   "dst": "Okay, es waren fünf, und du hast... Gut, also fehlen noch {~}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -262,7 +262,7 @@
   },
   "The Scarred Springs#025": {
    "src": "Release the frogs at the pond in the back at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Lass die Frösche am hinteren Teich bei [-{~}, {~}, -{~}] frei.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -272,7 +272,7 @@
   },
   "The Scarred Springs#026": {
    "src": "Whoa! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, ohhkay, okay, right!",
-   "dst": "",
+   "dst": "Wow! Das... das ist mal eine Art, Frösche zu tragen, haha! D- Pfffkhhhaaahahahaa!! Du siehst aus- Wahaha, fantastisch!! Oh, ohhkay, okay, schon gut!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -282,7 +282,7 @@
   },
   "The Scarred Springs#027": {
    "src": "There's a pond to the southwest of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "",
+   "dst": "Südwestlich von Pishlas gibt's einen Teich, da kannst du sie freilassen! Und jetzt h-hau ab, ehehe! Ich muss mich konzentrieren, und auf dir sitzen Frösche- hihihahahahaaah!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -292,7 +292,7 @@
   },
   "The Scarred Springs#028": {
    "src": "Pick up all the leaf piles around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sammle alle Laubhaufen bei [-{~}, {~}, -{~}] ein.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -302,7 +302,7 @@
   },
   "The Scarred Springs#029": {
    "src": "Okay, frogs are dealt with, now the leaves! There were ten big patches out there I saw. Get in there and scoop them up- Uh, lemme see. ...",
-   "dst": "",
+   "dst": "Okay, die Frösche sind erledigt, jetzt das Laub! Ich hab draußen zehn große Haufen gesehen. Rein da und schöpf sie raus- Äh, mal sehen. ...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -312,7 +312,7 @@
   },
   "The Scarred Springs#030": {
    "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "",
+   "dst": "Okay, dir fehlen noch {~}! Hoffentlich bin ich hier fertig, wenn du so weit bist, dann sehen wir weiter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -322,7 +322,7 @@
   },
   "The Scarred Springs#031": {
    "src": "Report back to Maripe [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Melde dich bei Maripe [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -332,7 +332,7 @@
   },
   "The Scarred Springs#032": {
    "src": "Okay, there! And STAY in, you darn board... So, how's the work going?",
-   "dst": "",
+   "dst": "Okay, so! Und BLEIB drin, du blödes Brett... Und, wie läuft die Arbeit?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -342,7 +342,7 @@
   },
   "The Scarred Springs#033": {
    "src": "Frogs dealt with, check...and leaves out of the water, check! Which, ah...well, that means now I need you to get some leaves...to put IN the water, eheh!",
-   "dst": "",
+   "dst": "Frösche erledigt, check... und Laub aus dem Wasser, check! Was, äh... heißt, dass du mir jetzt Blätter holen musst... um sie INS Wasser zu tun, ehe!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -352,7 +352,7 @@
   },
   "The Scarred Springs#034": {
    "src": "What I mean by that, is that I need fresh tea for the teahouse! I've already got some food stowed away for refreshments, but I'll need some drinks to go along with that.",
-   "dst": "",
+   "dst": "Ich meine, ich brauche frischen Tee für das Teehaus! Essen für Erfrischungen hab ich schon eingelagert, aber dazu brauche ich Getränke.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -362,7 +362,7 @@
   },
   "The Scarred Springs#035": {
    "src": "I might be done in this building, but there's still plenty of things for me to take care of, so I've got to stay behind and really...really focus in on this!",
-   "dst": "",
+   "dst": "Mit diesem Gebäude bin ich vielleicht fertig, aber ich hab noch jede Menge zu tun, also muss ich hierbleiben und mich richtig... richtig konzentrieren!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -372,7 +372,7 @@
   },
   "The Scarred Springs#036": {
    "src": "It's just that...a lot of this isn't heavy work, but there's just so many tasks on the list that I don't know where to start, so I just can't get it going. You taking care of the other things is helping with that!",
-   "dst": "",
+   "dst": "Es ist nur... vieles davon ist keine schwere Arbeit, aber auf der Liste stehen so viele Aufgaben, dass ich nicht weiß, wo ich anfangen soll, und nicht in Gang komme. Dass du dich um den Rest kümmerst, hilft!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -382,7 +382,7 @@
   },
   "The Scarred Springs#037": {
    "src": "So, uh, anyway! There's a teahouse off to the northwest, up on a ridge. I know the owner- her name's Marseled, and she makes the best tea in the whole forest!",
-   "dst": "",
+   "dst": "Also, äh, jedenfalls! Im Nordwesten oben auf einem Grat gibt's ein Teehaus. Ich kenne die Besitzerin- sie heißt Marseled und macht den besten Tee im ganzen Wald!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -392,7 +392,7 @@
   },
   "The Scarred Springs#038": {
    "src": "So, your job is to head there for a big bulk order, and then bring it back! I'll ask her about paying it off later, since we trade favors a lot. Tell her I sent you!",
-   "dst": "",
+   "dst": "Du holst dort eine große Bestellung ab und bringst sie her! Wegen der Bezahlung frag ich sie später, wir tun uns oft Gefallen. Sag ihr, ich schicke dich!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -402,7 +402,7 @@
   },
   "The Scarred Springs#039": {
    "src": "Get some tea from [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Hol Tee bei [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -412,7 +412,7 @@
   },
   "The Scarred Springs#040": {
    "src": "Okay, dust busted, cobwebs cleared, lanterns in the middle of being lit- Oh, hey! Did you get the tea?",
-   "dst": "",
+   "dst": "Okay, Staub weg, Spinnweben weg, Laternen werden gerade angezündet- Oh, hey! Hast du den Tee?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -422,7 +422,7 @@
   },
   "The Scarred Springs#041": {
    "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
-   "dst": "",
+   "dst": "Marseleds Teehaus liegt im Nordwesten, oben auf dem Grat. Die genaue Stelle steht in deinem Inhaltsbuch!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -432,7 +432,7 @@
   },
   "The Scarred Springs#042": {
    "src": "Welcome, traveler, to my humble teahouse. My name is Marseled. It is always a pleasure to see a new customer.",
-   "dst": "",
+   "dst": "Willkommen, Reisender, in meinem bescheidenen Teehaus. Mein Name ist Marseled. Ein neuer Gast ist mir stets eine Freude.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -442,7 +442,7 @@
   },
   "The Scarred Springs#043": {
    "src": "So, what can I do for you?",
-   "dst": "",
+   "dst": "Nun, was kann ich für Euch tun?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -452,7 +452,7 @@
   },
   "The Scarred Springs#044": {
    "src": "Oh, is that so? Why, that's wonderful! He's spoken with me a few times about working on old Pishlas there. If he wants fresh stock for drinks, he must be confident that it's nearly finished!",
-   "dst": "",
+   "dst": "Oh, ist das so? Nun, wie wundervoll! Er erzählte mir ein paarmal von seiner Arbeit am alten Pishlas. Will er frische Ware für Getränke, muss er sicher sein, dass es fast fertig ist!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -462,7 +462,7 @@
   },
   "The Scarred Springs#045": {
    "src": "Admittedly, though, I'm facing some...difficulties. I've not got quite enough to fill up an order like he'll need. You see, ah...there's...",
-   "dst": "",
+   "dst": "Ich muss allerdings gestehen, ich habe einige... Schwierigkeiten. Für eine Bestellung wie seine habe ich nicht genug. Seht Ihr, äh... da sind...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -472,7 +472,7 @@
   },
   "The Scarred Springs#046": {
    "src": "It's COCKROACHES! Filthy, ugly, disgusting COCKROACHES!! They keep getting all over the mushrooms and on the tea leaves and I CAN'T touch them, I can't I can't I CAN'T!!",
-   "dst": "",
+   "dst": "Es sind KAKERLAKEN! Dreckige, hässliche, ekelhafte KAKERLAKEN!! Sie krabbeln über Pilze und Teeblätter, und ich KANN sie nicht anfassen, ich kann nicht, ich kann nicht, ich KANN NICHT!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -482,7 +482,7 @@
   },
   "The Scarred Springs#047": {
    "src": "They aren't even harming the plants or anything, but I go out to harvest them and they race up to me and crawl all over my feet and up my leggings and aahghguhgughuguhhhh!!!",
-   "dst": "",
+   "dst": "Sie schaden den Pflanzen nicht mal, aber wenn ich ernten gehe, rennen sie auf mich zu und krabbeln über meine Füße und die Strümpfe hoch und aahghguhgughuguhhhh!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -492,7 +492,7 @@
   },
   "The Scarred Springs#048": {
    "src": "I hate them I hate them I hate them, I hate them so much! I- Er. Um. S-sorry. I...shouldn't act so ill-mannered in front of my customers.",
-   "dst": "",
+   "dst": "Ich hasse sie, ich hasse sie, ich hasse sie, ich hasse sie so sehr! Ich- Äh. Hm. V-Verzeihung. Ich... sollte mich vor Gästen nicht so ungehobelt benehmen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -502,7 +502,7 @@
   },
   "The Scarred Springs#049": {
    "src": "The musrooms are right out front and the leaves are down the side of the hill. and should be enough to get me started again.",
-   "dst": "",
+   "dst": "Die Pilze sind gleich vorne und die Blätter unten am Hang. Das sollte reichen, damit ich wieder loslegen kann.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -512,7 +512,7 @@
   },
   "The Scarred Springs#050": {
    "src": "I do hate to ask, but...if you could go out and harvest some of the ingredients for me? And deal with the pests? I've tried, but every time I just...panic.",
-   "dst": "",
+   "dst": "Ich bitte ungern darum, aber... könntet Ihr einige Zutaten für mich ernten? Und Euch um die Plagegeister kümmern? Ich habe es versucht, aber jedes Mal... gerate ich in Panik.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -522,7 +522,7 @@
   },
   "The Scarred Springs#051": {
    "src": "If you could take care of that problem for me, I'll be able to fill out the order for Maripe... And, hopefully, I won't wake the whole of {p} shrieking over a roach in my pants.",
-   "dst": "",
+   "dst": "Löst Ihr das Problem für mich, kann ich Maripes Bestellung erfüllen... Und wecke hoffentlich nicht ganz {p}, weil ich wegen einer Kakerlake in der Hose kreische.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -532,7 +532,7 @@
   },
   "The Scarred Springs#052": {
    "src": "The mushrooms are just out front, and the leaves are down the side of the hill. {~} mushrooms and {~} leaf batches should be enough to fill the order.",
-   "dst": "",
+   "dst": "Die Pilze sind gleich vorne und die Blätter unten am Hang. {~} Pilze und {~} Blätterbündel sollten für die Bestellung reichen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -542,7 +542,7 @@
   },
   "The Scarred Springs#053": {
    "src": "Collect {~} mushrooms and {~} leaf batches from the tea farm at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Sammle {~} Pilze und {~} Blätterbündel auf der Teeplantage bei [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -552,7 +552,7 @@
   },
   "The Scarred Springs#054": {
    "src": "Oh, hey! Did you get the tea yet? I'm trying to get everything in ship-shape here, but I'm running in circles a little...",
-   "dst": "",
+   "dst": "Oh, hey! Hast du den Tee schon? Ich will hier alles auf Vordermann bringen, aber ich drehe mich ein bisschen im Kreis...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -562,7 +562,7 @@
   },
   "The Scarred Springs#055": {
    "src": "Oh, ew. She's got roaches in the farm? Yeah, that's rough. Anyways, go get 'em! I'll be, uh... Well, hopefully I'll have this done by the time you deal with that!",
-   "dst": "",
+   "dst": "Oh, igitt. Sie hat Kakerlaken auf der Plantage? Ja, das ist übel. Egal, schnapp sie dir! Ich bin, äh... Na ja, hoffentlich bin ich fertig, wenn du das erledigt hast!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -572,7 +572,7 @@
   },
   "The Scarred Springs#056": {
    "src": "Bring the tea you collected back to Marseled at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Bring den gesammelten Tee zu Marseled bei [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -582,7 +582,7 @@
   },
   "The Scarred Springs#057": {
    "src": "They're gone? They're really gone?",
-   "dst": "",
+   "dst": "Sie sind weg? Wirklich weg?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -592,7 +592,7 @@
   },
   "The Scarred Springs#058": {
    "src": "YES!! Take THAT, you dirty things! No more cockroooaches, no more cockroooaches, yeah, yeah- Er!",
-   "dst": "",
+   "dst": "JA!! Nehmt DAS, ihr dreckigen Viecher! Keine Kakerlaaaken mehr, keine Kakerlaaaken mehr, jaa, jaa- Äh!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -602,7 +602,7 @@
   },
   "The Scarred Springs#059": {
    "src": "...if you could. Um. Not tell anyone I was...doing that happy dance. Please. I don't think I've done that since I was a child.",
-   "dst": "",
+   "dst": "...wenn Ihr bitte. Ähm. Niemandem erzählt, dass ich... den Freudentanz aufführte. Bitte. Den tanzte ich zuletzt als Kind.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -612,7 +612,7 @@
   },
   "The Scarred Springs#060": {
    "src": "A-anyway, I'll pack up that order and bring it down to Pishlas on my own time. I know where it is. Perhaps I can be there for the opening celebrations, too!",
-   "dst": "",
+   "dst": "N-nun, ich packe die Bestellung und bringe sie bei Gelegenheit selbst nach Pishlas. Ich weiß, wo es ist. Vielleicht bin ich auch bei der Eröffnungsfeier dabei!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -622,7 +622,7 @@
   },
   "The Scarred Springs#061": {
    "src": "I'll be sure to let my customers know. An entire generation has missed out on those hot springs, if my parents speak truly, so this will be an event to cherish, I think!",
-   "dst": "",
+   "dst": "Ich sage es meinen Gästen. Eine ganze Generation hat diese heißen Quellen verpasst, wenn meine Eltern die Wahrheit sagen, also wird das ein Ereignis, das man in Ehren hält!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -632,7 +632,7 @@
   },
   "The Scarred Springs#062": {
    "src": "Okay, that's that now, so now- Oh, you're back! Did you get the order all filled out?",
-   "dst": "",
+   "dst": "Okay, das wär's, also jetzt- Oh, du bist zurück! Ist die Bestellung fertig?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -642,7 +642,7 @@
   },
   "The Scarred Springs#063": {
    "src": "...oops. You got confused, didn't you. Nah, those ingredients need to go to Marseled, and THEN come here. Good hustle, though! Get those to Marseled for processing!",
-   "dst": "",
+   "dst": "...hoppla. Du hast dich vertan, oder? Nee, die Zutaten müssen zu Marseled und DANN hierher. Aber flott warst du! Bring sie zu Marseled zum Verarbeiten!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -652,7 +652,7 @@
   },
   "The Scarred Springs#064": {
    "src": "Bring the tea back to Maripe at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Bring den Tee zu Maripe bei [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -662,7 +662,7 @@
   },
   "The Scarred Springs#065": {
    "src": "Oh my gosh, oh my gosh...L-Look! We have visitors!! Um, I know I'm not setting a great example, but...be quiet, okay? Don't disturb them!",
-   "dst": "",
+   "dst": "Meine Güte, meine Güte... S-sieh mal! Wir haben Besuch!! Ähm, ich weiß, ich bin kein gutes Vorbild, aber... sei leise, okay? Stör sie nicht!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -672,7 +672,7 @@
   },
   "The Scarred Springs#066": {
    "src": "See? The foxes...! I haven't seen them around here since I was a kid! I- well, if you're a tourist you wouldn't know, I suppose, but this is exciting!",
-   "dst": "",
+   "dst": "Siehst du? Die Füchse...! Die hab ich hier seit meiner Kindheit nicht gesehen! Ich- na ja, als Tourist weißt du das wohl nicht, aber das ist aufregend!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -682,7 +682,7 @@
   },
   "The Scarred Springs#067": {
    "src": "There's a really common tale about foxes here- That they're the reincarnation of our ancestors, that their spirits inhabit them. I know it's...well, it's supposed to be just a tall tale, but...",
-   "dst": "",
+   "dst": "Hier erzählt man sich oft, dass Füchse unsere wiedergeborenen Ahnen sind, dass ihre Geister in ihnen wohnen. Ich weiß, das ist... na ja, eigentlich nur ein Märchen, aber...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -692,7 +692,7 @@
   },
   "The Scarred Springs#068": {
    "src": "I really can't help but feel like seeing them here is a good omen! It's like my grandparents are back again- Er, wait! The tea! I completely forgot, did you get the order placed?",
-   "dst": "",
+   "dst": "Ich muss das einfach für ein gutes Omen halten! Als wären meine Großeltern zurück- Äh, warte! Der Tee! Ganz vergessen, hast du die Bestellung aufgegeben?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -702,7 +702,7 @@
   },
   "The Scarred Springs#069": {
    "src": "Oh, Marseled said she'd bring it by herself? Alright, fantastic! And she said she'd invite folks to the opening too... Funny she did, since that's what I was just about to ask you to do!",
-   "dst": "",
+   "dst": "Oh, Marseled bringt ihn selbst vorbei? Gut, fantastisch! Und sie lädt auch Leute zur Eröffnung ein... Lustig, genau darum wollte ich dich gerade bitten!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -712,7 +712,7 @@
   },
   "The Scarred Springs#070": {
    "src": "Pishlas is almost back to the way I remember it being when I was younger. I've still got a bit of decorating to do, so I want you to spread the word!",
-   "dst": "",
+   "dst": "Pishlas ist fast wieder so, wie ich es aus meiner Kindheit kenne. Ich muss noch etwas dekorieren, also sollst du die Nachricht verbreiten!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -722,7 +722,7 @@
   },
   "The Scarred Springs#071": {
    "src": "I've got some notes here on where you could find folks I know in {p}. You tell them, put some notices up...",
-   "dst": "",
+   "dst": "Ich hab hier Notizen, wo du meine Bekannten in {p} findest. Du sagst es ihnen, hängst ein paar Aushänge auf...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -732,7 +732,7 @@
   },
   "The Scarred Springs#072": {
    "src": "...and then after the big celebration re-opening, they'll tell their families, and then word will spread from there! Is it odd to say I'm looking forward to the work of maintaining the place?",
-   "dst": "",
+   "dst": "...und nach der großen Wiedereröffnung erzählen sie es ihren Familien, und von da verbreitet es sich! Ist es seltsam, dass ich mich darauf freue, den Ort instand zu halten?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -742,7 +742,7 @@
   },
   "The Scarred Springs#073": {
    "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "",
+   "dst": "Jedenfalls, los, verbreite die Nachricht! Wenn du nicht weißt, wo du suchen sollst, schau in meine Notizen! Verlierst du sie, komm zurück, dann schreib ich sie dir neu ab.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -752,7 +752,7 @@
   },
   "The Scarred Springs#074": {
    "src": "Invite citizens of {p} at [-{~}, {~}, -{~}] to join the opening celebrations.",
-   "dst": "",
+   "dst": "Lade die Bürger von {p} bei [-{~}, {~}, -{~}] zur Eröffnungsfeier ein.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -762,7 +762,7 @@
   },
   "The Scarred Springs#075": {
    "src": "Whew, okay... Whew. Gotta remember, I'm not the Sovereign. Can't be everywhere at once. Need to slow down...it's nearly done, no need to stress out- Oh, hey!",
-   "dst": "",
+   "dst": "Puh, okay... Puh. Denk dran, ich bin nicht der Herrscher. Kann nicht überall zugleich sein. Langsamer... es ist fast fertig, kein Grund zum Stress- Oh, hey!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -772,7 +772,7 @@
   },
   "The Scarred Springs#076": {
    "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "",
+   "dst": "Hast du die Nachricht schon verbreitet? In meinen Notizen steht, wo die Leute meist sind, also erzähl es weiter! Zur großen Wiedereröffnung bist du natürlich auch eingeladen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -782,7 +782,7 @@
   },
   "The Scarred Springs#077": {
    "src": "Oh, you lost my notes. Don't worry, it happens. Do you think you can find the spots on your own, or do you want me to write a new copy down for you?",
-   "dst": "",
+   "dst": "Oh, du hast meine Notizen verloren. Keine Sorge, kommt vor. Findest du die Stellen allein, oder soll ich dir eine neue Abschrift machen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -792,7 +792,7 @@
   },
   "The Scarred Springs#078": {
    "src": "Okay, one sec...and...here! Remember to check them for where to go!",
-   "dst": "",
+   "dst": "Okay, eine Sekunde... und... hier! Denk dran, nachzusehen, wohin du musst!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -802,7 +802,7 @@
   },
   "The Scarred Springs#079": {
    "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "",
+   "dst": "Alle Stellen auf meiner Liste liegen gleich um {p} herum, aber wenn du Probleme hast, schreib ich dir gern eine neue!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -812,7 +812,7 @@
   },
   "The Scarred Springs#080": {
    "src": "Oh, hello there. I certainly haven't seen you around here before.",
-   "dst": "",
+   "dst": "Oh, hallo. Euch habe ich hier gewiss noch nie gesehen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -822,7 +822,7 @@
   },
   "The Scarred Springs#081": {
    "src": "Is there something you wanted to speak with me about?",
-   "dst": "",
+   "dst": "Wolltet Ihr etwas mit mir besprechen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -832,7 +832,7 @@
   },
   "The Scarred Springs#082": {
    "src": "E-excuse you? What's reopening soon?",
-   "dst": "",
+   "dst": "W-wie bitte? Was eröffnet bald wieder?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -842,7 +842,7 @@
   },
   "The Scarred Springs#083": {
    "src": "Oh, OH! Pishlas? The hot springs? Sorry, it's been so long that I nearly forgot the name.",
-   "dst": "",
+   "dst": "Oh, OH! Pishlas? Die heißen Quellen? Verzeihung, nach so langer Zeit hätte ich den Namen fast vergessen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -852,7 +852,7 @@
   },
   "The Scarred Springs#084": {
    "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
-   "dst": "",
+   "dst": "Ich erinnere mich nur vage, wie ich als Kind dort war, aber nachdem ich sah, wie verlassen der Ort war, konnte ich mir das nicht mehr vorstellen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -862,7 +862,7 @@
   },
   "The Scarred Springs#085": {
    "src": "Maripe did tell me some time ago he would be working on renovating it. I'm to suppose his work has paid off, then! I'd intended to visit him again soon, but this provides a nice excuse, as well.",
-   "dst": "",
+   "dst": "Maripe erzählte mir vor einer Weile, dass er es renovieren wolle. Dann hat sich seine Arbeit wohl gelohnt! Ich wollte ihn ohnehin bald besuchen, das ist ein schöner Anlass.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -872,7 +872,7 @@
   },
   "The Scarred Springs#086": {
    "src": "...I might have to spread the word to his family for him. Even if Maripe's father is too busy looking after his wife, I'm sure he'll be delighted to hear about this.",
-   "dst": "",
+   "dst": "...vielleicht erzähle ich es für ihn seiner Familie. Auch wenn Maripes Vater mit der Pflege seiner Frau beschäftigt ist, wird er sich sicher sehr freuen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -882,7 +882,7 @@
   },
   "The Scarred Springs#087": {
    "src": "Well, I hope to see you there, stranger!",
-   "dst": "",
+   "dst": "Nun, ich hoffe, Euch dort zu sehen, Fremder!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -892,7 +892,7 @@
   },
   "The Scarred Springs#088": {
    "src": "Well, this is a sight, for sure! What can we do for you, fella?",
-   "dst": "",
+   "dst": "Na, das ist ja mal ein Anblick! Was können wir für dich tun, Freundchen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -902,7 +902,7 @@
   },
   "The Scarred Springs#089": {
    "src": "Wait, Pishlas? The hot springs?",
-   "dst": "",
+   "dst": "Moment, Pishlas? Die heißen Quellen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -912,7 +912,7 @@
   },
   "The Scarred Springs#090": {
    "src": "It's been ages, right...? That place, it's been in a state of disrepair for as long as I can recall...",
-   "dst": "",
+   "dst": "Das ist ewig her, oder...? Der Ort ist verfallen, solange ich denken kann...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -922,7 +922,7 @@
   },
   "The Scarred Springs#091": {
    "src": "They're finally going to be open again? And fully renovated? Sounds-",
-   "dst": "",
+   "dst": "Sie öffnen endlich wieder? Und komplett renoviert? Klingt-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -932,7 +932,7 @@
   },
   "The Scarred Springs#092": {
    "src": "Sounds tempting. It's been ages since I've been able to bathe in hot water or relax properly...",
-   "dst": "",
+   "dst": "Klingt verlockend. Seit Ewigkeiten konnte ich nicht heiß baden oder mich richtig entspannen...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -942,7 +942,7 @@
   },
   "The Scarred Springs#093": {
    "src": "We'll surely all be there! These old bones could use a nice, long soak, I think!",
-   "dst": "",
+   "dst": "Wir kommen bestimmt alle! Diese alten Knochen könnten ein schönes, langes Bad gebrauchen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -952,7 +952,7 @@
   },
   "The Scarred Springs#094": {
    "src": "The tourist returns! Anything else you wanted to talk about?",
-   "dst": "",
+   "dst": "Der Tourist ist zurück! Wolltest du noch über etwas reden?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -962,7 +962,7 @@
   },
   "The Scarred Springs#095": {
    "src": "Is there anything of interest here?",
-   "dst": "",
+   "dst": "Gibt es hier etwas Interessantes?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -972,7 +972,7 @@
   },
   "The Scarred Springs#096": {
    "src": "Head back to Pishlas to participate in the celebrations at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Kehre nach Pishlas zurück, um bei [-{~}, {~}, -{~}] mitzufeiern.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -982,7 +982,7 @@
   },
   "The Scarred Springs#097": {
    "src": "Okay. Phew. Wow. Okay. Alright, alright, it's...",
-   "dst": "",
+   "dst": "Okay. Puh. Wow. Okay. Gut, gut, es ist...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -992,7 +992,7 @@
   },
   "The Scarred Springs#098": {
    "src": "It's...it's done. It's all... It's all done, wow, I... There's. There's people... And they're here, and they're enjoying it, and, and...",
-   "dst": "",
+   "dst": "Es ist... es ist fertig. Es ist alles... Alles fertig, wow, ich... Da sind. Da sind Leute... Und sie sind hier, und sie genießen es, und, und...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1002,7 +1002,7 @@
   },
   "The Scarred Springs#099": {
    "src": "And I don't have to think about this anymore, and my parents can relax about having let the place go, and...",
-   "dst": "",
+   "dst": "Und ich muss nicht mehr daran denken, und meine Eltern müssen sich nicht mehr grämen, dass sie den Ort aufgaben, und...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1012,7 +1012,7 @@
   },
   "The Scarred Springs#100": {
    "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
-   "dst": "",
+   "dst": "Und, und, und, der, der Herrscher, er wird, ich kann ihm sagen, dass ich fertig bin, und ich krieg das, und... Ohhh, bei den Sternen, ich bin fertig, aber jetzt noch nervöser als vorher, aaah-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1022,7 +1022,7 @@
   },
   "The Scarred Springs#101": {
    "src": "Okay, come on, keep your head on straight, Maripe! Now's the time to relax a bit... Deep breaths now- Oh, hey!",
-   "dst": "",
+   "dst": "Okay, komm schon, behalt einen kühlen Kopf, Maripe! Jetzt ist Zeit, etwas zu entspannen... Tief durchatmen- Oh, hey!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1032,7 +1032,7 @@
   },
   "The Scarred Springs#102": {
    "src": "Uh, I...I need a minute, eheh. How about...you, uh, talk to everyone else, first, and just...yeah?",
-   "dst": "",
+   "dst": "Äh, ich... ich brauch eine Minute, ehe. Wie wär's... wenn du, äh, erst mit allen anderen redest, und dann... ja?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1042,7 +1042,7 @@
   },
   "The Scarred Springs#103": {
    "src": "I'd say I barely recognize the place after all the renovations...but honestly, it feels like I'm right at home, like I'm that little fox kit I used to be.",
-   "dst": "",
+   "dst": "Ich würde sagen, ich erkenne den Ort nach der Renovierung kaum wieder... aber ehrlich, ich fühle mich wie zu Hause, wie das kleine Fuchsjunge, das ich einst war.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1052,7 +1052,7 @@
   },
   "The Scarred Springs#104": {
    "src": "Maripe tried to talk you up like you did all the work! I practically had to pry a confession out of him that you just came in at the end to help with the finishing touches.",
-   "dst": "",
+   "dst": "Maripe wollte Euch so hinstellen, als hättet Ihr die ganze Arbeit gemacht! Ich musste ihm fast das Geständnis entreißen, dass Ihr erst am Ende für den letzten Schliff kamt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1062,7 +1062,7 @@
   },
   "The Scarred Springs#105": {
    "src": "He's always been a humble sort, but I think that just shows his gratitude. And believe me, I'm grateful to you as well! I think you gave him the kick he needed.",
-   "dst": "",
+   "dst": "Er war schon immer bescheiden, aber so zeigt er wohl seine Dankbarkeit. Und glaubt mir, auch ich bin Euch dankbar! Ihr habt ihm wohl den nötigen Schubs gegeben.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1072,7 +1072,7 @@
   },
   "The Scarred Springs#106": {
    "src": "Ohhhohoho that's the spot. Man...I never knew what I was missing. Sort of an old style name, Pishlas, but...",
-   "dst": "",
+   "dst": "Ohhhohoho, genau da. Mann... ich wusste nie, was mir entgeht. Etwas altmodischer Name, Pishlas, aber...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1082,7 +1082,7 @@
   },
   "The Scarred Springs#107": {
    "src": "Phew. I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
-   "dst": "",
+   "dst": "Puh. Ich komme ganz sicher wieder. Ein langer Tag Liff-Jagd, dann eine lange Nacht im Bad... Oh, das klingt nach einer schönen Routine...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1092,7 +1092,7 @@
   },
   "The Scarred Springs#108": {
    "src": "Maripe, hm. That boy has done good. Certainly couldn't have done better myself, at my age. He's got an eye for carpentry, for decoration, for the respect of his ancestors...",
-   "dst": "",
+   "dst": "Maripe, hm. Der Junge hat gute Arbeit geleistet. In meinem Alter hätte ich es nicht besser gekonnt. Er hat ein Auge für Zimmerei, für Dekoration, für die Achtung vor seinen Ahnen...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1102,7 +1102,7 @@
   },
   "The Scarred Springs#109": {
    "src": "And heck, he's even got free towels provided! I'll be a regular from now on, that's for sure! Hope he's prepared for daily business!",
-   "dst": "",
+   "dst": "Und verflixt, er hat sogar Gratishandtücher! Ab jetzt bin ich Stammgast, so viel ist sicher! Hoffentlich ist er auf täglichen Andrang gefasst!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1112,7 +1112,7 @@
   },
   "The Scarred Springs#110": {
    "src": "Wow... I'll have to tell Timot what he's missing out on. This is fantastic. Perfect view, perfect water, perfect service...",
-   "dst": "",
+   "dst": "Wow... Ich muss Timot erzählen, was er verpasst. Das ist fantastisch. Perfekte Aussicht, perfektes Wasser, perfekter Service...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1122,7 +1122,7 @@
   },
   "The Scarred Springs#111": {
    "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
-   "dst": "",
+   "dst": "Familiensachen gehen einem warmen Bad natürlich vor, aber... Ich teile ein paar Blätter mit ihm und zahle ihm nächstes Mal den Eintritt. Er hat ein Gratisbad verdient.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1132,7 +1132,7 @@
   },
   "The Scarred Springs#112": {
    "src": "Ahhh, that hits the spot... Youngster, do yourself a favor- never get as old as I am. {~} years, I've got...and this... Goodbye, aches, my dear old enemies...",
-   "dst": "",
+   "dst": "Ahhh, das tut gut... Jungspund, tu dir einen Gefallen- werd nie so alt wie ich. {~} Jahre bin ich... und das hier... Lebt wohl, Wehwehchen, meine lieben alten Feinde...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1142,7 +1142,7 @@
   },
   "The Scarred Springs#113": {
    "src": "It's heavenly to feel them wash away in the water, but boy would I love to not creak when I sit down to begin with. Good on you for helping out, by the way- especially for a tourist!",
-   "dst": "",
+   "dst": "Himmlisch, wie sie im Wasser davonschwimmen, aber Junge, wie gern würde ich beim Hinsetzen gar nicht erst knarzen. Gut gemacht übrigens, dass du geholfen hast- gerade als Tourist!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1152,7 +1152,7 @@
   },
   "The Scarred Springs#114": {
    "src": "After the community notice board got vandalized so badly a couple years ago, I thought not to trust it again. I'm quite glad I broke with that and gave it a look now.",
-   "dst": "",
+   "dst": "Nachdem das Schwarze Brett vor ein paar Jahren so übel verwüstet wurde, wollte ich ihm nie wieder trauen. Wie gut, dass ich damit gebrochen und jetzt nachgesehen habe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1162,7 +1162,7 @@
   },
   "The Scarred Springs#115": {
    "src": "Have you seen the owner of the springs, by the way? He's had a few foxes around him all day- normally, they're not the ones doing the chasing like that!",
-   "dst": "",
+   "dst": "Habt Ihr übrigens den Besitzer der Quellen gesehen? Er hat den ganzen Tag ein paar Füchse um sich- normalerweise sind nicht sie es, die so hinterherlaufen!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1172,7 +1172,7 @@
   },
   "The Scarred Springs#116": {
    "src": "Oh, it's lovely to be back. Having visited this place as a teenager, it had always saddened me that it closed. My heart really does go out to Maripe's mother.",
-   "dst": "",
+   "dst": "Oh, wie schön, wieder hier zu sein. Ich war als Teenager hier, und es hat mich immer betrübt, dass es schloss. Mein Mitgefühl gilt wirklich Maripes Mutter.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1182,7 +1182,7 @@
   },
   "The Scarred Springs#117": {
    "src": "Honestly, if the Sovereign can manage all his business, his father should've been able to keep up. But either way, Maripe has outdone himself- and the Auburn Amaretto is such a fine vintage!",
-   "dst": "",
+   "dst": "Ehrlich, wenn der Herrscher all seine Geschäfte schafft, hätte Maripes Vater auch mithalten können. So oder so, Maripe hat sich selbst übertroffen- und der Auburn Amaretto ist ein so feiner Jahrgang!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1192,7 +1192,7 @@
   },
   "The Scarred Springs#118": {
    "src": "I've enough years on me to remember how Maripe's grandparents used to run this place. Maripe has outdone himself- this is, at barest minimum, up to their standard. No one can say otherwise.",
-   "dst": "",
+   "dst": "Ich bin alt genug, um mich zu erinnern, wie Maripes Großeltern den Ort führten. Maripe hat sich selbst übertroffen- das hier reicht mindestens an sie heran. Niemand kann etwas anderes sagen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1202,7 +1202,7 @@
   },
   "The Scarred Springs#119": {
    "src": "It always was something of a...blemish, on his family's name, this place. I understand his mother fell ill, and that's certainly no one's fault, but abandoning a family business for any reason...",
-   "dst": "",
+   "dst": "Dieser Ort war immer so etwas wie ein... Makel am Namen seiner Familie. Ich verstehe, dass seine Mutter erkrankte, und daran ist gewiss niemand schuld, aber ein Familiengeschäft aufzugeben, aus welchem Grund auch immer...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1212,7 +1212,7 @@
   },
   "The Scarred Springs#120": {
    "src": "People judged them all, whether they realized it or not. Hopefully now with Pishlas open, that will end. It feels as if a cloud has lifted, really. Hmhm, or maybe that's just the tea.",
-   "dst": "",
+   "dst": "Die Leute urteilten über sie alle, ob sie es merkten oder nicht. Nun, da Pishlas offen ist, endet das hoffentlich. Als hätte sich eine Wolke verzogen. Hmhm, oder es ist nur der Tee.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1222,7 +1222,7 @@
   },
   "The Scarred Springs#121": {
    "src": "Either way, this is marvelous work. And I can take my harvest without having to worry about disgusting cockroaches crawling all over me! So thank you for that, as well.",
-   "dst": "",
+   "dst": "So oder so, das ist wunderbare Arbeit. Und ich kann ernten, ohne Angst vor ekligen Kakerlaken, die über mich krabbeln! Also danke auch dafür.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1232,7 +1232,7 @@
   },
   "The Scarred Springs#122": {
    "src": "Talk to Maripe at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Sprich mit Maripe bei [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -1242,7 +1242,7 @@
   },
   "The Scarred Springs#123": {
    "src": "I think I said earlier- with so many different little things piling up, I just couldn't think straight. i've been stuck at 'almost done' for a while now.",
-   "dst": "",
+   "dst": "Ich hab's ja vorhin gesagt- bei so vielen Kleinigkeiten, die sich türmten, konnte ich nicht klar denken. Ich hing schon eine Weile bei 'fast fertig' fest.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1252,7 +1252,7 @@
   },
   "The Scarred Springs#124": {
    "src": "You showing up, offering to take care of all the little things cluttering up my brainspace...that made this...possible! I don't think I could've done it without you!",
-   "dst": "",
+   "dst": "Dass du aufgetaucht bist und mir all die Kleinigkeiten abgenommen hast, die mir den Kopf verstopften... das hat das hier... möglich gemacht! Ohne dich hätte ich es nicht geschafft!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1262,7 +1262,7 @@
   },
   "The Scarred Springs#125": {
    "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
-   "dst": "",
+   "dst": "Es ist wirklich genau wie in meiner Erinnerung. Alle kommen zusammen, entspannen, reden, worüber sie Lust haben, und lassen ihre Sorgen einfach verschwinden...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1272,7 +1272,7 @@
   },
   "The Scarred Springs#126": {
    "src": "It even feels like I've got my grandparents right here with me. ...though, maybe that's just these two. These foxes have been following me all day...I hope they'll stick around.",
-   "dst": "",
+   "dst": "Es fühlt sich sogar an, als wären meine Großeltern hier bei mir. ...aber vielleicht liegt das an diesen zwei. Die Füchse folgen mir den ganzen Tag... Hoffentlich bleiben sie.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1282,7 +1282,7 @@
   },
   "The Scarred Springs#127": {
    "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
-   "dst": "",
+   "dst": "Es ist dieses Gefühl... eine Last los zu sein, aber zu wissen, dass eine neue Aufgabe wartet- diesen Ort zu pflegen. Pishlas. Es ist... erfrischend, glaube ich.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1292,7 +1292,7 @@
   },
   "The Scarred Springs#128": {
    "src": "Do... I know you're just a tourist, but...do you think... Do you think my grandparents would be proud of me? For all this?",
-   "dst": "",
+   "dst": "Glaubst... Ich weiß, du bist nur Tourist, aber... glaubst du... Glaubst du, meine Großeltern wären stolz auf mich? Für all das?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1302,7 +1302,7 @@
   },
   "The Scarred Springs#129": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1312,7 +1312,7 @@
   },
   "The Scarred Springs#130": {
    "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
-   "dst": "",
+   "dst": "...oh je, ich hab mir geschworen, nicht zu weinen... u-und jetzt tu ich's doch. Haha... Bei den Sternen, bin ich müde nach all dem. So, so müde... aber. Aber die gute Art von müde, weißt du?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1322,7 +1322,7 @@
   },
   "The Scarred Springs#131": {
    "src": "You might need to go home soon, since you're just visiting...but come back any time. It'll be free, for you- and these should go pretty far in the {p}, I think. I just- Thank you...so much.",
-   "dst": "",
+   "dst": "Du musst bald heim, du bist ja nur zu Besuch... aber komm jederzeit wieder. Für dich ist es gratis- und damit solltest du in {p} ziemlich weit kommen, glaube ich. Ich- Danke... vielmals.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1332,7 +1332,7 @@
   },
   "The Scarred Springs#132": {
    "src": "...you know...you might have a point. I've been so weighed down by what everyone might think, that I could barely focus on the work. I should try and let that go, shouldn't I?",
-   "dst": "",
+   "dst": "...weißt du... da hast du vielleicht recht. Mich hat so belastet, was alle denken könnten, dass ich mich kaum auf die Arbeit konzentrieren konnte. Ich sollte das loslassen, oder?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1342,7 +1342,7 @@
   },
   "The Scarred Springs#133": {
    "src": "You know, for a tourist, you sure are generous with the help. So, I should be generous too! How's free access for life...and a personal gift from me sound? Again...thank you, so much!",
-   "dst": "",
+   "dst": "Weißt du, für einen Touristen hilfst du echt großzügig. Also sollte ich auch großzügig sein! Wie klingt lebenslang freier Eintritt... und ein Geschenk von mir? Noch mal... danke, vielmals!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1352,7 +1352,7 @@
   },
   "The Scarred Springs#134": {
    "src": "...heh. I guess that would make sense. But...I'd like to think they would be. I really would.",
-   "dst": "",
+   "dst": "...heh. Das ergibt wohl Sinn. Aber... ich glaube gern, dass sie es wären. Wirklich.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1362,7 +1362,7 @@
   },
   "The Scarred Springs#135": {
    "src": "So... For one thing. You get free access! For another...here's a personal gift from me! After all, you didn't HAVE to help...but you did! You'll get a lot more use out of these than I will. SO...thank you, so much!",
-   "dst": "",
+   "dst": "Also... Erstens. Du hast freien Eintritt! Zweitens... hier ist ein persönliches Geschenk von mir! Du MUSSTEST ja nicht helfen... aber du hast es getan! Du hast hiervon viel mehr als ich. ALSO... danke, vielmals!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1372,7 +1372,7 @@
   },
   "The Scarred Springs#136": {
    "src": "You should release the Frogs at the pond in the back.",
-   "dst": "",
+   "dst": "Du solltest die Frösche am hinteren Teich freilassen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1382,7 +1382,7 @@
   },
   "The Scarred Springs#137": {
    "src": "to release frogs",
-   "dst": "",
+   "dst": "zum Freilassen der Frösche",
    "role": "desc",
    "kind": "Floating Text",
    "quest": "The Scarred Springs",
@@ -1392,7 +1392,7 @@
   },
   "The Scarred Springs#138": {
    "src": "You should head back to clean up the pools now.",
-   "dst": "",
+   "dst": "Du solltest jetzt zurückgehen und die Becken säubern.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1402,7 +1402,7 @@
   },
   "The Scarred Springs#139": {
    "src": "{#} or {#} to pick up",
-   "dst": "",
+   "dst": "{#} oder {#} zum Aufheben",
    "role": "desc",
    "kind": "Floating Text",
    "quest": "The Scarred Springs",
@@ -1412,7 +1412,7 @@
   },
   "The Scarred Springs#140": {
    "src": "You should head back to Maripe.",
-   "dst": "",
+   "dst": "Du solltest zu Maripe zurückgehen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1422,7 +1422,7 @@
   },
   "The Scarred Springs#141": {
    "src": "Hello to you, too.",
-   "dst": "",
+   "dst": "Seid auch Ihr gegrüßt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1432,7 +1432,7 @@
   },
   "The Scarred Springs#142": {
    "src": "Yes indeed. I'm far from the first to run the teahouse, though.",
-   "dst": "",
+   "dst": "In der Tat. Ich bin aber längst nicht die Erste, die das Teehaus führt.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1442,7 +1442,7 @@
   },
   "The Scarred Springs#143": {
    "src": "My family has always been in the business of running this place- I do believe this building has stood since the very beginning of our written history.",
-   "dst": "",
+   "dst": "Meine Familie führt diesen Ort seit jeher- ich glaube, dieses Gebäude steht seit dem Anbeginn unserer schriftlichen Geschichte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1452,7 +1452,7 @@
   },
   "The Scarred Springs#144": {
    "src": "Of course, it is only right that someone take in our parents' footsteps and continue the work. Not all my siblings were enthused with the job, but I've taken to it quite smoothly, I think.",
-   "dst": "",
+   "dst": "Natürlich gebührt es sich, dass jemand in die Fußstapfen unserer Eltern tritt und die Arbeit fortsetzt. Nicht alle Geschwister waren davon begeistert, aber ich habe mich recht gut eingefunden, glaube ich.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1462,7 +1462,7 @@
   },
   "The Scarred Springs#145": {
    "src": "It would have been unthinkable to leave the teahouse empty. After all, there have been no great tragedies preventing me from putting my attention to the work.",
-   "dst": "",
+   "dst": "Es wäre undenkbar gewesen, das Teehaus leer stehen zu lassen. Schließlich gab es keine großen Tragödien, die mich von der Arbeit abgehalten hätten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1472,7 +1472,7 @@
   },
   "The Scarred Springs#146": {
    "src": "I do hope they all have found their different pursuits to be as fulfilling as I find following in my family's footsteps to be.",
-   "dst": "",
+   "dst": "Ich hoffe doch, sie alle finden ihre eigenen Wege so erfüllend, wie ich es finde, in den Fußstapfen meiner Familie zu gehen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1482,7 +1482,7 @@
   },
   "The Scarred Springs#147": {
    "src": "A good question. Mine is far from the only teahouse in the forest, after all. All of them have their own specialties... Sampling from different houses is fantastic for gaining new ideas.",
-   "dst": "",
+   "dst": "Eine gute Frage. Meines ist schließlich bei Weitem nicht das einzige Teehaus im Wald. Jedes hat seine Spezialitäten... Bei anderen Häusern zu kosten, bringt wunderbar neue Ideen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1492,7 +1492,7 @@
   },
   "The Scarred Springs#148": {
    "src": "I bother by the most traditional methods- there's a particular type of tea leaf I grow here, of course, but my other chief brewing ingredient consists of local mushrooms.",
-   "dst": "",
+   "dst": "Ich halte mich an die traditionellsten Methoden- ich baue hier natürlich eine besondere Teesorte an, aber meine andere Hauptzutat sind hiesige Pilze.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1502,7 +1502,7 @@
   },
   "The Scarred Springs#149": {
    "src": "Many tourists have expressed disbelief at this idea- apparently, mushrooms don't sound palateable or usable for tea, but that isn't true!",
-   "dst": "",
+   "dst": "Viele Touristen können das kaum glauben- Pilze klingen wohl weder schmackhaft noch teetauglich, aber das stimmt nicht!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1512,7 +1512,7 @@
   },
   "The Scarred Springs#150": {
    "src": "I think it's simply the idea that some mushrooms are poisonous that warns people away, but I assure you, if what I cultivated was poison I wouldn't be alive to provide it.",
-   "dst": "",
+   "dst": "Ich glaube, die Vorstellung giftiger Pilze schreckt die Leute ab, aber ich versichere Euch: Wäre, was ich anbaue, giftig, lebte ich nicht mehr, um es auszuschenken.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1522,7 +1522,7 @@
   },
   "The Scarred Springs#151": {
    "src": "Other teahouses prefer different specialties. I have, for example, had some fantastic ginger tea from this small village by a manor...but I stand by the most traditional methods.",
-   "dst": "",
+   "dst": "Andere Teehäuser bevorzugen andere Spezialitäten. Ich hatte etwa einen fantastischen Ingwertee aus einem kleinen Dorf bei einem Herrenhaus... aber ich bleibe bei den traditionellsten Methoden.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1532,7 +1532,7 @@
   },
   "The Scarred Springs#152": {
    "src": "There is a tea for every occasion, so I don't believe there is a best one to choose always. However, there is a worst tea. There is...certainly...a worst tea.",
-   "dst": "",
+   "dst": "Es gibt für jeden Anlass einen Tee, also gibt es wohl keinen, der immer der beste ist. Es gibt jedoch einen schlimmsten Tee. Es gibt... ganz gewiss... einen schlimmsten Tee.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1542,7 +1542,7 @@
   },
   "The Scarred Springs#153": {
    "src": "I still have the nightmares...",
-   "dst": "",
+   "dst": "Ich habe immer noch Albträume...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1552,7 +1552,7 @@
   },
   "The Scarred Springs#154": {
    "src": "I'm curious. What's your opinion on the teas around here?",
-   "dst": "",
+   "dst": "Ich bin neugierig. Was haltet Ihr von den Tees hier?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1562,7 +1562,7 @@
   },
   "The Scarred Springs#155": {
    "src": "I'm curious. What's your opinion on the teas around here?",
-   "dst": "",
+   "dst": "Ich bin neugierig. Was haltet Ihr von den Tees hier?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1572,7 +1572,7 @@
   },
   "The Scarred Springs#156": {
    "src": "Maripe sent me. He's reopening the hot springs and needs to stock the teahouse with a bulk order.",
-   "dst": "",
+   "dst": "Maripe schickt mich. Er eröffnet die heißen Quellen neu und braucht eine große Bestellung für das Teehaus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1582,7 +1582,7 @@
   },
   "The Scarred Springs#157": {
    "src": "You should bring the ingredients back to Marseled.",
-   "dst": "",
+   "dst": "Du solltest die Zutaten zu Marseled zurückbringen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1592,7 +1592,7 @@
   },
   "The Scarred Springs#158": {
    "src": "Job's done- The cockroaches are dead, and I have the ingredients for you.",
-   "dst": "",
+   "dst": "Erledigt- Die Kakerlaken sind tot, und ich habe Eure Zutaten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1602,7 +1602,7 @@
   },
   "The Scarred Springs#159": {
    "src": "Plenty of papers have been posted over, and there's a weathered old advertisement in the middle. Surely it's lost relevance by now, so...",
-   "dst": "",
+   "dst": "Viele Zettel wurden übereinander geklebt, und in der Mitte hängt eine verwitterte alte Anzeige. Die ist inzwischen sicher nicht mehr aktuell, also...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1612,7 +1612,7 @@
   },
   "The Scarred Springs#160": {
    "src": "There. That should be a good spot for it. How much effort did Maripe put into the poster? It really stands out from the rest of the notices.",
-   "dst": "",
+   "dst": "So. Das sollte ein guter Platz sein. Wie viel Mühe hat Maripe wohl in das Plakat gesteckt? Es sticht richtig aus den anderen Aushängen heraus.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1622,7 +1622,7 @@
   },
   "The Scarred Springs#161": {
    "src": "There isn't a world that exists where someone doesn't see this advertisement.",
-   "dst": "",
+   "dst": "Es gibt keine Welt, in der jemand diese Anzeige übersieht.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1632,7 +1632,7 @@
   },
   "The Scarred Springs#162": {
    "src": "You're now tracking the Lone Person at [-{~}, {~}, -{~}]!",
-   "dst": "",
+   "dst": "Du verfolgst jetzt die einzelne Person bei [-{~}, {~}, -{~}]!",
    "role": "desc",
    "kind": "Chat",
    "quest": "The Scarred Springs",
@@ -1642,7 +1642,7 @@
   },
   "The Scarred Springs#163": {
    "src": "You're now tracking the Group at [-{~}, {~}, -{~}]!",
-   "dst": "",
+   "dst": "Du verfolgst jetzt die Gruppe bei [-{~}, {~}, -{~}]!",
    "role": "desc",
    "kind": "Chat",
    "quest": "The Scarred Springs",
@@ -1652,7 +1652,7 @@
   },
   "The Scarred Springs#164": {
    "src": "That's everyone! You may as well head back and join in on the fun.",
-   "dst": "",
+   "dst": "Das sind alle! Dann kannst du auch zurückgehen und mitfeiern.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1662,7 +1662,7 @@
   },
   "The Scarred Springs#165": {
    "src": "There's so many people here! It'd be a shame to not talk to a few of them.",
-   "dst": "",
+   "dst": "Hier sind so viele Leute! Schade, nicht mit ein paar davon zu reden.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1672,7 +1672,7 @@
   },
   "The Scarred Springs#166": {
    "src": "Maripe's waving in your general direction. He must've calmed down enough to talk coherently now.",
-   "dst": "",
+   "dst": "Maripe winkt ungefähr in deine Richtung. Er hat sich wohl genug beruhigt, um zusammenhängend zu reden.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1682,7 +1682,7 @@
   },
   "The Scarred Springs#167": {
    "src": "Surely they would be. You've done a great job.",
-   "dst": "",
+   "dst": "Ganz bestimmt. Du hast großartige Arbeit geleistet.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1692,7 +1692,7 @@
   },
   "The Scarred Springs#168": {
    "src": "It's really all here again. It really is. I...I did this. All my work's finally born fruit!",
-   "dst": "",
+   "dst": "Es ist wirklich alles wieder da. Wirklich. Ich... ich war das. Meine Arbeit trägt endlich Früchte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1702,7 +1702,7 @@
   },
   "The Scarred Springs#169": {
    "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
-   "dst": "",
+   "dst": "Er räkelt sich im Schatten. Er wirkt mit etwas zufrieden, aber du weißt nicht, womit...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1712,7 +1712,7 @@
   },
   "The Scarred Springs#170": {
    "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
-   "dst": "",
+   "dst": "Er schläft noch nicht ganz. Er scheint vor... Vorfreude zu zittern?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1722,7 +1722,7 @@
   },
   "The Scarred Springs#171": {
    "src": "It looks to be observing Maripe at work with great curiosity.",
-   "dst": "",
+   "dst": "Er scheint Maripe neugierig bei der Arbeit zu beobachten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1732,7 +1732,7 @@
   },
   "The Scarred Springs#172": {
    "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
-   "dst": "",
+   "dst": "Alle auf der Liste amüsieren sich wohl schon an den heißen Quellen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1742,7 +1742,7 @@
   },
   "The Scarred Springs#173": {
    "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
-   "dst": "",
+   "dst": "Er schläft leicht, als könnte er jeden Moment aufwachen. Als würde er über die Quellen wachen... oder wie stolze Eltern, die das Werk ihres Kindes betrachten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1752,7 +1752,7 @@
   },
   "The Scarred Springs#174": {
    "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
-   "dst": "",
+   "dst": "Er schläft tief und fest. Sein Atem ist so sanft, als könnte er dich in den Schlaf wiegen, wenn du lange genug lauschst... wie stolze Eltern, die dich ins Bett bringen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1762,7 +1762,7 @@
   },
   "The Scarred Springs#175": {
    "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
-   "dst": "",
+   "dst": "Er sieht im Schlaf sehr bequem aus. Maripe war wohl so aufmerksam, ihm ein Handtuch unterzulegen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1772,7 +1772,7 @@
   },
   "The Scarred Springs#176": {
    "src": "It seems to enjoy watching the visistors.",
-   "dst": "",
+   "dst": "Er scheint die Besucher gern zu beobachten.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1782,7 +1782,7 @@
   },
   "The Scarred Springs#177": {
    "src": "It's slowly dozing off. It appears to be... savoring the moment?",
-   "dst": "",
+   "dst": "Er döst langsam ein. Er scheint... den Moment zu genießen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1792,7 +1792,7 @@
   },
   "The Scarred Springs#178": {
    "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
-   "dst": "",
+   "dst": "Er räkelt sich im Schatten. Trotz all der Leute wirkt er zufrieden... oder vielleicht gerade wegen all der Leute?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
