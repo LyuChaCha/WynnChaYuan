@@ -8,13 +8,14 @@
  "entries": {
   "Green Gloop#000": {
    "src": "You gotten me [{~} Soft Sand] yet? You can dig it up from all those sand piles 'round the desert.",
-   "dst": "[{~} Soft Sand] はもう手に入れたか？砂漠中の砂山を掘れば出てくるぞ。",
+   "dst": "{c2}[{~} Soft Sand]{/} はもう手に入れたか？{c3}砂漠中の砂山を掘れば出てくるぞ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Yodbon",
+   "source": "captured",
+   "note":"{c2}[{~} Soft Sand]{/} , {C3}You can dig it up from all those sand piles 'round the desert.{/}"
   },
   "Green Gloop#001": {
    "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
@@ -28,23 +29,25 @@
   },
   "Green Gloop#002": {
    "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he^ll probably let you into his shop.",
-   "dst": "大量に仕込むから [{~} Slimey Goo] が必要なんだ。手伝ってくれたら友達に伝えるよ、たぶん店に入れてくれる。",
+   "dst": "大量に仕込むから {c2}[{~} Slimey Goo]{/} が必要なんだ。手伝ってくれたら友達に伝えるよ、たぶん店に入れてくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "Stage 1",
    "speaker": "Eluzterp",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}[{~} Slimey Goo]{/}"
   },
   "Green Gloop#003": {
    "src": "Ah, you've got the scooper! Head into the cave now - remember, I need [{~} Slimey Goo] to make the drink!",
-   "dst": "お、すくい網を手に入れたね！さあ洞窟へ。忘れないで、飲み物を作るのに [{~} Slimey Goo] が要るんだ！",
+   "dst": "お、すくい網を手に入れたね！さあ洞窟へ。忘れないで、飲み物を作るのに {c2}[{~} Slimey Goo] {/}が要るんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Eluzterp",
+   "source": "captured",
+   "note":"{c2}[{~} Slimey Goo]{/}"
   },
   "Green Gloop#004": {
    "src": "Talk to Eluzterp at [{~}, {~}, -{~}]",
@@ -178,23 +181,25 @@
   },
   "Green Gloop#017": {
    "src": "Anyways, for me to make you a scooper you'll need to get [{~} Soft Sand].",
-   "dst": "とにかく、すくいを作るには [{~} Soft Sand] を持ってこい。",
+   "dst": "とにかく、すくいを作るには{c2} [{~} Soft Sand] {/}を持ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "Stage 2",
    "speaker": "Yodbon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}[{~} Soft Sand]{/}"
   },
   "Green Gloop#018": {
    "src": "Come back to me once you've gotten ahold of it. You can dig it up from those sand piles 'round the desert.",
-   "dst": "手に入れたら戻ってこい。砂漠の砂山を掘れば出てくる。",
+   "dst": "手に入れたら戻ってこい。{c2}砂漠の砂山を掘れば出てくる。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "Stage 2",
    "speaker": "Yodbon",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}You can dig it up from those sand piles 'round the desert.{/}"
   },
   "Green Gloop#019": {
    "src": "Bring [{~} Soft Sand] from enemies in the desert to Yodbon at [{~}, {~}, -{~}]",
@@ -227,7 +232,7 @@
    "source": "wiki"
   },
   "Green Gloop#022": {
-   "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
+   "src": "...There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
    "dst": "…ほらよ。あいつがなんであんな物を欲しがるのかは知らん。慣れると旨い味なのかもな…",
    "role": "desc",
    "kind": "dialogue",
@@ -345,6 +350,27 @@
    "stage": "Stage 4",
    "speaker": "Yodbon",
    "source": "wiki"
+  },
+  "Green Gloop#034": {
+   "src": "I hope that brother of mine isn't off doin' something dumb again...",
+   "dst": "あの兄貴が、また何か馬鹿なことをしに行ったりしてないといいんだけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Yodbon",
+   "source": "captured.json"
+  },
+  "Green Gloop#035": {
+   "src": "Have you talked to Yodbon yet, about the [Slime Scooper]? You can find him outside {p} bank!",
+   "dst": "{c2}[スライムすくい]{/}のことについて、もう Yodbon とは話した？　彼は{p}銀行の外にいるよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Eluzterp",
+   "source": "captured.json",
+   "note":"{c2}[Slime Scooper]{/}"
   }
  }
 }
