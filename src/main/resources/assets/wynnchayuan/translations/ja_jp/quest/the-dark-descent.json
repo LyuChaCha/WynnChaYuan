@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Dark Descent",
-  "count": 59,
-  "translated": 59,
+  "count": 62,
+  "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -33,7 +33,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Scout",
    "source": "captured"
   },
   "The Dark Descent#003": {
@@ -43,7 +43,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#004": {
@@ -53,7 +53,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#005": {
@@ -73,7 +73,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#007": {
@@ -83,7 +83,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#008": {
@@ -93,7 +93,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#009": {
@@ -113,7 +113,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#011": {
@@ -138,13 +138,14 @@
   },
   "The Dark Descent#013": {
    "src": "Looks like the only way to go is into the skull...",
-   "dst": "道は髑髏の中に入るしかないようだ…",
+   "dst": "{c1}道は{c2}髑髏の中に入る{c1}しかないようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the only way to go is{c2}into the skull{c1}...{/}"
   },
   "The Dark Descent#014": {
    "src": "You were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
@@ -528,13 +529,14 @@
   },
   "The Dark Descent#052": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "おい！こっちだ、こっちへ来い！ゾンビどもとうろうろするのはやめたまえ！",
+   "dst": "おい！こっちだ、{c2}こっちへ来い{/}！ゾンビどもとうろうろするのはやめたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "Stage 6",
    "speaker": "General Graken",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}come over here{/}"
   },
   "The Dark Descent#053": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
@@ -595,6 +597,36 @@
    "stage": "Stage 6",
    "speaker": "General Graken",
    "source": "wiki"
+  },
+  "The Dark Descent#059": {
+   "src": "Ah, hello chap! Might I inquire as to whether you've glanced in that house yet?",
+   "dst": "ああ、やあ、君！　あの家の中をもう覗いてみたかな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#060": {
+   "src": "It's just up the road here, impossible to miss with a bleedin' skull right over the doorway!",
+   "dst": "ここからすぐ先の道沿いにある。入り口の真上にデカい頭蓋骨がぶら下がってるから、絶対に見逃せない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#061": {
+   "src": "Return to Graken at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] にいる Graken の元へ戻る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Dark Descent",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

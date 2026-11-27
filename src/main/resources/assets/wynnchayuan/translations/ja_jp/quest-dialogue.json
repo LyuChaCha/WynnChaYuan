@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 25015,
-  "translated": 25012,
+  "count": 25035,
+  "translated": 25032,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -42545,13 +42545,14 @@
   },
   "Brothers Return#000": {
    "src": "The door is locked, but there should be a key around here somewhere...",
-   "dst": "扉には鍵がかかっているが、この辺りのどこかに鍵があるはずだ…",
+   "dst": "扉には鍵がかかっているが、この辺りの{c2}どこかに鍵がある{/}はずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}a key around here{/}"
   },
   "Brothers Return#001": {
    "src": "Were it not for our teachings, I would not let you set even one singular toe upon this holy ground after what you did.",
@@ -42560,7 +42561,7 @@
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#002": {
@@ -42591,17 +42592,19 @@
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Drucksh",
-   "source": "captured"
+   "source": "captured",
+   "note": "Mmmmmgghh... aaauuughh... need... mmgh は斜体"
   },
   "Brothers Return#005": {
    "src": "There must be something around here that could make him talk...",
-   "dst": "この辺りに、彼の口を割らせる何かがあるはずだ…",
+   "dst": "{c2}この辺りに{/}、彼の口を割らせる{c2}何かがある{/}はずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}something around here{/}"
   },
   "Brothers Return#006": {
    "src": "You may have forgotten already, but I unfortunately must inform you that your brother is indeed dead.",
@@ -42621,16 +42624,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "captured"
-  },
-  "Brothers Return#008": {
-   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
-   "dst": "何だと！？牛神様！恐れていた以上にひどい！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
    "source": "captured"
   },
   "Brothers Return#009": {
@@ -42765,13 +42758,14 @@
   },
   "Brothers Return#022": {
    "src": "Drucksh shouldn't be hard to find, he usually spends his time in the bar in {p}. Just follow this road out of {p} to get there.",
-   "dst": "Drucksh ならすぐ見つかる。たいてい {p} の酒場に入り浸ってるからな。この道を {p} から出ていけば着くよ。",
+   "dst": "Drucksh ならすぐ見つかる。たいてい {c2}{p} の酒場{/}に入り浸ってるからな。この道を {p} から出ていけば着くよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 1",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}bar in {p}{/}"
   },
   "Brothers Return#023": {
    "src": "Find Drucksh at the bar in {p} at [{~}, {~}, -{~}].",
@@ -42785,13 +42779,14 @@
   },
   "Brothers Return#024": {
    "src": "Thanks again for doing this, pal. Just follow this road out of {p} to get to {p}, Drucksh's usually at the bar there.",
-   "dst": "引き受けてくれて改めてありがとう、相棒。この道で {p} を出れば {p} だ。Drucksh はたいていそこの酒場にいる。",
+   "dst": "引き受けてくれて改めてありがとう、相棒。{c2}この道で{/} {p} を出れば {p} だ。Drucksh はたいていそこの酒場にいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}follow this road{/}"
   },
   "Brothers Return#025": {
    "src": "Anythin' to drink?",
@@ -42805,13 +42800,14 @@
   },
   "Brothers Return#026": {
    "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
-   "dst": "うぁぁ… な、何か… むぐぅ… 飲む… もの… あぁ…",
+   "dst": "うぁぁ… な、何か… むぐぅ… {c3}飲む… もの…{/} あぁ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Aauuughh , mmmmgh , aaaughh は斜体 {c3}to... drink...{/}"
   },
   "Brothers Return#027": {
    "src": "Find a way to make Drucksh tell you about the will.",
@@ -42835,13 +42831,14 @@
   },
   "Brothers Return#029": {
    "src": "Anythin' is possible. If ya have [{~} Emeralds] to spare, that is.",
-   "dst": "何だってできるさ。[{~} エメラルド] 払えるならな。",
+   "dst": "何だってできるさ。{c2}[{~} エメラルド]{/} 払えるならな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Barkeep",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Emeralds]{/}"
   },
   "Brothers Return#030": {
    "src": "One {p} Whiskey, shipwrecked against the rocks, comin' right up.",
@@ -42871,7 +42868,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Ughhhhhh は斜体"
   },
   "Brothers Return#033": {
    "src": "This nice fella got ya a drink. A {p} Whiskey, yer favourite.",
@@ -42891,7 +42889,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Ughhhhhh は斜体"
   },
   "Brothers Return#035": {
    "src": "Hey! They paid for yer drink, ya know. Ya could at least try to be courteous.",
@@ -43041,7 +43040,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sayleros は斜体"
   },
   "Brothers Return#050": {
    "src": "So then why did the Bishop...",
@@ -43074,8 +43074,8 @@
    "source": "wiki"
   },
   "Brothers Return#053": {
-   "src": "Speak to the Bishop Kaideus in {p} at [{~}, {~}, -{~}].",
-   "dst": "{p} の [{~}, {~}, -{~}] で Kaideus 司教と話す。",
+   "src": "Speak to the Bishop in {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} の [{~}, {~}, -{~}] で司教と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -43101,7 +43101,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whatever は斜体"
   },
   "Brothers Return#056": {
    "src": "Oh, it's you. For your information, the proper term of address is your excellency.",
@@ -43111,7 +43112,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you , your excellency は斜体"
   },
   "Brothers Return#057": {
    "src": "Y-yes, I know all that, y-your priestliness. But where's my brother? I want to see 'im.",
@@ -43151,7 +43153,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Hey は斜体"
   },
   "Brothers Return#061": {
    "src": "Your excellency! Th-th-they've risen!",
@@ -43164,14 +43167,15 @@
    "source": "wiki"
   },
   "Brothers Return#062": {
-   "src": "Holy Bovine! It's even worse than I feared!",
-   "dst": "牛神様！恐れていた以上にひどい！",
+   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
+   "dst": "何だと！？牛神様！恐れていた以上にひどい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "captured",
+   "note": "They've what!? は震えている"
   },
   "Brothers Return#063": {
    "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
@@ -43185,13 +43189,14 @@
   },
   "Brothers Return#064": {
    "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
-   "dst": "今がチャンスだ、相棒！地下墓所で兄貴を探してくれ！お、俺はここで後ろを守っとく！",
+   "dst": "今がチャンスだ、相棒！地下墓所で{c2}兄貴を探してくれ{/}！お、俺はここで後ろを守っとく！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}find my brother{/}"
   },
   "Brothers Return#065": {
    "src": "Enter the crypt at [{~}, {~}, -{~}] and find Sayleros' Brother.",
@@ -43245,7 +43250,7 @@
   },
   "Brothers Return#070": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Crypt Basement Key.",
-   "dst": "Crypt Basement Key で [{~}, {~}, -{~}] の扉を開ける。",
+   "dst": "地下室の墓所の鍵で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -43265,7 +43270,7 @@
   },
   "Brothers Return#072": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Sealed Crypt Key.",
-   "dst": "Sealed Crypt Key で [{~}, {~}, -{~}] の扉を開ける。",
+   "dst": "封印された墓所の鍵で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -43321,7 +43326,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thousand times は斜体"
   },
   "Brothers Return#078": {
    "src": "Y-you're back! Did you find 'im?",
@@ -43361,7 +43367,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you は斜体"
   },
   "Brothers Return#082": {
    "src": "W-well... I-I thought I'd take responsibility for our family for once...",
@@ -43391,7 +43398,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "renegade は斜体"
   },
   "Brothers Return#085": {
    "src": "He's our brother, your priestliness! Let us w-worry about 'im and you can worry about your great cow in the sky, or whatever it is.",
@@ -43401,7 +43409,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "our は斜体"
   },
   "Brothers Return#086": {
    "src": "That's right, your priestliness! Here, I'll take the will.",
@@ -43572,6 +43581,27 @@
    "stage": "Stage 13",
    "speaker": "Alfe",
    "source": "wiki"
+  },
+  "Brothers Return#103": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "ああ、お前か！うぅぅ…俺たちのためにしてくれたこと、本当に…んんっ…感謝してる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Drucksh",
+   "source": "captured",
+   "note": "Aaaagghh , mmhhhgg は斜体"
+  },
+  "Brothers Return#104": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "やあ、また会えてうれしいよ、友よ！お祝いに招かなくてすまなかった。ずいぶん忙しそうだったからね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Sayleros",
+   "source": "captured"
   },
   "Burning Bonds#000": {
    "src": "There's only a razor-sharp rock here. Nothing particularly useful... yet.",
@@ -55135,22 +55165,6 @@
    "stage": "Stage 6",
    "speaker": "Thomas",
    "source": "wiki"
-  },
-  "Creeper Infiltration#040": {
-   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
-   "dst": "やあ、また会えてうれしいよ、友よ！お祝いに招かなくてすまなかった。ずいぶん忙しそうだったからね！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "source": "captured"
-  },
-  "Creeper Infiltration#041": {
-   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
-   "dst": "ああ、あなたか！うぅぅ…私たちのためにしてくれたこと、本当に…んんっ…感謝してる…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "source": "captured"
   },
   "Creeper Infiltration#042": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
@@ -84169,6 +84183,57 @@
    "speaker": "",
    "source": "captured"
   },
+  "Fast-Paced Pilgrimage#001": {
+   "src": "Ah, hello, dear. How can I help you? Are you a pilgrim, by any chance?",
+   "dst": "ああ、こんにちは。何かお手伝いできることはありますか？もしかして、巡礼者の方でしょうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#002": {
+   "src": "...You're just looking around? Then would you like to hear about the ongoing festival?",
+   "dst": "…ただ見回っているだけですか？ それなら、現在開催中のお祭りについてお話ししましょうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#003": {
+   "src": "Pilgrims from all across the world are coming to {p} right now - it's a tradition of ours, you see. {p} is a site of great significance in our faith.",
+   "dst": "今まさに、世界中から巡礼者たちが{p}へと集まってきています。これは私たちの伝統なのです。{p}は、私たちの信仰において非常に重要な場所なのです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#004": {
+   "src": "As part of the traditions, many will venture into the ruined city. The army isn't happy about it, since Corrupteds have been on the rise there lately, but we have the resources to handle it. They should keep their nose out of it.",
+   "dst": "伝統の一環として、多くの者が廃墟となった街へと足を踏み入れるでしょう。最近、その地域では「腐敗者」の活動が活発化しているため、軍はこれを快く思っていないが、我々には対処できるだけの戦力がある。軍は余計な口出しをすべきではない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#005": {
+   "src": "...Ahem. My apologies. Would you like to try out the festivity? We are welcoming to those outside of our religion. Talk to me more if you're interested.",
+   "dst": "…えーっと。失礼しました。このお祭りを体験してみませんか？ 私たちの宗教に属していない方でも大歓迎です。興味があれば、ぜひ{c2}詳しくお話し{/}しましょう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured",
+   "note": "{c2}Talk to me more{/}"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "おや、{p} 軍の者か。この凍てついた墳墓のことをもっと知りたいと思っている。力を貸してほしい。",
@@ -109112,23 +109177,25 @@
   },
   "Lost Tower#006": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
-   "dst": "手伝ってくれるなら [{~} Book of the Bones] を持ってきてください。今は {p} の古い塔で、骸骨の手にあるはずです。",
+   "dst": "手伝ってくれるなら {c2}[{~} Book of the Bones]{/} を持ってきてください。今は {c3}{p} の古い塔{/}で、骸骨の手にあるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
    "stage": "Stage 1",
    "speaker": "Laen",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Book of the Bones]{/} , {c3}in an old tower in {p}{/}"
   },
   "Lost Tower#007": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
-   "dst": "その塔を探してみてください。中の骸骨のどれかが本を持っているはずです。",
+   "dst": "{c2}その塔を探して{/}みてください。中の骸骨のどれかが本を持っているはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
    "stage": "Stage 1",
    "speaker": "Laen",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}find this tower{/}"
   },
   "Lost Tower#008": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
@@ -109169,6 +109236,16 @@
    "stage": "Stage 4",
    "speaker": "Laen",
    "source": "wiki"
+  },
+  "Lost Tower#012": {
+   "src": "Talk to Laen in {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} の [{~}, {~}, -{~}] にいる Laen と話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
   },
   "Maltic's Well#000": {
    "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
@@ -112569,13 +112646,14 @@
   },
   "Misadventure on the Sea#005": {
    "src": "Sitting on this stool will start Misadventure on the Sea.",
-   "dst": "この椅子に座ると「海の災難」が始まる。",
+   "dst": "この椅子に座ると「{c2}海の災難{/}」が始まる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Misadventure on the Sea.{/}"
   },
   "Misadventure on the Sea#006": {
    "src": "I'll take two {p} Whiskeys. One for me, one for this chap.",
@@ -112594,7 +112672,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Barkeep",
    "source": "captured"
   },
   "Misadventure on the Sea#008": {
@@ -112629,33 +112707,36 @@
   },
   "Misadventure on the Sea#011": {
    "src": "Sounds like you're being dragged around...",
-   "dst": "引きずり回されているように感じる…",
+   "dst": "{c1}引きずり回されているように感じる…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Sounds like you're being dragged around...{/}"
   },
   "Misadventure on the Sea#012": {
    "src": "You pick up a small sign...",
-   "dst": "小さな看板を拾った…",
+   "dst": "{c1}小さな看板を拾った…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You pick up a small sign...{/}"
   },
   "Misadventure on the Sea#013": {
    "src": "It reads: 'Behind you, idiot.'",
-   "dst": "こう書いてある:「後ろだよ、バカ。」",
+   "dst": "{c1}こう書いてある:「後ろだよ、バカ。」{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It reads: 'Behind you, idiot.'{/}"
   },
   "Misadventure on the Sea#014": {
    "src": "So, there's quite a few bodies in there, and we never bothered throwin' em out!",
@@ -112719,113 +112800,124 @@
   },
   "Misadventure on the Sea#020": {
    "src": "Looks like the door that leads to the hold...",
-   "dst": "船倉へ続く扉のようだ…",
+   "dst": "{c1}船倉へ続く扉のようだ…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the door that leads to the hold...{/}"
   },
   "Misadventure on the Sea#021": {
    "src": "It's locked. Probably because of the rat issue. Honip must have the key.",
-   "dst": "鍵がかかっている。たぶんネズミ騒ぎのせいだ。鍵は Honip が持っているはずだ。",
+   "dst": "{c1}鍵がかかっている。たぶんネズミ騒ぎのせいだ。鍵は Honip が持っているはずだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's locked. Probably because of the rat issue. Honip must have the key.{/}"
   },
   "Misadventure on the Sea#022": {
    "src": "You find some notes on the table.",
-   "dst": "テーブルの上にメモがある。",
+   "dst": "{c1}テーブルの上にメモがある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You find some notes on the table.{/}"
   },
   "Misadventure on the Sea#023": {
    "src": "There's mentions of... A human cannon? How does that make sense?",
-   "dst": "書いてあるのは… 人間大砲？どういう意味だろうか？",
+   "dst": "{c1}書いてあるのは… 人間大砲？どういう意味だろうか？{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There's mentions of... A human cannon? How does that make sense?{/}"
   },
   "Misadventure on the Sea#024": {
    "src": "Apparently, only gunpowder is needed, as well as a fuse.",
-   "dst": "どうやら必要なのは火薬と導火線だけらしい。",
+   "dst": "{c1}どうやら必要なのは火薬と導火線だけらしい。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Apparently, only gunpowder is needed, as well as a fuse.{/}"
   },
   "Misadventure on the Sea#025": {
    "src": "This cannon is aiming slightly upwards, and it seems less powerful than the others.",
-   "dst": "この大砲は少し上を向いていて、他の大砲より威力が弱そうだ。",
+   "dst": "{c1}この大砲は少し上を向いていて、他の大砲より威力が弱そうだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}This cannon is aiming slightly upwards, and it seems less powerful than the others.{/}"
   },
   "Misadventure on the Sea#026": {
    "src": "According to the notes you saw, it's probably the \"human\" cannon. This must be your escape route!",
-   "dst": "さっきのメモによれば、これが例の「人間」大砲だろう。これは脱出経路になるだろう！",
+   "dst": "{c1}さっきのメモによれば、これが例の「人間」大砲だろう。これは脱出経路になるだろう！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}According to the notes you saw, it's probably the \"human\" cannon. This must be your escape route!{/}"
   },
   "Misadventure on the Sea#027": {
    "src": "You pick up some notes.",
-   "dst": "メモを拾った。",
+   "dst": "{c1}メモを拾った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You pick up some notes.{/}"
   },
   "Misadventure on the Sea#028": {
    "src": "There are mentions of a hidden key in the hold...",
-   "dst": "船倉に隠された鍵のことが書いてある…",
+   "dst": "{c1}船倉に隠された鍵のことが書いてある…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There are mentions of a hidden key in the hold...{/}"
   },
   "Misadventure on the Sea#029": {
    "src": "You should probably search the hold later, when possible.",
-   "dst": "後で機会があれば、船倉を探してみたほうがよさそうだ。",
+   "dst": "{c1}後で機会があれば、船倉を探してみたほうがよさそうだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You should probably search the hold later, when possible.{/}"
   },
   "Misadventure on the Sea#030": {
    "src": "You cleaned the bodies! You should talk to Honip on the deck.",
-   "dst": "死体を片付けた！甲板の Honip と話そう。",
+   "dst": "{c1}死体を片付けた！甲板の Honip と話そう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You cleaned the bodies! You should talk to Honip on the deck.{/}"
   },
   "Misadventure on the Sea#031": {
    "src": "'ey! How's the cleaning? Don't forget to check everywhere, ya never know what you might find!",
@@ -112834,7 +112926,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#032": {
@@ -112859,13 +112951,14 @@
   },
   "Misadventure on the Sea#034": {
    "src": "You picked up some seeds.",
-   "dst": "種を拾った。",
+   "dst": "{c1}種を拾った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You picked up some seeds.{/}"
   },
   "Misadventure on the Sea#035": {
    "src": "Honip's probably waitin' for ya by now! Take these ladders next to me, he's up there.",
@@ -112874,7 +112967,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#036": {
@@ -112969,13 +113062,14 @@
   },
   "Misadventure on the Sea#045": {
    "src": "Seems like it likes you now!",
-   "dst": "すっかりなついたみたいだ！",
+   "dst": "{c1}すっかりなついたみたいだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Seems like it likes you now!{/}"
   },
   "Misadventure on the Sea#046": {
    "src": "Not done yet? Well, take your time!",
@@ -112984,7 +113078,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#047": {
@@ -112999,23 +113093,25 @@
   },
   "Misadventure on the Sea#048": {
    "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
-   "dst": "この木箱はネズミの毛と、かじられたニンジンでいっぱいのようだ。",
+   "dst": "{c1}この木箱はネズミの毛と、かじられたニンジンでいっぱいのようだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like this crate is filled with rat hair, with some eaten carrots.{/}"
   },
   "Misadventure on the Sea#049": {
    "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
-   "dst": "ネズミを倒した！出る前に火薬と導火線を持っていこう。",
+   "dst": "{c1}ネズミを倒した！出る前に火薬と導火線を持っていこう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You defeated the rats! You should grab the gunpowder and the fuse before leaving.{/}"
   },
   "Misadventure on the Sea#050": {
    "src": "[+{~} Cannon Fuse]",
@@ -113039,13 +113135,14 @@
   },
   "Misadventure on the Sea#052": {
    "src": "You've got enough gunpowder already.",
-   "dst": "火薬はもう十分ある。",
+   "dst": "{c1}火薬はもう十分ある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You've got enough gunpowder already.{/}"
   },
   "Misadventure on the Sea#053": {
    "src": "Looks like this crate is filled with even more rat hair!",
@@ -113059,123 +113156,135 @@
   },
   "Misadventure on the Sea#054": {
    "src": "You picked up a dusty key!",
-   "dst": "ほこりまみれの鍵を拾った！",
+   "dst": "{c1}ほこりまみれの鍵を拾った！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You picked up a dusty key!{/}"
   },
   "Misadventure on the Sea#055": {
    "src": "You already got fuse.",
-   "dst": "導火線はもう手に入れた。",
+   "dst": "{c1}導火線はもう手に入れた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You already got fuse.{/}"
   },
   "Misadventure on the Sea#056": {
    "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
-   "dst": "導火線も火薬も手に入れた。これであの大砲が使えそうだ！",
+   "dst": "{c1}導火線も火薬も手に入れた。これであの大砲が使えそうだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You got the fuse as well as the gunpowder. Looks like you can use that cannon now!{/}"
   },
   "Misadventure on the Sea#057": {
    "src": "You put the gunpowder in the cannon and attach the fuse...",
-   "dst": "大砲に火薬を詰め、導火線を取り付けた…",
+   "dst": "{c1}大砲に火薬を詰め、導火線を取り付けた…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You put the gunpowder in the cannon and attach the fuse...{/}"
   },
   "Misadventure on the Sea#058": {
    "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
-   "dst": "完全に使えるようだ。海賊に見つからないように！大砲を使ったら、もう船には戻れない。",
+   "dst": "{c1}完全に使えるようだ。海賊に見つからないように！大砲を使ったら、もう船には戻れない。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.{/} , Once you leave, you won't be able to come back. は太字"
   },
   "Misadventure on the Sea#059": {
    "src": "You crawl into the cannon...",
-   "dst": "大砲の中に這い込んだ…",
+   "dst": "{c1}大砲の中に這い込んだ…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You crawl into the cannon...{/}"
   },
   "Misadventure on the Sea#060": {
    "src": "You dig up some sand...",
-   "dst": "砂を掘り出した…",
+   "dst": "{c1}砂を掘り出した…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You dig up some sand...{/}"
   },
   "Misadventure on the Sea#061": {
    "src": "There's more sand.",
-   "dst": "まだ砂がある。",
+   "dst": "{c1}まだ砂がある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There's more sand.{/}"
   },
   "Misadventure on the Sea#062": {
    "src": "It's a coconut.",
-   "dst": "ココナッツだ。",
+   "dst": "{c1}ココナッツだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's a coconut.{/}"
   },
   "Misadventure on the Sea#063": {
    "src": "It's a palm tree!",
-   "dst": "ヤシの木だ！",
+   "dst": "{c1}ヤシの木だ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's a palm tree!{/}"
   },
   "Misadventure on the Sea#064": {
    "src": "Huh? Something's approaching off in the distance...",
-   "dst": "ん？遠くから何かが近づいてくる…",
+   "dst": "{c1}ん？遠くから何かが近づいてくる…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Huh? Something's approaching off in the distance...{/}"
   },
   "Misadventure on the Sea#065": {
-   "src": "Looks like they're headed toward the island! Is that..?",
-   "dst": "この島へ向かってくるようだ！あれは…？",
+   "src": "Looks like they're headed toward the island!",
+   "dst": "{c1}この島へ向かってくるようだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like they're headed toward the island!{/}"
   },
   "Misadventure on the Sea#066": {
    "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
@@ -113184,7 +113293,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seaskipper Captain",
    "source": "captured"
   },
   "Misadventure on the Sea#067": {
@@ -113365,7 +113474,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "YOU は太字"
   },
   "Misadventure on the Sea#085": {
    "src": "Hey, you're finally awake.",
@@ -113379,7 +113489,7 @@
   },
   "Misadventure on the Sea#086": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
-   "dst": "正直、あんなのに引っかかるなんて信じらんねえよ。あんたのためにまとめてやるよ",
+   "dst": "正直、あんなのに引っかかるなんて信じらんねえよ。あんたのためにまとめてやるよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -113395,7 +113505,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "pirate は太字"
   },
   "Misadventure on the Sea#088": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
@@ -113465,7 +113576,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "BIG は太字"
   },
   "Misadventure on the Sea#095": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
@@ -113478,8 +113590,8 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#096": {
-   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
-   "dst": "船内の死体を掃除する。同時に脱出の手がかりを探す。-掃除した死体: #/{~}",
+   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: {~}/{~}",
+   "dst": "船内の死体を掃除する。同時に脱出の手がかりを探す。-掃除した死体: {~}/{~}",
    "role": "desc",
    "kind": "objective",
    "quest": "Misadventure on the Sea",
@@ -113855,7 +113967,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 4",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rats は太字"
   },
   "Misadventure on the Sea#134": {
    "src": "Come to the hold, I'll explain on the way.",
@@ -114204,58 +114317,63 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#169": {
    "src": "Huh? It looks like there's a hidden lock in this bookshelf!",
-   "dst": "あれ？この本棚に隠し錠があるようだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#170": {
-   "src": "Where could the key be? Does the crew know about this?",
-   "dst": "鍵はどこだろう？船員たちは知ってるのだろうか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#171": {
-   "src": "It's barely visible, it's probably not going to help on escaping.",
-   "dst": "ほとんど見えない。脱出の役には立たなさそうだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#172": {
-   "src": "That's definitely not a place to store gunpowder, nor a fuse.",
-   "dst": "火薬か導火線をしまうような場所ではないのは確かだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#173": {
-   "src": "You don't have the key.",
-   "dst": "鍵を持っていない。",
+   "dst": "{c1}あれ？この本棚に隠し錠があるようだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
    "source": "captured",
+   "note": "{c1}Huh? It looks like there's a hidden lock in this bookshelf!{/}"
+  },
+  "Misadventure on the Sea#170": {
+   "src": "Where could the key be? Does the crew know about this?",
+   "dst": "{c1}鍵はどこだろう？船員たちは知ってるのだろうか？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}Where could the key be? Does the crew know about this?{/}"
+  },
+  "Misadventure on the Sea#171": {
+   "src": "It's barely visible, it's probably not going to help on escaping.",
+   "dst": "{c1}ほとんど見えない。脱出の役には立たなさそうだ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}It's barely visible, it's probably not going to help on escaping.{/}"
+  },
+  "Misadventure on the Sea#172": {
+   "src": "That's definitely not a place to store gunpowder, nor a fuse.",
+   "dst": "{c1}火薬か導火線をしまうような場所ではないのは確かだ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}That's definitely not a place to store gunpowder, nor a fuse.{/}"
+  },
+  "Misadventure on the Sea#173": {
+   "src": "You don't have the key.",
+   "dst": "{c1}鍵を持っていない。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You don't have the key.{/}",
    "similar": {
     "text": "You don't have to come.",
     "file": "quest.json",
@@ -114275,23 +114393,25 @@
   },
   "Misadventure on the Sea#175": {
    "src": "You search the chest...",
-   "dst": "宝箱を漁る…",
+   "dst": "{c1}宝箱を漁る…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You search the chest...{/}"
   },
   "Misadventure on the Sea#176": {
    "src": "It's filled with various items.",
-   "dst": "いろいろな物が詰まっている。",
+   "dst": "{c1}いろいろな物が詰まっている。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's filled with various items.{/}"
   },
   "Misadventure on the Sea#177": {
    "src": "[+{~} Fake Tooth]",
@@ -114311,13 +114431,14 @@
   },
   "Misadventure on the Sea#178": {
    "src": "That's all there was.",
-   "dst": "それだけだった。",
+   "dst": "{c1}それだけだった。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}That's all there was.{/}"
   },
   "Misadventure on the Sea#179": {
    "src": "Mo'in, traveller, have you heard of Corkus? The new province filled with machines!",
@@ -114488,6 +114609,129 @@
    "stage": "Stage 8",
    "speaker": "Seaskipper Captain",
    "source": "wiki"
+  },
+  "Misadventure on the Sea#196": {
+   "src": "So... I've seen ya around town. Helping some guy with a book, explorin' the surroundings...",
+   "dst": "で…町であんたを見かけたぜ。ある男に本のことを手伝ったり、辺りを探索したりして…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 1",
+   "speaker": "Honip",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#197": {
+   "src": "The chicken's got quite the agressive personality!",
+   "dst": "このニワトリ、かなり気性が荒い！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#198": {
+   "src": "He ain't scared of anything, which makes him the best pirate 'round here!",
+   "dst": "あいつは何を恐れることもない。だからこそ、この辺りで一番の海賊なんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#199": {
+   "src": "These rats... I don't think they're normal rats. Something's wrong with 'em.",
+   "dst": "このネズミたち……普通のネズミじゃない気がする。何かおかしいんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#200": {
+   "src": "You noticed the cannon could be used to escape. Clean the bodies and see what Honip tells you! -Bodies cleaned: {~}/{~}",
+   "dst": "大砲を使って脱出できそうだ。死体を片付けて、 Honip に聞いてみよう！ -掃除した死体: {~}/{~}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#201": {
+   "src": "Welcome back! Any progress?",
+   "dst": "戻ってきたな！進捗はどうだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Seth",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#202": {
+   "src": "Oh, there he is! Hold on...",
+   "dst": "あ、あそこにいる！ちょっと待って……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#203": {
+   "src": "Isn't he the best??",
+   "dst": "彼って最高じゃない？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#204": {
+   "src": "You probably shouldn't leave the boat just like that.",
+   "dst": "{c1}無造作に船から降りないほうがいいだろう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You probably shouldn't leave the boat just like that.{/}"
+  },
+  "Misadventure on the Sea#205": {
+   "src": "You picked up a peculiarly tasty-looking bone.",
+   "dst": "{c1}妙においしそうな骨を拾った。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You picked up a peculiarly tasty-looking bone.{/}"
+  },
+  "Misadventure on the Sea#206": {
+   "src": "He's looking towards the bookshelves...",
+   "dst": "{c1}本棚のほうを見ている…{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}He's looking towards the bookshelves...{/}"
+  },
+  "Misadventure on the Sea#207": {
+   "src": "Alright, I know he was like a fierce chicken or whatever, but this is just ridiculous.",
+   "dst": "まあ、彼がまるで凶暴なニワトリみたいなやつだったのは知ってるけど、これじゃまったくもって馬鹿げてるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   },
   "Mixed Feelings#000": {
    "src": "Speak to Javen at the Corkus Docks.",
@@ -185412,7 +185656,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Scout",
    "source": "captured"
   },
   "The Dark Descent#003": {
@@ -185422,7 +185666,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#004": {
@@ -185432,7 +185676,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#005": {
@@ -185452,7 +185696,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#007": {
@@ -185462,7 +185706,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#008": {
@@ -185472,7 +185716,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#009": {
@@ -185492,7 +185736,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#011": {
@@ -185517,13 +185761,14 @@
   },
   "The Dark Descent#013": {
    "src": "Looks like the only way to go is into the skull...",
-   "dst": "道は髑髏の中に入るしかないようだ…",
+   "dst": "{c1}道は{c2}髑髏の中に入る{c1}しかないようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the only way to go is{c2}into the skull{c1}...{/}"
   },
   "The Dark Descent#014": {
    "src": "You were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
@@ -185907,13 +186152,14 @@
   },
   "The Dark Descent#052": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "おい！こっちだ、こっちへ来い！ゾンビどもとうろうろするのはやめたまえ！",
+   "dst": "おい！こっちだ、{c2}こっちへ来い{/}！ゾンビどもとうろうろするのはやめたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "Stage 6",
    "speaker": "General Graken",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}come over here{/}"
   },
   "The Dark Descent#053": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
@@ -185974,6 +186220,36 @@
    "stage": "Stage 6",
    "speaker": "General Graken",
    "source": "wiki"
+  },
+  "The Dark Descent#059": {
+   "src": "Ah, hello chap! Might I inquire as to whether you've glanced in that house yet?",
+   "dst": "ああ、やあ、君！　あの家の中をもう覗いてみたかな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#060": {
+   "src": "It's just up the road here, impossible to miss with a bleedin' skull right over the doorway!",
+   "dst": "ここからすぐ先の道沿いにある。入り口の真上にデカい頭蓋骨がぶら下がってるから、絶対に見逃せない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#061": {
+   "src": "Return to Graken at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] にいる Graken の元へ戻る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Dark Descent",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
   },
   "The Envoy Part I#000": {
    "src": "It's an independant island to the west. In fact... If you want to go...",
@@ -195767,7 +196043,7 @@
   },
   "The Feathers Fly Part II#1320": {
    "src": "You search the chest...",
-   "dst": "宝箱を漁る…",
+   "dst": "{c1}宝箱を漁る…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195777,7 +196053,7 @@
   },
   "The Feathers Fly Part II#1321": {
    "src": "That's all there was.",
-   "dst": "それだけだった。",
+   "dst": "{c1}それだけだった。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",

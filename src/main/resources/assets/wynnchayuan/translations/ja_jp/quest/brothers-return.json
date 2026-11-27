@@ -1,20 +1,21 @@
 {
  "_meta": {
   "quest": "Brothers Return",
-  "count": 103,
-  "translated": 103,
+  "count": 104,
+  "translated": 104,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Brothers Return#000": {
    "src": "The door is locked, but there should be a key around here somewhere...",
-   "dst": "扉には鍵がかかっているが、この辺りのどこかに鍵があるはずだ…",
+   "dst": "扉には鍵がかかっているが、この辺りの{c2}どこかに鍵がある{/}はずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}a key around here{/}"
   },
   "Brothers Return#001": {
    "src": "Were it not for our teachings, I would not let you set even one singular toe upon this holy ground after what you did.",
@@ -23,7 +24,7 @@
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#002": {
@@ -54,17 +55,19 @@
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Drucksh",
-   "source": "captured"
+   "source": "captured",
+   "note": "Mmmmmgghh... aaauuughh... need... mmgh は斜体"
   },
   "Brothers Return#005": {
    "src": "There must be something around here that could make him talk...",
-   "dst": "この辺りに、彼の口を割らせる何かがあるはずだ…",
+   "dst": "{c2}この辺りに{/}、彼の口を割らせる{c2}何かがある{/}はずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}something around here{/}"
   },
   "Brothers Return#006": {
    "src": "You may have forgotten already, but I unfortunately must inform you that your brother is indeed dead.",
@@ -84,16 +87,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "captured"
-  },
-  "Brothers Return#008": {
-   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
-   "dst": "何だと！？牛神様！恐れていた以上にひどい！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
    "source": "captured"
   },
   "Brothers Return#009": {
@@ -228,13 +221,14 @@
   },
   "Brothers Return#022": {
    "src": "Drucksh shouldn't be hard to find, he usually spends his time in the bar in {p}. Just follow this road out of {p} to get there.",
-   "dst": "Drucksh ならすぐ見つかる。たいてい {p} の酒場に入り浸ってるからな。この道を {p} から出ていけば着くよ。",
+   "dst": "Drucksh ならすぐ見つかる。たいてい {c2}{p} の酒場{/}に入り浸ってるからな。この道を {p} から出ていけば着くよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 1",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}bar in {p}{/}"
   },
   "Brothers Return#023": {
    "src": "Find Drucksh at the bar in {p} at [{~}, {~}, -{~}].",
@@ -248,13 +242,14 @@
   },
   "Brothers Return#024": {
    "src": "Thanks again for doing this, pal. Just follow this road out of {p} to get to {p}, Drucksh's usually at the bar there.",
-   "dst": "引き受けてくれて改めてありがとう、相棒。この道で {p} を出れば {p} だ。Drucksh はたいていそこの酒場にいる。",
+   "dst": "引き受けてくれて改めてありがとう、相棒。{c2}この道で{/} {p} を出れば {p} だ。Drucksh はたいていそこの酒場にいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}follow this road{/}"
   },
   "Brothers Return#025": {
    "src": "Anythin' to drink?",
@@ -268,13 +263,14 @@
   },
   "Brothers Return#026": {
    "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
-   "dst": "うぁぁ… な、何か… むぐぅ… 飲む… もの… あぁ…",
+   "dst": "うぁぁ… な、何か… むぐぅ… {c3}飲む… もの…{/} あぁ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Aauuughh , mmmmgh , aaaughh は斜体 {c3}to... drink...{/}"
   },
   "Brothers Return#027": {
    "src": "Find a way to make Drucksh tell you about the will.",
@@ -298,13 +294,14 @@
   },
   "Brothers Return#029": {
    "src": "Anythin' is possible. If ya have [{~} Emeralds] to spare, that is.",
-   "dst": "何だってできるさ。[{~} エメラルド] 払えるならな。",
+   "dst": "何だってできるさ。{c2}[{~} エメラルド]{/} 払えるならな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Barkeep",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Emeralds]{/}"
   },
   "Brothers Return#030": {
    "src": "One {p} Whiskey, shipwrecked against the rocks, comin' right up.",
@@ -334,7 +331,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Ughhhhhh は斜体"
   },
   "Brothers Return#033": {
    "src": "This nice fella got ya a drink. A {p} Whiskey, yer favourite.",
@@ -354,7 +352,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Ughhhhhh は斜体"
   },
   "Brothers Return#035": {
    "src": "Hey! They paid for yer drink, ya know. Ya could at least try to be courteous.",
@@ -504,7 +503,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 3",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sayleros は斜体"
   },
   "Brothers Return#050": {
    "src": "So then why did the Bishop...",
@@ -537,8 +537,8 @@
    "source": "wiki"
   },
   "Brothers Return#053": {
-   "src": "Speak to the Bishop Kaideus in {p} at [{~}, {~}, -{~}].",
-   "dst": "{p} の [{~}, {~}, -{~}] で Kaideus 司教と話す。",
+   "src": "Speak to the Bishop in {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} の [{~}, {~}, -{~}] で司教と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -564,7 +564,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whatever は斜体"
   },
   "Brothers Return#056": {
    "src": "Oh, it's you. For your information, the proper term of address is your excellency.",
@@ -574,7 +575,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you , your excellency は斜体"
   },
   "Brothers Return#057": {
    "src": "Y-yes, I know all that, y-your priestliness. But where's my brother? I want to see 'im.",
@@ -614,7 +616,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Hey は斜体"
   },
   "Brothers Return#061": {
    "src": "Your excellency! Th-th-they've risen!",
@@ -627,14 +630,15 @@
    "source": "wiki"
   },
   "Brothers Return#062": {
-   "src": "Holy Bovine! It's even worse than I feared!",
-   "dst": "牛神様！恐れていた以上にひどい！",
+   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
+   "dst": "何だと！？牛神様！恐れていた以上にひどい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "captured",
+   "note": "They've what!? は震えている"
   },
   "Brothers Return#063": {
    "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
@@ -648,13 +652,14 @@
   },
   "Brothers Return#064": {
    "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
-   "dst": "今がチャンスだ、相棒！地下墓所で兄貴を探してくれ！お、俺はここで後ろを守っとく！",
+   "dst": "今がチャンスだ、相棒！地下墓所で{c2}兄貴を探してくれ{/}！お、俺はここで後ろを守っとく！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}find my brother{/}"
   },
   "Brothers Return#065": {
    "src": "Enter the crypt at [{~}, {~}, -{~}] and find Sayleros' Brother.",
@@ -708,7 +713,7 @@
   },
   "Brothers Return#070": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Crypt Basement Key.",
-   "dst": "Crypt Basement Key で [{~}, {~}, -{~}] の扉を開ける。",
+   "dst": "地下室の墓所の鍵で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -728,7 +733,7 @@
   },
   "Brothers Return#072": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Sealed Crypt Key.",
-   "dst": "Sealed Crypt Key で [{~}, {~}, -{~}] の扉を開ける。",
+   "dst": "封印された墓所の鍵で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Brothers Return",
@@ -784,7 +789,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thousand times は斜体"
   },
   "Brothers Return#078": {
    "src": "Y-you're back! Did you find 'im?",
@@ -824,7 +830,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Sayleros",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you は斜体"
   },
   "Brothers Return#082": {
    "src": "W-well... I-I thought I'd take responsibility for our family for once...",
@@ -854,7 +861,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "renegade は斜体"
   },
   "Brothers Return#085": {
    "src": "He's our brother, your priestliness! Let us w-worry about 'im and you can worry about your great cow in the sky, or whatever it is.",
@@ -864,7 +872,8 @@
    "quest": "Brothers Return",
    "stage": "Stage 13",
    "speaker": "Drucksh",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "our は斜体"
   },
   "Brothers Return#086": {
    "src": "That's right, your priestliness! Here, I'll take the will.",
@@ -1035,6 +1044,27 @@
    "stage": "Stage 13",
    "speaker": "Alfe",
    "source": "wiki"
+  },
+  "Brothers Return#103": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "ああ、お前か！うぅぅ…俺たちのためにしてくれたこと、本当に…んんっ…感謝してる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Drucksh",
+   "source": "captured",
+   "note": "Aaaagghh , mmhhhgg は斜体"
+  },
+  "Brothers Return#104": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "やあ、また会えてうれしいよ、友よ！お祝いに招かなくてすまなかった。ずいぶん忙しそうだったからね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Sayleros",
+   "source": "captured"
   }
  }
 }
