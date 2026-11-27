@@ -37,7 +37,10 @@ public final class HijackedLetterTest {
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("misc.json"), """
                 {
-                  "Water of the Past [Secret Discovery]": "Água do passado [Descoberta secreta]"
+                  "Water of the Past [Secret Discovery]": "Água do passado [Descoberta secreta]",
+                  "Ah, I forgot.": "À, tôi quên mất.",
+                  "DecrepitÀÀÀSewers Key": "Kırık DecrepitÀÀÀSewers Anahtarı",
+                  "At the edge": "à beira, À beira"
                 }
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("quest-name.json"), """
@@ -53,6 +56,7 @@ public final class HijackedLetterTest {
         corpusKeepsAccent(dir);
         originalKept(store);
         contentBookNames(store);
+        spacerLetter(store);
 
         System.out.println(failures == 0
                 ? "HijackedLetterTest 全部通過" : failures + " 項失敗");
@@ -89,6 +93,15 @@ public final class HijackedLetterTest {
         check("卡片標題拿到的名字也換掉了（實際 " + card + "）", "Agua do passado".equals(card));
         String quest = store.pageTitleName("Emissaries of Light");
         check("任務名稱表拿到的名字也換掉了（實際 " + quest + "）", "Anh Sáng Sứ Giả".equals(quest));
+    }
+
+    private static void spacerLetter(TranslationStore store) {
+        String vi = store.lookup("Ah, I forgot.");
+        check("原文沒有 À，譯文的 À 換成 A（實際 " + vi + "）", "A, tôi quên mất.".equals(vi));
+        String key = store.lookup("DecrepitÀÀÀSewers Key");
+        check("原文有 À 對齊字元就照留（實際 " + key + "）", "Kırık DecrepitÀÀÀSewers Anahtarı".equals(key));
+        String pt = store.lookup("At the edge");
+        check("小寫 à 不動（實際 " + pt + "）", "à beira, A beira".equals(pt));
     }
 
     private static String shown(String text, Style style, TranslationStore store) {

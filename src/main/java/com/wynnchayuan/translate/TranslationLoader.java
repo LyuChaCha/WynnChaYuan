@@ -114,7 +114,7 @@ final class TranslationLoader {
                 Map<String, String> into =
                         translations.scopedOnly.computeIfAbsent(scope, k -> new HashMap<>());
                 for (String key : obj.keySet()) {
-                    String dst = shownValue(obj.get(key));
+                    String dst = shownValue(obj.get(key), key);
                     if (!key.startsWith("_") && dst != null && !dst.isBlank()) {
                         into.put(key.strip(), dst);
                     }
@@ -177,12 +177,12 @@ final class TranslationLoader {
                     String name = PageNames.nameOfTitle(key);
                     if (name != null && name.indexOf('{') < 0) {
                         translations.pageNames.add(name.strip());
-                        translations.notePageTitle(name.strip(), shownValue(obj.get(key)));
+                        translations.notePageTitle(name.strip(), shownValue(obj.get(key), key));
                     }
                 }
                 if (file.getFileName().toString().equals(QUEST_NAMES)) {
                     for (String key : obj.keySet()) {
-                        String name = shownValue(obj.get(key));
+                        String name = shownValue(obj.get(key), key);
                         if (!key.startsWith("_") && name != null) {
                             translations.noteQuestName(key.strip(), name);
                         }
@@ -262,7 +262,7 @@ final class TranslationLoader {
             }
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
-            String dst = shownValue(e.get("dst"));
+            String dst = shownValue(e.get("dst"), src);
             if (gearNames && src != null && !src.isBlank()
                     && (dst == null || dst.isBlank())
                     && "name".equals(optString(e, "role"))) {
@@ -350,7 +350,7 @@ final class TranslationLoader {
                 continue;
             }
             translations.seenSources.add(key.strip());
-            String flat = shownValue(obj.get(key));
+            String flat = shownValue(obj.get(key), key);
             if (flat != null && !flat.isBlank()) {
                 translations.entries.put(key.strip(), flat);
                 translations.nameRules.otherOwners.add(key.strip());
@@ -385,9 +385,9 @@ final class TranslationLoader {
         layered(translations.flat, "flat", normalise(key), value);
     }
 
-    private static String shownValue(JsonElement value) {
+    private static String shownValue(JsonElement value, String src) {
         return value != null && value.isJsonPrimitive()
-                ? DisplayStyles.deIcon(value.getAsString().strip()) : null;
+                ? DisplayStyles.shownTranslation(value.getAsString().strip(), src) : null;
     }
 
     private static String optString(JsonObject o, String field) {
