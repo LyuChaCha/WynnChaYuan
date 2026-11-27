@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 25035,
-  "translated": 25032,
+  "count": 24998,
+  "translated": 24995,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -136083,6 +136083,16 @@
    "source": "captured"
   },
   "Point of No Return#004": {
+   "src": "Who were we?",
+   "dst": "私たちは誰だったの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#005": {
    "src": "Tying you to something you no longer are.",
    "dst": "もはやお前ではない何かに、お前を縛りつけている。",
    "role": "desc",
@@ -136092,7 +136102,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#005": {
+  "Point of No Return#006": {
    "src": "[-{~} Soul Retainer]",
    "dst": "[-{~} 魂の保持具]",
    "role": "desc",
@@ -136102,7 +136112,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#006": {
+  "Point of No Return#007": {
    "src": "And then, when it was done, we lost what little still was left.",
    "dst": "そしてそれが終わると、わずかに残っていたものまで失った。",
    "role": "desc",
@@ -136112,19 +136122,9 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#007": {
-   "src": "Did your soul just stop following you?",
-   "dst": "魂がついて来なくなった？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "Point of No Return#008": {
-   "src": "...you have to let it go.",
-   "dst": "…手放さなければならない。",
+   "src": "What were we?",
+   "dst": "私たちは何だったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -136133,8 +136133,8 @@
    "source": "captured"
   },
   "Point of No Return#009": {
-   "src": "Something which can no longer leave.",
-   "dst": "もう去ることのできない何か。",
+   "src": "Who did this to us?",
+   "dst": "誰がこんな目に遭わせたんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -136143,8 +136143,8 @@
    "source": "captured"
   },
   "Point of No Return#010": {
-   "src": "... Maybe you should talk to that citizen again.",
-   "dst": "…あの住人ともう一度話したほうがいいかも。",
+   "src": "Did your soul just stop following you?",
+   "dst": "魂がついて来なくなった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -136163,6 +136163,26 @@
    "source": "captured"
   },
   "Point of No Return#012": {
+   "src": "Something which can no longer leave.",
+   "dst": "もう去ることのできない何か。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#013": {
+   "src": "... Maybe you should talk to that citizen again.",
+   "dst": "…あの住人ともう一度話したほうがいいかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#014": {
    "src": "You're... free. But, something is...",
    "dst": "お前は…自由だ。だが、何かが…",
    "role": "desc",
@@ -136172,7 +136192,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#013": {
+  "Point of No Return#015": {
    "src": "Live well, {u}. That is all I ask.",
    "dst": "よく生きろ、{u}。私が望むのはそれだけだ。",
    "role": "desc",
@@ -136182,7 +136202,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#014": {
+  "Point of No Return#016": {
    "src": "Retrace the steps of your soul to keep up...",
    "dst": "遅れぬよう、魂の足跡をたどれ…",
    "role": "desc",
@@ -136192,7 +136212,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#015": {
+  "Point of No Return#017": {
    "src": "A blood trail?",
    "dst": "血の跡？",
    "role": "desc",
@@ -136202,7 +136222,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#016": {
+  "Point of No Return#018": {
    "src": "Holding the Soul Retainer seems to switch your location with your soul...",
    "dst": "魂の保持具を持つと、自分と魂の位置が入れ替わるようだ…",
    "role": "desc",
@@ -136212,7 +136232,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#017": {
+  "Point of No Return#019": {
    "src": "Talk to the {p} Citizen at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] にいる {p} の市民と話す。",
    "role": "desc",
@@ -136222,7 +136242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Point of No Return#018": {
+  "Point of No Return#020": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -136232,7 +136252,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#019": {
+  "Point of No Return#021": {
    "src": "You... could it be...? Are you... real?",
    "dst": "お前…まさか…？本物…なのか？",
    "role": "desc",
@@ -136242,7 +136262,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#020": {
+  "Point of No Return#022": {
    "src": "Ha... ha... you should not have come here.",
    "dst": "は…は…お前は来るべきでなかった。",
    "role": "desc",
@@ -136252,29 +136272,9 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#021": {
+  "Point of No Return#023": {
    "src": "Have you seen the others? Barely clinging on to life... hollowed, empty.",
    "dst": "他の者を見たか？かろうじて生にしがみつき…虚ろで、空っぽだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 1",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#022": {
-   "src": "Only I persist. And, now... you, too, have been ensnared.",
-   "dst": "残っているのは私だけ。そして今…お前も囚われた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 1",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#023": {
-   "src": "Fight against your fate, if you so choose... it makes no difference in the end. Ha... ha... ha...",
-   "dst": "望むなら運命に抗うがいい…結局は何も変わらない。は…は…は…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -136363,66 +136363,6 @@
    "source": "wiki"
   },
   "Point of No Return#032": {
-   "src": "Explore this happier version of {p}.",
-   "dst": "この幸せな {p} を探索する。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Point of No Return#033": {
-   "src": "Ahh... a newcomer? Welcome, welcome.",
-   "dst": "ああ…新顔か？ようこそ、ようこそ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#034": {
-   "src": "Do not worry, you are safe here. The Obelisk protects us all.",
-   "dst": "心配いらない、ここは安全だ。オベリスクが皆を守ってくれる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#035": {
-   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
-   "dst": "外の恐怖の中に灯る安全の光…困った時に待っていてくれたとは、なんという奇跡だろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#036": {
-   "src": "Rest well, friend. You have made it home. Feel free to familiarize yourself with it.",
-   "dst": "ゆっくり休むといい、友よ。ここが家だ。自由に見て回ってくれ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#037": {
-   "src": "How long has it been since a new face has joined us? I can't quite seem to recall...",
-   "dst": "新しい顔が加わるのはいつ以来だろう？どうにも思い出せない…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#038": {
    "src": "Don't be fooled - everything you see around you is very real.",
    "dst": "惑わされるな。周りに見えるものはすべて本物だ。",
    "role": "desc",
@@ -136432,7 +136372,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#039": {
+  "Point of No Return#033": {
    "src": "Where did your soul go?!",
    "dst": "魂はどこへ行った？！",
    "role": "desc",
@@ -136442,7 +136382,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#040": {
+  "Point of No Return#034": {
    "src": "Is this... {p}? It seems different.",
    "dst": "ここは…{p}？何か違う。",
    "role": "desc",
@@ -136452,7 +136392,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#041": {
+  "Point of No Return#035": {
    "src": "You look different in the mirror. It is a reflection of your inner self.",
    "dst": "鏡の中の自分が違って見える。内なる自己の姿だ。",
    "role": "desc",
@@ -136462,7 +136402,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#042": {
+  "Point of No Return#036": {
    "src": "You've left the darkness...",
    "dst": "闇を抜け出した…",
    "role": "desc",
@@ -136472,7 +136412,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#043": {
+  "Point of No Return#037": {
    "src": "Something must be left behind. And you must leave.",
    "dst": "何かを残していかねばならない。そして去らねばならない。",
    "role": "desc",
@@ -136482,7 +136422,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Point of No Return#044": {
+  "Point of No Return#038": {
    "src": "...more than anything beyond, at least. The Obelisk protects us, after all.",
    "dst": "…少なくとも、外の何よりはな。何しろオベリスクが守ってくれるのだから。",
    "role": "desc",
@@ -136492,7 +136432,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#045": {
+  "Point of No Return#039": {
    "src": "Do you feel its pull? It calls to us all, when we arrive.",
    "dst": "引力を感じるか？ここに来た者を皆、呼んでいるんだ。",
    "role": "desc",
@@ -136502,7 +136442,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#046": {
+  "Point of No Return#040": {
    "src": "Why would anyone choose to resist? The world is twisted, wrong... we do not belong there.",
    "dst": "なぜ抗おうとする？あの世界は歪み、間違っている…私たちの居場所ではない。",
    "role": "desc",
@@ -136512,7 +136452,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#047": {
+  "Point of No Return#041": {
    "src": "It is by the Bovine's grace that the Obelisk has seen fit to bless us with this sanctuary.",
    "dst": "オベリスクがこの聖域を授けてくださったのは、牛神様のご加護あってこそだ。",
    "role": "desc",
@@ -136522,7 +136462,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#048": {
+  "Point of No Return#042": {
    "src": "There is no fault in giving in. It only wants to protect us. Is that so wrong?",
    "dst": "身を委ねるのは悪くない。守ろうとしているだけだ。それがいけないことか？",
    "role": "desc",
@@ -136532,7 +136472,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#049": {
+  "Point of No Return#043": {
    "src": "Why would you ever want to leave?",
    "dst": "なぜ出ていきたいなど思う？",
    "role": "desc",
@@ -136540,6 +136480,66 @@
    "quest": "Point of No Return",
    "stage": "Stage 10",
    "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#044": {
+   "src": "{u}.",
+   "dst": "{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Point of No Return#045": {
+   "src": "Leave Happier {p}.",
+   "dst": "幸せな {p} を去る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#046": {
+   "src": "If you truly want to leave... no one here will stop you. But are you really willing to go through with it?",
+   "dst": "本当に去りたいなら…誰も止めはしない。だが、本当にその覚悟があるのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
+   "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#047": {
+   "src": "Talk to the {p} Citizen who sent you on this journey.",
+   "dst": "この旅に送り出した {p} の市民と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#048": {
+   "src": "Ha... I saw it there. That flicker in your eyes...",
+   "dst": "は…見えたぞ。お前の目に宿った、その揺らめき…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#049": {
+   "src": "You have been... shattered. Just like me, ha, ha, ha...",
+   "dst": "お前は…砕けてしまった。私と同じだ、は、は、は…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
    "source": "wiki"
   },
   "Point of No Return#050": {
@@ -136553,76 +136553,6 @@
    "source": "wiki"
   },
   "Point of No Return#051": {
-   "src": "{u}.",
-   "dst": "{u}。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "Point of No Return#052": {
-   "src": "Leave Happier {p}.",
-   "dst": "幸せな {p} を去る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Point of No Return",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Point of No Return#053": {
-   "src": "If you truly want to leave... no one here will stop you. But are you really willing to go through with it?",
-   "dst": "本当に去りたいなら…誰も止めはしない。だが、本当にその覚悟があるのか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 11",
-   "speaker": "Lutho Guard",
-   "source": "wiki"
-  },
-  "Point of No Return#054": {
-   "src": "Talk to the {p} Citizen who sent you on this journey.",
-   "dst": "この旅に送り出した {p} の市民と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Point of No Return",
-   "stage": "Stage 12",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Point of No Return#055": {
-   "src": "Ha... I saw it there. That flicker in your eyes...",
-   "dst": "は…見えたぞ。お前の目に宿った、その揺らめき…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 12",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#056": {
-   "src": "You have been... shattered. Just like me, ha, ha, ha...",
-   "dst": "お前は…砕けてしまった。私と同じだ、は、は、は…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 12",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#057": {
-   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
-   "dst": "他の者は…皆あの引力に屈した。私たち生き残りは…置き去りにされ、見捨てられた…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 12",
-   "speaker": "Lutho Citizen",
-   "source": "wiki"
-  },
-  "Point of No Return#058": {
    "src": "I cannot blame them. Such a loss must seem a blessing, compared to life out here...",
    "dst": "彼らを責められない。ここで生きるのに比べれば、あの喪失は恵みに思えるだろう…",
    "role": "desc",
@@ -136632,7 +136562,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#059": {
+  "Point of No Return#052": {
    "src": "How long has it been, since we found ourselves trapped here...? Longer than anyone has any right to live... ha, ha...",
    "dst": "ここに閉じ込められて、どれほど経ったか…？誰にも許されぬほど長く生きた…は、は…",
    "role": "desc",
@@ -136642,7 +136572,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#060": {
+  "Point of No Return#053": {
    "src": "Perhaps I am already gone. More dead than alive. Hollowed out...",
    "dst": "私はもう消えているのかもしれない。生きているより死に近い。空っぽだ…",
    "role": "desc",
@@ -136652,7 +136582,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#061": {
+  "Point of No Return#054": {
    "src": "All it does is take. More, and more, and more, until nothing is left... ha, ha, ha...",
    "dst": "奪うばかりだ。もっと、もっと、もっと、何も残らなくなるまで…は、は、は…",
    "role": "desc",
@@ -136662,7 +136592,7 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#062": {
+  "Point of No Return#055": {
    "src": "It takes... and takes... until...",
    "dst": "奪って…奪って…やがて…",
    "role": "desc",
@@ -136672,13 +136602,83 @@
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
-  "Point of No Return#063": {
+  "Point of No Return#056": {
    "src": "Your soul seems to be slipping away from reality...",
    "dst": "自分の魂は、現実から少しずつ遠ざかっていっているようだ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
    "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#057": {
+   "src": "Where does all of this lead?",
+   "dst": "これらすべては、いったいどこへ向かっているのだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#058": {
+   "src": "Your soul runs beneath your feet.",
+   "dst": "自分の魂は足元を駆け抜けている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#059": {
+   "src": "It leads you onwards..",
+   "dst": "それは先へと導いていく……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#060": {
+   "src": "Your soul drifts further from you. Will you ever get it back?",
+   "dst": "自分の魂はますます遠ざかりつつある。果たして、それを取り戻せるだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#061": {
+   "src": "Oh, how they tried to bury us...",
+   "dst": "ああ、彼らは私たちを葬り去ろうと、どれほど必死だったことか……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured.json"
+  },
+  "Point of No Return#062": {
+   "src": "Something is holding you back.",
+   "dst": "何かがあなたを引き留めている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Point of No Return#063": {
+   "src": "A distant thread, tying you to... something.",
+   "dst": "遠く離れた糸が、あなたを……何かへと結びつけている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 11",
    "speaker": "",
    "source": "captured.json"
   },
@@ -136702,36 +136702,6 @@
    "speaker": "",
    "source": "captured.json"
   },
-  "Point of No Return#066": {
-   "src": "Where does all of this lead?",
-   "dst": "これらすべては、いったいどこへ向かっているのだろうか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "Point of No Return#067": {
-   "src": "Your soul runs beneath your feet.",
-   "dst": "自分の魂は足元を駆け抜けている。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "Point of No Return#068": {
-   "src": "It leads you onwards..",
-   "dst": "それは先へと導いていく……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "Point of No Return#069": {
    "src": "You should try reproducing your soul's steps to find the exit...",
    "dst": "出口を見つけるために、自分の魂の歩みをたどってみてはどうだろうか……",
@@ -136745,16 +136715,6 @@
   "Point of No Return#070": {
    "src": "Why can you fly here...?",
    "dst": "どうしてここでは飛べるんだ…？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "Point of No Return#071": {
-   "src": "Your soul drifts further from you. Will you ever get it back?",
-   "dst": "自分の魂はますます遠ざかりつつある。果たして、それを取り戻せるだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -136795,16 +136755,6 @@
   "Point of No Return#075": {
    "src": "How long, now, has it been? Since they broke us in this way. Since you lost all that you were.",
    "dst": "さて、どれくらい経ったのだろう？　彼らが私たちをこのように打ちのめしてから。お前が、かつての自分すべてを失ってから。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 10",
-   "speaker": "Player?",
-   "source": "captured.json"
-  },
-  "Point of No Return#076": {
-   "src": "Oh, how they tried to bury us...",
-   "dst": "ああ、彼らは私たちを葬り去ろうと、どれほど必死だったことか……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -137010,26 +136960,6 @@
    "quest": "Point of No Return",
    "stage": "Stage 10",
    "speaker": "Player?",
-   "source": "captured.json"
-  },
-  "Point of No Return#097": {
-   "src": "Something is holding you back.",
-   "dst": "何かがあなたを引き留めている。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "Point of No Return#098": {
-   "src": "A distant thread, tying you to... something.",
-   "dst": "遠く離れた糸が、あなたを……何かへと結びつけている。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "Stage 11",
-   "speaker": "",
    "source": "captured.json"
   },
   "Potion Making#000": {
@@ -183598,6 +183528,16 @@
    "source": "wiki"
   },
   "The Cursed One#319": {
+   "src": "Complete {~} festival activities.",
+   "dst": "祭りのアクティビティを {~} 個達成する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#522": {
    "src": "[{~}/{~}] festival activities completed.",
    "dst": "[{~}/{~}] 祭りのアクティビティを完了させる。",
    "role": "desc",
@@ -188592,8 +188532,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#025": {
-   "src": "For all we know, it might predate your corruption too!",
-   "dst": "ひょっとすると、お前たちの腐敗より古いかもしれんぞ！",
+   "src": "Never died or anything either. For all we know, it might predate your corruption too!",
+   "dst": "枯れもせん。ひょっとすると、お前たちの腐敗より古いかもしれんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -190710,6 +190650,16 @@
    "stage": "",
    "speaker": "Avos Chieftain",
    "source": "captured"
+  },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "ひょっとすると、お前たちの腐敗より古いかもしれんぞ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 3",
+   "speaker": "Avos Chief",
+   "source": "wiki"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
@@ -193292,8 +193242,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#535": {
-   "src": "You helped deal with WHA-",
-   "dst": "君があの件を―",
+   "src": "You did WHA-",
+   "dst": "君、何したっ―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195132,8 +195082,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1121": {
-   "src": "Well, besides the citizens being afraid... I'd say the town's fine. However! I got tasked to find Ava.",
-   "dst": "まあ、市民たちが怖がっていることはさておき……町自体は問題ないと思うよ。それでね！　僕はAvaを探すよう頼まれたんだ。",
+   "src": "Well, the town's fine, but... I got tasked to find Ava.",
+   "dst": "街は無事だけど…僕、Ava を探す任務を受けたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195701,36 +195651,6 @@
    "speaker": "Ava",
    "source": "wiki"
   },
-  "The Feathers Fly Part II#1286": {
-   "src": "You take a look inside the drawer...",
-   "dst": "引き出しの中を覗いてみると……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1287": {
-   "src": "Lucky! There's a Mechanic Outfit in there.",
-   "dst": "ラッキー！　中にMechanic Outfitが入ってる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1288": {
-   "src": "You can give it to Ava, or you can look around the other rooms for more options.",
-   "dst": "これをAvaに渡してもいいし、他の部屋を見て回って、他にも選択肢がないか探してみてもいい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1289": {
    "src": "You already got an outfit from this drawer.",
    "dst": "この引き出しからもう服を1着取り出した。",
@@ -195751,39 +195671,9 @@
    "speaker": "",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1291": {
-   "src": "There's some clothes here. They're dirty though.",
-   "dst": "ここに服がいくつかある。でも、汚れている。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1292": {
-   "src": "There must be a way to wash those somewhere nearby.",
-   "dst": "あの服を洗える場所が、きっとこの近くにあるはずだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1293": {
    "src": "You already picked up these clothes. Better find a way to wash them.",
    "dst": "もうこの服は拾ったから、何とかして洗う方法を見つけたほうがいい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1294": {
-   "src": "Looks like there's an outfit ready right here!",
-   "dst": "どうやら、ここにすぐ着られる服があるみたいだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195981,16 +195871,6 @@
    "speaker": "",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1314": {
-   "src": "You start washing the clothes...",
-   "dst": "服を洗い始める…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1315": {
    "src": "Looks as good as new!",
    "dst": "まるで新品みたい！",
@@ -196001,29 +195881,9 @@
    "speaker": "",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1316": {
-   "src": "You pick up a particularly tasty-looking bone.",
-   "dst": "とりわけ美味しそうな骨を拾い上げた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1317": {
    "src": "You already picked up this bone.",
    "dst": "既にこの骨を拾った。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1318": {
-   "src": "There's some sort of armour in that chest. It looks flashy!",
-   "dst": "その宝箱の中には、何か鎧のようなものが入っている。すごく派手そうだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -196061,49 +195921,9 @@
    "speaker": "",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1322": {
-   "src": "...Is that someone crying over there? Eh, I'm not sure my social skills can handle that.",
-   "dst": "…あそこで誰かが泣いているのかな？　うーん、あたしの対人スキルじゃ、それには対応しきれないかも。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1323": {
    "src": "I'll try talking to more people!",
    "dst": "もっと多くの人と話してみるよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1324": {
-   "src": "Hey. Ya got anythin'?",
-   "dst": "ねえ。何かある？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1325": {
-   "src": "Woah there, what's that letter? You actually got an invitation?!",
-   "dst": "ちょっと待って、その手紙は何？　まさか招待状が届いたの？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1326": {
-   "src": "I... Wow. Well I'm impressed! I really am!",
-   "dst": "えっと……うわぁ。まあ、本当に感心したよ！ 本当にね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -196121,49 +195941,9 @@
    "speaker": "Ava",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1328": {
-   "src": "Well... If you want me to follow you, tell me. I've heard 'bout a receptionist in the far end of the castle, so maybe we should go there?",
-   "dst": "えーと……もしあたしについてきてほしいなら、そう言ってよ。城の奥の方にいる受付係の話は聞いたことがあるから、そこに行ってみたらどうかな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1329": {
    "src": "Don't worry, we got this, let's keep looking!",
    "dst": "心配しないで、大丈夫だから、探し続けよう！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1330": {
-   "src": "Well, no matter! I'll just... See when the council's available and book a meeting...",
-   "dst": "まあ、いいですわ！　とりあえず……評議会がいつ空いているか確認して、会議を予約しますわね……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Receptionist",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1331": {
-   "src": "Hey! I saw you run towards the castle. What did you do?",
-   "dst": "ねえ！　君が城の方へ走っていくのを見かけたよ。どうしたの？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1332": {
-   "src": "...Wait, what? You went to the receptionist alone, just like that?!",
-   "dst": "…えっ、何？　そんなふうに、一人で受付に行ったの？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -196181,86 +195961,6 @@
    "speaker": "Ava",
    "source": "captured.json"
   },
-  "The Feathers Fly Part II#1334": {
-   "src": "I... I'm really grateful. What a relief. I did some tweaking regarding the machine, so you should come and test with me!",
-   "dst": "えっと……本当に感謝してる。ほっとした。機械の設定を少し調整したから、ぜひ一緒にテストしに来て！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1335": {
-   "src": "Let's meet up near the northern entrance if ya want a lift. Alternatively, you can just meet me by the Workshop if you're into walking!",
-   "dst": "乗せてもらいたいなら、北側の入り口の近くで待ち合わせましょ。あるいは、歩くのが好きなら、工房のそばで待ち合わせてもいいよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1336": {
-   "src": "You ARE coming back... Right??",
-   "dst": "絶対に戻ってくるよね……？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1337": {
-   "src": "You probably should wait for Ava first.",
-   "dst": "まずはAvaを待ったほうがいいだろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1338": {
-   "src": "Looks like she's waiting for your signal.",
-   "dst": "どうやら彼女はあなたの合図を待っているようだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1339": {
-   "src": "She's glancing at you. Maybe she's waiting for your signal.",
-   "dst": "彼女はあなたをちらっと見ている。もしかすると、あなたの合図を待っているのかもしれない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1340": {
-   "src": "Hmpf. I certainly am curious now.",
-   "dst": "ふん。これで確かに興味が湧いてきたな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1341": {
-   "src": "So {u} knows how to handle machines too? Nifty!",
-   "dst": "{u}も機械の扱い方を知ってるの？ すごいね！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
   "The Feathers Fly Part II#1342": {
    "src": "Ava is sweating.",
    "dst": "Avaは冷や汗をかいている。",
@@ -196268,56 +195968,6 @@
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
    "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1343": {
-   "src": "EVERYONE! STOP! {u}, I want you to come here and answer something, immediately.",
-   "dst": "みんな！止まって！{u}、今すぐこっちに来て、ひとつ答えてちょうだい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "Efena",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1344": {
-   "src": "You take a deep breath, and-",
-   "dst": "あなたは深呼吸をして、そして――",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1345": {
-   "src": "Looks like Maxie wants to speak to you.",
-   "dst": "Maxieがあなたに話があるようだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1346": {
-   "src": "Efena doesn't seem very pleased to see you.",
-   "dst": "Efenaは、あなたを見てあまり嬉しそうではないようだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1347": {
-   "src": "She's a little stressed out.",
-   "dst": "彼女はちょっとイラついている。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 11",
    "speaker": "",
    "source": "captured.json"
   },
@@ -196329,26 +195979,6 @@
    "quest": "The Feathers Fly Part II",
    "stage": "Stage 11",
    "speaker": "Ava",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1349": {
-   "src": "No time to talk, {u}! Just go! There must be a core to hit at the top!",
-   "dst": "{u}、話してる暇はない！さっさと行って！頂上には攻撃すべきコアがあるはずだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 11",
-   "speaker": "Maxie",
-   "source": "captured.json"
-  },
-  "The Feathers Fly Part II#1350": {
-   "src": "I'm reading, but I'll be done soon!",
-   "dst": "今読んでるんだけど、もうすぐ読み終わるよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 14",
-   "speaker": "Maxie",
    "source": "captured.json"
   },
   "The Feathers Fly Part II#1351": {

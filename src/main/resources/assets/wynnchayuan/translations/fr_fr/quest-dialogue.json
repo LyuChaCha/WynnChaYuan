@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "fr_fr",
-  "count": 24931,
-  "translated": 24903,
+  "count": 24998,
+  "translated": 24913,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -38566,6 +38566,56 @@
    "speaker": "",
    "source": "captured"
   },
+  "Arachnids' Ascent#113": {
+   "src": "You'll want to start by speaking to Private Cob on the {p}. He'll have supplies for you to bring along with you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#114": {
+   "src": "We're counting on you, soldier! Go climb that volcano! The cave entrance is not far from here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#115": {
+   "src": "We should get moving, {u}. I don't want to make those two fight more spiders than they need to.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#116": {
+   "src": "Well, are you ready? When you are, let's head in and fight those spiders!",
+   "dst": "Alors, prêt? Quand tu le seras, on entre et on affronte ces araignées!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#117": {
+   "src": "Do you need to prepare? We'll wait here for you until you're ready.",
+   "dst": "Tu dois te préparer? On t'attend ici jusqu'à ce que tu sois prêt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
   "Beneath the Depths#000": {
    "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
    "dst": "J'ai laissé ma vieille carte marine dans mon ancienne planque, elle te dira où trouver mon vieil or.",
@@ -40904,6 +40954,76 @@
    "quest": "Black Road Runaround",
    "stage": "",
    "speaker": "Stablehand",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#006": {
+   "src": "It's a note from Enkser... Read it?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#007": {
+   "src": "Welp, I'm a man of my word. I lost the bet, so to the victor go the spoils - the daughter of my precious Betty. You take good care of her, hear?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#008": {
+   "src": "I suspect you might be wanting to breed her with that other horse I gave you before. It's a good idea; their offspring will have a higher Potential.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#009": {
+   "src": "A Mount's Potential is basically the sum of all of its Max stats. The higher the Potential, the greater your horse can become.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#010": {
+   "src": "If you want to breed a mount, just go to the mount feeder and place the saddle of one mount into the other's trough. Yes, it's weird. Don't ask.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#011": {
+   "src": "Be warned though - in the process of becoming parents, the two horses you had before will have to retire. We'll take them into our care, and you'll not be able to use them anymore.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Black Road Runaround#012": {
+   "src": "That should be all. If you have any more questions, I left you a book about Mount rearing in the Bank across from the Enclosure. Be good to that horse for me, okay?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Black Road Runaround",
+   "stage": "",
+   "speaker": "",
    "source": "captured.json"
   },
   "Blazing Retribution#000": {
@@ -69729,7 +69849,7 @@
    "source": "captured"
   },
   "Elemental Exercise#000": {
-   "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
+   "src": "Hm... So if I attack this one, I'll deal more {#} Air and less {#} Earth...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -69829,7 +69949,7 @@
    "source": "captured"
   },
   "Elemental Exercise#010": {
-   "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
+   "src": "...Oh! So my Bash spell will still deal {#} Earth damage even if my weapon only uses {#} Water , right?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -70019,7 +70139,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#029": {
-   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
+   "src": "I am! The elements are... {#} Fire, {#} Air, {#} Earth, {#} Thunder, and... {#} Water?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -70029,7 +70149,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#030": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- {#} Fire beats {#} Air, {#} Air beats {#} Earth, and so on.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -70137,16 +70257,6 @@
    "stage": "Stage 3",
    "speaker": "Tasim",
    "source": "wiki"
-  },
-  "Elemental Exercise#041": {
-   "src": "I'd like to try out this wea",
-   "dst": "J'aimerais essayer cette arme encore un peu.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "captured"
   },
   "Elemental Exercise#042": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
@@ -70279,7 +70389,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#055": {
-   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
+   "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -70309,7 +70419,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#058": {
-   "src": "... We'll be alright. Come on, let's go follow the captain.",
+   "src": "... We'll be alright. Come on, let's go follow the Captain.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -70537,6 +70647,106 @@
    "stage": "Stage 8",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Elemental Exercise#081": {
+   "src": "Come on, let's get going towards the north gate.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#082": {
+   "src": "Oh, {u}! Are you here for some training? Aledar and I thought we'd get some practice in before... you know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#083": {
+   "src": "It's going... about as well as you would expect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#084": {
+   "src": "Hey! It's going great, thank you very much! When we go fight those spiders, I'll be well prepared!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#085": {
+   "src": "...Sure. Well, {u}, there's plenty of dummies around if you want to train up as well. Including the one fighting a dummy of the same element as his weapon...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#086": {
+   "src": "I'll have you know, I...- alright, that's fair.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#087": {
+   "src": "Oh, {u}! Good to see you- I'm just here getting some training in before we take on those spiders.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#088": {
+   "src": "And Tasim's here for moral support!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#089": {
+   "src": "That's what I do best. Also, I can tell you when your form's off. Which is... fairly often. Including right now!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Elemental Exercise#090": {
+   "src": "...When did you get better than me at this?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured.json"
   },
   "Ensemble of Hope#000": {
    "src": "Meet up with your friends in room number {~} in hotel {p} at [-{~}, {~}, -{~}].",
@@ -115876,7 +116086,7 @@
    "source": "wiki"
   },
   "Mushroom Man#027": {
-   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-But- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
+   "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-but- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
    "dst": "Hm. Un soldat, deux s-soldats... V-vous avez l'air faibles. J'en ai v-vu des plus cos-... costauds. M-mais- héhé, les- les s-soldats plus costauds sont... pas là. V-vous ferez l'affaire. Peut-être.",
    "role": "desc",
    "kind": "dialogue",
@@ -116473,6 +116683,36 @@
    "quest": "Mushroom Man",
    "stage": "",
    "speaker": "Yahya",
+   "source": "captured"
+  },
+  "Mushroom Man#087": {
+   "src": "You know... I'm starting to wonder what I've gotten us into.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#088": {
+   "src": "I'm just hoping this all works out in the end.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Mushroom Man#089": {
+   "src": "Come on, we need to tell the mayor what happened!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Off the Rails#000": {
@@ -136049,8 +136289,8 @@
    "source": "wiki"
   },
   "Potion Making#011": {
-   "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
-   "dst": "Tuez des Mooshrooms des environs et apportez [{~} Red Mushrooms] à l'Assistant à {p}",
+   "src": "Slay Mooshrooms near [{~}, {~}, -{~}] and bring [{~} Red Mushrooms] to The Assistant in {p}",
+   "dst": "Tuez des Mooshrooms près de [{~}, {~}, -{~}] et apportez [{~} Red Mushrooms] à l'Assistant à {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -136149,7 +136389,7 @@
    "source": "wiki"
   },
   "Potion Making#021": {
-   "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
+   "src": "Enter the hut at [{~}, {~}, -{~}], slay Essren, and take his coat",
    "dst": "Entrez dans la cabane en [{~}, {~}, -{~}], tuez Essren et prenez son manteau.",
    "role": "desc",
    "kind": "objective",
@@ -167172,8 +167412,8 @@
    "source": "captured"
   },
   "Taking the Tower#004": {
-   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
-   "dst": "Apparemment, le grand méchant au sommet de la tour craint les dégâts de type  Eau!",
+   "src": "Apparently, the big bad at the top of the tower is weak to {#} Water damage!",
+   "dst": "Apparemment, le grand méchant au sommet de la tour craint les dégâts de type {#} Eau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -167192,8 +167432,8 @@
    "source": "captured"
   },
   "Taking the Tower#006": {
-   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "Dans ce cas, tu peux appliquer une poudre de type  Eau, pour que ton arme soit plus efficace contre les ennemis corrompus de la tour!",
+   "src": "In this case, you can apply a {#} Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "Dans ce cas, tu peux appliquer une poudre de type {#} Eau, pour que ton arme soit plus efficace contre les ennemis corrompus de la tour!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -167382,7 +167622,7 @@
    "source": "wiki"
   },
   "Taking the Tower#025": {
-   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
+   "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
    "dst": "Bon, je reste encore un moment ici. Si tu changes d'avis, dis-le-moi!",
    "role": "desc",
    "kind": "dialogue",
@@ -167392,7 +167632,7 @@
    "source": "wiki"
   },
   "Taking the Tower#026": {
-   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "src": "Hey, you're back! Have you changed your mind? Want to join a raid on a corrupted tower?",
    "dst": "Hé, te revoilà! Tu as changé d'avis? Tu veux participer à l'assaut d'une tour corrompue?",
    "role": "desc",
    "kind": "dialogue",
@@ -167402,7 +167642,7 @@
    "source": "wiki"
   },
   "Taking the Tower#027": {
-   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
+   "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
    "dst": "Suivez Aledar jusqu'au Maître des poudres, en [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
@@ -167660,6 +167900,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   },
   "Taproot#007": {
    "src": "New Quest Started: Realm of Light II - Taproot",
@@ -170288,6 +170568,36 @@
    "dst": "N'oubliez pas: consultez votre livre de contenu pour vous guider.",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#145": {
+   "src": "This is the Light Dust that Jorkin mentioned! He said to bring it back to him...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#146": {
+   "src": "Give [{~} Sky Vapor] and the Light Dust to Rayshyroth at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Temple of the Legends (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Temple of the Legends (Quest)#147": {
+   "src": "Find Garull, the Creeper obsessed craftsman, somewhere in the Pigmen's Ravines located around [-{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
    "stage": "",
    "speaker": "",
@@ -181648,8 +181958,8 @@
    "source": "wiki"
   },
   "The Cursed One#249": {
-   "src": "Find Zeph at near {p}.",
-   "dst": "Trouvez Zeph près de {p}.",
+   "src": "Find Zeph at [-{~}, {~}, -{~}] near {p}.",
+   "dst": "Trouvez Zeph en [-{~}, {~}, -{~}], près de {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -182350,6 +182660,16 @@
   "The Cursed One#319": {
    "src": "Complete {~} festival activities.",
    "dst": "Terminez {~} activités du festival.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#522": {
+   "src": "[{~}/{~}] festival activities completed.",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -183558,8 +183878,8 @@
    "source": "wiki"
   },
   "The Cursed One#440": {
-   "src": "Return to Syndra at or keep exploring the festival.",
-   "dst": "Retournez voir Syndra ou continuez à explorer le festival.",
+   "src": "Return to Syndra at [-{~}, {~}, -{~}] or keep exploring the festival.",
+   "dst": "Retournez voir Syndra en [-{~}, {~}, -{~}] ou continuez à explorer le festival.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -184366,6 +184686,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#521": {
+   "src": "[!] Keep following the Sovereign, but don't go too close or too far from them!",
+   "dst": "[!] Continuez de suivre le Souverain, sans vous approcher ni vous éloigner de lui!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
    "speaker": "",
    "source": "captured"
   },
@@ -187290,8 +187620,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#021": {
-   "src": "Gah! What are you doing?!",
-   "dst": "Ah! Qu'est-ce que tu fais?!",
+   "src": "Gah! You startled me!",
+   "dst": "Gah! Vous m'avez fait peur!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -187310,7 +187640,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#023": {
-   "src": "Ah, our wisteria tree! Yes...",
+   "src": "Ah, eager to see our wisteria tree!",
    "dst": "Ah, notre glycine! Oui...",
    "role": "desc",
    "kind": "dialogue",
@@ -187320,7 +187650,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#024": {
-   "src": "It's one of a kind! We planted it eons ago. It has never ever grown an inch. Or moved.",
+   "src": "It's one of a kind! We planted it eons ago. It has never ever grown an inch.",
    "dst": "Elle est unique! Nous l'avons plantée il y a des éons. Elle n'a jamais grandi d'un pouce. Ni bougé.",
    "role": "desc",
    "kind": "dialogue",
@@ -192120,8 +192450,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#543": {
-   "src": "...I've made a Growth Accelerator with help from .",
-   "dst": "...J'ai fait un Accélérateur de croissance avec l'aide de .",
+   "src": "...I've made a Growth Accelerator with help from {u}.",
+   "dst": "...J'ai fait un Accélérateur de croissance avec l'aide de {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -193520,7 +193850,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1005": {
-   "src": "I - I really didn't want this. I wanted to help people, {u}! Not... not...",
+   "src": "I - I really didn't want this... I wanted to help people, {u}! Not... Not...",
    "dst": "Je - Je ne voulais vraiment pas ça. Je voulais aider les gens, {u}! Pas... pas...",
    "role": "desc",
    "kind": "dialogue",
@@ -193710,7 +194040,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1024": {
-   "src": "I can't stay, {u}. The president's one thing, but the others...",
+   "src": "I can't stay, {u}. The president's one thing, but the others... It's safe to say no one's gonna welcome me with open arms, y'know?",
    "dst": "Je ne peux pas rester, {u}. La présidente, c'est une chose, mais les autres...",
    "role": "desc",
    "kind": "dialogue",
@@ -194080,7 +194410,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1142": {
-   "src": "I do believe we can all learn a thing or two about this. Ava...",
+   "src": "I do believe we can all learn a thing or two about this.",
    "dst": "Je crois qu'on peut tous en tirer une leçon ou deux. Ava...",
    "role": "desc",
    "kind": "dialogue",
@@ -194448,6 +194778,336 @@
    "stage": "Stage 14",
    "speaker": "Ava",
    "source": "wiki"
+  },
+  "The Feathers Fly Part II#1289": {
+   "src": "You already got an outfit from this drawer.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1290": {
+   "src": "It has random clothes, but no real outfit.",
+   "dst": "Il y a des vêtements en vrac, mais pas de vraie tenue.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1293": {
+   "src": "You already picked up these clothes. Better find a way to wash them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1295": {
+   "src": "You already got this outfit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1296": {
+   "src": "You find a book about the history of Pirate Cove...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1297": {
+   "src": "You pet the dog. It's a good dog.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1298": {
+   "src": "You pet the dog again. It's still a good dog.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1299": {
+   "src": "You pet the dog again. Very enjoyable, yes.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1300": {
+   "src": "The dog has been pet again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1301": {
+   "src": "It's a neverending petting session.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1302": {
+   "src": "The petting brakes broke. The dog is overjoyed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1303": {
+   "src": "The dog, has been once again, pet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1304": {
+   "src": "You wonder when you'll stop...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1305": {
+   "src": "...But apparently stopping isn't exactly an option.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1306": {
+   "src": "Or is it? Does free will exist? Or are we forced to forever pet a dog?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1307": {
+   "src": "It looks like there's only one unpleasant way to find out. And it's to stop petting the dog.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1308": {
+   "src": "Though, that's unlikely to happen. He's so cute!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1309": {
+   "src": "It looks like he'll be fine for a while now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1310": {
+   "src": "But a few more pets won't hurt!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1311": {
+   "src": "There, there. He's so happy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1312": {
+   "src": "The dog is content with your love. That should be enough.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1313": {
+   "src": "You might be able to wash the dirty clothes you found in there!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1315": {
+   "src": "Looks as good as new!",
+   "dst": "Comme neuf!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1317": {
+   "src": "You already picked up this bone.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1319": {
+   "src": "It's empty. You already found this chest.",
+   "dst": "C'est vide. Vous avez déjà trouvé ce coffre.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1320": {
+   "src": "You search the chest...",
+   "dst": "Vous fouillez le coffre...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1321": {
+   "src": "That's all there was.",
+   "dst": "C'est tout ce qu'il y avait.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1323": {
+   "src": "I'll try talking to more people!",
+   "dst": "Je vais essayer de parler à plus de gens!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1327": {
+   "src": "Do you think it'd work with that Mechanic outfit? Well, I don't think that matters anymore!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1329": {
+   "src": "Don't worry, we got this, let's keep looking!",
+   "dst": "T'inquiète, on gère, continuons à chercher!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1333": {
+   "src": "And you booked an audience for tomorrow morning??",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1342": {
+   "src": "Ava is sweating.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part II#1348": {
+   "src": "It's all over. My life's over...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 11",
+   "speaker": "Ava",
+   "source": "captured.json"
   },
   "The Feathers Fly Part II#1351": {
    "src": "You lead, I follow!",
@@ -197158,6 +197818,16 @@
    "stage": "Stage 22",
    "speaker": "Coming Soon",
    "source": "wiki"
+  },
+  "The Hero of Gavel#196": {
+   "src": "Selling tickets! Get your Scavenger Hunt tickets here!",
+   "dst": "Tickets en vente! Vos tickets pour la chasse au trésor, c'est ici!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured.json"
   },
   "The Hero of Gavel#197": {
    "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",

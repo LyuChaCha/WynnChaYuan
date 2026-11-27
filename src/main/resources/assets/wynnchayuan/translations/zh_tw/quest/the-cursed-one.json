@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Cursed One",
-  "count": 521,
-  "translated": 521,
+  "count": 523,
+  "translated": 522,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -2501,8 +2501,8 @@
    "source": "wiki"
   },
   "The Cursed One#249": {
-   "src": "Find Zeph at near {p}.",
-   "dst": "在 {p} 附近找到 Zeph。",
+   "src": "Find Zeph at [-{~}, {~}, -{~}] near {p}.",
+   "dst": "在 {p} 附近的 [-{~}, {~}, -{~}] 找到 Zeph。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -3203,6 +3203,16 @@
   "The Cursed One#319": {
    "src": "Complete {~} festival activities.",
    "dst": "完成 {~} 項慶典活動。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Cursed One#522": {
+   "src": "[{~}/{~}] festival activities completed.",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -4411,8 +4421,8 @@
    "source": "wiki"
   },
   "The Cursed One#440": {
-   "src": "Return to Syndra at or keep exploring the festival.",
-   "dst": "回到 Syndra 那裡，或繼續逛慶典。",
+   "src": "Return to Syndra at [-{~}, {~}, -{~}] or keep exploring the festival.",
+   "dst": "回到 [-{~}, {~}, -{~}] 的 Syndra 那裡，或繼續逛慶典。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -5219,6 +5229,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#521": {
+   "src": "[!] Keep following the Sovereign, but don't go too close or too far from them!",
+   "dst": "{c1}[{c2}!{c1}] {c3}繼續跟著統領，但別靠得太{c1}近{c3}，也別離得太{c1}遠{c3}！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
    "speaker": "",
    "source": "captured"
   }
