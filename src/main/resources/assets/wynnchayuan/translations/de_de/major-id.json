@@ -3,9 +3,9 @@
   "domain": "major-id",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 331,
+  "count": 366,
   "note": "Major ID。名稱一定對得上；說明會依畫面寬度自動斷行，整段多半對不上，但翻名稱時看得到上下文。由 tools/fetch-majorids.py 從官方 CDN 產生。",
-  "translated": 324
+  "translated": 366
  },
  "entries": {
   "Accretion Chain": {
@@ -939,8 +939,8 @@
    "_raw": "Arrow and Grape Bombs gain +1 radius and phase through enemies. Bouncing Bomb has decreased velocity and gains +1 bounces, and Grape Bombs gain increased randomness and +2 projectiles."
   },
   "Split Second::desc": {
-   "src": "Aura now travels faster with Invigorating Wave unlocked, but no longer gives mana.",
-   "dst": "",
+   "src": "Aura now travels {~} seconds faster with Invigorating Wave unlocked, but no longer gives mana.",
+   "dst": "Aura breitet sich mit freigeschalteter Invigorating Wave um {~} Sekunden schneller aus, gewährt aber kein Mana mehr.",
    "role": "desc"
   },
   "Geocentrism::desc": {
@@ -949,8 +949,8 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
-   "dst": "",
+   "src": "Mantra will charge Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "dst": "Mantra lädt Masken {~} schneller auf, lässt sie aber auch {~} schneller zerfallen und halbiert ihre Schonfrist.",
    "role": "desc",
    "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
   },
@@ -1106,8 +1106,8 @@
    "_raw": "Curse instead releases a calming wave with a radius of 8 blocks. Allies affected will have their Mana Regen and Mana Steal increased by 25% for 6s."
   },
   "Pirouette::desc": {
-   "src": "Dancing Blade enhances Dash. Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
-   "dst": "",
+   "src": "Dashing into an enemy now vaults you upwards and resets dash as if you touched the ground.",
+   "dst": "Ein Dash in einen Gegner schleudert dich nun nach oben und setzt Dash zurück, als hättest du den Boden berührt.",
    "role": "desc"
   },
   "major-id#0208": {
@@ -1208,8 +1208,8 @@
    "_raw": "Focus gets +10% damage per stack, but caps at 2. Crepuscular Ray can be cast at 2 Focus with decreased Focus drain, launching you into the air and immobilizing you."
   },
   "major-id#0225": {
-   "src": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to {~}. Tricks application is increased by {~}.",
-   "dst": "",
+   "src": "Mirror Clone count is reduced to {~}. Foul Play will no longer slay a Mirror Clone while still providing its effects.",
+   "dst": "Die Zahl der Spiegelklone sinkt auf {~}. Foul Play opfert keinen Spiegelklon mehr, gewährt aber weiterhin seine Effekte.",
    "role": "desc",
    "_raw": "Foul Play will no longer slay a Mirror Clone and will still provide its effects, but Mirror Clone count is reduced to 1. Tricks application is increased by 50%."
   },
@@ -1473,8 +1473,8 @@
    "_raw": "Powder Specials can no longer be charged manually, but accumulate 8% charge every second."
   },
   "major-id#0272": {
-   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration",
-   "dst": "",
+   "src": "Pressure grants additional effects: Bash gains +{~} radius, Uppercut gains {#}+{~}, and War Scream's buff gains +{~}s duration.",
+   "dst": "Pressure gewährt zusätzliche Effekte: Bash erhält +{~} Radius, Uppercut erhält {#}+{~}, und die Stärkung von War Scream hält +{~}s länger an.",
    "role": "desc",
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
   },
@@ -1581,8 +1581,8 @@
    "role": "desc"
   },
   "major-id#0291": {
-   "src": "Tangled Traps ropes gain +{~} range, can overlap up to {~} times, and deal {#}{~}. Gain +{~} traps with {~} duration that cannot be triggered by enemies.",
-   "dst": "",
+   "src": "Barbed wires from Tangled Traps gain +{~} range, can overlap up to {~} times, and linger for +{~}s. Patient Hunter grants an additional +{~} traps.",
+   "dst": "Der Stacheldraht von Tangled Traps erhält +{~} Reichweite, kann sich bis zu {~}-mal überlagern und bleibt +{~}s länger bestehen. Patient Hunter gewährt zusätzlich +{~} Fallen.",
    "role": "desc",
    "_raw": "Tangled Traps ropes gain +1 range, can overlap up to 3 times, and deal 65%. Gain +12 traps with 66% duration that cannot be triggered by enemies."
   },
@@ -1777,10 +1777,185 @@
    "_raw": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread."
   },
   "Solar Fracture::desc": {
-   "src": "Hand of the Shaman gains +{~} beams.",
-   "dst": "",
+   "src": "Hand of the Shaman gains +{~} beam.",
+   "dst": "Hand of the Shaman erhält +{~} Strahl.",
    "role": "desc",
    "_raw": "Hand of the Shaman gains +2 beams."
+  },
+  "Dust to Dust": {
+   "src": "Dust to Dust",
+   "dst": "Staub zu Staub",
+   "role": "name"
+  },
+  "Dust to Dust::desc": {
+   "src": "Feedback Loop causes Arrow Storm to fire {~} waves of arrows, but can grant up to {~} more arrows.",
+   "dst": "Feedback Loop lässt Arrow Storm {~} Pfeilwellen abfeuern, kann aber höchstens {~} zusätzliche Pfeile gewähren.",
+   "role": "desc"
+  },
+  "Fractured Halo": {
+   "src": "Fractured Halo",
+   "dst": "Zerbrochener Heiligenschein",
+   "role": "name"
+  },
+  "Fractured Halo::desc": {
+   "src": "Ophanim gains +{~} orbs, no longer increases mana cost and has increased fire speed, but shatters immediately upon contact.",
+   "dst": "Ophanim erhält +{~} Kugeln, erhöht die Manakosten nicht mehr und feuert schneller, zerbricht aber sofort bei Kontakt.",
+   "role": "desc"
+  },
+  "Galvanized": {
+   "src": "Galvanized",
+   "dst": "Galvanisiert",
+   "role": "name"
+  },
+  "Galvanized::desc": {
+   "src": "While Eldritch Call is active, Blood Connection can be used much further from your Totem.",
+   "dst": "Solange Eldritch Call aktiv ist, kann Blood Connection viel weiter entfernt von deinem Totem eingesetzt werden.",
+   "role": "desc"
+  },
+  "Gravitic Defiance": {
+   "src": "Gravitic Defiance",
+   "dst": "Gravitationstrotz",
+   "role": "name"
+  },
+  "Gravitic Defiance::desc": {
+   "src": "Gravity's hold on you is weakened, allowing unrestrained movement.",
+   "dst": "Der Griff der Schwerkraft um dich wird schwächer und erlaubt dir ungehinderte Bewegung.",
+   "role": "desc"
+  },
+  "Immortal Rot": {
+   "src": "Immortal Rot",
+   "dst": "Unsterbliche Fäulnis",
+   "role": "name"
+  },
+  "Immortal Rot::desc": {
+   "src": "For every {~} of health missing, dodging with agility ignores {~} more damage.",
+   "dst": "Für je {~} fehlendes Leben ignoriert das Ausweichen durch Agilität {~} mehr Schaden.",
+   "role": "desc"
+  },
+  "Mayday": {
+   "src": "Mayday",
+   "dst": "Mayday",
+   "role": "name"
+  },
+  "Mayday::desc": {
+   "src": "Jasmine Bloom deals no damage but makes enemies {~} more vulnerable, and causes Swan Dive to only activate at max Momemtum, dealing {#}+{~}.",
+   "dst": "Jasmine Bloom verursacht keinen Schaden, macht Gegner aber {~} anfälliger und lässt Swan Dive nur bei maximalem Schwung auslösen, wobei es {#}+{~} verursacht.",
+   "role": "desc"
+  },
+  "Molten Rebirth": {
+   "src": "Molten Rebirth",
+   "dst": "Geschmolzene Wiedergeburt",
+   "role": "name"
+  },
+  "Molten Rebirth::desc": {
+   "src": "Harvester additionally restores {~} health per mark, increasing to {~} with devour.",
+   "dst": "Harvester stellt zusätzlich {~} Leben pro Markierung wieder her, mit Devour steigt dies auf {~}.",
+   "role": "desc"
+  },
+  "Myriad Salvo": {
+   "src": "Myriad Salvo",
+   "dst": "Myriadensalve",
+   "role": "name"
+  },
+  "Myriad Salvo::desc": {
+   "src": "Mirror Image gains +{~} clone and casts all damage spells with Last Laugh, but losing a Mirror Clone slays all Mirror Clones simultaneously.",
+   "dst": "Mirror Image erhält +{~} Klon und wirkt alle Schadenszauber mit Last Laugh, aber der Verlust eines Spiegelklons opfert alle Spiegelklone gleichzeitig.",
+   "role": "desc"
+  },
+  "Negation": {
+   "src": "Negation",
+   "dst": "Negation",
+   "role": "name"
+  },
+  "Negation::desc": {
+   "src": "Whatever spell you use to exit Vanish will have no mana cost ({~} second cooldown).",
+   "dst": "Der Zauber, mit dem du Vanish verlässt, kostet kein Mana ({~} Sekunden Abklingzeit).",
+   "role": "desc"
+  },
+  "Pandemic": {
+   "src": "Pandemic",
+   "dst": "Pandemie",
+   "role": "name"
+  },
+  "Runic Symphony": {
+   "src": "Runic Symphony",
+   "dst": "Runensinfonie",
+   "role": "name"
+  },
+  "Runic Symphony::desc": {
+   "src": "Arrow Bomb gains rotating effects with each cast: {#}: Direct hits deal {#}+{~} damage and freezes for {~}s {#}: Becomes a piercing arrow with increased velocity. {#}: Gains +{~} area and {#}+{~}.",
+   "dst": "Arrow Bomb wechselt mit jedem Wirken zwischen Effekten: {#}: Direkttreffer verursachen {#}+{~} Schaden und frieren {~}s lang ein {#}: Wird zu einem durchdringenden Pfeil mit höherer Geschwindigkeit. {#}: Erhält +{~} Fläche und {#}+{~}.",
+   "role": "desc"
+  },
+  "Seeking Totem": {
+   "src": "Seeking Totem",
+   "dst": "Suchendes Totem",
+   "role": "name"
+  },
+  "Seeking Totem::desc": {
+   "src": "Totem moves towards you when wearing Mask of the Heretic.",
+   "dst": "Totem bewegt sich auf dich zu, während du die Maske des Ketzers trägst.",
+   "role": "desc"
+  },
+  "Serrated Root": {
+   "src": "Serrated Root",
+   "dst": "Gezackte Wurzel",
+   "role": "name"
+  },
+  "Serrated Root::desc": {
+   "src": "Quake channels nature energy into a powerful root, travelling rapidly underground and emerging under the nearest mob for {#}{~}.",
+   "dst": "Beben bündelt Naturenergie zu einer mächtigen Wurzel, die rasch unterirdisch wandert und unter dem nächsten Mob für {#}{~} hervorbricht.",
+   "role": "desc"
+  },
+  "Sigil Of Determination": {
+   "src": "Sigil Of Determination",
+   "dst": "Siegel der Entschlossenheit",
+   "role": "name"
+  },
+  "Sigil Of Determination::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Das Wirken von Arrow Shield erzeugt {~}s lang ein Siegel am Boden ({~}s Abklingzeit). Verbündete im Siegel werden um {~} deiner gesamten Lebensregenerations-IDs alle {~}s geheilt.",
+   "role": "desc"
+  },
+  "Sigil Of Undying": {
+   "src": "Sigil Of Undying",
+   "dst": "Siegel der Unsterblichkeit",
+   "role": "name"
+  },
+  "Sigil Of Undying::desc": {
+   "src": "Casting Arrow Shield creates a sigil on the ground for {~}s ({~}s cooldown). Allies within the sigil gain {~} resistance and are healed for {~} your total Health Regen ID every {~}s.",
+   "dst": "Das Wirken von Arrow Shield erzeugt {~}s lang ein Siegel am Boden ({~}s Abklingzeit). Verbündete im Siegel erhalten {~} Resistenz und werden um {~} deiner gesamten Lebensregenerations-IDs alle {~}s geheilt.",
+   "role": "desc"
+  },
+  "Soulbinder": {
+   "src": "Soulbinder",
+   "dst": "Seelenbinder",
+   "role": "name"
+  },
+  "Soulbinder::desc": {
+   "src": "Hit enemies become Soulbound for {~}s, causing them to take damage whenever you take damage or lose health in any way - equal to {~}x the health lost.",
+   "dst": "Getroffene Gegner werden {~}s lang seelengebunden und erleiden Schaden, wann immer du Schaden erleidest oder auf irgendeine Weise Leben verlierst - in Höhe des {~}-Fachen des verlorenen Lebens.",
+   "role": "desc"
+  },
+  "Thunderous Strike": {
+   "src": "Thunderous Strike",
+   "dst": "Donnernder Schlag",
+   "role": "name"
+  },
+  "Thunderous Strike::desc": {
+   "src": "Fireworks additionally summons a lightning bolt, dealing {#}{~} and {#}{~} while stunning enemies for {~}s.",
+   "dst": "Fireworks beschwört zusätzlich einen Blitz, der {#}{~} und {#}{~} verursacht und Gegner {~}s lang betäubt.",
+   "role": "desc"
+  },
+  "Woe's Epithet": {
+   "src": "Woe's Epithet",
+   "dst": "Beiname des Leids",
+   "role": "name"
+  },
+  "Woe's Epithet::desc": {
+   "src": "Shadow Dance's cooldown is reduced by {~}s when vanishing and Shadow Siphon immediately refreshes Vanish. Surprise Strike's multiplier is reduced by -{~}.",
+   "dst": "Beim Verschwinden sinkt die Abklingzeit von Shadow Dance um {~}s, und Shadow Siphon setzt Vanish sofort zurück. Der Multiplikator von Surprise Strike sinkt um -{~}.",
+   "role": "desc"
   }
  }
 }
