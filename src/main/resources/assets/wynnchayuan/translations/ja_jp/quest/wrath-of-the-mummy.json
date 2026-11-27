@@ -8,7 +8,7 @@
  "entries": {
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
-   "dst": "ミイラに詳しいか？もちろん！一生かけて研究してきたんだ！",
+   "dst": "ミイラに詳しいかって？もちろん！一生かけて研究してきたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -28,13 +28,14 @@
   },
   "Wrath of the Mummy#002": {
    "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just restocked.",
-   "dst": "ただし…なあ。ピンクの羊毛がずっと欲しかったんだが、唯一売ってる店がちょうど入荷したところでな。",
+   "dst": "ただし…なあ。{c2}ピンクの羊毛{/}がずっと欲しかったんだが、唯一売ってる店がちょうど入荷したところでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 3",
    "speaker": "Bandit",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}pink wool{/}"
   },
   "Wrath of the Mummy#003": {
    "src": "Or better yet, if you happen to have some of that pink wool on you. If you give it to me, well... the tomb is all yours.",
@@ -43,28 +44,30 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#004": {
    "src": "Either way, you can take my wagon over there to {p}, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
-   "dst": "どっちにしろ、向こうの {p} まで俺の荷馬車を使っていいが、帰りは自力だ。[{~} ピンクの羊毛] を渡せば通してやる。",
+   "dst": "どっちにしろ、向こうの {p} まで{c2}俺の荷馬車を使って{/}いいが、帰りは自力だ。{c3}[{~} ピンクの羊毛] {/}を渡せば通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 3",
    "speaker": "Bandit",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}take my wagon over there{/} , {c3}[{~} Pink Wool]{/}"
   },
   "Wrath of the Mummy#005": {
    "src": "Have you got me [{~} Pink Wool] yet!? You can get it from the shop in {p}.",
-   "dst": "[{~} ピンクの羊毛] はまだか！？{p} の店で買えるぞ。",
+   "dst": "{c2}[{~} ピンクの羊毛]{/} はまだか！？{c3}{p} の店{/}で買えるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Bandit",
+   "source": "captured",
+   "note":"{c2}[{~} Pink Wool]{/} , {c3}shop in {p}{/}"
   },
   "Wrath of the Mummy#006": {
    "src": "I don't know you, and you don't know me. Got it?",
@@ -73,7 +76,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#007": {
@@ -178,13 +181,14 @@
   },
   "Wrath of the Mummy#017": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
-   "dst": "墓は砂漠の北にある。だが十分に気をつけて！",
+   "dst": "墓は{c2}砂漠の北{/}にある。だが十分に気をつけて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 2",
    "speaker": "Achper",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}North of the desert{/}"
   },
   "Wrath of the Mummy#018": {
    "src": "On top of that, the Creden Tibus bandit clan have been ransacking the tombs around the desert. You might run into trouble with them, so be prepared.",
@@ -237,8 +241,8 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#023": {
-   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
-   "dst": "[{~}, {~}, -{~}] の盗賊の荷馬車で {p} へ向かう。",
+   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p} or give [{~} Pink Wool] to the bandit.",
+   "dst": "[{~}, {~}, -{~}] の盗賊の荷馬車で {p} へ向かい、[{~} ピンクの羊毛] を盗賊に渡す",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -257,14 +261,14 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#025": {
-   "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
+   "src": "Well, whaddya know? You got some pink wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "おやおや、驚いた！ピンクの羊毛を手に入れたか！よし、渡しな。見なかったことにして墓に入れてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 5",
    "speaker": "Bandit",
-   "source": "wiki"
+   "source": "capture"
   },
   "Wrath of the Mummy#026": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
@@ -355,6 +359,94 @@
    "stage": "Stage 7",
    "speaker": "Ormrod",
    "source": "wiki"
+  },
+  "Wrath of the Mummy#035": {
+   "src": "{#} [{~}/{~}] Bandit: I'm not letting you in, unless you can\n{#} pay me.",
+   "dst": "{#} [{~}/{~}] {c2}盗賊:{c4} 金を払わない限り{c3}、通すわけにはいかねえな。\n{#}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki",
+   "note":"{c1}[{~}/{~}]{c2}Bandit:{c3}I'm not letting you in, unless you can{c4}pay me.{/}"
+  },
+  "Wrath of the Mummy#036": {
+   "src": "As you enter the tomb, a putrid smell fills your nostrils...",
+   "dst": "墓に入ると、腐敗臭が鼻を突く……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":""
+  },
+  "Wrath of the Mummy#037": {
+   "src": "As the door opens, a chill runs down your spine as the heat of the desert is sealed behind you...",
+   "dst": "扉が開くと、背筋に寒気が走り、砂漠の暑さが背後に閉じ込められていく……。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":""
+  },
+  "Wrath of the Mummy#038": {
+   "src": "You hear the muffled shriek of an evil creature through the door...",
+   "dst": "ドアの向こうから、邪悪な生き物のこもった悲鳴が聞こえてくる……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":""
+  },
+  "Wrath of the Mummy#039": {
+   "src": "Quickly destroy the cursed totem!",
+   "dst": "呪いのトーテムを急いで{c2}破壊{/}しよう！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":"{c2}destroy{/}"
+  },
+  "Wrath of the Mummy#040": {
+   "src": "[!] You can feel your muscles decaying... You've been cursed!",
+   "dst": "[!] 筋肉が衰えていくのを感じる……{c2}呪われてしまった！{/}",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":"{c1}You've been cursed!{/}"
+  },
+  "Wrath of the Mummy#041": {
+   "src": "The cursed totem has been destroyed!",
+   "dst": "呪いのトーテムを破壊した！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note":""
+  },
+  "Wrath of the Mummy#042": {
+   "src": "Thank you so much for removing the curse!",
+   "dst": "呪いを解いてくださり、本当にありがとうございます！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Ormrod",
+   "source": "capture",
+   "note":""
   }
  }
 }
