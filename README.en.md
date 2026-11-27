@@ -25,10 +25,10 @@ original stays is up to you**: the translation can sit in a panel beside it, or 
 [Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
-> **About the translations.** Some of the translations are written by hand and then rendered by AI,
-> a smaller part is translated by AI directly, and most of the core content has been
-> proofread by a person. The other languages are currently AI-translated from the
-> Traditional Chinese, so expect mistranslations and inconsistent terms.
+> **About the translations.** Each language comes from a different source:
+> - **Traditional Chinese**: translated by AI first, then proofread by a person.
+> - **Simplified Chinese**: will be taken over entirely by human translators, no longer converted from Traditional Chinese.
+> - **Other languages**: derived from the Traditional Chinese (AI-translated), so expect mistranslations and inconsistent terms.
 > Report problems to **LyuChaCha** on Discord or on
 > [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -114,15 +114,20 @@ The full details are in the site's [privacy policy](https://wynnchayuan.com/priv
 
 ## Languages and progress
 
-| Language | Coverage |
-|---|---|
-| `zh_tw` Traditional Chinese | Main language, everything |
-| `zh_cn` Simplified Chinese | Everything, quest dialogue included |
-| `ja_jp` Japanese | Everything, quest dialogue included |
-| `ko_kr` Korean | Everything, quest dialogue included |
-| `ru_ru` Russian | Everything, quest dialogue included |
-| `es_es` Spanish | Everything, quest dialogue included |
-| `tr_tr` Turkish | Everything, quest dialogue included |
+| Language | Coverage | Source |
+|---|---|---|
+| `zh_tw` Traditional Chinese | Main language, everything | AI translation, proofread by a person |
+| `zh_cn` Simplified Chinese | Everything, quest dialogue included | To be taken over entirely by human translators |
+| `ja_jp` Japanese | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `ko_kr` Korean | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `ru_ru` Russian | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `es_es` Spanish | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `tr_tr` Turkish | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `pt_br` Portuguese (Brazil) | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `vi_vn` Vietnamese | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `th_th` Thai | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `de_de` German | Everything, quest dialogue included | Derived from Traditional Chinese |
+| `fr_fr` French | Everything, quest dialogue included | Derived from Traditional Chinese |
 
 Switch under **Settings → Data**, without changing the game's language or restarting:
 
