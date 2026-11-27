@@ -59,7 +59,17 @@ final class DisplayStyles {
                 ? text : text.replace(HIJACKED_LETTER, SAFE_LETTER);
     }
 
+    // À 在 Wynncraft 字型是 1px 對齊字元；原文沒有 À 時，譯文的 À 是字母
+    static String shownTranslation(String dst, String src) {
+        String safe = deIcon(dst);
+        return safe == null || safe.indexOf(SPACER_LETTER) < 0
+                || (src != null && src.indexOf(SPACER_LETTER) >= 0)
+                ? safe : safe.replace(SPACER_LETTER, SAFE_LETTER);
+    }
+
     private static final char HIJACKED_LETTER = 'Á';
+
+    private static final char SPACER_LETTER = 'À';
 
     private static final char SAFE_LETTER = 'A';
 
