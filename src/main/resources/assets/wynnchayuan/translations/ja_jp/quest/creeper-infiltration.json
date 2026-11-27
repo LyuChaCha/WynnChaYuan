@@ -8,7 +8,7 @@
  "entries": {
   "Creeper Infiltration#000": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "クリーパーの洞窟へは、西の道を進んで、豚人の野営地で左に曲がってください。",
+   "dst": "クリーパーの洞窟へは、西の道を進んで、ピッグマンの野営地で左に曲がってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -29,12 +29,12 @@
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
    "stage": "",
-   "speaker": "",
+   "speaker": "Thomas",
    "source": "captured"
   },
   "Creeper Infiltration#002": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
-   "dst": "私は Thomas、豚人渓谷の村で物資の管理を手伝っています。ですが、少し困ったことがありまして…",
+   "dst": "私は Thomas、ピッグマン渓谷の村で物資の管理を手伝っています。ですが、少し困ったことがありまして…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -54,7 +54,7 @@
   },
   "Creeper Infiltration#004": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "前回入った時、上から爆発音が聞こえました。豚人たちが TNT で麦を吹き飛ばしているのではと…",
+   "dst": "前回入った時、上から爆発音が聞こえました。ピッグマンたちが TNT で麦を吹き飛ばしているのではと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -74,27 +74,29 @@
   },
   "Creeper Infiltration#006": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "本当ですか？命の恩人です。村で会いましょう。町を出る道を進み、一番北の入り口から渓谷へ入ってください。",
+   "dst": "本当ですか？命の恩人です。村で会いましょう。{c2}町を出る道を進み{/}、一番北の入り口から渓谷へ入ってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
    "stage": "Stage 1",
    "speaker": "Thomas",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}follow the path out of town{/}"
   },
   "Creeper Infiltration#007": {
    "src": "I'll meet you at the village! Just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "村で会いましょう！町を出る道を進み、一番北の入り口から渓谷へ入ってください。",
+   "dst": "村で会いましょう！{c2}町を出る道を進み{/}、一番北の入り口から渓谷へ入ってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
    "stage": "",
    "speaker": "Thomas",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}follow the path out of town{/}"
   },
   "Creeper Infiltration#008": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "着いたら渓谷の右の壁沿いに進み、階段を上れば入り口です。トンネルでは気をつけて、豚人は石を投げてきますから。",
+   "dst": "着いたら渓谷の右の壁沿いに進み、階段を上れば入り口です。トンネルでは気をつけて、ピッグマンは石を投げてきますから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -124,7 +126,7 @@
   },
   "Creeper Infiltration#011": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
-   "dst": "あなたは私よりずっと強そうだ。トンネルの豚人を突破して、頂上の爆発を止められるかもしれません。",
+   "dst": "あなたは私よりずっと強そうだ。トンネルのピッグマンを突破して、頂上の爆発を止められるかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -134,7 +136,7 @@
   },
   "Creeper Infiltration#012": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "渓谷の右の壁沿いに進み、階段を上れば入り口です。トンネルでは気をつけて、豚人は石を投げてきますから。",
+   "dst": "渓谷の右の壁沿いに進み、階段を上れば入り口です。トンネルでは気をつけて、ピッグマンは石を投げてきますから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -174,7 +176,7 @@
   },
   "Creeper Infiltration#016": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
-   "dst": "大丈夫？ああ、よかった。豚人と爆発物は片付きましたか？",
+   "dst": "大丈夫？ああ、よかった。ピッグマンと爆発物は片付きましたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -184,7 +186,7 @@
   },
   "Creeper Infiltration#017": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
-   "dst": "緑の生き物？「クリーパー」？そんなもの、この世にいませんよ。まして豚人だらけのここに！",
+   "dst": "緑の生き物？「クリーパー」？そんなもの、この世にいませんよ。ましてピッグマンだらけのここに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -234,7 +236,7 @@
   },
   "Creeper Infiltration#022": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
-   "dst": "近くの洞窟に時々、豚人の覇王がいるんです。倒せば、仮面を作れるほど丈夫な豚人の皮が手に入ります。",
+   "dst": "近くの洞窟に時々、ピッグマンの覇王がいるんです。倒せば、仮面を作れるほど丈夫なピッグマンの皮が手に入ります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -254,7 +256,7 @@
   },
   "Creeper Infiltration#024": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
-   "dst": "豚人の皮を手に入れたら、戻ってきてください。次にすべきことを教えます。",
+   "dst": "ピッグマンの皮を手に入れたら、戻ってきてください。次にすべきことを教えます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -264,7 +266,7 @@
   },
   "Creeper Infiltration#025": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
-   "dst": "[-{~2}, {~3}, -{~4}] 付近の豚人の覇王から [{~1} Pigman Hide] を手に入れ、Thomas のもとへ戻る",
+   "dst": "[-{~2}, {~3}, -{~4}] 付近のピッグマンの覇王から [{~1} Pigman Hide] を手に入れ、Thomas のもとへ戻る",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -333,7 +335,7 @@
    "source": "wiki"
   },
   "Creeper Infiltration#032": {
-   "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
+   "src": "Bring Thomas [{~} Creeper Powder] to prove to him creepers exist in Wynn at [-{~}, {~}, -{~}]",
    "dst": "[{~1} Creeper Powder] を [-{~2}, {~3}, -{~4}] の Thomas に届け、Wynn にクリーパーがいると証明する",
    "role": "desc",
    "kind": "objective",
@@ -424,7 +426,7 @@
   },
   "Creeper Infiltration#043": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "普段は自分たちで採るのですが、最近怒った豚人の群れが、麦の育つ渓谷の頂上へ続くトンネルを占拠してしまって。",
+   "dst": "普段は自分たちで採るのですが、最近怒ったピッグマンの群れが、麦の育つ渓谷の頂上へ続くトンネルを占拠してしまって。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -434,7 +436,7 @@
   },
   "Creeper Infiltration#044": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
-   "dst": "クリーパーの洞窟にはもう行きましたか？西の道を進んで、豚人の野営地で左に曲がるだけです。",
+   "dst": "クリーパーの洞窟にはもう行きましたか？西の道を進んで、ピッグマンの野営地で左に曲がるだけです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -457,8 +459,65 @@
    "dst": "おや、客人か？面白い。この洞窟を知っているのは私だけだと思っていたよ。師匠には頭がおかしいと言われたからね。",
    "role": "desc",
    "kind": "dialogue",
+   "speaker": "Garull",
    "quest": "Creeper Infiltration",
    "source": "captured"
+  },
+  "Creeper Infiltration#047": {
+   "src": "A piece of the creeper came along with you after the blast catapulted you here. Maybe Thomas would like to take a look at it.",
+   "dst": "爆発でここに吹き飛ばされた際、ツタの一部も一緒に飛んできたようだ。Thomas に見てもらったほうがいいかもしれない。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#048": {
+   "src": "Do you need a reminder about the location of the Pigman Overlord? Just continue on the western path past the tunnel entrance, and you should find a camp where the Overlord is located.",
+   "dst": "ピッグマンの覇王の居場所をもう一度確認したいですか？トンネルの入り口を過ぎて西側の道をそのまま進めば、覇王がいるキャンプが見つかるはずです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "speaker": "Thomas",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#049": {
+   "src": "There is a mythical aura coming from this cave...",
+   "dst": "この洞窟からは、どこか神話的な雰囲気が漂っている……",
+   "role": "desc",
+   "kind": "Chat",
+   "speaker": "",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#050": {
+   "src": "The follower is the key to revealing the entrance",
+   "dst": "その{c2}追随者{/}こそが、{c2}入り口{/}を明らかにする鍵なのだ",
+   "role": "desc",
+   "kind": "Chat",
+   "speaker": "",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "note":"{c2}follower{/} , {c2}entrance{/}"
+  },
+  "Creeper Infiltration#051": {
+   "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
+   "dst": "ここにはしばらく住んで、クリーパーを研究している。この地方では伝説の存在だが、皆が間違っていると証明したいんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "speaker": "Garull",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "note":""
+  },
+  "Creeper Infiltration#052": {
+   "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
+   "dst": "閉じ込められる心配はいらないよ。家のすぐ外に魔法の扉があって、帰りたければそこから外へ転移できる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "speaker": "Garull",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "note":""
   }
  }
 }
