@@ -3,7 +3,7 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "zh_cn",
-  "count": 231,
+  "count": 230,
   "translated": 216,
   "note": "Aspect 各阶的能力说明，取自 Wynntils CDN。句式重复度很高，所以是按规则转的——同一个句式永远得到同样的中文。技能名保持原样，交给技能名词表去换。dst 空着表示还没有对应的句式规则，画面上会显示灰色原文。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟这里的道具无关。",
   "gearNames": false
@@ -164,7 +164,7 @@
    "class": "archer"
   },
   "aspect-desc#0022": {
-   "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
+   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
    "dst": "你的 Hound 攻击速度增加 +{~1}，移动速度增加 +{~2}。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
@@ -1508,13 +1508,6 @@
    "role": "desc",
    "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
-  },
-  "aspect-desc#0196": {
-   "src": "Increase your Hound's attack speed by +{~}. and movement speed by +{~}.",
-   "dst": "",
-   "role": "desc",
-   "aspect": "Aspect of the Beastmaster",
-   "class": "archer"
   },
   "aspect-desc#0197": {
    "src": "Increase your Snake's weakness and poison vulnerability effects by +{~}.",
