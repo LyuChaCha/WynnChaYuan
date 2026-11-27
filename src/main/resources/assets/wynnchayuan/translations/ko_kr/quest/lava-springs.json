@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 46,
-  "translated": 46,
+  "count": 49,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -437,7 +437,7 @@
    "source": "wiki"
   },
   "Lava Springs#043": {
-   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole in at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "흑요석 피부 물약을 마시고 [{~}, {~}, -{~}]의 시추공으로 용암 온천에 들어가 타락한 심장을 찾으세요",
    "role": "desc",
    "kind": "objective",
@@ -465,6 +465,36 @@
    "stage": "Stage 8",
    "speaker": "Colonel Gailard",
    "source": "wiki"
+  },
+  "Lava Springs#046": {
+   "src": "Oi, ya got my evidence yet? We need three pieces of [Corrupted Evidence] to show to high command.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#047": {
+   "src": "Right, listen here darling... There's a secret to this well... it's that... there's a guy doing his job down there... spooky, right??",
+   "dst": "자, 잘 들어 봐 자기... 이 우물엔 비밀이 있어... 그게 뭐냐면... 저 아래에서 누가 일하고 있다는 거야... 으스스하지??",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
+  },
+  "Lava Springs#048": {
+   "src": "So... be a nice, respectful person, and don't go goofing off around here, yes?",
+   "dst": "그러니까... 착하고 예의 바르게 굴고, 여기서 장난치지 마, 알았지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
   }
  }
 }

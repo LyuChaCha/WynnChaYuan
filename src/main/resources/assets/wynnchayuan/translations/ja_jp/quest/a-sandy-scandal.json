@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Sandy Scandal",
-  "count": 92,
-  "translated": 92,
+  "count": 98,
+  "translated": 98,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -28,253 +28,278 @@
   },
   "A Sandy Scandal#002": {
    "src": "You read the report and visualize its words.",
-   "dst": "報告書を読み、そこに書かれた光景を思い浮かべる。",
+   "dst": "{c1}報告書を読み、そこに書かれた光景を思い浮かべる。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You read the report and visualize its words.{/}"
   },
   "A Sandy Scandal#003": {
    "src": "WITNESS REPORT I - TOLD BY ODIN GIBBS, SHOP OWNER - GIBBS' MINING SUPPLY STORE CO.",
-   "dst": "目撃報告 I - 証言者: 店主 ODIN GIBBS - GIBBS' MINING SUPPLY STORE CO.",
+   "dst": "{c1}目撃報告 I{c2} - 証言者: 店主 ODIN GIBBS - GIBBS' MINING SUPPLY STORE CO.{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}WITNESS REPORT I {c2}- TOLD BY ODIN GIBBS, SHOP OWNER - GIBBS' MINING SUPPLY STORE CO.{/}"
   },
   "A Sandy Scandal#004": {
    "src": "Business was slow that day, until two rugged, oddly-dressed men stormed into my shop, with a lot of nerve.",
-   "dst": "その日は客足が鈍かった。そこへ粗野で妙な格好の男が二人、ずかずかと店に押し入ってきたんだ。",
+   "dst": "{c1}その日は客足が鈍かった。そこへ粗野で妙な格好の男が二人、ずかずかと店に押し入ってきたんだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Business was slow that day, until two rugged, oddly-dressed men stormed into my shop, with a lot of nerve.{/}"
   },
   "A Sandy Scandal#005": {
    "src": "Before I could close any deal with them, the man with a dagger started threatening me!",
-   "dst": "取引の話がまとまる前に、短剣を持った男が私を脅し始めた！",
+   "dst": "{c1}取引の話がまとまる前に、短剣を持った男が私を脅し始めた！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Before I could close any deal with them, the man with a dagger started threatening me!{/}"
   },
   "A Sandy Scandal#006": {
    "src": "I tried to make peace with the crooks.",
-   "dst": "ならず者たちをなだめようとした。",
+   "dst": "{c1}ならず者たちをなだめようとした。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I tried to make peace with the crooks.{/}"
   },
   "A Sandy Scandal#007": {
    "src": "The bandit put the knife closer to me and started demanding the code to the TNT vault downstairs!",
-   "dst": "強盗はナイフをさらに突きつけ、地下の TNT 金庫の暗証番号を言えと迫ってきた！",
+   "dst": "{c1}強盗はナイフをさらに突きつけ、地下の TNT 金庫の暗証番号を言えと迫ってきた！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}The bandit put the knife closer to me and started demanding the code to the TNT vault downstairs!{/}"
   },
   "A Sandy Scandal#008": {
    "src": "The bandits grew agitated and resorted to violence to obtain the combination.",
-   "dst": "強盗どもは苛立ち、番号を聞き出すために暴力に訴えた。",
+   "dst": "{c1}強盗どもは苛立ち、番号を聞き出すために暴力に訴えた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}The bandits grew agitated and resorted to violence to obtain the combination.{/}"
   },
   "A Sandy Scandal#009": {
    "src": "They swiped their knife at me, leaving a sizeable wound on my arm.",
-   "dst": "ナイフで斬りつけられ、腕にかなりの傷を負った。",
+   "dst": "{c1}ナイフで斬りつけられ、腕にかなりの傷を負った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}They swiped their knife at me, leaving a sizeable wound on my arm.{/}"
   },
   "A Sandy Scandal#010": {
    "src": "I had no choice but to give up the combination, which was {~}.",
-   "dst": "番号を教えるしかなかった。番号は {~} だ。",
+   "dst": "{c1}番号を教えるしかなかった。番号は {~} だ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I had no choice but to give up the combination, which was {~}.{/}"
   },
   "A Sandy Scandal#011": {
    "src": "After I gave up the combination, they knocked me out!",
-   "dst": "番号を教えたとたん、殴られて気を失った！",
+   "dst": "{c1}番号を教えたとたん、殴られて気を失った！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}After I gave up the combination, they knocked me out!{/}"
   },
   "A Sandy Scandal#012": {
    "src": "I had no idea what the criminals did after that, I haven't been back to my shop since the incident.",
-   "dst": "その後奴らが何をしたかはまったく分からない。あれ以来、店には一度も戻っていないんだ。",
+   "dst": "{c1}その後奴らが何をしたかはまったく分からない。あれ以来、店には一度も戻っていないんだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I had no idea what the criminals did after that, I haven't been back to my shop since the incident.{/}"
   },
   "A Sandy Scandal#013": {
    "src": "The bandits must've taken the explosives! You should investigate.",
-   "dst": "強盗たちが爆薬を持ち去ったに違いない！調べてみよう。",
+   "dst": "{c1}強盗たちが爆薬を持ち去ったに違いない！調べてみよう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}The bandits must've taken the explosives! You should investigate.{/}"
   },
   "A Sandy Scandal#014": {
    "src": "Looks like the bandit's took almost all of the TNT from the shopkeeper's vault.",
-   "dst": "強盗は店主の金庫の TNT をほとんど持ち去ったようだ。",
+   "dst": "{c1}強盗は店主の金庫の TNT をほとんど持ち去ったようだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the bandit's took almost all of the TNT from the shopkeeper's vault.{/}"
   },
   "A Sandy Scandal#015": {
    "src": "They seem to have dropped their knife during all the looting...",
-   "dst": "略奪の最中にナイフを落としていったらしい…",
+   "dst": "{c1}略奪の最中にナイフを落としていったらしい…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}They seem to have dropped their knife during all the looting...{/}"
   },
   "A Sandy Scandal#016": {
    "src": "You should return to the {p} Bank Guard with your information.",
-   "dst": "分かったことを持って {p} の銀行警備員のもとへ戻ろう。",
+   "dst": "{c1}分かったことを持って {c2}{p} の銀行警備員のもとへ戻ろう{c1}。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You should {c2}return to the {p} Bank Guard{c2} with your information.{/}"
   },
   "A Sandy Scandal#017": {
    "src": "WITNESS REPORT II - TOLD BY SCROLL MERCHANT, SHOP OWNER - ALMUJ SCROLL SHOP",
-   "dst": "目撃報告 II - 証言者: スクロール商人 (店主) - ALMUJ SCROLL SHOP",
+   "dst": "{c1}目撃報告 II {c2}- 証言者: スクロール商人 (店主) - ALMUJ SCROLL SHOP{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}WITNESS REPORT II {c2}- TOLD BY SCROLL MERCHANT, SHOP OWNER - ALMUJ SCROLL SHOP{/}"
   },
   "A Sandy Scandal#018": {
    "src": "I was having a fine time tending to my rooftop garden after a lengthy day of selling scrolls.",
-   "dst": "一日じゅう巻物を売った後、屋上の庭の手入れをしてのんびり過ごしていたんです。",
+   "dst": "{c1}一日じゅう巻物を売った後、屋上の庭の手入れをしてのんびり過ごしていたんです。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I was having a fine time tending to my rooftop garden after a lengthy day of selling scrolls.{/}"
   },
   "A Sandy Scandal#019": {
    "src": "While looking down on the street, I saw two unsavory men, one with TNT in hand, marching down the path.",
-   "dst": "通りを見下ろすと、怪しげな男が二人、道を進んでいくのが見えました。一人は TNT を手にしていました。",
+   "dst": "{c1}通りを見下ろすと、怪しげな男が二人、道を進んでいくのが見えました。一人は TNT を手にしていました。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}While looking down on the street, I saw two unsavory men, one with TNT in hand, marching down the path.{/}"
   },
   "A Sandy Scandal#020": {
    "src": "I was suspicious, so I tried to get their attention, but they ignored me.",
-   "dst": "怪しいと思って声をかけてみましたが、無視されました。",
+   "dst": "{c1}怪しいと思って声をかけてみましたが、無視されました。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I was suspicious, so I tried to get their attention, but they ignored me.{/}"
   },
   "A Sandy Scandal#021": {
    "src": "I tried to yell for the attention of a guard or official, but nobody could hear me.",
-   "dst": "大声で衛兵や役人を呼ぼうとしましたが、誰にも聞こえませんでした。",
+   "dst": "{c1}大声で衛兵や役人を呼ぼうとしましたが、誰にも聞こえませんでした。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I tried to yell for the attention of a guard or official, but nobody could hear me.{/}"
   },
   "A Sandy Scandal#022": {
    "src": "I wasn't sure what to do at this point... I didn't try to confront them, that'd have been way too risky!",
-   "dst": "その時はどうしていいか分からなくて… 止めに行ったりはしませんでした、危なすぎますから！",
+   "dst": "{c1}その時はどうしていいか分からなくて… 止めに行ったりはしませんでした、危なすぎますから！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I wasn't sure what to do at this point... I didn't try to confront them, that'd have been way too risky!{/}"
   },
   "A Sandy Scandal#023": {
    "src": "I have no idea where they went off to afterwards.",
-   "dst": "その後どこへ行ったのかはまったく分かりません。",
+   "dst": "{c1}その後どこへ行ったのかはまったく分かりません。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I have no idea where they went off to afterwards.{/}"
   },
   "A Sandy Scandal#024": {
    "src": "You should check out the house that the explosion came from!",
-   "dst": "爆発が起きた家を調べに行こう！",
+   "dst": "{c1}爆発が起きた家を調べに行こう！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You should check out the house that the explosion came from!{/}"
   },
   "A Sandy Scandal#025": {
    "src": "Two weapons are missing from the wealthy estate owner's weapon rack!",
-   "dst": "裕福な屋敷の主人の武器棚から、武器が二つなくなっている！",
+   "dst": "{c1}裕福な屋敷の主人の武器棚から、武器が二つなくなっている！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Two weapons are missing from the wealthy estate owner's weapon rack!{/}"
   },
   "A Sandy Scandal#026": {
    "src": "With such powerful weapons the bandits could easily break through the bank's defenses.",
-   "dst": "これほど強力な武器があれば、強盗どもは銀行の守りを簡単に破れるだろう。",
+   "dst": "{c1}これほど強力な武器があれば、強盗どもは銀行の守りを簡単に破れるだろう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}With such powerful weapons the bandits could easily break through the bank's defenses.{/}"
   },
   "A Sandy Scandal#027": {
    "src": "The whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
@@ -288,13 +313,14 @@
   },
   "A Sandy Scandal#028": {
    "src": "Looks like the bandits have started their heist! You should follow them into the bank and stop them.",
-   "dst": "強盗たちが銀行襲撃を始めたようだ！後を追って銀行に入り、止めよう。",
+   "dst": "{c1}強盗たちが銀行襲撃を始めたようだ！後を追って銀行に入り、止めよう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the bandits have started their heist! You should follow them into the bank and stop them.{/}"
   },
   "A Sandy Scandal#029": {
    "src": "It's too late to stop us now! We're about to bust out of here with the grand prize - the contents of the emerald vault!",
@@ -318,13 +344,14 @@
   },
   "A Sandy Scandal#031": {
    "src": "Before anybody could hear me, a large explosion occurred inside of the house the bandits intruded.",
-   "dst": "誰かに声が届く前に、強盗たちが押し入った家の中で大爆発が起きた。",
+   "dst": "{c1}誰かに声が届く前に、強盗たちが押し入った家の中で大爆発が起きた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Before anybody could hear me, a large explosion occurred inside of the house the bandits intruded.{/}"
   },
   "A Sandy Scandal#032": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
@@ -407,7 +434,7 @@
    "source": "wiki"
   },
   "A Sandy Scandal#042": {
-   "src": "Shut yer’ trap, old man. We came for a different kind of business.",
+   "src": "Shut yer' trap, old man. We came for a different kind of business.",
    "dst": "黙りな、じいさん。俺たちゃ別の用で来たんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -617,8 +644,8 @@
    "source": "wiki"
   },
   "A Sandy Scandal#065": {
-   "src": "Find the source of the detonation at [{~}, {~}, {~}].",
-   "dst": "[{~}, {~}, {~}] で爆発の発生源を探す。",
+   "src": "Find the source of the detonation at [-{~}, {~}, {~}]",
+   "dst": "[-{~}, {~}, {~}] で爆発の発生源を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -687,14 +714,15 @@
    "source": "wiki"
   },
   "A Sandy Scandal#073": {
-   "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
-   "dst": "なんと… おい！兵士！急げ！強盗は橋の向こう、今日最初に訪ねた家の隣だ！探している強盗どもかもしれん。",
+   "src": "Oh my... you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
+   "dst": "なんと… おい！兵士！急げ！強盗は{c2}橋の向こう{/}、今日最初に訪ねた家の隣だ！探している強盗どもかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "Stage 11",
    "speaker": "Almuj Bank Guard",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}across the bridge{/}"
   },
   "A Sandy Scandal#074": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
@@ -908,21 +936,84 @@
   },
   "A Sandy Scandal#098": {
    "src": "I then realized that they had no innocent itinerary, they were heading straight for my wealthy neighbor's house!",
-   "dst": "そこで気づいたんです。あいつらはただうろついていたわけじゃない、裕福なお隣さんの家へまっすぐ向かっていたんです！",
+   "dst": "{c1}そこで気づいたんです。あいつらはただうろついていたわけじゃない、裕福なお隣さんの家へまっすぐ向かっていたんです！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}I then realized that they had no innocent itinerary, they were heading straight for my wealthy neighbor's house!{/}"
   },
   "A Sandy Scandal#099": {
    "src": "The bandits came sprinting out of my wealthy neighbor's house with some of his most prized possessions: two weapons from his collection.",
-   "dst": "強盗たちは裕福なお隣さんの家から、彼の一番の宝物――コレクションの武器二つ――を抱えて飛び出してきました。",
+   "dst": "{c1}強盗たちは裕福なお隣さんの家から、彼の一番の宝物――コレクションの武器二つ――を抱えて飛び出してきました。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}The bandits came sprinting out of my wealthy neighbor's house with some of his most prized possessions: two weapons from his collection.{/}"
+  },
+  "A Sandy Scandal#100": {
+   "src": "Have you been reading the witness reports?",
+   "dst": "目撃報告は読んだか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 1",
+   "speaker": "Almuj Bank Guard",
+   "source": "captured"
+  },
+  "A Sandy Scandal#101": {
+   "src": "Exit the house",
+   "dst": "建物から出る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#102": {
+   "src": "You should return to the bank guard to relay what you’ve seen.",
+   "dst": "銀行警備員のもとに戻り、目撃したことを伝えよう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#103": {
+   "src": "This must be where the robbery took place!",
+   "dst": "ここがきっと強盗事件の現場に違いない！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#105": {
+   "src": "There's a trail of gold lying on the ground...",
+   "dst": "地面に{c2}金の痕跡{/}が伸びている……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}trail of gold{/}"
+  },
+  "A Sandy Scandal#106": {
+   "src": "Follow the trail of gold the criminals left behind from the robbery at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]での強盗事件で、犯人たちが残した金の痕跡を追跡する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
    "speaker": "",
    "source": "captured"
   }

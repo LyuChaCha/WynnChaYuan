@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 46,
-  "translated": 46,
+  "count": 49,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -437,7 +437,7 @@
    "source": "wiki"
   },
   "Lava Springs#043": {
-   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole in at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "喝下黑曜皮膚藥水，從 [{~1}, {~2}, -{~3}] 的鑽孔進入熔岩泉，尋找腐敗之心",
    "role": "desc",
    "kind": "objective",
@@ -465,6 +465,36 @@
    "stage": "Stage 8",
    "speaker": "Colonel Gailard",
    "source": "wiki"
+  },
+  "Lava Springs#046": {
+   "src": "Oi, ya got my evidence yet? We need three pieces of [Corrupted Evidence] to show to high command.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#047": {
+   "src": "Right, listen here darling... There's a secret to this well... it's that... there's a guy doing his job down there... spooky, right??",
+   "dst": "好，聽好了親愛的……這口井有個祕密……那就是……底下有個傢伙在幹活……很嚇人吧？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
+  },
+  "Lava Springs#048": {
+   "src": "So... be a nice, respectful person, and don't go goofing off around here, yes?",
+   "dst": "所以……當個友善、有禮貌的人，別在這附近胡鬧，好嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
   }
  }
 }

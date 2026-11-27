@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "A Sandy Scandal",
-  "count": 92,
+  "count": 98,
   "translated": 92,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -407,7 +407,7 @@
    "source": "wiki"
   },
   "A Sandy Scandal#042": {
-   "src": "Shut yer’ trap, old man. We came for a different kind of business.",
+   "src": "Shut yer' trap, old man. We came for a different kind of business.",
    "dst": "闭上你的嘴，老头。我们来谈的是另一种生意。",
    "role": "desc",
    "kind": "dialogue",
@@ -687,7 +687,7 @@
    "source": "wiki"
   },
   "A Sandy Scandal#073": {
-   "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
+   "src": "Oh my... you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
    "dst": "天哪……你！士兵！快！抢劫就发生在桥对面，在你今天去过的第一栋房子旁边！可能就是我们在找的强盗。",
    "role": "desc",
    "kind": "dialogue",
@@ -923,6 +923,66 @@
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#100": {
+   "src": "Have you been reading the witness reports?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 1",
+   "speaker": "Almuj Bank Guard",
+   "source": "captured"
+  },
+  "A Sandy Scandal#101": {
+   "src": "Exit the house",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#102": {
+   "src": "You should return to the bank guard to relay what you’ve seen.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#103": {
+   "src": "This must be where the robbery took place!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#105": {
+   "src": "There's a trail of gold lying on the ground...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#106": {
+   "src": "Follow the trail of gold the criminals left behind from the robbery at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
    "speaker": "",
    "source": "captured"
   }

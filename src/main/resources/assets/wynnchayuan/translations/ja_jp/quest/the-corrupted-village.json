@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "The Corrupted Village",
-  "count": 71,
-  "translated": 71,
+  "count": 86,
+  "translated": 86,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Did you do what I asked? No? Check your content book.",
-   "dst": "頼んだことはやったか？まだ？コンテンツブックを確認しろ。",
+   "dst": "頼んだことはやったか？まだ？コンテンツブックを確認してくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Orikal",
    "source": "captured"
   },
   "The Corrupted Village#001": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#002": {
@@ -33,128 +33,140 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#003": {
    "src": "Orikal pays the excavators.",
-   "dst": "Orikal が発掘者たちに給料を払っている。",
+   "dst": "{c1}Orikal が発掘者たちに給料を払っている。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Orikal pays the excavators.{/}"
   },
   "The Corrupted Village#004": {
    "src": "We were performing our usual routines when suddenly an unknown explosion caused a massive cave-in at the entrance to our main mining supply area.",
-   "dst": "いつも通り作業していたら、突然謎の爆発が起きて、主要な採掘資材置き場の入口が大きく崩落した。",
+   "dst": "{c1}いつも通り作業していたら、突然謎の爆発が起きて、主要な採掘資材置き場の入口が大きく崩落した。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}We were performing our usual routines when suddenly an unknown explosion caused a massive cave-in at the entrance to our main mining supply area.{/}"
   },
   "The Corrupted Village#005": {
    "src": "Something must be done to remove the debris, we cannot easily continue our mining operations without our supplies.",
-   "dst": "瓦礫を何とかしなければ。資材がなければ採掘作業は続けられない。",
+   "dst": "{c1}瓦礫を何とかしなければ。資材がなければ採掘作業は続けられない。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Something must be done to remove the debris, we cannot easily continue our mining operations without our supplies.{/}"
   },
   "The Corrupted Village#006": {
    "src": "There also may be people trapped on the other side, and I would hate to lose even more miners to these catastrophes.",
-   "dst": "向こう側に閉じ込められた者もいるかもしれない。こんな災難でこれ以上鉱夫を失いたくはない。",
+   "dst": "{c1}向こう側に閉じ込められた者もいるかもしれない。こんな災難でこれ以上鉱夫を失いたくはない。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There also may be people trapped on the other side, and I would hate to lose even more miners to these catastrophes.{/}"
   },
   "The Corrupted Village#007": {
    "src": "Maybe we could use the Wrecking Ball to demolish the debris, but if we don't act soon...",
-   "dst": "解体用鉄球で瓦礫を壊せるかもしれないが、急がないと…",
+   "dst": "{c1}解体用鉄球で瓦礫を壊せるかもしれないが、急がないと…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Maybe we could use the Wrecking Ball to demolish the debris, but if we don't act soon...{/}"
   },
   "The Corrupted Village#008": {
    "src": "How to Use the Explosive-Cloaker Machine:",
-   "dst": "爆発物無力化装置の使い方:",
+   "dst": "{c1}爆発物無力化装置の使い方:{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}How to Use the Explosive-Cloaker Machine:{/} 全て太字"
   },
   "The Corrupted Village#009": {
    "src": "- Acquire an explosive item.",
-   "dst": "- 爆発物を入手する。",
+   "dst": "{c1}- 爆発物を入手する。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}{/}"
   },
   "The Corrupted Village#010": {
    "src": "- Insert explosive item into the hole of the INPUT slot of the machine.",
-   "dst": "- 爆発物を装置の INPUT スロットの穴に入れる。",
+   "dst": "{c1}- 爆発物を装置の INPUT スロットの穴に入れる。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}- Insert explosive item into the hole of the INPUT slot of the machine.{/}"
   },
   "The Corrupted Village#011": {
    "src": "- Wait while the machine temporarily disables the item's explosive property.",
-   "dst": "- 装置が爆発性を一時的に無効化するまで待つ。",
+   "dst": "{c1}- 装置が爆発性を一時的に無効化するまで待つ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}- Wait while the machine temporarily disables the item's explosive property.{/}"
   },
   "The Corrupted Village#012": {
    "src": "- Take item out of OUTPUT slot.",
-   "dst": "- OUTPUT スロットから取り出す。",
+   "dst": "{c1}- OUTPUT スロットから取り出す。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}- Take item out of OUTPUT slot.{/}"
   },
   "The Corrupted Village#013": {
    "src": "- Can be very useful for disabling explosive properties of unstable ores found in caves.",
-   "dst": "- 洞窟で見つかる不安定な鉱石の爆発性を消すのにとても便利。",
+   "dst": "{c1}- 洞窟で見つかる不安定な鉱石の爆発性を消すのにとても便利。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}- Can be very useful for disabling explosive properties of unstable ores found in caves.{/} 全て太字"
   },
   "The Corrupted Village#014": {
    "src": "Orikal takes the materials you retrieved and puts them in a container. He mutters some words in an unknown language, and suddenly the container turns into some sort of Magical TNT.",
-   "dst": "Orikal は持ち帰った材料を容器に入れた。未知の言葉で何かを呟くと、容器は突然、魔法の TNT のようなものに変わった。",
+   "dst": "{c1}Orikal は持ち帰った材料を容器に入れた。未知の言葉で何かを呟くと、容器は突然、魔法の TNT のようなものに変わった。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Orikal takes the materials you retrieved and puts them in a container. He mutters some words in an unknown language, and suddenly the container turns into some sort of Magical TNT.{/}"
   },
   "The Corrupted Village#015": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe. Here, take this for your help.",
@@ -227,7 +239,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#022": {
-   "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
+   "src": "Corruption does not affect humans like other beings. It's much much slower, more like an infection of the mind to us.",
    "dst": "腐敗は人間には他の生き物と違う形で作用する。ずっと遅く、私たちには心の感染に近いんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -257,7 +269,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#025": {
-   "src": "Climb the spike to see if you can find anything useful about it's existance.",
+   "src": "Climb the spike to see if you can find anything useful about it's existence.",
    "dst": "棘に登り、その存在について役立つ手がかりがないか探す。",
    "role": "desc",
    "kind": "objective",
@@ -318,13 +330,14 @@
   },
   "The Corrupted Village#031": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
-   "dst": "この辺りには採掘時代の古い坑道がある。棘を掘り出すため二人を送り込んだんだが、下りて手伝ってくれるか？",
+   "dst": "{c1}この辺りには採掘時代の古い坑道がある。棘を掘り出すため二人を送り込んだんだが、下りて手伝ってくれるか？{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "Stage 4",
    "speaker": "Orikal",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?{/}"
   },
   "The Corrupted Village#032": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
@@ -578,23 +591,25 @@
   },
   "The Corrupted Village#057": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
-   "dst": "必要な主な材料は {~} つ。[Stabilized Corrupted Ore]、[Incendiary Fluid]、それに起爆用の [Switch Fuse] だ。",
+   "dst": "必要な主な材料は {~} つ。{c2}[Stabilized Corrupted Ore]{/}、{c2}[Incendiary Fluid]{/}、それに起爆用の {c2}[Switch Fuse]{/} だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "Stage 6",
    "speaker": "Orikal",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[Stabilized Corrupted Ore]{/} , {c2}[Incendiary Fluid]{/} , {c2}[Switch Fuse]{/}"
   },
   "The Corrupted Village#058": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
-   "dst": "この町の少し東に、小さな採掘キャンプがあったんだ。今は廃墟だが、必要な物はまだ見つかるはずだ。",
+   "dst": "この町の少し東に、{c2}小さな採掘キャンプがあったんだ。{/}今は廃墟だが、必要な物はまだ見つかるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "Stage 6",
    "speaker": "Orikal",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}a small mining camp a little east of this town.{/}"
   },
   "The Corrupted Village#059": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
@@ -617,7 +632,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#061": {
-   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
+   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid] and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の採掘キャンプで TNT 用の [Stabilized Corrupted Ore]、[Incendiary Fluid]、[Switch Fuse] を探す。",
    "role": "desc",
    "kind": "objective",
@@ -715,6 +730,158 @@
    "stage": "Stage 10",
    "speaker": "Orikal",
    "source": "wiki"
+  },
+  "The Corrupted Village#071": {
+   "src": "This spike appears to be much larger than the others around the village, but nothing unusual. You should take a closer look at the top.",
+   "dst": "この棘は、村の周辺にある他のものよりもずっと大きく見えるが、特に変わったところはない。頂上をじっくりと見てみるといいだろう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#072": {
+   "src": "When observing the spike from on top, you notice absolutely nothing. You should report back to Orikal.",
+   "dst": "棘を上から眺めても、まったく何も目につかない。Orikal に報告しよう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#073": {
+   "src": "That explosion sounded like it uncovered something big. You should take a look.",
+   "dst": "あの爆発の音は、何か大きなものを露わにしたようだった。ちょっと見てみよう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#074": {
+   "src": "I need [Stabilized Corrupted Ore], [Incendiary Fluid] , and [Switch Fuse] to create the explosive.",
+   "dst": "爆薬を作るには {c2}[Stabilized Corrupted Ore]{/}、{c2}[Incendiary Fluid]{/}、{c2}[Switch Fuse]{/} が必要なんだ。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki",
+   "note": "{c2}[Stabilized Corrupted Ore]{/} , {c2}[Incendiary Fluid]{/} , {c2}[Switch Fuse]{/}"
+  },
+  "The Corrupted Village#075": {
+   "src": "The small mining camp a little east of this village should have what you're looking for. Now Hurry!",
+   "dst": "この村の少し東にある小さな採掘キャンプに、探しているものがあるはずだ。さあ、急いで！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki"
+  },
+  "The Corrupted Village#076": {
+   "src": "GUH! No one in this town is any use! You're all LOSERS. YOU HEAR ME GERALD?",
+   "dst": "うわっ！この町の連中は誰一人として役に立たねえ！お前ら全員、負け犬だ。 GERALD 、聞いてるか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#077": {
+   "src": "I swear if he comes near me again with that attitude I will END HIM.",
+   "dst": "あの態度でまた俺に近づいてきたら、絶対にぶっ殺してやる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#078": {
+   "src": "To the Mining Operations Manager:",
+   "dst": "{c1}採掘作業責任者へ:{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}To the Mining Operations Manager:{/}"
+  },
+  "The Corrupted Village#079": {
+   "src": "You filled the container with a glowing liquid. You can use the well to bring it up to the surface.",
+   "dst": "容器に光る液体を満たした。井戸を使って、それを地表まで引き上げることができる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#080": {
+   "src": "The ore begins to glow and vibrate in your hand when you take it... it's about to explode!",
+   "dst": "鉱石を手に取ると、手の中で光り始め、振動し始める……今にも爆発しそうだ！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#081": {
+   "src": "The ore exploded! Looks like you have to get more from the cave and try again!",
+   "dst": "鉱石が爆発した！　洞窟からもっと鉱石を持ってきて、もう一度やってみよう！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#082": {
+   "src": "The machine begins making strange sounds, but after a little while the ore falls out the other side of the machine.",
+   "dst": "機械から奇妙な音が鳴り始めたが、しばらくすると、鉱石が機械の反対側から落ちてきた。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#083": {
+   "src": "The ore appears to have temporarily lost its explosive attribute. It is safe to carry.",
+   "dst": "この鉱石は、一時的に爆発性を失ったようだ。安全に持ち運べる。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#084": {
+   "src": "It appears this magical TNT worked. Now that the spike's roots have been demolished, you should talk to Orikal about your success.",
+   "dst": "どうやらこの魔法のTNTは効果があったようだ。棘の根が破壊されたので、成功したことを Orikal に報告しよう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#085": {
+   "src": "It will take a while for these people to recover, so I'll stay here watching over them while they do.",
+   "dst": "この人たちが回復するにはしばらく時間がかかりそうなので、回復するまで私はここにいて、見守ってあげようと思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Orikal",
+   "source": "capture"
   }
  }
 }

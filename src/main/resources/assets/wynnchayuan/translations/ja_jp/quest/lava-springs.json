@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 46,
-  "translated": 46,
+  "count": 49,
+  "translated": 49,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -28,23 +28,25 @@
   },
   "Lava Springs#002": {
    "src": "You've already collected this evidence.",
-   "dst": "この証拠はもう集めた。",
+   "dst": "{c1}この証拠はもう集めた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You've already collected this evidence.{/}"
   },
   "Lava Springs#003": {
    "src": "This should be enough evidence. You should report back to Colonel Gailard.",
-   "dst": "証拠はこれで十分だろう。Gailard 大佐に報告しに戻ろう。",
+   "dst": "{c1}証拠はこれで十分だろう。{c2}Gailard 大佐に報告しに戻ろう{c1}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}This should be enough evidence. You should {c2}report back to Colonel Gailard.{/}"
   },
   "Lava Springs#004": {
    "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here named {p}, yeah? There's a healer person there that can help us out.",
@@ -78,23 +80,25 @@
   },
   "Lava Springs#007": {
    "src": "Now, you have somewhere to be, right? Right. Go and report back to the Colonel, soldier. Tell him I said hi, by the way.",
-   "dst": "さて、行くところがあるんでしょ？だよね。大佐に報告してきな、兵士さん。よろしく伝えといて。",
+   "dst": "さて、行くところがあるんでしょ？{c2}大佐に報告してきな、兵士さん{/}。よろしく伝えといて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "Stage 5",
    "speaker": "Nami The Healer",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Go and report back to the Colonel, soldier{/}"
   },
   "Lava Springs#008": {
    "src": "You can feel your body heat adjusting as the potion courses through your body...",
-   "dst": "ポーションが全身を巡り、体温が順応していくのを感じる…",
+   "dst": "{c1}ポーションが全身を巡り、体温が順応していくのを感じる…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}{/}"
   },
   "Lava Springs#009": {
    "src": "Ye're a good ally, soldier! And a great help to the army, at that!",
@@ -158,13 +162,14 @@
   },
   "Lava Springs#015": {
    "src": "Take a look around the springs, soldier! Find me some damn evidence around here! [{~} Pieces of Evidence] should be enough! Now, get movin'!",
-   "dst": "泉の周りを見てこい、兵士！証拠を見つけてこい！[{~} 個の証拠] があれば十分だ！さあ、動け！",
+   "dst": "泉の周りを見てこい、兵士！{c2}証拠を見つけてこい！{c3}[{~} 個の証拠] {c2}があれば十分だ！{c3}さあ、動け！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "Stage 1",
    "speaker": "Colonel Gailard",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Find me some damn evidence around here!{c3} [{~} Pieces of Evidence] {c2}should be enough! {c3}Now, get movin'!{/}"
   },
   "Lava Springs#016": {
    "src": "Look for three pieces of corrupted evidence around the Lava Spring at [{~}, {~}, -{~}]",
@@ -228,23 +233,25 @@
   },
   "Lava Springs#022": {
    "src": "Don't have much to go on, but I'm pretty damn sure the password is Bob, or something. After the hero himself.",
-   "dst": "手がかりは少ねえが、合言葉は Bob とか何とかだったはずだ。あの英雄にちなんでな。",
+   "dst": "手がかりは少ねえが、合言葉は {c2}Bob{/} とか何とかだったはずだ。あの英雄にちなんでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "Stage 3",
    "speaker": "Colonel Gailard",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Bob,{/}"
   },
   "Lava Springs#023": {
    "src": "Right, ye're headin' there to find a potion that can keep ya weak little hide safe from the heat, understand? Here, let me write down the location in that book of yours.",
-   "dst": "よし、お前はそこで、そのひ弱な体を熱から守る薬を手に入れるんだ、分かったな？ほら、お前の本に場所を書いといてやる。",
+   "dst": "よし、{c2}お前はそこで、そのひ弱な体を熱から守る薬を手に入れるんだ{/}、分かったな？ほら、お前の本に場所を書いといてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "Stage 3",
    "speaker": "Colonel Gailard",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}ye're headin' there to find a potion that can keep ya weak little hide safe from the heat{/}"
   },
   "Lava Springs#024": {
    "src": "Talk to Gregor outside the {p} well at [{~}, {~}, -{~}]",
@@ -418,13 +425,14 @@
   },
   "Lava Springs#041": {
    "src": "Had a small chat with the brass, earlier. They got a hunch that there's a heart to the Corruption that's pumpin' out all the lava!",
-   "dst": "さっき上層部と少し話した。溶岩をくみ上げてる腐敗の心臓があるんじゃねえかってな！",
+   "dst": "さっき上層部と少し話した。溶岩をくみ上げてる{c2}腐敗の心臓{/}があるんじゃねえかってな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
    "stage": "Stage 6",
    "speaker": "Colonel Gailard",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}heart to the Corruption{/}"
   },
   "Lava Springs#042": {
    "src": "That's gotta be our ticket, yeah? If 'ye destroy that, ya should be able to stop the spread of the lava! Now, get movin'! Head into the borehole, soldier!",
@@ -437,7 +445,7 @@
    "source": "wiki"
   },
   "Lava Springs#043": {
-   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole in at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "黒曜の肌のポーションを飲み、[{~}, {~}, -{~}] の縦穴から溶岩泉に入って腐敗した心臓を探す",
    "role": "desc",
    "kind": "objective",
@@ -465,6 +473,37 @@
    "stage": "Stage 8",
    "speaker": "Colonel Gailard",
    "source": "wiki"
+  },
+  "Lava Springs#046": {
+   "src": "Oi, ya got my evidence yet? We need three pieces of [Corrupted Evidence] to show to high command.",
+   "dst": "おい、証拠はもう手に入れたか？上層部に提示するために、{c2}[腐敗の証拠]{/}が3つ必要なんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "captured",
+   "note": "{c2}[Corrupted Evidence]{/}"
+  },
+  "Lava Springs#047": {
+   "src": "Right, listen here darling... There's a secret to this well... it's that... there's a guy doing his job down there... spooky, right??",
+   "dst": "いいこと、よく聞いて、あんた… この井戸には秘密があるの… それはね… 下で仕事してる男がいるのよ… 不気味でしょ？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
+  },
+  "Lava Springs#048": {
+   "src": "So... be a nice, respectful person, and don't go goofing off around here, yes?",
+   "dst": "だから… いい子で礼儀正しくして、ここでふざけたりしないこと、いいわね？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
   }
  }
 }

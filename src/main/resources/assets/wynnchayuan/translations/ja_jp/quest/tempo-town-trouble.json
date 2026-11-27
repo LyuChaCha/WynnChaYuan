@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Tempo Town Trouble",
-  "count": 58,
-  "translated": 58,
+  "count": 59,
+  "translated": 59,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -28,13 +28,14 @@
   },
   "Tempo Town Trouble#002": {
    "src": "The monster you just killed was known as a Time Trouble. They're odd creatures that were forced into a day-long temporal loop by some fools long ago.",
-   "dst": "お主が今倒した化け物は時の厄介者と呼ばれる。遥か昔、愚か者どもに一日の時の輪へ押し込められた奇妙な生き物じゃ。",
+   "dst": "お主が今倒した化け物は{c2}時の厄介者{/}と呼ばれる。遥か昔、愚か者どもに一日の時の輪へ押し込められた奇妙な生き物じゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 4",
    "speaker": "Old Man Martyn",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Time Trouble.{/}"
   },
   "Tempo Town Trouble#003": {
    "src": "Oh, he actually showed his face after you took care of the thing? What, did you beat him to the punch or something?",
@@ -118,13 +119,14 @@
   },
   "Tempo Town Trouble#011": {
    "src": "Some old guy with jaundice or something swings by, some kind of keeper- Says to set up on a ridge overlooking a lake. So, we did! Everything was going well for a bit.",
-   "dst": "黄疸だか何だかの爺さんが通りかかって、番人か何かでさ、湖を見下ろす尾根に住めって言うんだ。だからそうした！しばらくは順調だった。",
+   "dst": "黄疸だか何だかの爺さんが通りかかって、番人か何かでさ、{c2}湖を見下ろす尾根{/}に住めって言うんだ。だからそうした！しばらくは順調だった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 1",
    "speaker": "Tyko",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}ridge overlooking a lake{/}"
   },
   "Tempo Town Trouble#012": {
    "src": "And then some freaky time monster starts showing up in the middle of the night and tries to bust down our doors! We were told that ridge was safe, but that was clearly a lie.",
@@ -148,23 +150,25 @@
   },
   "Tempo Town Trouble#014": {
    "src": "Lemme write down the coordinates for ya in your book. I'm gonna stick around and see if anyone else feels like helping.",
-   "dst": "本に座標を書いとくよ。俺はここに残って、他にも手伝ってくれる奴がいないか探す。",
+   "dst": "{c2}本{/}に座標を書いとくよ。俺はここに残って、他にも手伝ってくれる奴がいないか探す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 1",
    "speaker": "Tyko",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}in your book.{/}"
   },
   "Tempo Town Trouble#015": {
    "src": "The coordinates to where you need to go should be in your book. Help us out, yeah?",
-   "dst": "行き先の座標は本に書いてあるはずだ。助けてくれるよな？",
+   "dst": "行き先の座標は{c2}本{/}に書いてあるはずだ。助けてくれるよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 1",
    "speaker": "Tyko",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}in your book.{/}"
   },
   "Tempo Town Trouble#016": {
    "src": "Go to {p} at [-{~}, {~}, -{~}]",
@@ -268,23 +272,25 @@
   },
   "Tempo Town Trouble#026": {
    "src": "There's the coordinates in case you forget, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
-   "dst": "忘れた時のための座標です。でも丘を登ってすぐの神殿の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
+   "dst": "忘れた時のための座標です。でも{c2}丘を登ってすぐの神殿{/}の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 2",
    "speaker": "Homeless Mayor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}temple just up the hill!{/}"
   },
   "Tempo Town Trouble#027": {
    "src": "The coordinates are in your book, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
-   "dst": "座標は本に書いてありますが、丘を登ってすぐの神殿の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
+   "dst": "座標は本に書いてありますが、{c2}丘を登ってすぐの神殿{/}の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 2",
    "speaker": "Homeless Mayor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}temple just up the hill!{/}"
   },
   "Tempo Town Trouble#028": {
    "src": "Investigate the ruin at [-{~}, {~}, -{~}]",
@@ -338,13 +344,14 @@
   },
   "Tempo Town Trouble#034": {
    "src": "Stand on the disk and cast any spell. That should probably get it open, then we can finally kill that freak of nature lurking inside of there!",
-   "dst": "円盤の上に立って何か呪文を唱えてくれ。それで開くはずだ、そしたら中に潜んでる化け物をやっと仕留められる！",
+   "dst": "円盤の上に立って{c2}何か呪文を唱えてくれ。{/}それで開くはずだ、そしたら中に潜んでる化け物をやっと仕留められる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 3",
    "speaker": "Scout",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}cast any spell.{/}"
   },
   "Tempo Town Trouble#035": {
    "src": "Let's see... What kind of secrets do these odd temples house?",
@@ -428,13 +435,14 @@
   },
   "Tempo Town Trouble#044": {
    "src": "I can fix this seal, so you'll have one less to deal with, but the rest of the Troubles will have to be taken down daily with brute force.",
-   "dst": "この封印は直せるから一匹は減るが、残りの厄介者は毎日力ずくで倒すしかない。",
+   "dst": "この封印は直せるから一匹は減るが、{c2}残りの厄介者は毎日力ずくで倒すしかない。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 4",
    "speaker": "Old Man Martyn",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}but the rest of the Troubles will have to be taken down daily with brute force.{/}"
   },
   "Tempo Town Trouble#045": {
    "src": "You're going to have to deal with those, soldier. I have far too much to take care of in this valley.",
@@ -518,13 +526,14 @@
   },
   "Tempo Town Trouble#055": {
    "src": "Gah, this is a disaster... It isn't your fault, you didn't know- Wait, what's that boxy thing you have? A [Time Fragment]? ...oh, so the monster dropped it.",
-   "dst": "ああ、大変なことに…あなたのせいじゃありません、知らなかったんですし…あれ、その四角いのは？[Time Fragment]？…ああ、化け物が落としたんですね。",
+   "dst": "ああ、大変なことに…あなたのせいじゃありません、知らなかったんですし…あれ、その四角いのは？{c2}[Time Fragment]{/}？…ああ、化け物が落としたんですね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 5",
    "speaker": "Homeless Mayor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[Time Fragment]{/}"
   },
   "Tempo Town Trouble#056": {
    "src": "Interesting... One of the townsfolk likes to collect those sorts of things! He's that Mysterious Merchant just behind me.",
@@ -538,23 +547,25 @@
   },
   "Tempo Town Trouble#057": {
    "src": "Go talk with him about those! He might give you something worth your while if you trade them with him.",
-   "dst": "その件で彼と話してみてください！交換すれば、いい物をくれるかもしれません。",
+   "dst": "{c2}その件で彼と話してみてください！交換すれば、いい物をくれるかもしれません。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 5",
    "speaker": "Homeless Mayor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Go talk with him about those! He might give you something worth your while if you trade them with him.{/}"
   },
   "Tempo Town Trouble#058": {
    "src": "...also, while you were away, that strange magic stone up on the hill started glowing. We're not sure what to do with it, really! Might be worth your attention.",
-   "dst": "…それと、あなたがいない間に、丘の上の不思議な魔法の石が光り出したんです。どうしたらいいのか分からなくて！見ておく価値があるかも。",
+   "dst": "…それと、あなたがいない間に、{c2}丘の上の不思議な魔法の石{/}が光り出したんです。どうしたらいいのか分からなくて！見ておく価値があるかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
    "stage": "Stage 5",
    "speaker": "Homeless Mayor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}strange magic stone up on the hill{/}"
   },
   "Tempo Town Trouble#060": {
    "src": "Heya! Heard from the mayor that you helped out the town! Can't thank you enough for that.",
@@ -585,6 +596,17 @@
    "stage": "Stage 5",
    "speaker": "Scout",
    "source": "wiki"
+  },
+  "Tempo Town Trouble#063": {
+   "src": "The obelisk does not react to your touch. [Req: {p} Trouble]",
+   "dst": "オベリスクは触れても反応しない。{c2}[必要: {p}の災難]{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}[Req: {p} Trouble]{/}"
   }
  }
 }

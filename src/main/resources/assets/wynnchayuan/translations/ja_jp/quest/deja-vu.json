@@ -1,20 +1,21 @@
 {
  "_meta": {
   "quest": "Deja Vu",
-  "count": 89,
-  "translated": 89,
+  "count": 92,
+  "translated": 92,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Deja Vu#001": {
    "src": "Whatever that odd feeling was, it's over now. And there's Asher's shovel! Better return this to him.",
-   "dst": "あの妙な感覚が何だったにせよ、もう終わった。それに Asher のシャベルだ！返しに行こう。",
+   "dst": "{c1}あの妙な感覚が何だったにせよ、もう終わった。それに Asher のシャベルだ！返しに行こう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Whatever that odd feeling was, it's over now. And there's Asher's shovel! Better return this to him.{/}"
   },
   "Deja Vu#002": {
    "src": "Whenever you're ready to save Asher, step through the rift.",
@@ -23,7 +24,7 @@
    "kind": "dialogue",
    "quest": "Deja Vu",
    "stage": "",
-   "speaker": "",
+   "speaker": "Old Man Martyn",
    "source": "captured"
   },
   "Deja Vu#003": {
@@ -895,6 +896,36 @@
    "stage": "Stage 8",
    "speaker": "Asher",
    "source": "wiki"
+  },
+  "Deja Vu#091": {
+   "src": "You need more help? I think I dropped it under a pink tree. Now move it or lose it!",
+   "dst": "まだ手伝いが要るのか？ ピンクの木の下に落としたと思う。さっさと動け、ぐずぐずするな！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "Stage 1",
+   "speaker": "Asher",
+   "source": "wiki"
+  },
+  "Deja Vu#092": {
+   "src": "The cannon is ready to fire!",
+   "dst": "大砲は発射準備完了だ！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Deja Vu",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Deja Vu#093": {
+   "src": "I miss seeing the past. It was such an interesting place.",
+   "dst": "あの頃が懐かしい。本当に面白い場所だった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "",
+   "speaker": "Asher",
+   "source": "capture"
   }
  }
 }
