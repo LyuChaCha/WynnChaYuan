@@ -43,7 +43,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#004": {
@@ -68,13 +68,14 @@
   },
   "Recover the Past#006": {
    "src": "Get me the part from that blacksmith's and I'll come with you to Picard's tower. I could hardly leave my baby alone unfinished like this now, could I?",
-   "dst": "鍛冶屋から部品を持ってきてくれたら、Picard の塔に一緒に行くよ。愛しの船を未完成のまま放っていけないだろ？",
+   "dst": "{c2}鍛冶屋から部品{/}を持ってきてくれたら、Picard の塔に一緒に行くよ。愛しの船を未完成のまま放っていけないだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 2",
    "speaker": "Caid",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}the part from that blacksmith's{/}"
   },
   "Recover the Past#007": {
    "src": "Move the box out of the door to complete the puzzle!",
@@ -84,7 +85,8 @@
    "quest": "Recover the Past",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"全て太字"
   },
   "Recover the Past#008": {
    "src": "Seems like the box broke...",
@@ -108,13 +110,14 @@
   },
   "Recover the Past#010": {
    "src": "You should return to Caid with the package before the blacksmith notices...",
-   "dst": "鍛冶屋に気付かれる前に、包みを持って Caid のもとへ戻ろう…",
+   "dst": "鍛冶屋に気付かれる前に、包みを持って {c2}Caid のもとへ戻ろう{/}…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}return to Caid{/}"
   },
   "Recover the Past#011": {
    "src": "[-{~} Wrapped Package]",
@@ -144,7 +147,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Edwin",
-   "source": "captured"
+   "source": "captured",
+   "note":"please は斜体"
   },
   "Recover the Past#014": {
    "src": "Take him to the prison for further questioning, and to decide what shall be done with him.",
@@ -164,7 +168,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Dr. Picard",
-   "source": "captured"
+   "source": "captured",
+   "note":"Hm hm hm. は斜体"
   },
   "Recover the Past#016": {
    "src": "Yes, so it would appear! But surely there's more beyond this point... perhaps, if I-",
@@ -173,7 +178,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#017": {
@@ -188,13 +193,14 @@
   },
   "Recover the Past#018": {
    "src": "I saw him heading into the temple not very long ago. Perhaps he's had a change of heart. You lead the way to Caid, I'll be right behind you.",
-   "dst": "少し前、彼が神殿のほうへ行くのを見ました。心変わりしたのかもしれません。Caid のところへ案内を、すぐ後ろについて行きます。",
+   "dst": "少し前、彼が神殿のほうへ行くのを見ました。心変わりしたのかもしれません。{c2}Caid のところへ案内{/}を、すぐ後ろについて行きます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 7",
    "speaker": "Reynauld",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}lead the way to Caid{/}"
   },
   "Recover the Past#019": {
    "src": "I wouldn't dream of doing anything else!",
@@ -203,7 +209,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#020": {
@@ -213,7 +219,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#021": {
@@ -223,7 +229,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#022": {
@@ -283,7 +289,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#028": {
@@ -293,8 +299,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Tasim",
+   "source": "captured",
+   "note":"happening は斜体"
   },
   "Recover the Past#029": {
    "src": "... Tasim? Why are-",
@@ -303,7 +310,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#030": {
@@ -313,8 +320,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Picard",
+   "source": "captured",
+   "note":"That , you は斜体"
   },
   "Recover the Past#031": {
    "src": "Doctor. Stop. Talking. Tasim, why are you here? Where's Caid?",
@@ -323,8 +331,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Reynauld",
+   "source": "captured",
+   "note":"Doctor は太字"
   },
   "Recover the Past#032": {
    "src": "Right... the Admiral sent me to bolster {p}'s defences. I was expecting to meet you at the bridge, but all I found was Caid.",
@@ -344,7 +353,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Reynauld",
-   "source": "captured"
+   "source": "captured",
+   "note":"thief , Damn は斜体"
   },
   "Recover the Past#034": {
    "src": "There's no time to waste now. Let's go. Tasim, {u}. We need to save {p}.",
@@ -363,7 +373,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#036": {
@@ -373,7 +383,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#037": {
@@ -383,7 +393,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#038": {
@@ -463,7 +473,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#046": {
@@ -473,7 +483,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#047": {
@@ -483,8 +493,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Picard",
+   "source": "captured",
+   "note":"fine は斜体"
   },
   "Recover the Past#048": {
    "src": "You haven't done any-?!",
@@ -493,8 +504,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Tasim",
+   "source": "captured",
+   "note":"done any は斜体"
   },
   "Recover the Past#049": {
    "src": "You want to put more magic into this, when it's already unstable?!",
@@ -504,7 +516,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Tasim",
-   "source": "captured"
+   "source": "captured",
+   "note":"more は斜体"
   },
   "Recover the Past#050": {
    "src": "... Fine. We can look at my memories. I don't know that I necessarily agree... but alright.",
@@ -523,8 +536,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
-   "speaker": "Aledar",
-   "source": "captured"
+   "speaker": "???",
+   "source": "captured",
+   "note":"cursed は斜体"
   },
   "Recover the Past#052": {
    "src": "My... magic is struggling to keep hold... but it's clear there's more to see! Increasing power...",
@@ -574,7 +588,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Tasim",
-   "source": "captured"
+   "source": "captured",
+   "note":"what は斜体"
   },
   "Recover the Past#057": {
    "src": "What are you going to do now",
@@ -588,13 +603,14 @@
   },
   "Recover the Past#058": {
    "src": "You are a new recruit, being sent to the Wynn Province to fight in their war. You enlisted because you thought your unique... talents... would be useful.",
-   "dst": "お前は新兵であり、戦争に加わるため Wynn 地方へ送られる。自分の特異な…才能…が役立つと考え、志願したのだ。",
+   "dst": "{c1}お前{/}は新兵であり、戦争に加わるため Wynn 地方へ送られる。自分の特異な…{c1}才能{/}…が役立つと考え、志願したのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c1}You{/} are a new recruit, being sent to the Wynn Province to fight in their war. You enlisted because you thought your unique... {c1}talents{/}... would be useful."
   },
   "Recover the Past#059": {
    "src": "Wonderful. Take this one away. It looks like we'll be able to fit two more for today's batch.",
@@ -644,7 +660,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 15",
    "speaker": "Tasim",
-   "source": "captured"
+   "source": "captured",
+   "note":"please は斜体"
   },
   "Recover the Past#064": {
    "src": "When you get stronger, you should go there too. Maybe we'll even run into each other, eventually.",
@@ -668,13 +685,14 @@
   },
   "Recover the Past#066": {
    "src": "Now what might you be...?",
-   "dst": "さて、お前は何だ…？",
+   "dst": "{c1}さ{c2}て{c1}、{c2}お前{c1}は{c2}何{c1}だ{c2}…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Inquisitor",
+   "source": "captured",
+   "note":"{c1}N{c2}o{c1}w {c2}wha{c1}t mi{c2}ght y{c1}ou b{c2}e..?"
   },
   "Recover the Past#067": {
    "src": "G-gah! What's happening?",
@@ -683,7 +701,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#068": {
@@ -693,8 +711,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Picard",
+   "source": "captured",
+   "note":"quite は斜体"
   },
   "Recover the Past#069": {
    "src": "Hmph. Maybe it just needs more power... If I increase the amount of mana I'm able to put into the spell, then-",
@@ -703,7 +722,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#070": {
@@ -713,8 +732,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Picard",
+   "source": "captured",
+   "note":"also は斜体"
   },
   "Recover the Past#071": {
    "src": "[+{~} Wrapped Package]",
@@ -733,18 +753,19 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#073": {
    "src": "Use your Movement Keys to Preview your move, then press Jump to Confirm.",
-   "dst": "移動キーで動きをプレビューし、ジャンプで決定。",
+   "dst": "移動キーで動きを{c2}プレビュー{/}し、ジャンプで{c2}決定{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c3}Preview{/} , {c3}Confirm{/} , Movement Keys , Jump は太字"
   },
   "Recover the Past#074": {
    "src": "Talk to Dr. Picard at [{~}, {~}, -{~}].",
@@ -808,13 +829,14 @@
   },
   "Recover the Past#080": {
    "src": "You can start with the would-be sailor, Caid. You'll find him just past {p}- follow the path until you reach the river.",
-   "dst": "まずは船乗り志望の Caid からだ。{p} を過ぎたところにいる—道を川までたどれば会える。",
+   "dst": "まずは船乗り志望の Caid からだ。{p} を過ぎたところにいる—{c2}道を川までたどれば会える{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 1",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}follow the path until you reach the river{/}"
   },
   "Recover the Past#081": {
    "src": "Recover the sailor Caid near his boat at [-{~}, {~}, -{~}].",
@@ -828,13 +850,14 @@
   },
   "Recover the Past#082": {
    "src": "Well? I've given you an assignment, what are you still doing here? Go find the sailor Caid. You'll find him just past {p}- follow the path until you reach the river.",
-   "dst": "で？任務は与えたはずだ、なぜまだここにいる？船乗り Caid を探したまえ。{p} を過ぎて、道を川までたどれば会える。",
+   "dst": "で？任務は与えたはずだ、なぜまだここにいる？船乗り Caid を探したまえ。{p} を過ぎて、{c2}道を川までたどれば会える{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 2",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}follow the path until you reach the river{/}"
   },
   "Recover the Past#083": {
    "src": "Huh? Oh! I- ah, nothing to see here! Just... just taking a look at my good old ship!",
@@ -894,17 +917,19 @@
    "quest": "Recover the Past",
    "stage": "Stage 2",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"someone は斜体"
   },
   "Recover the Past#089": {
    "src": "Hold Shift to Reset.",
-   "dst": "Shift 長押しでリセット。",
+   "dst": "Shift 長押しで{c2}リセット{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}Reset{/} , Shift は太字"
   },
   "Recover the Past#090": {
    "src": "Hey! Heh, well you're not wrong. I cobbled it together using mostly junk I found laying around. Still, it's pretty impressive for a scrap heap, don't you think?",
@@ -924,7 +949,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 2",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"exotic は斜体"
   },
   "Recover the Past#092": {
    "src": "I only need one more part to finish it off, and well, you see... A shipment just arrived at the blacksmith's... You see where I'm going with this?",
@@ -948,13 +974,14 @@
   },
   "Recover the Past#094": {
    "src": "Have you gotten the box yet? It's at the blacksmith's, a short walk away from here in {p}. Just, don't get spotted!",
-   "dst": "箱はもう手に入れたか？ここからすぐの {p} の鍛冶屋にある。とにかく見つかるなよ！",
+   "dst": "箱はもう手に入れたか？ここからすぐの {p} の{c2}鍛冶屋{/}にある。とにかく見つかるなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 3",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}at the blacksmith's{/}"
   },
   "Recover the Past#095": {
    "src": "Bring the package to Caid at [-{~}, {~}, -{~}].",
@@ -974,7 +1001,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 4",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"goods は斜体"
   },
   "Recover the Past#097": {
    "src": "The blacksmith didn't see anything right? I'm a bit worried Reynauld is on my trail...",
@@ -1004,7 +1032,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 4",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"Ta da は斜体"
   },
   "Recover the Past#100": {
    "src": "That's right! Every ship worth its salt's got to have a bell. Wouldn't be the same without one.",
@@ -1058,13 +1087,14 @@
   },
   "Recover the Past#105": {
    "src": "Lead the way to Picard's tower! Let's see what's hiding in this big head o' mine.",
-   "dst": "Picard の塔まで案内してくれ！俺のこのデカい頭に何が隠れてるか、見てみようぜ。",
+   "dst": "{c2}Picard の塔{/}まで案内してくれ！俺のこのデカい頭に何が隠れてるか、見てみようぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 4",
    "speaker": "Caid",
-   "source": "captured"
+   "source": "captured",
+   "note":"{c2}to Picard's tower{/}"
   },
   "Recover the Past#106": {
    "src": "Bring Caid to Dr. Picard in his tower at [{~}, {~}, -{~}].",
@@ -1114,7 +1144,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"ninety percent は斜体"
   },
   "Recover the Past#111": {
    "src": "Alright... I trust you know what you're doing, doctor...",
@@ -1194,11 +1225,12 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Edwin",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"all は斜体"
   },
   "Recover the Past#119": {
    "src": "Exactly! I'm glad you agree. So, have you found anything goo-",
-   "dst": "そのとおり！わかってくれて嬉しいよ。で、何かいい物は見つか",
+   "dst": "そのとおり！わかってくれて嬉しいよ。で、何かいい物は見つか-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -1324,7 +1356,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"all は斜体"
   },
   "Recover the Past#132": {
    "src": "...",
@@ -1344,7 +1377,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Recover the Past#134": {
    "src": "Ah! Bystander-turned-assis- you know what, I'll just call you my assistant. Finally out of your trance, I see.",
@@ -1378,13 +1412,14 @@
   },
   "Recover the Past#137": {
    "src": "Yes, hm. You'll find him near the bridge to the {p}. I'm counting on you to convince him to join our experiment. In the name of science!",
-   "dst": "そう、ふむ。{p} への橋の近くにいるはずだ。彼を実験に参加させるよう説得してくれたまえ。科学の名のもとに！",
+   "dst": "そう、ふむ。{p} への{c2}橋の近く{/}にいるはずだ。彼を実験に参加させるよう説得してくれたまえ。科学の名のもとに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}near the bridge{/}"
   },
   "Recover the Past#138": {
    "src": "Find Scout Reynauld near the bridge to the {p} at [{~}, {~}, -{~}].",
@@ -1408,13 +1443,14 @@
   },
   "Recover the Past#140": {
    "src": "Gah! Assistant! What are you doing here? Have you spoken to Scout Reynauld yet? You'll find him near the bridge to the {p}.",
-   "dst": "うわっ！助手！ここで何をしている？斥候 Reynauld とはもう話したか？{p} への橋の近くにいるぞ。",
+   "dst": "うわっ！助手！ここで何をしている？斥候 Reynauld とはもう話したか？{p} への{c2}橋の近く{/}にいるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 7",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}near the bridge{/}"
   },
   "Recover the Past#141": {
    "src": "Just... leave me be. Alright?",
@@ -1504,7 +1540,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 7",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"crook , prove it は斜体"
   },
   "Recover the Past#150": {
    "src": "Yes, fine, I understand you've taken issue with my methodology. But it works! This has worked thrice now!",
@@ -1513,7 +1550,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#151": {
@@ -1523,8 +1560,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Essren",
+   "source": "captured",
+   "note":"still , own は斜体"
   },
   "Recover the Past#152": {
    "src": "Return to Reynauld at [{~}, {~}, -{~}].",
@@ -1574,7 +1612,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 8",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"us は斜体"
   },
   "Recover the Past#157": {
    "src": "Only, my participation would leave {p} undefended. So we're asking if you'd be willing to keep a watch over things while I'm otherwise preoccupied.",
@@ -1594,17 +1633,19 @@
    "quest": "Recover the Past",
    "stage": "Stage 8",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"me は斜体"
   },
   "Recover the Past#159": {
    "src": "Don't get me wrong, I'd rather not leave the security of {p} in the hands of a thie... someone like you. You weren't my first choice to say the least, or second, or third-",
-   "dst": "誤解しないでください、{p} の安全を泥ぼ…あなたのような人の手に委ねたくはない。控えめに言っても第一候補ではなかった、第二でも、第三でも",
+   "dst": "誤解しないでください、{p} の安全を泥ぼ…あなたのような人の手に委ねたくはない。控えめに言っても第一候補ではなかった、第二でも、第三でも-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 8",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"someone like you は斜体"
   },
   "Recover the Past#160": {
    "src": "Yeah, yeah. I get it.",
@@ -1648,13 +1689,14 @@
   },
   "Recover the Past#164": {
    "src": "Well, I suppose that settles that. Let's hurry to the doctor. I don't want to leave {p}'s safety in that man's slippery fingers for any longer than I have to.",
-   "dst": "さて、これで決まりですね。急いで博士のもとへ。{p} の安全を、あの手癖の悪い男に必要以上に預けたくありません。",
+   "dst": "さて、これで決まりですね。{c2}急いで博士のもとへ{/}。{p} の安全を、あの手癖の悪い男に必要以上に預けたくありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 8",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}hurry to the doctor{/}"
   },
   "Recover the Past#165": {
    "src": "Thank you for your help, Tasim and {u}. And Caid too...",
@@ -1663,7 +1705,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#166": {
@@ -1677,14 +1719,15 @@
    "source": "wiki"
   },
   "Recover the Past#167": {
-   "src": "Let's hurry to the doctor, I don't want to leave {p}'s safety in that man's slippery fingers for any longer than I have to.",
-   "dst": "急いで博士のもとへ。{p} の安全を、あの手癖の悪い男に必要以上に預けたくありません。",
+   "src": "Let's hurry to the doctor, I don't want leave {p}'s safety in that man's slippery fingers for any longer than I have to.",
+   "dst": "{c2}急いで博士のもとへ{/}。{p} の安全を、あの手癖の悪い男に必要以上に預けたくありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 9",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}hurry to the doctor{/}"
   },
   "Recover the Past#168": {
    "src": "Witness Reynauld's past.",
@@ -1794,7 +1837,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"warned は斜体"
   },
   "Recover the Past#179": {
    "src": "You know that isn't how this works. Now, where are the goods?",
@@ -1814,7 +1858,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"oh, how was your week? は斜体"
   },
   "Recover the Past#181": {
    "src": "Fine. It's up and over here.",
@@ -1834,7 +1879,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"known は斜体"
   },
   "Recover the Past#183": {
    "src": "Hmph.",
@@ -1914,7 +1960,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Royal Captain",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"strict は斜体"
   },
   "Recover the Past#191": {
    "src": "Otherwise, how could we be certain our ranks are pure of any misdeeds? We must set an example for the people of our great province.",
@@ -2127,7 +2174,7 @@
    "source": "wiki"
   },
   "Recover the Past#212": {
-   "src": "Do whatever you have to first, but be quick. The enemy might arrive at any moment.",
+   "src": "Do whatever you have to do first, but be quick. The enemy might arrive at any moment.",
    "dst": "先に済ませることがあれば済ませてください、ただし急いで。敵はいつ来てもおかしくない。",
    "role": "desc",
    "kind": "dialogue",
@@ -2204,7 +2251,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"Damn it は斜体"
   },
   "Recover the Past#220": {
    "src": "The spikes must be its weak point!",
@@ -2274,7 +2322,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"anything は斜体"
   },
   "Recover the Past#227": {
    "src": "We can't give up now, not while {p} is still in danger!",
@@ -2324,7 +2373,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"done は斜体"
   },
   "Recover the Past#232": {
    "src": "Caid, no! You... can't, you'll-",
@@ -2334,7 +2384,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"can't は斜体"
   },
   "Recover the Past#233": {
    "src": "Take this!",
@@ -2364,7 +2415,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"Now, Reynauld! Shoot!←この単語のみ斜体"
   },
   "Recover the Past#236": {
    "src": "It-It's coming down! Now's our chance!",
@@ -2404,7 +2456,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Caid",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"ouch は斜体"
   },
   "Recover the Past#240": {
    "src": "You're safe...",
@@ -2434,7 +2487,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Reynauld",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"my は斜体"
   },
   "Recover the Past#243": {
    "src": "You must be wanting to take Tasim with you for your experiment. After all you've done today, I can hardly object. But, Tasim...",
@@ -2468,13 +2522,14 @@
   },
   "Recover the Past#246": {
    "src": "Well, anyway. Please, lead the way to the doctor. I'm intrigued to see what it's all about.",
-   "dst": "まあ、とにかく。博士のところへ案内してくれるかな。どういうことか、ぜひ見てみたい。",
+   "dst": "まあ、とにかく。博士のところへ{c2}案内{/}してくれるかな。どういうことか、ぜひ見てみたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 12",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}lead the way{/}"
   },
   "Recover the Past#247": {
    "src": "Bring Tasim to Dr. Picard in his tower at [{~}, {~}, -{~}].",
@@ -2544,7 +2599,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"if は斜体"
   },
   "Recover the Past#254": {
    "src": "Excellent, I'm glad to hear that! Now. Activating in three... two... one... go!",
@@ -2604,7 +2660,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"Damn it. は斜体"
   },
   "Recover the Past#260": {
    "src": "... You really shouldn't have gotten involved, you know.",
@@ -2613,7 +2670,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Recover the Past#261": {
@@ -2623,8 +2680,9 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Dr. Essren",
+   "source": "captured",
+   "note":"Besides は斜体"
   },
   "Recover the Past#262": {
    "src": "...Damn it. Damn it all. I can't just let the man bleed out, even if he's-...",
@@ -2684,7 +2742,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Aledar",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"cursed は斜体"
   },
   "Recover the Past#268": {
    "src": "Well, a lot of good that's done us. You know no one gets out of here, right? When they take you, you're never heard from again! So, that's where we're at.",
@@ -2754,7 +2813,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"Silence , not want←この単語のみ は斜体"
   },
   "Recover the Past#275": {
    "src": "What we will do with you today is a kindness, a mercy. If the world were to have its way, you would be far worse off. Remember that as we continue.",
@@ -2778,23 +2838,25 @@
   },
   "Recover the Past#277": {
    "src": "Fruma is nothing but a speck in your history. A fact set in stone, with details lost to the hypothetical past. You think of it fondly, but remember nothing.",
-   "dst": "Fruma はお前の過去の一点にすぎない。石に刻まれた事実だが、詳細は仮初めの過去に失われた。懐かしく思うが、何も覚えていない。",
+   "dst": "{c1}Fruma{/} はお前の過去の一点にすぎない。石に刻まれた事実だが、詳細は仮初めの過去に失われた。懐かしく思うが、{c1}何も覚えていない{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c1}Fruma{/} , {c1}nothing{/}"
   },
   "Recover the Past#278": {
    "src": "You will fight in their war. You will live for it, you will die for it. You will be of Wynn forever, and Fruma will be glad to be rid of you.",
-   "dst": "お前は彼らの戦争で戦う。そのために生き、そのために死ぬ。お前は永遠に Wynn のものとなり、Fruma はお前を厄介払いできて喜ぶだろう。",
+   "dst": "お前は彼らの戦争で{c2}戦う{/}。そのために{c2}生き{/}、そのために{c2}死ぬ{/}。お前は永遠に {c2}Wynn{/} のものとなり、{c2}Fruma{/} はお前を厄介払いできて喜ぶだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}fight{/} , {c2}live{/} , {c2}die{/} , {c2}Wynn{/} , {c2}Fruma{/}"
   },
   "Recover the Past#279": {
    "src": "Understood?",
@@ -2804,37 +2866,41 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"全て斜体"
   },
   "Recover the Past#280": {
    "src": "Must I repeat myself? Do you understand?",
-   "dst": "繰り返させる気か？わかったか？",
+   "dst": "繰り返させる気か？{c2}わかったか？{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Do you understand?{/}"
   },
   "Recover the Past#281": {
    "src": "I will ask once more. Is your directive understood?",
-   "dst": "もう一度だけ問う。指令は理解したか？",
+   "dst": "もう一度だけ問う。{c2}指令は理解したか？{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Inquisitor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Is your directive understood?{/}"
   },
   "Recover the Past#282": {
    "src": "... it is understood.",
-   "dst": "…理解した。",
+   "dst": "{c1}…理解した。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}... it is understood.{/}"
   },
   "Recover the Past#283": {
    "src": "......ant......",
@@ -2938,23 +3004,25 @@
   },
   "Recover the Past#293": {
    "src": "The offer still stands, if you'd like to take it. Just step up to the orb, like the others did.",
-   "dst": "その申し出はまだ有効だ、望むならね。ほかの者と同じくオーブの前に立ちたまえ。",
+   "dst": "その申し出はまだ有効だ、望むならね。ほかの者と同じく{c2}オーブの前に立ちたまえ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}step up to the orb{/}"
   },
   "Recover the Past#294": {
    "src": "Well? The offer still stands, if you'd like to take it. Simply step up to the orb, just like the others did.",
-   "dst": "で？申し出はまだ有効だ、望むならね。ほかの者と同じように、オーブの前に立つだけだ。",
+   "dst": "で？申し出はまだ有効だ、望むならね。ほかの者と同じように、{c2}オーブの前に立つだけだ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}step up to the orb{/}"
   },
   "Recover the Past#295": {
    "src": "H-huh?! The orb! My beautiful memory restorification orb! It's ruined!",
@@ -3008,13 +3076,14 @@
   },
   "Recover the Past#300": {
    "src": "As thanks for your help. Here, a reward. Ah, also... I believe your friend is just outside the tower. You might want to check in on him.",
-   "dst": "手伝ってくれた礼だ。ほら、報酬を。ああ、それと…君の友人が塔のすぐ外にいるはずだ。様子を見てきたらどうかね。",
+   "dst": "手伝ってくれた礼だ。ほら、報酬を。ああ、それと…君の友人が{c2}塔のすぐ外{/}にいるはずだ。様子を見てきたらどうかね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Dr. Picard",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}outside the tower{/}"
   },
   "Recover the Past#301": {
    "src": "Find Tasim outside Dr. Picard's tower at [{~}, {~}, -{~}].",
@@ -3034,7 +3103,8 @@
    "quest": "Recover the Past",
    "stage": "Stage 15",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"cursed は斜体"
   },
   "Recover the Past#303": {
    "src": "... Did the two of us really meet through sheer random luck? He was running from something, and... fell straight into my life.",
@@ -3085,6 +3155,77 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "Recover the Past#308": {
+   "src": "Find the sailor Caid near his boat at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]の位置にある船のそばにいる船乗りの Caid を探す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recover the Past",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recover the Past#309": {
+   "src": "And while you are at it... I'll be preparing for the next subject. Assuming you're able to convince that Tasim to assist, of course.",
+   "dst": "それとついでに… 私は次の被験者の準備をしておこう。もちろん、あの Tasim を説得して協力させられればの話だがね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "",
+   "speaker": "Dr. Picard",
+   "source": "captured"
+  },
+  "Recover the Past#310": {
+   "src": "So, have you had any interesting adventures since we split up?",
+   "dst": "ところで、別れてから何か面白い出来事はあった？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#311": {
+   "src": "...Oh, right! You and General Graken dealt with the undead in {p}, didn't you? Captain Ragon was glad to hear that, I'll tell you.",
+   "dst": "…ああ、そうだ！　君と Graken 将軍は{p}でアンデッドを退治したんだね？　Ragon 大尉はそれを聞いてとても喜んでたって伝えとくよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#312": {
+   "src": "Me? Well... nothing really to talk about. Aledar's gone off to research the corruption on his own, so I've been- I don't know. Helping wherever I can.",
+   "dst": "僕？　うーん……特に話すことなんてないよ。Aledar は腐敗の真相を独自に調べに行くことになって、僕は……どう言えばいいかな。できる範囲で手助けしてるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#313": {
+   "src": "I have the skill and the magic to fight off corrupteds, so I might as well help wherever I'm needed.",
+   "dst": "僕には腐敗者と戦うための技と魔法があるのだから、必要とされるところならどこでも手助けしてやろうと思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  }, 
+  "Recover the Past#314": {
+   "src": "I believe your friend is just outside the tower. You might want to check in on him. Leave me now, I need to continue my research. There's more to learn, I'm sure...",
+   "dst": "君の友人なら{c2}塔のすぐ外{/}にいるはずだ。様子を見てやるといい。さあ、行きたまえ。私は研究を続けねば。学ぶべきことはまだあるはずだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
+   "source": "captured",
+   "note":"{c2}outside the tower{/}"
   }
  }
 }
