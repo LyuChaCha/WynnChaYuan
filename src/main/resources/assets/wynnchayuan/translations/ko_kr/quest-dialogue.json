@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 25060,
-  "translated": 24942,
+  "count": 25057,
+  "translated": 24939,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -168095,7 +168095,7 @@
   },
   "Taking the Tower#025": {
    "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
-   "dst": "난 한동안 여기 있을 거야. 마음 바뀌면 말해 줘!",
+   "dst": "뭐, 임무는 한동안 시작 안 할 거야. 마음 바뀌면 말해 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -168115,7 +168115,7 @@
   },
   "Taking the Tower#027": {
    "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
-   "dst": "Aledar를 따라 [{~}, {~}, -{~}]의 파우더 마스터에게 가세요.",
+   "dst": "Aledar를 따라 [{~}, {~}, -{~}]의 아이템 강화사에게 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -188273,7 +188273,7 @@
   },
   "The Feathers Fly Part I#023": {
    "src": "Ah, eager to see our wisteria tree!",
-   "dst": "아, 우리 등나무! 그래...",
+   "dst": "아, 우리 등나무를 보고 싶은 겐가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -188283,17 +188283,7 @@
   },
   "The Feathers Fly Part I#024": {
    "src": "It's one of a kind! We planted it eons ago. It has never ever grown an inch.",
-   "dst": "세상에 하나뿐인 나무일세! 아득한 옛날에 심었지. 한 치도 자란 적이 없어. 움직인 적도.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part I",
-   "stage": "Stage 3",
-   "speaker": "Avos Chief",
-   "source": "wiki"
-  },
-  "The Feathers Fly Part I#025": {
-   "src": "Never died or anything either. For all we know, it might predate your corruption too!",
-   "dst": "죽은 적도 없고. 어쩌면 자네들의 타락보다도 오래됐을지 모르지!",
+   "dst": "세상에 하나뿐인 나무일세! 아득한 옛날에 심었지. 한 치도 자란 적이 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -190417,7 +190407,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Avos Chief",
    "source": "captured"
   },
@@ -193001,16 +192991,6 @@
    "speaker": "Efena",
    "source": "wiki"
   },
-  "The Feathers Fly Part II#535": {
-   "src": "You did WHA-",
-   "dst": "뭘 했다고-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 7",
-   "speaker": "Ava",
-   "source": "wiki"
-  },
   "The Feathers Fly Part II#536": {
    "src": "Shall we begin, pres'?",
    "dst": "시작할까요, 대통령님?",
@@ -194673,7 +194653,7 @@
   },
   "The Feathers Fly Part II#1024": {
    "src": "I can't stay, {u}. The president's one thing, but the others... It's safe to say no one's gonna welcome me with open arms, y'know?",
-   "dst": "난 남을 수 없어, {u}. 대통령은 그렇다 쳐도, 다른 사람들은...",
+   "dst": "난 남을 수 없어, {u}. 대통령은 그렇다 쳐도, 다른 사람들은... 아무도 날 두 팔 벌려 반겨 주진 않을 거야, 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -194834,16 +194814,6 @@
   "The Feathers Fly Part II#1120": {
    "src": "That was some really nice job back there! But now...",
    "dst": "아까 정말 멋지게 해냈어! 그런데 이제...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 13",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Feathers Fly Part II#1121": {
-   "src": "Well, the town's fine, but... I got tasked to find Ava.",
-   "dst": "음, 마을은 괜찮은데... Ava를 찾으라는 임무를 받았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195043,7 +195013,7 @@
   },
   "The Feathers Fly Part II#1142": {
    "src": "I do believe we can all learn a thing or two about this.",
-   "dst": "우리 모두 이번 일로 배울 게 있다고 생각해. Ava...",
+   "dst": "우리 모두 이번 일로 배울 게 있다고 생각해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -196247,7 +196217,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
-   "stage": "",
+   "stage": "Stage 7",
    "speaker": "Ava",
    "source": "captured"
   },
@@ -196477,7 +196447,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
-   "stage": "",
+   "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "captured"
   },

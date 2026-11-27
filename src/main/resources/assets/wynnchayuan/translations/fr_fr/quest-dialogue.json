@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "fr_fr",
-  "count": 25060,
-  "translated": 24924,
+  "count": 25057,
+  "translated": 24921,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -168095,7 +168095,7 @@
   },
   "Taking the Tower#025": {
    "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
-   "dst": "Bon, je reste encore un moment ici. Si tu changes d'avis, dis-le-moi!",
+   "dst": "Bon, la mission ne commencera pas avant un petit moment. Si tu changes d'avis, dis-le-moi!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -168115,7 +168115,7 @@
   },
   "Taking the Tower#027": {
    "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
-   "dst": "Suivez Aledar jusqu'au Maître des poudres, en [{~}, {~}, -{~}].",
+   "dst": "Suivez Aledar jusqu'à l'Améliorateur d'objets, en [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -188273,7 +188273,7 @@
   },
   "The Feathers Fly Part I#023": {
    "src": "Ah, eager to see our wisteria tree!",
-   "dst": "Ah, notre glycine! Oui...",
+   "dst": "Ah, tu as hâte de voir notre glycine!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -188283,17 +188283,7 @@
   },
   "The Feathers Fly Part I#024": {
    "src": "It's one of a kind! We planted it eons ago. It has never ever grown an inch.",
-   "dst": "Elle est unique! Nous l'avons plantée il y a des éons. Elle n'a jamais grandi d'un pouce. Ni bougé.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part I",
-   "stage": "Stage 3",
-   "speaker": "Avos Chief",
-   "source": "wiki"
-  },
-  "The Feathers Fly Part I#025": {
-   "src": "Never died or anything either. For all we know, it might predate your corruption too!",
-   "dst": "Elle n'est jamais morte non plus. Elle est peut-être même antérieure à votre Corruption!",
+   "dst": "Elle est unique! Nous l'avons plantée il y a des éons. Elle n'a jamais grandi d'un pouce.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -190417,7 +190407,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Avos Chief",
    "source": "captured"
   },
@@ -193001,16 +192991,6 @@
    "speaker": "Efena",
    "source": "wiki"
   },
-  "The Feathers Fly Part II#535": {
-   "src": "You did WHA-",
-   "dst": "Tu as fait QU-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 7",
-   "speaker": "Ava",
-   "source": "wiki"
-  },
   "The Feathers Fly Part II#536": {
    "src": "Shall we begin, pres'?",
    "dst": "On commence, prez'?",
@@ -194673,7 +194653,7 @@
   },
   "The Feathers Fly Part II#1024": {
    "src": "I can't stay, {u}. The president's one thing, but the others... It's safe to say no one's gonna welcome me with open arms, y'know?",
-   "dst": "Je ne peux pas rester, {u}. La présidente, c'est une chose, mais les autres...",
+   "dst": "Je ne peux pas rester, {u}. La présidente, c'est une chose, mais les autres... Disons que personne ne va m'accueillir à bras ouverts, tu vois?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -194834,16 +194814,6 @@
   "The Feathers Fly Part II#1120": {
    "src": "That was some really nice job back there! But now...",
    "dst": "Super boulot, tout à l'heure! Mais maintenant...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 13",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Feathers Fly Part II#1121": {
-   "src": "Well, the town's fine, but... I got tasked to find Ava.",
-   "dst": "Bon, la ville va bien, mais... on m'a chargé de retrouver Ava.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -195043,7 +195013,7 @@
   },
   "The Feathers Fly Part II#1142": {
    "src": "I do believe we can all learn a thing or two about this.",
-   "dst": "Je crois qu'on peut tous en tirer une leçon ou deux. Ava...",
+   "dst": "Je crois qu'on peut tous en tirer une leçon ou deux.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -196247,7 +196217,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
-   "stage": "",
+   "stage": "Stage 7",
    "speaker": "Ava",
    "source": "captured"
   },
@@ -196477,7 +196447,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
-   "stage": "",
+   "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "captured"
   },
