@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Corrupted Village",
-  "count": 71,
-  "translated": 71,
+  "count": 86,
+  "translated": 74,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -13,7 +13,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Orikal",
    "source": "captured"
   },
   "The Corrupted Village#001": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#002": {
@@ -33,7 +33,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#003": {
@@ -227,7 +227,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#022": {
-   "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
+   "src": "Corruption does not affect humans like other beings. It's much much slower, more like an infection of the mind to us.",
    "dst": "Die Verderbnis wirkt auf Menschen nicht wie auf andere Wesen. Bei uns geht es viel, viel langsamer, eher wie eine Infektion des Geistes.",
    "role": "desc",
    "kind": "dialogue",
@@ -257,7 +257,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#025": {
-   "src": "Climb the spike to see if you can find anything useful about it's existance.",
+   "src": "Climb the spike to see if you can find anything useful about it's existence.",
    "dst": "Klettere auf den Stachel und finde heraus, ob es etwas Nützliches über seine Existenz gibt.",
    "role": "desc",
    "kind": "objective",
@@ -617,7 +617,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#061": {
-   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
+   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid] and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
    "dst": "Finde [Stabilized Corrupted Ore], [Incendiary Fluid] und [Switch Fuse] für das TNT im Bergbaulager bei [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
@@ -715,6 +715,156 @@
    "stage": "Stage 10",
    "speaker": "Orikal",
    "source": "wiki"
+  },
+  "The Corrupted Village#071": {
+   "src": "This spike appears to be much larger than the others around the village, but nothing unusual. You should take a closer look at the top.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#072": {
+   "src": "When observing the spike from on top, you notice absolutely nothing. You should report back to Orikal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#073": {
+   "src": "That explosion sounded like it uncovered something big. You should take a look.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#074": {
+   "src": "I need [Stabilized Corrupted Ore], [Incendiary Fluid] , and [Switch Fuse] to create the explosive.",
+   "dst": "Ich brauche [Stabilized Corrupted Ore], [Incendiary Fluid] und [Switch Fuse], um den Sprengstoff herzustellen.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki"
+  },
+  "The Corrupted Village#075": {
+   "src": "The small mining camp a little east of this village should have what you're looking for. Now Hurry!",
+   "dst": "Das kleine Bergbaulager ein Stück östlich dieses Dorfes sollte haben, was du suchst. Und jetzt beeil dich!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki"
+  },
+  "The Corrupted Village#076": {
+   "src": "GUH! No one in this town is any use! You're all LOSERS. YOU HEAR ME GERALD?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#077": {
+   "src": "I swear if he comes near me again with that attitude I will END HIM.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#078": {
+   "src": "To the Mining Operations Manager:",
+   "dst": "An den Leiter des Bergbaubetriebs:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#079": {
+   "src": "You filled the container with a glowing liquid. You can use the well to bring it up to the surface.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#080": {
+   "src": "The ore begins to glow and vibrate in your hand when you take it... it's about to explode!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#081": {
+   "src": "The ore exploded! Looks like you have to get more from the cave and try again!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#082": {
+   "src": "The machine begins making strange sounds, but after a little while the ore falls out the other side of the machine.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#083": {
+   "src": "The ore appears to have temporarily lost its explosive attribute. It is safe to carry.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#084": {
+   "src": "It appears this magical TNT worked. Now that the spike's roots have been demolished, you should talk to Orikal about your success.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#085": {
+   "src": "It will take a while for these people to recover, so I'll stay here watching over them while they do.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Orikal",
+   "source": "capture"
   }
  }
 }

@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Meaningful Holiday",
-  "count": 120,
+  "count": 129,
   "translated": 120,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -17,7 +17,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Haily",
    "source": "captured"
   },
   "Meaningful Holiday#001": {
@@ -37,7 +37,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nora",
    "source": "captured"
   },
   "Meaningful Holiday#003": {
@@ -47,7 +47,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nora",
    "source": "captured"
   },
   "Meaningful Holiday#004": {
@@ -57,7 +57,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Salath",
    "source": "captured"
   },
   "Meaningful Holiday#005": {
@@ -67,7 +67,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Salath",
    "source": "captured"
   },
   "Meaningful Holiday#006": {
@@ -77,7 +77,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Kamoth",
    "source": "captured"
   },
   "Meaningful Holiday#007": {
@@ -87,7 +87,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Kamoth",
    "source": "captured"
   },
   "Meaningful Holiday#008": {
@@ -107,7 +107,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#010": {
@@ -137,7 +137,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#013": {
@@ -167,7 +167,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#016": {
@@ -207,7 +207,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Server",
    "source": "captured"
   },
   "Meaningful Holiday#020": {
@@ -251,7 +251,7 @@
    "source": "wiki"
   },
   "Meaningful Holiday#024": {
-   "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
+   "src": "This is the {p} charity center. We're looking for volunteers to help the homeless this year.",
    "dst": "Burası {p} Yardım Merkezi. Bu yıl evsizlere yardım edecek gönüllüler arıyoruz.",
    "role": "desc",
    "kind": "dialogue",
@@ -271,8 +271,8 @@
    "source": "wiki"
   },
   "Meaningful Holiday#026": {
-   "src": "Go talk to Haily's friend Nick at the poor area.",
-   "dst": "Haily'nin arkadaşı Nick ile yoksul mahallede konuş.",
+   "src": "Go talk to Haily's friend Nick at the poor area south of the city at [{~}, {~}, -{~}].",
+   "dst": "Haily'nin arkadaşı Nick ile şehrin güneyindeki yoksul mahallede konuş: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -351,8 +351,8 @@
    "source": "wiki"
   },
   "Meaningful Holiday#034": {
-   "src": "Go to the budget store and ask for food.",
-   "dst": "Ucuz dükkâna git ve yiyecek iste.",
+   "src": "Go to the budget store at [{~}, {~}, -{~}] and ask for food.",
+   "dst": "[{~}, {~}, -{~}] konumundaki ucuz dükkâna git ve yiyecek iste.",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -531,14 +531,14 @@
    "source": "wiki"
   },
   "Meaningful Holiday#052": {
-   "src": "Continue the tunnel and find Nick's friend.",
-   "dst": "Tünelden devam et ve Nick'in arkadaşını bul.",
+   "src": "Continue the tunnel and find Nick's friend at [{~}, {~}, -{~}].",
+   "dst": "Tünelden devam et ve Nick'in arkadaşını bul: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "wiki"
+   "source": "capture"
   },
   "Meaningful Holiday#053": {
    "src": "Welcome to my farm! Looking to buy some of my fresh crops?",
@@ -761,8 +761,8 @@
    "source": "wiki"
   },
   "Meaningful Holiday#075": {
-   "src": "Enter the ball room.",
-   "dst": "Balo salonuna gir.",
+   "src": "Enter the ball room at [{~}, {~}, -{~}].",
+   "dst": "Balo salonuna gir: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -811,14 +811,14 @@
    "source": "wiki"
   },
   "Meaningful Holiday#080": {
-   "src": "What're you doing here?",
+   "src": "What are you doing here?",
    "dst": "Senin burada ne işin var?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "Stage 12",
    "speaker": "Server",
-   "source": "wiki"
+   "source": "capture"
   },
   "Meaningful Holiday#081": {
    "src": "This event is invite-only.",
@@ -1141,14 +1141,14 @@
    "source": "wiki"
   },
   "Meaningful Holiday#113": {
-   "src": "Talk to Nick.",
-   "dst": "Nick ile konuş.",
+   "src": "Talk to Nick at [{~}, {~}, -{~}]",
+   "dst": "Nick ile konuş: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
    "stage": "Stage 15",
    "speaker": "",
-   "source": "wiki"
+   "source": "captured"
   },
   "Meaningful Holiday#114": {
    "src": "It looks like my little speech brought the rich back down to earth.",
@@ -1209,6 +1209,96 @@
    "stage": "Stage 15",
    "speaker": "Nick",
    "source": "wiki"
+  },
+  "Meaningful Holiday#120": {
+   "src": "Just continue along this tunnel to get to {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 6",
+   "speaker": "Margaret",
+   "source": "capture"
+  },
+  "Meaningful Holiday#121": {
+   "src": "It's cold and quiet here, save for the faint noise of a workshop in the distance...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#122": {
+   "src": "Soldier on through the thick snow and icey terrain! Keep your focus on the faint noise from the workshop in the distance...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#123": {
+   "src": "This must be Santa's village, you should probably look for him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#124": {
+   "src": "There is a lot to do before Craftmas!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "Ellen",
+   "source": "capture"
+  },
+  "Meaningful Holiday#125": {
+   "src": "Thank god it's only once a year.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "Ellen",
+   "source": "capture"
+  },
+  "Meaningful Holiday#126": {
+   "src": "The portal brought you to {p}, the ball must be nearby.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#127": {
+   "src": "Seems like Nick is about to make a speech.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#128": {
+   "src": "Thank you so much! I couldn't have done it without you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "",
+   "speaker": "Nick",
+   "source": "capture"
   }
  }
 }

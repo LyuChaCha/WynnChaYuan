@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 46,
-  "translated": 46,
+  "count": 49,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -437,7 +437,7 @@
    "source": "wiki"
   },
   "Lava Springs#043": {
-   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole in at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "Uống Thuốc Da Hắc diện thạch, rồi vào suối dung nham qua lỗ khoan tại [{~}, {~}, -{~}] và tìm một trái tim bị tha hóa",
    "role": "desc",
    "kind": "objective",
@@ -465,6 +465,36 @@
    "stage": "Stage 8",
    "speaker": "Colonel Gailard",
    "source": "wiki"
+  },
+  "Lava Springs#046": {
+   "src": "Oi, ya got my evidence yet? We need three pieces of [Corrupted Evidence] to show to high command.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#047": {
+   "src": "Right, listen here darling... There's a secret to this well... it's that... there's a guy doing his job down there... spooky, right??",
+   "dst": "Được rồi, nghe này cưng... Cái giếng này có một bí mật... đó là... có một gã đang làm việc dưới đó... rợn người nhỉ??",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
+  },
+  "Lava Springs#048": {
+   "src": "So... be a nice, respectful person, and don't go goofing off around here, yes?",
+   "dst": "Vậy nên... làm người tử tế, lễ phép, và đừng có quậy phá quanh đây, nhé?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
   }
  }
 }

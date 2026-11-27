@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Creeper Infiltration",
-  "count": 45,
-  "translated": 45,
+  "count": 51,
+  "translated": 47,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -29,7 +29,7 @@
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
    "stage": "",
-   "speaker": "",
+   "speaker": "Thomas",
    "source": "captured"
   },
   "Creeper Infiltration#002": {
@@ -333,7 +333,7 @@
    "source": "wiki"
   },
   "Creeper Infiltration#032": {
-   "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
+   "src": "Bring Thomas [{~} Creeper Powder] to prove to him creepers exist in Wynn at [-{~}, {~}, -{~}]",
    "dst": "Mang [{~} Creeper Powder] cho Thomas ở [-{~}, {~}, -{~}] để chứng minh creeper có tồn tại ở Wynn",
    "role": "desc",
    "kind": "objective",
@@ -418,9 +418,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 1",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#043": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
@@ -428,9 +428,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 1",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#044": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
@@ -438,9 +438,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 4",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#045": {
    "src": "Thanks again for your help. Now we can truly say creepers exist here in the ravines.",
@@ -458,6 +458,68 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
+   "source": "captured"
+  },
+  "Creeper Infiltration#047": {
+   "src": "A piece of the creeper came along with you after the blast catapulted you here. Maybe Thomas would like to take a look at it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#048": {
+   "src": "Do you need a reminder about the location of the Pigman Overlord? Just continue on the western path past the tunnel entrance, and you should find a camp where the Overlord is located.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas",
+   "source": "captured"
+  },
+  "Creeper Infiltration#049": {
+   "src": "There is a mythical aura coming from this cave...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#050": {
+   "src": "The follower is the key to revealing the entrance",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#051": {
+   "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
+   "dst": "Tôi sống dưới này cũng được một thời gian, nghiên cứu creeper. Ở vùng này chúng chỉ là truyền thuyết, và tôi muốn chứng minh mọi người đã sai.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
+   "source": "captured"
+  },
+  "Creeper Infiltration#052": {
+   "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
+   "dst": "Nhưng đừng lo bị kẹt ở đây. Ngay ngoài nhà tôi có một cánh cửa phép có thể dịch chuyển bạn ra ngoài nếu muốn đi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
    "source": "captured"
   }
  }

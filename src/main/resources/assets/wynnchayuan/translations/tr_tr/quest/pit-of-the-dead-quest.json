@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
-  "count": 11,
+  "count": 13,
   "translated": 11,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -118,6 +118,26 @@
    "quest": "Pit of the Dead (Quest)",
    "stage": "Stage 1",
    "speaker": "Merloni",
+   "source": "captured"
+  },
+  "Pit of the Dead (Quest)#014": {
+   "src": "If you are too scared to go down there, I understand. Dealing with the souls of the dead isn't for everyone.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pit of the Dead (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
+   "source": "captured"
+  },
+  "Pit of the Dead (Quest)#015": {
+   "src": "Go back to {p} at [{~}, {~}, -{~}] and tell Merloni that you succeeded",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Pit of the Dead (Quest)",
+   "stage": "Stage 2",
+   "speaker": "",
    "source": "captured"
   }
  }

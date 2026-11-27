@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwelling Walls",
-  "count": 17,
-  "translated": 17,
+  "count": 23,
+  "translated": 23,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -22,8 +22,8 @@
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "",
+   "speaker": "Leucsaa",
    "source": "wiki"
   },
   "Dwelling Walls#002": {
@@ -175,6 +175,68 @@
    "stage": "Stage 4",
    "speaker": "Leucsaa",
    "source": "wiki"
+  },
+  "Dwelling Walls#017": {
+   "src": "{#} [{~}/{~}] Leucsaa: Hey, you can't just barge in there!\n{#} You'd get lost, trust me.",
+   "dst": "{#} [{~}/{~}] Leucsaa: {c3}おい、あそこに勝手に踏み込むなんてダメだよ！{/}\n{#}{c4}迷子になるに決まってる、信じて。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured",
+   "note": "{c1}[{~}/{~}]{c2}Leucsaa:{c3}Hey, you can't just barge in there!{c4}You'd get lost, trust me.{/}"
+  },
+  "Dwelling Walls#018": {
+   "src": "Have you gotten [{~} Leucsaa's Journal] yet from the mansion? I don't blame you, it's an udder nightmare!",
+   "dst": "屋敷から {c2}[{~} Leucsaa's Journal] {/}はもう取ってきた？ 無理もないわ、まさに悪夢の館なんだから！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "captured",
+   "note": "{c2}[{~} Leucsaa's Journal]{/}"
+  },
+  "Dwelling Walls#019": {
+   "src": "You should find a way to reach the journal.",
+   "dst": "日記の所に行く方法を見つけるべきだ。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#020": {
+   "src": "With the journal found, you should take it and bring it to Leucsaa",
+   "dst": "見つけた日記を手に取って Leucsaa へ持っていくべきだ",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#021": {
+   "src": "Grab the journal and exit the mansion",
+   "dst": "日記を手に取って、屋敷を出る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#022": {
+   "src": "Thank you for retrieving my journal from the mansion, I hope nobody else is tricked into buying this evil piece of property!",
+   "dst": "屋敷から私の日記を取り出してくれてありがとう。この邪悪な不動産を、これ以上誰も騙されて買わされないことを願っています！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured"
   }
  }
 }

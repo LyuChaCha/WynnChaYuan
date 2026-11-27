@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwelling Walls",
-  "count": 17,
-  "translated": 17,
+  "count": 23,
+  "translated": 18,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -26,8 +26,8 @@
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "",
+   "speaker": "Leucsaa",
    "source": "wiki"
   },
   "Dwelling Walls#002": {
@@ -179,6 +179,66 @@
    "stage": "Stage 4",
    "speaker": "Leucsaa",
    "source": "wiki"
+  },
+  "Dwelling Walls#017": {
+   "src": "{#} [{~}/{~}] Leucsaa: Hey, you can't just barge in there!\n{#} You'd get lost, trust me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured"
+  },
+  "Dwelling Walls#018": {
+   "src": "Have you gotten [{~} Leucsaa's Journal] yet from the mansion? I don't blame you, it's an udder nightmare!",
+   "dst": "Konaktan [{~} Leucsaa's Journal] eşyasını aldın mı? Seni suçlamam, inek-anılmaz bir kâbus orası!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "captured"
+  },
+  "Dwelling Walls#019": {
+   "src": "You should find a way to reach the journal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#020": {
+   "src": "With the journal found, you should take it and bring it to Leucsaa",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#021": {
+   "src": "Grab the journal and exit the mansion",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#022": {
+   "src": "Thank you for retrieving my journal from the mansion, I hope nobody else is tricked into buying this evil piece of property!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured"
   }
  }
 }

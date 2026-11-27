@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24942,
-  "translated": 24741,
+  "count": 25004,
+  "translated": 24744,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -15569,7 +15569,7 @@
    "source": "wiki"
   },
   "A Sandy Scandal#042": {
-   "src": "Shut yer’ trap, old man. We came for a different kind of business.",
+   "src": "Shut yer' trap, old man. We came for a different kind of business.",
    "dst": "闭上你的嘴，老头。我们来谈的是另一种生意。",
    "role": "desc",
    "kind": "dialogue",
@@ -15849,7 +15849,7 @@
    "source": "wiki"
   },
   "A Sandy Scandal#073": {
-   "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
+   "src": "Oh my... you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
    "dst": "天哪……你！士兵！快！抢劫就发生在桥对面，在你今天去过的第一栋房子旁边！可能就是我们在找的强盗。",
    "role": "desc",
    "kind": "dialogue",
@@ -16085,6 +16085,66 @@
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
    "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#100": {
+   "src": "Have you been reading the witness reports?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 1",
+   "speaker": "Almuj Bank Guard",
+   "source": "captured"
+  },
+  "A Sandy Scandal#101": {
+   "src": "Exit the house",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#102": {
+   "src": "You should return to the bank guard to relay what you’ve seen.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#103": {
+   "src": "This must be where the robbery took place!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#105": {
+   "src": "There's a trail of gold lying on the ground...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#106": {
+   "src": "Follow the trail of gold the criminals left behind from the robbery at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Sandy Scandal",
+   "stage": "Stage 11",
    "speaker": "",
    "source": "captured"
   },
@@ -42166,16 +42226,6 @@
    "speaker": "Sayleros",
    "source": "captured"
   },
-  "Brothers Return#016": {
-   "src": "The obelisk does not react to your touch. [Req: {p} Trouble]",
-   "dst": "方尖碑对你的触碰毫无反应。[需求: {p} 风波]",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "Brothers Return#017": {
    "src": "Talk to Sayleros at [{~}, {~}, -{~}].",
    "dst": "前往 [{~}, {~}, -{~}] 与 Sayleros 交谈。",
@@ -54207,7 +54257,7 @@
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
    "stage": "",
-   "speaker": "",
+   "speaker": "Thomas",
    "source": "captured"
   },
   "Creeper Infiltration#002": {
@@ -54511,7 +54561,7 @@
    "source": "wiki"
   },
   "Creeper Infiltration#032": {
-   "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
+   "src": "Bring Thomas [{~} Creeper Powder] to prove to him creepers exist in Wynn at [-{~}, {~}, -{~}]",
    "dst": "把 [{~} 苦力怕粉末] 带给 [-{~}, {~}, -{~}] 的 Thomas，证明 Wynn 真的有苦力怕",
    "role": "desc",
    "kind": "objective",
@@ -54596,9 +54646,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 1",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#043": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
@@ -54606,9 +54656,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 1",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#044": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
@@ -54616,9 +54666,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured",
    "stage": "Stage 4",
-   "speaker": "Thomas"
+   "speaker": "Thomas",
+   "source": "captured"
   },
   "Creeper Infiltration#045": {
    "src": "Thanks again for your help. Now we can truly say creepers exist here in the ravines.",
@@ -54636,6 +54686,68 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
+   "source": "captured"
+  },
+  "Creeper Infiltration#047": {
+   "src": "A piece of the creeper came along with you after the blast catapulted you here. Maybe Thomas would like to take a look at it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#048": {
+   "src": "Do you need a reminder about the location of the Pigman Overlord? Just continue on the western path past the tunnel entrance, and you should find a camp where the Overlord is located.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas",
+   "source": "captured"
+  },
+  "Creeper Infiltration#049": {
+   "src": "There is a mythical aura coming from this cave...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#050": {
+   "src": "The follower is the key to revealing the entrance",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#051": {
+   "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
+   "dst": "我在这底下住了好一阵子，一直在研究苦力怕。在这一带它们只是传说，而我想证明大家都错了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
+   "source": "captured"
+  },
+  "Creeper Infiltration#052": {
+   "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
+   "dst": "不过别担心会被困在这里。我家门外就有一道魔法门，想离开的话它能把你传送出去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Garull",
    "source": "captured"
   },
   "Crop Failure#000": {
@@ -56119,7 +56231,7 @@
    "kind": "dialogue",
    "quest": "Deja Vu",
    "stage": "",
-   "speaker": "",
+   "speaker": "Old Man Martyn",
    "source": "captured"
   },
   "Deja Vu#003": {
@@ -56991,6 +57103,36 @@
    "stage": "Stage 8",
    "speaker": "Asher",
    "source": "wiki"
+  },
+  "Deja Vu#091": {
+   "src": "You need more help? I think I dropped it under a pink tree. Now move it or lose it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "Stage 1",
+   "speaker": "Asher",
+   "source": "wiki"
+  },
+  "Deja Vu#092": {
+   "src": "The cannon is ready to fire!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Deja Vu",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Deja Vu#093": {
+   "src": "I miss seeing the past. It was such an interesting place.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "",
+   "speaker": "Asher",
+   "source": "capture"
   },
   "Desperate Metal#000": {
    "src": "Speak to Phinas.",
@@ -61774,8 +61916,8 @@
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "",
+   "speaker": "Leucsaa",
    "source": "wiki"
   },
   "Dwelling Walls#002": {
@@ -61927,6 +62069,66 @@
    "stage": "Stage 4",
    "speaker": "Leucsaa",
    "source": "wiki"
+  },
+  "Dwelling Walls#017": {
+   "src": "{#} [{~}/{~}] Leucsaa: Hey, you can't just barge in there!\n{#} You'd get lost, trust me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured"
+  },
+  "Dwelling Walls#018": {
+   "src": "Have you gotten [{~} Leucsaa's Journal] yet from the mansion? I don't blame you, it's an udder nightmare!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "captured"
+  },
+  "Dwelling Walls#019": {
+   "src": "You should find a way to reach the journal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#020": {
+   "src": "With the journal found, you should take it and bring it to Leucsaa",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#021": {
+   "src": "Grab the journal and exit the mansion",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#022": {
+   "src": "Thank you for retrieving my journal from the mansion, I hope nobody else is tricked into buying this evil piece of property!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "Leucsaa",
+   "source": "captured"
   },
   "Echoes of Change#000": {
    "src": "Third Division - Guarding Sovereign Soosu's mansion.",
@@ -93097,7 +93299,7 @@
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
+   "speaker": "Yodbon",
    "source": "captured"
   },
   "Green Gloop#001": {
@@ -93127,7 +93329,7 @@
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
+   "speaker": "Eluzterp",
    "source": "captured"
   },
   "Green Gloop#004": {
@@ -93311,7 +93513,7 @@
    "source": "wiki"
   },
   "Green Gloop#022": {
-   "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
+   "src": "...There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
    "dst": "……做好了。真不知道他为什么要那种东西。也许是越喝越上瘾吧……",
    "role": "desc",
    "kind": "dialogue",
@@ -93429,6 +93631,26 @@
    "stage": "Stage 4",
    "speaker": "Yodbon",
    "source": "wiki"
+  },
+  "Green Gloop#034": {
+   "src": "I hope that brother of mine isn't off doin' something dumb again...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Yodbon",
+   "source": "captured"
+  },
+  "Green Gloop#035": {
+   "src": "Have you talked to Yodbon yet, about the [Slime Scooper]? You can find him outside {p} bank!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Eluzterp",
+   "source": "captured"
   },
   "Haven Antiquity#000": {
    "src": "Did you talk with the old creepy man in the mansion yet? I'm sure he knows something.",
@@ -105506,7 +105728,7 @@
    "source": "wiki"
   },
   "Lava Springs#043": {
-   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
+   "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole in at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "喝下黑曜石皮肤药水，然后从 [{~}, {~}, -{~}] 的钻孔进入熔岩泉，寻找腐化之心",
    "role": "desc",
    "kind": "objective",
@@ -105534,6 +105756,36 @@
    "stage": "Stage 8",
    "speaker": "Colonel Gailard",
    "source": "wiki"
+  },
+  "Lava Springs#046": {
+   "src": "Oi, ya got my evidence yet? We need three pieces of [Corrupted Evidence] to show to high command.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 1",
+   "speaker": "Colonel Gailard",
+   "source": "captured"
+  },
+  "Lava Springs#047": {
+   "src": "Right, listen here darling... There's a secret to this well... it's that... there's a guy doing his job down there... spooky, right??",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
+  },
+  "Lava Springs#048": {
+   "src": "So... be a nice, respectful person, and don't go goofing off around here, yes?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "Stage 4",
+   "speaker": "Gregor",
+   "source": "captured"
   },
   "Lazarus Pit (Quest)#000": {
    "src": "Speak to Burtur at [-{~}, {~}, -{~}]",
@@ -109190,7 +109442,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Haily",
    "source": "captured"
   },
   "Meaningful Holiday#001": {
@@ -109210,7 +109462,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nora",
    "source": "captured"
   },
   "Meaningful Holiday#003": {
@@ -109220,7 +109472,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nora",
    "source": "captured"
   },
   "Meaningful Holiday#004": {
@@ -109230,7 +109482,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Salath",
    "source": "captured"
   },
   "Meaningful Holiday#005": {
@@ -109240,7 +109492,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Salath",
    "source": "captured"
   },
   "Meaningful Holiday#006": {
@@ -109250,7 +109502,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Kamoth",
    "source": "captured"
   },
   "Meaningful Holiday#007": {
@@ -109260,7 +109512,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Kamoth",
    "source": "captured"
   },
   "Meaningful Holiday#008": {
@@ -109280,7 +109532,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#010": {
@@ -109310,7 +109562,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#013": {
@@ -109340,7 +109592,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#016": {
@@ -109380,7 +109632,7 @@
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "",
-   "speaker": "",
+   "speaker": "Server",
    "source": "captured"
   },
   "Meaningful Holiday#020": {
@@ -109424,7 +109676,7 @@
    "source": "wiki"
   },
   "Meaningful Holiday#024": {
-   "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
+   "src": "This is the {p} charity center. We're looking for volunteers to help the homeless this year.",
    "dst": "这里是 {p} 慈善中心。我们今年在招募志愿者帮助无家可归的人。",
    "role": "desc",
    "kind": "dialogue",
@@ -109984,14 +110236,14 @@
    "source": "wiki"
   },
   "Meaningful Holiday#080": {
-   "src": "What're you doing here?",
+   "src": "What are you doing here?",
    "dst": "你在这里干什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
    "stage": "Stage 12",
    "speaker": "Server",
-   "source": "wiki"
+   "source": "capture"
   },
   "Meaningful Holiday#081": {
    "src": "This event is invite-only.",
@@ -110382,6 +110634,96 @@
    "stage": "Stage 15",
    "speaker": "Nick",
    "source": "wiki"
+  },
+  "Meaningful Holiday#120": {
+   "src": "Just continue along this tunnel to get to {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 6",
+   "speaker": "Margaret",
+   "source": "capture"
+  },
+  "Meaningful Holiday#121": {
+   "src": "It's cold and quiet here, save for the faint noise of a workshop in the distance...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#122": {
+   "src": "Soldier on through the thick snow and icey terrain! Keep your focus on the faint noise from the workshop in the distance...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#123": {
+   "src": "This must be Santa's village, you should probably look for him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#124": {
+   "src": "There is a lot to do before Craftmas!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "Ellen",
+   "source": "capture"
+  },
+  "Meaningful Holiday#125": {
+   "src": "Thank god it's only once a year.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "Ellen",
+   "source": "capture"
+  },
+  "Meaningful Holiday#126": {
+   "src": "The portal brought you to {p}, the ball must be nearby.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#127": {
+   "src": "Seems like Nick is about to make a speech.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Meaningful Holiday",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Meaningful Holiday#128": {
+   "src": "Thank you so much! I couldn't have done it without you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Meaningful Holiday",
+   "stage": "",
+   "speaker": "Nick",
+   "source": "capture"
   },
   "Memory Paranoia#000": {
    "src": "You can't quite make out the messy scribbles in the journal, but it looks very intense.",
@@ -134962,6 +135304,26 @@
    "speaker": "Merloni",
    "source": "captured"
   },
+  "Pit of the Dead (Quest)#014": {
+   "src": "If you are too scared to go down there, I understand. Dealing with the souls of the dead isn't for everyone.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pit of the Dead (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
+   "source": "captured"
+  },
+  "Pit of the Dead (Quest)#015": {
+   "src": "Go back to {p} at [{~}, {~}, -{~}] and tell Merloni that you succeeded",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Pit of the Dead (Quest)",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
   "Point of No Return#000": {
    "src": "Where did your soul go?",
    "dst": "你的灵魂去哪了？",
@@ -147178,7 +147540,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#004": {
@@ -147308,7 +147670,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#017": {
@@ -147338,7 +147700,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#020": {
@@ -147348,7 +147710,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#021": {
@@ -147358,7 +147720,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#022": {
@@ -147418,7 +147780,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#028": {
@@ -147428,7 +147790,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#029": {
@@ -147438,7 +147800,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#030": {
@@ -147448,7 +147810,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#031": {
@@ -147458,7 +147820,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#032": {
@@ -147498,7 +147860,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#036": {
@@ -147508,7 +147870,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#037": {
@@ -147518,7 +147880,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#038": {
@@ -147598,7 +147960,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#046": {
@@ -147608,7 +147970,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#047": {
@@ -147618,7 +147980,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#048": {
@@ -147628,7 +147990,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#049": {
@@ -147658,7 +148020,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "Stage 14",
-   "speaker": "Aledar",
+   "speaker": "???",
    "source": "captured"
   },
   "Recover the Past#052": {
@@ -147808,7 +148170,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Inquisitor",
    "source": "captured"
   },
   "Recover the Past#067": {
@@ -147818,7 +148180,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#068": {
@@ -147828,7 +148190,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#069": {
@@ -147838,7 +148200,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#070": {
@@ -147848,7 +148210,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#071": {
@@ -147868,7 +148230,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#073": {
@@ -148648,7 +149010,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#151": {
@@ -148658,7 +149020,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Essren",
    "source": "captured"
   },
   "Recover the Past#152": {
@@ -148798,7 +149160,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#166": {
@@ -148812,7 +149174,7 @@
    "source": "wiki"
   },
   "Recover the Past#167": {
-   "src": "Let's hurry to the doctor, I don't want to leave {p}'s safety in that man's slippery fingers for any longer than I have to.",
+   "src": "Let's hurry to the doctor, I don't want leave {p}'s safety in that man's slippery fingers for any longer than I have to.",
    "dst": "我们赶快去博士那里吧，我不想让 {p} 的安危在那家伙滑溜溜的手指里多待一秒。",
    "role": "desc",
    "kind": "dialogue",
@@ -149262,7 +149624,7 @@
    "source": "wiki"
   },
   "Recover the Past#212": {
-   "src": "Do whatever you have to first, but be quick. The enemy might arrive at any moment.",
+   "src": "Do whatever you have to do first, but be quick. The enemy might arrive at any moment.",
    "dst": "先把你该做的事做完，但动作要快。敌人随时可能到来。",
    "role": "desc",
    "kind": "dialogue",
@@ -149748,7 +150110,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Recover the Past#261": {
@@ -149758,7 +150120,7 @@
    "kind": "dialogue",
    "quest": "Recover the Past",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dr. Essren",
    "source": "captured"
   },
   "Recover the Past#262": {
@@ -150219,6 +150581,76 @@
    "quest": "Recover the Past",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "Recover the Past#308": {
+   "src": "Find the sailor Caid near his boat at [-{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recover the Past",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recover the Past#309": {
+   "src": "And while you are at it... I'll be preparing for the next subject. Assuming you're able to convince that Tasim to assist, of course.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "",
+   "speaker": "Dr. Picard",
+   "source": "captured"
+  },
+  "Recover the Past#310": {
+   "src": "So, have you had any interesting adventures since we split up?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#311": {
+   "src": "...Oh, right! You and General Graken dealt with the undead in {p}, didn't you? Captain Ragon was glad to hear that, I'll tell you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#312": {
+   "src": "Me? Well... nothing really to talk about. Aledar's gone off to research the corruption on his own, so I've been- I don't know. Helping wherever I can.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#313": {
+   "src": "I have the skill and the magic to fight off corrupteds, so I might as well help wherever I'm needed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 11",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Recover the Past#314": {
+   "src": "I believe your friend is just outside the tower. You might want to check in on him. Leave me now, I need to continue my research. There's more to learn, I'm sure...",
+   "dst": "我想你的朋友就在塔外面。你或许该去看看他。现在让我一个人待着，我得继续我的研究。还有更多东西等着我去弄明白，我很确定……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recover the Past",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Redbeard's Booty#000": {
@@ -156313,6 +156745,46 @@
    "quest": "Royal Trials",
    "stage": "",
    "speaker": "Egpla",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#001": {
+   "src": "Ah, welcome to our town, soldier! I hope you don't mind the lack of facilities; we're not too well-off, as I'm sure you can tell.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#002": {
+   "src": "Like most people, I moved here after my home was destroyed in the war. As much as I miss {p}, I've found ways to appreciate {p}, too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#003": {
+   "src": "I really like taking strolls around the ruins around here... It'll never beat the walks I used to take along the coastline, but it's still quite nice! From time to time, I even find treasure sitting around in the ruins, just there, untapped!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#004": {
+   "src": "Maybe you should try it out yourself? You might find some interesting stuff along the way, too! Talk to me again if you'd like to hear my route.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
    "source": "captured"
   },
   "Shattered Minds#000": {
@@ -170893,6 +171365,16 @@
    "speaker": "Scout",
    "source": "wiki"
   },
+  "Tempo Town Trouble#063": {
+   "src": "The obelisk does not react to your touch. [Req: {p} Trouble]",
+   "dst": "方尖碑对你的触碰毫无反应。[需求: {p} 风波]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Bigger Picture#000": {
    "src": "Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
    "dst": "你个子这么大，不会睡着的！请帮我采些蘑菇回来。",
@@ -178474,7 +178956,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Orikal",
    "source": "captured"
   },
   "The Corrupted Village#001": {
@@ -178484,7 +178966,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#002": {
@@ -178494,7 +178976,7 @@
    "kind": "dialogue",
    "quest": "The Corrupted Village",
    "stage": "",
-   "speaker": "",
+   "speaker": "Angry Townsperson",
    "source": "captured"
   },
   "The Corrupted Village#003": {
@@ -178688,7 +179170,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#022": {
-   "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
+   "src": "Corruption does not affect humans like other beings. It's much much slower, more like an infection of the mind to us.",
    "dst": "腐化对人类的影响跟对其他生物不一样。慢得多得多，对我们来说更像是一种心智上的感染。",
    "role": "desc",
    "kind": "dialogue",
@@ -178718,7 +179200,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#025": {
-   "src": "Climb the spike to see if you can find anything useful about it's existance.",
+   "src": "Climb the spike to see if you can find anything useful about it's existence.",
    "dst": "爬上尖刺，看看能不能找到有关它存在的有用线索。",
    "role": "desc",
    "kind": "objective",
@@ -179078,7 +179560,7 @@
    "source": "wiki"
   },
   "The Corrupted Village#061": {
-   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
+   "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid] and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
    "dst": "在 [{~}, {~}, -{~}] 的采矿营地找到做 TNT 用的 [稳定腐化矿石]、[燃烧液] 和 [开关引信]。",
    "role": "desc",
    "kind": "objective",
@@ -179176,6 +179658,156 @@
    "stage": "Stage 10",
    "speaker": "Orikal",
    "source": "wiki"
+  },
+  "The Corrupted Village#071": {
+   "src": "This spike appears to be much larger than the others around the village, but nothing unusual. You should take a closer look at the top.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#072": {
+   "src": "When observing the spike from on top, you notice absolutely nothing. You should report back to Orikal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#073": {
+   "src": "That explosion sounded like it uncovered something big. You should take a look.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "capture"
+  },
+  "The Corrupted Village#074": {
+   "src": "I need [Stabilized Corrupted Ore], [Incendiary Fluid] , and [Switch Fuse] to create the explosive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki"
+  },
+  "The Corrupted Village#075": {
+   "src": "The small mining camp a little east of this village should have what you're looking for. Now Hurry!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "Stage 6",
+   "speaker": "Orikal",
+   "source": "wiki"
+  },
+  "The Corrupted Village#076": {
+   "src": "GUH! No one in this town is any use! You're all LOSERS. YOU HEAR ME GERALD?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#077": {
+   "src": "I swear if he comes near me again with that attitude I will END HIM.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Angry Townsperson",
+   "source": "captured"
+  },
+  "The Corrupted Village#078": {
+   "src": "To the Mining Operations Manager:",
+   "dst": "致采矿作业经理:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#079": {
+   "src": "You filled the container with a glowing liquid. You can use the well to bring it up to the surface.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#080": {
+   "src": "The ore begins to glow and vibrate in your hand when you take it... it's about to explode!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#081": {
+   "src": "The ore exploded! Looks like you have to get more from the cave and try again!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#082": {
+   "src": "The machine begins making strange sounds, but after a little while the ore falls out the other side of the machine.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#083": {
+   "src": "The ore appears to have temporarily lost its explosive attribute. It is safe to carry.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#084": {
+   "src": "It appears this magical TNT worked. Now that the spike's roots have been demolished, you should talk to Orikal about your success.",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#085": {
+   "src": "It will take a while for these people to recover, so I'll stay here watching over them while they do.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "Orikal",
+   "source": "capture"
   },
   "The Cursed One#000": {
    "src": "[+{~} Crystal Focus]",
@@ -203367,7 +203999,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#166": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
@@ -203417,7 +204049,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#171": {
    "src": "Nevermind. It's nothing...",
@@ -207091,16 +207723,6 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#537": {
-   "src": "I will ask once more. Is your directive understood?",
-   "dst": "我再问一次。你的指令，明白了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Missing Piece",
-   "stage": "Stage 50",
-   "speaker": "Inquisitor",
-   "source": "wiki"
-  },
   "The Missing Piece#538": {
    "src": "I'll never forget her!",
    "dst": "我永远不会忘记她！",
@@ -207289,7 +207911,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 7",
    "speaker": "Player",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#557": {
    "src": "You take a sip.",
@@ -207299,7 +207921,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#558": {
    "src": "Ha! But that's why I moved here!",
@@ -207309,7 +207931,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#559": {
    "src": "In the living blocks you can never be alone. No time to think, only to work. No dear, it's much better up here.",
@@ -207319,7 +207941,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#560": {
    "src": "Lived my whole childhood in one of the towers. I was born there. That was until... until... Well, I've forgotten the reason, ha!",
@@ -207329,7 +207951,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#561": {
    "src": "My memory isn't so good these days. It must have been twenty-five or so years ago.",
@@ -207339,7 +207961,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#562": {
    "src": "But I had a reason... a good one! Ha, it's funny isn't it? At the time it probably seemed like the most important thing in the world.",
@@ -207349,7 +207971,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#563": {
    "src": "But now, well, I've gone and forgotten the whole thing, haven't I?",
@@ -207359,7 +207981,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#564": {
    "src": "In the Roughworks? My whole life, ha. I'm only fifty... fifty-two, you know. Or maybe it was fifty-three.",
@@ -207369,7 +207991,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#565": {
    "src": "... Which year is it again? I seem to have lost track.",
@@ -207379,7 +208001,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#566": {
    "src": "So... goodness, longer than I expected. It must have been... Oh, by Her Grace! What does it matter, the years pass quicker for every one that goes.",
@@ -207389,7 +208011,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#567": {
    "src": "How strange... I feel like I should know who this is from... and yet, I don't.",
@@ -207399,7 +208021,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#568": {
    "src": "Hm. I said I wouldn't pry, but... You don't work for the post, do you? I know your type.",
@@ -207409,7 +208031,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#569": {
    "src": "Ha! Why should I care?",
@@ -207419,7 +208041,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#570": {
    "src": "But... you have piqued my curiosity with these letters...",
@@ -207429,7 +208051,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#571": {
    "src": "Say, 'letter-carrier', won't you be a dearie and water my plants while I read the rest of these letters? Maybe there is something else I can glean from reading them.",
@@ -207439,7 +208061,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#572": {
    "src": "I have {~} plants outside and {~} pots inside. Just be sure not to overwater them! The watering can is just outside in the garden.",
@@ -207449,7 +208071,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#573": {
    "src": "Don't be afraid to ask if you're wondering anything! I don't bite, ha!",
@@ -207459,7 +208081,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 8",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#574": {
    "src": "{#}{#}\n{#} Right-click to refill.",
@@ -207469,7 +208091,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 9",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#575": {
    "src": "Elise has probably finished reading those letters by now. You should return to her in the kitchen.",
@@ -207479,7 +208101,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 9",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#576": {
    "src": "{#} Right-Click to stop.",
@@ -207489,7 +208111,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 9",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#577": {
    "src": "Doesn't look like you're going to get anything out of this guy...",
@@ -207499,7 +208121,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 19",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#578": {
    "src": "But my friend worked here, and...",
@@ -207509,7 +208131,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 19",
    "speaker": "Player",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#579": {
    "src": "Can I at least get a look inside...?",
@@ -207519,7 +208141,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 19",
    "speaker": "Player",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#580": {
    "src": "In order to steal the bread, you must stay hidden.",
@@ -207529,7 +208151,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#581": {
    "src": "When close to workers, {#} SNEAK to remain hidden.",
@@ -207539,7 +208161,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#582": {
    "src": "You could knock out the workers with this...",
@@ -207549,7 +208171,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#583": {
    "src": "When close to workers, {#} LEFT-CLICK with Bottle to knock out.",
@@ -207559,7 +208181,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#584": {
    "src": "{#} Left-Click with Bottle to Knock Out",
@@ -207569,7 +208191,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#585": {
    "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
@@ -207579,7 +208201,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#586": {
    "src": "With this, you can open the grate to the pipe and progress.",
@@ -207589,7 +208211,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#587": {
    "src": "Enter the pipe?",
@@ -207599,7 +208221,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#588": {
    "src": "To stay out of sight of workers, use Bottles to distract them.",
@@ -207609,7 +208231,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#589": {
    "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
@@ -207619,7 +208241,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#590": {
    "src": "There's nothing worth taking.",
@@ -207629,7 +208251,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#591": {
    "src": "The bottle is too high up to reach...",
@@ -207639,7 +208261,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#592": {
    "src": "That must be the way in to the vault Elise mentioned.",
@@ -207649,7 +208271,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#593": {
    "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
@@ -207659,7 +208281,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#594": {
    "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
@@ -207669,7 +208291,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#595": {
    "src": "They really ought to improve their security around here...",
@@ -207679,7 +208301,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#596": {
    "src": "Deactivating oven...",
@@ -207689,7 +208311,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#597": {
    "src": "Now, to find the Maintenance Key...",
@@ -207699,7 +208321,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#598": {
    "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
@@ -207709,7 +208331,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#599": {
    "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
@@ -207719,7 +208341,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#600": {
    "src": "Do you want to infiltrate the Bread Vault through this method?",
@@ -207729,7 +208351,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#601": {
    "src": "Initiating EMERGENCY SHUTDOWN...",
@@ -207739,7 +208361,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#602": {
    "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
@@ -207749,7 +208371,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 24",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#603": {
    "src": "There must be a way to get to that balcony above.",
@@ -207759,7 +208381,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 25",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#604": {
    "src": "Switch between selected beams using the switch button.",
@@ -207769,7 +208391,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 27",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#605": {
    "src": "They're having a discussion you can just barely make out...",
@@ -207779,7 +208401,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 28",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#606": {
    "src": "Finally... The bread you've been looking for.",
@@ -207789,7 +208411,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#607": {
    "src": "→ Backward",
@@ -207799,7 +208421,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#608": {
    "src": "↓ Down",
@@ -207809,7 +208431,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#609": {
    "src": "⭯ Rotate",
@@ -207819,7 +208441,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#610": {
    "src": "↩ Switch",
@@ -207829,7 +208451,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#611": {
    "src": "Guard\nOh well...",
@@ -207839,7 +208461,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "Guard",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#612": {
    "src": "Inspector\nOpen up!",
@@ -207849,7 +208471,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "Inspector",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#613": {
    "src": "It seems Elise has visitors...",
@@ -207859,7 +208481,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#614": {
    "src": "Confront the inspection.",
@@ -207869,7 +208491,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#615": {
    "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
@@ -207879,7 +208501,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 37",
    "speaker": "Elise",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#616": {
    "src": "Pick up Elise at [-{~}, {~}, -{~}]",
@@ -207889,7 +208511,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 51",
    "speaker": "",
-   "source": "captured.json"
+   "source": "captured"
   },
   "The Missing Piece#617": {
    "src": "That's what a life in the Roughworks does to you! Worked my whole life, I have. Ha, for no benefit either.",

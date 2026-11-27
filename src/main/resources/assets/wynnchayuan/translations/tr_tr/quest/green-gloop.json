@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Green Gloop",
-  "count": 34,
+  "count": 36,
   "translated": 34,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -17,7 +17,7 @@
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
+   "speaker": "Yodbon",
    "source": "captured"
   },
   "Green Gloop#001": {
@@ -47,7 +47,7 @@
    "kind": "dialogue",
    "quest": "Green Gloop",
    "stage": "",
-   "speaker": "",
+   "speaker": "Eluzterp",
    "source": "captured"
   },
   "Green Gloop#004": {
@@ -231,7 +231,7 @@
    "source": "wiki"
   },
   "Green Gloop#022": {
-   "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
+   "src": "...There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
    "dst": "..Al bakalım. Gerçi o şeyi neden istiyor hiç bilmiyorum. Belki sonradan alışılan bir tattır...",
    "role": "desc",
    "kind": "dialogue",
@@ -349,6 +349,26 @@
    "stage": "Stage 4",
    "speaker": "Yodbon",
    "source": "wiki"
+  },
+  "Green Gloop#034": {
+   "src": "I hope that brother of mine isn't off doin' something dumb again...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Yodbon",
+   "source": "captured"
+  },
+  "Green Gloop#035": {
+   "src": "Have you talked to Yodbon yet, about the [Slime Scooper]? You can find him outside {p} bank!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "Eluzterp",
+   "source": "captured"
   }
  }
 }

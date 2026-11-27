@@ -1,0 +1,51 @@
+{
+ "_meta": {
+  "quest": "Rush Around the Ruins",
+  "count": 4,
+  "translated": 4,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Rush Around the Ruins#001": {
+   "src": "Ah, welcome to our town, soldier! I hope you don't mind the lack of facilities; we're not too well-off, as I'm sure you can tell.",
+   "dst": "ああ、兵士さん、この町へようこそ！設備が整っていないのはご容赦ください。お気づきの通り、ここはあまり裕福な町ではないのですから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#002": {
+   "src": "Like most people, I moved here after my home was destroyed in the war. As much as I miss {p}, I've found ways to appreciate {p}, too.",
+   "dst": "多くの人と同じように、私も戦争で家が破壊された後、ここに引っ越してきました。{p}が恋しい気持ちはありますが、{p}の良さも見つけることができました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#003": {
+   "src": "I really like taking strolls around the ruins around here... It'll never beat the walks I used to take along the coastline, but it's still quite nice! From time to time, I even find treasure sitting around in the ruins, just there, untapped!",
+   "dst": "この辺りの遺跡をぶらぶら歩くのが本当に好きなんです……昔、海岸沿いを歩いていた頃には敵いませんが、それでもなかなかいいものです！ 時々、遺跡の中に、そのまま放置されたままの「お宝」を見つけることさえありますよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured"
+  },
+  "Rush Around the Ruins#004": {
+   "src": "Maybe you should try it out yourself? You might find some interesting stuff along the way, too! Talk to me again if you'd like to hear my route.",
+   "dst": "一度、自分で試してみてはどうですか？その過程で、何か面白い発見があるかもしれませんよ！もし私のルートを知りたいなら、{c2}また声をかけて{/}くださいね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rush Around the Ruins",
+   "stage": "",
+   "speaker": "Tempo Town Citizen",
+   "source": "captured",
+   "note": "{c2}Talk to me again{/}"
+  }
+ }
+}
