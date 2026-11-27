@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**24,909 / 24,912 句已翻（100.0%），共 160 個任務，還沒有人動的有 0 個。**
+**24,922 / 24,927 句已翻（100.0%），共 161 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -100,6 +100,7 @@
 | Hunger of the Gerts Part II | [`hunger-of-the-gerts-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunger-of-the-gerts-part-ii.json) | 91 | 80 | 7 | ✅ |
 | Hunt Woolly Rhinos | [`hunt-woolly-rhinos.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunt-woolly-rhinos.json) | 7 | 6 | 0 | ✅ |
 | Ice Nations | [`ice-nations.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ice-nations.json) | 31 | 26 | 3 | ✅ |
+| Infested Pit | [`infested-pit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-pit.json) | 15 | 15 | 4 | 87% |
 | Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-plants.json) | 62 | 56 | 4 | ✅ |
 | Jungle Fever | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/jungle-fever.json) | 37 | 31 | 3 | ✅ |
 | King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/king-s-recruit.json) | 175 | 153 | 8 | ✅ |
