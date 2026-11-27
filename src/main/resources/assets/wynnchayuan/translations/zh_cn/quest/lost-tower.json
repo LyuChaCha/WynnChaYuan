@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Lost Tower",
-  "count": 9,
+  "count": 10,
   "translated": 9,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -95,6 +95,16 @@
    "stage": "Stage 4",
    "speaker": "Laen",
    "source": "wiki"
+  },
+  "Lost Tower#012": {
+   "src": "Talk to Laen in {p} at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

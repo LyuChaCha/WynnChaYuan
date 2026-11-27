@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Misadventure on the Sea",
-  "count": 196,
-  "translated": 196,
+  "count": 208,
+  "translated": 198,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -83,7 +83,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Barkeep",
    "source": "captured"
   },
   "Misadventure on the Sea#008": {
@@ -323,7 +323,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#032": {
@@ -363,7 +363,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#036": {
@@ -473,7 +473,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#047": {
@@ -657,8 +657,8 @@
    "source": "captured"
   },
   "Misadventure on the Sea#065": {
-   "src": "Looks like they're headed toward the island! Is that..?",
-   "dst": "Sieht aus, als steuern sie auf die Insel zu! Ist das..?",
+   "src": "Looks like they're headed toward the island!",
+   "dst": "Sieht aus, als steuern sie auf die Insel zu!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -673,7 +673,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seaskipper Captain",
    "source": "captured"
   },
   "Misadventure on the Sea#067": {
@@ -967,8 +967,8 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#096": {
-   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
-   "dst": "Putze die Leichen auf dem Boot. Suche dabei nach Hinweisen zur Flucht. -Geputzte Leichen: #/{~}",
+   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: {~}/{~}",
+   "dst": "Putze die Leichen auf dem Boot. Suche dabei nach Hinweisen zur Flucht. -Geputzte Leichen: {~}/{~}",
    "role": "desc",
    "kind": "objective",
    "quest": "Misadventure on the Sea",
@@ -1693,7 +1693,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#169": {
@@ -1977,6 +1977,126 @@
    "stage": "Stage 8",
    "speaker": "Seaskipper Captain",
    "source": "wiki"
+  },
+  "Misadventure on the Sea#196": {
+   "src": "So... I've seen ya around town. Helping some guy with a book, explorin' the surroundings...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 1",
+   "speaker": "Honip",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#197": {
+   "src": "The chicken's got quite the agressive personality!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#198": {
+   "src": "He ain't scared of anything, which makes him the best pirate 'round here!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#199": {
+   "src": "These rats... I don't think they're normal rats. Something's wrong with 'em.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#200": {
+   "src": "You noticed the cannon could be used to escape. Clean the bodies and see what Honip tells you! -Bodies cleaned: {~}/{~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#201": {
+   "src": "Welcome back! Any progress?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Seth",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#202": {
+   "src": "Oh, there he is! Hold on...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#203": {
+   "src": "Isn't he the best??",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#204": {
+   "src": "You probably shouldn't leave the boat just like that.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#205": {
+   "src": "You picked up a peculiarly tasty-looking bone.",
+   "dst": "Du hast einen seltsam lecker aussehenden Knochen aufgehoben.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#206": {
+   "src": "He's looking towards the bookshelves...",
+   "dst": "Er blickt zu den Bücherregalen...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#207": {
+   "src": "Alright, I know he was like a fierce chicken or whatever, but this is just ridiculous.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

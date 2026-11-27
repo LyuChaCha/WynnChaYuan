@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "The Dark Descent",
-  "count": 59,
+  "count": 62,
   "translated": 59,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -37,7 +37,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Scout",
    "source": "captured"
   },
   "The Dark Descent#003": {
@@ -47,7 +47,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#004": {
@@ -57,7 +57,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#005": {
@@ -77,7 +77,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#007": {
@@ -87,7 +87,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#008": {
@@ -97,7 +97,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#009": {
@@ -117,7 +117,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#011": {
@@ -599,6 +599,36 @@
    "stage": "Stage 6",
    "speaker": "General Graken",
    "source": "wiki"
+  },
+  "The Dark Descent#059": {
+   "src": "Ah, hello chap! Might I inquire as to whether you've glanced in that house yet?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#060": {
+   "src": "It's just up the road here, impossible to miss with a bleedin' skull right over the doorway!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#061": {
+   "src": "Return to Graken at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Dark Descent",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

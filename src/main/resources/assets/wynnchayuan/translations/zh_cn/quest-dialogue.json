@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24871,
-  "translated": 24735,
+  "count": 24891,
+  "translated": 24734,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -41913,7 +41913,7 @@
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#002": {
@@ -41974,16 +41974,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "captured"
-  },
-  "Brothers Return#008": {
-   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
-   "dst": "他们干了什么！？神圣的牛啊！比我担心的还要糟！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
    "source": "captured"
   },
   "Brothers Return#009": {
@@ -42427,7 +42417,7 @@
    "source": "wiki"
   },
   "Brothers Return#053": {
-   "src": "Speak to the Bishop Kaideus in {p} at [{~}, {~}, -{~}].",
+   "src": "Speak to the Bishop in {p} at [{~}, {~}, -{~}]",
    "dst": "前往 {p} 的 [{~}, {~}, -{~}] 与 Kaideus 主教交谈。",
    "role": "desc",
    "kind": "objective",
@@ -42517,14 +42507,14 @@
    "source": "wiki"
   },
   "Brothers Return#062": {
-   "src": "Holy Bovine! It's even worse than I feared!",
-   "dst": "神圣的牛啊！比我担心的还要糟！",
+   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
+   "dst": "他们干了什么！？神圣的牛啊！比我担心的还要糟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "captured"
   },
   "Brothers Return#063": {
    "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
@@ -42925,6 +42915,26 @@
    "stage": "Stage 13",
    "speaker": "Alfe",
    "source": "wiki"
+  },
+  "Brothers Return#103": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "哦，是你！啊啊啊……谢谢你为我们做的一切，真的……嗯嗯……非常感激……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Drucksh",
+   "source": "captured"
+  },
+  "Brothers Return#104": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "啊，真高兴又见到你，朋友！很抱歉庆祝的时候没邀请你，不过你那时看起来挺忙的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Sayleros",
+   "source": "captured"
   },
   "Burning Bonds#000": {
    "src": "There's only a razor-sharp rock here. Nothing particularly useful... yet.",
@@ -54459,22 +54469,6 @@
    "stage": "Stage 6",
    "speaker": "Thomas",
    "source": "wiki"
-  },
-  "Creeper Infiltration#040": {
-   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
-   "dst": "啊，真高兴又见到你，朋友！很抱歉庆祝的时候没邀请你，不过你那时看起来挺忙的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "source": "captured"
-  },
-  "Creeper Infiltration#041": {
-   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
-   "dst": "哦，是你！啊啊啊……谢谢你为我们做的一切，真的……嗯嗯……非常感激……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "source": "captured"
   },
   "Creeper Infiltration#042": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
@@ -83196,6 +83190,56 @@
    "speaker": "",
    "source": "captured"
   },
+  "Fast-Paced Pilgrimage#001": {
+   "src": "Ah, hello, dear. How can I help you? Are you a pilgrim, by any chance?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#002": {
+   "src": "...You're just looking around? Then would you like to hear about the ongoing festival?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#003": {
+   "src": "Pilgrims from all across the world are coming to {p} right now - it's a tradition of ours, you see. {p} is a site of great significance in our faith.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#004": {
+   "src": "As part of the traditions, many will venture into the ruined city. The army isn't happy about it, since Corrupteds have been on the rise there lately, but we have the resources to handle it. They should keep their nose out of it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
+  "Fast-Paced Pilgrimage#005": {
+   "src": "...Ahem. My apologies. Would you like to try out the festivity? We are welcoming to those outside of our religion. Talk to me more if you're interested.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fast-Paced Pilgrimage",
+   "stage": "",
+   "speaker": "Bishop Sura",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "啊，{p} 军队的一员。我们正想多了解这座冰之坟冢。我们需要你的帮助。",
@@ -108167,6 +108211,16 @@
    "speaker": "Laen",
    "source": "wiki"
   },
+  "Lost Tower#012": {
+   "src": "Talk to Laen in {p} at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
   "Maltic's Well#000": {
    "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
    "dst": "求你想想办法！我知道 {p} 是村民的聚落，对你们人类来说不重要，可是……我的儿子啊！",
@@ -111590,7 +111644,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Barkeep",
    "source": "captured"
   },
   "Misadventure on the Sea#008": {
@@ -111830,7 +111884,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#032": {
@@ -111870,7 +111924,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#036": {
@@ -111980,7 +112034,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#047": {
@@ -112180,7 +112234,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seaskipper Captain",
    "source": "captured"
   },
   "Misadventure on the Sea#067": {
@@ -113200,7 +113254,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#169": {
@@ -113484,6 +113538,126 @@
    "stage": "Stage 8",
    "speaker": "Seaskipper Captain",
    "source": "wiki"
+  },
+  "Misadventure on the Sea#196": {
+   "src": "So... I've seen ya around town. Helping some guy with a book, explorin' the surroundings...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 1",
+   "speaker": "Honip",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#197": {
+   "src": "The chicken's got quite the agressive personality!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#198": {
+   "src": "He ain't scared of anything, which makes him the best pirate 'round here!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#199": {
+   "src": "These rats... I don't think they're normal rats. Something's wrong with 'em.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#200": {
+   "src": "You noticed the cannon could be used to escape. Clean the bodies and see what Honip tells you! -Bodies cleaned: {~}/{~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#201": {
+   "src": "Welcome back! Any progress?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Seth",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#202": {
+   "src": "Oh, there he is! Hold on...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#203": {
+   "src": "Isn't he the best??",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#204": {
+   "src": "You probably shouldn't leave the boat just like that.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#205": {
+   "src": "You picked up a peculiarly tasty-looking bone.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#206": {
+   "src": "He's looking towards the bookshelves...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#207": {
+   "src": "Alright, I know he was like a fierce chicken or whatever, but this is just ridiculous.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   },
   "Mixed Feelings#000": {
    "src": "Speak to Javen at the Corkus Docks.",
@@ -184092,7 +184266,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Scout",
    "source": "captured"
   },
   "The Dark Descent#003": {
@@ -184102,7 +184276,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#004": {
@@ -184112,7 +184286,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#005": {
@@ -184132,7 +184306,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#007": {
@@ -184142,7 +184316,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#008": {
@@ -184152,7 +184326,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#009": {
@@ -184172,7 +184346,7 @@
    "kind": "dialogue",
    "quest": "The Dark Descent",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#011": {
@@ -184654,6 +184828,36 @@
    "stage": "Stage 6",
    "speaker": "General Graken",
    "source": "wiki"
+  },
+  "The Dark Descent#059": {
+   "src": "Ah, hello chap! Might I inquire as to whether you've glanced in that house yet?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#060": {
+   "src": "It's just up the road here, impossible to miss with a bleedin' skull right over the doorway!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
+   "source": "captured"
+  },
+  "The Dark Descent#061": {
+   "src": "Return to Graken at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Dark Descent",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
   },
   "The Envoy Part I#000": {
    "src": "It's an independant island to the west. In fact... If you want to go...",

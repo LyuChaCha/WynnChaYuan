@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Brothers Return",
-  "count": 103,
-  "translated": 103,
+  "count": 104,
+  "translated": 104,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#002": {
@@ -84,16 +84,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "captured"
-  },
-  "Brothers Return#008": {
-   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
-   "dst": "Они что сделали?! Святая корова! Всё хуже, чем я боялся!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
    "source": "captured"
   },
   "Brothers Return#009": {
@@ -537,7 +527,7 @@
    "source": "wiki"
   },
   "Brothers Return#053": {
-   "src": "Speak to the Bishop Kaideus in {p} at [{~}, {~}, -{~}].",
+   "src": "Speak to the Bishop in {p} at [{~}, {~}, -{~}]",
    "dst": "Поговори с епископом Kaideus в {p}, в [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
@@ -627,14 +617,14 @@
    "source": "wiki"
   },
   "Brothers Return#062": {
-   "src": "Holy Bovine! It's even worse than I feared!",
-   "dst": "Святая корова! Всё хуже, чем я боялся!",
+   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
+   "dst": "Они что сделали?! Святая корова! Всё хуже, чем я боялся!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Bishop Kaideus",
-   "source": "wiki"
+   "source": "captured"
   },
   "Brothers Return#063": {
    "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
@@ -1035,6 +1025,26 @@
    "stage": "Stage 13",
    "speaker": "Alfe",
    "source": "wiki"
+  },
+  "Brothers Return#103": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "О, это ты! А-а-агх... Спасибо за то, что ты для нас сделал, это... м-м-мгх... правда очень ценно...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Drucksh",
+   "source": "captured"
+  },
+  "Brothers Return#104": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "А, рад снова тебя видеть, приятель! Прости, что не позвал на праздник, но ты, похоже, был очень занят!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "Sayleros",
+   "source": "captured"
   }
  }
 }

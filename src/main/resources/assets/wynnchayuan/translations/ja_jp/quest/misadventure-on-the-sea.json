@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Misadventure on the Sea",
-  "count": 196,
-  "translated": 196,
+  "count": 208,
+  "translated": 208,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -58,13 +58,14 @@
   },
   "Misadventure on the Sea#005": {
    "src": "Sitting on this stool will start Misadventure on the Sea.",
-   "dst": "この椅子に座ると「海の災難」が始まる。",
+   "dst": "この椅子に座ると「{c2}海の災難{/}」が始まる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Misadventure on the Sea.{/}"
   },
   "Misadventure on the Sea#006": {
    "src": "I'll take two {p} Whiskeys. One for me, one for this chap.",
@@ -83,7 +84,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Barkeep",
    "source": "captured"
   },
   "Misadventure on the Sea#008": {
@@ -118,33 +119,36 @@
   },
   "Misadventure on the Sea#011": {
    "src": "Sounds like you're being dragged around...",
-   "dst": "引きずり回されているように感じる…",
+   "dst": "{c1}引きずり回されているように感じる…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Sounds like you're being dragged around...{/}"
   },
   "Misadventure on the Sea#012": {
    "src": "You pick up a small sign...",
-   "dst": "小さな看板を拾った…",
+   "dst": "{c1}小さな看板を拾った…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You pick up a small sign...{/}"
   },
   "Misadventure on the Sea#013": {
    "src": "It reads: 'Behind you, idiot.'",
-   "dst": "こう書いてある:「後ろだよ、バカ。」",
+   "dst": "{c1}こう書いてある:「後ろだよ、バカ。」{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It reads: 'Behind you, idiot.'{/}"
   },
   "Misadventure on the Sea#014": {
    "src": "So, there's quite a few bodies in there, and we never bothered throwin' em out!",
@@ -208,113 +212,124 @@
   },
   "Misadventure on the Sea#020": {
    "src": "Looks like the door that leads to the hold...",
-   "dst": "船倉へ続く扉のようだ…",
+   "dst": "{c1}船倉へ続く扉のようだ…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like the door that leads to the hold...{/}"
   },
   "Misadventure on the Sea#021": {
    "src": "It's locked. Probably because of the rat issue. Honip must have the key.",
-   "dst": "鍵がかかっている。たぶんネズミ騒ぎのせいだ。鍵は Honip が持っているはずだ。",
+   "dst": "{c1}鍵がかかっている。たぶんネズミ騒ぎのせいだ。鍵は Honip が持っているはずだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's locked. Probably because of the rat issue. Honip must have the key.{/}"
   },
   "Misadventure on the Sea#022": {
    "src": "You find some notes on the table.",
-   "dst": "テーブルの上にメモがある。",
+   "dst": "{c1}テーブルの上にメモがある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You find some notes on the table.{/}"
   },
   "Misadventure on the Sea#023": {
    "src": "There's mentions of... A human cannon? How does that make sense?",
-   "dst": "書いてあるのは… 人間大砲？どういう意味だろうか？",
+   "dst": "{c1}書いてあるのは… 人間大砲？どういう意味だろうか？{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There's mentions of... A human cannon? How does that make sense?{/}"
   },
   "Misadventure on the Sea#024": {
    "src": "Apparently, only gunpowder is needed, as well as a fuse.",
-   "dst": "どうやら必要なのは火薬と導火線だけらしい。",
+   "dst": "{c1}どうやら必要なのは火薬と導火線だけらしい。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Apparently, only gunpowder is needed, as well as a fuse.{/}"
   },
   "Misadventure on the Sea#025": {
    "src": "This cannon is aiming slightly upwards, and it seems less powerful than the others.",
-   "dst": "この大砲は少し上を向いていて、他の大砲より威力が弱そうだ。",
+   "dst": "{c1}この大砲は少し上を向いていて、他の大砲より威力が弱そうだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}This cannon is aiming slightly upwards, and it seems less powerful than the others.{/}"
   },
   "Misadventure on the Sea#026": {
    "src": "According to the notes you saw, it's probably the \"human\" cannon. This must be your escape route!",
-   "dst": "さっきのメモによれば、これが例の「人間」大砲だろう。これは脱出経路になるだろう！",
+   "dst": "{c1}さっきのメモによれば、これが例の「人間」大砲だろう。これは脱出経路になるだろう！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}According to the notes you saw, it's probably the \"human\" cannon. This must be your escape route!{/}"
   },
   "Misadventure on the Sea#027": {
    "src": "You pick up some notes.",
-   "dst": "メモを拾った。",
+   "dst": "{c1}メモを拾った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You pick up some notes.{/}"
   },
   "Misadventure on the Sea#028": {
    "src": "There are mentions of a hidden key in the hold...",
-   "dst": "船倉に隠された鍵のことが書いてある…",
+   "dst": "{c1}船倉に隠された鍵のことが書いてある…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There are mentions of a hidden key in the hold...{/}"
   },
   "Misadventure on the Sea#029": {
    "src": "You should probably search the hold later, when possible.",
-   "dst": "後で機会があれば、船倉を探してみたほうがよさそうだ。",
+   "dst": "{c1}後で機会があれば、船倉を探してみたほうがよさそうだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You should probably search the hold later, when possible.{/}"
   },
   "Misadventure on the Sea#030": {
    "src": "You cleaned the bodies! You should talk to Honip on the deck.",
-   "dst": "死体を片付けた！甲板の Honip と話そう。",
+   "dst": "{c1}死体を片付けた！甲板の Honip と話そう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You cleaned the bodies! You should talk to Honip on the deck.{/}"
   },
   "Misadventure on the Sea#031": {
    "src": "'ey! How's the cleaning? Don't forget to check everywhere, ya never know what you might find!",
@@ -323,7 +338,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#032": {
@@ -348,13 +363,14 @@
   },
   "Misadventure on the Sea#034": {
    "src": "You picked up some seeds.",
-   "dst": "種を拾った。",
+   "dst": "{c1}種を拾った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You picked up some seeds.{/}"
   },
   "Misadventure on the Sea#035": {
    "src": "Honip's probably waitin' for ya by now! Take these ladders next to me, he's up there.",
@@ -363,7 +379,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#036": {
@@ -458,13 +474,14 @@
   },
   "Misadventure on the Sea#045": {
    "src": "Seems like it likes you now!",
-   "dst": "すっかりなついたみたいだ！",
+   "dst": "{c1}すっかりなついたみたいだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Seems like it likes you now!{/}"
   },
   "Misadventure on the Sea#046": {
    "src": "Not done yet? Well, take your time!",
@@ -473,7 +490,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seth",
    "source": "captured"
   },
   "Misadventure on the Sea#047": {
@@ -488,23 +505,25 @@
   },
   "Misadventure on the Sea#048": {
    "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
-   "dst": "この木箱はネズミの毛と、かじられたニンジンでいっぱいのようだ。",
+   "dst": "{c1}この木箱はネズミの毛と、かじられたニンジンでいっぱいのようだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like this crate is filled with rat hair, with some eaten carrots.{/}"
   },
   "Misadventure on the Sea#049": {
    "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
-   "dst": "ネズミを倒した！出る前に火薬と導火線を持っていこう。",
+   "dst": "{c1}ネズミを倒した！出る前に火薬と導火線を持っていこう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You defeated the rats! You should grab the gunpowder and the fuse before leaving.{/}"
   },
   "Misadventure on the Sea#050": {
    "src": "[+{~} Cannon Fuse]",
@@ -528,13 +547,14 @@
   },
   "Misadventure on the Sea#052": {
    "src": "You've got enough gunpowder already.",
-   "dst": "火薬はもう十分ある。",
+   "dst": "{c1}火薬はもう十分ある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You've got enough gunpowder already.{/}"
   },
   "Misadventure on the Sea#053": {
    "src": "Looks like this crate is filled with even more rat hair!",
@@ -548,123 +568,135 @@
   },
   "Misadventure on the Sea#054": {
    "src": "You picked up a dusty key!",
-   "dst": "ほこりまみれの鍵を拾った！",
+   "dst": "{c1}ほこりまみれの鍵を拾った！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You picked up a dusty key!{/}"
   },
   "Misadventure on the Sea#055": {
    "src": "You already got fuse.",
-   "dst": "導火線はもう手に入れた。",
+   "dst": "{c1}導火線はもう手に入れた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You already got fuse.{/}"
   },
   "Misadventure on the Sea#056": {
    "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
-   "dst": "導火線も火薬も手に入れた。これであの大砲が使えそうだ！",
+   "dst": "{c1}導火線も火薬も手に入れた。これであの大砲が使えそうだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You got the fuse as well as the gunpowder. Looks like you can use that cannon now!{/}"
   },
   "Misadventure on the Sea#057": {
    "src": "You put the gunpowder in the cannon and attach the fuse...",
-   "dst": "大砲に火薬を詰め、導火線を取り付けた…",
+   "dst": "{c1}大砲に火薬を詰め、導火線を取り付けた…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You put the gunpowder in the cannon and attach the fuse...{/}"
   },
   "Misadventure on the Sea#058": {
    "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
-   "dst": "完全に使えるようだ。海賊に見つからないように！大砲を使ったら、もう船には戻れない。",
+   "dst": "{c1}完全に使えるようだ。海賊に見つからないように！大砲を使ったら、もう船には戻れない。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.{/} , Once you leave, you won't be able to come back. は太字"
   },
   "Misadventure on the Sea#059": {
    "src": "You crawl into the cannon...",
-   "dst": "大砲の中に這い込んだ…",
+   "dst": "{c1}大砲の中に這い込んだ…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You crawl into the cannon...{/}"
   },
   "Misadventure on the Sea#060": {
    "src": "You dig up some sand...",
-   "dst": "砂を掘り出した…",
+   "dst": "{c1}砂を掘り出した…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You dig up some sand...{/}"
   },
   "Misadventure on the Sea#061": {
    "src": "There's more sand.",
-   "dst": "まだ砂がある。",
+   "dst": "{c1}まだ砂がある。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}There's more sand.{/}"
   },
   "Misadventure on the Sea#062": {
    "src": "It's a coconut.",
-   "dst": "ココナッツだ。",
+   "dst": "{c1}ココナッツだ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's a coconut.{/}"
   },
   "Misadventure on the Sea#063": {
    "src": "It's a palm tree!",
-   "dst": "ヤシの木だ！",
+   "dst": "{c1}ヤシの木だ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's a palm tree!{/}"
   },
   "Misadventure on the Sea#064": {
    "src": "Huh? Something's approaching off in the distance...",
-   "dst": "ん？遠くから何かが近づいてくる…",
+   "dst": "{c1}ん？遠くから何かが近づいてくる…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Huh? Something's approaching off in the distance...{/}"
   },
   "Misadventure on the Sea#065": {
-   "src": "Looks like they're headed toward the island! Is that..?",
-   "dst": "この島へ向かってくるようだ！あれは…？",
+   "src": "Looks like they're headed toward the island!",
+   "dst": "{c1}この島へ向かってくるようだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Looks like they're headed toward the island!{/}"
   },
   "Misadventure on the Sea#066": {
    "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
@@ -673,7 +705,7 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Seaskipper Captain",
    "source": "captured"
   },
   "Misadventure on the Sea#067": {
@@ -854,7 +886,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "YOU は太字"
   },
   "Misadventure on the Sea#085": {
    "src": "Hey, you're finally awake.",
@@ -868,7 +901,7 @@
   },
   "Misadventure on the Sea#086": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
-   "dst": "正直、あんなのに引っかかるなんて信じらんねえよ。あんたのためにまとめてやるよ",
+   "dst": "正直、あんなのに引っかかるなんて信じらんねえよ。あんたのためにまとめてやるよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -884,7 +917,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "pirate は太字"
   },
   "Misadventure on the Sea#088": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
@@ -954,7 +988,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 2",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "BIG は太字"
   },
   "Misadventure on the Sea#095": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
@@ -967,8 +1002,8 @@
    "source": "wiki"
   },
   "Misadventure on the Sea#096": {
-   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
-   "dst": "船内の死体を掃除する。同時に脱出の手がかりを探す。-掃除した死体: #/{~}",
+   "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: {~}/{~}",
+   "dst": "船内の死体を掃除する。同時に脱出の手がかりを探す。-掃除した死体: {~}/{~}",
    "role": "desc",
    "kind": "objective",
    "quest": "Misadventure on the Sea",
@@ -1344,7 +1379,8 @@
    "quest": "Misadventure on the Sea",
    "stage": "Stage 4",
    "speaker": "Honip",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rats は太字"
   },
   "Misadventure on the Sea#134": {
    "src": "Come to the hold, I'll explain on the way.",
@@ -1693,58 +1729,63 @@
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
-   "speaker": "",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#169": {
    "src": "Huh? It looks like there's a hidden lock in this bookshelf!",
-   "dst": "あれ？この本棚に隠し錠があるようだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#170": {
-   "src": "Where could the key be? Does the crew know about this?",
-   "dst": "鍵はどこだろう？船員たちは知ってるのだろうか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#171": {
-   "src": "It's barely visible, it's probably not going to help on escaping.",
-   "dst": "ほとんど見えない。脱出の役には立たなさそうだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#172": {
-   "src": "That's definitely not a place to store gunpowder, nor a fuse.",
-   "dst": "火薬か導火線をしまうような場所ではないのは確かだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Misadventure on the Sea#173": {
-   "src": "You don't have the key.",
-   "dst": "鍵を持っていない。",
+   "dst": "{c1}あれ？この本棚に隠し錠があるようだ！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
    "source": "captured",
+   "note": "{c1}Huh? It looks like there's a hidden lock in this bookshelf!{/}"
+  },
+  "Misadventure on the Sea#170": {
+   "src": "Where could the key be? Does the crew know about this?",
+   "dst": "{c1}鍵はどこだろう？船員たちは知ってるのだろうか？{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}Where could the key be? Does the crew know about this?{/}"
+  },
+  "Misadventure on the Sea#171": {
+   "src": "It's barely visible, it's probably not going to help on escaping.",
+   "dst": "{c1}ほとんど見えない。脱出の役には立たなさそうだ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}It's barely visible, it's probably not going to help on escaping.{/}"
+  },
+  "Misadventure on the Sea#172": {
+   "src": "That's definitely not a place to store gunpowder, nor a fuse.",
+   "dst": "{c1}火薬か導火線をしまうような場所ではないのは確かだ。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}That's definitely not a place to store gunpowder, nor a fuse.{/}"
+  },
+  "Misadventure on the Sea#173": {
+   "src": "You don't have the key.",
+   "dst": "{c1}鍵を持っていない。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You don't have the key.{/}",
    "similar": {
     "text": "You don't have to come.",
     "file": "quest.json",
@@ -1764,23 +1805,25 @@
   },
   "Misadventure on the Sea#175": {
    "src": "You search the chest...",
-   "dst": "宝箱を漁る…",
+   "dst": "{c1}宝箱を漁る…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}You search the chest...{/}"
   },
   "Misadventure on the Sea#176": {
    "src": "It's filled with various items.",
-   "dst": "いろいろな物が詰まっている。",
+   "dst": "{c1}いろいろな物が詰まっている。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}It's filled with various items.{/}"
   },
   "Misadventure on the Sea#177": {
    "src": "[+{~} Fake Tooth]",
@@ -1800,13 +1843,14 @@
   },
   "Misadventure on the Sea#178": {
    "src": "That's all there was.",
-   "dst": "それだけだった。",
+   "dst": "{c1}それだけだった。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}That's all there was.{/}"
   },
   "Misadventure on the Sea#179": {
    "src": "Mo'in, traveller, have you heard of Corkus? The new province filled with machines!",
@@ -1977,6 +2021,129 @@
    "stage": "Stage 8",
    "speaker": "Seaskipper Captain",
    "source": "wiki"
+  },
+  "Misadventure on the Sea#196": {
+   "src": "So... I've seen ya around town. Helping some guy with a book, explorin' the surroundings...",
+   "dst": "で…町であんたを見かけたぜ。ある男に本のことを手伝ったり、辺りを探索したりして…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 1",
+   "speaker": "Honip",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#197": {
+   "src": "The chicken's got quite the agressive personality!",
+   "dst": "このニワトリ、かなり気性が荒い！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#198": {
+   "src": "He ain't scared of anything, which makes him the best pirate 'round here!",
+   "dst": "あいつは何を恐れることもない。だからこそ、この辺りで一番の海賊なんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#199": {
+   "src": "These rats... I don't think they're normal rats. Something's wrong with 'em.",
+   "dst": "このネズミたち……普通のネズミじゃない気がする。何かおかしいんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#200": {
+   "src": "You noticed the cannon could be used to escape. Clean the bodies and see what Honip tells you! -Bodies cleaned: {~}/{~}",
+   "dst": "大砲を使って脱出できそうだ。死体を片付けて、 Honip に聞いてみよう！ -掃除した死体: {~}/{~}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#201": {
+   "src": "Welcome back! Any progress?",
+   "dst": "戻ってきたな！進捗はどうだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Seth",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#202": {
+   "src": "Oh, there he is! Hold on...",
+   "dst": "あ、あそこにいる！ちょっと待って……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#203": {
+   "src": "Isn't he the best??",
+   "dst": "彼って最高じゃない？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "Pirate",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#204": {
+   "src": "You probably shouldn't leave the boat just like that.",
+   "dst": "{c1}無造作に船から降りないほうがいいだろう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You probably shouldn't leave the boat just like that.{/}"
+  },
+  "Misadventure on the Sea#205": {
+   "src": "You picked up a peculiarly tasty-looking bone.",
+   "dst": "{c1}妙においしそうな骨を拾った。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}You picked up a peculiarly tasty-looking bone.{/}"
+  },
+  "Misadventure on the Sea#206": {
+   "src": "He's looking towards the bookshelves...",
+   "dst": "{c1}本棚のほうを見ている…{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}He's looking towards the bookshelves...{/}"
+  },
+  "Misadventure on the Sea#207": {
+   "src": "Alright, I know he was like a fierce chicken or whatever, but this is just ridiculous.",
+   "dst": "まあ、彼がまるで凶暴なニワトリみたいなやつだったのは知ってるけど、これじゃまったくもって馬鹿げてるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
