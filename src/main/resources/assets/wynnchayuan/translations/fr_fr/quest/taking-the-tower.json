@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 53,
+  "count": 57,
   "translated": 53,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -47,8 +47,8 @@
    "source": "captured"
   },
   "Taking the Tower#004": {
-   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
-   "dst": "Apparemment, le grand méchant au sommet de la tour craint les dégâts de type  Eau!",
+   "src": "Apparently, the big bad at the top of the tower is weak to {#} Water damage!",
+   "dst": "Apparemment, le grand méchant au sommet de la tour craint les dégâts de type {#} Eau!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -67,8 +67,8 @@
    "source": "captured"
   },
   "Taking the Tower#006": {
-   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "Dans ce cas, tu peux appliquer une poudre de type  Eau, pour que ton arme soit plus efficace contre les ennemis corrompus de la tour!",
+   "src": "In this case, you can apply a {#} Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "Dans ce cas, tu peux appliquer une poudre de type {#} Eau, pour que ton arme soit plus efficace contre les ennemis corrompus de la tour!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -257,7 +257,7 @@
    "source": "wiki"
   },
   "Taking the Tower#025": {
-   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
+   "src": "Well, the mission won't be starting for a little while. If you change your mind, let me know!",
    "dst": "Bon, je reste encore un moment ici. Si tu changes d'avis, dis-le-moi!",
    "role": "desc",
    "kind": "dialogue",
@@ -267,7 +267,7 @@
    "source": "wiki"
   },
   "Taking the Tower#026": {
-   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "src": "Hey, you're back! Have you changed your mind? Want to join a raid on a corrupted tower?",
    "dst": "Hé, te revoilà! Tu as changé d'avis? Tu veux participer à l'assaut d'une tour corrompue?",
    "role": "desc",
    "kind": "dialogue",
@@ -277,7 +277,7 @@
    "source": "wiki"
   },
   "Taking the Tower#027": {
-   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
+   "src": "Follow Aledar to the Item Upgrader at [{~}, {~}, -{~}].",
    "dst": "Suivez Aledar jusqu'au Maître des poudres, en [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
@@ -535,6 +535,46 @@
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
    "source": "wiki"
+  },
+  "Taking the Tower#053": {
+   "src": "Let's keep going! Lieutenant Van and the others are by that bunch of houses in the {p}, remember?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#054": {
+   "src": "Good to see you, {u}! I haven't been up to much since we took back the Raging Tower.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#055": {
+   "src": "I've been waiting for Tasim to finish up whatever he's been doing. He's been nonstop training since he got here, you know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#056": {
+   "src": "Hey, maybe it'd be worth your time to join him! If you talk to Captain Ragon over there, he'll probably teach you some things.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
   }
  }
 }
