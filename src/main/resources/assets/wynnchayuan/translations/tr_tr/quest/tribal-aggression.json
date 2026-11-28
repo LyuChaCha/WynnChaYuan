@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Tribal Aggression",
-  "count": 29,
+  "count": 33,
   "translated": 29,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -47,7 +47,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#004": {
@@ -97,7 +97,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#009": {
@@ -299,6 +299,46 @@
    "stage": "Stage 4",
    "speaker": "Caras",
    "source": "wiki"
+  },
+  "Tribal Aggression#029": {
+   "src": "What are you doing here? Be gone!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#030": {
+   "src": "Are you going to get the totem back or not? It's located at the Owl Camp right now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#031": {
+   "src": "Oh thank you so much for helping us! It's so nice to see you again, owl friend.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Caras",
+   "source": "capture"
+  },
+  "Tribal Aggression#032": {
+   "src": "Ah, this is how I appreciate it, peace and harmony...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Favian",
+   "source": "capture"
   }
  }
 }

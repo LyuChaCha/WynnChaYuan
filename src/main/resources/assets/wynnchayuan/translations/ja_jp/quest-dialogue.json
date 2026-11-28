@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 25057,
-  "translated": 25054,
+  "count": 25076,
+  "translated": 25073,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -55921,6 +55921,58 @@
    "speaker": "Doubiss",
    "source": "captured"
   },
+  "Dash Across the Dunes#001": {
+   "src": "Hahaha! You goofball, are you wearing a bunch of armor you pilfered from this place? That's really funny.",
+   "dst": "ハハハ！このおバカさん、ここから盗んできた鎧を山ほど身に着けてるのかい？それ、本当に笑えるね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#002": {
+   "src": "I've found some real cool stuff myself. Like this one fancy chestplate that was just sat on a table! Those Wynn Army guys clearly never expected to get robbed. Ha!",
+   "dst": "俺もかなりクールなものをいくつか見つけたよ。例えば、テーブルの上にただ置いてあったこの豪華な{c2}チェストプレート{/}とか！Wynn 軍の連中は、まさか強盗に遭うなんて全く予想していなかったみたいだね。ハハ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured",
+   "note": "{c2}chestplate{/}"
+  },
+  "Dash Across the Dunes#003": {
+   "src": "...What? You want it? Hands off, idiot, finders keepers! Although, I guess I might be willing to bet on it. Big fan of bets.",
+   "dst": "…え？　欲しいって？　手を出すなよ、バカ。見つけた者が持ち主だ！　まあ、賭けなら乗ってもいいかもね。賭けは大の得意だから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#004": {
+   "src": "Let's say, uh... If you can clear my Time Trial in like, {~} seconds, I'll give you it. You in? If you are, talk to me again.",
+   "dst": "えーと……例えば、俺の{c2}タイムトライアル{/}を{c2}{~}秒{/}くらいでクリアできたら、やるよ。どうだ？ やる気があるなら、{c2}また声をかけな{/}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured",
+   "note": "{c2}Time Trial{/} , {c2}{~} seconds{/} , {c2}talk to me again{/}"
+  },
+  "Dash Across the Dunes#005": {
+   "src": "...Does he not know that the fort was already retaken..?",
+   "dst": "…あの砦はすでに奪還されていたことを、彼は知らないのだろうか…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Dearly Departed#000": {
    "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "{#} {c1}器用さ{/}は少し変な能力だ。高ければ高いほど、攻撃が二倍のダメージを与える確率が上がる。いいだろう？",
@@ -106244,6 +106296,26 @@
    "stage": "Stage 9",
    "speaker": "Junes",
    "source": "wiki"
+  },
+  "Kingdom of Sand#072": {
+   "src": "Have you made any progress with the sceptre? I can't wait to see it.",
+   "dst": "王笏に関しての進展はあった？ 早く見たいです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "capture"
+  },
+  "Kingdom of Sand#073": {
+   "src": "Have you looked into exploring the tomb at all? Please be careful where you step, I'm sure there are priceless artifacts inside!",
+   "dst": "あの墓を探索してみようと考えたことは？足元には気をつけてくださいね、中にはきっと貴重な遺物があるはず！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "Junes",
+   "source": "capture"
   },
   "Lava Springs#000": {
    "src": "If you want some of my special brews, elixirs, and potions, go do business with my assistant.",
@@ -239112,7 +239184,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#004": {
@@ -239162,7 +239234,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#009": {
@@ -239227,13 +239299,14 @@
   },
   "Tribal Aggression#015": {
    "src": "Now, enter the Eagle Camp across the river, you may have to search the camp, I'm sure they have hidden our totem!",
-   "dst": "さあ、川向こうの鷲族の野営地へ行け。野営地を探し回ることになるだろう、奴らは必ずトーテムを隠している！",
+   "dst": "さあ、{c2}川向こうの鷲族の野営地へ行け{/}。野営地を探し回ることになるだろう、奴らは必ずトーテムを隠している！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "Stage 1",
    "speaker": "Caras",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}enter the Eagle Camp across the river,{/}"
   },
   "Tribal Aggression#016": {
    "src": "Enter the Eagle Camp and talk to Favian",
@@ -239277,13 +239350,14 @@
   },
   "Tribal Aggression#020": {
    "src": "Tell you what, if you can retrieve our Eagle Totem, I will allow you to go return the Owl totem.",
-   "dst": "こうしよう。我らの鷲のトーテムを取り戻せたら、梟のトーテムを返しに行くことを許そう。",
+   "dst": "こうしよう。{c2}我らの鷲のトーテムを取り戻せたら{/}、梟のトーテムを返しに行くことを許そう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "Stage 2",
    "speaker": "Favian",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}retrieve our Eagle Totem,{/}"
   },
   "Tribal Aggression#021": {
    "src": "Bring back the Eagle Totem from the Owl Camp",
@@ -239364,6 +239438,46 @@
    "stage": "Stage 4",
    "speaker": "Caras",
    "source": "wiki"
+  },
+  "Tribal Aggression#029": {
+   "src": "What are you doing here? Be gone!",
+   "dst": "ここで何をしているんだ？　さっさと出て行け！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#030": {
+   "src": "Are you going to get the totem back or not? It's located at the Owl Camp right now.",
+   "dst": "トーテムを取り戻すつもりなのか？　今は梟のキャンプにある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#031": {
+   "src": "Oh thank you so much for helping us! It's so nice to see you again, owl friend.",
+   "dst": "ああ、助けてくれて本当にありがとう！また会えて本当に嬉しいよ、梟の友達。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Caras",
+   "source": "capture"
+  },
+  "Tribal Aggression#032": {
+   "src": "Ah, this is how I appreciate it, peace and harmony...",
+   "dst": "ああ、これこそ私が求めていたもの、平和と調和……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Favian",
+   "source": "capture"
   },
   "Troubled Tribesmen#000": {
    "src": "Fa yna tuusat! Dra sykel uv drec cylnat dnaa ryc paah lunnibdat.",
@@ -248700,7 +248814,7 @@
   },
   "Wrath of the Mummy#000": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
-   "dst": "ミイラに詳しいか？もちろん！一生かけて研究してきたんだ！",
+   "dst": "ミイラに詳しいかって？もちろん！一生かけて研究してきたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -248720,13 +248834,14 @@
   },
   "Wrath of the Mummy#002": {
    "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just restocked.",
-   "dst": "ただし…なあ。ピンクの羊毛がずっと欲しかったんだが、唯一売ってる店がちょうど入荷したところでな。",
+   "dst": "ただし…なあ。{c2}ピンクの羊毛{/}がずっと欲しかったんだが、唯一売ってる店がちょうど入荷したところでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 3",
    "speaker": "Bandit",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}pink wool{/}"
   },
   "Wrath of the Mummy#003": {
    "src": "Or better yet, if you happen to have some of that pink wool on you. If you give it to me, well... the tomb is all yours.",
@@ -248735,28 +248850,30 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#004": {
    "src": "Either way, you can take my wagon over there to {p}, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
-   "dst": "どっちにしろ、向こうの {p} まで俺の荷馬車を使っていいが、帰りは自力だ。[{~} ピンクの羊毛] を渡せば通してやる。",
+   "dst": "どっちにしろ、向こうの {p} まで{c2}俺の荷馬車を使って{/}いいが、帰りは自力だ。{c3}[{~} ピンクの羊毛] {/}を渡せば通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 3",
    "speaker": "Bandit",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}take my wagon over there{/} , {c3}[{~} Pink Wool]{/}"
   },
   "Wrath of the Mummy#005": {
    "src": "Have you got me [{~} Pink Wool] yet!? You can get it from the shop in {p}.",
-   "dst": "[{~} ピンクの羊毛] はまだか！？{p} の店で買えるぞ。",
+   "dst": "{c2}[{~} ピンクの羊毛]{/} はまだか！？{c3}{p} の店{/}で買えるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
-   "source": "captured"
+   "speaker": "Bandit",
+   "source": "captured",
+   "note": "{c2}[{~} Pink Wool]{/} , {c3}shop in {p}{/}"
   },
   "Wrath of the Mummy#006": {
    "src": "I don't know you, and you don't know me. Got it?",
@@ -248765,7 +248882,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#007": {
@@ -248870,13 +248987,14 @@
   },
   "Wrath of the Mummy#017": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
-   "dst": "墓は砂漠の北にある。だが十分に気をつけて！",
+   "dst": "墓は{c2}砂漠の北{/}にある。だが十分に気をつけて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 2",
    "speaker": "Achper",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}North of the desert{/}"
   },
   "Wrath of the Mummy#018": {
    "src": "On top of that, the Creden Tibus bandit clan have been ransacking the tombs around the desert. You might run into trouble with them, so be prepared.",
@@ -248929,8 +249047,8 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#023": {
-   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
-   "dst": "[{~}, {~}, -{~}] の盗賊の荷馬車で {p} へ向かう。",
+   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p} or give [{~} Pink Wool] to the bandit.",
+   "dst": "[{~}, {~}, -{~}] の盗賊の荷馬車で {p} へ向かうか、[{~} ピンクの羊毛] を盗賊に渡す",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -248949,14 +249067,14 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#025": {
-   "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
+   "src": "Well, whaddya know? You got some pink wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "おやおや、驚いた！ピンクの羊毛を手に入れたか！よし、渡しな。見なかったことにして墓に入れてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 5",
    "speaker": "Bandit",
-   "source": "wiki"
+   "source": "capture"
   },
   "Wrath of the Mummy#026": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
@@ -249047,6 +249165,89 @@
    "stage": "Stage 7",
    "speaker": "Ormrod",
    "source": "wiki"
+  },
+  "Wrath of the Mummy#035": {
+   "src": "{#} [{~}/{~}] Bandit: I'm not letting you in, unless you can\n{#} pay me.",
+   "dst": "{#} [{~}/{~}] {c2}盗賊:{c4} 金を払わない限り{c3}、通すわけにはいかねえな。\n{#}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki",
+   "note": "{c1}[{~}/{~}]{c2}Bandit:{c3}I'm not letting you in, unless you can{c4}pay me.{/}"
+  },
+  "Wrath of the Mummy#036": {
+   "src": "As you enter the tomb, a putrid smell fills your nostrils...",
+   "dst": "墓に入ると、腐敗臭が鼻を突く……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#037": {
+   "src": "As the door opens, a chill runs down your spine as the heat of the desert is sealed behind you...",
+   "dst": "扉が開くと、背筋に寒気が走り、砂漠の暑さが背後に閉じ込められていく……。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#038": {
+   "src": "You hear the muffled shriek of an evil creature through the door...",
+   "dst": "ドアの向こうから、邪悪な生き物のこもった悲鳴が聞こえてくる……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#039": {
+   "src": "Quickly destroy the cursed totem!",
+   "dst": "呪いのトーテムを急いで{c2}破壊{/}しよう！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note": "{c2}destroy{/}"
+  },
+  "Wrath of the Mummy#040": {
+   "src": "[!] You can feel your muscles decaying... You've been cursed!",
+   "dst": "[!] 筋肉が衰えていくのを感じる……{c2}呪われてしまった！{/}",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture",
+   "note": "{c1}You've been cursed!{/}"
+  },
+  "Wrath of the Mummy#041": {
+   "src": "The cursed totem has been destroyed!",
+   "dst": "呪いのトーテムを破壊した！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#042": {
+   "src": "Thank you so much for removing the curse!",
+   "dst": "呪いを解いてくださり、本当にありがとうございます！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Ormrod",
+   "source": "capture"
   },
   "WynnExcavation Site A#000": {
    "src": "Well, I figured it out soon after you got back. We possess the crystal, don't go looking for Wynn Excavation again, all is not what it seems. Take that as a friendly warning.",

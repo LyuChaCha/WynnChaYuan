@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 35,
-  "translated": 35,
+  "count": 43,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -43,7 +43,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#004": {
@@ -63,7 +63,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#006": {
@@ -73,7 +73,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#007": {
@@ -237,8 +237,8 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#023": {
-   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
-   "dst": "Nimm den Wagen des Banditen bei [{~}, {~}, -{~}], um nach {p} zu gelangen.",
+   "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p} or give [{~} Pink Wool] to the bandit.",
+   "dst": "Nimm den Wagen des Banditen bei [{~}, {~}, -{~}], um nach {p} zu gelangen, oder gib dem Banditen [{~} Pink Wool].",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -257,14 +257,14 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#025": {
-   "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
+   "src": "Well, whaddya know? You got some pink wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "Na, sieh mal einer an! Du hast rosa Wolle! Okay, gib her, dann schaue ich weg und lasse dich ins Grab.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 5",
    "speaker": "Bandit",
-   "source": "wiki"
+   "source": "capture"
   },
   "Wrath of the Mummy#026": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
@@ -355,6 +355,86 @@
    "stage": "Stage 7",
    "speaker": "Ormrod",
    "source": "wiki"
+  },
+  "Wrath of the Mummy#035": {
+   "src": "{#} [{~}/{~}] Bandit: I'm not letting you in, unless you can\n{#} pay me.",
+   "dst": "{#} [{~}/{~}] Bandit: Ich lass dich nicht rein, es sei denn, du\n{#} bezahlst mich.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#036": {
+   "src": "As you enter the tomb, a putrid smell fills your nostrils...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#037": {
+   "src": "As the door opens, a chill runs down your spine as the heat of the desert is sealed behind you...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#038": {
+   "src": "You hear the muffled shriek of an evil creature through the door...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#039": {
+   "src": "Quickly destroy the cursed totem!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#040": {
+   "src": "[!] You can feel your muscles decaying... You've been cursed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#041": {
+   "src": "The cursed totem has been destroyed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#042": {
+   "src": "Thank you so much for removing the curse!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Ormrod",
+   "source": "capture"
   }
  }
 }
