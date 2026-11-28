@@ -2,7 +2,7 @@
 
 整理日期 2026-11-28。這份只是清單，語料裡的簡中譯文我們沒有動，由簡中團隊決定怎麼改。
 
-## 一、原文改了，簡中還留著舊原文（108 條）
+## 一、原文改了，簡中還留著舊原文（109 條）
 
 這些鍵在繁中與其他語言已經換成新原文。簡中因為譯文是照舊原文寫的，所以保留舊原文，結果遊戲送出新原文時對不上，**畫面會顯示英文**。改法：把 src 換成「新原文」，再照新原文改譯文。
 
@@ -116,6 +116,7 @@
 | quest/the-feathers-fly-part-ii.json | The Feathers Fly Part II#543 | ...I've made a Growth Accelerator with help from . | ...I've made a Growth Accelerator with help from {u}. | ……我在的协助下做出了一台生长加速器。 |
 | quest/the-feathers-fly-part-ii.json | The Feathers Fly Part II#1024 | I can't stay, {u}. The president's one thing, but the others... | I can't stay, {u}. The president's one thing, but the others... It's safe to say no one's gonna welcome me with open arms, y'know? | 我不能留下来，{u}。总统是一回事，但其他人…… |
 | quest/the-feathers-fly-part-ii.json | The Feathers Fly Part II#1142 | I do believe we can all learn a thing or two about this. Ava... | I do believe we can all learn a thing or two about this. | 我确实相信我们都能从这件事里学到点什么。Ava…… |
+| quest/wrath-of-the-mummy.json | Wrath of the Mummy#023 | Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}. | Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p} or give [{~} Pink Wool] to the bandit. | 使用 [{~}, {~}, -{~}] 的强盗马车前往 {p}。 |
 
 ## 二、原文已換新，但譯文還是照舊意思寫的（1 條）
 
