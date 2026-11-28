@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Canyon Condor",
-  "count": 44,
-  "translated": 44,
+  "count": 48,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -23,18 +23,19 @@
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "",
-   "speaker": "",
+   "speaker": "Jankan",
    "source": "captured"
   },
   "Canyon Condor#002": {
    "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
-   "dst": "坑道の奥から [{~} 金塊] を取ってきてくれたら、次に行く場所を教えてやろう。",
+   "dst": "{c2}坑道の奥から{c3} [{~} 金塊]{c2} を取ってきてくれたら、{c3}次に行く場所を教えてやろう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 2",
    "speaker": "Jankan",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}fetch me{c3}[{~} Gold Chunks]{c2}from the end of the shaft{c3}and I'll tell ye where ye need to go next.{/}"
   },
   "Canyon Condor#003": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
@@ -128,13 +129,14 @@
   },
   "Canyon Condor#012": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
-   "dst": "獣が見つかるといいのですが。見つけたら証拠に [{~} 獣の卵] を持ち帰ってもらえますか？",
+   "dst": "獣が見つかるといいのですが。見つけたら証拠に{c2} [{~} 獣の卵]{/} を持ち帰ってもらえますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 1",
    "speaker": "Svin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Beast Egg]{/}"
   },
   "Canyon Condor#013": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
@@ -238,13 +240,14 @@
   },
   "Canyon Condor#023": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
-   "dst": "山を登って峡谷の深淵を渡った先におるはずじゃ。愛想のいい奴じゃない、それだけは言っとく。",
+   "dst": "{c2}山を登って峡谷の深淵を渡った先{/}におるはずじゃ。愛想のいい奴じゃない、それだけは言っとく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 3",
    "speaker": "Jankan",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}up the mountain and across the canyon abyss,{/}"
   },
   "Canyon Condor#024": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
@@ -308,23 +311,25 @@
   },
   "Canyon Condor#030": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
-   "dst": "台地にある岩柱の一つのてっぺんに咲いてる。見つけるのは難しくないはずだ。",
+   "dst": "{c2}台地にある岩柱の一つのてっぺん{/}に咲いてる。見つけるのは難しくないはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 4",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}on top of one of the stacks in the mesa{/}"
   },
   "Canyon Condor#031": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
-   "dst": "[{~} 希少なバラ] を持ってきたら、台地の怪物のところへ通してやる。",
+   "dst": "{c2}[{~} 希少なバラ]{/} を持ってきたら、台地の怪物のところへ通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 4",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Rare Rose]{/}"
   },
   "Canyon Condor#032": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
@@ -348,13 +353,14 @@
   },
   "Canyon Condor#034": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
-   "dst": "獣はこの台地のどれかのてっぺんに棲んでる。少し探せば見つかるだろう。",
+   "dst": "{c1}獣はこの台地のどれかのてっぺんに棲んでる。少し探せば見つかるだろう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 5",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.{/}"
   },
   "Canyon Condor#035": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
@@ -445,6 +451,49 @@
    "stage": "Stage 6",
    "speaker": "Svin",
    "source": "wiki"
+  },
+  "Canyon Condor#044": {
+   "src": "How is the search going, traveler? I do hope you return to me with [{~} Beast Egg].",
+   "dst": "旅の方、探索は順調ですか？ぜひ{c2} [{~} 獣の卵]{/} を持って戻ってきてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki",
+   "note": "{c2}[{~} Beast Egg]{/}"
+  },
+  "Canyon Condor#045": {
+   "src": "Me back ain' gunna hold up carryin' all that gold. Bring me my [{~} Gold Chunks] from the tunnel, and then I'll give ye yer information.",
+   "dst": "金を全部運んだら、わしの腰がもたん。{c3}トンネルから {c2}[{~} 金塊] {c3}を持ってきたら、{c2}知りたいことを教えてやろう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki",
+   "note": "{c2}[{~} Gold Chunks]{c3}from the tunnel,{c2}and then I'll give ye yer information.{/}"
+  },
+  "Canyon Condor#046": {
+   "src": "What's taken you so long, kid? I just want [{~} Rare Rose]!",
+   "dst": "なんでこんなに時間がかかってるんだ、小僧？　俺が欲しいのはただ{c2}[{~} 希少なバラ]{/}だけなのに！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki",
+   "note": "{c2}[{~} Rare Rose]{/}"
+  },
+  "Canyon Condor#047": {
+   "src": "I hope you have learned much from your adventures, courageous traveler!",
+   "dst": "勇敢な旅の方、この冒険で多くのことを学ばれたことを願っています！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Svin",
+   "source": "captured"
   }
  }
 }

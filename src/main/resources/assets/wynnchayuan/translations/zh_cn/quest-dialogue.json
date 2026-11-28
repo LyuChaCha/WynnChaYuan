@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 25076,
-  "translated": 24743,
+  "count": 25081,
+  "translated": 24744,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -44463,7 +44463,7 @@
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "",
-   "speaker": "",
+   "speaker": "Jankan",
    "source": "captured"
   },
   "Canyon Condor#002": {
@@ -44885,6 +44885,46 @@
    "stage": "Stage 6",
    "speaker": "Svin",
    "source": "wiki"
+  },
+  "Canyon Condor#044": {
+   "src": "How is the search going, traveler? I do hope you return to me with [{~} Beast Egg].",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#045": {
+   "src": "Me back ain' gunna hold up carryin' all that gold. Bring me my [{~} Gold Chunks] from the tunnel, and then I'll give ye yer information.",
+   "dst": "俺这老腰可扛不动那么多金子。去隧道里把俺的 [{~} 金块] 拿来，俺就把情报告诉你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#046": {
+   "src": "What's taken you so long, kid? I just want [{~} Rare Rose]!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#047": {
+   "src": "I hope you have learned much from your adventures, courageous traveler!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Svin",
+   "source": "captured"
   },
   "Celebrations in Smoke#000": {
    "src": "The dagger is lightly stained with blood.",
@@ -248022,7 +248062,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#001": {
@@ -248072,7 +248112,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#006": {
@@ -248334,6 +248374,16 @@
    "stage": "Stage 6",
    "speaker": "Excavator Vade",
    "source": "wiki"
+  },
+  "WynnExcavation Site A#032": {
+   "src": "Take that to Vade, and don't read it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured"
   },
   "WynnExcavation Site B#000": {
    "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
