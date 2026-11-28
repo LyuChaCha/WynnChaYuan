@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 25057,
-  "translated": 24741,
+  "count": 25076,
+  "translated": 24743,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -55600,6 +55600,56 @@
    "speaker": "Doubiss",
    "source": "captured"
   },
+  "Dash Across the Dunes#001": {
+   "src": "Hahaha! You goofball, are you wearing a bunch of armor you pilfered from this place? That's really funny.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#002": {
+   "src": "I've found some real cool stuff myself. Like this one fancy chestplate that was just sat on a table! Those Wynn Army guys clearly never expected to get robbed. Ha!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#003": {
+   "src": "...What? You want it? Hands off, idiot, finders keepers! Although, I guess I might be willing to bet on it. Big fan of bets.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#004": {
+   "src": "Let's say, uh... If you can clear my Time Trial in like, {~} seconds, I'll give you it. You in? If you are, talk to me again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "Bandit",
+   "source": "captured"
+  },
+  "Dash Across the Dunes#005": {
+   "src": "...Does he not know that the fort was already retaken..?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dash Across the Dunes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Dearly Departed#000": {
    "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "{#} 灵巧比较微妙一点。你的灵巧越高，攻击打出双倍伤害的几率就越大。不错吧？",
@@ -105586,6 +105636,26 @@
    "stage": "Stage 9",
    "speaker": "Junes",
    "source": "wiki"
+  },
+  "Kingdom of Sand#072": {
+   "src": "Have you made any progress with the sceptre? I can't wait to see it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "capture"
+  },
+  "Kingdom of Sand#073": {
+   "src": "Have you looked into exploring the tomb at all? Please be careful where you step, I'm sure there are priceless artifacts inside!",
+   "dst": "你有没有考虑去古墓里探一探？落脚的时候请务必小心，里面肯定有无价的文物！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "Junes",
+   "source": "capture"
   },
   "Lava Springs#000": {
    "src": "If you want some of my special brews, elixirs, and potions, go do business with my assistant.",
@@ -238042,7 +238112,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#004": {
@@ -238092,7 +238162,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#009": {
@@ -238294,6 +238364,46 @@
    "stage": "Stage 4",
    "speaker": "Caras",
    "source": "wiki"
+  },
+  "Tribal Aggression#029": {
+   "src": "What are you doing here? Be gone!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#030": {
+   "src": "Are you going to get the totem back or not? It's located at the Owl Camp right now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#031": {
+   "src": "Oh thank you so much for helping us! It's so nice to see you again, owl friend.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Caras",
+   "source": "capture"
+  },
+  "Tribal Aggression#032": {
+   "src": "Ah, this is how I appreciate it, peace and harmony...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Favian",
+   "source": "capture"
   },
   "Troubled Tribesmen#000": {
    "src": "Fa yna tuusat! Dra sykel uv drec cylnat dnaa ryc paah lunnibdat.",
@@ -247512,7 +247622,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#004": {
@@ -247532,7 +247642,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#006": {
@@ -247542,7 +247652,7 @@
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "",
-   "speaker": "",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#007": {
@@ -247726,14 +247836,14 @@
    "source": "wiki"
   },
   "Wrath of the Mummy#025": {
-   "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
+   "src": "Well, whaddya know? You got some pink wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "哟，没想到啊？你真弄到粉色羊毛了！好，交给我，我就当没看见，放你进墓里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
    "stage": "Stage 5",
    "speaker": "Bandit",
-   "source": "wiki"
+   "source": "capture"
   },
   "Wrath of the Mummy#026": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
@@ -247824,6 +247934,86 @@
    "stage": "Stage 7",
    "speaker": "Ormrod",
    "source": "wiki"
+  },
+  "Wrath of the Mummy#035": {
+   "src": "{#} [{~}/{~}] Bandit: I'm not letting you in, unless you can\n{#} pay me.",
+   "dst": "{#} [{~}/{~}] 强盗: 我不会放你进去，除非你\n{#} 付我钱。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Wrath of the Mummy#036": {
+   "src": "As you enter the tomb, a putrid smell fills your nostrils...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#037": {
+   "src": "As the door opens, a chill runs down your spine as the heat of the desert is sealed behind you...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#038": {
+   "src": "You hear the muffled shriek of an evil creature through the door...",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#039": {
+   "src": "Quickly destroy the cursed totem!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#040": {
+   "src": "[!] You can feel your muscles decaying... You've been cursed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#041": {
+   "src": "The cursed totem has been destroyed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Wrath of the Mummy",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "capture"
+  },
+  "Wrath of the Mummy#042": {
+   "src": "Thank you so much for removing the curse!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Ormrod",
+   "source": "capture"
   },
   "WynnExcavation Site A#000": {
    "src": "Well, I figured it out soon after you got back. We possess the crystal, don't go looking for Wynn Excavation again, all is not what it seems. Take that as a friendly warning.",
