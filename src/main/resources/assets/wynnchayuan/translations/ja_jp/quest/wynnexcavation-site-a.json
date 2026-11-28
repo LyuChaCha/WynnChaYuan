@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site A",
-  "count": 32,
-  "translated": 32,
+  "count": 33,
+  "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -13,7 +13,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#001": {
@@ -38,23 +38,25 @@
   },
   "WynnExcavation Site A#003": {
    "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
-   "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
+   "dst": "石板ひとつ完成！{c2}Vade に返してね{/}。あ、読んじゃダメよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 2",
    "speaker": "Tesha",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Return it to Vade{/}"
   },
   "WynnExcavation Site A#004": {
    "src": "A strange force pushes you back!",
-   "dst": "奇妙な力に押し戻された！",
+   "dst": "{c1}奇妙な力に押し戻された！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}A strange force pushes you back!{/}"
   },
   "WynnExcavation Site A#005": {
    "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
@@ -63,7 +65,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#006": {
@@ -108,13 +110,14 @@
   },
   "WynnExcavation Site A#010": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
-   "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！研究所は上のテントだ。翻訳に傷なんかつけるなよ！",
+   "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！{c2}研究所は上のテント{/}だ。翻訳に傷なんかつけるなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 1",
    "speaker": "Excavator Vade",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}The lab is up there in the tent,{/}"
   },
   "WynnExcavation Site A#011": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
@@ -238,13 +241,14 @@
   },
   "WynnExcavation Site A#023": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
-   "dst": "「際立つ木材に供物を投げよ。正しき角度が道を開く」",
+   "dst": "{c1}「際立つ木材に供物を投げよ。正しき角度が道を開く」{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 3",
    "speaker": "Excavator Vade",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}\"Throw tribute an item to the wood that stands out, the right angle will open the way\"{/}"
   },
   "WynnExcavation Site A#024": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
@@ -325,6 +329,17 @@
    "stage": "Stage 6",
    "speaker": "Excavator Vade",
    "source": "wiki"
+  },
+  "WynnExcavation Site A#032": {
+   "src": "Take that to Vade, and don't read it!",
+   "dst": "{c1}これを Vade に渡して。絶対に読んじゃだめよ！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured",
+   "note": "{c1}Take that to Vade, and don't read it!{/}"
   }
  }
 }

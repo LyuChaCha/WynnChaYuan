@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Canyon Condor",
-  "count": 44,
-  "translated": 44,
+  "count": 48,
+  "translated": 45,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -23,7 +23,7 @@
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "",
-   "speaker": "",
+   "speaker": "Jankan",
    "source": "captured"
   },
   "Canyon Condor#002": {
@@ -445,6 +445,46 @@
    "stage": "Stage 6",
    "speaker": "Svin",
    "source": "wiki"
+  },
+  "Canyon Condor#044": {
+   "src": "How is the search going, traveler? I do hope you return to me with [{~} Beast Egg].",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki"
+  },
+  "Canyon Condor#045": {
+   "src": "Me back ain' gunna hold up carryin' all that gold. Bring me my [{~} Gold Chunks] from the tunnel, and then I'll give ye yer information.",
+   "dst": "หลังข้าคงไม่ไหวถ้าต้องแบกทองทั้งหมดนั่น เอา [{~} Gold Chunks] ของข้าจากอุโมงค์มาให้ แล้วข้าจะให้ข้อมูลเจ้า",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki"
+  },
+  "Canyon Condor#046": {
+   "src": "What's taken you so long, kid? I just want [{~} Rare Rose]!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki"
+  },
+  "Canyon Condor#047": {
+   "src": "I hope you have learned much from your adventures, courageous traveler!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Svin",
+   "source": "captured"
   }
  }
 }
