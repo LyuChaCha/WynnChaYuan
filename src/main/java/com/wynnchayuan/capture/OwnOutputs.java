@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.translate.BundledCorpus;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.Languages;
 import net.minecraft.network.chat.Component;
@@ -186,7 +187,7 @@ public final class OwnOutputs {
     }
 
     private static JsonElement read(String resource) {
-        try (InputStream in = OwnOutputs.class.getResourceAsStream(resource)) {
+        try (InputStream in = BundledCorpus.open(resource)) {
             if (in == null) {
                 return null;
             }

@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.tukaani:xz:${xz_version}"
+    }
+}
+
 plugins {
     id 'fabric-loom' version '1.13-SNAPSHOT'
     id 'java'
@@ -41,6 +50,9 @@ dependencies {
     // Mod Menu：只拿它的介面來編譯 client.ModMenuEntry，不打包、也不要求玩家安裝。
     // 沒裝 Mod Menu 的人那個類別根本不會被載入（見該類別的說明）。
     modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+    implementation "org.tukaani:xz:${project.xz_version}"
+    include "org.tukaani:xz:${project.xz_version}"
 }
 
 // 少了 Wynntils jar 的話，錯誤會是一長串「找不到 com.wynntils.*」，很難看出真正原因。
@@ -220,10 +232,64 @@ def downloadedLanguages = (translationsRoot.listFiles() ?: [] as File[])
         .collect { it.name }
         .sort()
 
+def processedTranslations = layout.buildDirectory.dir('resources/main/assets/wynnchayuan/translations')
+def packedCorpus = layout.buildDirectory.dir('corpus-xz')
+
+tasks.register('packCorpus') {
+    group = 'build'
+    description = 'jar 內附的語料改存成 .json.xz，原始碼與測試照舊讀 json'
+    dependsOn 'processResources'
+    def langs = jarLanguages
+    def from = processedTranslations
+    def out = packedCorpus
+    inputs.property 'jarLanguages', langs.join(',')
+    inputs.files(langs.collect { from.get().dir(it) }).withPathSensitivity(PathSensitivity.RELATIVE)
+    outputs.dir(out)
+    doLast {
+        def root = from.get().asFile
+        def target = out.get().asFile
+        target.deleteDir()
+        long raw = 0
+        long packed = 0
+        langs.each { lang ->
+            def dir = new File(root, lang)
+            if (!dir.directory) {
+                throw new GradleException("${lang} 的語料不在 ${dir}，打不了 xz")
+            }
+            dir.eachFileRecurse(groovy.io.FileType.FILES) { f ->
+                if (!f.name.endsWith('.json')) {
+                    return
+                }
+                def rel = root.toPath().relativize(f.toPath()).toString().replace(File.separator, '/')
+                def dest = new File(target, rel + '.xz')
+                dest.parentFile.mkdirs()
+                def options = new org.tukaani.xz.LZMA2Options(9)
+                options.niceLen = org.tukaani.xz.LZMA2Options.NICE_LEN_MAX
+                options.depthLimit = 512
+                options.dictSize = Math.max(org.tukaani.xz.LZMA2Options.DICT_SIZE_MIN, f.length() as int)
+                dest.withOutputStream { os ->
+                    new org.tukaani.xz.XZOutputStream(new BufferedOutputStream(os, 1 << 16), options).withCloseable { xz ->
+                        f.withInputStream { xz << it }
+                    }
+                }
+                raw += f.length()
+                packed += dest.length()
+            }
+        }
+        logger.lifecycle(String.format('[WynnChaYuan] 內附語料 %.2f MB 壓成 xz 後 %.2f MB', raw / 1e6, packed / 1e6))
+    }
+}
+
 tasks.named('jar') {
     inputs.property 'jarLanguages', jarLanguages.join(',')
     downloadedLanguages.each { lang ->
         exclude "assets/wynnchayuan/translations/${lang}/**"
+    }
+    jarLanguages.each { lang ->
+        exclude "assets/wynnchayuan/translations/${lang}/**/*.json"
+    }
+    from(tasks.named('packCorpus')) {
+        into 'assets/wynnchayuan/translations'
     }
     doFirst {
         logger.lifecycle("[WynnChaYuan] jar 只打包 ${jarLanguages.join('、')}，"
@@ -233,7 +299,7 @@ tasks.named('jar') {
 
 tasks.register('checkJarLanguages') {
     group = 'verification'
-    description = 'jar 裡的語料只有 _in-jar.json 列的語言，其他資源一個不少'
+    description = 'jar 裡的語料只有 _in-jar.json 列的語言、是 xz 版本，其他資源一個不少'
     def built = tasks.named('remapJar').flatMap { it.archiveFile }
     def resources = layout.buildDirectory.dir('resources/main')
     def expected = jarLanguages
@@ -253,18 +319,24 @@ tasks.register('checkJarLanguages') {
         if (found != expected) {
             problems << "jar 裡的語料語言是 ${found}，_in-jar.json 寫的是 ${expected}"
         }
+        def packedLang = { String rel -> expected.any { rel.startsWith("${prefix}${it}/".toString()) } }
         expected.each { lang ->
-            if (!entries.contains("${prefix}${lang}/_index.json".toString())) {
-                problems << "${lang} 沒有 _index.json"
+            if (!entries.contains("${prefix}${lang}/_index.json.xz".toString())) {
+                problems << "${lang} 沒有 _index.json.xz"
             }
+        }
+        def doubled = entries.findAll { packedLang(it) && it.endsWith('.json') }.sort()
+        if (doubled) {
+            problems << "內附語言的原始 json 也打進 jar 了（應該只有 .xz）：\n  " + doubled.take(20).join('\n  ')
         }
         def root = resources.get().asFile
         def missing = []
         root.eachFileRecurse(groovy.io.FileType.FILES) { f ->
             def rel = root.toPath().relativize(f.toPath()).toString().replace(File.separator, '/')
             def dropped = leftOut.any { rel.startsWith("${prefix}${it}/".toString()) }
-            if (!dropped && !entries.contains(rel)) {
-                missing << rel
+            def want = packedLang(rel) && rel.endsWith('.json') ? rel + '.xz' : rel
+            if (!dropped && !entries.contains(want)) {
+                missing << want
             }
         }
         if (missing) {
@@ -273,7 +345,7 @@ tasks.register('checkJarLanguages') {
         if (problems) {
             throw new GradleException(problems.join('\n'))
         }
-        logger.lifecycle("[WynnChaYuan] jar 的語料：${found.join('、')}；其他資源齊全")
+        logger.lifecycle("[WynnChaYuan] jar 的語料：${found.join('、')}（xz）；其他資源齊全")
     }
 }
 tasks.named('check') { dependsOn 'checkJarLanguages' }
@@ -323,6 +395,15 @@ tasks.named('UpgradeSafetyTest') {
 tasks.named('SettingsViewTest') {
     if (project.hasProperty('pack')) {
         systemProperty 'wcy.pack', project.property('pack')
+    }
+}
+
+tasks.named('BundledCorpusTest') {
+    def built = tasks.named('remapJar').flatMap { it.archiveFile }
+    inputs.file(built)
+    dependsOn 'remapJar'
+    doFirst {
+        systemProperty 'wcy.jar', built.get().asFile.path
     }
 }
 

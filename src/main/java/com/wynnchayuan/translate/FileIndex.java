@@ -41,7 +41,7 @@ public final class FileIndex {
         if (hit != null) {
             return hit;
         }
-        List<String> found = read(() -> FileIndex.class.getResourceAsStream(resource(lang)));
+        List<String> found = read(() -> BundledCorpus.open(resource(lang)));
         cached.put(lang, found);
         return found;
     }

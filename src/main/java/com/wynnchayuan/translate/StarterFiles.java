@@ -52,7 +52,7 @@ public final class StarterFiles {
             if (resume && Files.exists(out)) {
                 continue;
             }
-            try (InputStream in = StarterFiles.class.getResourceAsStream(
+            try (InputStream in = BundledCorpus.open(
                     Languages.resource(lang) + name)) {
                 if (in == null) {
                     continue;
@@ -94,7 +94,7 @@ public final class StarterFiles {
         if (!FileIndex.safeName(name) || !Languages.inJar(lang)) {
             return false;
         }
-        try (InputStream in = StarterFiles.class.getResourceAsStream(
+        try (InputStream in = BundledCorpus.open(
                 Languages.resource(lang) + name)) {
             if (in == null) {
                 return false;
