@@ -6,6 +6,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.PositionView;
 import com.wynnchayuan.client.ui.PositionView.Panel;
 import com.wynnchayuan.client.ui.PositionView.Rect;
+import com.wynnchayuan.client.ui.PositionView.Shown;
 import com.wynnchayuan.client.ui.PositionView.Size;
 import com.wynnchayuan.client.ui.PositionView.Spot;
 import com.wynnchayuan.client.ui.Surface;
@@ -18,6 +19,7 @@ import net.minecraft.client.gui.screens.Screen;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public final class PositionScreen extends CanvasScreen {
 
@@ -28,7 +30,7 @@ public final class PositionScreen extends CanvasScreen {
     private final PositionView view;
     private final Map<Overlay, PanelPreview.Sample> samples = PanelSamples.all();
     private final PanelPreview.Sample original = PanelSamples.original();
-    private Rect preview;
+    private Shown preview;
 
     public PositionScreen(Screen parent) {
         super(T.c("pos.title"), parent);
@@ -66,26 +68,29 @@ public final class PositionScreen extends CanvasScreen {
         super.render(g, mouseX, mouseY, delta);
     }
 
-    private Rect drawPreview(GuiGraphics g) {
+    private Shown drawPreview(GuiGraphics g) {
         try {
             Overlay which = Overlay.valueOf(view.showing());
-            PanelBox box;
             if (which == Overlay.TOOLTIP && view.follows()) {
-                int[] mouse = view.followPoint();
-                int mx = mouse == null ? this.width * 3 / 10 : mouse[0];
-                int my = mouse == null ? this.height * 2 / 5 : mouse[1];
-                box = PanelPreview.drawFollowing(g, original, samples.get(which), mx, my,
-                        WynnChaYuan.config().panelGap(), ModConfig.PanelSide.values()[view.side()]);
-            } else {
-                Spot at = view.spot();
-                box = PanelPreview.draw(g, which, samples.get(which),
-                        new PanelPlace(at.x(), at.y(), at.w(), at.h()));
+                int[] item = Objects.requireNonNullElseGet(view.itemAt(),
+                        () -> PositionView.itemHome(this.width, this.height));
+                PanelPreview.Following drawn = PanelPreview.drawFollowing(g, original,
+                        samples.get(which), item[0], item[1], WynnChaYuan.config().panelGap(),
+                        ModConfig.PanelSide.values()[view.side()]);
+                return new Shown(rect(drawn.panel()), drawn.item().empty() ? null : rect(drawn.item()));
             }
-            return new Rect(box.x(), box.y(), box.w(), box.h());
+            Spot at = view.spot();
+            PanelBox box = PanelPreview.draw(g, which, samples.get(which),
+                    new PanelPlace(at.x(), at.y(), at.w(), at.h()));
+            return new Shown(rect(box), null);
         } catch (RuntimeException e) {
             ErrorDebug.note("PositionScreen#drawPreview", view.showing(), e);
             return null;
         }
+    }
+
+    private static Rect rect(PanelBox box) {
+        return new Rect(box.x(), box.y(), box.w(), box.h());
     }
 
     private final class Places implements PositionView.Host {
@@ -117,7 +122,7 @@ public final class PositionScreen extends CanvasScreen {
         }
 
         @Override
-        public Rect drawn(String id, Spot spot) {
+        public Shown drawn(String id, Spot spot, PositionView.Anchor anchor) {
             return preview;
         }
 

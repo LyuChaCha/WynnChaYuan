@@ -32,6 +32,10 @@ public final class PositionView extends Surface {
 
     public record Rect(int x, int y, int w, int h) {}
 
+    public record Anchor(int x, int y, int side) {}
+
+    public record Shown(Rect panel, Rect item) {}
+
     public interface Host {
         List<Panel> panels();
 
@@ -41,7 +45,7 @@ public final class PositionView extends Surface {
 
         boolean follows();
 
-        Rect drawn(String id, Spot spot);
+        Shown drawn(String id, Spot spot, Anchor anchor);
 
         void store(String id, Spot spot);
 
@@ -58,7 +62,7 @@ public final class PositionView extends Surface {
 
     public static final String TOOLTIP = "TOOLTIP";
 
-    private enum Grab { NONE, MOVE, RESIZE }
+    private enum Grab { NONE, MOVE, RESIZE, ITEM }
 
     private static final long NOTE_MS = 3500;
     private static final float GAP = 8;
@@ -74,7 +78,7 @@ public final class PositionView extends Surface {
     private final int openedSide;
     private boolean follow;
     private int side;
-    private int[] followAt;
+    private int[] itemAt;
     private float[] lastDock;
     private int showing;
 
@@ -82,10 +86,12 @@ public final class PositionView extends Surface {
     private double pressX;
     private double pressY;
     private Rect pressRect;
+    private int[] pressItem;
     private boolean snapX;
     private boolean snapY;
     private long pinnedAt;
     private Rect lastRect;
+    private Rect lastItem;
 
     public PositionView(Shell shell, Host host) {
         this.shell = shell;
@@ -129,8 +135,16 @@ public final class PositionView extends Surface {
         return side;
     }
 
-    public int[] followPoint() {
-        return followAt;
+    public int[] itemAt() {
+        return itemAt == null ? null : itemAt.clone();
+    }
+
+    public static int[] itemHome(int screenW, int screenH) {
+        return new int[] {screenW / 2, screenH * 3 / 5};
+    }
+
+    public Rect item() {
+        return lastItem;
     }
 
     public void show(String id) {
@@ -149,6 +163,17 @@ public final class PositionView extends Surface {
 
     private Panel panel() {
         return panels.get(showing);
+    }
+
+    private boolean following(Panel panel) {
+        return TOOLTIP.equals(panel.id()) && follow;
+    }
+
+    private void anchorMode(boolean follow) {
+        if (follow && !this.follow) {
+            itemAt = null;
+        }
+        this.follow = follow;
     }
 
     private boolean changed(Panel panel) {
@@ -234,24 +259,71 @@ public final class PositionView extends Surface {
         if (panels.isEmpty()) {
             return;
         }
-        trackFollow();
         Panel panel = panel();
-        Rect r = host.drawn(panel.id(), working.get(panel.id()));
+        boolean sided = following(panel);
+        Anchor anchor = null;
+        if (sided) {
+            settleItem();
+            backdrop();
+            anchor = new Anchor(itemAt[0], itemAt[1], side);
+        }
+        Shown shown = host.drawn(panel.id(), working.get(panel.id()), anchor);
+        Rect r = shown == null ? null : shown.panel();
+        Rect item = sided && shown != null ? shown.item() : null;
         lastRect = r;
+        lastItem = item;
+        if (visible(item)) {
+            adornItem(item);
+        }
         boolean underGrip = false;
-        if (r != null && r.w() > 0 && r.h() > 0) {
+        if (visible(r)) {
             underGrip = adorn(panel, r);
         }
         dock(panel, r, underGrip);
     }
 
-    private void trackFollow() {
-        boolean onScreen = mx >= 0 && my >= 0 && mx < screenW && my < screenH;
-        boolean onDock = lastDock != null
-                && Ui.in(mx, my, lastDock[0], lastDock[1], lastDock[2], lastDock[3]);
-        if (onScreen && !onDock && grab == Grab.NONE) {
-            followAt = new int[] {Math.round(mx), Math.round(my)};
+    private static boolean visible(Rect r) {
+        return r != null && r.w() > 0 && r.h() > 0;
+    }
+
+    private void settleItem() {
+        int[] at = itemAt == null ? itemHome(screenW, screenH) : itemAt;
+        itemAt = clampItem(at[0], at[1]);
+    }
+
+    private int[] clampItem(int x, int y) {
+        return new int[] {Math.max(0, Math.min(x, Math.max(0, screenW - 1))),
+                Math.max(0, Math.min(y, Math.max(0, screenH - 1)))};
+    }
+
+    private void backdrop() {
+        Zone empty = zone(0, 0, screenW, screenH, (px, py, b) -> {
+            itemAt = clampItem((int) Math.round(px), (int) Math.round(py));
+            start(Grab.ITEM, px, py, null);
+        });
+        empty.drag = (px, py, b) -> dragItem(px, py);
+        empty.release = this::drop;
+        empty.key = "backdrop";
+    }
+
+    private void adornItem(Rect item) {
+        boolean hot = over(item.x(), item.y(), item.w(), item.h());
+        float g = glow("item", hot || grab == Grab.ITEM);
+        c.ring(item.x() - 2, item.y() - 2, item.w() + 4, item.h() + 4, 2, c.px(),
+               Ui.alpha(0xFFFFFFFF, (int) (0x30 + (0xC0 - 0x30) * g)));
+        Zone zone = zone(item.x(), item.y(), item.w(), item.h(),
+                (px, py, b) -> start(Grab.ITEM, px, py, null));
+        zone.drag = (px, py, b) -> dragItem(px, py);
+        zone.release = this::drop;
+        zone.key = "item";
+    }
+
+    private void dragItem(double px, double py) {
+        if (pressItem == null) {
+            return;
         }
+        itemAt = clampItem(pressItem[0] + (int) Math.round(px - pressX),
+                pressItem[1] + (int) Math.round(py - pressY));
     }
 
     private boolean adorn(Panel panel, Rect r) {
@@ -262,7 +334,7 @@ public final class PositionView extends Surface {
                    snapY ? accent : 0x38FFFFFF);
         }
         boolean hot = over(r.x(), r.y(), r.w(), r.h());
-        float g = glow("panel", hot || grab != Grab.NONE);
+        float g = glow("panel", hot || grab == Grab.MOVE || grab == Grab.RESIZE);
         c.ring(r.x() - 2, r.y() - 2, r.w() + 4, r.h() + 4, 2, c.px(),
                Ui.alpha(accent, (int) (0x70 + (0xFF - 0x70) * g)));
 
@@ -301,6 +373,7 @@ public final class PositionView extends Surface {
         pressX = px;
         pressY = py;
         pressRect = r;
+        pressItem = itemAt == null ? null : itemAt.clone();
         snapX = false;
         snapY = false;
     }
@@ -333,6 +406,7 @@ public final class PositionView extends Surface {
     private void drop() {
         grab = Grab.NONE;
         pressRect = null;
+        pressItem = null;
         snapX = false;
         snapY = false;
     }
@@ -372,7 +446,7 @@ public final class PositionView extends Surface {
 
     private void dock(Panel panel, Rect r, boolean underGrip) {
         boolean tooltip = TOOLTIP.equals(panel.id());
-        boolean sided = tooltip && follow;
+        boolean sided = following(panel);
         float room = screenW - MARGIN * 2;
         float inner = room - PAD * 2;
 
@@ -387,7 +461,7 @@ public final class PositionView extends Surface {
             List<Row.Option> anchors = anchors();
             pieces.add(new Piece(Math.min(inner, segmentWidth(anchors)), false, (x, y, w) ->
                     segmented("anchor", x, x + w, y, anchors, () -> follow ? 0 : 1,
-                              i -> follow = i == 0, tone -> accent)));
+                              i -> anchorMode(i == 0), tone -> accent)));
         }
         if (sided) {
             List<Row.Option> sides = sides();
@@ -492,7 +566,7 @@ public final class PositionView extends Surface {
         } else if (grab == Grab.MOVE) {
             text = shell.tr(snapX || snapY ? "pos.snapping" : "pos.dragging", panel.label());
             ink = snapX || snapY ? accent : Ui.TEXT;
-        } else if (TOOLTIP.equals(panel.id()) && follow) {
+        } else if (following(panel)) {
             text = shell.tr("pos.follow.hint");
             ink = Ui.AMBER;
         } else if (underGrip) {

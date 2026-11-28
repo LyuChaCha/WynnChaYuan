@@ -2,7 +2,9 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.client.ui.PositionView;
 import com.wynnchayuan.client.ui.PositionView.Panel;
+import com.wynnchayuan.client.ui.PositionView.Anchor;
 import com.wynnchayuan.client.ui.PositionView.Rect;
+import com.wynnchayuan.client.ui.PositionView.Shown;
 import com.wynnchayuan.client.ui.PositionView.Size;
 import com.wynnchayuan.client.ui.PositionView.Spot;
 import com.wynnchayuan.client.ui.Shell;
@@ -16,6 +18,9 @@ final class FakePanels implements PositionView.Host {
 
     static final Size TALL = new Size(100, 640, 24, 320, true);
     static final Size WIDE = new Size(100, 420, 0, 0, false);
+    static final int ITEM_W = 120;
+    static final int ITEM_H = 60;
+    static final int GAP = 8;
 
     private final Shell shell;
     final Map<String, Spot> saved = new HashMap<>();
@@ -60,7 +65,43 @@ final class FakePanels implements PositionView.Host {
     }
 
     @Override
-    public Rect drawn(String id, Spot spot) {
+    public Shown drawn(String id, Spot spot, Anchor anchor) {
+        if (anchor != null && id.equals("TOOLTIP")) {
+            return beside(anchor);
+        }
+        return new Shown(drawn(id, spot), null);
+    }
+
+    Rect itemFor(int mouseX, int mouseY) {
+        int textW = ITEM_W - 8;
+        int textH = ITEM_H - 8;
+        int left = mouseX + 12;
+        if (left + textW > screenW) {
+            left = Math.max(left - 24 - textW, 4);
+        }
+        int top = mouseY - 12;
+        if (top + textH + 3 > screenH) {
+            top = screenH - textH - 3;
+        }
+        return new Rect(left - 4, top - 4, ITEM_W, ITEM_H);
+    }
+
+    private Shown beside(Anchor anchor) {
+        Rect item = itemFor(anchor.x(), anchor.y());
+        boolean itemOnRight = item.x() + 4 >= anchor.x();
+        int right = item.x() + item.w() + GAP;
+        int left = item.x() - GAP - 150;
+        int x = switch (anchor.side()) {
+            case 1 -> right;
+            case 2 -> left;
+            default -> itemOnRight ? left : right;
+        };
+        x = Math.max(0, Math.min(screenW - 150, x));
+        int y = Math.max(0, Math.min(screenH - 70, item.y()));
+        return new Shown(new Rect(x, y, 150, 70), item);
+    }
+
+    private Rect drawn(String id, Spot spot) {
         int[] natural = switch (id) {
             case "TOOLTIP" -> new int[] {150, 70};
             case "TRACKER" -> new int[] {120, 40};

@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.client.ui.PanelDrag;
 import com.wynnchayuan.client.ui.PositionView;
+import com.wynnchayuan.client.ui.PositionView.Rect;
 import com.wynnchayuan.client.ui.PositionView.Spot;
 import com.wynnchayuan.client.ui.Surface;
 
@@ -9,6 +10,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 
 public final class PositionEditorTest {
 
@@ -31,6 +33,10 @@ public final class PositionEditorTest {
         dragMath();
         onePanel();
         pinsTooltip();
+        cursorLeavesItem();
+        clickMovesItem();
+        dragsItem();
+        sideKeepsItem();
         side();
         cancel();
         resize();
@@ -133,6 +139,7 @@ public final class PositionEditorTest {
         float[] after = view.spot("box:TOOLTIP");
         must("面板跟著拖過去（" + after[0] + "," + after[1] + "）",
                 after[0] == before[0] + 100 && after[1] == before[1] + 50);
+        must("固定之後不畫示範物品框", view.spot("item") == null && view.item() == null);
         AwtCanvas c = render(view, after[0] + 10, after[1] + 10);
         ImageIO.write(c.image, "png", new File("build/ui-preview/zh_tw-position-pinned.png"));
         must("還沒儲存，什麼都不寫", host.stored.isEmpty() && host.followSet == null);
@@ -141,7 +148,8 @@ public final class PositionEditorTest {
                 host.followSet == Boolean.FALSE && host.commits == 1 && host.closes == 1);
         Spot tooltip = host.stored.get("TOOLTIP");
         must("寫進去的是拖過之後的文字起點（" + tooltip + "）",
-                tooltip != null && tooltip.x() == 120 && tooltip.y() == 70);
+                tooltip != null && tooltip.x() == (int) before[0] + 104
+                        && tooltip.y() == (int) before[1] + 54);
         must("沒動的面板不寫", host.stored.size() == 1);
 
         FakePanels back = new FakePanels(new SubViewsTest.FakeShell("zh_tw"));
@@ -151,6 +159,96 @@ public final class PositionEditorTest {
         must("在編輯器裡可以切回跟隨滑鼠", again.follows());
         press(again, "b:save");
         must("切回跟隨滑鼠會寫回去", back.followSet == Boolean.TRUE);
+    }
+
+    private static int[] home() {
+        return PositionView.itemHome(W, H);
+    }
+
+    private static void cursorLeavesItem() throws Exception {
+        FakePanels host = new FakePanels(new SubViewsTest.FakeShell("zh_tw"));
+        PositionView view = editor(host);
+        must("剛打開時示範物品框在中間偏下（" + Arrays.toString(view.itemAt()) + "）",
+                Arrays.equals(view.itemAt(), home()) && home()[1] > H / 2);
+        Rect item = view.item();
+        Rect panel = view.drawn();
+        must("跟隨模式畫出示範物品框", item != null && view.spot("item") != null);
+        double[][] path = {{30, 200}, {500, 300}, {320, 10}, {item.x() + 5, item.y() + 5}};
+        boolean still = true;
+        for (double[] at : path) {
+            render(view, at[0], at[1]);
+            still &= Arrays.equals(view.itemAt(), home()) && item.equals(view.item())
+                    && panel.equals(view.drawn());
+        }
+        must("游標移來移去，示範物品框和翻譯面板都不動", still);
+        must("游標移到上面的工具列也點得到", view.spot("c:side:1") != null);
+    }
+
+    private static void clickMovesItem() throws Exception {
+        FakePanels host = new FakePanels(new SubViewsTest.FakeShell("zh_tw"));
+        PositionView view = editor(host);
+        view.mouseDown(500, 120, 0);
+        view.mouseUp();
+        render(view, 100, 300);
+        must("點空白處，示範物品框移過去（" + Arrays.toString(view.itemAt()) + "）",
+                Arrays.equals(view.itemAt(), new int[] {500, 120})
+                        && host.itemFor(500, 120).equals(view.item()));
+        must("點空白處不會改成固定位置", view.follows() && host.stored.isEmpty());
+        render(view, 20, 40);
+        must("點完游標移開，物品框留在點的地方", Arrays.equals(view.itemAt(), new int[] {500, 120}));
+    }
+
+    private static void dragsItem() throws Exception {
+        FakePanels host = new FakePanels(new SubViewsTest.FakeShell("zh_tw"));
+        PositionView view = editor(host);
+        int[] start = home();
+        Rect before = view.item();
+        drag(view, "item", -60, 30);
+        must("拖示範物品框跟著走（" + Arrays.toString(view.itemAt()) + "）",
+                Arrays.equals(view.itemAt(), new int[] {start[0] - 60, start[1] + 30})
+                        && view.item().x() == before.x() - 60 && view.item().y() == before.y() + 30);
+        must("拖物品框不會改成固定位置", view.follows());
+        render(view, 600, 20);
+        must("放開之後就停住", Arrays.equals(view.itemAt(), new int[] {start[0] - 60, start[1] + 30}));
+
+        drag(view, "item", 1000, 0);
+        must("物品框拖得到最右邊（" + Arrays.toString(view.itemAt()) + "）",
+                view.itemAt()[0] == W - 1 && view.item().x() + view.item().w() <= W);
+        view.mouseDown(300, 120, 0);
+        view.mouseUp();
+        render(view, -100, -100);
+        drag(view, "item", -2000, 0);
+        must("也拖得到最左邊（" + Arrays.toString(view.itemAt()) + "）",
+                view.itemAt()[0] == 0 && view.item().x() >= 0);
+
+        drag(view, "box:TOOLTIP", 30, -20);
+        must("拖翻譯面板本身仍然改成固定位置", !view.follows());
+        press(view, "c:anchor:0");
+        render(view, -100, -100);
+        must("切回跟隨滑鼠，物品框回到中間偏下", Arrays.equals(view.itemAt(), home()));
+    }
+
+    private static void sideKeepsItem() throws Exception {
+        FakePanels host = new FakePanels(new SubViewsTest.FakeShell("zh_tw"));
+        PositionView view = editor(host);
+        Rect item = view.item();
+        int[] at = view.itemAt();
+        press(view, "c:side:1");
+        render(view, -100, -100);
+        Rect right = view.drawn();
+        boolean stayed = item.equals(view.item()) && Arrays.equals(at, view.itemAt());
+        press(view, "c:side:2");
+        render(view, -100, -100);
+        Rect left = view.drawn();
+        stayed &= item.equals(view.item()) && Arrays.equals(at, view.itemAt());
+        press(view, "c:side:0");
+        render(view, -100, -100);
+        stayed &= item.equals(view.item()) && Arrays.equals(at, view.itemAt());
+        must("切換自動／右側／左側，示範物品框不動", stayed);
+        must("只有翻譯面板換邊（右 " + right.x() + "、左 " + left.x() + "）",
+                right.x() >= item.x() + item.w() && left.x() + left.w() <= item.x());
+        AwtCanvas c = render(view, -100, -100);
+        ImageIO.write(c.image, "png", new File("build/ui-preview/zh_tw-position-follow.png"));
     }
 
     private static void side() throws Exception {

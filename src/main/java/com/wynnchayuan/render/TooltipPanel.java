@@ -43,15 +43,21 @@ public final class TooltipPanel {
         PanelBox drawn = cfg.panelAnchor() == ModConfig.PanelAnchor.FIXED
                 ? drawPinned(graphics, lines, cfg.fixedX(), cfg.fixedY())
                 : drawBeside(graphics, tooltip, lines, mouseX, mouseY,
-                        PanelGap.layout(cfg.panelGap()), cfg.panelSide(), PendingTooltip.pushed());
+                        PanelGap.layout(cfg.panelGap()), cfg.panelSide(), PendingTooltip.pushed())
+                        .panel();
         PanelShot.note(drawn.x(), drawn.y(), drawn.w(), drawn.h(), lines.get(0).getString());
     }
 
-    static PanelBox drawBeside(GuiGraphics graphics, List<Component> tooltip, List<Component> lines,
-                               int mouseX, int mouseY, int gap, ModConfig.PanelSide side,
-                               boolean withOriginal) {
+    record Beside(PanelBox panel, PanelBox original) {
+
+        static final Beside NONE = new Beside(PanelBox.NONE, PanelBox.NONE);
+    }
+
+    static Beside drawBeside(GuiGraphics graphics, List<Component> tooltip, List<Component> lines,
+                             int mouseX, int mouseY, int gap, ModConfig.PanelSide side,
+                             boolean withOriginal) {
         if (tooltip == null || tooltip.isEmpty() || lines == null || lines.isEmpty()) {
-            return PanelBox.NONE;
+            return Beside.NONE;
         }
         Minecraft mc = Minecraft.getInstance();
         int screenW = graphics.guiWidth();
@@ -62,10 +68,14 @@ public final class TooltipPanel {
         int[] at = keepOnScreen(spot.panelX(), spot.panelY(), panelBox, screenW, screenH);
         int x = WynnventoryBox.place(at[0], at[1], panelBox[0] + 8, panelBox[1] + 8,
                 spot.leftSide(), spot.rightSide(), screenW, gap);
+        PanelBox original = PanelBox.NONE;
         if (withOriginal) {
             TooltipPlacement.drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
+            int[] originalBox = TooltipPlacement.box(mc, tooltip);
+            original = new PanelBox(spot.originalX() - SHOT_MARGIN, spot.originalY() - SHOT_MARGIN,
+                    originalBox[0] + SHOT_MARGIN * 2, originalBox[1] + SHOT_MARGIN * 2);
         }
-        return paint(graphics, mc, lines, x, at[1], panelBox);
+        return new Beside(paint(graphics, mc, lines, x, at[1], panelBox), original);
     }
 
     static PanelBox drawPinned(GuiGraphics graphics, List<Component> lines, int x, int y) {

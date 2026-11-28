@@ -58,18 +58,25 @@ public final class PanelPreview {
         }
     }
 
-    public static PanelBox drawFollowing(GuiGraphics graphics, Sample original, Sample panel,
-                                         int mouseX, int mouseY, int gap,
-                                         ModConfig.PanelSide side) {
+    public record Following(PanelBox panel, PanelBox item) {
+
+        public static final Following NONE = new Following(PanelBox.NONE, PanelBox.NONE);
+    }
+
+    public static Following drawFollowing(GuiGraphics graphics, Sample original, Sample panel,
+                                          int mouseX, int mouseY, int gap,
+                                          ModConfig.PanelSide side) {
         if (graphics == null || original == null || panel == null) {
-            return PanelBox.NONE;
+            return Following.NONE;
         }
         try {
-            return TooltipPanel.drawBeside(graphics, original.lines(), panel.lines(), mouseX, mouseY,
-                    PanelGap.layout(gap), side == null ? ModConfig.PanelSide.AUTO : side, true);
+            TooltipPanel.Beside drawn = TooltipPanel.drawBeside(graphics, original.lines(),
+                    panel.lines(), mouseX, mouseY, PanelGap.layout(gap),
+                    side == null ? ModConfig.PanelSide.AUTO : side, true);
+            return new Following(drawn.panel(), drawn.original());
         } catch (Throwable t) {
             ErrorDebug.note("PanelPreview#drawFollowing", null, t);
-            return PanelBox.NONE;
+            return Following.NONE;
         }
     }
 
