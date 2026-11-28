@@ -1,69 +1,111 @@
 package com.wynnchayuan.client.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public final class PositionView extends Surface {
 
-    public record Line(String text, int colour) {}
+    public record Size(int minW, int maxW, int minH, int maxH, boolean tall) {}
 
-    public record Spec(String id, String label, int defW, int defH, boolean resizable,
-                       int minW, int maxW, boolean centred, List<Line> lines) {}
+    public record Panel(String id, String label, boolean centred, int edge, int inset, Size size) {
 
-    public record Saved(Integer x, Integer y, Integer w, Integer h) {}
+        boolean resizable() {
+            return size != null;
+        }
+    }
+
+    public record Spot(Integer x, Integer y, Integer w, Integer h) {
+
+        public static final Spot AUTO = new Spot(null, null, null, null);
+
+        public boolean placed() {
+            return x != null && y != null;
+        }
+
+        public boolean sized() {
+            return w != null && h != null;
+        }
+    }
+
+    public record Rect(int x, int y, int w, int h) {}
+
+    public record Anchor(int x, int y, int side) {}
+
+    public record Shown(Rect panel, Rect item) {}
 
     public interface Host {
-        List<Spec> boxes();
+        List<Panel> panels();
 
-        Saved saved(String id);
+        Spot saved(String id);
 
-        int[] defaultPosition(String id, int w, int h, int screenW, int screenH);
+        Spot fallback(String id);
 
-        void store(String id, int x, int y, Integer w, Integer h);
+        boolean follows();
+
+        Shown drawn(String id, Spot spot, Anchor anchor);
+
+        void store(String id, Spot spot);
+
+        void follow(boolean follow);
+
+        int side();
+
+        void side(int side);
 
         void commit();
 
         void close();
     }
 
-    private static final class Box {
-        final Spec spec;
-        int x;
-        int y;
-        int w;
-        int h;
-        boolean resized;
+    public static final String TOOLTIP = "TOOLTIP";
 
-        Box(Spec spec) {
-            this.spec = spec;
-            this.w = spec.defW();
-            this.h = spec.defH();
-        }
-    }
+    private enum Grab { NONE, MOVE, RESIZE, ITEM }
 
-    private static final int MIN_H = 24;
-    private static final int MAX_H = 320;
-    private static final int SNAP = 5;
-    private static final int TOP = 56;
-    private static final int FOOT = 40;
+    private static final long NOTE_MS = 3500;
+    private static final float GAP = 8;
+    private static final float PAD = 5;
+    private static final float MARGIN = 6;
 
     private final Shell shell;
     private final Host host;
-    private final List<Box> boxes = new ArrayList<>();
-    private Box selected;
-    private Box active;
-    private boolean resizing;
+    private final List<Panel> panels;
+    private final Map<String, Spot> working = new HashMap<>();
+    private final Map<String, Spot> opened = new HashMap<>();
+    private final boolean openedFollow;
+    private final int openedSide;
+    private boolean follow;
+    private int side;
+    private int[] itemAt;
+    private float[] lastDock;
+    private int showing;
+
+    private Grab grab = Grab.NONE;
+    private double pressX;
+    private double pressY;
+    private Rect pressRect;
+    private int[] pressItem;
     private boolean snapX;
     private boolean snapY;
-    private double grabX;
-    private double grabY;
-    private long savedAt;
-    private int laidOutW = -1;
-    private int laidOutH = -1;
+    private long pinnedAt;
+    private Rect lastRect;
+    private Rect lastItem;
 
     public PositionView(Shell shell, Host host) {
         this.shell = shell;
         this.host = host;
+        this.panels = List.copyOf(host.panels());
+        for (Panel panel : panels) {
+            Spot saved = Objects.requireNonNullElse(host.saved(panel.id()), Spot.AUTO);
+            working.put(panel.id(), saved);
+            opened.put(panel.id(), saved);
+        }
+        this.openedFollow = host.follows();
+        this.follow = openedFollow;
+        this.openedSide = host.side();
+        this.side = openedSide;
     }
 
     @Override
@@ -76,317 +118,464 @@ public final class PositionView extends Surface {
         shell.click();
     }
 
-    private void layout() {
-        if (laidOutW == screenW && laidOutH == screenH) {
-            return;
-        }
-        boolean first = boxes.isEmpty();
-        if (first) {
-            for (Spec spec : host.boxes()) {
-                boxes.add(new Box(spec));
+    public String showing() {
+        return panels.isEmpty() ? null : panels.get(showing).id();
+    }
+
+    public Spot spot() {
+        String id = showing();
+        return id == null ? Spot.AUTO : working.get(id);
+    }
+
+    public boolean follows() {
+        return follow;
+    }
+
+    public int side() {
+        return side;
+    }
+
+    public int[] itemAt() {
+        return itemAt == null ? null : itemAt.clone();
+    }
+
+    public static int[] itemHome(int screenW, int screenH) {
+        return new int[] {screenW / 2, screenH * 3 / 5};
+    }
+
+    public Rect item() {
+        return lastItem;
+    }
+
+    public void show(String id) {
+        for (int i = 0; i < panels.size(); i++) {
+            if (panels.get(i).id().equals(id)) {
+                showing = i;
+                grab = Grab.NONE;
+                return;
             }
-            for (Box box : boxes) {
-                Saved saved = host.saved(box.spec.id());
-                if (box.spec.resizable() && saved.w() != null && saved.h() != null) {
-                    box.w = clamp(saved.w(), box.spec.minW(), Math.min(box.spec.maxW(), screenW));
-                    box.h = clamp(saved.h(), MIN_H, MAX_H);
-                    box.resized = true;
-                }
-                if (saved.x() != null && saved.y() != null) {
-                    box.x = box.spec.centred() ? saved.x() - box.w / 2 : saved.x();
-                    box.y = saved.y();
-                } else {
-                    reset(box);
-                }
+        }
+    }
+
+    public Rect drawn() {
+        return lastRect;
+    }
+
+    private Panel panel() {
+        return panels.get(showing);
+    }
+
+    private boolean following(Panel panel) {
+        return TOOLTIP.equals(panel.id()) && follow;
+    }
+
+    private void anchorMode(boolean follow) {
+        if (follow && !this.follow) {
+            itemAt = null;
+        }
+        this.follow = follow;
+    }
+
+    private boolean changed(Panel panel) {
+        return !Objects.equals(working.get(panel.id()), opened.get(panel.id()));
+    }
+
+    private boolean atFallback(Panel panel) {
+        return Objects.equals(working.get(panel.id()), host.fallback(panel.id()));
+    }
+
+    private Spot fromRect(Panel panel, Rect r, Integer w, Integer h) {
+        int x = panel.centred() ? r.x() + r.w() / 2 : r.x() + panel.inset();
+        return new Spot(x, r.y() + panel.inset(), w, h);
+    }
+
+    private void placeAt(Panel panel, Rect at) {
+        Spot now = working.get(panel.id());
+        working.put(panel.id(), fromRect(panel, at, now.w(), now.h()));
+        pinIfTooltip(panel);
+    }
+
+    private void pinIfTooltip(Panel panel) {
+        if (TOOLTIP.equals(panel.id()) && follow) {
+            follow = false;
+            pinnedAt = now;
+        }
+    }
+
+    public void save() {
+        for (Panel panel : panels) {
+            if (changed(panel)) {
+                host.store(panel.id(), working.get(panel.id()));
             }
-            selected = boxes.get(boxes.size() - 1);
         }
-        for (Box box : boxes) {
-            intoScreen(box);
+        if (follow != openedFollow) {
+            host.follow(follow);
         }
-        laidOutW = screenW;
-        laidOutH = screenH;
-    }
-
-    private void reset(Box box) {
-        box.w = box.spec.defW();
-        box.h = box.spec.defH();
-        box.resized = false;
-        int[] at = host.defaultPosition(box.spec.id(), box.w, box.h, screenW, screenH);
-        box.x = at[0];
-        box.y = at[1];
-        intoScreen(box);
-    }
-
-    private boolean atDefault(Box box) {
-        int[] at = host.defaultPosition(box.spec.id(), box.spec.defW(), box.spec.defH(),
-                                        screenW, screenH);
-        Box probe = new Box(box.spec);
-        probe.x = at[0];
-        probe.y = at[1];
-        intoScreen(probe);
-        return !box.resized && box.x == probe.x && box.y == probe.y;
-    }
-
-    private void intoScreen(Box box) {
-        int floor = Math.max(TOP, screenH - FOOT - box.h);
-        box.x = Math.max(0, Math.min(box.x, Math.max(0, screenW - box.w)));
-        box.y = Math.max(TOP, Math.min(box.y, floor));
-    }
-
-    private static int clamp(int v, int lo, int hi) {
-        return Math.max(lo, Math.min(v, Math.max(lo, hi)));
-    }
-
-    private void save() {
-        for (Box box : boxes) {
-            host.store(box.spec.id(), box.spec.centred() ? box.x + box.w / 2 : box.x, box.y,
-                       box.resized ? box.w : null, box.resized ? box.h : null);
+        if (side != openedSide) {
+            host.side(side);
         }
         host.commit();
-        savedAt = now;
+        host.close();
+    }
+
+    public void cancel() {
+        working.putAll(opened);
+        follow = openedFollow;
+        side = openedSide;
+        host.close();
+    }
+
+    private void resetThis() {
+        Panel panel = panel();
+        working.put(panel.id(), Objects.requireNonNullElse(host.fallback(panel.id()), Spot.AUTO));
+    }
+
+    @Override
+    public boolean key(int key, boolean ctrl) {
+        if (key == KEY_ENTER || key == KEY_KP_ENTER) {
+            click();
+            save();
+            return true;
+        }
+        int dx = key == KEY_LEFT ? -1 : key == KEY_RIGHT ? 1 : 0;
+        int dy = key == KEY_UP ? -1 : key == KEY_DOWN ? 1 : 0;
+        if ((dx == 0 && dy == 0) || lastRect == null || panels.isEmpty()) {
+            return false;
+        }
+        int step = ctrl ? 10 : 1;
+        Rect r = lastRect;
+        PanelDrag.Moved moved = PanelDrag.move(r.x() + dx * step, r.y() + dy * step, r.w(), r.h(),
+                screenW, screenH, panel().edge());
+        placeAt(panel(), new Rect(moved.x(), moved.y(), r.w(), r.h()));
+        return true;
     }
 
     @Override
     protected void draw() {
-        layout();
         winX = 0;
         winY = 0;
         winW = screenW;
         winH = screenH;
-        int frame = 0xFF000000 | (shell.frame() & 0xFFFFFF);
-
-        if (active != null && !resizing) {
-            c.fill(screenW / 2f, TOP - 14, screenW / 2f + c.px(), screenH - FOOT,
-                   snapX ? accent : 0x30FFFFFF);
-            c.fill(0, screenH / 2f, screenW, screenH / 2f + c.px(),
-                   snapY ? accent : 0x30FFFFFF);
+        if (panels.isEmpty()) {
+            return;
         }
-
-        Box under = null;
+        Panel panel = panel();
+        boolean sided = following(panel);
+        Anchor anchor = null;
+        if (sided) {
+            settleItem();
+            backdrop();
+            anchor = new Anchor(itemAt[0], itemAt[1], side);
+        }
+        Shown shown = host.drawn(panel.id(), working.get(panel.id()), anchor);
+        Rect r = shown == null ? null : shown.panel();
+        Rect item = sided && shown != null ? shown.item() : null;
+        lastRect = r;
+        lastItem = item;
+        if (visible(item)) {
+            adornItem(item);
+        }
         boolean underGrip = false;
-        for (Box box : boxes) {
-            if (over(box.x, box.y - 13, box.w, box.h + 13)) {
-                under = box;
-                underGrip = box.spec.resizable()
-                        && over(box.x + box.w - 10, box.y + box.h - 10, 10, 10);
-            }
+        if (visible(r)) {
+            underGrip = adorn(panel, r);
         }
-        for (Box box : boxes) {
-            box(box, frame, box == under || box == active);
-        }
-
-        topBar();
-        toolbar(under, underGrip);
+        dock(panel, r, underGrip);
     }
 
-    private void box(Box box, int frame, boolean lit) {
-        boolean on = box == selected;
-        float g = glow("box:" + box.spec.id(), lit);
-        String size = box.w + " × " + box.h;
-        String label = box.spec.label();
-        float lw = Math.min(box.w, c.width(label) + c.width(size) + 18);
-        c.round(box.x, box.y - 13, lw, 12, 3, on ? accent : 0xE00B1119);
-        c.text(Ui.fit(c, label, (int) (lw - 8)), box.x + 4, box.y - 11,
-               on ? Ui.ON_ACCENT : Ui.TEXT_2);
-        if (c.width(label) + c.width(size) + 18 <= box.w) {
-            c.text(size, box.x + lw - 4 - c.width(size), box.y - 11,
-                   on ? Ui.ON_ACCENT : Ui.FAINT);
-        }
+    private static boolean visible(Rect r) {
+        return r != null && r.w() > 0 && r.h() > 0;
+    }
 
-        Ui.halo(c, box.x, box.y, box.w, box.h, 2, accent, Math.max(g, box == active ? 1f : 0f));
-        c.fill(box.x, box.y, box.x + box.w, box.y + box.h, 0xE60B1119);
-        c.ring(box.x, box.y, box.w, box.h, 0, 1f, on ? accent : frame);
-        clip(box.x + 2, box.y + 2, box.x + box.w - 2, box.y + box.h - 2);
-        float ty = box.y + 6;
-        for (Line line : box.spec.lines()) {
-            c.text(line.text(), box.x + 6, ty, line.colour());
-            ty += 10;
-        }
-        unclip();
+    private void settleItem() {
+        int[] at = itemAt == null ? itemHome(screenW, screenH) : itemAt;
+        itemAt = clampItem(at[0], at[1]);
+    }
 
-        Zone body = zone(box.x, box.y - 13, box.w, box.h + 13, (px, py, b) -> {
-            active = box;
-            selected = box;
-            resizing = false;
-            grabX = px - box.x;
-            grabY = py - box.y;
-            boxes.remove(box);
-            boxes.add(box);
+    private int[] clampItem(int x, int y) {
+        return new int[] {Math.max(0, Math.min(x, Math.max(0, screenW - 1))),
+                Math.max(0, Math.min(y, Math.max(0, screenH - 1)))};
+    }
+
+    private void backdrop() {
+        Zone empty = zone(0, 0, screenW, screenH, (px, py, b) -> {
+            itemAt = clampItem((int) Math.round(px), (int) Math.round(py));
+            start(Grab.ITEM, px, py, null);
         });
-        body.drag = (px, py, b) -> {
-            int nx = (int) Math.round(px - grabX);
-            int ny = (int) Math.round(py - grabY);
-            int cx = (screenW - box.w) / 2;
-            int cy = (screenH - box.h) / 2;
-            snapX = Math.abs(nx - cx) <= SNAP;
-            snapY = Math.abs(ny - cy) <= SNAP;
-            box.x = snapX ? cx : nx;
-            box.y = snapY ? cy : ny;
-            intoScreen(box);
-        };
-        body.release = this::drop;
-        body.key = "box:" + box.spec.id();
-
-        if (box.spec.resizable()) {
-            int ink = lit || on ? accent : Ui.alpha(frame, 0x90);
-            float rx = box.x + box.w - 3;
-            float by = box.y + box.h - 3;
-            for (int i = 0; i < 3; i++) {
-                float off = i * 2.5f;
-                c.fill(rx - off - 1, by - 1, rx - off, by, ink);
-                c.fill(rx - 1, by - off - 1, rx, by - off, ink);
-            }
-            Zone grip = zone(box.x + box.w - 10, box.y + box.h - 10, 10, 10, (px, py, b) -> {
-                active = box;
-                selected = box;
-                resizing = true;
-                grabX = px - box.w;
-                grabY = py - box.h;
-            });
-            grip.drag = (px, py, b) -> {
-                box.w = clamp((int) Math.round(px - grabX), box.spec.minW(),
-                              Math.min(box.spec.maxW(), screenW - box.x));
-                box.h = clamp((int) Math.round(py - grabY), MIN_H,
-                              Math.min(MAX_H, screenH - FOOT - box.y));
-                box.resized = true;
-            };
-            grip.release = this::drop;
-            grip.key = "grip:" + box.spec.id();
-        }
+        empty.drag = (px, py, b) -> dragItem(px, py);
+        empty.release = this::drop;
+        empty.key = "backdrop";
     }
 
-    private void drop() {
-        active = null;
-        resizing = false;
+    private void adornItem(Rect item) {
+        boolean hot = over(item.x(), item.y(), item.w(), item.h());
+        float g = glow("item", hot || grab == Grab.ITEM);
+        c.ring(item.x() - 2, item.y() - 2, item.w() + 4, item.h() + 4, 2, c.px(),
+               Ui.alpha(0xFFFFFFFF, (int) (0x30 + (0xC0 - 0x30) * g)));
+        Zone zone = zone(item.x(), item.y(), item.w(), item.h(),
+                (px, py, b) -> start(Grab.ITEM, px, py, null));
+        zone.drag = (px, py, b) -> dragItem(px, py);
+        zone.release = this::drop;
+        zone.key = "item";
+    }
+
+    private void dragItem(double px, double py) {
+        if (pressItem == null) {
+            return;
+        }
+        itemAt = clampItem(pressItem[0] + (int) Math.round(px - pressX),
+                pressItem[1] + (int) Math.round(py - pressY));
+    }
+
+    private boolean adorn(Panel panel, Rect r) {
+        if (grab == Grab.MOVE) {
+            c.fill(screenW / 2f, 0, screenW / 2f + c.px(), screenH,
+                   snapX ? accent : 0x38FFFFFF);
+            c.fill(0, screenH / 2f, screenW, screenH / 2f + c.px(),
+                   snapY ? accent : 0x38FFFFFF);
+        }
+        boolean hot = over(r.x(), r.y(), r.w(), r.h());
+        float g = glow("panel", hot || grab == Grab.MOVE || grab == Grab.RESIZE);
+        c.ring(r.x() - 2, r.y() - 2, r.w() + 4, r.h() + 4, 2, c.px(),
+               Ui.alpha(accent, (int) (0x70 + (0xFF - 0x70) * g)));
+
+        Zone body = zone(r.x(), r.y(), r.w(), r.h(), (px, py, b) -> start(Grab.MOVE, px, py, r));
+        body.drag = (px, py, b) -> drag(panel, px, py);
+        body.release = this::drop;
+        body.key = "box:" + panel.id();
+
+        if (!panel.resizable()) {
+            return false;
+        }
+        float gx = r.x() + r.w();
+        float gy = r.y() + r.h();
+        boolean overGrip = over(gx - 7, gy - 7, 12, 12);
+        float gg = glow("grip", overGrip || grab == Grab.RESIZE);
+        c.round(gx - 4, gy - 4, 7, 7, 2, Ui.mix(Ui.alpha(accent, 0xC0), accent, gg));
+        c.round(gx - 2, gy - 2, 3, 3, 1, Ui.ON_ACCENT);
+        Zone grip = zone(gx - 7, gy - 7, 12, 12, (px, py, b) -> start(Grab.RESIZE, px, py, r));
+        grip.drag = (px, py, b) -> drag(panel, px, py);
+        grip.release = this::drop;
+        grip.key = "grip:" + panel.id();
+
+        if (grab == Grab.RESIZE) {
+            String size = r.w() + " × " + r.h();
+            float sw = c.width(size) + 8;
+            float sx = Math.min(screenW - sw - 2, gx + 6);
+            float sy = Math.min(screenH - 14, gy + 6);
+            c.round(sx, sy, sw, 12, 3, Ui.WINDOW_SOLID);
+            c.text(size, sx + 4, sy + 2, accent);
+        }
+        return overGrip;
+    }
+
+    private void start(Grab kind, double px, double py, Rect r) {
+        grab = kind;
+        pressX = px;
+        pressY = py;
+        pressRect = r;
+        pressItem = itemAt == null ? null : itemAt.clone();
         snapX = false;
         snapY = false;
     }
 
-    private void topBar() {
-        float x = 8;
-        float y = 6;
-        float w = screenW - 16;
-        float h = 30;
-        for (int i = 3; i >= 1; i--) {
-            float g = i * 1.4f;
-            c.round(x - g, y - g + 1.5f, w + g * 2, h + g * 2, Ui.R2 + g, 0x12000000);
+    private void drag(Panel panel, double px, double py) {
+        if (pressRect == null) {
+            return;
         }
-        Ui.pane(c, x, y, w, h, Ui.R2, shell.blurred() ? Ui.WINDOW : Ui.WINDOW_SOLID, Ui.WIN_EDGE);
-        zone(x, y, w, h, (px, py, b) -> { });
-        c.logo(x + 6, y + 5, 20);
-        float right = x + w - 8;
-
-        float chipsLeft = right;
-        if (screenW >= 520) {
-            for (int i = boxes.size() - 1; i >= 0; i--) {
-                Box box = sorted(i);
-                String label = box.spec.label();
-                float cw = c.width(label) + 20;
-                float cx = chipsLeft - cw;
-                boolean on = box == selected;
-                boolean hot = over(cx, y + 7, cw, CTRL_H);
-                float g = glow("chip:" + box.spec.id(), hot);
-                Ui.pane(c, cx, y + 7, cw, CTRL_H, Ui.R1, on ? Ui.alpha(accent, 0x30) : Ui.RAISED,
-                        on ? accent : edge(g));
-                c.round(cx + 6, y + 13, 4, 4, 1, atDefault(box) ? Ui.FAINT : Ui.GOLD);
-                c.text(label, cx + 14, y + 11, on ? accent : Ui.mix(Ui.TEXT_2, Ui.TEXT, g));
-                zone(cx, y + 7, cw, CTRL_H, (px, py, b) -> {
-                    click();
-                    selected = box;
-                });
-                chipsLeft = cx - 4;
-            }
+        int dx = (int) Math.round(px - pressX);
+        int dy = (int) Math.round(py - pressY);
+        Rect r = pressRect;
+        if (grab == Grab.RESIZE && panel.resizable()) {
+            int tallH = panel.size().tall() ? r.h() + dy : r.h();
+            int[] size = PanelDrag.resize(r.w() + dx, tallH, r.x(), r.y(), panel.size(),
+                    screenW, screenH, panel.edge());
+            Rect at = new Rect(r.x(), r.y(), size[0], size[1]);
+            working.put(panel.id(), fromRect(panel, at, size[0], size[1]));
+            return;
         }
-        float room = chipsLeft - 6 - (x + 32);
-        c.text(Ui.fit(c, shell.tr("pos.title"), (int) room), x + 32, y + 5, accent);
-        c.text(Ui.fit(c, shell.tr("pos.hint"), (int) room), x + 32, y + 16, Ui.TEXT_3);
+        if (dx == 0 && dy == 0) {
+            return;
+        }
+        PanelDrag.Moved moved = PanelDrag.move(r.x() + dx, r.y() + dy, r.w(), r.h(),
+                screenW, screenH, panel.edge());
+        snapX = moved.snapX();
+        snapY = moved.snapY();
+        placeAt(panel, new Rect(moved.x(), moved.y(), r.w(), r.h()));
     }
 
-    private Box sorted(int index) {
-        Spec spec = host.boxes().get(index);
-        for (Box box : boxes) {
-            if (box.spec.id().equals(spec.id())) {
-                return box;
-            }
-        }
-        return boxes.get(index);
+    private void drop() {
+        grab = Grab.NONE;
+        pressRect = null;
+        pressItem = null;
+        snapX = false;
+        snapY = false;
     }
 
-    private void toolbar(Box under, boolean underGrip) {
-        float need = 9 + 9 + c.width(shell.tr("pos.idle")) + 12
-                + buttonWidth(shell.tr("pos.save")) + 12 + 4
-                + buttonWidth(shell.tr("pos.cancel")) + 10
-                + buttonWidth(shell.tr("pos.reset")) + 4 + 6;
-        if (selected != null) {
-            need += buttonWidth(shell.tr("pos.reset.one", selected.spec.label())) + 6;
+    private List<Row.Option> tabs() {
+        List<Row.Option> out = new ArrayList<>(panels.size());
+        for (Panel panel : panels) {
+            out.add(new Row.Option(panel.label(), Row.Tone.ACCENT, null));
         }
-        float w = Math.min(screenW - 16, Math.max(480, need));
-        float h = 26;
-        float x = Math.round((screenW - w) / 2f);
-        float y = screenH - h - 7;
-        for (int i = 3; i >= 1; i--) {
-            float g = i * 1.4f;
-            c.round(x - g, y - g + 1.5f, w + g * 2, h + g * 2, Ui.R2 + g, 0x12000000);
-        }
-        Ui.pane(c, x, y, w, h, Ui.R2, shell.blurred() ? Ui.WINDOW : Ui.WINDOW_SOLID, Ui.WIN_EDGE);
-        zone(x, y, w, h, (px, py, b) -> { });
-        float by = y + 4;
-        float right = x + w - 6;
+        return out;
+    }
 
-        String save = shell.tr("pos.save");
-        float sw = buttonWidth(save) + 12;
-        button("save", right - sw, by, sw, 18, save, true, true, null, this::save);
-        right -= sw + 4;
+    private List<Row.Option> anchors() {
+        return List.of(new Row.Option(shell.tr("mode.follow"), Row.Tone.PLAIN, null),
+                       new Row.Option(shell.tr("mode.pinned"), Row.Tone.PLAIN, null));
+    }
+
+    private List<Row.Option> sides() {
+        return List.of(new Row.Option(shell.tr("mode.auto"), Row.Tone.PLAIN, null),
+                       new Row.Option(shell.tr("mode.right"), Row.Tone.PLAIN, null),
+                       new Row.Option(shell.tr("mode.left"), Row.Tone.PLAIN, null));
+    }
+
+    private float segmentWidth(List<Row.Option> options) {
+        float w = 2;
+        for (Row.Option o : options) {
+            w += c.width(o.label()) + 12;
+        }
+        return w;
+    }
+
+    private interface Placer {
+        void at(float x, float y, float w);
+    }
+
+    private record Piece(float w, boolean right, Placer draw) {}
+
+    private void dock(Panel panel, Rect r, boolean underGrip) {
+        boolean tooltip = TOOLTIP.equals(panel.id());
+        boolean sided = following(panel);
+        float room = screenW - MARGIN * 2;
+        float inner = room - PAD * 2;
+
+        List<Piece> pieces = new ArrayList<>();
+        List<Row.Option> tabs = tabs();
+        pieces.add(new Piece(Math.min(inner, segmentWidth(tabs)), false, (x, y, w) ->
+                segmented("tab", x, x + w, y, tabs, () -> showing, i -> {
+                    showing = i;
+                    grab = Grab.NONE;
+                }, tone -> accent)));
+        if (tooltip) {
+            List<Row.Option> anchors = anchors();
+            pieces.add(new Piece(Math.min(inner, segmentWidth(anchors)), false, (x, y, w) ->
+                    segmented("anchor", x, x + w, y, anchors, () -> follow ? 0 : 1,
+                              i -> anchorMode(i == 0), tone -> accent)));
+        }
+        if (sided) {
+            List<Row.Option> sides = sides();
+            pieces.add(new Piece(Math.min(inner, segmentWidth(sides)), false, (x, y, w) ->
+                    segmented("side", x, x + w, y, sides, () -> side, i -> side = i,
+                              tone -> accent)));
+        }
+        String reset = shell.tr("pos.reset.this");
         String cancel = shell.tr("pos.cancel");
-        float cw = buttonWidth(cancel);
-        button("cancel", right - cw, by, cw, 18, cancel, true, false, null, host::close);
-        right -= cw + 5;
-        c.fill(right, by + 2, right + c.px(), by + 16, Ui.BORDER);
-        right -= 5;
+        String save = shell.tr("pos.save");
+        float resetW = buttonWidth(reset);
+        float cancelW = buttonWidth(cancel);
+        float saveW = buttonWidth(save) + 6;
+        boolean resettable = !atFallback(panel);
+        pieces.add(new Piece(resetW + 4 + cancelW + 4 + saveW, true, (x, y, w) -> {
+            float bx = x + w - saveW;
+            button("save", bx, y, saveW, CTRL_H, save, true, true, null, this::save);
+            bx -= 4 + cancelW;
+            button("cancel", bx, y, cancelW, CTRL_H, cancel, true, false, null, this::cancel);
+            bx -= 4 + resetW;
+            button("reset", bx, y, resetW, CTRL_H, reset, resettable, false, null,
+                   this::resetThis);
+        }));
 
-        boolean anyMoved = false;
-        for (Box box : boxes) {
-            anyMoved |= !atDefault(box);
-        }
-        String all = shell.tr("pos.reset");
-        float aw = buttonWidth(all);
-        button("all", right - aw, by, aw, 18, all, anyMoved, false, null, () -> {
-            for (Box box : boxes) {
-                reset(box);
+        List<List<Piece>> rows = new ArrayList<>();
+        List<Float> widths = new ArrayList<>();
+        for (Piece piece : pieces) {
+            int last = rows.size() - 1;
+            if (last < 0 || widths.get(last) + GAP + piece.w() > inner) {
+                rows.add(new ArrayList<>(List.of(piece)));
+                widths.add(piece.w());
+            } else {
+                rows.get(last).add(piece);
+                widths.set(last, widths.get(last) + GAP + piece.w());
             }
-        });
-        right -= aw + 4;
-        if (selected != null && right - (x + 8) > 190) {
-            String one = shell.tr("pos.reset.one", selected.spec.label());
-            float ow = buttonWidth(one);
-            Box target = selected;
-            button("one", right - ow, by, ow, 18, one, !atDefault(target), false, null,
-                   () -> reset(target));
-            right -= ow + 6;
+        }
+        float widest = 0;
+        for (float rowW : widths) {
+            widest = Math.max(widest, rowW);
+        }
+        float w = Math.min(room, widest + PAD * 2);
+        float h = PAD + rows.size() * CTRL_H + (rows.size() - 1) * 4 + 4 + 9 + PAD;
+        float x = Math.round((screenW - w) / 2f);
+        boolean held = lastDock != null && Ui.in(mx, my, lastDock[0], lastDock[1], lastDock[2],
+                lastDock[3]);
+        float y = held ? Math.min(lastDock[1], screenH - h - MARGIN)
+                : dockTop(sided ? null : r, x, w, h);
+
+        for (int i = 3; i >= 1; i--) {
+            float s = i * 1.4f;
+            c.round(x - s, y - s + 1.5f, w + s * 2, h + s * 2, Ui.R2 + s, 0x14000000);
+        }
+        Ui.pane(c, x, y, w, h, Ui.R2, Ui.WINDOW_SOLID, Ui.WIN_EDGE);
+        zone(x, y, w, h, (px, py, b) -> { });
+        lastDock = new float[] {x, y, w, h};
+
+        float rowY = y + PAD;
+        for (List<Piece> row : rows) {
+            float left = x + PAD;
+            float right = x + w - PAD;
+            for (Piece piece : row) {
+                if (piece.right()) {
+                    piece.draw().at(right - piece.w(), rowY, piece.w());
+                } else {
+                    piece.draw().at(left, rowY, piece.w());
+                    left += piece.w() + GAP;
+                }
+            }
+            rowY += CTRL_H + 4;
         }
 
+        status(panel, x + PAD, y + h - PAD - 9, w - PAD * 2, underGrip);
+    }
+
+    private float dockTop(Rect r, float x, float w, float h) {
+        float top = MARGIN;
+        float bottom = screenH - h - MARGIN;
+        if (r == null) {
+            return top;
+        }
+        float upper = overlap(r, x, top, w, h);
+        float lower = overlap(r, x, bottom, w, h);
+        return upper > 0 && lower < upper ? bottom : top;
+    }
+
+    private static float overlap(Rect r, float x, float y, float w, float h) {
+        float m = 6;
+        float ox = Math.min(r.x() + r.w() + m, x + w) - Math.max(r.x() - m, x);
+        float oy = Math.min(r.y() + r.h() + m, y + h) - Math.max(r.y() - m, y);
+        return ox > 0 && oy > 0 ? ox * oy : 0;
+    }
+
+    private void status(Panel panel, float x, float y, float w, boolean underGrip) {
         String text;
         int ink = Ui.TEXT_3;
-        if (savedAt != 0 && now - savedAt < 2000) {
-            text = shell.tr("pos.saved");
-            ink = Ui.GREEN;
-        } else if (active != null && resizing) {
-            text = shell.tr("pos.resizing", active.spec.label(), active.w, active.h);
+        if (pinnedAt != 0 && now - pinnedAt < NOTE_MS) {
+            text = shell.tr("pos.pinned.now");
+            ink = Ui.GOLD;
+        } else if (grab == Grab.RESIZE) {
+            text = shell.tr("pos.resizing", panel.label(), lastRect.w(), lastRect.h());
             ink = accent;
-        } else if (active != null) {
-            text = shell.tr(snapX || snapY ? "pos.snapping" : "pos.dragging", active.spec.label());
+        } else if (grab == Grab.MOVE) {
+            text = shell.tr(snapX || snapY ? "pos.snapping" : "pos.dragging", panel.label());
             ink = snapX || snapY ? accent : Ui.TEXT;
-        } else if (under == null) {
-            text = shell.tr("pos.idle");
-        } else {
-            text = shell.tr(underGrip ? "pos.grip" : "pos.dragging", under.spec.label());
+        } else if (following(panel)) {
+            text = shell.tr("pos.follow.hint");
+            ink = Ui.AMBER;
+        } else if (underGrip) {
+            text = shell.tr("pos.grip", panel.label());
             ink = Ui.TEXT_2;
+        } else {
+            text = shell.tr(panel.resizable() ? "pos.idle.size" : "pos.idle");
         }
-        float left = x + 9;
-        if (right - left > 30) {
-            c.round(left, by + 6.5f, 5, 5, 2.5f, ink);
-            c.text(Ui.fit(c, text, (int) (right - left - 12)), left + 9, by + 5, ink);
-        }
+        c.round(x + 1, y + 2, 4, 4, 2, ink);
+        c.text(Ui.fit(c, text, (int) (w - 10)), x + 9, y, ink);
     }
 }

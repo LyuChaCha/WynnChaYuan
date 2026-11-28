@@ -21,6 +21,9 @@ final class DialoguePanelRenderer {
     private DialoguePanelRenderer() {}
 
     static void render(GuiGraphics graphics) {
+        if (PanelsHidden.hidden()) {
+            return;
+        }
         List<Component> lines = DialogueOverlay.current;
         List<List<Component>> options = DialogueOverlay.choices;
         if (lines.isEmpty() && options.isEmpty()) {
@@ -33,11 +36,12 @@ final class DialoguePanelRenderer {
             DialogueOverlay.rawChoices = List.of();
             return;
         }
-        Minecraft mc = Minecraft.getInstance();
-        if (WynnChaYuan.config().dialogueMode() == ModConfig.DialogueMode.REPLACE
+        ModConfig cfg = WynnChaYuan.config();
+        PanelPlace choicePlace = PanelPlace.saved(cfg, ModConfig.Overlay.CHOICES);
+        if (cfg.dialogueMode() == ModConfig.DialogueMode.REPLACE
                 && !DialogueRewriter.bodyTooLong()) {
             if (!options.isEmpty() && choicesInPanel()) {
-                drawChoices(graphics, mc, options, alpha);
+                drawChoices(graphics, options, DialogueOverlay.picked, choicePlace, alpha);
             }
             return;
         }
@@ -47,48 +51,54 @@ final class DialoguePanelRenderer {
             withName.addAll(lines);
             lines = withName;
         }
+        drawDialogue(graphics, lines, PanelPlace.saved(cfg, ModConfig.Overlay.DIALOGUE), alpha);
+        if (!options.isEmpty() && choicesInPanel()) {
+            drawChoices(graphics, options, DialogueOverlay.picked, choicePlace, alpha);
+        }
+    }
+
+    static PanelBox drawDialogue(GuiGraphics graphics, List<Component> lines, PanelPlace place,
+                                 float alpha) {
+        if (lines.isEmpty()) {
+            return PanelBox.NONE;
+        }
+        Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;
-        boolean sized = WynnChaYuan.config()
-                .hasOverlaySize(ModConfig.Overlay.DIALOGUE);
+        boolean sized = place.sized();
         int cap = Math.min(MAX_BOX_W, graphics.guiWidth() - CHOICE_EDGE * 2);
         int natural = sized ? 0 : widthOf(mc, lines);
         boolean folded = !sized && natural > cap;
-        int boxW = sized ? dialogueWidth(0) : folded ? cap : natural;
+        int boxW = sized ? place.w() : folded ? cap : natural;
         int rowCount = folded ? wrapAll(mc, lines, boxW - DialogueOverlay.PADDING * 2).size() : lines.size();
-        int boxH = lines.isEmpty() ? 0
-                : atLeastTall(rowCount * lineHeight + DialogueOverlay.PADDING * 2);
+        int boxH = atLeastTall(rowCount * lineHeight + DialogueOverlay.PADDING * 2, place);
 
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - DialogueOverlay.BOTTOM_MARGIN - boxH;
-        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.DIALOGUE)) {
-            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.DIALOGUE) - boxW / 2;
-            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.DIALOGUE);
+        if (place.placed()) {
+            x = place.x() - boxW / 2;
+            y = place.y();
         }
         int[] at = Boxes.intoScreen(x, y, boxW, boxH, graphics.guiWidth(), graphics.guiHeight());
         x = at[0];
         y = at[1];
 
-        if (!lines.isEmpty()) {
-            if (sized || folded) {
-                drawSized(graphics, mc, lines, x, y, boxW, alpha);
-            } else {
-                draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
-            }
+        if (sized || folded) {
+            boxH = drawSized(graphics, mc, lines, x, y, boxW, alpha, place);
+        } else {
+            draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
         }
-        if (!options.isEmpty() && choicesInPanel()) {
-            drawChoices(graphics, mc, options, alpha);
-        }
+        return new PanelBox(x, y, boxW, boxH);
     }
 
     private static boolean choicesInPanel() {
         return WynnChaYuan.config().choiceMode() == ModConfig.DialogueMode.PANEL;
     }
 
-    private static void drawChoices(GuiGraphics graphics, Minecraft mc,
-                                    List<List<Component>> options, float alpha) {
-        ModConfig cfg = WynnChaYuan.config();
-        int boxW = cfg.hasOverlaySize(ModConfig.Overlay.CHOICES)
-                ? cfg.overlayW(ModConfig.Overlay.CHOICES)
+    static PanelBox drawChoices(GuiGraphics graphics, List<List<Component>> options, int picked,
+                                PanelPlace place, float alpha) {
+        Minecraft mc = Minecraft.getInstance();
+        int boxW = place.sized()
+                ? place.w()
                 : Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
                         graphics.guiWidth() / 4));
         int inner = boxW - DialogueOverlay.PADDING * 2 - MARKER_W - 2;
@@ -105,17 +115,16 @@ final class DialoguePanelRenderer {
             textLines += wrapped.size();
         }
         if (rows.isEmpty()) {
-            return;
+            return PanelBox.NONE;
         }
         int boxH = textLines * lineHeight + DialogueOverlay.PADDING * 2
                 + (rows.size() - 1) * (ROW_GAP * 2 + 1);
 
         int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
         int y = graphics.guiHeight() * 5 / 8;
-        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.CHOICES)) {
-            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.CHOICES)
-                    - boxW / 2;
-            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.CHOICES);
+        if (place.placed()) {
+            x = place.x() - boxW / 2;
+            y = place.y();
         }
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
@@ -126,7 +135,7 @@ final class DialoguePanelRenderer {
         for (int i = 0; i < rows.size(); i++) {
             List<FormattedCharSequence> option = rows.get(i);
             int rowH = option.size() * lineHeight;
-            boolean here = DialogueOverlay.picked == i + 1;
+            boolean here = picked == i + 1;
 
             if (here) {
                 graphics.fill(x + 1, textY - ROW_GAP + 1, x + boxW - 1,
@@ -156,6 +165,7 @@ final class DialoguePanelRenderer {
                 textY += ROW_GAP * 2 + 1;
             }
         }
+        return new PanelBox(x, y, boxW, boxH);
     }
 
     private static final int SELECTED_BG = 0x40FFD24A;
@@ -211,7 +221,7 @@ final class DialoguePanelRenderer {
         return out;
     }
 
-    private static Component speakerLine(String said) {
+    static Component speakerLine(String said) {
         return Component.literal(T.s("dialogue.speaker", said)).withStyle(Style.EMPTY
                         .withColor(DialogueOverlay.SPEAKER_COLOUR).withBold(true));
     }
@@ -246,26 +256,16 @@ final class DialoguePanelRenderer {
         return width + DialogueOverlay.PADDING * 2;
     }
 
-    private static int dialogueWidth(int auto) {
-        ModConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(ModConfig.Overlay.DIALOGUE)
-                ? cfg.overlayW(ModConfig.Overlay.DIALOGUE)
-                : auto;
+    private static int atLeastTall(int auto, PanelPlace place) {
+        return place.sized() ? Math.max(auto, place.h()) : auto;
     }
 
-    private static int atLeastTall(int auto) {
-        ModConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(ModConfig.Overlay.DIALOGUE)
-                ? Math.max(auto, cfg.overlayH(ModConfig.Overlay.DIALOGUE))
-                : auto;
-    }
-
-    private static void drawSized(GuiGraphics graphics, Minecraft mc,
-                                  List<Component> lines, int x, int y,
-                                  int boxW, float alpha) {
+    private static int drawSized(GuiGraphics graphics, Minecraft mc,
+                                 List<Component> lines, int x, int y,
+                                 int boxW, float alpha, PanelPlace place) {
         int lineHeight = mc.font.lineHeight + 1;
         List<FormattedCharSequence> rows = wrapAll(mc, lines, boxW - DialogueOverlay.PADDING * 2);
-        int boxH = atLeastTall(rows.size() * lineHeight + DialogueOverlay.PADDING * 2);
+        int boxH = atLeastTall(rows.size() * lineHeight + DialogueOverlay.PADDING * 2, place);
         Boxes.draw(graphics, x, y, boxW, boxH, alpha);
         int textY = y + DialogueOverlay.PADDING;
         for (FormattedCharSequence row : rows) {
@@ -273,6 +273,7 @@ final class DialoguePanelRenderer {
                     Colors.fade(Colors.TEXT, alpha));
             textY += lineHeight;
         }
+        return boxH;
     }
 
 }

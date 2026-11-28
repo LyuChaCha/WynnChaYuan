@@ -48,12 +48,13 @@ final class TooltipPlacement {
     }
 
     static Place place(Minecraft mc, List<Component> lines, List<Component> tooltip,
-                       int mouseX, int mouseY, int screenW, int screenH, int gap) {
+                       int mouseX, int mouseY, int screenW, int screenH, int gap,
+                       ModConfig.PanelSide side) {
         int[] panelBox = box(mc, lines);
         int[] originalBox = box(mc, tooltip);
         OriginalTooltipBox.Box drawn = OriginalTooltipBox.find(originalBox[0], originalBox[1]);
         return layout(panelBox[0], panelBox[1], originalBox[0], originalBox[1], drawn,
-                mouseX, mouseY, screenW, screenH, gap, WynnChaYuan.config().panelSide());
+                mouseX, mouseY, screenW, screenH, gap, side);
     }
 
     static Place layout(int panelTextW, int panelTextH, int originalTextW, int originalTextH,
@@ -129,7 +130,8 @@ final class TooltipPlacement {
         }
         return place(mc, lines, stripped, mouseX, mouseY,
                 mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
-                PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
+                PanelGap.layout(WynnChaYuan.config().panelGap()),
+                WynnChaYuan.config().panelSide()).overlaps();
     }
 
     static void drawAt(GuiGraphics graphics, Minecraft mc,

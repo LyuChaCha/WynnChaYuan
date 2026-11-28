@@ -3,14 +3,18 @@ package com.wynnchayuan;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.client.FirstRunScreen;
+import com.wynnchayuan.client.HotKeys;
 import com.wynnchayuan.client.NoticeScreen;
+import com.wynnchayuan.client.PositionScreen;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.client.T;
+import com.wynnchayuan.client.Toasts;
 import com.wynnchayuan.listener.LiveRefresh;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.render.Badges;
 import com.wynnchayuan.render.FpsLog;
 import com.wynnchayuan.render.PanelShot;
+import com.wynnchayuan.render.PanelsHidden;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynnchayuan.translate.TranslationUpdate;
 import com.wynnchayuan.translate.WynnventoryBridge;
@@ -41,8 +45,13 @@ final class ModKeys {
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
+        WynnChaYuan.hidePanelsKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+                "key.wynnchayuan.hidePanels",
+                InputConstants.Type.KEYSYM,
+                GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         PanelShot.bind(WynnChaYuan.screenshotKey);
-        PanelShot.listen();
+        HotKeys.add(WynnChaYuan.screenshotKey, PanelShot::request);
+        HotKeys.add(WynnChaYuan.hidePanelsKey, ModKeys::flipPanels);
 
         if (WynnventoryBridge.installed()) {
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -78,9 +87,11 @@ final class ModKeys {
                 ModCommands.openSettingsNextTick = false;
                 client.setScreen(new SettingsScreen());
             }
-            while (WynnChaYuan.screenshotKey.consumeClick()) {
-                PanelShot.request();
+            if (ModCommands.openPositionsNextTick) {
+                ModCommands.openPositionsNextTick = false;
+                client.setScreen(new PositionScreen(null));
             }
+            HotKeys.tick(client);
             PanelShot.tick();
             Releases.tellOnce(client);
             if (client.player != null && client.getCurrentServer() != null
@@ -93,6 +104,11 @@ final class ModKeys {
             SelfUpdate.announceProgress(client);
             TranslationUpdate.tellOnce(client);
         });
+    }
+
+    private static void flipPanels() {
+        boolean hidden = PanelsHidden.toggle();
+        Toasts.show(Minecraft.getInstance(), T.c(hidden ? "panels.hidden" : "panels.shown"));
     }
 
     private static volatile boolean tellKeysReleased = false;

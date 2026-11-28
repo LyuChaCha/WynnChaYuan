@@ -29,6 +29,9 @@ public final class StarterFiles {
     }
 
     public static int installIfEmpty(Path dir, String lang) {
+        if (!Languages.inJar(lang)) {
+            return 0;
+        }
         boolean resume = false;
         try {
             Files.createDirectories(dir);
@@ -49,7 +52,7 @@ public final class StarterFiles {
             if (resume && Files.exists(out)) {
                 continue;
             }
-            try (InputStream in = StarterFiles.class.getResourceAsStream(
+            try (InputStream in = BundledCorpus.open(
                     Languages.resource(lang) + name)) {
                 if (in == null) {
                     continue;
@@ -68,6 +71,9 @@ public final class StarterFiles {
     }
 
     public static int installMissingScoped(Path dir, String lang) {
+        if (!Languages.inJar(lang)) {
+            return 0;
+        }
         int written = 0;
         for (String name : FileIndex.SCOPED) {
             Path out = dir.resolve(name);
@@ -85,10 +91,10 @@ public final class StarterFiles {
     }
 
     public static boolean restore(Path dir, String lang, String name) {
-        if (!FileIndex.safeName(name)) {
+        if (!FileIndex.safeName(name) || !Languages.inJar(lang)) {
             return false;
         }
-        try (InputStream in = StarterFiles.class.getResourceAsStream(
+        try (InputStream in = BundledCorpus.open(
                 Languages.resource(lang) + name)) {
             if (in == null) {
                 return false;
