@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 25076,
-  "translated": 25073,
+  "count": 25081,
+  "translated": 25078,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -44751,18 +44751,19 @@
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "",
-   "speaker": "",
+   "speaker": "Jankan",
    "source": "captured"
   },
   "Canyon Condor#002": {
    "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
-   "dst": "坑道の奥から [{~} 金塊] を取ってきてくれたら、次に行く場所を教えてやろう。",
+   "dst": "{c2}坑道の奥から{c3} [{~} 金塊]{c2} を取ってきてくれたら、{c3}次に行く場所を教えてやろう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 2",
    "speaker": "Jankan",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}fetch me{c3}[{~} Gold Chunks]{c2}from the end of the shaft{c3}and I'll tell ye where ye need to go next.{/}"
   },
   "Canyon Condor#003": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
@@ -44856,13 +44857,14 @@
   },
   "Canyon Condor#012": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
-   "dst": "獣が見つかるといいのですが。見つけたら証拠に [{~} 獣の卵] を持ち帰ってもらえますか？",
+   "dst": "獣が見つかるといいのですが。見つけたら証拠に{c2} [{~} 獣の卵]{/} を持ち帰ってもらえますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 1",
    "speaker": "Svin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Beast Egg]{/}"
   },
   "Canyon Condor#013": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
@@ -44966,13 +44968,14 @@
   },
   "Canyon Condor#023": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
-   "dst": "山を登って峡谷の深淵を渡った先におるはずじゃ。愛想のいい奴じゃない、それだけは言っとく。",
+   "dst": "{c2}山を登って峡谷の深淵を渡った先{/}におるはずじゃ。愛想のいい奴じゃない、それだけは言っとく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 3",
    "speaker": "Jankan",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}up the mountain and across the canyon abyss,{/}"
   },
   "Canyon Condor#024": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
@@ -45036,23 +45039,25 @@
   },
   "Canyon Condor#030": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
-   "dst": "台地にある岩柱の一つのてっぺんに咲いてる。見つけるのは難しくないはずだ。",
+   "dst": "{c2}台地にある岩柱の一つのてっぺん{/}に咲いてる。見つけるのは難しくないはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 4",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}on top of one of the stacks in the mesa{/}"
   },
   "Canyon Condor#031": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
-   "dst": "[{~} 希少なバラ] を持ってきたら、台地の怪物のところへ通してやる。",
+   "dst": "{c2}[{~} 希少なバラ]{/} を持ってきたら、台地の怪物のところへ通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 4",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}[{~} Rare Rose]{/}"
   },
   "Canyon Condor#032": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
@@ -45076,13 +45081,14 @@
   },
   "Canyon Condor#034": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
-   "dst": "獣はこの台地のどれかのてっぺんに棲んでる。少し探せば見つかるだろう。",
+   "dst": "{c1}獣はこの台地のどれかのてっぺんに棲んでる。少し探せば見つかるだろう。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "Stage 5",
    "speaker": "Hermit",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.{/}"
   },
   "Canyon Condor#035": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
@@ -45173,6 +45179,49 @@
    "stage": "Stage 6",
    "speaker": "Svin",
    "source": "wiki"
+  },
+  "Canyon Condor#044": {
+   "src": "How is the search going, traveler? I do hope you return to me with [{~} Beast Egg].",
+   "dst": "旅の方、探索は順調ですか？ぜひ{c2} [{~} 獣の卵]{/} を持って戻ってきてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 1",
+   "speaker": "Svin",
+   "source": "wiki",
+   "note": "{c2}[{~} Beast Egg]{/}"
+  },
+  "Canyon Condor#045": {
+   "src": "Me back ain' gunna hold up carryin' all that gold. Bring me my [{~} Gold Chunks] from the tunnel, and then I'll give ye yer information.",
+   "dst": "金を全部運んだら、わしの腰がもたん。{c3}トンネルから {c2}[{~} 金塊] {c3}を持ってきたら、{c2}知りたいことを教えてやろう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
+   "source": "wiki",
+   "note": "{c2}[{~} Gold Chunks]{c3}from the tunnel,{c2}and then I'll give ye yer information.{/}"
+  },
+  "Canyon Condor#046": {
+   "src": "What's taken you so long, kid? I just want [{~} Rare Rose]!",
+   "dst": "なんでこんなに時間がかかってるんだ、小僧？　俺が欲しいのはただ{c2}[{~} 希少なバラ]{/}だけなのに！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "Stage 4",
+   "speaker": "Hermit",
+   "source": "wiki",
+   "note": "{c2}[{~} Rare Rose]{/}"
+  },
+  "Canyon Condor#047": {
+   "src": "I hope you have learned much from your adventures, courageous traveler!",
+   "dst": "勇敢な旅の方、この冒険で多くのことを学ばれたことを願っています！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "Svin",
+   "source": "captured"
   },
   "Celebrations in Smoke#000": {
    "src": "The dagger is lightly stained with blood.",
@@ -249256,7 +249305,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#001": {
@@ -249281,23 +249330,25 @@
   },
   "WynnExcavation Site A#003": {
    "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
-   "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
+   "dst": "石板ひとつ完成！{c2}Vade に返してね{/}。あ、読んじゃダメよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 2",
    "speaker": "Tesha",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}Return it to Vade{/}"
   },
   "WynnExcavation Site A#004": {
    "src": "A strange force pushes you back!",
-   "dst": "奇妙な力に押し戻された！",
+   "dst": "{c1}奇妙な力に押し戻された！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}A strange force pushes you back!{/}"
   },
   "WynnExcavation Site A#005": {
    "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
@@ -249306,7 +249357,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#006": {
@@ -249351,13 +249402,14 @@
   },
   "WynnExcavation Site A#010": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
-   "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！研究所は上のテントだ。翻訳に傷なんかつけるなよ！",
+   "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！{c2}研究所は上のテント{/}だ。翻訳に傷なんかつけるなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 1",
    "speaker": "Excavator Vade",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}The lab is up there in the tent,{/}"
   },
   "WynnExcavation Site A#011": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
@@ -249481,13 +249533,14 @@
   },
   "WynnExcavation Site A#023": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
-   "dst": "「際立つ木材に供物を投げよ。正しき角度が道を開く」",
+   "dst": "{c1}「際立つ木材に供物を投げよ。正しき角度が道を開く」{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "Stage 3",
    "speaker": "Excavator Vade",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}\"Throw tribute an item to the wood that stands out, the right angle will open the way\"{/}"
   },
   "WynnExcavation Site A#024": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
@@ -249568,6 +249621,17 @@
    "stage": "Stage 6",
    "speaker": "Excavator Vade",
    "source": "wiki"
+  },
+  "WynnExcavation Site A#032": {
+   "src": "Take that to Vade, and don't read it!",
+   "dst": "{c1}これを Vade に渡して。絶対に読んじゃだめよ！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured",
+   "note": "{c1}Take that to Vade, and don't read it!{/}"
   },
   "WynnExcavation Site B#000": {
    "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
