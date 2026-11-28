@@ -56,8 +56,26 @@ public final class Languages {
     }
 
     public static List<String> bundled() {
-        try (InputStream in = Languages.class.getResourceAsStream(
-                ASSETS + "_languages.json")) {
+        return listed("_languages.json");
+    }
+
+    private static volatile List<String> inJar;
+
+    public static List<String> inJar() {
+        List<String> hit = inJar;
+        if (hit == null) {
+            hit = listed("_in-jar.json");
+            inJar = hit;
+        }
+        return hit;
+    }
+
+    public static boolean inJar(String lang) {
+        return inJar().contains(normalise(lang));
+    }
+
+    private static List<String> listed(String file) {
+        try (InputStream in = Languages.class.getResourceAsStream(ASSETS + file)) {
             if (in == null) {
                 return List.of(DEFAULT);
             }
@@ -70,7 +88,7 @@ public final class Languages {
             }
             return out.isEmpty() ? List.of(DEFAULT) : List.copyOf(out);
         } catch (Exception e) {
-            ErrorDebug.note("Languages#bundled", null, e);
+            ErrorDebug.note("Languages#listed", null, e);
             return List.of(DEFAULT);
         }
     }

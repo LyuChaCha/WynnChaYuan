@@ -11,6 +11,8 @@ final class ModCommands {
 
     static volatile boolean openSettingsNextTick = false;
 
+    static volatile boolean openPositionsNextTick = false;
+
     static void registerCommand() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
                     for (String name : new String[] {"wynnchayuan", "wcy"}) {
@@ -19,6 +21,11 @@ final class ModCommands {
                                             openSettingsNextTick = true;
                                             return 1;
                                         })
+                                        .then(ClientCommandManager.literal("pos")
+                                                .executes(context -> {
+                                                    openPositionsNextTick = true;
+                                                    return 1;
+                                                }))
                                         .then(ClientCommandManager.literal("update")
                                                 .executes(context -> {
                                                     SelfUpdate.startFromChat(

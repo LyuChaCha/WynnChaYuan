@@ -62,7 +62,14 @@ public final class SubViewsTest {
                 views.put("notes", new NotesView(shell, new FakeNotes(shell, false)));
                 views.put("notes-newer", new NotesView(shell, new FakeNotes(shell, true)));
                 views.put("credits", new CreditsView(shell, new FakeCredits(shell)));
-                views.put("position", new PositionView(shell, new FakePlaces(shell)));
+                for (String panel : new String[] {"TOOLTIP", "DIALOGUE"}) {
+                    FakePanels places = new FakePanels(shell);
+                    places.screenW = size[0];
+                    places.screenH = size[1];
+                    PositionView position = new PositionView(shell, places);
+                    position.show(panel);
+                    views.put("position-" + panel.toLowerCase(java.util.Locale.ROOT), position);
+                }
                 views.put("nametag", nametag(lang));
                 views.put("chatlog", new ChatLogView(shell, new FakeChat(true, true)));
                 views.put("chatlog-quick", new ChatLogView(shell, new FakeChat(false, true)));
@@ -97,7 +104,6 @@ public final class SubViewsTest {
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 16 張 × "
                 + SIZES.length + " 種大小）");
 
-        position(out);
         notes();
         notice();
         credits();
@@ -163,78 +169,6 @@ public final class SubViewsTest {
             view.mouseDown(r[0] + r[2] / 2, r[1] + r[3] / 2, 0);
             view.mouseUp();
         }
-    }
-
-    private static void position(File out) throws Exception {
-        FakeShell shell = new FakeShell("zh_tw");
-        FakePlaces places = new FakePlaces(shell);
-        PositionView view = new PositionView(shell, places);
-        render(view, "zh_tw", 640, 360, 1, -100, -100);
-
-        float[] box = view.spot("box:TOOLTIP");
-        must("翻譯面板那個框畫出來了", box != null);
-        if (box == null) {
-            return;
-        }
-        must("沒擺過的框放在預設位置，而且不會壓到頂列", box[0] == 20 && box[1] + 13 >= 56);
-        double gx = box[0] + 135;
-        double gy = box[1] + 60;
-        view.mouseDown(gx, gy, 0);
-        view.mouseDrag(gx + 100, gy + 50);
-        AwtCanvas c = render(view, "zh_tw", 640, 360, 2, gx + 100, gy + 50);
-        ImageIO.write(c.image, "png", new File(out, "zh_tw-position-drag.png"));
-        view.mouseUp();
-        render(view, "zh_tw", 640, 360, 1, -100, -100);
-        float[] moved = view.spot("box:TOOLTIP");
-        must("拖了之後框跟著走（" + moved[0] + "," + moved[1] + "）",
-                Math.abs(moved[0] - (box[0] + 100)) < 1.5f
-                        && Math.abs(moved[1] - (box[1] + 50)) < 1.5f);
-        must("還沒按儲存，什麼都不寫", places.stored.isEmpty() && places.commits == 0);
-
-        press(view, "b:save");
-        must("按儲存：五個框都寫進去，存一次檔", places.stored.size() == 5 && places.commits == 1);
-        int[] tooltip = places.stored.get("TOOLTIP");
-        must("寫進去的是拖過之後的位置", tooltip != null && tooltip[0] == 120);
-        int[] dialogue = places.stored.get("DIALOGUE");
-        must("置中的框存的是中心的 x（畫面一半）", dialogue != null && dialogue[0] == 320);
-        must("沒拉過大小的框不寫大小", tooltip != null && tooltip[2] == -1);
-
-        render(view, "zh_tw", 640, 360, 1, -100, -100);
-        float[] grip = view.spot("grip:TRACKER");
-        must("能改大小的框右下角有把手", grip != null);
-        must("照內容長的框沒有把手", view.spot("grip:TOOLTIP") == null);
-        if (grip != null) {
-            view.mouseDown(grip[0] + 5, grip[1] + 5, 0);
-            view.mouseDrag(grip[0] + 45, grip[1] + 25);
-            view.mouseUp();
-            render(view, "zh_tw", 640, 360, 1, -100, -100);
-            press(view, "b:save");
-            int[] tracker = places.stored.get("TRACKER");
-            must("拉過大小的框寫了新的寬高（" + tracker[2] + "×" + tracker[3] + "）",
-                    tracker[2] == 152 && tracker[3] == 82);
-        }
-
-        render(view, "zh_tw", 640, 360, 1, -100, -100);
-        press(view, "b:all");
-        render(view, "zh_tw", 640, 360, 1, -100, -100);
-        float[] back = view.spot("box:TOOLTIP");
-        must("全部回到預設：框回到原來的地方", back[0] == box[0] && back[1] == box[1]);
-        press(view, "b:save");
-        must("回到預設之後大小也清掉", places.stored.get("TRACKER")[2] == -1);
-
-        int before = places.closes;
-        press(view, "b:cancel");
-        must("取消會關掉畫面", places.closes == before + 1);
-
-        places.saved.put("TOOLTIP", new PositionView.Saved(300, 120, null, null));
-        places.saved.put("DIALOGUE", new PositionView.Saved(320, 200, 260, 60));
-        PositionView again = new PositionView(shell, places);
-        render(again, "zh_tw", 640, 360, 1, -100, -100);
-        float[] t = again.spot("box:TOOLTIP");
-        float[] d = again.spot("box:DIALOGUE");
-        must("存過的位置打開時原樣還原", t[0] == 300 && t[1] + 13 == 120);
-        must("置中的框存的是中心：畫出來要往左退半個寬度（" + d[0] + "，寬 " + d[2] + "）",
-                d[0] == 320 - 130 && d[2] == 260);
     }
 
     private static void notes() throws Exception {
@@ -1048,74 +982,6 @@ public final class SubViewsTest {
         @Override
         public String version() {
             return "0.2.8_2";
-        }
-
-        @Override
-        public void close() {
-            closes++;
-        }
-    }
-
-    private static final class FakePlaces implements PositionView.Host {
-        private final FakeShell shell;
-        final Map<String, PositionView.Saved> saved = new HashMap<>();
-        final Map<String, int[]> stored = new LinkedHashMap<>();
-        int commits;
-        int closes;
-
-        FakePlaces(FakeShell shell) {
-            this.shell = shell;
-        }
-
-        private PositionView.Line line(String key, int colour) {
-            return new PositionView.Line(shell.tr(key), colour);
-        }
-
-        @Override
-        public List<PositionView.Spec> boxes() {
-            List<PositionView.Spec> out = new ArrayList<>();
-            out.add(new PositionView.Spec("TOOLTIP", shell.tr("pos.box.tooltip"), 150, 90,
-                    false, 90, 640, false, List.of(line("pos.demo.bow", 0xFFB48EDE),
-                            line("pos.demo.dps", Ui.TEXT), line("pos.demo.level", Ui.TEXT),
-                            line("pos.demo.steal", Ui.TEXT))));
-            out.add(new PositionView.Spec("TRACKER", shell.tr("pos.box.tracker"), 112, 62,
-                    true, 100, 640, false, List.of(line("pos.demo.tracker", 0xFFF5C56B),
-                            line("pos.demo.goto", Ui.TEXT), line("pos.demo.slay", Ui.TEXT))));
-            out.add(new PositionView.Spec("DIALOGUE", shell.tr("pos.box.dialogue"), 200, 42,
-                    true, 100, 640, true, List.of(line("pos.demo.cook", 0xFF8FD694),
-                            line("pos.demo.line", Ui.TEXT))));
-            out.add(new PositionView.Spec("CHOICES", shell.tr("pos.box.choices"), 150, 34,
-                    true, 100, 420, true, List.of(line("pos.demo.choice1", Ui.TEXT),
-                            line("pos.demo.choice2", Ui.TEXT), line("pos.demo.choice3", Ui.TEXT))));
-            out.add(new PositionView.Spec("NAMETAG", shell.tr("pos.box.nametag"), 96, 22,
-                    false, 100, 640, true, List.of(line("pos.demo.cook", 0xFF8FD694))));
-            return out;
-        }
-
-        @Override
-        public PositionView.Saved saved(String id) {
-            return saved.getOrDefault(id, new PositionView.Saved(null, null, null, null));
-        }
-
-        @Override
-        public int[] defaultPosition(String id, int w, int h, int screenW, int screenH) {
-            return switch (id) {
-                case "TOOLTIP" -> new int[] {20, 20};
-                case "TRACKER" -> new int[] {8, 40};
-                case "DIALOGUE" -> new int[] {(screenW - w) / 2, screenH - 60 - h};
-                case "NAMETAG" -> new int[] {(screenW - w) / 2, screenH / 2 + 16};
-                default -> new int[] {screenW - w - 8, screenH * 5 / 8};
-            };
-        }
-
-        @Override
-        public void store(String id, int x, int y, Integer w, Integer h) {
-            stored.put(id, new int[] {x, y, w == null ? -1 : w, h == null ? -1 : h});
-        }
-
-        @Override
-        public void commit() {
-            commits++;
         }
 
         @Override

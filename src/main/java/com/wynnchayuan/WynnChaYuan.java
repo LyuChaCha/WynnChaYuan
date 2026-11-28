@@ -81,6 +81,8 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     static KeyMapping screenshotKey;
 
+    static KeyMapping hidePanelsKey;
+
     static Path configDir;
 
     static volatile String language = Languages.DEFAULT;
@@ -91,6 +93,14 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     public static Path configDir() {
         return configDir;
+    }
+
+    public static KeyMapping screenshotKey() {
+        return screenshotKey;
+    }
+
+    public static KeyMapping hidePanelsKey() {
+        return hidePanelsKey;
     }
 
     public static ModConfig config() {
@@ -149,7 +159,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         store.knowsLonger(t -> translations.hasLonger(t));
         store.knowsPlayerFrames(t -> translations.nameFrames().framesName(t));
         store.knowsHousing(Whereabouts::onHousing);
-        OwnOutputs.buildAsync();
+        OwnOutputs.buildAsync(dir);
         LanguageLayers.loadLayers();
 
         // CLIENT_STARTED 之前，跟隨遊戲語言的玩家語言還沒定

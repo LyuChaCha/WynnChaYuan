@@ -1,10 +1,12 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.capture.UnappliedAudit;
 import com.wynnchayuan.client.Credits;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.render.DialogueTint;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.LanguagePack;
 import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
@@ -22,6 +24,8 @@ import java.util.function.Consumer;
 public final class LanguageLayers {
 
     private LanguageLayers() {}
+
+    public record Outcome(String text, boolean ok) {}
 
     public static void reloadTranslations() {
         loadLayers();
@@ -71,16 +75,14 @@ public final class LanguageLayers {
             UnappliedAudit.clear();
             return;
         }
-        List<Path> layers = new ArrayList<>();
         String under = fallbackLanguage();
         if (under != null) {
-            Path fallback = Languages.dir(WynnChaYuan.configDir, under);
-            StarterFiles.installIfEmpty(fallback, under);
-            layers.add(fallback);
+            StarterFiles.installIfEmpty(Languages.dir(WynnChaYuan.configDir, under), under);
         }
-        Path dir = Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
-        StarterFiles.installIfEmpty(dir, WynnChaYuan.language);
-        layers.add(dir);
+        StarterFiles.installIfEmpty(
+                Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language), WynnChaYuan.language);
+        List<Path> layers = new ArrayList<>(
+                LanguagePack.layers(WynnChaYuan.configDir, WynnChaYuan.language, under));
         TranslationCache.loadRepairing(WynnChaYuan.translations, layers);
         loadReferenceKeys(layers);
         UnappliedAudit.clear();
@@ -89,18 +91,87 @@ public final class LanguageLayers {
     static int fetchCurrentLanguages() {
         String lang = WynnChaYuan.language;
         markFetched(lang);
-        int changed = RemoteSync.fetchInto(
-                Languages.dir(WynnChaYuan.configDir, lang), lang);
+        int changed = syncLanguage(lang);
         String under = Languages.underlay(WynnChaYuan.config.fallbackLanguage(), lang);
         if (under != null) {
             markFetched(under);
-            changed += RemoteSync.fetchInto(
-                    Languages.dir(WynnChaYuan.configDir, under), under);
+            changed += syncLanguage(under);
         }
         if (RemoteSync.fetchCredits(WynnChaYuan.configDir)) {
             Credits.reload();
         }
         return changed;
+    }
+
+    static boolean fetchMissingLanguages() {
+        String lang = WynnChaYuan.language;
+        boolean got = false;
+        for (String one : new String[] {lang,
+                Languages.underlay(WynnChaYuan.config.fallbackLanguage(), lang)}) {
+            if (one != null && LanguagePack.needsDownload(WynnChaYuan.configDir, one)) {
+                markFetched(one);
+                got |= syncLanguage(one) > 0;
+            }
+        }
+        return got;
+    }
+
+    private static int syncLanguage(String lang) {
+        if (!LanguagePack.needsDownload(WynnChaYuan.configDir, lang)) {
+            return RemoteSync.fetchInto(Languages.dir(WynnChaYuan.configDir, lang), lang);
+        }
+        if (downloadBlocked() != null) {
+            return 0;
+        }
+        LanguagePack.Phase got = LanguagePack.download(
+                WynnChaYuan.configDir, lang, RemoteSync::fetchComplete, null);
+        if (got != LanguagePack.Phase.READY) {
+            return 0;
+        }
+        OwnOutputs.buildAsync(WynnChaYuan.configDir);
+        return 1;
+    }
+
+    public static String downloadBlocked() {
+        if (WynnChaYuan.config.source() != ModConfig.Source.GITHUB) {
+            return "data.language.local";
+        }
+        if (!NetworkGate.online(WynnChaYuan.config)) {
+            return "data.language.offline";
+        }
+        return null;
+    }
+
+    private static void fetchMissing(String lang, RemoteSync.Progress progress,
+                                     Consumer<Outcome> done) {
+        String name = Languages.nativeName(lang);
+        String blocked = downloadBlocked();
+        if (blocked != null) {
+            done.accept(new Outcome(T.s(blocked, name), false));
+            return;
+        }
+        markFetched(lang);
+        Thread worker = new Thread(() -> {
+            LanguagePack.Phase got = LanguagePack.download(
+                    WynnChaYuan.configDir, lang, RemoteSync::fetchComplete, progress);
+            ModLog.info("下載 " + lang + "：" + got + "，" + RemoteSync.lastResult());
+            Minecraft.getInstance().execute(() -> {
+                if (got == LanguagePack.Phase.READY) {
+                    loadLayers();
+                    OwnOutputs.buildAsync(WynnChaYuan.configDir);
+                    done.accept(new Outcome(T.s("data.language.downloaded", name,
+                            WynnChaYuan.translations.size()), true));
+                } else if (got == LanguagePack.Phase.DOWNLOADING) {
+                    LanguagePack.Status at = LanguagePack.status(lang);
+                    done.accept(new Outcome(T.s("data.language.downloading",
+                            (at == null ? 0 : at.percent()) + "%"), true));
+                } else {
+                    done.accept(new Outcome(T.s("data.language.download_failed", name), false));
+                }
+            });
+        }, WynnChaYuan.MOD_ID + "-download");
+        worker.setDaemon(true);
+        worker.start();
     }
 
     private static void refreshOncePerSession(String lang) {
@@ -109,9 +180,8 @@ public final class LanguageLayers {
                 || !firstFetch(lang)) {
             return;
         }
-        Path dir = Languages.dir(WynnChaYuan.configDir, lang);
         Thread worker = new Thread(() -> {
-            int changed = RemoteSync.fetchInto(dir, lang);
+            int changed = syncLanguage(lang);
             ModLog.info("切到 " + lang + "：" + RemoteSync.lastResult());
             if (changed > 0) {
                 reloadOnMainThread();
@@ -134,12 +204,12 @@ public final class LanguageLayers {
     }
 
     public static void switchFallback(String lang,
-                                      Consumer<String> done) {
+                                      Consumer<Outcome> done) {
         switchFallback(lang, done, null);
     }
 
     public static void switchFallback(String lang,
-                                      Consumer<String> done, RemoteSync.Progress progress) {
+                                      Consumer<Outcome> done, RemoteSync.Progress progress) {
         WynnChaYuan.config.setFallbackLanguage(lang);
         String wanted = fallbackLanguage();
         if (wanted != null) {
@@ -147,8 +217,12 @@ public final class LanguageLayers {
         }
         loadLayers();
         String under = fallbackLanguage();
+        if (under != null && LanguagePack.needsDownload(WynnChaYuan.configDir, under)) {
+            fetchMissing(under, progress, done);
+            return;
+        }
         if (under == null || WynnChaYuan.config.source() != ModConfig.Source.GITHUB) {
-            done.accept(T.s("data.fallback.done", WynnChaYuan.translations.size()));
+            done.accept(new Outcome(T.s("data.fallback.done", WynnChaYuan.translations.size()), true));
             return;
         }
         Path dir = Languages.dir(WynnChaYuan.configDir, under);
@@ -157,7 +231,8 @@ public final class LanguageLayers {
             RemoteSync.fetchInto(dir, under, progress);
             Minecraft.getInstance().execute(() -> {
                 loadLayers();
-                done.accept(T.s("data.fallback.done", WynnChaYuan.translations.size()));
+                done.accept(new Outcome(
+                        T.s("data.fallback.done", WynnChaYuan.translations.size()), true));
             });
         }, WynnChaYuan.MOD_ID + "-fallback");
         worker.setDaemon(true);
@@ -167,12 +242,12 @@ public final class LanguageLayers {
     public static final String OFF = Languages.OFF;
 
     public static void switchLanguage(String lang,
-                                      Consumer<String> done) {
+                                      Consumer<Outcome> done) {
         switchLanguage(lang, done, null);
     }
 
     public static void switchLanguage(String lang,
-                                      Consumer<String> done, RemoteSync.Progress progress) {
+                                      Consumer<Outcome> done, RemoteSync.Progress progress) {
         WynnChaYuan.config.setLanguage(lang);
         WynnChaYuan.language = Languages.pick(WynnChaYuan.config.language(), gameLanguage());
         DialogueTint.init(WynnChaYuan.configDir.resolve(DialogueTint.FILE), WynnChaYuan.language);
@@ -182,9 +257,13 @@ public final class LanguageLayers {
         if (WynnChaYuan.store() != null) {
             WynnChaYuan.store().useLanguage(WynnChaYuan.language);
         }
+        if (LanguagePack.needsDownload(WynnChaYuan.configDir, WynnChaYuan.language)) {
+            fetchMissing(WynnChaYuan.language, progress, done);
+            return;
+        }
         refreshOncePerSession(WynnChaYuan.language);
-        done.accept(T.s("data.language.done", Languages.nativeName(WynnChaYuan.language),
-                WynnChaYuan.translations.size()));
+        done.accept(new Outcome(T.s("data.language.done", Languages.nativeName(WynnChaYuan.language),
+                WynnChaYuan.translations.size()), true));
     }
 
     public static String autoLanguage() {

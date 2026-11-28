@@ -8,6 +8,7 @@ import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.client.Credits;
 import com.wynnchayuan.client.T;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -18,11 +19,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.zip.GZIPInputStream;
 
 public final class RemoteSync {
 
@@ -62,22 +65,29 @@ public final class RemoteSync {
 
     private RemoteSync() {}
 
-    private static final int FAILED = 0;
+    static final int FAILED = 0;
 
-    private static final int SAME = 1;
+    static final int SAME = 1;
 
-    private static final int CHANGED = 2;
+    static final int CHANGED = 2;
 
     private static int fetchOne(HttpClient client, Path cacheDir,
                                 String lang, String name) {
-        Path target = cacheDir.resolve(name);
-        Path tmp = cacheDir.resolve(name + ".tmp");
+        List<String> urls = new ArrayList<>();
         for (String base : SOURCES) {
+            urls.add(base + Languages.path(lang) + name);
+        }
+        return fetchFile(client, urls, cacheDir.resolve(name));
+    }
+
+    static int fetchFile(HttpClient client, List<String> urls, Path target) {
+        Path tmp = target.resolveSibling(target.getFileName() + ".tmp");
+        for (String url : urls) {
             try {
-                HttpRequest request = HttpRequest.newBuilder(
-                        URI.create(base + Languages.path(lang) + name))
+                HttpRequest request = HttpRequest.newBuilder(URI.create(url))
                         .timeout(TIMEOUT)
                         .header("User-Agent", "WynnChaYuan")
+                        .header("Accept-Encoding", "gzip")
                         .header("Cache-Control", "no-cache")
                         .header("Pragma", "no-cache")
                         .GET()
@@ -85,10 +95,11 @@ public final class RemoteSync {
                 HttpResponse<InputStream> response =
                         client.send(request, HttpResponse.BodyHandlers.ofInputStream());
                 if (response.statusCode() != 200) {
+                    response.body().close();
                     continue;
                 }
-                Files.createDirectories(tmp.getParent());
-                try (InputStream in = response.body()) {
+                Files.createDirectories(tmp.toAbsolutePath().getParent());
+                try (InputStream in = decoded(response)) {
                     Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                 }
                 if (!SafeFiles.parsesAsObject(tmp)) {
@@ -102,15 +113,23 @@ public final class RemoteSync {
                 SafeFiles.moveAtomically(tmp, target);
                 return CHANGED;
             } catch (Exception e) {
-                ErrorDebug.note("RemoteSync#fetchOne", null, e);
+                ErrorDebug.note("RemoteSync#fetchFile", null, e);
                 try {
                     Files.deleteIfExists(tmp);
                 } catch (Exception failure) {
-                    ErrorDebug.note("RemoteSync#fetchOne", null, failure);
+                    ErrorDebug.note("RemoteSync#fetchFile", null, failure);
                 }
             }
         }
         return FAILED;
+    }
+
+    private static InputStream decoded(HttpResponse<InputStream> response) throws IOException {
+        String encoding = response.headers().firstValue("Content-Encoding").orElse("").strip();
+        if ("gzip".equalsIgnoreCase(encoding)) {
+            return new GZIPInputStream(response.body());
+        }
+        return response.body();
     }
 
     public static String lastResult() {
@@ -194,48 +213,11 @@ public final class RemoteSync {
         if (!allowed()) {
             return false;
         }
-        Path target = configDir.resolve(Credits.FILE);
-        Path tmp = configDir.resolve(Credits.FILE + ".tmp");
         try (HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(TIMEOUT)
                 .followRedirects(HttpClient.Redirect.NORMAL)
                 .build()) {
-            for (String url : CREDITS) {
-                try {
-                    HttpRequest request = HttpRequest.newBuilder(URI.create(url))
-                            .timeout(TIMEOUT)
-                            .header("User-Agent", "WynnChaYuan")
-                            .header("Cache-Control", "no-cache")
-                            .header("Pragma", "no-cache")
-                            .GET()
-                            .build();
-                    HttpResponse<InputStream> response =
-                            client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-                    if (response.statusCode() != 200) {
-                        continue;
-                    }
-                    try (InputStream in = response.body()) {
-                        Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
-                    }
-                    if (!SafeFiles.parsesAsObject(tmp)) {
-                        Files.deleteIfExists(tmp);
-                        continue;
-                    }
-                    if (Files.isRegularFile(target) && Files.mismatch(tmp, target) == -1L) {
-                        Files.deleteIfExists(tmp);
-                        return false;
-                    }
-                    SafeFiles.moveAtomically(tmp, target);
-                    return true;
-                } catch (Exception e) {
-                    ErrorDebug.note("RemoteSync#fetchCredits", null, e);
-                    try {
-                        Files.deleteIfExists(tmp);
-                    } catch (Exception failure) {
-                        ErrorDebug.note("RemoteSync#fetchCredits", null, failure);
-                    }
-                }
-            }
+            return fetchFile(client, CREDITS, configDir.resolve(Credits.FILE)) == CHANGED;
         } catch (Exception e) {
             ErrorDebug.note("RemoteSync#fetchCredits", null, e);
         }
@@ -247,9 +229,23 @@ public final class RemoteSync {
         void at(int done, int total);
     }
 
+    private record Outcome(int changed, int ok, int failed, boolean index) {
+        boolean complete() {
+            return index && failed == 0 && ok > 0;
+        }
+    }
+
     public static int fetchInto(Path cacheDir, String lang, Progress progress) {
+        return fetch(cacheDir, lang, progress).changed();
+    }
+
+    public static boolean fetchComplete(Path dir, String lang, Progress progress) {
+        return fetch(dir, lang, progress).complete();
+    }
+
+    private static Outcome fetch(Path cacheDir, String lang, Progress progress) {
         if (!allowed()) {
-            return 0;
+            return new Outcome(0, 0, 0, false);
         }
         int ok = 0;
         int failed = 0;
@@ -259,8 +255,9 @@ public final class RemoteSync {
         } catch (Exception e) {
             lastResult = T.s("status.sync_cache_failed", e.getMessage());
             FAILURES.incrementAndGet();
-            return 0;
+            return new Outcome(0, 0, 0, false);
         }
+        boolean indexed = false;
 
         try (HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(TIMEOUT)
@@ -271,6 +268,7 @@ public final class RemoteSync {
             if (index == CHANGED) {
                 changed++;
             }
+            indexed = index != FAILED;
 
             List<String> names = files(cacheDir, lang);
             Set<String> fetched = new HashSet<>();
@@ -296,7 +294,7 @@ public final class RemoteSync {
         } catch (Exception e) {
             lastResult = T.s("status.sync_offline", e.getMessage());
             FAILURES.incrementAndGet();
-            return changed;
+            return new Outcome(changed, ok, failed + 1, indexed);
         }
 
         if (failed > 0) {
@@ -305,6 +303,6 @@ public final class RemoteSync {
         lastResult = failed == 0
                 ? T.s("status.sync_ok", ok, changed)
                 : T.s("status.sync_partial", ok, failed);
-        return changed;
+        return new Outcome(changed, ok, failed, indexed);
     }
 }

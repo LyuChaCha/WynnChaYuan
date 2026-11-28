@@ -7,13 +7,14 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
-import com.wynnchayuan.render.PanelShot;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.gui.screens.options.controls.KeyBindsScreen;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 final class DisplayTabs {
 
@@ -62,21 +63,17 @@ final class DisplayTabs {
                 .details(List.of(SettingsScreen.toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                         cfg()::toggleShiftPeekNames))));
         rows.add(SettingsScreen.toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
-        rows.add(Row.segment("items.shot", SettingsScreen.t("items.shot"), () -> {
-                    String clash = PanelShot.conflict();
-                    if (clash != null) {
-                        return T.s("items.shot.clash", clash);
-                    }
-                    return PanelShot.hasKey() ? T.s("items.shot.bound", PanelShot.keyName())
-                                              : T.s("items.shot.unbound");
-                })
+        rows.add(Row.segment("items.shot", SettingsScreen.t("items.shot"),
+                        () -> keyHint(WynnChaYuan.screenshotKey(),
+                                clash -> T.s("items.shot.clash", clash),
+                                key -> T.s("items.shot.bound", key),
+                                () -> T.s("items.shot.unbound")))
                 .option(T.s("mode.hotkey"), Row.Tone.ACCENT)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> cfg().shotMode().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
                         ModConfig.ShotMode.values()[i]))
-                .extra(SettingsScreen.t("button.keybinds"), () -> screen.client().setScreen(
-                        new KeyBindsScreen(screen, screen.client().options)))
+                .extra(SettingsScreen.t("button.keybinds"), this::openKeyBinds)
                 .reset(() -> cfg().shotMode() == ModConfig.ShotMode.KEY,
                         () -> SettingsScreen.cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
                                 ModConfig.ShotMode.KEY)));
@@ -142,7 +139,27 @@ final class DisplayTabs {
                     cfg().saveIfDirty();
                 }));
         rows.add(SettingsScreen.toggle("dialogue.overlays", true, cfg()::showOverlays, cfg()::toggleOverlays));
+        rows.add(Row.action("panel.hide", SettingsScreen.t("panel.hide"),
+                        () -> keyHint(WynnChaYuan.hidePanelsKey(),
+                                clash -> T.s("panel.hide.clash", clash),
+                                key -> T.s("panel.hide.bound", key),
+                                () -> T.s("panel.hide.unbound")))
+                .label(SettingsScreen.t("button.keybinds"))
+                .run(this::openKeyBinds));
         return rows;
+    }
+
+    private static String keyHint(KeyMapping mapping, UnaryOperator<String> clashing,
+                                  UnaryOperator<String> bound, Supplier<String> unbound) {
+        String clash = HotKeys.clash(mapping);
+        if (clash != null) {
+            return clashing.apply(clash);
+        }
+        return HotKeys.hasKey(mapping) ? bound.apply(HotKeys.keyName(mapping)) : unbound.get();
+    }
+
+    private void openKeyBinds() {
+        screen.client().setScreen(new KeyBindsScreen(screen, screen.client().options));
     }
 
     private static final String DEFAULT_COLOUR = ModConfig.DEFAULT_COLOUR;
