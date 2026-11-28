@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site A",
-  "count": 32,
+  "count": 33,
   "translated": 32,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -13,7 +13,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#001": {
@@ -63,7 +63,7 @@
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
    "stage": "",
-   "speaker": "",
+   "speaker": "Excavator Vade",
    "source": "captured"
   },
   "WynnExcavation Site A#006": {
@@ -325,6 +325,16 @@
    "stage": "Stage 6",
    "speaker": "Excavator Vade",
    "source": "wiki"
+  },
+  "WynnExcavation Site A#032": {
+   "src": "Take that to Vade, and don't read it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
+   "source": "captured"
   }
  }
 }
