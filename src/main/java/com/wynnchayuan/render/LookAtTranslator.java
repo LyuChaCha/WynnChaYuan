@@ -101,7 +101,7 @@ public final class LookAtTranslator {
     }
 
     public static void render(GuiGraphics graphics) {
-        if (WynnChaYuan.config() == null
+        if (PanelsHidden.hidden() || WynnChaYuan.config() == null
                 || WynnChaYuan.config().nametagMode()
                         != ModConfig.NametagMode.LOOK_AT) {
             return;

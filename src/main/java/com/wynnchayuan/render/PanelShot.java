@@ -1,6 +1,5 @@
 package com.wynnchayuan.render;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ConfigFolder;
@@ -8,16 +7,14 @@ import com.wynnchayuan.ModChat;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ShotScreen;
 import com.wynnchayuan.client.T;
+import com.wynnchayuan.client.Toasts;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
-import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
-import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
@@ -47,8 +44,6 @@ public final class PanelShot {
 
     private static volatile boolean pending = false;
 
-    private static KeyMapping bound;
-
     private PanelShot() {}
 
     private static void log(String stage) {
@@ -65,7 +60,6 @@ public final class PanelShot {
     }
 
     public static void bind(KeyMapping mapping) {
-        bound = mapping;
         String where = "?";
         try {
             var key = KeyBindingHelper.getBoundKeyOf(mapping);
@@ -78,51 +72,6 @@ public final class PanelShot {
         log("bind：截圖鍵已交給 PanelShot（目前綁定 " + where + "）");
     }
 
-    public static boolean hasKey() {
-        if (bound == null) {
-            return false;
-        }
-        var key = KeyBindingHelper.getBoundKeyOf(bound);
-        return key != null
-                && key.getValue() != InputConstants.UNKNOWN.getValue();
-    }
-
-    public static String keyName() {
-        if (bound == null) {
-            return "未設定";
-        }
-        var key = KeyBindingHelper.getBoundKeyOf(bound);
-        if (key == null || key.getValue() == InputConstants.UNKNOWN.getValue()) {
-            return "未設定";
-        }
-        return bound.getTranslatedKeyMessage().getString();
-    }
-
-    public static String conflict() {
-        if (bound == null) {
-            return null;
-        }
-        var mine = KeyBindingHelper.getBoundKeyOf(bound);
-        if (mine == null
-                || mine.getValue() == InputConstants.UNKNOWN.getValue()) {
-            return null;
-        }
-        Minecraft mc = Minecraft.getInstance();
-        if (mc == null || mc.options == null) {
-            return null;
-        }
-        for (KeyMapping other : mc.options.keyMappings) {
-            if (other == bound) {
-                continue;
-            }
-            var theirs = KeyBindingHelper.getBoundKeyOf(other);
-            if (theirs != null && theirs.getValue() == mine.getValue()) {
-                return Component.translatable(other.getName()).getString();
-            }
-        }
-        return null;
-    }
-
     public static void request() {
         if (WynnChaYuan.config().shotMode() == ModConfig.ShotMode.OFF) {
             return;
@@ -130,27 +79,6 @@ public final class PanelShot {
         pending = true;
         log("request：收到，準備拍");
         tell(Component.literal(T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
-    }
-
-    public static void listen() {
-        ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
-                    // afterKeyPress 只在畫面沒吃鍵時跑，背包與 Wynntils 會吃鍵
-                    ScreenKeyboardEvents.beforeKeyPress(screen).register((s, keyEvent) -> {
-                                if (bound != null && bound.matches(keyEvent)) {
-                                    log("畫面鍵盤事件（前置）：收到截圖鍵（"
-                                            + screen.getClass().getSimpleName() + "）");
-                                    request();
-                                }
-                            });
-                    ScreenKeyboardEvents.afterKeyPress(screen).register((s, keyEvent) -> {
-                                if (bound != null && bound.matches(keyEvent)) {
-                                    log("畫面鍵盤事件（後置）：收到截圖鍵（"
-                                            + screen.getClass().getSimpleName() + "）");
-                                    request();
-                                }
-                            });
-                });
-        log("listen：已掛上畫面鍵盤事件（前置與後置）");
     }
 
     public static void tick() {
@@ -326,19 +254,8 @@ public final class PanelShot {
         }
     }
 
-    private static void toast(Minecraft mc, Component message) {
-        try {
-            SystemToast.addOrUpdate(mc.getToastManager(), SystemToast
-                            .SystemToastId.PERIODIC_NOTIFICATION,
-                    Component.literal(WynnChaYuan.MOD_NAME),
-                    message);
-        } catch (Throwable t) {
-            ErrorDebug.note("PanelShot#toast", null, t);
-        }
-    }
-
     private static void say(Minecraft mc, Component message) {
-        toast(mc, message);
+        Toasts.show(mc, message);
         if (mc.player != null) {
             ModChat.say(mc, message);
             mc.player.playSound(

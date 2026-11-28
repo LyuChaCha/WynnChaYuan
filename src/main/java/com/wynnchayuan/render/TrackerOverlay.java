@@ -86,6 +86,9 @@ public final class TrackerOverlay {
     }
 
     public static void render(GuiGraphics graphics) {
+        if (PanelsHidden.hidden()) {
+            return;
+        }
         List<Component> lines = current;
         boolean panel = WynnChaYuan.config().trackerMode()
                 == ModConfig.DialogueMode.PANEL;

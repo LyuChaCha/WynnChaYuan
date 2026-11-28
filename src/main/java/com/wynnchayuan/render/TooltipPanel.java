@@ -23,7 +23,7 @@ public final class TooltipPanel {
 
     public static void render(GuiGraphics graphics, List<Component> tooltip,
                               int mouseX, int mouseY, TranslationStore store) {
-        if (tooltip == null || tooltip.isEmpty()) {
+        if (PanelsHidden.hidden() || tooltip == null || tooltip.isEmpty()) {
             return;
         }
         tooltip = ThirdPartySections.strip(tooltip);
@@ -109,6 +109,9 @@ public final class TooltipPanel {
 
     public static boolean wouldPush(List<Component> tooltip, int mouseX, int mouseY,
                                     TranslationStore store) {
+        if (PanelsHidden.hidden()) {
+            return false;
+        }
         return TooltipPlacement.wouldPush(tooltip, mouseX, mouseY, store);
     }
 
