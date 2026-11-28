@@ -247,9 +247,23 @@ public final class RemoteSync {
         void at(int done, int total);
     }
 
+    private record Outcome(int changed, int ok, int failed, boolean index) {
+        boolean complete() {
+            return index && failed == 0 && ok > 0;
+        }
+    }
+
     public static int fetchInto(Path cacheDir, String lang, Progress progress) {
+        return fetch(cacheDir, lang, progress).changed();
+    }
+
+    public static boolean fetchComplete(Path dir, String lang, Progress progress) {
+        return fetch(dir, lang, progress).complete();
+    }
+
+    private static Outcome fetch(Path cacheDir, String lang, Progress progress) {
         if (!allowed()) {
-            return 0;
+            return new Outcome(0, 0, 0, false);
         }
         int ok = 0;
         int failed = 0;
@@ -259,8 +273,9 @@ public final class RemoteSync {
         } catch (Exception e) {
             lastResult = T.s("status.sync_cache_failed", e.getMessage());
             FAILURES.incrementAndGet();
-            return 0;
+            return new Outcome(0, 0, 0, false);
         }
+        boolean indexed = false;
 
         try (HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(TIMEOUT)
@@ -271,6 +286,7 @@ public final class RemoteSync {
             if (index == CHANGED) {
                 changed++;
             }
+            indexed = index != FAILED;
 
             List<String> names = files(cacheDir, lang);
             Set<String> fetched = new HashSet<>();
@@ -296,7 +312,7 @@ public final class RemoteSync {
         } catch (Exception e) {
             lastResult = T.s("status.sync_offline", e.getMessage());
             FAILURES.incrementAndGet();
-            return changed;
+            return new Outcome(changed, ok, failed + 1, indexed);
         }
 
         if (failed > 0) {
@@ -305,6 +321,6 @@ public final class RemoteSync {
         lastResult = failed == 0
                 ? T.s("status.sync_ok", ok, changed)
                 : T.s("status.sync_partial", ok, failed);
-        return changed;
+        return new Outcome(changed, ok, failed, indexed);
     }
 }

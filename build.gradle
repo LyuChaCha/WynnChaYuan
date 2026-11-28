@@ -212,6 +212,72 @@ jar {
     }
 }
 
+def translationsRoot = file('src/main/resources/assets/wynnchayuan/translations')
+def jarLanguages = (new groovy.json.JsonSlurper()
+        .parse(new File(translationsRoot, '_in-jar.json'))['languages'] as List).toSorted()
+def downloadedLanguages = (translationsRoot.listFiles() ?: [] as File[])
+        .findAll { it.directory && !jarLanguages.contains(it.name) }
+        .collect { it.name }
+        .sort()
+
+tasks.named('jar') {
+    inputs.property 'jarLanguages', jarLanguages.join(',')
+    downloadedLanguages.each { lang ->
+        exclude "assets/wynnchayuan/translations/${lang}/**"
+    }
+    doFirst {
+        logger.lifecycle("[WynnChaYuan] jar 只打包 ${jarLanguages.join('、')}，"
+                + "${downloadedLanguages.join('、')} 改成選到時下載")
+    }
+}
+
+tasks.register('checkJarLanguages') {
+    group = 'verification'
+    description = 'jar 裡的語料只有 _in-jar.json 列的語言，其他資源一個不少'
+    def built = tasks.named('remapJar').flatMap { it.archiveFile }
+    def resources = layout.buildDirectory.dir('resources/main')
+    def expected = jarLanguages
+    def leftOut = downloadedLanguages
+    inputs.file(built)
+    dependsOn 'remapJar'
+    doLast {
+        def entries = [] as Set
+        new java.util.zip.ZipFile(built.get().asFile).withCloseable { zip ->
+            zip.entries().each { entries << it.name }
+        }
+        def prefix = 'assets/wynnchayuan/translations/'
+        def found = entries.findAll { it.startsWith(prefix) && it.indexOf('/', prefix.length()) > 0 }
+                .collect { it.substring(prefix.length(), it.indexOf('/', prefix.length())) }
+                .toSet().toSorted()
+        def problems = []
+        if (found != expected) {
+            problems << "jar 裡的語料語言是 ${found}，_in-jar.json 寫的是 ${expected}"
+        }
+        expected.each { lang ->
+            if (!entries.contains("${prefix}${lang}/_index.json".toString())) {
+                problems << "${lang} 沒有 _index.json"
+            }
+        }
+        def root = resources.get().asFile
+        def missing = []
+        root.eachFileRecurse(groovy.io.FileType.FILES) { f ->
+            def rel = root.toPath().relativize(f.toPath()).toString().replace(File.separator, '/')
+            def dropped = leftOut.any { rel.startsWith("${prefix}${it}/".toString()) }
+            if (!dropped && !entries.contains(rel)) {
+                missing << rel
+            }
+        }
+        if (missing) {
+            problems << "這些資源沒進 jar：\n  " + missing.sort().take(20).join('\n  ')
+        }
+        if (problems) {
+            throw new GradleException(problems.join('\n'))
+        }
+        logger.lifecycle("[WynnChaYuan] jar 的語料：${found.join('、')}；其他資源齊全")
+    }
+}
+tasks.named('check') { dependsOn 'checkJarLanguages' }
+
 // 驗證程式直接沿用 main 的 classpath —— 那份已經被 Loom 重映射成 Mojang 名稱，
 // 若改用未重映射的原始 jar，跑起來會是 intermediary 名稱而對不上。
 sourceSets {

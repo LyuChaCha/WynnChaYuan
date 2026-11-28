@@ -61,6 +61,9 @@ public final class ModNetwork {
                 if (remote != null && !remote.equals(WynnChaYuan.config.syncedTranslations())) {
                     TranslationUpdate.found(remote);
                 }
+                if (LanguageLayers.fetchMissingLanguages()) {
+                    LanguageLayers.reloadOnMainThread();
+                }
                 return;
             }
             int changed = LanguageLayers.fetchCurrentLanguages();

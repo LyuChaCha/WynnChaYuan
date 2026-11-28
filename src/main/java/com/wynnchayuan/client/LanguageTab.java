@@ -5,12 +5,14 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.SettingsView;
 import com.wynnchayuan.client.ui.Ui;
+import com.wynnchayuan.translate.LanguagePack;
 import com.wynnchayuan.translate.Languages;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Supplier;
 
 final class LanguageTab {
 
@@ -42,15 +44,62 @@ final class LanguageTab {
         return new Row.Choice(lang, Languages.nativeName(lang), badge(lang), false);
     }
 
+    private static Row.Choice corpus(String lang) {
+        String name = Languages.nativeName(lang);
+        if (LanguagePack.needsDownload(WynnChaYuan.configDir(), lang)) {
+            name = T.s("data.language.needs_download", name);
+        }
+        return new Row.Choice(lang, name, badge(lang), false);
+    }
+
+    private static String downloading(String lang) {
+        LanguagePack.Status at = LanguagePack.status(lang);
+        if (lang == null || at == null || !LanguagePack.running(lang)) {
+            return null;
+        }
+        return T.s("data.language.downloading", at.percent() + "%");
+    }
+
+    private static String note(String lang) {
+        if (lang == null || !LanguagePack.needsDownload(WynnChaYuan.configDir(), lang)
+                || LanguagePack.running(lang)) {
+            return null;
+        }
+        String name = Languages.nativeName(lang);
+        String blocked = LanguageLayers.downloadBlocked();
+        if (blocked != null) {
+            return T.s(blocked, name);
+        }
+        LanguagePack.Status at = LanguagePack.status(lang);
+        if (at != null && at.phase() == LanguagePack.Phase.FAILED) {
+            return T.s("data.language.download_failed", name);
+        }
+        return null;
+    }
+
+    private static Supplier<String> hint(String key, Supplier<String> lang) {
+        Supplier<String> base = SettingsScreen.t(key);
+        return () -> {
+            String said = note(lang.get());
+            return said != null ? said : base.get();
+        };
+    }
+
+    private static String percent(int done, int total) {
+        return T.s("data.language.downloading",
+                new LanguagePack.Status(LanguagePack.Phase.DOWNLOADING, done, total).percent() + "%");
+    }
+
     List<Row> languages() {
         List<Row> rows = new ArrayList<>();
-        rows.add(Row.select("data.language", SettingsScreen.t("data.language"), SettingsScreen.t("data.language.hint"))
+        rows.add(Row.select("data.language", SettingsScreen.t("data.language"),
+                        hint("data.language.hint", WynnChaYuan::language))
                 .choices(() -> {
                     List<Row.Choice> out = new ArrayList<>();
                     out.add(new Row.Choice("", T.s("data.language.auto",
                             Languages.nativeName(LanguageLayers.autoLanguage())), "A", true));
                     for (String lang : Languages.bundled()) {
-                        out.add(language(lang));
+                        out.add(corpus(lang));
                     }
                     return out;
                 })
@@ -58,8 +107,9 @@ final class LanguageTab {
                 .choose(id -> pendingLanguage = id.equals(SettingsScreen.cfg().language()) ? null : id)
                 .apply(() -> pendingLanguage != null, this::applyLanguage)
                 .locked(() -> screen.toolsTab.fetching)
-                .busy(() -> languageBusy));
-        rows.add(Row.select("data.fallback", SettingsScreen.t("data.fallback"), SettingsScreen.t("data.fallback.hint"))
+                .busy(() -> languageBusy != null ? languageBusy : downloading(WynnChaYuan.language())));
+        rows.add(Row.select("data.fallback", SettingsScreen.t("data.fallback"),
+                        hint("data.fallback.hint", LanguageLayers::fallbackLanguage))
                 .choices(() -> {
                     List<Row.Choice> out = new ArrayList<>();
                     String under = LanguageLayers.fallbackLanguage();
@@ -69,7 +119,7 @@ final class LanguageTab {
                     out.add(new Row.Choice(LanguageLayers.OFF, T.s("data.fallback.off"), "EN", false));
                     for (String lang : Languages.bundled()) {
                         if (!lang.equals(WynnChaYuan.language())) {
-                            out.add(language(lang));
+                            out.add(corpus(lang));
                         }
                     }
                     return out;
@@ -78,7 +128,8 @@ final class LanguageTab {
                 .choose(id -> pendingFallback = id.equals(SettingsScreen.cfg().fallbackLanguage()) ? null : id)
                 .apply(() -> pendingFallback != null, this::applyFallback)
                 .locked(() -> screen.toolsTab.fetching)
-                .busy(() -> fallbackBusy));
+                .busy(() -> fallbackBusy != null ? fallbackBusy
+                        : downloading(LanguageLayers.fallbackLanguage())));
         rows.add(Row.select("data.ui", SettingsScreen.t("data.ui"), SettingsScreen.t("data.ui.hint"))
                 .choices(() -> {
                     List<Row.Choice> out = new ArrayList<>();
@@ -126,9 +177,9 @@ final class LanguageTab {
             }
             screen.toolsTab.fetching = false;
             languageBusy = null;
-            screen.say("✔ " + result, Ui.GREEN);
+            report(result);
         }, (done, total) -> Minecraft.getInstance().execute(() -> {
-            languageBusy = T.s("data.language.progress", done, total);
+            languageBusy = percent(done, total);
             screen.say(languageBusy, Ui.TEXT_3);
         }));
     }
@@ -144,10 +195,14 @@ final class LanguageTab {
             pendingFallback = null;
             screen.toolsTab.fetching = false;
             fallbackBusy = null;
-            screen.say("✔ " + result, Ui.GREEN);
+            report(result);
         }, (done, total) -> Minecraft.getInstance().execute(() -> {
-            fallbackBusy = T.s("data.language.progress", done, total);
+            fallbackBusy = percent(done, total);
             screen.say(fallbackBusy, Ui.TEXT_3);
         }));
+    }
+
+    private void report(LanguageLayers.Outcome result) {
+        screen.say((result.ok() ? "✔ " : "✘ ") + result.text(), result.ok() ? Ui.GREEN : Ui.RED);
     }
 }

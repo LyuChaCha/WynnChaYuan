@@ -11,6 +11,8 @@ import net.minecraft.network.chat.Component;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,17 +37,36 @@ public final class OwnOutputs {
 
     private OwnOutputs() {}
 
-    public static void buildAsync() {
-        Thread t = new Thread(OwnOutputs::build, "WynnChaYuan-own-outputs");
+    public static void buildAsync(Path configDir) {
+        Thread t = new Thread(() -> build(configDir), "WynnChaYuan-own-outputs");
         t.setDaemon(true);
         t.start();
     }
 
     static void build() {
+        build(null);
+    }
+
+    @FunctionalInterface
+    private interface Source {
+        JsonElement read(String name);
+    }
+
+    private static Source source(Path configDir, String lang) {
+        Source jar = name -> read(ASSETS + lang + "/" + name);
+        if (configDir == null || jar.read("_index.json") != null) {
+            return jar;
+        }
+        Path dir = Languages.dir(configDir, lang);
+        return name -> readFile(dir.resolve(name));
+    }
+
+    static void build(Path configDir) {
         List<Long> out = new ArrayList<>(1 << 18);
         for (String lang : Languages.bundled()) {
-            for (String file : files(lang)) {
-                JsonElement root = read(ASSETS + lang + "/" + file);
+            Source from = source(configDir, lang);
+            for (String file : files(from)) {
+                JsonElement root = from.read(file);
                 if (root != null && root.isJsonObject()) {
                     collect(root.getAsJsonObject(), out);
                 }
@@ -140,8 +161,8 @@ public final class OwnOutputs {
         return h;
     }
 
-    private static List<String> files(String lang) {
-        JsonElement index = read(ASSETS + lang + "/_index.json");
+    private static List<String> files(Source from) {
+        JsonElement index = from.read("_index.json");
         List<String> out = new ArrayList<>();
         if (index != null && index.isJsonObject() && index.getAsJsonObject().has("files")) {
             for (JsonElement f : index.getAsJsonObject().getAsJsonArray("files")) {
@@ -149,6 +170,19 @@ public final class OwnOutputs {
             }
         }
         return out;
+    }
+
+    private static JsonElement readFile(Path file) {
+        if (!Files.isRegularFile(file)) {
+            return null;
+        }
+        try (InputStreamReader in = new InputStreamReader(Files.newInputStream(file),
+                StandardCharsets.UTF_8)) {
+            return JsonParser.parseReader(in);
+        } catch (Exception e) {
+            ErrorDebug.note("OwnOutputs#readFile", null, e);
+            return null;
+        }
     }
 
     private static JsonElement read(String resource) {
