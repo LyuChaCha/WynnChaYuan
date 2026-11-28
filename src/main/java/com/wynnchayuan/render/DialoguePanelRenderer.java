@@ -21,6 +21,9 @@ final class DialoguePanelRenderer {
     private DialoguePanelRenderer() {}
 
     static void render(GuiGraphics graphics) {
+        if (PanelsHidden.hidden()) {
+            return;
+        }
         List<Component> lines = DialogueOverlay.current;
         List<List<Component>> options = DialogueOverlay.choices;
         if (lines.isEmpty() && options.isEmpty()) {

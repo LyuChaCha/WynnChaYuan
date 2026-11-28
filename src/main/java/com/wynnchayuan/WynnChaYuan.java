@@ -81,6 +81,8 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     static KeyMapping screenshotKey;
 
+    static KeyMapping hidePanelsKey;
+
     static Path configDir;
 
     static volatile String language = Languages.DEFAULT;
@@ -91,6 +93,14 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     public static Path configDir() {
         return configDir;
+    }
+
+    public static KeyMapping screenshotKey() {
+        return screenshotKey;
+    }
+
+    public static KeyMapping hidePanelsKey() {
+        return hidePanelsKey;
     }
 
     public static ModConfig config() {
