@@ -39,47 +39,66 @@ public final class TooltipPanel {
             return;
         }
 
+        ModConfig cfg = WynnChaYuan.config();
+        PanelBox drawn = cfg.panelAnchor() == ModConfig.PanelAnchor.FIXED
+                ? drawPinned(graphics, lines, cfg.fixedX(), cfg.fixedY())
+                : drawBeside(graphics, tooltip, lines, mouseX, mouseY,
+                        PanelGap.layout(cfg.panelGap()), cfg.panelSide(), PendingTooltip.pushed());
+        PanelShot.note(drawn.x(), drawn.y(), drawn.w(), drawn.h(), lines.get(0).getString());
+    }
+
+    static PanelBox drawBeside(GuiGraphics graphics, List<Component> tooltip, List<Component> lines,
+                               int mouseX, int mouseY, int gap, ModConfig.PanelSide side,
+                               boolean withOriginal) {
+        if (tooltip == null || tooltip.isEmpty() || lines == null || lines.isEmpty()) {
+            return PanelBox.NONE;
+        }
         Minecraft mc = Minecraft.getInstance();
         int screenW = graphics.guiWidth();
         int screenH = graphics.guiHeight();
-        int gap = PanelGap.layout(WynnChaYuan.config().panelGap());
-
         int[] panelBox = TooltipPlacement.box(mc, lines);
-        int panelW = panelBox[0] + 8;
-        int panelH = panelBox[1] + 8;
-
-        TooltipPlacement.Place spot;
-        if (WynnChaYuan.config().panelAnchor() == ModConfig.PanelAnchor.FIXED) {
-            spot = new TooltipPlacement.Place(WynnChaYuan.config().fixedX(), WynnChaYuan.config().fixedY(),
-                    0, 0, false, 0, 0);
-        } else {
-            spot = TooltipPlacement.place(mc, lines, tooltip, mouseX, mouseY, screenW, screenH, gap);
-        }
-        int x = Math.max(0, Math.min(spot.panelX(), Math.max(0, screenW - panelW)));
-        int y = Math.max(0, Math.min(spot.panelY(), Math.max(0, screenH - panelH)));
-        if (WynnChaYuan.config().panelAnchor() != ModConfig.PanelAnchor.FIXED) {
-            x = WynnventoryBox.place(x, y, panelW, panelH,
-                    spot.leftSide(), spot.rightSide(), screenW, gap);
-        }
-
-        if (PendingTooltip.pushed()) {
+        TooltipPlacement.Place spot = TooltipPlacement.place(mc, lines, tooltip, mouseX, mouseY,
+                screenW, screenH, gap, side);
+        int[] at = keepOnScreen(spot.panelX(), spot.panelY(), panelBox, screenW, screenH);
+        int x = WynnventoryBox.place(at[0], at[1], panelBox[0] + 8, panelBox[1] + 8,
+                spot.leftSide(), spot.rightSide(), screenW, gap);
+        if (withOriginal) {
             TooltipPlacement.drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
         }
+        return paint(graphics, mc, lines, x, at[1], panelBox);
+    }
 
+    static PanelBox drawPinned(GuiGraphics graphics, List<Component> lines, int x, int y) {
+        if (lines == null || lines.isEmpty()) {
+            return PanelBox.NONE;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        int[] panelBox = TooltipPlacement.box(mc, lines);
+        int[] at = keepOnScreen(x, y, panelBox, graphics.guiWidth(), graphics.guiHeight());
+        return paint(graphics, mc, lines, at[0], at[1], panelBox);
+    }
+
+    private static int[] keepOnScreen(int x, int y, int[] panelBox, int screenW, int screenH) {
+        int panelW = panelBox[0] + 8;
+        int panelH = panelBox[1] + 8;
+        return new int[] {Math.max(0, Math.min(x, Math.max(0, screenW - panelW))),
+                Math.max(0, Math.min(y, Math.max(0, screenH - panelH)))};
+    }
+
+    private static PanelBox paint(GuiGraphics graphics, Minecraft mc, List<Component> lines,
+                                  int x, int y, int[] panelBox) {
         List<ClientTooltipComponent> components = new ArrayList<>(lines.size());
         for (Component line : lines) {
             components.add(ClientTooltipComponent.create(line.getVisualOrderText()));
         }
-
         OriginalTooltipBox.beginOwn();
         try {
             graphics.renderTooltip(mc.font, components, x, y, EXACT, null);
         } finally {
             OriginalTooltipBox.endOwn();
         }
-        String title = lines.isEmpty() ? null : lines.get(0).getString();
-        PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
-                panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
+        return new PanelBox(x - SHOT_MARGIN, y - SHOT_MARGIN,
+                panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2);
     }
 
     private static final int SHOT_MARGIN = 4;

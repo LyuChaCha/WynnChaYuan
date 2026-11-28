@@ -5,6 +5,7 @@ import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.LookAtTranslator;
+import com.wynnchayuan.render.PanelPreview;
 import com.wynnchayuan.render.PendingTooltip;
 import com.wynnchayuan.render.TooltipPanel;
 import com.wynnchayuan.render.TooltipScaleProbe;
@@ -186,6 +187,9 @@ public final class RenderListener {
 
     public static void renderHud(GuiGraphics graphics) {
         ChatBlock.tick();
+        if (PanelPreview.editing()) {
+            return;
+        }
         boolean inPlace = WynnChaYuan.config().dialogueMode()
                         == ModConfig.DialogueMode.REPLACE
                 || WynnChaYuan.config().choiceMode()

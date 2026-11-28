@@ -112,7 +112,7 @@ public final class LookAtTranslator {
         }
         dropStale(WynnChaYuan.translations());
         if (lastShown != null && System.currentTimeMillis() - shownAt < MIN_SHOW_MS) {
-            drawRow(graphics, mc, List.of(lastShown), 1.0f);
+            drawRow(graphics, List.of(lastShown), 1.0f, saved());
             return;
         }
         Entity aimed = findAimedLabel(mc);
@@ -123,7 +123,7 @@ public final class LookAtTranslator {
                 noteOnce("nametag.noMatch");
                 if (lastShown != null && (aimed == lastSource || sameContent(target))) {
                     lastSeen = System.currentTimeMillis();
-                    drawRow(graphics, mc, List.of(lastShown), 1.0f);
+                    drawRow(graphics, List.of(lastShown), 1.0f, saved());
                 }
                 return;
             }
@@ -148,7 +148,7 @@ public final class LookAtTranslator {
                     row.add(near);
                 }
             }
-            drawRow(graphics, mc, row, 1.0f);
+            drawRow(graphics, row, 1.0f, saved());
             return;
         }
         if (lastSource != null
@@ -161,7 +161,7 @@ public final class LookAtTranslator {
         if (lastShown != null && hold > 0) {
             float alpha = Fade.alphaFor(lastSeen, hold);
             if (alpha > 0f) {
-                drawRow(graphics, mc, List.of(lastShown), alpha);
+                drawRow(graphics, List.of(lastShown), alpha, saved());
             }
         }
     }
@@ -343,11 +343,12 @@ public final class LookAtTranslator {
         }
     }
 
-    private static void drawRow(GuiGraphics graphics, Minecraft mc,
-                                List<Component> boxes, float alpha) {
+    static PanelBox drawRow(GuiGraphics graphics, List<Component> boxes, float alpha,
+                            PanelPlace place) {
         if (boxes.isEmpty()) {
-            return;
+            return PanelBox.NONE;
         }
+        Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;
         List<List<Component>> rows = new ArrayList<>();
         List<Integer> widths = new ArrayList<>();
@@ -375,18 +376,19 @@ public final class LookAtTranslator {
             tallest = Math.max(tallest, h);
         }
         if (rows.isEmpty()) {
-            return;
+            return PanelBox.NONE;
         }
 
         int x = (graphics.guiWidth() - total) / 2;
         int y = defaultY(graphics);
-        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.NAMETAG)) {
-            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.NAMETAG) - total / 2;
-            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.NAMETAG);
+        if (place.placed()) {
+            x = place.x() - total / 2;
+            y = place.y();
         }
         int[] at = Boxes.intoScreen(x, y, total, tallest, graphics.guiWidth(), graphics.guiHeight());
         x = at[0];
         y = at[1];
+        PanelBox drawn = new PanelBox(x, y, total, tallest);
 
         for (int i = 0; i < rows.size(); i++) {
             List<Component> lines = rows.get(i);
@@ -402,6 +404,11 @@ public final class LookAtTranslator {
             }
             x += w + GAP;
         }
+        return drawn;
+    }
+
+    private static PanelPlace saved() {
+        return PanelPlace.saved(WynnChaYuan.config(), ModConfig.Overlay.NAMETAG);
     }
 
     static int topOf(int tallest, int height) {

@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.client.FirstRunScreen;
 import com.wynnchayuan.client.NoticeScreen;
+import com.wynnchayuan.client.PositionScreen;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.listener.LiveRefresh;
@@ -77,6 +78,10 @@ final class ModKeys {
             if (ModCommands.openSettingsNextTick) {
                 ModCommands.openSettingsNextTick = false;
                 client.setScreen(new SettingsScreen());
+            }
+            if (ModCommands.openPositionsNextTick) {
+                ModCommands.openPositionsNextTick = false;
+                client.setScreen(new PositionScreen(null));
             }
             while (WynnChaYuan.screenshotKey.consumeClick()) {
                 PanelShot.request();

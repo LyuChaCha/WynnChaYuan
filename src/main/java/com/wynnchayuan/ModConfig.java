@@ -1014,6 +1014,19 @@ public final class ModConfig {
         save();
     }
 
+    public void clearOverlayPos(Overlay which) {
+        if (which != Overlay.TOOLTIP && overlayPos.remove(which) != null) {
+            save();
+        }
+    }
+
+    public void setPanelAnchor(PanelAnchor anchor) {
+        if (anchor != null && anchor != panelAnchor) {
+            panelAnchor = anchor;
+            save();
+        }
+    }
+
     public boolean hasOverlaySize(Overlay which) {
         return overlaySize.containsKey(which);
     }
