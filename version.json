@@ -1,11 +1,59 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.8_2",
+ "latest": "1.0.9",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.9": {
+   "headline": "1.0.9: hide panels with a key, a new position editor, a much smaller download",
+   "items": [
+    "Added: a hotkey to hide the translation panels for a moment and bring them back (tooltip panel, dialogue, choices, tracker, nameplate). Set it in F6 > Look > Translation panel.",
+    "Added: a new panel position editor that shows the real panels over the game. Pick one panel at a time and drag it; open it from F6 or with /wcy pos.",
+    "Added: in follow-mouse mode the editor shows which side the panel lands on (auto, right, left).",
+    "Changed: the download is much smaller (about 13 MB). Only Traditional and Simplified Chinese come in the file; other languages download the first time you pick them.",
+    "Added: German (de_de) and French (fr_fr) translations and settings screens.",
+    "Fixed: item quality words now go where each language puts them.",
+    "Fixed: the Class Type value no longer covers a longer translated label.",
+    "Fixed: content book names no longer show a black bar.",
+    "Fixed: capital A with a grave accent no longer disappears from Vietnamese and Portuguese text.",
+    "Fixed: the screenshot key fires once per press and not while you type.",
+    "Translations: Japanese contributions (thanks yool141), new lines from in-game captures, every language lined up with Traditional Chinese."
+   ],
+   "zh_tw": {
+    "headline": "1.0.9：快捷鍵隱藏面板、新的位置編輯器、檔案大幅縮小",
+    "items": [
+     "新增：按一下快捷鍵就能暫時隱藏翻譯面板，再按一下叫回來（物品說明面板、對話、選項、追蹤、名牌）。在 F6 > 外觀 > 譯文面板設定按鍵。",
+     "新增：新的面板位置編輯器，直接在遊戲畫面上顯示真正的面板。一次選一個面板拖曳；從 F6 或輸入 /wcy pos 打開。",
+     "新增：跟隨滑鼠模式下，編輯器會顯示面板放在哪一側（自動、右側、左側）。",
+     "調整：檔案大幅縮小（約 13 MB）。只內附繁體中文與簡體中文，其他語言第一次選用時才下載。",
+     "新增：德文（de_de）與法文（fr_fr）譯文與設定畫面。",
+     "修正：物品品質字會放在各語言該放的位置。",
+     "修正：Class Type 的數值不會再蓋住比較長的譯文標籤。",
+     "修正：內容書的名稱不會再出現黑條。",
+     "修正：越南文與葡萄牙文裡帶重音的大寫 A 不會再消失。",
+     "修正：截圖鍵按一下只觸發一次，打字時也不會觸發。",
+     "譯文：日文社群貢獻（感謝 yool141）、遊戲裡收集到的新句子、各語言條目與繁體中文對齊。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.9：快捷键隐藏面板、新的位置编辑器、文件大幅缩小",
+    "items": [
+     "新增：按一下快捷键就能暂时隐藏翻译面板，再按一下恢复（物品说明面板、对话、选项、追踪、名牌）。在 F6 > 外观 > 译文面板设置按键。",
+     "新增：新的面板位置编辑器，直接在游戏画面上显示真正的面板。一次选一个面板拖动；从 F6 或输入 /wcy pos 打开。",
+     "新增：跟随鼠标模式下，编辑器会显示面板放在哪一侧（自动、右侧、左侧）。",
+     "调整：文件大幅缩小（约 13 MB）。只内置繁体中文与简体中文，其他语言第一次选用时才下载。",
+     "新增：德文（de_de）与法文（fr_fr）译文与设置界面。",
+     "修正：物品品质词会放在各语言该放的位置。",
+     "修正：Class Type 的数值不会再盖住较长的译文标签。",
+     "修正：内容书的名称不会再出现黑条。",
+     "修正：越南文与葡萄牙文里带重音的大写 A 不会再消失。",
+     "修正：截图键按一下只触发一次，打字时也不会触发。",
+     "译文：日文社区贡献（感谢 yool141）、游戏里收集到的新句子、各语言条目与繁体中文对齐。"
+    ]
+   }
+  },
   "1.0.8_2": {
    "headline": "1.0.8_2: Vietnamese and a draggable chat log button",
    "items": [
