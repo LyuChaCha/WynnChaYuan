@@ -112,17 +112,16 @@ public final class TrackerOverlay {
             both.addAll(more);
             lines = both;
         }
+        draw(graphics, lines, PanelPlace.saved(WynnChaYuan.config(), ModConfig.Overlay.TRACKER));
+    }
+
+    static PanelBox draw(GuiGraphics graphics, List<Component> lines, PanelPlace place) {
         Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;
-        int x = LEFT_MARGIN;
-        int y = TOP_OFFSET;
-        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.TRACKER)) {
-            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.TRACKER);
-            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.TRACKER);
-        }
-        ModConfig cfg = WynnChaYuan.config();
-        boolean sized = cfg.hasOverlaySize(ModConfig.Overlay.TRACKER);
-        int fixedW = sized ? cfg.overlayW(ModConfig.Overlay.TRACKER) : 0;
+        int x = place.placed() ? place.x() : LEFT_MARGIN;
+        int y = place.placed() ? place.y() : TOP_OFFSET;
+        boolean sized = place.sized();
+        int fixedW = sized ? place.w() : 0;
         int wrapAt = sized
                 ? Math.max(MIN_WRAP, fixedW - PADDING * 2)
                 : wrapWidth(x, graphics.guiWidth());
@@ -150,7 +149,7 @@ public final class TrackerOverlay {
         boxW += PADDING * 2;
         if (sized) {
             boxW = Math.max(boxW, fixedW);
-            boxH = Math.max(boxH, cfg.overlayH(ModConfig.Overlay.TRACKER));
+            boxH = Math.max(boxH, place.h());
         }
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
@@ -173,13 +172,14 @@ public final class TrackerOverlay {
                     Colors.TEXT);
             textY += lineHeight;
         }
+        return new PanelBox(x, y, boxW, boxH);
     }
 
     private static final float NAME_SCALE = 1.25f;
 
     private static final int NAME_COLOR = 0xFF40E0C0;
 
-    private static String heading(Object type) {
+    static String heading(Object type) {
         String key = type == null ? null : String.valueOf(type);
         String suffix = key == null ? "default"
                 : key.toLowerCase(Locale.ROOT);
