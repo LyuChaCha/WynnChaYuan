@@ -1,6 +1,6 @@
 # 校稿清單
 
-**待校稿 38 個檔、13,244 句。** 已校稿 0 個。
+**待校稿 36 個檔、12,146 句。** 已校稿 0 個。
 
 > 這份清單是**產生物**，跑 `python tools/proofread.py` 重產。不要手改。
 
@@ -39,9 +39,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Celebrations in Smoke | 643 | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/celebrations-in-smoke.json) |
 | Aldorei's Secret Part II | 636 | [`aldorei-s-secret-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-ii.json) |
 | True Colours | 602 | [`true-colours.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/true-colours.json) |
-| The Feathers Fly Part II | 577 | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) |
 | Solidarity of Steel | 561 | [`solidarity-of-steel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/solidarity-of-steel.json) |
-| The Cursed One | 521 | [`the-cursed-one.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-cursed-one.json) |
 | All Roads to Peace | 504 | [`all-roads-to-peace.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/all-roads-to-peace.json) |
 | Hollow Serenity | 450 | [`hollow-serenity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hollow-serenity.json) |
 | The Canary Calls | 332 | [`the-canary-calls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-canary-calls.json) |
@@ -51,8 +49,8 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Revelations in Fall | 307 | [`revelations-in-fall.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/revelations-in-fall.json) |
 | A Hunter's Calling | 305 | [`a-hunter-s-calling.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-hunter-s-calling.json) |
 | The Order of the Grook | 278 | [`the-order-of-the-grook.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-order-of-the-grook.json) |
-| The Hero of Gavel | 259 | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) |
-| The Feathers Fly Part I | 238 | [`the-feathers-fly-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-i.json) |
+| The Hero of Gavel | 260 | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) |
+| The Feathers Fly Part I | 237 | [`the-feathers-fly-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-i.json) |
 | A Headless History | 208 | [`a-headless-history.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-headless-history.json) |
 | Recipe For Disaster | 206 | [`recipe-for-disaster.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recipe-for-disaster.json) |
 | Forbidden Prison (Quest) | 203 | [`forbidden-prison-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/forbidden-prison-quest.json) |
@@ -77,6 +75,8 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | 內容 | 進度 | 檔案 |
 |---|---:|---|
 | Temple of the Legends (Quest) | 147 / 148 | [`temple-of-the-legends-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/temple-of-the-legends-quest.json) |
+| The Cursed One | 522 / 523 | [`the-cursed-one.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-cursed-one.json) |
+| The Feathers Fly Part II | 582 / 608 | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) |
 | The Worm Holes | 96 / 97 | [`the-worm-holes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-worm-holes.json) |
 | raid.json | 641 / 649 | [`raid.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/raid.json) |
 
@@ -85,38 +85,38 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（201 個檔）</summary>
+<details><summary>展開（210 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
-| misc.json | 18,043 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
+| misc.json | 18,062 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
 | npc.json | 10,290 | [`npc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/npc.json) |
 | gear-weapon.json | 2,818 | [`gear-weapon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-weapon.json) |
-| gear-armour.json | 2,502 | [`gear-armour.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-armour.json) |
-| quest.json | 1,855 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
-| lootrun.json | 1,743 | [`lootrun.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/lootrun.json) |
-| secret-dialogue.json | 1,319 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
+| gear-armour.json | 2,504 | [`gear-armour.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-armour.json) |
+| quest.json | 1,808 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
+| lootrun.json | 1,744 | [`lootrun.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/lootrun.json) |
+| secret-dialogue.json | 1,404 | [`secret-dialogue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret-dialogue.json) |
 | gui.json | 1,295 | [`gui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gui.json) |
 | gear-accessory.json | 1,152 | [`gear-accessory.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-accessory.json) |
 | ingredient.json | 978 | [`ingredient.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ingredient.json) |
 | Off the Rails | 944 | [`off-the-rails.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/off-the-rails.json) |
-| label.json | 835 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/label.json) |
+| label.json | 837 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/label.json) |
 | The Price of Ingenuity | 785 | [`the-price-of-ingenuity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-price-of-ingenuity.json) |
 | Queen's Recruit | 715 | [`queen-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/queen-s-recruit.json) |
 | cosmetics.json | 649 | [`cosmetics.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/cosmetics.json) |
 | dialogue-choice.json | 646 | [`dialogue-choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dialogue-choice.json) |
-| The Missing Piece | 619 | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-missing-piece.json) |
+| The Missing Piece | 618 | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-missing-piece.json) |
 | discovery.json | 536 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
 | A New Beginning | 372 | [`a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-new-beginning.json) |
 | major-id.json | 366 | [`major-id.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/major-id.json) |
+| Recover the Past | 315 | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) |
 | ui-labels.json | 311 | [`ui-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ui-labels.json) |
-| Recover the Past | 308 | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) |
 | discovery-name.json | 307 | [`discovery-name.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery-name.json) |
 | shaman.json | 294 | [`shaman.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shaman.json) |
 | A Journey Beyond | 286 | [`a-journey-beyond.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-journey-beyond.json) |
 | Through the Pipes | 259 | [`through-the-pipes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/through-the-pipes.json) |
+| quest-ui.json | 250 | [`quest-ui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json) |
 | ability-labels.json | 249 | [`ability-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability-labels.json) |
-| quest-ui.json | 249 | [`quest-ui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json) |
 | archer.json | 243 | [`archer.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/archer.json) |
 | mage.json | 238 | [`mage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/mage.json) |
 | assassin.json | 234 | [`assassin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/assassin.json) |
@@ -138,36 +138,37 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | material.json | 136 | [`material.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/material.json) |
 | wynnventory.json | 131 | [`wynnventory.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/wynnventory.json) |
 | Hunger of the Gerts Part I | 130 | [`hunger-of-the-gerts-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunger-of-the-gerts-part-i.json) |
+| Meaningful Holiday | 129 | [`meaningful-holiday.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/meaningful-holiday.json) |
 | aspect.json | 128 | [`aspect.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/aspect.json) |
 | One Thousand Meters Under | 127 | [`one-thousand-meters-under.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/one-thousand-meters-under.json) |
 | Enter the Dojo | 126 | [`enter-the-dojo.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enter-the-dojo.json) |
 | Acquiring Credentials | 123 | [`acquiring-credentials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/acquiring-credentials.json) |
-| Meaningful Holiday | 120 | [`meaningful-holiday.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/meaningful-holiday.json) |
+| Arachnids' Ascent | 118 | [`arachnids-ascent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/arachnids-ascent.json) |
 | The Realm of Light (Quest) | 117 | [`the-realm-of-light-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-realm-of-light-quest.json) |
 | Taproot | 114 | [`taproot.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/taproot.json) |
 | The Qira Hive (Quest) | 114 | [`the-qira-hive-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-qira-hive-quest.json) |
-| Arachnids' Ascent | 113 | [`arachnids-ascent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/arachnids-ascent.json) |
 | A House Divided | 113 | [`a-house-divided.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/a-house-divided.json) |
 | Flight in Distress | 110 | [`flight-in-distress.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/flight-in-distress.json) |
 | ability-terms.json | 107 | [`ability-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability-terms.json) |
 | Burning Bonds | 105 | [`burning-bonds.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/burning-bonds.json) |
 | The Envoy Part II | 105 | [`the-envoy-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-ii.json) |
-| Brothers Return | 104 | [`brothers-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/brothers-return.json) |
 | The Envoy Part I | 104 | [`the-envoy-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-i.json) |
+| Brothers Return | 103 | [`brothers-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/brothers-return.json) |
 | Purple and Blue | 103 | [`purple-and-blue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/purple-and-blue.json) |
 | Royal Trials | 101 | [`royal-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/royal-trials.json) |
+| A Sandy Scandal | 98 | [`a-sandy-scandal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-sandy-scandal.json) |
 | A Journey Further | 97 | [`a-journey-further.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-journey-further.json) |
 | Lazarus Pit (Quest) | 93 | [`lazarus-pit-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lazarus-pit-quest.json) |
 | The Hidden City | 93 | [`the-hidden-city.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hidden-city.json) |
-| A Sandy Scandal | 92 | [`a-sandy-scandal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-sandy-scandal.json) |
+| Deja Vu | 92 | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) |
 | Point of No Return | 92 | [`point-of-no-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/point-of-no-return.json) |
 | Dwarves and Doguns Part II | 91 | [`dwarves-and-doguns-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-ii.json) |
 | Hunger of the Gerts Part II | 91 | [`hunger-of-the-gerts-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunger-of-the-gerts-part-ii.json) |
 | Elemental Exercise | 90 | [`elemental-exercise.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/elemental-exercise.json) |
-| Deja Vu | 89 | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) |
+| Mushroom Man | 90 | [`mushroom-man.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/mushroom-man.json) |
 | The Shadow of the Beast | 89 | [`the-shadow-of-the-beast.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-shadow-of-the-beast.json) |
 | Dwarves and Doguns Part III | 87 | [`dwarves-and-doguns-part-iii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-iii.json) |
-| Mushroom Man | 87 | [`mushroom-man.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/mushroom-man.json) |
+| The Corrupted Village | 86 | [`the-corrupted-village.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-corrupted-village.json) |
 | Aldorei's Secret Part I | 84 | [`aldorei-s-secret-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-i.json) |
 | Fate of the Fallen | 84 | [`fate-of-the-fallen.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fate-of-the-fallen.json) |
 | The Ultimate Weapon | 84 | [`the-ultimate-weapon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-ultimate-weapon.json) |
@@ -176,13 +177,12 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | The Legend of Bob | 77 | [`the-legend-of-bob.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/the-legend-of-bob.json) |
 | shared.json | 75 | [`shared.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shared.json) |
 | Frost Bite | 74 | [`frost-bite.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/frost-bite.json) |
+| Kingdom of Sand | 74 | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) |
 | The Canyon Guides | 74 | [`the-canyon-guides.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-canyon-guides.json) |
 | Lost Soles | 73 | [`lost-soles.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-soles.json) |
 | An Iron Heart Part II | 72 | [`an-iron-heart-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-ii.json) |
 | Corrupted Betrayal | 72 | [`corrupted-betrayal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/corrupted-betrayal.json) |
-| Kingdom of Sand | 72 | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) |
 | An Unexpected Departure | 72 | [`an-unexpected-departure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/an-unexpected-departure.json) |
-| The Corrupted Village | 71 | [`the-corrupted-village.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-corrupted-village.json) |
 | A Marauder's Dues | 70 | [`a-marauder-s-dues.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-marauder-s-dues.json) |
 | Dwarves and Doguns Part IV | 70 | [`dwarves-and-doguns-part-iv.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-iv.json) |
 | Fallen Delivery | 70 | [`fallen-delivery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fallen-delivery.json) |
@@ -200,23 +200,24 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | The Thanos Depository | 62 | [`the-thanos-depository.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-thanos-depository.json) |
 | WynnExcavation Site C | 61 | [`wynnexcavation-site-c.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-c.json) |
 | Haven Antiquity | 59 | [`haven-antiquity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/haven-antiquity.json) |
+| Tempo Town Trouble | 59 | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) |
 | Dearly Departed | 58 | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) |
 | Master Piece | 58 | [`master-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/master-piece.json) |
-| Tempo Town Trouble | 58 | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) |
 | Taking the Tower | 57 | [`taking-the-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/taking-the-tower.json) |
 | The Lost | 57 | [`the-lost.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-lost.json) |
 | gear.json | 57 | [`gear.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/gear.json) |
 | Crop Failure | 56 | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) |
 | Zhight Island (Quest) | 53 | [`zhight-island-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/zhight-island-quest.json) |
+| Creeper Infiltration | 51 | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) |
 | The Maiden Tower | 50 | [`the-maiden-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-maiden-tower.json) |
+| Lava Springs | 49 | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) |
 | Desperate Metal | 48 | [`desperate-metal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/desperate-metal.json) |
-| Lava Springs | 46 | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) |
 | Blazing Retribution | 45 | [`blazing-retribution.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/blazing-retribution.json) |
-| Creeper Infiltration | 45 | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) |
 | Redbeard's Booty | 45 | [`redbeard-s-booty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/redbeard-s-booty.json) |
 | wynntils.json | 45 | [`wynntils.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/wynntils.json) |
 | Beneath the Depths | 44 | [`beneath-the-depths.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beneath-the-depths.json) |
 | Canyon Condor | 44 | [`canyon-condor.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/canyon-condor.json) |
+| Wrath of the Mummy | 43 | [`wrath-of-the-mummy.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wrath-of-the-mummy.json) |
 | Heart of Llevigar | 41 | [`heart-of-llevigar.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/heart-of-llevigar.json) |
 | unsorted.json | 41 | [`unsorted.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/unsorted.json) |
 | Grand Youth | 40 | [`grand-youth.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/grand-youth.json) |
@@ -226,13 +227,13 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Troubled Tribesmen | 38 | [`troubled-tribesmen.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/troubled-tribesmen.json) |
 | Jungle Fever | 37 | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/jungle-fever.json) |
 | Stable Story | 37 | [`stable-story.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/stable-story.json) |
+| Green Gloop | 36 | [`green-gloop.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/green-gloop.json) |
 | Reincarnation | 36 | [`reincarnation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/reincarnation.json) |
-| Wrath of the Mummy | 35 | [`wrath-of-the-mummy.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wrath-of-the-mummy.json) |
 | Death Whistle (Quest) | 34 | [`death-whistle-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/death-whistle-quest.json) |
-| Green Gloop | 34 | [`green-gloop.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/green-gloop.json) |
 | Potion Making | 34 | [`potion-making.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/potion-making.json) |
 | The Great Sap Siphon | 34 | [`the-great-sap-siphon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/the-great-sap-siphon.json) |
 | Lost in the Jungle | 33 | [`lost-in-the-jungle.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-in-the-jungle.json) |
+| Tribal Aggression | 33 | [`tribal-aggression.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tribal-aggression.json) |
 | Life Before Technology | 33 | [`life-before-technology.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/life-before-technology.json) |
 | Lost Royalty | 32 | [`lost-royalty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-royalty.json) |
 | WynnExcavation Site A | 32 | [`wynnexcavation-site-a.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-a.json) |
@@ -242,13 +243,14 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Star Thief | 30 | [`star-thief.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/star-thief.json) |
 | Underwater | 30 | [`underwater.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/underwater.json) |
 | The Passage (Quest) | 29 | [`the-passage-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-passage-quest.json) |
-| Tribal Aggression | 29 | [`tribal-aggression.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tribal-aggression.json) |
 | WynnExcavation Site B | 29 | [`wynnexcavation-site-b.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-b.json) |
 | Enzan's Brother | 28 | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) |
 | The Bigger Picture | 27 | [`the-bigger-picture.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-bigger-picture.json) |
 | An Iron Heart Part I | 25 | [`an-iron-heart-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-i.json) |
 | Maltic's Well | 25 | [`maltic-s-well.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/maltic-s-well.json) |
 | Ruins of Detlas | 24 | [`ruins-of-detlas.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/ruins-of-detlas.json) |
+| Dwelling Walls | 23 | [`dwelling-walls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwelling-walls.json) |
+| Quicksand | 23 | [`quicksand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/quicksand.json) |
 | label.json | 22 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/label.json) |
 | Cook Assistant | 21 | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cook-assistant.json) |
 | Tower of Ascension (Quest) | 21 | [`tower-of-ascension-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tower-of-ascension-quest.json) |
@@ -257,7 +259,6 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Shadowy Dealings | 20 | [`shadowy-dealings.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/shadowy-dealings.json) |
 | A Grave Mistake | 19 | [`a-grave-mistake.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-grave-mistake.json) |
 | The Olmic Rune | 19 | [`the-olmic-rune.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-olmic-rune.json) |
-| Dwelling Walls | 17 | [`dwelling-walls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwelling-walls.json) |
 | The House of Twain (Quest) | 17 | [`the-house-of-twain-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-house-of-twain-quest.json) |
 | Clearing the Camps | 15 | [`clearing-the-camps.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/clearing-the-camps.json) |
 | Cluck Cluck | 15 | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cluck-cluck.json) |
@@ -265,26 +266,34 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | archetype.json | 15 | [`archetype.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/archetype.json) |
 | Light and Shadow | 15 | [`light-and-shadow.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/light-and-shadow.json) |
 | Buried Records | 14 | [`buried-records.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/buried-records.json) |
+| Temple Ruin | 14 | [`temple-ruin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/temple-ruin.json) |
+| Pit of the Dead (Quest) | 13 | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) |
+| Rymek Thief | 13 | [`rymek-thief.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/rymek-thief.json) |
 | profession-terms.json | 12 | [`profession-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/profession-terms.json) |
+| Black Road Runaround | 12 | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) |
 | Hidden In Plain Sight | 12 | [`hidden-in-plain-sight.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/hidden-in-plain-sight.json) |
-| Pit of the Dead (Quest) | 11 | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) |
+| Desert Royal Residence | 11 | [`desert-royal-residence.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/desert-royal-residence.json) |
 | Headless, Not Homeless | 11 | [`headless-not-homeless.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/headless-not-homeless.json) |
-| Temple Ruin | 11 | [`temple-ruin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/temple-ruin.json) |
+| Temple of Swords | 11 | [`temple-of-swords.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/temple-of-swords.json) |
+| Totem Pole | 11 | [`totem-pole.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/totem-pole.json) |
 | Lost Tower | 10 | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-tower.json) |
+| Boulder Pit | 10 | [`boulder-pit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/boulder-pit.json) |
 | Collect White Lilies | 9 | [`collect-white-lilies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/collect-white-lilies.json) |
 | A Wynnic Excavation | 9 | [`a-wynnic-excavation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/a-wynnic-excavation.json) |
 | Water of the Past | 9 | [`water-of-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/water-of-the-past.json) |
 | Lost Farmers | 8 | [`lost-farmers.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/lost-farmers.json) |
 | Hunt Woolly Rhinos | 7 | [`hunt-woolly-rhinos.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunt-woolly-rhinos.json) |
 | charm.json | 5 | [`charm.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/charm.json) |
-| Black Road Runaround | 5 | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) |
+| Dash Across the Dunes | 5 | [`dash-across-the-dunes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dash-across-the-dunes.json) |
 | Fast-Paced Pilgrimage | 5 | [`fast-paced-pilgrimage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fast-paced-pilgrimage.json) |
 | Hallowed Ground | 5 | [`hallowed-ground.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/hallowed-ground.json) |
 | Ruler of the Skies | 5 | [`ruler-of-the-skies.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/ruler-of-the-skies.json) |
+| Rush Around the Ruins | 4 | [`rush-around-the-ruins.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rush-around-the-ruins.json) |
 | Empty Vaults | 4 | [`empty-vaults.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/empty-vaults.json) |
 | The Final Moments | 4 | [`the-final-moments.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/the-final-moments.json) |
 | major-id-terms.json | 3 | [`major-id-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/major-id-terms.json) |
 | bossbar.json | 3 | [`bossbar.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/bossbar.json) |
+| Wrecking Ball | 3 | [`wrecking-ball.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/wrecking-ball.json) |
 | chat-terms.json | 2 | [`chat-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/chat-terms.json) |
 | A Croaking Cryptid | 2 | [`the-forest-has-eyes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/the-forest-has-eyes.json) |
 | Timeless Ruin | 2 | [`timeless-ruin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/secret/timeless-ruin.json) |

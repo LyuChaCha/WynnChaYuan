@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**24,923 / 24,947 句已翻（99.9%），共 162 個任務，還沒有人動的有 1 個。**
+**24,944 / 25,076 句已翻（99.5%），共 164 個任務，還沒有人動的有 3 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -31,6 +31,8 @@
 
 | 任務 | 句數 |
 |---|---|
+| Rush Around the Ruins | 4 |
+| Dash Across the Dunes | 5 |
 | Fast-Paced Pilgrimage | 5 |
 
 ---
@@ -49,7 +51,7 @@
 | A Journey Home | [`a-journey-home.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-journey-home.json) | 157 | 140 | 12 | ✅ |
 | A Marauder's Dues | [`a-marauder-s-dues.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-marauder-s-dues.json) | 70 | 64 | 4 | ✅ |
 | A New Beginning | [`a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-new-beginning.json) | 372 | 361 | 15 | ✅ |
-| A Sandy Scandal | [`a-sandy-scandal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-sandy-scandal.json) | 92 | 76 | 7 | ✅ |
+| A Sandy Scandal | [`a-sandy-scandal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-sandy-scandal.json) | 98 | 77 | 7 | 95% |
 | Acquiring Credentials | [`acquiring-credentials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/acquiring-credentials.json) | 123 | 112 | 13 | ✅ |
 | Aldorei's Secret Part I | [`aldorei-s-secret-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-i.json) | 84 | 73 | 9 | ✅ |
 | Aldorei's Secret Part II | [`aldorei-s-secret-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-ii.json) | 636 | 606 | 18 | ✅ |
@@ -57,13 +59,13 @@
 | An Iron Heart Part I | [`an-iron-heart-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-i.json) | 25 | 21 | 3 | ✅ |
 | An Iron Heart Part II | [`an-iron-heart-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-ii.json) | 72 | 61 | 7 | ✅ |
 | Apotheosis (Quest) | [`apotheosis-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/apotheosis-quest.json) | 677 | 658 | 26 | ✅ |
-| Arachnids' Ascent | [`arachnids-ascent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/arachnids-ascent.json) | 113 | 107 | 7 | ✅ |
+| Arachnids' Ascent | [`arachnids-ascent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/arachnids-ascent.json) | 118 | 112 | 7 | 97% |
 | Beneath the Depths | [`beneath-the-depths.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beneath-the-depths.json) | 44 | 38 | 3 | ✅ |
 | Beyond the Grave | [`beyond-the-grave.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/beyond-the-grave.json) | 185 | 173 | 3 | ✅ |
-| Black Road Runaround | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) | 5 | 0 | 1 | ✅ |
+| Black Road Runaround | [`black-road-runaround.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/black-road-runaround.json) | 12 | 7 | 1 | 42% |
 | Blazing Retribution | [`blazing-retribution.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/blazing-retribution.json) | 45 | 38 | 4 | ✅ |
 | Bob's Lost Soul | [`bob-s-lost-soul.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/bob-s-lost-soul.json) | 83 | 73 | 5 | ✅ |
-| Brothers Return | [`brothers-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/brothers-return.json) | 104 | 90 | 7 | ✅ |
+| Brothers Return | [`brothers-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/brothers-return.json) | 103 | 89 | 7 | ✅ |
 | Burning Bonds | [`burning-bonds.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/burning-bonds.json) | 105 | 98 | 2 | ✅ |
 | Canyon Condor | [`canyon-condor.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/canyon-condor.json) | 44 | 38 | 3 | ✅ |
 | Celebrations in Smoke | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/celebrations-in-smoke.json) | 643 | 581 | 15 | ✅ |
@@ -73,17 +75,18 @@
 | Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cook-assistant.json) | 21 | 16 | 1 | ✅ |
 | Corrupted Betrayal | [`corrupted-betrayal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/corrupted-betrayal.json) | 72 | 66 | 4 | ✅ |
 | Cowfusion | [`cowfusion.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cowfusion.json) | 183 | 168 | 5 | ✅ |
-| Creeper Infiltration | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) | 45 | 40 | 1 | ✅ |
+| Creeper Infiltration | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) | 51 | 43 | 2 | 92% |
 | Crop Failure | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) | 56 | 52 | 2 | ✅ |
+| Dash Across the Dunes | [`dash-across-the-dunes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dash-across-the-dunes.json) | 5 | 5 | 1 | — |
 | Dearly Departed | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) | 58 | 54 | 2 | ✅ |
 | Death Whistle (Quest) | [`death-whistle-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/death-whistle-quest.json) | 34 | 28 | 3 | ✅ |
-| Deja Vu | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) | 89 | 81 | 2 | ✅ |
+| Deja Vu | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) | 92 | 83 | 2 | 98% |
 | Desperate Metal | [`desperate-metal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/desperate-metal.json) | 48 | 42 | 7 | ✅ |
 | Dwarves and Doguns Part I | [`dwarves-and-doguns-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-i.json) | 180 | 160 | 19 | ✅ |
 | Dwarves and Doguns Part II | [`dwarves-and-doguns-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-ii.json) | 91 | 77 | 6 | ✅ |
 | Dwarves and Doguns Part III | [`dwarves-and-doguns-part-iii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-iii.json) | 87 | 73 | 5 | ✅ |
 | Dwarves and Doguns Part IV | [`dwarves-and-doguns-part-iv.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwarves-and-doguns-part-iv.json) | 70 | 58 | 7 | ✅ |
-| Dwelling Walls | [`dwelling-walls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwelling-walls.json) | 17 | 13 | 1 | ✅ |
+| Dwelling Walls | [`dwelling-walls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwelling-walls.json) | 23 | 15 | 1 | 78% |
 | Echoes of Change | [`echoes-of-change.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/echoes-of-change.json) | 763 | 719 | 26 | ✅ |
 | Elemental Exercise | [`elemental-exercise.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/elemental-exercise.json) | 90 | 81 | 5 | ✅ |
 | Ensemble of Hope | [`ensemble-of-hope.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ensemble-of-hope.json) | 754 | 721 | 35 | ✅ |
@@ -101,7 +104,7 @@
 | Frost Bite | [`frost-bite.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/frost-bite.json) | 74 | 65 | 2 | ✅ |
 | General's Orders | [`general-s-orders.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/general-s-orders.json) | 139 | 112 | 10 | ✅ |
 | Grand Youth | [`grand-youth.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/grand-youth.json) | 40 | 34 | 4 | ✅ |
-| Green Gloop | [`green-gloop.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/green-gloop.json) | 34 | 30 | 2 | ✅ |
+| Green Gloop | [`green-gloop.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/green-gloop.json) | 36 | 32 | 2 | 94% |
 | Haven Antiquity | [`haven-antiquity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/haven-antiquity.json) | 59 | 51 | 3 | ✅ |
 | Heart of Llevigar | [`heart-of-llevigar.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/heart-of-llevigar.json) | 41 | 32 | 3 | ✅ |
 | Hollow Serenity | [`hollow-serenity.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hollow-serenity.json) | 450 | 431 | 18 | ✅ |
@@ -113,8 +116,8 @@
 | Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-plants.json) | 62 | 56 | 4 | ✅ |
 | Jungle Fever | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/jungle-fever.json) | 37 | 31 | 3 | ✅ |
 | King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/king-s-recruit.json) | 175 | 153 | 8 | ✅ |
-| Kingdom of Sand | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) | 72 | 63 | 8 | ✅ |
-| Lava Springs | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) | 46 | 39 | 3 | ✅ |
+| Kingdom of Sand | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) | 74 | 65 | 8 | 99% |
+| Lava Springs | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) | 49 | 42 | 3 | 98% |
 | Lazarus Pit (Quest) | [`lazarus-pit-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lazarus-pit-quest.json) | 93 | 74 | 7 | ✅ |
 | Lexdale Witch Trials | [`lexdale-witch-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lexdale-witch-trials.json) | 39 | 32 | 4 | ✅ |
 | Lost Royalty | [`lost-royalty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-royalty.json) | 32 | 26 | 2 | ✅ |
@@ -123,30 +126,31 @@
 | Lost in the Jungle | [`lost-in-the-jungle.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-in-the-jungle.json) | 33 | 28 | 3 | ✅ |
 | Maltic's Well | [`maltic-s-well.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/maltic-s-well.json) | 25 | 23 | 3 | ✅ |
 | Master Piece | [`master-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/master-piece.json) | 58 | 51 | 1 | ✅ |
-| Meaningful Holiday | [`meaningful-holiday.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/meaningful-holiday.json) | 120 | 105 | 10 | ✅ |
+| Meaningful Holiday | [`meaningful-holiday.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/meaningful-holiday.json) | 129 | 110 | 14 | 93% |
 | Memory Paranoia | [`memory-paranoia.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/memory-paranoia.json) | 128 | 104 | 13 | ✅ |
 | Misadventure on the Sea | [`misadventure-on-the-sea.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/misadventure-on-the-sea.json) | 208 | 199 | 7 | 95% |
 | Mixed Feelings | [`mixed-feelings.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/mixed-feelings.json) | 97 | 77 | 4 | ✅ |
 | Murder Mystery | [`murder-mystery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/murder-mystery.json) | 77 | 71 | 9 | ✅ |
-| Mushroom Man | [`mushroom-man.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/mushroom-man.json) | 87 | 81 | 6 | ✅ |
+| Mushroom Man | [`mushroom-man.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/mushroom-man.json) | 90 | 84 | 6 | 97% |
 | Off the Rails | [`off-the-rails.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/off-the-rails.json) | 944 | 900 | 12 | ✅ |
 | One Thousand Meters Under | [`one-thousand-meters-under.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/one-thousand-meters-under.json) | 127 | 110 | 10 | ✅ |
 | Out of my Mind | [`out-of-my-mind.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/out-of-my-mind.json) | 62 | 55 | 4 | ✅ |
 | Overture to Despair | [`overture-to-despair.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/overture-to-despair.json) | 688 | 668 | 26 | ✅ |
 | Pirate's Trove | [`pirate-s-trove.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pirate-s-trove.json) | 20 | 15 | 1 | ✅ |
-| Pit of the Dead (Quest) | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) | 11 | 9 | 1 | ✅ |
+| Pit of the Dead (Quest) | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) | 13 | 10 | 1 | 85% |
 | Point of No Return | [`point-of-no-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/point-of-no-return.json) | 92 | 88 | 4 | ✅ |
 | Potion Making | [`potion-making.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/potion-making.json) | 34 | 30 | 2 | ✅ |
 | Purple and Blue | [`purple-and-blue.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/purple-and-blue.json) | 103 | 95 | 3 | ✅ |
 | Queen's Recruit | [`queen-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/queen-s-recruit.json) | 715 | 687 | 21 | ✅ |
 | Recipe For Disaster | [`recipe-for-disaster.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recipe-for-disaster.json) | 206 | 185 | 10 | ✅ |
 | Reclaiming the House | [`reclaiming-the-house.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/reclaiming-the-house.json) | 68 | 55 | 4 | ✅ |
-| Recover the Past | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) | 308 | 292 | 11 | ✅ |
+| Recover the Past | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) | 315 | 298 | 12 | 98% |
 | Redbeard's Booty | [`redbeard-s-booty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/redbeard-s-booty.json) | 45 | 39 | 5 | ✅ |
 | Reincarnation | [`reincarnation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/reincarnation.json) | 36 | 32 | 2 | ✅ |
 | Revelations in Fall | [`revelations-in-fall.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/revelations-in-fall.json) | 307 | 294 | 11 | ✅ |
 | Rise of the Quartron | [`rise-of-the-quartron.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rise-of-the-quartron.json) | 119 | 108 | 9 | ✅ |
 | Royal Trials | [`royal-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/royal-trials.json) | 101 | 84 | 7 | ✅ |
+| Rush Around the Ruins | [`rush-around-the-ruins.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rush-around-the-ruins.json) | 4 | 4 | 1 | — |
 | Shattered Minds | [`shattered-minds.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/shattered-minds.json) | 66 | 60 | 9 | ✅ |
 | Shrouded in Mist | [`shrouded-in-mist.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/shrouded-in-mist.json) | 319 | 303 | 14 | ✅ |
 | Solidarity of Steel | [`solidarity-of-steel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/solidarity-of-steel.json) | 561 | 535 | 21 | ✅ |
@@ -156,25 +160,25 @@
 | Taking the Tower | [`taking-the-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/taking-the-tower.json) | 57 | 50 | 2 | ✅ |
 | Taproot | [`taproot.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/taproot.json) | 114 | 103 | 4 | ✅ |
 | Temple of the Legends (Quest) | [`temple-of-the-legends-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/temple-of-the-legends-quest.json) | 148 | 133 | 5 | 99% |
-| Tempo Town Trouble | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) | 58 | 53 | 4 | ✅ |
+| Tempo Town Trouble | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) | 59 | 54 | 4 | ✅ |
 | The Bigger Picture | [`the-bigger-picture.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-bigger-picture.json) | 27 | 20 | 1 | ✅ |
 | The Breaking Point | [`the-breaking-point.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-breaking-point.json) | 322 | 303 | 19 | ✅ |
 | The Canary Calls | [`the-canary-calls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-canary-calls.json) | 332 | 323 | 9 | ✅ |
 | The Canyon Guides | [`the-canyon-guides.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-canyon-guides.json) | 74 | 68 | 2 | ✅ |
-| The Corrupted Village | [`the-corrupted-village.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-corrupted-village.json) | 71 | 61 | 3 | ✅ |
-| The Cursed One | [`the-cursed-one.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-cursed-one.json) | 521 | 505 | 21 | ✅ |
+| The Corrupted Village | [`the-corrupted-village.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-corrupted-village.json) | 86 | 65 | 4 | 86% |
+| The Cursed One | [`the-cursed-one.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-cursed-one.json) | 523 | 505 | 21 | 100% |
 | The Dark Descent | [`the-dark-descent.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-dark-descent.json) | 62 | 55 | 5 | 95% |
 | The Envoy Part I | [`the-envoy-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-i.json) | 104 | 93 | 7 | ✅ |
 | The Envoy Part II | [`the-envoy-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-ii.json) | 105 | 91 | 12 | ✅ |
-| The Feathers Fly Part I | [`the-feathers-fly-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-i.json) | 238 | 226 | 6 | ✅ |
-| The Feathers Fly Part II | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) | 577 | 564 | 19 | ✅ |
-| The Hero of Gavel | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) | 259 | 239 | 11 | ✅ |
+| The Feathers Fly Part I | [`the-feathers-fly-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-i.json) | 237 | 225 | 6 | ✅ |
+| The Feathers Fly Part II | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) | 608 | 595 | 19 | 96% |
+| The Hero of Gavel | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) | 260 | 240 | 11 | ✅ |
 | The Hidden City | [`the-hidden-city.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hidden-city.json) | 93 | 77 | 14 | ✅ |
 | The House of Twain (Quest) | [`the-house-of-twain-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-house-of-twain-quest.json) | 17 | 14 | 2 | ✅ |
 | The Lost | [`the-lost.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-lost.json) | 57 | 44 | 4 | ✅ |
 | The Maiden Tower | [`the-maiden-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-maiden-tower.json) | 50 | 46 | 3 | ✅ |
 | The Mercenary | [`the-mercenary.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-mercenary.json) | 134 | 125 | 8 | ✅ |
-| The Missing Piece | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-missing-piece.json) | 619 | 554 | 17 | ✅ |
+| The Missing Piece | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-missing-piece.json) | 618 | 553 | 17 | ✅ |
 | The Olmic Rune | [`the-olmic-rune.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-olmic-rune.json) | 19 | 13 | 0 | ✅ |
 | The Order of the Grook | [`the-order-of-the-grook.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-order-of-the-grook.json) | 278 | 266 | 10 | ✅ |
 | The Passage (Quest) | [`the-passage-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-passage-quest.json) | 29 | 27 | 3 | ✅ |
@@ -190,14 +194,14 @@
 | The Worm Holes | [`the-worm-holes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-worm-holes.json) | 97 | 91 | 3 | 99% |
 | Through the Pipes | [`through-the-pipes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/through-the-pipes.json) | 259 | 233 | 2 | ✅ |
 | Tower of Ascension (Quest) | [`tower-of-ascension-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tower-of-ascension-quest.json) | 21 | 21 | 2 | 95% |
-| Tribal Aggression | [`tribal-aggression.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tribal-aggression.json) | 29 | 25 | 3 | ✅ |
+| Tribal Aggression | [`tribal-aggression.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tribal-aggression.json) | 33 | 29 | 3 | 88% |
 | Troubled Tribesmen | [`troubled-tribesmen.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/troubled-tribesmen.json) | 38 | 32 | 5 | ✅ |
 | True Colours | [`true-colours.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/true-colours.json) | 602 | 580 | 11 | ✅ |
 | Tunnel Trouble | [`tunnel-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tunnel-trouble.json) | 69 | 58 | 6 | ✅ |
 | Underice | [`underice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/underice.json) | 63 | 50 | 6 | ✅ |
 | Undersupply | [`undersupply.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/undersupply.json) | 114 | 108 | 10 | ✅ |
 | Underwater | [`underwater.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/underwater.json) | 30 | 24 | 2 | ✅ |
-| Wrath of the Mummy | [`wrath-of-the-mummy.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wrath-of-the-mummy.json) | 35 | 29 | 3 | ✅ |
+| Wrath of the Mummy | [`wrath-of-the-mummy.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wrath-of-the-mummy.json) | 43 | 31 | 3 | 84% |
 | WynnExcavation Site A | [`wynnexcavation-site-a.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-a.json) | 32 | 26 | 2 | ✅ |
 | WynnExcavation Site B | [`wynnexcavation-site-b.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-b.json) | 29 | 24 | 4 | ✅ |
 | WynnExcavation Site C | [`wynnexcavation-site-c.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-c.json) | 61 | 52 | 5 | ✅ |
