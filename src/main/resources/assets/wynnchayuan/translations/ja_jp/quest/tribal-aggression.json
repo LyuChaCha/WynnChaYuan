@@ -43,7 +43,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#004": {
@@ -93,7 +93,7 @@
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "",
-   "speaker": "",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#009": {
@@ -158,13 +158,14 @@
   },
   "Tribal Aggression#015": {
    "src": "Now, enter the Eagle Camp across the river, you may have to search the camp, I'm sure they have hidden our totem!",
-   "dst": "さあ、川向こうの鷲族の野営地へ行け。野営地を探し回ることになるだろう、奴らは必ずトーテムを隠している！",
+   "dst": "さあ、{c2}川向こうの鷲族の野営地へ行け{/}。野営地を探し回ることになるだろう、奴らは必ずトーテムを隠している！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "Stage 1",
    "speaker": "Caras",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}enter the Eagle Camp across the river,{/}"
   },
   "Tribal Aggression#016": {
    "src": "Enter the Eagle Camp and talk to Favian",
@@ -208,13 +209,14 @@
   },
   "Tribal Aggression#020": {
    "src": "Tell you what, if you can retrieve our Eagle Totem, I will allow you to go return the Owl totem.",
-   "dst": "こうしよう。我らの鷲のトーテムを取り戻せたら、梟のトーテムを返しに行くことを許そう。",
+   "dst": "こうしよう。{c2}我らの鷲のトーテムを取り戻せたら{/}、梟のトーテムを返しに行くことを許そう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
    "stage": "Stage 2",
    "speaker": "Favian",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}retrieve our Eagle Totem,{/}"
   },
   "Tribal Aggression#021": {
    "src": "Bring back the Eagle Totem from the Owl Camp",
@@ -295,6 +297,46 @@
    "stage": "Stage 4",
    "speaker": "Caras",
    "source": "wiki"
+  },
+  "Tribal Aggression#029": {
+   "src": "What are you doing here? Be gone!",
+   "dst": "ここで何をしているんだ？　さっさと出て行け！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#030": {
+   "src": "Are you going to get the totem back or not? It's located at the Owl Camp right now.",
+   "dst": "トーテムを取り戻すつもりなのか？　今は梟のキャンプにある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "capture"
+  },
+  "Tribal Aggression#031": {
+   "src": "Oh thank you so much for helping us! It's so nice to see you again, owl friend.",
+   "dst": "ああ、助けてくれて本当にありがとう！また会えて本当に嬉しいよ、梟の友達。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Caras",
+   "source": "capture"
+  },
+  "Tribal Aggression#032": {
+   "src": "Ah, this is how I appreciate it, peace and harmony...",
+   "dst": "ああ、これこそ私が求めていたもの、平和と調和……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Favian",
+   "source": "capture"
   }
  }
 }
