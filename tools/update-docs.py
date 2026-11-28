@@ -347,7 +347,7 @@ def write_progress_doc(rows: list[tuple[str, int, int]]) -> None:
 
 
 def write_language_manifest() -> list[str]:
-    """把「jar 裡有哪些語言」寫成一份清單，給 Java 端與打包用。
+    """把「玩家選得到哪些語言」寫成一份清單，給 Java 端與打包用。
 
     <p>依<b>實際資料夾</b>產生，不必手動維護——新增一種語言只要建一個資料夾，
     下次跑這支就會被收進去。手維護的清單一定會有人忘了改，
@@ -372,12 +372,13 @@ def write_language_manifest() -> list[str]:
     shipped.sort()
     (root / "_languages.json").write_text(
         json.dumps({
-            "_note": "打包了哪些語言，以及各語言有哪些檔案一條都還沒翻。"
+            "_note": "玩家選得到哪些語言，以及各語言有哪些檔案一條都還沒翻。"
                      "由 tools/update-docs.py 產生，不要手改。"
-                     "一條譯文都沒有的語言不會列進來，也不會打進 jar——"
+                     "一條譯文都沒有的語言不會列進來——"
                      "空骨架是給翻譯的人用的，玩家不需要多下載一份原文。"
-                     "empty 裡的檔案同理：語言剛開始翻的時候，整包幾乎都是"
+                     "empty 裡的檔案不打進 jar：語言剛開始翻的時候，整包幾乎都是"
                      "空的，照樣打進 jar 等於讓每個玩家多下載兩 MB 的英文原文。"
+                     "真正打進 jar 的語言看 _in-jar.json，其他語言玩家選到時才從 GitHub 下載。"
                      "新增一種語言請跑 tools/new-language.py。",
             "languages": shipped,
             "empty": {name: untranslated_files(root / name)
